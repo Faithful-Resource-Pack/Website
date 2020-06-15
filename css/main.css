@@ -5,6 +5,7 @@ html {
 header, footer {
   padding: 2rem 1rem;
   text-align: center;
+  background: #2D2E32;
 }
 main {
   margin: 30px 0;
