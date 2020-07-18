@@ -1,0 +1,7 @@
+url: "https://faithful-dungeons.github.io/Website/"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
