@@ -11,16 +11,16 @@ h1: Gallery
 									
 			<div class="modal-header">
 				<h4 class="modal-title">See closer</h4>
-				<button type="button" class="close" data-dismiss="modal">×</button>
+				<button type="button" class="close" data-dismiss="blockModal">×</button>
 			</div>
 
 			<div class="modal-body">
-				<img src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/{{ blockTextures[0] }}" alt="Texture not done yet.">
-				<p><small>{{ blockTextures[0] | remove: ".png" | remove: ".tga" }}</small></p>
+				<img id="{{ blockTextures[0] }}" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/{{ blockTextures[0] }}" alt="Texture not done yet.">
+				<p id="{{ blockTextures[0] }}"><small>{{ blockTextures[0] | remove: ".png" | remove: ".tga" }}</small></p>
 			</div>
 
 			<div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-danger" data-dismiss="blockModal">Close</button>
 			</div>
 
 		</div>
@@ -40,7 +40,7 @@ h1: Gallery
 						<div class="col">
 							
 							<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-								<button type="button" class="btn" data-toggle="modal" data-target="#blockModal">
+								<button type="button" class="btn" data-toggle="blockModal" data-texture="{{ blockTextures[0] }}" data-target="#blockModal">
 									<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/{{ blockTextures[0] }}" style="width:100%; height:64px" alt="">
 								</button>
 							</div>
