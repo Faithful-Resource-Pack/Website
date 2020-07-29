@@ -25,6 +25,13 @@ main {
   height: 100%;
 }
 
+/* Thumbnail img */
+.img-thumbnail {
+  background-color: #0000;
+  border: 0px solid #0000;
+}
+
+
 /* Dark colors */
 ::-webkit-scrollbar{
   width: 17px;
