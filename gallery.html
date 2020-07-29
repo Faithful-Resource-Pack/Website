@@ -36,7 +36,7 @@ h1: Gallery
 	          		{%- for equipmentsTextures in site.data.equipments_list -%}
 						<div class="col">
 							<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ equipmentsTextures[0] }}" style="width:100%; height:64px" alt="{{ equipmentsTextures[0] | remove: ".png" | remove: ".tga" }}">
+								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ equipmentsTextures }}" style="width:100%; height:64px">
 							</div>
 						</div>
 					{% endfor %}
@@ -53,10 +53,47 @@ h1: Gallery
         	<div class="card-body">
         		<div class="row">
 	          		{%- for itemsTextures in site.data.items_list -%}
-	          		{{ itemsTextures }}
 						<div class="col">
 							<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ itemsTextures[0] }}" style="width:100%; height:64px" alt="{{ itemsTextures[0] | remove: ".png" | remove: ".tga" }}">
+								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ itemsTextures }}" style="width:100%; height:64px">
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+        	</div>
+      	</div>
+    </div>
+
+    <div class="card">
+    	<div class="card-header">
+    		<a class="card-link" data-toggle="collapse" href="#collapse4">Mobs</a>
+    	</div>
+    	<div id="collapse4" class="collapse" data-parent="#accordion">
+        	<div class="card-body">
+        		<div class="row">
+	          		{%- for mobsTextures in site.data.mobs_list -%}
+						<div class="col">
+							<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
+								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ mobsTextures }}" style="width:100%; height:64px">
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+        	</div>
+      	</div>
+    </div>
+
+    <div class="card">
+    	<div class="card-header">
+    		<a class="card-link" data-toggle="collapse" href="#collapse5">Prefabs</a>
+    	</div>
+    	<div id="collapse5" class="collapse" data-parent="#accordion">
+        	<div class="card-body">
+        		<div class="row">
+	          		{%- for prefabsTextures in site.data.prefabs_list -%}
+						<div class="col">
+							<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
+								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ prefabsTextures }}" style="width:100%; height:64px">
 							</div>
 						</div>
 					{% endfor %}
