@@ -10,7 +10,7 @@ https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%2
 -->
 
 {%- for blocksTextures in site.data.block_textures -%}
-	{{ blocksTextures }}
+	{%- assign blockTexture = blocksTextures | split "." -%}
 	<br>
 {% endfor %}
 
