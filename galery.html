@@ -12,32 +12,56 @@ h1: Galery
       	</div>
       	<div id="collapse1" class="collapse show" data-parent="#accordion">
         	<div class="card-body">
-          		{%- for blocksTextures in site.data.block_textures -%}
+        		<div class="row">
+	          		{%- for blocksTextures in site.data.block_textures -%}
 
-					<div class="col">
-						<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-							<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/{{ blocksTextures[0] }}" style="width:100%; height:64px" alt="{{ blocksTextures[0] | remove: ".png" | remove: ".tga" }}">
+						<div class="col">
+							<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
+								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/{{ blocksTextures[0] }}" style="width:100%; height:64px" alt="{{ blocksTextures[0] | remove: ".png" | remove: ".tga" }}">
+							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
         	</div>
       	</div>
     </div>
+
     <div class="card">
     	<div class="card-header">
     		<a class="card-link" data-toggle="collapse" href="#collapse2">Equipments</a>
     	</div>
-    	<div id="collapse1" class="collapse show" data-parent="#accordion">
+    	<div id="collapse2" class="collapse show" data-parent="#accordion">
         	<div class="card-body">
-          		{%- for equipmentsTextures in site.data.equipments_list -%}
-
-					<div class="col">
-						<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-							<img class="card-img-top img-thumbnail" src="#{{ equipmentsTextures[0] }}" style="width:100%; height:64px" alt="{{ equipmentsTextures[0] | remove: ".png" | remove: ".tga" }}">
+        		<div class="row">
+	          		{%- for equipmentsTextures in site.data.equipments_list -%}
+						<div class="col">
+							<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
+								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ equipmentsTextures[0] }}" style="width:100%; height:64px" alt="{{ equipmentsTextures[0] | remove: ".png" | remove: ".tga" }}">
+							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
         	</div>
       	</div>
     </div>
+
+    <div class="card">
+    	<div class="card-header">
+    		<a class="card-link" data-toggle="collapse" href="#collapse3">Items</a>
+    	</div>
+    	<div id="collapse3" class="collapse show" data-parent="#accordion">
+        	<div class="card-body">
+        		<div class="row">
+	          		{%- for itemsTextures in site.data.items_list -%}
+						<div class="col">
+							<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
+								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ itemsTextures[0] }}" style="width:100%; height:64px" alt="{{ itemsTextures[0] | remove: ".png" | remove: ".tga" }}">
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+        	</div>
+      	</div>
+    </div>
+
 </div>
