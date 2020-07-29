@@ -10,9 +10,7 @@ https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%2
 -->
 
 {%- for blocksTextures in site.data.block_textures -%}
-	{%- assign blockTexture = blocksTextures | split: ".png" -%}
-	{%- assign blockTextureSize = blockTexture | size -%}
-	{{ blockTexture[0] | slice: 2, blockTextureSize }}
+	{{ blocksTextures }}
 	<br>
 {% endfor %}
 
