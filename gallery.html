@@ -11,7 +11,7 @@ h1: Gallery
 									
 			<div class="modal-header">
 				<h4 class="modal-title">See closer</h4>
-				<button type="button" class="close" data-dismiss="blockModal">×</button>
+				<button type="button" class="close" data-dismiss="modalBlock">×</button>
 			</div>
 
 			<div class="modal-body">
@@ -20,7 +20,7 @@ h1: Gallery
 			</div>
 
 			<div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="blockModal">Close</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modalBlock">Close</button>
 			</div>
 
 		</div>
@@ -37,7 +37,7 @@ h1: Gallery
         		<div class="row">
 	          		{%- for blockTextures in site.data.block_textures -%}
 						
-						<button type="button" class="btn" data-toggle="blockModal" data-texture="{{ blockTextures[0] }}" data-target="#blockModal">
+						<button type="button" class="btn" data-toggle="modalBlock" data-texture="{{ blockTextures[0] }}" data-target="#blockModal">
 							<div class="col">
 								
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
