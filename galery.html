@@ -9,7 +9,8 @@ h1: Galery
 https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/
 -->
 
-{%- for blockTexture in site.data.block_textures -%}
+{%- for blocksTextures in site.data.block_textures -%}
+	{%- assign blockTexture = blocksTextures | split: ".png" -%}
 	{{ blockTexture }}
 	<br>
 {% endfor %}
