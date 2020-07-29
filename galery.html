@@ -9,10 +9,17 @@ h1: Galery
 https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/
 -->
 
-{%- for blocksTextures in site.data.block_textures -%}
-	{{ blocksTextures[0] }}
-	<br>
-{% endfor %}
+<div class="row">
+	{%- for blocksTextures in site.data.block_textures -%}
+
+		<div class="col">
+			<div class="card" style="width:128px">
+				<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/{{ blocksTextures[0] }}" style="width:100%" alt="{{ blocksTextures[0] | remove: ".png" | remove: ".tga" }}">
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
 
 <!--
 <div class="row">
