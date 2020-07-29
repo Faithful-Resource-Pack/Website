@@ -52,8 +52,8 @@ h1: Gallery
     	<div id="collapse3" class="collapse" data-parent="#accordion">
         	<div class="card-body">
         		<div class="row">
-        			{{ itemsTextures }}
 	          		{%- for itemsTextures in site.data.items_list -%}
+	          		{{ itemsTextures }}
 						<div class="col">
 							<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
 								<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ itemsTextures[0] }}" style="width:100%; height:64px" alt="{{ itemsTextures[0] | remove: ".png" | remove: ".tga" }}">
