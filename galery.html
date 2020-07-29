@@ -8,7 +8,7 @@ h1: Galery
 https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/
 
 {%- for blockTexture in site.data.block_textures -%}
-	<img src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/{{ blockTexture.name }}" alt="{{ blockTexture.basename }}">
+	{{ blockTexture }}
 {% endfor %}
 
 <!--
