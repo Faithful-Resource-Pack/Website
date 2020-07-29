@@ -5,10 +5,13 @@ description: Discover all textures made by us!
 h1: Galery
 ---
 
+<!--
 https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/
+-->
 
 {%- for blockTexture in site.data.block_textures -%}
 	{{ blockTexture }}
+	<br>
 {% endfor %}
 
 <!--
