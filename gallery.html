@@ -38,7 +38,7 @@ h1: Gallery
         		<div class="row">
 	          		{%- for equipmentsTextures in site.data.equipments_list -%}
 						<div class="col">
-							<a href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content{{ equipmentsTextures[0] }}" data-toggle="tooltip" data-placement="bottom" title="{{ equipmentsTextures[0] | remove: "Actors/Equipment/" | remove: ".png" | remove: ".tga" }}">
+							<a href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content{{ equipmentsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ equipmentsTextures | remove: "Actors/Equipment/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
 									<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ equipmentsTextures }}" style="width:100%; height:64px" alt="">
 								</div>
@@ -60,7 +60,7 @@ h1: Gallery
 	          		{%- for itemsTextures in site.data.items_list -%}
 
 						<div class="col">
-							<a href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content{{ itemsTextures[0] }}" data-toggle="tooltip" data-placement="bottom" title="{{ itemsTextures[0] | remove: "Actors/Items/" | remove: ".png" | remove: ".tga" }}">
+							<a href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content{{ itemsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ itemsTextures | remove: "Actors/Items/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
 									<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ itemsTextures }}" style="width:100%; height:64px" alt="">
 								</div>
@@ -82,7 +82,7 @@ h1: Gallery
         		<div class="row">
 	          		{%- for mobsTextures in site.data.mobs_list -%}
 						<div class="col">
-							<a href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content{{ mobsTextures[0] }}" data-toggle="tooltip" data-placement="bottom" title="{{ mobsTextures[0] | remove: "Actors/Characters/" | remove: ".png" | remove: ".tga" }}">
+							<a href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content{{ mobsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ mobsTextures | remove: "Actors/Characters/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
 									<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ mobsTextures }}" style="width:100%; height:64px" alt="">
 								</div>
@@ -103,7 +103,7 @@ h1: Gallery
         		<div class="row">
 	          		{%- for prefabsTextures in site.data.prefabs_list -%}
 						<div class="col">
-							<a href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content{{ prefabsTextures[0] }}" data-toggle="tooltip" data-placement="bottom" title="{{ prefabsTextures[0] | remove: "Decor/Prefabs/" | remove: ".png" | remove: ".tga" }}">
+							<a href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content{{ prefabsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ prefabsTextures | remove: "Decor/Prefabs/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
 									<img class="card-img-top img-thumbnail" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ prefabsTextures }}" style="width:100%; height:64px" alt="">
 								</div>
