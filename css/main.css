@@ -267,10 +267,9 @@ h2, h3, h4, h5 {
 
 img[src$=".png"] {
   image-rendering: pixelated;
-  user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
   -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
