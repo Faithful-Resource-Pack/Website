@@ -248,12 +248,29 @@ h2, h3, h4, h5 {
   margin-right: 6px;
 }
 
-/* Button hover */
+/* Button and image hover and selecting */
 
-.nav-link {
+.nav-link, .card-img-top {
   transition: all .1s;
 }
 
-.nav-link:hover {
+.nav-link:hover, .card-img-top:hover {
   transform: scale(0.95);
+}
+
+.card-img-top:active {
+    transform: scale(5.0);
+    z-index: 1;
+}
+
+/* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
+
+img[src$=".png"] {
+  image-rendering: pixelated;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
