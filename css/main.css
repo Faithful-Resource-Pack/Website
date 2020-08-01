@@ -251,7 +251,7 @@ h2, h3, h4, h5 {
 /* Button and image hover and selecting */
 
 .nav-link, .card-img-top {
-  transition: all .1s;
+  transition: all .1s ease-out;
 }
 
 .nav-link:hover, .card-img-top:hover {
@@ -259,8 +259,9 @@ h2, h3, h4, h5 {
 }
 
 .card-img-top:active {
-    transform: scale(5.0);
-    z-index: 1;
+  z-index: 1;
+  transform: scale(5.0);
+  height: auto !important;
 }
 
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
