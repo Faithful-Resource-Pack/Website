@@ -250,15 +250,15 @@ h2, h3, h4, h5 {
 
 /* Button and image hover and selecting */
 
-.nav-link, .card-img-top {
+.nav-link, .col .card .card-img-top {
   transition: all .1s ease-out;
 }
 
-.nav-link:hover, .card-img-top:hover {
+.nav-link:hover, .col .card .card-img-top:hover {
   transform: scale(0.95);
 }
 
-.card-img-top:active {
+.col .card .card-img-top:active {
   z-index: 1;
   transform: scale(5.0);
   height: auto !important;
