@@ -6,14 +6,14 @@ h1: Gallery
 ---
 
 <div id="accordion">
-    <div class="card">
-      	<div class="card-header">
-        	<a class="card-link" data-toggle="collapse" href="#collapse1">Block Textures</a>
-      	</div>
-      	<div id="collapse1" class="collapse show" data-parent="#accordion">
-        	<div class="card-body">
-        		<div class="row">
-	          		{%- for blockTextures in site.data.block_textures -%}
+		<div class="card">
+				<div class="card-header">
+					<a class="card-link" data-toggle="collapse" href="#collapse1">Block Textures</a>
+				</div>
+				<div id="collapse1" class="collapse show" data-parent="#accordion">
+					<div class="card-body">
+						<div class="row">
+								{%- for blockTextures in site.data.block_textures -%}
 						
 							<div class="col">
 								<span href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/{{ blockTextures[0] }}" data-toggle="tooltip" data-placement="bottom" title="{{ blockTextures[0] | remove: ".png" | remove: ".tga" }}">
@@ -25,18 +25,18 @@ h1: Gallery
 
 					{% endfor %}
 				</div>
-        	</div>
-      	</div>
-    </div>
+					</div>
+				</div>
+		</div>
 
-    <div class="card">
-    	<div class="card-header">
-    		<a class="card-link" data-toggle="collapse" href="#collapse2">Equipments</a>
-    	</div>
-    	<div id="collapse2" class="collapse" data-parent="#accordion">
-        	<div class="card-body">
-        		<div class="row">
-	          		{%- for equipmentsTextures in site.data.equipments_list -%}
+		<div class="card">
+			<div class="card-header">
+				<a class="card-link" data-toggle="collapse" href="#collapse2">Equipments</a>
+			</div>
+			<div id="collapse2" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<div class="row">
+								{%- for equipmentsTextures in site.data.equipments_list -%}
 						<div class="col">
 							<span href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ equipmentsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ equipmentsTextures | remove: "Actors/Equipment/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
@@ -46,18 +46,18 @@ h1: Gallery
 						</div>
 					{% endfor %}
 				</div>
-        	</div>
-      	</div>
-    </div>
+					</div>
+				</div>
+		</div>
 
-    <div class="card">
-    	<div class="card-header">
-    		<a class="card-link" data-toggle="collapse" href="#collapse3">Items</a>
-    	</div>
-    	<div id="collapse3" class="collapse" data-parent="#accordion">
-        	<div class="card-body">
-        		<div class="row">
-	          		{%- for itemsTextures in site.data.items_list -%}
+		<div class="card">
+			<div class="card-header">
+				<a class="card-link" data-toggle="collapse" href="#collapse3">Items</a>
+			</div>
+			<div id="collapse3" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<div class="row">
+								{%- for itemsTextures in site.data.items_list -%}
 
 						<div class="col">
 							<span href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ itemsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ itemsTextures | remove: "Actors/Items/" | remove: ".png" | remove: ".tga" }}">
@@ -69,18 +69,18 @@ h1: Gallery
 
 					{% endfor %}
 				</div>
-        	</div>
-      	</div>
-    </div>
+					</div>
+				</div>
+		</div>
 
-    <div class="card">
-    	<div class="card-header">
-    		<a class="card-link" data-toggle="collapse" href="#collapse4">Mobs</a>
-    	</div>
-    	<div id="collapse4" class="collapse" data-parent="#accordion">
-        	<div class="card-body">
-        		<div class="row">
-	          		{%- for mobsTextures in site.data.mobs_list -%}
+		<div class="card">
+			<div class="card-header">
+				<a class="card-link" data-toggle="collapse" href="#collapse4">Mobs</a>
+			</div>
+			<div id="collapse4" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<div class="row">
+								{%- for mobsTextures in site.data.mobs_list -%}
 						<div class="col">
 							<span href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ mobsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ mobsTextures | remove: "Actors/Characters/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
@@ -90,18 +90,18 @@ h1: Gallery
 						</div>
 					{% endfor %}
 				</div>
-        	</div>
-      	</div>
-    </div>
+					</div>
+				</div>
+		</div>
 
-    <div class="card">
-    	<div class="card-header">
-    		<a class="card-link" data-toggle="collapse" href="#collapse5">Prefabs</a>
-    	</div>
-    	<div id="collapse5" class="collapse" data-parent="#accordion">
-        	<div class="card-body">
-        		<div class="row">
-	          		{%- for prefabsTextures in site.data.prefabs_list -%}
+		<div class="card">
+			<div class="card-header">
+				<a class="card-link" data-toggle="collapse" href="#collapse5">Prefabs</a>
+			</div>
+			<div id="collapse5" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<div class="row">
+								{%- for prefabsTextures in site.data.prefabs_list -%}
 						<div class="col">
 							<span href="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/Content/{{ prefabsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ prefabsTextures | remove: "Decor/Prefabs/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
@@ -111,8 +111,8 @@ h1: Gallery
 						</div>
 					{% endfor %}
 				</div>
-        	</div>
-      	</div>
-    </div>
+					</div>
+				</div>
+		</div>
 
 </div>

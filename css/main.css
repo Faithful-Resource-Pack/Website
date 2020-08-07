@@ -84,7 +84,7 @@ h2, h3, h4, h5 {
   margin: 15px auto;
 }
 
-/* Classes for images next to text */
+/* Classes for images next to text UNUSED */
 .links-image {
   width: 100%;
   margin: 0 0 15px 0;
@@ -267,6 +267,15 @@ h2, h3, h4, h5 {
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
 
 img[src$=".png"] {
+  image-rendering: pixelated;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+img[src$=".tga"] {
   image-rendering: pixelated;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
