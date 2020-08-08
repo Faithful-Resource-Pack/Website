@@ -262,6 +262,18 @@ h2, h3, h4, h5 {
   height: auto;
 }
 
+/* used in gallery.html */
+.grid-container {
+  display: grid;
+  grid-template-columns: minmax(60px, max-content) repeat(auto-fill, 60px);
+  grid-template-rows: 64px;
+  grid-gap: 16px;
+}
+.card-texture {
+  height: 64px;
+  width: 64px;
+}
+
 img {
   background-color: #1b1c1f;
   border: 0px solid #0000;
