@@ -27,9 +27,10 @@ h1: Gallery
 								{%- for blockTextures in site.data.block_textures -%}
 
 								{%- assign hideElementId = {{ blockTextures[0] | remove: ".png" | remove: ".tga" | remove: "_" }} -%}
+								{%- assign animElementId = {{ blockTextures[0] | remove: ".png" | remove: ".tga" | append: "mcmeta" | remove: "_" }} -%}
 						
 							<div 
-								id="{{ hideElement }}" 
+								id="{{ hideElementId }}" 
 								class="col"
 							>
 								<span 
@@ -45,7 +46,7 @@ h1: Gallery
 										<!-- detect if file is animated or not -->
 										{%- if AnimatedTextures contains {{blockTextures[0]}} -%}
 												
-											<div id="{{ blockTextures[0] | remove: ".png" }}"></div>
+											<div id="{{ animElementId }}"></div>
 
 											<style>
 												#{{ blockTextures[0] | remove: ".png" }}:hover {
@@ -55,7 +56,7 @@ h1: Gallery
 												
 											<script>
 												var mca = new MCAnimation("{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}")
-												var parentElement = document.getElementById("{{ blockTextures[0] | remove: ".png" | remove: ".tga" | append: "mcmeta" | remove: "_" }}")
+												var parentElement = document.getElementById("{{ animElementId }}")
 												parentElement.appendChild(mca.canvas)
 											</script>
 										{%- else -%}
