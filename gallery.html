@@ -37,12 +37,12 @@ h1: Gallery
 					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
 					
 					<span 
-						href="{{ BlockURL }}" 
+						id="{{ HideElementID }}"
 						data-toggle="tooltip" 
 						data-placement="bottom" 
 						title="{{ BlockName }}"
 					>
-						<div class="card card-texture" id="{{ HideElementID }}">
+						<div class="card card-texture">
 							
 							<img 
 								class="card-img-top" 
