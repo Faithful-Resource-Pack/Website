@@ -10,162 +10,65 @@ h1: Gallery
 		You can hold your mouse on the images to see them bigger!
 	</p>
 </div>
+	
+<style>
+.grid-container {
+	display: grid;
+	grid-template-columns: minmax(60px, max-content) repeat(auto-fill, 60px);
+	grid-template-rows: 64px;
+	grid-gap: 16px;
+}
+.card-texture {
+	height: 64px;
+	width: 64px;
+}
+</style>
 
+{%- assign TextureCounter = 0 -%}
 {%- assign GitHubURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/" -%}
+{%- assign BlockURL = GitHubURL | append: "Block%20Textures/{{ blockTextures[0] }}" -%}
+
 {%- assign AnimatedTextures = "fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" -%}
-
-<script src="{{ site.baseurl }}/js/MCAnimation.js"></script>
-<script src="{{ site.baseurl }}/js/hideElement.js"></script>
-
+	
 <div id="accordion">
-		<div class="card">
-				<div class="card-header">
-					<a class="card-link" data-toggle="collapse" href="#collapse1">Block Textures</a>
-				</div>
-				<div id="collapse1" class="collapse show" data-parent="#accordion">
-					<div class="card-body">
-						<div class="row">
-								{%- for blockTextures in site.data.block_textures -%}
-
-								{%- assign hideElementId = blockTextures[0] | remove: ".png" | remove: "_" -%}
-								{%- assign animElementId = blockTextures[0] | remove: ".png" | append: "mcmeta" | remove: "_" -%}
-						
-							<div 
-								id="{{ hideElementId }}" 
-								class="col"
+	
+	<div class="card">
+		<div class="card-header">
+			<a class="card-link" data-toggle="collapse" href="#collapseOne">Blocks Textures:</a>
+		</div>
+		<div id="collapseOne" class="collapse show" data-parent="#accordion">
+			<div class="card-body grid-container">
+			
+			{%- assign AnimatedTextures = "fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" %}					
+				{%- for blockTextures in site.data.block_textures -%}
+				
+					{%- increment TextureCounter -%}
+					{%- assign HideElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "NB-{{ TextureCounter }}" -%}
+					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
+					
+					
+					<span 
+						href="{{ BlockURL }}" 
+						data-toggle="tooltip" 
+						data-placement="bottom" 
+						title="{{ BlockName }}"
+					>
+						<div class="card card-texture" id="{{ HideElementID }}">
+							
+							<img 
+								class="card-img-top" 
+								src="{{ BlockURL }}" 
+								style="width:100%; height:64px" 
+								alt=""
+								onerror="hideElement('{{ HideElementID }}')"
 							>
-								<span 
-									href="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" 
-									data-toggle="tooltip" 
-									data-placement="bottom" 
-									title="{{ blockTextures[0] | remove: ".png" }}"
-								>
-									<div 
-										class="card" 
-										style="width:64px; height:64px; margin-bottom: 32px;"
-									>
-										<!-- detect if file is animated or not -->
-										{%- if AnimatedTextures contains {{blockTextures[0]}} -%}
-												
-											<div id="{{ animElementId }}"></div>
-
-											<style>
-												#{{ animElementId }}:hover {
-													z-index: 1;
-												}
-											</style>
-												
-											<script>
-												var mca = new MCAnimation("{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}")
-												var parentElement = document.getElementById("{{ animElementId }}")
-												parentElement.appendChild(mca.canvas)
-											</script>
-										{%- else -%}
-											<img  
-												class="card-img-top" 
-												src="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" 
-												style="width:100%; height:64px" 
-												alt=""
-												onerror="hideElement('{{ hideElementId }}')" 
-											>
-										{%- endif -%}
-
-									</div>
-
-								</span>
-
-							</div>
-
-					{%- endfor -%}
-				</div>
-					</div>
-				</div>
-		</div>
-
-		<div class="card">
-			<div class="card-header">
-				<a class="card-link" data-toggle="collapse" href="#collapse2">Equipments</a>
-			</div>
-			<div id="collapse2" class="collapse" data-parent="#accordion">
-					<div class="card-body">
-						<div class="row">
-								{%- for equipmentsTextures in site.data.equipments_list -%}
-						<div class="col">
-							<span href="{{ GitHubURL }}UE4Project/Content/{{ equipmentsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ equipmentsTextures | remove: "Actors/Equipment/" | remove: ".png" }}">
-								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-									<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}UE4Project/Content/{{ equipmentsTextures }}" style="width:100%; height:64px" alt="">
-								</div>
-							</span>
+									
 						</div>
-					{%- endfor -%}
-				</div>
-					</div>
-				</div>
-		</div>
-
-		<div class="card">
-			<div class="card-header">
-				<a class="card-link" data-toggle="collapse" href="#collapse3">Items</a>
+					</span>
+				{%- endfor -%}    
+						
 			</div>
-			<div id="collapse3" class="collapse" data-parent="#accordion">
-					<div class="card-body">
-						<div class="row">
-								{%- for itemsTextures in site.data.items_list -%}
-
-						<div class="col">
-							<span href="{{ GitHubURL }}UE4Project/Content/{{ itemsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ itemsTextures | remove: "Actors/Items/" | remove: ".png" }}">
-								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-									<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}UE4Project/Content/{{ itemsTextures }}" style="width:100%; height:64px" alt="">
-								</div>
-							</span>
-						</div>
-
-					{%- endfor -%}
-				</div>
-					</div>
-				</div>
 		</div>
-
-		<div class="card">
-			<div class="card-header">
-				<a class="card-link" data-toggle="collapse" href="#collapse4">Mobs</a>
-			</div>
-			<div id="collapse4" class="collapse" data-parent="#accordion">
-					<div class="card-body">
-						<div class="row">
-								{%- for mobsTextures in site.data.mobs_list -%}
-						<div class="col">
-							<span href="{{ GitHubURL }}UE4Project/Content/{{ mobsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ mobsTextures | remove: "Actors/Characters/" | remove: ".png" }}">
-								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-									<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}UE4Project/Content/{{ mobsTextures }}" style="width:100%; height:64px" alt="">
-								</div>
-							</span>
-						</div>
-					{%- endfor -%}
-				</div>
-					</div>
-				</div>
-		</div>
-
-		<div class="card">
-			<div class="card-header">
-				<a class="card-link" data-toggle="collapse" href="#collapse5">Prefabs</a>
-			</div>
-			<div id="collapse5" class="collapse" data-parent="#accordion">
-					<div class="card-body">
-						<div class="row">
-								{%- for prefabsTextures in site.data.prefabs_list -%}
-						<div class="col">
-							<span href="{{ GitHubURL }}UE4Project/Content/{{ prefabsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ prefabsTextures | remove: "Decor/Prefabs/" | remove: ".png" }}">
-								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-									<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}UE4Project/Content/{{ prefabsTextures }}" style="width:100%; height:64px" alt="">
-								</div>
-							</span>
-						</div>
-					{%- endfor -%}
-				</div>
-					</div>
-				</div>
-		</div>
-
+	</div>
+		
 </div>
