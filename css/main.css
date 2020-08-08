@@ -25,12 +25,6 @@ main {
   height: 100%;
 }
 
-/* Thumbnail img */
-.img-thumbnail {
-  background-color: #1b1c1f;
-  border: 0px solid #0000;
-}
-
 
 /* Dark colors */
 ::-webkit-scrollbar{
@@ -268,10 +262,15 @@ h2, h3, h4, h5 {
   height: auto;
 }
 
+img {
+  background-color: #1b1c1f;
+  border: 0px solid #0000;
+}
+
 /* Animated Textures: */
 .mc-animation {
   width: 100%;
-  background-color: #1B1C1F;
+  background-color: #1b1c1f;
   border: 0px solid #0000;
   image-rendering: pixelated;
 }
