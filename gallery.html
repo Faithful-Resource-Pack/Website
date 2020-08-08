@@ -12,6 +12,7 @@ h1: Gallery
 </div>
 
 {%- assign GitHubURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/" -%}
+{%- assign AnimatedTextures = [ "fire_layer_0", "fire_layer_1", "lava_flow", "lava_still", "sea_lantern" ] -%}
 <script src="{{ site.baseurl }}/js/MCAnimation.js"></script>
 
 <div id="accordion">
@@ -28,9 +29,8 @@ h1: Gallery
 								<span href="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" data-toggle="tooltip" data-placement="bottom" title="{{ blockTextures[0] | remove: ".png" | remove: ".tga" }}">
 									<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
 										<!-- detect if file is animated or not -->
-										
-										{% if blockTextures[0] == "fire_layer_0.png" %}
-											
+										{%- if texture contains blockTextures[0] -%}
+												
 											<div id="{{ blockTextures[0] | remove: ".png" }}"></div>
 
 											<style>
@@ -38,7 +38,7 @@ h1: Gallery
 													z-index: 1;
 												}
 											</style>
-											
+												
 											<script>
 												const imgURL = "{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}"
 
@@ -47,9 +47,9 @@ h1: Gallery
 												parentElement.appendChild(mca.canvas)
 											</script>
 
-										{% else %}
+										{%- else -%}
 											<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" style="width:100%; height:64px" alt="">
-										{% endif %}
+										{%- endif -%}
 
 									</div>
 
@@ -57,7 +57,7 @@ h1: Gallery
 
 							</div>
 
-					{% endfor %}
+					{%- endfor -%}
 				</div>
 					</div>
 				</div>
@@ -78,7 +78,7 @@ h1: Gallery
 								</div>
 							</span>
 						</div>
-					{% endfor %}
+					{%- endfor -%}
 				</div>
 					</div>
 				</div>
@@ -101,7 +101,7 @@ h1: Gallery
 							</span>
 						</div>
 
-					{% endfor %}
+					{%- endfor -%}
 				</div>
 					</div>
 				</div>
@@ -122,7 +122,7 @@ h1: Gallery
 								</div>
 							</span>
 						</div>
-					{% endfor %}
+					{%- endfor -%}
 				</div>
 					</div>
 				</div>
@@ -143,7 +143,7 @@ h1: Gallery
 								</div>
 							</span>
 						</div>
-					{% endfor %}
+					{%- endfor -%}
 				</div>
 					</div>
 				</div>
