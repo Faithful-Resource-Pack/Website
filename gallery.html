@@ -62,7 +62,7 @@ h1: Gallery
 											</script>
 										{%- else -%}
 											<img 
-												onerror="hideElement({{ hideElementId }})" 
+												onerror="hideElement('{{ hideElementId }}')" 
 												loading="lazy" 
 												class="card-img-top" 
 												src="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" 
