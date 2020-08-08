@@ -31,13 +31,13 @@ h1: Gallery
 										
 										{% if blockTextures[0] == "fire_layer_0.png" %}
 											
-											<div id="{{ blockTextures[0] }}"></div>
+											<div id="{{ blockTextures[0].replace(/\W/g,'_') }}"></div>
 											
 											<script>
 												const imgUrl = "{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}"
 
 												const mca = new MCAnimation(imgURL)
-												const parentElement = document.getElementById("{{ blockTextures[0] }}")
+												const parentElement = document.getElementById("{{ blockTextures[0].replace(/\W/g,'_') }}")
 												parentElement.appendChild(mca.canvas)
 											</script>
 
