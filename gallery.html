@@ -41,9 +41,7 @@ h1: Gallery
 											</style>
 												
 											<script>
-												const imgURL = "{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}"
-
-												const mca = new MCAnimation(imgURL)
+												const mca = new MCAnimation("{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}")
 												const parentElement = document.getElementById("{{ blockTextures[0] | remove: ".png" }}")
 												parentElement.appendChild(mca.canvas)
 											</script>
