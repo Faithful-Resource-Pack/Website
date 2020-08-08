@@ -26,8 +26,8 @@ h1: Gallery
 						<div class="row">
 								{%- for blockTextures in site.data.block_textures -%}
 
-								{%- assign hideElementId = {{ blockTextures[0] | remove: ".png" | remove: ".tga" | remove: "_" }} -%}
-								{%- assign animElementId = {{ blockTextures[0] | remove: ".png" | remove: ".tga" | append: "mcmeta" | remove: "_" }} -%}
+								{%- assign hideElementId = blockTextures[0] | remove: ".png" | remove: ".tga" | remove: "_" -%}
+								{%- assign animElementId = blockTextures[0] | remove: ".png" | remove: ".tga" | append: "mcmeta" | remove: "_" -%}
 						
 							<div 
 								id="{{ hideElementId }}" 
