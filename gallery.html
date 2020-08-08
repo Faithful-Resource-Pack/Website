@@ -25,9 +25,11 @@ h1: Gallery
 					<div class="card-body">
 						<div class="row">
 								{%- for blockTextures in site.data.block_textures -%}
+
+								{%- assign hideElementId = {{ blockTextures[0] | remove: ".png" | remove: ".tga" | append: "-hideElement" | replace: "_", "-" }} -%}
 						
 							<div 
-								id="{{ blockTextures[0] | remove: ".png" | remove: ".tga" | append: "_hideElement" }}" 
+								id="hideElementId" 
 								class="col"
 							>
 								<span 
@@ -58,7 +60,7 @@ h1: Gallery
 											</script>
 										{%- else -%}
 											<img 
-												onerror="hideElement({{ blockTextures[0] | remove: ".png" | remove: ".tga" | append: "_hideElement" }})" 
+												onerror="hideElement({{ hideElementId }})" 
 												loading="lazy" 
 												class="card-img-top" 
 												src="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" 
