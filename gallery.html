@@ -28,7 +28,7 @@ h1: Gallery
 		<div id="collapseOne" class="collapse show" data-parent="#accordion">
 			<div class="card-body grid-container">
 							
-				{%- for blockTextures in site.data.block_textures -%}
+				{%- for blockTextures in site.data.TexturesBlocks -%}
 				
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
@@ -70,6 +70,7 @@ h1: Gallery
 								src="{{ BlockURL }}" 
 								style="height:64px; object-fit: contain;" 
 								alt=""
+								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
 
