@@ -16,6 +16,7 @@ h1: Gallery
 
 {%- assign TextureCounter = 0 -%}
 {%- assign GitHubURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/" -%}
+{%- assign UEComplement = "UE4Project/" -%}
 
 {%- assign AnimatedTextures = "fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" -%}
 	
@@ -23,9 +24,9 @@ h1: Gallery
 	
 	<div class="card">
 		<div class="card-header">
-			<a class="card-link" data-toggle="collapse" href="#collapseOne">Blocks Textures:</a>
+			<a class="card-link" data-toggle="collapse" href="#collapse1">Blocks Textures:</a>
 		</div>
-		<div id="collapseOne" class="collapse show" data-parent="#accordion">
+		<div id="collapse1" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 							
 				{%- for blockTextures in site.data.TexturesBlocks -%}
@@ -80,6 +81,67 @@ h1: Gallery
 					</span>
 				{%- endfor -%}    
 						
+			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card-header">
+			<a class="card-link" data-toggle="collapse" href="#collapse2">Components Textures:</a>
+		</div>
+		<div id="collapse2" class="collapse" data-parent="#accordion">
+			<div class="card-body grid-container">
+				{%- for componentTextures in site.data.TexturesComponents -%}
+				
+					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
+
+					{%- assign HideElementID = componentTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
+					{%- assign AnimElementID = componentTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
+
+					{%- assign BlockURL = GitHubURL | append: UEComplement | append: componentTextures -%}
+					{%- assign BlockName = componentTextures | remove: ".png" -%}
+					
+					<span 
+						id="{{ HideElementID }}"
+						data-toggle="tooltip" 
+						data-placement="bottom" 
+						title="{{ BlockName }}"
+					>
+
+					{%- if AnimatedTextures contains {{componentTextures}} -%}
+						<style>
+							#{{ AnimElementID }}:hover {
+								z-index: 1;
+							}
+						</style>
+
+						<div class="card card-texture">
+							<div id="{{ AnimElementID }}"></div>
+						</div>
+
+						<script>
+							var mca = new MCAnimation("{{ BlockURL }}")
+							var parentElement = document.getElementById("{{ AnimElementID }}")
+							parentElement.appendChild(mca.canvas)
+						</script>
+
+					{%- else -%}
+						<div class="card card-texture">
+							
+							<img 
+								class="card-img-top" 
+								src="{{ BlockURL }}" 
+								style="height:64px; object-fit: contain;" 
+								alt=""
+								loading="lazy"
+								onerror="hideElement('{{ HideElementID }}')"
+							>
+
+						</div>
+					{%- endif -%}
+
+					</span>
+				{%- endfor -%}
 			</div>
 		</div>
 	</div>
