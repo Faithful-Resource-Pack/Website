@@ -15,6 +15,7 @@ h1: Gallery
 {%- assign AnimatedTextures = "fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" -%}
 
 <script src="{{ site.baseurl }}/js/MCAnimation.js"></script>
+<script src="{{ site.baseurl }}/js/hideElement.js"></script>
 
 <div id="accordion">
 		<div class="card">
@@ -69,8 +70,6 @@ h1: Gallery
 												alt=""
 											>
 										{%- endif -%}
-
-										
 
 									</div>
 
@@ -171,16 +170,3 @@ h1: Gallery
 		</div>
 
 </div>
-
-<!-- hide element if url is broken -->
-<script>
-	function hideElement(id) {
-		var x = document.getElementById(id);
-		if (x.style.display === "none") {
-			x.style.display = "block";
-		}
-		else{
-			x.style.display = "none";
-		}
-	}
-</script>
