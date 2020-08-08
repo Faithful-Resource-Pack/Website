@@ -31,7 +31,13 @@ h1: Gallery
 										
 										{% if blockTextures[0] == "fire_layer_0.png" %}
 											
-											<div id="{{ blockTextures[0] | remove: ".png" }}" style="z-index:1"></div>
+											<div id="{{ blockTextures[0] | remove: ".png" }}"></div>
+
+											<style>
+												#{{ blocTextures[0] | remove: ".png" }}:hover {
+													z-index: 1;
+												}
+											</style>
 											
 											<script>
 												const imgURL = "{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}"
