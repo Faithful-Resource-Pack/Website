@@ -29,7 +29,7 @@ h1: Gallery
 								<span href="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" data-toggle="tooltip" data-placement="bottom" title="{{ blockTextures[0] | remove: ".png" | remove: ".tga" }}">
 									<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
 										<!-- detect if file is animated or not -->
-										{%- if texture contains blockTextures[0] -%}
+										{%- if AnimatedTextures contains blockTextures[0] -%}
 												
 											<div id="{{ blockTextures[0] | remove: ".png" }}"></div>
 
