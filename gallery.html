@@ -30,15 +30,8 @@ h1: Gallery
 										<!-- detect if file is animated or not -->
 										
 										{% if {{ blockTextures[0] }} == "fire_layer_0.png" %}
-											<div id="{{ blockTextures[0] }}"/>
 											
-											<script>
-												const imgUrl = "{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}"
-
-												const mca = new MCAnimation(imgURL)
-												const parentElement = document.getElementById("{{ blockTextures[0] }}")
-												parentElement.appendChild(mca.canvas)
-											</script>
+										{{ blockTextures[0] }}
 
 										{% else %}
 											<img loading="lazy" class="card-img-top img-thumbnail" src="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" style="width:100%; height:64px" alt="">
