@@ -9831,13 +9831,7 @@
   "dirt_highblockhalls.png": [
     "highblockhalls/images/blocks/dirt.png",
     "mooncorecaverns/images/blocks/dirt.png"  
-  ],
-  "grass_side.tga": [
-    "deserttemple/images/blocks/grass_side.tga",
-    "highblockhalls/images/blocks/grass_side.tga",
-    "mooncorecaverns/images/blocks/grass_side.tga",
-    "squidcoast/images/blocks/grass_side.tga"  
-  ],  
+  ], 
   "dirt_pumpkinpastures.png": [
     "pumpkinpastures/images/blocks/dirt.png"  
   ]   
