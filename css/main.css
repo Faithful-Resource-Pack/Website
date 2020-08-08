@@ -256,11 +256,10 @@ h2, h3, h4, h5 {
 
 .mc-animation:hover, .nav-link:hover, .col .card .card-img-top:hover {
   transform: scale(0.95);
-  z-index: 9999;
 }
 
 .mc-animation:active, .col .card .card-img-top:active {
-  z-index: 1;
+  z-index: 9999 !important;
   transform: scale(5.0);
   height: auto !important;
 }
