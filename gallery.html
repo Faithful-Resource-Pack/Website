@@ -12,7 +12,8 @@ h1: Gallery
 </div>
 
 {%- assign GitHubURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/" -%}
-{%- assign AnimatedTextures = [ "fire_layer_0.png", "fire_layer_1.png", "lava_flow.png", "lava_still.png", "sea_lantern.png" ] -%}
+{%- assign AnimatedTextures = "fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" | split: ", " -%}
+
 <script src="{{ site.baseurl }}/js/MCAnimation.js"></script>
 
 <div id="accordion">
@@ -29,7 +30,7 @@ h1: Gallery
 								<span href="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" data-toggle="tooltip" data-placement="bottom" title="{{ blockTextures[0] | remove: ".png" | remove: ".tga" }}">
 									<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
 										<!-- detect if file is animated or not -->
-										{%- if AnimatedTextures contains blockTextures[0] -%}
+										{%- if AnimatedTextures contains {{blockTextures[0]}} -%}
 												
 											<div id="{{ blockTextures[0] | remove: ".png" }}"></div>
 
