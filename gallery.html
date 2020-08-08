@@ -26,7 +26,6 @@ h1: Gallery
 
 {%- assign TextureCounter = 0 -%}
 {%- assign GitHubURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/" -%}
-{%- assign BlockURL = GitHubURL | append: "Block%20Textures/{{ blockTextures[0] }}" -%}
 
 {%- assign AnimatedTextures = "fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" -%}
 	
@@ -42,10 +41,10 @@ h1: Gallery
 			{%- assign AnimatedTextures = "fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" %}					
 				{%- for blockTextures in site.data.block_textures -%}
 				
-					{%- increment TextureCounter -%}
-					{%- assign HideElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "NB-{{ TextureCounter }}" -%}
+					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
+					{%- assign HideElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "NB-" | append: TextureCounter -%}
+					{%- assign BlockURL = GitHubURL | append: "Block%20Textures/" | append: blockTextures[0] -%}
 					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
-					
 					
 					<span 
 						href="{{ BlockURL }}" 
