@@ -26,10 +26,10 @@ h1: Gallery
 						<div class="row">
 								{%- for blockTextures in site.data.block_textures -%}
 
-								{%- assign hideElementId = {{ blockTextures[0] | remove: ".png" | remove: ".tga" | append: "-hideElement" | replace: "_", "-" }} -%}
+								{%- assign hideElementId = {{ blockTextures[0] | remove: ".png" | remove: ".tga" | remove: "_" }} -%}
 						
 							<div 
-								id="hideElementId" 
+								id="{{ hideElement }}" 
 								class="col"
 							>
 								<span 
@@ -55,7 +55,7 @@ h1: Gallery
 												
 											<script>
 												var mca = new MCAnimation("{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}")
-												var parentElement = document.getElementById("{{ blockTextures[0] | remove: ".png" | remove: ".tga" | append: "_mcmeta" }}")
+												var parentElement = document.getElementById("{{ blockTextures[0] | remove: ".png" | remove: ".tga" | append: "mcmeta" | remove: "_" }}")
 												parentElement.appendChild(mca.canvas)
 											</script>
 										{%- else -%}
