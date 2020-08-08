@@ -20,7 +20,6 @@ h1: Authors
       </tr>
       <tr>
         <th style="width:4%">{{ page.Htype | default: 'Type' }}</th>
-        <th class="detailed" style="width:4%">{{ page.Hdisplayed | default: 'Displayed' }}</th>
         <th style="width:40%">{{ page.Hname | default: 'Name' }}</th>
         <th style="width:24%">{{ page.Hauthors | default: 'Author(s)' }}</th>
         <th class="detailed" style="width:28%">{{ page.Hpublished | default: 'Published' }}</th>
@@ -42,19 +41,6 @@ h1: Authors
           {%- endif -%}
           {%- if category[1].type == 'Texture' -%}
           <span class="badge" style="background-color: #FC9F5B; color: #141519;">{{ page.texture | default: 'Texture' }}</span>
-          {%- endif -%}
-        </td>
-        <td class="detailed" style="width:4%" align="center">
-          {%- if category[1].displayed -%}
-
-            {%- if category[1].displayed == 1 -%}
-              <span class="badge badge-success">{{ page.yes_span | default: 'YES' }}</span>
-            {%- endif -%}
-
-            {%- if category[1].displayed == 0 -%}
-              <span class="badge badge-danger">{{ page.no_span | default: 'NO' }}</span>
-            {%- endif -%}
-
           {%- endif -%}
         </td>
 
