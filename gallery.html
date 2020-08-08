@@ -31,7 +31,7 @@ h1: Gallery
 										
 										{% if blockTextures[0] == "fire_layer_0.png" %}
 											
-											<div id="{{ blockTextures[0] | remove: ".png" }}"></div>
+											<div id="{{ blockTextures[0] | remove: ".png" }}" style="z-index:1"></div>
 											
 											<script>
 												const imgURL = "{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}"
@@ -42,7 +42,7 @@ h1: Gallery
 											</script>
 
 										{% else %}
-											<img loading="lazy" class="card-img-top img-thumbnail" src="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" style="width:100%; height:64px" alt="">
+											<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}Block%20Textures/{{ blockTextures[0] }}" style="width:100%; height:64px" alt="">
 										{% endif %}
 
 									</div>
@@ -68,7 +68,7 @@ h1: Gallery
 						<div class="col">
 							<span href="{{ GitHubURL }}UE4Project/Content/{{ equipmentsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ equipmentsTextures | remove: "Actors/Equipment/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-									<img loading="lazy" class="card-img-top img-thumbnail" src="{{ GitHubURL }}UE4Project/Content/{{ equipmentsTextures }}" style="width:100%; height:64px" alt="">
+									<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}UE4Project/Content/{{ equipmentsTextures }}" style="width:100%; height:64px" alt="">
 								</div>
 							</span>
 						</div>
@@ -90,7 +90,7 @@ h1: Gallery
 						<div class="col">
 							<span href="{{ GitHubURL }}UE4Project/Content/{{ itemsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ itemsTextures | remove: "Actors/Items/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-									<img loading="lazy" class="card-img-top img-thumbnail" src="{{ GitHubURL }}UE4Project/Content/{{ itemsTextures }}" style="width:100%; height:64px" alt="">
+									<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}UE4Project/Content/{{ itemsTextures }}" style="width:100%; height:64px" alt="">
 								</div>
 							</span>
 						</div>
@@ -112,7 +112,7 @@ h1: Gallery
 						<div class="col">
 							<span href="{{ GitHubURL }}UE4Project/Content/{{ mobsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ mobsTextures | remove: "Actors/Characters/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-									<img loading="lazy" class="card-img-top img-thumbnail" src="{{ GitHubURL }}UE4Project/Content/{{ mobsTextures }}" style="width:100%; height:64px" alt="">
+									<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}UE4Project/Content/{{ mobsTextures }}" style="width:100%; height:64px" alt="">
 								</div>
 							</span>
 						</div>
@@ -133,7 +133,7 @@ h1: Gallery
 						<div class="col">
 							<span href="{{ GitHubURL }}UE4Project/Content/{{ prefabsTextures }}" data-toggle="tooltip" data-placement="bottom" title="{{ prefabsTextures | remove: "Decor/Prefabs/" | remove: ".png" | remove: ".tga" }}">
 								<div class="card" style="width:64px; height:64px; margin-bottom: 32px;">
-									<img loading="lazy" class="card-img-top img-thumbnail" src="{{ GitHubURL }}UE4Project/Content/{{ prefabsTextures }}" style="width:100%; height:64px" alt="">
+									<img loading="lazy" class="card-img-top" src="{{ GitHubURL }}UE4Project/Content/{{ prefabsTextures }}" style="width:100%; height:64px" alt="">
 								</div>
 							</span>
 						</div>

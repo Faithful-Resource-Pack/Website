@@ -259,9 +259,13 @@ h2, h3, h4, h5 {
 }
 
 .mc-animation:active, .col .card .card-img-top:active {
-  z-index: 9999 !important;
+  z-index: 1;
   transform: scale(5.0);
-  height: auto !important;
+  height: auto !important;  
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Animated Textures: */
