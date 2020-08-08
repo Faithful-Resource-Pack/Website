@@ -27,12 +27,14 @@ h1: Gallery
 		</div>
 		<div id="collapseOne" class="collapse show" data-parent="#accordion">
 			<div class="card-body grid-container">
-			
-			{%- assign AnimatedTextures = "fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" %}					
+							
 				{%- for blockTextures in site.data.block_textures -%}
 				
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
-					{%- assign HideElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "NB-" | append: TextureCounter -%}
+
+					{%- assign HideElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
+					{%- assign AnimElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
+
 					{%- assign BlockURL = GitHubURL | append: "Block%20Textures/" | append: blockTextures[0] -%}
 					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
 					
@@ -42,6 +44,23 @@ h1: Gallery
 						data-placement="bottom" 
 						title="{{ BlockName }}"
 					>
+
+					{%- if AnimatedTextures contains {{blockTextures[0]}} -%}
+						<style>
+							#{{ AnimElementID }}:hover {
+								z-index: 1;
+							}
+						</style>
+
+						<div id="{{ AnimElementID }}"/>
+
+						<script>
+							var mca = new MCAnimation("{{ BlockURL }}")
+							var parentElement = document.getElementById("{{ AnimElementID }}")
+							parentElement.appendChild(mca.canvas)
+						</script>
+
+					{%- else -%}
 						<div class="card card-texture">
 							
 							<img 
@@ -51,8 +70,10 @@ h1: Gallery
 								alt=""
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-									
+
 						</div>
+					{%- endif -%}
+
 					</span>
 				{%- endfor -%}    
 						
