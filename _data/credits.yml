@@ -1,0 +1,8 @@
+list:
+  A:
+    test:
+      name: test
+      date: test
+      authors: test
+      type: Block
+      displayed: 0
