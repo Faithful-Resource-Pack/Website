@@ -250,18 +250,25 @@ h2, h3, h4, h5 {
 
 /* Button and image hover and selecting */
 
-.nav-link, .col .card .card-img-top {
+.mc-animation, .nav-link, .col .card .card-img-top {
   transition: all .1s ease-out;
 }
 
-.nav-link:hover, .col .card .card-img-top:hover {
+.mc-animation:hover, .nav-link:hover, .col .card .card-img-top:hover {
   transform: scale(0.95);
 }
 
-.col .card .card-img-top:active {
+.mc-animation:active, .col .card .card-img-top:active {
   z-index: 1;
   transform: scale(5.0);
   height: auto !important;
+}
+
+/* Animated Textures: */
+.mc-animation {
+  width: 100%;
+  background-color: #1B1C1F;
+  border: 0px solid #0000;
 }
 
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
