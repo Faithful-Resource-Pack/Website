@@ -11,6 +11,14 @@ h1: Gallery
 	}
 </style>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function(event) {
+   	document.querySelectorAll('img').forEach(function(img){
+  		img.onerror = function(){this.style.display='none';};
+   	})
+	});
+</script>
+
 <div>
 	<p align="center">
 		You can hold your mouse on the images to see them bigger!
@@ -96,7 +104,7 @@ h1: Gallery
 						</div>
 
 					{%- endif -%}
-					
+
 						<!-- modal -->
 						<div id="{{ ModalID }}" class="modal">
 						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
