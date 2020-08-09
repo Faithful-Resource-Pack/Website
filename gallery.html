@@ -35,6 +35,10 @@ h1: Gallery
 
 					{%- assign HideElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
+					
+					{%- assign ModalID = hideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = blockTextures[0] | append: "-" | append: TextureCounter -%}
 
 					{%- assign BlockURL = GitHubURL | append: "Block%20Textures/" | append: blockTextures[0] -%}
 					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
@@ -46,40 +50,61 @@ h1: Gallery
 						title="{{ BlockName }}"
 					>
 
-					{%- if AnimatedTextures contains {{blockTextures[0]}} -%}
+						{%- if AnimatedTextures contains {{blockTextures[0]}} -%}
+							<style>
+								#{{ AnimElementID }}:hover {
+									z-index: 1;
+								}
+							</style>
+
+							<div id="{{ ImgID }}" class="card card-texture">
+								<div id="{{ AnimElementID }}"></div>
+
+							</div>
+
+							<script>
+								var mca = new MCAnimation("{{ BlockURL }}")
+								var parentElement = document.getElementById("{{ AnimElementID }}")
+								parentElement.appendChild(mca.canvas)
+							</script>
+
+						{%- else -%}
+							<div class="card card-texture">
+								
+								<img 
+									id="{{ ImgID }}"
+									class="card-img-top" 
+									src="{{ BlockURL }}" 
+									style="height:64px; object-fit: contain;" 
+									alt=""
+									loading="lazy"
+									onerror="hideElement('{{ HideElementID }}')"
+								>
+
+							</div>
+						{%- endif -%}
+
 						<style>
-							#{{ AnimElementID }}:hover {
-								z-index: 1;
+							#{{ ImgID }} {
+							  border-radius: 5px;
+							  cursor: pointer;
+							  transition: 0.3s;
 							}
+
+							#{{ ImgID }}:hover {opacity: 0.7;}
 						</style>
-
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
-							<div class="card-texture-name"><p>{{ BlockName }}</p></div>
+					
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span class="close">&times;</span>
+						  <img class="modal-content" id="{{ ModalImgID }}">
+						  <div id="{{ BlockName }}"></div>
 						</div>
 
+						<!-- modal script -->
 						<script>
-							var mca = new MCAnimation("{{ BlockURL }}")
-							var parentElement = document.getElementById("{{ AnimElementID }}")
-							parentElement.appendChild(mca.canvas)
+							function({{ ModalID }}, {{ ImgID }}, {{ ModalImgID }}, {{ BlockName }})
 						</script>
-
-					{%- else -%}
-						<div class="card card-texture">
-							
-							<img 
-								class="card-img-top" 
-								src="{{ BlockURL }}" 
-								style="height:64px; object-fit: contain;" 
-								alt=""
-								loading="lazy"
-								onerror="hideElement('{{ HideElementID }}')"
-							>
-
-							<div class="card-texture-name"><p>{{ BlockName }}</p></div>
-
-						</div>
-					{%- endif -%}
 
 					</span>
 				{%- endfor -%}    	
