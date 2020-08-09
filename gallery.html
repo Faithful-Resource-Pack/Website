@@ -37,9 +37,9 @@ h1: Gallery
 					{%- assign HideElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = blockTextures[0] | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
 					
-					{%- assign ModalID = hideElementID | append: "-MODAL" -%}
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
-					{%- assign ModalImgID = blockTextures[0] | append: "-" | append: TextureCounter -%}
+					{%- assign ModalImgID = blockTextures[0] | remove: ".png" | append: "-" | append: TextureCounter -%}
 
 					{%- assign BlockURL = GitHubURL | append: "Block%20Textures/" | append: blockTextures[0] -%}
 					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
