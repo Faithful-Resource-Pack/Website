@@ -55,6 +55,7 @@ h1: Gallery
 
 						<div class="card card-texture">
 							<div id="{{ AnimElementID }}"></div>
+							<div class="card-texture-name"><p>{{ BlockName }}</p></div>
 						</div>
 
 						<script>
@@ -74,6 +75,8 @@ h1: Gallery
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
+
+							<div class="card-texture-name"><p>{{ BlockName }}</p></div>
 
 						</div>
 					{%- endif -%}
