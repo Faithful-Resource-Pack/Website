@@ -49,6 +49,8 @@ h1: Gallery
 
 					{%- assign BlockURL = GitHubURL | append: "Block%20Textures/" | append: blockTextures[0] -%}
 					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
+
+					{%- assign ModalSpanID = Blockname | append: "-" | append: "SPAN" -%}
 					
 					<span 
 						id="{{ HideElementID }}"
@@ -93,15 +95,14 @@ h1: Gallery
 					
 						<!-- modal -->
 						<div id="{{ ModalID }}" class="modal">
-						  <span class="close">&times;</span>
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
 						  <img class="modal-content" id="{{ ModalImgID }}">
 						  <div class="caption" id="{{ BlockName }}"></div>
 						</div>
 
 						<!-- modal script -->
 						<script>
-							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}")
-							hideModal("{{ BlockName }}")
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
 						</script>
 
 					</span>

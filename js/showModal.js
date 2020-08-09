@@ -1,5 +1,5 @@
 
-function showModal(ModalID, ImgID, ModalImgID, TextureName){
+function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 	var modal = document.getElementById(ModalID);
 
 	// Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -12,13 +12,11 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName){
 	  modalImg.src = this.src;
 	  captionText.innerHTML = this.alt;
 	}
-}
 
-function hideModal(id){
-	var span = document.getElementsById(id);
+	var span = document.getElementById(SpanID);
 
 	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() { 
-		modal.style.display = "none";
+	span.onclick = function(){
+		modal.style.display = "none"
 	}
 }
