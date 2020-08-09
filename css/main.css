@@ -268,14 +268,14 @@ h2, h3, h4, h5 {
   grid-gap: 16px;
 }
 .card-texture {
+  background-image: url(https://raw.githubusercontent.com/Faithful-Dungeons/Website/master/image/gallery/transparent.png);
+  background-size: auto;
+  background-repeat: repeat;
   height: 64px;
   width: 64px;
 }
 
 img {
-  background-image: url({{ site.baseurl  }}/image/gallery/transparent.png);
-  background-size: auto;
-  background-repeat: repeat;
   border: 0px solid #0000;
 }
 
