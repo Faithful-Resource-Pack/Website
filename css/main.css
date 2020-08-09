@@ -253,7 +253,9 @@ h2, h3, h4, h5 {
 }
 
 .mc-animation:active, .card-texture .card-img-top:active {
-  background-color: #1b1c1f;
+  background-image: url(https://raw.githubusercontent.com/Faithful-Dungeons/Website/master/image/gallery/transparent.png);
+  background-size: auto;
+  background-repeat: repeat;
   z-index: 1;
   transform: scale(5.0);
   padding: 0.25rem;
@@ -282,7 +284,9 @@ img {
 /* Animated Textures: */
 .mc-animation {
   width: 100%;
-  background-color: #1b1c1f;
+  background-image: url(https://raw.githubusercontent.com/Faithful-Dungeons/Website/master/image/gallery/transparent.png);
+  background-size: auto;
+  background-repeat: repeat;
   border: 0px solid #0000;
   image-rendering: pixelated;
 }
