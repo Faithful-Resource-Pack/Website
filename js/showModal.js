@@ -15,7 +15,7 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName){
 }
 
 function hideModal(id){
-	var span = document.getElementsById(id)[0];
+	var span = document.getElementsById(id);
 
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function() { 
