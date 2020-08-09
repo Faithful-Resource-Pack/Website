@@ -66,17 +66,9 @@ h1: Gallery
 								}
 							</style>
 
-							<div id="{{ ImgID }}" class="card card-texture">
+							<div alt="{{ BlockName }}" src="{{ BlockURL }}" id="{{ ImgID }}" class="card card-texture">
 								<div id="{{ AnimElementID }}"></div>
 							</div>
-
-							<!-- unused img : used in modal : don't remove it -->
-							<img 
-									id="{{ ImgID }}"
-									src="{{ BlockURL }}" 
-									style="display:none;" 
-									alt="{{ BlockName }}"
-								>
 
 							<script>
 								var mca = new MCAnimation("{{ BlockURL }}")
