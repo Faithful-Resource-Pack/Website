@@ -13,3 +13,12 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName){
 	  captionText.innerHTML = this.alt;
 	}
 }
+
+function hideModal(id){
+	var span = document.getElementsById(id)[0];
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() { 
+		modal.style.display = "none";
+	}
+}
