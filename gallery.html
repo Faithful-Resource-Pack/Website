@@ -52,45 +52,50 @@ h1: Gallery
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
 					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
 
-						{%- if AnimatedTextures contains {{blockTextures[0]}} -%}
-							<style>
-								#{{ AnimElementID }}:hover {
-									z-index: 1;
-								}
-							</style>
+					<!-- image is animated -->
+					{%- if AnimatedTextures contains {{blockTextures[0]}} -%}
+						<style>
+							#{{ AnimElementID }}:hover {
+								z-index: 1;
+							}
+						</style>
 
-							<div class="card card-texture" id="{{ ImgID }}" style="display: none;">
-								<div id="{{ AnimElementID }}"></div>
-							</div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockURL }}" 
+								style="display: none;" 
+								alt="{{ BlockName }}"
+							>
 
-							<script>
-								var mca = new MCAnimation("{{ BlockURL }}")
-								var parentElement = document.getElementById("{{ AnimElementID }}")
-								parentElement.appendChild(mca.canvas)
-							</script>
+						</div>
 
-						{%- else -%}
-							<div class="card card-texture">
-								
-								<img 
-									id="{{ ImgID }}"
-									class="card-img-top" 
-									src="{{ BlockURL }}" 
-									style="height:64px; object-fit: contain;" 
-									alt="{{ BlockName }}"
-									loading="lazy"
-									onerror="hideElement('{{ HideElementID }}')"
-								>
+						<script>
+							var mca = new MCAnimation("{{ BlockURL }}")
+							var parentElement = document.getElementById("{{ AnimElementID }}")
+							parentElement.appendChild(mca.canvas)
+						</script>
 
-							</div>
-						{%- endif -%}
+					<!-- image is not animated -->
+					{%- else -%}
+
+						<div class="card card-texture">
+							
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockURL }}" 
+								style="height:64px; object-fit: contain;" 
+								alt="{{ BlockName }}"
+								loading="lazy"
+								onerror="hideElement('{{ HideElementID }}')"
+							>
+						
+						</div>
+
+					{%- endif -%}
 					
 						<!-- modal -->
 						<div id="{{ ModalID }}" class="modal">
@@ -104,7 +109,7 @@ h1: Gallery
 							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
 						</script>
 
-					</span>
+					
 				{%- endfor -%}    	
 			</div>
 		</div>
