@@ -286,7 +286,7 @@ h2, h3, h4, h5 {
 }
 
 /* Caption of Modal Image */
-#caption {
+.caption {
   margin: auto;
   display: block;
   width: 80%;

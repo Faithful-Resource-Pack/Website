@@ -90,22 +90,12 @@ h1: Gallery
 
 							</div>
 						{%- endif -%}
-
-						<style>
-							#{{ ImgID }} {
-							  border-radius: 5px;
-							  cursor: pointer;
-							  transition: 0.3s;
-							}
-
-							#{{ ImgID }}:hover {opacity: 0.7;}
-						</style>
 					
 						<!-- modal -->
 						<div id="{{ ModalID }}" class="modal">
 						  <span class="close">&times;</span>
 						  <img class="modal-content" id="{{ ModalImgID }}">
-						  <div id="{{ BlockName }}"></div>
+						  <div class="caption" id="{{ BlockName }}"></div>
 						</div>
 
 						<!-- modal script -->
