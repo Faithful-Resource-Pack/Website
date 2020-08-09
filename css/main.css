@@ -253,6 +253,7 @@ h2, h3, h4, h5 {
 }
 
 .mc-animation:active, .card-texture .card-img-top:active {
+  background-color: #1b1c1f;
   z-index: 1;
   transform: scale(5.0);
   padding: 0.25rem;
@@ -272,7 +273,9 @@ h2, h3, h4, h5 {
 }
 
 img {
-  background-color: #1b1c1f;
+  background-image: url({{ site.baseurl  }}/image/gallery/transparent.png);
+  background-size: auto;
+  background-repeat: repeat;
   border: 0px solid #0000;
 }
 
