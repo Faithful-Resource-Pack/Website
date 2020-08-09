@@ -242,14 +242,13 @@ h2, h3, h4, h5 {
   margin-right: 6px;
 }
 
-/* Button and image hover and selecting */
-
-/* DISABLED -> TESTING MODAL
-.mc-animation, .nav-link, .card-texture .card-img-top {
-  transition: all .1s ease-out;
+.card-img-top {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.mc-animation:active, .card-texture .card-img-top:active {
+.card-img-top:hover, .mc-animation:hover {
   background-image: url(https://raw.githubusercontent.com/Faithful-Dungeons/Website/master/image/gallery/transparent.png);
   background-size: 16px;
   background-repeat: repeat;
@@ -258,15 +257,6 @@ h2, h3, h4, h5 {
   padding: 0.25rem;
   border-radius: 0.25rem;
 }
-*/
-
-.card-img-top {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.card-img-top:hover, .mc-animation:hover {transform: scale(0.95)}
 
 /* The Modal (background) */
 .modal {
