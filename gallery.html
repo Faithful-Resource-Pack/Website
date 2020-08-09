@@ -66,8 +66,10 @@ h1: Gallery
 								}
 							</style>
 
-							<div alt="{{ BlockName }}" src="{{ BlockURL }}" id="{{ ImgID }}" class="card card-texture">
-								<div id="{{ AnimElementID }}"></div>
+							<div>
+								<img alt="{{ BlockName }}" src="{{ BlockURL }}" id="{{ ImgID }}" style="display: none;">
+									<div id="{{ AnimElementID }}"></div>
+								</img>
 							</div>
 
 							<script>
