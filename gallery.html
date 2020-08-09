@@ -50,7 +50,7 @@ h1: Gallery
 					{%- assign BlockURL = GitHubURL | append: "Block%20Textures/" | append: blockTextures[0] -%}
 					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
 
-					{%- assign ModalSpanID = Blockname | append: "-" | append: "SPAN" -%}
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
 					
 					<span 
 						id="{{ HideElementID }}"
