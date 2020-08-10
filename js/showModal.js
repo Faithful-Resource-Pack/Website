@@ -11,7 +11,19 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 	btn.innerHTML = "See on GitHub";
 	btn.classList.add("btn","btn-info","btn-modal");
 
-	btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/tree/master/");
+	var str = TextureName;
+	var n = str.indexOf("/")
+
+	// is a block textures
+	if (n === -1){
+		btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/Block%20Textures/" + TextureName);
+	}
+	// isn't it
+	else {
+		btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/UE4Project/" + TextureName);
+	}
+
+	
 
 	btn.setAttribute('target', "_blank");
 
