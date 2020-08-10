@@ -19,7 +19,7 @@ h1: Gallery
 $(document).ready(function () {
   $("#anythingSearch").on("keyup", function () {
     var value = $(this).val().toLowerCase();
-    $("#accordion *").filter(function () {
+    $(".card-texture").filter(function () {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
