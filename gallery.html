@@ -12,6 +12,19 @@ h1: Gallery
 	}
 </style>
 
+<input class="form-control search-bar" id="input" type="text" placeholder="{{ page.Search | default: 'Search..'}}">
+
+<script>
+$(document).ready(function(){
+  $("#input").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#collapse1 .card-body .card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
 <div>
 	<p align="center">
 		You can hold your mouse on the images to see them bigger! The page is currently being renewed, be careful!
