@@ -1,69 +1,68 @@
 /* Basic layout */
 html {
-  overflow-x: hidden;
+  overflow-x: hidden
 }
 header, footer {
   padding: 2rem 1rem;
   text-align: center;
-  background: #141519;
+  background: #141519
 }
 main {
-  margin: 30px 0;
+  margin: 30px 0
 }
 .img-fluid {
-  border-radius: .25rem;
+  border-radius: .25rem
 }
 @media (min-width: 576px) {
   header, footer {
-    padding: 4rem 2rem;
+    padding: 4rem 2rem
   }
 }
 
 /* Make the image fully responsive (carrousel) */
 .carousel-inner img {
   width: 100%;
-  height: 100%;
+  height: 100%
 }
-
 
 /* Dark colors */
 ::-webkit-scrollbar{
-  width: 17px;
+  width: 17px
 }
 ::-webkit-scrollbar-button{
-  height: 17px;
+  height: 17px
 }
 ::-webkit-scrollbar-track{
-  background: #0E0E0E;
+  background: #0E0E0E
 }
 ::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb{
   background: #3E3E3E;
-  border: 2px solid #0E0E0E;
+  border: 2px solid #0E0E0E
 }
 ::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover{
-  background: #575757;
+  background: #575757
 }
 ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
-  background: #878787;
+  background: #878787
 }
 .card {
-  background: #2D2E32;
+  background: #2D2E32
 }
 body {
   background: #141519;
-  color: #fff;
+  color: #fff
 }
 p {
-  color: rgba(255, 255, 255, .7);
+  color: rgba(255, 255, 255, .7)
 }
 .modal-header {
-  border-bottom: 1px solid #2D2E32;
+  border-bottom: 1px solid #2D2E32
 }
 .modal-footer {
-  border-top: 1px solid #2D2E32;
+  border-top: 1px solid #2D2E32
 }
 h2, h3, h4, h5 {
-  font-weight: 300;
+  font-weight: 300
 }
 
 /* Flexbox */
@@ -72,32 +71,32 @@ h2, h3, h4, h5 {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap
 }
 .flex-container > .card {
-  margin: 15px auto;
+  margin: 15px auto
 }
 
 /* Classes for images next to text UNUSED */
 .links-image {
   width: 100%;
   margin: 0 0 15px 0;
-  border-radius: .25rem;
+  border-radius: .25rem
 }
 .links-image img {
-  border-radius: .25rem;
+  border-radius: .25rem
 }
 @media (min-width: 992px) {
   .links-image, .links-content {
-    display: inline-block;
+    display: inline-block
   }
   .links-image {
     margin: 0 15px 0 0;
-    width: 500px;
+    width: 500px
   }
   .links-content {
     width: calc(100% - 545px);
-    vertical-align: top;
+    vertical-align: top
   }
 }
 
@@ -106,20 +105,20 @@ h2, h3, h4, h5 {
   position: sticky;
   top: 0;
   background: #1B1B1B;
-  z-index: 1020;
+  z-index: 1020
 }
 @media (min-width: 800px) {
   .custom-navbar-wrapper {
-    text-align: center;
+    text-align: center
   }
   .custom-navbar {
-    display: inline-flex;
+    display: inline-flex
   }
   .lang-navbar {
     display: block;
     margin: auto;
     justify-content: center;
-    text-align: center;
+    text-align: center
   }
 }
 
@@ -128,62 +127,62 @@ h2, h3, h4, h5 {
   display: block;
   max-width: 100%;
   margin: 0 auto 1rem;
-  border-radius: .25rem;
+  border-radius: .25rem
 }
 @media (min-width: 768px) {
   .header-image {
-    max-width: 75%;
+    max-width: 75%
   }
 }
 
 /* Custom carousel */
 .custom.carousel {
-  margin-bottom: 45px;
+  margin-bottom: 45px
 }
 .custom.carousel-item-prev, .custom.carousel-item.active, .custom.carousel-item-next {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column
 }
 .custom.carousel-indicators {
-  bottom: -45px;
+  bottom: -45px
 }
 .custom.carousel-item > .card {
   cursor: pointer;
   transition-duration:.3s;
-  margin: 15px auto;
+  margin: 15px auto
 }
 .custom img {
-  height: auto;
+  height: auto
 }
 .custom.carousel-item > .card:hover {
   box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.5)
 }
 @media (min-width: 624px) {
   .custom.carousel-item > .card {
-    flex: 0 0 34%;
+    flex: 0 0 34%
   }
   .custom.carousel-item-prev, .custom.carousel-item.active, .custom.carousel-item-next {
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: row
   }
   .custom.carousel-control-prev {
-    left: -50px;
+    left: -50px
   }
   .custom.carousel-control-next {
-    right: -50px;
+    right: -50px
   }
 }
 @media (min-width: 992px) {
   .custom.carousel-item > .card {
-    flex: initial;
+    flex: initial
   }
   .custom.carousel-control-prev {
-    left: -100px;
+    left: -100px
   }
   .custom.carousel-control-next {
-    right: -100px;
+    right: -100px
   }
 }
 
@@ -191,7 +190,7 @@ h2, h3, h4, h5 {
 #modalCanvas {
   width: 100% !important;
   height: auto !important;
-  border-radius: .3rem;
+  border-radius: .3rem
 }
 
 /* Cookie Banner */
@@ -205,15 +204,15 @@ h2, h3, h4, h5 {
   padding: 0 32px;
   padding-top: 16px;
   z-index: 1050;
-  transition: 400ms;
+  transition: 400ms
 }
 
 .cookie-container.active {
-  bottom: 0;
+  bottom: 0
 }
 
 .cookie-container a {
-  color: #f5f6fa;
+  color: #f5f6fa
 }
 
 .cookie-btn {
@@ -224,7 +223,7 @@ h2, h3, h4, h5 {
   font-size: 18px;
   margin-bottom: 16px;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: pointer
 }
 
 /* Article */
@@ -233,27 +232,25 @@ h2, h3, h4, h5 {
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  text-shadow: 2px 2px 20px #000;
+  text-shadow: 2px 2px 20px #000
 }
 
 /* Credits */
 .credits-author {
   width: 25px;
-  margin-right: 6px;
+  margin-right: 6px
 }
-
 .card-img-top {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  color: #0000;
+  color: #000
 }
-
 .card-img-top:hover, .mc-animation:hover {
   background-image: url(https://raw.githubusercontent.com/Faithful-Dungeons/Website/master/image/gallery/transparent.png);
   background-size: 16px;
   background-repeat: repeat;
-  z-index: 1;
+  z-index: 1
 }
 
 /* The Modal (background) */
@@ -262,12 +259,12 @@ h2, h3, h4, h5 {
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.9) /* Black w/ opacity */
 }
 
 /* Modal btn */
 .modal-btn {
-  margin-left: 42%;
+  margin-left: 42%
 }
 
 /* Modal Content (image) */
@@ -275,7 +272,7 @@ h2, h3, h4, h5 {
   margin: auto;
   display: block;
   width: 80%;
-  max-width: 700px;
+  max-width: 700px
 }
 
 /* Caption of Modal Image */
@@ -286,7 +283,7 @@ h2, h3, h4, h5 {
   max-width: 700px;
   text-align: center;
   color: #ccc;
-  padding: 10px 0;
+  padding: 10px 0
 }
 
 .nav-link {
@@ -310,7 +307,7 @@ h2, h3, h4, h5 {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
-  animation-duration: 0.6s;
+  animation-duration: 0.6s
 }
 
 @-webkit-keyframes zoom {
@@ -331,20 +328,20 @@ h2, h3, h4, h5 {
   color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
-  transition: 0.3s;
+  transition: 0.3s
 }
 
 .close:hover,
 .close:focus {
   color: #bbb;
   text-decoration: none;
-  cursor: pointer;
+  cursor: pointer
 }
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
-    width: 100%;
+    width: 100%
   }
 }
 
@@ -353,34 +350,32 @@ h2, h3, h4, h5 {
   display: grid;
   grid-template-columns: minmax(60px, max-content) repeat(auto-fill, 60px);
   grid-template-rows: 64px;
-  grid-gap: 16px;
+  grid-gap: 16px
 }
 .card-texture {
   background-image: url(https://raw.githubusercontent.com/Faithful-Dungeons/Website/master/image/gallery/transparent.png);
   background-size: 16px;
   background-repeat: repeat;
   height: 64px;
-  width: 64px;
+  width: 64px
 }
-
 img {
-  border: 0px solid #0000;
+  border: 0 solid #000
 }
 
 /* Animated Textures: */
 .mc-animation {
   width: 100%;
-  border: 0px solid #0000;
-  image-rendering: pixelated;
+  border: 0 solid #000;
+  image-rendering: pixelated
 }
 
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
-
 img[src$=".png"] {
   image-rendering: pixelated;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  user-drag: none;
+  user-drag: none
 }
