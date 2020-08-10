@@ -12,25 +12,12 @@ h1: Gallery
 	}
 </style>
 
-<input class="form-control search-bar" id="input" type="text" placeholder="{{ page.Search | default: 'Search..'}}">
-
-<script>
-$(document).ready(function(){
-  $("#input").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#collapse1 .card-body .card").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
-
 <div>
 	<p align="center">
 		You can hold your mouse on the images to see them bigger! The page is currently being renewed, be careful!
 	</p>
 </div>
-	
+
 <script src="{{ site.baseurl }}/js/MCAnimation.js"></script>
 <script src="{{ site.baseurl }}/js/hideElement.js"></script>
 <script src="{{ site.baseurl }}/js/showModal.js"></script>
@@ -40,9 +27,9 @@ $(document).ready(function(){
 {%- assign UEComplement = "UE4Project/" -%}
 
 {%- assign AnimatedTextures = "Content/Materials/T_Lava_16_spritesheet.png, fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" -%}
-	
+
 <div id="accordion">
-	
+
 	<!-- Blocks Textures -->
 	<div class="card">
 		<div class="card-header">
@@ -65,9 +52,9 @@ $(document).ready(function(){
 					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{blockTextures[0]}} -%}
 					<!-- image is animated -->
 						<style>
@@ -93,7 +80,7 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
@@ -107,7 +94,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -136,12 +123,12 @@ $(document).ready(function(){
 		<div id="collapse2" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 				{%- for componentsTextures in site.data.TexturesComponents -%}
-				
+
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
 					{%- assign HideElementID = componentsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = componentsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-					
+
 					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
 					{%- assign ModalImgID = componentsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
@@ -150,9 +137,9 @@ $(document).ready(function(){
 					{%- assign BlockName = componentsTextures | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{componentsTextures}} -%}
 					<!-- image is animated -->
 						<style>
@@ -178,11 +165,11 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
-							
+
 							<img 
 								id="{{ ImgID }}"
 								class="card-img-top" 
@@ -192,7 +179,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -221,12 +208,12 @@ $(document).ready(function(){
 		<div id="collapse3" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 				{%- for decorTextures in site.data.TexturesDecor -%}
-				
+
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
 					{%- assign HideElementID = decorTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = decorTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-					
+
 					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
 					{%- assign ModalImgID = decorTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
@@ -235,9 +222,9 @@ $(document).ready(function(){
 					{%- assign BlockName = decorTextures | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{decorTextures}} -%}
 					<!-- image is animated -->
 						<style>
@@ -263,11 +250,11 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
-							
+
 							<img 
 								id="{{ ImgID }}"
 								class="card-img-top" 
@@ -277,7 +264,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -306,12 +293,12 @@ $(document).ready(function(){
 		<div id="collapse4" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 				{%- for effectsTextures in site.data.TexturesEffects -%}
-				
+
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
 					{%- assign HideElementID = effectsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = effectsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-					
+
 					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
 					{%- assign ModalImgID = effectsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
@@ -320,9 +307,9 @@ $(document).ready(function(){
 					{%- assign BlockName = effectsTextures | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{effectsTextures}} -%}
 					<!-- image is animated -->
 						<style>
@@ -348,11 +335,11 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
-							
+
 							<img 
 								id="{{ ImgID }}"
 								class="card-img-top" 
@@ -362,7 +349,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -382,7 +369,7 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-		
+
 	<!-- Entity Textures (Actors, Enemies, Friendlies) -->
 	<div class="card">
 		<div class="card-header">
@@ -391,12 +378,12 @@ $(document).ready(function(){
 		<div id="collapse5" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 				{%- for entitiesTextures in site.data.TexturesEntity -%}
-				
+
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
 					{%- assign HideElementID = entitiesTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = entitiesTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-					
+
 					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
 					{%- assign ModalImgID = entitiesTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
@@ -405,9 +392,9 @@ $(document).ready(function(){
 					{%- assign BlockName = entitiesTextures | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{entitiesTextures}} -%}
 					<!-- image is animated -->
 						<style>
@@ -433,11 +420,11 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
-							
+
 							<img 
 								id="{{ ImgID }}"
 								class="card-img-top" 
@@ -447,7 +434,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -476,12 +463,12 @@ $(document).ready(function(){
 		<div id="collapse6" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 				{%- for equipmentsTextures in site.data.TexturesEquipment -%}
-				
+
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
 					{%- assign HideElementID = equipmentsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = equipmentsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-					
+
 					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
 					{%- assign ModalImgID = equipmentsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
@@ -490,9 +477,9 @@ $(document).ready(function(){
 					{%- assign BlockName = equipmentsTextures | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{equipmentsTextures}} -%}
 					<!-- image is animated -->
 						<style>
@@ -518,11 +505,11 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
-							
+
 							<img 
 								id="{{ ImgID }}"
 								class="card-img-top" 
@@ -532,7 +519,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -561,12 +548,12 @@ $(document).ready(function(){
 		<div id="collapse7" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 				{%- for itemsTextures in site.data.TexturesItems -%}
-				
+
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
 					{%- assign HideElementID = itemsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = itemsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-					
+
 					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
 					{%- assign ModalImgID = itemsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
@@ -575,9 +562,9 @@ $(document).ready(function(){
 					{%- assign BlockName = itemsTextures | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{itemsTextures}} -%}
 					<!-- image is animated -->
 						<style>
@@ -603,11 +590,11 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
-							
+
 							<img 
 								id="{{ ImgID }}"
 								class="card-img-top" 
@@ -617,7 +604,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -646,12 +633,12 @@ $(document).ready(function(){
 		<div id="collapse8" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 				{%- for materialsTextures in site.data.TexturesMaterials -%}
-				
+
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
 					{%- assign HideElementID = materialsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = materialsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-					
+
 					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
 					{%- assign ModalImgID = materialsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
@@ -660,9 +647,9 @@ $(document).ready(function(){
 					{%- assign BlockName = materialsTextures | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{materialsTextures}} -%}
 					<!-- image is animated -->
 						<style>
@@ -688,11 +675,11 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
-							
+
 							<img 
 								id="{{ ImgID }}"
 								class="card-img-top" 
@@ -702,7 +689,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -731,12 +718,12 @@ $(document).ready(function(){
 		<div id="collapse9" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 				{%- for uiTextures in site.data.TexturesUI -%}
-				
+
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
 					{%- assign HideElementID = uiTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = uiTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-					
+
 					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
 					{%- assign ModalImgID = uiTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
@@ -745,9 +732,9 @@ $(document).ready(function(){
 					{%- assign BlockName = uiTextures | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{uiTextures}} -%}
 					<!-- image is animated -->
 						<style>
@@ -773,11 +760,11 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
-							
+
 							<img 
 								id="{{ ImgID }}"
 								class="card-img-top" 
@@ -787,7 +774,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -816,12 +803,12 @@ $(document).ready(function(){
 		<div id="collapse10" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
 				{%- for othersTextures in site.data.TexturesOthers -%}
-				
+
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
 					{%- assign HideElementID = othersTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = othersTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-					
+
 					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
 					{%- assign ImgID = TextureCounter -%}
 					{%- assign ModalImgID = othersTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
@@ -830,9 +817,9 @@ $(document).ready(function(){
 					{%- assign BlockName = othersTextures | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
-					
 
-					
+
+
 					{%- if AnimatedTextures contains {{othersTextures}} -%}
 					<!-- image is animated -->
 						<style>
@@ -858,11 +845,11 @@ $(document).ready(function(){
 							parentElement.appendChild(mca.canvas)
 						</script>
 
-					
+
 					{%- else -%}
 					<!-- image is not animated -->
 						<div class="card card-texture" id="{{ HideElementID }}">
-							
+
 							<img 
 								id="{{ ImgID }}"
 								class="card-img-top" 
@@ -872,7 +859,7 @@ $(document).ready(function(){
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-						
+
 						</div>
 
 					{%- endif -%}
@@ -893,4 +880,3 @@ $(document).ready(function(){
 		</div>
 	</div>
 </div>
-
