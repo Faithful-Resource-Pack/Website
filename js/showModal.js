@@ -31,7 +31,7 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 	  modal.style.display = "block";
 	  modalImg.src = this.src;
 	  captionText.innerHTML = this.alt;
-	  modal.appendChild(btn);
+	  captionText.appendChild(btn);
 	}
 
 	var span = document.getElementById(SpanID);
