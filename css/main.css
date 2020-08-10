@@ -289,6 +289,22 @@ h2, h3, h4, h5 {
   padding: 10px 0;
 }
 
+.nav-link {
+  transition: all .1s ease-out;
+  -webkit-transition: all .1s ease-out;
+  -moz-transition: all .1s ease-out;
+  -ms-transition: all .1s ease-out;
+  -o-transition: all .1s ease-out
+}
+
+.nav-link:hover {
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95)
+}
+
 /* Add Animation */
 .modal-content, .caption {  
   -webkit-animation-name: zoom;
