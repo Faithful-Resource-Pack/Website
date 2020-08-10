@@ -1,5 +1,5 @@
 
-function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
+function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID, ImgURL){
 	var modal = document.getElementById(ModalID);
 
 	// Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -9,6 +9,8 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 
 	var btn = document.createElement("BUTTON");
 	btn.innerHTML = "See on GitHub";
+	btn.classList.add("btn btn-info btn-modal");
+	btn.href = ImgURL;
 
 	img.onclick = function(){
 	  modal.style.display = "block";

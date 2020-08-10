@@ -265,6 +265,11 @@ h2, h3, h4, h5 {
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
+/* Modal btn */
+.modal-btn {
+  margin-left: 42%;
+}
+
 /* Modal Content (image) */
 .modal-content {
   margin: auto;
@@ -282,7 +287,6 @@ h2, h3, h4, h5 {
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
 }
 
 /* Add Animation */
