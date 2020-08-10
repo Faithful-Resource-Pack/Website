@@ -24,7 +24,6 @@ h1: Gallery
 
 {%- assign TextureCounter = 0 -%}
 {%- assign GitHubRawURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/" -%}
-{%- assign GitHubURL = "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/" -%}
 {%- assign UEComplement = "UE4Project/" -%}
 
 {%- assign AnimatedTextures = "Content/Materials/T_Lava_16_spritesheet.png, fire_layer_0.png, fire_layer_1.png, lava_flow.png, lava_still.png, sea_lantern.png" -%}
@@ -50,7 +49,6 @@ h1: Gallery
 					{%- assign ModalImgID = blockTextures[0] | remove: ".png" | append: "-" | append: TextureCounter -%}
 
 					{%- assign BlockRawURL = GitHubRawURL | append: "Block%20Textures/" | append: blockTextures[0] -%}
-					{%- assign BlockURL = GitHubURL | append: "Block%20Textures/" | append: blockTextures[0] -%}
 					{%- assign BlockName = blockTextures[0] | remove: ".png" -%}
 
 					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
@@ -110,7 +108,7 @@ h1: Gallery
 
 						<!-- modal script -->
 						<script>
-							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}", "")
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
 						</script>
 
 					

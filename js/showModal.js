@@ -1,5 +1,5 @@
 
-function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID, ImgURL){
+function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 	var modal = document.getElementById(ModalID);
 
 	// Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -10,7 +10,10 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID, ImgURL){
 	var btn = document.createElement("A");
 	btn.innerHTML = "See on GitHub";
 	btn.classList.add("btn","btn-info","btn-modal");
-	btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/");
+
+	btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/tree/master/");
+
+	btn.setAttribute('target', "_blank");
 
 	img.onclick = function(){
 	  modal.style.display = "block";
