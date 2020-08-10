@@ -5,7 +5,8 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 	// Get the image and insert it inside the modal - use its "alt" text as a caption
 	var img = document.getElementById(ImgID);
 	var modalImg = document.getElementById(ModalImgID);
-	var captionText = document.getElementById(TextureName);
+	var captionText = document.getElementById(TextureName + "-P");
+	var captionBtn = document.getElementById(TextureName + "-DIV")
 
 	var btn = document.createElement("A");
 	btn.innerHTML = "See on GitHub";
@@ -23,15 +24,13 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 		btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/UE4Project/" + TextureName + ".png");
 	}
 
-	
-
 	btn.setAttribute('target', "_blank");
 
 	img.onclick = function(){
 	  modal.style.display = "block";
 	  modalImg.src = this.src;
 	  captionText.innerHTML = this.alt;
-	  captionText.appendChild(btn);
+	  captionBtn.appendChild(btn);
 	}
 
 	var span = document.getElementById(SpanID);
