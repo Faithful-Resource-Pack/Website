@@ -7,10 +7,14 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 	var modalImg = document.getElementById(ModalImgID);
 	var captionText = document.getElementById(TextureName);
 
+	var btn = document.createElement("BUTTON");
+	btn.innerHTML = "See on GitHub";
+
 	img.onclick = function(){
 	  modal.style.display = "block";
 	  modalImg.src = this.src;
 	  captionText.innerHTML = this.alt;
+	  modal.appendChild(btn);
 	}
 
 	var span = document.getElementById(SpanID);
