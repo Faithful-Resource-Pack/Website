@@ -12,6 +12,20 @@ h1: Gallery
 	}
 </style>
 
+<!-- search bar -->
+<input class="form-control" id="anythingSearch" type="text" placeholder="Type something to search:">
+
+<script>
+$(document).ready(function () {
+  $("#anythingSearch").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("#accordion *").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
 <div>
 	<p align="center">
 		You can hold your mouse on the images to see them bigger! The page is currently being renewed, be careful!
