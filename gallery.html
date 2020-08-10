@@ -109,9 +109,7 @@ h1: Gallery
 						<!-- modal script -->
 						<script>
 							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
-						</script>
-
-					
+						</script>	
 				{%- endfor -%}    	
 			</div>
 		</div>
@@ -124,32 +122,41 @@ h1: Gallery
 		</div>
 		<div id="collapse2" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
-				{%- for componentTextures in site.data.TexturesComponents -%}
+				{%- for componentsTextures in site.data.TexturesComponents -%}
 				
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
-					{%- assign HideElementID = componentTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
-					{%- assign AnimElementID = componentTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-
-					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: componentTextures -%}
-					{%- assign BlockName = componentTextures | remove: ".png" -%}
+					{%- assign HideElementID = componentsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
+					{%- assign AnimElementID = componentsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
 					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = componentsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
 
-					{%- if AnimatedTextures contains {{componentTextures}} -%}
+					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: componentsTextures -%}
+					{%- assign BlockName = componentsTextures | remove: ".png" -%}
+
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
+					
+
+					
+					{%- if AnimatedTextures contains {{componentsTextures}} -%}
+					<!-- image is animated -->
 						<style>
 							#{{ AnimElementID }}:hover {
 								z-index: 1;
 							}
 						</style>
 
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockRawURL }}" 
+								style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
+								alt="{{ BlockName }}"
+							>
+
 						</div>
 
 						<script>
@@ -158,23 +165,37 @@ h1: Gallery
 							parentElement.appendChild(mca.canvas)
 						</script>
 
+					
 					{%- else -%}
-						<div class="card card-texture">
+					<!-- image is not animated -->
+						<div class="card card-texture" id="{{ HideElementID }}">
 							
 							<img 
+								id="{{ ImgID }}"
 								class="card-img-top" 
 								src="{{ BlockRawURL }}" 
 								style="height:64px; object-fit: contain;" 
-								alt=""
+								alt="{{ BlockName }}"
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-
+						
 						</div>
+
 					{%- endif -%}
 
-					</span>
-				{%- endfor -%}
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
+						  <img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalImgID }}">
+						  <div class="caption" id="{{ BlockName }}"></div>
+						</div>
+
+						<!-- modal script -->
+						<script>
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
+						</script>	
+				{%- endfor -%} 
 			</div>
 		</div>
 	</div>
@@ -192,26 +213,35 @@ h1: Gallery
 
 					{%- assign HideElementID = decorTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = decorTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
+					
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = decorTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
 
 					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: decorTextures -%}
 					{%- assign BlockName = decorTextures | remove: ".png" -%}
-					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
 
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
+					
+
+					
 					{%- if AnimatedTextures contains {{decorTextures}} -%}
+					<!-- image is animated -->
 						<style>
 							#{{ AnimElementID }}:hover {
 								z-index: 1;
 							}
 						</style>
 
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockRawURL }}" 
+								style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
+								alt="{{ BlockName }}"
+							>
+
 						</div>
 
 						<script>
@@ -220,23 +250,37 @@ h1: Gallery
 							parentElement.appendChild(mca.canvas)
 						</script>
 
+					
 					{%- else -%}
-						<div class="card card-texture">
+					<!-- image is not animated -->
+						<div class="card card-texture" id="{{ HideElementID }}">
 							
 							<img 
+								id="{{ ImgID }}"
 								class="card-img-top" 
 								src="{{ BlockRawURL }}" 
 								style="height:64px; object-fit: contain;" 
-								alt=""
+								alt="{{ BlockName }}"
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-
+						
 						</div>
+
 					{%- endif -%}
 
-					</span>
-				{%- endfor -%}
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
+						  <img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalImgID }}">
+						  <div class="caption" id="{{ BlockName }}"></div>
+						</div>
+
+						<!-- modal script -->
+						<script>
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
+						</script>	
+				{%- endfor -%} 
 			</div>
 		</div>
 	</div>
@@ -254,26 +298,35 @@ h1: Gallery
 
 					{%- assign HideElementID = effectsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = effectsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
+					
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = effectsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
 
 					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: effectsTextures -%}
 					{%- assign BlockName = effectsTextures | remove: ".png" -%}
-					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
 
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
+					
+
+					
 					{%- if AnimatedTextures contains {{effectsTextures}} -%}
+					<!-- image is animated -->
 						<style>
 							#{{ AnimElementID }}:hover {
 								z-index: 1;
 							}
 						</style>
 
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockRawURL }}" 
+								style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
+								alt="{{ BlockName }}"
+							>
+
 						</div>
 
 						<script>
@@ -282,22 +335,36 @@ h1: Gallery
 							parentElement.appendChild(mca.canvas)
 						</script>
 
+					
 					{%- else -%}
-						<div class="card card-texture">
+					<!-- image is not animated -->
+						<div class="card card-texture" id="{{ HideElementID }}">
 							
 							<img 
+								id="{{ ImgID }}"
 								class="card-img-top" 
 								src="{{ BlockRawURL }}" 
 								style="height:64px; object-fit: contain;" 
-								alt=""
+								alt="{{ BlockName }}"
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-
+						
 						</div>
+
 					{%- endif -%}
 
-					</span>
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
+						  <img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalImgID }}">
+						  <div class="caption" id="{{ BlockName }}"></div>
+						</div>
+
+						<!-- modal script -->
+						<script>
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
+						</script>	
 				{%- endfor -%}
 			</div>
 		</div>
@@ -310,32 +377,41 @@ h1: Gallery
 		</div>
 		<div id="collapse5" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
-				{%- for entityTextures in site.data.TexturesEntity -%}
+				{%- for entitiesTextures in site.data.TexturesEntity -%}
 				
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
-					{%- assign HideElementID = entityTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
-					{%- assign AnimElementID = entityTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-
-					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: entityTextures -%}
-					{%- assign BlockName = entityTextures | remove: ".png" -%}
+					{%- assign HideElementID = entitiesTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
+					{%- assign AnimElementID = entitiesTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
 					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = entitiesTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
 
-					{%- if AnimatedTextures contains {{entityTextures}} -%}
+					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: entitiesTextures -%}
+					{%- assign BlockName = entitiesTextures | remove: ".png" -%}
+
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
+					
+
+					
+					{%- if AnimatedTextures contains {{entitiesTextures}} -%}
+					<!-- image is animated -->
 						<style>
 							#{{ AnimElementID }}:hover {
 								z-index: 1;
 							}
 						</style>
 
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockRawURL }}" 
+								style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
+								alt="{{ BlockName }}"
+							>
+
 						</div>
 
 						<script>
@@ -344,22 +420,36 @@ h1: Gallery
 							parentElement.appendChild(mca.canvas)
 						</script>
 
+					
 					{%- else -%}
-						<div class="card card-texture">
+					<!-- image is not animated -->
+						<div class="card card-texture" id="{{ HideElementID }}">
 							
 							<img 
+								id="{{ ImgID }}"
 								class="card-img-top" 
 								src="{{ BlockRawURL }}" 
 								style="height:64px; object-fit: contain;" 
-								alt=""
+								alt="{{ BlockName }}"
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-
+						
 						</div>
+
 					{%- endif -%}
 
-					</span>
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
+						  <img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalImgID }}">
+						  <div class="caption" id="{{ BlockName }}"></div>
+						</div>
+
+						<!-- modal script -->
+						<script>
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
+						</script>	
 				{%- endfor -%}
 			</div>
 		</div>
@@ -372,32 +462,41 @@ h1: Gallery
 		</div>
 		<div id="collapse6" class="collapse" data-parent="#accordion">
 			<div class="card-body grid-container">
-				{%- for equipmentTextures in site.data.TexturesEquipment -%}
+				{%- for equipmentsTextures in site.data.TexturesEquipment -%}
 				
 					{%- assign TextureCounter = TextureCounter | plus: 1 -%}
 
-					{%- assign HideElementID = equipmentTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
-					{%- assign AnimElementID = equipmentTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
-
-					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: equipmentTextures -%}
-					{%- assign BlockName = equipmentTextures | remove: ".png" -%}
+					{%- assign HideElementID = equipmentsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
+					{%- assign AnimElementID = equipmentsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
 					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = equipmentsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
 
-					{%- if AnimatedTextures contains {{equipmentTextures}} -%}
+					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: equipmentsTextures -%}
+					{%- assign BlockName = equipmentsTextures | remove: ".png" -%}
+
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
+					
+
+					
+					{%- if AnimatedTextures contains {{equipmentsTextures}} -%}
+					<!-- image is animated -->
 						<style>
 							#{{ AnimElementID }}:hover {
 								z-index: 1;
 							}
 						</style>
 
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockRawURL }}" 
+								style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
+								alt="{{ BlockName }}"
+							>
+
 						</div>
 
 						<script>
@@ -406,22 +505,36 @@ h1: Gallery
 							parentElement.appendChild(mca.canvas)
 						</script>
 
+					
 					{%- else -%}
-						<div class="card card-texture">
+					<!-- image is not animated -->
+						<div class="card card-texture" id="{{ HideElementID }}">
 							
 							<img 
+								id="{{ ImgID }}"
 								class="card-img-top" 
 								src="{{ BlockRawURL }}" 
 								style="height:64px; object-fit: contain;" 
-								alt=""
+								alt="{{ BlockName }}"
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-
+						
 						</div>
+
 					{%- endif -%}
 
-					</span>
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
+						  <img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalImgID }}">
+						  <div class="caption" id="{{ BlockName }}"></div>
+						</div>
+
+						<!-- modal script -->
+						<script>
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
+						</script>	
 				{%- endfor -%}
 			</div>
 		</div>
@@ -440,26 +553,35 @@ h1: Gallery
 
 					{%- assign HideElementID = itemsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = itemsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
+					
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = itemsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
 
 					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: itemsTextures -%}
 					{%- assign BlockName = itemsTextures | remove: ".png" -%}
-					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
 
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
+					
+
+					
 					{%- if AnimatedTextures contains {{itemsTextures}} -%}
+					<!-- image is animated -->
 						<style>
 							#{{ AnimElementID }}:hover {
 								z-index: 1;
 							}
 						</style>
 
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockRawURL }}" 
+								style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
+								alt="{{ BlockName }}"
+							>
+
 						</div>
 
 						<script>
@@ -468,22 +590,36 @@ h1: Gallery
 							parentElement.appendChild(mca.canvas)
 						</script>
 
+					
 					{%- else -%}
-						<div class="card card-texture">
+					<!-- image is not animated -->
+						<div class="card card-texture" id="{{ HideElementID }}">
 							
 							<img 
+								id="{{ ImgID }}"
 								class="card-img-top" 
 								src="{{ BlockRawURL }}" 
 								style="height:64px; object-fit: contain;" 
-								alt=""
+								alt="{{ BlockName }}"
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-
+						
 						</div>
+
 					{%- endif -%}
 
-					</span>
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
+						  <img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalImgID }}">
+						  <div class="caption" id="{{ BlockName }}"></div>
+						</div>
+
+						<!-- modal script -->
+						<script>
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
+						</script>	
 				{%- endfor -%}
 			</div>
 		</div>
@@ -502,26 +638,35 @@ h1: Gallery
 
 					{%- assign HideElementID = materialsTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = materialsTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
+					
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = materialsTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
 
 					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: materialsTextures -%}
 					{%- assign BlockName = materialsTextures | remove: ".png" -%}
-					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
 
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
+					
+
+					
 					{%- if AnimatedTextures contains {{materialsTextures}} -%}
+					<!-- image is animated -->
 						<style>
 							#{{ AnimElementID }}:hover {
 								z-index: 1;
 							}
 						</style>
 
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockRawURL }}" 
+								style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
+								alt="{{ BlockName }}"
+							>
+
 						</div>
 
 						<script>
@@ -530,22 +675,36 @@ h1: Gallery
 							parentElement.appendChild(mca.canvas)
 						</script>
 
+					
 					{%- else -%}
-						<div class="card card-texture">
+					<!-- image is not animated -->
+						<div class="card card-texture" id="{{ HideElementID }}">
 							
 							<img 
+								id="{{ ImgID }}"
 								class="card-img-top" 
 								src="{{ BlockRawURL }}" 
 								style="height:64px; object-fit: contain;" 
-								alt=""
+								alt="{{ BlockName }}"
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-
+						
 						</div>
+
 					{%- endif -%}
 
-					</span>
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
+						  <img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalImgID }}">
+						  <div class="caption" id="{{ BlockName }}"></div>
+						</div>
+
+						<!-- modal script -->
+						<script>
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
+						</script>	
 				{%- endfor -%}
 			</div>
 		</div>
@@ -564,26 +723,35 @@ h1: Gallery
 
 					{%- assign HideElementID = uiTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = uiTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
+					
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = uiTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
 
 					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: uiTextures -%}
 					{%- assign BlockName = uiTextures | remove: ".png" -%}
-					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
 
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
+					
+
+					
 					{%- if AnimatedTextures contains {{uiTextures}} -%}
+					<!-- image is animated -->
 						<style>
 							#{{ AnimElementID }}:hover {
 								z-index: 1;
 							}
 						</style>
 
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockRawURL }}" 
+								style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
+								alt="{{ BlockName }}"
+							>
+
 						</div>
 
 						<script>
@@ -592,22 +760,36 @@ h1: Gallery
 							parentElement.appendChild(mca.canvas)
 						</script>
 
+					
 					{%- else -%}
-						<div class="card card-texture">
+					<!-- image is not animated -->
+						<div class="card card-texture" id="{{ HideElementID }}">
 							
 							<img 
+								id="{{ ImgID }}"
 								class="card-img-top" 
 								src="{{ BlockRawURL }}" 
 								style="height:64px; object-fit: contain;" 
-								alt=""
+								alt="{{ BlockName }}"
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-
+						
 						</div>
+
 					{%- endif -%}
 
-					</span>
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
+						  <img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalImgID }}">
+						  <div class="caption" id="{{ BlockName }}"></div>
+						</div>
+
+						<!-- modal script -->
+						<script>
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
+						</script>	
 				{%- endfor -%}
 			</div>
 		</div>
@@ -626,26 +808,35 @@ h1: Gallery
 
 					{%- assign HideElementID = othersTextures | remove: ".png" | remove: "_" | append: "-NB" | append: TextureCounter -%}
 					{%- assign AnimElementID = othersTextures | remove: ".png" | remove: "_" | append: "-MCMETA"  -%}
+					
+					{%- assign ModalID = HideElementID | append: "-MODAL" -%}
+					{%- assign ImgID = TextureCounter -%}
+					{%- assign ModalImgID = othersTextures | remove: ".png" | append: "-" | append: TextureCounter -%}
 
 					{%- assign BlockRawURL = GitHubRawURL | append: UEComplement | append: othersTextures -%}
 					{%- assign BlockName = othersTextures | remove: ".png" -%}
-					
-					<span 
-						id="{{ HideElementID }}"
-						data-toggle="tooltip" 
-						data-placement="bottom" 
-						title="{{ BlockName }}"
-					>
 
+					{%- assign ModalSpanID = BlockName | append: "-" | append: "SPAN" -%}
+					
+
+					
 					{%- if AnimatedTextures contains {{othersTextures}} -%}
+					<!-- image is animated -->
 						<style>
 							#{{ AnimElementID }}:hover {
 								z-index: 1;
 							}
 						</style>
 
-						<div class="card card-texture">
-							<div id="{{ AnimElementID }}"></div>
+						<div class="card card-texture" id="{{ AnimElementID }}">
+							<img 
+								id="{{ ImgID }}"
+								class="card-img-top" 
+								src="{{ BlockRawURL }}" 
+								style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
+								alt="{{ BlockName }}"
+							>
+
 						</div>
 
 						<script>
@@ -654,22 +845,36 @@ h1: Gallery
 							parentElement.appendChild(mca.canvas)
 						</script>
 
+					
 					{%- else -%}
-						<div class="card card-texture">
+					<!-- image is not animated -->
+						<div class="card card-texture" id="{{ HideElementID }}">
 							
 							<img 
+								id="{{ ImgID }}"
 								class="card-img-top" 
 								src="{{ BlockRawURL }}" 
 								style="height:64px; object-fit: contain;" 
-								alt=""
+								alt="{{ BlockName }}"
 								loading="lazy"
 								onerror="hideElement('{{ HideElementID }}')"
 							>
-
+						
 						</div>
+
 					{%- endif -%}
 
-					</span>
+						<!-- modal -->
+						<div id="{{ ModalID }}" class="modal">
+						  <span id="{{ ModalSpanID }}" class="close">&times;</span>
+						  <img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalImgID }}">
+						  <div class="caption" id="{{ BlockName }}"></div>
+						</div>
+
+						<!-- modal script -->
+						<script>
+							showModal("{{ ModalID }}", "{{ ImgID }}", "{{ ModalImgID }}", "{{ BlockName }}", "{{ ModalSpanID }}")
+						</script>	
 				{%- endfor -%}
 			</div>
 		</div>
