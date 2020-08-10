@@ -16,11 +16,11 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 
 	// is a block textures
 	if (n === -1){
-		btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/Block%20Textures/" + TextureName);
+		btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/Block%20Textures/" + TextureName + ".png");
 	}
 	// isn't it
 	else {
-		btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/UE4Project/" + TextureName);
+		btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/UE4Project/" + TextureName + ".png");
 	}
 
 	
