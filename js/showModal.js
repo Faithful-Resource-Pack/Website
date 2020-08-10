@@ -9,7 +9,7 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID, ImgURL){
 
 	var btn = document.createElement("BUTTON");
 	btn.innerHTML = "See on GitHub";
-	btn.classList.add("btn btn-info btn-modal");
+	btn.classList.add("btn","btn-info","btn-modal");
 	btn.href = ImgURL;
 
 	img.onclick = function(){
