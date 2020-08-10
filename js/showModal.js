@@ -7,10 +7,10 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID, ImgURL){
 	var modalImg = document.getElementById(ModalImgID);
 	var captionText = document.getElementById(TextureName);
 
-	var btn = document.createElement("BUTTON");
+	var btn = document.createElement("A");
 	btn.innerHTML = "See on GitHub";
 	btn.classList.add("btn","btn-info","btn-modal");
-	btn.href = ImgURL;
+	btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/");
 
 	img.onclick = function(){
 	  modal.style.display = "block";

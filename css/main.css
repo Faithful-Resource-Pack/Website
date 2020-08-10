@@ -46,7 +46,7 @@ main {
 ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
   background: #878787;
 }
-.card, .modal-content {
+.card {
   background: #2D2E32;
 }
 body {
