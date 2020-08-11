@@ -113,6 +113,8 @@ h1: Faithful Dungeons !
 	</div>
 </div>
 
+<hr>
+
 <!-- Carousel Automatic -->
 <div id="carouselID" class="carousel slide" data-ride="carousel">
 	<!-- indicators -->
@@ -142,14 +144,14 @@ h1: Faithful Dungeons !
 					<div class="carousel-item active">
 						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 						<div class="carousel-caption">
-							<p>{{ image.basename }}</p>
+							<h3>{{ image.basename }}</h3>
 						</div>
 					</div>
 				{%- else -%}
 					<div class="carousel-item">
 						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 						<div class="carousel-caption">
-							<p>{{ image.basename }}</p>
+							<h3>{{ image.basename }}</h3>
 						</div>
 					</div>
 				{%- endif -%}
@@ -160,7 +162,7 @@ h1: Faithful Dungeons !
 	</div>
 
 	<!-- left & right controls -->
-	<a href="#courselID" class="carousel-control-prev" data-slide="prev">
+	<a href="#carouselID" class="carousel-control-prev" data-slide="prev">
 		<span class="carousel-control-prev-icon"></span>
 	</a>
 	<a href="#carouselID" class="carousel-control-next" data-slide="next">
