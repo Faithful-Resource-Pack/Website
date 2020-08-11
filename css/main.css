@@ -373,10 +373,10 @@ img {
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
 img[src$=".png"] {
 	image-rendering: pixelated;
-	image-rendering: -moz-crisp-edges;         /* Firefox */
-	image-rendering: -o-crisp-edges;         /* Opera */
-	image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-	-ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
 	-webkit-user-drag: none;
 	-khtml-user-drag: none;
 	-moz-user-drag: none;
