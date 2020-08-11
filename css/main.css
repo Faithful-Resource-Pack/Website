@@ -26,12 +26,12 @@ main {
 }
 /* Carousel arrow hover animation */
 .carousel-control-prev-icon, .carousel-control-next-icon {
-	transition: all 1s ease-in;
+	transition: all 1s ease;
 }
-.carousel-control-prev-icon:hover {
+.carousel-control-prev:hover {
 	margin-right: 100px;
 }
-.carousel-control-next-icon:hover {
+.carousel-control-next:hover {
 	margin-left: 100px;
 }
 
