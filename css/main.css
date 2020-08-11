@@ -28,10 +28,10 @@ main {
 .carousel-control-prev-icon, .carousel-control-next-icon {
 	transition: all 1s ease;
 }
-.carousel-control-prev:hover {
+.carousel-control-prev:hover .carousel-control-prev-icon {
 	margin-right: 100px;
 }
-.carousel-control-next:hover {
+.carousel-control-next:hover .carousel-control-next-icon {
 	margin-left: 100px;
 }
 
