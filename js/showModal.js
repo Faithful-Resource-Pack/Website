@@ -39,7 +39,7 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 	span.onclick = function(){
 		modal.style.display = "none"
 	}
-	/*$('.modal').click(function()){
+	$('.modal-background').click(function()){
 		modal.style.display = "none"
-	}*/
+	}
 }
