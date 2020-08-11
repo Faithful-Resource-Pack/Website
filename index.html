@@ -140,16 +140,16 @@ h1: Faithful Dungeons !
 			{%- if image.path contains '/image/home/carousel' -%}
 				{%- if ImgCounter == 0 -%}
 					<div class="carousel-item active">
-						<img src="{{ image.path }}" alt="{{ image.basename }}">
+						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 						<div class="carousel-caption">
-							<p>{{ image.basename | remove: '.webp' }}</p>
+							<p>{{ image.basename }}</p>
 						</div>
 					</div>
 				{%- else -%}
 					<div class="carousel-item">
-						<img src="{{ image.path }}" alt="{{ image.basename }}">
+						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 						<div class="carousel-caption">
-							<p>{{ image.basename | remove: '.webp' }}</p>
+							<p>{{ image.basename }}</p>
 						</div>
 					</div>
 				{%- endif -%}
