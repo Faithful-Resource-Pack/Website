@@ -19,10 +19,20 @@ main {
 	}
 }
 
-/* Make the image fully responsive (carrousel) */
+/* Make the image fully responsive (carousel) */
 .carousel-inner img {
 	width: 100%;
 	height: 100%
+}
+/* Carousel arrow hover animation */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	transition: all 1s ease-in;
+}
+.carousel-control-prev-icon:hover {
+	margin-right: 100px;
+}
+.carousel-control-next-icon:hover {
+	margin-left: 100px;
 }
 
 /* Dark colors */
