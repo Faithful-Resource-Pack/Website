@@ -34,7 +34,7 @@ function getCredits(id, texture){
 			}
 			document.getElementById(id).innerHTML =  comits;
 		}
-	};
+	});
 
 }
 
