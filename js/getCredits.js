@@ -28,7 +28,7 @@ function getCredits(id, texture){
 			console.log('Something went wrong: ' + err);
 		} else {
 			while (comitter !== null || count === 100) { // Idk : unless committer is broken -> no more committer			  
-			  comitter = data[count]['commit'][1]['name'];
+			  var comitter = data[count]['commit'][1]['name'];
 			  comits.push(comitter); // Add comitter to the list
 			  count++;
 			}
