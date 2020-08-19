@@ -17,10 +17,9 @@ h1: Cool Title
 	{%- assign texturePath = "Block%20Textures/" | append: texture[0] -%}
 	{%- assign counter = counter | plus: 1 -%}
 
-	<span id="{{ counter }}">
-		<scripts>
-			getCredits("{{ counter }}", "{{ texturePath }}")
-		</scripts>
-	</span>
+	<span id="{{ counter }}"></span>
+	<script>
+		getCredits("{{ counter }}", "{{ texturePath }}")
+	</script>
 
 {%- endfor -%}
