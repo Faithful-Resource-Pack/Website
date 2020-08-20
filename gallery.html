@@ -84,12 +84,13 @@ title: gallery (WIP)
   
     <div class="card bg-dark">
       <div class="card-body" style="color:#FFF; font-size:24px;">
-        <div id="animated" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/fire_layer_0.png" style="margin-right:20px; width:64px; height:64px">Animated</div>
+        <div id="animated" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/fire_layer_0.png" style="margin-right:20px; width:64px; height:64px"></div>Animated
         <a href="{{ site.baseurl }}/gallery/animated" class="stretched-link"></a>
       </div>
     </div>
     
-    <script src="{{ site.baseurl }}/js/MCAnimation.js">
+    <script src="{{ site.baseurl }}/js/MCAnimation.js"></script>
+    <script>
       var mca = new MCAnimation("https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/fire_layer_0.png")
       var parentElement = document.getElementById("animated")
       parentElement.appendChild(mca.canvas)
