@@ -27,12 +27,14 @@ function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 
 	btn.setAttribute('target', "_blank");
 
+	// click full screen button
 	btnfull.onclick = function(){
 	  modal.style.display = "block";
 	  modalImg.src = img.src;
 	  captionText.innerHTML = img.alt;
 	  captionBtn.appendChild(btn);
 	}
+	
 
 	var span = document.getElementById(SpanID);
 
@@ -40,4 +42,11 @@ function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 	span.onclick = function(){
 		modal.style.display = "none"
 	}
+
+	// When user press escape key
+	$(document).keydown(function(event) { 
+	  if (event.keyCode == 27) { 
+	    modal.style.display = "none"
+	  }
+	});
 }
