@@ -1,9 +1,9 @@
 
-function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
+function showModal(ModalID, BtnID, ModalImgID, TextureName, SpanID){
 	var modal = document.getElementById(ModalID);
 
 	// Get the image and insert it inside the modal - use its "alt" text as a caption
-	var img = document.getElementById(ImgID);
+	var btnfull = document.getElementById(BtnID);
 	var modalImg = document.getElementById(ModalImgID);
 	var captionText = document.getElementById(TextureName + "-P");
 	var captionBtn = document.getElementById(TextureName + "-DIV")
@@ -26,7 +26,7 @@ function showModal(ModalID, ImgID, ModalImgID, TextureName, SpanID){
 
 	btn.setAttribute('target', "_blank");
 
-	img.onclick = function(){
+	btnfull.onclick = function(){
 	  modal.style.display = "block";
 	  modalImg.src = this.src;
 	  captionText.innerHTML = this.alt;
