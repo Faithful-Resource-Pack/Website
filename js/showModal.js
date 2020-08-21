@@ -40,13 +40,20 @@ function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function(){
-		modal.style.display = "none"
+		modal.style.display = "none";
 	}
 
 	// When user press escape key
 	$(document).keydown(function(event) { 
 	  if (event.keyCode == 27) { 
-	    modal.style.display = "none"
+	    modal.style.display = "none";
+	  }
+	});
+
+	//if you click on anything except the modal itself or the "open modal" link, close the modal
+	$(document).click(function(event) {
+	  if (!$(event.target).closest("#" + ModalID).length) {
+	    modal.style.display = "none";
 	  }
 	});
 }
