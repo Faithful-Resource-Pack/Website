@@ -256,12 +256,6 @@ h2, h3, h4, h5 {
 	transition: 0.3s;
 	color: #000
 }
-.card-img-top:hover, .mc-animation:hover {
-	background-image: url(https://raw.githubusercontent.com/Faithful-Dungeons/Website/master/image/gallery/transparent.png);
-	background-size: 16px;
-	background-repeat: repeat;
-	z-index: 1
-}
 
 /* The Modal (background) */
 .modal {
