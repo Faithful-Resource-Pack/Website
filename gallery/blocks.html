@@ -11,9 +11,9 @@ title: Blocks (WIP)
 {%- assign GitHubRawURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/" -%}
 {%- assign Count = 0 -%}
 
-<div class="card">
+<div class="card bg-dark">
 	{%- for Texture in site.data.TexturesBlocks -%}
-		<div class="card card-texture bg-dark">
+		<div class="card-body grid-container bg-dark">
 		{%- assign Count = Count | plus: 1 -%}
 
 		{%- assign TextureName   = Texture[0]   | remove: ".png" -%}
