@@ -91,7 +91,7 @@ nav-img: blocks.png
 
 
 			<div class="card card-texture" id="{{ HideEID }}">				
-				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onclick="openNav({{ SidePanelID }})" onerror="hideElement('{{ HideEID }}')">
+				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onclick="openNav('{{ SidePanelID }}')" onerror="hideElement('{{ HideEID }}')">
 				<button id="{{ BtnID }}" type="button" class="btn btn-dark">
 					<i class="fas fa-expand"></i>
 				</button>
@@ -107,7 +107,7 @@ nav-img: blocks.png
 			</div>
 
 			<div id="{{ SidePanelID }}" class="sidepanel">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav({{ SidePanelID }})">×</a>
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav('{{ SidePanelID }}')">×</a>
 				<p>Authors:</p>
 				<p>Size:</p>
 				<p>Used in:</p>
