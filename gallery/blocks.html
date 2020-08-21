@@ -76,9 +76,11 @@ nav-img: blocks.png
 			{%- assign ModalIID = Texture[0] | remove: ".png" | remove: "_" | append: "-MI" | append: "-NB" | append: Count -%}
 			{%- assign BtnID    = Texture[0] | remove: ".png" | remove: "_" | append: "-B"  | append: "-NB" | append: Count -%}
 
+			{%- assign SidePanelID = Texture[0] | remove: ".png" | remove: "_" | append: "-SP" | append: "-NB" | append: Count -%}
+
 
 			<div class="card card-texture" id="{{ HideEID }}">				
-				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
+				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onclick="openNav({{ SidePanelID }})" onerror="hideElement('{{ HideEID }}')">
 				<button id="{{ BtnID }}" type="button" class="btn btn-dark">
 					<i class="fas fa-expand"></i>
 				</button>
@@ -93,6 +95,13 @@ nav-img: blocks.png
 				</div>
 			</div>
 
+			<div id="{{ SidePanelID }}" class="sidepanel">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav({{ SidePanelID }})">×</a>
+				<p>Authors:</p>
+				<p>Size:</p>
+				<p>Used in:</p>
+			</div>
+
 			<script>
 				showModal("{{ ModalID }}", "{{ ImageID }}", "{{ ModalIID }}", "{{ TextureName }}", "{{ ModalSID }}", "{{ BtnID }}")
 			</script>
@@ -103,3 +112,13 @@ nav-img: blocks.png
 </div>
 
 <p align="right">{{ Count }} textures.</p>
+
+<script>
+	function openNav(id) {
+		document.getElementById(id).style.width = "75px";
+	}
+
+	function closeNav(id) {
+		document.getElementById(id).style.width = "0";
+	}
+</script>
