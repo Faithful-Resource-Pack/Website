@@ -118,6 +118,7 @@ h2, h3, h4, h5 {
 	z-index: 1020
 }
 .navbar-gallery {
+	z-index: 0;
 	background: #1C1C1C;
 }
 
