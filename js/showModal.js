@@ -29,10 +29,10 @@ function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 
 	// click full screen button
 	btnfull.onclick = function(){
-	  modal.style.display = "block";
-	  modalImg.src = img.src;
-	  captionText.innerHTML = img.alt;
-	  captionBtn.appendChild(btn);
+		modal.style.display = "block";
+		modalImg.src = img.src;
+		captionText.innerHTML = img.alt;
+		captionBtn.appendChild(btn);
 	}
 	
 
@@ -45,14 +45,7 @@ function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 
 	// When user press escape key
 	$(document).keydown(function(event) { 
-	  if (event.keyCode == 27) { 
-	    modal.style.display = "none";
-	  }
-	});
-
-	//if you click on anything except the modal itself or the "open modal" link, close the modal
-	$(document).click(function(event) {
-		if (!$(event.target).closest('img[' + ModalImgID + ']').length && modal.style.display === "block") {
+		if (event.keyCode == 27) { 
 			modal.style.display = "none";
 		}
 	});
