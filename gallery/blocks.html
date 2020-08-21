@@ -31,9 +31,9 @@ title: Blocks (WIP)
 
 			<div class="card card-texture" id="{{ HideEID }}">				
 				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:64px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
-				<button id="{{ BtnID }}" type="button" class="btn btn-dark">
+				<a id="{{ BtnID }}" type="button" class="btn btn-dark" style="display: none;">
 					[]
-				</button>
+				</a>
 			</div>
 
 			<div id="{{ ModalID }}" class="modal">
@@ -46,7 +46,7 @@ title: Blocks (WIP)
 			</div>
 
 			<style>
-				#{{ ImageID }}:hover + .button, .button:hover {
+				.img:hover + .button, .button:hover {
     				display: inline-block;
 				}
 			</style>
