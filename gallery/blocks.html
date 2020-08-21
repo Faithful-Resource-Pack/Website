@@ -13,7 +13,7 @@ title: Blocks (WIP)
 
 <div class="card-deck">
 	{%- for Texture in site.data.TexturesBlocks -%}
-		<div class="card bg-dark">
+		<div class="card bg-dark grid-container">
 		{%- assign Count = Count | plus: 1 -%}
 
 		{%- assign TextureName   = Texture[0]   | remove: ".png" -%}
