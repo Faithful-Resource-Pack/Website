@@ -6,6 +6,17 @@ nav-img: blocks.png
 
 <script src="{{ site.baseurl }}/js/hideElement.js"></script>
 <script src="{{ site.baseurl }}/js/showModal.js"></script>
+
+<script>
+	function openNav(id) {
+		document.getElementById(id).style.width = "75px";
+	}
+
+	function closeNav(id) {
+		document.getElementById(id).style.width = "0";
+	}
+</script>
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 {%- assign GitHubRawURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/" -%}
@@ -112,13 +123,3 @@ nav-img: blocks.png
 </div>
 
 <p align="right">{{ Count }} textures.</p>
-
-<script>
-	function openNav(id) {
-		document.getElementById(id).style.width = "75px";
-	}
-
-	function closeNav(id) {
-		document.getElementById(id).style.width = "0";
-	}
-</script>
