@@ -196,55 +196,6 @@ h2, h3, h4, h5 {
 	}
 }
 
-/* Modal */
-#modalCanvas {
-	width: 100% !important;
-	height: auto !important;
-	border-radius: .3rem
-}
-
-/* Cookie Banner */
-.cookie-container {
-	position: fixed;
-	bottom: -100%;
-	left: 0;
-	right: 0;
-	background: #2f3640;
-	color: #f5f6fa;
-	padding: 0 32px;
-	padding-top: 16px;
-	z-index: 1050;
-	transition: 400ms
-}
-
-.cookie-container.active {
-	bottom: 0
-}
-
-.cookie-container a {
-	color: #f5f6fa
-}
-
-.cookie-btn {
-	background: #28A745;
-	border: 0;
-	color: #f5f6fa;
-	padding: 12px 32px;
-	font-size: 18px;
-	margin-bottom: 16px;
-	border-radius: 8px;
-	cursor: pointer
-}
-
-/* Article */
-.display-article {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	color: #fff;
-	text-shadow: 2px 2px 20px #000
-}
-
 /* Credits */
 .credits-author {
 	width: 25px;
@@ -352,16 +303,15 @@ h2, h3, h4, h5 {
 /* used in gallery.html */
 .grid-container {
 	display: grid;
-	grid-template-columns: minmax(60px, max-content) repeat(auto-fill, 60px);
-	grid-template-rows: 64px;
-	grid-gap: 16px
+	grid-template-columns: minmax(128px, max-content) repeat(auto-fill, 128px);
+	grid-gap: 5px
 }
 .card-texture {
 	background-image: url(https://raw.githubusercontent.com/Faithful-Dungeons/Website/master/image/gallery/transparent.png);
 	background-size: 16px;
 	background-repeat: repeat;
-	height: 64px;
-	width: 64px
+	height: 128px;
+	width: 128px
 }
 img {
 	border: 0 solid #000
@@ -413,6 +363,7 @@ img[src$=".gif"] {
 }
 .card-texture img {
   display:block;
+  flex-shrink: inherit;
 }
 .card-texture button {
   position: absolute;
