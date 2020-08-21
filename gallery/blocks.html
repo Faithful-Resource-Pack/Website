@@ -7,6 +7,7 @@ title: Blocks (WIP)
 
 <script src="{{ site.baseurl }}/js/hideElement.js"></script>
 <script src="{{ site.baseurl }}/js/showModal.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 {%- assign GitHubRawURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/" -%}
 {%- assign Count = 0 -%}
@@ -31,7 +32,9 @@ title: Blocks (WIP)
 
 			<div class="card card-texture" id="{{ HideEID }}">				
 				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:64px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
-				<button type="button" class="btn btn-dark"><iframe src="{{ site.baseurl }}/image/icon/expand-solid.svg" width="5px" height="5px" sandbox></button>
+				<button type="button" class="btn btn-dark">
+					<i class="fas fa-expand"></i>
+				</button>
 			</div>
 
 			<!--
