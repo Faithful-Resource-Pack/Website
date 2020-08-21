@@ -30,7 +30,7 @@ function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 	btnfull.onclick = function(){
 	  modal.style.display = "block";
 	  modalImg.src = img.src;
-	  captionText.innerHTML = this.alt;
+	  captionText.innerHTML = img.alt;
 	  captionBtn.appendChild(btn);
 	}
 
