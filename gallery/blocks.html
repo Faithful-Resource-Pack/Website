@@ -108,9 +108,18 @@ nav-img: blocks.png
 
 			<div id="{{ SidePanelID }}" class="sidepanel">
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav('{{ SidePanelID }}')">×</a>
-				<p>Authors:</p>
-				<p>Size:</p>
-				<p>Used in:</p>
+				
+				<div class="row">
+					<div class="col">
+						<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy">
+					</div>
+					<div class="col">
+						<p>Authors:</p>
+						<p>Size:</p>
+						<p>Used in:</p>
+					</div>
+				</div>
+				
 			</div>
 
 			<script>
