@@ -90,8 +90,8 @@ nav-img: blocks.png
 			{%- assign SidePanelID = Texture[0] | remove: ".png" | remove: "_" | append: "-SP" | append: "-NB" | append: Count -%}
 
 
-			<div class="card card-texture" id="{{ HideEID }}">				
-				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onclick="openNav('{{ SidePanelID }}')" onerror="hideElement('{{ HideEID }}')">
+			<div class="card card-texture" id="{{ HideEID }}" onclick="openNav('{{ SidePanelID }}')">				
+				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
 				<button id="{{ BtnID }}" type="button" class="btn btn-dark">
 					<i class="fas fa-expand"></i>
 				</button>
