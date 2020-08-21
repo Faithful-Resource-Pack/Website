@@ -31,10 +31,12 @@ title: Blocks (WIP)
 
 			<div class="card card-texture" id="{{ HideEID }}">				
 				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:64px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
-				<button id="{{ BtnID }}" type="button" class="btn btn-dark" style="display: none;">
-					[]
+				<button type="button" class="btn btn-dark" style="display: none;">
+					⛶
 				</button>
 			</div>
+
+			<!--
 
 			<div id="{{ ModalID }}" class="modal">
 				<span id="{{ ModalSID }}" class="close">&times;</span>
@@ -48,6 +50,8 @@ title: Blocks (WIP)
 			<script>
 				showModal("{{ ModalID }}", "{{ ImageID }}", "{{ ModalIID }}", "{{ TextureName }}", "{{ ModalSID }}")
 			</script>
+
+			-->
 		
 		{%- endfor -%}
 	</div>

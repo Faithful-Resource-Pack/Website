@@ -406,11 +406,6 @@ img[src$=".gif"] {
 }
 
 /* Show button when hovering imgs */
-.card-texture {
-    position: relative;  
-    width:100%;
-    max-width:100px;
-}
 .card-texture:before {
   content:"";
   position:absolute;
