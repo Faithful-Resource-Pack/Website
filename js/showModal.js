@@ -17,7 +17,7 @@ function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 	var n = str.indexOf("/")
 
 	// is a block textures
-	if (n === -1){
+	if (n == -1){
 		btn.setAttribute('href', "https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/Block%20Textures/" + TextureName + ".png");
 	}
 	// isn't it
@@ -51,9 +51,11 @@ function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 	});
 
 	//if you click on anything except the modal itself or the "open modal" link, close the modal
-	$(document).click(function(event) {
-	  if (!$(event.target).closest('img[' + ModalImgID + ']').length) {
-	    modal.style.display = "none";
-	  }
-	});
+	if (  ){
+		$(document).click(function(event) {
+		  if (!$(event.target).closest('img[' + ModalImgID + ']').length && modal.style.display === "block") {
+		    modal.style.display = "none";
+		  }
+		});
+	}
 }
