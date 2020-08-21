@@ -117,9 +117,10 @@ h2, h3, h4, h5 {
 	background: #1B1B1B;
 	z-index: 1020
 }
-.custom-navbar-wrapper-gallery {
-	background: #3B3B3B;
+.navbar-gallery {
+	background: #1C1C1C;
 }
+
 @media (min-width: 800px) {
 	.custom-navbar-wrapper {
 		text-align: center
@@ -128,16 +129,6 @@ h2, h3, h4, h5 {
 		display: inline-flex
 	}
 }
-
-@media (min-width: 992px) {
-	.custom-navbar-wrapper-gallery {
-		text-align: center
-	}
-	.custom-navbar-gallery {
-		display: inline-flex
-	}
-}
-
 
 /* Header images*/
 .header-image {
