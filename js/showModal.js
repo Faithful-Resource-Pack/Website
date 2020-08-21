@@ -1,9 +1,10 @@
 
-function showModal(ModalID, BtnID, ModalImgID, TextureName, SpanID){
+function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 	var modal = document.getElementById(ModalID);
 
 	// Get the image and insert it inside the modal - use its "alt" text as a caption
 	var btnfull = document.getElementById(BtnID);
+	var img = document.getElementById(ImgID);
 	var modalImg = document.getElementById(ModalImgID);
 	var captionText = document.getElementById(TextureName + "-P");
 	var captionBtn = document.getElementById(TextureName + "-DIV")
@@ -28,7 +29,7 @@ function showModal(ModalID, BtnID, ModalImgID, TextureName, SpanID){
 
 	btnfull.onclick = function(){
 	  modal.style.display = "block";
-	  modalImg.src = this.src;
+	  modalImg.src = img.src;
 	  captionText.innerHTML = this.alt;
 	  captionBtn.appendChild(btn);
 	}

@@ -22,7 +22,7 @@ title: Blocks (WIP)
 			{%- assign TextureRawURL = GitHubRawURL | append: Texture[0] -%}
 
 			{%- assign HideEID  = Texture[0] | remove: ".png" | remove: "_" | append: "-H"  | append: "-NB" | append: Count -%}
-
+			{%- assign ImageID  = Texture[0] | remove: ".png" | remove: "_" | append: "-I"  | append: "-NB" | append: Count -%}
 			{%- assign ModalID  = Texture[0] | remove: ".png" | remove: "_" | append: "-M"  | append: "-NB" | append: Count -%}
 			{%- assign ModalSID = Texture[0] | remove: ".png" | remove: "_" | append: "-MS" | append: "-NB" | append: Count -%}
 			{%- assign ModalIID = Texture[0] | remove: ".png" | remove: "_" | append: "-MI" | append: "-NB" | append: Count -%}
@@ -30,7 +30,7 @@ title: Blocks (WIP)
 
 
 			<div class="card card-texture" id="{{ HideEID }}">				
-				<img class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
+				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
 				<button id="{{ BtnID }}" type="button" class="btn btn-dark">
 					<i class="fas fa-expand"></i>
 				</button>
@@ -46,7 +46,7 @@ title: Blocks (WIP)
 			</div>
 
 			<script>
-				showModal("{{ ModalID }}", "{{ BtnID }}", "{{ ModalIID }}", "{{ TextureName }}", "{{ ModalSID }}")
+				showModal("{{ ModalID }}", "{{ ImageID }}", "{{ ModalIID }}", "{{ TextureName }}", "{{ ModalSID }}", "{{ BtnID }}")
 			</script>
 		
 		{%- endfor -%}
