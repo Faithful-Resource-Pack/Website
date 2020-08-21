@@ -51,11 +51,9 @@ function showModal(ModalID, ImgID ,ModalImgID, TextureName, SpanID, BtnID){
 	});
 
 	//if you click on anything except the modal itself or the "open modal" link, close the modal
-	if (  ){
-		$(document).click(function(event) {
-		  if (!$(event.target).closest('img[' + ModalImgID + ']').length && modal.style.display === "block") {
-		    modal.style.display = "none";
-		  }
-		});
-	}
+	$(document).click(function(event) {
+		if (!$(event.target).closest('img[' + ModalImgID + ']').length && modal.style.display === "block") {
+			modal.style.display = "none";
+		}
+	});
 }
