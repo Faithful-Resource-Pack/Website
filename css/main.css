@@ -124,13 +124,17 @@ h2, h3, h4, h5 {
 	.custom-navbar {
 		display: inline-flex
 	}
-	.lang-navbar {
-		display: block;
-		margin: auto;
-		justify-content: center;
+}
+
+@media (min-width: 992px) {
+	.custom-navbar-wrapper-gallery {
 		text-align: center
 	}
+	.custom-navbar-gallery {
+		display: inline-flex
+	}
 }
+
 
 /* Header images*/
 .header-image {
