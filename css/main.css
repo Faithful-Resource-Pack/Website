@@ -392,3 +392,15 @@ img[src$=".png"] {
 	-o-user-drag: none;
 	user-drag: none
 }
+
+img[src$=".gif"] {
+	image-rendering: pixelated;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	-ms-interpolation-mode: nearest-neighbor;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none
+}
