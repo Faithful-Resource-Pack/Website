@@ -12,37 +12,39 @@ title: Blocks (WIP)
 {%- assign Count = 0 -%}
 
 <div class="card bg-dark">
-	{%- for Texture in site.data.TexturesBlocks -%}
-		<div class="card-body grid-container bg-dark">
-		{%- assign Count = Count | plus: 1 -%}
+	<div class="card-body grid-container bg-dark">
+		{%- for Texture in site.data.TexturesBlocks -%}
+		
+			{%- assign Count = Count | plus: 1 -%}
 
-		{%- assign TextureName   = Texture[0]   | remove: ".png" -%}
-		{%- assign TextureRawURL = GitHubRawURL | append: Texture[0] -%}
+			{%- assign TextureName   = Texture[0]   | remove: ".png" -%}
+			{%- assign TextureRawURL = GitHubRawURL | append: Texture[0] -%}
 
-		{%- assign HideEID  = Texture[0] | remove: ".png" | remove: "_" | append: "-H"  | append: "-NB" | append: Count -%}
-		{%- assign ImageID  = Texture[0] | remove: ".png" | remove: "_" | append: "-I"  | append: "-NB" | append: Count -%}
-		{%- assign ModalID  = Texture[0] | remove: ".png" | remove: "_" | append: "-M"  | append: "-NB" | append: Count -%}
-		{%- assign ModalSID = Texture[0] | remove: ".png" | remove: "_" | append: "-MS" | append: "-NB" | append: Count -%}
-		{%- assign ModalIID = Texture[0] | remove: ".png" | remove: "_" | append: "-MI" | append: "-NB" | append: Count -%}
+			{%- assign HideEID  = Texture[0] | remove: ".png" | remove: "_" | append: "-H"  | append: "-NB" | append: Count -%}
+			{%- assign ImageID  = Texture[0] | remove: ".png" | remove: "_" | append: "-I"  | append: "-NB" | append: Count -%}
+			{%- assign ModalID  = Texture[0] | remove: ".png" | remove: "_" | append: "-M"  | append: "-NB" | append: Count -%}
+			{%- assign ModalSID = Texture[0] | remove: ".png" | remove: "_" | append: "-MS" | append: "-NB" | append: Count -%}
+			{%- assign ModalIID = Texture[0] | remove: ".png" | remove: "_" | append: "-MI" | append: "-NB" | append: Count -%}
 
 
-		<div class="card card-texture" id="{{ HideEID }}">				
-			<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:64px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
-		</div>
-
-		<div id="{{ ModalID }}" class="modal">
-			<span id="{{ ModalSID }}" class="close">&times;</span>
-			<img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalIID }}">
-			<div class="caption" id="{{ TextureName }}-DIV">
-				<p id="{{ TextureName }}-P"></p>
-				<hr>
+			<div class="card card-texture" id="{{ HideEID }}">				
+				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:64px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
 			</div>
-		</div>
 
-		<script>
-			showModal("{{ ModalID }}", "{{ ImageID }}", "{{ ModalIID }}", "{{ TextureName }}", "{{ ModalSID }}")
-		</script>
+			<div id="{{ ModalID }}" class="modal">
+				<span id="{{ ModalSID }}" class="close">&times;</span>
+				<img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalIID }}">
+				<div class="caption" id="{{ TextureName }}-DIV">
+					<p id="{{ TextureName }}-P"></p>
+					<hr>
+				</div>
+			</div>
+
+			<script>
+				showModal("{{ ModalID }}", "{{ ImageID }}", "{{ ModalIID }}", "{{ TextureName }}", "{{ ModalSID }}")
+			</script>
+		
+		{%- endfor -%}
+	</div>
 	
-		</div>
-	{%- endfor -%}
 </div>
