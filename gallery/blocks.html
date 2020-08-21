@@ -1,9 +1,8 @@
 ---
 layout: no-header
-title: Blocks (WIP)
+title: Blocks
+nav-img: blocks.png
 ---
-
-
 
 <script src="{{ site.baseurl }}/js/hideElement.js"></script>
 <script src="{{ site.baseurl }}/js/showModal.js"></script>
@@ -16,8 +15,8 @@ title: Blocks (WIP)
 	<div class="custom-navbar-wrapper navbar-gallery">
 		<nav class="custom-navbar navbar navbar-expand-lg navbar-dark">
 			<span class="navbar-brand">
-				<img src="{{ site.baseurl }}/image/gallery/blocks.png" width="30" height="30" class="d-inline-block align-top" alt="">
-				Blocks
+				<img src="{{ site.baseurl }}/image/gallery/{{ page.nav-img }}" width="30" height="30" class="d-inline-block align-top" alt="">
+				{{ page.title }}
 			</span>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleSubNavbar" aria-label="Menu">
 				<span class="navbar-toggler-icon"></span>
