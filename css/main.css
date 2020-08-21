@@ -404,3 +404,35 @@ img[src$=".gif"] {
 	-o-user-drag: none;
 	user-drag: none
 }
+
+/* Show button when hovering imgs */
+.card-texture {
+    position: relative;  
+    width:100%;
+    max-width:100px;
+}
+.card-texture:before {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;left:0;right:0;
+  background-color:rgba(0,0,0,0);
+}
+.card-texture:hover::before {
+  background-color:rgba(0,0,0,0.5);
+}
+.card-texture img {
+  display:block;
+}
+.card-texture button {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  opacity:0;
+} 
+.card-texture:hover button {   
+  opacity: 1;
+}
