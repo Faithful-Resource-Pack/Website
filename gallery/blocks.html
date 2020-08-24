@@ -90,11 +90,25 @@ nav-img: blocks.png
 			{%- assign SidePanelID = Texture[0] | remove: ".png" | remove: "_" | append: "-SP" | append: "-NB" | append: Count -%}
 
 
-			<div class="card card-texture" id="{{ HideEID }}" onclick="openNav('{{ SidePanelID }}')">				
-				<img id="{{ ImageID }}" class="card-img-top" src="{{ TextureRawURL }}" style="height:128px; object-fit: contain;" alt="{{ TextureName }}" loading="lazy" onerror="hideElement('{{ HideEID }}')">
-				<button id="{{ BtnID }}" type="button" class="btn btn-dark">
+			<div class="card card-texture" id="{{ HideEID }}">				
+				<img  
+					id="{{ ImageID }}" 
+					class="card-img-top" 
+					src="{{ TextureRawURL }}" 
+					style="height:128px; object-fit: contain;" 
+					alt="{{ TextureName }}" 
+					loading="lazy" 
+					onerror="hideElement('{{ HideEID }}')"
+				>
+
+				<button id="{{ BtnID }}" type="button" class="btn btn-primary">
 					<i class="fas fa-expand"></i>
 				</button>
+
+				<button id="{{ BtnID | append: "-2" }}" type="button" class="btn btn-primary">
+					<i class="fas fa-info"></i>
+				</button>
+
 			</div>
 
 			<div id="{{ ModalID }}" class="modal">
@@ -111,27 +125,37 @@ nav-img: blocks.png
 				
 				<div class="row">
 					<div class="col">
-						<img id="{{ ImageID }}" src="{{ TextureRawURL }}" style="height:100%; width:100%; max-height: 85%; object-fit: contain;" alt="{{ TextureName }}" loading="lazy">
+						<div class="card card-texture">
+							<img 
+								id="{{ ImageID }}" 
+								src="{{ TextureRawURL }}" 
+								style="height:100%; width:100%; max-height: 85%; object-fit: contain;" 
+								alt="{{ TextureName }}" 
+								loading="lazy"
+							>
+						</div>
 					</div>
 					<div class="col">
-						<table class="table table-dark table-hover" >
-							<thead>
-								<tr>
-									<th>Authors</th>
-									<th>Size</th>
-									<th>Published</th>
-									<th>Used in</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>-</td>
-									<td>-</td>
-									<td>-</td>
-									<td>-</td>
-								</tr>
-							</tbody>
-						</table>
+						<div class="card">
+							<table class="table table-dark table-hover" >
+								<thead>
+									<tr>
+										<th>Authors</th>
+										<th>Size</th>
+										<th>Published</th>
+										<th>Used in</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 				
