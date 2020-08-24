@@ -4,8 +4,6 @@ title: Blocks
 nav-img: blocks.png
 ---
 
-<script src="{{ site.baseurl }}/js/hideElement.js"></script>
-<script src="{{ site.baseurl }}/js/showModal.js"></script>
 
 <script>
 	function openNav(id) {
@@ -82,44 +80,6 @@ nav-img: blocks.png
 		</div>
 		
 	</div>
-
-	<script>
-		function ShowFullscreen(imgURL, captionText){
-			var modal = document.getElementById("ShowFullscreen")
-
-			modal.style.display = "block";
-
-			// close modal: 
-			var span = document.getElementById("SF-Span");
-			span.onclick = function() {
-				modal.style.display = "none";
-			}
-			// when pressing escape key:
-			$(document).keydown(function(event) { 
-				if (event.keyCode == 27) { 
-					modal.style.display = "none";
-				}
-			});
-
-			// set img in modal:
-			var img = document.getElementById("SF-Img");
-			img.src = imgURL;
-
-			// set caption:
-			var caption = document.getElementById("SF-Caption");
-			caption.innerHTML = captionText;
-
-			// set button to github:
-			var btn = document.getElementById("SF-Btn");
-			if (captionText.indexOf("/") == -1){
-				btn.setAttribute('href', 'https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/Block%20Textures/' + captionText + '.png');
-			} else {
-				btn.setAttribute('href', 'https://github.com/Faithful-Dungeons/Resource-Pack/blob/master/UE4Project/' + captionText + '.png')
-			}
-			btn.setAttribute('target', "_blank");
-
-		}
-	</script>
 	
 	<div class="card-body grid-container bg-dark">
 		{%- for Texture in site.data.TexturesBlocks -%}
@@ -131,7 +91,6 @@ nav-img: blocks.png
 
 			{%- assign HideEID  = Texture[0] | remove: ".png" | remove: "_" | append: "-H"  | append: "-NB" | append: Count -%}
 			{%- assign ImageID  = Texture[0] | remove: ".png" | remove: "_" | append: "-I"  | append: "-NB" | append: Count -%}
-			{%- assign BtnID    = Texture[0] | remove: ".png" | remove: "_" | append: "-B"  | append: "-NB" | append: Count -%}
 
 			{%- assign SidePanelID = Texture[0] | remove: ".png" | remove: "_" | append: "-SP" | append: "-NB" | append: Count -%}
 
@@ -148,25 +107,23 @@ nav-img: blocks.png
 				>
 
 				<!-- Fullscreen button -->
-				<button type="button" class="btn btn-primary btn-fullscreen" onclick="ShowFullscreen('{{ TextureRawURL }}','{{ TextureName }}')">
+				<button type="button" class="btn btn-primary button-fullscreen" onclick="ShowFullscreen('{{ TextureRawURL }}','{{ TextureName }}')">
 					<i class="fas fa-expand"></i>
 				</button>
 
 				<!-- Info button -->
-				<button type="button" class="btn btn-primary btn-info" onclick="ShowInfo()">
+				<button type="button" class="btn btn-primary button-info" onclick="ShowInfo()">
 					<i class="fas fa-info"></i>
 				</button>
 
 			</div>
 
-			<!-- 
-			<-- Fullscreen modal ->
-			<div id="{{ ModalID }}" class="modal">
-				<span id="{{ ModalSID }}" class="close" style="height:100%; width:100%; z-index:-1"></span>
-				<img class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;" id="{{ ModalIID }}">
-				<div class="caption" id="{{ TextureName }}-DIV">
-					<p id="{{ TextureName }}-P"></p>
-					<hr>
+			<!--
+			<div id="ShowInfo" class="sidepanel">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav('ShowInfo')">×</a>
+
+				<div class="card-deck">
+					
 				</div>
 			</div>
 
@@ -211,10 +168,6 @@ nav-img: blocks.png
 				</div>
 				
 			</div>
-			
-			<script>
-				showModal("{{ ModalID }}", "{{ ImageID }}", "{{ ModalIID }}", "{{ TextureName }}", "{{ ModalSID }}", "{{ BtnID }}")
-			</script>
 			-->
 		{%- endfor -%}
 	</div>
@@ -222,3 +175,6 @@ nav-img: blocks.png
 </div>
 
 <p align="right">{{ Count }} textures.</p>
+
+<script src="{{ site.baseurl }}/js/hideElement.js"></script>
+<script src="{{ site.baseurl }}/js/ShowFullscreen.js"></script>

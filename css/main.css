@@ -364,7 +364,7 @@ img[src$=".gif"] {
   display:block;
   flex-shrink: inherit;
 }
-.card-texture .btn-fullscreen {
+.card-texture .button-fullscreen {
   position: absolute;
   top: 20%;
   left: 20%;
@@ -374,11 +374,11 @@ img[src$=".gif"] {
   -ms-transform: translate(-50%, -50%);
   opacity:0;
 } 
-.card-texture:hover .btn-fullscreen {   
+.card-texture:hover .button-fullscreen {   
   opacity: 1;
 }
 
-.card-texture .btn-info {
+.card-texture .button-info {
   position: absolute;
   top: 20%;
   left: 55%;
@@ -388,7 +388,7 @@ img[src$=".gif"] {
   -ms-transform: translate(-50%, -50%);
   opacity:0;
 } 
-.card-texture:hover .btn-info {   
+.card-texture:hover .button-info {   
   opacity: 1;
 }
 
