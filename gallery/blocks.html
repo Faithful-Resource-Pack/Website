@@ -4,17 +4,6 @@ title: Blocks
 nav-img: blocks.png
 ---
 
-
-<script>
-	function openNav(id) {
-		document.getElementById(id).style.width = "85%";
-	}
-
-	function closeNav(id) {
-		document.getElementById(id).style.width = "0";
-	}
-</script>
-
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 {%- assign GitHubRawURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/" -%}
@@ -80,6 +69,31 @@ nav-img: blocks.png
 		</div>
 		
 	</div>
+
+	<!-- Infos panel -->
+	<div id="ShowInfos" class="sidepanel" style="display: none;">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	  <div class="card">
+	  	<img id="SI-img" class="card-img-top" style="background-color: #0000; height:256px; object-fit: contain;">
+	  </div>
+  	<p id="caption" align="center"></p>
+	  <div>
+	    <table class="table table-dark">
+	      <thead>
+	        <th>Authors</th>
+	        <th>Size</th>
+	        <th>Published</th>
+	        <th>Used in</th>
+	      </thead>
+	      <tbody>
+	        <td id="auth"></td>
+	        <td id="size"></td>
+	        <td id="date"></td>
+	        <td id="uses"></td>
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
 	
 	<div class="card-body grid-container bg-dark">
 		{%- for Texture in site.data.TexturesBlocks -%}
@@ -107,68 +121,16 @@ nav-img: blocks.png
 				>
 
 				<!-- Fullscreen button -->
-				<button type="button" class="btn btn-primary button-fullscreen" onclick="ShowFullscreen('{{ TextureRawURL }}','{{ TextureName }}')">
+				<button type="button" class="btn btn-light button-fullscreen" onclick="ShowFullscreen('{{ TextureRawURL }}','{{ TextureName }}')">
 					<i class="fas fa-expand"></i>
 				</button>
 
 				<!-- Info button -->
-				<button type="button" class="btn btn-primary button-info" onclick="ShowInfo()">
+				<button type="button" class="btn btn-light button-info" onclick="ShowInfo()">
 					<i class="fas fa-info"></i>
 				</button>
 
 			</div>
-
-			<!--
-			<div id="ShowInfo" class="sidepanel">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav('ShowInfo')">×</a>
-
-				<div class="card-deck">
-					
-				</div>
-			</div>
-
-			<-- Info panel ->
-			<div id="{{ SidePanelID }}" class="sidepanel">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav('{{ SidePanelID }}')">×</a>
-				
-				<div class="row">
-					<div class="col">
-						<div class="card card-texture">
-							<img 
-								id="{{ ImageID }}" 
-								src="{{ TextureRawURL }}" 
-								style="height:100%; width:100%; max-height: 85%; object-fit: contain;" 
-								alt="{{ TextureName }}" 
-								loading="lazy"
-							>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card">
-							<table class="table table-dark table-hover" >
-								<thead>
-									<tr>
-										<th>Authors</th>
-										<th>Size</th>
-										<th>Published</th>
-										<th>Used in</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>-</td>
-										<td>-</td>
-										<td>-</td>
-										<td>-</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			-->
 		{%- endfor -%}
 	</div>
 	
@@ -178,3 +140,4 @@ nav-img: blocks.png
 
 <script src="{{ site.baseurl }}/js/hideElement.js"></script>
 <script src="{{ site.baseurl }}/js/ShowFullscreen.js"></script>
+<script src="{{ site.baseurl }}/js/ShowInfos.js"></script>
