@@ -72,6 +72,14 @@ nav-img: blocks.png
 		</nav>
 	</div>
 
+	<!-- Fullscreen modal -->
+	<div id="ShowFullscreen" class="modal" style="display: none;">
+		<span id="SF-Span" class="close" style="height:100%; width:100%; z-index:-1"></span>
+		<img  id="SF-Img"  class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;">
+		<div  id="SF-Caption" class="caption"></div>
+		<a id="SF-Btn" class="btn btn-info btn-modal">See on GitHub</a>
+	</div>
+
 	<script>
 		function ShowFullscreen(imgURL, captionText){
 			var modal = document.getElementById("ShowFullscreen")
@@ -110,14 +118,6 @@ nav-img: blocks.png
 		}
 	</script>
 	
-	<!-- Fullscreen modal -->
-	<div id="ShowFullscreen" class="modal" style="display: none;">
-		<span id="SF-Span" class="close" style="height:100%; width:100%; z-index:-1"></span>
-		<img  id="SF-Img"  class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;">
-		<div  id="SF-Caption" class="caption"></div>
-		<a id="SF-Btn" class="btn btn-info btn-modal">See on GitHub</a>
-	</div>
-
 	<div class="card-body grid-container bg-dark">
 		{%- for Texture in site.data.TexturesBlocks -%}
 		
