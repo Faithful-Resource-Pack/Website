@@ -364,7 +364,7 @@ img[src$=".gif"] {
   display:block;
   flex-shrink: inherit;
 }
-.card-texture button {
+.card-texture .btn-fullscreen {
   position: absolute;
   top: 20%;
   left: 20%;
@@ -372,7 +372,19 @@ img[src$=".gif"] {
   -ms-transform: translate(-50%, -50%);
   opacity:0;
 } 
-.card-texture:hover button {   
+.card-texture:hover .btn-fullscreen {   
+  opacity: 1;
+}
+
+.card-texture .btn-info {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  opacity:0;
+} 
+.card-texture:hover .btn-info {   
   opacity: 1;
 }
 
