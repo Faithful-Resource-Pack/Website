@@ -368,6 +368,8 @@ img[src$=".gif"] {
   position: absolute;
   top: 20%;
   left: 20%;
+  height: 40px;
+  width: 40px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   opacity:0;
@@ -379,7 +381,9 @@ img[src$=".gif"] {
 .card-texture .btn-info {
   position: absolute;
   top: 20%;
-  left: 40%;
+  left: 55%;
+  height: 40px;
+  width: 40px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   opacity:0;
