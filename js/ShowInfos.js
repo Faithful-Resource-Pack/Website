@@ -15,13 +15,13 @@ function ShowInfos(imgURL, captionText){
 	var date = 'date'; 	
 	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
 
-	document.getElementById("auth").innerHTML = auth;
-	document.getElementById("size").innerHTML = size;
-	document.getElementById("date").innerHTML = date;
-	document.getElementById("uses").innerHTML = uses;
+	document.getElementById("auth").innerHTML += auth;
+	document.getElementById("size").innerHTML += size;
+	document.getElementById("date").innerHTML += date;
+	document.getElementById("uses").innerHTML += uses;
 
 	// set url in text-muted:
-	document.getElementById("url").innerHTML = imgURL;
+	document.getElementById("url").innerHTML += imgURL;
 
 	// close pannel when pressing escape key:
 	$(document).keydown(function(event) { 
