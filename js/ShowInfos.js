@@ -28,6 +28,6 @@ function ShowInfos(imgURL, captionText){
 	});
 }
 
-function closeNav(id) {
-	document.getElementById(id).style.width = "0";
+function closeNav() {
+	document.getElementById("ShowInfos").style.width = "0";
 }
