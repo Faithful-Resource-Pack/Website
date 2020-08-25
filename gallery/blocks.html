@@ -74,19 +74,34 @@ nav-img: blocks.png
 	<div id="ShowInfos" class="sidepanel" style="width: 0%;">
 		<a class="closebtn" onclick="closeNav()">×</a>
 
-		<div class="card" style="width: 256px; margin-left: 7.5%;">
-			<img id="SI-img" style="background-color: #0000; height:256px; width:256px; object-fit: contain;">
-		</div>
-
-		<div>
-			<h4 id="caption"></h4>
-			<ul class="list-group">
-				<li class="list-group-item list-group-item-info">Authors: <p id="auth"></p> </li>
-				<li class="list-group-item list-group-item-info">Size: <p id="size"></p> </li>
-				<li class="list-group-item list-group-item-info">Published: <p id="date"></p> </li>
-				<li class="list-group-item list-group-item-info">Used in: <p id="uses"></p> </li>
-			</ul>
-		</div>
+		<div class="card flex-row flex-wrap">
+      <div class="card-header border-0">
+        <img id="SI-img" style="background-color: #0000; height:256px; width:256px; object-fit: contain;">
+      </div>
+      <div class="card-block px-2">
+        <h2 id="caption" class="card-title">caption</h2>
+        <p id="auth" class="card-text">
+         	<strong>Authors:</strong>
+        </p>
+        <p id="size" class="card-text">
+         	<strong>Size:</strong>
+        </p>
+        <p id="date" class="card-text">
+         	<strong>Date:</strong>
+        </p>
+        <p class="card-text">
+         	<strong>Uses:</strong>
+         		<ul>
+         			<li id="uses"></li>
+         			<li id="uses2"></li>
+         			<li id="uses3"></li>
+         		</ul>
+        </p>
+      </div>
+      <div class="card-footer w-100 text-muted">
+        <small id="url">url</small>
+      </div>
+    </div>
 		
 	</div>
 	

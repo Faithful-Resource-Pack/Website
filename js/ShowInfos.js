@@ -10,15 +10,18 @@ function ShowInfos(imgURL, captionText){
 
 	// WIP
 	// call github api to get infos about the texture:
-	var auth = '-'; // list of authors (Juknum, Robert..;)
-	var size = '-'; // dimensions (32x32, 64x64, ...)
-	var date = '-'; 	
-	var uses = '-'; // use json (use for blocks textures (result: squidcoast, ...))
+	var auth = 'auth'; // list of authors (Juknum, Robert..;)
+	var size = 'size'; // dimensions (32x32, 64x64, ...)
+	var date = 'date'; 	
+	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
 
 	document.getElementById("auth").innerHTML = auth;
 	document.getElementById("size").innerHTML = size;
 	document.getElementById("date").innerHTML = date;
 	document.getElementById("uses").innerHTML = uses;
+
+	// set url in text-muted:
+	document.getElementById("url").innerHTML = imgURL;
 
 	// close pannel when pressing escape key:
 	$(document).keydown(function(event) { 
