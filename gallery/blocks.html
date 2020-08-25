@@ -73,26 +73,28 @@ nav-img: blocks.png
 	<!-- Infos panel -->
 	<div id="ShowInfos" class="sidepanel" style="width: 0%;">
 	  <a class="closebtn" onclick="closeNav()">×</a>
-	  <div class="card">
+	  <div class="card" style="width: 256px; margin-left: 7.5%;">
 	  	<img id="SI-img" class="card-img-top" style="background-color: #0000; height:256px; width:256px; object-fit: contain;">
+
+	  	<p id="caption" align="center"></p>
+		  <div style="width: 85%; margin-left: 7.5%;">
+		    <table class="table table-dark">
+		      <thead>
+		        <th>Authors</th>
+		        <th>Size</th>
+		        <th>Published</th>
+		        <th>Used in</th>
+		      </thead>
+		      <tbody>
+		        <td id="auth"></td>
+		        <td id="size"></td>
+		        <td id="date"></td>
+		        <td id="uses"></td>
+		      </tbody>
+		    </table>
+		  </div>
 	  </div>
-  	<p id="caption" align="center"></p>
-	  <div style="width: 85%; margin-left: 7.5%;">
-	    <table class="table table-dark">
-	      <thead>
-	        <th>Authors</th>
-	        <th>Size</th>
-	        <th>Published</th>
-	        <th>Used in</th>
-	      </thead>
-	      <tbody>
-	        <td id="auth"></td>
-	        <td id="size"></td>
-	        <td id="date"></td>
-	        <td id="uses"></td>
-	      </tbody>
-	    </table>
-	  </div>
+  	
 	</div>
 	
 	<div class="card-body grid-container bg-dark">
