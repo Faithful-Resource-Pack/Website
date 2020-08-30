@@ -23,6 +23,24 @@ main {
 	}
 }
 
+/* Make the image fully responsive (owl carousel) */
+.carousel-inner img {
+	width: 100%;
+	height: 100%
+}
+/* Carousel arrow hover animation */
+.item img {
+  margin: 0 auto
+}
+
+.item a img.img-fluid {
+    transition: all .5s ease
+}
+
+.item a img.img-fluid:hover {
+    transform: scale(1.1)
+}
+
 /* Make the image fully responsive (carousel) */
 .carousel-inner img {
 	width: 100%;
