@@ -21,7 +21,7 @@ function ShowInfos(imgURL, captionText){
 	document.getElementById("uses").innerHTML = 'Used in' + uses;
 
 	// set url in text-muted:
-	document.getElementById("url").innerHTML = 'URL:' imgURL;
+	document.getElementById("url").innerHTML = 'URL:' + imgURL;
 
 	// close pannel when pressing escape key:
 	$(document).keydown(function(event) { 
