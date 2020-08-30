@@ -1,4 +1,49 @@
-function ShowInfos(imgURL, captionText){
+var getJSON = function(url, callback) {
+	var xhr = new XMLHttpRequest();
+
+	xhr.open('GET', url, true);
+	xhr.responseType = 'json';
+
+	xhr.onload = function() {
+		var status = xhr.status;
+
+		if (status === 200) {
+			callback(null, xhr.response);
+		} else {
+			callback(status, xhr.response);
+		}
+	};
+
+	xhr.send();
+};
+
+function getAuthors(texture, blockTexture){
+	var count = 0;
+	var comits = new Array();
+	var	url = 'https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/commits?path=';
+
+	if (blockTexture) {
+		url += '/Block%20Textures/' + texture;
+	} else {
+		url += '/UE4Project/Content/' + texture;
+	}
+
+	getJSON(url, function(err, data) {
+		if (err !== null) {
+			console.log('Something went wrong: ' + err);
+		} else {
+			while (comitter !== null || count === 100) { // Idk : unless committer is broken -> no more committer			  
+			  var comitter = data[count]['commit'][1]['name'];
+			  comits.push(comitter); // Add comitter to the list
+			  count++;
+			}
+		}
+	});
+
+	return comits;
+}
+
+function ShowInfos(imgURL, captionText, blockTexture){
 	var panel = document.getElementById("ShowInfos")
 	panel.style.width = "85%";
 
@@ -10,7 +55,7 @@ function ShowInfos(imgURL, captionText){
 
 	// WIP
 	// call github api to get infos about the texture:
-	var auth = 'auth'; // list of authors (Juknum, Robert..;)
+	var auth = getAuthors(captionText, blockTexture);
 	var size = 'size'; // dimensions (32x32, 64x64, ...)
 	var date = 'date'; 	
 	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
@@ -21,7 +66,7 @@ function ShowInfos(imgURL, captionText){
 	document.getElementById("uses").innerHTML = 'Used in' + uses;
 
 	// set url in text-muted:
-	document.getElementById("url").innerHTML = 'URL:' + imgURL;
+	document.getElementById("url").innerHTML = 'URL: ' + imgURL;
 
 	// close pannel when pressing escape key:
 	$(document).keydown(function(event) { 
