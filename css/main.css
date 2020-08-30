@@ -2,8 +2,12 @@
 html {
 	overflow-x: hidden
 }
-header, footer {
+footer {
 	padding: 2rem 1rem;
+	text-align: center;
+	background: #141519
+}
+header {
 	text-align: center;
 	background: #141519
 }
@@ -14,7 +18,7 @@ main {
 	border-radius: .25rem
 }
 @media (min-width: 576px) {
-	header, footer {
+	footer {
 		padding: 4rem 2rem
 	}
 }
