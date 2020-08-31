@@ -47,8 +47,10 @@ function getAuthors(texture, blockTexture){
 		}
 	*/
 
-	var author = data[0].committer.login;
-	comits.push(author);
+		var obj = JSON.parse(data);
+
+		var author = obj[0].committer.login;
+		comits.push(author);
 	});
 
 	return comits;
