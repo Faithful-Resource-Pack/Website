@@ -1,7 +1,3 @@
-const axios = require('axios').default;
-var https = require('https');
-var sizeOf = require('image-size');
-
 var getJSON = function(url, callback) {
 	var xhr = new XMLHttpRequest();
 
