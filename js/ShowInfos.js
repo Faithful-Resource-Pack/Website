@@ -1,23 +1,3 @@
-var getJSONURL = function(url, callback) {
-	var xhr = new XMLHttpRequest();
-
-	xhr.open('GET', url, true);
-	xhr.responseType = 'json';
-
-	xhr.onload = function() {
-		var status = xhr.status;
-
-		if (status === 200) {
-			callback(null, xhr.response);
-		} else {
-			callback(status, xhr.response);
-		}
-	};
-
-	xhr.send();
-
-};
-
 function getMeta(imgUrl) {
 	return new Promise(function(resolve, reject) {
 
@@ -48,45 +28,40 @@ function ShowInfos(imgURL, captionText, blockTexture){
 		url += '/UE4Project/Content/' + captionText + '.png';
 	}
 
-	getJSONURL(url, function(err, data){
-		if (err !== null){
-			console.log('Something went wrong: ' + err);
-			var authTxt = 'GitHub API error:' + err;
-		} else {
+	$.getJSON(url, function(data) {
+		// authors:
+		var count = 0;
+		const MAX_COUNT = 20;
+		var authArr = new Array();
+		var authTxt = '';
 
-			// authors:
-			var count = 0;
-			const MAX_COUNT = 20;
-			var authArr = new Array();
-			var authTxt = '';
-
-			while (data[count] !== undefined || count < MAX_COUNT){ // while data isn't broken or count is reached (max 100)
-				//console.log(data[count]);
-				if(data[count]){
-					var author = data[count].committer.login;
-					if(author !== undefined) {
-						//console.log(author);
-						authArr.push(author);
-						count++;
-					} else { // might be useless
-						count = MAX_COUNT;
-						authTxt = authArr;
-					}
-				} else {
+		while (data[count] !== undefined || count < MAX_COUNT){ // while data isn't broken or count is reached (max 100)
+			//console.log(data[count]);
+			if(data[count]){
+				var author = data[count].committer.login;
+				if(author !== undefined) {
+					//console.log(author);
+					authArr.push(author);
+					count++;
+				} else { // might be useless
 					count = MAX_COUNT;
 					authTxt = authArr;
-				}	
-			}
-
-			// date: (last commit)
-			var dateTxt = data[0].commit.author.date;
+				}
+			} else {
+				count = MAX_COUNT;
+				authTxt = authArr;
+			}	
 		}
-		authTxt = authTxt.toString().replace(/,/g, ", ");
-		document.getElementById("auth").innerHTML = '<strong>Authors:</strong> ' + authTxt;
 
-		dateTxt = dateTxt.toString().substring(0, 10).replace(/-/g, '/');
-		document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + dateTxt;
+		// date: (last commit)
+		var dateTxt = data[0].commit.author.date;
 	});
+
+	authTxt = authTxt.toString().replace(/,/g, ", ");
+	document.getElementById("auth").innerHTML = '<strong>Authors:</strong> ' + authTxt;
+
+	dateTxt = dateTxt.toString().substring(0, 10).replace(/-/g, '/');
+	document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + dateTxt;
 
 	// Set img
 	document.getElementById("SI-img").src = imgURL;
@@ -101,7 +76,8 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	// used in: (only blocks)
 	if (blockTexture) {
 		$.getJSON('https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Tools/configs/block_textures.json', function(json) {
-			console.log(json);
+			var uses = json[captionText];
+			console.log(uses);
 		});
 	}
 
