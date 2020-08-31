@@ -18,6 +18,15 @@ function getMeta(imgUrl) {
 
 function ShowInfos(imgURL, captionText, blockTexture){
 	var panel = document.getElementById("ShowInfos")
+
+	var loading = '<div class="spinner-border text-light"></div>'
+
+	document.getElementById("auth").innerHTML = '<strong>Authors:</strong> '   + loading;
+	document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + loading;
+	document.getElementById("size").innerHTML = '<strong>Size:</strong> '      + loading;
+	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> '   + loading;
+
+
 	panel.style.width = "85%";
 
 	// set GitHub API url:
@@ -78,15 +87,11 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	// used in: (only blocks)
 	if (blockTexture) {
 		$.getJSON('https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Tools/configs/block_textures.json', function(json) {
+			console.log(captionText);
 			var uses = json[captionText];
 			console.log(uses);
 		});
 	}
-
-	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))	
-	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> ' + uses;
-
-	
 
 	// Print texture name below img:
 	document.getElementById("caption").innerHTML = captionText;
