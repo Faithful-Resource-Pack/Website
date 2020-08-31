@@ -39,6 +39,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 			var count = 0;
 			const MAX_COUNT = 20;
 			var authArr = new Array();
+			var authTxt = '';
 			while (data[count] !== undefined || count < MAX_COUNT){ // while data isn't broken or count is reached (max 100)
 				//console.log(data[count]);
 				if(data[count]){
