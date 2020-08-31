@@ -31,7 +31,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	}
 
 
-	getJSON(url, function(err, data){
+	var auth = getJSON(url, function(err, data){
 
 		if (err !== null){
 			console.log('Something went wrong: ' + err);
@@ -42,14 +42,18 @@ function ShowInfos(imgURL, captionText, blockTexture){
 			var authArr = new Array(); 
 
 			while (data[count] !== undefined || count !== 100){ // while data isn't broken or count is reached (max 100)
-				var author = data[count].committer.login;
-				console.log(author);
-				authArr.push(author);
-				count++;
+				if(data[count]){
+					var author = data[count].committer.login;
+					console.log(author);
+					authArr.push(author);
+					count++;
+				} else {
+					var authTxt = authArr;
+				}	
 			}
-
-			var authTxt = authArr;
 		}
+
+		return authTxt;
 	});
 
 
@@ -60,7 +64,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	var date = 'date'; 	
 	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
 
-	document.getElementById("auth").innerHTML = 'Authors: ' + authTxt;
+	document.getElementById("auth").innerHTML = 'Authors: ' + auth;
 	document.getElementById("size").innerHTML = 'Size: ' + size;
 	document.getElementById("date").innerHTML = 'Published: ' + date;
 	document.getElementById("uses").innerHTML = 'Used in: ' + uses;
