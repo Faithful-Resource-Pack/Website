@@ -17,7 +17,6 @@ var getJSON = function(url, callback) {
 
 	xhr.send();
 
-	return callback;
 };
 
 function ShowInfos(imgURL, captionText, blockTexture){
@@ -32,52 +31,42 @@ function ShowInfos(imgURL, captionText, blockTexture){
 		url += '/UE4Project/Content/' + captionText + '.png';
 	}
 
-
-var auth = getJSON(url, function(err, data){
-
-	if (err !== null){
-		console.log('Something went wrong: ' + err);
-		var authTxt = 'GitHub API error:' + err;
-
-	} else {
-		var count = 0;
-		const MAX_COUNT = 20;
-
-		var authArr = new Array();
-
-		while (data[count] !== undefined || count < MAX_COUNT){ // while data isn't broken or count is reached (max 100)
-			console.log(data[count]);
-
-			if(data[count]){
-				var author = data[count].committer.login;
-
-				if(author !== undefined) {
-					console.log(author);
-					authArr.push(author);
-					count++;
-
-				} else { // might be useless
+	var auth = getJSON(url, function(err, data){
+		if (err !== null){
+			console.log('Something went wrong: ' + err);
+			var authTxt = 'GitHub API error:' + err;
+		} else {
+			var count = 0;
+			const MAX_COUNT = 20;
+			var authArr = new Array();
+			while (data[count] !== undefined || count < MAX_COUNT){ // while data isn't broken or count is reached (max 100)
+				//console.log(data[count]);
+				if(data[count]){
+					var author = data[count].committer.login;
+					if(author !== undefined) {
+						console.log(author);
+						authArr.push(author);
+						count++;
+					} else { // might be useless
+						count = MAX_COUNT;
+						authTxt = authArr;
+					}
+				} else {
 					count = MAX_COUNT;
 					authTxt = authArr;
-				}
-			} else {
-				count = MAX_COUNT;
-				authTxt = authArr;
-			}	
+				}	
+			}
 		}
-	}
-
-	console.log(authTxt);
-	return authTxt;
-});
+		//console.log(authTxt);
+		document.getElementById("auth").innerHTML = 'Authors: ' + authTxt;
+	});
 
 	// WIP
 	// call github api to get infos about the texture:
 	var size = 'size'; // dimensions (32x32, 64x64, ...)
 	var date = 'date'; 	
 	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
-
-	document.getElementById("auth").innerHTML = 'Authors: ' + auth;
+	
 	document.getElementById("size").innerHTML = 'Size: ' + size;
 	document.getElementById("date").innerHTML = 'Published: ' + date;
 	document.getElementById("uses").innerHTML = 'Used in: ' + uses;
