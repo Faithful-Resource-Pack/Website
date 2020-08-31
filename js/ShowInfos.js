@@ -100,7 +100,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 
 	// used in: (only blocks)
 	if (blockTexture) {
-		$.getJSON('_data/TexturesBlocks.json', function(json) {
+		$.getJSON('./../_data/TexturesBlocks.json', function(json) {
 			console.log(json);
 		});
 	}
