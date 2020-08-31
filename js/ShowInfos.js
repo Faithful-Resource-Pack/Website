@@ -19,13 +19,13 @@ function getMeta(imgUrl) {
 function ShowInfos(imgURL, captionText, blockTexture){
 	var panel = document.getElementById("ShowInfos")
 
-	var loading = '<div class="spinner-border text-light"></div>'
+	var loading = '<div class="spinner-border text-light" style="color: gray!important; width: 7px; height: 7px; margin-bottom: 7px;"></div>'
 
+	// hide old infos with loading spinner
 	document.getElementById("auth").innerHTML = '<strong>Authors:</strong> '   + loading;
 	document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + loading;
 	document.getElementById("size").innerHTML = '<strong>Size:</strong> '      + loading;
 	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> '   + loading;
-
 
 	panel.style.width = "85%";
 
@@ -72,8 +72,6 @@ function ShowInfos(imgURL, captionText, blockTexture){
 		document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + dateTxt;
 	});
 
-	
-
 	// Set img
 	document.getElementById("SI-img").src = imgURL;
 
@@ -88,7 +86,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	if (blockTexture) {
 		$.getJSON('https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Tools/configs/block_textures.json', function(json) {
 			console.log(captionText);
-			var uses = json[captionText];
+			var uses = json['' + captionText + ''];
 			console.log(uses);
 		});
 	}
