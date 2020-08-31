@@ -85,8 +85,11 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	// used in: (only blocks)
 	if (blockTexture) {
 		$.getJSON('https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Tools/configs/block_textures.json', function(json) {
-			console.log(captionText);
-			var uses = json['' + captionText + ''];
+			console.log(json);
+
+			obj = JSON.parse(json);
+
+			var uses = obj[captionText];
 			console.log(uses);
 		});
 	}
