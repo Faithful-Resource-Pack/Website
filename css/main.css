@@ -430,7 +430,7 @@ img[src$=".gif"] {
 
 .sidepanel p, .sidepanel a {
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color: #818181;
   display: block;
 	margin-bottom: 0px;
