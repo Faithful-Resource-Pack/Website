@@ -1,23 +1,24 @@
-function getAuthors(texture, blockTexture){
-	var getJSON = function(url, callback) {
-		var xhr = new XMLHttpRequest();
 
-		xhr.open('GET', url, true);
-		xhr.responseType = 'json';
+var getJSON = function(url, callback) {
+	var xhr = new XMLHttpRequest();
 
-		xhr.onload = function() {
-			var status = xhr.status;
+	xhr.open('GET', url, true);
+	xhr.responseType = 'json';
 
-			if (status === 200) {
-				callback(null, xhr.response);
-			} else {
-				callback(status, xhr.response);
-			}
-		};
+	xhr.onload = function() {
+		var status = xhr.status;
 
-		xhr.send();
+		if (status === 200) {
+			callback(null, xhr.response);
+		} else {
+			callback(status, xhr.response);
+		}
 	};
 
+	xhr.send();
+};
+
+function getAuthors(texture, blockTexture){
 	var count = 0;
 	var comits = new Array();
 	var	url = 'https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/commits?path=';
@@ -34,7 +35,8 @@ function getAuthors(texture, blockTexture){
 
 		console.log(data);
 
-		if (err !== null) {
+	/*
+	if (err !== null) {
 			console.log('Something went wrong: ' + err);
 		} else {
 			while (comitter !== null || count === 100) { // Idk : unless committer is broken -> no more committer			  
@@ -43,6 +45,10 @@ function getAuthors(texture, blockTexture){
 			  count++;
 			}
 		}
+	*/
+
+	var author = data[0].committer.login;
+	comits.push(author);
 	});
 
 	return comits;
