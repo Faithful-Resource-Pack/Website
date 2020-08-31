@@ -25,9 +25,9 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	// set GitHub API url:
 	var	url = 'https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/commits?path=';
 	if (blockTexture) {
-		url += '/Block%20Textures/' + texture + '.png';
+		url += '/Block%20Textures/' + captionText + '.png';
 	} else {
-		url += '/UE4Project/Content/' + texture + '.png';
+		url += '/UE4Project/Content/' + captionText + '.png';
 	}
 
 
@@ -40,7 +40,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 		} else {
 			var count = 0;
 			var authArr = new Array(); 
-			
+
 			while (data[count] !== undefined || count !== 100){ // while data isn't broken or count is reached (max 100)
 				var author = data[count].committer.login;
 				console.log(author);
