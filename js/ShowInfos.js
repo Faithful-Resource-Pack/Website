@@ -88,7 +88,10 @@ function ShowInfos(imgURL, captionText, blockTexture){
 			console.log(json);
 
 			var uses = json[captionText + '.png'];
-			console.log(uses);
+			
+			uses = uses.toString().replace(/,/g, "<br>");
+			document.getElementById("uses").innerHTML = "<strong>Used in:</strong><br>" + uses;
+
 		});
 	}
 
