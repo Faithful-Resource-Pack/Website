@@ -8,6 +8,7 @@ nav-img: blocks.png
 
 {%- assign GitHubRawURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Block%20Textures/" -%}
 {%- assign Count = 0 -%}
+{%- assign isBlock = true -%}
 
 <div class="card bg-dark">
 	<div class="custom-navbar-wrapper navbar-gallery">
@@ -84,7 +85,7 @@ nav-img: blocks.png
          	<p id="auth"><strong>Authors:</strong></p>
          	<p id="size"><strong>Size:</strong></p>
          	<p id="date"><strong>Date:</strong></p>
-         	<p id="uses"><strong>Uses:</strong></p>
+         	{%- if isBlock == true -%}<p id="uses"><strong>Uses:</strong></p>{%- endif -%}
         </p>
       </div>
       <div class="card-footer w-100 text-muted">
@@ -125,7 +126,7 @@ nav-img: blocks.png
 				</button>
 
 				<!-- Info button -->
-				<button type="button" class="btn btn-light button-info" onclick="ShowInfos('{{ TextureRawURL }}','{{ TextureName }}',true)">
+				<button type="button" class="btn btn-light button-info" onclick="ShowInfos('{{ TextureRawURL }}','{{ TextureName }}',{{ isBlock }})">
 					<i class="fas fa-info"></i>
 				</button>
 
