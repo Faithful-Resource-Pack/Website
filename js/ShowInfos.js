@@ -58,8 +58,8 @@ function ShowInfos(imgURL, captionText, blockTexture){
 				}	
 			}
 		}
-		authTxt = authTxt.replace(/,/g, ", ");
-		document.getElementById("auth").innerHTML = 'Authors: ' + authTxt;
+		authTxt = authTxt.toString().replace(/,/g, ", ");
+		document.getElementById("auth").innerHTML = '<strong>Authors:</strong> ' + authTxt;
 	});
 
 	// WIP
@@ -68,9 +68,9 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	var date = 'date'; 	
 	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
 	
-	document.getElementById("size").innerHTML = 'Size: ' + size;
-	document.getElementById("date").innerHTML = 'Published: ' + date;
-	document.getElementById("uses").innerHTML = 'Used in: ' + uses;
+	document.getElementById("size").innerHTML = '<strong>Size:</strong> ' + size;
+	document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + date;
+	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> ' + uses;
 
 	// Set img
 	document.getElementById("SI-img").src = imgURL;
