@@ -55,13 +55,15 @@ function ShowInfos(imgURL, captionText, blockTexture){
 
 		// date: (last commit)
 		var dateTxt = data[0].commit.author.date;
+
+		authTxt = authTxt.toString().replace(/,/g, ", ");
+		document.getElementById("auth").innerHTML = '<strong>Authors:</strong> ' + authTxt;
+
+		dateTxt = dateTxt.toString().substring(0, 10).replace(/-/g, '/');
+		document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + dateTxt;
 	});
 
-	authTxt = authTxt.toString().replace(/,/g, ", ");
-	document.getElementById("auth").innerHTML = '<strong>Authors:</strong> ' + authTxt;
-
-	dateTxt = dateTxt.toString().substring(0, 10).replace(/-/g, '/');
-	document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + dateTxt;
+	
 
 	// Set img
 	document.getElementById("SI-img").src = imgURL;
