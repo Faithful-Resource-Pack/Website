@@ -18,63 +18,58 @@ var getJSON = function(url, callback) {
 	xhr.send();
 };
 
-function getAuthors(texture, blockTexture){
-	var count = 0;
-	var comits = new Array();
-	var	url = 'https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/commits?path=';
+function ShowInfos(imgURL, captionText, blockTexture){
+	var panel = document.getElementById("ShowInfos")
+	panel.style.width = "85%";
 
+	// set GitHub API url:
+	var	url = 'https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/commits?path=';
 	if (blockTexture) {
 		url += '/Block%20Textures/' + texture + '.png';
 	} else {
 		url += '/UE4Project/Content/' + texture + '.png';
 	}
 
-	console.log(url);
 
-	getJSON(url, function(err, data) {
+	getJSON(url, function(err, data){
 
-		console.log(data);
-
-	/*
-	if (err !== null) {
+		if (err !== null){
 			console.log('Something went wrong: ' + err);
-		} else {
-			while (comitter !== null || count === 100) { // Idk : unless committer is broken -> no more committer			  
-			  var comitter = data[count].committer.login;
-			  comits.push(comitter); // Add comitter to the list
-			  count++;
-			}
-		}
-	*/
+			var authTxt = 'GitHub API error:' + err;
 
-		var author = data.[0].committer.login;
-		comits.push(author);
+		} else {
+			var count = 0;
+			var authArr = new Array(); 
+			
+			while (data[count] !== undefined || count !== 100){ // while data isn't broken or count is reached (max 100)
+				var author = data[count].committer.login;
+				console.log(author);
+				authArr.push(author);
+				count++;
+			}
+
+			var authTxt = authArr;
+		}
 	});
 
-	return comits;
-}
 
-function ShowInfos(imgURL, captionText, blockTexture){
-	var panel = document.getElementById("ShowInfos")
-	panel.style.width = "85%";
+
+	// WIP
+	// call github api to get infos about the texture:
+	var size = 'size'; // dimensions (32x32, 64x64, ...)
+	var date = 'date'; 	
+	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
+
+	document.getElementById("auth").innerHTML = 'Authors: ' + authTxt;
+	document.getElementById("size").innerHTML = 'Size: ' + size;
+	document.getElementById("date").innerHTML = 'Published: ' + date;
+	document.getElementById("uses").innerHTML = 'Used in: ' + uses;
 
 	// Set img
 	document.getElementById("SI-img").src = imgURL;
 
 	// Print texture name below img:
 	document.getElementById("caption").innerHTML = captionText;
-
-	// WIP
-	// call github api to get infos about the texture:
-	var auth = getAuthors(captionText, blockTexture);
-	var size = 'size'; // dimensions (32x32, 64x64, ...)
-	var date = 'date'; 	
-	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
-
-	document.getElementById("auth").innerHTML = 'Authors: ' + auth;
-	document.getElementById("size").innerHTML = 'Size: ' + size;
-	document.getElementById("date").innerHTML = 'Published: ' + date;
-	document.getElementById("uses").innerHTML = 'Used in: ' + uses;
 
 	// set url in text-muted:
 	document.getElementById("url").innerHTML = 'URL: ' + imgURL;
@@ -85,8 +80,8 @@ function ShowInfos(imgURL, captionText, blockTexture){
 			panel.style.width = "0%";
 		}
 	});
-}
+};
 
 function closeNav() {
 	document.getElementById("ShowInfos").style.width = "0";
-}
+};
