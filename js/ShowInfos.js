@@ -41,6 +41,8 @@ function ShowInfos(imgURL, captionText, blockTexture){
 			var count = 0;
 			var authArr = new Array(); 
 
+			console.log(data[count]);
+
 			while (data[count] !== undefined || count < 100){ // while data isn't broken or count is reached (max 100)
 				if(data[count]){
 					var author = data[count].committer.login;
@@ -50,6 +52,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 				} else {
 					var authTxt = authArr;
 					count = 100;
+					console.log(data[count]);
 				}	
 			}
 		}
