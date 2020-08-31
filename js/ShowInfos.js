@@ -87,9 +87,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 		$.getJSON('https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Tools/configs/block_textures.json', function(json) {
 			console.log(json);
 
-			obj = JSON.parse(json);
-
-			var uses = obj[captionText];
+			var uses = json[captionText + '.png'];
 			console.log(uses);
 		});
 	}
