@@ -39,24 +39,32 @@ function ShowInfos(imgURL, captionText, blockTexture){
 
 		} else {
 			var count = 0;
-			var authArr = new Array(); 
+			var authArr = new Array();
+			const MAX_COUNT = 20;
 
-			console.log(data[count]);
+			while (data[count] !== undefined || count < MAX_COUNT){ // while data isn't broken or count is reached (max 100)
+				console.log(data[count]);
 
-			while (data[count] !== undefined || count < 100){ // while data isn't broken or count is reached (max 100)
 				if(data[count]){
 					var author = data[count].committer.login;
-					console.log(author);
-					authArr.push(author);
-					count++;
+
+					if(author !== undefined) {
+						console.log(author);
+						authArr.push(author);
+						count++;
+
+					} else { // might be useless
+						count = MAX_COUNT;
+						authTxt = authArr;
+					}
 				} else {
-					var authTxt = authArr;
-					count = 100;
-					console.log(data[count]);
+					count = MAX_COUNT;
+					authTxt = authArr;
 				}	
 			}
 		}
 
+		console.log(authTxt);
 		return authTxt;
 		});
 
