@@ -44,7 +44,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 				if(data[count]){
 					var author = data[count].committer.login;
 					if(author !== undefined) {
-						console.log(author);
+						//console.log(author);
 						authArr.push(author);
 						count++;
 					} else { // might be useless
@@ -57,7 +57,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 				}	
 			}
 		}
-		//console.log(authTxt);
+		authTxt = authTxt.replace(/,/g, ", ");
 		document.getElementById("auth").innerHTML = 'Authors: ' + authTxt;
 	});
 
