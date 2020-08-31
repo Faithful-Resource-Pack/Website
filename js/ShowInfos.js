@@ -1,3 +1,6 @@
+const axios = require('axios').default;
+var https = require('https');
+var sizeOf = require('image-size');
 
 var getJSON = function(url, callback) {
 	var xhr = new XMLHttpRequest();
@@ -18,6 +21,24 @@ var getJSON = function(url, callback) {
 	xhr.send();
 
 };
+
+function getMeta(imgUrl) {
+	return new Promise(function(resolve, reject) {
+
+		https.get(imgUrl, function (response) {
+			var chunks = [];
+			response.on('data', function (chunk) {
+				chunks.push(chunk);
+			}).on('end', function() {
+				var buffer = Buffer.concat(chunks);
+				resolve(sizeOf(buffer));
+			});
+		}).on('error', function(error) {
+			reject(error);
+		});
+
+	});
+}
 
 function ShowInfos(imgURL, captionText, blockTexture){
 	var panel = document.getElementById("ShowInfos")
@@ -71,12 +92,25 @@ function ShowInfos(imgURL, captionText, blockTexture){
 		document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + dateTxt;
 	});
 
+	// texture size: 
+	axios.get(imgURL).then(function (response) {
+		getMeta(imgURL).then(function (dimension) {
+			var size = dimension.width + 'x' + dimension.height;
+
+			document.getElementById("size").innerHTML = '<strong>Size:</strong> ' + size;
+		}).catch(function(error) {
+			console.log('getMeta: ' + error);
+		});
+	}).catch(function(error) {
+		console.log('axios: ' + error);
+	});
+
 	// WIP
 	// call github api to get infos about the texture:
 	var size = 'size'; // dimensions (32x32, 64x64, ...)
 	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
 	
-	document.getElementById("size").innerHTML = '<strong>Size:</strong> ' + size;
+	
 	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> ' + uses;
 
 	// Set img
