@@ -41,7 +41,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 			var count = 0;
 			var authArr = new Array(); 
 
-			while (data[count] !== undefined || count !== 100){ // while data isn't broken or count is reached (max 100)
+			while (data[count] !== undefined || count < 100){ // while data isn't broken or count is reached (max 100)
 				if(data[count]){
 					var author = data[count].committer.login;
 					console.log(author);
@@ -49,12 +49,13 @@ function ShowInfos(imgURL, captionText, blockTexture){
 					count++;
 				} else {
 					var authTxt = authArr;
+					count = 100;
 				}	
 			}
 		}
 
 		return authTxt;
-	});
+		});
 
 
 
