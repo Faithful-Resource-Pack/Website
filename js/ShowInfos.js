@@ -88,29 +88,21 @@ function ShowInfos(imgURL, captionText, blockTexture){
 		document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + dateTxt;
 	});
 
-	// texture size: 
-	axios.get(imgURL).then(function (response) {
-		getMeta(imgURL).then(function (dimension) {
-			var size = dimension.width + 'x' + dimension.height;
-
-			document.getElementById("size").innerHTML = '<strong>Size:</strong> ' + size;
-		}).catch(function(error) {
-			console.log('getMeta: ' + error);
-		});
-	}).catch(function(error) {
-		console.log('axios: ' + error);
-	});
-
-	// WIP
-	// call github api to get infos about the texture:
-	var size = 'size'; // dimensions (32x32, 64x64, ...)
-	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))
-	
-	
-	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> ' + uses;
-
 	// Set img
 	document.getElementById("SI-img").src = imgURL;
+
+	// textures size (use img from side pannel)
+	var img = document.querySelector("#SI-img");
+	var width = img.naturalWidth;
+	var height = img.naturalHeight;
+
+	document.getElementById("size").innerHTML = '<strong>Size:</strong> ' + width + 'x' + height;
+
+	// WIP
+	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))	
+	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> ' + uses;
+
+	
 
 	// Print texture name below img:
 	document.getElementById("caption").innerHTML = captionText;
