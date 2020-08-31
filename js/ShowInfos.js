@@ -1,4 +1,4 @@
-var getJSON = function(url, callback) {
+var getJSONURL = function(url, callback) {
 	var xhr = new XMLHttpRequest();
 
 	xhr.open('GET', url, true);
@@ -48,7 +48,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 		url += '/UE4Project/Content/' + captionText + '.png';
 	}
 
-	getJSON(url, function(err, data){
+	getJSONURL(url, function(err, data){
 		if (err !== null){
 			console.log('Something went wrong: ' + err);
 			var authTxt = 'GitHub API error:' + err;
@@ -98,7 +98,13 @@ function ShowInfos(imgURL, captionText, blockTexture){
 
 	document.getElementById("size").innerHTML = '<strong>Size:</strong> ' + width + 'x' + height;
 
-	// WIP
+	// used in: (only blocks)
+	if (blockTexture) {
+		$.getJSON('_data/TexturesBlocks.json', function(json) {
+			console.log(json);
+		});
+	}
+
 	var uses = ['use1','use2','use3']; // use json (use for blocks textures (result: squidcoast, ...))	
 	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> ' + uses;
 
