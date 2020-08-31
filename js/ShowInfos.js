@@ -100,7 +100,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 
 	// used in: (only blocks)
 	if (blockTexture) {
-		$.getJSON('./../_data/TexturesBlocks.json', function(json) {
+		$.getJSON('https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/Tools/configs/block_textures.json', function(json) {
 			console.log(json);
 		});
 	}
