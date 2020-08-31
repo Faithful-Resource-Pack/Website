@@ -67,8 +67,8 @@ function ShowInfos(imgURL, captionText, blockTexture){
 		authTxt = authTxt.toString().replace(/,/g, ", ");
 		document.getElementById("auth").innerHTML = '<strong>Authors:</strong> ' + authTxt;
 
-		dateTxt = sizeTxt.toString().substring(0, 10).replace(/-/g, '/');
-		document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + date;
+		dateTxt = dateTxt.toString().substring(0, 10).replace(/-/g, '/');
+		document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + dateTxt;
 	});
 
 	// WIP
