@@ -16,6 +16,8 @@ var getJSON = function(url, callback) {
 	};
 
 	xhr.send();
+
+	return callback;
 };
 
 function ShowInfos(imgURL, captionText, blockTexture){
@@ -31,44 +33,43 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	}
 
 
-	var auth = getJSON(url, function(err, data){
+var auth = getJSON(url, function(err, data){
 
-		if (err !== null){
-			console.log('Something went wrong: ' + err);
-			var authTxt = 'GitHub API error:' + err;
+	if (err !== null){
+		console.log('Something went wrong: ' + err);
+		var authTxt = 'GitHub API error:' + err;
 
-		} else {
-			var count = 0;
-			var authArr = new Array();
-			const MAX_COUNT = 20;
+	} else {
+		var count = 0;
+		const MAX_COUNT = 20;
 
-			while (data[count] !== undefined || count < MAX_COUNT){ // while data isn't broken or count is reached (max 100)
-				console.log(data[count]);
+		var authArr = new Array();
 
-				if(data[count]){
-					var author = data[count].committer.login;
+		while (data[count] !== undefined || count < MAX_COUNT){ // while data isn't broken or count is reached (max 100)
+			console.log(data[count]);
 
-					if(author !== undefined) {
-						console.log(author);
-						authArr.push(author);
-						count++;
+			if(data[count]){
+				var author = data[count].committer.login;
 
-					} else { // might be useless
-						count = MAX_COUNT;
-						authTxt = authArr;
-					}
-				} else {
+				if(author !== undefined) {
+					console.log(author);
+					authArr.push(author);
+					count++;
+
+				} else { // might be useless
 					count = MAX_COUNT;
 					authTxt = authArr;
-				}	
-			}
+				}
+			} else {
+				count = MAX_COUNT;
+				authTxt = authArr;
+			}	
 		}
+	}
 
-		console.log(authTxt);
-		return authTxt;
-		});
-
-
+	console.log(authTxt);
+	return authTxt;
+});
 
 	// WIP
 	// call github api to get infos about the texture:
