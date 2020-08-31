@@ -38,7 +38,7 @@ function getAuthors(texture, blockTexture){
 			console.log('Something went wrong: ' + err);
 		} else {
 			while (comitter !== null || count === 100) { // Idk : unless committer is broken -> no more committer			  
-			  var comitter = data[count]['committer']['login'];
+			  var comitter = data[count].committer.login;
 			  comits.push(comitter); // Add comitter to the list
 			  count++;
 			}
@@ -68,7 +68,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	document.getElementById("auth").innerHTML = 'Authors: ' + auth;
 	document.getElementById("size").innerHTML = 'Size: ' + size;
 	document.getElementById("date").innerHTML = 'Published: ' + date;
-	document.getElementById("uses").innerHTML = 'Used in' + uses;
+	document.getElementById("uses").innerHTML = 'Used in: ' + uses;
 
 	// set url in text-muted:
 	document.getElementById("url").innerHTML = 'URL: ' + imgURL;
