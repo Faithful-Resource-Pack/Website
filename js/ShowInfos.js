@@ -23,9 +23,9 @@ function getAuthors(texture, blockTexture){
 	var	url = 'https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/commits?path=';
 
 	if (blockTexture) {
-		url += '/Block%20Textures/' + texture;
+		url += '/Block%20Textures/' + texture + '.png';
 	} else {
-		url += '/UE4Project/Content/' + texture;
+		url += '/UE4Project/Content/' + texture + '.png';
 	}
 
 	console.log(url);
