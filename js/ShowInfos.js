@@ -104,11 +104,23 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	// close pannel when pressing escape key:
 	$(document).keydown(function(event) { 
 		if (event.keyCode == 27) { 
+
+			// hide old infos with loading spinner
+			document.getElementById("auth").innerHTML = '<strong>Authors:</strong> '  ;
+			document.getElementById("date").innerHTML = '<strong>Published:</strong> ';
+			document.getElementById("size").innerHTML = '<strong>Size:</strong> '     ;
+			document.getElementById("uses").innerHTML = '<strong>Used in:</strong> '  ;
 			panel.style.width = "0%";
 		}
 	});
 };
 
 function closeNav() {
+	// hide old infos with loading spinner
+	document.getElementById("auth").innerHTML = '<strong>Authors:</strong> '  ;
+	document.getElementById("date").innerHTML = '<strong>Published:</strong> ';
+	document.getElementById("size").innerHTML = '<strong>Size:</strong> '     ;
+	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> '  ;
+
 	document.getElementById("ShowInfos").style.width = "0";
 };
