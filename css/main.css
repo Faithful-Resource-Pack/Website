@@ -429,11 +429,11 @@ img[src$=".gif"] {
 }
 
 .sidepanel p, .sidepanel a {
-  padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
+	margin-bottom: 0px;
   transition: 0.3s;
 }
 
