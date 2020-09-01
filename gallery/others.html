@@ -1,6 +1,158 @@
 ---
 layout: no-header
-title: Others (WIP)
+title: Others
+nav-img: others.png
 ---
 
-<h1>Currently work in Progress</h1>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+{%- assign GitHubRawURL = "https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/UE4Project/" -%}
+{%- assign Count = 0 -%}
+{%- assign isBlock = false -%}
+
+<div class="card bg-dark">
+	<div class="custom-navbar-wrapper navbar-gallery">
+		<nav class="custom-navbar navbar navbar-expand-lg navbar-dark">
+			<span class="navbar-brand">
+				<img src="{{ site.baseurl }}/image/gallery/{{ page.nav-img }}" width="30" height="30" class="d-inline-block align-top" alt="">
+				{{ page.title }}
+			</span>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleSubNavbar" aria-label="Menu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleSubNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="{{ site.baseurl }}/gallery/blocks">Blocks</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ site.baseurl }}/gallery/components">Components</a>
+					</li>
+					<li>
+						<a class="nav-link" href="{{ site.baseurl }}/gallery/decor">Decor</a>
+					</li>
+					<li>
+						<a class="nav-link" href="{{ site.baseurl }}/gallery/effects">Effects</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ site.baseurl }}/gallery/entities">Entities</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ site.baseurl }}/gallery/equipments">Equipments</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="{{ site.baseurl }}/gallery/items">Items</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ site.baseurl }}/gallery/materials">Materials</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ site.baseurl }}/gallery/ui">UI</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ site.baseurl }}/gallery/animated">Animated</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="{{ site.baseurl }}/gallery/others">Others</a>
+					</li> 
+				</ul>
+			</div>  
+		</nav>
+	</div>
+
+	<!-- Fullscreen modal -->
+	<div id="ShowFullscreen" class="modal" style="display: none;">
+		<span id="SF-Span" class="close" style="height:100%; width:100%; z-index:-1"></span>
+		<img  id="SF-Img"  class="modal-content card-texture" style="height:auto; width:100%; max-height: 85%; object-fit: contain;">
+		<div class="caption">
+			<p id="SF-Caption"></p>
+			<a id="SF-Btn" class="btn btn-info btn-modal">See on GitHub</a>
+		</div>
+		
+	</div>
+
+	<!-- Infos panel -->
+	<div id="ShowInfos" class="sidepanel" style="width: 0%;">
+		<a class="closebtn" onclick="closeNav()">×</a>
+
+		<div class="card flex-row flex-wrap" style="width: 80%; margin-left: 10%;">
+			<div class="card-header border-0">
+				<img id="SI-img" style="background-color: #0000; height:256px; width:256px; object-fit: contain;">
+			</div>
+			<div class="card-block px-2">
+				<h2 id="caption" style="margin-top: 15px;" class="card-title">Texture</h2>
+				<p class="card-text">
+					<p id="auth"><strong>Authors:</strong></p>
+					<p id="size"><strong>Size:</strong></p>
+					<p id="date"><strong>Published:</strong></p>
+					{%- if isBlock == true -%}<p style="margin-bottom: 10px" id="uses"><strong>Uses:</strong></p>{%- endif -%}
+				</p>
+			</div>
+			<div class="card-footer w-100 text-muted">
+				<small id="url">URL: </small>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="card-body grid-container bg-dark">
+		{%- for Texture in site.data.TexturesOthers -%}
+		
+			{%- assign Count = Count | plus: 1 -%}
+
+			{%- assign TextureName   = Texture   | remove: ".png" -%}
+			{%- assign TextureRawURL = GitHubRawURL | append: Texture -%}
+
+			{%- assign HideEID  = Texture | remove: ".png" | remove: "_" | append: "-H"  | append: "-NB" | append: Count -%}
+			{%- assign ImageID  = Texture | remove: ".png" | remove: "_" | append: "-I"  | append: "-NB" | append: Count -%}
+
+			{%- assign SidePanelID = Texture | remove: ".png" | remove: "_" | append: "-SP" | append: "-NB" | append: Count -%}
+
+			<!-- texture card -->
+			<div class="card card-texture" id="{{ HideEID }}">				
+				<img  
+					id="{{ ImageID }}" 
+					class="card-img-top" 
+					src="{{ TextureRawURL }}" 
+					style="height:128px; object-fit: contain;" 
+					alt="{{ TextureName }}" 
+					loading="lazy" 
+					onerror="hideElement('{{ HideEID }}')"
+				>
+
+				<!-- Fullscreen button -->
+				<button type="button" class="btn btn-light button-fullscreen" onclick="ShowFullscreen('{{ TextureRawURL }}','{{ TextureName }}')">
+					<i class="fas fa-expand"></i>
+				</button>
+
+				<!-- Info button -->
+				<button type="button" class="btn btn-light button-info" onclick="ShowInfos('{{ TextureRawURL }}','{{ TextureName }}',{{ isBlock }})">
+					<i class="fas fa-info"></i>
+				</button>
+
+			</div>
+		{%- endfor -%}
+	</div>
+	
+</div>
+
+<div class="row" style="width: 25%; margin: auto;">
+	<div class="col">
+		<small>
+			<p style="margin: 0" align="left">Total textures:</p>
+			<p style="margin: 0" align="left">Missing:</p>
+			<p style="margin: 0" align="left">Done:</p>
+		</small>
+	</div>
+	<div class="col">
+		<small>
+			<p style="margin: 0" align="right" id="total-texture">{{ Count }}</p>
+			<p style="margin: 0" align="right" id="missing-texture">0</p>
+			<p style="margin: 0" align="right" id="percentage-texture"></p>
+		</small>
+	</div>
+</div>
+
+<script src="{{ site.baseurl }}/js/hideElement.js"></script>
+<script src="{{ site.baseurl }}/js/ShowInfos.js"></script>
+<script src="{{ site.baseurl }}/js/ShowFullscreen.js"></script>
