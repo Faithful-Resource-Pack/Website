@@ -121,7 +121,7 @@ nav-img: animated.gif
 				</div>
 
 				<script>
-					var mcmeta = 0;
+					var mcmeta = {{ texture['mcmeta'] | jsonify }};
 					var mca = new MCAnimation("{{ URL }}")
 					var parentElement = document.getElementById("{{ AnimElementID }}")
 					parentElement.appendChild(mca.canvas)
