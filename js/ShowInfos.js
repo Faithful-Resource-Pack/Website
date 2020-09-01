@@ -16,7 +16,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	if (blockTexture) {
 		url += '/Block%20Textures/' + captionText + '.png';
 	} else {
-		url += '/UE4Project/Content/' + captionText + '.png';
+		url += '/UE4Project/' + captionText + '.png';
 	}
 
 	$.getJSON(url, function(data) {
