@@ -16,12 +16,13 @@ function hideElement(id) {
 	}
 
 	var countMissing = parseInt(document.getElementById("missing-texture").innerHTML, 10) + 1;  // add one each time a texture is missing
-	var total = parseInt(document.getElementById("total-texture").innerHTML, 10);
-	var missing = (total * 100) / countMissing;
+	var count = parseInt(document.getElementById("total-texture").innerHTML, 10);
+	var missing = (countMissing / count) * 100;
+	var done = 100 - missing;
 
 	console.log(total + '-' + countMissing + '-' + missing )
 
 	document.getElementById("missing-texture").innerHTML = countMissing;
-	document.getElementById("percentage-texture").innerHTML = missing;
+	document.getElementById("percentage-texture").innerHTML = done;
 
 }

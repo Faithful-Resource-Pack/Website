@@ -76,22 +76,22 @@ nav-img: blocks.png
 		<a class="closebtn" onclick="closeNav()">×</a>
 
 		<div class="card flex-row flex-wrap" style="width: 80%; margin-left: 10%;">
-      <div class="card-header border-0">
-        <img id="SI-img" style="background-color: #0000; height:256px; width:256px; object-fit: contain;">
-      </div>
-      <div class="card-block px-2">
-        <h2 id="caption" style="margin-top: 15px;" class="card-title">Texture</h2>
-        <p class="card-text">
-         	<p id="auth"><strong>Authors:</strong></p>
-         	<p id="size"><strong>Size:</strong></p>
-         	<p id="date"><strong>Published:</strong></p>
-         	{%- if isBlock == true -%}<p style="margin-bottom: 10px" id="uses"><strong>Uses:</strong></p>{%- endif -%}
-        </p>
-      </div>
-      <div class="card-footer w-100 text-muted">
-        <small id="url">URL: </small>
-      </div>
-    </div>
+			<div class="card-header border-0">
+				<img id="SI-img" style="background-color: #0000; height:256px; width:256px; object-fit: contain;">
+			</div>
+			<div class="card-block px-2">
+				<h2 id="caption" style="margin-top: 15px;" class="card-title">Texture</h2>
+				<p class="card-text">
+					<p id="auth"><strong>Authors:</strong></p>
+					<p id="size"><strong>Size:</strong></p>
+					<p id="date"><strong>Published:</strong></p>
+					{%- if isBlock == true -%}<p style="margin-bottom: 10px" id="uses"><strong>Uses:</strong></p>{%- endif -%}
+				</p>
+			</div>
+			<div class="card-footer w-100 text-muted">
+				<small id="url">URL: </small>
+			</div>
+		</div>
 		
 	</div>
 	
@@ -136,9 +136,22 @@ nav-img: blocks.png
 	
 </div>
 
-<p align="right" id="total-texture">{{ Count }}</p>
-<p align="right" id="missing-texture">0</p>
-<p align="right" id="percentage-texure"></p>
+<div class="row">
+	<div class="col">
+		<small>
+			<p style="margin: 0" align="left">Total textures:</p>
+			<p style="margin: 0" align="left">Missing:</p>
+			<p style="margin: 0" align="left">Done:</p>
+		</small>
+	</div>
+	<div class="col">
+		<small>
+			<p style="margin: 0" align="right" id="total-texture">{{ Count }}</p>
+			<p style="margin: 0" align="right" id="missing-texture">0</p>
+			<p style="margin: 0" align="right" id="percentage-texture"></p>
+		</small>
+	</div>
+</div>
 
 <script src="{{ site.baseurl }}/js/hideElement.js"></script>
 <script src="{{ site.baseurl }}/js/ShowInfos.js"></script>
