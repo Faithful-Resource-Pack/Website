@@ -1,21 +1,3 @@
-function getMeta(imgUrl) {
-	return new Promise(function(resolve, reject) {
-
-		https.get(imgUrl, function (response) {
-			var chunks = [];
-			response.on('data', function (chunk) {
-				chunks.push(chunk);
-			}).on('end', function() {
-				var buffer = Buffer.concat(chunks);
-				resolve(sizeOf(buffer));
-			});
-		}).on('error', function(error) {
-			reject(error);
-		});
-
-	});
-}
-
 function ShowInfos(imgURL, captionText, blockTexture){
 	var panel = document.getElementById("ShowInfos")
 
@@ -25,7 +7,7 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	document.getElementById("auth").innerHTML = '<strong>Authors:</strong> '   + loading;
 	document.getElementById("date").innerHTML = '<strong>Published:</strong> ' + loading;
 	document.getElementById("size").innerHTML = '<strong>Size:</strong> '      + loading;
-	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> '   + loading;
+	if (blockTexture) document.getElementById("uses").innerHTML = '<strong>Used in:</strong> '   + loading;
 
 	panel.style.width = "85%";
 
@@ -104,23 +86,11 @@ function ShowInfos(imgURL, captionText, blockTexture){
 	// close pannel when pressing escape key:
 	$(document).keydown(function(event) { 
 		if (event.keyCode == 27) { 
-
-			// hide old infos with loading spinner
-			document.getElementById("auth").innerHTML = '<strong>Authors:</strong> '  ;
-			document.getElementById("date").innerHTML = '<strong>Published:</strong> ';
-			document.getElementById("size").innerHTML = '<strong>Size:</strong> '     ;
-			document.getElementById("uses").innerHTML = '<strong>Used in:</strong> '  ;
 			panel.style.width = "0%";
 		}
 	});
 };
 
 function closeNav() {
-	// hide old infos with loading spinner
-	document.getElementById("auth").innerHTML = '<strong>Authors:</strong> '  ;
-	document.getElementById("date").innerHTML = '<strong>Published:</strong> ';
-	document.getElementById("size").innerHTML = '<strong>Size:</strong> '     ;
-	document.getElementById("uses").innerHTML = '<strong>Used in:</strong> '  ;
-
 	document.getElementById("ShowInfos").style.width = "0";
 };
