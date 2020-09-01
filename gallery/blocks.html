@@ -80,7 +80,7 @@ nav-img: blocks.png
         <img id="SI-img" style="background-color: #0000; height:256px; width:256px; object-fit: contain;">
       </div>
       <div class="card-block px-2">
-        <h2 id="caption" style="margin-top: 15;" class="card-title">Texture</h2>
+        <h2 id="caption" style="margin-top: 15px;" class="card-title">Texture</h2>
         <p class="card-text">
          	<p id="auth"><strong>Authors:</strong></p>
          	<p id="size"><strong>Size:</strong></p>
@@ -136,7 +136,9 @@ nav-img: blocks.png
 	
 </div>
 
-<p align="right">{{ Count }} textures.</p>
+<p align="right" id="total-texture">{{ Count }}</p>
+<p align="right" id="missing-texture"></p>
+<p align="right" id="percentage-texure"></p>
 
 <script src="{{ site.baseurl }}/js/hideElement.js"></script>
 <script src="{{ site.baseurl }}/js/ShowInfos.js"></script>
