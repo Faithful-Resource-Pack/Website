@@ -15,8 +15,7 @@ function hideElement(id) {
 		x.style.display = "none";
 	}
 
-	var missing = parseInt(document.getElementById("missing-texture").innerHTML, 10);
-	var missing += 1; // add one each time a texture is missing
+	var missing = parseInt(document.getElementById("missing-texture").innerHTML, 10) + 1;  // add one each time a texture is missing
 	document.getElementById("missing-texture").innerHTML = missing;
 
 	//var percentage = document.getElementById("percentage-texure");
