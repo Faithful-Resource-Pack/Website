@@ -20,8 +20,6 @@ function hideElement(id) {
 	var missing = (countMissing / count) * 100;
 	var done = 100 - missing;
 
-	console.log(total + '-' + countMissing + '-' + missing )
-
 	document.getElementById("missing-texture").innerHTML = countMissing;
 	document.getElementById("percentage-texture").innerHTML = done;
 
