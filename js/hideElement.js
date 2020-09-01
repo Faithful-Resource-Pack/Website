@@ -15,19 +15,13 @@ function hideElement(id) {
 		x.style.display = "none";
 	}
 
-	var missing = parseInt(document.getElementById("missing-texture").innerHTML, 10) + 1;  // add one each time a texture is missing
-	document.getElementById("missing-texture").innerHTML = missing;
-
-	//var percentage = document.getElementById("percentage-texure");
-
+	var countMissing = parseInt(document.getElementById("missing-texture").innerHTML, 10) + 1;  // add one each time a texture is missing
 	var total = parseInt(document.getElementById("total-texture").innerHTML, 10);
-	var missingPER = total * 100 / missing;
+	var missing = (total * 100) / countMissing;
 
-	document.getElementById("percentage-texture").innerHTML = missingPER;
+	console.log(total + '-' + countMissing + '-' + missing )
 
-	/*
-	total => 100%
-	missing => 100*total / missing %
-	*/
+	document.getElementById("missing-texture").innerHTML = countMissing;
+	document.getElementById("percentage-texture").innerHTML = missing;
 
 }
