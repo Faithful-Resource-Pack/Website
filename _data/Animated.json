@@ -10,8 +10,23 @@
 		"mcmeta": ""
 	},
 	{
+		"name": "lava_flow.png",
+		"url": "Block%20Textures",
+		"mcmeta": ""
+	},
+	{
+		"name": "lava_still.png",
+		"url": "Block%20Textures",
+		"mcmeta": ""
+	},
+	{
 		"name": "sea_lantern.png",
 		"url": "Block%20Textures",
+		"mcmeta": ""
+	},
+	{
+		"name": "T_Lava_16_spritesheet.png",
+		"url": "U4Project/Content/Materials",
 		"mcmeta": ""
 	}
 ]
