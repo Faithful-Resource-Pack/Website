@@ -100,7 +100,10 @@ nav-img: animated.gif
 		{%- for texture in site.data.Animated -%}
 		
 			{%- assign Count = Count | plus: 1 -%}
-			{%- assign URL = GitHubURL | append: texture[1] | append: texture[0] -%}
+			{%- assign textureName = texture['name'] -%}
+			{%- assign textureURL = texture['url'] -%}
+
+			{%- assign URL = GitHubURL | append: textureURL | append: textureName -%}
 
 			{%- assign AnimElementID = "Anim-" | append: Count -%}
 			{%- assign ImgID = "Img-" | append: Count -%}
@@ -112,8 +115,8 @@ nav-img: animated.gif
 						id="{{ ImgID }}"
 						class="card-img-top" 
 						src="{{ URL }}" 
-						style="display:block; height:64px; width:64px; position:absolute; opacity:0;" 
-						alt="{{ texture[0] }}"
+						style="display:none;" 
+						alt="{{ textureName }}"
 					>
 				</div>
 
@@ -124,12 +127,12 @@ nav-img: animated.gif
 				</script>
 
 				<!-- Fullscreen button -->
-				<button type="button" class="btn btn-light button-fullscreen" onclick="ShowFullscreen('{{ URL }}','{{ texture[0] }}')">
+				<button type="button" class="btn btn-light button-fullscreen" onclick="ShowFullscreen('{{ URL }}','{{ textureName }}')">
 					<i class="fas fa-expand"></i>
 				</button>
 
 				<!-- Info button -->
-				<button type="button" class="btn btn-light button-info" onclick="ShowInfos('{{ URL }}','{{ texture[0] }}',{{ isBlock }})">
+				<button type="button" class="btn btn-light button-info" onclick="ShowInfos('{{ URL }}','{{ textureName }}',{{ isBlock }})">
 					<i class="fas fa-info"></i>
 				</button>
 
