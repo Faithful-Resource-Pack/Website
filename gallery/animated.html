@@ -103,7 +103,7 @@ nav-img: animated.gif
 			{%- assign textureName = texture['name'] -%}
 			{%- assign textureURL = texture['url'] -%}
 
-			{%- assign URL = GitHubURL | append: textureURL | append: textureName -%}
+			{%- assign URL = GitHubURL | append: textureURL | append: "/" | append: textureName -%}
 
 			{%- assign AnimElementID = "Anim-" | append: Count -%}
 			{%- assign ImgID = "Img-" | append: Count -%}
