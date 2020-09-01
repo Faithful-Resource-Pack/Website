@@ -7,26 +7,26 @@
 	{
 		"name": "fire_layer_1.png",
 		"url": "Block%20Textures",
-		"mcmeta": ""
+		"mcmeta": { "animation": { }}
 	},
 	{
 		"name": "lava_flow.png",
 		"url": "Block%20Textures",
-		"mcmeta": ""
+		"mcmeta": { "animation": { "frametime": 3 }}
 	},
 	{
 		"name": "lava_still.png",
 		"url": "Block%20Textures",
-		"mcmeta": ""
+		"mcmeta": { "animation": { "frametime": 2, "frames": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]}}
 	},
 	{
 		"name": "sea_lantern.png",
 		"url": "Block%20Textures",
-		"mcmeta": ""
+		"mcmeta": { "animation": { "frametime": 5 }}
 	},
 	{
 		"name": "T_Lava_16_spritesheet.png",
 		"url": "UE4Project/Content/Materials",
-		"mcmeta": ""
+		"mcmeta": { "animation": { "frametime": 2 }}
 	}
 ]
