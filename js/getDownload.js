@@ -31,7 +31,7 @@ function getDownload(id, release, prefix){
 			console.log('Something went wrong: ' + err);
 		} else {
 			count = data[release]['assets'][0]['download_count'];
-			document.getElementById(id).innerHTML =  count;
+			document.getElementById(id).innerHTML = count;
 		}
 	});
 }
