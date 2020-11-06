@@ -5,11 +5,11 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
-	background: #241715
+	background: #191713
 }
 header {
 	text-align: center;
-	background: #241715
+	background: #191713
 }
 main {
 	margin: 30px 0
@@ -81,10 +81,10 @@ main {
 	background: #322121
 }
 .card-in {
-	background: #583442;
+	background: #957186;
 }
 body {
-	background: #241715;
+	background: #191713;
 	color: #fff
 }
 p {
@@ -139,12 +139,12 @@ h2, h3, h4, h5 {
 .custom-navbar-wrapper {
 	position: sticky;
 	top: 0;
-	background: #402A2C;
+	background: #241715;
 	z-index: 1020
 }
 .navbar-gallery {
 	z-index: 0;
-	background: #402A2C;
+	background: #1C1C1C;
 }
 
 @media (min-width: 800px) {
