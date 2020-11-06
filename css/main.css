@@ -5,11 +5,11 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
-	background: #402A2C
+	background: #241715
 }
 header {
 	text-align: center;
-	background: #402A2C
+	background: #241715
 }
 main {
 	margin: 30px 0
@@ -84,7 +84,7 @@ main {
 	background: #583442;
 }
 body {
-	background: #402A2C;
+	background: #241715;
 	color: #fff
 }
 p {
@@ -139,12 +139,12 @@ h2, h3, h4, h5 {
 .custom-navbar-wrapper {
 	position: sticky;
 	top: 0;
-	background: #241715;
+	background: #402A2C;
 	z-index: 1020
 }
 .navbar-gallery {
 	z-index: 0;
-	background: #1C1C1C;
+	background: #402A2C;
 }
 
 @media (min-width: 800px) {
