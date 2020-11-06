@@ -11,54 +11,7 @@ nav-img: decor.png
 {%- assign isBlock = false -%}
 
 <div class="card bg-dark">
-	<div class="custom-navbar-wrapper navbar-gallery">
-		<nav class="custom-navbar navbar navbar-expand-lg navbar-dark">
-			<span class="navbar-brand">
-				<img src="{{ site.baseurl }}/image/gallery/{{ page.nav-img }}" width="30" height="30" class="d-inline-block align-top" alt="">
-				{{ page.title }}
-			</span>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleSubNavbar" aria-label="Menu">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="collapsibleSubNavbar">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/blocks">Blocks</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/components">Components</a>
-					</li>
-					<li>
-						<a class="nav-link active" href="{{ site.baseurl }}/gallery/decor">Decor</a>
-					</li>
-					<li>
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/effects">Effects</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/entities">Entities</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/equipments">Equipments</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/items">Items</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/materials">Materials</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/ui">UI</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/animated">Animated</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery/others">Others</a>
-					</li> 
-				</ul>
-			</div>  
-		</nav>
-	</div>
+	{%- include dungeons_menu.html -%}
 
 	<!-- Fullscreen modal -->
 	<div id="ShowFullscreen" class="modal" style="display: none;">
