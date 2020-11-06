@@ -5,11 +5,11 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
-	background: #141519
+	background: #22202C
 }
 header {
 	text-align: center;
-	background: #141519
+	background: #22202C
 }
 main {
 	margin: 30px 0
@@ -81,7 +81,7 @@ main {
 	background: #2D2E32
 }
 body {
-	background: #141519;
+	background: #22202C;
 	color: #fff
 }
 p {
