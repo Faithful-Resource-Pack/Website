@@ -5,11 +5,11 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
-	background: #22202C
+	background: #402A2C
 }
 header {
 	text-align: center;
-	background: #22202C
+	background: #402A2C
 }
 main {
 	margin: 30px 0
@@ -78,20 +78,23 @@ main {
 	background: #878787
 }
 .card {
-	background: #2D2E32
+	background: #322121
+}
+.card-in {
+	background: #583442;
 }
 body {
-	background: #22202C;
+	background: #402A2C;
 	color: #fff
 }
 p {
 	color: rgba(255, 255, 255, .7)
 }
 .modal-header {
-	border-bottom: 1px solid #2D2E32
+	border-bottom: 1px solid #322121
 }
 .modal-footer {
-	border-top: 1px solid #2D2E32
+	border-top: 1px solid #322121
 }
 h2, h3, h4, h5 {
 	font-weight: 300
@@ -136,7 +139,7 @@ h2, h3, h4, h5 {
 .custom-navbar-wrapper {
 	position: sticky;
 	top: 0;
-	background: #1B1B1B;
+	background: #241715;
 	z-index: 1020
 }
 .navbar-gallery {
