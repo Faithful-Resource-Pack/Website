@@ -1,7 +1,9 @@
 /* Custom font */
 @font-face {
-	font-family: "Compliance Sans", serif;
-	src: url("https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/font/ComplianceSans.otf") format("otf");
+	font-family: "Compliance Sans";
+	src: 
+		url("../font/ComplianceSans.otf") format("opentype"),
+		url("../font/Compliance_Sans-7.ttf") format("truetype");
 }
 
 /* Basic layout */
@@ -12,12 +14,12 @@ footer {
 	padding: 2rem 1rem;
 	text-align: center;
 	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png);
-	font-family: "Compliance Sans", serif;
+	font-family: "Compliance Sans", sans-serif;
 }
 header {
 	text-align: center;
 	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png);
-	font-family: "Compliance Sans", serif;
+	font-family: "Compliance Sans", sans-serif;
 }
 .img-fluid {
 	border-radius: .25rem
@@ -94,7 +96,7 @@ main {
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png) bottom center repeat-x,
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png) repeat;
 	color: #fff;
-	font-family: "Compliance Sans", serif;
+	font-family: "Compliance Sans", sans-serif;
 }
 p {
 	color: rgba(255, 255, 255, .7)
@@ -276,7 +278,7 @@ h2, h3, h4, h5 {
 
 .nav-item {
 	font-size: 30px;
-	font-family: "Compliance Sans", serif;
+	font-family: "Compliance Sans", sans-serif;
 }
 
 .nav-link {
