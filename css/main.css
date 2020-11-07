@@ -1,6 +1,6 @@
 /* Custom font */
 @font-face {
-	font-family: "Compliance Sans", line-height: -10%;
+	font-family: "Compliance Sans";
 	src: 
 		url("../font/ComplianceSans.ttf") format("truetype");
 }
@@ -14,11 +14,13 @@ footer {
 	text-align: center;
 	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png);
 	font-family: "Compliance Sans", sans-serif;
+	line-height: -10%;
 }
 header {
 	text-align: center;
 	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png);
 	font-family: "Compliance Sans", sans-serif;
+	line-height: -10%;
 }
 .img-fluid {
 	border-radius: .25rem
@@ -96,6 +98,7 @@ main {
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png) repeat;
 	color: #fff;
 	font-family: "Compliance Sans", sans-serif;
+	line-height: -10%;
 }
 p {
 	color: rgba(255, 255, 255, .7)
@@ -278,6 +281,7 @@ h2, h3, h4, h5 {
 .nav-item {
 	font-size: 30px;
 	font-family: "Compliance Sans", sans-serif;
+	line-height: -10%;
 }
 
 .nav-link {
