@@ -3,60 +3,63 @@ layout: default
 title: Home
 ---
 
-<!-- Carousel Automatic -->
-<div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel">
-	<!-- indicators -->
-	<ul class="carousel-indicators">
-		{%- assign ImgCounter = 0 -%}
+<!-- Screenshots carousel preview -->
+<div class="card">
+	<div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel">
+		<!-- indicators -->
+		<ul class="carousel-indicators">
+			{%- assign ImgCounter = 0 -%}
 
-		{%- for image in site.static_files -%}
-			{%- if image.path contains '/image/home/carousel' -%}
-				{%- if ImgCounter == 0 -%}
-					<li data-target="#ScreenshotCarousel" class="active" data-slide-to="{{ ImgCounter }}"></li>
-				{%- else -%}
-					<li data-target="#ScreenshotCarousel" data-slide-to="{{ ImgCounter }}"></li>
+			{%- for image in site.static_files -%}
+				{%- if image.path contains '/image/home/carousel' -%}
+					{%- if ImgCounter == 0 -%}
+						<li data-target="#ScreenshotCarousel" class="active" data-slide-to="{{ ImgCounter }}"></li>
+					{%- else -%}
+						<li data-target="#ScreenshotCarousel" data-slide-to="{{ ImgCounter }}"></li>
+					{%- endif -%}
+
+					{%- assign ImgCounter = ImgCounter | plus: 1 -%}
 				{%- endif -%}
+			{%- endfor -%}
+		</ul>
 
-				{%- assign ImgCounter = ImgCounter | plus: 1 -%}
-			{%- endif -%}
-		{%- endfor -%}
-	</ul>
+		<!-- slideshow --> 
+		<div class="carousel-inner">
+			{%- assign ImgCounter = 0 -%}
 
-	<!-- slideshow --> 
-	<div class="carousel-inner">
-		{%- assign ImgCounter = 0 -%}
-
-		{%- for image in site.static_files -%}
-			{%- if image.path contains '/image/home/carousel' -%}
-				{%- if ImgCounter == 0 -%}
-					<div class="carousel-item active">
-						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-						<div class="carousel-caption">
-							<h3>{{ image.basename }}</h3>
+			{%- for image in site.static_files -%}
+				{%- if image.path contains '/image/home/carousel' -%}
+					{%- if ImgCounter == 0 -%}
+						<div class="carousel-item active">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<div class="carousel-caption">
+								<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
+							</div>
 						</div>
-					</div>
-				{%- else -%}
-					<div class="carousel-item">
-						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-						<div class="carousel-caption">
-							<h3>{{ image.basename }}</h3>
+					{%- else -%}
+						<div class="carousel-item">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<div class="carousel-caption">
+								<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
+							</div>
 						</div>
-					</div>
+					{%- endif -%}
+
+					{%- assign ImgCounter = ImgCounter | plus: 1 -%}
 				{%- endif -%}
+			{%- endfor -%}
+		</div>
 
-				{%- assign ImgCounter = ImgCounter | plus: 1 -%}
-			{%- endif -%}
-		{%- endfor -%}
+		<!-- left & right controls -->
+		<a href="#ScreenshotCarousel" class="carousel-control-prev" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a href="#ScreenshotCarousel" class="carousel-control-next" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
 	</div>
-
-	<!-- left & right controls -->
-	<a href="#ScreenshotCarousel" class="carousel-control-prev" data-slide="prev">
-		<span class="carousel-control-prev-icon"></span>
-	</a>
-	<a href="#ScreenshotCarousel" class="carousel-control-next" data-slide="next">
-		<span class="carousel-control-next-icon"></span>
-	</a>
 </div>
+
 
 <hr>
 

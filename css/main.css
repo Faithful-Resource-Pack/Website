@@ -14,6 +14,10 @@ footer {
 	text-align: center;
 }
 
+nav {
+	background-color: #1C1C1C;
+}
+
 #topCarousel {
 	margin-top: 70px;
 }
@@ -28,7 +32,7 @@ footer {
 	}
 }
 
-.dropdown-toggle {
+.dropdown-toggle-transparent {
 	background-color: #0000;
 	border: 0px;
 }
