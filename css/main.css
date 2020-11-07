@@ -22,8 +22,12 @@ header {
 	line-height: -10%;*/
 }
 main {
+	margin-top: 80px;
 	/*font-family: "Compliance Sans", sans-serif;
 	line-height: -10%;*/
+}
+.container {
+	margin-top: 100px; 
 }
 p {
 	color: rgba(255, 255, 255, .7)
