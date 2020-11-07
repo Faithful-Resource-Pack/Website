@@ -11,9 +11,6 @@ header {
 	text-align: center;
 	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png)
 }
-main {
-	margin: 30px 0
-}
 .img-fluid {
 	border-radius: .25rem
 }
