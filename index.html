@@ -68,12 +68,14 @@ title: Home
 		<div id="compliance32x" class="owl-carousel owl-theme">
 
 			{%- for image in site.static_files -%}
-				{%- if image contains 'image/news/compliance32x' -%}
+				{%- if image.path contains 'image/news/compliance32x' -%}
+
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance32x/{{ image.basename }}" rel="noopener">
 							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 						</a>
 					</div>
+
 				{%- endif -%}
 			{%- endfor -%}
 
