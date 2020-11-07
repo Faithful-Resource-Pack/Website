@@ -65,60 +65,51 @@ title: Home
 	<div class="card-body">
 		<h2 class="card-title">Compliance 32x</h2>
 
-		<div id="Compliance32xCarousel" class="carousel" data-ride="carousel">
+		<div class="Compliance32xCarousel owl-theme">
 
-			<ul class="carousel-indicators">
-				{%- assign ImgCounter = 0 -%}
-
-				{%- for image in site.static_files | reverse -%}
-					{%- if image.path contains '/image/news/compliance32x' -%}
-						{%- if ImgCounter == 0 -%}
-							<li data-target="#Compliance32xCarousel" class="active" data-slide-to="{{ ImgCounter }}"></li>
-						{%- else -%}
-							<li data-target="#Compliance32xCarousel" data-slide-to="{{ ImgCounter }}"></li>
-						{%- endif -%}
-
-						{%- assign ImgCounter = ImgCounter | plus: 1 -%}
-					{%- endif -%}
-				{%- endfor -%}
-			</ul>
-
-			<!-- slideshow --> 
-			<div class="carousel-inner">
-				{%- assign ImgCounter = 0 -%}
-
-				{%- for image in site.static_files | reverse -%}
-					{%- if image.path contains '/image/news/compliance32x' -%}
-						{%- if ImgCounter == 0 -%}
-							<div class="carousel-item active">
-								<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-								<div class="carousel-caption">
-									<h3>{{ image.basename }}</h3>
-								</div>
-							</div>
-						{%- else -%}
-							<div class="carousel-item">
-								<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-								<div class="carousel-caption">
-									<h3>{{ image.basename }}</h3>
-								</div>
-							</div>
-						{%- endif -%}
-
-						{%- assign ImgCounter = ImgCounter | plus: 1 -%}
-					{%- endif -%}
-				{%- endfor -%}
-			</div>
-
-			<!-- left & right controls -->
-			<a href="#Compliance32xCarousel" class="carousel-control-prev" data-slide="prev">
-				<span class="carousel-control-prev-icon"></span>
-			</a>
-			<a href="#Compliance32xCarousel" class="carousel-control-next" data-slide="next">
-				<span class="carousel-control-next-icon"></span>
-			</a>
+			{%- for image in site.static_files | reverse -%}
+				{%- if image contains 'image/news/compliance32x' -%}
+					<div class="item">
+						<a href="https://faithful-dungeons.github.io/Website/" rel="noopener">
+							<img title="{{ image.basename }}" src="{{ site.baseurl }}/image/icon/compliance_dungeons.png" style="width: 128px; height: 128px;" class="img-fluid" alt="Compliance Dungeons">
+						</a>
+					</div>
+				{%- endif -%}
+			{%- endfor -%}
 
 		</div>
+
+		<script>
+			$('.Compliance32xCarousel').owlCarousel({
+				center: true,
+				loop: true,
+				autoplay: false,
+				lazyLoad: true,
+				rewind: true,
+				margin: 20,
+				responsiveClass: true,
+				autoHeight: true,
+				autoplayTimeout: 4000,
+				smartSpeed: 800,
+				responsive: {
+					0: {
+						items: 1
+					},
+
+					600: {
+						items: 3
+					},
+
+					1024: {
+						items: 4
+					},
+
+					1366: {
+						items: 4
+					}
+				}
+			});
+		</script>
 		
 		<br>
 
