@@ -83,10 +83,10 @@ main {
 .card-in {
 	background: #402A2C;
 }
-body {
+main {
 	background: 
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_top.png) top center no-repeat,
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png) bottom center no-repeat,
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_top.png) top center repeat-x,
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png) bottom center repeat-x,
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png) repeat;
 	color: #fff
 }
