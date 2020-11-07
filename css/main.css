@@ -265,6 +265,10 @@ h2, h3, h4, h5 {
 	padding: 10px 0
 }
 
+.nav-item {
+	font-size: 30px;
+}
+
 .nav-link {
 	transition: all .1s ease-out;
 	-webkit-transition: all .1s ease-out;
