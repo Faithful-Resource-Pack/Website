@@ -15,9 +15,12 @@ footer {
 	color: rgba(255, 255, 255, .7);
 }
 
-nav {
-	background-color: #1C1C1C;
+.custom-navbar-wrapper {
+	position: sticky;
 	color: rgba(255, 255, 255, .7);
+	top: 0;
+	background: #1C1C1C;
+	z-index: 1020
 }
 
 .container {
