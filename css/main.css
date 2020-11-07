@@ -1,7 +1,7 @@
 /* Custom font */
 @font-face {
 	font-family: "Compliance Sans";
-	src: url("https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/font/Compliance_Sans-7.ttf") format("ttf");
+	src: url("https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/font/ComplianceSans.otf") format("otf");
 }
 
 /* Basic layout */
@@ -276,6 +276,7 @@ h2, h3, h4, h5 {
 
 .nav-item {
 	font-size: 30px;
+	font-family: "Compliance Sans";
 }
 
 .nav-link {
