@@ -70,8 +70,8 @@ title: Home
 			{%- for image in site.static_files | reverse -%}
 				{%- if image contains 'image/news/compliance32x' -%}
 					<div class="item">
-						<a href="https://faithful-dungeons.github.io/Website/" rel="noopener">
-							<img title="{{ image.basename }}" src="{{ site.baseurl }}/image/icon/compliance_dungeons.png" style="width: 128px; height: 128px;" class="img-fluid" alt="Compliance Dungeons">
+						<a href="{{ site.baseurl }}/news/compliance32x/{{ image.basename }}" rel="noopener">
+							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 						</a>
 					</div>
 				{%- endif -%}
@@ -79,38 +79,6 @@ title: Home
 
 		</div>
 
-		<script>
-			$('.Compliance32xCarousel').owlCarousel({
-				center: true,
-				loop: true,
-				autoplay: false,
-				lazyLoad: true,
-				rewind: true,
-				margin: 20,
-				responsiveClass: true,
-				autoHeight: true,
-				autoplayTimeout: 4000,
-				smartSpeed: 800,
-				responsive: {
-					0: {
-						items: 1
-					},
-
-					600: {
-						items: 3
-					},
-
-					1024: {
-						items: 4
-					},
-
-					1366: {
-						items: 4
-					}
-				}
-			});
-		</script>
-		
 		<br>
 
 		<h2 class="card-title">Compliance 32x - 3D</h2>
@@ -224,6 +192,7 @@ title: Home
 
 <hr>
 
+<!-- COMPLIANCE DUNGEONS -->
 <div class="card">
 	<div class="card-body">
 		<h2 class="card-title">Compliance Mods for Minecraft Dungeons:</h2>
@@ -330,3 +299,45 @@ title: Home
 		</div>
 	</div>
 </div>
+
+<script>
+	$('.Compliance32xCarousel').owlCarousel({
+		center: true,
+		loop: true,
+		autoplay: false,
+		lazyLoad: true,
+		rewind: true,
+		margin: 20,
+		responsiveClass: true,
+		autoHeight: true,
+		autoplayTimeout: 4000,
+		smartSpeed: 800,
+		responsive: {
+			0: {
+				items: 1
+			},
+			600: {
+				items: 3
+			},
+			1024: {
+				items: 4
+			},
+			1366: {
+				items: 4
+			}
+		}
+		afterMove: function(elem) {
+        var current = this.currentItem;
+        var currentImg = elem.find('.owl-item').eq(current).find('img');
+
+        $('figure')
+            .find('img')
+            .attr({
+                'src': currentImg.attr('src'),
+                'alt': currentImg.attr('alt'),
+                'title': currentImg.attr('alt')
+            });
+        $('#figcaption').text(currentImg.attr('title'));
+    }
+	});
+</script>
