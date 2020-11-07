@@ -3,7 +3,6 @@ layout: default
 title: Home
 ---
 
-<h2>Discover:</h2>
 <!-- Carousel Automatic -->
 <div id="carouselID" class="carousel slide" data-ride="carousel">
 	<!-- indicators -->
@@ -67,41 +66,25 @@ title: Home
 		<h2 class="card-title">Compliance 32x</h2>
 
 		<div class="card-deck">
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">20w45a (1.17)</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.16.4</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.15.2</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.14.4</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.13.2</h4>
-				</div>
-			</div>
+
+			{%- assign counter = 0 -%}
+
+			{%- for image in site.static_files -%}
+				{%- if counter < 6 -%}
+					{%- assign counter = counter + 1 -%}
+					{%- if image.path contains 'image/home/compliance32x/' -%}
+
+						<div class="card">
+							<img class="card-img" src="{{ site.baseurl }}/{{ image.path }}" alt="{{ image.name }}">
+							<div class="card-img-overlay">
+								<h4 class="card-title">{{ image.name }}</h4>
+							</div>
+						</div>
+
+					{%- endif -%}
+				{%- endif -%}
+			{%- endfor -%}
+
 		</div>
 
 		<br>
