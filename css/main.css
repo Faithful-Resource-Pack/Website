@@ -18,19 +18,40 @@ footer {
 }
 header {
 	text-align: center;
-	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png);
 	font-family: "Compliance Sans", sans-serif;
 	line-height: -10%;
 }
-.img-fluid {
-	border-radius: .25rem
+main {
+	font-family: "Compliance Sans", sans-serif;
+	line-height: -10%;
 }
+p {
+	color: rgba(255, 255, 255, .7)
+}
+
 @media (min-width: 576px) {
 	footer {
 		padding: 4rem 2rem
 	}
 }
 
+/** BACKGROUND **/
+.background-top {
+	background-image: 
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png) repeat;
+}
+.background-middle {
+	background-image: 
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_top.png) top center repeat-x,
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png) bottom center repeat-x,
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png) repeat;
+}
+.background-bottom {
+	background-image: 
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/.png) repeat;
+}
+
+/** OWL CAROUSEL **/
 /* Make the image fully responsive (owl carousel) */
 .carousel-inner img {
 	width: 100%;
@@ -40,15 +61,17 @@ header {
 .item img {
   margin: 0 auto
 }
-
 .item a img.img-fluid {
     transition: all .5s ease
 }
-
 .item a img.img-fluid:hover {
     transform: scale(1.1)
 }
+.img-fluid {
+	border-radius: .25rem
+}
 
+/** BASIC CAROUSEL **/
 /* Make the image fully responsive (carousel) */
 .carousel-inner img {
 	width: 100%;
@@ -65,7 +88,7 @@ header {
 	margin-left: 100px;
 }
 
-/* Dark colors */
+/** CUSTOM SCROLLBAR **/
 ::-webkit-scrollbar{
 	width: 17px
 }
@@ -85,86 +108,26 @@ header {
 ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
 	background: #878787
 }
+
+/* CARDS */
 .card {
 	background: #322121
 }
 .card-in {
 	background: #402A2C;
 }
-main {
-	background: 
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_top.png) top center repeat-x,
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png) bottom center repeat-x,
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png) repeat;
-	color: #fff;
-	font-family: "Compliance Sans", sans-serif;
-	line-height: -10%;
-}
-p {
-	color: rgba(255, 255, 255, .7)
-}
-.modal-header {
-	border-bottom: 1px solid #322121
-}
-.modal-footer {
-	border-top: 1px solid #322121
-}
-h2, h3, h4, h5 {
-	font-weight: 300
-}
 
-/* Flexbox */
-.flex-container {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	flex-direction: row;
-	flex-wrap: wrap
-}
-.flex-container > .card {
-	margin: 15px auto
-}
-
-/* Classes for images next to text UNUSED */
-.links-image {
-	width: 100%;
-	margin: 0 0 15px 0;
-	border-radius: .25rem
-}
-.links-image img {
-	border-radius: .25rem
-}
-@media (min-width: 992px) {
-	.links-image, .links-content {
-		display: inline-block
-	}
-	.links-image {
-		margin: 0 15px 0 0;
-		width: 500px
-	}
-	.links-content {
-		width: calc(100% - 545px);
-		vertical-align: top
-	}
-}
-
-/* navbar */
-.custom-navbar-wrapper {
-	position: sticky;
-	top: 0;
-	background: #0000;
-	z-index: 1020
-}
+/* NAVBAR */
 .navbar-gallery {
 	z-index: 0;
 	background: #1C1C1C;
 }
 
 @media (min-width: 800px) {
-	.custom-navbar-wrapper {
+	.nav {
 		text-align: center
 	}
-	.custom-navbar {
+	.nav {
 		display: inline-flex
 	}
 }
