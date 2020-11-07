@@ -84,9 +84,10 @@ main {
 	background: #402A2C;
 }
 body {
-	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_top.png),
-										url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png),
-										url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png);
+	background: 
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_top.png) top center no-repeat,
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png) bottom center no-repeat,
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png) repeat;
 	color: #fff
 }
 p {
