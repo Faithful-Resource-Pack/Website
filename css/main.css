@@ -1,9 +1,8 @@
 /* Custom font */
 @font-face {
-	font-family: "Compliance Sans";
+	font-family: "Compliance Sans", line-height: -10%;
 	src: 
-		url("../font/ComplianceSans.otf") format("opentype"),
-		url("../font/Compliance_Sans-7.ttf") format("truetype");
+		url("../font/ComplianceSans.ttf") format("truetype");
 }
 
 /* Basic layout */
