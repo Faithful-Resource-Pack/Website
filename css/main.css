@@ -1,3 +1,9 @@
+/* Custom font */
+@font-face {
+	font-family: "Compliance Sans";
+	src: url("https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/font/Compliance_Sans-7.ttf") format("ttf");
+}
+
 /* Basic layout */
 html {
 	overflow-x: hidden
@@ -5,11 +11,13 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
-	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png)
+	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png);
+	font-family: "Compliance Sans";
 }
 header {
 	text-align: center;
-	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png)
+	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png);
+	font-family: "Compliance Sans";
 }
 .img-fluid {
 	border-radius: .25rem
@@ -85,7 +93,8 @@ main {
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_top.png) top center repeat-x,
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png) bottom center repeat-x,
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png) repeat;
-	color: #fff
+	color: #fff;
+	font-family: "Compliance Sans";
 }
 p {
 	color: rgba(255, 255, 255, .7)
