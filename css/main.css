@@ -13,8 +13,12 @@ footer {
 	padding: 2rem 1rem;
 	text-align: center;
 }
+
+#topCarousel {
+	margin-top: 70px;
+}
+
 .container {
-	margin-top: 100px;
 	color: rgba(255, 255, 255, .7);
 }
 
