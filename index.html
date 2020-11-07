@@ -83,41 +83,23 @@ title: Home
 
 		<br>
 
-		<h2 class="card-title">Compliance 32x - 3D</h2>
-		<div class="card-deck">
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">20w45a (1.17)</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.16.4</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.15.2</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.14.4</h4>
-				</div>
-			</div>
+		<h2 class="card-title">Compliance 3D 32x</h2>
+
+		<div id="compliance32x3D" class="owl-carousel owl-theme">
+
+			{%- for image in site.static_files -%}
+				{%- if image.path contains 'image/news/compliance32x3D' -%}
+
+					<div class="item">
+						<a href="{{ site.baseurl }}/news/compliance32x3D/{{ image.basename }}" rel="noopener">
+							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+						</a>
+					</div>
+
+				{%- endif -%}
+			{%- endfor -%}
+
 		</div>
-
-		<br>
-
-		<a href="" class="btn btn-primary btn-lg btn-block">Others versions</a>
 
 		<br>
 	
@@ -147,47 +129,18 @@ title: Home
 <div class="card">
 	<div class="card-body">
 		<h2 class="card-title">Compliance 64x</h2>
-		<div class="card-deck">
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">20w45a (1.17)</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.16.4</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.15.2</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.14.4</h4>
-				</div>
-			</div>
-			<div class="card card-in">
-				<img class="card-img-top" src="{{ site.baseurl }}/image/home/test.png" alt="">
-				<div class="card-body">
-					<!-- Card text -->
-					<h4 class="card-title">1.13.2</h4>
-				</div>
-			</div>
-		</div>
 
-		<br>
+		{%- for image in site.static_files -%}
+			{%- if image.path contains 'image/news/compliance64x' -%}
 
-		<a href="" class="btn btn-primary btn-lg btn-block">Others versions</a>
+				<div class="item">
+					<a href="{{ site.baseurl }}/news/compliance64x/{{ image.basename }}" rel="noopener">
+						<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+					</a>
+				</div>
+
+			{%- endif -%}
+		{%- endfor -%}
 
 	</div>
 </div>
@@ -307,17 +260,74 @@ title: Home
 
 		$('#compliance32x').owlCarousel({
 			loop: true,
-			nav: false,
+			margin: 10,
+			nav: true,
 			responsiveClass: true,
 			autoHeight: true,
 			responsive: {
 				0: {
 					items: 1
 				},
+
 				600: {
-					items: 2
+					items: 3
 				},
-				1000: {
+
+				1024: {
+					items: 4
+				},
+
+				1366: {
+					items: 4
+				}
+			}
+		});
+
+		$('#compliance32x3D').owlCarousel({
+			loop: true,
+			margin: 10,
+			nav: true,
+			responsiveClass: true,
+			autoHeight: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+
+				600: {
+					items: 3
+				},
+
+				1024: {
+					items: 4
+				},
+
+				1366: {
+					items: 4
+				}
+			}
+		});
+
+		$('#compliance64x').owlCarousel({
+			loop: true,
+			margin: 10,
+			nav: true,
+			responsiveClass: true,
+			autoHeight: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+
+				600: {
+					items: 3
+				},
+
+				1024: {
+					items: 4
+				},
+
+				1366: {
 					items: 4
 				}
 			}
