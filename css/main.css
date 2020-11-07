@@ -13,17 +13,17 @@ footer {
 	padding: 2rem 1rem;
 	text-align: center;
 	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png);
-	font-family: "Compliance Sans", sans-serif;
-	line-height: -10%;
+	/*font-family: "Compliance Sans", sans-serif;
+	line-height: -10%;*/
 }
 header {
 	text-align: center;
-	font-family: "Compliance Sans", sans-serif;
-	line-height: -10%;
+	/*font-family: "Compliance Sans", sans-serif;
+	line-height: -10%;*/
 }
 main {
-	font-family: "Compliance Sans", sans-serif;
-	line-height: -10%;
+	/*font-family: "Compliance Sans", sans-serif;
+	line-height: -10%;*/
 }
 p {
 	color: rgba(255, 255, 255, .7)
@@ -37,18 +37,18 @@ p {
 
 /** BACKGROUND **/
 .background-top {
-	background-image: 
+	background: 
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png) repeat;
 }
 .background-middle {
-	background-image: 
+	background: 
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_top.png) top center repeat-x,
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png) bottom center repeat-x,
 		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png) repeat;
 }
 .background-bottom {
-	background-image: 
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/.png) repeat;
+	background: 
+		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png) repeat;
 }
 
 /** OWL CAROUSEL **/
