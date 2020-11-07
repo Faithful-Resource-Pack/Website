@@ -130,17 +130,21 @@ title: Home
 	<div class="card-body">
 		<h2 class="card-title">Compliance 64x</h2>
 
-		{%- for image in site.static_files -%}
-			{%- if image.path contains 'image/news/compliance64x' -%}
+		<div id="compliance64x" class="owl-carousel owl-theme">
+		
+			{%- for image in site.static_files -%}
+				{%- if image.path contains 'image/news/compliance64x' -%}
 
-				<div class="item">
-					<a href="{{ site.baseurl }}/news/compliance64x/{{ image.basename }}" rel="noopener">
-						<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-					</a>
-				</div>
+					<div class="item">
+						<a href="{{ site.baseurl }}/news/compliance64x/{{ image.basename }}" rel="noopener">
+							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+						</a>
+					</div>
 
-			{%- endif -%}
-		{%- endfor -%}
+				{%- endif -%}
+			{%- endfor -%}
+		
+		</div>
 
 	</div>
 </div>
@@ -260,7 +264,7 @@ title: Home
 
 		$('#compliance32x').owlCarousel({
 			loop: true,
-			margin: 10,
+			margin: 30,
 			nav: true,
 			responsiveClass: true,
 			autoHeight: true,
@@ -285,7 +289,7 @@ title: Home
 
 		$('#compliance32x3D').owlCarousel({
 			loop: true,
-			margin: 10,
+			margin: 30,
 			nav: true,
 			responsiveClass: true,
 			autoHeight: true,
@@ -310,7 +314,7 @@ title: Home
 
 		$('#compliance64x').owlCarousel({
 			loop: true,
-			margin: 10,
+			margin: 30,
 			nav: true,
 			responsiveClass: true,
 			autoHeight: true,
