@@ -12,25 +12,10 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
-	background-image: url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png);
-	/*font-family: "Compliance Sans", sans-serif;
-	line-height: -10%;*/
-}
-header {
-	text-align: center;
-	/*font-family: "Compliance Sans", sans-serif;
-	line-height: -10%;*/
-}
-main {
-	margin-top: 80px;
-	/*font-family: "Compliance Sans", sans-serif;
-	line-height: -10%;*/
 }
 .container {
-	margin-top: 100px; 
-}
-p {
-	color: rgba(255, 255, 255, .7)
+	margin-top: 100px;
+	color: rgba(255, 255, 255, .7);
 }
 
 @media (min-width: 576px) {
@@ -42,17 +27,17 @@ p {
 /** BACKGROUND **/
 .background-top {
 	background: 
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png) repeat;
+		url(../image/background/bg_black.png) repeat;
 }
 .background-middle {
 	background: 
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_top.png) top center repeat-x,
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black_transition_bottom.png) bottom center repeat-x,
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_white.png) repeat;
+		url(../image/background/bg_black_transition_top.png) top center repeat-x,
+		url(../image/background/bg_black_transition_bottom.png) bottom center repeat-x,
+		url(../image/background/bg_white.png) repeat;
 }
 .background-bottom {
 	background: 
-		url(https://raw.githubusercontent.com/Compliance-Resource-Pack/Website/master/image/background/bg_black.png) repeat;
+		url(../image/background/bg_black.png) repeat;
 }
 
 /** OWL CAROUSEL **/
@@ -245,12 +230,6 @@ p {
 	padding: 10px 0
 }
 
-.nav-item {
-	font-size: 30px;
-	font-family: "Compliance Sans", sans-serif;
-	line-height: -10%;
-}
-
 .nav-link {
 	transition: all .1s ease-out;
 	-webkit-transition: all .1s ease-out;
@@ -401,34 +380,4 @@ img[src$=".gif"] {
 } 
 .card-texture:hover .button-info {   
   opacity: 1;
-}
-
-/* side panel */
-.sidepanel  {
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0,.85);
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidepanel p, .sidepanel a {
-  text-decoration: none;
-  font-size: 15px;
-  color: #818181;
-  display: block;
-	margin-bottom: 0px;
-  transition: 0.3s;
-}
-
-.sidepanel .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
 }

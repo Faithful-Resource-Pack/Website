@@ -34,9 +34,9 @@
 
 <body>
 	
-	<header>
+	<header class="background-top">
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-			<a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}/image/home/logo.png" alt="Logo" width="315" height="64"></a>
+			<a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}/image/home/logo.png" alt="Logo" width="236" height="48"></a>
 			<ul class="navbar-nav">
 
 				<li class="nav-item">
@@ -53,12 +53,31 @@
 					</a>
 				</li>
 
+				<li class="nav-item">
+					<a class="nav-link" href="{{ site.baseurl }}/download">
+						<i style="margin-right: 5px" class="fas fa-github"></i>
+						GitHub
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i style="margin-right: 5px" class="fab fa-discord"></i>
+						Discord
+					</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="">Compliance 32x</a>
+						<a class="dropdown-item" href="">Compliance 64x</a>
+						<a class="dropdown-item" href="">Compliance Addons</a>
+						<a class="dropdown-item" href="">Compliance Mods</a>
+						<a class="dropdown-item" href="">Compliance Dungeons</a>
+					</div>
+				</li>
+
 			</ul>
 		</nav>
-	</header>
 
-	<main class="background-middle">
-
+		<!-- carousel of others websites -->
 		<div id="topCarousel" class="owl-carousel owl-theme background-top">
 			<div class="item">
 				<a href="https://faithful-dungeons.github.io/Website/" rel="noopener">
@@ -86,16 +105,24 @@
 				</a>
 			</div>
 		</div>
+	</header>
 
-		<div class="container background-middle">
+	<br>
+
+	<main class="background-middle">
+	
+		<!-- Page content, centered -->
+		<div class="container">
 			{{ content }}
-			<br>
 		</div>
 
-		<footer>
-			<p>Website made by and for the Compliance Community</p>
-		</footer>
 	</main>
+
+	<br>
+
+	<footer class="background-bottom">
+			<p>Website made by and for the Compliance Community</p>
+	</footer>
 
 	<script>
 		$('#topCarousel').owlCarousel({
