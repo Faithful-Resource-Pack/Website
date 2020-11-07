@@ -152,7 +152,7 @@ h2, h3, h4, h5 {
 .custom-navbar-wrapper {
 	position: sticky;
 	top: 0;
-	background: #241715;
+	background: #0000;
 	z-index: 1020
 }
 .navbar-gallery {
