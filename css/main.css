@@ -12,14 +12,12 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
+	color: rgba(255, 255, 255, .7);
 }
 
 nav {
 	background-color: #1C1C1C;
-}
-
-#topCarousel {
-	margin-top: 70px;
+	color: rgba(255, 255, 255, .7);
 }
 
 .container {
@@ -30,11 +28,6 @@ nav {
 	footer {
 		padding: 4rem 2rem
 	}
-}
-
-.dropdown-toggle-transparent {
-	background-color: #0000;
-	border: 0px;
 }
 
 /** BACKGROUND **/
