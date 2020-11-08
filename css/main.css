@@ -50,6 +50,13 @@ footer {
 .table td {
 	border-top: 1px solid #343A40;
 }
+.table tbody+tbody {
+    border-top: 2px solid #343A40;
+}
+.table-hover tbody tr:hover {
+  color: #ccc;
+  background-color: rgba(0,0,0,.15);
+}
 #table32x3D, #table32x, #table64x {
 	display: none;
 }
