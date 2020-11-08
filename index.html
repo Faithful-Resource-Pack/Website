@@ -10,7 +10,7 @@ title: Home
 		<ul class="carousel-indicators">
 			{%- assign ImgCounter = 0 -%}
 
-			{%- for image in site.static_files | reverse -%}
+			{%- for image in site.static_files -%}
 				{%- if image.path contains '/image/home/carousel' -%}
 					{%- if ImgCounter == 0 -%}
 						<li data-target="#ScreenshotCarousel" class="active" data-slide-to="{{ ImgCounter }}"></li>
@@ -27,7 +27,7 @@ title: Home
 		<div class="carousel-inner">
 			{%- assign ImgCounter = 0 -%}
 
-			{%- for image in site.static_files | reverse -%}
+			{%- for image in site.static_files -%}
 				{%- if image.path contains '/image/home/carousel' -%}
 					{%- if ImgCounter == 0 -%}
 						<div class="carousel-item active">
@@ -63,6 +63,8 @@ title: Home
 
 <hr>
 
+{%- assign reversed_files = site.static_files | reverse -%}
+
 <!-- COMPLIANCE 32x -->
 <div class="card">
 	<div class="card-body">
@@ -70,7 +72,7 @@ title: Home
 
 		<div id="compliance32x" class="owl-carousel owl-theme">
 
-			{%- for image in site.static_files | reverse -%}
+			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/news/compliance32x' -%}
 
 					<div class="item">
@@ -91,7 +93,7 @@ title: Home
 
 		<div id="compliance32x3D" class="owl-carousel owl-theme">
 
-			{%- for image in site.static_files | reverse -%}
+			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/news/compliance32x3D' -%}
 
 					<div class="item">
@@ -112,7 +114,7 @@ title: Home
 
 		<div id="compliance32xAddons" class="owl-carousel owl-theme">
 
-			{%- for image in site.static_files | reverse -%}
+			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/news/compliance32xAddons' -%}
 
 					<div class="item">
@@ -152,7 +154,7 @@ title: Home
 
 		<div id="compliance64x" class="owl-carousel owl-theme">
 		
-			{%- for image in site.static_files | reverse -%}
+			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/news/compliance64x' -%}
 
 					<div class="item">
@@ -173,7 +175,7 @@ title: Home
 
 		<div id="compliance64xAddons" class="owl-carousel owl-theme">
 
-			{%- for image in site.static_files | reverse -%}
+			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/news/compliance64xAddons' -%}
 
 					<div class="item">
