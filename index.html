@@ -236,6 +236,97 @@ title: Home
 
 <hr>
 
+<!-- COMPLIANCE 32x -->
+<h2 class="display-3 m-5 text-center">Com&shy;pli&shy;ance for Bedrock</h2>
+<div class="card">
+	<div class="card-body">
+		<h2 class="card-title text-center">32x</h2>
+
+		<div id="compliance32x32xBedrock" class="owl-carousel owl-theme">
+
+			{%- for image in reversed_files -%}
+				{%- if image.path contains 'image/news/compliance32xBedrock/' -%}
+
+					<div class="item">
+						<a href="{{ site.baseurl }}/news/compliance32x32xBedrock/{{ image.basename }}" rel="noopener">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<h4>{{ image.basename }}</h4>
+						</a>
+					</div>
+
+				{%- endif -%}
+			{%- endfor -%}
+
+		</div>
+
+		<br>
+
+		<h2 class="card-title text-center">64x</h2>
+
+		<div id="compliance64xBedrock" class="owl-carousel owl-theme">
+
+			{%- for image in reversed_files -%}
+				{%- if image.path contains 'image/news/compliance64xBedrock/' -%}
+
+					<div class="item">
+						<a href="{{ site.baseurl }}/news/compliance64xBedrock/{{ image.basename }}" rel="noopener">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<h4>{{ image.basename }}</h4>
+						</a>
+					</div>
+
+				{%- endif -%}
+			{%- endfor -%}
+
+		</div>
+
+		<br>
+
+		<h2 class="card-title text-center">Add-Ons 32x</h2>
+
+		<div id="compliance32xBedrockAddons" class="owl-carousel owl-theme">
+
+			{%- for image in reversed_files -%}
+				{%- if image.path contains 'image/news/compliance32xBedrockAddons/' -%}
+
+					<div class="item">
+						<a href="{{ site.baseurl }}/news/compliance32xBedrockAddons/{{ image.basename }}" rel="noopener">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<h4>{{ image.basename }}</h4>
+						</a>
+					</div>
+
+				{%- endif -%}
+			{%- endfor -%}
+
+		</div>
+
+		<br>
+
+		<h2 class="card-title text-center">Add-Ons 64x</h2>
+
+		<div id="compliance64xBedrockAddons" class="owl-carousel owl-theme">
+
+			{%- for image in reversed_files -%}
+				{%- if image.path contains 'image/news/compliance64xBedrockAddons/' -%}
+
+					<div class="item">
+						<a href="{{ site.baseurl }}/news/compliance64xBedrockAddons/{{ image.basename }}" rel="noopener">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<h4>{{ image.basename }}</h4>
+						</a>
+					</div>
+
+				{%- endif -%}
+			{%- endfor -%}
+
+		</div>
+
+	</div>
+</div>
+
+<hr>
+
 <!-- COMPLIANCE DUNGEONS -->
 <h2 class="display-3 m-5 text-center">Com&shy;pli&shy;ance Mods for Mi&shy;ne&shy;craft Dun&shy;geons</h2>
 		<div class="card-deck">
@@ -444,6 +535,31 @@ title: Home
 		});
 
 		$('#compliance64x').owlCarousel({
+			loop: true,
+			margin: 30,
+			nav: false,
+			responsiveClass: true,
+			autoHeight: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+
+				600: {
+					items: 2
+				},
+
+				1024: {
+					items: 3
+				},
+
+				1366: {
+					items: 3
+				}
+			}
+		});
+
+		$('#compliance64xProgArt').owlCarousel({
 			loop: true,
 			margin: 30,
 			nav: false,
