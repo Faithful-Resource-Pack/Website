@@ -4,60 +4,58 @@ title: Home
 ---
 
 <!-- Screenshots carousel preview -->
-<div class="card">
-	<div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel">
-		<!-- indicators -->
-		<ul class="carousel-indicators">
-			{%- assign ImgCounter = 0 -%}
+<div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel">
+	<!-- indicators -->
+	<ul class="carousel-indicators">
+		{%- assign ImgCounter = 0 -%}
 
-			{%- for image in site.static_files -%}
-				{%- if image.path contains '/image/home/carousel' -%}
-					{%- if ImgCounter == 0 -%}
-						<li data-target="#ScreenshotCarousel" class="active" data-slide-to="{{ ImgCounter }}"></li>
-					{%- else -%}
-						<li data-target="#ScreenshotCarousel" data-slide-to="{{ ImgCounter }}"></li>
-					{%- endif -%}
-
-					{%- assign ImgCounter = ImgCounter | plus: 1 -%}
+		{%- for image in site.static_files -%}
+			{%- if image.path contains '/image/home/carousel' -%}
+				{%- if ImgCounter == 0 -%}
+					<li data-target="#ScreenshotCarousel" class="active" data-slide-to="{{ ImgCounter }}"></li>
+				{%- else -%}
+					<li data-target="#ScreenshotCarousel" data-slide-to="{{ ImgCounter }}"></li>
 				{%- endif -%}
-			{%- endfor -%}
-		</ul>
 
-		<!-- slideshow --> 
-		<div class="carousel-inner">
-			{%- assign ImgCounter = 0 -%}
+				{%- assign ImgCounter = ImgCounter | plus: 1 -%}
+			{%- endif -%}
+		{%- endfor -%}
+	</ul>
 
-			{%- for image in site.static_files -%}
-				{%- if image.path contains '/image/home/carousel' -%}
-					{%- if ImgCounter == 0 -%}
-						<div class="carousel-item active">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-							<div class="carousel-caption">
-								<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
-							</div>
+	<!-- slideshow -->
+	<div class="carousel-inner">
+		{%- assign ImgCounter = 0 -%}
+
+		{%- for image in site.static_files -%}
+			{%- if image.path contains '/image/home/carousel' -%}
+				{%- if ImgCounter == 0 -%}
+					<div class="carousel-item active">
+						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+						<div class="carousel-caption">
+							<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
 						</div>
-					{%- else -%}
-						<div class="carousel-item">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-							<div class="carousel-caption">
-								<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
-							</div>
+					</div>
+				{%- else -%}
+					<div class="carousel-item">
+						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+						<div class="carousel-caption">
+							<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
 						</div>
-					{%- endif -%}
-
-					{%- assign ImgCounter = ImgCounter | plus: 1 -%}
+					</div>
 				{%- endif -%}
-			{%- endfor -%}
-		</div>
 
-		<!-- left & right controls -->
-		<a href="#ScreenshotCarousel" class="carousel-control-prev" data-slide="prev">
-			<span class="carousel-control-prev-icon"></span>
-		</a>
-		<a href="#ScreenshotCarousel" class="carousel-control-next" data-slide="next">
-			<span class="carousel-control-next-icon"></span>
-		</a>
+				{%- assign ImgCounter = ImgCounter | plus: 1 -%}
+			{%- endif -%}
+		{%- endfor -%}
 	</div>
+
+	<!-- left & right controls -->
+	<a href="#ScreenshotCarousel" class="carousel-control-prev" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+	</a>
+	<a href="#ScreenshotCarousel" class="carousel-control-next" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+	</a>
 </div>
 
 <hr>
@@ -65,9 +63,10 @@ title: Home
 {%- assign reversed_files = site.static_files | reverse -%}
 
 <!-- COMPLIANCE 32x -->
+<h2 class="display-3 m-5 text-center">Com&shy;pli&shy;ance 32x</h2>
 <div class="card">
 	<div class="card-body">
-		<h2 class="card-title">Compliance 32x</h2>
+		<h2 class="card-title text-center">Main Pack</h2>
 
 		<div id="compliance32x" class="owl-carousel owl-theme">
 
@@ -76,7 +75,7 @@ title: Home
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance32x/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
@@ -88,7 +87,7 @@ title: Home
 
 		<br>
 
-		<h2 class="card-title">Compliance 3D 32x</h2>
+		<h2 class="card-title text-center">3D Extension</h2>
 
 		<div id="compliance32x3D" class="owl-carousel owl-theme">
 
@@ -97,7 +96,7 @@ title: Home
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance32x3D/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
@@ -109,7 +108,7 @@ title: Home
 
 		<br>
 
-		<h2 class="card-title">Compliance Addons 32x</h2>
+		<h2 class="card-title text-center">Add-Ons</h2>
 
 		<div id="compliance32xAddons" class="owl-carousel owl-theme">
 
@@ -118,7 +117,7 @@ title: Home
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance32xAddons/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
@@ -129,8 +128,8 @@ title: Home
 		</div>
 
 		<br>
-	
-		<h2 class="card-title">Compliance Mods for 32x</h2>
+
+		<h2 class="card-title text-center">Mod Support</h2>
 
 		<div class="row">
 			<div class="col">
@@ -147,30 +146,31 @@ title: Home
 <hr>
 
 <!-- COMPLIANCE 64x -->
+<h2 class="display-3 m-5 text-center">Com&shy;pli&shy;ance 64x</h2>
 <div class="card">
 	<div class="card-body">
-		<h2 class="card-title">Compliance 64x</h2>
+		<h2 class="card-title text-center">Main Pack</h2>
 
 		<div id="compliance64x" class="owl-carousel owl-theme">
-		
+
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/news/compliance64x/' -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance64x/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
 
 				{%- endif -%}
 			{%- endfor -%}
-		
+
 		</div>
 
 		<br>
 
-		<h2 class="card-title">Compliance Addons 64x</h2>
+		<h2 class="card-title text-center">Add-Ons</h2>
 
 		<div id="compliance64xAddons" class="owl-carousel owl-theme">
 
@@ -179,7 +179,7 @@ title: Home
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance64xAddons/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
@@ -195,9 +195,7 @@ title: Home
 <hr>
 
 <!-- COMPLIANCE DUNGEONS -->
-<div class="card">
-	<div class="card-body">
-		<h2 class="card-title">Compliance Mods for Minecraft Dungeons:</h2>
+<h2 class="display-3 m-5 text-center">Com&shy;pli&shy;ance Mods for Mi&shy;ne&shy;craft Dun&shy;geons</h2>
 		<div class="card-deck">
 			<!-- Compliance Skin Pack Card -->
 			<div class="card card-in">
@@ -299,8 +297,6 @@ title: Home
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
 
 <script>
 	$(document).ready(function(){
@@ -308,9 +304,9 @@ title: Home
 		$('#compliance32x').owlCarousel({
 			loop: true,
 			margin: 30,
-			nav: true,
+			nav: false,
 			responsiveClass: true,
-			autoHeight: true,
+			autoHeight: false,
 			responsive: {
 				0: {
 					items: 1
@@ -333,9 +329,9 @@ title: Home
 		$('#compliance32x3D').owlCarousel({
 			loop: true,
 			margin: 30,
-			nav: true,
+			nav: false,
 			responsiveClass: true,
-			autoHeight: true,
+			autoHeight: false,
 			responsive: {
 				0: {
 					items: 1
@@ -358,9 +354,9 @@ title: Home
 		$('#compliance32xAddons').owlCarousel({
 			loop: true,
 			margin: 30,
-			nav: true,
+			nav: false,
 			responsiveClass: true,
-			autoHeight: true,
+			autoHeight: false,
 			responsive: {
 				0: {
 					items: 1
@@ -383,9 +379,9 @@ title: Home
 		$('#compliance64x').owlCarousel({
 			loop: true,
 			margin: 30,
-			nav: true,
+			nav: false,
 			responsiveClass: true,
-			autoHeight: true,
+			autoHeight: false,
 			responsive: {
 				0: {
 					items: 1
@@ -408,9 +404,9 @@ title: Home
 		$('#compliance64xAddons').owlCarousel({
 			loop: true,
 			margin: 30,
-			nav: true,
+			nav: false,
 			responsiveClass: true,
-			autoHeight: true,
+			autoHeight: false,
 			responsive: {
 				0: {
 					items: 1
