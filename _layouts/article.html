@@ -3,9 +3,11 @@ layout: default
 ---
 
 {%- if page.long_text -%}
-	<p align="justify">
-		{{ page.long_text }}
-	</p>
+	<div class="card">
+		<p align="justify">
+			{{ page.long_text }}
+		</p>
+	</div>
 {%- endif -%}
 
 <hr>
@@ -13,40 +15,52 @@ layout: default
 {%- if page.added -%}
 	<h2>Added</h2>
 
-	{%- for item in page.added -%}
-		<h2><small>{{ item.first | pop}}</h2></small>
-		<ul>
-			<li>{{ item.first | shift  | join: '</li><li>' }}</li>
-		</ul>
-	{%- endfor -%}
+	<div class="card">
+		{%- for item in page.added -%}
+			<h2><small>{{ item.first | pop}}</h2></small>
+			<ul>
+				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
+			</ul>
+		{%- endfor -%}
+	</div>
+
 {%- endif -%}
 
 {%- if page.changed -%}
 	<h2>Changed</h2>
 
-	<ul>
+	<div class="card">
 		{%- for item in page.changed -%}
-			<li>{{ item }}</li>
+			<h2><small>{{ item.first | pop}}</h2></small>
+			<ul>
+				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
+			</ul>
 		{%- endfor -%}
-	</ul>
+	</div>
 {%- endif -%}
 
 {%- if page.fixed -%}
 	<h2>Fixed</h2>
 
-	<ul>
+	<div class="card">
 		{%- for item in page.fixed -%}
-			<li>{{ item }}</li>
+			<h2><small>{{ item.first | pop}}</h2></small>
+			<ul>
+				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
+			</ul>
 		{%- endfor -%}
-	</ul>
+	</div>
 {%- endif -%}
 
 {%- if page.removed -%}
 	<h2>Removed</h2>
 
-	<ul>
+	<div class="card">
 		{%- for item in page.removed -%}
-			<li>{{ item }}</li>
+			<h2><small>{{ item.first | pop}}</h2></small>
+			<ul>
+				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
+			</ul>
 		{%- endfor -%}
-	</ul>
+	</div>
 {%- endif -%}
