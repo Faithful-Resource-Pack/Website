@@ -6,10 +6,6 @@ defaults:
     values:
       layout: "default"
   - scope:
-      path: "article/compliance64x"
-    values:
-      layout: "article"
-  - scope:
-      path: "article/compliance32x"
+      path: "article"
     values:
       layout: "article"
