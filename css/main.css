@@ -41,6 +41,9 @@ footer {
 .table {
 	background-color: #fdfdfd;
 }
+#table32x3D, #table32x {
+	display: none;
+}
 
 /** NAVBAR **/
 .custom-navbar-wrapper {
