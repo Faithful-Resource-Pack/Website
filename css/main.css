@@ -35,26 +35,36 @@ footer {
 }
 
 /** FANCY CARDS **/
-#ScreenshotCarousel, div.card, .card a > img.img-fluid {
+#ScreenshotCarousel, div.card, .card .item > a {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.btn {
+.btn, .dropdown-menu {
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.btn {
   margin-top: .3rem;
 }
 .card-body > :first-child {
   margin-top: 0;
 }
-.card-title {
+.card-title, .card h4 {
 	color: rgba(255, 255, 255, .9);
+}
+.card-title {
   font-weight: 300;
   margin: 1rem 0 1.25rem;
 }
 .card {
 	color: rgba(255, 255, 255, .7);
+}
+.card .item > a {
+  display: block;
+}
+#ScreenshotCarousel {
+  background: #000;
 }
 
 /** DOWNLOAD TABLES **/
@@ -88,8 +98,8 @@ footer {
 	z-index: 1020
 }
 .dropdown-menu-center {
-    right: auto;
-    left: auto;
+  right: auto;
+  left: auto;
 }
 
 /** OWL CAROUSEL **/
@@ -97,9 +107,6 @@ footer {
 .carousel-inner img {
 	width: 100%;
 	height: 100%
-}
-.card .owl-stage-outer {
-  min-height: 168px;
 }
 /* Carousel arrow hover animation */
 .item img {
@@ -256,7 +263,7 @@ a > h4:hover {
 	margin-right: 6px
 }
 .card-img-top {
-	border-radius: 5px;
+	border-radius: 16px;
 	cursor: pointer;
 	transition: 0.3s;
 	color: #000
