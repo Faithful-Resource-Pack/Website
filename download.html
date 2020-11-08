@@ -20,27 +20,29 @@ title: Download
 					<td><a href="" data-toggle="tooltip" title="Download">1.17 (20w45a)</a></td>
 					<td>none</td>
 				</tr>
-				<tr id="32x">
+			</tbody>
+			<tbody id="32x">
+				<tr>
 					<td><span class="badge badge-success">Release</span></td>
 					<td><a href="" data-toggle="tooltip" title="Download">1.16.4</a></td>
 					<td>none</td>
 				</tr>
-				<tr id="32x">
+				<tr>
 					<td><span class="badge badge-success">Release</span></td>
 					<td><a href="" data-toggle="tooltip" title="Download">1.16.3</a></td>
 					<td>none</td>
 				</tr>
-				<tr id="32x">
+				<tr>
 					<td><span class="badge badge-success">Release</span></td>
 					<td><a href="" data-toggle="tooltip" title="Download">1.16.2</a></td>
 					<td>none</td>
 				</tr>
-				<tr id="32x">
+				<tr>
 					<td><span class="badge badge-success">Release</span></td>
 					<td><a href="" data-toggle="tooltip" title="Download">1.16.1</a></td>
 					<td>none</td>
 				</tr>
-				<tr><td><button onclick="Load_More('32x')">Load more</button></td></tr>
+				<tr><td><button class="btn btn-dark btn-lg btn-block" onclick="Load_More('32x')">Load more</button></td></tr>
 			</tbody>
 
 			<thead class="thead-light">
@@ -56,27 +58,29 @@ title: Download
 					<td><a href="" data-toggle="tooltip" title="Download">1.17 (20w45a)</a></td>
 					<td>none</td>
 				</tr>
-				<tr id="32x3D">
+			</tbody>
+			<tbody id="32x3D">
+				<tr>
 					<td><span class="badge badge-success">Release</span></td>
 					<td><a href="" data-toggle="tooltip" title="Download">1.16.4</a></td>
 					<td>none</td>
 				</tr>
-				<tr id="32x3D">
+				<tr>
 					<td><span class="badge badge-success">Release</span></td>
 					<td><a href="" data-toggle="tooltip" title="Download">1.16.3</a></td>
 					<td>none</td>
 				</tr>
-				<tr id="32x3D">
+				<tr>
 					<td><span class="badge badge-success">Release</span></td>
 					<td><a href="" data-toggle="tooltip" title="Download">1.16.2</a></td>
 					<td>none</td>
 				</tr>
-				<tr id="32x3D">
+				<tr>
 					<td><span class="badge badge-success">Release</span></td>
 					<td><a href="" data-toggle="tooltip" title="Download">1.16.1</a></td>
 					<td>none</td>
 				</tr>
-				<tr><td><button onclick="Load_More('32x3D')">Load more</button></td></tr>
+				<tr><td><button class="btn btn-dark btn-lg btn-block" onclick="Load_More('32x3D')">Load more</button></td></tr>
 			</tbody>
 
 		</table>
@@ -87,7 +91,7 @@ title: Download
 	function Load_More(id){
 		var table = document.getElementById(id); 
 		if (table.style.display === "none"){
-			table.style.display = "block";
+			table.style.display = "table-row-group";
 		} else {
 			table.style.display = "none";
 		}
