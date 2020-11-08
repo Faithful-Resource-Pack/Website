@@ -38,6 +38,10 @@ footer {
 		url(../image/background/bg_white.png) repeat;
 }
 
+.table {
+	background-color: #fdfdfd;
+}
+
 /** NAVBAR **/
 .custom-navbar-wrapper {
 	position: sticky;
