@@ -39,7 +39,8 @@ footer {
 }
 
 .table {
-	background-color: #fdfdfd;
+	background-color: #1c1c1c;
+	color: #ccc;
 }
 #table32x3D, #table32x {
 	display: none;
