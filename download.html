@@ -47,7 +47,7 @@ title: Download
 
 		<button class="btn btn-dark btn-block" onclick="Load_More('table32x')">Load more</button>
 
-		<table>
+		<table class="table">
 			<thead class="thead-dark">
 				<tr>
 					<th>Compliance 3D 32x</th>
@@ -94,10 +94,10 @@ title: Download
 <script>
 	function Load_More(id){
 		var table = document.getElementById(id); 
-		if (table.style.display === "none"){
-			table.style.display = "table-row-group";
-		} else {
+		if (table.style.display == "table-row-group") {
 			table.style.display = "none";
+		} else {
+			table.style.display = "table-row-group";
 		}
 	}
 </script>

@@ -38,9 +38,20 @@ footer {
 		url(../image/background/bg_white.png) repeat;
 }
 
+/** DOWNLOAD TABLES **/
+
 .table {
 	background-color: #1c1c1c;
 	color: #ccc;
+}
+.table th {
+	background-color: #343A40;
+}
+.table td {
+	border-top: 1px solid #343A40;
+}
+.table-warning {
+	background-color: rgba(#FFEEBA, 0.7);
 }
 #table32x3D, #table32x {
 	display: none;
