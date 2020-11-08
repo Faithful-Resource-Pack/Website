@@ -105,15 +105,35 @@ title: Home
 		</div>
 
 		<br>
+
+		<h2 class="card-title">Compliance Addons 32x</h2>
+
+		<div id="compliance32xAddons" class="owl-carousel owl-theme">
+
+			{%- for image in site.static_files -%}
+				{%- if image.path contains 'image/news/compliance32xAddons' -%}
+
+					<div class="item">
+						<a href="{{ site.baseurl }}/news/compliance32xAddons/{{ image.basename }}" rel="noopener">
+							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+						</a>
+					</div>
+
+				{%- endif -%}
+			{%- endfor -%}
+
+		</div>
+
+		<br>
 	
 		<h2 class="card-title">Compliance Mods for 32x</h2>
 
 		<div class="row">
 			<div class="col">
-				<a href="" class="btn btn-primary btn-lg btn-block">Mods</a>
+				<a href="" class="btn btn-dark btn-lg btn-block">Mods</a>
 			</div>
 			<div class="col">
-				<a href="" class="btn btn-primary btn-lg btn-block">Modpacks</a>
+				<a href="" class="btn btn-dark btn-lg btn-block">Modpacks</a>
 			</div>
 		</div>
 
@@ -141,6 +161,26 @@ title: Home
 				{%- endif -%}
 			{%- endfor -%}
 		
+		</div>
+
+		<br>
+
+		<h2 class="card-title">Compliance Addons 64x</h2>
+
+		<div id="compliance64xAddons" class="owl-carousel owl-theme">
+
+			{%- for image in site.static_files -%}
+				{%- if image.path contains 'image/news/compliance64xAddons' -%}
+
+					<div class="item">
+						<a href="{{ site.baseurl }}/news/compliance64xAddons/{{ image.basename }}" rel="noopener">
+							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+						</a>
+					</div>
+
+				{%- endif -%}
+			{%- endfor -%}
+
 		</div>
 
 	</div>
@@ -271,15 +311,15 @@ title: Home
 				},
 
 				600: {
-					items: 3
+					items: 2
 				},
 
 				1024: {
-					items: 4
+					items: 3
 				},
 
 				1366: {
-					items: 4
+					items: 3
 				}
 			}
 		});
@@ -296,15 +336,40 @@ title: Home
 				},
 
 				600: {
-					items: 3
+					items: 2
 				},
 
 				1024: {
-					items: 4
+					items: 3
 				},
 
 				1366: {
-					items: 4
+					items: 3
+				}
+			}
+		});
+
+		$('#compliance32xAddons').owlCarousel({
+			loop: true,
+			margin: 30,
+			nav: true,
+			responsiveClass: true,
+			autoHeight: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+
+				600: {
+					items: 2
+				},
+
+				1024: {
+					items: 3
+				},
+
+				1366: {
+					items: 3
 				}
 			}
 		});
@@ -321,15 +386,40 @@ title: Home
 				},
 
 				600: {
-					items: 3
+					items: 2
 				},
 
 				1024: {
-					items: 4
+					items: 3
 				},
 
 				1366: {
-					items: 4
+					items: 3
+				}
+			}
+		});
+
+		$('#compliance64xAddons').owlCarousel({
+			loop: true,
+			margin: 30,
+			nav: true,
+			responsiveClass: true,
+			autoHeight: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+
+				600: {
+					items: 2
+				},
+
+				1024: {
+					items: 3
+				},
+
+				1366: {
+					items: 3
 				}
 			}
 		});

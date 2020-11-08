@@ -1,10 +1,3 @@
-/* Custom font */
-@font-face {
-	font-family: "Compliance Sans";
-	src: 
-		url("../font/ComplianceSans.ttf") format("truetype");
-}
-
 /* Basic layout */
 html {
 	overflow-x: hidden
@@ -43,6 +36,14 @@ footer {
 		url(../image/background/bg_black_transition_top.png) top repeat-x,
 		url(../image/background/bg_black_transition_bottom.png) bottom repeat-x,
 		url(../image/background/bg_white.png) repeat;
+}
+
+/** NAVBAR **/
+.custom-navbar-wrapper {
+	position: sticky;
+	top: 0;
+	background: #1B1B1B;
+	z-index: 1020
 }
 
 /** OWL CAROUSEL **/
