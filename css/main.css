@@ -16,7 +16,7 @@ footer {
 	z-index: 1020
 }
 
-.container {
+.card {
 	color: rgba(255, 255, 255, .7);
 }
 
@@ -28,14 +28,21 @@ footer {
 
 /** BACKGROUND **/
 .background-black {
-	background: 
+	background:
 		url(../image/background/bg_black.png) repeat;
 }
 .background-middle {
-	background: 
+	background:
 		url(../image/background/bg_black_transition_top.png) top repeat-x,
 		url(../image/background/bg_black_transition_bottom.png) bottom repeat-x,
 		url(../image/background/bg_white.png) repeat;
+}
+
+/** FANCY CARDS **/
+#ScreenshotCarousel, div.card, a > img.img-fluid {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 /** DOWNLOAD TABLES **/
@@ -286,7 +293,7 @@ a > h4:hover {
 }
 
 /* Add Animation */
-.modal-content, .caption {  
+.modal-content, .caption {
 	-webkit-animation-name: zoom;
 	-webkit-animation-duration: 0.6s;
 	animation-name: zoom;
@@ -294,12 +301,12 @@ a > h4:hover {
 }
 
 @-webkit-keyframes zoom {
-	from {-webkit-transform:scale(0)} 
+	from {-webkit-transform:scale(0)}
 	to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-	from {transform:scale(0)} 
+	from {transform:scale(0)}
 	to {transform:scale(1)}
 }
 
@@ -402,8 +409,8 @@ img[src$=".gif"] {
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	opacity:0;
-} 
-.card-texture:hover .button-fullscreen {   
+}
+.card-texture:hover .button-fullscreen {
 	opacity: 1;
 }
 
@@ -416,7 +423,7 @@ img[src$=".gif"] {
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	opacity:0;
-} 
-.card-texture:hover .button-info {   
+}
+.card-texture:hover .button-info {
 	opacity: 1;
 }
