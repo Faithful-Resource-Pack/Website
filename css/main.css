@@ -16,10 +16,6 @@ footer {
 	z-index: 1020
 }
 
-.card {
-	color: rgba(255, 255, 255, .7);
-}
-
 @media (min-width: 576px) {
 	footer {
 		padding: 4rem 2rem
@@ -47,6 +43,18 @@ footer {
 .btn {
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-top: .3rem;
+}
+.card-body > :first-child {
+  margin-top: 0;
+}
+.card-title {
+	color: rgba(255, 255, 255, .9);
+  font-weight: 300;
+  margin: 1rem 0 1.25rem;
+}
+.card {
+	color: rgba(255, 255, 255, .7);
 }
 
 /** DOWNLOAD TABLES **/
