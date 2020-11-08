@@ -50,7 +50,7 @@ footer {
 .table td {
 	border-top: 1px solid #343A40;
 }
-#table32x3D, #table32x {
+#table32x3D, #table32x, #table64x {
 	display: none;
 }
 
