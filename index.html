@@ -23,7 +23,7 @@ title: Home
 			{%- endfor -%}
 		</ul>
 
-		<!-- slideshow --> 
+		<!-- slideshow -->
 		<div class="carousel-inner">
 			{%- assign ImgCounter = 0 -%}
 
@@ -76,7 +76,7 @@ title: Home
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance32x/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
@@ -97,7 +97,7 @@ title: Home
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance32x3D/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
@@ -118,7 +118,7 @@ title: Home
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance32xAddons/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
@@ -129,7 +129,7 @@ title: Home
 		</div>
 
 		<br>
-	
+
 		<h2 class="card-title">Compliance Mods for 32x</h2>
 
 		<div class="row">
@@ -152,20 +152,20 @@ title: Home
 		<h2 class="card-title">Compliance 64x</h2>
 
 		<div id="compliance64x" class="owl-carousel owl-theme">
-		
+
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/news/compliance64x/' -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance64x/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
 
 				{%- endif -%}
 			{%- endfor -%}
-		
+
 		</div>
 
 		<br>
@@ -179,7 +179,7 @@ title: Home
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/news/compliance64xAddons/{{ image.basename }}" rel="noopener">
-							<img src="{{ site.baseurl }}/{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h4>{{ image.basename }}</h4>
 						</a>
 					</div>
