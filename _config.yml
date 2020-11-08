@@ -5,3 +5,7 @@ defaults:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: "article"
+    values:
+      layout: "article"
