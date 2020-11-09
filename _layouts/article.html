@@ -2,18 +2,33 @@
 layout: default
 ---
 
-{%- if page.long_text -%}
+{%- if page.header-img or page.long_text -%}
 	<div class="card">
-		<p align="justify">
-			{{ page.long_text }}
-		</p>
+		<div class="card-body">
+
+			{%- if page.header-img -%}
+				<img src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="">
+			{%- endif -%}
+
+			{%- if page.header-img and page.long_text -%}
+				<br>
+			{%- endif -%}
+
+			{%- if page.long_text -%}
+				<p align="justify">
+					{{ page.long_text }}
+				</p>
+			{%- endif -%}
+
+		</div>
 	</div>
+
+	<hr>
 {%- endif -%}
 
-<hr>
-
 {%- if page.added -%}
-	<h2>Added</h2>
+	
+	<h2 class="card-title text-center">Added</h2>
 
 	<div class="card">
 		{%- for item in page.added -%}
@@ -24,10 +39,13 @@ layout: default
 		{%- endfor -%}
 	</div>
 
+	<hr>
+
 {%- endif -%}
 
 {%- if page.changed -%}
-	<h2>Changed</h2>
+
+	<h2 class="card-title text-center">Changed</h2>
 
 	<div class="card">
 		{%- for item in page.changed -%}
@@ -37,10 +55,14 @@ layout: default
 			</ul>
 		{%- endfor -%}
 	</div>
+
+	<hr>
+
 {%- endif -%}
 
 {%- if page.fixed -%}
-	<h2>Fixed</h2>
+
+	<h2 class="card-title text-center">Fixed</h2>
 
 	<div class="card">
 		{%- for item in page.fixed -%}
@@ -50,10 +72,13 @@ layout: default
 			</ul>
 		{%- endfor -%}
 	</div>
+
+	<hr>
+
 {%- endif -%}
 
 {%- if page.removed -%}
-	<h2>Removed</h2>
+	<h2 class="card-title text-center">Removed</h2>
 
 	<div class="card">
 		{%- for item in page.removed -%}
@@ -63,4 +88,7 @@ layout: default
 			</ul>
 		{%- endfor -%}
 	</div>
+
+	<hr>
+	
 {%- endif -%}
