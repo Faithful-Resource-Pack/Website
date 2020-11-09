@@ -10,9 +10,24 @@ layout: default
 
 {%- if page.authors -%}
 	<h3 class="display m-5 text-center">
-		By
-		{% for item in page.authors %}
-			<a href="{{ item.first | shift  | join: '</li><li>' }}">{{ item.first | pop}}</a>
+		By&nbsp;
+		{%- assign author_nb = page.authors.size -%}
+		{% for author in page.authors %}
+			{%- assign author_nb = author_nb | minus: 1 -%}
+	
+			{% if author.first %}
+				{%- if author_nb != 0 -%}
+					<a href="{{ author.first | shift }}">{{ author.first | pop }}</a>,
+				{%- else -%}
+					<a href="{{ author.first | shift }}">{{ author.first | pop }}</a>
+				{%- endif -%}
+			{% else %}
+				{%- if author_nb != 0 -%}
+					{{ author }},
+				{%- else -%}
+					{{ author }}
+				{%- endif -%}
+			{% endif %}
 		{% endfor %}
 	</h3>
 {%- endif -%}
@@ -179,7 +194,11 @@ layout: default
 {%- endif -%}
 
 {%- if page.download -%}
-	<h2 class="display-4 m-5 text-center">Downloads</h2>
+	{%- if page.download.size > 1 -%}
+		<h2 class="display-4 m-5 text-center">Downloads</h2>
+	{%- else -%}
+		<h2 class="display-4 m-5 text-center">Download</h2>
+	{%- endif -%}
 	{%- for item in page.download -%}
 		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-lg btn-download"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
 	{%- endfor -%}

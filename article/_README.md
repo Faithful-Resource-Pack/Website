@@ -31,8 +31,8 @@ changed:
 authors:
   - JogurciQ:
     - https://twitter.com/JogurciQ // if not, remove it
-  - Juknum:
-  - RobertR11:
+  - Juknum
+  - RobertR11
 
 // can be removed:
 download: 
