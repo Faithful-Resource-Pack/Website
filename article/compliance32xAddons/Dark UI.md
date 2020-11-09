@@ -1,8 +1,8 @@
 ---
 title: Dark UI - 32x
-permalink: /article/compliance32xAddons/Alt%20Entities
+permalink: /article/compliance32xAddons/Dark%20UI
 
-header-img: article/compliance32xAddons/Alt Entities.png
+header-img: article/compliance32xAddons/Dark UI.png
 
 carousel-img: article/image/carousel/Dark UI/
 
