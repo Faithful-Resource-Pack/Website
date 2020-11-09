@@ -12,6 +12,17 @@ layout: default
 	<h2 class="display-3 m-5 text-center">Unknown Title</h2>
 {%- endif -%}
 
+{%- if page.authors -%}
+  <h3 class="display m-5 text-center">
+    By
+	  {% for item in page.authors %}
+		  <a href="{{ item.first | shift  | join: '</li><li>' }}">{{ item.first | pop}}</a>
+	  {% endfor %}
+  </h3>
+{%- endif -%}
+
+	<hr>
+
 {%- if page.carousel-img -%}
 	<!-- {{ page.carousel-img }} -->
 	<div class="card">
@@ -30,6 +41,9 @@ layout: default
 			</div>
 		</div>
 	</div>
+
+  <hr>
+
 	<script>
 		$(document).ready(function(){
 
@@ -63,13 +77,9 @@ layout: default
 {%- endif -%}
 
 {%- if page.long_text -%}
-	{%- if page.header-img -%}
-		<hr>
-	{%- endif -%}
-
 	<div class="card">
 		<div class="card-body">
-			<p align="justify">
+			<p class="m-0" align="justify">
 				{{ page.long_text }}
 			</p>
 		</div>
@@ -79,7 +89,6 @@ layout: default
 {%- endif -%}
 
 {%- if page.added -%}
-
 	<h2 class="display-4 m-5 text-center">Added</h2>
 
 	<div class="card">
@@ -92,11 +101,9 @@ layout: default
 	</div>
 
 	<hr>
-
 {%- endif -%}
 
 {%- if page.changed -%}
-
 	<h2 class="display-4 m-5 text-center">Changed</h2>
 
 	<div class="card">
@@ -109,11 +116,9 @@ layout: default
 	</div>
 
 	<hr>
-
 {%- endif -%}
 
 {%- if page.fixed -%}
-
 	<h2 class="display-4 m-5 text-center">Fixed</h2>
 
 	<div class="card">
@@ -126,7 +131,6 @@ layout: default
 	</div>
 
 	<hr>
-
 {%- endif -%}
 
 {%- if page.removed -%}
@@ -142,30 +146,11 @@ layout: default
 	</div>
 
 	<hr>
-
-{%- endif -%}
-
-{%- if page.authors -%}
-
-	{%- if page.authors.size > 1 -%}
-		<h2 class="display-4 m-5 text-center">Authors</h2>
-	{%- else -%}
-		<h2 class="display-4 m-5 text-center">Author</h2>
-	{%- endif -%}
-
-	<div class="card" style="padding-bottom: 2rem;">
-		{% for item in page.authors %}
-			<h2 style="margin-bottom: -.5rem;" class="card-title text-left"><a style="color: #fff;" href="{{ item.first | shift  | join: '</li><li>' }}">{{ item.first | pop}}</a></h2>
-		{% endfor %}
-	</div>
-
-	<hr>
-
 {%- endif -%}
 
 {%- if page.download -%}
-
+  <h2 class="display-4 m-5 text-center">Downloads</h2>
 	{%- for item in page.download -%}
-		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-dark btn-lg btn-block">{{ item.first | pop}}</a>
+		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-lg btn-download"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
 	{%- endfor -%}
 {%- endif -%}

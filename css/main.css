@@ -31,6 +31,27 @@ footer {
 		url(../image/background/bg_white.png) repeat;
 }
 
+/** ADD_ON STUFF **/
+.display {
+  font-weight: 300;
+  line-height: 1.2;
+}
+a.btn-download {
+  display: block;
+  border-radius: 16px;
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+a.btn-download:hover {
+  color: #fff;
+  filter: brightness(112%);
+}
+img.fancy-card {
+  max-height: 24rem;
+  object-fit: cover;
+}
+
 /** FANCY CARDS **/
 #ScreenshotCarousel, div.card, .card .item > a, img.fancy-card {
   border-radius: 16px;
