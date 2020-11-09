@@ -30,9 +30,9 @@ changed:
 // used for addons, can be removed:
 authors:
   - JogurciQ:
-    - https://twitter.com/JogurciQ // if not, let # instead
-  - Juknum
-    - #
+    - https://twitter.com/JogurciQ // if not, remove it
+  - Juknum:
+  - RobertR11:
 
 // can be removed:
 download: 
