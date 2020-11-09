@@ -10,6 +10,49 @@ layout: default
 	<h2 class="display-3 m-5 text-center">{{ page.title }}</h2>
 {%- endif -%}
 
+{%- if page.carousel-img -%}
+	<div id="carousel-img" class="owl-carousel owl-theme">
+		{%- for image in site.static_files -%}
+			{%- if image.path contains carousel-img -%}
+				<div class="item">
+					<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+				</div>
+			{%- endif -%}
+		{%- endfor -%}
+	</div>
+
+	<script>
+		$(document).ready(function(){
+
+			$('#carousel-img').owlCarousel({
+				loop: true,
+				margin: 30,
+				nav: false,
+				responsiveClass: true,
+				autoHeight: true,
+				responsive: {
+					0: {
+						items: 1
+					},
+
+					600: {
+						items: 2
+					},
+
+					1024: {
+						items: 3
+					},
+
+					1366: {
+						items: 3
+					}
+				}
+			});
+
+		});
+	</script>
+{%- endif -%}
+
 {%- if page.long_text -%}
 	{%- if page.header-img -%}
 		<hr>
