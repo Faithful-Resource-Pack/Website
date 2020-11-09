@@ -8,14 +8,6 @@ footer {
 	color: rgba(255, 255, 255, .7);
 }
 
-.custom-navbar-wrapper {
-	position: sticky;
-	color: rgba(255, 255, 255, .7);
-	top: 0;
-	background: #1C1C1C;
-	z-index: 1020
-}
-
 @media (min-width: 576px) {
 	footer {
 		padding: 4rem 2rem
@@ -97,7 +89,6 @@ footer {
 .custom-navbar-wrapper {
 	position: sticky;
 	top: 0;
-	background: #1B1B1B;
 	z-index: 1020
 }
 .dropdown-menu-center {
