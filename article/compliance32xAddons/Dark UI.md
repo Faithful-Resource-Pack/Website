@@ -12,5 +12,9 @@ long_text: Do you play Minecraft at night? Are you scared of opening your invent
 authors:
   - JogurciQ
 
-download: https://www.curseforge.com/minecraft/texture-packs/faithful-x32-dark-ui-addon/files
+download: 
+	- Planet Minecraft:
+		- https://www.planetminecraft.com/texture-pack/official-faithful-dark-ui-addon/
+	- CurseForge:
+		- https://www.curseforge.com/minecraft/texture-packs/faithful-x32-dark-ui-addon/files
 ---

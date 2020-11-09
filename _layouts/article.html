@@ -13,17 +13,19 @@ layout: default
 {%- if page.carousel-img -%}
 	<!-- {{ page.carousel-img }} -->
 	<div class="card">
-		<div id="carousel-img" class="owl-carousel owl-theme">
+		<div class="card-body">
+			<div id="carousel-img" class="owl-carousel owl-theme">
 
-			{%- for image in site.static_files -%}
-				{%- if image.path contains page.carousel-img -%}
-					<div class="item">
-						<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-						{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
-					</div>
-				{%- endif -%}
-			{%- endfor -%}
+				{%- for image in site.static_files -%}
+					{%- if image.path contains page.carousel-img -%}
+						<div class="item">
+							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
+						</div>
+					{%- endif -%}
+				{%- endfor -%}
 
+			</div>
 		</div>
 	</div>
 	<script>
@@ -160,5 +162,10 @@ layout: default
 {%- endif -%}
 
 {%- if page.download -%}
-	<a href="{{ page.download }}" class="btn btn-dark btn-lg btn-block">Download</a>
+
+	{%- for item in page.download -%}
+			<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-dark btn-lg btn-block">{{ item.first | pop}}</a>
+	{%- endfor -%}
+
+	Download</a>
 {%- endif -%}
