@@ -16,6 +16,4 @@ authors:
 download: 
   - Planet Minecraft:
     - https://www.planetminecraft.com/texture-pack/official-faithful-dark-ui-addon/
-  - CurseForge:
-    - https://www.curseforge.com/minecraft/texture-packs/faithful-x32-dark-ui-addon/files
 ---

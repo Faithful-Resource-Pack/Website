@@ -30,16 +30,16 @@ changed:
 // used for addons, can be removed:
 authors:
   - JogurciQ:
-    - https://twitter.com/JogurciQ // can be removed
+    - https://twitter.com/JogurciQ // if not, let # instead
   - Juknum
-  - ...
+    - #
 
 // can be removed:
 download: 
   - Planet Minecraft:
-    - https://www.planetminecraft.com/texture-pack/official-faithful-dark-ui-addon/
+    - https://www.planetminecraft.com/texture-pack/
   - CurseForge:
-    - https://www.curseforge.com/minecraft/texture-packs/faithful-x32-dark-ui-addon/files
+    - https://www.curseforge.com/minecraft/texture-packs/
 
 ---
 ```
