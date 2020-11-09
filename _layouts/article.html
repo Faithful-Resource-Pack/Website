@@ -151,7 +151,7 @@ layout: default
 		<h2 class="display-4 m-5 text-center">Author</h2>
 	{%- endif -%}
 
-	<div class="card">
+	<div class="card" style="margin-bottom: .5rem;">
 		{% for item in page.authors %}
 			<h2 style="margin-bottom: -.5rem;" class="card-title text-left"><a style="color: #fff;" href="{{ item.first | shift  | join: '</li><li>' }}">{{ item.first | pop}}</a></h2>
 		{% endfor %}
@@ -166,6 +166,4 @@ layout: default
 	{%- for item in page.download -%}
 		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-dark btn-lg btn-block">{{ item.first | pop}}</a>
 	{%- endfor -%}
-
-	Download</a>
 {%- endif -%}
