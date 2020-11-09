@@ -1,0 +1,36 @@
+---
+layout: default
+title: Bedrock Addons 64x
+---
+
+<h2 class="display-3 m-5 text-center">Bedrock Addons 64x</h2>
+<div class="card">
+
+	{%- assign counter = 0 -%}
+	
+	{%- for bedrorckaddons64x in site.static_files -%}
+		{%- if bedrorckaddons64x.path contains 'image/article/compliance64xBedrockAddons' -%}
+
+			{%- assign counter = counter | plus: 1 -%}
+
+			{%- if counter == 1 -%}
+				<div class="card-deck" style="padding: 10px;">
+			{%- endif -%}
+
+			<div class="card">
+				<img class="card-img" style="min-height: 100%" src="{{ bedrorckaddons64x.path }}" alt="{{ bedrorckaddons64x.basename }}">
+				<div class="card-img-overlay">
+					<h3 class="card-title">{{ bedrorckaddons64x.basename }}</h3>
+				</div>
+				<a class="stretched-link" href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ bedrorckaddons64x.basename }}"></a>
+			</div>
+				
+			{%- if counter == 3 -%}
+				{%- assign counter = 0 -%}
+				</div>
+			{%- endif -%}
+				
+		{%- endif -%}	
+	{%- endfor -%}
+
+</div>

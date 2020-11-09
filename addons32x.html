@@ -1,0 +1,36 @@
+---
+layout: default
+title: Addons 32x
+---
+
+<h2 class="display-3 m-5 text-center">Addons 32x</h2>
+<div class="card">
+
+	{%- assign counter = 0 -%}
+	
+	{%- for addons32x in site.static_files -%}
+		{%- if addons32x.path contains 'image/article/compliance32xAddons' -%}
+
+			{%- assign counter = counter | plus: 1 -%}
+
+			{%- if counter == 1 -%}
+				<div class="card-deck" style="padding: 10px;">
+			{%- endif -%}
+
+			<div class="card">
+				<img class="card-img" style="min-height: 100%" src="{{ addons32x.path }}" alt="{{ addons32x.basename }}">
+				<div class="card-img-overlay">
+					<h3 class="card-title">{{ addons32x.basename }}</h3>
+				</div>
+				<a class="stretched-link" href="{{ site.baseurl }}/article/compliance32xAddons/{{ addons32x.basename }}"></a>
+			</div>
+				
+			{%- if counter == 3 -%}
+				{%- assign counter = 0 -%}
+				</div>
+			{%- endif -%}
+				
+		{%- endif -%}	
+	{%- endfor -%}
+
+</div>

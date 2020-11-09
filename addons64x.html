@@ -1,0 +1,36 @@
+---
+layout: default
+title: Addons 64x
+---
+
+<h2 class="display-3 m-5 text-center">Addons 64x</h2>
+<div class="card">
+
+	{%- assign counter = 0 -%}
+	
+	{%- for addons64x in site.static_files -%}
+		{%- if addons64x.path contains 'image/article/compliance64xAddons' -%}
+
+			{%- assign counter = counter | plus: 1 -%}
+
+			{%- if counter == 1 -%}
+				<div class="card-deck" style="padding: 10px;">
+			{%- endif -%}
+
+			<div class="card">
+				<img class="card-img" style="min-height: 100%" src="{{ addons64x.path }}" alt="{{ addons64x.basename }}">
+				<div class="card-img-overlay">
+					<h3 class="card-title">{{ addons64x.basename }}</h3>
+				</div>
+				<a class="stretched-link" href="{{ site.baseurl }}/article/compliance64xAddons/{{ addons64x.basename }}"></a>
+			</div>
+				
+			{%- if counter == 3 -%}
+				{%- assign counter = 0 -%}
+				</div>
+			{%- endif -%}
+				
+		{%- endif -%}	
+	{%- endfor -%}
+
+</div>
