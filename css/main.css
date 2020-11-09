@@ -306,7 +306,7 @@ a > h4:hover {
 .modal-content {
 	margin: auto;
 	display: block;
-	width: 80%;
+	width: 70%;
 	max-width: 700px
 
 	-webkit-animation-name: zoom;
