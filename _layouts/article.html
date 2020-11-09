@@ -152,9 +152,14 @@ layout: default
 	{%- endif -%}
 
 	<div class="card">
-		{% for item in page.authors %}
-			<a href="{{ item.first | shift  | join: '</li><li>' }}" class="card-title text-left">{{ item.first | pop}}</a>
-		{% endfor %}
+		{%- for item in page.authors -%}
+			{%- if item.first | shift -%}
+				<h2 class="card-title text-left"><a href="{{ item.first | shift  | join: '</li><li>' }}">{{ item.first | pop}}</a></h2>
+			{%- else -%}
+				<h2 class="card-title text-left">{{ item.first | pop}}</h2>
+			{%- endif -%}
+			
+		{%- endfor -%}
 	</div>
 
 	<hr>
@@ -164,7 +169,7 @@ layout: default
 {%- if page.download -%}
 
 	{%- for item in page.download -%}
-			<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-dark btn-lg btn-block">{{ item.first | pop}}</a>
+		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-dark btn-lg btn-block">{{ item.first | pop}}</a>
 	{%- endfor -%}
 
 	Download</a>
