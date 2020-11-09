@@ -10,7 +10,7 @@ Use this file as an example for your markdown file:
 title: 1.16.4 - 64x
 permalink: /article/compliance64x/1_16_4
 
-header-img: /article/compliance64x/1.16.4.png
+header-img: article/compliance64x/1.16.4.png
 
 long_text: Lorem ipsum doloret and i like compliance // can be removed
 
