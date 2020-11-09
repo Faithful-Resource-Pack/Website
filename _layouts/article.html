@@ -2,10 +2,6 @@
 layout: default
 ---
 
-{%- if page.header-img -%}
-	<img class="img-fluid fancy-card" style="width: 100%;" src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="">
-{%- endif -%}
-
 {%- if page.title -%}
 	<h2 class="display-3 m-5 text-center">{{ page.title }}</h2>
 {%- else -%}
@@ -13,12 +9,17 @@ layout: default
 {%- endif -%}
 
 {%- if page.authors -%}
-  <h3 class="display m-5 text-center">
-    By
-	  {% for item in page.authors %}
-		  <a href="{{ item.first | shift  | join: '</li><li>' }}">{{ item.first | pop}}</a>
-	  {% endfor %}
-  </h3>
+	<h3 class="display m-5 text-center">
+		By
+		{% for item in page.authors %}
+			<a href="{{ item.first | shift  | join: '</li><li>' }}">{{ item.first | pop}}</a>
+		{% endfor %}
+	</h3>
+{%- endif -%}
+
+{%- if page.header-img -%}
+	<img class="img-fluid fancy-card" style="width: 100%;" src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="">
+	<br>
 {%- endif -%}
 
 	<br>
@@ -32,7 +33,7 @@ layout: default
 				{%- for image in site.static_files -%}
 					{%- if image.path contains page.carousel-img -%}
 						<div class="item">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img onclick="ShowFullscreen('{{ image.path }}')" id="{{ image.basename | replace: " ", "_" }}" src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
 						</div>
 					{%- endif -%}
@@ -42,7 +43,36 @@ layout: default
 		</div>
 	</div>
 
-  <hr>
+	<hr>
+
+	<div id="SF" class="modal">
+		<span id="SF-Span" class="close">&times;</span>
+		<img  id="SF-Img"  class="modal-content">	
+	</div>
+
+	<script>
+		function ShowFullscreen(img_path){
+			var modal = document.getElementById("SF")
+
+			modal.style.display = "block";
+
+			// close modal: 
+			var span = document.getElementById("SF-Span");
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+			// when pressing escape key:
+			$(document).keydown(function(event) { 
+				if (event.keyCode == 27) { 
+					modal.style.display = "none";
+				}
+			});
+
+			// set img in modal:
+			var img = document.getElementById("SF-Img");
+			img.src = img_path;
+		}
+	</script>
 
 	<script>
 		$(document).ready(function(){
@@ -149,7 +179,7 @@ layout: default
 {%- endif -%}
 
 {%- if page.download -%}
-  <h2 class="display-4 m-5 text-center">Downloads</h2>
+	<h2 class="display-4 m-5 text-center">Downloads</h2>
 	{%- for item in page.download -%}
 		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-lg btn-download"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
 	{%- endfor -%}
