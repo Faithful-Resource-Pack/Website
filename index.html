@@ -74,9 +74,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance32x/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -95,9 +95,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance32x3D/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32x3D/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance32x3D/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -116,9 +116,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance32xProgArt/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32xProgArt/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance32xProgArt/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -137,9 +137,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance32xAddons/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32xAddons/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance32xAddons/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -178,9 +178,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance64x/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -199,9 +199,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance64xProgArt/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64xProgArt/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance64xProgArt/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -220,9 +220,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance64xAddons/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64xAddons/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance64xAddons/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -248,9 +248,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance32xBedrock/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32x32xBedrock/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance32x32xBedrock/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -269,9 +269,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance64xBedrock/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -290,9 +290,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance32xBedrockAddons/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 
@@ -311,9 +311,9 @@ title: Home
 				{%- if image.path contains 'image/article/compliance64xBedrockAddons/' -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ image.basename | replace: ".", "_" }}" rel="noopener">
+						<a href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ image.basename | replace: ".", "_" | add: ".html" }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
+							<h4>{{ image.basename | replace: "%20", " " }}</h4>
 						</a>
 					</div>
 

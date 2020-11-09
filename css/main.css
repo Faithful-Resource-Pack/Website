@@ -111,6 +111,9 @@ footer {
 	width: 100%;
 	height: 100%
 }
+#item > a > img {
+	max-height: 250px;
+}
 /* Carousel arrow hover animation */
 .item img {
 	margin: 0 auto

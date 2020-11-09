@@ -90,11 +90,20 @@ layout: default
 {%- endif -%}
 
 {%- if page.authors -%}
+	{%- if page.authors.size > 1 -%}
+		<h2 class="display-3 m-5 text-center">Authors</h2>
+	{%- else -%}
+		<h2 class="display-3 m-5 text-center">Author</h2>
+	{%- endif -%}
+<div class="card">
 	<ul>
-		{%- for item in page.authors -%}
-			<li>{{ item.first | shift  | join: '</li><li>' }}</li>
-		{%- endfor -%}
+		{% for item in page.authors %}
+			<li>{{ item }}</li>
+		{% endfor %}
 	</ul>
+</div>
+
+<hr>
 {%- endif -%}
 
 {%- if page.download -%}
