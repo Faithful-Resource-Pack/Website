@@ -2,24 +2,20 @@
 layout: default
 ---
 
-{%- if page.header-img or page.long_text -%}
+{%- if page.header-img -%}
+	<img class="img-fluid" style="width: 100%;" src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="">
+{%- endif -%}
+
+{%- if page.long_text -%}
+	{%- if page.header-img -%}
+		<hr>
+	{%- endif -%}
+
 	<div class="card">
 		<div class="card-body">
-
-			{%- if page.header-img -%}
-				<img src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="">
-			{%- endif -%}
-
-			{%- if page.header-img and page.long_text -%}
-				<br>
-			{%- endif -%}
-
-			{%- if page.long_text -%}
-				<p align="justify">
-					{{ page.long_text }}
-				</p>
-			{%- endif -%}
-
+			<p align="justify">
+				{{ page.long_text }}
+			</p>
 		</div>
 	</div>
 
@@ -28,11 +24,11 @@ layout: default
 
 {%- if page.added -%}
 	
-	<h2 class="card-title text-center">Added</h2>
+	<h2 class="display-3 m-5">Added</h2>
 
 	<div class="card">
 		{%- for item in page.added -%}
-			<h2><small>{{ item.first | pop}}</h2></small>
+			<h2 class="card-title"><small>{{ item.first | pop}}</h2></small>
 			<ul>
 				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
 			</ul>
@@ -45,11 +41,11 @@ layout: default
 
 {%- if page.changed -%}
 
-	<h2 class="card-title text-center">Changed</h2>
+	<h2 class="display-3 m-5">Changed</h2>
 
 	<div class="card">
 		{%- for item in page.changed -%}
-			<h2><small>{{ item.first | pop}}</h2></small>
+			<h2 class="card-title"><small>{{ item.first | pop}}</h2></small>
 			<ul>
 				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
 			</ul>
@@ -62,11 +58,11 @@ layout: default
 
 {%- if page.fixed -%}
 
-	<h2 class="card-title text-center">Fixed</h2>
+	<h2 class="display-3 m-5">Fixed</h2>
 
 	<div class="card">
 		{%- for item in page.fixed -%}
-			<h2><small>{{ item.first | pop}}</h2></small>
+			<h2 class="card-title"><small>{{ item.first | pop}}</h2></small>
 			<ul>
 				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
 			</ul>
@@ -78,11 +74,11 @@ layout: default
 {%- endif -%}
 
 {%- if page.removed -%}
-	<h2 class="card-title text-center">Removed</h2>
+	<h2 class="card-title">Removed</h2>
 
 	<div class="card">
 		{%- for item in page.removed -%}
-			<h2><small>{{ item.first | pop}}</h2></small>
+			<h2 class="card-title"><small>{{ item.first | pop}}</h2></small>
 			<ul>
 				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
 			</ul>
@@ -90,5 +86,5 @@ layout: default
 	</div>
 
 	<hr>
-	
+
 {%- endif -%}
