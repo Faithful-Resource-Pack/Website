@@ -11,16 +11,17 @@ layout: default
 {%- endif -%}
 
 {%- if page.carousel-img -%}
-	<div id="carousel-img" class="owl-carousel owl-theme">
-		{%- for image in site.static_files -%}
-			{%- if image.path contains carousel-img -%}
-				<div class="item">
-					<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-				</div>
-			{%- endif -%}
-		{%- endfor -%}
+	<div class="card">
+		<div id="carousel-img" class="owl-carousel owl-theme">
+			{%- for image in site.static_files -%}
+				{%- if image.path contains page.carousel-img -%}
+					<div class="item">
+						<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+					</div>
+				{%- endif -%}
+			{%- endfor -%}
+		</div>
 	</div>
-
 	<script>
 		$(document).ready(function(){
 
