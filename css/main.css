@@ -63,6 +63,9 @@ footer {
 .card .item > a {
   display: block;
 }
+.text-left {
+	margin-left: 12px;
+}
 #ScreenshotCarousel {
   background: #000;
 }

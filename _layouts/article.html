@@ -24,11 +24,11 @@ layout: default
 
 {%- if page.added -%}
 	
-	<h2 class="display-3 m-5">Added</h2>
+	<h2 class="display-3 m-5 text-center">Added</h2>
 
 	<div class="card">
 		{%- for item in page.added -%}
-			<h2 class="card-title"><small>{{ item.first | pop}}</h2></small>
+			<h2 class="card-title text-left"><small>{{ item.first | pop}}</h2></small>
 			<ul>
 				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
 			</ul>
@@ -41,11 +41,11 @@ layout: default
 
 {%- if page.changed -%}
 
-	<h2 class="display-3 m-5">Changed</h2>
+	<h2 class="display-3 m-5 text-center">Changed</h2>
 
 	<div class="card">
 		{%- for item in page.changed -%}
-			<h2 class="card-title"><small>{{ item.first | pop}}</h2></small>
+			<h2 class="card-title text-left"><small>{{ item.first | pop}}</h2></small>
 			<ul>
 				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
 			</ul>
@@ -58,11 +58,11 @@ layout: default
 
 {%- if page.fixed -%}
 
-	<h2 class="display-3 m-5">Fixed</h2>
+	<h2 class="display-3 m-5 text-center">Fixed</h2>
 
 	<div class="card">
 		{%- for item in page.fixed -%}
-			<h2 class="card-title"><small>{{ item.first | pop}}</h2></small>
+			<h2 class="card-title text-left"><small>{{ item.first | pop}}</h2></small>
 			<ul>
 				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
 			</ul>
@@ -74,11 +74,11 @@ layout: default
 {%- endif -%}
 
 {%- if page.removed -%}
-	<h2 class="card-title">Removed</h2>
+	<h2 class="display-3 m-5 text-center">Removed</h2>
 
 	<div class="card">
 		{%- for item in page.removed -%}
-			<h2 class="card-title"><small>{{ item.first | pop}}</h2></small>
+			<h2 class="card-title text-left"><small>{{ item.first | pop}}</h2></small>
 			<ul>
 				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
 			</ul>
