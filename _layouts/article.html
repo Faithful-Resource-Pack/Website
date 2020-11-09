@@ -6,6 +6,10 @@ layout: default
 	<img class="img-fluid" style="width: 100%;" src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="">
 {%- endif -%}
 
+{%- if page.title -%}
+	<h2 class="display-3 m-5 text-center">{{ page.title }}</h2>
+{%- endif -%}
+
 {%- if page.long_text -%}
 	{%- if page.header-img -%}
 		<hr>
@@ -24,7 +28,7 @@ layout: default
 
 {%- if page.added -%}
 	
-	<h2 class="display-3 m-5 text-center">Added</h2>
+	<h2 class="display-4 m-5 text-center">Added</h2>
 
 	<div class="card">
 		{%- for item in page.added -%}
@@ -41,7 +45,7 @@ layout: default
 
 {%- if page.changed -%}
 
-	<h2 class="display-3 m-5 text-center">Changed</h2>
+	<h2 class="display-4 m-5 text-center">Changed</h2>
 
 	<div class="card">
 		{%- for item in page.changed -%}
@@ -58,7 +62,7 @@ layout: default
 
 {%- if page.fixed -%}
 
-	<h2 class="display-3 m-5 text-center">Fixed</h2>
+	<h2 class="display-4 m-5 text-center">Fixed</h2>
 
 	<div class="card">
 		{%- for item in page.fixed -%}
@@ -74,7 +78,7 @@ layout: default
 {%- endif -%}
 
 {%- if page.removed -%}
-	<h2 class="display-3 m-5 text-center">Removed</h2>
+	<h2 class="display-4 m-5 text-center">Removed</h2>
 
 	<div class="card">
 		{%- for item in page.removed -%}
@@ -92,9 +96,9 @@ layout: default
 {%- if page.authors -%}
 
 	{%- if page.authors.size > 1 -%}
-		<h2 class="display-3 m-5 text-center">Authors</h2>
+		<h2 class="display-4 m-5 text-center">Authors</h2>
 	{%- else -%}
-		<h2 class="display-3 m-5 text-center">Author</h2>
+		<h2 class="display-4 m-5 text-center">Author</h2>
 	{%- endif -%}
 
 	<div class="card">
