@@ -153,7 +153,11 @@ layout: default
 
 	<div class="card">
 		{% for item in page.authors %}
-			<h2 class="card-title text-left">{{ item }}</h2>
+			{%- if item[0] -%}
+				<a href="{{ item[0] }}" class="card-title text-left">{{ item }}</a>
+			{%- else -%}
+				<h2 class="card-title text-left">{{ item }}</h2>
+			{%- endif -%}
 		{% endfor %}
 	</div>
 

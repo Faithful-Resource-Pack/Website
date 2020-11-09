@@ -9,5 +9,7 @@ long_text: Do you find Minecraft's entities too repetitive? Do you wish mobs had
 authors:
   - Redcoke26
 
-download: https://www.planetminecraft.com/texture-pack/alternate-entities/
+download: 
+  - Planet Minecraft: 
+    - https://www.planetminecraft.com/texture-pack/alternate-entities/
 ---
