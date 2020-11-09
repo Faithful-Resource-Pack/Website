@@ -11,15 +11,19 @@ layout: default
 {%- endif -%}
 
 {%- if page.carousel-img -%}
+	<!-- {{ page.carousel-img }} -->
 	<div class="card">
 		<div id="carousel-img" class="owl-carousel owl-theme">
+
 			{%- for image in site.static_files -%}
 				{%- if image.path contains page.carousel-img -%}
 					<div class="item">
 						<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+						{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
 					</div>
 				{%- endif -%}
 			{%- endfor -%}
+
 		</div>
 	</div>
 	<script>
