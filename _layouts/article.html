@@ -88,3 +88,15 @@ layout: default
 	<hr>
 
 {%- endif -%}
+
+{%- if page.authors -%}
+	<ul>
+		{%- for item in page.authors -%}
+			<li>{{ item.first | shift  | join: '</li><li>' }}</li>
+		{%- endfor -%}
+	</ul>
+{%- endif -%}
+
+{%- if page.download -%}
+	<a href="{{ page.download }}" class="btn btn-dark btn-lg btn-block">Download</a>
+{%- endif -%}
