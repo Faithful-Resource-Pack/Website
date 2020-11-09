@@ -32,7 +32,7 @@ footer {
 }
 
 /** FANCY CARDS **/
-#ScreenshotCarousel, div.card, .card .item > a {
+#ScreenshotCarousel, div.card, .card .item > a, img.fancy-card {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
