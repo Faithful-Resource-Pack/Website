@@ -323,12 +323,14 @@ a > h4:hover {
 	-o-transition: all .1s ease-out
 }
 
-.nav-link:hover {
-	transform: scale(0.95);
-	-webkit-transform: scale(0.95);
-	-moz-transform: scale(0.95);
-	-ms-transform: scale(0.95);
-	-o-transform: scale(0.95)
+@media screen and (min-width: 800px) {
+  .nav-link:hover {
+  	transform: scale(0.95);
+  	-webkit-transform: scale(0.95);
+  	-moz-transform: scale(0.95);
+  	-ms-transform: scale(0.95);
+  	-o-transform: scale(0.95)
+  }
 }
 
 /* Add Animation */
