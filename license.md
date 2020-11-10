@@ -60,7 +60,7 @@ How add a language support ?
 </script>
 
 <div id="English">
-	<h1>Compliance Pack de Ressources License</h1>
+	<h1>Compliance Resource Pack License</h1>
 	<p align="justify">
 		BY USING COMPLIANCE YOU AGREE TO THESE TERMS AND CONDITIONS. IF YOU DISTRIBUTE COMPLIANCE IN ANY FORM, THIS LICENSE MUST BE INCLUDED INSIDE OF THE ZIP FILE.
 	</p>
