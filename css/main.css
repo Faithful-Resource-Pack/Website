@@ -121,6 +121,22 @@ img.fancy-card {
 	right: auto;
 	left: auto;
 }
+.custom-navbar-brand {
+  display: none;
+}
+@media screen and (min-width: 400px) {
+  .custom-navbar-brand {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 56px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 800px) {
+  .custom-navbar-brand {
+    display: none;
+  }
+}
 #bottomNavbar {
   display: inline-block;
   width: auto;
