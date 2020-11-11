@@ -7,7 +7,7 @@ title: Addons 64x
 <div class="card">
 
 	{%- assign counter = 0 -%}
-	
+
 	{%- for addons64x in site.static_files -%}
 		{%- if addons64x.path contains 'image/article/compliance64xAddons' -%}
 
@@ -24,13 +24,16 @@ title: Addons 64x
 				</div>
 				<a class="stretched-link" href="{{ site.baseurl }}/article/compliance64xAddons/{{ addons64x.basename }}"></a>
 			</div>
-				
+
 			{%- if counter == 3 -%}
 				{%- assign counter = 0 -%}
 				</div>
 			{%- endif -%}
-				
-		{%- endif -%}	
+
+		{%- endif -%}
 	{%- endfor -%}
+  {%- if counter != 3 -%}
+    </div>
+  {%- endif -%}
 
 </div>

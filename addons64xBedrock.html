@@ -7,7 +7,7 @@ title: Bedrock Addons 64x
 <div class="card">
 
 	{%- assign counter = 0 -%}
-	
+
 	{%- for bedrorckaddons64x in site.static_files -%}
 		{%- if bedrorckaddons64x.path contains 'image/article/compliance64xBedrockAddons' -%}
 
@@ -24,13 +24,16 @@ title: Bedrock Addons 64x
 				</div>
 				<a class="stretched-link" href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ bedrorckaddons64x.basename }}"></a>
 			</div>
-				
+
 			{%- if counter == 3 -%}
 				{%- assign counter = 0 -%}
 				</div>
 			{%- endif -%}
-				
-		{%- endif -%}	
+
+		{%- endif -%}
 	{%- endfor -%}
+  {%- if counter != 3 -%}
+    </div>
+  {%- endif -%}
 
 </div>
