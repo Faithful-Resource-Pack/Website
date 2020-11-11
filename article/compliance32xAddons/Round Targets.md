@@ -10,6 +10,6 @@ authors:
   - LetsTryThisAgain
 
 download: 
-  - GitHub:
-    - https://github.com/Compliance-Resource-Pack/Compliance-Addons/raw/master/Round%20Target.zip
+  - 1.16:
+    - https://github.com/Compliance-Resource-Pack/Compliance-Addons/raw/master/32x/Round%20Target/Round%20Target%201.16.zip
 ---
