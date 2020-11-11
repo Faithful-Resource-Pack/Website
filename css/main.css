@@ -31,6 +31,12 @@ footer {
 		url(../image/background/bg_white.png) repeat;
 }
 
+/** Right to left reading **/
+.right-reading {
+	direction: rtl;
+}
+
+
 /** ADD_ON STUFF **/
 .display {
 	font-weight: 300;
