@@ -1,0 +1,510 @@
+---
+title: License
+permalink: /license
+---
+
+<!-- 
+How add a language support ? 
+	1. copy the english div, set style="display: none"
+	2. translate to the language you want add support
+	3. add flag of the main country where your language is speaked in /image/license
+	4. add a buttons following existing one.
+-->
+
+<div class="row">
+	<div class="col">
+		<button class="btn btn-block nav-link" onclick="Display('Czech')">
+			<img src="{{ site.baseurl }}/image/license/cz.png" height="24" class="d-inline-block" alt="FlagCZ">
+			CZ
+		</button>
+	</div><div class="col">
+		<button class="btn btn-block nav-link disabled" onclick="Display('German')">
+			<img src="{{ site.baseurl }}/image/license/de.png" height="24" class="d-inline-block" alt="FlagDE">
+			DE
+		</button>
+	</div>
+	<div class="col">
+		<button class="btn btn-block nav-link" onclick="Display('English')">
+			<img src="{{ site.baseurl }}/image/license/en.png" height="24" class="d-inline-block" alt="FlagEN">
+			EN
+		</button>
+	</div>
+	<div class="col">
+		<button class="btn btn-block nav-link" onclick="Display('Spanish')">
+			<img src="{{ site.baseurl }}/image/license/es.png" height="24" class="d-inline-block" alt="FlagES">
+			ES
+		</button>
+	</div>
+	<div class="col">
+		<button class="btn btn-block nav-link" onclick="Display('French')">
+			<img src="{{ site.baseurl }}/image/license/fr.png" height="24" class="d-inline-block" alt="FlagFR">
+			FR
+		</button>
+	</div>
+	<div class="col">
+		<button class="btn btn-block nav-link" onclick="Display('Polish')">
+			<img src="{{ site.baseurl }}/image/license/pl.png" height="24" class="d-inline-block" alt="FlagPL">
+			PL
+		</button>
+	</div>
+	<div class="col">
+		<button class="btn btn-block nav-link" onclick="Display('Portuguese')">
+			<img src="{{ site.baseurl }}/image/license/pt.png" height="24" class="d-inline-block" alt="FlagPT">
+			PT
+		</button>
+	</div>
+	<div class="col">
+		<button class="btn btn-block nav-link" onclick="Display('Romanian')">
+			<img src="{{ site.baseurl }}/image/license/ro.png" height="24" class="d-inline-block" alt="FlagRO">
+			RO
+		</button>
+	</div>
+	<div class="col">
+		<button class="btn btn-block nav-link" onclick="Display('Russian')">
+			<img src="{{ site.baseurl }}/image/license/ru.png" height="24" class="d-inline-block" alt="FlagRU">
+			RU
+		</button>
+	</div>
+</div>
+
+<br>
+
+<div id="memory" style="display: none;">English</div>
+<script>
+	function Display(id) {
+		var memory = document.getElementById('memory')
+		var old_lang = document.getElementById(memory.innerHTML);
+		var new_lang = document.getElementById(id);
+		var warn = document.getElementById('warning')
+
+		old_lang.style.display = 'none';
+		new_lang.style.display = 'block';
+
+		memory.innerHTML = id;
+
+		if (id != 'English'){
+			warn.style.display = 'block';
+		} else {
+			warn.style.display = 'none';
+		}
+	}
+</script>
+
+<div id="English">
+	<h1>Compliance Resource Pack License</h1>
+	<p align="justify">
+		BY USING COMPLIANCE YOU AGREE TO THESE TERMS AND CONDITIONS. IF YOU DISTRIBUTE COMPLIANCE IN ANY FORM, THIS LICENSE MUST BE INCLUDED INSIDE OF THE ZIP FILE.
+	</p>
+
+	<h2>Definitions</h2>
+	<p align="justify">
+		The pack refers to any copyrightable work licensed under this license.
+		<br>
+		The Compliance Team staff refers to the persons in possession of the Discord accounts with the online nicknames Sei#0721, jogurciQ#7641, Juknum#6148, PeJohn#4519, Pomik108#1378 and RobertR11#7841.
+		<br>
+		A pack can be considered to be an add-on if it can only work in combination with the original pack in a way that makes sense.
+		<br>
+		A pack can be considered to be a streamer pack or a youtuber pack if it was made by or on behalf of a streamer or a youtuber.
+	</p>
+
+	<h2>Distribution of The Pack</h2>
+	<p align="justify">
+		If you wish to distribute the pack (whether that is a modified copy or an identical copy), you have to comply with the following terms and conditions:
+		<ol>
+			<li>You are required to get permission from the Compliance Team staff.</li>
+			<li>You are required to link back to https://www.compliancepack.net in an appropriate place.</li>
+			<li>You may not make money off of the pack in any form.</li>
+			<li>You are required to include this license in all copies.</li>
+		</ol>
+	</p>
+
+	<h2>Exceptions</h2>
+	<p align="justify">
+		You are not required to get permission from the Compliance Team staff if your pack can be considered to be an add-on.
+	</p>
+
+	<h2>Usage of The Pack</h2>
+	<p>
+		The pack may be used...
+		<ul>
+			<li>For placeholder textures.</li>
+			<li>For replacing a small amount of textures you are unable to make yourself.</li>
+			<li>For streamer or youtuber packs.</li>
+			<li>During a stream or a video.</li>
+			<li>As a base for mod or map textures.</li>
+		</ul>
+	</p>
+
+	<h2>Final Note</h2>
+	<p align="justify">
+		The Compliance Team staff has the final say over any distribution and usage of the pack. We have the right to deny anyone the distribution or re-use of the pack. If you do not follow the terms and conditions of this license, legal action may be taken.
+	</p>
+</div>
+
+<!-- Translated to French by Juknum#6148 -->
+<div id="French" style="display: none;">
+	<h1>License du Pack de Ressources Compliance</h1>
+	<p align="justify">
+		EN UTILISANT COMPLIANCE, VOUS ACCEPTEZ CES TERMES ET CONDITIONS. SI VOUS LE REDISTRIBUEZ QUEL QU'EN SOIT LA FORME, CETTE LICENSE DOIT ETRE INCLUSE DANS LE FICHIER ZIP.
+	</p>
+
+	<h2>Définitions</h2>
+	<p align="justify">
+		Le Pack de Ressources fait référence à tout travail protégeable par droit d'auteur sous cette license.
+		<br>
+		L'équipe Compliance se réfère à et est composée des personnes dont leurs pseudonymes Discords sont: Sei#0721, jogurciQ#7641, Juknum#6148, PeJohn#4519, Pomik108#1378 et RobertR11#7841.
+		<br>
+		Le Pack de Ressources peut être considéré comme étant un "add-on" (une extension) s'il ne peut fonction qu'en combinaison avec le Pack de Ressources Originel tout en ayant du sens.
+		<br>
+		Le Pack de Ressources peut être considéré comme étant un "Pack de Ressources de Streamer" ou comme étant un "Pack de Ressources de Vidéaste" s'il a été créer par ou au nom d'un streamer ou d'un vidéaste
+	</p>
+
+	<h2>Distribution du Pack de Ressources</h2>
+	<p align="justify">
+		Si vous souhaitez distribuer ce pack de ressources (qu'il soit modifié ou une copie exacte), vous devez vous conformez avec les termes et conditions suivantes:
+		<ol>
+			<li>Vous devez avoir la permission par l'un des membres de l'équipe du Compliance.</li>
+			<li>Vous devez attacher un lien retournant vers https://www.compliancepack.net dans un lieu approprié.</li>
+			<li>Vous ne pouvez pas gagner d'argent avec le pack distribué, sous quelque forme que ce soit.</li>
+			<li>Vous devez inclure cette license dans toutes les copies</li>
+		</ol>
+	</p>
+
+	<h2>Exceptions</h2>
+	<p align="justify">
+		Vous n'avez pas besoin d'obtenir une permission de l'équipe du Compliance si votre Pack de Ressources peut-être considéré comme étant un "add-on" (une extension).
+	</p>
+
+	<h2>Utilisation du Pack de Ressources</h2>
+	<p>
+		Le Pack de Ressources peut être utilisé...
+		<ul>
+			<li>Pour un Ressource Pack personnel.</li>
+			<li>Pour remplacer une petite quantité de textures que vous n'êtes pas capable de faire par vous-même.</li>
+			<li>Pour un Pack de Ressources pour Streamer et/ou Vidéaste.</li>
+			<li>Lors d'un live et/ou d'une vidéo.</li>
+			<li>Comme une base pour un Mod ou une Map.</li>
+		</ul>
+	</p>
+
+	<h2>Notes Finales</h2>
+	<p align="justify">
+		Le personnel de l'équipe du Compliance a le dernier mot sur la distribution et l'utilisation du Pack de Ressources. Nous avons le droit de refuser à quiconque la distribution ou la réutilisation du Pack de Ressources. Si vous ne suivez pas les termes et conditions de cette license, des poursuites judiciaires peuvent être engagées.
+	</p>
+</div>
+
+<!-- Translated to Romanian by Ozzymand#1575 -->
+<div id="Romanian" style="display: none;">
+	<h1>Licență Compliance Resource Pack</h1>
+	<p align="justify">
+		PRIN FOLOSIREA PACHETULUI COMPLIACE SUNTEȚI DE ACORD CU TERMENI ȘI CONDIȚIILE. DACĂ DISTRIBUIȚI PACHETUL COMPLIANCE ÎN ORICE FORMĂ, ACEASTĂ LICENȚĂ TREBUIE SĂ FIE INCULSĂ IN FIȘIERUL ZIP.
+	</p>
+
+	<h2>Definiții</h2>
+	<p align="justify">
+		Pachetul se referă la toate lucrările sub această licență care dețin toate drepturile de autor.
+		<br>
+		Staff-ul Compliance se referă la persoanele în possesia următoarelor conturi de discord: Sei#0721, jogurciQ#7641, Juknum#6148, PeJohn#4519, Pomik108#1378 și RobertR11#7841.
+		<br>
+		Un pachet poate fi considerat ca o adiție doar dacă poate să meargă in combinație cu pachetul original intr-o metodă ce are sens.
+		<br>
+		Un pachet poate fi considerat ca al unui streamer sau al unui youtuber dacă acesta este creat de sau în numele acelui streamer sau youtuber.
+	</p>
+
+	<h2>Distribuirea pachetului</h2>
+	<p align="justify">
+		Dacă dorești să distribui pachetul (acesta fiind o copie modificată sau originalul), trebuie să te conformezi cu următorii termeni si condiții:
+		<ol>
+			<li>Trebuie să ceri permisia Staff-ului Compliance.</li>
+			<li>Trebuie să pui un link către https://www.compliancepack.net intr-un loc potrivit.</li>
+			<li>Nu trebuie să faci bani sub nici o formă din pachet.</li>
+			<li>Toate copiile trebuie să includă licența.</li>
+		</ol>
+	</p>
+
+	<h2>Excepții</h2>
+	<p align="justify">
+		Nu ai nevoie de permisia Staff-ului Compliance dacă pachetul tau poate fi considerat o adiție.
+	</p>
+
+	<h2>Folosirea pachetului</h2>
+	<p>
+		Pachetul poate fi folosit pentru...
+		<ul>
+			<li>Pentru texturi temporare.</li>
+			<li>Pentru a schimba cantități mici de texturi pe care nu le puteți face dumneavoastră.</li>
+			<li>Pentru pachete intenționate pentru streameri sau youtuberi.</li>
+			<li>În timpul unui stream sau al unui video.</li>
+			<li>Ca o textură de bază pentru un mod sau o hartă.</li>
+		</ul>
+	</p>
+
+	<h2>Notă finală</h2>
+	<p align="justify">
+		Staff-ul Compliance deține utlimul cuvânt asupra distribuirea și folosirea pachetului. Avem dreptul de a refuza abilitatea de a distribuii și de a refolosi acest pachet oricui. Dacă nu te conformezi cu termenii si condițiile acestei licențe, acțiuni legal vor fi luate.
+	</p>
+</div>
+
+<!-- Translated to Spanish by Mr. Kirby 48#0933 -->
+<div id="Spanish" style="display: none;">
+	<h1>Licencia del paquete de recursos Compliance</h1>
+	<p align="justify">
+		AL USAR COMPLIANCE, ACEPTA ESTOS TÉRMINOS Y CONDICIONES. SI DISTRIBUYE COMPLIANCE EN CUALQUIER FORMA, ESTA LICENCIA DEBE INCLUIRSE DENTRO DEL ARCHIVO ZIP.
+	</p>
+
+	<h2>Definiciones</h2>
+	<p align="justify">
+		El paquete se refiere a cualquier trabajo protegido por derechos de autor bajo esta licencia.
+		<br>
+		El Equipo de Compliance se refiere a las personas en posesión de las cuentas de Discord con los apodos de Sei#0721, jogurciQ#7641, Juknum#6148, PeJohn#4519, Pomik108#1378 y RobertR11#7841.
+		<br>
+		Un paquete puede considerarse un complemento (Add-On) si solo puede funcionar en combinación con el paquete original de una manera que tenga sentido.
+		<br>
+		Un paquete puede considerarse un paquete de streamer o un paquete de youtuber si fue creado por o en nombre de un streamer o youtuber.
+	</p>
+
+	<h2>Distribución del Paquete</h2>
+	<p align="justify">
+		Si desea distribuir el paquete(ya sea una copia modificada o una copia idéntica), debe cumplir con los siguientes términos y condiciones:
+		<ol>
+			<li>Debe obtener el permiso del equipo de Compliance.</li>
+			<li>Debe volver a vincular a https://www.compliancepack.net en un lugar apropiado.</li>
+			<li>No puede ganar dinero con el paquete de ninguna forma.</li>
+			<li>Debe incluir esta licencia en todas las copias.</li>
+		</ol>
+	</p>
+
+	<h2>Excepciones</h2>
+	<p align="justify">
+		No es necesario que obtenga el permiso del personal del Equipo de Compliance si su paquete puede considerarse un complemento (Add-On).
+	</p>
+
+	<h2>Uso del paquete</h2>
+	<p>
+		El paquete se puede utilizar ...
+		<ul>
+			<li>Para texturas de marcador de posición.</li>
+			<li>Para reemplazar una pequeña cantidad de texturas no puede hacer usted mismo.</li>
+			<li>Para paquetes de streamers o youtuber.</li>
+			<li>Durante una transmisión o un video.</li>
+			<li>Como base para texturas de un mod, o de un mapa.</li>
+		</ul>
+	</p>
+
+	<h2>Nota final</h2>
+	<p align="justify">
+		El personal del Equipo de Compliance tiene la última palabra sobre cualquier distribución y uso del paquete. Tenemos derecho a negarle a cualquier persona la distribución o reutilización del paquete. Si no sigue los términos y condiciones de esta licencia, se pueden tomar acciones legales.
+	</p>
+</div>
+
+<!-- Translated to Czech by Pomik108#1378-->
+<div id="Czech" style="display: none;">
+	<h1>Licence balíčku zdrojů Compliance</h1>
+	<p align="justify">
+		UŽÍVÁNÍM BALÍČKU ZDROJŮ COMPLIANCE SOUHLASÍTE S TĚMITO PODMÍNKAMI. POKUD DISTRIBUUJETE COMPLIANCE V JAKÉKOLIV PODOBĚ, TATO LICENCE MUSÍ BÝT VLOŽENA UVNITŘ ZIP ARCHIVU.
+	</p>
+
+	<h2>Definice</h2>
+	<p align="justify">
+		"Balíček" je označení pro jakýkoliv obsah podléhající autorským právům pod touto licencí.
+		<br>
+		"Tým Compliance" je označení pro osoby vlastnící Discord účty s online přezdívkami Sei#0721, jogurciQ#7461, Juknum#6148, PeJohn#4519, Pomik108#1378 a RobertR11#7841.
+		<br>
+		Balíček zdrojů může být považován za add-on, pokud funguje jen v kombinaci s původním balíčkem zdrojů Compliance způsobem, který dává smysl.
+		<br>
+		Balíček zdrojů může být považován za balíček streamera či balíček youtubera, pokud byl vytvořen jménem streamera či youtubera.
+	</p>
+
+	<h2>Distribuce Balíčku</h2>
+	<p align="justify">
+		Pokud si přejete distribuovat Balíček (jako upravenou či identickou kopii), musíte dodržet následující podmínky:
+		<ol>
+			<li>Máte povinnost získat svolení od Týmu Compliance.</li>
+			<li>Máte povinnost vložit odkaz na oficiální stránku původního Balíčku – https://www.compliancepack.net – na vhodné místo.</li>
+			<li>Nesmíte díky Balíčku získávat peníze v jakékoliv podobě.</li>
+			<li>Máte povinnost zahrnout tuto licenci ve všech kopiích.</li>
+		</ol>
+	</p>
+
+	<h2>Výjimky</h2>
+	<p align="justify">
+		Není nutno získávat povolení od Týmu Compliance, pokud se váš balíček zdrojů dá považovat za add-on.
+	</p>
+
+	<h2>Užití Balíčku</h2>
+	<p>
+		Balíček může být použit...
+		<ul>
+			<li>Na zástupné textury.</li>
+			<li>Na nahrazení malého množství textur, které jste neschopni vytvořit sami.</li>
+			<li>Na balíčky zdrojů youtuberů či streamerů.</li>
+			<li>V průběhu streamu či ve videu.</li>
+			<li>Jako základ pro textury pro módy či textury pro mapy.</li>
+		</ul>
+	</p>
+
+	<h2>Závěrečná poznámka</h2>
+	<p align="justify">
+		Tým Compliance má poslední slovo ohledně jakéhokoliv distribuování a využití Balíčku. Máme právo komukoliv zakázat distribuci či znovupoužití Balíčku. Pokud nedodržíte podmínky této licence, je možné, že budou podniknuty právní kroky.
+	</p>
+</div>
+
+<!-- Translated to Russian by Fractalis#9059 -->
+<div id="Russian" style="display: none;">
+	<h1>Лицензия набора ресурсов Compliance</h1>
+	<p align="justify">
+		ИСПОЛЬЗУЯ COMPLIANCE, ВЫ СОГЛАШАЕТЕСЬ С ЭТИМИ ПРАВИЛАМИ И УСЛОВИЯМИ. ЕСЛИ ВЫ РАСПРОСТРАНЯЕТЕ COMPLIANCE В ЛЮБОЙ ФОРМЕ, ЭТА ЛИЦЕНЗИЯ ДОЛЖНА БЫТЬ ВКЛЮЧЕНА В ZIP-ФАЙЛ.
+	</p>
+
+	<h2>Определения</h2>
+	<p align="justify">
+		К Набору относятся любые работе, на которые могут распространяться авторские права, в рамках данной лицензии.
+		<br>
+		К сотрудникам команды Compliance относятся лица, владеющие Discord-аккаунтами с онлайн никами Sei#0721, jogurciQ#7641, Juknum#6148, PeJohn#4519, Pomik108#1378 и RobertR11#7841.
+		<br>
+		Набор можно рассматривать как дополнение, если он может работать только в сочетании с оригинальным набором, в таком случае это будет иметь смысл.
+		<br>
+		Набор можно считать набором стримера или ютубера, если он был сделан ими или от их имени.
+	</p>
+
+	<h2>Распространение набора</h2>
+	<p align="justify">
+		Если вы хотите распространять набор (будь то модифицированная или идентичная копия), вы должны соблюдать следующие правила и условия:
+		<ol>
+			<li>Вы должны получить права от сотрудников команды Compliance.</li>
+			<li>Вы должны оставить ссылку на https://www.compliancepack.net в подходящем месте.</li>
+			<li>Вы не можете зарабатывать деньги на наборе ни в какой форме.</li>
+			<li>Вы должны включить эту лицензию во все копии.</li>
+		</ol>
+	</p>
+
+	<h2>Исключения</h2>
+	<p align="justify">
+		Вам не требуется получать разрешение от сотрудников команды Compliance, если ваш набор можно считать дополнением.
+	</p>
+
+	<h2>Использование набора</h2>
+	<p>
+		Набор может быть использован:
+		<ul>
+			<li>В качестве временных текстур-запонителей.</li>
+			<li>Для замены небольшого количества текстур, которые вы не можете сделать сами.</li>
+			<li>Для наборов стримеров или ютуберов.</li>
+			<li>Во время стрима или видео.</li>
+			<li>Как основа для модов или текстур карт.</li>
+		</ul>
+	</p>
+
+	<h2>Последнее примечание</h2>
+	<p align="justify">
+		Сотрудники команды Compliance имеют решающее слово в отношении любого распространения и использования набора. Мы имеем право отказать кому-либо в распространении или повторном использовании набора. Если вы не соблюдаете условия этой лицензии, то могут быть предприняты юридические действия.
+	</p>
+</div>
+
+<!-- Translated to Portuguese by Victor Rocha#0754 -->
+<div id="Portuguese" style="display: none;">
+	<h1>Licença de pacote de recursos de Compliance</h1>
+	<p align="justify">
+		AO USAR COMPLIANCE, VOCÊ CONCORDA COM ESTES TERMOS E CONDIÇÕES. SE VOCÊ DISTRIBUIR A COMPLIANCE DE QUALQUER FORMA, ESTA LICENÇA DEVE SER INCLUÍDA DENTRO DO ARQUIVO ZIP.
+	</p>
+
+	<h2>Definições</h2>
+	<p align="justify">
+		O pacote refere-se a qualquer trabalho protegido por direitos autorais licenciado sob esta licença.
+		<br>
+		A equipe do Compliance refere-se às pessoas em posse das contas do Discord com os apelidos online Sei#0721, jogurciQ#7641, Juknum#6148, PeJohn#4519, Pomik108#1378 e RobertR11#7841.
+		<br>
+		Um pacote pode ser considerado um complemento se funcionar apenas em combinação com o pacote original de uma forma que faça sentido.
+		<br>
+		Um pacote pode ser considerado um pacote de streamer ou um pacote de youtuber se tiver sido feito por ou em nome de um streamer ou youtuber.
+	</p>
+
+	<h2>Distribuição do pacote</h2>
+	<p align="justify">
+		Se você deseja distribuir o pacote (seja uma cópia modificada ou uma cópia idêntica), você deve cumprir os seguintes termos e condições:
+		<ol>
+			<li>Você deve obter permissão da equipe do Compliance</li>
+			<li>É necessário vincular de volta a https://www.compliancepack.net em um local apropriado.</li>
+			<li>Você não pode ganhar dinheiro com o pacote de nenhuma forma.</li>
+			<li>Você é obrigado a incluir esta licença em todas as cópias.</li>
+		</ol>
+	</p>
+
+	<h2>Exceções:</h2>
+	<p align="justify">
+		Você não precisa obter permissão da equipe do Compliance se o seu pacote puder ser considerado um complemento.
+	</p>
+
+	<h2>Uso do pacote</h2>
+	<p>
+		O pacote pode ser usado:
+		<ul>
+			<li>Para preecher espaço.</li>
+			<li>Para substituir uma pequena quantidade de texturas que você não consegue fazer sozinho.</li>
+			<li>Para pacotes de streamers ou youtubers.</li>
+			<li>Durante uma transmissão ou vídeos.</li>
+			<li>Como base para mod ou texturas de mapas.</li>
+		</ul>
+	</p>
+
+	<h2>Nota Final</h2>
+	<p align="justify">
+		A equipe do Compliance tem a palavra final sobre qualquer distribuição e uso do pacote. Temos o direito de negar a qualquer pessoa a distribuição ou reutilização do pacote. Se você não seguir os termos e condições desta licença, uma ação legal pode ser tomada.
+	</p>
+</div>
+
+<!-- Translated to Polish by Neluś#1939 -->
+<div id="Polish" style="display: none;">
+	<h1>Licencja Paczki Zasobów Compliance</h1>
+	<p align="justify">
+		POPRZEZ UŻYWANIE COMPLIANCE ZGADZASZ SIĘ NA NASTĘPUJĄCE WARUNKI UŻYTKOWANIA. JEŻELI W JAKIKOLWIEK SPOSÓB UDOSTĘPNIASZ PACZKĘ, LICENCJA MUSI BYĆ DOŁĄCZONA DO PLIKU ZIP.
+	</p>
+
+	<h2>Definicje</h2>
+	<p align="justify">
+		Paczka odnosi sie do wszystkich prac objętych prawem autorskim, na które jest udzielana licencja poprzez tą licencję.
+		<br>
+		Do sztabu Compliance Team należą następujące osoby, wymieniając po nazwach Discord: Sei#0721, jogurciQ#7641, Juknum#6148, PeJohn#4519, Pomik108#1378 oraz RobertR11#7841
+		<br>
+		Paczka może być zaliczana jako add-on, jeżeli może działać tylko w kombinacji z oryginalną paczką w sensowny sposób.
+		<br>
+		Paczka może być uważana jako paczka streamera lub youtubera, gdy została stworzona przez, lub w imieniu streamera lub youtubera.
+	</p>
+
+	<h2>Dystrybucja paczki</h2>
+	<p align="justify">
+		Jeżeli chcesz dystrybuować paczkę (niezależnie czy jest to zmodyfikowana lub identyczna kopia) musisz zastosować się do regulaminu:
+		<ol>
+			<li>Musisz posiadać zgodę od Sztabu Compliance Team.</li>
+			<li>Musisz zamieścić link strony paczki (https://www.compliancepack.net) w odpowiednim miejscu.</li>
+			<li>Nie możesz zarabiać pieniędzy z udostępniania paczki w jakiejkolwiek formie.</li>
+			<li>Musisz zamieścić tą licencję we wszystkich kopiach.</li>
+		</ol>
+	</p>
+
+	<h2>Wyjątki:</h2>
+	<p align="justify">
+		Pozwolenie na zamieszczenie nie jest wymagane jeżeli twoja paczka jest uważana za add-on.
+	</p>
+
+	<h2>Korzystanie z paczki</h2>
+	<p>
+		Paczka może być użyta...
+		<ul>
+			<li>Jako tekstury zastępcze.</li>
+			<li>Jako zamiennik dla małej ilości tekstur, których nie jesteś w stanie zrobić samodzielnie.</li>
+			<li>Dla paczek streamerów lub youtuberów.</li>
+			<li>Podczas streamu lub odcinka.</li>
+			<li>Jako baza dla tekstur modów lub map.</li>
+		</ul>
+	</p>
+
+	<h2>Ostatnia notatka</h2>
+	<p align="justify">
+		Sztab Compliance Team decyduje o dystrybucji i wykorzystaniu paczki. Mamy prawo do blokady dystrybucji lub ponownego użycia paczki. Jeżeli nie będziesz postępować warunkami licencji, mogą zostać podjęte działania prawne.
+	</p>
+</div>
+
+<div id="warning" style="display: none;">
+	<p align="center"><small>The translation may be inexact, if you find anything wrong, report it on our <a href="https://github.com/Compliance-Resource-Pack/Website">GitHub</a> or <a data-toggle="tooltip" data-placement="top" title="See Above">Discord</a></small></p>
+</div>
