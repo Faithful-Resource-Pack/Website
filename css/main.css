@@ -121,6 +121,19 @@ img.fancy-card {
 	right: auto;
 	left: auto;
 }
+#bottomNavbar {
+  display: inline-block;
+  width: auto;
+  margin: auto;
+}
+@media screen and (min-width: 360px) {
+  #bottomNavbar .navbar-nav {
+    flex-direction: row;
+  }
+  #bottomNavbar .nav-link {
+    padding: 0 .5rem;
+  }
+}
 
 /** OWL CAROUSEL **/
 /* Make the image fully responsive (owl carousel) */
@@ -331,6 +344,9 @@ a > h4:hover {
   	-ms-transform: scale(0.95);
   	-o-transform: scale(0.95)
   }
+}
+.nav-link:hover {
+  cursor: pointer;
 }
 
 /* Add Animation */
