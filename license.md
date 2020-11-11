@@ -3,7 +3,6 @@
 	<p align="justify">
 		BY USING COMPLIANCE YOU AGREE TO THESE TERMS AND CONDITIONS. IF YOU DISTRIBUTE COMPLIANCE IN ANY FORM, THIS LICENSE MUST BE INCLUDED INSIDE OF THE ZIP FILE.
 	</p>
-
 	<h2>Definitions</h2>
 	<p align="justify">
 		The pack refers to any copyrightable work licensed under this license.
@@ -14,7 +13,6 @@
 		<br>
 		A pack can be considered to be a streamer pack or a youtuber pack if it was made by or on behalf of a streamer or a youtuber.
 	</p>
-
 	<h2>Distribution of The Pack</h2>
 	<p align="justify">
 		If you wish to distribute the pack (whether that is a modified copy or an identical copy), you have to comply with the following terms and conditions:
@@ -25,12 +23,10 @@
 			<li>You are required to include this license in all copies.</li>
 		</ol>
 	</p>
-
 	<h2>Exceptions</h2>
 	<p align="justify">
 		You are not required to get permission from the Compliance Team staff if your pack can be considered to be an add-on.
 	</p>
-
 	<h2>Usage of The Pack</h2>
 	<p>
 		The pack may be used...
@@ -42,7 +38,6 @@
 			<li>As a base for mod or map textures.</li>
 		</ul>
 	</p>
-
 	<h2>Final Note</h2>
 	<p align="justify">
 		The Compliance Team staff has the final say over any distribution and usage of the pack. We have the right to deny anyone the distribution or re-use of the pack. If you do not follow the terms and conditions of this license, legal action may be taken.
