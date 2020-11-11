@@ -38,7 +38,7 @@ How add a language support ?
 	<div class="col">
 		<button class="btn btn-block nav-link" onclick="Display('Romanian')">
 			<img src="{{ site.baseurl }}/image/license/ro.png" height="24" class="d-inline-block" alt="FlagRO">
-			PL
+			RO
 		</button>
 	</div>
 	<div class="col">
