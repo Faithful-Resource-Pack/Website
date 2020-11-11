@@ -121,6 +121,9 @@ img.fancy-card {
 	right: auto;
 	left: auto;
 }
+#topNavbar, #topCarousel {
+  margin: 1rem 0;
+}
 .custom-navbar-brand {
   display: none;
 }
