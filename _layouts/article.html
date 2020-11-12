@@ -133,66 +133,6 @@ layout: default
 	<hr>
 {%- endif -%}
 
-{%- if page.added -%}
-	<h2 class="display-4 m-5 text-center">Added</h2>
-
-	<div class="card">
-		{%- for item in page.added -%}
-			<h2 class="card-title text-left"><small>{{ item.first | pop}}</h2></small>
-			<ul>
-				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
-			</ul>
-		{%- endfor -%}
-	</div>
-
-	<hr>
-{%- endif -%}
-
-{%- if page.changed -%}
-	<h2 class="display-4 m-5 text-center">Changed</h2>
-
-	<div class="card">
-		{%- for item in page.changed -%}
-			<h2 class="card-title text-left"><small>{{ item.first | pop}}</h2></small>
-			<ul>
-				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
-			</ul>
-		{%- endfor -%}
-	</div>
-
-	<hr>
-{%- endif -%}
-
-{%- if page.fixed -%}
-	<h2 class="display-4 m-5 text-center">Fixed</h2>
-
-	<div class="card">
-		{%- for item in page.fixed -%}
-			<h2 class="card-title text-left"><small>{{ item.first | pop}}</h2></small>
-			<ul>
-				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
-			</ul>
-		{%- endfor -%}
-	</div>
-
-	<hr>
-{%- endif -%}
-
-{%- if page.removed -%}
-	<h2 class="display-4 m-5 text-center">Removed</h2>
-
-	<div class="card">
-		{%- for item in page.removed -%}
-			<h2 class="card-title text-left"><small>{{ item.first | pop}}</h2></small>
-			<ul>
-				<li>{{ item.first | shift  | join: '</li><li>' }}</li>
-			</ul>
-		{%- endfor -%}
-	</div>
-
-	<hr>
-{%- endif -%}
-
 {%- if page.download -%}
 	{%- if page.download.size > 1 -%}
 		<h2 class="display-4 m-5 text-center">Downloads</h2>
@@ -202,4 +142,26 @@ layout: default
 	{%- for item in page.download -%}
 		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-lg btn-download"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
 	{%- endfor -%}
+{%- endif -%}
+
+{%- if page.changelog -%}
+	<h2 class="display-4 m-5 text-center">Changelog</h2>
+	<div class="card">
+		{% assign changelog = page.changelog | reverse %}
+		{%- for version in changelog -%}
+			<h1 class="card-title text-center">{{ version.first.[0] }}</h1>
+			{%- for type in version.first.[1] -%}
+				<h3 class="card-title text-left">{{ type.first.[0] }}:</h3>
+				{%- for category in type.first.[1] -%}
+					<h4 class="card-title text-left">{{ category.first.[0] }}:</h4>
+					<ul class="text-left">
+						{%- for item in category.first.[1] -%}
+							<li>{{ item }}</li>
+						{%- endfor -%}
+					</ul>
+				{%- endfor -%}
+			{%- endfor -%}
+			<hr>
+		{%- endfor -%}
+	</div>
 {%- endif -%}
