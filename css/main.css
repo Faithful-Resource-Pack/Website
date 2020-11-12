@@ -36,6 +36,13 @@ footer {
 	direction: rtl;
 }
 
+/** LICENSE STUFF **/
+.btn-flag {
+	margin-right: 10px;
+}
+.disabled {
+	pointer-events: none;
+}
 
 /** ADD_ON STUFF **/
 .display {

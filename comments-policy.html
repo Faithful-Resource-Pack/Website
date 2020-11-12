@@ -1,15 +1,15 @@
 ---
 layout: default
-title: License
-permalink: /license
+title: Comments Policy
+permalink: /comments-policy
 ---
 
 <div class="row">
-	<button class="btn btn-flag" onclick="Load('cz.html')">
+	<button class="btn btn-flag disabled" onclick="Load('cz.html')">
 		<img src="{{ site.baseurl }}/image/flags/cz.png" height="34" alt="FlagCZ">
 		CZ
 	</button>
-	<button class="btn btn-flag" onclick="Load('de.html')">
+	<button class="btn btn-flag disabled" onclick="Load('de.html')">
 		<img src="{{ site.baseurl }}/image/flags/de.png" height="34" alt="FlagCZ">
 		DE
 	</button>
@@ -17,7 +17,7 @@ permalink: /license
 		<img src="{{ site.baseurl }}/image/flags/en.png" height="34" alt="FlagEN">
 		EN
 	</button>
-	<button class="btn btn-flag" onclick="Load('es.html')">
+	<button class="btn btn-flag disabled" onclick="Load('es.html')">
 		<img src="{{ site.baseurl }}/image/flags/es.png" height="34" alt="FlagES">
 		ES
 	</button>
@@ -25,31 +25,31 @@ permalink: /license
 		<img src="{{ site.baseurl }}/image/flags/fr.png" height="34" alt="FlagFR">
 		FR
 	</button>
-	<button class="btn btn-flag" onclick="Load('it.html')">
+	<button class="btn btn-flag disabled" onclick="Load('it.html')">
 		<img src="{{ site.baseurl }}/image/flags/it.png" height="34" alt="FlagIT">
 		IT
 	</button>
-	<button class="btn btn-flag" onclick="Load('pk.html')">
+	<button class="btn btn-flag disabled" onclick="Load('pk.html')">
 		<img src="{{ site.baseurl }}/image/flags/pk.png" height="34" alt="FlagPK">
 		PK
 	</button>
-	<button class="btn btn-flag" onclick="Load('pl.html')">
+	<button class="btn btn-flag disabled" onclick="Load('pl.html')">
 		<img src="{{ site.baseurl }}/image/flags/pl.png" height="34" alt="FlagPL">
 		PL
 	</button>
-	<button class="btn btn-flag" onclick="Load('pt.html')">
+	<button class="btn btn-flag disabled" onclick="Load('pt.html')">
 		<img src="{{ site.baseurl }}/image/flags/pt.png" height="34" alt="FlagPT">
 		PT
 	</button>
-	<button class="btn btn-flag" onclick="Load('ro.html')">
+	<button class="btn btn-flag disabled" onclick="Load('ro.html')">
 		<img src="{{ site.baseurl }}/image/flags/ro.png" height="34" alt="FlagRO">
 		RO
 	</button>
-	<button class="btn btn-flag" onclick="Load('ru.html')">
+	<button class="btn btn-flag disabled" onclick="Load('ru.html')">
 		<img src="{{ site.baseurl }}/image/flags/ru.png" height="34" alt="FlagRU">
 		RU
 	</button>
-	<button class="btn btn-flag" onclick="Load('sk.html')">
+	<button class="btn btn-flag disabled" onclick="Load('sk.html')">
 		<img src="{{ site.baseurl }}/image/flags/sk.png" height="34" alt="FlagSK">
 		SK
 	</button>
@@ -67,9 +67,8 @@ permalink: /license
 	Load('en.html'); // load english by default
 
 	function Load(file){
-		jQuery.get('{{site.baseurl}}/license/'+ file, function(data) {
+		jQuery.get('{{site.baseurl}}/comments-policy/'+ file, function(data) {
 			var output = document.getElementById('output');
-
 			output.innerHTML = data;
 		});
 
