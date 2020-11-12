@@ -156,13 +156,13 @@ layout: default
 			
 			{% if counter < CHANGELOG_LIMIT %}
 
-				<h1 class="card-title text-center">{{ version.first.[0] }}</h1>
-				{%- for type in version.first.[1] -%}
-					<h3 class="card-title text-left">{{ type.first.[0] }}:</h3>
-					{%- for category in type.first.[1] -%}
-						<h4 class="card-title text-left">{{ category.first.[0] }}:</h4>
+				<h1 class="card-title text-center">{{ version.first[0] }}</h1>
+				{%- for type in version.first[1] -%}
+					<h3 class="card-title text-left">{{ type.first[0] }}:</h3>
+					{%- for category in type.first[1] -%}
+						<h4 class="card-title text-left">{{ category.first[0] }}:</h4>
 						<ul class="text-left">
-							{%- for item in category.first.[1] -%}
+							{%- for item in category.first[1] -%}
 								<li>{{ item }}</li>
 							{%- endfor -%}
 						</ul>
@@ -186,13 +186,13 @@ layout: default
 				
 				{% if counter > CHANGELOG_LIMIT %}
 
-					<h1 class="card-title text-center">{{ version.first.[0] }}</h1>
-					{%- for type in version.first.[1] -%}
-						<h3 class="card-title text-left">{{ type.first.[0] }}:</h3>
-						{%- for category in type.first.[1] -%}
-							<h4 class="card-title text-left">{{ category.first.[0] }}:</h4>
+					<h1 class="card-title text-center">{{ version.first[0] }}</h1>
+					{%- for type in version.first[1] -%}
+						<h3 class="card-title text-left">{{ type.first[0] }}:</h3>
+						{%- for category in type.first[1] -%}
+							<h4 class="card-title text-left">{{ category.first[0] }}:</h4>
 							<ul class="text-left">
-								{%- for item in category.first.[1] -%}
+								{%- for item in category.first[1] -%}
 									<li>{{ item }}</li>
 								{%- endfor -%}
 							</ul>
