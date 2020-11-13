@@ -14,7 +14,7 @@ layout: default
 		{%- assign author_nb = page.authors.size -%}
 		{% for author in page.authors %}
 			{%- assign author_nb = author_nb | minus: 1 -%}
-	
+
 			{% if author.first %}
 				{%- if author_nb != 0 -%}
 					<a href="{{ author.first | shift }}">{{ author.first | pop }}</a>,
@@ -62,7 +62,7 @@ layout: default
 
 	<div id="SF" class="modal">
 		<span id="SF-Span" class="close">&times;</span>
-		<img  id="SF-Img"  class="modal-content">	
+		<img  id="SF-Img"  class="modal-content">
 	</div>
 
 	<script>
@@ -71,14 +71,14 @@ layout: default
 
 			modal.style.display = "block";
 
-			// close modal: 
+			// close modal:
 			var span = document.getElementById("SF-Span");
 			span.onclick = function() {
 				modal.style.display = "none";
 			}
 			// when pressing escape key:
-			$(document).keydown(function(event) { 
-				if (event.keyCode == 27) { 
+			$(document).keydown(function(event) {
+				if (event.keyCode == 27) {
 					modal.style.display = "none";
 				}
 			});
@@ -153,7 +153,7 @@ layout: default
 
 		{%- for version in changelog -%}
 			{%- assign counter = counter | plus: 1 -%}
-			
+
 			{% if counter < CHANGELOG_LIMIT %}
 
 				<h1 class="card-title text-center">{{ version.first[0] }}</h1>
@@ -183,7 +183,7 @@ layout: default
 		<div id="old" style="display: none;">
 			{%- for version in changelog -%}
 				{%- assign counter = counter | plus: 1 -%}
-				
+
 				{% if counter > CHANGELOG_LIMIT %}
 
 					<h1 class="card-title text-center">{{ version.first[0] }}</h1>
@@ -230,6 +230,7 @@ layout: default
 {%- endif -%}
 
 {%- if page.comments == true -%}
+  <hr>
 	<h2 class="display-4 m-5 text-center">Comments</h2>
 	<div id="disqus_thread" class="col card"></div>
 	<script>
