@@ -5,6 +5,61 @@ title: Home
 
 {%- assign reversed_files = site.static_files | reverse -%}
 
+<!-- Screenshots carousel preview -->
+<div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel">
+	<!-- indicators -->
+	<ul class="carousel-indicators">
+		{%- assign ImgCounter = 0 -%}
+
+		{%- for image in site.static_files -%}
+			{%- if image.path contains '/image/home/carousel' -%}
+				{%- if ImgCounter == 0 -%}
+					<li data-target="#ScreenshotCarousel" class="active" data-slide-to="{{ ImgCounter }}"></li>
+				{%- else -%}
+					<li data-target="#ScreenshotCarousel" data-slide-to="{{ ImgCounter }}"></li>
+				{%- endif -%}
+
+				{%- assign ImgCounter = ImgCounter | plus: 1 -%}
+			{%- endif -%}
+		{%- endfor -%}
+	</ul>
+
+	<!-- slideshow -->
+	<div class="carousel-inner">
+		{%- assign ImgCounter = 0 -%}
+
+		{%- for image in site.static_files -%}
+			{%- if image.path contains '/image/home/carousel' -%}
+				{%- if ImgCounter == 0 -%}
+					<div class="carousel-item active">
+						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+						<div class="carousel-caption">
+							<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
+						</div>
+					</div>
+				{%- else -%}
+					<div class="carousel-item">
+						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+						<div class="carousel-caption">
+							<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
+						</div>
+					</div>
+				{%- endif -%}
+
+				{%- assign ImgCounter = ImgCounter | plus: 1 -%}
+			{%- endif -%}
+		{%- endfor -%}
+	</div>
+
+	<!-- left & right controls -->
+	<a href="#ScreenshotCarousel" class="carousel-control-prev" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+	</a>
+	<a href="#ScreenshotCarousel" class="carousel-control-next" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+	</a>
+</div>
+
 <!-- COMPLIANCE 32x -->
 <h2 class="display-3 m-5 text-center">Com&shy;pli&shy;ance 32x</h2>
 <div class="card">
@@ -25,7 +80,6 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-
 		</div>
 
 		<br>
@@ -46,13 +100,11 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-
 		</div>
 
 		<br>
 
 		<h2 class="card-title text-center">Programmer Art</h2>
-
 		<div id="compliance32xProgArt" class="owl-carousel owl-theme">
 
 			{%- for image in reversed_files -%}
@@ -76,7 +128,7 @@ title: Home
 
 		<div id="compliance32xAddons" class="owl-carousel owl-theme">
 
-			{%- for image in reversed_files -%}
+			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance32xAddons/' -%}
 
 					<div class="item">
@@ -88,7 +140,6 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-
 		</div>
 
 		<br>
@@ -159,7 +210,7 @@ title: Home
 
 		<div id="compliance64xAddons" class="owl-carousel owl-theme">
 
-			{%- for image in reversed_files -%}
+			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance64xAddons/' -%}
 
 					<div class="item">
@@ -179,7 +230,7 @@ title: Home
 
 <hr>
 
-<!-- COMPLIANCE 32x -->
+<!-- COMPLIANCE BEDROCK -->
 <h2 class="display-3 m-5 text-center">Com&shy;pli&shy;ance for Bedrock</h2>
 <div class="card">
 	<div class="card-body">
@@ -229,7 +280,7 @@ title: Home
 
 		<div id="compliance32xBedrockAddons" class="owl-carousel owl-theme">
 
-			{%- for image in reversed_files -%}
+			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance32xBedrockAddons/' -%}
 
 					<div class="item">
@@ -250,7 +301,7 @@ title: Home
 
 		<div id="compliance64xBedrockAddons" class="owl-carousel owl-theme">
 
-			{%- for image in reversed_files -%}
+			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance64xBedrockAddons/' -%}
 
 					<div class="item">
@@ -376,66 +427,11 @@ title: Home
 
 <hr>
 
-<!-- Screenshots carousel preview -->
-<div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel">
-	<!-- indicators -->
-	<ul class="carousel-indicators">
-		{%- assign ImgCounter = 0 -%}
-
-		{%- for image in site.static_files -%}
-			{%- if image.path contains '/image/home/carousel' -%}
-				{%- if ImgCounter == 0 -%}
-					<li data-target="#ScreenshotCarousel" class="active" data-slide-to="{{ ImgCounter }}"></li>
-				{%- else -%}
-					<li data-target="#ScreenshotCarousel" data-slide-to="{{ ImgCounter }}"></li>
-				{%- endif -%}
-
-				{%- assign ImgCounter = ImgCounter | plus: 1 -%}
-			{%- endif -%}
-		{%- endfor -%}
-	</ul>
-
-	<!-- slideshow -->
-	<div class="carousel-inner">
-		{%- assign ImgCounter = 0 -%}
-
-		{%- for image in site.static_files -%}
-			{%- if image.path contains '/image/home/carousel' -%}
-				{%- if ImgCounter == 0 -%}
-					<div class="carousel-item active">
-						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-						<div class="carousel-caption">
-							<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
-						</div>
-					</div>
-				{%- else -%}
-					<div class="carousel-item">
-						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-						<div class="carousel-caption">
-							<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
-						</div>
-					</div>
-				{%- endif -%}
-
-				{%- assign ImgCounter = ImgCounter | plus: 1 -%}
-			{%- endif -%}
-		{%- endfor -%}
-	</div>
-
-	<!-- left & right controls -->
-	<a href="#ScreenshotCarousel" class="carousel-control-prev" data-slide="prev">
-		<span class="carousel-control-prev-icon"></span>
-	</a>
-	<a href="#ScreenshotCarousel" class="carousel-control-next" data-slide="next">
-		<span class="carousel-control-next-icon"></span>
-	</a>
-</div>
-
 <script>
 	$(document).ready(function(){
 
 		$('#compliance32x').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -460,7 +456,7 @@ title: Home
 		});
 
 		$('#compliance32x3D').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -485,7 +481,7 @@ title: Home
 		});
 
 		$('#compliance32xProgArt').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -510,7 +506,7 @@ title: Home
 		});
 
 		$('#compliance32xAddons').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -535,7 +531,7 @@ title: Home
 		});
 
 		$('#compliance64x').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -560,7 +556,7 @@ title: Home
 		});
 
 		$('#compliance64xProgArt').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -585,7 +581,7 @@ title: Home
 		});
 
 		$('#compliance64xAddons').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -610,7 +606,7 @@ title: Home
 		});
 
 		$('#compliance32xBedrock').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -635,7 +631,7 @@ title: Home
 		});
 
 		$('#compliance32xBedrockAddons').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -660,7 +656,7 @@ title: Home
 		});
 
 		$('#compliance64xBedrock').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
@@ -685,7 +681,7 @@ title: Home
 		});
 
 		$('#compliance64xBedrockAddons').owlCarousel({
-			loop: true,
+			loop: false,
 			margin: 30,
 			nav: false,
 			responsiveClass: true,
