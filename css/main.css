@@ -129,6 +129,8 @@ img.fancy-card {
 .table {
 	background-color: #1c1c1c;
 	color: #ccc;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .table th {
 	background-color: #343A40;
