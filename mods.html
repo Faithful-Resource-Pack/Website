@@ -1,0 +1,55 @@
+---
+layout: default
+title: Mods
+---
+
+<link rel="stylesheet" href="{{ site.baseurl }}/css/mods.css">
+<div id="app">
+	<a id="target" style="display: none"></a>
+
+  <br>
+  <minecraft-versions :versions="minecraftVersions" :title="sentences.downloadVersion" :breakpoints="breakpoints"></minecraft-versions>
+
+  <zip-options></zip-options>
+
+  <local-download ref="localDownload" :canpack="canPackMods"></local-download>
+
+  <template v-if="isMounted">
+    <button id="DownloadLocally" :disabled="$refs.localDownload.canDownloadLocally" class="btn btn-lg btn-download" v-on:click="$refs.localDownload.openConfirmModal(undefined)">Download Resource Pack</button>
+    <div v-if="modSelection.length != 0 && $refs.localDownload.canDownloadLocally" class="advice text-center">Error: {{ $refs.localDownload.reasonCantDownload }}</div>
+  </template>
+
+  <br>
+
+  <div>
+    <input id="SearchBar" class="border-card-16" type="text" placeholder="Search for mods or Minecraft version.." title="Type something" v-model="form.search">
+    <div class="advice" v-text="searchAdvice"></div>
+  </div>
+
+  <div v-if='filteredMods.length == 0' v-text="emptyTable" id="noresults"></div>
+
+  <minecraft-mod-list :mods="filteredMods"></minecraft-mod-list>
+</table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="js/polyfill.js"></script>
+<script src="js/ajax.js"></script>
+<script src="js/extensionjs.js"></script>
+<script src="js/downloadFile.js"></script>
+<script src="js/components/minecraftVersions.js"></script>
+<script src="js/components/downloadMinecraftVersion.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/jszip.min.js"></script>
+<script src="js/FileSaver.min.js"></script>
+<script src="https://unpkg.com/idb@5/build/iife/index-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2/moment.min.js"></script>
+<script src="js/core/MinecraftUtils.js"></script>
+<script src="js/core/ResourcePackCreator.js"></script>
+<script src="js/components/clearDatabase.js"></script>
+<script src="js/components/zipOptions.js"></script>
+<script src="js/components/customModal.js"></script>
+<script src="js/components/localDownload.js"></script>
+<script src="js/components/minecraftMod.js"></script>
+<script src="js/components/minecraftModsList.js"></script>
+<script src="js/index.js"></script>

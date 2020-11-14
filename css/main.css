@@ -74,14 +74,15 @@ footer {
 	font-weight: 300;
 	line-height: 1.2;
 }
-a.btn-download {
+a.btn-download, button.btn-download {
 	display: block;
+  width: 100%;
 	border-radius: 16px;
 	background-color: var(--primary);
 	border-color: var(--primary);
 	color: #fff;
 }
-a.btn-download:hover {
+a.btn-download:hover, button.btn-download:hover {
 	color: #fff;
 	filter: brightness(112%);
 }
@@ -91,12 +92,12 @@ img.fancy-card {
 }
 
 /** FANCY CARDS **/
-#ScreenshotCarousel, div.card, .card .item > a, img.fancy-card {
+#ScreenshotCarousel, div.card, .card .item > a, img.fancy-card, .border-card-16, ul.card {
 	border-radius: 16px;
 	overflow: hidden;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.btn, .dropdown-menu {
+.btn, .dropdown-menu, select.custom-select, input#archiveName, .border-card-8 {
 	border-radius: 8px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }

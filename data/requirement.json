@@ -1,0 +1,32 @@
+{
+	"1.16.2": [
+		"faithful",
+		"fabric"
+	],
+	"1.15.2": [
+		"faithful",
+		"fabric"
+	],
+	"1.14.4": [
+		"faithful",
+		"fabric"
+	],
+	"1.12.2": [
+		"faithful",
+		"forge"
+	],
+	"1.11.2": [
+		"faithful",
+		"forge"
+	],
+	"1.10.2": [
+		"minecraft",
+		"forge"
+	],
+	"1.8.9": [
+		"minecraft"
+	],
+	"1.7.10": [
+		"minecraft"
+	]
+}

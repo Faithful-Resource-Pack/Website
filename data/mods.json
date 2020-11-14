@@ -1,0 +1,4825 @@
+[
+ {
+  "name": [
+   "/dank/null",
+   "danknull",
+   "dank-null"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "AE2 Stuff",
+   "ae2stuff",
+   "ae2-stuff"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "AIOT Botania",
+   "aiotbotania",
+   "aiot-botania"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "AbyssalCraft",
+   "abyssalcraft",
+   "abyssalcraft"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Actually Additions",
+   "actuallyadditions",
+   "actually-additions"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Additional Buildcraft Objects",
+   "additional-buildcraft-objects",
+   "additional-buildcraft-objects"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Additional Pipes for Buildcraft",
+   "additionalpipes",
+   "additional-pipes-for-buildcraft"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Advanced Generators",
+   "advgenerators",
+   "advanced-generators"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Advanced Genetics",
+   "advancedgenetics",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Advanced Machines",
+   "advancedmachines",
+   "advanced-machines"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Advanced Rocketry",
+   "advancedrocketry",
+   "advanced-rocketry"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Advanced Solar Materials",
+   "advsolars",
+   "advanced-solar-materials"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Advanced Solar Panel",
+   "advancedsolarpanel",
+   "advanced-solar-panels"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Advancement Book",
+   "advancementbook",
+   "advancement-book"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Advancements Enlarger",
+   "advancements-enlarger",
+   "advancements-enlarger"
+  ],
+  "versions": [
+   "1.16.3",
+   "1.15.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Advent of Ascension (Nevermine)",
+   "nevermine",
+   "advent-of-ascension-nevermine"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "AgriCraft",
+   "agricraft",
+   "agricraft"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Akashic Tome",
+   "akashictome",
+   "akashic-tome"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Alchemical Wizardry",
+   "alchemicalwizardry",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Alchemistry",
+   "alchemistry",
+   "alchemistry"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Animania",
+   "animania",
+   "animania"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Another Dusts",
+   "anotherdusts",
+   "another-dusts"
+  ],
+  "versions": [
+   "1.11.2",
+   "1.10.2",
+   "1.9.4"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Another One Bites the Dust",
+   "aobd",
+   "another-one-bites-the-dust"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Antique Atlas",
+   "antiqueatlas",
+   "antique-atlas"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "AppleCore",
+   "applecore",
+   "applecore"
+  ],
+  "versions": [
+   "1.11.2",
+   "1.10.2",
+   "1.9.4",
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "AppleSkin",
+   "appleskin",
+   "appleskin"
+  ],
+  "versions": [
+   "1.16.3",
+   "1.15.2",
+   "1.14.4",
+   "1.13.2",
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Applied Energistics 2",
+   "appliedenergistics2",
+   "applied-energistics-2"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Archimedes' Ships",
+   "archimedes",
+   "archimedes-ships"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ArchitectureCraft",
+   "architecturecraft",
+   "architecturecraft"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Armor Toughness Bar",
+   "toughnessbar",
+   "armor-toughness-bar"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ArmorPlus",
+   "armorplus",
+   "armorplus"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Aroma1997s Dimensional World",
+   "aroma1997sdimension",
+   "aroma1997s-dimensional-world"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ars Magica 2",
+   "arsmagica2",
+   "ars-magica-2"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Astral Sorcery",
+   "astralsorcery",
+   "astral-sorcery"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Auraddons",
+   "auraddons",
+   "auraddons"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Auto Dropper",
+   "autodropper",
+   "auto-dropper"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Automagy",
+   "automagy",
+   "automagy"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Avanced Power Management",
+   "advancedpowermanagement",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Avaritia 1.1x",
+   "avaritia",
+   "avaritia"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Backpack",
+   "backpack",
+   "forge-backpacks"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Bagginses",
+   "bagginses",
+   "bagginses"
+  ],
+  "versions": [
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Bartworks",
+   "bartworks",
+   "bartworks"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Baubles",
+   "baubles",
+   "baubles"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Baubley Heart Canisters",
+   "bhc",
+   "baubley-heart-canisters"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Beenfo",
+   "beenfo",
+   "beenfo"
+  ],
+  "versions": [
+   "1.16.3",
+   "1.15.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Better Achievements",
+   "betterachievements",
+   "betterachievements"
+  ],
+  "versions": [
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Better Advancements",
+   "betteradvancements",
+   "better-advancements"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Better Builder's Wands",
+   "betterbuilderswands",
+   "better-builders-wands"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Better Enchanted Books",
+   "bebooks",
+   "better-enchanted-books"
+  ],
+  "versions": [
+   "1.16.3",
+   "1.15.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Better Questing",
+   "betterquesting",
+   "better-questing"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Better Questing - Quest Book",
+   "questbook",
+   "better-questing-quest-book"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Better Storage",
+   "betterstorage",
+   "better-storage"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Better With Mods",
+   "betterwithmods",
+   "bwm-suite"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BetterBeginnings Mod",
+   "betterbeginnings",
+   "betterbeginnings-mod"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BetterNether",
+   "betternether",
+   "betternether"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BeyondRealityCore",
+   "beyondrealitycore",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BiblioCraft",
+   "bibliocraft",
+   "bibliocraft"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Billund",
+   "billund",
+   "billund-223258"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Binnie Design",
+   "binniedesign",
+   "binnies-mods"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Binnie's Mods",
+   "binniecore",
+   "binnies-mods"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Biomes O' Plenty",
+   "biomesoplenty",
+   "biomes-o-plenty"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Bis",
+   "bis",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Block Drops (JEI Addon)",
+   "blockdrops",
+   "block-drops-jei-addon"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Blood Arsenal",
+   "bloodarsenal",
+   "blood-arsenal"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Blood Magic",
+   "bloodmagic",
+   "blood-magic"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Blue Power",
+   "bluepower",
+   "blue-power"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Books",
+   "books",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Botania",
+   "botania",
+   "botania"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Botany",
+   "botany",
+   "binnies-mods"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BuilCraft | Compat",
+   "buildcraftcompat",
+   "buildcraft-compat"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BuilCraft | Core",
+   "buildcraftcore",
+   "buildcraft-core"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BuildCraft",
+   "buildcraft",
+   "buildcraft"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BuildCraft | Builders",
+   "buildcraftbuilders",
+   "buildcraft-builders"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BuildCraft | Energy",
+   "buildcraftenergy",
+   "buildcraft-energy"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BuildCraft | Factory",
+   "buildcraftfactory",
+   "buildcraft-factory"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BuildCraft | Robotics",
+   "buildcraftrobotics",
+   "buildcraft-robotics"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BuildCraft | Silicon",
+   "buildcraftsilicon",
+   "buildcraft-silicon"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "BuildCraft | Transport",
+   "buildcrafttransport",
+   "buildcraft-transport"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Buildcraft | Additions",
+   "bcadditions",
+   "buildcraft-additions"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Building Gadgets",
+   "buildinggadgets",
+   "building-gadgets"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Bullseye",
+   "bullseye",
+   "bullseye"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Capsule",
+   "capsule",
+   "capsule"
+  ],
+  "versions": [
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Career Bees",
+   "careerbees",
+   "career-bees"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Carpenter's Blocks",
+   "carpentersblocks",
+   "carpenters-blocks"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ceramics",
+   "ceramics",
+   "ceramics"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Chicken Chunks 1.8.+",
+   "chickenchunks",
+   "chickenchunks"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Chisel",
+   "chisel",
+   "chisel"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Chisels & Bits",
+   "chiselsandbits",
+   "chisels-bits"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.8.9"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Chromaticraft",
+   "chromaticraft",
+   "chromaticraft"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Classic Bars",
+   "classicbar",
+   "classic-bars"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Clay Bucket",
+   "claybucket",
+   "clay-bucket"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "CoFH Core",
+   "cofh",
+   "cofh-core"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Compact Machines 3",
+   "compactmachines3",
+   "compact-machines"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Compact Solars",
+   "compactsolars",
+   "compact-solars"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ComputerCraft",
+   "computercraft",
+   "computercraft"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Computronics",
+   "computronics",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Construct's Armory",
+   "conarm",
+   "constructs-armory"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ContentTweaker",
+   "contenttweaker",
+   "contenttweaker"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Cooking for Blockheads",
+   "cookingforblockheads",
+   "cooking-for-blockheads"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Cosmetic Armor Reworked",
+   "cosmeticarmorreworked",
+   "cosmetic-armor-reworked"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Crafting Station",
+   "craftingstation",
+   "crafting-station"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Crafting Table IV",
+   "craftingtableiv",
+   "craftingtable-iv"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Crafting Tweaks",
+   "craftingtweaks",
+   "crafting-tweaks"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "CreativeCore",
+   "creativecore",
+   "creativecore"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Curios API",
+   "curios",
+   "curios"
+  ],
+  "versions": [
+   "1.16.3",
+   "1.15.2",
+   "1.14.4",
+   "1.13.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Cyclic",
+   "cyclicmagic",
+   "cyclic"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Cyclops Core",
+   "cyclopscore",
+   "cyclops-core"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Dark Utilities",
+   "darkutils",
+   "dark-utilities"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Davincis Vessels",
+   "davincisvessels",
+   "davincis-vessels"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Deep Mob Learning",
+   "deepmoblearning",
+   "deep-mob-learning"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Deep Resonance",
+   "deepresonance",
+   "deep-resonance"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Demagnetize",
+   "demagnetize",
+   "demagnetize"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Dense Metals",
+   "densemetals",
+   "dense-metals"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Dimensional Anchors",
+   "dimanchor",
+   "dimensional-anchors"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "DimensionalDoors",
+   "dimdoors",
+   "dimensionaldoors"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Doggy Talents",
+   "doggytalents",
+   "doggy-talents"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Draconic Evolution",
+   "draconicevolution",
+   "draconic-evolution"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "DreamCraft",
+   "dreamcraft",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "EasyCrafting",
+   "easycrafting",
+   "easycrafting"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Electro-Magic Tools",
+   "electromagictools",
+   "electro-magic-tools"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Electroblob's Wizardry",
+   "ebwizardry",
+   "electroblobs-wizardry"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Elevator Mod",
+   "elevatorid",
+   "none"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Embers",
+   "embers",
+   "embers"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Enchanting Plus",
+   "eplus",
+   "enchanting-plus"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Enchiridion",
+   "enchiridion",
+   "enchiridion"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ender Compass",
+   "endercompass",
+   "ender-compass"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ender Enhancement",
+   "ee",
+   "ender-enhancement"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ender IO",
+   "enderio",
+   "ender-io"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ender IO Forestry",
+   "enderiointegrationforestry",
+   "ender-io-forestry"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ender IO Machines",
+   "enderiomachines",
+   "ender-io-machines"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ender Storage 1.8.+",
+   "enderstorage",
+   "ender-storage-1-8"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ender Zoo",
+   "enderzoo",
+   "ender-zoo"
+  ],
+  "versions": [
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "EnderCore",
+   "endercore",
+   "endercore"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "EnderTech",
+   "endertech",
+   "endertech"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Enhanced Portal 3",
+   "enhancedportals",
+   "enhanced-portals-3"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "EnviroMine",
+   "enviromine",
+   "enviromine"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Environmental Tech",
+   "environmentaltech",
+   "environmental-tech"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Equivalent Energistics",
+   "equivalentenergistics",
+   "equivalent-energistics"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Equivalent Exchange 3",
+   "ee3",
+   "ee3"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Equivalent Integrations",
+   "equivalentintegrations",
+   "equivalent-integrations"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Et Futurum",
+   "etfuturum",
+   "et-futurum"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Eureka",
+   "eureka",
+   "eureka"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ex Astris",
+   "exastris",
+   "ex-astris"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ex Compressum",
+   "excompressum",
+   "ex-compressum"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ex Nihilo",
+   "exnihilo",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ex Nihilo Adscensio",
+   "exnihiloadscensio",
+   "ex-nihilo-adscensio"
+  ],
+  "versions": [
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ex Nihilo: Creatio",
+   "exnihilocreatio",
+   "ex-nihilo-creatio"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Exchangers",
+   "exchangers",
+   "exchangers"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Expandable Backpacks",
+   "expandablebackpack",
+   "expandable-backpacks"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Extended Crafting",
+   "extendedcrafting",
+   "extended-crafting"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Extra Bees",
+   "extrabees",
+   "binnies-mods"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Extra Trees",
+   "extratrees",
+   "binnies-mods"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Extra Utilities",
+   "extrautils",
+   "extra-utilities"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Extra Utilities 2",
+   "extrautils2",
+   "extra-utilities"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ExtraCells 2",
+   "extracells",
+   "extracells2"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ExtraPlanets",
+   "extraplanets",
+   "extraplanets"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ExtraTiC",
+   "extratic",
+   "extratic"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ExtrabiomesXL",
+   "extrabiomesxl",
+   "extrabiomesxl"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Extreme Reactors",
+   "bigreactors",
+   "extreme-reactors"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Factorization",
+   "factorization",
+   "factorization-unofficial"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Farming for Blockheads",
+   "farmingforblockheads",
+   "farming-for-blockheads"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Flat Colored Blocks",
+   "flatcoloredblocks",
+   "flat-colored-blocks"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Flux Networks",
+   "fluxnetworks",
+   "flux-networks"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Fluxed-Crystals",
+   "fluxedcrystals",
+   "fluxed-crystals"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Forbidden Mod",
+   "forbidden",
+   "forbidden-mod"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Forestry",
+   "forestry",
+   "forestry"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Forge MultiPart CBE",
+   "microblockcbe",
+   "forge-multipart-cbe"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Funky Locomotion",
+   "funkylocomotion",
+   "funky-locomotion"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Furnace Overhaul",
+   "furnaceoverhaul",
+   "furnace-overhaul"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Future MC",
+   "futuremc",
+   "future-mc"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "GalactiCraft Asteroids",
+   "galacticraftasteroids",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "GalactiCraft Core",
+   "galacticraftcore",
+   "none"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "GalactiCraft Mars",
+   "galacticraftmars",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "GalactiCraft Moon",
+   "galacticraftmoon",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "GalactiCraft Planets",
+   "galacticraftplanets",
+   "none"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Gany's Surface",
+   "ganyssurface",
+   "ganys-surface"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Gendustry",
+   "gendustry",
+   "gendustry"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Genetics Reborn",
+   "genetics",
+   "genetics-reborn"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "GeoStrata",
+   "geostrata",
+   "geostrata"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Goetia",
+   "goetia",
+   "goetia"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Gravitation Suite",
+   "gravisuite",
+   "gravitation-suite"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Gravity Gun",
+   "gravigun",
+   "gravity-gun"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "GregTech",
+   "gregtech",
+   "gregtechce"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Guide-API",
+   "guideapi",
+   "guide-api"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Hazards",
+   "hazards",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Hearth Well",
+   "hwell",
+   "hearth-well"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Highlands",
+   "highlands",
+   "highlands"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "HitWithAxe",
+   "hitwithaxe",
+   "hitwithaxe"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Hopper Ducts",
+   "hopperductmod",
+   "hopper-ducts"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Hunting Dimension",
+   "huntingdim",
+   "hunting-dimension"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "IHL Tools & Machines",
+   "ihl",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ice and Fire",
+   "iceandfire",
+   "ice-and-fire-dragons"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Iguanas Tinker Tweaks",
+   "iguanatweakstconstruct",
+   "iguanas-tinker-tweaks"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Immersive Engineering",
+   "immersiveengineering",
+   "immersive-engineering"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Immersive Integration",
+   "immersiveintegration",
+   "immersive-integration"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Immersive Petroleum",
+   "immersivepetroleum",
+   "immersive-petroleum"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Immibis's Microblocks",
+   "microblock",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Industrial Foregoing",
+   "industrialforegoing",
+   "industrial-foregoing"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Industrical Craft 2 (IC2)",
+   "ic2",
+   "industrial-craft"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Inspirations",
+   "inspirations",
+   "none"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Integrated Crafting",
+   "integratedcrafting",
+   "integrated-crafting"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Integrated Dynamics",
+   "integrateddynamics",
+   "integrated-dynamics"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Integrated Dynamics Compatibility",
+   "integrateddynamicscompat",
+   "integrated-dynamics"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Integrated Terminals",
+   "integratedterminals",
+   "integrated-terminals"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Integrated Tunnels",
+   "integratedtunnels",
+   "https://minecraft.curseforge.com/projects/integrated-tunnels"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Inventory Profiles",
+   "inventoryprofiles",
+   "inventory-profiles"
+  ],
+  "versions": [
+   "1.15.2",
+   "1.14.4"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Iron Backpacks",
+   "ironbackpacks",
+   "iron-backpacks"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Iron Chests",
+   "ironchest",
+   "iron-chests"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Iron Tanks",
+   "irontank",
+   "iron-tanks"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "JAOPCA",
+   "jaopca",
+   "jaopca"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "JAOPCA Ore Chunks (AOBD)",
+   "jaopcaoc",
+   "aobd-ore-chunks"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "JEI Bees",
+   "jeibees",
+   "jei-bees"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "JEI Villagers",
+   "jeivillagers",
+   "jei-villagers"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Jabba",
+   "jabba",
+   "jabba"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Just Enough Items (JEI)",
+   "jei",
+   "jei"
+  ],
+  "versions": [
+   "1.16.3",
+   "1.15.2",
+   "1.14.4",
+   "1.13.2",
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.9.4",
+   "1.8.9"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Just Enough Reactors",
+   "justenoughreactors",
+   "just-enough-reactors"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Just Enough Resources (JER)",
+   "jeresources",
+   "just-enough-resources-jer"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Just Enough Throwing In Fluids (JETIF)",
+   "jetif",
+   "jetif"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Karat Garden",
+   "karatgarden",
+   "karat-garden"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "LandCore",
+   "landcore",
+   "none"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "LandCraft",
+   "landcraft",
+   "none"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "LibVulpes",
+   "libvulpes",
+   "libvulpes"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "LittleTiles",
+   "littletiles",
+   "littletiles"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Logistics Pipes",
+   "logisticspipes",
+   "logistics-pipes"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "LootBags",
+   "lootbags",
+   "lootbags"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Lucky Block",
+   "lucky",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Lumberjack",
+   "lumberjack",
+   "lumberjack"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Magia Naturalis",
+   "magianaturalis",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Magic Bees",
+   "magicbees",
+   "magic-bees"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Magical Crops",
+   "magicalcrops",
+   "magical-crops"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Magneticraft",
+   "magneticraft",
+   "magneticraft"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "MalisisDoors",
+   "malisisdoors",
+   "malisisdoors"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mantle",
+   "mantle",
+   "mantle"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Matter Overdrive",
+   "mo",
+   "matteroverdrive-17-edition"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mekanism",
+   "mekanism",
+   "mekanism"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mekanism Generators",
+   "mekanismgenerators",
+   "mekanism-generators"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mekanism Tools",
+   "mekanismtools",
+   "mekanism-tools"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Metallurgy",
+   "metallurgy",
+   "metallurgy"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mine & Blade: Battlegear 2",
+   "battlegear2",
+   "mb-battlegear-2"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mine Souls",
+   "minesouls",
+   "mine-souls"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Minefactory Reloaded",
+   "minefactoryreloaded",
+   "minefactory-reloaded"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mineswagg",
+   "mineswagg",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "MiniCoal",
+   "minicoal",
+   "minicoal"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "MiscUtils [Modding Utilities]",
+   "miscutils",
+   "miscutils-modding-utilities"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mo Glass",
+   "mo_glass",
+   "mo-glass"
+  ],
+  "versions": [
+   "1.16.3",
+   "1.15.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mod Menu",
+   "modmenu",
+   "modmenu"
+  ],
+  "versions": [
+   "1.16.3",
+   "1.15.2",
+   "1.14.4"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Modular Force Field Systems (MFFS)",
+   "mffs",
+   "mffs"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Modular Machinery",
+   "modularmachinery",
+   "modular-machinery"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Modular Powersuits",
+   "powersuits",
+   "modular-powersuits"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Modular Powersuits Addons",
+   "powersuitaddons",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Monster Girl Mod",
+   "monstergirlmod",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "More Furnaces",
+   "morefurnaces",
+   "more-furnaces"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "More Plates",
+   "moreplates",
+   "moreplates"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "More Swords Mod",
+   "moreswords",
+   "more-swords-mod"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "MoreChisels",
+   "morechisels",
+   "morechisels"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Morph-o-Tool",
+   "morphtool",
+   "morph-o-tool"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "MrCrayfish's Furniture Mod",
+   "cfm",
+   "mrcrayfish-furniture-mod"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "MrTJPCore",
+   "mrtjpcore",
+   "mrtjpcore"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mystcraft",
+   "mystcraft",
+   "mystcraft"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mystical Adaptations",
+   "mysticaladaptations",
+   "mystical-adaptations"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mystical Agradditions",
+   "mysticalagradditions",
+   "mystical-agradditions"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mystical Agriculture",
+   "mysticalagriculture",
+   "mystical-agriculture"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Mystical World",
+   "mysticalworld",
+   "mystical-world"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Natura",
+   "natura",
+   "natura"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Nature's Aura",
+   "naturesaura",
+   "natures-aura"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Nether Metals",
+   "nethermetals",
+   "nether-metals"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Nether Things",
+   "netherthings",
+   "nether-things"
+  ],
+  "versions": [
+   "1.14.4"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "NetherEx",
+   "netherex",
+   "netherex"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "NetherOres",
+   "netherores",
+   "netherores"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Netherending Ores",
+   "netherendingores",
+   "netherending-ores"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Netherite Horse Armor",
+   "netheritehorsearmor",
+   "netherite-horse-armor"
+  ],
+  "versions": [
+   "1.16.3"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Not Enough Items (NEI)",
+   "nei",
+   "not-enough-items-1-8"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.9.4",
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Not Enough Wands",
+   "notenoughwands",
+   "not-enough-wands"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "NotEnoughScaffold",
+   "notenoughscaffold",
+   "notenoughscaffold"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Nuclear Control 2",
+   "nuclearcontrol",
+   "nuclear-control-2"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "NuclearCraft",
+   "nc",
+   "nuclearcraft-mod"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "NuclearCraft",
+   "nuclearcraft",
+   "nuclearcraft-mod"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Nutrition",
+   "nutrition",
+   "none"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Open Glider",
+   "openglider",
+   "open-glider"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "OpenBlocks",
+   "openblocks",
+   "openblocks"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "OpenCCSensors",
+   "openccsensors",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "OpenComputers",
+   "opencomputers",
+   "opencomputers"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "OpenEye",
+   "openeye",
+   "openeye"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Overworld Quartz",
+   "overworld-quartz",
+   "overworld-quartz"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "PackagedAuto",
+   "packagedauto",
+   "packagedauto"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Pam's HarvestCraft",
+   "harvestcraft",
+   "pams-harvestcraft"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Peripherals++",
+   "peripheralsplusplus",
+   "peripherals"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Pickle Tweaks",
+   "pickletweaks",
+   "pickle-tweaks"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Player Stats 2",
+   "playerstats",
+   "none"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "PlusTiC",
+   "plustic",
+   "none"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "PneumaticCraft: Repressurized",
+   "pneumaticcraft",
+   "pneumaticcraft-repressurized"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "PoorOres",
+   "poorores",
+   "poorores"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Portal Gun",
+   "portalgun",
+   "portal-gun"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Power Converters 3",
+   "powerconverters",
+   "power-converters3"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Primal Tech",
+   "primal_tech",
+   "primal-tech"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Production",
+   "production",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Progressive Automation",
+   "progressiveautomation",
+   "progressive-automation-early-miner"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Project EX",
+   "projectex",
+   "project-ex"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Project Red",
+   "projectred",
+   "project-red-base"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ProjectE",
+   "projecte",
+   "projecte"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Psi",
+   "psi",
+   "psi"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "QuantumFlux",
+   "quantumflux",
+   "quantumflux"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "QuantumStorage",
+   "quantumstorage",
+   "quantumstorage"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Quark",
+   "quark",
+   "quark"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "QuarryPlus",
+   "yogpstop_qp",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "RFTools",
+   "rftools",
+   "rftools"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "RFTools Control",
+   "rftoolscontrol",
+   "rftools-control"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "RFTools Dimensions",
+   "rftoolsdim",
+   "rftools-dimensions"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "RSCircuits",
+   "rscircuits",
+   "none"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Railcraft",
+   "railcraft",
+   "railcraft"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Random Things",
+   "randomthings",
+   "random-things"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "RandomAdditions",
+   "randomadditions",
+   "randomadditions"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ReactorCraft",
+   "reactorcraft",
+   "reactorcraft"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Realistic Torches",
+   "realistictorches",
+   "realistic-torches"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Reborn Storage",
+   "rebornstorage",
+   "rebornstorage"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Redstone Armory",
+   "rarm",
+   "redstone-armory"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Redstone Arsenal",
+   "redstonearsenal",
+   "redstone-arsenal"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Redstone In Motion",
+   "jakj_redstoneinmotion",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Redstone Repository Revolved",
+   "redstonerepository",
+   "redstone-repository-revolved"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Refined Machinery",
+   "refinedmachinery",
+   "refined-machinery"
+  ],
+  "versions": [
+   "1.14.4"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Refined Storage",
+   "refinedstorage",
+   "refined-storage"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Refined Storage Addons",
+   "refinedstorageaddons",
+   "refined-storage-addons"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Roots",
+   "roots",
+   "roots"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "RotaryCraft",
+   "rotarycraft",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Rustic",
+   "rustic",
+   "rustic"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Scannable",
+   "scannable",
+   "scannable"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Serene Seasons",
+   "sereneseasons",
+   "serene-seasons"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Simple Achievements",
+   "simpleachievements",
+   "simple-achievements"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Simple Covers",
+   "covers",
+   "simple-covers"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Simple Storage Network",
+   "storagenetwork",
+   "simple-storage-network"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Simply Jetpacks 2",
+   "simplyjetpacks",
+   "simply-jetpacks"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Sky Compression",
+   "sc",
+   "sky-compression"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Sky Orchards",
+   "sky_orchards",
+   "sky-orchards"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Sky Resources 2",
+   "skyresources",
+   "sky-resources"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Smart HUD",
+   "smarthud",
+   "smart-hud"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Smart Moving",
+   "smartmoving",
+   "smart-moving"
+  ],
+  "versions": [
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Snow Variants",
+   "snowvariants",
+   "snow-variants"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Sodacan Torches",
+   "sodacantorches",
+   "sodacan-utilities"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Sodacan Utilities",
+   "sodacanutils",
+   "sodacan-utilities"
+  ],
+  "versions": [
+   "1.8.9"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Solar Expansion",
+   "solarexpansion",
+   "solar-expansion"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Soul Shards: The Old Ways",
+   "sstow",
+   "soul-shards-the-old-ways"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Soulus",
+   "soulus",
+   "soulus"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Speedy Ladders",
+   "speedyladders",
+   "speedy-ladders"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Steamcraft 2",
+   "steamcraft",
+   "steamcraft2"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Steve's Carts",
+   "stevescarts",
+   "steves-carts-reborn"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Steve's Factory Manager",
+   "stevesfactory",
+   "steves-factory-manager-reborn"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Storage Drawers",
+   "storagedrawers",
+   "storage-drawers"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Storage Drawers: Biomes O' Plenty Pack",
+   "storagedrawersbop",
+   "storage-drawers-biomes-o-plenty-pack"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Superior Shields",
+   "superiorshields",
+   "superior-shields"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tainted Magic",
+   "taintedmagic",
+   "tainted-magic"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tech Reborn",
+   "techreborn",
+   "techreborn"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "TerraFirmaCraft",
+   "terrafirmacraft",
+   "tfcraft"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tesla Core Lib",
+   "teslacorelib",
+   "tesla-core-lib"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thaumcraft",
+   "thaumcraft",
+   "thaumcraft"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thaumic Bases",
+   "thaumicbases",
+   "thaumic-bases"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thaumic Energistics",
+   "thaumicenergistics",
+   "thaumic-energistics"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thaumic Exploration",
+   "thaumicexploration",
+   "thaumic-exploration"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thaumic Grid",
+   "thaumicgrid",
+   "thaumic-grid"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thaumic JEI",
+   "thaumicjei",
+   "thaumic-jei"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thaumic Palmistry",
+   "thaumicpalmistry",
+   "thaumic-palmistry"
+  ],
+  "versions": [
+   "1.8.9"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thaumic Tinkerer",
+   "ttinkerer",
+   "thaumic-tinkerer"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thaumic Tinkerer",
+   "thaumictinkerer",
+   "thaumic-tinkerer"
+  ],
+  "versions": [
+   "1.8.9"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "The Aether II",
+   "aether",
+   "the-aether-ii"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "The Barrels Mod",
+   "barrels",
+   "none"
+  ],
+  "versions": [
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "The Disenchanter Mod",
+   "disenchanter",
+   "the-disenchanter-mod"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "The Farlanders",
+   "farlanders",
+   "farlanders"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "The One Probe",
+   "theoneprobe",
+   "the-one-probe"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "The Spice of Life",
+   "spiceoflife",
+   "the-spice-of-life"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "The Twilight Forest",
+   "twilightforest",
+   "the-twilight-forest"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thermal Cultivation",
+   "thermalcultivation",
+   "thermal-cultivation"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thermal Dynamics",
+   "thermaldynamics",
+   "thermal-dynamics"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thermal Expansion",
+   "thermalexpansion",
+   "thermal-expansion"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thermal Foundation",
+   "thermalfoundation",
+   "thermal-foundation"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thermal Innovation",
+   "thermalinnovation",
+   "thermal-innovation"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thermal Logistics",
+   "thermallogistics",
+   "thermallogistics"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Thermal Solars",
+   "thermalsolars",
+   "thermal-solars"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tinker I/O",
+   "tinker_io",
+   "tinker-i-o"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tinker's JEI",
+   "tinkersjei",
+   "tinkers-jei"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tinker's Mechworks",
+   "tmechworks",
+   "tinkers-mechworks"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tinker's Steelworks",
+   "tsteelworks",
+   "tinkers-steelworks"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tinkers' Complement",
+   "tcomplement",
+   "tinkers-complement"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tinkers Construct",
+   "tinker",
+   "tinkers-construct"
+  ],
+  "versions": [
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tinkers Construct",
+   "tconstruct",
+   "tinkers-construct"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2",
+   "1.8.9"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Tiny Progressions",
+   "tp",
+   "tiny-progressions"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Torchmaster",
+   "torchmaster",
+   "torchmaster"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "TrashSlot",
+   "trashslot",
+   "trashslot"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Traverse",
+   "traverse",
+   "traverse"
+  ],
+  "versions": [
+   "1.15.2",
+   "1.14.4"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "TubeStuff",
+   "tubestuff",
+   "none"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Uncrafting Table",
+   "uncraftingtable",
+   "jglrxavpoks-uncrafting-table"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Underground Biomes",
+   "undergroundbiomes",
+   "underground-biomes"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Unstable Tools",
+   "unstabletools",
+   "unstable-tools"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "ValkyrieLib",
+   "valkyrielib",
+   "valkyrielib"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Version Checker",
+   "versionchecker",
+   "version-checker"
+  ],
+  "versions": [
+   "1.8.9",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Village Names",
+   "villagenames",
+   "village-names"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Visible Armor Slots",
+   "visiblearmorslots",
+   "visible-armor-slots"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "WR-CBE Addons (Wireless Redstone Chicken Bones Edition)",
+   "wrcbe_addons",
+   "wr-cbe-universal"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "WR-CBE Core (Wireless Redstone Chicken Bones Edition)",
+   "wrcbe_core",
+   "wr-cbe-universal"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "WR-CBE Logic (Wireless Redstone Chicken Bones Edition)",
+   "wrcbe_logic",
+   "wr-cbe-universal"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Warp Book",
+   "warpbook",
+   "warp-book"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Warp Theory",
+   "warptheory",
+   "warp-theory"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Wireless Crafting Terminal",
+   "wct",
+   "wireless-crafting-terminal"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Witchery",
+   "witchery",
+   "witchery"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Witching Gadgets",
+   "witchinggadgets",
+   "witching-gadgets"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Wizardry Mod",
+   "wizardry",
+   "wizardry-mod"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Wood Stuff",
+   "woodstuff",
+   "wood-stuff"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Wooden Shears [SBM]",
+   "woodenshears",
+   "sbm-wooden-shears"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.11.2",
+   "1.10.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Woot",
+   "woot",
+   "woot"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "XNet",
+   "xnet",
+   "xnet"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "XP Book",
+   "xpbook",
+   "xp-book"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Xeno's Reliquary",
+   "xreliquary",
+   "reliquary-v1-3"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Xtones",
+   "xtones",
+   "xtones"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "YABBA",
+   "yabba",
+   "yabba"
+  ],
+  "versions": [
+   "1.12.2"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Yet Another Leather Smelting Mod (YALSM)",
+   "yalsm",
+   "yalsm-yet-another-leather-smelting-mod"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Ztones",
+   "ztones",
+   "ztones"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "iBench",
+   "ibench",
+   "ibench"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ }
+]
