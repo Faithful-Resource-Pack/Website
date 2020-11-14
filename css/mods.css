@@ -72,13 +72,21 @@ input[type=radio]:checked + label {
 	background: #ccc;
 }
 
+.customModalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+	background: rgba(0,0,0,0.5);
+}
+
 .customModal {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(0,0,0,0.5);
 	padding: 10px;
 	z-index: 3000;
 	text-align: center
@@ -104,15 +112,6 @@ input[type=radio]:checked + label {
 	overflow: auto;
 	text-align: left;
 	position: relative
-}
-
-.customModalContent .close {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: .5rem 0.75rem;
-	color: white;
-	z-index: 100;
 }
 
 .customModal p {

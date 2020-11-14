@@ -19,8 +19,8 @@ Vue.component('local-download', {
         </div>\
       </custom-modal>\
       \
-      <custom-modal id="downloadModal" contentId="downloadModalContent" :modalOpened="modalOpened" :closeIconEnabled="canCloseModal" :closeOnClick="closeModal" :closeIconTitle="cancelTitle">\
-        <div id="steps" class="row pr-4">\
+      <custom-modal id="downloadModal" contentId="downloadModalContent" :modalOpened="modalOpened" :closeOnClick="closeModal">\
+        <div id="steps" class="row">\
           <template v-for="(step, index) in steps" :key="step.name" >\
             <div class="col-auto text-center">\
               <button :disabled="index != currentStep" class="mx-auto px-0 btn btn-custom">{{ index+1 }}</button>\
