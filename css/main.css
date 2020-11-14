@@ -81,9 +81,6 @@ img.fancy-card {
 .card-body > :first-child {
 	margin-top: 0;
 }
-.card-title, .card h4 {
-	color: rgba(255, 255, 255, .9);
-}
 .card-title {
 	font-weight: 300;
 	margin: 1rem 0 1.25rem;
@@ -190,11 +187,12 @@ img.fancy-card {
 a > h4 {
 	margin-top: -45px;
 	margin-left: 10px;
-	color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, .9);
+  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
 }
 a > h4:hover {
 	text-decoration: none;
-	color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, .9);
 }
 
 /** BASIC CAROUSEL **/

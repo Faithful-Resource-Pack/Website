@@ -68,8 +68,10 @@ title: Home
 
 		<div id="compliance32x" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance32x/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -80,6 +82,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
+
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 		<br>
@@ -88,8 +100,10 @@ title: Home
 
 		<div id="compliance32x3D" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance32x3D/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance32x3D/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -100,6 +114,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
+
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 		<br>
@@ -107,8 +131,10 @@ title: Home
 		<h2 class="card-title text-center">Programmer Art</h2>
 		<div id="compliance32xProgArt" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance32xProgArt/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance32xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -119,7 +145,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
 
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 		<br>
@@ -128,8 +163,10 @@ title: Home
 
 		<div id="compliance32xAddons" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance32xAddons/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance32xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -140,6 +177,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
+
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 		<br>
@@ -168,8 +215,10 @@ title: Home
 
 		<div id="compliance64x" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance64x/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -180,7 +229,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
 
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 		<br>
@@ -189,8 +247,10 @@ title: Home
 
 		<div id="compliance64xProgArt" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance64xProgArt/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance64xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -201,7 +261,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
 
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 		<br>
@@ -210,8 +279,10 @@ title: Home
 
 		<div id="compliance64xAddons" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance64xAddons/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance64xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -222,7 +293,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
 
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 	</div>
@@ -238,8 +318,10 @@ title: Home
 
 		<div id="compliance32xBedrock" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance32xBedrock/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance32x32xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -250,7 +332,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
 
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 		<br>
@@ -259,8 +350,10 @@ title: Home
 
 		<div id="compliance64xBedrock" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance64xBedrock/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -271,7 +364,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
 
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 		<br>
@@ -280,8 +382,10 @@ title: Home
 
 		<div id="compliance32xBedrockAddons" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance32xBedrockAddons/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -292,7 +396,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
 
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 		<br>
@@ -301,8 +414,10 @@ title: Home
 
 		<div id="compliance64xBedrockAddons" class="owl-carousel owl-theme">
 
+      {%- assign listIsEmpty = true -%}
 			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance64xBedrockAddons/' -%}
+          {%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -313,7 +428,16 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
+      {%- if listIsEmpty -%}
 
+        <div class="item">
+          <a href="{{ site.baseurl }}/" rel="noopener">
+            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
+            <h4>Coming Soon</h4>
+          </a>
+        </div>
+
+      {%- endif -%}
 		</div>
 
 	</div>
