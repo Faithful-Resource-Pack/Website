@@ -1,0 +1,36 @@
+---
+layout: default
+title: Modpacks
+---
+
+<link rel="stylesheet" href="{{ site.baseurl }}/css/mods.css">
+<!-- <input id="SearchBar" type="text" placeholder="Search for a modpack..." title="Type something" > // v-model="form.search" -->
+
+<div id="modpacks">
+  <zip-options></zip-options>
+
+  <local-download ref="localDownload" canPack="true"></local-download>
+
+  <modpack-modal id="modpackModal" :modpack="currentModpack" :modpackmodalopened="modpackModalOpened" :onclose="function() { modpackModalOpened = false }" :modcorrespondance="modListCorrespondance"></modpack-modal>
+
+    <div class="card-deck">
+      <modpack-card v-for="(m, mindex) in modpacks" :key="mindex" :modpack="m" :onbuttonclick="function(){ openModpackModal(mindex)  }"></modpack-card>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ajax.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="/js/components/customModal.js"></script>
+<script src="/js/components/modpackModal.js"></script>
+<script src="/js/components/modpackCard.js"></script>
+
+<script src="https://unpkg.com/idb@5/build/iife/index-min.js"></script>
+<script src="js/components/clearDatabase.js"></script>
+<script src="js/components/zipOptions.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2/moment.min.js"></script>
+<script src="js/core/ResourcePackCreator.js"></script>
+<script src="js/FileSaver.min.js"></script>
+<script src="/js/components/localDownload.js"></script>
+
+<script src="/js/modpacks.js"></script>
