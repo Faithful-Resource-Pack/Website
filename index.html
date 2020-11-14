@@ -96,38 +96,6 @@ title: Home
 
 		<br>
 
-		<h2 class="card-title text-center">3D Extension</h2>
-
-		<div id="compliance32x3D" class="owl-carousel owl-theme">
-
-      {%- assign listIsEmpty = true -%}
-			{%- for image in reversed_files -%}
-				{%- if image.path contains 'image/article/compliance32x3D/' -%}
-          {%- assign listIsEmpty = false -%}
-
-					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32x3D/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h4>{{ image.basename }}</h4>
-						</a>
-					</div>
-
-				{%- endif -%}
-			{%- endfor -%}
-      {%- if listIsEmpty -%}
-
-        <div class="item">
-          <a href="{{ site.baseurl }}/" rel="noopener">
-            <img src="{{ site.baseurl }}/image/home/placeholder.png" class="img-fluid" alt="Empty">
-            <h4>Coming Soon</h4>
-          </a>
-        </div>
-
-      {%- endif -%}
-		</div>
-
-		<br>
-
 		<h2 class="card-title text-center">Programmer Art</h2>
 		<div id="compliance32xProgArt" class="owl-carousel owl-theme">
 
