@@ -9,10 +9,6 @@ h1, h2, h3, h4, h5 {
 		justify-content: center
 	}
 
-	.btn-group > .btn {
-		border-radius: 0.25rem !important;
-	}
-
 	#bottomButtons .btn {
 		display: block;
 		width: 100%;
@@ -31,10 +27,6 @@ label {
 
 .fa-info-circle {
 	margin-left: -5px
-}
-
-.fa-info-circle:hover {
-	color: #eb5252
 }
 
 input[type=radio] + label {
@@ -58,26 +50,9 @@ input[type=radio]:checked + label {
   border-color: #343a40;
 }
 
-.btn-custom.focus, .btn-custom:focus, .btn-custom:hover {
-	box-shadow: none;
+.btn-custom:hover {
+	filter: brightness(112%);
 	color: #fff
-}
-
-.btn-group-custom .btn {
-	border-radius: 0;
-}
-
-.btn-group-custom:first-child .btn:first-child {
-	border-top-left-radius: .8em
-}
-.btn-group-custom:first-child .btn:last-child {
-	border-top-right-radius: .8em
-}
-.btn-group-custom:last-child .btn:last-child {
-	border-bottom-right-radius: .8em
-}
-.btn-group-custom:last-child .btn:first-child {
-	border-bottom-left-radius: .8em
 }
 
 #zipOptions ::-webkit-input-placeholder {
@@ -122,6 +97,7 @@ input[type=radio]:checked + label {
 	background: #232323;
   color: rgba(255, 255, 255, .9);
 	border-radius: 16px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 600px;
 	max-width: 100%;
 	max-height: 100%;
@@ -226,7 +202,7 @@ input[type=radio]:checked + label {
 	background-size: auto 100%;
 	background-size: contain;
 	background-repeat: no-repeat;
-	image-rendering: crisp-edges;
+	image-rendering: pixelated;
 	background-position: center;
   border-radius: 8px;
 }

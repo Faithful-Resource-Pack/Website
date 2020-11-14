@@ -3,13 +3,11 @@
 
 Vue.component('minecraft-versions', {
   props: {
-    title: String,
     versions: Array,
     breakpoints: Object
   },
   template:
     '<div id="minecraftVersions">\
-      <h2>{{ title }}</h2>\
       <div>\
         <div v-for="(line, index) in versionsOrganized" :key="index" class="row mt-0 mx-0 btn-group-custom">\
           <download-minecraft-version v-for="version in line" :key="version.version" :value="version" :block="breakpoints.lg && !breakpoints.md" />\

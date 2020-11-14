@@ -7,8 +7,17 @@ title: Mods
 <div id="app">
 	<a id="target" style="display: none"></a>
 
-  <br>
-  <minecraft-versions :versions="minecraftVersions" :title="sentences.downloadVersion" :breakpoints="breakpoints"></minecraft-versions>
+  <h2 class="display-4 m-5 text-center">Download All Textures for Version</h2>
+
+  <div class="card">
+    <div class="card-body">
+      <minecraft-versions :versions="minecraftVersions" :breakpoints="breakpoints"></minecraft-versions>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2 class="display-4 m-5 text-center">Put Together Your Own Pack</h2>
 
   <zip-options></zip-options>
 
