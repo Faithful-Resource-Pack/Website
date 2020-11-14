@@ -7,7 +7,7 @@ function Hide(id){
 
 	col1.innerHTML = '<h2 class="display-5 m-3 text-center">16x</h2>';
 	col2.innerHTML = '<h2 class="display-5 m-3 text-center">32x</h2>';
-	col3.innerHTML = '<h2 class="display-5 m-3 text-center">128x</h2>';
+	col3.innerHTML = '<h2 class="display-5 m-3 text-center">64x</h2>';
 
 	col1.style.display = 'none';
 	col2.style.display = 'none';
@@ -27,6 +27,18 @@ function Load_Textures(file,done) {
 
 	if (file.startsWith('/data/java')) {
 		MC_TYPE = 'JAVA-RESULT';
+	}
+
+	if (file.startsWith('/data/dungeons')) {
+		MC_TYPE = 'DUNGEONS-RESULT';
+	}
+
+	if (file.startsWith('/data/bedrock')) {
+		MC_TYPE = 'BEDROCK-RESULT';
+	}
+
+	if (file.startsWith('/data/education')) {
+		MC_TYPE = 'EDUCATION-RESULT';
 	}
 
 	var btn, col1, col2, col3;
