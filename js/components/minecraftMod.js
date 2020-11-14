@@ -133,7 +133,7 @@ Vue.component('minecraft-mod', {
       } else {
         // set default organization image
 
-        this.imageSource = '/image/icon/organization_icon.png'
+        this.imageSource = '/image/icon/compliance_mods.png'
         this.$parent.thumbnailCache.push({
           modName: this.$props.mod.name[0],
           imageSource: this.imageSource,

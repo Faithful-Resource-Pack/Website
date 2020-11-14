@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5 {
 		width: 100%;
 	}
 
-	#bottomButtons .btn-custom-grey {
+	#bottomButtons {
 		margin-right: 0;
 		margin-bottom: 8px;
 	}
@@ -171,7 +171,7 @@ input[type=radio]:checked + label {
 }
 .progress-bar,
 #downloadModalContent #zipProgressBar > * {
-	background-color: rgb(123, 0, 82);
+	background-color: var(--blue);
 }
 #downloadModalContent #zipProgressBar > * {
 	transition: unset;
@@ -201,7 +201,7 @@ input[type=radio]:checked + label {
 }
 
 #SearchBar {
-	background-image: url(/image/css/searchicon.png);
+	background-image: url(/image/css/search.svg);
 	background-position: 10px 12px;
 	background-repeat: no-repeat;
 	width: 100%;
