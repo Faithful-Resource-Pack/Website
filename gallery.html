@@ -2,98 +2,179 @@
 layout: default
 title: Gallery
 ---
+<h2 id="JAVA-TITLE" class="display-4 m-4 text-center">Java Edition:</h2>
+<div id="JAVA-SELECTOR" class="owl-carousel owl-theme card">
 
-<h2>Java Edition Textures:</h2>
+	{%- for file in site.static_files -%}
+		{%- if file.path contains 'data/java/' -%}
+
+			<button class="item item-sized btn" onclick="Load_Textures('{{ file.path }}')">
+				<img src="{{ site.baseurl }}/image/gallery/java/{{ file.basename }}.png">
+				<h5 class="card-title text-center">{{ file.basename }}</h5>
+			</button>
+
+		{%- endif -%}
+	{%- endfor -%}
+	
+	<br>
+</div>
+
+<button id="BTN-JAVA-RESULT" onclick="Hide('JAVA-RESULT')" class="btn btn-lg btn-block btn-dark" style="display: none">Hide</button>
+<br>
+<div class="row">
+	<div id="COL1-JAVA-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">16x</h2></div>
+	<div id="COL2-JAVA-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL3-JAVA-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">64x</h2></div>
+</div>
+
+<h2 id="BEDROCK-TITLE" class="display-4 m-4 text-center">Bedrock Edition:</h2>
+<div id="BEDROCK-SELECTOR" class="owl-carousel owl-theme card">
+
+	{%- for file in site.static_files -%}
+		{%- if file.path contains 'data/bedrock/' -%}
+
+			<button class="item item-sized btn" onclick="Load_Textures('{{ file.path }}')">
+				<img src="{{ site.baseurl }}/image/gallery/bedrock/{{ file.basename }}.png">
+				<h5 class="card-title text-center">{{ file.basename }}</h5>
+			</button>
+
+		{%- endif -%}
+	{%- endfor -%}
+	
+	<br>
+</div>
+
+<button id="BTN-BEDROCK-RESULT" onclick="Hide('BEDROCK-RESULT')" class="btn btn-lg btn-block btn-dark" style="display: none">Hide</button>
+<br>
+<div class="row">
+	<div id="COL1-BEDROCK-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">16x</h2></div>
+	<div id="COL2-BEDROCK-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL3-BEDROCK-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">64x</h2></div>
+</div>
+
+<h2 id="EDUCATION-TITLE" class="display-4 m-4 text-center">Education Edition:</h2>
+<div id="EDUCATION-SELECTOR" class="owl-carousel owl-theme card">
+
+	{%- for file in site.static_files -%}
+		{%- if file.path contains 'data/education/' -%}
+
+			<button class="item item-sized btn" onclick="Load_Textures('{{ file.path }}')">
+				<img src="{{ site.baseurl }}/image/gallery/education/{{ file.basename }}.png">
+				<h5 class="card-title text-center">{{ file.basename }}</h5>
+			</button>
+
+		{%- endif -%}
+	{%- endfor -%}
+	
+	<br>
+</div>
+
+<button id="BTN-EDUCATION-RESULT" onclick="Hide('EDUCATION-RESULT')" class="btn btn-lg btn-block btn-dark" style="display: none">Hide</button>
+<br>
+<div class="row">
+	<div id="COL1-EDUCATION-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">16x</h2></div>
+	<div id="COL2-EDUCATION-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL3-EDUCATION-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">64x</h2></div>
+</div>
+
+<h2 id=DUNGEONS-TITLE class="display-4 m-4 text-center">Minecraft Dungeons:</h2>
+<div id="DUNGEONS-SELECTOR" class="owl-carousel owl-theme card">
+
+	{%- for file in site.static_files -%}
+		{%- if file.path contains 'data/dungeons/' -%}
+
+			<button class="item item-sized btn" onclick="Load_Textures('{{ file.path }}')">
+				<img src="{{ site.baseurl }}/image/gallery/dungeons/{{ file.basename }}.png">
+				<h5 class="card-title text-center">{{ file.basename }}</h5>
+			</button>
+
+		{%- endif -%}
+	{%- endfor -%}
+	
+	<br>
+</div>
+
+<button id="BTN-DUNGEONS-RESULT" onclick="Hide('DUNGEONS-RESULT')" class="btn btn-lg btn-block btn-dark" style="display: none">Hide</button>
+<br>
+<div class="row">
+	<div id="COL1-DUNGEONS-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">16x</h2></div>
+	<div id="COL2-DUNGEONS-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL3-DUNGEONS-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">64x</h2></div>
+</div>
+
 <hr>
 
-<h2>Bedrock Edition Textures:</h2>
-<hr>
+<script src="{{ site.baseurl }}/js/Gallery.js"></script>
 
-<h2>Dungeons Textures:</h2>
-
-	<div class="card-deck">
-	
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/blocks.png" width="64" height="64" style="margin-right:20px">Blocks
-				<a href="{{ site.baseurl }}/gallery/dungeons/blocks" class="stretched-link"></a>
-			</div>
-		</div>
-		
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/transparent.png" width="64" height="64" style="margin-right:20px">Components
-				<a href="{{ site.baseurl }}/gallery/dungeons/components" class="stretched-link"></a>
-			</div>
-		</div>
-		
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/decor.png" width="64" height="64" style="margin-right:20px">Decor
-				<a href="{{ site.baseurl }}/gallery/dungeons/decor" class="stretched-link"></a>
-			</div>
-		</div>  
-	</div>
-	<br>
-	<div class="card-deck">
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/transparent.png" width="64" height="64" style="margin-right:20px">Effects
-				<a href="{{ site.baseurl }}/gallery/dungeons/effects" class="stretched-link"></a>
-			</div>
-		</div>
-		
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/entities.png" width="64" height="64" style="margin-right:20px">Entities
-				<a href="{{ site.baseurl }}/gallery/dungeons/entities" class="stretched-link"></a>
-			</div>
-		</div>
-		
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/equipments.png" width="64" height="64" style="margin-right:20px">Equipments
-				<a href="{{ site.baseurl }}/gallery/dungeons/equipments" class="stretched-link"></a>
-			</div>
-		</div>  
-	</div>
-	<br>
-	<div class="card-deck">
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/items.png" width="64" height="64" style="margin-right:20px">Items
-				<a href="{{ site.baseurl }}/gallery/dungeons/items" class="stretched-link"></a>
-			</div>
-		</div>
-		
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/materials.png" width="64" height="64" style="margin-right:20px">Materials
-				<a href="{{ site.baseurl }}/gallery/dungeons/materials" class="stretched-link"></a>
-			</div>
-		</div>
-		
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/ui.png" width="64" height="64" style="margin-right:20px">UI
-				<a href="{{ site.baseurl }}/gallery/dungeons/ui" class="stretched-link"></a>
-			</div>
-		</div>
-	</div>
-	<br>
-	<div class="card-deck">
-	
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/animated.gif" width="64" height="64" style="margin-right:20px">Animated
-				<a href="{{ site.baseurl }}/gallery/dungeons/animated" class="stretched-link"></a>
-			</div>
-		</div>
-		
-		<div class="card bg-dark">
-			<div class="card-body" style="color:#FFF; font-size:24px;">
-				<img src="{{ site.baseurl }}/image/gallery/others.png" width="64" height="64" style="margin-right:20px">Others
-				<a href="{{ site.baseurl }}/gallery/dungeons/others" class="stretched-link"></a>
-			</div>
-		</div>    
-	</div>
+<script>
+	$(document).ready(function(){
+		$('#JAVA-SELECTOR').owlCarousel({
+			loop: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				400: {
+					items: 2
+				},
+				600: {
+					items: 3
+				},
+				1000: {
+					items: 6
+				},
+			}
+		});
+		$('#BEDROCK-SELECTOR').owlCarousel({
+			loop: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				400: {
+					items: 2
+				},
+				600: {
+					items: 3
+				},
+				1000: {
+					items: 6
+				},
+			}
+		});
+		$('#EDUCATION-SELECTOR').owlCarousel({
+			loop: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				400: {
+					items: 2
+				},
+				600: {
+					items: 3
+				},
+				1000: {
+					items: 6
+				},
+			}
+		});
+		$('#DUNGEONS-SELECTOR').owlCarousel({
+			loop: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				400: {
+					items: 2
+				},
+				600: {
+					items: 3
+				},
+				1000: {
+					items: 6
+				},
+			}
+		});
+	});
+</script>

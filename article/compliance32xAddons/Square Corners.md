@@ -9,7 +9,6 @@ long_text: Gives the containers square corners to be more uniform with other UI 
 
 authors:
   - ThePolishHussar
-  - Crusader_Time
 
 download: 
   - 1.16.4: 

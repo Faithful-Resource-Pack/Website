@@ -30,6 +30,31 @@ footer {
 		url(../image/background/bg_black_transition_bottom.png) bottom repeat-x,
 		url(../image/background/bg_white.png) repeat;
 }
+/** gallery **/
+.img-gallery {
+	object-fit: contain;
+	background: url(../image/gallery/transparent.png) repeat;
+	background-size: 32px;
+	color: #fff;
+}
+.card-gallery {
+	font-size: 24px;
+}
+.card-gallery > img {
+	margin-right: 20px;
+	margin-left: -5px
+}
+.center {
+	display: block;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.item-sized {
+	width: 135px;
+}
+#JAVA-SELECTOR > .owl-stage-outer, #BEDROCK-SELECTOR > .owl-stage-outer, #EDUCATION-SELECTOR > .owl-stage-outer, #DUNGEONS-SELECTOR > .owl-stage-outer {
+	padding: 10px;
+}
 
 /** Right to left reading **/
 .right-reading {
@@ -132,36 +157,36 @@ img.fancy-card {
 	left: auto;
 }
 #topNavbar, #topCarousel {
-  margin: 1rem 0;
+	margin: 1rem 0;
 }
 .custom-navbar-brand {
-  display: none;
+	display: none;
 }
 @media screen and (min-width: 400px) {
-  .custom-navbar-brand {
-    display: inline-block;
-    vertical-align: top;
-    padding-right: 56px;
-    margin: auto;
-  }
+	.custom-navbar-brand {
+		display: inline-block;
+		vertical-align: top;
+		padding-right: 56px;
+		margin: auto;
+	}
 }
 @media screen and (min-width: 800px) {
-  .custom-navbar-brand {
-    display: none;
-  }
+	.custom-navbar-brand {
+		display: none;
+	}
 }
 #bottomNavbar {
-  display: inline-block;
-  width: auto;
-  margin: auto;
+	display: inline-block;
+	width: auto;
+	margin: auto;
 }
 @media screen and (min-width: 360px) {
-  #bottomNavbar .navbar-nav {
-    flex-direction: row;
-  }
-  #bottomNavbar .nav-link {
-    padding: 0 .5rem;
-  }
+	#bottomNavbar .navbar-nav {
+		flex-direction: row;
+	}
+	#bottomNavbar .nav-link {
+		padding: 0 .5rem;
+	}
 }
 
 /** OWL CAROUSEL **/
@@ -367,16 +392,16 @@ a > h4:hover {
 }
 
 @media screen and (min-width: 800px) {
-  .nav-link:hover {
-  	transform: scale(0.95);
-  	-webkit-transform: scale(0.95);
-  	-moz-transform: scale(0.95);
-  	-ms-transform: scale(0.95);
-  	-o-transform: scale(0.95)
-  }
+	.nav-link:hover {
+		transform: scale(0.95);
+		-webkit-transform: scale(0.95);
+		-moz-transform: scale(0.95);
+		-ms-transform: scale(0.95);
+		-o-transform: scale(0.95)
+	}
 }
 .nav-link:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* Add Animation */
