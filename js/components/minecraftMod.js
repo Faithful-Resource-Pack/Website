@@ -10,9 +10,9 @@ Vue.component('minecraft-mod', {
     mod: Object
   },
   template:
-    '<li class="w3-bar">\
-      <div v-if="!!imageSource" :style="{ \'background-image\': \'url(\' + imageSource + \')\', opacity: !link ? 0.3 : 1 }" class="w3-bar-item w3-hide-small mod-img"></div>\
-      <div class="w3-bar-item">\
+    '<li class="mod-bar">\
+      <div v-if="!!imageSource" :style="{ \'background-image\': \'url(\' + imageSource + \')\', opacity: !link ? 0.3 : 1 }" class="mod-bar-item w3-hide-small mod-img"></div>\
+      <div class="mod-bar-item">\
         <input :id="mod.name[1]" type="checkbox" v-model="mod.selected">\
         <label class="w3-large" :for="mod.name[1]">{{ mod.name[0] }}</label>\
         <a v-if="!!link" :href="link" target="_blank" :title="link" class="ml-2"><i class="fas fa-info-circle"></i></a>\

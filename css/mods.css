@@ -5,17 +5,12 @@ h1, h2, h3, h4, h5 {
 /* Versions btn for small screen */
 @media (max-width: 777px) {
 	.btn-group {
-		-ms-flex-direction: column;
 		flex-direction: column;
-		-ms-flex-align: start;
-		-ms-flex-pack: center;
 		justify-content: center
 	}
 
 	.btn-group > .btn {
 		border-radius: 0.25rem !important;
-		-webkit-border-radius: 0.25rem !important;
-		-moz-border-radius: 0.25rem !important
 	}
 
 	#bottomButtons .btn {
@@ -35,7 +30,6 @@ label {
 }
 
 .fa-info-circle {
-	color: lightcoral;
 	margin-left: -5px
 }
 
@@ -45,14 +39,12 @@ label {
 
 input[type=radio] + label {
 	border-radius: 20px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
 	padding: 2px 4px
 }
 
 input[type=radio]:checked + label {
-	background-color: lightcoral;
-	color: black
+	background-color: var(--blue);
+	color: white
 }
 
 .modNotChosen input[type=radio]:checked + label {
@@ -71,59 +63,8 @@ input[type=radio]:checked + label {
 	color: #fff
 }
 
-.btn-custom:not(:disabled):not(.disabled).active, .btn-custom:not(:disabled):not(.disabled):active, .show>.btn-custom.dropdown-toggle {
-	color: #fff;
-	background-color: #941b6b;
-	border-color: #e83e8c
-}
-
-.btn-custom.disabled, .btn-custom:disabled {
-	color: #fff;
-	background-color: #4a0332;
-	border-color: #e83e8c
-}
-
-.btn-custom.disabled:hover, .btn-custom:disabled:hover {
-	color: #fff;
-	background-color: #4a0332;
-	border-color: #e83e8c
-}
-
-.btn-custom-grey {
-	color: #fff;
-	background-color: #232323;
-	border-color: #848484;
-}
-
-.btn-custom-grey.focus, .btn-custom-grey:focus, .btn-custom-grey:hover {
-	box-shadow: none;
-	background-color: #848484;
-	border-color: #848484;
-	color: #fff
-}
-
-.btn-custom-grey:not(:disabled):not(.disabled).active, .btn-custom-grey:not(:disabled):not(.disabled):active, .show>.btn-custom-grey.dropdown-toggle {
-	color: #fff;
-	background-color: #444;
-	border-color: #777
-}
-
-.btn-custom-grey.disabled, .btn-custom-grey:disabled {
-	color: #fff;
-	background-color: #232323;
-	border-color: #848484;
-}
-
-.btn-custom-grey.disabled:hover, .btn-custom-grey:disabled:hover {
-	color: #fff;
-	background-color: #232323;
-	border-color: #848484;
-}
-
 .btn-group-custom .btn {
 	border-radius: 0;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0
 }
 
 .btn-group-custom:first-child .btn:first-child {
@@ -196,6 +137,10 @@ input[type=radio]:checked + label {
 	padding: .5rem 0.75rem;
 	color: white;
 	z-index: 100;
+}
+
+.customModal p {
+  color: rgba(255, 255, 255, .7);
 }
 
 #downloadModalContent #steps {
@@ -271,16 +216,6 @@ input[type=radio]:checked + label {
 	opacity: 0.75
 }
 
-#app .w3-ul li:hover{
-	background-color: rgba(0,0,0,.35);
-	color: white
-}
-
-#app .w3-ul li {
-	border-color: #131313;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
 .modNotChosen {
 	opacity: 0.7
 }
@@ -292,16 +227,13 @@ input[type=radio]:checked + label {
 	background-size: contain;
 	background-repeat: no-repeat;
 	image-rendering: crisp-edges;
-	background-position: center
+	background-position: center;
+  border-radius: 8px;
 }
 
 .version > * {
 	display: inline-block;
 	vertical-align: middle
-}
-
-.w3-card-4 {
-	background: #1b1b1b
 }
 
 .center {
@@ -314,6 +246,18 @@ input[type=radio]:checked + label {
 blockquote {
 	padding-left: 10px;
 	border-left: 5px solid #e83e8c
+}
+
+/* Mod bar */
+.mod-ul {
+  padding: 0;
+}
+.mod-bar {
+  display: flex;
+  padding: 1rem;
+}
+.mod-bar-item {
+  margin-right: 1rem;
 }
 
 /* Flexbox */
@@ -333,13 +277,9 @@ blockquote {
 	width: 100%;
 	margin: 0 0 15px 0;
 	border-radius: .25rem;
-	-webkit-border-radius: .25rem;
-	-moz-border-radius: .25rem
 }
 .links-image img {
 	border-radius: .25rem;
-	-webkit-border-radius: .25rem;
-	-moz-border-radius: .25rem
 }
 
 /** MODPACKS **\
