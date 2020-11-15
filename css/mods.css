@@ -246,9 +246,12 @@ blockquote {
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 1;
+  font-size: 0;
 }
 .mod-bar-item {
   margin-right: 1rem;
+  z-index: 2;
 }
 .selected-mod {
   background: rgba(127, 127, 127, .16)
