@@ -212,14 +212,8 @@ input[type=radio]:checked + label {
 
 .center {
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: auto;
 	margin-bottom: 15px
-}
-
-blockquote {
-	padding-left: 10px;
-	border-left: 5px solid #e83e8c
 }
 
 /* Mod bar */
@@ -257,28 +251,6 @@ blockquote {
 }
 .selected-mod {
 	background: rgba(127, 127, 127, .16)
-}
-
-/* Flexbox */
-.flex-container {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	flex-direction: row;
-	flex-wrap: wrap
-}
-.flex-container > .card {
-	margin: 15px auto
-}
-
-/* Classes for images next to text UNUSED */
-.links-image {
-	width: 100%;
-	margin: 0 0 15px 0;
-	border-radius: .25rem
-}
-.links-image img {
-	border-radius: .25rem
 }
 
 /** MODPACKS **\

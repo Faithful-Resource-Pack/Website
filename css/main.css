@@ -53,8 +53,7 @@ p {
 }
 .center {
 	display: block;
-	margin-left: auto !important;
-	margin-right: auto !important
+	margin: auto !important
 }
 .item-sized {
 	width: 135px
@@ -122,11 +121,16 @@ div.dropdown-menu {
 	margin: 1rem 0 1.25rem;
 	color: rgba(255, 255, 255, .7)
 }
-.card {
+.card, .card p {
 	color: rgba(255, 255, 255, .7)
 }
 .card .item > a {
 	display: block
+}
+.card-img-top {
+	border-radius: 16px;
+	cursor: pointer;
+	color: #000
 }
 .text-left {
 	margin-left: 24px
@@ -220,9 +224,6 @@ div.dropdown-menu {
 #topCarousel .item a img.img-fluid:hover {
 	transform: scale(1.1)
 }
-.img-fluid {
-	border-radius: .25rem
-}
 
 a > h4, a > h3 {
 	margin-top: -45px;
@@ -231,10 +232,6 @@ a > h4, a > h3 {
   text-shadow: 0 3px 6px rgba(0,0,0,0.5);
   font-size: 1.5rem;
   font-weight: bold
-}
-a > h4:hover, a > h3:hover {
-	text-decoration: none;
-	color: rgba(255, 255, 255, .9)
 }
 
 /** BASIC CAROUSEL **/
@@ -248,10 +245,10 @@ a > h4:hover, a > h3:hover {
 	transition: all 1s ease
 }
 .carousel-control-prev:hover .carousel-control-prev-icon {
-	margin-right: 100px
+	margin-right: 25px
 }
 .carousel-control-next:hover .carousel-control-next-icon {
-	margin-left: 100px
+	margin-left: 25px
 }
 
 /** CUSTOM SCROLLBAR **/
@@ -279,16 +276,8 @@ a > h4:hover, a > h3:hover {
 .card {
 	background: #1C1C1C
 }
-.card-in {
-	background: #252525
-}
 
 /* NAVBAR */
-.navbar-gallery {
-	z-index: 0;
-	background: #1C1C1C
-}
-
 @media (min-width: 800px) {
 	.nav {
 		text-align: center
@@ -296,82 +285,6 @@ a > h4:hover, a > h3:hover {
 	.nav {
 		display: inline-flex
 	}
-}
-
-/* Header images*/
-.header-image {
-	display: block;
-	max-width: 100%;
-	margin: 0 auto 1rem;
-	border-radius: .25rem
-}
-@media (min-width: 768px) {
-	.header-image {
-		max-width: 75%
-	}
-}
-
-/* Custom carousel */
-.custom.carousel {
-	margin-bottom: 45px
-}
-.custom.carousel-item-prev, .custom.carousel-item.active, .custom.carousel-item-next {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	flex-direction: column
-}
-.custom.carousel-indicators {
-	bottom: -45px
-}
-.custom.carousel-item > .card {
-	cursor: pointer;
-	transition-duration:.3s;
-	margin: 15px auto
-}
-.custom img {
-	height: auto
-}
-.custom.carousel-item > .card:hover {
-	box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.5)
-}
-@media (min-width: 624px) {
-	.custom.carousel-item > .card {
-		flex: 0 0 34%
-	}
-	.custom.carousel-item-prev, .custom.carousel-item.active, .custom.carousel-item-next {
-		flex-wrap: wrap;
-		flex-direction: row
-	}
-	.custom.carousel-control-prev {
-		left: -50px
-	}
-	.custom.carousel-control-next {
-		right: -50px
-	}
-}
-@media (min-width: 992px) {
-	.custom.carousel-item > .card {
-		flex: initial
-	}
-	.custom.carousel-control-prev {
-		left: -100px
-	}
-	.custom.carousel-control-next {
-		right: -100px
-	}
-}
-
-/* Credits */
-.credits-author {
-	width: 25px;
-	margin-right: 6px
-}
-.card-img-top {
-	border-radius: 16px;
-	cursor: pointer;
-	transition: 0.3s;
-	color: #000
 }
 
 /* Modal */
@@ -393,27 +306,16 @@ a > h4:hover, a > h3:hover {
 	display: block;
 	width: 70%;
 	max-width: 700px;
-	-webkit-animation-name: zoom;
-	-webkit-animation-duration: 0.6s;
 	animation-name: zoom;
 	animation-duration: 0.6s
 }
 
 .nav-link {
 	transition: all .1s ease-out;
-	-webkit-transition: all .1s ease-out;
-	-moz-transition: all .1s ease-out;
-	-ms-transition: all .1s ease-out;
-	-o-transition: all .1s ease-out
 }
-
 @media screen and (min-width: 800px) {
 	.nav-link:hover {
 		transform: scale(0.95);
-		-webkit-transform: scale(0.95);
-		-moz-transform: scale(0.95);
-		-ms-transform: scale(0.95);
-		-o-transform: scale(0.95)
 	}
 }
 .nav-link:hover {
@@ -426,11 +328,6 @@ a > h4:hover, a > h3:hover {
 	-webkit-animation-duration: 0.6s;
 	animation-name: zoom;
 	animation-duration: 0.6s
-}
-
-@-webkit-keyframes zoom {
-	from {-webkit-transform:scale(0)}
-	to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
