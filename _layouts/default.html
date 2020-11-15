@@ -20,13 +20,14 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.carousel.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/snow.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="{{ site.baseurl }}/js/owl.carousel.js"></script>
-  <script src="{{ site.baseurl }}/js/owl.addons.js" ></script>
+	<script src="{{ site.baseurl }}/js/owl.addons.js" ></script>
 
 	<!-- Font awesome icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -34,6 +35,12 @@
 </head>
 
 <body class="background-black">
+	<div id="snowflakeContainer">
+		<span class="snowflake0"></span>
+		<span class="snowflake1"></span>
+		<span class="snowflake2"></span>
+		<span class="snowflake3"></span>
+	</div>
 
 	<header>
 		<!-- carousel of others websites -->
@@ -77,7 +84,7 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="Menu">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-        <img src="{{site.baseurl}}/image/home/logo.png" class="custom-navbar-brand" alt="Compliance">
+				<img src="{{site.baseurl}}/image/home/logo.png" class="custom-navbar-brand" alt="Compliance">
 
 				<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
 					<ul class="navbar-nav">
@@ -146,7 +153,7 @@
 	</main>
 
 	<footer>
-    <!-- navigation bar -->
+		<!-- navigation bar -->
 		<div class="custom-navbar-wrapper">
 			<nav class="custom-navbar navbar navbar-expand-sm navbar-dark" id="bottomNavbar">
 
@@ -228,13 +235,14 @@
 					items: 4
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		// fix non centered icons
 		document.addEventListener('DOMContentLoaded', function () { window.dispatchEvent(new Event('resize')); })
 	</script>
 
-  <script id="dsq-count-scr" src="//compliance-1.disqus.com/count.js" async></script>
+	<script id="dsq-count-scr" src="//compliance-1.disqus.com/count.js" async></script>
+	<script src="{{ site.baseurl }}/js/snow.js"></script>
 </body>
 </html>
