@@ -20,7 +20,6 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.carousel.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/snow.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -242,7 +241,18 @@
 		document.addEventListener('DOMContentLoaded', function () { window.dispatchEvent(new Event('resize')); })
 	</script>
 
-	<script id="dsq-count-scr" src="//compliance-1.disqus.com/count.js" async></script>
+	<script>
+		function getStylesheet() {
+			var today = new Date().getMonth();
+			if ( today == 11 ){ // December -> January is 0
+				document.write("<link rel='stylesheet' href='{{ site.baseurl }}/css/snow.css' type='text/css'>")
+			}
+		}
+		getStylesheet();
+	</script>
+
 	<script src="{{ site.baseurl }}/js/snow.js"></script>
+	
+	<script id="dsq-count-scr" src="//compliance-1.disqus.com/count.js" async></script>
 </body>
 </html>

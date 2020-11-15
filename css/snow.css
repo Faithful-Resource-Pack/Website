@@ -5,6 +5,48 @@
   display: none;
 }
 
+.card {
+  background:
+    url(../image/background/snow_overlay.png) top center repeat-x,
+    #1C1C1C;
+}
+
+.card-body {
+  margin-top: 15px;
+}
+
+.btn {
+  border: 0px !important;
+}
+
+.btn-dark {
+  padding-top: 15px;
+  background:
+    url(../image/background/snow_overlay_small.png) top center repeat-x,
+    #343a40;
+}
+
+.btn-primary {
+  padding-top: 15px;
+  background:
+    url(../image/background/snow_overlay_small.png) top center repeat-x,
+    #007bff;
+}
+
+.btn-info {
+  padding-top: 15px;
+  background:
+    url(../image/background/snow_overlay_small.png) top center repeat-x,
+    #17a2b8;
+}
+
+.btn-warning {
+  padding-top: 15px;
+  background:
+    url(../image/background/snow_overlay_small.png) top center repeat-x,
+    #ffc107;
+}
+
 .snowflake0 {
   position: fixed;
 

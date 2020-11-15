@@ -25,7 +25,7 @@ Vue.component('modpack-card', {
             </div>\
           </div>\
         </div>\
-        <button v-on:click="onbuttonclick" :title="cantDownload" :disabled="cantDownload || !modpack.modList || modpack.modList.length == 0" class="btn btn-custom btn-block">Download</button>\
+        <button v-on:click="onbuttonclick" :title="cantDownload" :disabled="cantDownload || !modpack.modList || modpack.modList.length == 0" class="btn btn-block btn-dark">Download</button>\
       </div>\
     </div>'
 })

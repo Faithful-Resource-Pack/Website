@@ -80,18 +80,7 @@ p {
 	font-weight: 300;
 	line-height: 1.2
 }
-a.btn-download, button.btn-download {
-	display: block;
-	width: 100%;
-	border-radius: 16px;
-	background-color: var(--primary);
-	border-color: var(--primary);
-	color: #fff
-}
-a.btn-download:hover, button.btn-download:hover {
-	color: #fff;
-	filter: brightness(112%)
-}
+
 img.fancy-card {
 	max-height: 24rem;
 	object-fit: cover
@@ -274,7 +263,8 @@ a > h4, a > h3 {
 
 /* CARDS */
 .card {
-	background: #1C1C1C
+	background: #1C1C1C;
+	border: 0px !important;
 }
 
 /* NAVBAR */
