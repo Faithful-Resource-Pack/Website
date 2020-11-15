@@ -104,6 +104,9 @@ img.fancy-card {
 .btn {
 	margin-top: .3rem;
 }
+div.dropdown-menu {
+  border: 0;
+}
 .card-body > :first-child {
 	margin-top: 0;
 }
@@ -169,6 +172,7 @@ img.fancy-card {
 @media screen and (min-width: 400px) {
 	.custom-navbar-brand {
 		display: inline-block;
+    height: 40px;
 		vertical-align: top;
 		padding-right: 56px;
 		margin: auto;
@@ -213,13 +217,14 @@ img.fancy-card {
 	border-radius: .25rem
 }
 
-a > h4 {
+a > h4, a > h3 {
 	margin-top: -45px;
 	margin-left: 10px;
   color: rgba(255, 255, 255, .9);
   text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+  font-size: 1.5rem;
 }
-a > h4:hover {
+a > h4:hover, a > h3:hover {
 	text-decoration: none;
   color: rgba(255, 255, 255, .9);
 }
