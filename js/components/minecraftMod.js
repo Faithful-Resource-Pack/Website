@@ -12,7 +12,7 @@ Vue.component('minecraft-mod', {
   template:
     '<li class="mod-bar" :class="[mod.selected ? \'selected-mod\' : null]">\
       <label :for="mod.name[1]" class="mod-label">Select this mod</label>\
-      <div v-if="!!imageSource" :style="{ \'background-image\': \'url(\' + imageSource + \')\', opacity: !link ? 0.3 : 1 }" class="mod-bar-item mod-img"></div>\
+      <div :style="link ? { \'background-image\': \'url(\' + imageSource + \')\'} : {opacity: 0.3 }" class="mod-bar-item mod-img"></div>\
       <div class="mod-bar-item">\
         <input :id="mod.name[1]" type="checkbox" v-model="mod.selected">\
         <span>{{ mod.name[0] }}</span>\

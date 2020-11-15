@@ -199,9 +199,9 @@ input[type=radio]:checked + label {
 }
 
 .mod-img {
-	width: 65px !important;
+	width: 65px;
 	height: 65px;
-	background-size: auto 100%;
+  background-image: url('../image/icon/compliance_mods.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	image-rendering: pixelated;
