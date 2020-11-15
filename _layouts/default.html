@@ -1,11 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Compliance - {{ page.title }}</title>
+	<meta name="description" content="Compliance, a default-style 32x and 64x resource pack for Minecraft Java, Bedrock and Dungeons." />
+	<meta name="keywords" content="Minecraft Dungeons, Compliance, Minecraft Java, Minecraft Bedrock, Resource Pack, Mods">
+	<meta name="theme-color" content="#76C945">
 
-{%- include head.html -%}
+	<link rel="icon" href="{{ site.baseurl }}/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
+	<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
+	<link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png"/>
+	<meta property="og:image" content="{{ site.baseurl }}/image/home/logo_og.png" />
+	<meta property="twitter:image" content="{{ site.baseurl }}/image/home/logo_twitter.png" />
+	<meta name="twitter:card" content="summary_large_image">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.carousel.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="{{ site.baseurl }}/js/owl.carousel.js"></script>
+  <script src="{{ site.baseurl }}/js/owl.addons.js" ></script>
+
+	<!-- Font awesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
 
 <body class="background-black">
 
-	{%- include header.html -%}
+	<header>
+		<!-- carousel of others websites -->
+		<div id="topCarousel" class="owl-carousel owl-theme background-top">
+			<div class="item">
+				<a href="{{ site.baseurl }}/#compliance-32x" title="Compliance">
+					<img src="{{ site.baseurl }}/image/icon/compliance_32x.png" style="width: 128px; height: 128px;" class="img-fluid" alt="Compliance Dungeons">
+				</a>
+			</div>
+			<div class="item">
+				<a href="{{ site.baseurl }}/#compliance-64x" title="Compliance 64x">
+					<img src="{{ site.baseurl }}/image/icon/compliance_64x.png" style="width: 128px; height: 128px;" class="img-fluid" alt="Compliance 64x">
+				</a>
+			</div>
+			<div class="item">
+				<a href="{{ site.baseurl }}/addons" title="Compliance Add-Ons">
+					<img src="{{ site.baseurl }}/image/icon/compliance_addons.png" style="width: 128px; height: 128px;" class="img-fluid" alt="Compliance Add-Ons">
+				</a>
+			</div>
+			<div class="item">
+				<a href="https://faithful-dungeons.github.io/Website/" rel="noopener" title="Compliance Dungeons">
+					<img src="{{ site.baseurl }}/image/icon/compliance_dungeons.png" style="width: 128px; height: 128px;" class="img-fluid" alt="Compliance Dungeons">
+				</a>
+			</div>
+			<div class="item">
+				<a href="{{ site.baseurl }}/mods" title="Compliance Mods">
+					<img src="{{ site.baseurl }}/image/icon/compliance_mods.png" style="width: 128px; height: 128px;" class="img-fluid" alt="Compliance Mods">
+				</a>
+			</div>
+			<div class="item">
+				<a href="https://faithfultweaks.com/" rel="noopener" title="Compliance Tweaks">
+					<img src="{{ site.baseurl }}/image/icon/compliance_tweaks.png" style="width: 128px; height: 128px;" class="img-fluid" alt="Compliance Tweaks">
+				</a>
+			</div>
+		</div>
+
+		<!-- navigation bar -->
+		<div class="custom-navbar-wrapper">
+			<nav class="custom-navbar navbar navbar-expand-sm navbar-dark" id="topNavbar">
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="Menu">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+        <img src="{{site.baseurl}}/image/home/logo.png" class="custom-navbar-brand" alt="Compliance">
+
+				<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+					<ul class="navbar-nav">
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ site.baseurl }}/">
+								<i style="margin-right: 5px" class="fas fa-home"></i>
+								Home
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ site.baseurl }}/download">
+								<i style="margin-right: 5px" class="fas fa-angle-double-down"></i>
+								Downloads
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+								<i style="margin-right: 5px" class="fas fa-plus"></i>
+								Add-Ons
+							</span>
+							<div class="dropdown-menu dropdown-menu-center">
+								<a class="dropdown-item" href="{{ site.baseurl }}/addons32x">32x Add-Ons</a>
+								<a class="dropdown-item" href="{{ site.baseurl }}/addons64x">64x Add-Ons</a>
+								<a class="dropdown-item" href="{{ site.baseurl }}/addons32xBedrock">Bedrock 32x Add-Ons</a>
+								<a class="dropdown-item" href="{{ site.baseurl }}/addons64xBedrock">Bedrock 64x Add-Ons</a>
+							</div>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ site.baseurl }}/mods">
+								<i style="margin-right: 5px" class="fas fa-wrench"></i>
+								Mods
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ site.baseurl }}/modpacks">
+								<i style="margin-right: 5px" class="fas fa-cube"></i>
+								Modpacks
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ site.baseurl }}/gallery">
+								<i style="margin-right: 5px" class="fas fa-image"></i>
+								Gallery
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
 
 	<main class="background-middle">
 
@@ -16,7 +145,59 @@
 
 	</main>
 
-	{%- include footer.html -%}
+	<footer>
+    <!-- navigation bar -->
+		<div class="custom-navbar-wrapper">
+			<nav class="custom-navbar navbar navbar-expand-sm navbar-dark" id="bottomNavbar">
+
+				<div class="justify-content-center">
+					<ul class="navbar-nav">
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ site.baseurl }}/license">
+								<i style="margin-right: 5px" class="fas fa-gavel"></i>
+								License
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ site.baseurl }}/comments-policy">
+								<i style="margin-right: 5px" class="fas fa-scroll"></i>
+								Comments Policy
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/Compliance-Resource-Pack" rel="noopener">
+								<i style="margin-right: 5px" class="fab fa-github"></i>
+								GitHub
+							</a>
+						</li>
+
+						<li class="nav-item dropup">
+							<span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+								<i style="margin-right: 5px" class="fab fa-discord"></i>
+								Discord
+							</span>
+							<div class="dropdown-menu dropdown-menu-center">
+								<a class="dropdown-item" href="https://discord.gg/sN9YRQbBv7" rel="noopener">Compliance 32x</a>
+								<a class="dropdown-item" href="https://discord.com/invite/Tqtwtgh" rel="noopener">Compliance 64x</a>
+								<a class="dropdown-item" href="https://discord.gg/qVeDfZw" rel="noopener">Compliance Add-Ons</a>
+								<a class="dropdown-item" href="https://discord.com/invite/QF2CAX7" rel="noopener">Compliance Mods</a>
+								<a class="dropdown-item" href="https://discord.gg/6psYdRF" rel="noopener">Compliance Tweaks</a>
+								<a class="dropdown-item" href="https://discord.gg/eeVpygu" rel="noopener">Compliance Dungeons</a>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<br>
+		<p>
+			Website made by and for the Compliance Community
+		</p>
+	</footer>
 
 	<script>
 		$('#topCarousel').owlCarousel({
@@ -53,6 +234,7 @@
 		// fix non centered icons
 		document.addEventListener('DOMContentLoaded', function () { window.dispatchEvent(new Event('resize')); })
 	</script>
+
   <script id="dsq-count-scr" src="//compliance-1.disqus.com/count.js" async></script>
 </body>
 </html>
