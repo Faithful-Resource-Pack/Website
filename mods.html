@@ -32,15 +32,16 @@ title: Mods
 
   <br>
 
-  <div>
-    <input id="SearchBar" class="border-card-16" type="text" placeholder="Search for mods or Minecraft version..." title="Type something" v-model="form.search">
-    <div class="advice" v-text="searchAdvice"></div>
+  <div class="card">
+    <div class="search-bar-container">
+      <input id="SearchBar" class="border-card-8" type="text" placeholder="Search for mods or Minecraft version..." title="Type something" v-model="form.search">
+      <div class="advice" v-text="searchAdvice"></div>
+    </div>
+
+    <div v-if='filteredMods.length == 0' v-text="emptyTable" id="noresults"></div>
+
+    <minecraft-mod-list :mods="filteredMods"></minecraft-mod-list>
   </div>
-
-  <div v-if='filteredMods.length == 0' v-text="emptyTable" id="noresults"></div>
-
-  <minecraft-mod-list :mods="filteredMods"></minecraft-mod-list>
-</table>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>

@@ -189,7 +189,7 @@ input[type=radio]:checked + label {
 }
 
 .advice {
-	margin: 1px 0 12px;
+	margin: 1px 0 0;
 	font-size: 0.75em;
 	opacity: 0.75
 }
@@ -227,13 +227,19 @@ blockquote {
 }
 
 /* Mod bar */
+.search-bar-container {
+  padding: 1.25rem 1.25rem .625rem;
+}
 .mod-ul {
   padding: 0;
+}
+#noresults {
+  padding: 0 1.25rem;
 }
 .mod-bar {
   position: relative;
   display: flex;
-  padding: 1rem;
+  padding: .625rem 1.25rem;
 }
 .mod-bar:hover {
   background: rgba(127, 127, 127, .08)
@@ -250,7 +256,7 @@ blockquote {
   font-size: 0;
 }
 .mod-bar-item {
-  margin-right: 1rem;
+  margin-right: 1.25rem;
   z-index: 2;
 }
 .selected-mod {

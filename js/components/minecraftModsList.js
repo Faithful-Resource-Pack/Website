@@ -16,7 +16,7 @@ Vue.component('minecraft-mod-list', {
     }
   },
   template:
-    '<ul class="mod-ul card">\
+    '<ul class="mod-ul">\
       <minecraft-mod v-for="mod in mods" :key="mod.name[1]" :mod="mod"></minecraft-mod>\
     </ul>'
 })
