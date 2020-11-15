@@ -5,7 +5,15 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
-	color: rgba(255, 255, 255, .7)
+}
+footer, footer p {
+  color: rgba(255, 255, 255, .7)
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300
+}
+p {
+	color: rgba(0, 0, 0, .6)
 }
 
 @media (min-width: 576px) {
@@ -219,9 +227,10 @@ div.dropdown-menu {
 a > h4, a > h3 {
 	margin-top: -45px;
 	margin-left: 10px;
-	color: rgba(255, 255, 255, .9);
-	text-shadow: 0 3px 6px rgba(0,0,0,0.5);
-	font-size: 1.5rem
+  color: rgba(255, 255, 255, .9);
+  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+  font-size: 1.5rem;
+  font-weight: bold
 }
 a > h4:hover, a > h3:hover {
 	text-decoration: none;
