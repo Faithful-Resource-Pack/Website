@@ -17,40 +17,16 @@
 
 .btn {
   border: 0px !important;
-}
-
-.btn-dark {
   padding-top: 15px;
-  background:
-    url(../image/background/snow_overlay_small.png) top center repeat-x,
-    #343a40;
-}
-
-.btn-primary {
-  padding-top: 15px;
-  background:
-    url(../image/background/snow_overlay_small.png) top center repeat-x,
-    #007bff;
-}
-
-.btn-info {
-  padding-top: 15px;
-  background:
-    url(../image/background/snow_overlay_small.png) top center repeat-x,
-    #17a2b8;
-}
-
-.btn-warning {
-  padding-top: 15px;
-  background:
-    url(../image/background/snow_overlay_small.png) top center repeat-x,
-    #ffc107;
+  background-image: url(../image/background/snow_overlay_small.png);
+  background-position: top center;
+  background-repeat: repeat-x;
 }
 
 .snowflake0 {
   position: fixed;
 
-  background: 
+  background:
     url(../image/background/snow0.png);
   background-size: cover;
   image-rendering: pixelated;
@@ -67,7 +43,7 @@
 .snowflake1 {
   position: fixed;
 
-  background: 
+  background:
     url(../image/background/snow1.png);
   background-size: cover;
   image-rendering: pixelated;
@@ -84,7 +60,7 @@
 .snowflake2 {
   position: fixed;
 
-  background: 
+  background:
     url(../image/background/snow2.png);
   background-size: cover;
   image-rendering: pixelated;
@@ -101,7 +77,7 @@
 .snowflake3 {
   position: fixed;
 
-  background: 
+  background:
     url(../image/background/snow3.png);
   background-size: cover;
   image-rendering: pixelated;
