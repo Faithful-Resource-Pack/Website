@@ -37,16 +37,17 @@ permalink: /404.html
 </style>
 <script>
   const FRAME_TIME = 64
+  const tnt = document.getElementById('tnt')
+  const explosion = document.getElementById('explosion')
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   async function boom() {
-    const tnt = document.getElementById('tnt')
-    const explosion = document.getElementById('explosion')
 
     await sleep(FRAME_TIME);
+    explosion.src = "{{ site.baseurl }}/image/404/explosion_0.png"
     explosion.classList.remove("hidden")
     await sleep(FRAME_TIME);
     explosion.src = "{{ site.baseurl }}/image/404/explosion_1.png"
