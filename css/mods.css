@@ -43,17 +43,6 @@ input[type=radio]:checked + label {
 	color: white
 }
 
-.btn-custom {
-	color: #fff;
-	background-color: #343a40;
-	border-color: #343a40
-}
-
-.btn-custom:hover {
-	filter: brightness(112%);
-	color: #fff
-}
-
 #zipOptions ::-webkit-input-placeholder {
 	font-style: italic
 }
@@ -121,7 +110,7 @@ input[type=radio]:checked + label {
 	align-items: center
 }
 
-#downloadModalContent #steps .btn-custom {
+#downloadModalContent #steps .btn-dark {
 	height: 2.2rem;
 	width: 2.2rem;
 	padding-top: 0;

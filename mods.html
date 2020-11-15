@@ -26,7 +26,7 @@ title: Mods
   <local-download ref="localDownload" :canpack="canPackMods"></local-download>
 
   <template v-if="isMounted">
-    <button id="DownloadLocally" :disabled="$refs.localDownload.canDownloadLocally" class="btn btn-lg btn-block btn-primary" v-on:click="$refs.localDownload.openConfirmModal(undefined)">Download Resource Pack</button>
+    <button id="DownloadLocally" :disabled="$refs.localDownload.canDownloadLocally" class="btn btn-lg btn-download" v-on:click="$refs.localDownload.openConfirmModal(undefined)">Download Resource Pack</button>
     <div v-if="modSelection.length != 0 && $refs.localDownload.canDownloadLocally" class="advice text-center">Error: Packs Versions are not compatible</div>
   </template>
 

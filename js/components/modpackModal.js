@@ -16,8 +16,8 @@ Vue.component('modpack-modal', {
           </ul>\
         </div>\
         <div class="text-right">\
-          <button class="btn btn-custom mr-2" v-on:click="onclose">Cancel</button>\
-          <button class="btn btn-custom" v-on:click="download">Download</button>\
+          <button class="btn btn-dark mr-2" v-on:click="onclose">Cancel</button>\
+          <button class="btn btn-dark" v-on:click="download">Download</button>\
         </div>\
       </template>\
     </custom-modal>',

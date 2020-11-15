@@ -14,8 +14,8 @@ Vue.component('local-download', {
         <h3>Do you want to use cached versions?</h3>\
         <p class="mb-2">Some mod resource packs may already have been downloaded. Do you want to use the cached versions? Using the cached versions is usually faster but can cause outdated textures.</p>\
         <div class="text-center row px-2">\
-          <button type="button" class="btn btn-custom mx-1 mt-2 col-sm" v-on:click="downloadLocally(true)">No</button>\
-          <button type="button" class="btn btn-custom mx-1 mt-2 col-sm" v-on:click="downloadLocally(false)">Yes</button>\
+          <button type="button" class="btn btn-dark mx-1 mt-2 col-sm" v-on:click="downloadLocally(true)">No</button>\
+          <button type="button" class="btn btn-dark mx-1 mt-2 col-sm" v-on:click="downloadLocally(false)">Yes</button>\
         </div>\
       </custom-modal>\
       \
@@ -23,7 +23,7 @@ Vue.component('local-download', {
         <div id="steps" class="row">\
           <template v-for="(step, index) in steps" :key="step.name" >\
             <div class="col-auto text-center">\
-              <button :disabled="index != currentStep" class="mx-auto px-0 btn btn-custom">{{ index+1 }}</button>\
+              <button :disabled="index != currentStep" class="mx-auto px-0 btn btn-dark">{{ index+1 }}</button>\
             </div>\
             <div v-if="index < steps.length -1" class="line col"></div>\
           </template>\
@@ -38,7 +38,7 @@ Vue.component('local-download', {
           <div v-for="(log, index) in logs" :key="index" :class="{ log: true, error: log.type === \'error\' }" :title="log.value">{{ log.value }}</div>\
         </div>\
         <div id="bottomButtons" class="text-right mt-3">\
-        <button :disabled="!finalZip" v-on:click="downloadZip" class="btn btn-custom mr-2">Download Zip</button><button v-on:click="closeModal" :title="cancelTitle" :disabled="!canCloseModal" class="btn btn-custom">Cancel</button>\
+        <button :disabled="!finalZip" v-on:click="downloadZip" class="btn btn-dark mr-2">Download Zip</button><button v-on:click="closeModal" :title="cancelTitle" :disabled="!canCloseModal" class="btn btn-dark">Cancel</button>\
         </div>\
       </custom-modal>\
     </div>',
