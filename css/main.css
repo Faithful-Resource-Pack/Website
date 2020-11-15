@@ -5,7 +5,7 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
-	color: rgba(255, 255, 255, .7);
+	color: rgba(255, 255, 255, .7)
 }
 
 @media (min-width: 576px) {
@@ -17,28 +17,27 @@ footer {
 /** BACKGROUND **/
 .container {
 	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-bottom: 100px
 }
 
 .background-black {
-	background:
-		url(../image/background/bg_black.png) repeat;
+	background: url(../image/background/bg_black.png) repeat
 }
 .background-middle {
 	background:
 		url(../image/background/bg_black_transition_top.png) top repeat-x,
 		url(../image/background/bg_black_transition_bottom.png) bottom repeat-x,
-		url(../image/background/bg_white.png) repeat;
+		url(../image/background/bg_white.png) repeat
 }
 /** gallery **/
 .img-gallery {
 	object-fit: contain;
 	background: url(../image/gallery/transparent.png) repeat;
 	background-size: 32px;
-	color: #fff;
+	color: #fff
 }
 .card-gallery {
-	font-size: 24px;
+	font-size: 24px
 }
 .card-gallery > img {
 	margin-right: 20px;
@@ -47,85 +46,85 @@ footer {
 .center {
 	display: block;
 	margin-left: auto !important;
-	margin-right: auto !important;
+	margin-right: auto !important
 }
 .item-sized {
-	width: 135px;
+	width: 135px
 }
 #JAVA-SELECTOR > .owl-stage-outer, #BEDROCK-SELECTOR > .owl-stage-outer, #EDUCATION-SELECTOR > .owl-stage-outer, #DUNGEONS-SELECTOR > .owl-stage-outer {
-	padding: 10px;
+	padding: 10px
 }
 
 /** Right to left reading **/
 .right-reading {
-	direction: rtl;
+	direction: rtl
 }
 
 /** LICENSE STUFF **/
 .btn-flag {
-	margin-right: 10px;
+	margin-right: 10px
 }
 .disabled {
-	pointer-events: none;
+	pointer-events: none
 }
 
 /** ADD_ON STUFF **/
 .display {
 	font-weight: 300;
-	line-height: 1.2;
+	line-height: 1.2
 }
 a.btn-download, button.btn-download {
 	display: block;
-  width: 100%;
+	width: 100%;
 	border-radius: 16px;
 	background-color: var(--primary);
 	border-color: var(--primary);
-	color: #fff;
+	color: #fff
 }
 a.btn-download:hover, button.btn-download:hover {
 	color: #fff;
-	filter: brightness(112%);
+	filter: brightness(112%)
 }
 img.fancy-card {
 	max-height: 24rem;
-	object-fit: cover;
+	object-fit: cover
 }
 
 /** FANCY CARDS **/
 #ScreenshotCarousel, div.card, .card .item > a, img.fancy-card, .border-card-16, ul.card {
 	border-radius: 16px;
 	overflow: hidden;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 }
 .btn, .dropdown-menu, select.custom-select, input#archiveName, .border-card-8 {
 	border-radius: 8px;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 }
 .btn {
-	margin-top: .3rem;
+	margin-top: .3rem
 }
 div.dropdown-menu {
-  border: 0;
+	border: 0
 }
 .card-body > :first-child {
-	margin-top: 0;
+	margin-top: 0
 }
 .card-title {
 	font-weight: 300;
 	margin: 1rem 0 1.25rem;
-	color: rgba(255, 255, 255, .7);
+	color: rgba(255, 255, 255, .7)
 }
 .card {
-	color: rgba(255, 255, 255, .7);
+	color: rgba(255, 255, 255, .7)
 }
 .card .item > a {
-	display: block;
+	display: block
 }
 .text-left {
-	margin-left: 24px;
+	margin-left: 24px
 }
 #ScreenshotCarousel {
-	background: #000;
+	background: #000
 }
 
 /** DOWNLOAD TABLES **/
@@ -133,24 +132,24 @@ div.dropdown-menu {
 .table {
 	background-color: #1c1c1c;
 	color: #ccc;
-  border-radius: 8px;
-  overflow: hidden;
+	border-radius: 8px;
+	overflow: hidden
 }
 .table th {
-	background-color: #343A40;
+	background-color: #343A40
 }
 .table td {
-	border-top: 1px solid #343A40;
+	border-top: 1px solid #343A40
 }
 .table tbody+tbody {
-		border-top: 2px solid #343A40;
+	border-top: 2px solid #343A40
 }
 .table-hover tbody tr:hover {
 	color: #ccc;
-	background-color: rgba(0,0,0,.15);
+	background-color: rgba(0,0,0,.15)
 }
 #table32x3D, #table32x, #table64x {
-	display: none;
+	display: none
 }
 
 /** NAVBAR **/
@@ -161,39 +160,39 @@ div.dropdown-menu {
 }
 .dropdown-menu-center {
 	right: auto;
-	left: auto;
+	left: auto
 }
 #topNavbar, #topCarousel {
-	margin: 1rem 0;
+	margin: 1rem 0
 }
 .custom-navbar-brand {
-	display: none;
+	display: none
 }
 @media screen and (min-width: 400px) {
 	.custom-navbar-brand {
 		display: inline-block;
-    height: 40px;
+		height: 40px;
 		vertical-align: top;
 		padding-right: 56px;
-		margin: auto;
+		margin: auto
 	}
 }
 @media screen and (min-width: 800px) {
 	.custom-navbar-brand {
-		display: none;
+		display: none
 	}
 }
 #bottomNavbar {
 	display: inline-block;
 	width: auto;
-	margin: auto;
+	margin: auto
 }
 @media screen and (min-width: 360px) {
 	#bottomNavbar .navbar-nav {
-		flex-direction: row;
+		flex-direction: row
 	}
 	#bottomNavbar .nav-link {
-		padding: 0 .5rem;
+		padding: 0 .5rem
 	}
 }
 
@@ -208,10 +207,10 @@ div.dropdown-menu {
 	margin: 0 auto
 }
 .item a img.img-fluid {
-		transition: all .5s ease
+	transition: all .5s ease
 }
 #topCarousel .item a img.img-fluid:hover {
-		transform: scale(1.1)
+	transform: scale(1.1)
 }
 .img-fluid {
 	border-radius: .25rem
@@ -220,13 +219,13 @@ div.dropdown-menu {
 a > h4, a > h3 {
 	margin-top: -45px;
 	margin-left: 10px;
-  color: rgba(255, 255, 255, .9);
-  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
-  font-size: 1.5rem;
+	color: rgba(255, 255, 255, .9);
+	text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	font-size: 1.5rem
 }
 a > h4:hover, a > h3:hover {
 	text-decoration: none;
-  color: rgba(255, 255, 255, .9);
+	color: rgba(255, 255, 255, .9)
 }
 
 /** BASIC CAROUSEL **/
@@ -237,13 +236,13 @@ a > h4:hover, a > h3:hover {
 }
 /* Carousel arrow hover animation */
 .carousel-control-prev-icon, .carousel-control-next-icon {
-	transition: all 1s ease;
+	transition: all 1s ease
 }
 .carousel-control-prev:hover .carousel-control-prev-icon {
-	margin-right: 100px;
+	margin-right: 100px
 }
 .carousel-control-next:hover .carousel-control-next-icon {
-	margin-left: 100px;
+	margin-left: 100px
 }
 
 /** CUSTOM SCROLLBAR **/
@@ -269,16 +268,16 @@ a > h4:hover, a > h3:hover {
 
 /* CARDS */
 .card {
-	background: #1C1C1C;
+	background: #1C1C1C
 }
 .card-in {
-	background: #252525;
+	background: #252525
 }
 
 /* NAVBAR */
 .navbar-gallery {
 	z-index: 0;
-	background: #1C1C1C;
+	background: #1C1C1C
 }
 
 @media (min-width: 800px) {
@@ -378,18 +377,17 @@ a > h4:hover, a > h3:hover {
 	height: 100%;
 	overflow: auto;
 	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0,.7);
+	background-color: rgba(0,0,0,.7)
 }
 .modal-content {
 	margin: auto;
 	display: block;
 	width: 70%;
-	max-width: 700px
-
+	max-width: 700px;
 	-webkit-animation-name: zoom;
 	-webkit-animation-duration: 0.6s;
 	animation-name: zoom;
-	animation-duration: 0.6s;
+	animation-duration: 0.6s
 }
 
 .nav-link {
@@ -410,7 +408,7 @@ a > h4:hover, a > h3:hover {
 	}
 }
 .nav-link:hover {
-	cursor: pointer;
+	cursor: pointer
 }
 
 /* Add Animation */
@@ -488,14 +486,14 @@ img[src$=".gif"] {
 	width:100%;
 	height:100%;
 	top:0;left:0;right:0;
-	background-color:rgba(0,0,0,0);
+	background-color:rgba(0,0,0,0)
 }
 .card-texture:hover::before {
-	background-color:rgba(0,0,0,0.5);
+	background-color:rgba(0,0,0,0.5)
 }
 .card-texture img {
 	display:block;
-	flex-shrink: inherit;
+	flex-shrink: inherit
 }
 .card-texture .button-fullscreen {
 	position: absolute;
@@ -505,10 +503,10 @@ img[src$=".gif"] {
 	width: 40px;
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
-	opacity:0;
+	opacity:0
 }
 .card-texture:hover .button-fullscreen {
-	opacity: 1;
+	opacity: 1
 }
 
 .card-texture .button-info {
@@ -519,8 +517,8 @@ img[src$=".gif"] {
 	width: 40px;
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
-	opacity:0;
+	opacity:0
 }
 .card-texture:hover .button-info {
-	opacity: 1;
+	opacity: 1
 }

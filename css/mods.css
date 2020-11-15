@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5 {
-  font-weight: 300;
+	font-weight: 300
 }
 
 /* Versions btn for small screen */
@@ -11,12 +11,12 @@ h1, h2, h3, h4, h5 {
 
 	#bottomButtons .btn {
 		display: block;
-		width: 100%;
+		width: 100%
 	}
 
 	#bottomButtons {
 		margin-right: 0;
-		margin-bottom: 8px;
+		margin-bottom: 8px
 	}
 }
 
@@ -49,8 +49,8 @@ input[type=radio]:checked + label {
 
 .btn-custom {
 	color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+	background-color: #343a40;
+	border-color: #343a40
 }
 
 .btn-custom:hover {
@@ -59,29 +59,29 @@ input[type=radio]:checked + label {
 }
 
 #zipOptions ::-webkit-input-placeholder {
-	font-style: italic;
+	font-style: italic
 }
 #zipOptions :-moz-placeholder {
-	font-style: italic;
+	font-style: italic
 }
 #zipOptions ::-moz-placeholder {
-	font-style: italic;
+	font-style: italic
 }
 #zipOptions :-ms-input-placeholder {
-	font-style: italic;
+	font-style: italic
 }
 
 #zipOptions #archiveName.empty {
-	background: #ccc;
+	background: #ccc
 }
 
 .customModalBackground {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-	background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.5)
 }
 
 .customModal {
@@ -106,7 +106,7 @@ input[type=radio]:checked + label {
 
 .customModal .customModalContent {
 	background: #232323;
-  color: rgba(255, 255, 255, .9);
+	color: rgba(255, 255, 255, .9);
 	border-radius: 16px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 600px;
@@ -118,7 +118,7 @@ input[type=radio]:checked + label {
 }
 
 .customModal p {
-  color: rgba(255, 255, 255, .7);
+  color: rgba(255, 255, 255, .7)
 }
 
 #downloadModalContent #steps {
@@ -145,14 +145,14 @@ input[type=radio]:checked + label {
 }
 
 .progress {
-	background-color: #232323;
+	background-color: #232323
 }
 .progress-bar,
 #downloadModalContent #zipProgressBar > * {
-	background-color: var(--blue);
+	background-color: var(--blue)
 }
 #downloadModalContent #zipProgressBar > * {
-	transition: unset;
+	transition: unset
 }
 
 #logs .log {
@@ -185,7 +185,7 @@ input[type=radio]:checked + label {
 	width: 100%;
 	font-size: 16px;
 	padding: 12px 20px 12px 40px;
-	border: 0;
+	border: 0
 }
 
 .advice {
@@ -201,12 +201,12 @@ input[type=radio]:checked + label {
 .mod-img {
 	width: 65px;
 	height: 65px;
-  background-image: url('../image/icon/compliance_mods.png');
+	background-image: url('../image/icon/compliance_mods.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	image-rendering: pixelated;
 	background-position: center;
-  border-radius: 8px;
+	border-radius: 8px
 }
 
 .version > * {
@@ -228,39 +228,39 @@ blockquote {
 
 /* Mod bar */
 .search-bar-container {
-  padding: 1.25rem 1.25rem .625rem;
+	padding: 1.25rem 1.25rem .625rem
 }
 .mod-ul {
-  padding: 0;
+	padding: 0
 }
 #noresults {
-  padding: 0 1.25rem;
+	padding: 0 1.25rem
 }
 .mod-bar {
-  position: relative;
-  display: flex;
-  padding: .625rem 1.25rem;
+	position: relative;
+	display: flex;
+	padding: .625rem 1.25rem
 }
 .mod-bar:hover {
-  background: rgba(127, 127, 127, .08)
+	background: rgba(127, 127, 127, .08)
 }
 .mod-label {
-  position: absolute;
-  display: block;
-  margin: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  font-size: 0;
+	position: absolute;
+	display: block;
+	margin: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	font-size: 0
 }
 .mod-bar-item {
-  margin-right: 1.25rem;
-  z-index: 2;
+	margin-right: 1.25rem;
+	z-index: 2
 }
 .selected-mod {
-  background: rgba(127, 127, 127, .16)
+	background: rgba(127, 127, 127, .16)
 }
 
 /* Flexbox */
@@ -279,10 +279,10 @@ blockquote {
 .links-image {
 	width: 100%;
 	margin: 0 0 15px 0;
-	border-radius: .25rem;
+	border-radius: .25rem
 }
 .links-image img {
-	border-radius: .25rem;
+	border-radius: .25rem
 }
 
 /** MODPACKS **\
@@ -291,21 +291,21 @@ blockquote {
 #modpacks .card .card-image {
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center center
 }
 
 #modpacks .card .card-title {
-	min-height: 48px;
+	min-height: 48px
 }
 
 #modpacks #modpackModal {
-	z-index: 1200;
+	z-index: 1200
 }
 
 #modpacks #modpackModal #modList {
 	max-height: 400px;
 	overflow: auto;
-	background: rgba(0,0,0,.35);
+	background: rgba(0,0,0,.35)
 }
 
 #modpacks #modpackModal #modList ul {
@@ -313,5 +313,5 @@ blockquote {
 	list-style-type: none;
 	padding-left: 0;
 	padding-right: 0;
-	margin-bottom: 0;
+	margin-bottom: 0
 }
