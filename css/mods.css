@@ -20,8 +20,11 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
+input[type=checkbox], input[type=radio], label {
+  cursor: pointer
+}
+
 label {
-	cursor: pointer;
 	display: inline
 }
 
@@ -228,11 +231,27 @@ blockquote {
   padding: 0;
 }
 .mod-bar {
+  position: relative;
   display: flex;
   padding: 1rem;
 }
+.mod-bar:hover {
+  background: rgba(127, 127, 127, .08)
+}
+.mod-label {
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 .mod-bar-item {
   margin-right: 1rem;
+}
+.selected-mod {
+  background: rgba(127, 127, 127, .16)
 }
 
 /* Flexbox */
