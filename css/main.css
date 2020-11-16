@@ -98,17 +98,14 @@ img.fancy-card {
 }
 
 /** FANCY CARDS **/
-#ScreenshotCarousel, div.card, .card .item > a, img.fancy-card, .border-card-16, ul.card {
+#ScreenshotCarousel, div.card, .card .item > a, img.fancy-card, ul.card {
 	border-radius: 16px;
 	overflow: hidden;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 }
-.btn, .dropdown-menu, select.custom-select, input#archiveName, .border-card-8 {
+.btn, .dropdown-menu, select.custom-select, input#archiveName, .fancy-card-8 {
 	border-radius: 8px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
-}
-.btn {
-	margin-top: .3rem
 }
 div.dropdown-menu {
 	border: 0
@@ -132,9 +129,6 @@ div.dropdown-menu {
 	cursor: pointer;
 	color: #000
 }
-.text-left {
-	margin-left: 24px
-}
 #ScreenshotCarousel {
 	background: #000
 }
@@ -155,7 +149,7 @@ div.dropdown-menu {
 	border-top: 1px solid #343A40
 }
 .table tbody+tbody {
-	border-top: 2px solid #343A40
+	border: 0
 }
 .table-hover tbody tr:hover {
 	color: #ccc;
@@ -163,11 +157,6 @@ div.dropdown-menu {
 }
 
 /** NAVBAR **/
-.custom-navbar-wrapper {
-	position: sticky;
-	top: 0;
-	z-index: 10
-}
 .dropdown-menu-center {
 	right: auto;
 	left: auto

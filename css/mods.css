@@ -199,12 +199,6 @@ input[type=radio]:checked + label {
 	vertical-align: middle
 }
 
-.center {
-	display: block;
-	margin: auto;
-	margin-bottom: 15px
-}
-
 /* Mod bar */
 .search-bar-container {
 	padding: 1.25rem 1.25rem .625rem
