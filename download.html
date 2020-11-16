@@ -23,7 +23,7 @@ title: Download
 					<td align="right"><a class="btn btn-dark" href="" data-toggle="tooltip" title="Download"><i class="fas fa-angle-double-down"></i></a></td>
 				</tr>
 			</tbody>
-			<tbody id="table32x">
+			<tbody id="table32x" style="display:none">
 				<tr>
 					<td><span class="badge badge-primary">Snapshot</span></td>
 					<td>1.17 (20w45a)</td>
@@ -72,7 +72,7 @@ title: Download
 					<td align="right"><a class="btn btn-dark" href="" data-toggle="tooltip" title="Download"><i class="fas fa-angle-double-down"></i></a></td>
 				</tr>
 			</tbody>
-			<tbody id="table32x3D">
+			<tbody id="table32x3D" style="display:none">
 				<tr>
 					<td><span class="badge badge-primary">Snapshot</span></td>
 					<td>1.17 (20w45a)</td>
@@ -127,7 +127,7 @@ title: Download
 					<td align="right"><a class="btn btn-dark" href="" data-toggle="tooltip" title="Download"><i class="fas fa-angle-double-down"></i></a></td>
 				</tr>
 			</tbody>
-			<tbody id="table64x">
+			<tbody id="table64x" style="display:none">
 				<tr>
 					<td><span class="badge badge-primary">Snapshot</span></td>
 					<td>1.17 (20w45a)</td>
@@ -158,6 +158,102 @@ title: Download
 	</div>
 </div>
 
+<hr>
+
+<!-- Compliance Dungeons -->
+<div class="card">
+	<div class="card-body">
+
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Compliance Dungeons</th>
+          <th>Version</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-primary">Beta</span></td>
+          <td>Beta 2</td>
+          <td>26th September 2020</td>
+          <td align="right"><a class="btn btn-dark" href="https://github.com/Faithful-Dungeons/Resource-Pack/releases/tag/B2" data-toggle="tooltip" title="Download"><i class="fas fa-angle-double-down"></i></a></td>
+        </tr>
+      </tbody>
+      <tbody id="tableDungeons" style="display:none">
+        <tr>
+          <td><span class="badge badge-primary">Beta</span></td>
+          <td>Beta 1</td>
+          <td>28th July 2020</td>
+          <td align="right"><a class="btn btn-dark" href="https://github.com/Faithful-Dungeons/Resource-Pack/releases/tag/B1" data-toggle="tooltip" title="Download"><i class="fas fa-angle-double-down"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="btn btn-dark btn-block" onclick="toggleExpansion('tableDungeons', this)">Show more</button>
+
+		<br>
+
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Compliance Team Skin Dungeons Mod</th>
+          <th>Version</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-primary">Beta</span></td>
+          <td>Beta 2</td>
+          <td>8th August 2020</td>
+          <td align="right"><a class="btn btn-dark" href="https://github.com/Faithful-Dungeons/Skin-Mod/releases/tag/B2" data-toggle="tooltip" title="Download"><i class="fas fa-angle-double-down"></i></a></td>
+        </tr>
+      </tbody>
+      <tbody id="tableDungeonsSkinMod" style="display:none">
+        <tr>
+          <td><span class="badge badge-primary">Beta</span></td>
+          <td>Beta 1</td>
+          <td>6th August 2020</td>
+          <td align="right"><a class="btn btn-dark" href="https://github.com/Faithful-Dungeons/Skin-Mod/releases/tag/B1" data-toggle="tooltip" title="Download"><i class="fas fa-angle-double-down"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="btn btn-dark btn-block" onclick="toggleExpansion('tableDungeonsSkinMod', this)">Show more</button>
+	</div>
+</div>
+
+<style>
+  table {
+    width: 100%
+  }
+  th:nth-child(1) {
+    width: 42%
+  }
+  th:nth-child(2) {
+    width: 24%
+  }
+  th:nth-child(3) {
+    width: 28%
+  }
+  th:nth-child(4) {
+    width: 6%
+  }
+  @media screen and (max-width: 480px) {
+    th, td, tr {
+        display: block
+    }
+    tr > th:nth-child(1), tr > th:nth-child(2), tr > th:nth-child(3) {
+      width: 100%
+    }
+    th:nth-child(4) {
+      display: none
+    }
+  }
+</style>
 <script>
 	function toggleExpansion(tableId, button){
 		var table = document.getElementById(tableId);

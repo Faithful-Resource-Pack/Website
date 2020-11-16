@@ -161,9 +161,6 @@ div.dropdown-menu {
 	color: #ccc;
 	background-color: rgba(0,0,0,.15)
 }
-#table32x3D, #table32x, #table64x {
-	display: none
-}
 
 /** NAVBAR **/
 .custom-navbar-wrapper {
@@ -190,7 +187,7 @@ div.dropdown-menu {
 		margin: auto
 	}
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 576px) {
 	.custom-navbar-brand {
 		display: none
 	}
