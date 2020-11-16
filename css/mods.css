@@ -228,7 +228,7 @@ input[type=radio]:checked + label {
 .mod-img {
 	width: 65px;
 	height: 65px;
-	background: center/contain url('../image/icon/compliance_mods.png') no-repeat;
+	background: center/contain url('../image/icon/compliance_mods_transparent.png') no-repeat;
 	image-rendering: pixelated;
 	border-radius: 8px;
   flex: none

@@ -10,9 +10,9 @@ Vue.component('minecraft-mod', {
     mod: Object
   },
   template:
-    '<li class="mod-bar" :class="[mod.selected ? \'selected-mod\' : null]">\
+    '<li class="mod-bar" :class="{ \'selected-mod\': mod.selected }">\
       <label :for="mod.name[1]" class="mod-label">Select this mod</label>\
-      <div :style="link ? { \'background-image\': \'url(\' + imageSource + \')\'} : {opacity: 0.3 }" class="mod-bar-item mod-img">\
+      <div :style="link ? { \'background-image\': \'url(\' + imageSource + \')\'} : {opacity: 1}" class="mod-bar-item mod-img">\
         <div class="mod-img-overlay"></div>\
       </div>\
       <div class="mod-bar-item">\
