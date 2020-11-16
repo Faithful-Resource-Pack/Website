@@ -147,8 +147,9 @@ div.dropdown-menu {
 	border-radius: 8px;
 	overflow: hidden
 }
-.table th {
-	background-color: #343A40
+.table thead th {
+	background-color: #343A40;
+  border: 0
 }
 .table td {
 	border-top: 1px solid #343A40
