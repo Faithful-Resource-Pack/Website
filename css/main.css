@@ -197,14 +197,6 @@ div.dropdown-menu {
 	width: auto;
 	margin: auto
 }
-@media screen and (min-width: 360px) {
-	#bottomNavbar .navbar-nav {
-		flex-direction: row
-	}
-	#bottomNavbar .nav-link {
-		padding: 0 .5rem
-	}
-}
 
 /** OWL CAROUSEL **/
 /* Make the image fully responsive (owl carousel) */
