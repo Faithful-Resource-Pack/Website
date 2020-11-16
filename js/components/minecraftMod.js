@@ -14,14 +14,14 @@ Vue.component('minecraft-mod', {
       <label :for="mod.name[1]" class="mod-label">Select this mod</label>\
       <div :style="link ? { \'background-image\': \'url(\' + imageSource + \')\'} : {opacity: 0.3 }" class="mod-bar-item mod-img"></div>\
       <div class="mod-bar-item">\
-        <input :id="mod.name[1]" type="checkbox" v-model="mod.selected">\
+        <input :id="mod.name[1]" type="checkbox" v-model="mod.selected" class="mod-checkbox">\
         <span>{{ mod.name[0] }}</span>\
-        <a v-if="!!link" :href="link" target="_blank" rel="noopener" :title="link" class="ml-2"><i class="fas fa-info-circle"></i></a>\
+        <a v-if="!!link" :href="link" target="_blank" rel="noopener" :title="link" class="ml-2 mod-info"><i class="fas fa-info-circle"></i></a>\
         <br>\
-        <div :class="{ \'mt-1\': true, modNotChosen: !mod.selected }">\
+        <div :class="{ \'mt-1\': true, modNotChosen: !mod.selected }" class="mod-radio-group">\
           <template v-for="version in mod.versions":key="modId(mod, version)">\
-            <input :disabled="!mod.selected" type="radio" :id="modId(mod, version)" :name="modId(mod, version)"  v-model="mod.versionSelected" :value="version">\
-            <label :for="modId(mod, version)" class="mr-1">{{ version }}</label>\
+            <input :disabled="!mod.selected" type="radio" :id="modId(mod, version)" :name="modId(mod, version)"  v-model="mod.versionSelected" :value="version" class="mod-radio">\
+            <label :for="modId(mod, version)">{{ version }}</label>\
           </template>\
         </div>\
       </div>\
