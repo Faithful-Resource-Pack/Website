@@ -33,16 +33,10 @@ title: Home
 				{%- if ImgCounter == 0 -%}
 					<div class="carousel-item active">
 						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-						<div class="carousel-caption">
-							<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
-						</div>
 					</div>
 				{%- else -%}
 					<div class="carousel-item">
 						<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-						<div class="carousel-caption">
-							<h3>{{ image.basename | replace: 'UU', '?'}}</h3>
-						</div>
 					</div>
 				{%- endif -%}
 
