@@ -2,119 +2,116 @@
 layout: default
 title: Gallery
 ---
+
+<div id="FULLSCREEN" class="modal" style="display: none;">
+	<span id="FULLSCREEN-SPAN" class="gallery-close"></span>
+	<img  id="FULLSCREEN-IMG" class="gallery-modal-img">
+</div>
+
 <h2 id="JAVA-TITLE" class="display-4 m-4 text-center">Java Edition:</h2>
-<div id="JAVA-SELECTOR" class="owl-carousel owl-theme card">
+<div id="JAVA-SELECTOR" class="owl-carousel owl-theme gallery-selector card">
 
 	{%- for file in site.static_files -%}
 		{%- if file.path contains 'data/java/' -%}
 
 			{%- assign name = file.basename | capitalize -%}
 
-			<button class="item item-sized btn" onclick="Load_Textures('{{ file.path }}')">
+			<div class="item card clickable" onclick="Load_Textures('{{ file.path }}')">
 				<img src="{{ site.baseurl }}/image/gallery/java/{{ file.basename }}.png">
 				<h5 class="card-title text-center">{{ name }}</h5>
-			</button>
+			</div>
 
 		{%- endif -%}
 	{%- endfor -%}
 
-	<br>
 </div>
-
+<hr>
 <button id="BTN-JAVA-RESULT" onclick="Hide('JAVA-RESULT')" class="btn btn-lg btn-block btn-dark" style="display: none">Hide</button>
 <br>
 <div class="row">
-	<div id="COL1-JAVA-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">16x</h2></div>
-	<div id="COL2-JAVA-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL1-JAVA-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL2-JAVA-RESULT" style="display: none" class="col"></div>
 	<div id="COL3-JAVA-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">64x</h2></div>
 </div>
 
-<hr>
-
 <h2 id="BEDROCK-TITLE" class="display-4 m-4 text-center">Bedrock Edition:</h2>
-<div id="BEDROCK-SELECTOR" class="owl-carousel owl-theme card">
+<div id="BEDROCK-SELECTOR" class="owl-carousel owl-theme card gallery-selector">
 
 	{%- for file in site.static_files -%}
 		{%- if file.path contains 'data/bedrock/' -%}
 
 			{%- assign name = file.basename | capitalize -%}
 
-			<button class="item item-sized btn" onclick="Load_Textures('{{ file.path }}')">
+			<div class="item card clickable" onclick="Load_Textures('{{ file.path }}')">
 				<img src="{{ site.baseurl }}/image/gallery/bedrock/{{ file.basename }}.png">
 				<h5 class="card-title text-center">{{ name }}</h5>
-			</button>
+			</div>
 
 		{%- endif -%}
 	{%- endfor -%}
 
 	<br>
 </div>
-
 <hr>
-
 <button id="BTN-BEDROCK-RESULT" onclick="Hide('BEDROCK-RESULT')" class="btn btn-lg btn-block btn-dark" style="display: none">Hide</button>
 <br>
 <div class="row">
-	<div id="COL1-BEDROCK-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">16x</h2></div>
-	<div id="COL2-BEDROCK-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL1-BEDROCK-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL2-BEDROCK-RESULT" style="display: none" class="col"></div>
 	<div id="COL3-BEDROCK-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">64x</h2></div>
 </div>
 
 <h2 id="EDUCATION-TITLE" class="display-4 m-4 text-center">Education Edition:</h2>
-<div id="EDUCATION-SELECTOR" class="owl-carousel owl-theme card">
+<div id="EDUCATION-SELECTOR" class="owl-carousel owl-theme card gallery-selector">
 
 	{%- for file in site.static_files -%}
 		{%- if file.path contains 'data/education/' -%}
 
 			{%- assign name = file.basename | capitalize -%}
 
-			<button class="item item-sized btn" onclick="Load_Textures('{{ file.path }}')">
+			<div class="item card clickable" onclick="Load_Textures('{{ file.path }}')">
 				<img src="{{ site.baseurl }}/image/gallery/education/{{ file.basename }}.png">
 				<h5 class="card-title text-center">{{ name }}</h5>
-			</button>
+			</div>
 
 		{%- endif -%}
 	{%- endfor -%}
 
 	<br>
 </div>
-
 <hr>
-
 <button id="BTN-EDUCATION-RESULT" onclick="Hide('EDUCATION-RESULT')" class="btn btn-lg btn-block btn-dark" style="display: none">Hide</button>
 <br>
 <div class="row">
-	<div id="COL1-EDUCATION-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">16x</h2></div>
-	<div id="COL2-EDUCATION-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL1-EDUCATION-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL2-EDUCATION-RESULT" style="display: none" class="col"></div>
 	<div id="COL3-EDUCATION-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">64x</h2></div>
 </div>
 
 <h2 id=DUNGEONS-TITLE class="display-4 m-4 text-center">Minecraft Dungeons:</h2>
-<div id="DUNGEONS-SELECTOR" class="owl-carousel owl-theme card">
+<div id="DUNGEONS-SELECTOR" class="owl-carousel owl-theme card gallery-selector">
 
 	{%- for file in site.static_files -%}
 		{%- if file.path contains 'data/dungeons/' -%}
 
 			{%- assign name = file.basename | capitalize -%}
 
-			<button class="item item-sized btn" onclick="Load_Textures('{{ file.path }}')">
+			<div class="item card clickable" onclick="Load_Textures('{{ file.path }}')">
 				<img src="{{ site.baseurl }}/image/gallery/dungeons/{{ file.basename }}.png">
 				<h5 class="card-title text-center">{{ name }}</h5>
-			</button>
+			</div>
 
 		{%- endif -%}
 	{%- endfor -%}
 
 	<br>
 </div>
-
 <hr>
-
 <button id="BTN-DUNGEONS-RESULT" onclick="Hide('DUNGEONS-RESULT')" class="btn btn-lg btn-block btn-dark" style="display: none">Hide</button>
 <br>
 <div class="row">
-	<div id="COL1-DUNGEONS-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">16x</h2></div>
-	<div id="COL2-DUNGEONS-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL1-DUNGEONS-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">32x</h2></div>
+	<div id="COL2-DUNGEONS-RESULT" style="display: none" class="col"></div>
 	<div id="COL3-DUNGEONS-RESULT" style="display: none" class="col"><h2 class="display-5 m-3 text-center">64x</h2></div>
 </div>
 
@@ -123,7 +120,11 @@ title: Gallery
 <script>
 	$(document).ready(function(){
 		$('#JAVA-SELECTOR').owlCarousel({
-			loop: true,
+			loop: false,
+			margin: 30,
+			nav: false,
+			responsiveClass: true,
+			autoHeight: true,
 			responsive: {
 				0: {
 					items: 1
@@ -141,7 +142,11 @@ title: Gallery
       onInitialized: addDotButtonLabel
 		});
 		$('#BEDROCK-SELECTOR').owlCarousel({
-			loop: true,
+			loop: false,
+			margin: 30,
+			nav: false,
+			responsiveClass: true,
+			autoHeight: true,
 			responsive: {
 				0: {
 					items: 1
@@ -159,7 +164,11 @@ title: Gallery
       onInitialized: addDotButtonLabel
 		});
 		$('#EDUCATION-SELECTOR').owlCarousel({
-			loop: true,
+			loop: false,
+			margin: 30,
+			nav: false,
+			responsiveClass: true,
+			autoHeight: true,
 			responsive: {
 				0: {
 					items: 1
@@ -177,7 +186,11 @@ title: Gallery
       onInitialized: addDotButtonLabel
 		});
 		$('#DUNGEONS-SELECTOR').owlCarousel({
-			loop: true,
+			loop: false,
+			margin: 30,
+			nav: false,
+			responsiveClass: true,
+			autoHeight: true,
 			responsive: {
 				0: {
 					items: 1
