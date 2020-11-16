@@ -38,7 +38,7 @@ Vue.component('local-download', {
           <div v-for="(log, index) in logs" :key="index" :class="{ log: true, error: log.type === \'error\' }" :title="log.value">{{ log.value }}</div>\
         </div>\
         <div id="bottomButtons" class="text-right mt-3">\
-        <button :disabled="!finalZip" v-on:click="downloadZip" class="btn btn-dark mr-2">Download Zip</button><button v-on:click="closeModal" :title="cancelTitle" :disabled="!canCloseModal" class="btn btn-dark">Cancel</button>\
+        <button :disabled="!finalZip" v-on:click="downloadZip" class="btn btn-dark mt-2 mr-2">Download Zip</button><button v-on:click="closeModal" :title="cancelTitle" :disabled="!canCloseModal" class="btn btn-dark mt-2">Cancel</button>\
         </div>\
       </custom-modal>\
     </div>',
