@@ -1,9 +1,45 @@
-<img src="https://i.imgur.com/SJBTkKF.png" alt="CompliancePack" align="right" height="256px">
-<div align="center">
-  <h1>Compliance Website</h1>
-  <h3>The official website for the Compliance Resource Pack, Addons and side projects.</h3>
+<p align="center">
+  <a href="https://compliancepack.net/" target="_blank">
+    <img src="./image/icon/compliance_32x.png" alt="logo">
+  </a>
+  <h1 align="center">Compliance Website</h1>
 
-![RepoSize](https://img.shields.io/github/repo-size/Compliance-Resource-Pack/Website)
-![Issues](https://img.shields.io/github/issues/Compliance-Resource-Pack/Website)
-![PullRequests](https://img.shields.io/github/issues-pr/Compliance-Resource-Pack/Website)
-</div>
+  <div align="center">
+
+![RepoSize](https://img.shields.io/github/repo-size/Compliance-Resource-Pack/Website?style=flat-square)
+![Issues](https://img.shields.io/github/issues/Compliance-Resource-Pack/Website?style=flat-square)
+![PullRequests](https://img.shields.io/github/issues-pr/Compliance-Resource-Pack/Website?style=flat-square)
+![Stars](https://img.shields.io/github/stars/Compliance-Resource-Pack/Website?style=flat-square)
+  </div>
+</p>
+
+## What is this website?
+This website was created to show off everything related to the Compliance Resource Pack for Minecraft. On it you'll find the main pack, add-ons, mod support and much more.
+You can also contribute thanks to the instructions below.
+
+## You want to contribute? Contribute!
+
+You can create a [fork](https://github.com/Compliance-Resource-Pack/Website/network/members) of this repository, apply your changes/additions and then create a [pull request](https://github.com/Compliance-Resource-Pack/Website/compare)
+
+### Installation process
+
+You need a two requirements before developing the website. First you need Ruby ([download page](https://www.ruby-lang.org/en/downloads/)). With Ruby you will need to install [Jekyll](https://jekyllrb.com/) by typing the following command in your favorite terminal:
+```
+gem install bundler jekyll
+```
+
+Then you need to install the bundle provided in the [Gemfile](./Gemfile):
+```
+bundle install
+```
+
+Then you need to build the website with this command:
+```
+jekyll build
+```
+
+Eventually, in order to automatically rebuild the website if an existing file was updated, you can run:
+```
+jekyll serve
+```
+After that you can enjoy your website on your local machine at the following address: http://127.0.0.1:4000/. Enjoy!
