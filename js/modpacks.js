@@ -1,4 +1,4 @@
-/* global Vue, getJSON */
+/* global Vue, getJSON, getRequest */
 
 const regex = /\s\(by\s.*\)/
 
@@ -7,29 +7,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
   data: {
     modpackModalOpened: false,
     currentModpackIndex: -1,
-    modpacks: [
-      {
-        modpackName: 'Ragnamod V',
-        modpackVersion: '5.8.0',
-        minecraftVersion: '1.12.2',
-        coverSource: '/image/modpack/ragnamodv.png',
-        modList: []
-      },
-      {
-        modpackName: 'Enigmatica 2',
-        modpackVersion: '1.77',
-        minecraftVersion: '1.12.2',
-        coverSource: '/image/modpack/enigmatica2.png',
-        modList: []
-      },
-      {
-        modpackName: 'Dungeons, Dragons and Space Shuttles',
-        modpackVersion: '7.4a',
-        minecraftVersion: '1.12.2',
-        coverSource: 'image/modpack/dungeons,dragonsandspacesshuttles.png',
-        modList: []
-      }
-    ],
+    modpacks: [],
     mods: [],
     versions: []
   },
@@ -38,67 +16,38 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       this.currentModpackIndex = index
       this.modpackModalOpened = true
     },
-    downloadModpackFromModlist: function (relativePath, displayName, modpackVersion, minecraftVersion) {
+    downloadModpackFromModlist: function (codeName, displayName, modpackVersion, minecraftVersion, blackList = []) {
       const that = this
-      getRequest('/data/modpack/' + relativePath + '/modlist.html', {}, function(html, err) {
+      const relativePath = codeName + '/' + modpackVersion
+
+      getRequest('/data/modpack/' + relativePath + '/modlist.html', {}, function (html, err) {
         if (err) {
-          console.error(err)
+          console.error(relativePath, err)
           return
         }
 
         // filling list with html content
-        const modNamesList = document.createElement( 'ul' )
+        const modNamesList = document.createElement('ul')
         modNamesList.innerHTML = html
 
         // extracting mod names from list
-        const modNamesElements = [ ...modNamesList.getElementsByTagName('li')]
+        const modNamesElements = [...modNamesList.getElementsByTagName('li')]
 
         const modNames = modNamesElements.map(mod => mod.textContent.replace(regex, '')).sort()
-
-        console.log(modNames)
 
         // pushing mods
         that.modpacks.push({
           modpackName: displayName,
           modpackVersion: modpackVersion,
           minecraftVersion: minecraftVersion,
+          blackList: blackList,
           coverSource: 'data/modpack/' + relativePath + '/../pack.png',
           modList: modNames
         })
       })
     },
-    downloadAllModpacks: function() {
+    downloadAllModpacks: function () {
       const that = this
-      getJSON('/data/modpack/modpackList.json', function(err, list) {
-        if (err) {
-          console.error(error)
-          return
-        }
-
-        list.forEach(modpack => {
-          Object.keys(modpack.versions).forEach(minecraftVersion => {
-            modpack.versions[minecraftVersion].forEach(modpackVersion => {
-              that.downloadModpackFromModlist(modpack.codeName + '/' + modpackVersion, modpack.displayName, modpackVersion, minecraftVersion)
-            })
-          })
-        })
-      })
-    },
-    downloadModpackList: function (src, modpackIndex = undefined) {
-      const that = this
-      getJSON(src, function (err, json) {
-        if (err) {
-          console.error(err)
-          return
-        }
-
-        let tmp = Array.isArray(json) && json.length > 0 ? json[0] : json
-
-        that.modpacks[modpackIndex].modpackName = tmp.name
-        that.modpacks[modpackIndex].minecraftVersion = tmp.version
-        that.modpacks[modpackIndex].modpackVersion = tmp['modpack-version']
-        that.modpacks[modpackIndex].modList = (tmp.mods.sort())
-      })
 
       getJSON('data/mods.json', (err, json) => {
         if (err) {
@@ -106,6 +55,21 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
           return
         }
         that.mods = json
+      })
+
+      getJSON('/data/modpack/modpackList.json', function(err, list) {
+        if (err) {
+          console.error(err)
+          return
+        }
+
+        list.forEach(modpack => {
+          Object.keys(modpack.versions).forEach(minecraftVersion => {
+            modpack.versions[minecraftVersion].forEach(modpackVersion => {
+              that.downloadModpackFromModlist(modpack.codeName, modpack.displayName, modpackVersion, minecraftVersion, [...modpack.blackList.default, ... modpack.blackList[minecraftVersion]])
+            })
+          })
+        })
       })
     }
   },
@@ -117,6 +81,8 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       if (!this.currentModpack) return undefined
 
       const result = []
+
+      console.log(this.currentModpack.blackList)
 
       let notfound
       let supportedModIndex
@@ -139,7 +105,11 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         }
 
         if (notfound) {
-          result.push(undefined)
+          if (this.currentModpack.blackList.includes(this.mods[supportedModIndex - 1].name[0])) {
+            result.push('blacklisted')
+          } else {
+            result.push(undefined)
+          }
 
           // optimize search
           if (supportedModIndex < this.mods.length) {
@@ -151,9 +121,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       return result
     }
   },
-  mounted: function () {
-    this.downloadModpackList('/data/modpack/ragnamodv.json', 0)
-
+  created: function () {
     getJSON('data/versions.json', (err, json) => {
       if (err) {
         console.error(err)

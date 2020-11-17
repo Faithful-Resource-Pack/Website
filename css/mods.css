@@ -257,7 +257,7 @@ input[type=radio]:checked + label {
 }
 
 #modpacks .card .card-title {
-	min-height: 48px
+	min-height: 58px
 }
 
 #modpacks #modpackModal {
