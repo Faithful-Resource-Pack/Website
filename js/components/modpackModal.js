@@ -12,7 +12,7 @@ Vue.component('modpack-modal', {
         <p class="mb-0">Mod list (<span>{{ modpack.modList.length }}</span>): <span>{{ numberOfModsFound }}</span> found</p>\
         <div id="modList" class="mt-2 mx-n3 mb-3">\
           <ul class="px-3 py-2">\
-            <li v-for="(mod, index) in modpack.modList" :key="index">{{ mod }} - <span :class="{ \'text-success\' : modcorrespondance[index], \'text-danger\' : !modcorrespondance[index] }">{{ modcorrespondance[index] ? \'Found\' : \'Not found\' }} </span></li>\
+            <li v-for="(mod, index) in modpack.modList" :key="index">{{ mod }} - <span :class="{ \'text-success\' : modcorrespondance[index], \'text-danger\' : modcorrespondance[index] === undefined, \'text-warning\' : typeof(modcorrespondance[index]) === \'string\' }">{{ typeof(modcorrespondance[index]) === \'object\' ? \'Found\' : (modcorrespondance[index] ? \'No textures\' : \'Not found\') }} </span></li>\
           </ul>\
         </div>\
         <div class="text-right">\
@@ -23,7 +23,7 @@ Vue.component('modpack-modal', {
     </custom-modal>',
   computed: {
     modSelection: function () {
-      return this.$props.modcorrespondance.filter(el => el !== undefined).map(mod => this.$root.$refs.localDownload.modToSelection(mod, this.$props.modpack.minecraftVersion))
+      return this.$props.modcorrespondance.filter(el => el !== undefined && typeof (el) !== 'string').map(mod => this.$root.$refs.localDownload.modToSelection(mod, this.$props.modpack.minecraftVersion))
     },
     numberOfModsFound: function () {
       return this.modSelection.length

@@ -9,7 +9,7 @@ layout: null
     <loc>{{ site.url }}/</loc>
     <priority>1.0</priority>
   </url>
-  {% for page in site.pages %}{% unless page.url contains '404' %}
+  {% for page in site.pages %}{% unless page.url contains '404' or page.url contains 'secret-tools' %}
   <url>
     <loc>{{ site.url }}{{ page.url | remove: ".html" }}</loc>
     <priority>0.8</priority>
