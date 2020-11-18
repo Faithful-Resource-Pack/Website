@@ -1,0 +1,10 @@
+/** LICENSE **/
+.btn-flag {
+	margin-right: 10px;
+	margin-top: 10px;
+	width: 116px;
+}
+.btn-flag > img {
+	width: 64px !important;
+	height: 42px !important;
+}

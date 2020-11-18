@@ -37,12 +37,10 @@ p {
 		url(../image/background/bg_black_transition_bottom.png) bottom repeat-x,
 		url(../image/background/bg_white.png) repeat
 }
-/** gallery **/
-.img-gallery {
-	object-fit: contain;
-	background: url(../image/gallery/transparent.png) repeat;
-	background-size: 32px;
-	color: #fff
+
+/** MAIN STUFF **/
+.right-reading {
+	direction: rtl
 }
 .center {
 	display: block;
@@ -51,74 +49,19 @@ p {
 .clickable:hover {
 	cursor: pointer;
 }
-.card-sized{
-	height: 256px;
-}
-.title-top {
-	margin-bottom: -5px !important;
-}
-.gallery-selector {
-	padding: 10px
-}
-.gallery-modal-img {
-	height: auto;
-	width: 100%;
-	max-height: 85%;
-	object-fit: contain;
-	z-index: 2;
-}
-.gallery-close {
-	position: fixed;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-}
-.gallery-close:hover {
-	cursor: pointer
-}
-
-/** Right to left reading **/
-.right-reading {
-	direction: rtl
-}
-
-/** LICENSE STUFF **/
-.btn-flag {
-	margin-right: 10px;
-	margin-top: 10px;
-	width: 116px;
-}
-.btn-flag > img {
-	width: 64px !important;
-	height: 42px !important;
-}
 .disabled {
 	pointer-events: none
 }
 
-/** ADD_ON STUFF **/
-.display {
-	font-weight: 300;
-	line-height: 1.2
-}
-a.btn-download, button.btn-download {
-	display: block;
-	width: 100%;
-	border-radius: 16px;
-	background-color: var(--primary);
-	border-color: var(--primary);
-	color: #fff
-}
-a.btn-download:hover, button.btn-download:hover {
-	color: #fff;
-	filter: brightness(112%)
+/** FANCY CARDS **/
+.card {
+	background: #1C1C1C;
+	border: 0px !important;
 }
 img.fancy-card {
 	max-height: 24rem;
 	object-fit: cover
 }
-
-/** FANCY CARDS **/
 #ScreenshotCarousel, div.card, .card .item > a, img.fancy-card, ul.card {
 	border-radius: 16px;
 	overflow: hidden;
@@ -154,8 +97,25 @@ div.dropdown-menu {
 	background: #000
 }
 
-/** DOWNLOAD TABLES **/
+/** ADDONS / ADD-ONS **/
+.display {
+	font-weight: 300;
+	line-height: 1.2
+}
+a.btn-download, button.btn-download {
+	display: block;
+	width: 100%;
+	border-radius: 16px;
+	background-color: var(--primary);
+	border-color: var(--primary);
+	color: #fff
+}
+a.btn-download:hover, button.btn-download:hover {
+	color: #fff;
+	filter: brightness(112%)
+}
 
+/** DOWNLOAD TABLES **/
 .table {
 	background-color: #1c1c1c;
 	color: #ccc;
@@ -272,12 +232,6 @@ a > h4, a > h3 {
 	background: #878787
 }
 
-/* CARDS */
-.card {
-	background: #1C1C1C;
-	border: 0px !important;
-}
-
 /* NAVBAR */
 @media (min-width: 800px) {
 	.nav {
@@ -287,8 +241,19 @@ a > h4, a > h3 {
 		display: inline-flex
 	}
 }
+.nav-link {
+	transition: all .1s ease-out;
+}
+@media screen and (min-width: 800px) {
+	.nav-link:hover {
+		transform: scale(0.95);
+	}
+}
+.nav-link:hover {
+	cursor: pointer
+}
 
-/* Modal */
+/** MODAL **/
 .modal {
 	display: none;
 	position: fixed;
@@ -309,18 +274,6 @@ a > h4, a > h3 {
 	max-width: 700px;
 	animation-name: zoom;
 	animation-duration: 0.6s
-}
-
-.nav-link {
-	transition: all .1s ease-out;
-}
-@media screen and (min-width: 800px) {
-	.nav-link:hover {
-		transform: scale(0.95);
-	}
-}
-.nav-link:hover {
-	cursor: pointer
 }
 
 /* Add Animation */
@@ -384,48 +337,4 @@ img[src$=".gif"] {
 	-moz-user-drag: none;
 	-o-user-drag: none;
 	user-drag: none
-}
-
-/* Show button when hovering imgs */
-.card-texture:before {
-	content:"";
-	position:absolute;
-	width:100%;
-	height:100%;
-	top:0;left:0;right:0;
-	background-color:rgba(0,0,0,0)
-}
-.card-texture:hover::before {
-	background-color:rgba(0,0,0,0.5)
-}
-.card-texture img {
-	display:block;
-	flex-shrink: inherit
-}
-.card-texture .button-fullscreen {
-	position: absolute;
-	top: 20%;
-	left: 20%;
-	height: 40px;
-	width: 40px;
-	transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	opacity:0
-}
-.card-texture:hover .button-fullscreen {
-	opacity: 1
-}
-
-.card-texture .button-info {
-	position: absolute;
-	top: 20%;
-	left: 55%;
-	height: 40px;
-	width: 40px;
-	transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	opacity:0
-}
-.card-texture:hover .button-info {
-	opacity: 1
 }
