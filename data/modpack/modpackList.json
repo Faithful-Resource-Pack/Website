@@ -1,57 +1,63 @@
-[
-  {
-    "displayName": "Automaton",
-    "codeName": "automaton",
-    "versions": {
-      "1.12.2": ["1.5.0"]
-    },
-    "blackList": {
-      "default": [],
-      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
-    }
+{
+  "globalBlackList" : {
+    "default" : [],
+    "1.12.2" : []
   },
-  {
-    "displayName": "Dungeons, Dragons and Space Shuttles",
-    "codeName": "ddass",
-    "versions": {
-      "1.12.2": ["7.4a"]
+  "modpacks": [
+    {
+      "displayName": "Automaton",
+      "codeName": "automaton",
+      "versions": {
+        "1.12.2": ["1.5.0"]
+      },
+      "blackList": {
+        "default": [],
+        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
+      }
     },
-    "blackList": {
-      "default": [],
-      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
-    }
-  },
-  {
-    "displayName": "Enigmatica 2",
-    "codeName": "enigmatica2",
-    "versions": {
-      "1.12.2": ["1.77"]
+    {
+      "displayName": "Dungeons, Dragons and Space Shuttles",
+      "codeName": "ddass",
+      "versions": {
+        "1.12.2": ["7.4a"]
+      },
+      "blackList": {
+        "default": [],
+        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
+      }
     },
-    "blackList": {
-      "default": [],
-      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
-    }
-  },
-  {
-    "displayName": "Project Ozone 3 A New Way Forward",
-    "codeName": "po3",
-    "versions": {
-      "1.12.2": ["3.3.59"]
+    {
+      "displayName": "Enigmatica 2",
+      "codeName": "enigmatica2",
+      "versions": {
+        "1.12.2": ["1.77"]
+      },
+      "blackList": {
+        "default": [],
+        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
+      }
     },
-    "blackList": {
-      "default": [],
-      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
-    }
-  },
-  {
-    "displayName": "Ragnamod V",
-    "codeName": "ragnamodv",
-    "versions": {
-      "1.12.2": ["5.8.0"]
+    {
+      "displayName": "Project Ozone 3 A New Way Forward",
+      "codeName": "po3",
+      "versions": {
+        "1.12.2": ["3.3.59"]
+      },
+      "blackList": {
+        "default": [],
+        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
+      }
     },
-    "blackList": {
-      "default": [],
-      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
+    {
+      "displayName": "Ragnamod V",
+      "codeName": "ragnamodv",
+      "versions": {
+        "1.12.2": ["5.8.0"]
+      },
+      "blackList": {
+        "default": [],
+        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
+      }
     }
-  }
-]
+  ]  
+}

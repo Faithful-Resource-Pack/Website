@@ -1,7 +1,8 @@
-/* global Vue, getJSON, getRequest */
+/* global Vue, getJSON, getRequest, MinecraftUtils, location */
 
 const regex = /\s\(by\s.*\)/
 
+Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 const v = new Vue({ // eslint-disable-line no-unused-vars
   el: '#modpacks',
   data: {
@@ -9,7 +10,12 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     currentModpackIndex: -1,
     modpacks: [],
     mods: [],
-    versions: []
+    versions: [],
+    globalBlackList: [],
+    form: {
+      search: '',
+      minSearchLetters: 3
+    }
   },
   methods: {
     openModpackModal: function (index) {
@@ -57,16 +63,18 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         that.mods = json
       })
 
-      getJSON('/data/modpack/modpackList.json', function(err, list) {
+      getJSON('/data/modpack/modpackList.json', function (err, json) {
         if (err) {
           console.error(err)
           return
         }
 
-        list.forEach(modpack => {
+        that.globalBlackList = json.globalBlackList
+
+        json.modpacks.forEach(modpack => {
           Object.keys(modpack.versions).forEach(minecraftVersion => {
             modpack.versions[minecraftVersion].forEach(modpackVersion => {
-              that.downloadModpackFromModlist(modpack.codeName, modpack.displayName, modpackVersion, minecraftVersion, [...modpack.blackList.default, ... modpack.blackList[minecraftVersion]])
+              that.downloadModpackFromModlist(modpack.codeName, modpack.displayName, modpackVersion, minecraftVersion, [...that.globalBlackList.default, ...that.globalBlackList[minecraftVersion], ...modpack.blackList.default, ...modpack.blackList[minecraftVersion]])
             })
           })
         })
@@ -76,6 +84,45 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
   computed: {
     currentModpack: function () {
       return this.currentModpackIndex > -1 ? this.modpacks[this.currentModpackIndex] : undefined
+    },
+    filteredModpacks: function () {
+      if (this.modpacks.length === 0) {
+        return []
+      }
+
+      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0)))) {
+        return this.modpacks.filter(mp => {
+          return mp.minecraftVersion.startsWith(this.form.search) || mp.modpackVersion.startsWith(this.form.search)
+        })
+      }
+
+      if (this.form.search.length >= this.form.minSearchLetters) {
+        return this.modpacks.filter(mp => mp.modpackName.toLowerCase().includes(this.form.search.toLowerCase()))
+      }
+
+      return this.modpacks
+    },
+    filteredSortedModpacks: function () {
+      return this.filteredModpacks.sort((a, b) => {
+        let result = 0
+
+        if (a.modpackName === b.modpackName) {
+          if (a.modpackVersion === b.modpackVersion) {
+            const numbers = MinecraftUtils.minecraftVersionsToNumbers(a.minecraftVersion, b.minecraftVersion)
+            result = numbers[0] > numbers[1] ? 1 : -1
+          } else {
+            if (parseFloat(a.modpackVersion) === parseFloat(b.modpackVersion)) {
+              result = a.modpackVersion > b.modpackVersion ? 1 : -1
+            } else {
+              result = parseFloat(a.modpackVersion) > parseFloat(b.modpackVersion) ? 1 : -1
+            }
+          }
+        } else {
+          result = a.modpackName > b.modpackName ? 1 : -1
+        }
+
+        return result
+      })
     },
     modListCorrespondance: function () {
       if (!this.currentModpack) return undefined
@@ -123,7 +170,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         }
       })
 
-      //console.log(result)
+      // console.log(result)
 
       return result
     }

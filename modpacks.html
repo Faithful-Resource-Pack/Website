@@ -14,12 +14,13 @@ title: Modpacks
   <modpack-modal id="modpackModal" :modpack="currentModpack" :modpackmodalopened="modpackModalOpened" :onclose="function() { modpackModalOpened = false }" :modcorrespondance="modListCorrespondance"></modpack-modal>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-      <modpack-card v-for="(m, mindex) in modpacks" :key="mindex" :modpack="m" :onbuttonclick="function(){ openModpackModal(mindex)  }"></modpack-card>
+      <modpack-card v-for="(m, mindex) in filteredSortedModpacks" :key="mindex" :modpack="m" :onbuttonclick="function(){ openModpackModal(mindex)  }"></modpack-card>
     </div>
   </div>
 </div>
 
 <script src="/js/ajax.js"></script>
+<script src="/js/core/MinecraftUtils.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="/js/components/customModal.js"></script>
 <script src="/js/components/modpackModal.js"></script>
