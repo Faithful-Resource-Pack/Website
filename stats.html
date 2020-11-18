@@ -3,16 +3,18 @@ title: Statistics
 ---
 
 <div id="stats" class="text-center">
-  <h1 class="display-3 my-5">Compliance Statistics</h1>
+	<h1 class="display-3 my-5">Compliance Statistics</h1>
 
-  <div v-html="loadingMessage"></div>
+	<h2 class="display-4 my-5">Mods</h2>
+	<div v-html="loadingMessage"></div>
 
-  <div class="row">
-    <div v-for="(mKey, index) in keys" :key="index" class="col-sm">
-      <h2 class="h3 mb-4" v-text="messages[mKey]"></h2>
-      <p><span class="btn btn-primary h1"><b v-text="$data[mKey]"></b></span></p>
-    </div>
-  </div>
+	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+		<div v-for="(mKey, index) in keys" :key="index" class="col mb-3">
+			<h3 class="h3 mb-4" v-text="messages[mKey]"></h3>
+			<h3><span class="badge badge-primary h1" v-text="$data[mKey]"></span></h3>
+		</div>
+	</div>
+
 </div>
 
 <script src="/js/ajax.js"></script>
