@@ -3,13 +3,13 @@ layout: default
 ---
 
 {%- if page.title -%}
-	<h2 class="display-3 m-5 text-center">{{ page.title }}</h2>
+	<h2 class="display-3 my-5 text-center">{{ page.title }}</h2>
 {%- else -%}
-	<h2 class="display-3 m-5 text-center">Unknown Title</h2>
+	<h2 class="display-3 my-5 text-center">Unknown Title</h2>
 {%- endif -%}
 
 {%- if page.authors -%}
-	<h3 class="display m-5 text-center">
+	<h3 class="display my-5 text-center">
 		By&nbsp;
 		{%- assign author_nb = page.authors.size -%}
 		{% for author in page.authors %}
@@ -136,9 +136,9 @@ layout: default
 
 {%- if page.download -%}
 	{%- if page.download.size > 1 -%}
-		<h2 class="display-4 m-5 text-center">Downloads</h2>
+		<h2 class="display-4 my-5 text-center">Downloads</h2>
 	{%- else -%}
-		<h2 class="display-4 m-5 text-center">Download</h2>
+		<h2 class="display-4 my-5 text-center">Download</h2>
 	{%- endif -%}
 	{%- for item in page.download -%}
 		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-block btn-lg btn-primary fancy-card-2x"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
@@ -146,7 +146,7 @@ layout: default
 {%- endif -%}
 
 {%- if page.changelog -%}
-	<h2 id='changelog-title' class="display-4 m-5 text-center">Changelog</h2>
+	<h2 id='changelog-title' class="display-4 my-5 text-center">Changelog</h2>
 	<div class="card">
 		{%- assign changelog = page.changelog | reverse -%}
 		{%- assign counter = 0 -%}
@@ -232,7 +232,7 @@ layout: default
 
 {%- if page.comments == true -%}
   <hr>
-	<h2 class="display-4 m-5 text-center">Comments</h2>
+	<h2 class="display-4 my-5 text-center">Comments</h2>
 	<div id="disqus_thread" class="col card"></div>
 	<script>
 
