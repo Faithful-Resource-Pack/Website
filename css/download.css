@@ -1,0 +1,21 @@
+/** DOWNLOAD TABLES **/
+.table {
+	background-color: #1c1c1c;
+	color: #ccc;
+	border-radius: 8px;
+	overflow: hidden
+}
+.table thead th {
+	background-color: #343A40;
+  border: 0
+}
+.table td {
+	border-top: 1px solid #343A40
+}
+.table tbody+tbody {
+	border: 0
+}
+.table-hover tbody tr:hover {
+	color: #ccc;
+	background-color: rgba(0,0,0,.15)
+}

@@ -17,7 +17,7 @@ Vue.component('zip-options', {
           <div class="form-row">\
             <div class="form-group col-md-4">\
               <label for="compressionSelect" class="d-block pb-1">Compression level</label>\
-              <select id="compressionSelect" class="form-control custom-select" v-model="compressionChosen">\
+              <select id="compressionSelect" class="form-control custom-select fancy-card-1x" v-model="compressionChosen">\
                 <template v-for="(ct, ctindex) in compressionTypes">\
                   <optgroup :label="ct" :key="ct">\
                     <option v-for="cl in compressionLevels.slice(!!ctindex ? 1 : 0, !ctindex ? 1 : compressionLevelsAvailable)" :key="cl.value" :value="cl.value" :selected="cl.value == compressionChosen">{{ cl.label }}</option>\
@@ -27,7 +27,7 @@ Vue.component('zip-options', {
             </div>\
             <div class="form-group col-md-4">\
               <label for="archiveName" class="d-block pb-1">Archive name</label>\
-              <input type="text" autocomplete="false" name="archiveName" :class="{ \'form-control\': true, empty: !archiveName.trim() }" v-model="archiveName" id="archiveName" placeholder="Leave empty to generate a unique name">\
+              <input type="text" autocomplete="false" name="archiveName" :class="{ empty: !archiveName.trim() }" class="form-control fancy-card-1x" v-model="archiveName" id="archiveName" placeholder="Leave empty to generate a unique name">\
             </div>\
             <clear-database></clear-database>\
           </div>\

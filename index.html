@@ -6,7 +6,7 @@ title: Home
 {%- assign reversed_files = site.static_files | reverse -%}
 
 <!-- Screenshots carousel preview -->
-<div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel">
+<div id="ScreenshotCarousel" class="carousel slide fancy-card-2x" data-ride="carousel">
 	<!-- indicators -->
 	<ul class="carousel-indicators">
 		{%- assign ImgCounter = 0 -%}
@@ -68,7 +68,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -92,7 +92,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance32xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -117,7 +117,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32x3D/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance32x3D/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -142,7 +142,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance32xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -187,7 +187,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -212,7 +212,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance64xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -237,7 +237,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance64xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -269,7 +269,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32x32xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance32x32xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -294,7 +294,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -319,7 +319,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
@@ -344,7 +344,7 @@ title: Home
           {%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>

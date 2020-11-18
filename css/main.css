@@ -47,20 +47,20 @@ p {
 	margin: auto !important
 }
 .clickable:hover {
-	cursor: pointer;
+	cursor: pointer
 }
 .disabled {
 	pointer-events: none
 }
 @media screen and (max-width: 768px) {
 	.m-5 {
-		margin: 1rem !important;
+		margin: 1rem !important
 	}
 	.display-3 {
-		font-size: 2.25rem;
+		font-size: 2.25rem
 	}
 	.display-4 {
-		font-size: 1.75rem;
+		font-size: 1.75rem
 	}
 }
 @media screen and (min-width: 1000px) {
@@ -74,21 +74,21 @@ p {
 	background: #1C1C1C;
 	border: 0px !important;
 }
-img.fancy-card {
+div.dropdown-menu {
+	border: 0
+}
+img.fancy-card-2x {
 	max-height: 24rem;
 	object-fit: cover
 }
-#ScreenshotCarousel, div.card, .card .item > a, img.fancy-card, ul.card {
-	border-radius: 16px;
-	overflow: hidden;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
-}
-.btn, .dropdown-menu, select.custom-select, input#archiveName, .fancy-card-8 {
+.btn, .dropdown-menu, .fancy-card-1x {
 	border-radius: 8px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 }
-div.dropdown-menu {
-	border: 0
+*.card, .fancy-card-2x {
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 }
 .card-body > :first-child {
 	margin-top: 0
@@ -100,9 +100,6 @@ div.dropdown-menu {
 }
 .card, .card p {
 	color: rgba(255, 255, 255, .7)
-}
-.card .item > a {
-	display: block
 }
 .card-img-top {
 	border-radius: 16px;
@@ -117,40 +114,6 @@ div.dropdown-menu {
 .display {
 	font-weight: 300;
 	line-height: 1.2
-}
-a.btn-download, button.btn-download {
-	display: block;
-	width: 100%;
-	border-radius: 16px;
-	background-color: var(--primary);
-	border-color: var(--primary);
-	color: #fff
-}
-a.btn-download:hover, button.btn-download:hover {
-	color: #fff;
-	filter: brightness(112%)
-}
-
-/** DOWNLOAD TABLES **/
-.table {
-	background-color: #1c1c1c;
-	color: #ccc;
-	border-radius: 8px;
-	overflow: hidden
-}
-.table thead th {
-	background-color: #343A40;
-  border: 0
-}
-.table td {
-	border-top: 1px solid #343A40
-}
-.table tbody+tbody {
-	border: 0
-}
-.table-hover tbody tr:hover {
-	color: #ccc;
-	background-color: rgba(0,0,0,.15)
 }
 
 /** NAVBAR **/
