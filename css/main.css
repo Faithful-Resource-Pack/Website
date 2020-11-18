@@ -52,6 +52,22 @@ p {
 .disabled {
 	pointer-events: none
 }
+@media screen and (max-width: 768px) {
+	.m-5 {
+		margin: 1rem !important;
+	}
+	.display-3 {
+		font-size: 2.25rem;
+	}
+	.display-4 {
+		font-size: 1.75rem;
+	}
+}
+@media screen and (min-width: 1000px) {
+	.small-screen-warning {
+		display: none
+	}
+}
 
 /** FANCY CARDS **/
 .card {
