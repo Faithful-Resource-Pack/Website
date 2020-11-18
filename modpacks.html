@@ -13,7 +13,7 @@ title: Modpacks
 
   <modpack-modal id="modpackModal" :modpack="currentModpack" :modpackmodalopened="modpackModalOpened" :onclose="function() { modpackModalOpened = false }" :modcorrespondance="modListCorrespondance"></modpack-modal>
 
-    <div class="card-deck">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
       <modpack-card v-for="(m, mindex) in modpacks" :key="mindex" :modpack="m" :onbuttonclick="function(){ openModpackModal(mindex)  }"></modpack-card>
     </div>
   </div>
