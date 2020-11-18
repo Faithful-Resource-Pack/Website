@@ -1,5 +1,16 @@
 [
   {
+    "displayName": "Automaton",
+    "codeName": "automaton",
+    "versions": {
+      "1.12.2": ["1.5.0"]
+    },
+    "blackList": {
+      "default": [],
+      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
+    }
+  },
+  {
     "displayName": "Dungeons, Dragons and Space Shuttles",
     "codeName": "ddass",
     "versions": {
@@ -7,7 +18,7 @@
     },
     "blackList": {
       "default": [],
-      "1.12.2": ["AppleCore"]
+      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
     }
   },
   {
@@ -18,7 +29,7 @@
     },
     "blackList": {
       "default": [],
-      "1.12.2": ["AppleCore"]
+      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
     }
   },
   {
@@ -29,7 +40,7 @@
     },
     "blackList": {
       "default": [],
-      "1.12.2": ["AppleCore"]
+      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
     }
   },
   {
@@ -40,7 +51,7 @@
     },
     "blackList": {
       "default": [],
-      "1.12.2": ["AppleCore"]
+      "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
     }
   }
 ]

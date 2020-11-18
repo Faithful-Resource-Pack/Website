@@ -95,8 +95,18 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         // this.mods[supportedModIndex].name[0] <= mod, we stop looking if name is greater
         // <= VERY important so that if result is equal it doesn't exit
         while (supportedModIndex < this.mods.length && this.mods[supportedModIndex].name[0] <= mod && notfound) {
+          console.log(mod + ' / ' + this.mods[supportedModIndex].name[0])
+
           if (this.mods[supportedModIndex].name[0] === mod && this.mods[supportedModIndex].versions.includes(this.currentModpack.minecraftVersion)) {
+            console.log('found')
             result.push(this.mods[supportedModIndex])
+            notfound = false
+            startIndex = supportedModIndex
+          }
+
+          if (this.currentModpack.blackList.includes(mod)) {
+            console.log('blacklisted:' + mod)
+            result.push('blacklisted')
             notfound = false
             startIndex = supportedModIndex
           }
@@ -104,19 +114,16 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
           ++supportedModIndex
         }
 
+        // optimized search
         if (notfound) {
-          if (this.currentModpack.blackList.includes(this.mods[supportedModIndex - 1].name[0])) {
-            result.push('blacklisted')
-          } else {
-            result.push(undefined)
-          }
-
-          // optimize search
+          result.push(undefined)
           if (supportedModIndex < this.mods.length) {
             startIndex = supportedModIndex
           }
         }
       })
+
+      //console.log(result)
 
       return result
     }
