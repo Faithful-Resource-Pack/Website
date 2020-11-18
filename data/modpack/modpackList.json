@@ -1,6 +1,6 @@
 {
 	"globalBlackList" : {
-		"default" : ["AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"],
+		"default" : ["ModLister","Mo' Villages","MTLib","MCMultipart","LunatriusCore","LootTweaker","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"],
 		"1.12.2" : ["AppleCore"],
 		"1.10.2" : [],
 		"1.7.10" : []

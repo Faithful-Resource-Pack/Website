@@ -9,7 +9,7 @@ Vue.component('modpack-modal', {
       <p class="advice mb-0">Modpack version: <span>{{ modpack.modpackVersion }}</span></p>\
       <p class="advice">Minecraft version: <span>{{ modpack.minecraftVersion }}</span></p>\
       <template v-if="modpack.modList && Array.isArray(modpack.modList) && modpack.modList.length">\
-        <p class="mb-0">Mod list (<span>{{ modpack.modList.length }}</span>): <span>{{ numberOfModsFound }}</span> found</p>\
+        <p class="mb-0">Mod list (<span>{{ modpack.modList.length }}</span>): <span>{{ numberOfModsFound }}</span> found, <span>{{ numberOfModsBlackListed }}</span> ignored - coverage: <span>{{ coveragePercentage }}</span>%</p>\
         <div id="modList" class="mt-2 mx-n3 mb-3">\
           <ul class="px-3 py-2">\
             <li v-for="(mod, index) in modpack.modList" :key="index">{{ mod }} - <span :class="{ \'text-success\' : modcorrespondance[index], \'text-danger\' : modcorrespondance[index] === undefined, \'text-warning\' : typeof(modcorrespondance[index]) === \'string\' }">{{ typeof(modcorrespondance[index]) === \'object\' ? \'Found\' : (modcorrespondance[index] ? \'No textures\' : \'Not found\') }} </span></li>\
@@ -27,6 +27,20 @@ Vue.component('modpack-modal', {
     },
     numberOfModsFound: function () {
       return this.modSelection.length
+    },
+    numberOfModsBlackListed: function () {
+      var counter = 0
+
+      for (var index in this.$props.modcorrespondance) {
+        if (this.$props.modcorrespondance[index] === 'blacklisted') {
+          ++counter
+        }
+      }
+
+      return counter
+    },
+    coveragePercentage: function () {
+      return (((this.numberOfModsBlackListed + this.modSelection.length) * 100 ) / this.$props.modpack.modList.length).toFixed(2)
     }
   },
   methods: {
