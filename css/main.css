@@ -1,4 +1,8 @@
 /* Basic layout */
+:root {
+  --border-radius-1x: 12px;
+  --border-radius-2x: 24px
+}
 html {
 	overflow-x: hidden
 }
@@ -81,14 +85,15 @@ img.fancy-card-2x {
 	max-height: 24rem;
 	object-fit: cover
 }
-.btn, .dropdown-menu, .fancy-card-1x {
-	border-radius: 8px;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
-}
-*.card, .fancy-card-2x {
-	border-radius: 16px;
+.btn, .dropdown-menu, .fancy-card-1x, *.card, .fancy-card-2x {
 	overflow: hidden;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+}
+.btn, .dropdown-menu, *.card *.card, .fancy-card-1x {
+	border-radius: var(--border-radius-1x);
+}
+*.card, .fancy-card-2x {
+	border-radius: var(--border-radius-2x);
 }
 .card-body > :first-child {
 	margin-top: 0
@@ -102,7 +107,7 @@ img.fancy-card-2x {
 	color: rgba(255, 255, 255, .7)
 }
 .card-img-top {
-	border-radius: 16px;
+	border-radius: var(--border-radius-2x);
 	cursor: pointer;
 	color: #000
 }

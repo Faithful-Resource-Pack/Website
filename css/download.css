@@ -2,7 +2,7 @@
 .table {
 	background-color: #1c1c1c;
 	color: #ccc;
-	border-radius: 8px;
+	border-radius: var(--border-radius-1x);
 	overflow: hidden
 }
 .table thead th {
