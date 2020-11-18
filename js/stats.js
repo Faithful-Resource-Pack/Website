@@ -8,7 +8,7 @@ NAME = 'Compliance Mods';
 const v = new Vue({ // eslint-disable-line no-unused-vars
   el: '#stats',
   data: {
-    
+
     keys: ['numberOfMinecraftVersions', 'totalNumberOfResourcePacksStored', 'numberOfModsSupported'],
     messages: {
       loading: 'Loading',
@@ -24,9 +24,6 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
   computed: {
     loadingMessage: function () {
       return this.loading ? '<i class="fas fa-circle-notch fa-spin"></i> ' + this.messages.loading : ''
-    },
-    statisticsTitle: function() {
-      return NAME + ' statistics'
     }
   },
   mounted: function () {
