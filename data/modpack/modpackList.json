@@ -1,63 +1,132 @@
 {
-  "globalBlackList" : {
-    "default" : [],
-    "1.12.2" : []
-  },
-  "modpacks": [
-    {
-      "displayName": "Automaton",
-      "codeName": "automaton",
-      "versions": {
-        "1.12.2": ["1.5.0"]
-      },
-      "blackList": {
-        "default": [],
-        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
-      }
-    },
-    {
-      "displayName": "Dungeons, Dragons and Space Shuttles",
-      "codeName": "ddass",
-      "versions": {
-        "1.12.2": ["7.4a"]
-      },
-      "blackList": {
-        "default": [],
-        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
-      }
-    },
-    {
-      "displayName": "Enigmatica 2",
-      "codeName": "enigmatica2",
-      "versions": {
-        "1.12.2": ["1.77"]
-      },
-      "blackList": {
-        "default": [],
-        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
-      }
-    },
-    {
-      "displayName": "Project Ozone 3 A New Way Forward",
-      "codeName": "po3",
-      "versions": {
-        "1.12.2": ["3.3.59"]
-      },
-      "blackList": {
-        "default": [],
-        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
-      }
-    },
-    {
-      "displayName": "Ragnamod V",
-      "codeName": "ragnamodv",
-      "versions": {
-        "1.12.2": ["5.8.0"]
-      },
-      "blackList": {
-        "default": [],
-        "1.12.2": ["AppleCore","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"]
-      }
-    }
-  ]  
+	"globalBlackList" : {
+		"default" : ["AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"],
+		"1.12.2" : ["AppleCore"],
+		"1.10.2" : [],
+		"1.7.10" : []
+	
+	},
+	"modpacks": [
+		{
+			"displayName": "Automaton",
+			"codeName": "automaton",
+			"versions": {
+				"1.12.2": ["1.5.0"]
+			},
+			"blackList": {
+				"default": [],
+				"1.12.2": []
+			}
+		},
+		{
+			"displayName": "Dungeons, Dragons and Space Shuttles",
+			"codeName": "ddass",
+			"versions": {
+				"1.12.2": ["7.4a"]
+			},
+			"blackList": {
+				"default": [],
+				"1.12.2": []
+			}
+		},
+		{
+			"displayName": "Enigmatica 2",
+			"codeName": "enigmatica2",
+			"versions": {
+				"1.12.2": ["1.77"]
+			},
+			"blackList": {
+				"default": [],
+				"1.12.2": []
+			}
+		},
+		{
+			"displayName": "FTB Infinity Evolved",
+			"codeName": "ftbinfinityevolved",
+			"versions": {
+				"1.7.10": ["3.1.0"]
+			},
+			"blackList": {
+				"default": [],
+				"1.7.10": []
+			}
+		},
+		{
+			"displayName": "Infitech 2",
+			"codeName": "infitech2",
+			"versions": {
+				"1.7.10": ["3.2.21"]
+			},
+			"blackList": {
+				"default": [],
+				"1.7.10": []
+			}
+		},
+		{
+			"displayName": "Project Ozone 3: A New Way Forward",
+			"codeName": "po3",
+			"versions": {
+				"1.12.2": ["3.3.59"]
+			},
+			"blackList": {
+				"default": [],
+				"1.12.2": []
+			}
+		},
+		{
+			"displayName": "Ragnamod V",
+			"codeName": "ragnamodv",
+			"versions": {
+				"1.12.2": ["5.8.0"]
+			},
+			"blackList": {
+				"default": [],
+				"1.12.2": []
+			}
+		},
+		{
+			"displayName": "RLCraft",
+			"codeName": "rlcraft",
+			"versions": {
+				"1.12.2": ["2.8.2"]
+			},
+			"blackList": {
+				"default": [],
+				"1.12.2": []
+			}
+		},
+		{
+			"displayName": "SevTech Ages",
+			"codeName": "sevtechages",
+			"versions": {
+				"1.12.2": ["3.1.7"]
+			},
+			"blackList": {
+				"default": [],
+				"1.12.2": []
+			}
+		},
+		{
+			"displayName": "FTB Presents SkyFactory 3",
+			"codeName": "skyfactory3",
+			"versions": {
+				"1.10.2": ["3.0.21"]
+			},
+			"blackList": {
+				"default": [],
+				"1.10.2": []
+			}
+		},
+		{
+			"displayName": "SkyFactory 4",
+			"codeName": "skyfactory4",
+			"versions": {
+				"1.12.2": ["4.2.2"]
+			},
+			"blackList": {
+				"default": [],
+				"1.12.2": []
+			}
+		}
+	]  
 }
