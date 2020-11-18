@@ -15,6 +15,15 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     form: {
       search: '',
       minSearchLetters: 3
+    },
+    sentences: {
+      searchAdvice: 'You can search by name or by version',
+      lettersLeft: 'letters to start search...',
+      loading: 'Loading mods...',
+      failed: 'Failed to load mods. Check console for more informations',
+      noresults: 'No results found for your search: ',
+      noResultsVersion: 'No results found for version',
+      typeAnotherVersion: 'Try to type another version than'
     }
   },
   methods: {
@@ -173,6 +182,26 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       // console.log(result)
 
       return result
+    },
+    emptyTable: function () {
+      if (this.modpacks.length === 0) return this.sentences.failed
+
+      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) {
+        return this.sentences.noResultsVersion + ' ' + this.form.search
+      }
+
+      if (this.filteredModpacks.length === 0) return this.sentences.noresults + this.form.search
+
+      return ''
+    },
+    searchAdvice: function () {
+      if (this.modpacks.length === 0) { return '' }
+
+      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) { return this.sentences.typeAnotherVersion + ' ' + this.form.search }
+
+      if (this.form.search.length < this.form.minSearchLetters) { return String((this.form.minSearchLetters - this.form.search.length) + ' ' + this.sentences.lettersLeft) }
+
+      return ''
     }
   },
   created: function () {

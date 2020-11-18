@@ -172,6 +172,11 @@ input[type=radio]:checked + label {
 	border: 0
 }
 
+#SearchBar + .advice {
+	line-height: 20px;
+	min-height: 20px;
+}
+
 .advice {
 	margin: 1px 0 0;
 	font-size: 0.75em;
