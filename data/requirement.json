@@ -1,22 +1,22 @@
 {
 	"1.16.2": [
-		"faithful",
+		"compliance",
 		"fabric"
 	],
 	"1.15.2": [
-		"faithful",
+		"compliance",
 		"fabric"
 	],
 	"1.14.4": [
-		"faithful",
+		"compliance",
 		"fabric"
 	],
 	"1.12.2": [
-		"faithful",
+		"compliance",
 		"forge"
 	],
 	"1.11.2": [
-		"faithful",
+		"compliance",
 		"forge"
 	],
 	"1.10.2": [

@@ -802,31 +802,7 @@
  },
  {
   "name": [
-   "BuilCraft | Compat",
-   "buildcraftcompat",
-   "buildcraft-compat"
-  ],
-  "versions": [
-   "1.12.2",
-   "1.7.10"
-  ],
-  "repository": "Faithful-Mods"
- },
- {
-  "name": [
-   "BuilCraft | Core",
-   "buildcraftcore",
-   "buildcraft-core"
-  ],
-  "versions": [
-   "1.12.2",
-   "1.7.10"
-  ],
-  "repository": "Faithful-Mods"
- },
- {
-  "name": [
-   "BuildCraft",
+   "Buildcraft",
    "buildcraft",
    "buildcraft"
   ],
@@ -837,7 +813,18 @@
  },
  {
   "name": [
-   "BuildCraft | Builders",
+   "Buildcraft Additions",
+   "bcadditions",
+   "buildcraft-additions"
+  ],
+  "versions": [
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Buildcraft Builders",
    "buildcraftbuilders",
    "buildcraft-builders"
   ],
@@ -849,7 +836,31 @@
  },
  {
   "name": [
-   "BuildCraft | Energy",
+   "Buildcraft Compat",
+   "buildcraftcompat",
+   "buildcraft-compat"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Buildcraft Core",
+   "buildcraftcore",
+   "buildcraft-core"
+  ],
+  "versions": [
+   "1.12.2",
+   "1.7.10"
+  ],
+  "repository": "Faithful-Mods"
+ },
+ {
+  "name": [
+   "Buildcraft Energy",
    "buildcraftenergy",
    "buildcraft-energy"
   ],
@@ -861,7 +872,7 @@
  },
  {
   "name": [
-   "BuildCraft | Factory",
+   "Buildcraft Factory",
    "buildcraftfactory",
    "buildcraft-factory"
   ],
@@ -873,7 +884,7 @@
  },
  {
   "name": [
-   "BuildCraft | Robotics",
+   "Buildcraft Robotics",
    "buildcraftrobotics",
    "buildcraft-robotics"
   ],
@@ -884,7 +895,7 @@
  },
  {
   "name": [
-   "BuildCraft | Silicon",
+   "Buildcraft Silicon",
    "buildcraftsilicon",
    "buildcraft-silicon"
   ],
@@ -896,23 +907,12 @@
  },
  {
   "name": [
-   "BuildCraft | Transport",
+   "Buildcraft Transport",
    "buildcrafttransport",
    "buildcraft-transport"
   ],
   "versions": [
    "1.12.2",
-   "1.7.10"
-  ],
-  "repository": "Faithful-Mods"
- },
- {
-  "name": [
-   "Buildcraft | Additions",
-   "bcadditions",
-   "buildcraft-additions"
-  ],
-  "versions": [
    "1.7.10"
   ],
   "repository": "Faithful-Mods"
@@ -2291,7 +2291,7 @@
  },
  {
   "name": [
-   "Industrical Craft 2 (IC2)",
+   "Industrial Craft 2 (IC2)",
    "ic2",
    "industrial-craft"
   ],
@@ -3374,7 +3374,7 @@
  },
  {
   "name": [
-   "PneumaticCraft: Repressurized",
+   "PneumaticCraft",
    "pneumaticcraft",
    "pneumaticcraft-repressurized"
   ],

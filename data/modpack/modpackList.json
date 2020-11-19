@@ -1,6 +1,6 @@
 {
 	"globalBlackList" : {
-		"default" : ["ModLister","Mo' Villages","MTLib","MCMultipart","LunatriusCore","LootTweaker","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"],
+		"default" : ["Micdoodle Core","NetherPortalFix","ModTweaker","Morpheus","More Overlays","ModTweaker","ModLister","Mo' Villages","MTLib","MCMultipart","LunatriusCore","LootTweaker","AromaBackup","AutoRegLib","BdLib","BetterBedrockGen","BetterFps","Chameleon","Clumps","CodeChicken Lib 1.8.+","Colytra","ConnectedTexturesMod","CraftTweaker","FastFurnace","FastWorkbench","FoamFix for Minecraft","Knob Control"],
 		"1.12.2" : ["AppleCore"],
 		"1.10.2" : [],
 		"1.7.10" : []
@@ -63,7 +63,7 @@
 			}
 		},
 		{
-			"displayName": "Project Ozone 3: A New Way Forward",
+			"displayName": "Project Ozone 3 A New Way Forward",
 			"codeName": "po3",
 			"versions": {
 				"1.12.2": ["3.3.59"]
