@@ -1,0 +1,3958 @@
+[
+  {
+    "name": [
+      "/dank/null"
+    ],
+    "assets": {
+      "1.12.2": "danknull"
+    },
+    "curse": "dank-null"
+  },
+  {
+    "name": [
+      "AE2 Stuff"
+    ],
+    "assets": {
+      "1.12.2": "ae2stuff"
+    },
+    "curse": "ae2-stuff"
+  },
+  {
+    "name": [
+      "AIOT Botania"
+    ],
+    "assets": {
+      "1.12.2": "aiotbotania"
+    },
+    "curse": "aiot-botania"
+  },
+  {
+    "name": [
+      "AbyssalCraft"
+    ],
+    "assets": {
+      "1.12.2": "abyssalcraft"
+    },
+    "curse": "abyssalcraft"
+  },
+  {
+    "name": [
+      "Actually Additions"
+    ],
+    "assets": {
+      "1.12.2": "actuallyadditions",
+      "1.11.2": "actuallyadditions",
+      "1.10.2": "actuallyadditions"
+    },
+    "curse": "actually-additions"
+  },
+  {
+    "name": [
+      "Additional Buildcraft Objects"
+    ],
+    "assets": {
+      "1.7.10": "additional-buildcraft-objects"
+    },
+    "curse": "additional-buildcraft-objects"
+  },
+  {
+    "name": [
+      "Additional Pipes for Buildcraft"
+    ],
+    "assets": {
+      "1.7.10": "additionalpipes"
+    },
+    "curse": "additional-pipes-for-buildcraft"
+  },
+  {
+    "name": [
+      "Advanced Generators"
+    ],
+    "assets": {
+      "1.12.2": "advgenerators"
+    },
+    "curse": "advanced-generators"
+  },
+  {
+    "name": [
+      "Advanced Genetics"
+    ],
+    "assets": {
+      "1.7.10": "advancedgenetics"
+    }
+  },
+  {
+    "name": [
+      "Advanced Machines"
+    ],
+    "assets": {
+      "1.7.10": "advancedmachines"
+    },
+    "curse": "advanced-machines"
+  },
+  {
+    "name": [
+      "Advanced Rocketry"
+    ],
+    "assets": {
+      "1.12.2": "advancedrocketry"
+    },
+    "curse": "advanced-rocketry"
+  },
+  {
+    "name": [
+      "Advanced Solar Materials"
+    ],
+    "assets": {
+      "1.12.2": "advsolars"
+    },
+    "curse": "advanced-solar-materials"
+  },
+  {
+    "name": [
+      "Advanced Solar Panel"
+    ],
+    "assets": {
+      "1.7.10": "advancedsolarpanel"
+    },
+    "curse": "advanced-solar-panels"
+  },
+  {
+    "name": [
+      "Advancement Book"
+    ],
+    "assets": {
+      "1.12.2": "advancementbook"
+    },
+    "curse": "advancement-book"
+  },
+  {
+    "name": [
+      "Advancements Enlarger"
+    ],
+    "assets": {
+      "1.16.3": "advancements-enlarger",
+      "1.15.2": "advancements-enlarger"
+    },
+    "curse": "advancements-enlarger"
+  },
+  {
+    "name": [
+      "Advent of Ascension (Nevermine)"
+    ],
+    "assets": {
+      "1.7.10": "nevermine"
+    },
+    "curse": "advent-of-ascension-nevermine"
+  },
+  {
+    "name": [
+      "AgriCraft"
+    ],
+    "assets": {
+      "1.12.2": "agricraft"
+    },
+    "curse": "agricraft"
+  },
+  {
+    "name": [
+      "Akashic Tome"
+    ],
+    "assets": {
+      "1.12.2": "akashictome"
+    },
+    "curse": "akashic-tome"
+  },
+  {
+    "name": [
+      "Alchemical Wizardry"
+    ],
+    "assets": {
+      "1.7.10": "alchemicalwizardry"
+    }
+  },
+  {
+    "name": [
+      "Alchemistry"
+    ],
+    "assets": {
+      "1.12.2": "alchemistry"
+    },
+    "curse": "alchemistry"
+  },
+  {
+    "name": [
+      "Animania"
+    ],
+    "assets": {
+      "1.12.2": "animania"
+    },
+    "curse": "animania"
+  },
+  {
+    "name": [
+      "Another Dusts"
+    ],
+    "assets": {
+      "1.11.2": "anotherdusts",
+      "1.10.2": "anotherdusts",
+      "1.9.4": "anotherdusts"
+    },
+    "curse": "another-dusts"
+  },
+  {
+    "name": [
+      "Another One Bites the Dust"
+    ],
+    "assets": {
+      "1.7.10": "aobd"
+    },
+    "curse": "another-one-bites-the-dust"
+  },
+  {
+    "name": [
+      "Antique Atlas"
+    ],
+    "assets": {
+      "1.7.10": "antiqueatlas"
+    },
+    "curse": "antique-atlas"
+  },
+  {
+    "name": [
+      "AppleCore"
+    ],
+    "assets": {
+      "1.11.2": "applecore",
+      "1.10.2": "applecore",
+      "1.9.4": "applecore",
+      "1.8.9": "applecore",
+      "1.7.10": "applecore"
+    },
+    "curse": "applecore"
+  },
+  {
+    "name": [
+      "AppleSkin"
+    ],
+    "assets": {
+      "1.16.3": "appleskin",
+      "1.15.2": "appleskin",
+      "1.14.4": "appleskin",
+      "1.13.2": "appleskin",
+      "1.12.2": "appleskin",
+      "1.11.2": "appleskin",
+      "1.10.2": "appleskin"
+    },
+    "curse": "appleskin"
+  },
+  {
+    "name": [
+      "Applied Energistics 2"
+    ],
+    "assets": {
+      "1.12.2": "appliedenergistics2",
+      "1.11.2": "appliedenergistics2",
+      "1.10.2": "appliedenergistics2",
+      "1.7.10": "appliedenergistics2"
+    },
+    "curse": "applied-energistics-2"
+  },
+  {
+    "name": [
+      "Archimedes' Ships"
+    ],
+    "assets": {
+      "1.7.10": "archimedes"
+    },
+    "curse": "archimedes-ships"
+  },
+  {
+    "name": [
+      "ArchitectureCraft"
+    ],
+    "assets": {
+      "1.12.2": "architecturecraft"
+    },
+    "curse": "architecturecraft"
+  },
+  {
+    "name": [
+      "Armor Toughness Bar"
+    ],
+    "assets": {
+      "1.12.2": "toughnessbar"
+    },
+    "curse": "armor-toughness-bar"
+  },
+  {
+    "name": [
+      "ArmorPlus"
+    ],
+    "assets": {
+      "1.12.2": "armorplus"
+    },
+    "curse": "armorplus"
+  },
+  {
+    "name": [
+      "Aroma1997s Dimensional World"
+    ],
+    "assets": {
+      "1.12.2": "aroma1997sdimension"
+    },
+    "curse": "aroma1997s-dimensional-world"
+  },
+  {
+    "name": [
+      "Ars Magica 2"
+    ],
+    "assets": {
+      "1.7.10": "arsmagica2"
+    },
+    "curse": "ars-magica-2"
+  },
+  {
+    "name": [
+      "Astral Sorcery"
+    ],
+    "assets": {
+      "1.12.2": "astralsorcery"
+    },
+    "curse": "astral-sorcery"
+  },
+  {
+    "name": [
+      "Auraddons"
+    ],
+    "assets": {
+      "1.12.2": "auraddons"
+    },
+    "curse": "auraddons"
+  },
+  {
+    "name": [
+      "Auto Dropper"
+    ],
+    "assets": {
+      "1.12.2": "autodropper",
+      "1.11.2": "autodropper",
+      "1.10.2": "autodropper"
+    },
+    "curse": "auto-dropper"
+  },
+  {
+    "name": [
+      "Automagy"
+    ],
+    "assets": {
+      "1.7.10": "automagy"
+    },
+    "curse": "automagy"
+  },
+  {
+    "name": [
+      "Avanced Power Management"
+    ],
+    "assets": {
+      "1.7.10": "advancedpowermanagement"
+    }
+  },
+  {
+    "name": [
+      "Avaritia 1.1x"
+    ],
+    "assets": {
+      "1.12.2": "avaritia"
+    },
+    "curse": "avaritia"
+  },
+  {
+    "name": [
+      "Backpack"
+    ],
+    "assets": {
+      "1.12.2": "backpack",
+      "1.8.9": "backpack",
+      "1.7.10": "backpack"
+    },
+    "curse": "forge-backpacks"
+  },
+  {
+    "name": [
+      "Bagginses"
+    ],
+    "assets": {
+      "1.11.2": "bagginses",
+      "1.10.2": "bagginses"
+    },
+    "curse": "bagginses"
+  },
+  {
+    "name": [
+      "Bartworks"
+    ],
+    "assets": {
+      "1.7.10": "bartworks"
+    },
+    "curse": "bartworks"
+  },
+  {
+    "name": [
+      "Baubles"
+    ],
+    "assets": {
+      "1.12.2": "baubles",
+      "1.11.2": "baubles",
+      "1.10.2": "baubles",
+      "1.8.9": "baubles",
+      "1.7.10": "baubles"
+    },
+    "curse": "baubles"
+  },
+  {
+    "name": [
+      "Baubley Heart Canisters"
+    ],
+    "assets": {
+      "1.12.2": "bhc"
+    },
+    "curse": "baubley-heart-canisters"
+  },
+  {
+    "name": [
+      "Beenfo"
+    ],
+    "assets": {
+      "1.16.3": "beenfo",
+      "1.15.2": "beenfo"
+    },
+    "curse": "beenfo"
+  },
+  {
+    "name": [
+      "Better Achievements"
+    ],
+    "assets": {
+      "1.11.2": "betterachievements",
+      "1.10.2": "betterachievements"
+    },
+    "curse": "betterachievements"
+  },
+  {
+    "name": [
+      "Better Advancements"
+    ],
+    "assets": {
+      "1.12.2": "betteradvancements"
+    },
+    "curse": "better-advancements"
+  },
+  {
+    "name": [
+      "Better Builder's Wands"
+    ],
+    "assets": {
+      "1.12.2": "betterbuilderswands",
+      "1.11.2": "betterbuilderswands",
+      "1.10.2": "betterbuilderswands"
+    },
+    "curse": "better-builders-wands"
+  },
+  {
+    "name": [
+      "Better Enchanted Books"
+    ],
+    "assets": {
+      "1.16.3": "bebooks",
+      "1.15.2": "bebooks"
+    },
+    "curse": "better-enchanted-books"
+  },
+  {
+    "name": [
+      "Better Questing"
+    ],
+    "assets": {
+      "1.12.2": "betterquesting"
+    },
+    "curse": "better-questing"
+  },
+  {
+    "name": [
+      "Better Questing - Quest Book"
+    ],
+    "assets": {
+      "1.12.2": "questbook"
+    },
+    "curse": "better-questing-quest-book"
+  },
+  {
+    "name": [
+      "Better Storage"
+    ],
+    "assets": {
+      "1.7.10": "betterstorage"
+    },
+    "curse": "better-storage"
+  },
+  {
+    "name": [
+      "Better With Mods"
+    ],
+    "assets": {
+      "1.12.2": "betterwithmods"
+    },
+    "curse": "bwm-suite"
+  },
+  {
+    "name": [
+      "BetterBeginnings Mod"
+    ],
+    "assets": {
+      "1.7.10": "betterbeginnings"
+    },
+    "curse": "betterbeginnings-mod"
+  },
+  {
+    "name": [
+      "BetterNether"
+    ],
+    "assets": {
+      "1.12.2": "betternether"
+    },
+    "curse": "betternether"
+  },
+  {
+    "name": [
+      "BeyondRealityCore"
+    ],
+    "assets": {
+      "1.7.10": "beyondrealitycore"
+    }
+  },
+  {
+    "name": [
+      "BiblioCraft"
+    ],
+    "assets": {
+      "1.12.2": "bibliocraft",
+      "1.7.10": "bibliocraft"
+    },
+    "curse": "bibliocraft"
+  },
+  {
+    "name": [
+      "Billund"
+    ],
+    "assets": {
+      "1.7.10": "billund"
+    },
+    "curse": "billund-223258"
+  },
+  {
+    "name": [
+      "Binnie Design"
+    ],
+    "assets": {
+      "1.12.2": "binniedesign"
+    },
+    "curse": "binnies-mods"
+  },
+  {
+    "name": [
+      "Binnie's Mods"
+    ],
+    "assets": {
+      "1.12.2": "binniecore",
+      "1.7.10": "binniecore"
+    },
+    "curse": "binnies-mods"
+  },
+  {
+    "name": [
+      "Biomes O' Plenty"
+    ],
+    "assets": {
+      "1.12.2": "biomesoplenty",
+      "1.11.2": "biomesoplenty",
+      "1.10.2": "biomesoplenty",
+      "1.7.10": "biomesoplenty"
+    },
+    "curse": "biomes-o-plenty"
+  },
+  {
+    "name": [
+      "Bis"
+    ],
+    "assets": {
+      "1.7.10": "bis"
+    }
+  },
+  {
+    "name": [
+      "Block Drops (JEI Addon)"
+    ],
+    "assets": {
+      "1.12.2": "blockdrops",
+      "1.11.2": "blockdrops",
+      "1.10.2": "blockdrops"
+    },
+    "curse": "block-drops-jei-addon"
+  },
+  {
+    "name": [
+      "Blood Arsenal"
+    ],
+    "assets": {
+      "1.7.10": "bloodarsenal"
+    },
+    "curse": "blood-arsenal"
+  },
+  {
+    "name": [
+      "Blood Magic"
+    ],
+    "assets": {
+      "1.12.2": "bloodmagic"
+    },
+    "curse": "blood-magic"
+  },
+  {
+    "name": [
+      "Blue Power"
+    ],
+    "assets": {
+      "1.7.10": "bluepower"
+    },
+    "curse": "blue-power"
+  },
+  {
+    "name": [
+      "Books"
+    ],
+    "assets": {
+      "1.7.10": "books"
+    }
+  },
+  {
+    "name": [
+      "Botania"
+    ],
+    "assets": {
+      "1.12.2": "botania",
+      "1.11.2": "botania",
+      "1.10.2": "botania",
+      "1.7.10": "botania"
+    },
+    "curse": "botania"
+  },
+  {
+    "name": [
+      "Botany"
+    ],
+    "assets": {
+      "1.7.10": "botany"
+    },
+    "curse": "binnies-mods"
+  },
+  {
+    "name": [
+      "Buildcraft"
+    ],
+    "assets": {
+      "1.7.10": "buildcraft"
+    },
+    "curse": "buildcraft"
+  },
+  {
+    "name": [
+      "Buildcraft Additions"
+    ],
+    "assets": {
+      "1.7.10": "bcadditions"
+    },
+    "curse": "buildcraft-additions"
+  },
+  {
+    "name": [
+      "Buildcraft Builders"
+    ],
+    "assets": {
+      "1.12.2": "buildcraftbuilders",
+      "1.7.10": "buildcraftbuilders"
+    },
+    "curse": "buildcraft-builders"
+  },
+  {
+    "name": [
+      "Buildcraft Compat"
+    ],
+    "assets": {
+      "1.12.2": "buildcraftcompat",
+      "1.7.10": "buildcraftcompat"
+    },
+    "curse": "buildcraft-compat"
+  },
+  {
+    "name": [
+      "Buildcraft Core"
+    ],
+    "assets": {
+      "1.12.2": "buildcraftcore",
+      "1.7.10": "buildcraftcore"
+    },
+    "curse": "buildcraft-core"
+  },
+  {
+    "name": [
+      "Buildcraft Energy"
+    ],
+    "assets": {
+      "1.12.2": "buildcraftenergy",
+      "1.7.10": "buildcraftenergy"
+    },
+    "curse": "buildcraft-energy"
+  },
+  {
+    "name": [
+      "Buildcraft Factory"
+    ],
+    "assets": {
+      "1.12.2": "buildcraftfactory",
+      "1.7.10": "buildcraftfactory"
+    },
+    "curse": "buildcraft-factory"
+  },
+  {
+    "name": [
+      "Buildcraft Robotics"
+    ],
+    "assets": {
+      "1.7.10": "buildcraftrobotics"
+    },
+    "curse": "buildcraft-robotics"
+  },
+  {
+    "name": [
+      "Buildcraft Silicon"
+    ],
+    "assets": {
+      "1.12.2": "buildcraftsilicon",
+      "1.7.10": "buildcraftsilicon"
+    },
+    "curse": "buildcraft-silicon"
+  },
+  {
+    "name": [
+      "Buildcraft Transport"
+    ],
+    "assets": {
+      "1.12.2": "buildcrafttransport",
+      "1.7.10": "buildcrafttransport"
+    },
+    "curse": "buildcraft-transport"
+  },
+  {
+    "name": [
+      "Building Gadgets"
+    ],
+    "assets": {
+      "1.12.2": "buildinggadgets"
+    },
+    "curse": "building-gadgets"
+  },
+  {
+    "name": [
+      "Bullseye"
+    ],
+    "assets": {
+      "1.12.2": "bullseye",
+      "1.11.2": "bullseye",
+      "1.10.2": "bullseye"
+    },
+    "curse": "bullseye"
+  },
+  {
+    "name": [
+      "Capsule"
+    ],
+    "assets": {
+      "1.8.9": "capsule",
+      "1.7.10": "capsule"
+    },
+    "curse": "capsule"
+  },
+  {
+    "name": [
+      "Career Bees"
+    ],
+    "assets": {
+      "1.12.2": "careerbees"
+    },
+    "curse": "career-bees"
+  },
+  {
+    "name": [
+      "Carpenter's Blocks"
+    ],
+    "assets": {
+      "1.7.10": "carpentersblocks"
+    },
+    "curse": "carpenters-blocks"
+  },
+  {
+    "name": [
+      "Ceramics"
+    ],
+    "assets": {
+      "1.12.2": "ceramics"
+    },
+    "curse": "ceramics"
+  },
+  {
+    "name": [
+      "Chicken Chunks 1.8.+"
+    ],
+    "assets": {
+      "1.12.2": "chickenchunks",
+      "1.11.2": "chickenchunks",
+      "1.10.2": "chickenchunks",
+      "1.7.10": "chickenchunks"
+    },
+    "curse": "chickenchunks"
+  },
+  {
+    "name": [
+      "Chisel"
+    ],
+    "assets": {
+      "1.12.2": "chisel",
+      "1.11.2": "chisel",
+      "1.10.2": "chisel",
+      "1.7.10": "chisel"
+    },
+    "curse": "chisel"
+  },
+  {
+    "name": [
+      "Chisels & Bits"
+    ],
+    "assets": {
+      "1.12.2": "chiselsandbits",
+      "1.8.9": "chiselsandbits"
+    },
+    "curse": "chisels-bits"
+  },
+  {
+    "name": [
+      "Chromaticraft"
+    ],
+    "assets": {
+      "1.7.10": "chromaticraft"
+    },
+    "curse": "chromaticraft"
+  },
+  {
+    "name": [
+      "Classic Bars"
+    ],
+    "assets": {
+      "1.12.2": "classicbar"
+    },
+    "curse": "classic-bars"
+  },
+  {
+    "name": [
+      "Clay Bucket"
+    ],
+    "assets": {
+      "1.12.2": "claybucket"
+    },
+    "curse": "clay-bucket"
+  },
+  {
+    "name": [
+      "CoFH Core"
+    ],
+    "assets": {
+      "1.12.2": "cofh",
+      "1.11.2": "cofh",
+      "1.10.2": "cofh",
+      "1.7.10": "cofh"
+    },
+    "curse": "cofh-core"
+  },
+  {
+    "name": [
+      "Compact Machines 3"
+    ],
+    "assets": {
+      "1.12.2": "compactmachines3"
+    },
+    "curse": "compact-machines"
+  },
+  {
+    "name": [
+      "Compact Solars"
+    ],
+    "assets": {
+      "1.12.2": "compactsolars",
+      "1.7.10": "compactsolars"
+    },
+    "curse": "compact-solars"
+  },
+  {
+    "name": [
+      "ComputerCraft"
+    ],
+    "assets": {
+      "1.12.2": "computercraft",
+      "1.8.9": "computercraft",
+      "1.7.10": "computercraft"
+    },
+    "curse": "computercraft"
+  },
+  {
+    "name": [
+      "Computronics"
+    ],
+    "assets": {
+      "1.7.10": "computronics"
+    }
+  },
+  {
+    "name": [
+      "Construct's Armory"
+    ],
+    "assets": {
+      "1.12.2": "conarm"
+    },
+    "curse": "constructs-armory"
+  },
+  {
+    "name": [
+      "ContentTweaker"
+    ],
+    "assets": {
+      "1.12.2": "contenttweaker"
+    },
+    "curse": "contenttweaker"
+  },
+  {
+    "name": [
+      "Cooking for Blockheads"
+    ],
+    "assets": {
+      "1.12.2": "cookingforblockheads"
+    },
+    "curse": "cooking-for-blockheads"
+  },
+  {
+    "name": [
+      "Cosmetic Armor Reworked"
+    ],
+    "assets": {
+      "1.12.2": "cosmeticarmorreworked",
+      "1.11.2": "cosmeticarmorreworked",
+      "1.10.2": "cosmeticarmorreworked"
+    },
+    "curse": "cosmetic-armor-reworked"
+  },
+  {
+    "name": [
+      "Crafting Station"
+    ],
+    "assets": {
+      "1.12.2": "craftingstation"
+    },
+    "curse": "crafting-station"
+  },
+  {
+    "name": [
+      "Crafting Table IV"
+    ],
+    "assets": {
+      "1.7.10": "craftingtableiv"
+    },
+    "curse": "craftingtable-iv"
+  },
+  {
+    "name": [
+      "Crafting Tweaks"
+    ],
+    "assets": {
+      "1.12.2": "craftingtweaks"
+    },
+    "curse": "crafting-tweaks"
+  },
+  {
+    "name": [
+      "CreativeCore"
+    ],
+    "assets": {
+      "1.12.2": "creativecore",
+      "1.7.10": "creativecore"
+    },
+    "curse": "creativecore"
+  },
+  {
+    "name": [
+      "Curios API"
+    ],
+    "assets": {
+      "1.16.3": "curios",
+      "1.15.2": "curios",
+      "1.14.4": "curios",
+      "1.13.2": "curios"
+    },
+    "curse": "curios"
+  },
+  {
+    "name": [
+      "Cyclic"
+    ],
+    "assets": {
+      "1.12.2": "cyclicmagic"
+    },
+    "curse": "cyclic"
+  },
+  {
+    "name": [
+      "Cyclops Core"
+    ],
+    "assets": {
+      "1.12.2": "cyclopscore"
+    },
+    "curse": "cyclops-core"
+  },
+  {
+    "name": [
+      "Dark Utilities"
+    ],
+    "assets": {
+      "1.12.2": "darkutils",
+      "1.11.2": "darkutils",
+      "1.10.2": "darkutils"
+    },
+    "curse": "dark-utilities"
+  },
+  {
+    "name": [
+      "Davincis Vessels"
+    ],
+    "assets": {
+      "1.12.2": "davincisvessels"
+    },
+    "curse": "davincis-vessels"
+  },
+  {
+    "name": [
+      "Deep Mob Learning"
+    ],
+    "assets": {
+      "1.12.2": "deepmoblearning"
+    },
+    "curse": "deep-mob-learning"
+  },
+  {
+    "name": [
+      "Deep Resonance"
+    ],
+    "assets": {
+      "1.12.2": "deepresonance",
+      "1.11.2": "deepresonance",
+      "1.10.2": "deepresonance"
+    },
+    "curse": "deep-resonance"
+  },
+  {
+    "name": [
+      "Demagnetize"
+    ],
+    "assets": {
+      "1.12.2": "demagnetize"
+    },
+    "curse": "demagnetize"
+  },
+  {
+    "name": [
+      "Dense Metals"
+    ],
+    "assets": {
+      "1.12.2": "densemetals"
+    },
+    "curse": "dense-metals"
+  },
+  {
+    "name": [
+      "Dimensional Anchors"
+    ],
+    "assets": {
+      "1.7.10": "dimanchor"
+    },
+    "curse": "dimensional-anchors"
+  },
+  {
+    "name": [
+      "DimensionalDoors"
+    ],
+    "assets": {
+      "1.7.10": "dimdoors"
+    },
+    "curse": "dimensionaldoors"
+  },
+  {
+    "name": [
+      "Doggy Talents"
+    ],
+    "assets": {
+      "1.7.10": "doggytalents"
+    },
+    "curse": "doggy-talents"
+  },
+  {
+    "name": [
+      "Draconic Evolution"
+    ],
+    "assets": {
+      "1.12.2": "draconicevolution",
+      "1.7.10": "draconicevolution"
+    },
+    "curse": "draconic-evolution"
+  },
+  {
+    "name": [
+      "DreamCraft"
+    ],
+    "assets": {
+      "1.7.10": "dreamcraft"
+    }
+  },
+  {
+    "name": [
+      "EasyCrafting"
+    ],
+    "assets": {
+      "1.7.10": "easycrafting"
+    },
+    "curse": "easycrafting"
+  },
+  {
+    "name": [
+      "Electro-Magic Tools"
+    ],
+    "assets": {
+      "1.7.10": "electromagictools"
+    },
+    "curse": "electro-magic-tools"
+  },
+  {
+    "name": [
+      "Electroblob's Wizardry"
+    ],
+    "assets": {
+      "1.12.2": "ebwizardry"
+    },
+    "curse": "electroblobs-wizardry"
+  },
+  {
+    "name": [
+      "Elevator Mod"
+    ],
+    "assets": {
+      "1.12.2": "elevatorid"
+    }
+  },
+  {
+    "name": [
+      "Embers"
+    ],
+    "assets": {
+      "1.12.2": "embers"
+    },
+    "curse": "embers"
+  },
+  {
+    "name": [
+      "Enchanting Plus"
+    ],
+    "assets": {
+      "1.12.2": "eplus",
+      "1.8.9": "eplus",
+      "1.7.10": "eplus"
+    },
+    "curse": "enchanting-plus"
+  },
+  {
+    "name": [
+      "Enchiridion"
+    ],
+    "assets": {
+      "1.7.10": "enchiridion"
+    },
+    "curse": "enchiridion"
+  },
+  {
+    "name": [
+      "Ender Compass"
+    ],
+    "assets": {
+      "1.12.2": "endercompass",
+      "1.11.2": "endercompass",
+      "1.10.2": "endercompass"
+    },
+    "curse": "ender-compass"
+  },
+  {
+    "name": [
+      "Ender Enhancement"
+    ],
+    "assets": {
+      "1.7.10": "ee"
+    },
+    "curse": "ender-enhancement"
+  },
+  {
+    "name": [
+      "Ender IO"
+    ],
+    "assets": {
+      "1.12.2": "enderio",
+      "1.11.2": "enderio",
+      "1.10.2": "enderio",
+      "1.7.10": "enderio"
+    },
+    "curse": "ender-io"
+  },
+  {
+    "name": [
+      "Ender IO Forestry"
+    ],
+    "assets": {
+      "1.12.2": "enderiointegrationforestry"
+    },
+    "curse": "ender-io-forestry"
+  },
+  {
+    "name": [
+      "Ender IO Machines"
+    ],
+    "assets": {
+      "1.12.2": "enderiomachines"
+    },
+    "curse": "ender-io-machines"
+  },
+  {
+    "name": [
+      "Ender Storage 1.8.+"
+    ],
+    "assets": {
+      "1.12.2": "enderstorage",
+      "1.7.10": "enderstorage"
+    },
+    "curse": "ender-storage-1-8"
+  },
+  {
+    "name": [
+      "Ender Zoo"
+    ],
+    "assets": {
+      "1.8.9": "enderzoo",
+      "1.7.10": "enderzoo"
+    },
+    "curse": "ender-zoo"
+  },
+  {
+    "name": [
+      "EnderCore"
+    ],
+    "assets": {
+      "1.12.2": "endercore",
+      "1.11.2": "endercore",
+      "1.10.2": "endercore"
+    },
+    "curse": "endercore"
+  },
+  {
+    "name": [
+      "EnderTech"
+    ],
+    "assets": {
+      "1.7.10": "endertech"
+    },
+    "curse": "endertech"
+  },
+  {
+    "name": [
+      "Enhanced Portal 3"
+    ],
+    "assets": {
+      "1.7.10": "enhancedportals"
+    },
+    "curse": "enhanced-portals-3"
+  },
+  {
+    "name": [
+      "EnviroMine"
+    ],
+    "assets": {
+      "1.7.10": "enviromine"
+    },
+    "curse": "enviromine"
+  },
+  {
+    "name": [
+      "Environmental Tech"
+    ],
+    "assets": {
+      "1.12.2": "environmentaltech"
+    },
+    "curse": "environmental-tech"
+  },
+  {
+    "name": [
+      "Equivalent Energistics"
+    ],
+    "assets": {
+      "1.12.2": "equivalentenergistics"
+    },
+    "curse": "equivalent-energistics"
+  },
+  {
+    "name": [
+      "Equivalent Exchange 3"
+    ],
+    "assets": {
+      "1.7.10": "ee3"
+    },
+    "curse": "ee3"
+  },
+  {
+    "name": [
+      "Equivalent Integrations"
+    ],
+    "assets": {
+      "1.12.2": "equivalentintegrations"
+    },
+    "curse": "equivalent-integrations"
+  },
+  {
+    "name": [
+      "Et Futurum"
+    ],
+    "assets": {
+      "1.7.10": "etfuturum"
+    },
+    "curse": "et-futurum"
+  },
+  {
+    "name": [
+      "Eureka"
+    ],
+    "assets": {
+      "1.7.10": "eureka"
+    },
+    "curse": "eureka"
+  },
+  {
+    "name": [
+      "Ex Astris"
+    ],
+    "assets": {
+      "1.7.10": "exastris"
+    },
+    "curse": "ex-astris"
+  },
+  {
+    "name": [
+      "Ex Compressum"
+    ],
+    "assets": {
+      "1.12.2": "excompressum",
+      "1.11.2": "excompressum",
+      "1.10.2": "excompressum",
+      "1.7.10": "excompressum"
+    },
+    "curse": "ex-compressum"
+  },
+  {
+    "name": [
+      "Ex Nihilo"
+    ],
+    "assets": {
+      "1.7.10": "exnihilo"
+    }
+  },
+  {
+    "name": [
+      "Ex Nihilo Adscensio"
+    ],
+    "assets": {
+      "1.11.2": "exnihiloadscensio",
+      "1.10.2": "exnihiloadscensio"
+    },
+    "curse": "ex-nihilo-adscensio"
+  },
+  {
+    "name": [
+      "Ex Nihilo: Creatio"
+    ],
+    "assets": {
+      "1.12.2": "exnihilocreatio"
+    },
+    "curse": "ex-nihilo-creatio"
+  },
+  {
+    "name": [
+      "Exchangers"
+    ],
+    "assets": {
+      "1.12.2": "exchangers"
+    },
+    "curse": "exchangers"
+  },
+  {
+    "name": [
+      "Expandable Backpacks"
+    ],
+    "assets": {
+      "1.12.2": "expandablebackpack",
+      "1.11.2": "expandablebackpack",
+      "1.10.2": "expandablebackpack"
+    },
+    "curse": "expandable-backpacks"
+  },
+  {
+    "name": [
+      "Extended Crafting"
+    ],
+    "assets": {
+      "1.12.2": "extendedcrafting"
+    },
+    "curse": "extended-crafting"
+  },
+  {
+    "name": [
+      "Extra Bees"
+    ],
+    "assets": {
+      "1.12.2": "extrabees",
+      "1.7.10": "extrabees"
+    },
+    "curse": "binnies-mods"
+  },
+  {
+    "name": [
+      "Extra Trees"
+    ],
+    "assets": {
+      "1.12.2": "extratrees",
+      "1.7.10": "extratrees"
+    },
+    "curse": "binnies-mods"
+  },
+  {
+    "name": [
+      "Extra Utilities"
+    ],
+    "assets": {
+      "1.7.10": "extrautils"
+    },
+    "curse": "extra-utilities"
+  },
+  {
+    "name": [
+      "Extra Utilities 2"
+    ],
+    "assets": {
+      "1.12.2": "extrautils2",
+      "1.11.2": "extrautils2",
+      "1.10.2": "extrautils2"
+    },
+    "curse": "extra-utilities"
+  },
+  {
+    "name": [
+      "ExtraCells2"
+    ],
+    "assets": {
+      "1.12.2": "extracells",
+      "1.7.10": "extracells"
+    },
+    "curse": "extracells2"
+  },
+  {
+    "name": [
+      "ExtraPlanets"
+    ],
+    "assets": {
+      "1.12.2": "extraplanets"
+    },
+    "curse": "extraplanets"
+  },
+  {
+    "name": [
+      "ExtraTiC"
+    ],
+    "assets": {
+      "1.7.10": "extratic"
+    },
+    "curse": "extratic"
+  },
+  {
+    "name": [
+      "ExtrabiomesXL"
+    ],
+    "assets": {
+      "1.7.10": "extrabiomesxl"
+    },
+    "curse": "extrabiomesxl"
+  },
+  {
+    "name": [
+      "Extreme Reactors"
+    ],
+    "assets": {
+      "1.12.2": "bigreactors",
+      "1.11.2": "bigreactors",
+      "1.10.2": "bigreactors",
+      "1.7.10": "bigreactors"
+    },
+    "curse": "extreme-reactors"
+  },
+  {
+    "name": [
+      "Factorization"
+    ],
+    "assets": {
+      "1.7.10": "factorization"
+    },
+    "curse": "factorization-unofficial"
+  },
+  {
+    "name": [
+      "Farming for Blockheads"
+    ],
+    "assets": {
+      "1.12.2": "farmingforblockheads"
+    },
+    "curse": "farming-for-blockheads"
+  },
+  {
+    "name": [
+      "Flat Colored Blocks"
+    ],
+    "assets": {
+      "1.12.2": "flatcoloredblocks"
+    },
+    "curse": "flat-colored-blocks"
+  },
+  {
+    "name": [
+      "Flux Networks"
+    ],
+    "assets": {
+      "1.12.2": "fluxnetworks"
+    },
+    "curse": "flux-networks"
+  },
+  {
+    "name": [
+      "Fluxed-Crystals"
+    ],
+    "assets": {
+      "1.7.10": "fluxedcrystals"
+    },
+    "curse": "fluxed-crystals"
+  },
+  {
+    "name": [
+      "Forbidden Mod"
+    ],
+    "assets": {
+      "1.7.10": "forbidden"
+    },
+    "curse": "forbidden-mod"
+  },
+  {
+    "name": [
+      "Forestry"
+    ],
+    "assets": {
+      "1.12.2": "forestry",
+      "1.11.2": "forestry",
+      "1.10.2": "forestry",
+      "1.7.10": "forestry"
+    },
+    "curse": "forestry"
+  },
+  {
+    "name": [
+      "Forge MultiPart CBE"
+    ],
+    "assets": {
+      "1.12.2": "microblockcbe"
+    },
+    "curse": "forge-multipart-cbe"
+  },
+  {
+    "name": [
+      "Funky Locomotion"
+    ],
+    "assets": {
+      "1.7.10": "funkylocomotion"
+    },
+    "curse": "funky-locomotion"
+  },
+  {
+    "name": [
+      "Furnace Overhaul"
+    ],
+    "assets": {
+      "1.12.2": "furnaceoverhaul"
+    },
+    "curse": "furnace-overhaul"
+  },
+  {
+    "name": [
+      "Future MC"
+    ],
+    "assets": {
+      "1.12.2": "futuremc"
+    },
+    "curse": "future-mc"
+  },
+  {
+    "name": [
+      "GalactiCraft Asteroids"
+    ],
+    "assets": {
+      "1.7.10": "galacticraftasteroids"
+    }
+  },
+  {
+    "name": [
+      "GalactiCraft Core"
+    ],
+    "assets": {
+      "1.12.2": "galacticraftcore",
+      "1.7.10": "galacticraftcore"
+    }
+  },
+  {
+    "name": [
+      "GalactiCraft Mars"
+    ],
+    "assets": {
+      "1.7.10": "galacticraftmars"
+    }
+  },
+  {
+    "name": [
+      "GalactiCraft Moon"
+    ],
+    "assets": {
+      "1.7.10": "galacticraftmoon"
+    }
+  },
+  {
+    "name": [
+      "GalactiCraft Planets"
+    ],
+    "assets": {
+      "1.12.2": "galacticraftplanets"
+    }
+  },
+  {
+    "name": [
+      "Gany's Surface"
+    ],
+    "assets": {
+      "1.7.10": "ganyssurface"
+    },
+    "curse": "ganys-surface"
+  },
+  {
+    "name": [
+      "Gendustry"
+    ],
+    "assets": {
+      "1.12.2": "gendustry"
+    },
+    "curse": "gendustry"
+  },
+  {
+    "name": [
+      "Genetics Reborn"
+    ],
+    "assets": {
+      "1.12.2": "genetics",
+      "1.7.10": "genetics"
+    },
+    "curse": "genetics-reborn"
+  },
+  {
+    "name": [
+      "GeoStrata"
+    ],
+    "assets": {
+      "1.7.10": "geostrata"
+    },
+    "curse": "geostrata"
+  },
+  {
+    "name": [
+      "Goetia"
+    ],
+    "assets": {
+      "1.12.2": "goetia",
+      "1.11.2": "goetia",
+      "1.10.2": "goetia"
+    },
+    "curse": "goetia"
+  },
+  {
+    "name": [
+      "Gravitation Suite"
+    ],
+    "assets": {
+      "1.7.10": "gravisuite"
+    },
+    "curse": "gravitation-suite"
+  },
+  {
+    "name": [
+      "Gravity Gun"
+    ],
+    "assets": {
+      "1.7.10": "gravigun"
+    },
+    "curse": "gravity-gun"
+  },
+  {
+    "name": [
+      "GregTech"
+    ],
+    "assets": {
+      "1.12.2": "gregtech",
+      "1.7.10": "gregtech"
+    },
+    "curse": "gregtechce"
+  },
+  {
+    "name": [
+      "Guide-API"
+    ],
+    "assets": {
+      "1.12.2": "guideapi"
+    },
+    "curse": "guide-api"
+  },
+  {
+    "name": [
+      "Hazards"
+    ],
+    "assets": {
+      "1.7.10": "hazards"
+    }
+  },
+  {
+    "name": [
+      "Hearth Well"
+    ],
+    "assets": {
+      "1.12.2": "hwell"
+    },
+    "curse": "hearth-well"
+  },
+  {
+    "name": [
+      "Highlands"
+    ],
+    "assets": {
+      "1.7.10": "highlands"
+    },
+    "curse": "highlands"
+  },
+  {
+    "name": [
+      "HitWithAxe"
+    ],
+    "assets": {
+      "1.12.2": "hitwithaxe"
+    },
+    "curse": "hitwithaxe"
+  },
+  {
+    "name": [
+      "Hopper Ducts"
+    ],
+    "assets": {
+      "1.7.10": "hopperductmod"
+    },
+    "curse": "hopper-ducts"
+  },
+  {
+    "name": [
+      "Hunting Dimension"
+    ],
+    "assets": {
+      "1.12.2": "huntingdim"
+    },
+    "curse": "hunting-dimension"
+  },
+  {
+    "name": [
+      "IHL Tools & Machines"
+    ],
+    "assets": {
+      "1.7.10": "ihl"
+    }
+  },
+  {
+    "name": [
+      "Ice and Fire"
+    ],
+    "assets": {
+      "1.12.2": "iceandfire"
+    },
+    "curse": "ice-and-fire-dragons"
+  },
+  {
+    "name": [
+      "Iguanas Tinker Tweaks"
+    ],
+    "assets": {
+      "1.7.10": "iguanatweakstconstruct"
+    },
+    "curse": "iguanas-tinker-tweaks"
+  },
+  {
+    "name": [
+      "Immersive Engineering"
+    ],
+    "assets": {
+      "1.12.2": "immersiveengineering",
+      "1.11.2": "immersiveengineering",
+      "1.10.2": "immersiveengineering",
+      "1.7.10": "immersiveengineering"
+    },
+    "curse": "immersive-engineering"
+  },
+  {
+    "name": [
+      "Immersive Integration"
+    ],
+    "assets": {
+      "1.7.10": "immersiveintegration"
+    },
+    "curse": "immersive-integration"
+  },
+  {
+    "name": [
+      "Immersive Petroleum"
+    ],
+    "assets": {
+      "1.12.2": "immersivepetroleum"
+    },
+    "curse": "immersive-petroleum"
+  },
+  {
+    "name": [
+      "Immibis's Microblocks"
+    ],
+    "assets": {
+      "1.7.10": "microblock"
+    }
+  },
+  {
+    "name": [
+      "Industrial Foregoing"
+    ],
+    "assets": {
+      "1.12.2": "industrialforegoing"
+    },
+    "curse": "industrial-foregoing"
+  },
+  {
+    "name": [
+      "Industrial Craft 2 (IC2)"
+    ],
+    "assets": {
+      "1.12.2": "ic2",
+      "1.11.2": "ic2",
+      "1.10.2": "ic2",
+      "1.7.10": "ic2"
+    },
+    "curse": "industrial-craft"
+  },
+  {
+    "name": [
+      "Inspirations"
+    ],
+    "assets": {
+      "1.12.2": "inspirations"
+    }
+  },
+  {
+    "name": [
+      "Integrated Crafting"
+    ],
+    "assets": {
+      "1.12.2": "integratedcrafting"
+    },
+    "curse": "integrated-crafting"
+  },
+  {
+    "name": [
+      "Integrated Dynamics"
+    ],
+    "assets": {
+      "1.12.2": "integrateddynamics"
+    },
+    "curse": "integrated-dynamics"
+  },
+  {
+    "name": [
+      "Integrated Dynamics Compatibility"
+    ],
+    "assets": {
+      "1.12.2": "integrateddynamicscompat"
+    },
+    "curse": "integrated-dynamics"
+  },
+  {
+    "name": [
+      "Integrated Terminals"
+    ],
+    "assets": {
+      "1.12.2": "integratedterminals"
+    },
+    "curse": "integrated-terminals"
+  },
+  {
+    "name": [
+      "Integrated Tunnels"
+    ],
+    "assets": {
+      "1.12.2": "integratedtunnels"
+    },
+    "curse": "https://minecraft.curseforge.com/projects/integrated-tunnels"
+  },
+  {
+    "name": [
+      "Inventory Profiles"
+    ],
+    "assets": {
+      "1.15.2": "inventoryprofiles",
+      "1.14.4": "inventoryprofiles"
+    },
+    "curse": "inventory-profiles"
+  },
+  {
+    "name": [
+      "Iron Backpacks"
+    ],
+    "assets": {
+      "1.12.2": "ironbackpacks",
+      "1.11.2": "ironbackpacks",
+      "1.10.2": "ironbackpacks"
+    },
+    "curse": "iron-backpacks"
+  },
+  {
+    "name": [
+      "Iron Chests"
+    ],
+    "assets": {
+      "1.12.2": "ironchest",
+      "1.11.2": "ironchest",
+      "1.10.2": "ironchest",
+      "1.8.9": "ironchest",
+      "1.7.10": "ironchest"
+    },
+    "curse": "iron-chests"
+  },
+  {
+    "name": [
+      "Iron Tanks"
+    ],
+    "assets": {
+      "1.7.10": "irontank"
+    },
+    "curse": "iron-tanks"
+  },
+  {
+    "name": [
+      "JAOPCA"
+    ],
+    "assets": {
+      "1.12.2": "jaopca"
+    },
+    "curse": "jaopca"
+  },
+  {
+    "name": [
+      "JAOPCA Ore Chunks (AOBD)"
+    ],
+    "assets": {
+      "1.12.2": "jaopcaoc"
+    },
+    "curse": "aobd-ore-chunks"
+  },
+  {
+    "name": [
+      "JEI Bees"
+    ],
+    "assets": {
+      "1.12.2": "jeibees"
+    },
+    "curse": "jei-bees"
+  },
+  {
+    "name": [
+      "JEI Villagers"
+    ],
+    "assets": {
+      "1.12.2": "jeivillagers"
+    },
+    "curse": "jei-villagers"
+  },
+  {
+    "name": [
+      "Jabba"
+    ],
+    "assets": {
+      "1.7.10": "jabba"
+    },
+    "curse": "jabba"
+  },
+  {
+    "name": [
+      "Just Enough Items (JEI)"
+    ],
+    "assets": {
+      "1.16.3": "jei",
+      "1.15.2": "jei",
+      "1.14.4": "jei",
+      "1.13.2": "jei",
+      "1.12.2": "jei",
+      "1.11.2": "jei",
+      "1.10.2": "jei",
+      "1.9.4": "jei",
+      "1.8.9": "jei"
+    },
+    "curse": "jei"
+  },
+  {
+    "name": [
+      "Just Enough Reactors"
+    ],
+    "assets": {
+      "1.12.2": "justenoughreactors"
+    },
+    "curse": "just-enough-reactors"
+  },
+  {
+    "name": [
+      "Just Enough Resources (JER)"
+    ],
+    "assets": {
+      "1.12.2": "jeresources",
+      "1.11.2": "jeresources",
+      "1.10.2": "jeresources",
+      "1.7.10": "jeresources"
+    },
+    "curse": "just-enough-resources-jer"
+  },
+  {
+    "name": [
+      "Just Enough Throwing In Fluids (JETIF)"
+    ],
+    "assets": {
+      "1.12.2": "jetif"
+    },
+    "curse": "jetif"
+  },
+  {
+    "name": [
+      "Karat Garden"
+    ],
+    "assets": {
+      "1.12.2": "karatgarden"
+    },
+    "curse": "karat-garden"
+  },
+  {
+    "name": [
+      "LandCore"
+    ],
+    "assets": {
+      "1.12.2": "landcore"
+    }
+  },
+  {
+    "name": [
+      "LandCraft"
+    ],
+    "assets": {
+      "1.12.2": "landcraft"
+    }
+  },
+  {
+    "name": [
+      "LibVulpes"
+    ],
+    "assets": {
+      "1.12.2": "libvulpes",
+      "1.11.2": "libvulpes",
+      "1.10.2": "libvulpes",
+      "1.7.10": "libvulpes"
+    },
+    "curse": "libvulpes"
+  },
+  {
+    "name": [
+      "LittleTiles"
+    ],
+    "assets": {
+      "1.12.2": "littletiles"
+    },
+    "curse": "littletiles"
+  },
+  {
+    "name": [
+      "Logistics Pipes"
+    ],
+    "assets": {
+      "1.7.10": "logisticspipes"
+    },
+    "curse": "logistics-pipes"
+  },
+  {
+    "name": [
+      "LootBags"
+    ],
+    "assets": {
+      "1.12.2": "lootbags"
+    },
+    "curse": "lootbags"
+  },
+  {
+    "name": [
+      "Lucky Block"
+    ],
+    "assets": {
+      "1.7.10": "lucky"
+    }
+  },
+  {
+    "name": [
+      "Lumberjack"
+    ],
+    "assets": {
+      "1.12.2": "lumberjack"
+    },
+    "curse": "lumberjack"
+  },
+  {
+    "name": [
+      "Magia Naturalis"
+    ],
+    "assets": {
+      "1.7.10": "magianaturalis"
+    }
+  },
+  {
+    "name": [
+      "Magic Bees"
+    ],
+    "assets": {
+      "1.12.2": "magicbees",
+      "1.7.10": "magicbees"
+    },
+    "curse": "magic-bees"
+  },
+  {
+    "name": [
+      "Magical Crops"
+    ],
+    "assets": {
+      "1.7.10": "magicalcrops"
+    },
+    "curse": "magical-crops"
+  },
+  {
+    "name": [
+      "Magneticraft"
+    ],
+    "assets": {
+      "1.12.2": "magneticraft",
+      "1.7.10": "magneticraft"
+    },
+    "curse": "magneticraft"
+  },
+  {
+    "name": [
+      "MalisisDoors"
+    ],
+    "assets": {
+      "1.12.2": "malisisdoors",
+      "1.7.10": "malisisdoors"
+    },
+    "curse": "malisisdoors"
+  },
+  {
+    "name": [
+      "Mantle"
+    ],
+    "assets": {
+      "1.12.2": "mantle"
+    },
+    "curse": "mantle"
+  },
+  {
+    "name": [
+      "Matter Overdrive"
+    ],
+    "assets": {
+      "1.7.10": "mo"
+    },
+    "curse": "matteroverdrive-17-edition"
+  },
+  {
+    "name": [
+      "Mekanism"
+    ],
+    "assets": {
+      "1.12.2": "mekanism",
+      "1.11.2": "mekanism",
+      "1.10.2": "mekanism",
+      "1.7.10": "mekanism"
+    },
+    "curse": "mekanism"
+  },
+  {
+    "name": [
+      "Mekanism Generators"
+    ],
+    "assets": {
+      "1.12.2": "mekanismgenerators"
+    },
+    "curse": "mekanism-generators"
+  },
+  {
+    "name": [
+      "Mekanism Tools"
+    ],
+    "assets": {
+      "1.12.2": "mekanismtools",
+      "1.11.2": "mekanismtools",
+      "1.10.2": "mekanismtools",
+      "1.7.10": "mekanismtools"
+    },
+    "curse": "mekanism-tools"
+  },
+  {
+    "name": [
+      "Metallurgy"
+    ],
+    "assets": {
+      "1.7.10": "metallurgy"
+    },
+    "curse": "metallurgy"
+  },
+  {
+    "name": [
+      "Mine & Blade: Battlegear 2"
+    ],
+    "assets": {
+      "1.7.10": "battlegear2"
+    },
+    "curse": "mb-battlegear-2"
+  },
+  {
+    "name": [
+      "Mine Souls"
+    ],
+    "assets": {
+      "1.12.2": "minesouls",
+      "1.11.2": "minesouls",
+      "1.10.2": "minesouls",
+      "1.7.10": "minesouls"
+    },
+    "curse": "mine-souls"
+  },
+  {
+    "name": [
+      "Minefactory Reloaded"
+    ],
+    "assets": {
+      "1.7.10": "minefactoryreloaded"
+    },
+    "curse": "minefactory-reloaded"
+  },
+  {
+    "name": [
+      "Mineswagg"
+    ],
+    "assets": {
+      "1.7.10": "mineswagg"
+    }
+  },
+  {
+    "name": [
+      "MiniCoal"
+    ],
+    "assets": {
+      "1.12.2": "minicoal",
+      "1.11.2": "minicoal",
+      "1.10.2": "minicoal",
+      "1.7.10": "minicoal"
+    },
+    "curse": "minicoal"
+  },
+  {
+    "name": [
+      "MiscUtils [Modding Utilities]"
+    ],
+    "assets": {
+      "1.7.10": "miscutils"
+    },
+    "curse": "miscutils-modding-utilities"
+  },
+  {
+    "name": [
+      "Mo Glass"
+    ],
+    "assets": {
+      "1.16.3": "mo_glass",
+      "1.15.2": "mo_glass"
+    },
+    "curse": "mo-glass"
+  },
+  {
+    "name": [
+      "Mod Menu"
+    ],
+    "assets": {
+      "1.16.3": "modmenu",
+      "1.15.2": "modmenu",
+      "1.14.4": "modmenu"
+    },
+    "curse": "modmenu"
+  },
+  {
+    "name": [
+      "Modular Force Field Systems (MFFS)"
+    ],
+    "assets": {
+      "1.7.10": "mffs"
+    },
+    "curse": "mffs"
+  },
+  {
+    "name": [
+      "Modular Machinery"
+    ],
+    "assets": {
+      "1.12.2": "modularmachinery"
+    },
+    "curse": "modular-machinery"
+  },
+  {
+    "name": [
+      "Modular Powersuits"
+    ],
+    "assets": {
+      "1.7.10": "powersuits"
+    },
+    "curse": "modular-powersuits"
+  },
+  {
+    "name": [
+      "Modular Powersuits Addons"
+    ],
+    "assets": {
+      "1.7.10": "powersuitaddons"
+    }
+  },
+  {
+    "name": [
+      "Monster Girl Mod"
+    ],
+    "assets": {
+      "1.7.10": "monstergirlmod"
+    }
+  },
+  {
+    "name": [
+      "More Furnaces"
+    ],
+    "assets": {
+      "1.12.2": "morefurnaces"
+    },
+    "curse": "more-furnaces"
+  },
+  {
+    "name": [
+      "More Plates"
+    ],
+    "assets": {
+      "1.12.2": "moreplates"
+    },
+    "curse": "moreplates"
+  },
+  {
+    "name": [
+      "More Swords Mod"
+    ],
+    "assets": {
+      "1.7.10": "moreswords"
+    },
+    "curse": "more-swords-mod"
+  },
+  {
+    "name": [
+      "MoreChisels"
+    ],
+    "assets": {
+      "1.7.10": "morechisels"
+    },
+    "curse": "morechisels"
+  },
+  {
+    "name": [
+      "Morph-o-Tool"
+    ],
+    "assets": {
+      "1.12.2": "morphtool",
+      "1.11.2": "morphtool",
+      "1.10.2": "morphtool",
+      "1.7.10": "morphtool"
+    },
+    "curse": "morph-o-tool"
+  },
+  {
+    "name": [
+      "MrCrayfish's Furniture Mod"
+    ],
+    "assets": {
+      "1.7.10": "cfm"
+    },
+    "curse": "mrcrayfish-furniture-mod"
+  },
+  {
+    "name": [
+      "MrTJPCore"
+    ],
+    "assets": {
+      "1.7.10": "mrtjpcore"
+    },
+    "curse": "mrtjpcore"
+  },
+  {
+    "name": [
+      "Mystcraft"
+    ],
+    "assets": {
+      "1.7.10": "mystcraft"
+    },
+    "curse": "mystcraft"
+  },
+  {
+    "name": [
+      "Mystical Adaptations"
+    ],
+    "assets": {
+      "1.12.2": "mysticaladaptations"
+    },
+    "curse": "mystical-adaptations"
+  },
+  {
+    "name": [
+      "Mystical Agradditions"
+    ],
+    "assets": {
+      "1.12.2": "mysticalagradditions"
+    },
+    "curse": "mystical-agradditions"
+  },
+  {
+    "name": [
+      "Mystical Agriculture"
+    ],
+    "assets": {
+      "1.12.2": "mysticalagriculture",
+      "1.11.2": "mysticalagriculture",
+      "1.10.2": "mysticalagriculture",
+      "1.7.10": "mysticalagriculture"
+    },
+    "curse": "mystical-agriculture"
+  },
+  {
+    "name": [
+      "Mystical World"
+    ],
+    "assets": {
+      "1.12.2": "mysticalworld"
+    },
+    "curse": "mystical-world"
+  },
+  {
+    "name": [
+      "Natura"
+    ],
+    "assets": {
+      "1.12.2": "natura",
+      "1.11.2": "natura",
+      "1.10.2": "natura",
+      "1.7.10": "natura"
+    },
+    "curse": "natura"
+  },
+  {
+    "name": [
+      "Nature's Aura"
+    ],
+    "assets": {
+      "1.12.2": "naturesaura"
+    },
+    "curse": "natures-aura"
+  },
+  {
+    "name": [
+      "Nether Metals"
+    ],
+    "assets": {
+      "1.12.2": "nethermetals",
+      "1.11.2": "nethermetals",
+      "1.10.2": "nethermetals",
+      "1.7.10": "nethermetals"
+    },
+    "curse": "nether-metals"
+  },
+  {
+    "name": [
+      "Nether Things"
+    ],
+    "assets": {
+      "1.14.4": "netherthings"
+    },
+    "curse": "nether-things"
+  },
+  {
+    "name": [
+      "NetherEx"
+    ],
+    "assets": {
+      "1.12.2": "netherex"
+    },
+    "curse": "netherex"
+  },
+  {
+    "name": [
+      "NetherOres"
+    ],
+    "assets": {
+      "1.7.10": "netherores"
+    },
+    "curse": "netherores"
+  },
+  {
+    "name": [
+      "Netherending Ores"
+    ],
+    "assets": {
+      "1.12.2": "netherendingores"
+    },
+    "curse": "netherending-ores"
+  },
+  {
+    "name": [
+      "Netherite Horse Armor"
+    ],
+    "assets": {
+      "1.16.3": "netheritehorsearmor"
+    },
+    "curse": "netherite-horse-armor"
+  },
+  {
+    "name": [
+      "Not Enough Items (NEI)"
+    ],
+    "assets": {
+      "1.12.2": "nei",
+      "1.11.2": "nei",
+      "1.9.4": "nei",
+      "1.8.9": "nei",
+      "1.7.10": "nei"
+    },
+    "curse": "not-enough-items-1-8"
+  },
+  {
+    "name": [
+      "Not Enough Wands"
+    ],
+    "assets": {
+      "1.12.2": "notenoughwands"
+    },
+    "curse": "not-enough-wands"
+  },
+  {
+    "name": [
+      "NotEnoughScaffold"
+    ],
+    "assets": {
+      "1.12.2": "notenoughscaffold"
+    },
+    "curse": "notenoughscaffold"
+  },
+  {
+    "name": [
+      "Nuclear Control 2"
+    ],
+    "assets": {
+      "1.7.10": "nuclearcontrol"
+    },
+    "curse": "nuclear-control-2"
+  },
+  {
+    "name": [
+      "NuclearCraft"
+    ],
+    "assets": {
+      "1.7.10": "nc"
+    },
+    "curse": "nuclearcraft-mod"
+  },
+  {
+    "name": [
+      "NuclearCraft"
+    ],
+    "assets": {
+      "1.12.2": "nuclearcraft"
+    },
+    "curse": "nuclearcraft-mod"
+  },
+  {
+    "name": [
+      "Nutrition"
+    ],
+    "assets": {
+      "1.12.2": "nutrition"
+    }
+  },
+  {
+    "name": [
+      "Open Glider"
+    ],
+    "assets": {
+      "1.12.2": "openglider"
+    },
+    "curse": "open-glider"
+  },
+  {
+    "name": [
+      "OpenBlocks"
+    ],
+    "assets": {
+      "1.12.2": "openblocks",
+      "1.7.10": "openblocks"
+    },
+    "curse": "openblocks"
+  },
+  {
+    "name": [
+      "OpenCCSensors"
+    ],
+    "assets": {
+      "1.7.10": "openccsensors"
+    }
+  },
+  {
+    "name": [
+      "OpenComputers"
+    ],
+    "assets": {
+      "1.12.2": "opencomputers",
+      "1.11.2": "opencomputers",
+      "1.10.2": "opencomputers",
+      "1.7.10": "opencomputers"
+    },
+    "curse": "opencomputers"
+  },
+  {
+    "name": [
+      "OpenEye"
+    ],
+    "assets": {
+      "1.7.10": "openeye"
+    },
+    "curse": "openeye"
+  },
+  {
+    "name": [
+      "Overworld Quartz"
+    ],
+    "assets": {
+      "1.12.2": "overworld-quartz",
+      "1.11.2": "overworld-quartz",
+      "1.10.2": "overworld-quartz",
+      "1.7.10": "overworld-quartz"
+    },
+    "curse": "overworld-quartz"
+  },
+  {
+    "name": [
+      "PackagedAuto"
+    ],
+    "assets": {
+      "1.12.2": "packagedauto"
+    },
+    "curse": "packagedauto"
+  },
+  {
+    "name": [
+      "Pam's HarvestCraft"
+    ],
+    "assets": {
+      "1.12.2": "harvestcraft",
+      "1.11.2": "harvestcraft",
+      "1.10.2": "harvestcraft",
+      "1.7.10": "harvestcraft"
+    },
+    "curse": "pams-harvestcraft"
+  },
+  {
+    "name": [
+      "Peripherals++"
+    ],
+    "assets": {
+      "1.7.10": "peripheralsplusplus"
+    },
+    "curse": "peripherals"
+  },
+  {
+    "name": [
+      "Pickle Tweaks"
+    ],
+    "assets": {
+      "1.12.2": "pickletweaks"
+    },
+    "curse": "pickle-tweaks"
+  },
+  {
+    "name": [
+      "Player Stats 2"
+    ],
+    "assets": {
+      "1.12.2": "playerstats",
+      "1.11.2": "playerstats",
+      "1.10.2": "playerstats",
+      "1.7.10": "playerstats"
+    }
+  },
+  {
+    "name": [
+      "PlusTiC"
+    ],
+    "assets": {
+      "1.12.2": "plustic"
+    }
+  },
+  {
+    "name": [
+      "PneumaticCraft"
+    ],
+    "assets": {
+      "1.12.2": "pneumaticcraft",
+      "1.7.10": "pneumaticcraft"
+    },
+    "curse": "pneumaticcraft-repressurized"
+  },
+  {
+    "name": [
+      "PoorOres"
+    ],
+    "assets": {
+      "1.7.10": "poorores"
+    },
+    "curse": "poorores"
+  },
+  {
+    "name": [
+      "Portal Gun"
+    ],
+    "assets": {
+      "1.7.10": "portalgun"
+    },
+    "curse": "portal-gun"
+  },
+  {
+    "name": [
+      "Power Converters 3"
+    ],
+    "assets": {
+      "1.7.10": "powerconverters"
+    },
+    "curse": "power-converters3"
+  },
+  {
+    "name": [
+      "Primal Tech"
+    ],
+    "assets": {
+      "1.12.2": "primal_tech"
+    },
+    "curse": "primal-tech"
+  },
+  {
+    "name": [
+      "Production"
+    ],
+    "assets": {
+      "1.7.10": "production"
+    }
+  },
+  {
+    "name": [
+      "Progressive Automation"
+    ],
+    "assets": {
+      "1.7.10": "progressiveautomation"
+    },
+    "curse": "progressive-automation-early-miner"
+  },
+  {
+    "name": [
+      "Project EX"
+    ],
+    "assets": {
+      "1.12.2": "projectex"
+    },
+    "curse": "project-ex"
+  },
+  {
+    "name": [
+      "Project Red"
+    ],
+    "assets": {
+      "1.12.2": "projectred",
+      "1.7.10": "projectred"
+    },
+    "curse": "project-red-base"
+  },
+  {
+    "name": [
+      "ProjectE"
+    ],
+    "assets": {
+      "1.12.2": "projecte",
+      "1.11.2": "projecte",
+      "1.10.2": "projecte",
+      "1.8.9": "projecte",
+      "1.7.10": "projecte"
+    },
+    "curse": "projecte"
+  },
+  {
+    "name": [
+      "Psi"
+    ],
+    "assets": {
+      "1.12.2": "psi"
+    },
+    "curse": "psi"
+  },
+  {
+    "name": [
+      "QuantumFlux"
+    ],
+    "assets": {
+      "1.7.10": "quantumflux"
+    },
+    "curse": "quantumflux"
+  },
+  {
+    "name": [
+      "QuantumStorage"
+    ],
+    "assets": {
+      "1.12.2": "quantumstorage"
+    },
+    "curse": "quantumstorage"
+  },
+  {
+    "name": [
+      "Quark"
+    ],
+    "assets": {
+      "1.12.2": "quark",
+      "1.11.2": "quark",
+      "1.10.2": "quark",
+      "1.7.10": "quark"
+    },
+    "curse": "quark"
+  },
+  {
+    "name": [
+      "QuarryPlus"
+    ],
+    "assets": {
+      "1.7.10": "yogpstop_qp"
+    }
+  },
+  {
+    "name": [
+      "RFTools"
+    ],
+    "assets": {
+      "1.12.2": "rftools",
+      "1.11.2": "rftools",
+      "1.10.2": "rftools",
+      "1.7.10": "rftools"
+    },
+    "curse": "rftools"
+  },
+  {
+    "name": [
+      "RFTools Control"
+    ],
+    "assets": {
+      "1.12.2": "rftoolscontrol"
+    },
+    "curse": "rftools-control"
+  },
+  {
+    "name": [
+      "RFTools Dimensions"
+    ],
+    "assets": {
+      "1.12.2": "rftoolsdim",
+      "1.11.2": "rftoolsdim",
+      "1.10.2": "rftoolsdim",
+      "1.7.10": "rftoolsdim"
+    },
+    "curse": "rftools-dimensions"
+  },
+  {
+    "name": [
+      "RSCircuits"
+    ],
+    "assets": {
+      "1.12.2": "rscircuits",
+      "1.11.2": "rscircuits",
+      "1.10.2": "rscircuits",
+      "1.7.10": "rscircuits"
+    }
+  },
+  {
+    "name": [
+      "Railcraft"
+    ],
+    "assets": {
+      "1.12.2": "railcraft",
+      "1.11.2": "railcraft",
+      "1.10.2": "railcraft",
+      "1.7.10": "railcraft"
+    },
+    "curse": "railcraft"
+  },
+  {
+    "name": [
+      "Random Things"
+    ],
+    "assets": {
+      "1.12.2": "randomthings",
+      "1.7.10": "randomthings"
+    },
+    "curse": "random-things"
+  },
+  {
+    "name": [
+      "RandomAdditions"
+    ],
+    "assets": {
+      "1.7.10": "randomadditions"
+    },
+    "curse": "randomadditions"
+  },
+  {
+    "name": [
+      "ReactorCraft"
+    ],
+    "assets": {
+      "1.7.10": "reactorcraft"
+    },
+    "curse": "reactorcraft"
+  },
+  {
+    "name": [
+      "Realistic Torches"
+    ],
+    "assets": {
+      "1.12.2": "realistictorches"
+    },
+    "curse": "realistic-torches"
+  },
+  {
+    "name": [
+      "Reborn Storage"
+    ],
+    "assets": {
+      "1.12.2": "rebornstorage"
+    },
+    "curse": "rebornstorage"
+  },
+  {
+    "name": [
+      "Redstone Armory"
+    ],
+    "assets": {
+      "1.7.10": "rarm"
+    },
+    "curse": "redstone-armory"
+  },
+  {
+    "name": [
+      "Redstone Arsenal"
+    ],
+    "assets": {
+      "1.12.2": "redstonearsenal",
+      "1.7.10": "redstonearsenal"
+    },
+    "curse": "redstone-arsenal"
+  },
+  {
+    "name": [
+      "Redstone In Motion"
+    ],
+    "assets": {
+      "1.7.10": "jakj_redstoneinmotion"
+    }
+  },
+  {
+    "name": [
+      "Redstone Repository Revolved"
+    ],
+    "assets": {
+      "1.12.2": "redstonerepository"
+    },
+    "curse": "redstone-repository-revolved"
+  },
+  {
+    "name": [
+      "Refined Machinery"
+    ],
+    "assets": {
+      "1.14.4": "refinedmachinery"
+    },
+    "curse": "refined-machinery"
+  },
+  {
+    "name": [
+      "Refined Storage"
+    ],
+    "assets": {
+      "1.12.2": "refinedstorage",
+      "1.11.2": "refinedstorage",
+      "1.10.2": "refinedstorage",
+      "1.7.10": "refinedstorage"
+    },
+    "curse": "refined-storage"
+  },
+  {
+    "name": [
+      "Refined Storage Addons"
+    ],
+    "assets": {
+      "1.12.2": "refinedstorageaddons"
+    },
+    "curse": "refined-storage-addons"
+  },
+  {
+    "name": [
+      "Roots"
+    ],
+    "assets": {
+      "1.12.2": "roots",
+      "1.11.2": "roots",
+      "1.10.2": "roots",
+      "1.7.10": "roots"
+    },
+    "curse": "roots"
+  },
+  {
+    "name": [
+      "RotaryCraft"
+    ],
+    "assets": {
+      "1.7.10": "rotarycraft"
+    }
+  },
+  {
+    "name": [
+      "Rustic"
+    ],
+    "assets": {
+      "1.12.2": "rustic"
+    },
+    "curse": "rustic"
+  },
+  {
+    "name": [
+      "Scannable"
+    ],
+    "assets": {
+      "1.12.2": "scannable"
+    },
+    "curse": "scannable"
+  },
+  {
+    "name": [
+      "Serene Seasons"
+    ],
+    "assets": {
+      "1.12.2": "sereneseasons"
+    },
+    "curse": "serene-seasons"
+  },
+  {
+    "name": [
+      "Simple Achievements"
+    ],
+    "assets": {
+      "1.12.2": "simpleachievements",
+      "1.11.2": "simpleachievements",
+      "1.10.2": "simpleachievements",
+      "1.7.10": "simpleachievements"
+    },
+    "curse": "simple-achievements"
+  },
+  {
+    "name": [
+      "Simple Covers"
+    ],
+    "assets": {
+      "1.12.2": "covers",
+      "1.11.2": "covers",
+      "1.10.2": "covers"
+    },
+    "curse": "simple-covers"
+  },
+  {
+    "name": [
+      "Simple Storage Network"
+    ],
+    "assets": {
+      "1.12.2": "storagenetwork"
+    },
+    "curse": "simple-storage-network"
+  },
+  {
+    "name": [
+      "Simply Jetpacks 2"
+    ],
+    "assets": {
+      "1.12.2": "simplyjetpacks",
+      "1.7.10": "simplyjetpacks"
+    },
+    "curse": "simply-jetpacks"
+  },
+  {
+    "name": [
+      "Sky Compression"
+    ],
+    "assets": {
+      "1.12.2": "sc"
+    },
+    "curse": "sky-compression"
+  },
+  {
+    "name": [
+      "Sky Orchards"
+    ],
+    "assets": {
+      "1.12.2": "sky_orchards"
+    },
+    "curse": "sky-orchards"
+  },
+  {
+    "name": [
+      "Sky Resources 2"
+    ],
+    "assets": {
+      "1.12.2": "skyresources"
+    },
+    "curse": "sky-resources"
+  },
+  {
+    "name": [
+      "Smart HUD"
+    ],
+    "assets": {
+      "1.12.2": "smarthud"
+    },
+    "curse": "smart-hud"
+  },
+  {
+    "name": [
+      "Smart Moving"
+    ],
+    "assets": {
+      "1.8.9": "smartmoving",
+      "1.7.10": "smartmoving"
+    },
+    "curse": "smart-moving"
+  },
+  {
+    "name": [
+      "Snow Variants"
+    ],
+    "assets": {
+      "1.12.2": "snowvariants"
+    },
+    "curse": "snow-variants"
+  },
+  {
+    "name": [
+      "Sodacan Torches"
+    ],
+    "assets": {
+      "1.7.10": "sodacantorches"
+    },
+    "curse": "sodacan-utilities"
+  },
+  {
+    "name": [
+      "Sodacan Utilities"
+    ],
+    "assets": {
+      "1.8.9": "sodacanutils"
+    },
+    "curse": "sodacan-utilities"
+  },
+  {
+    "name": [
+      "Solar Expansion"
+    ],
+    "assets": {
+      "1.7.10": "solarexpansion"
+    },
+    "curse": "solar-expansion"
+  },
+  {
+    "name": [
+      "Soul Shards: The Old Ways"
+    ],
+    "assets": {
+      "1.7.10": "sstow"
+    },
+    "curse": "soul-shards-the-old-ways"
+  },
+  {
+    "name": [
+      "Soulus"
+    ],
+    "assets": {
+      "1.12.2": "soulus"
+    },
+    "curse": "soulus"
+  },
+  {
+    "name": [
+      "Speedy Ladders"
+    ],
+    "assets": {
+      "1.12.2": "speedyladders"
+    },
+    "curse": "speedy-ladders"
+  },
+  {
+    "name": [
+      "Steamcraft 2"
+    ],
+    "assets": {
+      "1.7.10": "steamcraft"
+    },
+    "curse": "steamcraft2"
+  },
+  {
+    "name": [
+      "Steve's Carts"
+    ],
+    "assets": {
+      "1.12.2": "stevescarts",
+      "1.11.2": "stevescarts",
+      "1.10.2": "stevescarts",
+      "1.7.10": "stevescarts"
+    },
+    "curse": "steves-carts-reborn"
+  },
+  {
+    "name": [
+      "Steve's Factory Manager"
+    ],
+    "assets": {
+      "1.7.10": "stevesfactory"
+    },
+    "curse": "steves-factory-manager-reborn"
+  },
+  {
+    "name": [
+      "Storage Drawers"
+    ],
+    "assets": {
+      "1.12.2": "storagedrawers",
+      "1.11.2": "storagedrawers",
+      "1.10.2": "storagedrawers",
+      "1.7.10": "storagedrawers"
+    },
+    "curse": "storage-drawers"
+  },
+  {
+    "name": [
+      "Storage Drawers: Biomes O' Plenty Pack"
+    ],
+    "assets": {
+      "1.7.10": "storagedrawersbop"
+    },
+    "curse": "storage-drawers-biomes-o-plenty-pack"
+  },
+  {
+    "name": [
+      "Superior Shields"
+    ],
+    "assets": {
+      "1.12.2": "superiorshields"
+    },
+    "curse": "superior-shields"
+  },
+  {
+    "name": [
+      "Tainted Magic"
+    ],
+    "assets": {
+      "1.7.10": "taintedmagic"
+    },
+    "curse": "tainted-magic"
+  },
+  {
+    "name": [
+      "Tech Reborn"
+    ],
+    "assets": {
+      "1.12.2": "techreborn"
+    },
+    "curse": "techreborn"
+  },
+  {
+    "name": [
+      "TerraFirmaCraft"
+    ],
+    "assets": {
+      "1.7.10": "terrafirmacraft"
+    },
+    "curse": "tfcraft"
+  },
+  {
+    "name": [
+      "Tesla Core Lib"
+    ],
+    "assets": {
+      "1.12.2": "teslacorelib"
+    },
+    "curse": "tesla-core-lib"
+  },
+  {
+    "name": [
+      "Thaumcraft"
+    ],
+    "assets": {
+      "1.12.2": "thaumcraft",
+      "1.8.9": "thaumcraft",
+      "1.7.10": "thaumcraft"
+    },
+    "curse": "thaumcraft"
+  },
+  {
+    "name": [
+      "Thaumic Bases"
+    ],
+    "assets": {
+      "1.7.10": "thaumicbases"
+    },
+    "curse": "thaumic-bases"
+  },
+  {
+    "name": [
+      "Thaumic Energistics"
+    ],
+    "assets": {
+      "1.7.10": "thaumicenergistics"
+    },
+    "curse": "thaumic-energistics"
+  },
+  {
+    "name": [
+      "Thaumic Exploration"
+    ],
+    "assets": {
+      "1.7.10": "thaumicexploration"
+    },
+    "curse": "thaumic-exploration"
+  },
+  {
+    "name": [
+      "Thaumic Grid"
+    ],
+    "assets": {
+      "1.12.2": "thaumicgrid"
+    },
+    "curse": "thaumic-grid"
+  },
+  {
+    "name": [
+      "Thaumic JEI"
+    ],
+    "assets": {
+      "1.12.2": "thaumicjei"
+    },
+    "curse": "thaumic-jei"
+  },
+  {
+    "name": [
+      "Thaumic Palmistry"
+    ],
+    "assets": {
+      "1.8.9": "thaumicpalmistry"
+    },
+    "curse": "thaumic-palmistry"
+  },
+  {
+    "name": [
+      "Thaumic Tinkerer"
+    ],
+    "assets": {
+      "1.7.10": "ttinkerer"
+    },
+    "curse": "thaumic-tinkerer"
+  },
+  {
+    "name": [
+      "Thaumic Tinkerer"
+    ],
+    "assets": {
+      "1.8.9": "thaumictinkerer"
+    },
+    "curse": "thaumic-tinkerer"
+  },
+  {
+    "name": [
+      "The Aether II"
+    ],
+    "assets": {
+      "1.7.10": "aether"
+    },
+    "curse": "the-aether-ii"
+  },
+  {
+    "name": [
+      "The Barrels Mod"
+    ],
+    "assets": {
+      "1.11.2": "barrels",
+      "1.10.2": "barrels",
+      "1.7.10": "barrels"
+    }
+  },
+  {
+    "name": [
+      "The Disenchanter Mod"
+    ],
+    "assets": {
+      "1.12.2": "disenchanter",
+      "1.11.2": "disenchanter",
+      "1.10.2": "disenchanter"
+    },
+    "curse": "the-disenchanter-mod"
+  },
+  {
+    "name": [
+      "The Farlanders"
+    ],
+    "assets": {
+      "1.12.2": "farlanders"
+    },
+    "curse": "farlanders"
+  },
+  {
+    "name": [
+      "The One Probe"
+    ],
+    "assets": {
+      "1.12.2": "theoneprobe",
+      "1.11.2": "theoneprobe",
+      "1.10.2": "theoneprobe"
+    },
+    "curse": "the-one-probe"
+  },
+  {
+    "name": [
+      "The Spice of Life"
+    ],
+    "assets": {
+      "1.12.2": "spiceoflife",
+      "1.11.2": "spiceoflife",
+      "1.10.2": "spiceoflife",
+      "1.7.10": "spiceoflife"
+    },
+    "curse": "the-spice-of-life"
+  },
+  {
+    "name": [
+      "The Twilight Forest"
+    ],
+    "assets": {
+      "1.12.2": "twilightforest",
+      "1.7.10": "twilightforest"
+    },
+    "curse": "the-twilight-forest"
+  },
+  {
+    "name": [
+      "Thermal Cultivation"
+    ],
+    "assets": {
+      "1.12.2": "thermalcultivation"
+    },
+    "curse": "thermal-cultivation"
+  },
+  {
+    "name": [
+      "Thermal Dynamics"
+    ],
+    "assets": {
+      "1.12.2": "thermaldynamics",
+      "1.7.10": "thermaldynamics"
+    },
+    "curse": "thermal-dynamics"
+  },
+  {
+    "name": [
+      "Thermal Expansion"
+    ],
+    "assets": {
+      "1.12.2": "thermalexpansion",
+      "1.11.2": "thermalexpansion",
+      "1.10.2": "thermalexpansion",
+      "1.7.10": "thermalexpansion"
+    },
+    "curse": "thermal-expansion"
+  },
+  {
+    "name": [
+      "Thermal Foundation"
+    ],
+    "assets": {
+      "1.12.2": "thermalfoundation",
+      "1.11.2": "thermalfoundation",
+      "1.10.2": "thermalfoundation",
+      "1.7.10": "thermalfoundation"
+    },
+    "curse": "thermal-foundation"
+  },
+  {
+    "name": [
+      "Thermal Innovation"
+    ],
+    "assets": {
+      "1.12.2": "thermalinnovation"
+    },
+    "curse": "thermal-innovation"
+  },
+  {
+    "name": [
+      "Thermal Logistics"
+    ],
+    "assets": {
+      "1.12.2": "thermallogistics"
+    },
+    "curse": "thermallogistics"
+  },
+  {
+    "name": [
+      "Thermal Solars"
+    ],
+    "assets": {
+      "1.12.2": "thermalsolars"
+    },
+    "curse": "thermal-solars"
+  },
+  {
+    "name": [
+      "Tinker I/O"
+    ],
+    "assets": {
+      "1.12.2": "tinker_io"
+    },
+    "curse": "tinker-i-o"
+  },
+  {
+    "name": [
+      "Tinker's JEI"
+    ],
+    "assets": {
+      "1.12.2": "tinkersjei"
+    },
+    "curse": "tinkers-jei"
+  },
+  {
+    "name": [
+      "Tinker's Mechworks"
+    ],
+    "assets": {
+      "1.7.10": "tmechworks"
+    },
+    "curse": "tinkers-mechworks"
+  },
+  {
+    "name": [
+      "Tinker's Steelworks"
+    ],
+    "assets": {
+      "1.7.10": "tsteelworks"
+    },
+    "curse": "tinkers-steelworks"
+  },
+  {
+    "name": [
+      "Tinkers' Complement"
+    ],
+    "assets": {
+      "1.12.2": "tcomplement"
+    },
+    "curse": "tinkers-complement"
+  },
+  {
+    "name": [
+      "Tinkers Construct"
+    ],
+    "assets": {
+      "1.8.9": "tinker",
+      "1.7.10": "tinker"
+    },
+    "curse": "tinkers-construct"
+  },
+  {
+    "name": [
+      "Tinkers Construct"
+    ],
+    "assets": {
+      "1.12.2": "tconstruct",
+      "1.11.2": "tconstruct",
+      "1.10.2": "tconstruct",
+      "1.8.9": "tconstruct"
+    },
+    "curse": "tinkers-construct"
+  },
+  {
+    "name": [
+      "Tiny Progressions"
+    ],
+    "assets": {
+      "1.12.2": "tp",
+      "1.11.2": "tp",
+      "1.10.2": "tp"
+    },
+    "curse": "tiny-progressions"
+  },
+  {
+    "name": [
+      "Torchmaster"
+    ],
+    "assets": {
+      "1.12.2": "torchmaster"
+    },
+    "curse": "torchmaster"
+  },
+  {
+    "name": [
+      "TrashSlot"
+    ],
+    "assets": {
+      "1.12.2": "trashslot"
+    },
+    "curse": "trashslot"
+  },
+  {
+    "name": [
+      "Traverse"
+    ],
+    "assets": {
+      "1.15.2": "traverse",
+      "1.14.4": "traverse"
+    },
+    "curse": "traverse"
+  },
+  {
+    "name": [
+      "TubeStuff"
+    ],
+    "assets": {
+      "1.7.10": "tubestuff"
+    }
+  },
+  {
+    "name": [
+      "Uncrafting Table"
+    ],
+    "assets": {
+      "1.7.10": "uncraftingtable"
+    },
+    "curse": "jglrxavpoks-uncrafting-table"
+  },
+  {
+    "name": [
+      "Underground Biomes"
+    ],
+    "assets": {
+      "1.12.2": "undergroundbiomes",
+      "1.7.10": "undergroundbiomes"
+    },
+    "curse": "underground-biomes"
+  },
+  {
+    "name": [
+      "Unstable Tools"
+    ],
+    "assets": {
+      "1.12.2": "unstabletools"
+    },
+    "curse": "unstable-tools"
+  },
+  {
+    "name": [
+      "ValkyrieLib"
+    ],
+    "assets": {
+      "1.12.2": "valkyrielib"
+    },
+    "curse": "valkyrielib"
+  },
+  {
+    "name": [
+      "Version Checker"
+    ],
+    "assets": {
+      "1.8.9": "versionchecker",
+      "1.7.10": "versionchecker"
+    },
+    "curse": "version-checker"
+  },
+  {
+    "name": [
+      "Village Names"
+    ],
+    "assets": {
+      "1.12.2": "villagenames"
+    },
+    "curse": "village-names"
+  },
+  {
+    "name": [
+      "Visible Armor Slots"
+    ],
+    "assets": {
+      "1.12.2": "visiblearmorslots",
+      "1.11.2": "visiblearmorslots",
+      "1.10.2": "visiblearmorslots"
+    },
+    "curse": "visible-armor-slots"
+  },
+  {
+    "name": [
+      "WR-CBE Addons (Wireless Redstone Chicken Bones Edition)"
+    ],
+    "assets": {
+      "1.7.10": "wrcbe_addons"
+    },
+    "curse": "wr-cbe-universal"
+  },
+  {
+    "name": [
+      "WR-CBE Core (Wireless Redstone Chicken Bones Edition)"
+    ],
+    "assets": {
+      "1.7.10": "wrcbe_core"
+    },
+    "curse": "wr-cbe-universal"
+  },
+  {
+    "name": [
+      "WR-CBE Logic (Wireless Redstone Chicken Bones Edition)"
+    ],
+    "assets": {
+      "1.7.10": "wrcbe_logic"
+    },
+    "curse": "wr-cbe-universal"
+  },
+  {
+    "name": [
+      "Warp Book"
+    ],
+    "assets": {
+      "1.7.10": "warpbook"
+    },
+    "curse": "warp-book"
+  },
+  {
+    "name": [
+      "Warp Theory"
+    ],
+    "assets": {
+      "1.7.10": "warptheory"
+    },
+    "curse": "warp-theory"
+  },
+  {
+    "name": [
+      "Wireless Crafting Terminal"
+    ],
+    "assets": {
+      "1.12.2": "wct"
+    },
+    "curse": "wireless-crafting-terminal"
+  },
+  {
+    "name": [
+      "Witchery"
+    ],
+    "assets": {
+      "1.7.10": "witchery"
+    },
+    "curse": "witchery"
+  },
+  {
+    "name": [
+      "Witching Gadgets"
+    ],
+    "assets": {
+      "1.7.10": "witchinggadgets"
+    },
+    "curse": "witching-gadgets"
+  },
+  {
+    "name": [
+      "Wizardry Mod"
+    ],
+    "assets": {
+      "1.12.2": "wizardry"
+    },
+    "curse": "wizardry-mod"
+  },
+  {
+    "name": [
+      "Wood Stuff"
+    ],
+    "assets": {
+      "1.7.10": "woodstuff"
+    },
+    "curse": "wood-stuff"
+  },
+  {
+    "name": [
+      "Wooden Shears [SBM]"
+    ],
+    "assets": {
+      "1.12.2": "woodenshears",
+      "1.11.2": "woodenshears",
+      "1.10.2": "woodenshears"
+    },
+    "curse": "sbm-wooden-shears"
+  },
+  {
+    "name": [
+      "Woot"
+    ],
+    "assets": {
+      "1.12.2": "woot"
+    },
+    "curse": "woot"
+  },
+  {
+    "name": [
+      "XNet"
+    ],
+    "assets": {
+      "1.12.2": "xnet"
+    },
+    "curse": "xnet"
+  },
+  {
+    "name": [
+      "XP Book"
+    ],
+    "assets": {
+      "1.12.2": "xpbook"
+    },
+    "curse": "xp-book"
+  },
+  {
+    "name": [
+      "Xeno's Reliquary"
+    ],
+    "assets": {
+      "1.12.2": "xreliquary",
+      "1.7.10": "xreliquary"
+    },
+    "curse": "reliquary-v1-3"
+  },
+  {
+    "name": [
+      "Xtones"
+    ],
+    "assets": {
+      "1.12.2": "xtones"
+    },
+    "curse": "xtones"
+  },
+  {
+    "name": [
+      "YABBA"
+    ],
+    "assets": {
+      "1.12.2": "yabba"
+    },
+    "curse": "yabba"
+  },
+  {
+    "name": [
+      "Yet Another Leather Smelting Mod (YALSM)"
+    ],
+    "assets": {
+      "1.7.10": "yalsm"
+    },
+    "curse": "yalsm-yet-another-leather-smelting-mod"
+  },
+  {
+    "name": [
+      "Ztones"
+    ],
+    "assets": {
+      "1.7.10": "ztones"
+    },
+    "curse": "ztones"
+  },
+  {
+    "name": [
+      "iBench"
+    ],
+    "assets": {
+      "1.7.10": "ibench"
+    },
+    "curse": "ibench"
+  }
+]
