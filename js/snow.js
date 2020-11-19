@@ -43,7 +43,7 @@ function setup() {
 // Make snow only when it's December
 //
 var today = new Date();
-if (today.getMonth() == 11){ // January is 0
+if (today.getMonth() == 11 || today.getMonth() == 0){ // January is 0
 	setup();
 }
 

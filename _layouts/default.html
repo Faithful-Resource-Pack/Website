@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.carousel.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css" id="darkcss">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -197,6 +197,10 @@
 						</div>
 					</li>
 
+					<div class="nav-item theme-switch-wrapper">
+						<btn id="DarkMode" onclick="changeMod(true)" class="nav-link">Dark Mode (Automatic)</btn>
+					</div>
+
 				</ul>
 			</div>
 		</nav>
@@ -242,17 +246,18 @@
 	</script>
 
 	<script>
-    const month = new Date().getMonth();
-    if (month == 0 || month == 11){ // December -> January is 0
-      const snowCSS = document.createElement("link")
-      snowCSS.rel = "stylesheet"
-      snowCSS.href = "{{ site.baseurl }}/css/snow.css"
-      snowCSS.type = "text/css"
-      document.getElementsByTagName("head")[0].appendChild(snowCSS);
-    }
+		const month = new Date().getMonth();
+		if (month == 0 || month == 11){ // December -> January is 0
+			const snowCSS = document.createElement("link")
+			snowCSS.rel = "stylesheet"
+			snowCSS.href = "{{ site.baseurl }}/css/snow.css"
+			snowCSS.type = "text/css"
+			document.getElementsByTagName("head")[0].appendChild(snowCSS);
+		}
 	</script>
 
 	<script src="{{ site.baseurl }}/js/snow.js"></script>
+	<script src="{{ site.baseurl }}/js/darktheme.js"></script>
 
 	<script id="dsq-count-scr" src="//compliance-1.disqus.com/count.js" async></script>
 </body>
