@@ -2,16 +2,18 @@ const currentTheme = localStorage.getItem('theme');
 const css = document.getElementById('darkcss')
 const btn = document.getElementById('DarkMode')
 
+// update btn
 if (currentTheme) {
 	if (currentTheme == 'dark') { btn.innerHTML = 'Dark Mode (ON)' }
 	if (currentTheme == 'dark-auto') { btn.innerHTML = 'Dark Mode (Auto)' }
 	if (currentTheme == 'light') { btn.innerHTML = 'Dark Mode (OFF)' }
 }
 
-changeMod()
+changeMod(false)
 
 function changeMod(change) {
 
+	// true if the btn is it, false otherwise
 	if (change) {
 		if (btn.innerHTML == 'Dark Mode (Auto)') {
 			btn.innerHTML = 'Dark Mode (ON)';
@@ -28,25 +30,11 @@ function changeMod(change) {
 		}
 	}
 
+	// update theme
 	var theme = localStorage.getItem('theme')
-
 	if ( theme == 'dark' || (theme == 'dark-auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 		css.href = "./css/dark.css"
 	} else { 
-		css.href = ""
+		css.href = "light mode is on"
 	}
 }
-
-/*
-function switchTheme(e) {
-	if (e.target.checked) {
-		document.documentElement.setAttribute('data-theme', 'dark');
-		localStorage.setItem('theme', 'dark');
-	}
-	else {        
-		document.documentElement.setAttribute('data-theme', 'light');
-		localStorage.setItem('theme', 'light');
-	}
-}
-
-*/
