@@ -5,11 +5,14 @@
 	background-size: 32px;
 	color: #fff
 }
+.card-title {
+	margin-top: .75rem;
+}
+.owl-stage-outer {
+	overflow: unset !important;
+}
 .card-sized{
 	height: 256px
-}
-.title-top {
-	margin-bottom: -5px !important
 }
 .gallery-selector {
 	padding: 10px
