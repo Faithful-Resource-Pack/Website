@@ -39,7 +39,7 @@ function changeMod(change) {
 	// update theme
 	var theme = localStorage.getItem('theme')
 	if ( theme == 'dark' || (theme == 'dark-auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-		css.href = "./css/dark.css"
+		css.href = "/css/dark.css"
 	} else { 
 		css.href = ""
 	}
