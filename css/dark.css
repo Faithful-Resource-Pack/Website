@@ -21,8 +21,12 @@
 	color: rgba(255, 255, 255, .7) !important;
 	background-color: #141414 !important
 }
-h1, h2, h3, h4, h5, h6, p {
+ul, ol, li, h1, h2, h3, h4, h5, h6, p {
 	color: rgba(255, 255, 255, .7)
+}
+
+.btn-flag {
+	color: rgba(255, 255, 255, .7) !important
 }
 
 hr {
