@@ -38,7 +38,7 @@ title: Mods
       <div class="advice" v-text="searchAdvice"></div>
     </div>
 
-    <div v-if='filteredMods.length == 0' v-text="emptyTable" id="noresults"></div>
+    <h3 v-if='filteredMods.length == 0' id="noresults" class="text-center" v-html="emptyTable"></h3>
 
     <minecraft-mod-list :mods="filteredMods"></minecraft-mod-list>
   </div>

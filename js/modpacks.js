@@ -12,6 +12,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     mods: [],
     versions: [],
     globalBlackList: [],
+    loading: true,
     form: {
       search: '',
       minSearchLetters: 3
@@ -19,7 +20,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     sentences: {
       searchAdvice: 'You can search by name or by version',
       lettersLeft: 'letters to start search...',
-      loading: 'Loading mods...',
+      loading: '<i class="fas fa-circle-notch fa-spin"></i> Loading mods...',
       failed: 'Failed to load mods. Check console for more informations',
       noresults: 'No results found for your search: ',
       noResultsVersion: 'No results found for version',
@@ -67,6 +68,8 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
           console.error(err)
           return
         }
+
+        this.loading = false
         this.mods = json
       })
 
@@ -86,7 +89,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
               if(minecraftVersion in this.globalBlackList) finalBlacklist = [ ...finalBlacklist, ...this.globalBlackList[minecraftVersion] ]
               if('default' in modpack.blackList) finalBlacklist = [ ...finalBlacklist, ...modpack.blackList.default ]
               if(minecraftVersion in modpack.blackList) finalBlacklist = [ ...finalBlacklist, ...modpack.blackList[minecraftVersion] ]
-
+              
               this.downloadModpackFromModlist(modpack.codeName, modpack.displayName, modpackVersion, minecraftVersion, finalBlacklist)
             })
           })
@@ -189,7 +192,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       return result
     },
     emptyTable: function () {
-      if (this.modpacks.length === 0) return this.sentences.failed
+      if(this.loading || this.modpacks.length === 0) return this.sentences.loading
 
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) {
         return this.sentences.noResultsVersion + ' ' + this.form.search

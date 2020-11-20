@@ -23,7 +23,7 @@ title: Modpacks
       <modpack-card v-for="(m, mindex) in filteredSortedModpacks" :key="mindex" :modpack="m" :onbuttonclick="function(){ openModpackModal(mindex)  }"></modpack-card>
     </div>
 
-    <div v-if='filteredModpacks.length == 0' v-text="emptyTable" id="noresults"></div>
+    <h3 v-if='filteredModpacks.length == 0' id="noresults" class="text-center" v-html="emptyTable"></h3>
   </div>
 </div>
 
