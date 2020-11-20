@@ -53,7 +53,7 @@ let getRequest = function(url, params, callback) {
       url += '?' + arr.join('&');
     }
 
-    console.log(url);
+    // console.log(url);
     
     xhr.open("GET", url, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
