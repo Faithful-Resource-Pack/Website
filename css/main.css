@@ -8,10 +8,10 @@ html {
 }
 footer {
 	padding: 2rem 1rem;
-	text-align: center;
+	text-align: center
 }
 header {
-	min-height: 256px;
+	min-height: 256px
 }
 footer, footer p {
   color: rgba(255, 255, 255, .7);
@@ -81,7 +81,7 @@ p {
 /** FANCY CARDS **/
 .card {
 	background: #1C1C1C;
-	border: 0px !important;
+	border: 0 !important
 }
 div.dropdown-menu {
 	border: 0
@@ -95,10 +95,10 @@ img.fancy-card-2x {
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 }
 .btn, .dropdown-menu, *.card *.card, .fancy-card-1x {
-	border-radius: var(--border-radius-1x);
+	border-radius: var(--border-radius-1x)
 }
 *.card, .fancy-card-2x {
-	border-radius: var(--border-radius-2x);
+	border-radius: var(--border-radius-2x)
 }
 .card-body > :first-child {
 	margin-top: 0
@@ -177,10 +177,10 @@ img.fancy-card-2x {
 a > h4, a > h3 {
 	margin-top: -45px;
 	margin-left: 10px;
-  color: rgba(255, 255, 255, .9);
-  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
-  font-size: 1.5rem;
-  font-weight: bold
+	color: rgba(255, 255, 255, .9);
+	text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	font-size: 1.5rem;
+	font-weight: bold
 }
 
 /** BASIC CAROUSEL **/
@@ -231,11 +231,11 @@ a > h4, a > h3 {
 	}
 }
 .nav-link {
-	transition: all .1s ease-out;
+	transition: all .1s ease-out
 }
 @media screen and (min-width: 800px) {
 	.nav-link:hover {
-		transform: scale(0.95);
+		transform: scale(0.95)
 	}
 }
 .nav-link:hover {
@@ -304,19 +304,7 @@ a > h4, a > h3 {
 }
 
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
-img[src$=".png"] {
-	image-rendering: pixelated;
-	image-rendering: -moz-crisp-edges;
-	image-rendering: -o-crisp-edges;
-	-ms-interpolation-mode: nearest-neighbor;
-	-webkit-user-drag: none;
-	-khtml-user-drag: none;
-	-moz-user-drag: none;
-	-o-user-drag: none;
-	user-drag: none
-}
-
-img[src$=".gif"] {
+img[src$=".png"], img[src$=".gif"] {
 	image-rendering: pixelated;
 	image-rendering: -moz-crisp-edges;
 	image-rendering: -o-crisp-edges;

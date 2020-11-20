@@ -17,7 +17,7 @@
 }
 
 input[type=checkbox], input[type=radio], label {
-  cursor: pointer
+	cursor: pointer
 }
 
 .fa-info-circle {
@@ -26,19 +26,19 @@ input[type=checkbox], input[type=radio], label {
 
 input[type=radio] + label {
 	border-radius: var(--border-radius-2x);
-  border: 1px solid rgba(255, 255, 255, .7);
+	border: 1px solid rgba(255, 255, 255, .7);
 	padding: 2px 8px
 }
 
 input[type=radio]:checked + label {
 	background-color: var(--primary);
-  border-color: var(--primary);
+	border-color: var(--primary);
 	color: white
 }
 
 .modNotChosen input[type=radio]:checked + label {
 	background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, .7);
+	border: 1px solid rgba(255, 255, 255, .7);
 	color: white
 }
 
@@ -174,7 +174,7 @@ input[type=radio]:checked + label {
 
 #SearchBar + .advice {
 	line-height: 20px;
-	min-height: 20px;
+	min-height: 20px
 }
 
 .advice {
@@ -236,19 +236,19 @@ input[type=radio]:checked + label {
 	background: center/contain url('../image/icon/compliance_mods_transparent.png') no-repeat;
 	image-rendering: pixelated;
 	border-radius: var(--border-radius-1x);
-  flex: none
+	flex: none
 }
 .selected-mod .mod-img-overlay {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 	border-radius: var(--border-radius-1x);
-  background: rgba(0, 123, 255, 0.64) center/75% url('../image/css/checked.svg') no-repeat
+	background: rgba(0, 123, 255, 0.64) center/75% url('../image/css/checked.svg') no-repeat
 }
 .mod-checkbox, .mod-radio {
-  display: none
+	display: none
 }
 .mod-info, .selected-mod .mod-radio-group {
-  position: relative;
+	position: relative;
 	z-index: 2
 }
 
@@ -262,7 +262,7 @@ input[type=radio]:checked + label {
 }
 
 #modpacks .card .card-title {
-	min-height: 80px;
+	min-height: 80px
 }
 
 #modpacks #modpackModal {

@@ -1,5 +1,5 @@
 .background {
-	background: url(../image/background/bg_light_background.png) repeat;
+	background: url(../image/background/bg_light_background.png) repeat
 }
 .foreground {
 	background:
@@ -12,10 +12,10 @@
 	background-size: contain
 }
 .dropdown-menu {
-	background-color: #1C1C1C;
+	background-color: #1C1C1C
 }
 .dropdown-item {
-	color: rgba(255, 255, 255, .7);
+	color: rgba(255, 255, 255, .7)
 }
 .dropdown-item:focus, .dropdown-item:hover {
 	color: rgba(255, 255, 255, .7) !important;
@@ -26,5 +26,5 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 hr {
-	border-top: 1px solid rgba(255, 255, 255, .5);
+	border-top: 1px solid rgba(255, 255, 255, .5)
 }

@@ -1,92 +1,52 @@
 #snowflakeContainer {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none
 }
 
 .card {
   background:
     url(../image/background/snow_overlay.png) top center repeat-x,
-    #1C1C1C;
+    #1C1C1C
 }
 
 .card-body {
-  margin-top: 15px;
+	margin-top: 15px
 }
 
 .btn {
-  border: 0px !important;
-  padding-top: 15px;
-  background-image: url(../image/background/snow_overlay_small.png);
-  background-position: top center;
-  background-repeat: repeat-x;
+	border: 0 !important;
+	padding-top: 15px;
+	background-image: url(../image/background/snow_overlay_small.png);
+	background-position: top center;
+	background-repeat: repeat-x
+}
+
+.snowflake0, .snowflake1, .snowflake2, .snowflake3 {
+	position: fixed;
+	background-size: cover;
+	image-rendering: pixelated;
+	user-select: none;
+	z-index: 1000;
+	pointer-events: none;
+	border-radius: 50%;
+	width: 16px;
+	height: 16px
 }
 
 .snowflake0 {
-  position: fixed;
-
-  background:
-    url(../image/background/snow0.png);
-  background-size: cover;
-  image-rendering: pixelated;
-
-
-  user-select: none;
-  z-index: 1000;
-  pointer-events: none;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
+	background: url(../image/background/snow0.png)
 }
 
 .snowflake1 {
-  position: fixed;
-
-  background:
-    url(../image/background/snow1.png);
-  background-size: cover;
-  image-rendering: pixelated;
-
-
-  user-select: none;
-  z-index: 1000;
-  pointer-events: none;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
+	background: url(../image/background/snow1.png)
 }
 
 .snowflake2 {
-  position: fixed;
-
-  background:
-    url(../image/background/snow2.png);
-  background-size: cover;
-  image-rendering: pixelated;
-
-
-  user-select: none;
-  z-index: 1000;
-  pointer-events: none;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
+	background: url(../image/background/snow2.png)
 }
 
 .snowflake3 {
-  position: fixed;
-
-  background:
-    url(../image/background/snow3.png);
-  background-size: cover;
-  image-rendering: pixelated;
-
-
-  user-select: none;
-  z-index: 1000;
-  pointer-events: none;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
+	background: url(../image/background/snow3.png)
 }
