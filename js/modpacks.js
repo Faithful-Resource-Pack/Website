@@ -62,28 +62,32 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       })
     },
     downloadAllModpacks: function () {
-      const that = this
-
       getJSON('data/mods.json', (err, json) => {
         if (err) {
           console.error(err)
           return
         }
-        that.mods = json
+        this.mods = json
       })
 
-      getJSON('/data/modpack/modpackList.json', function (err, json) {
+      getJSON('/data/modpack/modpackList.json', (err, json) => {
         if (err) {
           console.error(err)
           return
         }
 
-        that.globalBlackList = json.globalBlackList
+        this.globalBlackList = json.globalBlackList
 
         json.modpacks.forEach(modpack => {
           Object.keys(modpack.versions).forEach(minecraftVersion => {
             modpack.versions[minecraftVersion].forEach(modpackVersion => {
-              that.downloadModpackFromModlist(modpack.codeName, modpack.displayName, modpackVersion, minecraftVersion, [...that.globalBlackList.default, ...that.globalBlackList[minecraftVersion], ...modpack.blackList.default, ...modpack.blackList[minecraftVersion]])
+              let finalBlacklist = []
+              if('default' in this.globalBlackList) finalBlacklist = [ ...finalBlacklist, ...this.globalBlackList.default ]
+              if(minecraftVersion in this.globalBlackList) finalBlacklist = [ ...finalBlacklist, ...this.globalBlackList[minecraftVersion] ]
+              if('default' in modpack.blackList) finalBlacklist = [ ...finalBlacklist, ...modpack.blackList.default ]
+              if(minecraftVersion in modpack.blackList) finalBlacklist = [ ...finalBlacklist, ...modpack.blackList[minecraftVersion] ]
+
+              this.downloadModpackFromModlist(modpack.codeName, modpack.displayName, modpackVersion, minecraftVersion, finalBlacklist)
             })
           })
         })
