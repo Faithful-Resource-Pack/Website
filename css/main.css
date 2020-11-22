@@ -31,13 +31,13 @@ p {
 
 /** BACKGROUND **/
 .background {
-	background: url(../image/background/bg_light_background.png) repeat
+	background: #131313 url(../image/background/bg_light_background.png) repeat
 }
 .foreground {
 	background:
 		url(../image/background/bg_light_transition_top.png) top repeat-x,
 		url(../image/background/bg_light_transition_bottom.png) bottom repeat-x,
-		url(../image/background/bg_light_foreground.png) repeat
+		#EEEDE5 url(../image/background/bg_light_foreground.png) repeat
 }
 
 /** MAIN STUFF **/
@@ -155,6 +155,9 @@ img.fancy-card-2x {
 	display: inline-block;
 	width: auto;
 	margin: auto
+}
+#bottomNavbar .navbar-nav {
+  justify-content: center
 }
 
 /** OWL CAROUSEL **/
