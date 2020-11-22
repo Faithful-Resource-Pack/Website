@@ -808,7 +808,7 @@
   {
     "name": {
       "displayName": "Buildcraft Additions",
-      "aliases": []
+      "aliases": [ "Buildcraft | Additions" ]
     },
     "versions": [
       "1.7.10"
@@ -819,7 +819,7 @@
   {
     "name": {
       "displayName": "Buildcraft Builders",
-      "aliases": []
+      "aliases": [ "Buildcraft | Builders" ]
     },
     "versions": [
       "1.12.2",
@@ -831,7 +831,7 @@
   {
     "name": {
       "displayName": "Buildcraft Compat",
-      "aliases": []
+      "aliases": [ "Buildcraft | Compat" ]
     },
     "versions": [
       "1.12.2",
@@ -843,7 +843,7 @@
   {
     "name": {
       "displayName": "Buildcraft Core",
-      "aliases": []
+      "aliases": [ "Buildcraft | Core "]
     },
     "versions": [
       "1.12.2",
@@ -855,7 +855,7 @@
   {
     "name": {
       "displayName": "Buildcraft Energy",
-      "aliases": []
+      "aliases": [ "Buildcraft | Energy" ]
     },
     "versions": [
       "1.12.2",
@@ -867,7 +867,7 @@
   {
     "name": {
       "displayName": "Buildcraft Factory",
-      "aliases": []
+      "aliases": [ "Buildcraft | Factory" ]
     },
     "versions": [
       "1.12.2",
@@ -879,7 +879,7 @@
   {
     "name": {
       "displayName": "Buildcraft Robotics",
-      "aliases": []
+      "aliases": [ "Buildcraft | Robotics" ]
     },
     "versions": [
       "1.7.10"
@@ -890,7 +890,7 @@
   {
     "name": {
       "displayName": "Buildcraft Silicon",
-      "aliases": []
+      "aliases": [ "Buildcraft | Silicon" ]
     },
     "versions": [
       "1.12.2",
@@ -902,7 +902,7 @@
   {
     "name": {
       "displayName": "Buildcraft Transport",
-      "aliases": []
+      "aliases": [ "Buildcraft | Transport" ]
     },
     "versions": [
       "1.12.2",
@@ -2274,7 +2274,7 @@
   {
     "name": {
       "displayName": "Industrial Craft 2 (IC2)",
-      "aliases": []
+      "aliases": [ "Industrial Craft", "IC2" ]
     },
     "versions": [
       "1.12.2",
@@ -2347,7 +2347,7 @@
     "versions": [
       "1.12.2"
     ],
-    "curse": "https://minecraft.curseforge.com/projects/integrated-tunnels",
+    "curse": "integrated-tunnels",
     "orgRepo": "integratedtunnels"
   },
   {
@@ -2459,7 +2459,7 @@
   {
     "name": {
       "displayName": "Just Enough Items (JEI)",
-      "aliases": []
+      "aliases": [ "Just Enough Items", "JEI" ]
     },
     "versions": [
       "1.16.3",
@@ -2489,7 +2489,7 @@
   {
     "name": {
       "displayName": "Just Enough Resources (JER)",
-      "aliases": []
+      "aliases": [ "Just Enough Resources", "JER" ]
     },
     "versions": [
       "1.12.2",
@@ -2503,7 +2503,7 @@
   {
     "name": {
       "displayName": "Just Enough Throwing In Fluids (JETIF)",
-      "aliases": []
+      "aliases": [ "Just Enough Throwing In Fluids", "JETIF" ]
     },
     "versions": [
       "1.12.2"
@@ -2581,7 +2581,7 @@
   {
     "name": {
       "displayName": "LootBags",
-      "aliases": []
+      "aliases": [ "Loot Bags" ]
     },
     "versions": [
       "1.12.2"
@@ -2802,7 +2802,7 @@
   {
     "name": {
       "displayName": "MiscUtils [Modding Utilities]",
-      "aliases": []
+      "aliases": [ "MiscUtils" ]
     },
     "versions": [
       "1.7.10"
@@ -2838,7 +2838,7 @@
   {
     "name": {
       "displayName": "Modular Force Field Systems (MFFS)",
-      "aliases": []
+      "aliases": [ "Modular Force Field Systems", "MFFS" ]
     },
     "versions": [
       "1.7.10"
@@ -3123,7 +3123,7 @@
   {
     "name": {
       "displayName": "Not Enough Items (NEI)",
-      "aliases": []
+      "aliases": [ "Not Enough Items", "NEI" ]
     },
     "versions": [
       "1.12.2",
@@ -3322,7 +3322,7 @@
   {
     "name": {
       "displayName": "Player Stats 2",
-      "aliases": []
+      "aliases": [ "Player Stats" ]
     },
     "versions": [
       "1.12.2",
@@ -4346,7 +4346,7 @@
   {
     "name": {
       "displayName": "Tinker I/O",
-      "aliases": []
+      "aliases": [ "Tinker IO" ]
     },
     "versions": [
       "1.12.2"
@@ -4565,7 +4565,7 @@
   {
     "name": {
       "displayName": "WR-CBE Addons (Wireless Redstone Chicken Bones Edition)",
-      "aliases": []
+      "aliases": [ "WR-CBE Addons" ]
     },
     "versions": [
       "1.7.10"
@@ -4576,7 +4576,7 @@
   {
     "name": {
       "displayName": "WR-CBE Core (Wireless Redstone Chicken Bones Edition)",
-      "aliases": []
+      "aliases": [ "WR-CBE Core" ]
     },
     "versions": [
       "1.7.10"
@@ -4587,7 +4587,7 @@
   {
     "name": {
       "displayName": "WR-CBE Logic (Wireless Redstone Chicken Bones Edition)",
-      "aliases": []
+      "aliases": [ "WR-CBE Logic" ]
     },
     "versions": [
       "1.7.10"
@@ -4755,7 +4755,7 @@
   {
     "name": {
       "displayName": "Yet Another Leather Smelting Mod (YALSM)",
-      "aliases": []
+      "aliases": [ "Yet Another Leather Smelting Mod", "YALSM" ]
     },
     "versions": [
       "1.7.10"
@@ -4777,7 +4777,7 @@
   {
     "name": {
       "displayName": "iBench",
-      "aliases": []
+      "aliases": [ "IBench" ]
     },
     "versions": [
       "1.7.10"
