@@ -3,6 +3,7 @@
 
 const _MOD_NOT_FOUND_MESSAGE = 'Found no thumbnail for this mod'
 const _NO_LINK = undefined
+const _NO_ICON = '/image/icon/compliance_mods.png'
 const _NO_ATTACHMENTS = -1
 
 Vue.component('minecraft-mod', {
@@ -11,26 +12,32 @@ Vue.component('minecraft-mod', {
   },
   template:
     '<li class="mod-bar" :class="{ \'selected-mod\': mod.selected }">\
-      <label :for="mod.name[1]" class="mod-label">Select this mod</label>\
-      <div :style="link ? { \'background-image\': \'url(\' + imageSource + \')\'} : {opacity: 1}" class="mod-bar-item mod-img">\
+      <label :for="repoName" class="mod-label">Select this mod</label>\
+      <div :style="imageStyle" class="mod-bar-item mod-img">\
         <div class="mod-img-overlay"></div>\
       </div>\
       <div class="mod-bar-item">\
-        <input :id="mod.name[1]" type="checkbox" v-model="mod.selected" class="mod-checkbox">\
-        <span>{{ mod.name[0] }}</span>\
-        <a v-if="!!link" :href="link" target="_blank" rel="noopener" :title="link" class="ml-2 mod-info"><i class="fas fa-info-circle"></i></a>\
+        <input :id="repoName" type="checkbox" v-model="mod.selected" class="mod-checkbox">\
+        <span v-html="title"></span>\
         <br>\
         <div :class="{ \'mt-1\': true, modNotChosen: !mod.selected }" class="mod-radio-group">\
-          <template v-for="version in mod.versions":key="modId(mod, version)">\
-            <input :disabled="!mod.selected" type="radio" :id="modId(mod, version)" :name="modId(mod, version)"  v-model="mod.versionSelected" :value="version" class="mod-radio">\
-            <label :for="modId(mod, version)">{{ version }}</label>\
+          <template v-for="(version, vindex) in minecraftVersions":key="modIds[vindex]">\
+            <input :disabled="!mod.selected" type="radio" :id="modIds[vindex]" :name="modIds[vindex]"  v-model="mod.versionSelected" :value="version" class="mod-radio">\
+            <label :for="modIds[vindex]">{{ version }}</label>\
           </template>\
         </div>\
       </div>\
     </li>',
+  data: function () {
+    return {
+      searchPages: 3,
+      imageSource: _NO_ICON,
+      link: _NO_LINK
+    }
+  },
   methods: {
-    modId: function (mod, version) {
-      return String(mod.name[1] + '-' + version.replace(/\./g, ''))
+    modId: function (repoName, version) {
+      return String(repoName + '-' + version.replace(/\./g, ''))
     },
     search (index, searchFilter, _fullName = false) {
       return new Promise((resolve, reject) => {
@@ -41,11 +48,11 @@ Vue.component('minecraft-mod', {
           .then(res => {
             const result = res.data.find(mod => {
               let found = false
-              if (this.$props.mod.name[2]) {
-                found = mod.websiteUrl.split('/').pop() === this.$props.mod.name[2]
+              if (this.curseName !== _NO_LINK) {
+                found = mod.websiteUrl.split('/').pop() === this.curseName
               }
 
-              return found || mod.name.toLowerCase() === this.$props.mod.name[0].toLowerCase()
+              return found || mod.name.toLowerCase() === this.displayName.toLowerCase()
             })
 
             if (result) {
@@ -61,7 +68,7 @@ Vue.component('minecraft-mod', {
     },
     makeSearch: function (index = 1, fullName = false) {
       return new Promise((resolve, reject) => {
-        let searchFilter = fullName ? this.$props.mod.name[0] : this.$props.mod.name[2]
+        const searchFilter = fullName ? this.displayName : this.curseName
         this.search(index, searchFilter)
           .then(results => {
             resolve(results)
@@ -93,15 +100,50 @@ Vue.component('minecraft-mod', {
       })
     }
   },
-  data: function () {
-    return {
-      searchPages: 3,
-      imageSource: undefined,
-      link: _NO_LINK
+  computed: {
+    aliases: function () {
+      // return '<span class="advice">' + this.$props.mod.name.aliases.join(', ') + '</span>'
+      return ''
+    },
+    curseName: function () {
+      // return this.$props.mod.curse || _NO_LINK
+      return this.$props.mod.name[2] || _NO_LINK
+    },
+    info: function () {
+      // const link = 'https://www.curseforge.com/minecraft/mc-mods/' + this.curseName
+      const link = this.link
+
+      if (link === _NO_LINK) return ''
+
+      return '<a href="' + link + '" target="_blank" rel="noopener" title="' + link + '" class="ml-2 mod-info"><i class="fas fa-info-circle"></i></a>'
+    },
+    displayName: function () {
+      // return this.$props.mod.name.displayName
+      return this.$props.mod.name[0]
+    },
+    imageStyle: function () {
+      if (this.imageSource !== _NO_ICON) {
+        return 'background-image: url(' + this.imageSource + ')'
+      }
+
+      return 'opacity: 1'
+    },
+    minecraftVersions: function () {
+      return this.$props.mod.versions
+    },
+    repoName: function () {
+      // return this.$props.mod.extRepo || this.$props.mod.orgRepo
+      return this.$props.mod.name[1]
+    },
+    modIds: function () {
+      return this.minecraftVersions.map(v => this.modId(this.repoName, v))
+    },
+    title: function () {
+      return this.displayName + ' ' + this.aliases + ' ' + this.info
     }
   },
   mounted: function () {
-    let result = this.$parent.searchCache(this.$props.mod.name[0])
+    const result = this.$parent.searchCache(this.displayName)
 
     if (result) {
       this.imageSource = result.imageSource
@@ -124,21 +166,17 @@ Vue.component('minecraft-mod', {
 
       // add image to cache
       this.$parent.thumbnailCache.push({
-        modName: this.$props.mod.name[0],
+        modName: this.displayName,
         imageSource: this.imageSource,
         link: this.link
       })
-
     }).catch(err => {
       if (err.message !== _MOD_NOT_FOUND_MESSAGE) {
-        console.error(err)
-        console.error(this.$props.mod.name[2] || this.$props.mod.name[0])
+        // console.error(err)
+        // console.error(this.curseName || this.displayName)
       } else {
-        // set default organization image
-
-        this.imageSource = '/image/icon/compliance_mods.png'
         this.$parent.thumbnailCache.push({
-          modName: this.$props.mod.name[0],
+          modName: this.dispatch,
           imageSource: this.imageSource,
           link: _NO_LINK
         })
