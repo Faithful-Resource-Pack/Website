@@ -62,7 +62,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     filteredMods: function () {
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0)))) {
         return this.mods.filter(mod => {
-          let versions = mod.versions
+          const versions = mod.versions
           let found = false
 
           let i = 0
@@ -76,7 +76,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         })
       }
 
-      if (this.form.search.length >= this.form.minSearchLetters) { return this.mods.filter(mod => mod.name[0].toLowerCase().includes(this.form.search.toLowerCase())) }
+      if (this.form.search.length >= this.form.minSearchLetters) { return this.mods.filter(mod => this.modToDisplayName(mod).toLowerCase().includes(this.form.search.toLowerCase())) }
       return this.mods
     },
     exactVersionMode: function () {
@@ -89,7 +89,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       }) !== -1
     },
     modSelection: function () {
-      let selection = this.mods.filter(mod => mod.selected && !!mod.versionSelected)
+      const selection = this.mods.filter(mod => mod.selected && !!mod.versionSelected)
 
       return selection.map(mod => {
         return this.modToSelection(mod)
@@ -97,13 +97,6 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     },
     downloadButtonText: function () {
       return this.isLoadingDownload ? '<i class="fas fa-spinner fa-spin"></i> Sending request...' : 'Download Resource Pack'
-    },
-    downloadReposModSelection: function () {
-      let selection = this.mods.filter(mod => mod.selected && !!mod.versionSelected)
-
-      return selection.map(mod => {
-        return mod.repository + '/' + mod.name[1] + '#' + mod.versionSelected
-      })
     },
     minecraftVersions: function () {
       const mcVersions = []
@@ -138,7 +131,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       let i = 0
       while (i < this.modSelection.length && !versionChanged) {
         if (this.exactVersionMode) {
-          let tmp = this.modSelection[i].version
+          const tmp = this.modSelection[i].version
 
           if (minecraftVersion === undefined) {
             minecraftVersion = tmp
@@ -146,7 +139,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
             if (minecraftVersion !== tmp) { versionChanged = true }
           }
         } else {
-          let tmp = this.packageVersion(this.modSelection[i].version)
+          const tmp = this.packageVersion(this.modSelection[i].version)
 
           if (result === undefined) {
             result = tmp
@@ -169,11 +162,29 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   methods: {
+    modToDisplayName: function (mod) {
+      // return mod.name.displayName
+      return mod.name[0]
+    },
+    modToRepoName: function (mod) {
+      // return mod.name.orgRepo || mod.name.extRepo.split('/').pop()
+      return mod.name[1]
+    },
+    modToRepoURL: function (mod) {
+      /*
+      if(mod.orgRepo) {
+        return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
+      } else {
+        return mod.extRepo
+      }
+      */
+      return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
+    },
     modToSelection: function (mod, version = undefined) {
       return {
-        name: mod.name[1],
-        displayName: mod.name[0],
-        repository: mod.repository,
+        name: this.modToRepoName(mod),
+        displayName: this.modToDisplayName(mod),
+        repositoryURL: this.modToRepoURL(mod, version),
         version: mod.versionSelected || version
       }
     },
@@ -189,7 +200,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         const otherNumbersMax = MinecraftUtils.minecraftVersionToNumberArray(this.versions[versionKeys[i]].max)
 
         // we compute the corresponding numbers
-        let correspondingNumbers = MinecraftUtils.minecraftVersionsToNumbers([numbers, otherNumbersMin, otherNumbersMax])
+        const correspondingNumbers = MinecraftUtils.minecraftVersionsToNumbers([numbers, otherNumbersMin, otherNumbersMax])
 
         if (correspondingNumbers[0] >= correspondingNumbers[1] && correspondingNumbers[0] <= correspondingNumbers[2]) {
           result = versionKeys[i]

@@ -20,7 +20,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
 
     let i = 0
     while (i < modSelection.length && !versionChanged) {
-      let tmpPackageVersion = this.packageVersion(modSelection[i].version)
+      const tmpPackageVersion = this.packageVersion(modSelection[i].version)
 
       if (currentPackageVersion === undefined) {
         currentPackageVersion = tmpPackageVersion
@@ -46,7 +46,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
       const otherNumbersMax = MinecraftUtils.minecraftVersionToNumberArray(this.packVersions[packageVersionKeys[i]].max)
 
       // we compute the corresponding numbers
-      let correspondingNumbers = MinecraftUtils.minecraftVersionsToNumbers([numbers, otherNumbersMin, otherNumbersMax])
+      const correspondingNumbers = MinecraftUtils.minecraftVersionsToNumbers([numbers, otherNumbersMin, otherNumbersMax])
 
       if (correspondingNumbers[0] >= correspondingNumbers[1] && correspondingNumbers[0] <= correspondingNumbers[2]) {
         result = packageVersionKeys[i]
@@ -62,11 +62,32 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     return result
   },
 
+  modToDisplayName: function (mod) {
+    // return mod.name.displayName
+    return mod.name[0]
+  },
+
+  modToRepoName: function (mod) {
+    // return mod.name.orgRepo || mod.name.extRpo.split('/').pop()
+    return mod.name[1]
+  },
+
+  modToRepoURL: function(mod) {
+    /*
+    if(mod.orgRepo) {
+      return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
+    } else {
+      return mod.extRepo
+    }
+    */
+    return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
+  },
+
   modToSelection: function (mod, version = undefined) {
     return {
-      name: mod.name[1],
-      displayName: mod.name[0],
-      repository: mod.repository,
+      name: this.modToRepoName(mod),
+      displayName: this.modToDisplayName(mod),
+      repositoryURL: this.modToRepoURL(mod, version),
       version: mod.versionSelected || version
     }
   },
@@ -83,7 +104,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     return new Promise((resolve, reject) => {
       axios({
         url:
-          'https://api.allorigins.win/raw?url=https://github.com/' + mod.repository + '/' + mod.name + '/archive/' + mod.version + '.zip',
+          'https://api.allorigins.win/raw?url=' + mod.repositoryURL + '/archive/' + mod.version + '.zip',
         method: 'GET',
         responseType: 'blob' // important
       })
@@ -168,7 +189,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
         const fileKey = this.fileKey(modSelection[index])
 
         // load this pack
-        let zip = new JSZip()
+        const zip = new JSZip()
 
         zip.loadAsync(res.data)
           .then((zip) => {
