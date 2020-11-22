@@ -1,3958 +1,4788 @@
 [
   {
-    "name": [
-      "/dank/null"
-    ],
-    "assets": {
-      "1.12.2": "danknull"
+    "name": {
+      "displayName": "/dank/null",
+      "aliases": []
     },
-    "curse": "dank-null"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "dank-null",
+    "orgRepo": "danknull"
   },
   {
-    "name": [
-      "AE2 Stuff"
-    ],
-    "assets": {
-      "1.12.2": "ae2stuff"
+    "name": {
+      "displayName": "AE2 Stuff",
+      "aliases": []
     },
-    "curse": "ae2-stuff"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "ae2-stuff",
+    "orgRepo": "ae2stuff"
   },
   {
-    "name": [
-      "AIOT Botania"
-    ],
-    "assets": {
-      "1.12.2": "aiotbotania"
+    "name": {
+      "displayName": "AIOT Botania",
+      "aliases": []
     },
-    "curse": "aiot-botania"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "aiot-botania",
+    "orgRepo": "aiotbotania"
   },
   {
-    "name": [
-      "AbyssalCraft"
-    ],
-    "assets": {
-      "1.12.2": "abyssalcraft"
+    "name": {
+      "displayName": "AbyssalCraft",
+      "aliases": []
     },
-    "curse": "abyssalcraft"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "abyssalcraft",
+    "orgRepo": "abyssalcraft"
   },
   {
-    "name": [
-      "Actually Additions"
-    ],
-    "assets": {
-      "1.12.2": "actuallyadditions",
-      "1.11.2": "actuallyadditions",
-      "1.10.2": "actuallyadditions"
+    "name": {
+      "displayName": "Actually Additions",
+      "aliases": []
     },
-    "curse": "actually-additions"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "actually-additions",
+    "orgRepo": "actuallyadditions"
   },
   {
-    "name": [
-      "Additional Buildcraft Objects"
-    ],
-    "assets": {
-      "1.7.10": "additional-buildcraft-objects"
+    "name": {
+      "displayName": "Additional Buildcraft Objects",
+      "aliases": []
     },
-    "curse": "additional-buildcraft-objects"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "additional-buildcraft-objects",
+    "orgRepo": "additional-buildcraft-objects"
   },
   {
-    "name": [
-      "Additional Pipes for Buildcraft"
-    ],
-    "assets": {
-      "1.7.10": "additionalpipes"
+    "name": {
+      "displayName": "Additional Pipes for Buildcraft",
+      "aliases": []
     },
-    "curse": "additional-pipes-for-buildcraft"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "additional-pipes-for-buildcraft",
+    "orgRepo": "additionalpipes"
   },
   {
-    "name": [
-      "Advanced Generators"
-    ],
-    "assets": {
-      "1.12.2": "advgenerators"
+    "name": {
+      "displayName": "Advanced Generators",
+      "aliases": []
     },
-    "curse": "advanced-generators"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "advanced-generators",
+    "orgRepo": "advgenerators"
   },
   {
-    "name": [
-      "Advanced Genetics"
+    "name": {
+      "displayName": "Advanced Genetics",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "advancedgenetics"
-    }
+    "orgRepo": "advancedgenetics"
   },
   {
-    "name": [
-      "Advanced Machines"
-    ],
-    "assets": {
-      "1.7.10": "advancedmachines"
+    "name": {
+      "displayName": "Advanced Machines",
+      "aliases": []
     },
-    "curse": "advanced-machines"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "advanced-machines",
+    "orgRepo": "advancedmachines"
   },
   {
-    "name": [
-      "Advanced Rocketry"
-    ],
-    "assets": {
-      "1.12.2": "advancedrocketry"
+    "name": {
+      "displayName": "Advanced Rocketry",
+      "aliases": []
     },
-    "curse": "advanced-rocketry"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "advanced-rocketry",
+    "orgRepo": "advancedrocketry"
   },
   {
-    "name": [
-      "Advanced Solar Materials"
-    ],
-    "assets": {
-      "1.12.2": "advsolars"
+    "name": {
+      "displayName": "Advanced Solar Materials",
+      "aliases": []
     },
-    "curse": "advanced-solar-materials"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "advanced-solar-materials",
+    "orgRepo": "advsolars"
   },
   {
-    "name": [
-      "Advanced Solar Panel"
-    ],
-    "assets": {
-      "1.7.10": "advancedsolarpanel"
+    "name": {
+      "displayName": "Advanced Solar Panel",
+      "aliases": []
     },
-    "curse": "advanced-solar-panels"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "advanced-solar-panels",
+    "orgRepo": "advancedsolarpanel"
   },
   {
-    "name": [
-      "Advancement Book"
-    ],
-    "assets": {
-      "1.12.2": "advancementbook"
+    "name": {
+      "displayName": "Advancement Book",
+      "aliases": []
     },
-    "curse": "advancement-book"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "advancement-book",
+    "orgRepo": "advancementbook"
   },
   {
-    "name": [
-      "Advancements Enlarger"
-    ],
-    "assets": {
-      "1.16.3": "advancements-enlarger",
-      "1.15.2": "advancements-enlarger"
+    "name": {
+      "displayName": "Advancements Enlarger",
+      "aliases": []
     },
-    "curse": "advancements-enlarger"
+    "versions": [
+      "1.16.3",
+      "1.15.2"
+    ],
+    "curse": "advancements-enlarger",
+    "orgRepo": "advancements-enlarger"
   },
   {
-    "name": [
-      "Advent of Ascension (Nevermine)"
-    ],
-    "assets": {
-      "1.7.10": "nevermine"
+    "name": {
+      "displayName": "Advent of Ascension (Nevermine)",
+      "aliases": []
     },
-    "curse": "advent-of-ascension-nevermine"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "advent-of-ascension-nevermine",
+    "orgRepo": "nevermine"
   },
   {
-    "name": [
-      "AgriCraft"
-    ],
-    "assets": {
-      "1.12.2": "agricraft"
+    "name": {
+      "displayName": "AgriCraft",
+      "aliases": []
     },
-    "curse": "agricraft"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "agricraft",
+    "orgRepo": "agricraft"
   },
   {
-    "name": [
-      "Akashic Tome"
-    ],
-    "assets": {
-      "1.12.2": "akashictome"
+    "name": {
+      "displayName": "Akashic Tome",
+      "aliases": []
     },
-    "curse": "akashic-tome"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "akashic-tome",
+    "orgRepo": "akashictome"
   },
   {
-    "name": [
-      "Alchemical Wizardry"
+    "name": {
+      "displayName": "Alchemical Wizardry",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "alchemicalwizardry"
-    }
+    "orgRepo": "alchemicalwizardry"
   },
   {
-    "name": [
-      "Alchemistry"
-    ],
-    "assets": {
-      "1.12.2": "alchemistry"
+    "name": {
+      "displayName": "Alchemistry",
+      "aliases": []
     },
-    "curse": "alchemistry"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "alchemistry",
+    "orgRepo": "alchemistry"
   },
   {
-    "name": [
-      "Animania"
-    ],
-    "assets": {
-      "1.12.2": "animania"
+    "name": {
+      "displayName": "Animania",
+      "aliases": []
     },
-    "curse": "animania"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "animania",
+    "orgRepo": "animania"
   },
   {
-    "name": [
-      "Another Dusts"
-    ],
-    "assets": {
-      "1.11.2": "anotherdusts",
-      "1.10.2": "anotherdusts",
-      "1.9.4": "anotherdusts"
+    "name": {
+      "displayName": "Another Dusts",
+      "aliases": []
     },
-    "curse": "another-dusts"
+    "versions": [
+      "1.11.2",
+      "1.10.2",
+      "1.9.4"
+    ],
+    "curse": "another-dusts",
+    "orgRepo": "anotherdusts"
   },
   {
-    "name": [
-      "Another One Bites the Dust"
-    ],
-    "assets": {
-      "1.7.10": "aobd"
+    "name": {
+      "displayName": "Another One Bites the Dust",
+      "aliases": []
     },
-    "curse": "another-one-bites-the-dust"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "another-one-bites-the-dust",
+    "orgRepo": "aobd"
   },
   {
-    "name": [
-      "Antique Atlas"
-    ],
-    "assets": {
-      "1.7.10": "antiqueatlas"
+    "name": {
+      "displayName": "Antique Atlas",
+      "aliases": []
     },
-    "curse": "antique-atlas"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "antique-atlas",
+    "orgRepo": "antiqueatlas"
   },
   {
-    "name": [
-      "AppleCore"
-    ],
-    "assets": {
-      "1.11.2": "applecore",
-      "1.10.2": "applecore",
-      "1.9.4": "applecore",
-      "1.8.9": "applecore",
-      "1.7.10": "applecore"
+    "name": {
+      "displayName": "AppleCore",
+      "aliases": []
     },
-    "curse": "applecore"
+    "versions": [
+      "1.11.2",
+      "1.10.2",
+      "1.9.4",
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "applecore",
+    "orgRepo": "applecore"
   },
   {
-    "name": [
-      "AppleSkin"
-    ],
-    "assets": {
-      "1.16.3": "appleskin",
-      "1.15.2": "appleskin",
-      "1.14.4": "appleskin",
-      "1.13.2": "appleskin",
-      "1.12.2": "appleskin",
-      "1.11.2": "appleskin",
-      "1.10.2": "appleskin"
+    "name": {
+      "displayName": "AppleSkin",
+      "aliases": []
     },
-    "curse": "appleskin"
+    "versions": [
+      "1.16.3",
+      "1.15.2",
+      "1.14.4",
+      "1.13.2",
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "appleskin",
+    "orgRepo": "appleskin"
   },
   {
-    "name": [
-      "Applied Energistics 2"
-    ],
-    "assets": {
-      "1.12.2": "appliedenergistics2",
-      "1.11.2": "appliedenergistics2",
-      "1.10.2": "appliedenergistics2",
-      "1.7.10": "appliedenergistics2"
+    "name": {
+      "displayName": "Applied Energistics 2",
+      "aliases": []
     },
-    "curse": "applied-energistics-2"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "applied-energistics-2",
+    "orgRepo": "appliedenergistics2"
   },
   {
-    "name": [
-      "Archimedes' Ships"
-    ],
-    "assets": {
-      "1.7.10": "archimedes"
+    "name": {
+      "displayName": "Archimedes' Ships",
+      "aliases": []
     },
-    "curse": "archimedes-ships"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "archimedes-ships",
+    "orgRepo": "archimedes"
   },
   {
-    "name": [
-      "ArchitectureCraft"
-    ],
-    "assets": {
-      "1.12.2": "architecturecraft"
+    "name": {
+      "displayName": "ArchitectureCraft",
+      "aliases": []
     },
-    "curse": "architecturecraft"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "architecturecraft",
+    "orgRepo": "architecturecraft"
   },
   {
-    "name": [
-      "Armor Toughness Bar"
-    ],
-    "assets": {
-      "1.12.2": "toughnessbar"
+    "name": {
+      "displayName": "Armor Toughness Bar",
+      "aliases": []
     },
-    "curse": "armor-toughness-bar"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "armor-toughness-bar",
+    "orgRepo": "toughnessbar"
   },
   {
-    "name": [
-      "ArmorPlus"
-    ],
-    "assets": {
-      "1.12.2": "armorplus"
+    "name": {
+      "displayName": "ArmorPlus",
+      "aliases": []
     },
-    "curse": "armorplus"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "armorplus",
+    "orgRepo": "armorplus"
   },
   {
-    "name": [
-      "Aroma1997s Dimensional World"
-    ],
-    "assets": {
-      "1.12.2": "aroma1997sdimension"
+    "name": {
+      "displayName": "Aroma1997s Dimensional World",
+      "aliases": []
     },
-    "curse": "aroma1997s-dimensional-world"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "aroma1997s-dimensional-world",
+    "orgRepo": "aroma1997sdimension"
   },
   {
-    "name": [
-      "Ars Magica 2"
-    ],
-    "assets": {
-      "1.7.10": "arsmagica2"
+    "name": {
+      "displayName": "Ars Magica 2",
+      "aliases": []
     },
-    "curse": "ars-magica-2"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "ars-magica-2",
+    "orgRepo": "arsmagica2"
   },
   {
-    "name": [
-      "Astral Sorcery"
-    ],
-    "assets": {
-      "1.12.2": "astralsorcery"
+    "name": {
+      "displayName": "Astral Sorcery",
+      "aliases": []
     },
-    "curse": "astral-sorcery"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "astral-sorcery",
+    "orgRepo": "astralsorcery"
   },
   {
-    "name": [
-      "Auraddons"
-    ],
-    "assets": {
-      "1.12.2": "auraddons"
+    "name": {
+      "displayName": "Auraddons",
+      "aliases": []
     },
-    "curse": "auraddons"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "auraddons",
+    "orgRepo": "auraddons"
   },
   {
-    "name": [
-      "Auto Dropper"
-    ],
-    "assets": {
-      "1.12.2": "autodropper",
-      "1.11.2": "autodropper",
-      "1.10.2": "autodropper"
+    "name": {
+      "displayName": "Auto Dropper",
+      "aliases": []
     },
-    "curse": "auto-dropper"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "auto-dropper",
+    "orgRepo": "autodropper"
   },
   {
-    "name": [
-      "Automagy"
-    ],
-    "assets": {
-      "1.7.10": "automagy"
+    "name": {
+      "displayName": "Automagy",
+      "aliases": []
     },
-    "curse": "automagy"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "automagy",
+    "orgRepo": "automagy"
   },
   {
-    "name": [
-      "Avanced Power Management"
+    "name": {
+      "displayName": "Avanced Power Management",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "advancedpowermanagement"
-    }
+    "orgRepo": "advancedpowermanagement"
   },
   {
-    "name": [
-      "Avaritia 1.1x"
-    ],
-    "assets": {
-      "1.12.2": "avaritia"
+    "name": {
+      "displayName": "Avaritia 1.1x",
+      "aliases": []
     },
-    "curse": "avaritia"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "avaritia",
+    "orgRepo": "avaritia"
   },
   {
-    "name": [
-      "Backpack"
-    ],
-    "assets": {
-      "1.12.2": "backpack",
-      "1.8.9": "backpack",
-      "1.7.10": "backpack"
+    "name": {
+      "displayName": "Backpack",
+      "aliases": []
     },
-    "curse": "forge-backpacks"
+    "versions": [
+      "1.12.2",
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "forge-backpacks",
+    "orgRepo": "backpack"
   },
   {
-    "name": [
-      "Bagginses"
-    ],
-    "assets": {
-      "1.11.2": "bagginses",
-      "1.10.2": "bagginses"
+    "name": {
+      "displayName": "Bagginses",
+      "aliases": []
     },
-    "curse": "bagginses"
+    "versions": [
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "bagginses",
+    "orgRepo": "bagginses"
   },
   {
-    "name": [
-      "Bartworks"
-    ],
-    "assets": {
-      "1.7.10": "bartworks"
+    "name": {
+      "displayName": "Bartworks",
+      "aliases": []
     },
-    "curse": "bartworks"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "bartworks",
+    "orgRepo": "bartworks"
   },
   {
-    "name": [
-      "Baubles"
-    ],
-    "assets": {
-      "1.12.2": "baubles",
-      "1.11.2": "baubles",
-      "1.10.2": "baubles",
-      "1.8.9": "baubles",
-      "1.7.10": "baubles"
+    "name": {
+      "displayName": "Baubles",
+      "aliases": []
     },
-    "curse": "baubles"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "baubles",
+    "orgRepo": "baubles"
   },
   {
-    "name": [
-      "Baubley Heart Canisters"
-    ],
-    "assets": {
-      "1.12.2": "bhc"
+    "name": {
+      "displayName": "Baubley Heart Canisters",
+      "aliases": []
     },
-    "curse": "baubley-heart-canisters"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "baubley-heart-canisters",
+    "orgRepo": "bhc"
   },
   {
-    "name": [
-      "Beenfo"
-    ],
-    "assets": {
-      "1.16.3": "beenfo",
-      "1.15.2": "beenfo"
+    "name": {
+      "displayName": "Beenfo",
+      "aliases": []
     },
-    "curse": "beenfo"
+    "versions": [
+      "1.16.3",
+      "1.15.2"
+    ],
+    "curse": "beenfo",
+    "orgRepo": "beenfo"
   },
   {
-    "name": [
-      "Better Achievements"
-    ],
-    "assets": {
-      "1.11.2": "betterachievements",
-      "1.10.2": "betterachievements"
+    "name": {
+      "displayName": "Better Achievements",
+      "aliases": []
     },
-    "curse": "betterachievements"
+    "versions": [
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "betterachievements",
+    "orgRepo": "betterachievements"
   },
   {
-    "name": [
-      "Better Advancements"
-    ],
-    "assets": {
-      "1.12.2": "betteradvancements"
+    "name": {
+      "displayName": "Better Advancements",
+      "aliases": []
     },
-    "curse": "better-advancements"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "better-advancements",
+    "orgRepo": "betteradvancements"
   },
   {
-    "name": [
-      "Better Builder's Wands"
-    ],
-    "assets": {
-      "1.12.2": "betterbuilderswands",
-      "1.11.2": "betterbuilderswands",
-      "1.10.2": "betterbuilderswands"
+    "name": {
+      "displayName": "Better Builder's Wands",
+      "aliases": []
     },
-    "curse": "better-builders-wands"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "better-builders-wands",
+    "orgRepo": "betterbuilderswands"
   },
   {
-    "name": [
-      "Better Enchanted Books"
-    ],
-    "assets": {
-      "1.16.3": "bebooks",
-      "1.15.2": "bebooks"
+    "name": {
+      "displayName": "Better Enchanted Books",
+      "aliases": []
     },
-    "curse": "better-enchanted-books"
+    "versions": [
+      "1.16.3",
+      "1.15.2"
+    ],
+    "curse": "better-enchanted-books",
+    "orgRepo": "bebooks"
   },
   {
-    "name": [
-      "Better Questing"
-    ],
-    "assets": {
-      "1.12.2": "betterquesting"
+    "name": {
+      "displayName": "Better Questing",
+      "aliases": []
     },
-    "curse": "better-questing"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "better-questing",
+    "orgRepo": "betterquesting"
   },
   {
-    "name": [
-      "Better Questing - Quest Book"
-    ],
-    "assets": {
-      "1.12.2": "questbook"
+    "name": {
+      "displayName": "Better Questing - Quest Book",
+      "aliases": []
     },
-    "curse": "better-questing-quest-book"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "better-questing-quest-book",
+    "orgRepo": "questbook"
   },
   {
-    "name": [
-      "Better Storage"
-    ],
-    "assets": {
-      "1.7.10": "betterstorage"
+    "name": {
+      "displayName": "Better Storage",
+      "aliases": []
     },
-    "curse": "better-storage"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "better-storage",
+    "orgRepo": "betterstorage"
   },
   {
-    "name": [
-      "Better With Mods"
-    ],
-    "assets": {
-      "1.12.2": "betterwithmods"
+    "name": {
+      "displayName": "Better With Mods",
+      "aliases": []
     },
-    "curse": "bwm-suite"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "bwm-suite",
+    "orgRepo": "betterwithmods"
   },
   {
-    "name": [
-      "BetterBeginnings Mod"
-    ],
-    "assets": {
-      "1.7.10": "betterbeginnings"
+    "name": {
+      "displayName": "BetterBeginnings Mod",
+      "aliases": []
     },
-    "curse": "betterbeginnings-mod"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "betterbeginnings-mod",
+    "orgRepo": "betterbeginnings"
   },
   {
-    "name": [
-      "BetterNether"
-    ],
-    "assets": {
-      "1.12.2": "betternether"
+    "name": {
+      "displayName": "BetterNether",
+      "aliases": []
     },
-    "curse": "betternether"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "betternether",
+    "orgRepo": "betternether"
   },
   {
-    "name": [
-      "BeyondRealityCore"
+    "name": {
+      "displayName": "BeyondRealityCore",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "beyondrealitycore"
-    }
+    "orgRepo": "beyondrealitycore"
   },
   {
-    "name": [
-      "BiblioCraft"
-    ],
-    "assets": {
-      "1.12.2": "bibliocraft",
-      "1.7.10": "bibliocraft"
+    "name": {
+      "displayName": "BiblioCraft",
+      "aliases": []
     },
-    "curse": "bibliocraft"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "bibliocraft",
+    "orgRepo": "bibliocraft"
   },
   {
-    "name": [
-      "Billund"
-    ],
-    "assets": {
-      "1.7.10": "billund"
+    "name": {
+      "displayName": "Billund",
+      "aliases": []
     },
-    "curse": "billund-223258"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "billund-223258",
+    "orgRepo": "billund"
   },
   {
-    "name": [
-      "Binnie Design"
-    ],
-    "assets": {
-      "1.12.2": "binniedesign"
+    "name": {
+      "displayName": "Binnie Design",
+      "aliases": []
     },
-    "curse": "binnies-mods"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "binnies-mods",
+    "orgRepo": "binniedesign"
   },
   {
-    "name": [
-      "Binnie's Mods"
-    ],
-    "assets": {
-      "1.12.2": "binniecore",
-      "1.7.10": "binniecore"
+    "name": {
+      "displayName": "Binnie's Mods",
+      "aliases": []
     },
-    "curse": "binnies-mods"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "binnies-mods",
+    "orgRepo": "binniecore"
   },
   {
-    "name": [
-      "Biomes O' Plenty"
-    ],
-    "assets": {
-      "1.12.2": "biomesoplenty",
-      "1.11.2": "biomesoplenty",
-      "1.10.2": "biomesoplenty",
-      "1.7.10": "biomesoplenty"
+    "name": {
+      "displayName": "Biomes O' Plenty",
+      "aliases": []
     },
-    "curse": "biomes-o-plenty"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "biomes-o-plenty",
+    "orgRepo": "biomesoplenty"
   },
   {
-    "name": [
-      "Bis"
+    "name": {
+      "displayName": "Bis",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "bis"
-    }
+    "orgRepo": "bis"
   },
   {
-    "name": [
-      "Block Drops (JEI Addon)"
-    ],
-    "assets": {
-      "1.12.2": "blockdrops",
-      "1.11.2": "blockdrops",
-      "1.10.2": "blockdrops"
+    "name": {
+      "displayName": "Block Drops (JEI Addon)",
+      "aliases": []
     },
-    "curse": "block-drops-jei-addon"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "block-drops-jei-addon",
+    "orgRepo": "blockdrops"
   },
   {
-    "name": [
-      "Blood Arsenal"
-    ],
-    "assets": {
-      "1.7.10": "bloodarsenal"
+    "name": {
+      "displayName": "Blood Arsenal",
+      "aliases": []
     },
-    "curse": "blood-arsenal"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "blood-arsenal",
+    "orgRepo": "bloodarsenal"
   },
   {
-    "name": [
-      "Blood Magic"
-    ],
-    "assets": {
-      "1.12.2": "bloodmagic"
+    "name": {
+      "displayName": "Blood Magic",
+      "aliases": []
     },
-    "curse": "blood-magic"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "blood-magic",
+    "orgRepo": "bloodmagic"
   },
   {
-    "name": [
-      "Blue Power"
-    ],
-    "assets": {
-      "1.7.10": "bluepower"
+    "name": {
+      "displayName": "Blue Power",
+      "aliases": []
     },
-    "curse": "blue-power"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "blue-power",
+    "orgRepo": "bluepower"
   },
   {
-    "name": [
-      "Books"
+    "name": {
+      "displayName": "Books",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "books"
-    }
+    "orgRepo": "books"
   },
   {
-    "name": [
-      "Botania"
-    ],
-    "assets": {
-      "1.12.2": "botania",
-      "1.11.2": "botania",
-      "1.10.2": "botania",
-      "1.7.10": "botania"
+    "name": {
+      "displayName": "Botania",
+      "aliases": []
     },
-    "curse": "botania"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "botania",
+    "orgRepo": "botania"
   },
   {
-    "name": [
-      "Botany"
-    ],
-    "assets": {
-      "1.7.10": "botany"
+    "name": {
+      "displayName": "Botany",
+      "aliases": []
     },
-    "curse": "binnies-mods"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "binnies-mods",
+    "orgRepo": "botany"
   },
   {
-    "name": [
-      "Buildcraft"
-    ],
-    "assets": {
-      "1.7.10": "buildcraft"
+    "name": {
+      "displayName": "Buildcraft",
+      "aliases": []
     },
-    "curse": "buildcraft"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "buildcraft",
+    "orgRepo": "buildcraft"
   },
   {
-    "name": [
-      "Buildcraft Additions"
-    ],
-    "assets": {
-      "1.7.10": "bcadditions"
+    "name": {
+      "displayName": "Buildcraft Additions",
+      "aliases": []
     },
-    "curse": "buildcraft-additions"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "buildcraft-additions",
+    "orgRepo": "bcadditions"
   },
   {
-    "name": [
-      "Buildcraft Builders"
-    ],
-    "assets": {
-      "1.12.2": "buildcraftbuilders",
-      "1.7.10": "buildcraftbuilders"
+    "name": {
+      "displayName": "Buildcraft Builders",
+      "aliases": []
     },
-    "curse": "buildcraft-builders"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "buildcraft-builders",
+    "orgRepo": "buildcraftbuilders"
   },
   {
-    "name": [
-      "Buildcraft Compat"
-    ],
-    "assets": {
-      "1.12.2": "buildcraftcompat",
-      "1.7.10": "buildcraftcompat"
+    "name": {
+      "displayName": "Buildcraft Compat",
+      "aliases": []
     },
-    "curse": "buildcraft-compat"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "buildcraft-compat",
+    "orgRepo": "buildcraftcompat"
   },
   {
-    "name": [
-      "Buildcraft Core"
-    ],
-    "assets": {
-      "1.12.2": "buildcraftcore",
-      "1.7.10": "buildcraftcore"
+    "name": {
+      "displayName": "Buildcraft Core",
+      "aliases": []
     },
-    "curse": "buildcraft-core"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "buildcraft-core",
+    "orgRepo": "buildcraftcore"
   },
   {
-    "name": [
-      "Buildcraft Energy"
-    ],
-    "assets": {
-      "1.12.2": "buildcraftenergy",
-      "1.7.10": "buildcraftenergy"
+    "name": {
+      "displayName": "Buildcraft Energy",
+      "aliases": []
     },
-    "curse": "buildcraft-energy"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "buildcraft-energy",
+    "orgRepo": "buildcraftenergy"
   },
   {
-    "name": [
-      "Buildcraft Factory"
-    ],
-    "assets": {
-      "1.12.2": "buildcraftfactory",
-      "1.7.10": "buildcraftfactory"
+    "name": {
+      "displayName": "Buildcraft Factory",
+      "aliases": []
     },
-    "curse": "buildcraft-factory"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "buildcraft-factory",
+    "orgRepo": "buildcraftfactory"
   },
   {
-    "name": [
-      "Buildcraft Robotics"
-    ],
-    "assets": {
-      "1.7.10": "buildcraftrobotics"
+    "name": {
+      "displayName": "Buildcraft Robotics",
+      "aliases": []
     },
-    "curse": "buildcraft-robotics"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "buildcraft-robotics",
+    "orgRepo": "buildcraftrobotics"
   },
   {
-    "name": [
-      "Buildcraft Silicon"
-    ],
-    "assets": {
-      "1.12.2": "buildcraftsilicon",
-      "1.7.10": "buildcraftsilicon"
+    "name": {
+      "displayName": "Buildcraft Silicon",
+      "aliases": []
     },
-    "curse": "buildcraft-silicon"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "buildcraft-silicon",
+    "orgRepo": "buildcraftsilicon"
   },
   {
-    "name": [
-      "Buildcraft Transport"
-    ],
-    "assets": {
-      "1.12.2": "buildcrafttransport",
-      "1.7.10": "buildcrafttransport"
+    "name": {
+      "displayName": "Buildcraft Transport",
+      "aliases": []
     },
-    "curse": "buildcraft-transport"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "buildcraft-transport",
+    "orgRepo": "buildcrafttransport"
   },
   {
-    "name": [
-      "Building Gadgets"
-    ],
-    "assets": {
-      "1.12.2": "buildinggadgets"
+    "name": {
+      "displayName": "Building Gadgets",
+      "aliases": []
     },
-    "curse": "building-gadgets"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "building-gadgets",
+    "orgRepo": "buildinggadgets"
   },
   {
-    "name": [
-      "Bullseye"
-    ],
-    "assets": {
-      "1.12.2": "bullseye",
-      "1.11.2": "bullseye",
-      "1.10.2": "bullseye"
+    "name": {
+      "displayName": "Bullseye",
+      "aliases": []
     },
-    "curse": "bullseye"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "bullseye",
+    "orgRepo": "bullseye"
   },
   {
-    "name": [
-      "Capsule"
-    ],
-    "assets": {
-      "1.8.9": "capsule",
-      "1.7.10": "capsule"
+    "name": {
+      "displayName": "Capsule",
+      "aliases": []
     },
-    "curse": "capsule"
+    "versions": [
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "capsule",
+    "orgRepo": "capsule"
   },
   {
-    "name": [
-      "Career Bees"
-    ],
-    "assets": {
-      "1.12.2": "careerbees"
+    "name": {
+      "displayName": "Career Bees",
+      "aliases": []
     },
-    "curse": "career-bees"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "career-bees",
+    "orgRepo": "careerbees"
   },
   {
-    "name": [
-      "Carpenter's Blocks"
-    ],
-    "assets": {
-      "1.7.10": "carpentersblocks"
+    "name": {
+      "displayName": "Carpenter's Blocks",
+      "aliases": []
     },
-    "curse": "carpenters-blocks"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "carpenters-blocks",
+    "orgRepo": "carpentersblocks"
   },
   {
-    "name": [
-      "Ceramics"
-    ],
-    "assets": {
-      "1.12.2": "ceramics"
+    "name": {
+      "displayName": "Ceramics",
+      "aliases": []
     },
-    "curse": "ceramics"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "ceramics",
+    "orgRepo": "ceramics"
   },
   {
-    "name": [
-      "Chicken Chunks 1.8.+"
-    ],
-    "assets": {
-      "1.12.2": "chickenchunks",
-      "1.11.2": "chickenchunks",
-      "1.10.2": "chickenchunks",
-      "1.7.10": "chickenchunks"
+    "name": {
+      "displayName": "Chicken Chunks 1.8.+",
+      "aliases": []
     },
-    "curse": "chickenchunks"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "chickenchunks",
+    "orgRepo": "chickenchunks"
   },
   {
-    "name": [
-      "Chisel"
-    ],
-    "assets": {
-      "1.12.2": "chisel",
-      "1.11.2": "chisel",
-      "1.10.2": "chisel",
-      "1.7.10": "chisel"
+    "name": {
+      "displayName": "Chisel",
+      "aliases": []
     },
-    "curse": "chisel"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "chisel",
+    "orgRepo": "chisel"
   },
   {
-    "name": [
-      "Chisels & Bits"
-    ],
-    "assets": {
-      "1.12.2": "chiselsandbits",
-      "1.8.9": "chiselsandbits"
+    "name": {
+      "displayName": "Chisels & Bits",
+      "aliases": []
     },
-    "curse": "chisels-bits"
+    "versions": [
+      "1.12.2",
+      "1.8.9"
+    ],
+    "curse": "chisels-bits",
+    "orgRepo": "chiselsandbits"
   },
   {
-    "name": [
-      "Chromaticraft"
-    ],
-    "assets": {
-      "1.7.10": "chromaticraft"
+    "name": {
+      "displayName": "Chromaticraft",
+      "aliases": []
     },
-    "curse": "chromaticraft"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "chromaticraft",
+    "orgRepo": "chromaticraft"
   },
   {
-    "name": [
-      "Classic Bars"
-    ],
-    "assets": {
-      "1.12.2": "classicbar"
+    "name": {
+      "displayName": "Classic Bars",
+      "aliases": []
     },
-    "curse": "classic-bars"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "classic-bars",
+    "orgRepo": "classicbar"
   },
   {
-    "name": [
-      "Clay Bucket"
-    ],
-    "assets": {
-      "1.12.2": "claybucket"
+    "name": {
+      "displayName": "Clay Bucket",
+      "aliases": []
     },
-    "curse": "clay-bucket"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "clay-bucket",
+    "orgRepo": "claybucket"
   },
   {
-    "name": [
-      "CoFH Core"
-    ],
-    "assets": {
-      "1.12.2": "cofh",
-      "1.11.2": "cofh",
-      "1.10.2": "cofh",
-      "1.7.10": "cofh"
+    "name": {
+      "displayName": "CoFH Core",
+      "aliases": []
     },
-    "curse": "cofh-core"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "cofh-core",
+    "orgRepo": "cofh"
   },
   {
-    "name": [
-      "Compact Machines 3"
-    ],
-    "assets": {
-      "1.12.2": "compactmachines3"
+    "name": {
+      "displayName": "Compact Machines 3",
+      "aliases": []
     },
-    "curse": "compact-machines"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "compact-machines",
+    "orgRepo": "compactmachines3"
   },
   {
-    "name": [
-      "Compact Solars"
-    ],
-    "assets": {
-      "1.12.2": "compactsolars",
-      "1.7.10": "compactsolars"
+    "name": {
+      "displayName": "Compact Solars",
+      "aliases": []
     },
-    "curse": "compact-solars"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "compact-solars",
+    "orgRepo": "compactsolars"
   },
   {
-    "name": [
-      "ComputerCraft"
-    ],
-    "assets": {
-      "1.12.2": "computercraft",
-      "1.8.9": "computercraft",
-      "1.7.10": "computercraft"
+    "name": {
+      "displayName": "ComputerCraft",
+      "aliases": []
     },
-    "curse": "computercraft"
+    "versions": [
+      "1.12.2",
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "computercraft",
+    "orgRepo": "computercraft"
   },
   {
-    "name": [
-      "Computronics"
+    "name": {
+      "displayName": "Computronics",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "computronics"
-    }
+    "orgRepo": "computronics"
   },
   {
-    "name": [
-      "Construct's Armory"
-    ],
-    "assets": {
-      "1.12.2": "conarm"
+    "name": {
+      "displayName": "Construct's Armory",
+      "aliases": []
     },
-    "curse": "constructs-armory"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "constructs-armory",
+    "orgRepo": "conarm"
   },
   {
-    "name": [
-      "ContentTweaker"
-    ],
-    "assets": {
-      "1.12.2": "contenttweaker"
+    "name": {
+      "displayName": "ContentTweaker",
+      "aliases": []
     },
-    "curse": "contenttweaker"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "contenttweaker",
+    "orgRepo": "contenttweaker"
   },
   {
-    "name": [
-      "Cooking for Blockheads"
-    ],
-    "assets": {
-      "1.12.2": "cookingforblockheads"
+    "name": {
+      "displayName": "Cooking for Blockheads",
+      "aliases": []
     },
-    "curse": "cooking-for-blockheads"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "cooking-for-blockheads",
+    "orgRepo": "cookingforblockheads"
   },
   {
-    "name": [
-      "Cosmetic Armor Reworked"
-    ],
-    "assets": {
-      "1.12.2": "cosmeticarmorreworked",
-      "1.11.2": "cosmeticarmorreworked",
-      "1.10.2": "cosmeticarmorreworked"
+    "name": {
+      "displayName": "Cosmetic Armor Reworked",
+      "aliases": []
     },
-    "curse": "cosmetic-armor-reworked"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "cosmetic-armor-reworked",
+    "orgRepo": "cosmeticarmorreworked"
   },
   {
-    "name": [
-      "Crafting Station"
-    ],
-    "assets": {
-      "1.12.2": "craftingstation"
+    "name": {
+      "displayName": "Crafting Station",
+      "aliases": []
     },
-    "curse": "crafting-station"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "crafting-station",
+    "orgRepo": "craftingstation"
   },
   {
-    "name": [
-      "Crafting Table IV"
-    ],
-    "assets": {
-      "1.7.10": "craftingtableiv"
+    "name": {
+      "displayName": "Crafting Table IV",
+      "aliases": []
     },
-    "curse": "craftingtable-iv"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "craftingtable-iv",
+    "orgRepo": "craftingtableiv"
   },
   {
-    "name": [
-      "Crafting Tweaks"
-    ],
-    "assets": {
-      "1.12.2": "craftingtweaks"
+    "name": {
+      "displayName": "Crafting Tweaks",
+      "aliases": []
     },
-    "curse": "crafting-tweaks"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "crafting-tweaks",
+    "orgRepo": "craftingtweaks"
   },
   {
-    "name": [
-      "CreativeCore"
-    ],
-    "assets": {
-      "1.12.2": "creativecore",
-      "1.7.10": "creativecore"
+    "name": {
+      "displayName": "CreativeCore",
+      "aliases": []
     },
-    "curse": "creativecore"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "creativecore",
+    "orgRepo": "creativecore"
   },
   {
-    "name": [
-      "Curios API"
-    ],
-    "assets": {
-      "1.16.3": "curios",
-      "1.15.2": "curios",
-      "1.14.4": "curios",
-      "1.13.2": "curios"
+    "name": {
+      "displayName": "Curios API",
+      "aliases": []
     },
-    "curse": "curios"
+    "versions": [
+      "1.16.3",
+      "1.15.2",
+      "1.14.4",
+      "1.13.2"
+    ],
+    "curse": "curios",
+    "orgRepo": "curios"
   },
   {
-    "name": [
-      "Cyclic"
-    ],
-    "assets": {
-      "1.12.2": "cyclicmagic"
+    "name": {
+      "displayName": "Cyclic",
+      "aliases": []
     },
-    "curse": "cyclic"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "cyclic",
+    "orgRepo": "cyclicmagic"
   },
   {
-    "name": [
-      "Cyclops Core"
-    ],
-    "assets": {
-      "1.12.2": "cyclopscore"
+    "name": {
+      "displayName": "Cyclops Core",
+      "aliases": []
     },
-    "curse": "cyclops-core"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "cyclops-core",
+    "orgRepo": "cyclopscore"
   },
   {
-    "name": [
-      "Dark Utilities"
-    ],
-    "assets": {
-      "1.12.2": "darkutils",
-      "1.11.2": "darkutils",
-      "1.10.2": "darkutils"
+    "name": {
+      "displayName": "Dark Utilities",
+      "aliases": []
     },
-    "curse": "dark-utilities"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "dark-utilities",
+    "orgRepo": "darkutils"
   },
   {
-    "name": [
-      "Davincis Vessels"
-    ],
-    "assets": {
-      "1.12.2": "davincisvessels"
+    "name": {
+      "displayName": "Davincis Vessels",
+      "aliases": []
     },
-    "curse": "davincis-vessels"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "davincis-vessels",
+    "orgRepo": "davincisvessels"
   },
   {
-    "name": [
-      "Deep Mob Learning"
-    ],
-    "assets": {
-      "1.12.2": "deepmoblearning"
+    "name": {
+      "displayName": "Deep Mob Learning",
+      "aliases": []
     },
-    "curse": "deep-mob-learning"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "deep-mob-learning",
+    "orgRepo": "deepmoblearning"
   },
   {
-    "name": [
-      "Deep Resonance"
-    ],
-    "assets": {
-      "1.12.2": "deepresonance",
-      "1.11.2": "deepresonance",
-      "1.10.2": "deepresonance"
+    "name": {
+      "displayName": "Deep Resonance",
+      "aliases": []
     },
-    "curse": "deep-resonance"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "deep-resonance",
+    "orgRepo": "deepresonance"
   },
   {
-    "name": [
-      "Demagnetize"
-    ],
-    "assets": {
-      "1.12.2": "demagnetize"
+    "name": {
+      "displayName": "Demagnetize",
+      "aliases": []
     },
-    "curse": "demagnetize"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "demagnetize",
+    "orgRepo": "demagnetize"
   },
   {
-    "name": [
-      "Dense Metals"
-    ],
-    "assets": {
-      "1.12.2": "densemetals"
+    "name": {
+      "displayName": "Dense Metals",
+      "aliases": []
     },
-    "curse": "dense-metals"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "dense-metals",
+    "orgRepo": "densemetals"
   },
   {
-    "name": [
-      "Dimensional Anchors"
-    ],
-    "assets": {
-      "1.7.10": "dimanchor"
+    "name": {
+      "displayName": "Dimensional Anchors",
+      "aliases": []
     },
-    "curse": "dimensional-anchors"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "dimensional-anchors",
+    "orgRepo": "dimanchor"
   },
   {
-    "name": [
-      "DimensionalDoors"
-    ],
-    "assets": {
-      "1.7.10": "dimdoors"
+    "name": {
+      "displayName": "DimensionalDoors",
+      "aliases": []
     },
-    "curse": "dimensionaldoors"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "dimensionaldoors",
+    "orgRepo": "dimdoors"
   },
   {
-    "name": [
-      "Doggy Talents"
-    ],
-    "assets": {
-      "1.7.10": "doggytalents"
+    "name": {
+      "displayName": "Doggy Talents",
+      "aliases": []
     },
-    "curse": "doggy-talents"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "doggy-talents",
+    "orgRepo": "doggytalents"
   },
   {
-    "name": [
-      "Draconic Evolution"
-    ],
-    "assets": {
-      "1.12.2": "draconicevolution",
-      "1.7.10": "draconicevolution"
+    "name": {
+      "displayName": "Draconic Evolution",
+      "aliases": []
     },
-    "curse": "draconic-evolution"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "draconic-evolution",
+    "orgRepo": "draconicevolution"
   },
   {
-    "name": [
-      "DreamCraft"
+    "name": {
+      "displayName": "DreamCraft",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "dreamcraft"
-    }
+    "orgRepo": "dreamcraft"
   },
   {
-    "name": [
-      "EasyCrafting"
-    ],
-    "assets": {
-      "1.7.10": "easycrafting"
+    "name": {
+      "displayName": "EasyCrafting",
+      "aliases": []
     },
-    "curse": "easycrafting"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "easycrafting",
+    "orgRepo": "easycrafting"
   },
   {
-    "name": [
-      "Electro-Magic Tools"
-    ],
-    "assets": {
-      "1.7.10": "electromagictools"
+    "name": {
+      "displayName": "Electro-Magic Tools",
+      "aliases": []
     },
-    "curse": "electro-magic-tools"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "electro-magic-tools",
+    "orgRepo": "electromagictools"
   },
   {
-    "name": [
-      "Electroblob's Wizardry"
-    ],
-    "assets": {
-      "1.12.2": "ebwizardry"
+    "name": {
+      "displayName": "Electroblob's Wizardry",
+      "aliases": []
     },
-    "curse": "electroblobs-wizardry"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "electroblobs-wizardry",
+    "orgRepo": "ebwizardry"
   },
   {
-    "name": [
-      "Elevator Mod"
+    "name": {
+      "displayName": "Elevator Mod",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2"
     ],
-    "assets": {
-      "1.12.2": "elevatorid"
-    }
+    "orgRepo": "elevatorid"
   },
   {
-    "name": [
-      "Embers"
-    ],
-    "assets": {
-      "1.12.2": "embers"
+    "name": {
+      "displayName": "Embers",
+      "aliases": []
     },
-    "curse": "embers"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "embers",
+    "orgRepo": "embers"
   },
   {
-    "name": [
-      "Enchanting Plus"
-    ],
-    "assets": {
-      "1.12.2": "eplus",
-      "1.8.9": "eplus",
-      "1.7.10": "eplus"
+    "name": {
+      "displayName": "Enchanting Plus",
+      "aliases": []
     },
-    "curse": "enchanting-plus"
+    "versions": [
+      "1.12.2",
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "enchanting-plus",
+    "orgRepo": "eplus"
   },
   {
-    "name": [
-      "Enchiridion"
-    ],
-    "assets": {
-      "1.7.10": "enchiridion"
+    "name": {
+      "displayName": "Enchiridion",
+      "aliases": []
     },
-    "curse": "enchiridion"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "enchiridion",
+    "orgRepo": "enchiridion"
   },
   {
-    "name": [
-      "Ender Compass"
-    ],
-    "assets": {
-      "1.12.2": "endercompass",
-      "1.11.2": "endercompass",
-      "1.10.2": "endercompass"
+    "name": {
+      "displayName": "Ender Compass",
+      "aliases": []
     },
-    "curse": "ender-compass"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "ender-compass",
+    "orgRepo": "endercompass"
   },
   {
-    "name": [
-      "Ender Enhancement"
-    ],
-    "assets": {
-      "1.7.10": "ee"
+    "name": {
+      "displayName": "Ender Enhancement",
+      "aliases": []
     },
-    "curse": "ender-enhancement"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "ender-enhancement",
+    "orgRepo": "ee"
   },
   {
-    "name": [
-      "Ender IO"
-    ],
-    "assets": {
-      "1.12.2": "enderio",
-      "1.11.2": "enderio",
-      "1.10.2": "enderio",
-      "1.7.10": "enderio"
+    "name": {
+      "displayName": "Ender IO",
+      "aliases": []
     },
-    "curse": "ender-io"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "ender-io",
+    "orgRepo": "enderio"
   },
   {
-    "name": [
-      "Ender IO Forestry"
-    ],
-    "assets": {
-      "1.12.2": "enderiointegrationforestry"
+    "name": {
+      "displayName": "Ender IO Forestry",
+      "aliases": []
     },
-    "curse": "ender-io-forestry"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "ender-io-forestry",
+    "orgRepo": "enderiointegrationforestry"
   },
   {
-    "name": [
-      "Ender IO Machines"
-    ],
-    "assets": {
-      "1.12.2": "enderiomachines"
+    "name": {
+      "displayName": "Ender IO Machines",
+      "aliases": []
     },
-    "curse": "ender-io-machines"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "ender-io-machines",
+    "orgRepo": "enderiomachines"
   },
   {
-    "name": [
-      "Ender Storage 1.8.+"
-    ],
-    "assets": {
-      "1.12.2": "enderstorage",
-      "1.7.10": "enderstorage"
+    "name": {
+      "displayName": "Ender Storage 1.8.+",
+      "aliases": []
     },
-    "curse": "ender-storage-1-8"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "ender-storage-1-8",
+    "orgRepo": "enderstorage"
   },
   {
-    "name": [
-      "Ender Zoo"
-    ],
-    "assets": {
-      "1.8.9": "enderzoo",
-      "1.7.10": "enderzoo"
+    "name": {
+      "displayName": "Ender Zoo",
+      "aliases": []
     },
-    "curse": "ender-zoo"
+    "versions": [
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "ender-zoo",
+    "orgRepo": "enderzoo"
   },
   {
-    "name": [
-      "EnderCore"
-    ],
-    "assets": {
-      "1.12.2": "endercore",
-      "1.11.2": "endercore",
-      "1.10.2": "endercore"
+    "name": {
+      "displayName": "EnderCore",
+      "aliases": []
     },
-    "curse": "endercore"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "endercore",
+    "orgRepo": "endercore"
   },
   {
-    "name": [
-      "EnderTech"
-    ],
-    "assets": {
-      "1.7.10": "endertech"
+    "name": {
+      "displayName": "EnderTech",
+      "aliases": []
     },
-    "curse": "endertech"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "endertech",
+    "orgRepo": "endertech"
   },
   {
-    "name": [
-      "Enhanced Portal 3"
-    ],
-    "assets": {
-      "1.7.10": "enhancedportals"
+    "name": {
+      "displayName": "Enhanced Portal 3",
+      "aliases": []
     },
-    "curse": "enhanced-portals-3"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "enhanced-portals-3",
+    "orgRepo": "enhancedportals"
   },
   {
-    "name": [
-      "EnviroMine"
-    ],
-    "assets": {
-      "1.7.10": "enviromine"
+    "name": {
+      "displayName": "EnviroMine",
+      "aliases": []
     },
-    "curse": "enviromine"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "enviromine",
+    "orgRepo": "enviromine"
   },
   {
-    "name": [
-      "Environmental Tech"
-    ],
-    "assets": {
-      "1.12.2": "environmentaltech"
+    "name": {
+      "displayName": "Environmental Tech",
+      "aliases": []
     },
-    "curse": "environmental-tech"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "environmental-tech",
+    "orgRepo": "environmentaltech"
   },
   {
-    "name": [
-      "Equivalent Energistics"
-    ],
-    "assets": {
-      "1.12.2": "equivalentenergistics"
+    "name": {
+      "displayName": "Equivalent Energistics",
+      "aliases": []
     },
-    "curse": "equivalent-energistics"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "equivalent-energistics",
+    "orgRepo": "equivalentenergistics"
   },
   {
-    "name": [
-      "Equivalent Exchange 3"
-    ],
-    "assets": {
-      "1.7.10": "ee3"
+    "name": {
+      "displayName": "Equivalent Exchange 3",
+      "aliases": []
     },
-    "curse": "ee3"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "ee3",
+    "orgRepo": "ee3"
   },
   {
-    "name": [
-      "Equivalent Integrations"
-    ],
-    "assets": {
-      "1.12.2": "equivalentintegrations"
+    "name": {
+      "displayName": "Equivalent Integrations",
+      "aliases": []
     },
-    "curse": "equivalent-integrations"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "equivalent-integrations",
+    "orgRepo": "equivalentintegrations"
   },
   {
-    "name": [
-      "Et Futurum"
-    ],
-    "assets": {
-      "1.7.10": "etfuturum"
+    "name": {
+      "displayName": "Et Futurum",
+      "aliases": []
     },
-    "curse": "et-futurum"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "et-futurum",
+    "orgRepo": "etfuturum"
   },
   {
-    "name": [
-      "Eureka"
-    ],
-    "assets": {
-      "1.7.10": "eureka"
+    "name": {
+      "displayName": "Eureka",
+      "aliases": []
     },
-    "curse": "eureka"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "eureka",
+    "orgRepo": "eureka"
   },
   {
-    "name": [
-      "Ex Astris"
-    ],
-    "assets": {
-      "1.7.10": "exastris"
+    "name": {
+      "displayName": "Ex Astris",
+      "aliases": []
     },
-    "curse": "ex-astris"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "ex-astris",
+    "orgRepo": "exastris"
   },
   {
-    "name": [
-      "Ex Compressum"
-    ],
-    "assets": {
-      "1.12.2": "excompressum",
-      "1.11.2": "excompressum",
-      "1.10.2": "excompressum",
-      "1.7.10": "excompressum"
+    "name": {
+      "displayName": "Ex Compressum",
+      "aliases": []
     },
-    "curse": "ex-compressum"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "ex-compressum",
+    "orgRepo": "excompressum"
   },
   {
-    "name": [
-      "Ex Nihilo"
+    "name": {
+      "displayName": "Ex Nihilo",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "exnihilo"
-    }
+    "orgRepo": "exnihilo"
   },
   {
-    "name": [
-      "Ex Nihilo Adscensio"
-    ],
-    "assets": {
-      "1.11.2": "exnihiloadscensio",
-      "1.10.2": "exnihiloadscensio"
+    "name": {
+      "displayName": "Ex Nihilo Adscensio",
+      "aliases": []
     },
-    "curse": "ex-nihilo-adscensio"
+    "versions": [
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "ex-nihilo-adscensio",
+    "orgRepo": "exnihiloadscensio"
   },
   {
-    "name": [
-      "Ex Nihilo: Creatio"
-    ],
-    "assets": {
-      "1.12.2": "exnihilocreatio"
+    "name": {
+      "displayName": "Ex Nihilo: Creatio",
+      "aliases": []
     },
-    "curse": "ex-nihilo-creatio"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "ex-nihilo-creatio",
+    "orgRepo": "exnihilocreatio"
   },
   {
-    "name": [
-      "Exchangers"
-    ],
-    "assets": {
-      "1.12.2": "exchangers"
+    "name": {
+      "displayName": "Exchangers",
+      "aliases": []
     },
-    "curse": "exchangers"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "exchangers",
+    "orgRepo": "exchangers"
   },
   {
-    "name": [
-      "Expandable Backpacks"
-    ],
-    "assets": {
-      "1.12.2": "expandablebackpack",
-      "1.11.2": "expandablebackpack",
-      "1.10.2": "expandablebackpack"
+    "name": {
+      "displayName": "Expandable Backpacks",
+      "aliases": []
     },
-    "curse": "expandable-backpacks"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "expandable-backpacks",
+    "orgRepo": "expandablebackpack"
   },
   {
-    "name": [
-      "Extended Crafting"
-    ],
-    "assets": {
-      "1.12.2": "extendedcrafting"
+    "name": {
+      "displayName": "Extended Crafting",
+      "aliases": []
     },
-    "curse": "extended-crafting"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "extended-crafting",
+    "orgRepo": "extendedcrafting"
   },
   {
-    "name": [
-      "Extra Bees"
-    ],
-    "assets": {
-      "1.12.2": "extrabees",
-      "1.7.10": "extrabees"
+    "name": {
+      "displayName": "Extra Bees",
+      "aliases": []
     },
-    "curse": "binnies-mods"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "binnies-mods",
+    "orgRepo": "extrabees"
   },
   {
-    "name": [
-      "Extra Trees"
-    ],
-    "assets": {
-      "1.12.2": "extratrees",
-      "1.7.10": "extratrees"
+    "name": {
+      "displayName": "Extra Trees",
+      "aliases": []
     },
-    "curse": "binnies-mods"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "binnies-mods",
+    "orgRepo": "extratrees"
   },
   {
-    "name": [
-      "Extra Utilities"
-    ],
-    "assets": {
-      "1.7.10": "extrautils"
+    "name": {
+      "displayName": "Extra Utilities",
+      "aliases": []
     },
-    "curse": "extra-utilities"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "extra-utilities",
+    "orgRepo": "extrautils"
   },
   {
-    "name": [
-      "Extra Utilities 2"
-    ],
-    "assets": {
-      "1.12.2": "extrautils2",
-      "1.11.2": "extrautils2",
-      "1.10.2": "extrautils2"
+    "name": {
+      "displayName": "Extra Utilities 2",
+      "aliases": []
     },
-    "curse": "extra-utilities"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "extra-utilities",
+    "orgRepo": "extrautils2"
   },
   {
-    "name": [
-      "ExtraCells2"
-    ],
-    "assets": {
-      "1.12.2": "extracells",
-      "1.7.10": "extracells"
+    "name": {
+      "displayName": "ExtraCells2",
+      "aliases": []
     },
-    "curse": "extracells2"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "extracells2",
+    "orgRepo": "extracells"
   },
   {
-    "name": [
-      "ExtraPlanets"
-    ],
-    "assets": {
-      "1.12.2": "extraplanets"
+    "name": {
+      "displayName": "ExtraPlanets",
+      "aliases": []
     },
-    "curse": "extraplanets"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "extraplanets",
+    "orgRepo": "extraplanets"
   },
   {
-    "name": [
-      "ExtraTiC"
-    ],
-    "assets": {
-      "1.7.10": "extratic"
+    "name": {
+      "displayName": "ExtraTiC",
+      "aliases": []
     },
-    "curse": "extratic"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "extratic",
+    "orgRepo": "extratic"
   },
   {
-    "name": [
-      "ExtrabiomesXL"
-    ],
-    "assets": {
-      "1.7.10": "extrabiomesxl"
+    "name": {
+      "displayName": "ExtrabiomesXL",
+      "aliases": []
     },
-    "curse": "extrabiomesxl"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "extrabiomesxl",
+    "orgRepo": "extrabiomesxl"
   },
   {
-    "name": [
-      "Extreme Reactors"
-    ],
-    "assets": {
-      "1.12.2": "bigreactors",
-      "1.11.2": "bigreactors",
-      "1.10.2": "bigreactors",
-      "1.7.10": "bigreactors"
+    "name": {
+      "displayName": "Extreme Reactors",
+      "aliases": []
     },
-    "curse": "extreme-reactors"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "extreme-reactors",
+    "orgRepo": "bigreactors"
   },
   {
-    "name": [
-      "Factorization"
-    ],
-    "assets": {
-      "1.7.10": "factorization"
+    "name": {
+      "displayName": "Factorization",
+      "aliases": []
     },
-    "curse": "factorization-unofficial"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "factorization-unofficial",
+    "orgRepo": "factorization"
   },
   {
-    "name": [
-      "Farming for Blockheads"
-    ],
-    "assets": {
-      "1.12.2": "farmingforblockheads"
+    "name": {
+      "displayName": "Farming for Blockheads",
+      "aliases": []
     },
-    "curse": "farming-for-blockheads"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "farming-for-blockheads",
+    "orgRepo": "farmingforblockheads"
   },
   {
-    "name": [
-      "Flat Colored Blocks"
-    ],
-    "assets": {
-      "1.12.2": "flatcoloredblocks"
+    "name": {
+      "displayName": "Flat Colored Blocks",
+      "aliases": []
     },
-    "curse": "flat-colored-blocks"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "flat-colored-blocks",
+    "orgRepo": "flatcoloredblocks"
   },
   {
-    "name": [
-      "Flux Networks"
-    ],
-    "assets": {
-      "1.12.2": "fluxnetworks"
+    "name": {
+      "displayName": "Flux Networks",
+      "aliases": []
     },
-    "curse": "flux-networks"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "flux-networks",
+    "orgRepo": "fluxnetworks"
   },
   {
-    "name": [
-      "Fluxed-Crystals"
-    ],
-    "assets": {
-      "1.7.10": "fluxedcrystals"
+    "name": {
+      "displayName": "Fluxed-Crystals",
+      "aliases": []
     },
-    "curse": "fluxed-crystals"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "fluxed-crystals",
+    "orgRepo": "fluxedcrystals"
   },
   {
-    "name": [
-      "Forbidden Mod"
-    ],
-    "assets": {
-      "1.7.10": "forbidden"
+    "name": {
+      "displayName": "Forbidden Mod",
+      "aliases": []
     },
-    "curse": "forbidden-mod"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "forbidden-mod",
+    "orgRepo": "forbidden"
   },
   {
-    "name": [
-      "Forestry"
-    ],
-    "assets": {
-      "1.12.2": "forestry",
-      "1.11.2": "forestry",
-      "1.10.2": "forestry",
-      "1.7.10": "forestry"
+    "name": {
+      "displayName": "Forestry",
+      "aliases": []
     },
-    "curse": "forestry"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "forestry",
+    "orgRepo": "forestry"
   },
   {
-    "name": [
-      "Forge MultiPart CBE"
-    ],
-    "assets": {
-      "1.12.2": "microblockcbe"
+    "name": {
+      "displayName": "Forge MultiPart CBE",
+      "aliases": []
     },
-    "curse": "forge-multipart-cbe"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "forge-multipart-cbe",
+    "orgRepo": "microblockcbe"
   },
   {
-    "name": [
-      "Funky Locomotion"
-    ],
-    "assets": {
-      "1.7.10": "funkylocomotion"
+    "name": {
+      "displayName": "Funky Locomotion",
+      "aliases": []
     },
-    "curse": "funky-locomotion"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "funky-locomotion",
+    "orgRepo": "funkylocomotion"
   },
   {
-    "name": [
-      "Furnace Overhaul"
-    ],
-    "assets": {
-      "1.12.2": "furnaceoverhaul"
+    "name": {
+      "displayName": "Furnace Overhaul",
+      "aliases": []
     },
-    "curse": "furnace-overhaul"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "furnace-overhaul",
+    "orgRepo": "furnaceoverhaul"
   },
   {
-    "name": [
-      "Future MC"
-    ],
-    "assets": {
-      "1.12.2": "futuremc"
+    "name": {
+      "displayName": "Future MC",
+      "aliases": []
     },
-    "curse": "future-mc"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "future-mc",
+    "orgRepo": "futuremc"
   },
   {
-    "name": [
-      "GalactiCraft Asteroids"
+    "name": {
+      "displayName": "GalactiCraft Asteroids",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "galacticraftasteroids"
-    }
+    "orgRepo": "galacticraftasteroids"
   },
   {
-    "name": [
-      "GalactiCraft Core"
+    "name": {
+      "displayName": "GalactiCraft Core",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2",
+      "1.7.10"
     ],
-    "assets": {
-      "1.12.2": "galacticraftcore",
-      "1.7.10": "galacticraftcore"
-    }
+    "orgRepo": "galacticraftcore"
   },
   {
-    "name": [
-      "GalactiCraft Mars"
+    "name": {
+      "displayName": "GalactiCraft Mars",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "galacticraftmars"
-    }
+    "orgRepo": "galacticraftmars"
   },
   {
-    "name": [
-      "GalactiCraft Moon"
+    "name": {
+      "displayName": "GalactiCraft Moon",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "galacticraftmoon"
-    }
+    "orgRepo": "galacticraftmoon"
   },
   {
-    "name": [
-      "GalactiCraft Planets"
+    "name": {
+      "displayName": "GalactiCraft Planets",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2"
     ],
-    "assets": {
-      "1.12.2": "galacticraftplanets"
-    }
+    "orgRepo": "galacticraftplanets"
   },
   {
-    "name": [
-      "Gany's Surface"
-    ],
-    "assets": {
-      "1.7.10": "ganyssurface"
+    "name": {
+      "displayName": "Gany's Surface",
+      "aliases": []
     },
-    "curse": "ganys-surface"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "ganys-surface",
+    "orgRepo": "ganyssurface"
   },
   {
-    "name": [
-      "Gendustry"
-    ],
-    "assets": {
-      "1.12.2": "gendustry"
+    "name": {
+      "displayName": "Gendustry",
+      "aliases": []
     },
-    "curse": "gendustry"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "gendustry",
+    "orgRepo": "gendustry"
   },
   {
-    "name": [
-      "Genetics Reborn"
-    ],
-    "assets": {
-      "1.12.2": "genetics",
-      "1.7.10": "genetics"
+    "name": {
+      "displayName": "Genetics Reborn",
+      "aliases": []
     },
-    "curse": "genetics-reborn"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "genetics-reborn",
+    "orgRepo": "genetics"
   },
   {
-    "name": [
-      "GeoStrata"
-    ],
-    "assets": {
-      "1.7.10": "geostrata"
+    "name": {
+      "displayName": "GeoStrata",
+      "aliases": []
     },
-    "curse": "geostrata"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "geostrata",
+    "orgRepo": "geostrata"
   },
   {
-    "name": [
-      "Goetia"
-    ],
-    "assets": {
-      "1.12.2": "goetia",
-      "1.11.2": "goetia",
-      "1.10.2": "goetia"
+    "name": {
+      "displayName": "Goetia",
+      "aliases": []
     },
-    "curse": "goetia"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "goetia",
+    "orgRepo": "goetia"
   },
   {
-    "name": [
-      "Gravitation Suite"
-    ],
-    "assets": {
-      "1.7.10": "gravisuite"
+    "name": {
+      "displayName": "Gravitation Suite",
+      "aliases": []
     },
-    "curse": "gravitation-suite"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "gravitation-suite",
+    "orgRepo": "gravisuite"
   },
   {
-    "name": [
-      "Gravity Gun"
-    ],
-    "assets": {
-      "1.7.10": "gravigun"
+    "name": {
+      "displayName": "Gravity Gun",
+      "aliases": []
     },
-    "curse": "gravity-gun"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "gravity-gun",
+    "orgRepo": "gravigun"
   },
   {
-    "name": [
-      "GregTech"
-    ],
-    "assets": {
-      "1.12.2": "gregtech",
-      "1.7.10": "gregtech"
+    "name": {
+      "displayName": "GregTech",
+      "aliases": []
     },
-    "curse": "gregtechce"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "gregtechce",
+    "orgRepo": "gregtech"
   },
   {
-    "name": [
-      "Guide-API"
-    ],
-    "assets": {
-      "1.12.2": "guideapi"
+    "name": {
+      "displayName": "Guide-API",
+      "aliases": []
     },
-    "curse": "guide-api"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "guide-api",
+    "orgRepo": "guideapi"
   },
   {
-    "name": [
-      "Hazards"
+    "name": {
+      "displayName": "Hazards",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "hazards"
-    }
+    "orgRepo": "hazards"
   },
   {
-    "name": [
-      "Hearth Well"
-    ],
-    "assets": {
-      "1.12.2": "hwell"
+    "name": {
+      "displayName": "Hearth Well",
+      "aliases": []
     },
-    "curse": "hearth-well"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "hearth-well",
+    "orgRepo": "hwell"
   },
   {
-    "name": [
-      "Highlands"
-    ],
-    "assets": {
-      "1.7.10": "highlands"
+    "name": {
+      "displayName": "Highlands",
+      "aliases": []
     },
-    "curse": "highlands"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "highlands",
+    "orgRepo": "highlands"
   },
   {
-    "name": [
-      "HitWithAxe"
-    ],
-    "assets": {
-      "1.12.2": "hitwithaxe"
+    "name": {
+      "displayName": "HitWithAxe",
+      "aliases": []
     },
-    "curse": "hitwithaxe"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "hitwithaxe",
+    "orgRepo": "hitwithaxe"
   },
   {
-    "name": [
-      "Hopper Ducts"
-    ],
-    "assets": {
-      "1.7.10": "hopperductmod"
+    "name": {
+      "displayName": "Hopper Ducts",
+      "aliases": []
     },
-    "curse": "hopper-ducts"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "hopper-ducts",
+    "orgRepo": "hopperductmod"
   },
   {
-    "name": [
-      "Hunting Dimension"
-    ],
-    "assets": {
-      "1.12.2": "huntingdim"
+    "name": {
+      "displayName": "Hunting Dimension",
+      "aliases": []
     },
-    "curse": "hunting-dimension"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "hunting-dimension",
+    "orgRepo": "huntingdim"
   },
   {
-    "name": [
-      "IHL Tools & Machines"
+    "name": {
+      "displayName": "IHL Tools & Machines",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "ihl"
-    }
+    "orgRepo": "ihl"
   },
   {
-    "name": [
-      "Ice and Fire"
-    ],
-    "assets": {
-      "1.12.2": "iceandfire"
+    "name": {
+      "displayName": "Ice and Fire",
+      "aliases": []
     },
-    "curse": "ice-and-fire-dragons"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "ice-and-fire-dragons",
+    "orgRepo": "iceandfire"
   },
   {
-    "name": [
-      "Iguanas Tinker Tweaks"
-    ],
-    "assets": {
-      "1.7.10": "iguanatweakstconstruct"
+    "name": {
+      "displayName": "Iguanas Tinker Tweaks",
+      "aliases": []
     },
-    "curse": "iguanas-tinker-tweaks"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "iguanas-tinker-tweaks",
+    "orgRepo": "iguanatweakstconstruct"
   },
   {
-    "name": [
-      "Immersive Engineering"
-    ],
-    "assets": {
-      "1.12.2": "immersiveengineering",
-      "1.11.2": "immersiveengineering",
-      "1.10.2": "immersiveengineering",
-      "1.7.10": "immersiveengineering"
+    "name": {
+      "displayName": "Immersive Engineering",
+      "aliases": []
     },
-    "curse": "immersive-engineering"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "immersive-engineering",
+    "orgRepo": "immersiveengineering"
   },
   {
-    "name": [
-      "Immersive Integration"
-    ],
-    "assets": {
-      "1.7.10": "immersiveintegration"
+    "name": {
+      "displayName": "Immersive Integration",
+      "aliases": []
     },
-    "curse": "immersive-integration"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "immersive-integration",
+    "orgRepo": "immersiveintegration"
   },
   {
-    "name": [
-      "Immersive Petroleum"
-    ],
-    "assets": {
-      "1.12.2": "immersivepetroleum"
+    "name": {
+      "displayName": "Immersive Petroleum",
+      "aliases": []
     },
-    "curse": "immersive-petroleum"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "immersive-petroleum",
+    "orgRepo": "immersivepetroleum"
   },
   {
-    "name": [
-      "Immibis's Microblocks"
+    "name": {
+      "displayName": "Immibis's Microblocks",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "microblock"
-    }
+    "orgRepo": "microblock"
   },
   {
-    "name": [
-      "Industrial Foregoing"
-    ],
-    "assets": {
-      "1.12.2": "industrialforegoing"
+    "name": {
+      "displayName": "Industrial Foregoing",
+      "aliases": []
     },
-    "curse": "industrial-foregoing"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "industrial-foregoing",
+    "orgRepo": "industrialforegoing"
   },
   {
-    "name": [
-      "Industrial Craft 2 (IC2)"
-    ],
-    "assets": {
-      "1.12.2": "ic2",
-      "1.11.2": "ic2",
-      "1.10.2": "ic2",
-      "1.7.10": "ic2"
+    "name": {
+      "displayName": "Industrial Craft 2 (IC2)",
+      "aliases": []
     },
-    "curse": "industrial-craft"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "industrial-craft",
+    "orgRepo": "ic2"
   },
   {
-    "name": [
-      "Inspirations"
+    "name": {
+      "displayName": "Inspirations",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2"
     ],
-    "assets": {
-      "1.12.2": "inspirations"
-    }
+    "orgRepo": "inspirations"
   },
   {
-    "name": [
-      "Integrated Crafting"
-    ],
-    "assets": {
-      "1.12.2": "integratedcrafting"
+    "name": {
+      "displayName": "Integrated Crafting",
+      "aliases": []
     },
-    "curse": "integrated-crafting"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "integrated-crafting",
+    "orgRepo": "integratedcrafting"
   },
   {
-    "name": [
-      "Integrated Dynamics"
-    ],
-    "assets": {
-      "1.12.2": "integrateddynamics"
+    "name": {
+      "displayName": "Integrated Dynamics",
+      "aliases": []
     },
-    "curse": "integrated-dynamics"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "integrated-dynamics",
+    "orgRepo": "integrateddynamics"
   },
   {
-    "name": [
-      "Integrated Dynamics Compatibility"
-    ],
-    "assets": {
-      "1.12.2": "integrateddynamicscompat"
+    "name": {
+      "displayName": "Integrated Dynamics Compatibility",
+      "aliases": []
     },
-    "curse": "integrated-dynamics"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "integrated-dynamics",
+    "orgRepo": "integrateddynamicscompat"
   },
   {
-    "name": [
-      "Integrated Terminals"
-    ],
-    "assets": {
-      "1.12.2": "integratedterminals"
+    "name": {
+      "displayName": "Integrated Terminals",
+      "aliases": []
     },
-    "curse": "integrated-terminals"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "integrated-terminals",
+    "orgRepo": "integratedterminals"
   },
   {
-    "name": [
-      "Integrated Tunnels"
-    ],
-    "assets": {
-      "1.12.2": "integratedtunnels"
+    "name": {
+      "displayName": "Integrated Tunnels",
+      "aliases": []
     },
-    "curse": "https://minecraft.curseforge.com/projects/integrated-tunnels"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "https://minecraft.curseforge.com/projects/integrated-tunnels",
+    "orgRepo": "integratedtunnels"
   },
   {
-    "name": [
-      "Inventory Profiles"
-    ],
-    "assets": {
-      "1.15.2": "inventoryprofiles",
-      "1.14.4": "inventoryprofiles"
+    "name": {
+      "displayName": "Inventory Profiles",
+      "aliases": []
     },
-    "curse": "inventory-profiles"
+    "versions": [
+      "1.15.2",
+      "1.14.4"
+    ],
+    "curse": "inventory-profiles",
+    "orgRepo": "inventoryprofiles"
   },
   {
-    "name": [
-      "Iron Backpacks"
-    ],
-    "assets": {
-      "1.12.2": "ironbackpacks",
-      "1.11.2": "ironbackpacks",
-      "1.10.2": "ironbackpacks"
+    "name": {
+      "displayName": "Iron Backpacks",
+      "aliases": []
     },
-    "curse": "iron-backpacks"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "iron-backpacks",
+    "orgRepo": "ironbackpacks"
   },
   {
-    "name": [
-      "Iron Chests"
-    ],
-    "assets": {
-      "1.12.2": "ironchest",
-      "1.11.2": "ironchest",
-      "1.10.2": "ironchest",
-      "1.8.9": "ironchest",
-      "1.7.10": "ironchest"
+    "name": {
+      "displayName": "Iron Chests",
+      "aliases": []
     },
-    "curse": "iron-chests"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "iron-chests",
+    "orgRepo": "ironchest"
   },
   {
-    "name": [
-      "Iron Tanks"
-    ],
-    "assets": {
-      "1.7.10": "irontank"
+    "name": {
+      "displayName": "Iron Tanks",
+      "aliases": []
     },
-    "curse": "iron-tanks"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "iron-tanks",
+    "orgRepo": "irontank"
   },
   {
-    "name": [
-      "JAOPCA"
-    ],
-    "assets": {
-      "1.12.2": "jaopca"
+    "name": {
+      "displayName": "JAOPCA",
+      "aliases": []
     },
-    "curse": "jaopca"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "jaopca",
+    "orgRepo": "jaopca"
   },
   {
-    "name": [
-      "JAOPCA Ore Chunks (AOBD)"
-    ],
-    "assets": {
-      "1.12.2": "jaopcaoc"
+    "name": {
+      "displayName": "JAOPCA Ore Chunks (AOBD)",
+      "aliases": []
     },
-    "curse": "aobd-ore-chunks"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "aobd-ore-chunks",
+    "orgRepo": "jaopcaoc"
   },
   {
-    "name": [
-      "JEI Bees"
-    ],
-    "assets": {
-      "1.12.2": "jeibees"
+    "name": {
+      "displayName": "JEI Bees",
+      "aliases": []
     },
-    "curse": "jei-bees"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "jei-bees",
+    "orgRepo": "jeibees"
   },
   {
-    "name": [
-      "JEI Villagers"
-    ],
-    "assets": {
-      "1.12.2": "jeivillagers"
+    "name": {
+      "displayName": "JEI Villagers",
+      "aliases": []
     },
-    "curse": "jei-villagers"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "jei-villagers",
+    "orgRepo": "jeivillagers"
   },
   {
-    "name": [
-      "Jabba"
-    ],
-    "assets": {
-      "1.7.10": "jabba"
+    "name": {
+      "displayName": "Jabba",
+      "aliases": []
     },
-    "curse": "jabba"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "jabba",
+    "orgRepo": "jabba"
   },
   {
-    "name": [
-      "Just Enough Items (JEI)"
-    ],
-    "assets": {
-      "1.16.3": "jei",
-      "1.15.2": "jei",
-      "1.14.4": "jei",
-      "1.13.2": "jei",
-      "1.12.2": "jei",
-      "1.11.2": "jei",
-      "1.10.2": "jei",
-      "1.9.4": "jei",
-      "1.8.9": "jei"
+    "name": {
+      "displayName": "Just Enough Items (JEI)",
+      "aliases": []
     },
-    "curse": "jei"
+    "versions": [
+      "1.16.3",
+      "1.15.2",
+      "1.14.4",
+      "1.13.2",
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.9.4",
+      "1.8.9"
+    ],
+    "curse": "jei",
+    "orgRepo": "jei"
   },
   {
-    "name": [
-      "Just Enough Reactors"
-    ],
-    "assets": {
-      "1.12.2": "justenoughreactors"
+    "name": {
+      "displayName": "Just Enough Reactors",
+      "aliases": []
     },
-    "curse": "just-enough-reactors"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "just-enough-reactors",
+    "orgRepo": "justenoughreactors"
   },
   {
-    "name": [
-      "Just Enough Resources (JER)"
-    ],
-    "assets": {
-      "1.12.2": "jeresources",
-      "1.11.2": "jeresources",
-      "1.10.2": "jeresources",
-      "1.7.10": "jeresources"
+    "name": {
+      "displayName": "Just Enough Resources (JER)",
+      "aliases": []
     },
-    "curse": "just-enough-resources-jer"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "just-enough-resources-jer",
+    "orgRepo": "jeresources"
   },
   {
-    "name": [
-      "Just Enough Throwing In Fluids (JETIF)"
-    ],
-    "assets": {
-      "1.12.2": "jetif"
+    "name": {
+      "displayName": "Just Enough Throwing In Fluids (JETIF)",
+      "aliases": []
     },
-    "curse": "jetif"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "jetif",
+    "orgRepo": "jetif"
   },
   {
-    "name": [
-      "Karat Garden"
-    ],
-    "assets": {
-      "1.12.2": "karatgarden"
+    "name": {
+      "displayName": "Karat Garden",
+      "aliases": []
     },
-    "curse": "karat-garden"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "karat-garden",
+    "orgRepo": "karatgarden"
   },
   {
-    "name": [
-      "LandCore"
+    "name": {
+      "displayName": "LandCore",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2"
     ],
-    "assets": {
-      "1.12.2": "landcore"
-    }
+    "orgRepo": "landcore"
   },
   {
-    "name": [
-      "LandCraft"
+    "name": {
+      "displayName": "LandCraft",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2"
     ],
-    "assets": {
-      "1.12.2": "landcraft"
-    }
+    "orgRepo": "landcraft"
   },
   {
-    "name": [
-      "LibVulpes"
-    ],
-    "assets": {
-      "1.12.2": "libvulpes",
-      "1.11.2": "libvulpes",
-      "1.10.2": "libvulpes",
-      "1.7.10": "libvulpes"
+    "name": {
+      "displayName": "LibVulpes",
+      "aliases": []
     },
-    "curse": "libvulpes"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "libvulpes",
+    "orgRepo": "libvulpes"
   },
   {
-    "name": [
-      "LittleTiles"
-    ],
-    "assets": {
-      "1.12.2": "littletiles"
+    "name": {
+      "displayName": "LittleTiles",
+      "aliases": []
     },
-    "curse": "littletiles"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "littletiles",
+    "orgRepo": "littletiles"
   },
   {
-    "name": [
-      "Logistics Pipes"
-    ],
-    "assets": {
-      "1.7.10": "logisticspipes"
+    "name": {
+      "displayName": "Logistics Pipes",
+      "aliases": []
     },
-    "curse": "logistics-pipes"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "logistics-pipes",
+    "orgRepo": "logisticspipes"
   },
   {
-    "name": [
-      "LootBags"
-    ],
-    "assets": {
-      "1.12.2": "lootbags"
+    "name": {
+      "displayName": "LootBags",
+      "aliases": []
     },
-    "curse": "lootbags"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "lootbags",
+    "orgRepo": "lootbags"
   },
   {
-    "name": [
-      "Lucky Block"
+    "name": {
+      "displayName": "Lucky Block",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "lucky"
-    }
+    "orgRepo": "lucky"
   },
   {
-    "name": [
-      "Lumberjack"
-    ],
-    "assets": {
-      "1.12.2": "lumberjack"
+    "name": {
+      "displayName": "Lumberjack",
+      "aliases": []
     },
-    "curse": "lumberjack"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "lumberjack",
+    "orgRepo": "lumberjack"
   },
   {
-    "name": [
-      "Magia Naturalis"
+    "name": {
+      "displayName": "Magia Naturalis",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "magianaturalis"
-    }
+    "orgRepo": "magianaturalis"
   },
   {
-    "name": [
-      "Magic Bees"
-    ],
-    "assets": {
-      "1.12.2": "magicbees",
-      "1.7.10": "magicbees"
+    "name": {
+      "displayName": "Magic Bees",
+      "aliases": []
     },
-    "curse": "magic-bees"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "magic-bees",
+    "orgRepo": "magicbees"
   },
   {
-    "name": [
-      "Magical Crops"
-    ],
-    "assets": {
-      "1.7.10": "magicalcrops"
+    "name": {
+      "displayName": "Magical Crops",
+      "aliases": []
     },
-    "curse": "magical-crops"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "magical-crops",
+    "orgRepo": "magicalcrops"
   },
   {
-    "name": [
-      "Magneticraft"
-    ],
-    "assets": {
-      "1.12.2": "magneticraft",
-      "1.7.10": "magneticraft"
+    "name": {
+      "displayName": "Magneticraft",
+      "aliases": []
     },
-    "curse": "magneticraft"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "magneticraft",
+    "orgRepo": "magneticraft"
   },
   {
-    "name": [
-      "MalisisDoors"
-    ],
-    "assets": {
-      "1.12.2": "malisisdoors",
-      "1.7.10": "malisisdoors"
+    "name": {
+      "displayName": "MalisisDoors",
+      "aliases": []
     },
-    "curse": "malisisdoors"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "malisisdoors",
+    "orgRepo": "malisisdoors"
   },
   {
-    "name": [
-      "Mantle"
-    ],
-    "assets": {
-      "1.12.2": "mantle"
+    "name": {
+      "displayName": "Mantle",
+      "aliases": []
     },
-    "curse": "mantle"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "mantle",
+    "orgRepo": "mantle"
   },
   {
-    "name": [
-      "Matter Overdrive"
-    ],
-    "assets": {
-      "1.7.10": "mo"
+    "name": {
+      "displayName": "Matter Overdrive",
+      "aliases": []
     },
-    "curse": "matteroverdrive-17-edition"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "matteroverdrive-17-edition",
+    "orgRepo": "mo"
   },
   {
-    "name": [
-      "Mekanism"
-    ],
-    "assets": {
-      "1.12.2": "mekanism",
-      "1.11.2": "mekanism",
-      "1.10.2": "mekanism",
-      "1.7.10": "mekanism"
+    "name": {
+      "displayName": "Mekanism",
+      "aliases": []
     },
-    "curse": "mekanism"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "mekanism",
+    "orgRepo": "mekanism"
   },
   {
-    "name": [
-      "Mekanism Generators"
-    ],
-    "assets": {
-      "1.12.2": "mekanismgenerators"
+    "name": {
+      "displayName": "Mekanism Generators",
+      "aliases": []
     },
-    "curse": "mekanism-generators"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "mekanism-generators",
+    "orgRepo": "mekanismgenerators"
   },
   {
-    "name": [
-      "Mekanism Tools"
-    ],
-    "assets": {
-      "1.12.2": "mekanismtools",
-      "1.11.2": "mekanismtools",
-      "1.10.2": "mekanismtools",
-      "1.7.10": "mekanismtools"
+    "name": {
+      "displayName": "Mekanism Tools",
+      "aliases": []
     },
-    "curse": "mekanism-tools"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "mekanism-tools",
+    "orgRepo": "mekanismtools"
   },
   {
-    "name": [
-      "Metallurgy"
-    ],
-    "assets": {
-      "1.7.10": "metallurgy"
+    "name": {
+      "displayName": "Metallurgy",
+      "aliases": []
     },
-    "curse": "metallurgy"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "metallurgy",
+    "orgRepo": "metallurgy"
   },
   {
-    "name": [
-      "Mine & Blade: Battlegear 2"
-    ],
-    "assets": {
-      "1.7.10": "battlegear2"
+    "name": {
+      "displayName": "Mine & Blade: Battlegear 2",
+      "aliases": []
     },
-    "curse": "mb-battlegear-2"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "mb-battlegear-2",
+    "orgRepo": "battlegear2"
   },
   {
-    "name": [
-      "Mine Souls"
-    ],
-    "assets": {
-      "1.12.2": "minesouls",
-      "1.11.2": "minesouls",
-      "1.10.2": "minesouls",
-      "1.7.10": "minesouls"
+    "name": {
+      "displayName": "Mine Souls",
+      "aliases": []
     },
-    "curse": "mine-souls"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "mine-souls",
+    "orgRepo": "minesouls"
   },
   {
-    "name": [
-      "Minefactory Reloaded"
-    ],
-    "assets": {
-      "1.7.10": "minefactoryreloaded"
+    "name": {
+      "displayName": "Minefactory Reloaded",
+      "aliases": []
     },
-    "curse": "minefactory-reloaded"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "minefactory-reloaded",
+    "orgRepo": "minefactoryreloaded"
   },
   {
-    "name": [
-      "Mineswagg"
+    "name": {
+      "displayName": "Mineswagg",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "mineswagg"
-    }
+    "orgRepo": "mineswagg"
   },
   {
-    "name": [
-      "MiniCoal"
-    ],
-    "assets": {
-      "1.12.2": "minicoal",
-      "1.11.2": "minicoal",
-      "1.10.2": "minicoal",
-      "1.7.10": "minicoal"
+    "name": {
+      "displayName": "MiniCoal",
+      "aliases": []
     },
-    "curse": "minicoal"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "minicoal",
+    "orgRepo": "minicoal"
   },
   {
-    "name": [
-      "MiscUtils [Modding Utilities]"
-    ],
-    "assets": {
-      "1.7.10": "miscutils"
+    "name": {
+      "displayName": "MiscUtils [Modding Utilities]",
+      "aliases": []
     },
-    "curse": "miscutils-modding-utilities"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "miscutils-modding-utilities",
+    "orgRepo": "miscutils"
   },
   {
-    "name": [
-      "Mo Glass"
-    ],
-    "assets": {
-      "1.16.3": "mo_glass",
-      "1.15.2": "mo_glass"
+    "name": {
+      "displayName": "Mo Glass",
+      "aliases": []
     },
-    "curse": "mo-glass"
+    "versions": [
+      "1.16.3",
+      "1.15.2"
+    ],
+    "curse": "mo-glass",
+    "orgRepo": "mo_glass"
   },
   {
-    "name": [
-      "Mod Menu"
-    ],
-    "assets": {
-      "1.16.3": "modmenu",
-      "1.15.2": "modmenu",
-      "1.14.4": "modmenu"
+    "name": {
+      "displayName": "Mod Menu",
+      "aliases": []
     },
-    "curse": "modmenu"
+    "versions": [
+      "1.16.3",
+      "1.15.2",
+      "1.14.4"
+    ],
+    "curse": "modmenu",
+    "orgRepo": "modmenu"
   },
   {
-    "name": [
-      "Modular Force Field Systems (MFFS)"
-    ],
-    "assets": {
-      "1.7.10": "mffs"
+    "name": {
+      "displayName": "Modular Force Field Systems (MFFS)",
+      "aliases": []
     },
-    "curse": "mffs"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "mffs",
+    "orgRepo": "mffs"
   },
   {
-    "name": [
-      "Modular Machinery"
-    ],
-    "assets": {
-      "1.12.2": "modularmachinery"
+    "name": {
+      "displayName": "Modular Machinery",
+      "aliases": []
     },
-    "curse": "modular-machinery"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "modular-machinery",
+    "orgRepo": "modularmachinery"
   },
   {
-    "name": [
-      "Modular Powersuits"
-    ],
-    "assets": {
-      "1.7.10": "powersuits"
+    "name": {
+      "displayName": "Modular Powersuits",
+      "aliases": []
     },
-    "curse": "modular-powersuits"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "modular-powersuits",
+    "orgRepo": "powersuits"
   },
   {
-    "name": [
-      "Modular Powersuits Addons"
+    "name": {
+      "displayName": "Modular Powersuits Addons",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "powersuitaddons"
-    }
+    "orgRepo": "powersuitaddons"
   },
   {
-    "name": [
-      "Monster Girl Mod"
+    "name": {
+      "displayName": "Monster Girl Mod",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "monstergirlmod"
-    }
+    "orgRepo": "monstergirlmod"
   },
   {
-    "name": [
-      "More Furnaces"
-    ],
-    "assets": {
-      "1.12.2": "morefurnaces"
+    "name": {
+      "displayName": "More Furnaces",
+      "aliases": []
     },
-    "curse": "more-furnaces"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "more-furnaces",
+    "orgRepo": "morefurnaces"
   },
   {
-    "name": [
-      "More Plates"
-    ],
-    "assets": {
-      "1.12.2": "moreplates"
+    "name": {
+      "displayName": "More Plates",
+      "aliases": []
     },
-    "curse": "moreplates"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "moreplates",
+    "orgRepo": "moreplates"
   },
   {
-    "name": [
-      "More Swords Mod"
-    ],
-    "assets": {
-      "1.7.10": "moreswords"
+    "name": {
+      "displayName": "More Swords Mod",
+      "aliases": []
     },
-    "curse": "more-swords-mod"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "more-swords-mod",
+    "orgRepo": "moreswords"
   },
   {
-    "name": [
-      "MoreChisels"
-    ],
-    "assets": {
-      "1.7.10": "morechisels"
+    "name": {
+      "displayName": "MoreChisels",
+      "aliases": []
     },
-    "curse": "morechisels"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "morechisels",
+    "orgRepo": "morechisels"
   },
   {
-    "name": [
-      "Morph-o-Tool"
-    ],
-    "assets": {
-      "1.12.2": "morphtool",
-      "1.11.2": "morphtool",
-      "1.10.2": "morphtool",
-      "1.7.10": "morphtool"
+    "name": {
+      "displayName": "Morph-o-Tool",
+      "aliases": []
     },
-    "curse": "morph-o-tool"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "morph-o-tool",
+    "orgRepo": "morphtool"
   },
   {
-    "name": [
-      "MrCrayfish's Furniture Mod"
-    ],
-    "assets": {
-      "1.7.10": "cfm"
+    "name": {
+      "displayName": "MrCrayfish's Furniture Mod",
+      "aliases": []
     },
-    "curse": "mrcrayfish-furniture-mod"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "mrcrayfish-furniture-mod",
+    "orgRepo": "cfm"
   },
   {
-    "name": [
-      "MrTJPCore"
-    ],
-    "assets": {
-      "1.7.10": "mrtjpcore"
+    "name": {
+      "displayName": "MrTJPCore",
+      "aliases": []
     },
-    "curse": "mrtjpcore"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "mrtjpcore",
+    "orgRepo": "mrtjpcore"
   },
   {
-    "name": [
-      "Mystcraft"
-    ],
-    "assets": {
-      "1.7.10": "mystcraft"
+    "name": {
+      "displayName": "Mystcraft",
+      "aliases": []
     },
-    "curse": "mystcraft"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "mystcraft",
+    "orgRepo": "mystcraft"
   },
   {
-    "name": [
-      "Mystical Adaptations"
-    ],
-    "assets": {
-      "1.12.2": "mysticaladaptations"
+    "name": {
+      "displayName": "Mystical Adaptations",
+      "aliases": []
     },
-    "curse": "mystical-adaptations"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "mystical-adaptations",
+    "orgRepo": "mysticaladaptations"
   },
   {
-    "name": [
-      "Mystical Agradditions"
-    ],
-    "assets": {
-      "1.12.2": "mysticalagradditions"
+    "name": {
+      "displayName": "Mystical Agradditions",
+      "aliases": []
     },
-    "curse": "mystical-agradditions"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "mystical-agradditions",
+    "orgRepo": "mysticalagradditions"
   },
   {
-    "name": [
-      "Mystical Agriculture"
-    ],
-    "assets": {
-      "1.12.2": "mysticalagriculture",
-      "1.11.2": "mysticalagriculture",
-      "1.10.2": "mysticalagriculture",
-      "1.7.10": "mysticalagriculture"
+    "name": {
+      "displayName": "Mystical Agriculture",
+      "aliases": []
     },
-    "curse": "mystical-agriculture"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "mystical-agriculture",
+    "orgRepo": "mysticalagriculture"
   },
   {
-    "name": [
-      "Mystical World"
-    ],
-    "assets": {
-      "1.12.2": "mysticalworld"
+    "name": {
+      "displayName": "Mystical World",
+      "aliases": []
     },
-    "curse": "mystical-world"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "mystical-world",
+    "orgRepo": "mysticalworld"
   },
   {
-    "name": [
-      "Natura"
-    ],
-    "assets": {
-      "1.12.2": "natura",
-      "1.11.2": "natura",
-      "1.10.2": "natura",
-      "1.7.10": "natura"
+    "name": {
+      "displayName": "Natura",
+      "aliases": []
     },
-    "curse": "natura"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "natura",
+    "orgRepo": "natura"
   },
   {
-    "name": [
-      "Nature's Aura"
-    ],
-    "assets": {
-      "1.12.2": "naturesaura"
+    "name": {
+      "displayName": "Nature's Aura",
+      "aliases": []
     },
-    "curse": "natures-aura"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "natures-aura",
+    "orgRepo": "naturesaura"
   },
   {
-    "name": [
-      "Nether Metals"
-    ],
-    "assets": {
-      "1.12.2": "nethermetals",
-      "1.11.2": "nethermetals",
-      "1.10.2": "nethermetals",
-      "1.7.10": "nethermetals"
+    "name": {
+      "displayName": "Nether Metals",
+      "aliases": []
     },
-    "curse": "nether-metals"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "nether-metals",
+    "orgRepo": "nethermetals"
   },
   {
-    "name": [
-      "Nether Things"
-    ],
-    "assets": {
-      "1.14.4": "netherthings"
+    "name": {
+      "displayName": "Nether Things",
+      "aliases": []
     },
-    "curse": "nether-things"
+    "versions": [
+      "1.14.4"
+    ],
+    "curse": "nether-things",
+    "orgRepo": "netherthings"
   },
   {
-    "name": [
-      "NetherEx"
-    ],
-    "assets": {
-      "1.12.2": "netherex"
+    "name": {
+      "displayName": "NetherEx",
+      "aliases": []
     },
-    "curse": "netherex"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "netherex",
+    "orgRepo": "netherex"
   },
   {
-    "name": [
-      "NetherOres"
-    ],
-    "assets": {
-      "1.7.10": "netherores"
+    "name": {
+      "displayName": "NetherOres",
+      "aliases": []
     },
-    "curse": "netherores"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "netherores",
+    "orgRepo": "netherores"
   },
   {
-    "name": [
-      "Netherending Ores"
-    ],
-    "assets": {
-      "1.12.2": "netherendingores"
+    "name": {
+      "displayName": "Netherending Ores",
+      "aliases": []
     },
-    "curse": "netherending-ores"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "netherending-ores",
+    "orgRepo": "netherendingores"
   },
   {
-    "name": [
-      "Netherite Horse Armor"
-    ],
-    "assets": {
-      "1.16.3": "netheritehorsearmor"
+    "name": {
+      "displayName": "Netherite Horse Armor",
+      "aliases": []
     },
-    "curse": "netherite-horse-armor"
+    "versions": [
+      "1.16.3"
+    ],
+    "curse": "netherite-horse-armor",
+    "orgRepo": "netheritehorsearmor"
   },
   {
-    "name": [
-      "Not Enough Items (NEI)"
-    ],
-    "assets": {
-      "1.12.2": "nei",
-      "1.11.2": "nei",
-      "1.9.4": "nei",
-      "1.8.9": "nei",
-      "1.7.10": "nei"
+    "name": {
+      "displayName": "Not Enough Items (NEI)",
+      "aliases": []
     },
-    "curse": "not-enough-items-1-8"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.9.4",
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "not-enough-items-1-8",
+    "orgRepo": "nei"
   },
   {
-    "name": [
-      "Not Enough Wands"
-    ],
-    "assets": {
-      "1.12.2": "notenoughwands"
+    "name": {
+      "displayName": "Not Enough Wands",
+      "aliases": []
     },
-    "curse": "not-enough-wands"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "not-enough-wands",
+    "orgRepo": "notenoughwands"
   },
   {
-    "name": [
-      "NotEnoughScaffold"
-    ],
-    "assets": {
-      "1.12.2": "notenoughscaffold"
+    "name": {
+      "displayName": "NotEnoughScaffold",
+      "aliases": []
     },
-    "curse": "notenoughscaffold"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "notenoughscaffold",
+    "orgRepo": "notenoughscaffold"
   },
   {
-    "name": [
-      "Nuclear Control 2"
-    ],
-    "assets": {
-      "1.7.10": "nuclearcontrol"
+    "name": {
+      "displayName": "Nuclear Control 2",
+      "aliases": []
     },
-    "curse": "nuclear-control-2"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "nuclear-control-2",
+    "orgRepo": "nuclearcontrol"
   },
   {
-    "name": [
-      "NuclearCraft"
-    ],
-    "assets": {
-      "1.7.10": "nc"
+    "name": {
+      "displayName": "NuclearCraft",
+      "aliases": []
     },
-    "curse": "nuclearcraft-mod"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "nuclearcraft-mod",
+    "orgRepo": "nc"
   },
   {
-    "name": [
-      "NuclearCraft"
-    ],
-    "assets": {
-      "1.12.2": "nuclearcraft"
+    "name": {
+      "displayName": "NuclearCraft",
+      "aliases": []
     },
-    "curse": "nuclearcraft-mod"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "nuclearcraft-mod",
+    "orgRepo": "nuclearcraft"
   },
   {
-    "name": [
-      "Nutrition"
+    "name": {
+      "displayName": "Nutrition",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2"
     ],
-    "assets": {
-      "1.12.2": "nutrition"
-    }
+    "orgRepo": "nutrition"
   },
   {
-    "name": [
-      "Open Glider"
-    ],
-    "assets": {
-      "1.12.2": "openglider"
+    "name": {
+      "displayName": "Open Glider",
+      "aliases": []
     },
-    "curse": "open-glider"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "open-glider",
+    "orgRepo": "openglider"
   },
   {
-    "name": [
-      "OpenBlocks"
-    ],
-    "assets": {
-      "1.12.2": "openblocks",
-      "1.7.10": "openblocks"
+    "name": {
+      "displayName": "OpenBlocks",
+      "aliases": []
     },
-    "curse": "openblocks"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "openblocks",
+    "orgRepo": "openblocks"
   },
   {
-    "name": [
-      "OpenCCSensors"
+    "name": {
+      "displayName": "OpenCCSensors",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "openccsensors"
-    }
+    "orgRepo": "openccsensors"
   },
   {
-    "name": [
-      "OpenComputers"
-    ],
-    "assets": {
-      "1.12.2": "opencomputers",
-      "1.11.2": "opencomputers",
-      "1.10.2": "opencomputers",
-      "1.7.10": "opencomputers"
+    "name": {
+      "displayName": "OpenComputers",
+      "aliases": []
     },
-    "curse": "opencomputers"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "opencomputers",
+    "orgRepo": "opencomputers"
   },
   {
-    "name": [
-      "OpenEye"
-    ],
-    "assets": {
-      "1.7.10": "openeye"
+    "name": {
+      "displayName": "OpenEye",
+      "aliases": []
     },
-    "curse": "openeye"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "openeye",
+    "orgRepo": "openeye"
   },
   {
-    "name": [
-      "Overworld Quartz"
-    ],
-    "assets": {
-      "1.12.2": "overworld-quartz",
-      "1.11.2": "overworld-quartz",
-      "1.10.2": "overworld-quartz",
-      "1.7.10": "overworld-quartz"
+    "name": {
+      "displayName": "Overworld Quartz",
+      "aliases": []
     },
-    "curse": "overworld-quartz"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "overworld-quartz",
+    "orgRepo": "overworld-quartz"
   },
   {
-    "name": [
-      "PackagedAuto"
-    ],
-    "assets": {
-      "1.12.2": "packagedauto"
+    "name": {
+      "displayName": "PackagedAuto",
+      "aliases": []
     },
-    "curse": "packagedauto"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "packagedauto",
+    "orgRepo": "packagedauto"
   },
   {
-    "name": [
-      "Pam's HarvestCraft"
-    ],
-    "assets": {
-      "1.12.2": "harvestcraft",
-      "1.11.2": "harvestcraft",
-      "1.10.2": "harvestcraft",
-      "1.7.10": "harvestcraft"
+    "name": {
+      "displayName": "Pam's HarvestCraft",
+      "aliases": []
     },
-    "curse": "pams-harvestcraft"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "pams-harvestcraft",
+    "orgRepo": "harvestcraft"
   },
   {
-    "name": [
-      "Peripherals++"
-    ],
-    "assets": {
-      "1.7.10": "peripheralsplusplus"
+    "name": {
+      "displayName": "Peripherals++",
+      "aliases": []
     },
-    "curse": "peripherals"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "peripherals",
+    "orgRepo": "peripheralsplusplus"
   },
   {
-    "name": [
-      "Pickle Tweaks"
-    ],
-    "assets": {
-      "1.12.2": "pickletweaks"
+    "name": {
+      "displayName": "Pickle Tweaks",
+      "aliases": []
     },
-    "curse": "pickle-tweaks"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "pickle-tweaks",
+    "orgRepo": "pickletweaks"
   },
   {
-    "name": [
-      "Player Stats 2"
+    "name": {
+      "displayName": "Player Stats 2",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
     ],
-    "assets": {
-      "1.12.2": "playerstats",
-      "1.11.2": "playerstats",
-      "1.10.2": "playerstats",
-      "1.7.10": "playerstats"
-    }
+    "orgRepo": "playerstats"
   },
   {
-    "name": [
-      "PlusTiC"
+    "name": {
+      "displayName": "PlusTiC",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2"
     ],
-    "assets": {
-      "1.12.2": "plustic"
-    }
+    "orgRepo": "plustic"
   },
   {
-    "name": [
-      "PneumaticCraft"
-    ],
-    "assets": {
-      "1.12.2": "pneumaticcraft",
-      "1.7.10": "pneumaticcraft"
+    "name": {
+      "displayName": "PneumaticCraft",
+      "aliases": []
     },
-    "curse": "pneumaticcraft-repressurized"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "pneumaticcraft-repressurized",
+    "orgRepo": "pneumaticcraft"
   },
   {
-    "name": [
-      "PoorOres"
-    ],
-    "assets": {
-      "1.7.10": "poorores"
+    "name": {
+      "displayName": "PoorOres",
+      "aliases": []
     },
-    "curse": "poorores"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "poorores",
+    "orgRepo": "poorores"
   },
   {
-    "name": [
-      "Portal Gun"
-    ],
-    "assets": {
-      "1.7.10": "portalgun"
+    "name": {
+      "displayName": "Portal Gun",
+      "aliases": []
     },
-    "curse": "portal-gun"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "portal-gun",
+    "orgRepo": "portalgun"
   },
   {
-    "name": [
-      "Power Converters 3"
-    ],
-    "assets": {
-      "1.7.10": "powerconverters"
+    "name": {
+      "displayName": "Power Converters 3",
+      "aliases": []
     },
-    "curse": "power-converters3"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "power-converters3",
+    "orgRepo": "powerconverters"
   },
   {
-    "name": [
-      "Primal Tech"
-    ],
-    "assets": {
-      "1.12.2": "primal_tech"
+    "name": {
+      "displayName": "Primal Tech",
+      "aliases": []
     },
-    "curse": "primal-tech"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "primal-tech",
+    "orgRepo": "primal_tech"
   },
   {
-    "name": [
-      "Production"
+    "name": {
+      "displayName": "Production",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "production"
-    }
+    "orgRepo": "production"
   },
   {
-    "name": [
-      "Progressive Automation"
-    ],
-    "assets": {
-      "1.7.10": "progressiveautomation"
+    "name": {
+      "displayName": "Progressive Automation",
+      "aliases": []
     },
-    "curse": "progressive-automation-early-miner"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "progressive-automation-early-miner",
+    "orgRepo": "progressiveautomation"
   },
   {
-    "name": [
-      "Project EX"
-    ],
-    "assets": {
-      "1.12.2": "projectex"
+    "name": {
+      "displayName": "Project EX",
+      "aliases": []
     },
-    "curse": "project-ex"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "project-ex",
+    "orgRepo": "projectex"
   },
   {
-    "name": [
-      "Project Red"
-    ],
-    "assets": {
-      "1.12.2": "projectred",
-      "1.7.10": "projectred"
+    "name": {
+      "displayName": "Project Red",
+      "aliases": []
     },
-    "curse": "project-red-base"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "project-red-base",
+    "orgRepo": "projectred"
   },
   {
-    "name": [
-      "ProjectE"
-    ],
-    "assets": {
-      "1.12.2": "projecte",
-      "1.11.2": "projecte",
-      "1.10.2": "projecte",
-      "1.8.9": "projecte",
-      "1.7.10": "projecte"
+    "name": {
+      "displayName": "ProjectE",
+      "aliases": []
     },
-    "curse": "projecte"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "projecte",
+    "orgRepo": "projecte"
   },
   {
-    "name": [
-      "Psi"
-    ],
-    "assets": {
-      "1.12.2": "psi"
+    "name": {
+      "displayName": "Psi",
+      "aliases": []
     },
-    "curse": "psi"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "psi",
+    "orgRepo": "psi"
   },
   {
-    "name": [
-      "QuantumFlux"
-    ],
-    "assets": {
-      "1.7.10": "quantumflux"
+    "name": {
+      "displayName": "QuantumFlux",
+      "aliases": []
     },
-    "curse": "quantumflux"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "quantumflux",
+    "orgRepo": "quantumflux"
   },
   {
-    "name": [
-      "QuantumStorage"
-    ],
-    "assets": {
-      "1.12.2": "quantumstorage"
+    "name": {
+      "displayName": "QuantumStorage",
+      "aliases": []
     },
-    "curse": "quantumstorage"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "quantumstorage",
+    "orgRepo": "quantumstorage"
   },
   {
-    "name": [
-      "Quark"
-    ],
-    "assets": {
-      "1.12.2": "quark",
-      "1.11.2": "quark",
-      "1.10.2": "quark",
-      "1.7.10": "quark"
+    "name": {
+      "displayName": "Quark",
+      "aliases": []
     },
-    "curse": "quark"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "quark",
+    "orgRepo": "quark"
   },
   {
-    "name": [
-      "QuarryPlus"
+    "name": {
+      "displayName": "QuarryPlus",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "yogpstop_qp"
-    }
+    "orgRepo": "yogpstop_qp"
   },
   {
-    "name": [
-      "RFTools"
-    ],
-    "assets": {
-      "1.12.2": "rftools",
-      "1.11.2": "rftools",
-      "1.10.2": "rftools",
-      "1.7.10": "rftools"
+    "name": {
+      "displayName": "RFTools",
+      "aliases": []
     },
-    "curse": "rftools"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "rftools",
+    "orgRepo": "rftools"
   },
   {
-    "name": [
-      "RFTools Control"
-    ],
-    "assets": {
-      "1.12.2": "rftoolscontrol"
+    "name": {
+      "displayName": "RFTools Control",
+      "aliases": []
     },
-    "curse": "rftools-control"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "rftools-control",
+    "orgRepo": "rftoolscontrol"
   },
   {
-    "name": [
-      "RFTools Dimensions"
-    ],
-    "assets": {
-      "1.12.2": "rftoolsdim",
-      "1.11.2": "rftoolsdim",
-      "1.10.2": "rftoolsdim",
-      "1.7.10": "rftoolsdim"
+    "name": {
+      "displayName": "RFTools Dimensions",
+      "aliases": []
     },
-    "curse": "rftools-dimensions"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "rftools-dimensions",
+    "orgRepo": "rftoolsdim"
   },
   {
-    "name": [
-      "RSCircuits"
+    "name": {
+      "displayName": "RSCircuits",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
     ],
-    "assets": {
-      "1.12.2": "rscircuits",
-      "1.11.2": "rscircuits",
-      "1.10.2": "rscircuits",
-      "1.7.10": "rscircuits"
-    }
+    "orgRepo": "rscircuits"
   },
   {
-    "name": [
-      "Railcraft"
-    ],
-    "assets": {
-      "1.12.2": "railcraft",
-      "1.11.2": "railcraft",
-      "1.10.2": "railcraft",
-      "1.7.10": "railcraft"
+    "name": {
+      "displayName": "Railcraft",
+      "aliases": []
     },
-    "curse": "railcraft"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "railcraft",
+    "orgRepo": "railcraft"
   },
   {
-    "name": [
-      "Random Things"
-    ],
-    "assets": {
-      "1.12.2": "randomthings",
-      "1.7.10": "randomthings"
+    "name": {
+      "displayName": "Random Things",
+      "aliases": []
     },
-    "curse": "random-things"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "random-things",
+    "orgRepo": "randomthings"
   },
   {
-    "name": [
-      "RandomAdditions"
-    ],
-    "assets": {
-      "1.7.10": "randomadditions"
+    "name": {
+      "displayName": "RandomAdditions",
+      "aliases": []
     },
-    "curse": "randomadditions"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "randomadditions",
+    "orgRepo": "randomadditions"
   },
   {
-    "name": [
-      "ReactorCraft"
-    ],
-    "assets": {
-      "1.7.10": "reactorcraft"
+    "name": {
+      "displayName": "ReactorCraft",
+      "aliases": []
     },
-    "curse": "reactorcraft"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "reactorcraft",
+    "orgRepo": "reactorcraft"
   },
   {
-    "name": [
-      "Realistic Torches"
-    ],
-    "assets": {
-      "1.12.2": "realistictorches"
+    "name": {
+      "displayName": "Realistic Torches",
+      "aliases": []
     },
-    "curse": "realistic-torches"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "realistic-torches",
+    "orgRepo": "realistictorches"
   },
   {
-    "name": [
-      "Reborn Storage"
-    ],
-    "assets": {
-      "1.12.2": "rebornstorage"
+    "name": {
+      "displayName": "Reborn Storage",
+      "aliases": []
     },
-    "curse": "rebornstorage"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "rebornstorage",
+    "orgRepo": "rebornstorage"
   },
   {
-    "name": [
-      "Redstone Armory"
-    ],
-    "assets": {
-      "1.7.10": "rarm"
+    "name": {
+      "displayName": "Redstone Armory",
+      "aliases": []
     },
-    "curse": "redstone-armory"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "redstone-armory",
+    "orgRepo": "rarm"
   },
   {
-    "name": [
-      "Redstone Arsenal"
-    ],
-    "assets": {
-      "1.12.2": "redstonearsenal",
-      "1.7.10": "redstonearsenal"
+    "name": {
+      "displayName": "Redstone Arsenal",
+      "aliases": []
     },
-    "curse": "redstone-arsenal"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "redstone-arsenal",
+    "orgRepo": "redstonearsenal"
   },
   {
-    "name": [
-      "Redstone In Motion"
+    "name": {
+      "displayName": "Redstone In Motion",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "jakj_redstoneinmotion"
-    }
+    "orgRepo": "jakj_redstoneinmotion"
   },
   {
-    "name": [
-      "Redstone Repository Revolved"
-    ],
-    "assets": {
-      "1.12.2": "redstonerepository"
+    "name": {
+      "displayName": "Redstone Repository Revolved",
+      "aliases": []
     },
-    "curse": "redstone-repository-revolved"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "redstone-repository-revolved",
+    "orgRepo": "redstonerepository"
   },
   {
-    "name": [
-      "Refined Machinery"
-    ],
-    "assets": {
-      "1.14.4": "refinedmachinery"
+    "name": {
+      "displayName": "Refined Machinery",
+      "aliases": []
     },
-    "curse": "refined-machinery"
+    "versions": [
+      "1.14.4"
+    ],
+    "curse": "refined-machinery",
+    "orgRepo": "refinedmachinery"
   },
   {
-    "name": [
-      "Refined Storage"
-    ],
-    "assets": {
-      "1.12.2": "refinedstorage",
-      "1.11.2": "refinedstorage",
-      "1.10.2": "refinedstorage",
-      "1.7.10": "refinedstorage"
+    "name": {
+      "displayName": "Refined Storage",
+      "aliases": []
     },
-    "curse": "refined-storage"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "refined-storage",
+    "orgRepo": "refinedstorage"
   },
   {
-    "name": [
-      "Refined Storage Addons"
-    ],
-    "assets": {
-      "1.12.2": "refinedstorageaddons"
+    "name": {
+      "displayName": "Refined Storage Addons",
+      "aliases": []
     },
-    "curse": "refined-storage-addons"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "refined-storage-addons",
+    "orgRepo": "refinedstorageaddons"
   },
   {
-    "name": [
-      "Roots"
-    ],
-    "assets": {
-      "1.12.2": "roots",
-      "1.11.2": "roots",
-      "1.10.2": "roots",
-      "1.7.10": "roots"
+    "name": {
+      "displayName": "Roots",
+      "aliases": []
     },
-    "curse": "roots"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "roots",
+    "orgRepo": "roots"
   },
   {
-    "name": [
-      "RotaryCraft"
+    "name": {
+      "displayName": "RotaryCraft",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "rotarycraft"
-    }
+    "orgRepo": "rotarycraft"
   },
   {
-    "name": [
-      "Rustic"
-    ],
-    "assets": {
-      "1.12.2": "rustic"
+    "name": {
+      "displayName": "Rustic",
+      "aliases": []
     },
-    "curse": "rustic"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "rustic",
+    "orgRepo": "rustic"
   },
   {
-    "name": [
-      "Scannable"
-    ],
-    "assets": {
-      "1.12.2": "scannable"
+    "name": {
+      "displayName": "Scannable",
+      "aliases": []
     },
-    "curse": "scannable"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "scannable",
+    "orgRepo": "scannable"
   },
   {
-    "name": [
-      "Serene Seasons"
-    ],
-    "assets": {
-      "1.12.2": "sereneseasons"
+    "name": {
+      "displayName": "Serene Seasons",
+      "aliases": []
     },
-    "curse": "serene-seasons"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "serene-seasons",
+    "orgRepo": "sereneseasons"
   },
   {
-    "name": [
-      "Simple Achievements"
-    ],
-    "assets": {
-      "1.12.2": "simpleachievements",
-      "1.11.2": "simpleachievements",
-      "1.10.2": "simpleachievements",
-      "1.7.10": "simpleachievements"
+    "name": {
+      "displayName": "Simple Achievements",
+      "aliases": []
     },
-    "curse": "simple-achievements"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "simple-achievements",
+    "orgRepo": "simpleachievements"
   },
   {
-    "name": [
-      "Simple Covers"
-    ],
-    "assets": {
-      "1.12.2": "covers",
-      "1.11.2": "covers",
-      "1.10.2": "covers"
+    "name": {
+      "displayName": "Simple Covers",
+      "aliases": []
     },
-    "curse": "simple-covers"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "simple-covers",
+    "orgRepo": "covers"
   },
   {
-    "name": [
-      "Simple Storage Network"
-    ],
-    "assets": {
-      "1.12.2": "storagenetwork"
+    "name": {
+      "displayName": "Simple Storage Network",
+      "aliases": []
     },
-    "curse": "simple-storage-network"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "simple-storage-network",
+    "orgRepo": "storagenetwork"
   },
   {
-    "name": [
-      "Simply Jetpacks 2"
-    ],
-    "assets": {
-      "1.12.2": "simplyjetpacks",
-      "1.7.10": "simplyjetpacks"
+    "name": {
+      "displayName": "Simply Jetpacks 2",
+      "aliases": []
     },
-    "curse": "simply-jetpacks"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "simply-jetpacks",
+    "orgRepo": "simplyjetpacks"
   },
   {
-    "name": [
-      "Sky Compression"
-    ],
-    "assets": {
-      "1.12.2": "sc"
+    "name": {
+      "displayName": "Sky Compression",
+      "aliases": []
     },
-    "curse": "sky-compression"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "sky-compression",
+    "orgRepo": "sc"
   },
   {
-    "name": [
-      "Sky Orchards"
-    ],
-    "assets": {
-      "1.12.2": "sky_orchards"
+    "name": {
+      "displayName": "Sky Orchards",
+      "aliases": []
     },
-    "curse": "sky-orchards"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "sky-orchards",
+    "orgRepo": "sky_orchards"
   },
   {
-    "name": [
-      "Sky Resources 2"
-    ],
-    "assets": {
-      "1.12.2": "skyresources"
+    "name": {
+      "displayName": "Sky Resources 2",
+      "aliases": []
     },
-    "curse": "sky-resources"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "sky-resources",
+    "orgRepo": "skyresources"
   },
   {
-    "name": [
-      "Smart HUD"
-    ],
-    "assets": {
-      "1.12.2": "smarthud"
+    "name": {
+      "displayName": "Smart HUD",
+      "aliases": []
     },
-    "curse": "smart-hud"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "smart-hud",
+    "orgRepo": "smarthud"
   },
   {
-    "name": [
-      "Smart Moving"
-    ],
-    "assets": {
-      "1.8.9": "smartmoving",
-      "1.7.10": "smartmoving"
+    "name": {
+      "displayName": "Smart Moving",
+      "aliases": []
     },
-    "curse": "smart-moving"
+    "versions": [
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "smart-moving",
+    "orgRepo": "smartmoving"
   },
   {
-    "name": [
-      "Snow Variants"
-    ],
-    "assets": {
-      "1.12.2": "snowvariants"
+    "name": {
+      "displayName": "Snow Variants",
+      "aliases": []
     },
-    "curse": "snow-variants"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "snow-variants",
+    "orgRepo": "snowvariants"
   },
   {
-    "name": [
-      "Sodacan Torches"
-    ],
-    "assets": {
-      "1.7.10": "sodacantorches"
+    "name": {
+      "displayName": "Sodacan Torches",
+      "aliases": []
     },
-    "curse": "sodacan-utilities"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "sodacan-utilities",
+    "orgRepo": "sodacantorches"
   },
   {
-    "name": [
-      "Sodacan Utilities"
-    ],
-    "assets": {
-      "1.8.9": "sodacanutils"
+    "name": {
+      "displayName": "Sodacan Utilities",
+      "aliases": []
     },
-    "curse": "sodacan-utilities"
+    "versions": [
+      "1.8.9"
+    ],
+    "curse": "sodacan-utilities",
+    "orgRepo": "sodacanutils"
   },
   {
-    "name": [
-      "Solar Expansion"
-    ],
-    "assets": {
-      "1.7.10": "solarexpansion"
+    "name": {
+      "displayName": "Solar Expansion",
+      "aliases": []
     },
-    "curse": "solar-expansion"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "solar-expansion",
+    "orgRepo": "solarexpansion"
   },
   {
-    "name": [
-      "Soul Shards: The Old Ways"
-    ],
-    "assets": {
-      "1.7.10": "sstow"
+    "name": {
+      "displayName": "Soul Shards: The Old Ways",
+      "aliases": []
     },
-    "curse": "soul-shards-the-old-ways"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "soul-shards-the-old-ways",
+    "orgRepo": "sstow"
   },
   {
-    "name": [
-      "Soulus"
-    ],
-    "assets": {
-      "1.12.2": "soulus"
+    "name": {
+      "displayName": "Soulus",
+      "aliases": []
     },
-    "curse": "soulus"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "soulus",
+    "orgRepo": "soulus"
   },
   {
-    "name": [
-      "Speedy Ladders"
-    ],
-    "assets": {
-      "1.12.2": "speedyladders"
+    "name": {
+      "displayName": "Speedy Ladders",
+      "aliases": []
     },
-    "curse": "speedy-ladders"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "speedy-ladders",
+    "orgRepo": "speedyladders"
   },
   {
-    "name": [
-      "Steamcraft 2"
-    ],
-    "assets": {
-      "1.7.10": "steamcraft"
+    "name": {
+      "displayName": "Steamcraft 2",
+      "aliases": []
     },
-    "curse": "steamcraft2"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "steamcraft2",
+    "orgRepo": "steamcraft"
   },
   {
-    "name": [
-      "Steve's Carts"
-    ],
-    "assets": {
-      "1.12.2": "stevescarts",
-      "1.11.2": "stevescarts",
-      "1.10.2": "stevescarts",
-      "1.7.10": "stevescarts"
+    "name": {
+      "displayName": "Steve's Carts",
+      "aliases": []
     },
-    "curse": "steves-carts-reborn"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "steves-carts-reborn",
+    "orgRepo": "stevescarts"
   },
   {
-    "name": [
-      "Steve's Factory Manager"
-    ],
-    "assets": {
-      "1.7.10": "stevesfactory"
+    "name": {
+      "displayName": "Steve's Factory Manager",
+      "aliases": []
     },
-    "curse": "steves-factory-manager-reborn"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "steves-factory-manager-reborn",
+    "orgRepo": "stevesfactory"
   },
   {
-    "name": [
-      "Storage Drawers"
-    ],
-    "assets": {
-      "1.12.2": "storagedrawers",
-      "1.11.2": "storagedrawers",
-      "1.10.2": "storagedrawers",
-      "1.7.10": "storagedrawers"
+    "name": {
+      "displayName": "Storage Drawers",
+      "aliases": []
     },
-    "curse": "storage-drawers"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "storage-drawers",
+    "orgRepo": "storagedrawers"
   },
   {
-    "name": [
-      "Storage Drawers: Biomes O' Plenty Pack"
-    ],
-    "assets": {
-      "1.7.10": "storagedrawersbop"
+    "name": {
+      "displayName": "Storage Drawers: Biomes O' Plenty Pack",
+      "aliases": []
     },
-    "curse": "storage-drawers-biomes-o-plenty-pack"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "storage-drawers-biomes-o-plenty-pack",
+    "orgRepo": "storagedrawersbop"
   },
   {
-    "name": [
-      "Superior Shields"
-    ],
-    "assets": {
-      "1.12.2": "superiorshields"
+    "name": {
+      "displayName": "Superior Shields",
+      "aliases": []
     },
-    "curse": "superior-shields"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "superior-shields",
+    "orgRepo": "superiorshields"
   },
   {
-    "name": [
-      "Tainted Magic"
-    ],
-    "assets": {
-      "1.7.10": "taintedmagic"
+    "name": {
+      "displayName": "Tainted Magic",
+      "aliases": []
     },
-    "curse": "tainted-magic"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "tainted-magic",
+    "orgRepo": "taintedmagic"
   },
   {
-    "name": [
-      "Tech Reborn"
-    ],
-    "assets": {
-      "1.12.2": "techreborn"
+    "name": {
+      "displayName": "Tech Reborn",
+      "aliases": []
     },
-    "curse": "techreborn"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "techreborn",
+    "orgRepo": "techreborn"
   },
   {
-    "name": [
-      "TerraFirmaCraft"
-    ],
-    "assets": {
-      "1.7.10": "terrafirmacraft"
+    "name": {
+      "displayName": "TerraFirmaCraft",
+      "aliases": []
     },
-    "curse": "tfcraft"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "tfcraft",
+    "orgRepo": "terrafirmacraft"
   },
   {
-    "name": [
-      "Tesla Core Lib"
-    ],
-    "assets": {
-      "1.12.2": "teslacorelib"
+    "name": {
+      "displayName": "Tesla Core Lib",
+      "aliases": []
     },
-    "curse": "tesla-core-lib"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "tesla-core-lib",
+    "orgRepo": "teslacorelib"
   },
   {
-    "name": [
-      "Thaumcraft"
-    ],
-    "assets": {
-      "1.12.2": "thaumcraft",
-      "1.8.9": "thaumcraft",
-      "1.7.10": "thaumcraft"
+    "name": {
+      "displayName": "Thaumcraft",
+      "aliases": []
     },
-    "curse": "thaumcraft"
+    "versions": [
+      "1.12.2",
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "thaumcraft",
+    "orgRepo": "thaumcraft"
   },
   {
-    "name": [
-      "Thaumic Bases"
-    ],
-    "assets": {
-      "1.7.10": "thaumicbases"
+    "name": {
+      "displayName": "Thaumic Bases",
+      "aliases": []
     },
-    "curse": "thaumic-bases"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "thaumic-bases",
+    "orgRepo": "thaumicbases"
   },
   {
-    "name": [
-      "Thaumic Energistics"
-    ],
-    "assets": {
-      "1.7.10": "thaumicenergistics"
+    "name": {
+      "displayName": "Thaumic Energistics",
+      "aliases": []
     },
-    "curse": "thaumic-energistics"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "thaumic-energistics",
+    "orgRepo": "thaumicenergistics"
   },
   {
-    "name": [
-      "Thaumic Exploration"
-    ],
-    "assets": {
-      "1.7.10": "thaumicexploration"
+    "name": {
+      "displayName": "Thaumic Exploration",
+      "aliases": []
     },
-    "curse": "thaumic-exploration"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "thaumic-exploration",
+    "orgRepo": "thaumicexploration"
   },
   {
-    "name": [
-      "Thaumic Grid"
-    ],
-    "assets": {
-      "1.12.2": "thaumicgrid"
+    "name": {
+      "displayName": "Thaumic Grid",
+      "aliases": []
     },
-    "curse": "thaumic-grid"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "thaumic-grid",
+    "orgRepo": "thaumicgrid"
   },
   {
-    "name": [
-      "Thaumic JEI"
-    ],
-    "assets": {
-      "1.12.2": "thaumicjei"
+    "name": {
+      "displayName": "Thaumic JEI",
+      "aliases": []
     },
-    "curse": "thaumic-jei"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "thaumic-jei",
+    "orgRepo": "thaumicjei"
   },
   {
-    "name": [
-      "Thaumic Palmistry"
-    ],
-    "assets": {
-      "1.8.9": "thaumicpalmistry"
+    "name": {
+      "displayName": "Thaumic Palmistry",
+      "aliases": []
     },
-    "curse": "thaumic-palmistry"
+    "versions": [
+      "1.8.9"
+    ],
+    "curse": "thaumic-palmistry",
+    "orgRepo": "thaumicpalmistry"
   },
   {
-    "name": [
-      "Thaumic Tinkerer"
-    ],
-    "assets": {
-      "1.7.10": "ttinkerer"
+    "name": {
+      "displayName": "Thaumic Tinkerer",
+      "aliases": []
     },
-    "curse": "thaumic-tinkerer"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "thaumic-tinkerer",
+    "orgRepo": "ttinkerer"
   },
   {
-    "name": [
-      "Thaumic Tinkerer"
-    ],
-    "assets": {
-      "1.8.9": "thaumictinkerer"
+    "name": {
+      "displayName": "Thaumic Tinkerer",
+      "aliases": []
     },
-    "curse": "thaumic-tinkerer"
+    "versions": [
+      "1.8.9"
+    ],
+    "curse": "thaumic-tinkerer",
+    "orgRepo": "thaumictinkerer"
   },
   {
-    "name": [
-      "The Aether II"
-    ],
-    "assets": {
-      "1.7.10": "aether"
+    "name": {
+      "displayName": "The Aether II",
+      "aliases": []
     },
-    "curse": "the-aether-ii"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "the-aether-ii",
+    "orgRepo": "aether"
   },
   {
-    "name": [
-      "The Barrels Mod"
+    "name": {
+      "displayName": "The Barrels Mod",
+      "aliases": []
+    },
+    "versions": [
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
     ],
-    "assets": {
-      "1.11.2": "barrels",
-      "1.10.2": "barrels",
-      "1.7.10": "barrels"
-    }
+    "orgRepo": "barrels"
   },
   {
-    "name": [
-      "The Disenchanter Mod"
-    ],
-    "assets": {
-      "1.12.2": "disenchanter",
-      "1.11.2": "disenchanter",
-      "1.10.2": "disenchanter"
+    "name": {
+      "displayName": "The Disenchanter Mod",
+      "aliases": []
     },
-    "curse": "the-disenchanter-mod"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "the-disenchanter-mod",
+    "orgRepo": "disenchanter"
   },
   {
-    "name": [
-      "The Farlanders"
-    ],
-    "assets": {
-      "1.12.2": "farlanders"
+    "name": {
+      "displayName": "The Farlanders",
+      "aliases": []
     },
-    "curse": "farlanders"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "farlanders",
+    "orgRepo": "farlanders"
   },
   {
-    "name": [
-      "The One Probe"
-    ],
-    "assets": {
-      "1.12.2": "theoneprobe",
-      "1.11.2": "theoneprobe",
-      "1.10.2": "theoneprobe"
+    "name": {
+      "displayName": "The One Probe",
+      "aliases": []
     },
-    "curse": "the-one-probe"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "the-one-probe",
+    "orgRepo": "theoneprobe"
   },
   {
-    "name": [
-      "The Spice of Life"
-    ],
-    "assets": {
-      "1.12.2": "spiceoflife",
-      "1.11.2": "spiceoflife",
-      "1.10.2": "spiceoflife",
-      "1.7.10": "spiceoflife"
+    "name": {
+      "displayName": "The Spice of Life",
+      "aliases": []
     },
-    "curse": "the-spice-of-life"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "the-spice-of-life",
+    "orgRepo": "spiceoflife"
   },
   {
-    "name": [
-      "The Twilight Forest"
-    ],
-    "assets": {
-      "1.12.2": "twilightforest",
-      "1.7.10": "twilightforest"
+    "name": {
+      "displayName": "The Twilight Forest",
+      "aliases": []
     },
-    "curse": "the-twilight-forest"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "the-twilight-forest",
+    "orgRepo": "twilightforest"
   },
   {
-    "name": [
-      "Thermal Cultivation"
-    ],
-    "assets": {
-      "1.12.2": "thermalcultivation"
+    "name": {
+      "displayName": "Thermal Cultivation",
+      "aliases": []
     },
-    "curse": "thermal-cultivation"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "thermal-cultivation",
+    "orgRepo": "thermalcultivation"
   },
   {
-    "name": [
-      "Thermal Dynamics"
-    ],
-    "assets": {
-      "1.12.2": "thermaldynamics",
-      "1.7.10": "thermaldynamics"
+    "name": {
+      "displayName": "Thermal Dynamics",
+      "aliases": []
     },
-    "curse": "thermal-dynamics"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "thermal-dynamics",
+    "orgRepo": "thermaldynamics"
   },
   {
-    "name": [
-      "Thermal Expansion"
-    ],
-    "assets": {
-      "1.12.2": "thermalexpansion",
-      "1.11.2": "thermalexpansion",
-      "1.10.2": "thermalexpansion",
-      "1.7.10": "thermalexpansion"
+    "name": {
+      "displayName": "Thermal Expansion",
+      "aliases": []
     },
-    "curse": "thermal-expansion"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "thermal-expansion",
+    "orgRepo": "thermalexpansion"
   },
   {
-    "name": [
-      "Thermal Foundation"
-    ],
-    "assets": {
-      "1.12.2": "thermalfoundation",
-      "1.11.2": "thermalfoundation",
-      "1.10.2": "thermalfoundation",
-      "1.7.10": "thermalfoundation"
+    "name": {
+      "displayName": "Thermal Foundation",
+      "aliases": []
     },
-    "curse": "thermal-foundation"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.7.10"
+    ],
+    "curse": "thermal-foundation",
+    "orgRepo": "thermalfoundation"
   },
   {
-    "name": [
-      "Thermal Innovation"
-    ],
-    "assets": {
-      "1.12.2": "thermalinnovation"
+    "name": {
+      "displayName": "Thermal Innovation",
+      "aliases": []
     },
-    "curse": "thermal-innovation"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "thermal-innovation",
+    "orgRepo": "thermalinnovation"
   },
   {
-    "name": [
-      "Thermal Logistics"
-    ],
-    "assets": {
-      "1.12.2": "thermallogistics"
+    "name": {
+      "displayName": "Thermal Logistics",
+      "aliases": []
     },
-    "curse": "thermallogistics"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "thermallogistics",
+    "orgRepo": "thermallogistics"
   },
   {
-    "name": [
-      "Thermal Solars"
-    ],
-    "assets": {
-      "1.12.2": "thermalsolars"
+    "name": {
+      "displayName": "Thermal Solars",
+      "aliases": []
     },
-    "curse": "thermal-solars"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "thermal-solars",
+    "orgRepo": "thermalsolars"
   },
   {
-    "name": [
-      "Tinker I/O"
-    ],
-    "assets": {
-      "1.12.2": "tinker_io"
+    "name": {
+      "displayName": "Tinker I/O",
+      "aliases": []
     },
-    "curse": "tinker-i-o"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "tinker-i-o",
+    "orgRepo": "tinker_io"
   },
   {
-    "name": [
-      "Tinker's JEI"
-    ],
-    "assets": {
-      "1.12.2": "tinkersjei"
+    "name": {
+      "displayName": "Tinker's JEI",
+      "aliases": []
     },
-    "curse": "tinkers-jei"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "tinkers-jei",
+    "orgRepo": "tinkersjei"
   },
   {
-    "name": [
-      "Tinker's Mechworks"
-    ],
-    "assets": {
-      "1.7.10": "tmechworks"
+    "name": {
+      "displayName": "Tinker's Mechworks",
+      "aliases": []
     },
-    "curse": "tinkers-mechworks"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "tinkers-mechworks",
+    "orgRepo": "tmechworks"
   },
   {
-    "name": [
-      "Tinker's Steelworks"
-    ],
-    "assets": {
-      "1.7.10": "tsteelworks"
+    "name": {
+      "displayName": "Tinker's Steelworks",
+      "aliases": []
     },
-    "curse": "tinkers-steelworks"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "tinkers-steelworks",
+    "orgRepo": "tsteelworks"
   },
   {
-    "name": [
-      "Tinkers' Complement"
-    ],
-    "assets": {
-      "1.12.2": "tcomplement"
+    "name": {
+      "displayName": "Tinkers' Complement",
+      "aliases": []
     },
-    "curse": "tinkers-complement"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "tinkers-complement",
+    "orgRepo": "tcomplement"
   },
   {
-    "name": [
-      "Tinkers Construct"
-    ],
-    "assets": {
-      "1.8.9": "tinker",
-      "1.7.10": "tinker"
+    "name": {
+      "displayName": "Tinkers Construct",
+      "aliases": []
     },
-    "curse": "tinkers-construct"
+    "versions": [
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "tinkers-construct",
+    "orgRepo": "tinker"
   },
   {
-    "name": [
-      "Tinkers Construct"
-    ],
-    "assets": {
-      "1.12.2": "tconstruct",
-      "1.11.2": "tconstruct",
-      "1.10.2": "tconstruct",
-      "1.8.9": "tconstruct"
+    "name": {
+      "displayName": "Tinkers Construct",
+      "aliases": []
     },
-    "curse": "tinkers-construct"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2",
+      "1.8.9"
+    ],
+    "curse": "tinkers-construct",
+    "orgRepo": "tconstruct"
   },
   {
-    "name": [
-      "Tiny Progressions"
-    ],
-    "assets": {
-      "1.12.2": "tp",
-      "1.11.2": "tp",
-      "1.10.2": "tp"
+    "name": {
+      "displayName": "Tiny Progressions",
+      "aliases": []
     },
-    "curse": "tiny-progressions"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "tiny-progressions",
+    "orgRepo": "tp"
   },
   {
-    "name": [
-      "Torchmaster"
-    ],
-    "assets": {
-      "1.12.2": "torchmaster"
+    "name": {
+      "displayName": "Torchmaster",
+      "aliases": []
     },
-    "curse": "torchmaster"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "torchmaster",
+    "orgRepo": "torchmaster"
   },
   {
-    "name": [
-      "TrashSlot"
-    ],
-    "assets": {
-      "1.12.2": "trashslot"
+    "name": {
+      "displayName": "TrashSlot",
+      "aliases": []
     },
-    "curse": "trashslot"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "trashslot",
+    "orgRepo": "trashslot"
   },
   {
-    "name": [
-      "Traverse"
-    ],
-    "assets": {
-      "1.15.2": "traverse",
-      "1.14.4": "traverse"
+    "name": {
+      "displayName": "Traverse",
+      "aliases": []
     },
-    "curse": "traverse"
+    "versions": [
+      "1.15.2",
+      "1.14.4"
+    ],
+    "curse": "traverse",
+    "orgRepo": "traverse"
   },
   {
-    "name": [
-      "TubeStuff"
+    "name": {
+      "displayName": "TubeStuff",
+      "aliases": []
+    },
+    "versions": [
+      "1.7.10"
     ],
-    "assets": {
-      "1.7.10": "tubestuff"
-    }
+    "orgRepo": "tubestuff"
   },
   {
-    "name": [
-      "Uncrafting Table"
-    ],
-    "assets": {
-      "1.7.10": "uncraftingtable"
+    "name": {
+      "displayName": "Uncrafting Table",
+      "aliases": []
     },
-    "curse": "jglrxavpoks-uncrafting-table"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "jglrxavpoks-uncrafting-table",
+    "orgRepo": "uncraftingtable"
   },
   {
-    "name": [
-      "Underground Biomes"
-    ],
-    "assets": {
-      "1.12.2": "undergroundbiomes",
-      "1.7.10": "undergroundbiomes"
+    "name": {
+      "displayName": "Underground Biomes",
+      "aliases": []
     },
-    "curse": "underground-biomes"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "underground-biomes",
+    "orgRepo": "undergroundbiomes"
   },
   {
-    "name": [
-      "Unstable Tools"
-    ],
-    "assets": {
-      "1.12.2": "unstabletools"
+    "name": {
+      "displayName": "Unstable Tools",
+      "aliases": []
     },
-    "curse": "unstable-tools"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "unstable-tools",
+    "orgRepo": "unstabletools"
   },
   {
-    "name": [
-      "ValkyrieLib"
-    ],
-    "assets": {
-      "1.12.2": "valkyrielib"
+    "name": {
+      "displayName": "ValkyrieLib",
+      "aliases": []
     },
-    "curse": "valkyrielib"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "valkyrielib",
+    "orgRepo": "valkyrielib"
   },
   {
-    "name": [
-      "Version Checker"
-    ],
-    "assets": {
-      "1.8.9": "versionchecker",
-      "1.7.10": "versionchecker"
+    "name": {
+      "displayName": "Version Checker",
+      "aliases": []
     },
-    "curse": "version-checker"
+    "versions": [
+      "1.8.9",
+      "1.7.10"
+    ],
+    "curse": "version-checker",
+    "orgRepo": "versionchecker"
   },
   {
-    "name": [
-      "Village Names"
-    ],
-    "assets": {
-      "1.12.2": "villagenames"
+    "name": {
+      "displayName": "Village Names",
+      "aliases": []
     },
-    "curse": "village-names"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "village-names",
+    "orgRepo": "villagenames"
   },
   {
-    "name": [
-      "Visible Armor Slots"
-    ],
-    "assets": {
-      "1.12.2": "visiblearmorslots",
-      "1.11.2": "visiblearmorslots",
-      "1.10.2": "visiblearmorslots"
+    "name": {
+      "displayName": "Visible Armor Slots",
+      "aliases": []
     },
-    "curse": "visible-armor-slots"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "visible-armor-slots",
+    "orgRepo": "visiblearmorslots"
   },
   {
-    "name": [
-      "WR-CBE Addons (Wireless Redstone Chicken Bones Edition)"
-    ],
-    "assets": {
-      "1.7.10": "wrcbe_addons"
+    "name": {
+      "displayName": "WR-CBE Addons (Wireless Redstone Chicken Bones Edition)",
+      "aliases": []
     },
-    "curse": "wr-cbe-universal"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "wr-cbe-universal",
+    "orgRepo": "wrcbe_addons"
   },
   {
-    "name": [
-      "WR-CBE Core (Wireless Redstone Chicken Bones Edition)"
-    ],
-    "assets": {
-      "1.7.10": "wrcbe_core"
+    "name": {
+      "displayName": "WR-CBE Core (Wireless Redstone Chicken Bones Edition)",
+      "aliases": []
     },
-    "curse": "wr-cbe-universal"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "wr-cbe-universal",
+    "orgRepo": "wrcbe_core"
   },
   {
-    "name": [
-      "WR-CBE Logic (Wireless Redstone Chicken Bones Edition)"
-    ],
-    "assets": {
-      "1.7.10": "wrcbe_logic"
+    "name": {
+      "displayName": "WR-CBE Logic (Wireless Redstone Chicken Bones Edition)",
+      "aliases": []
     },
-    "curse": "wr-cbe-universal"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "wr-cbe-universal",
+    "orgRepo": "wrcbe_logic"
   },
   {
-    "name": [
-      "Warp Book"
-    ],
-    "assets": {
-      "1.7.10": "warpbook"
+    "name": {
+      "displayName": "Warp Book",
+      "aliases": []
     },
-    "curse": "warp-book"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "warp-book",
+    "orgRepo": "warpbook"
   },
   {
-    "name": [
-      "Warp Theory"
-    ],
-    "assets": {
-      "1.7.10": "warptheory"
+    "name": {
+      "displayName": "Warp Theory",
+      "aliases": []
     },
-    "curse": "warp-theory"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "warp-theory",
+    "orgRepo": "warptheory"
   },
   {
-    "name": [
-      "Wireless Crafting Terminal"
-    ],
-    "assets": {
-      "1.12.2": "wct"
+    "name": {
+      "displayName": "Wireless Crafting Terminal",
+      "aliases": []
     },
-    "curse": "wireless-crafting-terminal"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "wireless-crafting-terminal",
+    "orgRepo": "wct"
   },
   {
-    "name": [
-      "Witchery"
-    ],
-    "assets": {
-      "1.7.10": "witchery"
+    "name": {
+      "displayName": "Witchery",
+      "aliases": []
     },
-    "curse": "witchery"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "witchery",
+    "orgRepo": "witchery"
   },
   {
-    "name": [
-      "Witching Gadgets"
-    ],
-    "assets": {
-      "1.7.10": "witchinggadgets"
+    "name": {
+      "displayName": "Witching Gadgets",
+      "aliases": []
     },
-    "curse": "witching-gadgets"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "witching-gadgets",
+    "orgRepo": "witchinggadgets"
   },
   {
-    "name": [
-      "Wizardry Mod"
-    ],
-    "assets": {
-      "1.12.2": "wizardry"
+    "name": {
+      "displayName": "Wizardry Mod",
+      "aliases": []
     },
-    "curse": "wizardry-mod"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "wizardry-mod",
+    "orgRepo": "wizardry"
   },
   {
-    "name": [
-      "Wood Stuff"
-    ],
-    "assets": {
-      "1.7.10": "woodstuff"
+    "name": {
+      "displayName": "Wood Stuff",
+      "aliases": []
     },
-    "curse": "wood-stuff"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "wood-stuff",
+    "orgRepo": "woodstuff"
   },
   {
-    "name": [
-      "Wooden Shears [SBM]"
-    ],
-    "assets": {
-      "1.12.2": "woodenshears",
-      "1.11.2": "woodenshears",
-      "1.10.2": "woodenshears"
+    "name": {
+      "displayName": "Wooden Shears [SBM]",
+      "aliases": []
     },
-    "curse": "sbm-wooden-shears"
+    "versions": [
+      "1.12.2",
+      "1.11.2",
+      "1.10.2"
+    ],
+    "curse": "sbm-wooden-shears",
+    "orgRepo": "woodenshears"
   },
   {
-    "name": [
-      "Woot"
-    ],
-    "assets": {
-      "1.12.2": "woot"
+    "name": {
+      "displayName": "Woot",
+      "aliases": []
     },
-    "curse": "woot"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "woot",
+    "orgRepo": "woot"
   },
   {
-    "name": [
-      "XNet"
-    ],
-    "assets": {
-      "1.12.2": "xnet"
+    "name": {
+      "displayName": "XNet",
+      "aliases": []
     },
-    "curse": "xnet"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "xnet",
+    "orgRepo": "xnet"
   },
   {
-    "name": [
-      "XP Book"
-    ],
-    "assets": {
-      "1.12.2": "xpbook"
+    "name": {
+      "displayName": "XP Book",
+      "aliases": []
     },
-    "curse": "xp-book"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "xp-book",
+    "orgRepo": "xpbook"
   },
   {
-    "name": [
-      "Xeno's Reliquary"
-    ],
-    "assets": {
-      "1.12.2": "xreliquary",
-      "1.7.10": "xreliquary"
+    "name": {
+      "displayName": "Xeno's Reliquary",
+      "aliases": []
     },
-    "curse": "reliquary-v1-3"
+    "versions": [
+      "1.12.2",
+      "1.7.10"
+    ],
+    "curse": "reliquary-v1-3",
+    "orgRepo": "xreliquary"
   },
   {
-    "name": [
-      "Xtones"
-    ],
-    "assets": {
-      "1.12.2": "xtones"
+    "name": {
+      "displayName": "Xtones",
+      "aliases": []
     },
-    "curse": "xtones"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "xtones",
+    "orgRepo": "xtones"
   },
   {
-    "name": [
-      "YABBA"
-    ],
-    "assets": {
-      "1.12.2": "yabba"
+    "name": {
+      "displayName": "YABBA",
+      "aliases": []
     },
-    "curse": "yabba"
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "yabba",
+    "orgRepo": "yabba"
   },
   {
-    "name": [
-      "Yet Another Leather Smelting Mod (YALSM)"
-    ],
-    "assets": {
-      "1.7.10": "yalsm"
+    "name": {
+      "displayName": "Yet Another Leather Smelting Mod (YALSM)",
+      "aliases": []
     },
-    "curse": "yalsm-yet-another-leather-smelting-mod"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "yalsm-yet-another-leather-smelting-mod",
+    "orgRepo": "yalsm"
   },
   {
-    "name": [
-      "Ztones"
-    ],
-    "assets": {
-      "1.7.10": "ztones"
+    "name": {
+      "displayName": "Ztones",
+      "aliases": []
     },
-    "curse": "ztones"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "ztones",
+    "orgRepo": "ztones"
   },
   {
-    "name": [
-      "iBench"
-    ],
-    "assets": {
-      "1.7.10": "ibench"
+    "name": {
+      "displayName": "iBench",
+      "aliases": []
     },
-    "curse": "ibench"
+    "versions": [
+      "1.7.10"
+    ],
+    "curse": "ibench",
+    "orgRepo": "ibench"
   }
 ]

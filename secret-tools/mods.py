@@ -8,20 +8,16 @@ with open('mods.json') as f:
 
 	for p in range(0,len(data)):
 
-		name = data[p]['name'][0]
-		curse = data[p]['name'][2]
-
-		# assets part:
-		assets = {}
-		for x in range(0,len(data[p]['versions'])):
-			version = data[p]['versions'][x]
-			assets[f'{version}'] = data[p]['name'][1]
+		name     = data[p]['name'][0]
+		assets   = data[p]['name'][1]
+		curse    = data[p]['name'][2]
+		versions = data[p]['versions']
 
 		if curse != 'none':
-			mod = { 'name': [ name ], 'assets': assets, 'curse': curse }
+			mod = { 'name': { 'displayName': name, 'aliases': [] }, 'versions': versions, 'curse': curse, 'orgRepo': assets }
 		else:
-			mod = { 'name': [ name ], 'assets': assets}
+			mod = { 'name': { 'displayName': name, 'aliases': [] }, 'versions': versions, 'orgRepo': assets }
 		final_data.append(mod)
 
-with open('mods2.json', 'w') as f:
+with open('modsNEW.json', 'w') as f:
 	json.dump(final_data, f, indent=2)
