@@ -3,6 +3,7 @@ layout: default
 title: Download
 ---
 
+<script src="{{ site.baseurl }}/js/getDownload.js"></script>
 <link rel="stylesheet" href="{{ site.baseurl }}/css/download.css">
 <!-- Compliance 32x & 3D -->
 <div class="card">
@@ -13,6 +14,7 @@ title: Download
 					<th>Compliance 32x</th>
 					<th>Version</th>
 					<th>Date</th>
+					<th>Downloads</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -21,6 +23,7 @@ title: Download
 					<td><span class="badge badge-success">Release</span></td>
 					<td>1.16.4</td>
 					<td>unreleased</td>
+					<td>-</td>
 					<td align="right"><a class="btn btn-dark" href="" data-toggle="tooltip" title="Download"><i class="fas fa-angle-double-down"></i></a></td>
 				</tr>
 			</tbody>
@@ -29,6 +32,7 @@ title: Download
 					<td><span class="badge badge-primary">Alpha</span></td>
 					<td>1.16.4 Alpha 1</td>
 					<td>24th November 2020</td>
+					<td id="alpha-1"><script>getDownload('alpha-1', 1, 'Resource-Pack-32x')</script></td>
 					<td align="right"><a class="btn btn-dark" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-32x/releases/download/alpha-1/Compliance.32x.Alpha.1.zip" data-toggle="tooltip" title="Download"><i class="fas fa-angle-double-down"></i></a></td>
 				</tr>
 			</tbody>
