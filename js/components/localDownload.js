@@ -103,6 +103,7 @@ Vue.component('local-download', {
       this.currentStep = 0
 
       if (this.navigatorSupportsWorkers) {
+        console.log(this.modSelection)
         this.downloadWithWorker(this.modSelection, forceDownload, this.logHandler)
 
         return
@@ -183,22 +184,23 @@ Vue.component('local-download', {
       })
     },
     modToDisplayName: function (mod) {
-      // return mod.name.displayName
-      return mod.name[0]
+      // return mod.name[0]
+      return mod.name.displayName
     },
     modToRepoName: function (mod) {
-      // return mod.name.orgRepo || mod.name.extRepo.split('/').pop()
-      return mod.name[1]
+      // return mod.name[1]
+      if (mod.name.extRepo) return mod.name.extRepo.split('/').pop()
+      else return mod.name.orgRepo
     },
     modToRepoURL: function (mod) {
-      /*
+      
       if(mod.orgRepo) {
         return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
       } else {
         return mod.extRepo
       }
-      */
-      return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
+      
+      // return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
     },
     modToSelection: function (mod, version = undefined) {
       return {

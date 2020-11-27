@@ -98,28 +98,69 @@ Vue.component('minecraft-mod', {
             }
           })
       })
+    },
+    updateThumbnail: function () {
+      const result = this.$parent.searchCache(this.displayName)
+
+      if (result) {
+        this.imageSource = result.imageSource
+        this.link = result.link
+        return
+      }
+
+      this.makeSearch().then(result => {
+        const attachments = result.attachments
+
+        // set icon with default attachment
+        let index = _NO_ATTACHMENTS
+        if (attachments.length > 0) {
+          index = Math.max(0, attachments.findIndex(att => att.isDefault))
+          this.imageSource = attachments[index].thumbnailUrl
+        }
+
+        // set link
+        this.link = result.websiteUrl
+
+        // add image to cache
+        this.$parent.thumbnailCache.push({
+          modName: this.displayName,
+          imageSource: this.imageSource,
+          link: this.link
+        })
+      }).catch(err => {
+        if (err.message !== _MOD_NOT_FOUND_MESSAGE) {
+          console.error(err)
+          console.error(this.curseName || this.displayName)
+        } else {
+          this.$parent.thumbnailCache.push({
+            modName: this.dispatch,
+            imageSource: this.imageSource,
+            link: _NO_LINK
+          })
+        }
+      })
     }
   },
   computed: {
     aliases: function () {
-      // return '<span class="advice">' + this.$props.mod.name.aliases.join(', ') + '</span>'
-      return ''
+      // return ''
+      return '<span class="advice">' + this.$props.mod.name.aliases.join(', ') + '</span>'
     },
     curseName: function () {
-      // return this.$props.mod.curse || _NO_LINK
-      return this.$props.mod.name[2] || _NO_LINK
+      // return this.$props.mod.name[2] || _NO_LINK
+      return this.$props.mod.curse || _NO_LINK
     },
     info: function () {
-      // const link = 'https://www.curseforge.com/minecraft/mc-mods/' + this.curseName
-      const link = this.link
+      // const link = this.link
+      const link = 'https://www.curseforge.com/minecraft/mc-mods/' + this.curseName
 
       if (link === _NO_LINK) return ''
 
       return '<a href="' + link + '" target="_blank" rel="noopener" title="' + link + '" class="ml-2 mod-info"><i class="fas fa-info-circle"></i></a>'
     },
     displayName: function () {
-      // return this.$props.mod.name.displayName
-      return this.$props.mod.name[0]
+      // return this.$props.mod.name[0]
+      return this.$props.mod.name.displayName
     },
     imageStyle: function () {
       if (this.imageSource !== _NO_ICON) {
@@ -132,8 +173,8 @@ Vue.component('minecraft-mod', {
       return this.$props.mod.versions
     },
     repoName: function () {
-      // return this.$props.mod.extRepo || this.$props.mod.orgRepo
-      return this.$props.mod.name[1]
+      // return this.$props.mod.name[1]
+      return this.$props.mod.extRepo || this.$props.mod.orgRepo
     },
     modIds: function () {
       return this.minecraftVersions.map(v => this.modId(this.repoName, v))
@@ -142,45 +183,14 @@ Vue.component('minecraft-mod', {
       return this.displayName + ' ' + this.aliases + ' ' + this.info
     }
   },
-  mounted: function () {
-    const result = this.$parent.searchCache(this.displayName)
-
-    if (result) {
-      this.imageSource = result.imageSource
-      this.link = result.link
-      return
+  watch: {
+    mod: function (newValue, oldValue) {
+      if (oldValue != newValue) {
+        this.updateThumbnail()
+      }
     }
-
-    this.makeSearch().then(result => {
-      const attachments = result.attachments
-
-      // set icon with default attachment
-      let index = _NO_ATTACHMENTS
-      if (attachments.length > 0) {
-        index = Math.max(0, attachments.findIndex(att => att.isDefault))
-        this.imageSource = attachments[index].thumbnailUrl
-      }
-
-      // set link
-      this.link = result.websiteUrl
-
-      // add image to cache
-      this.$parent.thumbnailCache.push({
-        modName: this.displayName,
-        imageSource: this.imageSource,
-        link: this.link
-      })
-    }).catch(err => {
-      if (err.message !== _MOD_NOT_FOUND_MESSAGE) {
-        // console.error(err)
-        // console.error(this.curseName || this.displayName)
-      } else {
-        this.$parent.thumbnailCache.push({
-          modName: this.dispatch,
-          imageSource: this.imageSource,
-          link: _NO_LINK
-        })
-      }
-    })
+  },
+  mounted: function () {
+    this.updateThumbnail()
   }
 })

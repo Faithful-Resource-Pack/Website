@@ -71,6 +71,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
         this.loading = false
         this.mods = json
+
       })
 
       getJSON('/data/modpack/modpackList.json', (err, json) => {
@@ -145,7 +146,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       const result = []
 
-      // console.log(this.currentModpack.blackList)
+      console.log(this.currentModpack.modList)
 
       let notfound
       let supportedModIndex
@@ -155,21 +156,30 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         supportedModIndex = startIndex
 
         // optimized search :
-        // this.mods[supportedModIndex].name[0] <= mod, we stop looking if name is greater
+        // this.mods[supportedModIndex].name.displayName <= mod, we stop looking if name is greater
         // <= VERY important so that if result is equal it doesn't exit
-        while (supportedModIndex < this.mods.length && this.mods[supportedModIndex].name[0] <= mod && notfound) {
-          // console.log(mod + ' / ' + this.mods[supportedModIndex].name[0])
 
-          if (this.mods[supportedModIndex].name[0] === mod && this.mods[supportedModIndex].versions.includes(this.currentModpack.minecraftVersion)) {
-            // console.log('found')
-            result.push(this.mods[supportedModIndex])
+        // console.info(this.mods[supportedModIndex].name.displayName,mod)
+        // console.info(supportedModIndex < this.mods.length, this.mods[supportedModIndex].name.displayName <= mod, notfound)
+
+        while (supportedModIndex < this.mods.length && this.mods[supportedModIndex].name.displayName <= mod && notfound) {
+          // console.log(mod + ' / ' + this.mods[supportedModIndex].name.displayName)
+
+          if (this.mods[supportedModIndex].name.displayName === mod) {
+            if (this.mods[supportedModIndex].versions.includes(this.currentModpack.minecraftVersion)) {
+              // console.log('found')
+              result.push(this.mods[supportedModIndex])
+            } else {
+              result.push('Not in ' + this.currentModpack.minecraftVersion)
+            }
+
             notfound = false
             startIndex = supportedModIndex
           }
 
           if (this.currentModpack.blackList.includes(mod)) {
             // console.log('blacklisted:' + mod)
-            result.push('blacklisted')
+            result.push('No textures')
             notfound = false
             startIndex = supportedModIndex
           }
