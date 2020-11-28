@@ -5,82 +5,82 @@ permalink: /404.html
 ---
 
 <div align="center">
-  <div id="animation_container" class="mb-4">
-    <img id="tnt" src="{{ site.baseurl }}/image/404/tnt_side.png" alt="Boom" onclick="boom()">
-    <img id="explosion" class="hidden" src="{{ site.baseurl }}/image/404/explosion_0.png" alt="Boom" onclick="boom()">
-  </div>
-  <h1>Page not found</h1>
-  <p>
-    Unfortunately the page you requested doesn't exist!<br>Check the spelling or go to the <a href="/">main page</a> to find what you were looking for.
-  </p>
+	<div id="animation_container" class="mb-4">
+		<img id="tnt" src="{{ site.baseurl }}/image/404/tnt_side.png" alt="Boom" onclick="boom()">
+		<img id="explosion" class="hidden" src="{{ site.baseurl }}/image/404/explosion_0.png" alt="Boom" onclick="boom()">
+	</div>
+	<h1>Page not found</h1>
+	<p>
+		Unfortunately the page you requested doesn't exist!<br>Check the spelling or go to the <a href="/">main page</a> to find what you were looking for.
+	</p>
 </div>
 <style>
-  .hidden {
-    display: none;
-  }
-  #animation_container {
-    position: relative;
-    height: 64px;
-    width: 128px;
-    margin: auto;
-  }
-  #tnt {
-    position: absolute;
-    left: 32px;
-    cursor: url("{{ site.baseurl }}/image/404/flint_and_steel.png") 16 16, pointer;
-  }
-  #explosion {
-    position: absolute;
-    top: -32px;
-    left: 0;
-  }
+	.hidden {
+		display: none
+	}
+	#animation_container {
+		position: relative;
+		height: 64px;
+		width: 128px;
+		margin: auto
+	}
+	#tnt {
+		position: absolute;
+		left: 32px;
+		cursor: url("{{ site.baseurl }}/image/404/flint_and_steel.png") 16 16, pointer
+	}
+	#explosion {
+		position: absolute;
+		top: -32px;
+		left: 0
+	}
 </style>
 <script>
-  const FRAME_TIME = 64
-  const tnt = document.getElementById('tnt')
-  const explosion = document.getElementById('explosion')
+	const FRAME_TIME = 64
+	const tnt = document.getElementById('tnt')
+	const explosion = document.getElementById('explosion')
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+	function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
 
-  async function boom() {
+	async function boom() {
 
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_0.png"
-    explosion.classList.remove("hidden")
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_1.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_2.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_3.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_4.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_5.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_6.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_7.png"
-    await sleep(FRAME_TIME);
-    tnt.src = "{{ site.baseurl }}/image/404/diamond.png"
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_8.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_9.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_10.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_11.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_12.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_13.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_14.png"
-    await sleep(FRAME_TIME);
-    explosion.src = "{{ site.baseurl }}/image/404/explosion_15.png"
-    await sleep(FRAME_TIME);
-    explosion.classList.add("hidden")
-  }
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_0.png"
+		explosion.classList.remove("hidden")
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_1.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_2.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_3.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_4.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_5.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_6.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_7.png"
+		await sleep(FRAME_TIME);
+		tnt.src = "{{ site.baseurl }}/image/404/diamond.png"
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_8.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_9.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_10.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_11.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_12.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_13.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_14.png"
+		await sleep(FRAME_TIME);
+		explosion.src = "{{ site.baseurl }}/image/404/explosion_15.png"
+		await sleep(FRAME_TIME);
+		explosion.classList.add("hidden")
+	}
 </script>
