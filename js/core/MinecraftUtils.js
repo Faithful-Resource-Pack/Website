@@ -1,6 +1,6 @@
 const MinecraftUtils = { // eslint-disable-line no-unused-vars
   minecraftVersionToNumberArray: function (version) {
-    let numbers = version.split('.')
+    const numbers = version.split('.')
     if (numbers.length < 3) {
       for (let i = 0; i < 3 - numbers.length; ++i) {
         numbers.push(0)
@@ -15,7 +15,7 @@ const MinecraftUtils = { // eslint-disable-line no-unused-vars
 
     // handle string arrays
     if (Array.isArray(numbers) && numbers.length > 0 && typeof (numbers[0]) === 'string') {
-      let tmp = []
+      const tmp = []
 
       for (let i = 0; i < numbers.length; ++i) {
         tmp.push(this.minecraftVersionToNumberArray(numbers[i]))
@@ -24,7 +24,7 @@ const MinecraftUtils = { // eslint-disable-line no-unused-vars
       numbers = tmp
     }
 
-    let result = []
+    const result = []
 
     // looking for max numbers count
     let maxNumbersCount = -1

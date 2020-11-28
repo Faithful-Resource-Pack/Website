@@ -29,9 +29,9 @@ Vue.component('modpack-modal', {
       return this.modSelection.length
     },
     numberOfModsBlackListed: function () {
-      var counter = 0
+      let counter = 0
 
-      for (var index in this.$props.modcorrespondance) {
+      for (const index in this.$props.modcorrespondance) {
         if (this.$props.modcorrespondance[index] === 'No textures') {
           ++counter
         }
@@ -40,7 +40,7 @@ Vue.component('modpack-modal', {
       return counter
     },
     coveragePercentage: function () {
-      return (((this.numberOfModsBlackListed + this.modSelection.length) * 100 ) / this.$props.modpack.modList.length).toFixed(2)
+      return (((this.numberOfModsBlackListed + this.modSelection.length) * 100) / this.$props.modpack.modList.length).toFixed(2)
     }
   },
   methods: {

@@ -1,22 +1,23 @@
-/* global ResourcePackCreator */
+/* global ResourcePackCreator, self, postMessage, importScripts */
 
-importScripts('../core/MinecraftUtils.js', '../core/ResourcePackCreator.js', '../axios.min.js', '../jszip.min.js', 'https://unpkg.com/idb@5/build/iife/index-min.js') // eslint-disable-line no-undef
+importScripts('../core/MinecraftUtils.js', '../core/ResourcePackCreator.js', '../axios.min.js', '../jszip.min.js', 'https://unpkg.com/idb@5/build/iife/index-min.js')
 
 const sendMessage = function (type, content) {
-  postMessage({ // eslint-disable-line no-undef
+  postMessage({
     type: type,
     content: content
   })
 }
 
-self.addEventListener('message', ev => { // eslint-disable-line no-undef
+self.addEventListener('message', ev => {
   const message = ev.data
 
+  let modSelection, canPack
   switch (message.channel) {
     case 'createPack':
-      const modSelection = message.data.modSelection
+      modSelection = message.data.modSelection
 
-      const canPack = ResourcePackCreator.canPackMods(modSelection)
+      canPack = ResourcePackCreator.canPackMods(modSelection)
 
       if (!canPack) {
         console.error('Oh no we can\'t pack your mod selection..')

@@ -1,49 +1,66 @@
+/* global localStorage */
+
 const css = document.getElementById('darkcss')
 const btn = document.getElementById('DarkMode')
 
-Object.defineProperty(window, 'currentTheme', {
-  get() {
-    return localStorage.getItem('theme')
+const THEME_VALUES = [
+  {
+    value: 'auto',
+    html: '<i style="margin-right: 5px" class="fas fa-adjust"></i> Auto Theme'
   },
-  set(value) {
-    localStorage.setItem('theme', value)
+  {
+    value: 'dark',
+    html: '<i style="margin-right: 5px" class="fas fa-moon"></i> Dark Theme'
+  },
+  {
+    value: 'light',
+    html: '<i style="margin-right: 5px" class="fas fa-sun"></i> Light Theme'
   }
-})
+]
 
-const text_light_mode  = '<i style="margin-right: 5px" class="fas fa-sun"></i> Light Theme'
-const text_auto_mode = '<i style="margin-right: 5px" class="fas fa-adjust"></i> Auto Theme'
-const text_dark_mode   = '<i style="margin-right: 5px" class="fas fa-moon"></i> Dark Theme'
+const THEME_DEFAULT_VALUE = THEME_VALUES[0].value
+const THEME_LOCALSTORAGE_KEY = 'theme'
+
+window.theme = {
+  get currentTheme () {
+    return localStorage.getItem(THEME_LOCALSTORAGE_KEY) || THEME_DEFAULT_VALUE
+  },
+  set currentTheme (value) {
+    localStorage.setItem(THEME_LOCALSTORAGE_KEY, value)
+  },
+
+  get currentThemeIndex () {
+    return THEME_VALUES.findIndex(el => el.value === this.currentTheme)
+  },
+  set currentThemeIndex (_v) {},
+
+  get currentThemeHTML () {
+    return THEME_VALUES[this.currentThemeIndex].html
+  },
+  set currentThemeHTML (_v) {},
+
+  get nextTheme () {
+    return THEME_VALUES[(this.currentThemeIndex + 1) % THEME_VALUES.length].value
+  },
+  set nextTheme (_v) {}
+}
 
 // update btn
-if (currentTheme == 'dark') btn.innerHTML = text_dark_mode
-else if (currentTheme == 'auto') btn.innerHTML = text_auto_mode
-else if (currentTheme == 'light') btn.innerHTML = text_light_mode
-else currentTheme = 'auto' // if the user comes for the first time
+btn.innerHTML = window.theme.currentThemeHTML
 
 changeMod(false)
 
-function changeMod(change) {
+function changeMod (change) {
+  // true if the btn calls the method, false otherwise
+  if (change) {
+    window.theme.currentTheme = window.theme.nextTheme
+    btn.innerHTML = window.theme.currentThemeHTML
+  }
 
-	// true if the btn calls the method, false otherwise
-	if (change) {
-		if (currentTheme == 'auto') {
-			btn.innerHTML = text_dark_mode;
-			currentTheme = 'dark'
-
-		} else if (currentTheme == 'dark') {
-			btn.innerHTML = text_light_mode
-			currentTheme = 'light'
-
-		} else if (currentTheme == 'light') {
-			btn.innerHTML = text_auto_mode
-			currentTheme = 'auto'
-		}
-	}
-
-	// update theme
-	if ( currentTheme == 'dark' || (currentTheme == 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-		css.href = "/css/dark.css"
-	} else {
-		css.href = ""
-	}
+  // update theme
+  if (window.theme.currentTheme === 'dark' || (window.theme.currentTheme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    css.href = '/css/dark.css'
+  } else {
+    css.href = ''
+  }
 }

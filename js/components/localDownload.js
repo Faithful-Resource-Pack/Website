@@ -1,10 +1,10 @@
-/* global Vue, saveAs, ResourcePackCreator, moment */
+/* global Vue, saveAs, ResourcePackCreator, moment, Worker, NAME */
 /* eslint no-multi-str: 0 */
 
 try {
-  let NAME;
-} catch(_e) {}
-NAME = 'Compliance Mods';
+  let NAME // eslint-disable-line
+} catch (_e) {}
+NAME = 'Compliance Mods' // eslint-disable-line
 
 Vue.component('local-download', {
   props: ['canpack', 'versions'],
@@ -103,7 +103,6 @@ Vue.component('local-download', {
       this.currentStep = 0
 
       if (this.navigatorSupportsWorkers) {
-        console.log(this.modSelection)
         this.downloadWithWorker(this.modSelection, forceDownload, this.logHandler)
 
         return
@@ -118,7 +117,7 @@ Vue.component('local-download', {
       // terminate (or re-terminate old worker)
       if (this.currentWorker) this.currentWorker.terminate()
 
-      this.currentWorker = new Worker('/js/worker/downloadWorker.js') // eslint-disable-line no-undef
+      this.currentWorker = new Worker('/js/worker/downloadWorker.js')
 
       // listen to logs
       this.currentWorker.onmessage = function (e) {
@@ -226,8 +225,9 @@ Vue.component('local-download', {
         }
       },
       handler: function () {
+        // scroll to bottom
         Vue.nextTick(() => {
-          let objDiv = this.$refs.log
+          const objDiv = this.$refs.log
           objDiv.scrollTop = objDiv.scrollHeight + 100
         })
       },

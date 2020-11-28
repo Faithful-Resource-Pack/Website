@@ -35,7 +35,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
   },
 
   packageVersion: function (modVersion) {
-    const numbers = MinecraftUtils.minecraftVersionToNumberArray(modVersion) // eslint-disable-line no-undef
+    const numbers = MinecraftUtils.minecraftVersionToNumberArray(modVersion)
 
     const packageVersionKeys = Object.keys(this.packVersions)
 

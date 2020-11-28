@@ -71,7 +71,6 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
         this.loading = false
         this.mods = json
-
       })
 
       getJSON('/data/modpack/modpackList.json', (err, json) => {
@@ -86,11 +85,11 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
           Object.keys(modpack.versions).forEach(minecraftVersion => {
             modpack.versions[minecraftVersion].forEach(modpackVersion => {
               let finalBlacklist = []
-              if('default' in this.globalBlackList) finalBlacklist = [ ...finalBlacklist, ...this.globalBlackList.default ]
-              if(minecraftVersion in this.globalBlackList) finalBlacklist = [ ...finalBlacklist, ...this.globalBlackList[minecraftVersion] ]
-              if('default' in modpack.blackList) finalBlacklist = [ ...finalBlacklist, ...modpack.blackList.default ]
-              if(minecraftVersion in modpack.blackList) finalBlacklist = [ ...finalBlacklist, ...modpack.blackList[minecraftVersion] ]
-              
+              if ('default' in this.globalBlackList) finalBlacklist = [...finalBlacklist, ...this.globalBlackList.default]
+              if (minecraftVersion in this.globalBlackList) finalBlacklist = [...finalBlacklist, ...this.globalBlackList[minecraftVersion]]
+              if ('default' in modpack.blackList) finalBlacklist = [...finalBlacklist, ...modpack.blackList.default]
+              if (minecraftVersion in modpack.blackList) finalBlacklist = [...finalBlacklist, ...modpack.blackList[minecraftVersion]]
+
               this.downloadModpackFromModlist(modpack.codeName, modpack.displayName, modpackVersion, minecraftVersion, finalBlacklist)
             })
           })
@@ -202,7 +201,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       return result
     },
     emptyTable: function () {
-      if(this.loading || this.modpacks.length === 0) return this.sentences.loading
+      if (this.loading || this.modpacks.length === 0) return this.sentences.loading
 
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) {
         return this.sentences.noResultsVersion + ' ' + this.form.search

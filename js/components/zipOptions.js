@@ -1,10 +1,10 @@
-/* global Vue */
+/* global Vue, NAME */
 /* eslint no-multi-str: 0 */
 
 try {
-  let NAME;
-} catch(_e) {}
-NAME = 'Compliance Mods';
+  let NAME // eslint-disable-line
+} catch (_e) {}
+NAME = 'Compliance Mods' // eslint-disable-line 
 
 Vue.component('zip-options', {
   template:
@@ -42,10 +42,10 @@ Vue.component('zip-options', {
       compressionLevelsAvailable: 10,
       compressionTypes: ['STORE', 'DEFLATE'],
       specialCompressionLabels: {
-        '0': 'No compression',
-        '1': 'Best speed',
-        '7': 'Recommanded',
-        '9': 'Best compression'
+        0: 'No compression',
+        1: 'Best speed',
+        7: 'Recommanded',
+        9: 'Best compression'
       },
       archiveName: ''
     }
@@ -59,7 +59,7 @@ Vue.component('zip-options', {
       for (let i = 0; i < this.compressionLevelsAvailable; ++i) {
         result.push({
           value: i,
-          label: (String(i) in this.specialCompressionLabels) ? i + ` (${this.specialCompressionLabels[i]})` : String(i)
+          label: (i) in this.specialCompressionLabels ? i + ` (${this.specialCompressionLabels[i]})` : String(i)
         })
       }
 

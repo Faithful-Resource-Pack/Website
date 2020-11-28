@@ -1,39 +1,40 @@
+/* global XMLHttpRequest, Blob, NAME */
 try {
-  let NAME;
-} catch(_e) {}
-NAME = 'Compliance Mods';
+  let NAME // eslint-disable-line
+} catch (_e) {}
+NAME = 'Compliance Mods' // eslint-disable-line
 
-function downloadFile(url) {
+function downloadFile (url) { // eslint-disable-line no-unused-vars
   return new Promise((resolve, reject) => {
-    var req = new XMLHttpRequest()
+    const req = new XMLHttpRequest()
     req.open('GET', url, true)
     req.responseType = 'blob'
 
     const FINAL_NAME = NAME + ' Resource Pack'
 
-    req.onload = function(_event) {
+    req.onload = function (_event) {
       if (req.status !== 200) {
         reject(req)
-        return;
+        return
       }
-  
-      var blob = req.response
-      var fileName = FINAL_NAME + ' ' + new Date().getTime() + '.zip'
-      var contentType = 'application/zip'
-  
+
+      const blob = req.response
+      const fileName = FINAL_NAME + ' ' + new Date().getTime() + '.zip'
+      const contentType = 'application/zip'
+
       if (window.navigator.msSaveOrOpenBlob) {
         // Internet Explorer
         window.navigator.msSaveOrOpenBlob(new Blob([blob], { type: contentType }), fileName)
       } else {
-        var el = document.getElementById('target')
+        const el = document.getElementById('target')
         el.href = window.URL.createObjectURL(blob)
         el.download = fileName
         el.click()
       }
-  
+
       resolve()
     }
-    req.onerror = function() {
+    req.onerror = function () {
       reject(req)
     }
 
