@@ -184,23 +184,18 @@ Vue.component('local-download', {
       })
     },
     modToDisplayName: function (mod) {
-      // return mod.name[0]
       return mod.name.displayName
     },
     modToRepoName: function (mod) {
-      // return mod.name[1]
-      if (mod.name.extRepo) return mod.name.extRepo.split('/').pop()
-      else return mod.name.orgRepo
+      if (mod.extRepo) return mod.extRepo.split('/').pop()
+      else return mod.orgRepo
     },
     modToRepoURL: function (mod) {
-      
-      if(mod.orgRepo) {
+      if (mod.orgRepo) {
         return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
       } else {
         return mod.extRepo
       }
-      
-      // return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
     },
     modToSelection: function (mod, version = undefined) {
       return {

@@ -143,15 +143,12 @@ Vue.component('minecraft-mod', {
   },
   computed: {
     aliases: function () {
-      // return ''
       return '<span class="advice">' + this.$props.mod.name.aliases.join(', ') + '</span>'
     },
     curseName: function () {
-      // return this.$props.mod.name[2] || _NO_LINK
       return this.$props.mod.curse || _NO_LINK
     },
     info: function () {
-      // const link = this.link
       const link = 'https://www.curseforge.com/minecraft/mc-mods/' + this.curseName
 
       if (link === _NO_LINK) return ''
@@ -159,7 +156,6 @@ Vue.component('minecraft-mod', {
       return '<a href="' + link + '" target="_blank" rel="noopener" title="' + link + '" class="ml-2 mod-info"><i class="fas fa-info-circle"></i></a>'
     },
     displayName: function () {
-      // return this.$props.mod.name[0]
       return this.$props.mod.name.displayName
     },
     imageStyle: function () {
@@ -173,7 +169,6 @@ Vue.component('minecraft-mod', {
       return this.$props.mod.versions
     },
     repoName: function () {
-      // return this.$props.mod.name[1]
       return this.$props.mod.extRepo || this.$props.mod.orgRepo
     },
     modIds: function () {
@@ -185,12 +180,12 @@ Vue.component('minecraft-mod', {
   },
   watch: {
     mod: function (newValue, oldValue) {
-      if (oldValue != newValue) {
+      if (oldValue !== newValue) {
         this.updateThumbnail()
       }
     }
   },
-  mounted: function () {
+  created: function () {
     this.updateThumbnail()
   }
 })

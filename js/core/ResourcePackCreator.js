@@ -63,23 +63,20 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
   },
 
   modToDisplayName: function (mod) {
-    // return mod.name[0]
     return mod.name.displayName
   },
 
   modToRepoName: function (mod) {
-    // return mod.name[1]
     if (mod.name.extRepo) return mod.name.extRepo.split('/').pop()
     else return mod.name.orgRepo
   },
 
-  modToRepoURL: function(mod) {
-    if(mod.orgRepo) {
+  modToRepoURL: function (mod) {
+    if (mod.orgRepo) {
       return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
     } else {
       return mod.extRepo
     }
-    //return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
   },
 
   modToSelection: function (mod, version = undefined) {
@@ -170,7 +167,6 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
         message: 'Downloading ' + mod.displayName + ' v' + mod.version + '...'
       })
 
-      console.log(mod)
       promises.push(this.getMod(mod, forceDownload, logListener))
     })
 

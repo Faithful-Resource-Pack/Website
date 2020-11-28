@@ -15,10 +15,8 @@ Vue.component('minecraft-mod-list', {
       return this.thumbnailCache.filter(mod => modName === mod.modName)[0]
     },
     modToRepoName: function (mod) {
-      // return mod.name[1]
-
-      if (mod.name.extRepo) return mod.name.extRepo.split('/').pop()
-      else return mod.name.orgRepo
+      if (mod.extRepo) return mod.extRepo.split('/').pop()
+      else return mod.orgRepo
     }
   },
   template:

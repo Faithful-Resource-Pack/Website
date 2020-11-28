@@ -163,22 +163,18 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
   },
   methods: {
     modToDisplayName: function (mod) {
-      // return mod.name[0]
       return mod.name.displayName
     },
     modToRepoName: function (mod) {
-      // return mod.name[1]
-      return mod.name.orgRepo || mod.name.extRepo.split('/').pop()
+      if (mod.extRepo) return mod.extRepo.split('/').pop()
+      else return mod.orgRepo
     },
     modToRepoURL: function (mod) {
-      
-      if(mod.orgRepo) {
+      if (mod.orgRepo) {
         return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
       } else {
         return mod.extRepo
       }
-      
-      //return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
     },
     modToSelection: function (mod, version = undefined) {
       return {
