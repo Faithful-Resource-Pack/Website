@@ -3321,6 +3321,17 @@
   },
   {
     "name": {
+      "displayName": "Pixelmon",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "pixelmon",
+    "extRepo": "https://github.com/EddyHg80/pixelmon"
+  },
+  {
+    "name": {
       "displayName": "Player Stats 2",
       "aliases": [ "Player Stats" ]
     },
