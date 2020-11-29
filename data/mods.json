@@ -3321,6 +3321,17 @@
   },
   {
     "name": {
+      "displayName": "Pixelmon",
+      "aliases": []
+    },
+    "versions": [
+      "1.12.2"
+    ],
+    "curse": "pixelmon",
+    "orgRepo": "EddyHg80"
+  },
+  {
+    "name": {
       "displayName": "Player Stats 2",
       "aliases": [ "Player Stats" ]
     },
