@@ -3328,7 +3328,7 @@
       "1.12.2"
     ],
     "curse": "pixelmon",
-    "orgRepo": "EddyHg80"
+    "extRepo": "https://github.com/EddyHg80/pixelmon"
   },
   {
     "name": {
