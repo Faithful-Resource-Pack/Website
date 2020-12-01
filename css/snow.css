@@ -25,7 +25,7 @@
 
 .snowflake0, .snowflake1, .snowflake2, .snowflake3 {
 	position: fixed;
-	background-size: cover;
+	
 	image-rendering: pixelated;
 	user-select: none;
 	z-index: 1000;
@@ -36,17 +36,21 @@
 }
 
 .snowflake0 {
-	background: url(../image/background/snow0.png)
+	background: url(../image/background/snow0.png) no-repeat center;
+	background-size: contain;
 }
 
 .snowflake1 {
-	background: url(../image/background/snow1.png)
+	background: url(../image/background/snow1.png) no-repeat center;
+	background-size: contain;
 }
 
 .snowflake2 {
-	background: url(../image/background/snow2.png)
+	background: url(../image/background/snow2.png) no-repeat center;
+	background-size: contain;
 }
 
 .snowflake3 {
-	background: url(../image/background/snow3.png)
+	background: url(../image/background/snow3.png) no-repeat center;
+	background-size: contain;
 }
