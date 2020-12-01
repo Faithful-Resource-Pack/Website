@@ -25,7 +25,6 @@
 
 .snowflake0, .snowflake1, .snowflake2, .snowflake3 {
 	position: fixed;
-	
 	image-rendering: pixelated;
 	user-select: none;
 	z-index: 1000;
