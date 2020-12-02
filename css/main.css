@@ -48,8 +48,10 @@ p {
 .placeholder {
 	max-height: 10%;
 	min-height: 200px;
-	background: url(../image/home/placeholder.png) center repeat;
-	background-size: contain
+	background-image: url(/image/icon/compliance_32x.png), url(/image/background/bg_light_foreground.png);
+	background-repeat: no-repeat, repeat;
+	background-position: center 17%, center center;
+	background-size: auto 75%, auto;
 }
 .right-reading {
 	direction: rtl

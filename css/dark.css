@@ -8,8 +8,7 @@
 		#0C0C0C url(../image/background/bg_dark_foreground.png) repeat
 }
 .placeholder {
-	background: url(../image/home/placeholder_dark.png) center repeat;
-	background-size: contain
+	background-image: url(/image/icon/compliance_32x.png), url(/image/background/bg_dark_foreground.png);
 }
 .dropdown-menu {
 	background-color: #1C1C1C
