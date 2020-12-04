@@ -5,7 +5,7 @@ Vue.component('minecraft-mod-list', {
   props: {
     mods: Object
   },
-  data: function () {
+  data() {
     return {
       thumbnailCache: []
     }

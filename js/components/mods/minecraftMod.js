@@ -28,7 +28,7 @@ Vue.component('minecraft-mod', {
         </div>\
       </div>\
     </li>',
-  data: function () {
+  data() {
     return {
       searchPages: 3,
       imageSource: _NO_ICON,
