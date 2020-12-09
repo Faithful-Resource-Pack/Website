@@ -34,7 +34,7 @@ Vue.component('zip-options', {
         </div>\
       </div>\
     </div>',
-  data: function () {
+  data() {
     return {
       advancedOptionsEnabled: false,
       compressionDefault: 7,
