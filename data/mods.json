@@ -326,12 +326,12 @@
   {
     "name": {
       "displayName": "ArchitectureCraft",
-      "aliases": []
+      "aliases": [ "ArchitectureCraft - TridentMC Version" ]
     },
     "versions": [
       "1.12.2"
     ],
-    "curse": "architecturecraft",
+    "curse": "architecturecraft-tridev",
     "orgRepo": "architecturecraft"
   },
   {
@@ -4686,7 +4686,7 @@
   {
     "name": {
       "displayName": "Wooden Shears [SBM]",
-      "aliases": []
+      "aliases": [ "SBM", "Wooden Shears" ]
     },
     "versions": [
       "1.12.2",
