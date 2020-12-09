@@ -716,7 +716,7 @@
   {
     "name": {
       "displayName": "Block Drops (JEI Addon)",
-      "aliases": []
+      "aliases": [ "Block Drops" ]
     },
     "versions": [
       "1.12.2",
@@ -1828,7 +1828,7 @@
   {
     "name": {
       "displayName": "Extreme Reactors",
-      "aliases": []
+      "aliases": [ "Big Reactors" ]
     },
     "versions": [
       "1.12.2",
@@ -2273,7 +2273,7 @@
   },
   {
     "name": {
-      "displayName": "Industrial Craft 2 (IC2)",
+      "displayName": "Industrial Craft 2",
       "aliases": [ "Industrial Craft", "IC2" ]
     },
     "versions": [
@@ -2458,7 +2458,7 @@
   },
   {
     "name": {
-      "displayName": "Just Enough Items (JEI)",
+      "displayName": "Just Enough Items",
       "aliases": [ "Just Enough Items", "JEI" ]
     },
     "versions": [
@@ -3122,7 +3122,7 @@
   },
   {
     "name": {
-      "displayName": "Not Enough Items (NEI)",
+      "displayName": "Not Enough Items",
       "aliases": [ "Not Enough Items", "NEI" ]
     },
     "versions": [
