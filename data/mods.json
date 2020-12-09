@@ -2403,8 +2403,8 @@
   },
   {
     "name": {
-      "displayName": "JAOPCA",
-      "aliases": []
+      "displayName": "Just A Ore Processing Compatibility Attempt",
+      "aliases": [ "JAOPCA" ]
     },
     "versions": [
       "1.12.2"
@@ -2415,7 +2415,7 @@
   {
     "name": {
       "displayName": "JAOPCA Ore Chunks (AOBD)",
-      "aliases": []
+      "aliases": [ "AOBD", "AOBD/JAOPCA ore chunks" ]
     },
     "versions": [
       "1.12.2"
