@@ -19,3 +19,41 @@
 	color: #ccc;
 	background-color: rgba(0,0,0,.15)
 }
+.btn-invisible {
+	background-color: rgba(0,0,0,.25);
+	padding: 5px;
+	border-radius: var(--border-radius-1x);
+	border: 1px #0000;
+	color: #ccc;
+}
+.btn-invisible:hover {
+	background-color: rgba(0,0,0,.75);
+	color: #fff;
+}
+table {
+	width: 100%
+}
+th:nth-child(1) {
+	width: 42%
+}
+th:nth-child(2) {
+	width: 24%
+}
+th:nth-child(3) {
+	width: 28%
+}
+th:nth-child(4) {
+	width: 6%
+}
+
+@media screen and (max-width: 480px) {
+	th, td, tr {
+		display: block
+	}
+	tr > th:nth-child(1), tr > th:nth-child(2), tr > th:nth-child(3) {
+		width: 100%
+	}
+	th:nth-child(4) {
+		display: none
+	}
+}

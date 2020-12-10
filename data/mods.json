@@ -2458,7 +2458,7 @@
   },
   {
     "name": {
-      "displayName": "Just Enough Items",
+      "displayName": "Just Enough Items (JEI)",
       "aliases": [ "Just Enough Items", "JEI" ]
     },
     "versions": [
@@ -3122,7 +3122,7 @@
   },
   {
     "name": {
-      "displayName": "Not Enough Items",
+      "displayName": "Not Enough Items (NEI)",
       "aliases": [ "Not Enough Items", "NEI" ]
     },
     "versions": [
