@@ -109,31 +109,6 @@ title: Home
 
 		<br>
 
-		<h2 class="card-title text-center">3D Extension</h2>
-
-		<div id="compliance32x3D" class="owl-carousel owl-theme">
-
-      {%- assign listIsEmpty = true -%}
-			{%- for image in reversed_files -%}
-				{%- if image.path contains 'image/article/compliance32x3D/' -%}
-          {%- assign listIsEmpty = false -%}
-
-					<div class="item">
-						<a class="card" href="{{ site.baseurl }}/article/compliance32x3D/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h3>{{ image.basename }}</h3>
-						</a>
-					</div>
-
-				{%- endif -%}
-			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
-		</div>
-
-		<br>
-
 		<h2 class="card-title text-center">Add-Ons</h2>
 
 		<div id="compliance32xAddons" class="owl-carousel owl-theme">
@@ -472,32 +447,6 @@ title: Home
 	$(document).ready(function(){
 
 		$('#compliance32x').owlCarousel({
-			loop: false,
-			margin: 30,
-			nav: false,
-			responsiveClass: true,
-			autoHeight: true,
-			responsive: {
-				0: {
-					items: 1
-				},
-
-				600: {
-					items: 2
-				},
-
-				1024: {
-					items: 3
-				},
-
-				1366: {
-					items: 3
-				}
-			},
-      onInitialized: addDotButtonLabel
-		});
-
-		$('#compliance32x3D').owlCarousel({
 			loop: false,
 			margin: 30,
 			nav: false,
