@@ -2129,6 +2129,17 @@
   },
   {
     "name": {
+      "displayName": "Health Overlay",
+      "aliases": []
+    },
+    "versions": [
+      "1.16.4"
+    ],
+    "curse": "health-overlay-fabric",
+    "orgRepo": "healthoverlay"
+  },
+  {
+    "name": {
       "displayName": "Hearth Well",
       "aliases": []
     },
