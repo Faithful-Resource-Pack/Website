@@ -2097,7 +2097,7 @@
   {
     "name": {
       "displayName": "GregTech",
-      "aliases": []
+      "aliases": ["GregTech Community Edition"]
     },
     "versions": [
       "1.12.2",
