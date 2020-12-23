@@ -63,6 +63,17 @@
 			}
 		},
 		{
+			"displayName": "Omnifactory",
+			"codeName": "omnifactory",
+			"versions": {
+				"1.12.2": ["1.2.2"]
+			},
+			"blackList": {
+				"default": [],
+				"1.12.2": []
+			}
+		},
+		{
 			"displayName": "Project Ozone 3 A New Way Forward",
 			"codeName": "po3",
 			"versions": {
