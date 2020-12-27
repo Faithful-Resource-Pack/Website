@@ -14,7 +14,7 @@ authors:
 
 download: 
   - 1.15-1.16.1:
-    - https://github.com/Compliance-Addons/Compliance-Addons/raw/master/32x/Custom%20Paintings/Custom%20Paintings%201.15-1.16.1.zip
+    - https://github.com/Compliance-Addons/Addons/raw/master/32x/Custom%20Paintings/Custom%20Paintings%201.15-1.16.1.zip
   - 1.16.2:
-    - https://github.com/Compliance-Addons/Compliance-Addons/raw/master/32x/Custom%20Paintings/Custom%20Paintings%201.16.2.zip
+    - https://github.com/Compliance-Addons/Addons/raw/master/32x/Custom%20Paintings/Custom%20Paintings%201.16.2.zip
 ---

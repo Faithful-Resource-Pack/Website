@@ -12,5 +12,5 @@ authors:
 
 download: 
   - Github:
-    - https://github.com/Compliance-Addons/Compliance-Addons/raw/master/32x/Smaller%20Crosshair.zip
+    - https://github.com/Compliance-Addons/Addons/raw/master/32x/Smaller%20Crosshair.zip
 ---

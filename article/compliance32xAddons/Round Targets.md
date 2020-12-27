@@ -12,5 +12,5 @@ authors:
 
 download: 
   - 1.16:
-    - https://github.com/Compliance-Addons/Compliance-Addons/raw/master/32x/Round%20Target/Round%20Target%201.16.zip
+    - https://github.com/Compliance-Addons/Addons/raw/master/32x/Round%20Target/Round%20Target%201.16.zip
 ---
