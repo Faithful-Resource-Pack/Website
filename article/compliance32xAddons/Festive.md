@@ -15,5 +15,5 @@ authors:
 
 download: 
   - 1.13 - 1.16:
-    - https://github.com/Compliance-Resource-Pack/Compliance-Addons/raw/master/32x/Compliance%20Festive%20Addon.zip
+    - https://github.com/Compliance-Addons/Compliance-Addons/raw/master/32x/Compliance%20Festive%20Addon.zip
 ---

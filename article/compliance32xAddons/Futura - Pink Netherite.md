@@ -12,5 +12,5 @@ authors:
 
 download: 
   - 1.16: 
-    - https://github.com/Compliance-Resource-Pack/Compliance-Addons/raw/master/32x/Futura%20-%20Pink%20Netherite/Futura%20-%20Pink%20Netherite%201.16.zip
+    - https://github.com/Compliance-Addons/Compliance-Addons/raw/master/32x/Futura%20-%20Pink%20Netherite/Futura%20-%20Pink%20Netherite%201.16.zip
 ---
