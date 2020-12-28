@@ -113,23 +113,32 @@ title: Home
 
 		<div id="compliance32xAddons" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+			{%- assign counter = 0 -%}
+
 			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance32xAddons/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign counter = counter | plus: 1 -%}
 
-					<div class="item">
-						<a class="card" href="{{ site.baseurl }}/article/compliance32xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h3>{{ image.basename }}</h3>
-						</a>
-					</div>
+					{%- if counter < 9 -%}
+						<div class="item">
+							<a class="card" href="{{ site.baseurl }}/article/compliance32xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+								<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+								<h3>{{ image.basename }}</h3>
+							</a>
+						</div>
+					{%- endif -%}
+
+					{%- if counter == 9 -%}
+						<div class="item">
+							<a class="card" href="{{ site.baseurl }}/addons32x">
+								<img src="{{ site.baseurl }}/image/carousel/see_more.png" alt="">
+								<h3>See more...</h3>
+							</a>
+						</div>
+					{%- endif -%}
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
 		</div>
 
 		<br>
@@ -208,23 +217,32 @@ title: Home
 
 		<div id="compliance64xAddons" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+      {%- assign counter = 0 -%}
+
 			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance64xAddons/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign counter = counter | plus: 1 -%}
 
-					<div class="item">
-						<a class="card" href="{{ site.baseurl }}/article/compliance64xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h3>{{ image.basename }}</h3>
-						</a>
-					</div>
+					{%- if counter < 9 -%}
+						<div class="item">
+							<a class="card" href="{{ site.baseurl }}/article/compliance64xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+								<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+								<h3>{{ image.basename }}</h3>
+							</a>
+						</div>
+					{%- endif -%}
+
+					{%- if counter == 9 -%}
+						<div class="item">
+							<a class="card" href="{{ site.baseurl }}/addons64x">
+								<img src="{{ site.baseurl }}/image/carousel/see_more.png" alt="">
+								<h3>See more...</h3>
+							</a>
+						</div>
+					{%- endif -%}
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
 		</div>
 
 	</div>
