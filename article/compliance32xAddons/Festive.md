@@ -11,7 +11,7 @@ show_carousel_name: false
 long_text: Adds new christmas themed items, blocks and entities, includes over 30+ tweaks.
 
 authors:
-  - Alexsor:
+  - Alexsor
 
 download: 
   - 1.16:
