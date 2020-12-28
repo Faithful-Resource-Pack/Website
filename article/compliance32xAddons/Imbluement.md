@@ -11,6 +11,6 @@ authors:
   - Cyberization
 
 download: 
-  - Github:
-    - https://github.com/Compliance-Addons/Addons/raw/master/32x/Imbluement.zip
+  - 1.16:
+    - https://github.com/Compliance-Addons/Addons/raw/master/32x/Imbluement/Imbluement%20-%201.16.zip
 ---

@@ -14,6 +14,6 @@ authors:
   - Alexsor:
 
 download: 
-  - 1.13 - 1.16:
-    - https://github.com/Compliance-Addons/Addons/raw/master/32x/Compliance%20Festive%20Addon.zip
+  - 1.16:
+    - https://github.com/Compliance-Addons/Addons/raw/master/32x/Compliance%20Festive%20Addon/Compliance%20Festive%20Addon%20-%201.16.zip
 ---
