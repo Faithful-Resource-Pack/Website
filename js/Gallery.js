@@ -1,5 +1,5 @@
 const VERSION64 = '1.17';
-const VERSION32 = '1.16.2%20-%201.16.4';
+const VERSION32 = 'Jappa-1.17';
 const VERSION_BEDROCK = '1.16.100';
 const SIZE    = 256;
 const MAX_IMG = 30;
@@ -102,7 +102,7 @@ function Load_Textures(file,done) {
 				if (MC_TYPE == 'JAVA-RESULT') {
 					col1.innerHTML += 
 					`
-						<img class="center img-gallery" alt="Not done yet" src="https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/master/Jappa/` + VERSION32 + `/assets` + json[k] + `" width="` + SIZE + `" height="` + SIZE + `">
+						<img class="center img-gallery" alt="Not done yet" src="https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/` + VERSION32 + `/assets` + json[k] + `" width="` + SIZE + `" height="` + SIZE + `">
 						<br>
 					`
 					col2.innerHTML += 
@@ -113,7 +113,7 @@ function Load_Textures(file,done) {
 								<h5 class="card-title text-center">See on GitHub:</h5>
 								<div class="row">
 									<div class="col">
-										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-32x/tree/master/Jappa/` + VERSION32 + `/assets` + json[k] + `">32x</a>
+										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-32x/tree/` + VERSION32 + `/assets` + json[k] + `">32x</a>
 									</div>
 									<div class="col">
 										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-64x/tree/master/Jappa/` + VERSION64 + `/assets` + json[k] + `">64x</a>
@@ -122,7 +122,7 @@ function Load_Textures(file,done) {
 								<h5 class="card-title text-center">Fullscreen:</h5>
 								<div class="row">
 									<div class="col">
-										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/master/Jappa/` + VERSION32 + `/assets` + json[k] + `')">32x</button>
+										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/` + VERSION32 + `/assets` + json[k] + `')">32x</button>
 									</div>
 									<div class="col">
 										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/master/Jappa/` + VERSION64 + `/assets` + json[k] + `')">64x</button>
