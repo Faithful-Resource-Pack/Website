@@ -1,0 +1,80 @@
+<h2 id='changelog-title' class="display-4 my-5 text-center">Changelog</h2>
+<div class="card">
+  {%- assign changelog = page.changelog | reverse -%}
+  {%- assign counter = 0 -%}
+  {%- assign CHANGELOG_LIMIT = 2 -%}
+
+  {%- for version in changelog -%}
+    {%- assign counter = counter | plus: 1 -%}
+
+    {% if counter < CHANGELOG_LIMIT %}
+
+      <h1 class="card-title text-center">{{ version.first[0] }}</h1>
+      {%- for type in version.first[1] -%}
+        <h3 class="card-title text-left">{{ type.first[0] }}:</h3>
+        {%- for category in type.first[1] -%}
+          <h4 class="card-title text-left">{{ category.first[0] }}:</h4>
+          <ul class="text-left">
+            {%- for item in category.first[1] -%}
+              <li>{{ item }}</li>
+            {%- endfor -%}
+          </ul>
+        {%- endfor -%}
+      {%- endfor -%}
+      <hr>
+
+    {%- endif -%}
+  {%- endfor -%}
+
+{%- assign counter = 0 -%}
+
+<div class="col">
+  <button id="old-btn" onclick="ShowAll()" class="btn btn-dark btn-lg btn-block">All</button>
+  <hr>
+</div>
+
+<div id="old" style="display: none;">
+  {%- for version in changelog -%}
+    {%- assign counter = counter | plus: 1 -%}
+
+    {% if counter >= CHANGELOG_LIMIT %}
+
+      <h1 class="card-title text-center">{{ version.first[0] }}</h1>
+      {%- for type in version.first[1] -%}
+        <h3 class="card-title text-left">{{ type.first[0] }}:</h3>
+        {%- for category in type.first[1] -%}
+          <h4 class="card-title text-left">{{ category.first[0] }}:</h4>
+          <ul class="text-left">
+            {%- for item in category.first[1] -%}
+              <li>{{ item }}</li>
+            {%- endfor -%}
+          </ul>
+        {%- endfor -%}
+      {%- endfor -%}
+      <hr>
+
+    {%- endif -%}
+  {%- endfor -%}
+  <div class="col">
+    <button onclick="ShowAll()" class="btn btn-dark btn-lg btn-block">Hide</button>
+    <br>
+  </div>
+</div>
+
+<script>
+  function ShowAll() {
+    var old = document.getElementById('old');
+    var btn = document.getElementById('old-btn');
+    var title = document.getElementById('changelog-title');
+
+    if ( old.style.display == 'none' ){
+      old.style.display = 'block';
+      btn.innerHTML = 'Hide';
+      title.innerHTML = 'Changelogs';
+    } else {
+      old.style.display = 'none';
+      btn.innerHTML = 'All';
+      title.innerHTML = 'Changelog';
+    }
+  }
+</script>
