@@ -89,7 +89,7 @@ div.dropdown-menu {
 	border: 0
 }
 img.fancy-card-2x {
-	max-height: 24rem;
+	max-height: 32rem;
 	object-fit: cover
 }
 .btn, .dropdown-menu, .fancy-card-1x, *.card, .fancy-card-2x {
