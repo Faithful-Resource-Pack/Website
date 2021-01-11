@@ -149,6 +149,9 @@
       "aliases": []
     },
     "versions": [
+      "1.16.4",
+      "1.15.2",
+      "1.14.4",
       "1.12.2"
     ],
     "curse": "advancement-book",
