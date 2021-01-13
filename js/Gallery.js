@@ -1,4 +1,4 @@
-const VERSION64 = '1.17';
+const VERSION64 = 'Jappa-1.17';
 const VERSION32 = 'Jappa-1.17';
 const VERSION_BEDROCK = '1.16.100';
 const SIZE    = 256;
@@ -116,7 +116,7 @@ function Load_Textures(file,done) {
 										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-32x/tree/` + VERSION32 + `/assets` + json[k] + `">32x</a>
 									</div>
 									<div class="col">
-										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-64x/tree/master/Jappa/` + VERSION64 + `/assets` + json[k] + `">64x</a>
+										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-64x/tree/` + VERSION64 + `/assets` + json[k] + `">64x</a>
 									</div>
 								</div>
 								<h5 class="card-title text-center">Fullscreen:</h5>
@@ -125,7 +125,7 @@ function Load_Textures(file,done) {
 										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/` + VERSION32 + `/assets` + json[k] + `')">32x</button>
 									</div>
 									<div class="col">
-										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/master/Jappa/` + VERSION64 + `/assets` + json[k] + `')">64x</button>
+										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/` + VERSION64 + `/assets` + json[k] + `')">64x</button>
 									</div>
 								</div>
 							</div>
@@ -134,7 +134,7 @@ function Load_Textures(file,done) {
 					`
 					col3.innerHTML += 
 					`
-						<img class="center img-gallery" alt="Not done yet" src="https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/master/Jappa/` + VERSION64 + `/assets` + json[k] + `" width="` + SIZE + `" height="` + SIZE + `">
+						<img class="center img-gallery" alt="Not done yet" src="https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/` + VERSION64 + `/assets` + json[k] + `" width="` + SIZE + `" height="` + SIZE + `">
 						<br>
 					`
 				}
