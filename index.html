@@ -64,10 +64,10 @@ title: Home
 
 		<div id="compliance32x" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+			{%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance32x/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: '-', '/' }}" rel="noopener">
@@ -78,9 +78,9 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
+			{%- if listIsEmpty -%}
+				{% include empty_carousel.html %}
+			{%- endif -%}
 		</div>
 
 		<br>
@@ -88,10 +88,10 @@ title: Home
 		<h2 class="card-title text-center">Programmer Art</h2>
 		<div id="compliance32xProgArt" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+			{%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance32xProgArt/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance32xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -102,9 +102,9 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
+			{%- if listIsEmpty -%}
+				{% include empty_carousel.html %}
+			{%- endif -%}
 		</div>
 
 		<br>
@@ -167,23 +167,23 @@ title: Home
 
 		<div id="compliance64x" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+			{%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance64x/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign listIsEmpty = false -%}
 
 					<div class="item">
-						<a class="card" href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: '-', '/' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							<h3>{{ image.basename }}</h3>
+							<h3>{{ image.basename | replace: '-A', ' Alpha ' }}</h3>
 						</a>
 					</div>
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
+			{%- if listIsEmpty -%}
+				{% include empty_carousel.html %}
+			{%- endif -%}
 		</div>
 
 		<br>
@@ -192,10 +192,10 @@ title: Home
 
 		<div id="compliance64xProgArt" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+			{%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance64xProgArt/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance64xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -206,9 +206,9 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
+			{%- if listIsEmpty -%}
+				{% include empty_carousel.html %}
+			{%- endif -%}
 		</div>
 
 		<br>
@@ -217,7 +217,7 @@ title: Home
 
 		<div id="compliance64xAddons" class="owl-carousel owl-theme">
 
-      {%- assign counter = 0 -%}
+			{%- assign counter = 0 -%}
 
 			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance64xAddons/' -%}
@@ -258,10 +258,10 @@ title: Home
 
 		<div id="compliance32xBedrock" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+			{%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance32xBedrock/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance32x32xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -272,9 +272,9 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
+			{%- if listIsEmpty -%}
+				{% include empty_carousel.html %}
+			{%- endif -%}
 		</div>
 
 		<br>
@@ -283,10 +283,10 @@ title: Home
 
 		<div id="compliance64xBedrock" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+			{%- assign listIsEmpty = true -%}
 			{%- for image in reversed_files -%}
 				{%- if image.path contains 'image/article/compliance64xBedrock/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -297,9 +297,9 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
+			{%- if listIsEmpty -%}
+				{% include empty_carousel.html %}
+			{%- endif -%}
 		</div>
 
 		<br>
@@ -308,10 +308,10 @@ title: Home
 
 		<div id="compliance32xBedrockAddons" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+			{%- assign listIsEmpty = true -%}
 			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance32xBedrockAddons/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -322,9 +322,9 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
+			{%- if listIsEmpty -%}
+				{% include empty_carousel.html %}
+			{%- endif -%}
 		</div>
 
 		<br>
@@ -333,10 +333,10 @@ title: Home
 
 		<div id="compliance64xBedrockAddons" class="owl-carousel owl-theme">
 
-      {%- assign listIsEmpty = true -%}
+			{%- assign listIsEmpty = true -%}
 			{%- for image in site.static_files -%}
 				{%- if image.path contains 'image/article/compliance64xBedrockAddons/' -%}
-          {%- assign listIsEmpty = false -%}
+					{%- assign listIsEmpty = false -%}
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
@@ -347,9 +347,9 @@ title: Home
 
 				{%- endif -%}
 			{%- endfor -%}
-      {%- if listIsEmpty -%}
-        {% include empty_carousel.html %}
-      {%- endif -%}
+			{%- if listIsEmpty -%}
+				{% include empty_carousel.html %}
+			{%- endif -%}
 		</div>
 
 	</div>
@@ -487,7 +487,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		$('#compliance32xProgArt').owlCarousel({
@@ -513,7 +513,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		$('#compliance32xAddons').owlCarousel({
@@ -539,7 +539,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		$('#compliance64x').owlCarousel({
@@ -565,7 +565,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		$('#compliance64xProgArt').owlCarousel({
@@ -591,7 +591,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		$('#compliance64xAddons').owlCarousel({
@@ -617,7 +617,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		$('#compliance32xBedrock').owlCarousel({
@@ -643,7 +643,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		$('#compliance32xBedrockAddons').owlCarousel({
@@ -669,7 +669,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		$('#compliance64xBedrock').owlCarousel({
@@ -695,7 +695,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 		$('#compliance64xBedrockAddons').owlCarousel({
@@ -721,7 +721,7 @@ title: Home
 					items: 3
 				}
 			},
-      onInitialized: addDotButtonLabel
+			onInitialized: addDotButtonLabel
 		});
 
 	});
