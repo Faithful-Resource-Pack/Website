@@ -137,7 +137,7 @@ layout: default
 		<h2 class="display-4 my-5 text-center">Download</h2>
 	{%- endif -%}
 	{%- for item in page.download -%}
-		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-block btn-lg btn-primary fancy-card-2x"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
+		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-block btn-lg btn-primary fancy-card-2x my-3"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
 	{%- endfor -%}
 {%- endif -%}
 
