@@ -13,16 +13,16 @@ Vue.component('local-download', {
       <custom-modal contentId="cacheClear" :modalOpened="confirmOpened" :closeOnClick="function() { confirmOpened = false }"> \
         <h3>Do you want to use cached versions?</h3>\
         <p class="mb-2">Some mod resource packs may already have been downloaded. Do you want to use the cached versions? Using the cached versions is usually faster but can cause outdated textures.</p>\
-        <div class="text-center row px-2">\
-          <button type="button" class="btn btn-dark mx-1 mt-2 col-sm" v-on:click="downloadLocally(true)">No</button>\
-          <button type="button" class="btn btn-dark mx-1 mt-2 col-sm" v-on:click="downloadLocally(false)">Yes</button>\
+        <div class="text-center auto-flex px-2">\
+          <button type="button" class="btn btn-dark mx-1 mt-2" v-on:click="downloadLocally(true)">No</button>\
+          <button type="button" class="btn btn-dark mx-1 mt-2" v-on:click="downloadLocally(false)">Yes</button>\
         </div>\
       </custom-modal>\
       \
       <custom-modal id="downloadModal" contentId="downloadModalContent" :modalOpened="modalOpened" :closeOnClick="closeModal">\
         <div id="steps" class="row">\
           <template v-for="(step, index) in steps" :key="step.name" >\
-            <div class="col-auto text-center">\
+            <div class="px-3 text-center">\
               <button :disabled="index != currentStep" class="mx-auto px-0 btn btn-dark">{{ index+1 }}</button>\
             </div>\
             <div v-if="index < steps.length -1" class="line col"></div>\

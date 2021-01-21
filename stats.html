@@ -8,9 +8,9 @@ title: Statistics
 	<h2 class="display-4 my-5">Mods</h2>
 	<div v-html="loadingMessage"></div>
 
-	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-		<div v-for="(mKey, index) in keys" :key="index" class="col mb-3">
-			<h3 class="h3 mb-4" v-text="messages[mKey]"></h3>
+	<div class="auto-flex">
+		<div v-for="(mKey, index) in keys" :key="index" class="mb-3">
+			<h3 class="mb-4" v-text="messages[mKey]"></h3>
 			<h3><span class="badge badge-primary h1" v-text="$data[mKey]"></span></h3>
 		</div>
 	</div>

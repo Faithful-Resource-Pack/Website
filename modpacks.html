@@ -11,7 +11,7 @@ title: Modpacks
   <local-download ref="localDownload" canPack="true"></local-download>
 
   <modpack-modal id="modpackModal" :modpack="currentModpack" :modpackmodalopened="modpackModalOpened" :onclose="function() { modpackModalOpened = false }" :modcorrespondance="modListCorrespondance"></modpack-modal>
-  
+
     <div class="card mb-4">
       <div class="search-bar-container">
         <input id="SearchBar" class="fancy-card-1x" type="text" placeholder="Search for modpacks, modpack version or Minecraft version..." title="Type something" v-model="form.search">
@@ -19,7 +19,7 @@ title: Modpacks
       </div>
     </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+    <div class="res-grid-4">
       <modpack-card v-for="(m, mindex) in filteredSortedModpacks" :key="mindex" :modpack="m" :onbuttonclick="function(){ openModpackModal(mindex)  }"></modpack-card>
     </div>
 
