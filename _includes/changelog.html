@@ -1,5 +1,6 @@
-<h2 id='changelog-title' class="display-4 my-5 text-center">Changelog</h2>
-<div class="card">
+<hr>
+<h2 class="display-4 my-5 text-center">Changelog</h2>
+<div class="card card-body">
   {%- assign changelog = page.changelog | reverse -%}
   {%- assign counter = 0 -%}
   {%- assign CHANGELOG_LIMIT = 2 -%}
@@ -28,12 +29,10 @@
 
 {%- assign counter = 0 -%}
 
-<div class="col">
-  <button id="old-btn" onclick="ShowAll()" class="btn btn-dark btn-lg btn-block">All</button>
-  <hr>
-</div>
+<button id="old-btn" onclick="ShowAll()" class="btn btn-dark btn-lg btn-block">All</button>
 
 <div id="old" style="display: none;">
+  <hr>
   {%- for version in changelog -%}
     {%- assign counter = counter | plus: 1 -%}
 
@@ -55,26 +54,20 @@
 
     {%- endif -%}
   {%- endfor -%}
-  <div class="col">
-    <button onclick="ShowAll()" class="btn btn-dark btn-lg btn-block">Hide</button>
-    <br>
-  </div>
+  <button onclick="ShowAll()" class="btn btn-dark btn-lg btn-block">Hide</button>
 </div>
 
 <script>
   function ShowAll() {
     var old = document.getElementById('old');
     var btn = document.getElementById('old-btn');
-    var title = document.getElementById('changelog-title');
 
     if ( old.style.display == 'none' ){
       old.style.display = 'block';
       btn.innerHTML = 'Hide';
-      title.innerHTML = 'Changelogs';
     } else {
       old.style.display = 'none';
       btn.innerHTML = 'All';
-      title.innerHTML = 'Changelog';
     }
   }
 </script>

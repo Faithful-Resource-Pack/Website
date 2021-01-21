@@ -41,20 +41,18 @@ layout: default
 
 {%- if page.carousel-img -%}
 	<!-- {{ page.carousel-img }} -->
-	<div class="card">
-		<div class="card-body">
-			<div id="carousel-img" class="owl-carousel owl-theme">
+	<div class="card card-body">
+		<div id="carousel-img" class="owl-carousel owl-theme">
 
-				{%- for image in site.static_files -%}
-					{%- if image.path contains page.carousel-img -%}
-						<div class="item">
-							<img onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')" id="{{ image.basename | replace: " ", "_" }}" src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
-							{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
-						</div>
-					{%- endif -%}
-				{%- endfor -%}
+			{%- for image in site.static_files -%}
+				{%- if image.path contains page.carousel-img -%}
+					<div class="item">
+						<img onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')" id="{{ image.basename | replace: " ", "_" }}" src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+						{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
+					</div>
+				{%- endif -%}
+			{%- endfor -%}
 
-			</div>
 		</div>
 	</div>
 
@@ -123,12 +121,10 @@ layout: default
 {%- endif -%}
 
 {%- if page.long_text -%}
-	<div class="card">
-		<div class="card-body">
-			<p class="m-0" align="justify">
-				{{ page.long_text }}
-			</p>
-		</div>
+	<div class="card card-body">
+		<p class="m-0" align="justify">
+			{{ page.long_text }}
+		</p>
 	</div>
 
 	<hr>
@@ -161,7 +157,7 @@ layout: default
 {%- if page.comments == true -%}
   <hr>
 	<h2 class="display-4 my-5 text-center">Comments</h2>
-	<div id="disqus_thread" class="col card"></div>
+	<div id="disqus_thread" class="card card-body"></div>
 	<script>
 
 		/*
