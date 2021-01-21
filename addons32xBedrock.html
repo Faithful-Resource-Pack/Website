@@ -4,18 +4,10 @@ title: Bedrock Addons 32x
 ---
 
 <h2 class="display-4 my-5 text-center">Bedrock 32x Addons</h2>
-<div class="card">
-
-	{%- assign counter = 0 -%}
+<div class="card card-body res-grid-4">
 
 	{%- for bedrorckaddons32x in site.static_files -%}
 		{%- if bedrorckaddons32x.path contains 'image/article/compliance32xBedrockAddons' -%}
-
-			{%- assign counter = counter | plus: 1 -%}
-
-			{%- if counter == 1 -%}
-				<div class="card-deck" style="padding: 10px;">
-			{%- endif -%}
 
 			<div class="card">
 				<img class="card-img" style="min-height: 100%" src="{{ site.baseurl }}{{ bedrorckaddons32x.path }}" alt="{{ bedrorckaddons32x.basename }}">
@@ -25,15 +17,7 @@ title: Bedrock Addons 32x
 				<a class="stretched-link" href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ bedrorckaddons32x.basename }}"></a>
 			</div>
 
-			{%- if counter == 3 -%}
-				{%- assign counter = 0 -%}
-				</div>
-			{%- endif -%}
-
 		{%- endif -%}
 	{%- endfor -%}
-  {%- if counter != 3 -%}
-    </div>
-  {%- endif -%}
 
 </div>
