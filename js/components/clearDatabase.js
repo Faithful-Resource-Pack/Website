@@ -3,8 +3,8 @@
 
 Vue.component('clear-database', {
   template:
-  '<div class="form-group col-md-4">\
-      <label for="clearDatabase" class="d-block pb-1">Database</label>\
+  '<div>\
+      <label for="clearDatabase" class="block pb-1">Database</label>\
       <button class="btn btn-block btn-dark" v-on:click="clearDB">Clear database</button>\
     </div>',
   methods: {
