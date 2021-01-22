@@ -36,7 +36,7 @@ function Fullscreen(file) {
 
 	//
 	// Close modal:
-	// 
+	//
 	modal_span.onclick = function() {
 		modal.style.display = 'none';
 	};
@@ -77,7 +77,7 @@ function Load_Textures(file,done) {
 	col1 = document.getElementById('COL1-'+MC_TYPE);
 	col2 = document.getElementById('COL2-'+MC_TYPE);
 	if (THIRD) col3 = document.getElementById('COL3-'+MC_TYPE);
-		
+
 	if (done){
 		var old_btn = document.getElementById('load-more');
 		old_btn.parentNode.removeChild(old_btn);
@@ -93,19 +93,19 @@ function Load_Textures(file,done) {
 			} else {
 				MAX = MAX_IMG;
 			}
-			
+
 			var j = k
 
 			if (k < MAX && k < json.length){
 				console.log(k,MAX)
 
 				if (MC_TYPE == 'JAVA-RESULT') {
-					col1.innerHTML += 
+					col1.innerHTML +=
 					`
 						<img class="center img-gallery" alt="Not done yet" src="https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/` + VERSION32 + `/assets` + json[k] + `" width="` + SIZE + `" height="` + SIZE + `">
 						<br>
 					`
-					col2.innerHTML += 
+					col2.innerHTML +=
 					`
 						<div class="card card-sized">
 							<div class="card-body">
@@ -113,26 +113,26 @@ function Load_Textures(file,done) {
 								<h5 class="card-title text-center">See on GitHub:</h5>
 								<div class="row">
 									<div class="col">
-										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-32x/tree/` + VERSION32 + `/assets` + json[k] + `">32x</a>
+										<a target="_blank" class="btn block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-32x/tree/` + VERSION32 + `/assets` + json[k] + `">32x</a>
 									</div>
 									<div class="col">
-										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-64x/tree/` + VERSION64 + `/assets` + json[k] + `">64x</a>
+										<a target="_blank" class="btn block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-64x/tree/` + VERSION64 + `/assets` + json[k] + `">64x</a>
 									</div>
 								</div>
 								<h5 class="card-title text-center">Fullscreen:</h5>
 								<div class="row">
 									<div class="col">
-										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/` + VERSION32 + `/assets` + json[k] + `')">32x</button>
+										<button class="btn block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/` + VERSION32 + `/assets` + json[k] + `')">32x</button>
 									</div>
 									<div class="col">
-										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/` + VERSION64 + `/assets` + json[k] + `')">64x</button>
+										<button class="btn block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/` + VERSION64 + `/assets` + json[k] + `')">64x</button>
 									</div>
 								</div>
 							</div>
 						</div>
 						<br>
 					`
-					col3.innerHTML += 
+					col3.innerHTML +=
 					`
 						<img class="center img-gallery" alt="Not done yet" src="https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/` + VERSION64 + `/assets` + json[k] + `" width="` + SIZE + `" height="` + SIZE + `">
 						<br>
@@ -145,7 +145,7 @@ function Load_Textures(file,done) {
 						<img class="center img-gallery" alt="Not done yet" src="https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x-Bedrock/master/` + VERSION_BEDROCK + json[k] + `" width="` + SIZE + `" height="` + SIZE + `">
 						<br>
 					`
-					col2.innerHTML += 
+					col2.innerHTML +=
 					`
 						<div class="card card-sized">
 							<div class="card-body">
@@ -153,19 +153,19 @@ function Load_Textures(file,done) {
 								<h5 class="card-title text-center">See on GitHub:</h5>
 								<div class="row">
 									<div class="col">
-										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-32x-Bedrock/tree/master/` + VERSION_BEDROCK + json[k] + `">32x</a>
+										<a target="_blank" class="btn block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-32x-Bedrock/tree/master/` + VERSION_BEDROCK + json[k] + `">32x</a>
 									</div>
 									<div class="col">
-										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-64x-Bedrock/tree/master/` + VERSION_BEDROCK + json[k] + `">64x</a>
+										<a target="_blank" class="btn block btn-success" href="https://github.com/Compliance-Resource-Pack/Resource-Pack-64x-Bedrock/tree/master/` + VERSION_BEDROCK + json[k] + `">64x</a>
 									</div>
 								</div>
 								<h5 class="card-title text-center">Fullscreen:</h5>
 								<div class="row">
 									<div class="col">
-										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/master/` + VERSION_BEDROCK + json[k] + `')">32x</button>
+										<button class="btn block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/master/` + VERSION_BEDROCK + json[k] + `')">32x</button>
 									</div>
 									<div class="col">
-										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/master/` + VERSION_BEDROCK + json[k] + `')">64x</button>
+										<button class="btn block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-64x/master/` + VERSION_BEDROCK + json[k] + `')">64x</button>
 									</div>
 								</div>
 							</div>
@@ -185,7 +185,7 @@ function Load_Textures(file,done) {
 						<img class="center img-gallery" alt="Not done yet" src="https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/`+ json[k] + `" width="` + SIZE + `" height="` + SIZE + `">
 						<br>
 					`
-					col2.innerHTML += 
+					col2.innerHTML +=
 					`
 						<div class="card card-sized">
 							<div class="card-body">
@@ -193,13 +193,13 @@ function Load_Textures(file,done) {
 								<h5 class="card-title text-center">See on GitHub:</h5>
 								<div class="row">
 									<div class="col">
-										<a target="_blank" class="btn btn-block btn-success" href="https://github.com/Faithful-Dungeons/Resource-Pack/tree/master/` + json[k] + `">32x</a>
+										<a target="_blank" class="btn block btn-success" href="https://github.com/Faithful-Dungeons/Resource-Pack/tree/master/` + json[k] + `">32x</a>
 									</div>
 								</div>
 								<h5 class="card-title text-center">Fullscreen:</h5>
 								<div class="row">
 									<div class="col">
-										<button class="btn btn-block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/` + json[k] + `')">32x</button>
+										<button class="btn block btn-primary" onclick="Fullscreen('https://raw.githubusercontent.com/Faithful-Dungeons/Resource-Pack/master/` + json[k] + `')">32x</button>
 									</div>
 								</div>
 							</div>
@@ -212,9 +212,9 @@ function Load_Textures(file,done) {
 		}
 
 		if (j > MAX) {
-			col2.innerHTML += `<button class="btn btn-block btn-info" id="load-more" onclick="Load_Textures('` + file + `',` + MAX + `)">Load More</button>`
+			col2.innerHTML += `<button class="btn block btn-info" id="load-more" onclick="Load_Textures('` + file + `',` + MAX + `)">Load More</button>`
 		}
-			
+
 		btn.style.display  = 'block';
 
 		col1.style.display = 'block';

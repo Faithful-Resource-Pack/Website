@@ -1270,30 +1270,6 @@ a.btn.disabled {
   content: "";
   background-color: rgba(0, 0, 0, 0);
 }
-/* Replacable Bootstrap */
-.btn-block {
-  display: block;
-  width: 100%;
-}
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-.col {
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
-}
 /*!
  * Bootstrap end
  */
@@ -1315,6 +1291,10 @@ footer, footer p {
 }
 p {
 	color: rgba(0, 0, 0, .6)
+}
+img:not(.img-gallery) {
+  max-width: 100%;
+  height: auto;
 }
 @media (min-width: 576px) {
 	footer {
@@ -1413,6 +1393,7 @@ img.fancy-card-2x {
 /** Custom Bootstrap-like **/
 .block {
   display: block;
+  width: 100%;
 }
 .display {
 	font-weight: 300;
@@ -1475,10 +1456,10 @@ img.fancy-card-2x {
 .item img {
 	margin: 0 auto
 }
-.item a img.img-fluid {
+.item a img {
 	transition: all .5s ease
 }
-#topCarousel .item a img.img-fluid:hover {
+#topCarousel .item a img:hover {
 	transform: scale(1.1)
 }
 a > h4, a > h3 {

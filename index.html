@@ -70,7 +70,7 @@ title: Home
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: '-', '/' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 							<h3>{{ image.basename | replace: '-A', ' Alpha ' }}</h3>
 						</a>
 					</div>
@@ -94,7 +94,7 @@ title: Home
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance32xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>
@@ -121,7 +121,7 @@ title: Home
 					{%- if counter < 9 -%}
 						<div class="item">
 							<a class="card" href="{{ site.baseurl }}/article/compliance32xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-								<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+								<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 								<h3>{{ image.basename }}</h3>
 							</a>
 						</div>
@@ -167,7 +167,7 @@ title: Home
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: '-', '/' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 							<h3>{{ image.basename | replace: '-A', ' Alpha ' }}</h3>
 						</a>
 					</div>
@@ -192,7 +192,7 @@ title: Home
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance64xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>
@@ -219,7 +219,7 @@ title: Home
 					{%- if counter < 9 -%}
 						<div class="item">
 							<a class="card" href="{{ site.baseurl }}/article/compliance64xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-								<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+								<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 								<h3>{{ image.basename }}</h3>
 							</a>
 						</div>
@@ -256,7 +256,7 @@ title: Home
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance32x32xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>
@@ -281,7 +281,7 @@ title: Home
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>
@@ -306,7 +306,7 @@ title: Home
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>
@@ -331,7 +331,7 @@ title: Home
 
 					<div class="item">
 						<a class="card" href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>
@@ -357,28 +357,22 @@ title: Home
 					<!-- Card text -->
 					<h4 class="card-title">Compliance Skin Pack</h4>
 					<h5 class="card-title">Available skins:</h5>
-					<div class="row">
-						<div class="col-sm-">
-							<ul>
-								<li>Deborn</li>
-								<li>Haragon</li>
-								<li>Juknum</li>
-							</ul>
-						</div>
-						<div class="col-sm-">
-							<ul>
-								<li>Pomik108</li>
-								<li>RobertR11</li>
-								<li>Seirin-Blu</li>
-							</ul>
-						</div>
-						<div class="col-sm-">
-							<ul>
-								<li>Tekayo</li>
-								<li>Terrifik</li>
-								<li>SuperMario20</li>
-							</ul>
-						</div>
+					<div class="auto-flex">
+						<ul>
+							<li>Deborn</li>
+							<li>Haragon</li>
+							<li>Juknum</li>
+						</ul>
+						<ul>
+							<li>Pomik108</li>
+							<li>RobertR11</li>
+							<li>Seirin-Blu</li>
+						</ul>
+						<ul>
+							<li>Tekayo</li>
+							<li>Terrifik</li>
+							<li>SuperMario20</li>
+						</ul>
 					</div>
 					<div class="dropup">
 						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Download</button>
@@ -413,21 +407,17 @@ title: Home
 					<!-- Card text -->
 					<h4 class="card-title">Compliance Resource Pack</h4>
 					<h5 class="card-title">Progress of Beta 1:</h5>
-					<div class="row">
-						<div class="col-sm-">
-							<ul>
-								<li>Blocks: 47%</li>
-								<li>Equipments: 0%</li>
-								<li>Items: 7%</li>
-							</ul>
-						</div>
-						<div class="col-sm-">
-							<ul>
-								<li>Mobs: 41%</li>
-								<li>Prefabs: 8%</li>
-								<li>Total: 28%</li>
-							</ul>
-						</div>
+					<div class="auto-flex">
+						<ul>
+							<li>Blocks: 47%</li>
+							<li>Equipments: 0%</li>
+							<li>Items: 7%</li>
+						</ul>
+						<ul>
+							<li>Mobs: 41%</li>
+							<li>Prefabs: 8%</li>
+							<li>Total: 28%</li>
+						</ul>
 					</div>
 						<div class="dropup">
 						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Download</button>

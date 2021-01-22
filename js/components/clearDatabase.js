@@ -5,7 +5,7 @@ Vue.component('clear-database', {
   template:
   '<div>\
       <label for="clearDatabase" class="block pb-1">Database</label>\
-      <button class="btn btn-block btn-dark" v-on:click="clearDB">Clear database</button>\
+      <button class="btn block btn-dark" v-on:click="clearDB">Clear database</button>\
     </div>',
   methods: {
     clearDB: function () {

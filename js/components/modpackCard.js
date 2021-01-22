@@ -11,32 +11,24 @@ Vue.component('modpack-card', {
       <div class="card-body">\
         <h4 class="card-title">{{ modpack.modpackName }}</h4>\
         <div class="card-text">\
-          <div class="row">\
-            <div class="col">\
-              <small>\
-                <p class="ma-0 text-left">Modpack version:</p>\
-              </small>\
-            </div>\
-            <div class="col">\
-              <small>\
-                <p class="ma-0 text-right">{{ modpack.modpackVersion }}</p>\
-              </small>\
-            </div>\
+          <div class="auto-flex">\
+            <small>\
+              <p class="ma-0 text-left">Modpack version:</p>\
+            </small>\
+            <small>\
+              <p class="ma-0 text-right">{{ modpack.modpackVersion }}</p>\
+            </small>\
           </div>\
-          <div class="row">\
-            <div class="col">\
-              <small>\
-                <p class="ma-0 text-left">Minecraft version:</p>\
-              </small>\
-            </div>\
-            <div class="col">\
-              <small>\
-                <p class="ma-0 text-right">{{ modpack.minecraftVersion }}</p>\
-              </small>\
-            </div>\
+          <div class="auto-flex">\
+            <small>\
+              <p class="ma-0 text-left">Minecraft version:</p>\
+            </small>\
+            <small>\
+              <p class="ma-0 text-right">{{ modpack.minecraftVersion }}</p>\
+            </small>\
           </div>\
         </div>\
-        <button v-on:click="onbuttonclick" :title="cantDownload" :disabled="cantDownload || !modpack.modList || modpack.modList.length == 0" class="btn btn-block btn-dark">Download</button>\
+        <button v-on:click="onbuttonclick" :title="cantDownload" :disabled="cantDownload || !modpack.modList || modpack.modList.length == 0" class="btn block btn-dark">Download</button>\
       </div>\
     </div>\
   </div>'

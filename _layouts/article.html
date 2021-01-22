@@ -33,7 +33,7 @@ layout: default
 {%- endif -%}
 
 {%- if page.header-img -%}
-	<img class="img-fluid fancy-card-2x" style="width: 100%;" src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="">
+	<img class="fancy-card-2x" style="width: 100%;" src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="">
 	<br>
 {%- endif -%}
 
@@ -47,7 +47,7 @@ layout: default
 			{%- for image in site.static_files -%}
 				{%- if image.path contains page.carousel-img -%}
 					<div class="item">
-						<img onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')" id="{{ image.basename | replace: " ", "_" }}" src="{{ site.baseurl }}{{ image.path }}" class="img-fluid" alt="{{ image.basename }}">
+						<img onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')" id="{{ image.basename | replace: " ", "_" }}" src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
 						{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
 					</div>
 				{%- endif -%}
@@ -137,7 +137,7 @@ layout: default
 		<h2 class="display-4 my-5 text-center">Download</h2>
 	{%- endif -%}
 	{%- for item in page.download -%}
-		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn btn-block btn-lg btn-primary fancy-card-2x my-3"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
+		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn block btn-lg btn-primary fancy-card-2x my-3"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
 	{%- endfor -%}
 {%- endif -%}
 

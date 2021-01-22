@@ -2,10 +2,10 @@
 .btn-flag {
 	margin-right: 10px;
 	margin-top: 10px;
-	width: 120px;
-	font-size-adjust: 0.5;
+	min-width: 120px;
+	font-size-adjust: 0.5
 }
 .btn-flag > img {
-	width: 64px !important;
-	height: 42px !important
+	width: 64px;
+	height: 42px
 }
