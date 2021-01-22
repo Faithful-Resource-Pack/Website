@@ -11,8 +11,8 @@
 	<link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
 	<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
 	<link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png"/>
-	<meta property="og:image" content="{{ site.baseurl }}/image/home/logo_og.png" />
-	<meta property="twitter:image" content="{{ site.baseurl }}/image/home/logo_twitter.png" />
+	<meta property="og:image" content="{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}{{ site.baseurl }}/image/home/logo_og.png{% endif %}" />
+	<meta property="twitter:image" content="{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}{{ site.baseurl }}/image/home/logo_twitter.png{% endif %}" />
 	<meta name="twitter:card" content="summary_large_image">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -209,11 +209,11 @@
 						</div>
 					</li>
 
-					<div class="nav-item theme-switch-wrapper">
+					<li class="nav-item theme-switch-wrapper">
 						<btn id="DarkMode" onclick="changeMod(true)" class="nav-link">
 							<i style="margin-right: 5px" class="fas fa-adjust"></i> Auto Theme
 						</btn>
-					</div>
+					</li>
 
 				</ul>
 			</div>
