@@ -260,18 +260,7 @@
 		document.addEventListener('DOMContentLoaded', function () { window.dispatchEvent(new Event('resize')); })
 	</script>
 
-	<script>
-		const month = new Date().getMonth();
-		if (month == 0 || month == 11){ // December -> January is 0
-			const snowCSS = document.createElement("link")
-			snowCSS.rel = "stylesheet"
-			snowCSS.href = "{{ site.baseurl }}/css/snow.css"
-			snowCSS.type = "text/css"
-			document.getElementsByTagName("head")[0].appendChild(snowCSS);
-		}
-	</script>
-
-	<script src="{{ site.baseurl }}/js/snow.js"></script>
+	<script src="{{ site.baseurl }}/js/snow.js" type="module"></script>
 	<script src="{{ site.baseurl }}/js/darktheme.js"></script>
 
 	<script id="dsq-count-scr" src="//compliance-1.disqus.com/count.js" async></script>
