@@ -1444,7 +1444,7 @@ img.fancy-card-2x {
   max-width: 100%;
   flex: 1;
 }
-.res-grid-4, .res-grid-3 {
+.res-grid-4, .res-grid-3, .res-grid-2 {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(1, 1fr);
@@ -1614,7 +1614,7 @@ a > h4, a > h3 {
   .container {
     max-width: 540px
   }
-  .res-grid-4, .res-grid-3 {
+  .res-grid-4, .res-grid-3, .res-grid-2 {
     grid-template-columns: repeat(2, 2fr);
   }
 }
