@@ -1425,7 +1425,7 @@ img.fancy-card-2x {
 	display: none
 }
 @media screen and (min-width: 400px) {
-	.custom-navbar-brand {
+	img.custom-navbar-brand {
 		display: inline-block;
 		height: 40px;
 		vertical-align: top;
@@ -1434,7 +1434,7 @@ img.fancy-card-2x {
 	}
 }
 @media screen and (min-width: 576px) {
-	.custom-navbar-brand {
+	img.custom-navbar-brand {
 		display: none
 	}
 }
