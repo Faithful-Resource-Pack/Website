@@ -1283,20 +1283,11 @@ input[type="month"].form-control {
 .text-success {
   color: #28a745 !important;
 }
-a.text-success:hover, a.text-success:focus {
-  color: #19692c !important;
-}
 .text-warning {
   color: #ffc107 !important;
 }
-a.text-warning:hover, a.text-warning:focus {
-  color: #ba8b00 !important;
-}
 .text-danger {
   color: #dc3545 !important;
-}
-a.text-danger:hover, a.text-danger:focus {
-  color: #a71d2a !important;
 }
 /*!
  * Bootstrap end
