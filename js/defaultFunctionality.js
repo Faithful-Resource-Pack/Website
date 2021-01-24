@@ -77,7 +77,7 @@ document.querySelectorAll('[data-ride="carousel"]').forEach(item => {
   }
 
   function goToSlide(carousel, index) {
-    if (!blocking) {
+    if (!blocking && index != currentItem) {
       blocking = true
 
       let carouselIIndicators = carousel.querySelector('.carousel-indicators').children

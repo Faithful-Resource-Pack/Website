@@ -22,45 +22,45 @@ const THEME_DEFAULT_VALUE = THEME_VALUES[0].value
 const THEME_LOCALSTORAGE_KEY = 'theme'
 
 window.theme = {
-  get currentTheme () {
+  get currentTheme() {
     return localStorage.getItem(THEME_LOCALSTORAGE_KEY) || THEME_DEFAULT_VALUE
   },
-  set currentTheme (value) {
+  set currentTheme(value) {
     localStorage.setItem(THEME_LOCALSTORAGE_KEY, value)
   },
 
-  get currentThemeIndex () {
+  get currentThemeIndex() {
     return THEME_VALUES.findIndex(el => el.value === this.currentTheme)
   },
-  set currentThemeIndex (_v) {},
+  set currentThemeIndex(_v) {},
 
-  get currentThemeHTML () {
+  get currentThemeHTML() {
     return THEME_VALUES[this.currentThemeIndex].html
   },
-  set currentThemeHTML (_v) {},
+  set currentThemeHTML(_v) {},
 
-  get nextTheme () {
+  get nextTheme() {
     return THEME_VALUES[(this.currentThemeIndex + 1) % THEME_VALUES.length].value
   },
-  set nextTheme (_v) {}
+  set nextTheme(_v) {}
 }
 
 // update btn
-btn.innerHTML = window.theme.currentThemeHTML
+btn.innerHTML = theme.currentThemeHTML
 
-changeMod(false)
-
-function changeMod (change) {
+window.changeMod = change => {
   // true if the btn calls the method, false otherwise
   if (change) {
-    window.theme.currentTheme = window.theme.nextTheme
-    btn.innerHTML = window.theme.currentThemeHTML
+    window.theme.currentTheme = theme.nextTheme
+    btn.innerHTML = theme.currentThemeHTML
   }
 
   // update theme
-  if (window.theme.currentTheme === 'dark' || (window.theme.currentTheme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  if (theme.currentTheme === 'dark' || (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)) {
     css.href = '/css/dark.css'
   } else {
     css.href = ''
   }
 }
+
+changeMod(false)
