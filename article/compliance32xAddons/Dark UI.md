@@ -3,7 +3,7 @@ title: Dark UI - 32x
 permalink: /article/compliance32xAddons/Dark%20UI
 comments: true
 comments-id: DarkUI
-header-img: article/compliance32xAddons/Dark UI.png
+header-img: article/compliance32xAddons/Dark UI.jpg
 
 carousel-img: article/carousel/Dark UI/
 show_carousel_name: false

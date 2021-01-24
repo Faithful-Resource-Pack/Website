@@ -3,7 +3,7 @@ title: Futura - 32x
 permalink: /article/compliance32xAddons/Futura
 comments: true
 comments-id: Futura
-header-img: article/compliance32xAddons/Futura.png
+header-img: article/compliance32xAddons/Futura.jpg
 
 long_text: 'The futuristic look of netherite armor and tools with visible enchants (max levels).<br>List of visible enchants:<ul><li>Sharpness</li><li>Fire Aspect</li><li>Efficency</li><li>Fortune</li><li>Silk Touch</li><li>Flame</li><li>Mending</li></ul><br><strong>Requires OptiFine Settings: Animated textures, Emissive texturse, Custom Item Textures (CIT)</strong>'
 

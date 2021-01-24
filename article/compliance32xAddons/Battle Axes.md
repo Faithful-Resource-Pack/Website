@@ -3,7 +3,7 @@ title: Battle Axes
 permalink: /article/compliance32xAddons/Battle%20Axes
 comments: true
 comments-id: BattleAxes
-header-img: article/compliance32xAddons/Battle Axes.png
+header-img: article/compliance32xAddons/Battle Axes.jpg
 
 long_text: Makes normal axes look like battle axes.
 

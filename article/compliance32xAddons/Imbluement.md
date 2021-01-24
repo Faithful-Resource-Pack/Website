@@ -3,7 +3,7 @@ title: Imbluement - 32x
 permalink: /article/compliance32xAddons/Imbluement
 comments: true
 comments-id: Imbluement
-header-img: article/compliance32xAddons/Imbluement.png
+header-img: article/compliance32xAddons/Imbluement.jpg
 
 long_text: 'Changes all things "enchanting" to "imbluing" for consistency with lapis as the ingredient.'
 

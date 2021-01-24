@@ -3,7 +3,7 @@ title: Alternative Environment - 64x
 permalink: /article/compliance64xAddons/Alternative%20Environment
 comments: true
 comments-id: AlternativeEnvironment
-header-img: article/compliance64xAddons/Alternative Environment.png
+header-img: article/compliance64xAddons/Alternative Environment.jpg
 
 carousel-img: article/carousel/Alternative Environment/
 show_carousel_name: false

@@ -3,7 +3,7 @@ title: Smaller Crosshair - 32x
 permalink: /article/compliance32xAddons/Smaller%20Crosshair
 comments: true
 comments-id: SmallerCrosshair
-header-img: article/compliance32xAddons/Smaller Crosshair.png
+header-img: article/compliance32xAddons/Smaller Crosshair.jpg
 
 long_text: 'Shrinks the distracting crosshair.'
 
