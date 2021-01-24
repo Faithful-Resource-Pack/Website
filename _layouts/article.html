@@ -88,35 +88,18 @@ layout: default
 	</script>
 
 	<script>
-		$(document).ready(function(){
-
+		$(document).ready(() => {
 			$('#carousel-img').owlCarousel({
-				loop: false,
 				margin: 30,
-				nav: false,
 				responsiveClass: true,
-				autoHeight: true,
 				responsive: {
-					0: {
-						items: 1
-					},
-
-					600: {
-						items: 2
-					},
-
-					1024: {
-						items: 3
-					},
-
-					1366: {
-						items: 3
-					}
+					0: { items: 1 },
+					600: { items: 2 },
+					1024: { items: 3 }
 				},
         onInitialized: addDotButtonLabel
-			});
-
-		});
+			})
+		})
 	</script>
 {%- endif -%}
 
