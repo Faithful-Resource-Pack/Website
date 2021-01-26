@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Compliance - {{ page.title }}</title>
-	<meta name="description" content="{% if page.long_text %}{{ page.long_text | strip_html | truncate: 160 }}{% else %}Compliance, a default-style 32x and 64x resource pack for Minecraft Java, Bedrock, Education and Dungeons.{% endif %}" />
+	<meta name="description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Compliance, a default-style 32x and 64x resource pack for Minecraft Java, Bedrock, Education and Dungeons.{% endif %}" />
 	<meta name="keywords" content="Minecraft, Java, Bedrock, Dungeons, Resource, Pack, Resource-Pack, Resourcepack, Compliance, Mods, Faithful, 32x, x32, 32x32, 64x, x64, 64x64">
 	<meta name="theme-color" content="#76C945">
 
