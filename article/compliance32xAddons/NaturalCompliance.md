@@ -6,6 +6,8 @@ comments-id: NaturalCompliance
 header-img: article/compliance32xAddons/NaturalCompliance.jpg
 
 long_text: |
+  <strong>This add-on is currently not being worked on!</strong><br>
+  <strong>Check out <a href="./AmbientEnvironment">AmbientEnvironment</a></strong><br><br>
   NaturalCompliance is a resource pack for Minecraft Java Edition that works as an add-on for Compliance.
   This add-on is a collection of other add-ons and custom self-made textures to ensure compatability and the best possible user experience.
   It is an attempt to make Minecraft look more realistic and overall a little bit better.
