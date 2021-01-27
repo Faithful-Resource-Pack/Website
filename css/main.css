@@ -55,6 +55,7 @@ p {
 ol, ul, dl {
   margin-top: 0;
   margin-bottom: 1rem;
+  list-style-position: inside;
 }
 a {
   color: #007bff;

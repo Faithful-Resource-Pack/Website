@@ -1,0 +1,45 @@
+---
+layout: default
+title: Add-On Collections
+
+collections:
+  - title: A Varied Affair
+    header_img: a-varied-affair.jpg
+    long_text: |
+      You are tired of seeing the same mobs all the time?
+      You don't like the dreary color scheme of Minecraft?
+      When normal Minecraft is too boring for you we have got a thing for you.
+      Check out this great combination of add-ons that brings some life and variation to your Minecraft world.
+    addon-list:
+      - title: Alt Entities
+        link: ./article/compliance32xAddons/Alt%20Entities
+      - title: AmbientEnvironment
+        link: ./article/compliance32xAddons/AmbientEnvironment
+      - title: Animated Mobs
+        link: ./article/compliance32xAddons/Animated%20Mobs
+
+  - title: The Christmas Look
+    header_img: the-christmas-look.jpg
+    long_text: |
+      When it's beginning to look a lot like Christmas... you should really try this collection.
+      It features a snowy world and lovely Christmas-themed textures.
+      Enjoy the time with your family at your virtual chimney.
+    addon-list:
+      - title: Festive
+        link: ./article/compliance32xAddons/Festive
+      - title: Winter
+        link: ./article/compliance32xAddons/Winter
+---
+
+{% for collection in page.collections %}
+  <h2 class="display-3 my-5 text-center">{{ collection.title }}</h2>
+  <img class="fancy-card-2x mb-3" style="width:100%" src="{{ site.baseurl }}/image/collections/{{ collection.header_img }}" alt="Preview">
+  <p class="card card-body" align="justify">
+    {{ collection.long_text }}
+  </p>
+  <h3 class="display my-5 text-center">Included Add-Ons</h3>
+  <div class="card card-body res-grid-3">
+    {% for addon in collection.addon-list %}<a href="{{ addon.link }}" class="btn btn-dark btn-lg block">{{ addon.title }}</a>{% endfor %}
+  </div>
+  <hr>
+{% endfor %}
