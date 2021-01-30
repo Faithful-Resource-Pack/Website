@@ -1434,7 +1434,7 @@ img.fancy-card-2x {
 	margin: 1rem 0
 }
 #topNavbar {
-  position: static;
+  position: relative;
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
