@@ -10,9 +10,6 @@ const DROPDOWN_SHOW_CLASS = 'show'
 
 // at initialization
 document.querySelectorAll('[data-toggle="dropdown"]').forEach(item => {
-  // say that all collapsible element not expanded
-  item.ariaExpanded = false
-
   // add click listener to toggle dropdowns
   item.addEventListener('click', () => {
     toggleDropdown(item)
@@ -21,15 +18,15 @@ document.querySelectorAll('[data-toggle="dropdown"]').forEach(item => {
 
 // function made to toggle my item and untoggle all others
 function toggleDropdown (item) {
-  if (!item.ariaExpanded) { // if I am not expanded, go untoggle all other siblings
-    item.parentNode.siblingElements().filter(el => el.classList.contains(DROPDOWN_SHOW_CLASS)).forEach(otherParent => { // you do not need to filter other with show class because it will be removed anyway
-      otherParent.querySelector('[data-toggle="dropdown"]').ariaExpanded = false
+  const itemExpanded = item.parentNode.classList.contains(DROPDOWN_SHOW_CLASS)
+
+  if (!itemExpanded) { // if I am not expanded, go untoggle all other siblings
+    item.parentNode.siblingElements().filter(el => el.classList.contains(DROPDOWN_SHOW_CLASS)).forEach(otherParent => {
       otherParent.classList.remove(DROPDOWN_SHOW_CLASS)
     })
   }
 
   // then toggle me
-  item.ariaExpanded = !item.ariaExpanded
   item.parentNode.classList.toggle(DROPDOWN_SHOW_CLASS)
 }
 
