@@ -243,6 +243,28 @@
 
 		// fix non centered icons
 		document.addEventListener('DOMContentLoaded', () => { window.dispatchEvent(new Event('resize')) })
+
+		// set sticky menu
+		let fixed = false;
+		let offsetTop;
+		window.addEventListener('scroll', (evt) => {
+			const windowScroll = this.scrollY
+
+			const topNavbar = document.getElementById('topNavbar')
+			const navOffset = topNavbar.offsetTop
+			if(!fixed) {
+				if(windowScroll > navOffset) {
+					fixed = true
+					topNavbar.classList.add('fixed')
+					offsetTop = navOffset
+				}
+			} else {
+				if(windowScroll <= offsetTop) {
+					topNavbar.classList.remove('fixed')
+					fixed = false
+				}
+			}
+		}, true)
 	</script>
 
   <script src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>

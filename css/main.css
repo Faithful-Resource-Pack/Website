@@ -1292,7 +1292,8 @@ footer {
 	text-align: center
 }
 header {
-	min-height: 256px
+  min-height: 256px;
+  padding-bottom: 0.5rem;
 }
 footer, footer p {
   color: rgba(255, 255, 255, .7);
@@ -1429,9 +1430,26 @@ img.fancy-card-2x {
 	right: auto;
 	left: auto
 }
-#topNavbar, #topCarousel {
+#topCarousel {
 	margin: 1rem 0
 }
+#topNavbar {
+  position: static;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+#topNavbar.fixed {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: url(../image/background/bg_light_background.png) repeat;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,1)
+}
+
 .custom-navbar-brand {
 	display: none
 }
