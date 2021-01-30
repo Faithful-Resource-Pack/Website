@@ -220,9 +220,10 @@ hr {
   pointer-events: none;
   background-color: transparent;
 }
-.dropdown-menu.show {
+.show > .dropdown-menu {
   display: block;
 }
+
 .dropdown-header {
   display: block;
   padding: 0.5rem 1.5rem;
