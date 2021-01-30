@@ -1242,6 +1242,17 @@ a.btn.disabled {
 .card-deck .card {
   margin-bottom: 15px;
 }
+
+.card-deck .card .card-image {
+  background-size: auto 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-deck .card .card-image img {
+  width: 100%;
+  opacity: 0;
+}
 @media (min-width: 576px) {
   .card-deck {
     display: flex;
