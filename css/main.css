@@ -58,12 +58,12 @@ ol, ul, dl {
   list-style-position: inside;
 }
 a {
-  color: #007bff;
+  color: #868686;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #0056b3;
+  color: #c2c2c2;
 }
 a:not([href]):not([class]) {
   color: inherit;
