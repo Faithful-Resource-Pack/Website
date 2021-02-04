@@ -4,3 +4,9 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 debug.log
+image/icon/.DS_Store
+article/.DS_Store
+article/compliance32x/.DS_Store
+image/.DS_Store
+image/article/.DS_Store
+.DS_Store
