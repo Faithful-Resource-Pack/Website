@@ -1,6 +1,6 @@
 ---
 title: Glow Berry Hunger Bar
-permalink: /article/compliance32xAddons/Glow%20Berry%Hunger
+permalink: /article/compliance32xAddons/Glow%20Berry%20Hunger
 comments: true
 comments-id: GlowBerryHunger
 header-img: article/compliance32xAddons/Glow Berry Hunger.jpg
