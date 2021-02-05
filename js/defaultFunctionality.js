@@ -121,9 +121,8 @@ document.querySelectorAll('[data-ride="carousel"]').forEach(item => {
 
 // set sticky menu
 const topNavbar = document.getElementById('topNavbar')
-const navOffset = topNavbar.offsetTop
 window.addEventListener('scroll', e => {
-  topNavbar.classList.toggle('fixed', window.scrollY > navOffset)
+  topNavbar.classList.toggle('fixed', window.scrollY > topNavbar.offsetTop)
 }, true)
 
 //default layout

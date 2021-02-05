@@ -1424,6 +1424,14 @@ img.fancy-card-2x {
 	font-weight: 300;
 	line-height: 1.2
 }
+.banner {
+  margin: 16px;
+  padding: 16px;
+  background: #f44336;
+  color: #fff;
+  text-align: center;
+  border-radius: var(--border-radius-1x);
+}
 .auto-flex {
   display: flex;
   flex-wrap: wrap;
