@@ -1,3 +1,6 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -222,28 +225,6 @@
 		</p>
     <small>CompliPage-{{ site.time | date: "%Y-%m-%d-%H:%M" }}</small>
 	</footer>
-
-	<script>
-		$('#topCarousel').owlCarousel({
-			center: true,
-			loop:true,
-			autoplay: true,
-			lazyLoad: true,
-			margin: 20,
-			responsiveClass: true,
-			autoplayTimeout: 4000,
-			smartSpeed: 800,
-			responsive: {
-				0: { items: 1 },
-				600: { items: 3 },
-				1024: { items: 4 }
-			},
-			onInitialized: addDotButtonLabel
-		})
-
-		// fix non centered icons
-		document.addEventListener('DOMContentLoaded', () => { window.dispatchEvent(new Event('resize')) })
-	</script>
 
   <script src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
 	<script src="{{ site.baseurl }}/js/snow.js" type="module"></script>

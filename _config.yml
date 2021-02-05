@@ -1,5 +1,9 @@
 url: "https://compliancepack.net/"
 
+compress_html:
+  comments: ["<!-- ", " -->"]
+  blanklines: true
+
 defaults:
   - scope:
       path: ""

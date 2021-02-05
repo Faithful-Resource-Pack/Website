@@ -125,3 +125,24 @@ const navOffset = topNavbar.offsetTop
 window.addEventListener('scroll', e => {
   topNavbar.classList.toggle('fixed', window.scrollY > navOffset)
 }, true)
+
+//default layout
+$('#topCarousel').owlCarousel({
+  center: true,
+  loop:true,
+  autoplay: true,
+  lazyLoad: true,
+  margin: 20,
+  responsiveClass: true,
+  autoplayTimeout: 4000,
+  smartSpeed: 800,
+  responsive: {
+    0: { items: 1 },
+    600: { items: 3 },
+    1024: { items: 4 }
+  },
+  onInitialized: addDotButtonLabel
+})
+
+//fix non centered icons
+document.addEventListener('DOMContentLoaded', () => { window.dispatchEvent(new Event('resize')) })
