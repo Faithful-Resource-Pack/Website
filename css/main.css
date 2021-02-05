@@ -1450,7 +1450,6 @@ img.fancy-card-2x {
   position: relative;
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
-
 #topNavbar.fixed {
   z-index: 1000;
   position: fixed;
@@ -1458,11 +1457,8 @@ img.fancy-card-2x {
   left: 0;
   right: 0;
   background: url(../image/background/bg_light_background.png) repeat;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,1)
 }
-
 .custom-navbar-brand {
 	display: none
 }
