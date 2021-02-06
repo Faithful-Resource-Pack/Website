@@ -1407,13 +1407,11 @@ img.fancy-card-2x {
 	background: #000
 }
 /* carousel cards */
-.owl-carousel .owl-stage-outer {
-  overflow-y: visible !important;
-}
 .item > .card {
   position: relative;
   height: 10rem;
   transition: .2s;
+  margin: 3px 6px 9px;
 }
 .item > .card > img {
   position: absolute;
