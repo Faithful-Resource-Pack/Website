@@ -7,9 +7,9 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     keys: ['numberOfMinecraftVersions', 'totalNumberOfResourcePacksStored', 'numberOfModsSupported'],
     messages: {
       loading: 'Loading',
-      numberOfMinecraftVersions: 'Number of minecraft versions supported',
-      numberOfModsSupported: 'Number of mods supported',
-      totalNumberOfResourcePacksStored: 'Total number of resource packs stored'
+      numberOfMinecraftVersions: 'Minecraft Versions Supported',
+      numberOfModsSupported: 'Mods Supported',
+      totalNumberOfResourcePacksStored: 'Mod Resource Packs Stored'
     },
     loading: true,
     numberOfMinecraftVersions: undefined,
