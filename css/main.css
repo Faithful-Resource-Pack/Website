@@ -58,12 +58,12 @@ ol, ul, dl {
   list-style-position: inside;
 }
 a {
-  color: #bbbbbb;
+  color: #007bff;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #c2c2c2;
+  color: #0056b3;
 }
 a:not([href]):not([class]) {
   color: inherit;
@@ -76,6 +76,7 @@ a:not([href]):not([class]):hover {
 img {
   vertical-align: middle;
   border-style: none;
+  object-fit: cover;
 }
 table {
   border-collapse: collapse;
@@ -1342,11 +1343,10 @@ img:not(.img-gallery) {
 	padding-bottom: 100px
 }
 .placeholder {
-	max-height: 10%;
-	min-height: 200px;
+  height: 100%;
 	background-image: url(/image/icon/compliance_32x.png), url(/image/background/bg_light_foreground.png);
 	background-repeat: no-repeat, repeat;
-	background-position: center 17%, center center;
+	background-position: center, center;
 	background-size: auto 75%, auto;
 }
 .right-reading {
@@ -1385,7 +1385,6 @@ div.dropdown-menu {
 }
 img.fancy-card-2x {
 	max-height: 32rem;
-	object-fit: cover
 }
 .btn, .dropdown-menu, .fancy-card-1x, *.card, .fancy-card-2x {
 	overflow: hidden;
@@ -1404,13 +1403,35 @@ img.fancy-card-2x {
 	font-weight: 300;
 	color: rgba(255, 255, 255, .7)
 }
-.card, .card p {
+.card, .card p, .card a {
 	color: rgba(255, 255, 255, .7)
+}
+.card a:hover {
+	color: rgba(255, 255, 255, .9)
 }
 .card-img-top {
 	border-radius: var(--border-radius-2x);
 	cursor: pointer;
 	color: #000
+}
+.item > .card {
+  position: relative;
+  height: 10rem;
+}
+.item > .card > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.item > .card > h3 {
+  position: absolute;
+  bottom: 0;
+  margin: 8px;
+	color: rgba(255, 255, 255, .9);
+	text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	font-size: 1.5rem;
+	font-weight: bold
 }
 #ScreenshotCarousel {
 	background: #000
@@ -1507,14 +1528,6 @@ img.fancy-card-2x {
 }
 #topCarousel .item a img:hover {
 	transform: scale(1.1)
-}
-a > h4, a > h3 {
-	margin-top: -45px;
-	margin-left: 10px;
-	color: rgba(255, 255, 255, .9);
-	text-shadow: 0 3px 6px rgba(0,0,0,0.5);
-	font-size: 1.5rem;
-	font-weight: bold
 }
 /** BASIC CAROUSEL **/
 /* Make the image fully responsive (carousel) */
