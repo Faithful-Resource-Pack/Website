@@ -171,8 +171,6 @@ hr {
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
 }
 .dropup .dropdown-menu {
   top: auto;
@@ -1174,10 +1172,8 @@ a.btn.disabled {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background: #131313 url(../image/background/bg_light_background.png) repeat;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
 }
 .card-body {
   flex: 1 1 auto;
@@ -1376,13 +1372,6 @@ img:not(.img-gallery) {
 	}
 }
 /** FANCY CARDS **/
-.card {
-	background: #1C1C1C;
-	border: 0 !important
-}
-div.dropdown-menu {
-	border: 0
-}
 img.fancy-card-2x {
 	max-height: 32rem;
 }
@@ -1414,15 +1403,27 @@ img.fancy-card-2x {
 	cursor: pointer;
 	color: #000
 }
+#ScreenshotCarousel {
+	background: #000
+}
+/* carousel cards */
+.owl-carousel .owl-stage-outer {
+  overflow: visible !important;
+}
 .item > .card {
   position: relative;
   height: 10rem;
+  transition: .2s;
 }
 .item > .card > img {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
+}
+ .item > .card > img:hover {
+  transform: scale(1.1);
+  filter: brightness(110%);
 }
 .item > .card > h3 {
   position: absolute;
@@ -1432,9 +1433,6 @@ img.fancy-card-2x {
 	text-shadow: 0 3px 6px rgba(0,0,0,0.5);
 	font-size: 1.5rem;
 	font-weight: bold
-}
-#ScreenshotCarousel {
-	background: #000
 }
 /** Custom Bootstrap-like **/
 .block {
@@ -1547,17 +1545,16 @@ img.fancy-card-2x {
 }
 /** CUSTOM SCROLLBAR **/
 ::-webkit-scrollbar{
-	width: 17px
+	width: 16px;
+  background: #0E0E0E
 }
 ::-webkit-scrollbar-button{
-	height: 17px
-}
-::-webkit-scrollbar-track{
-	background: #0E0E0E
+	height: 16px
 }
 ::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb{
 	background: #3E3E3E;
-	border: 2px solid #0E0E0E
+	border: 2px solid #0E0E0E;
+  border-radius: var(--border-radius-1x)
 }
 ::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover{
 	background: #575757
