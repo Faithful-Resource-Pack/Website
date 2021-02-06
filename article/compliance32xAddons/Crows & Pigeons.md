@@ -1,6 +1,6 @@
 ---
 title: Crows & Pigeons
-permalink: /article/compliance32xAddons/Crows%26Pigeons
+permalink: /article/compliance32xAddons/Crows%20Pigeons
 comments: true
 comments-id: CrowsAndPigeons
 header-img: article/compliance32xAddons/Crows and Pigeons.jpg
