@@ -1403,10 +1403,10 @@ img.fancy-card-2x {
 	font-weight: 300;
 	color: rgba(255, 255, 255, .7)
 }
-.card, .card p, .card > a {
+.card, .card p, .card > h2 > a {
 	color: rgba(255, 255, 255, .7)
 }
-.card > a:hover {
+.card > h2 > a:hover {
 	color: rgba(255, 255, 255, .9)
 }
 .card-img-top {
