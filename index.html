@@ -266,9 +266,9 @@ title: Home
 					{% assign listIsEmpty = false %}
 
 					<div class="item">
-						<a class="card" href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: '.', '_' }}" rel="noopener">
+						<a class="card" href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: '-', '/' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-							<h3>{{ image.basename }}</h3>
+							<h3>{{ image.basename | replace: '-A', ' Alpha '}}</h3>
 						</a>
 					</div>
 
