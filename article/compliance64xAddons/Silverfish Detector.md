@@ -1,5 +1,5 @@
 ---
-title: Silverfish Detector - 64x
+title: Silverfish Detector
 permalink: /article/compliance64xAddons/Silverfish%20Detector
 comments: true
 comments-id: SilverfishDetector
@@ -11,7 +11,7 @@ authors:
   - Juknum:
     - https://twitter.com/Juknum_
 
-download: 
+download:
   - CurseForge:
     - https://www.curseforge.com/minecraft/texture-packs/silverfish-detector/files
 ---

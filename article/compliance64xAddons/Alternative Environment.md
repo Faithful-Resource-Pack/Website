@@ -1,5 +1,5 @@
 ---
-title: Alternative Environment - 64x
+title: Alternative Environment
 permalink: /article/compliance64xAddons/Alternative%20Environment
 comments: true
 comments-id: AlternativeEnvironment
@@ -13,7 +13,7 @@ long_text: Do you also think that the Compliance 64x has no variation and textur
 authors:
   - HARAG0N
 
-download: 
+download:
   - Planet Minecraft:
     - https://www.planetminecraft.com/texture-pack/compliance-64x-alternative/
 ---

@@ -1,5 +1,5 @@
 ---
-title: Square Corners - 32x
+title: Square Corners
 permalink: /article/compliance32xAddons/Square%20Corners
 comments: true
 comments-id: SquareCorners

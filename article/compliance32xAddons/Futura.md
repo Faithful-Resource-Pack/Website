@@ -1,5 +1,5 @@
 ---
-title: Futura - 32x
+title: Futura
 permalink: /article/compliance32xAddons/Futura
 comments: true
 comments-id: Futura
@@ -10,7 +10,7 @@ long_text: 'The futuristic look of netherite armor and tools with visible enchan
 authors:
   - Neluś
 
-download: 
-  - 1.16: 
+download:
+  - 1.16:
     - https://github.com/Compliance-Addons/Addons/raw/master/32x/Futura/Futura%201.16.zip
 ---
