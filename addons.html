@@ -5,111 +5,51 @@ title: Add-Ons
 <h2 class="display-4 my-5 text-center">Java 32x</h2>
 <div class="card card-body">
   <div class="res-grid-3">
-  	{%- assign global_counter = 0 -%}
-
-  	{%- for addons32x in site.static_files -%}
-  		{%- if addons32x.path contains 'image/article/compliance32xAddons' -%}
-
-  			{%- assign global_counter = global_counter | plus: 1 -%}
-
-  			{%- if global_counter < 7 -%}
-
-  				<div class="card">
-  					<img class="card-img" style="min-height: 100%" src="{{ site.baseurl }}{{ addons32x.path }}" alt="{{ addons32x.basename }}">
-  					<div class="card-img-overlay">
-  						<h3 class="card-title">{{ addons32x.basename }}</h3>
-  					</div>
-  					<a class="stretched-link" href="{{ site.baseurl }}/article/compliance32xAddons/{{ addons32x.basename }}"></a>
-  				</div>
-
-  			{%- endif -%}
-
-  		{%- endif -%}
-  	{%- endfor -%}
+  	{% assign counter = 0 %}
+  	{% include matching_articles.html search_string='compliance32xAddons/' %}
   </div>
-	<a class="btn btn-lg block btn-dark mt-4" href="{{ site.baseurl }}/addons32x">See More</a>
+  {% if counter != 0 %}
+  <a class="btn btn-lg block btn-dark mt-4" href="{{ site.baseurl }}/addons32x">See More</a>
+  {% else %}
+  <p class="text-center">Coming soon!</p>
+  {% endif %}
 </div>
 
 <h2 class="display-4 my-5 text-center">Java 64x</h2>
 <div class="card card-body">
   <div class="res-grid-3">
-  	{%- assign global_counter = 0 -%}
-
-  	{%- for addons64x in site.static_files -%}
-  		{%- if addons64x.path contains 'image/article/compliance64xAddons' -%}
-
-  			{%- assign global_counter = global_counter | plus: 1 -%}
-
-  			{%- if global_counter < 7 -%}
-
-  				<div class="card">
-  					<img class="card-img" style="min-height: 100%" src="{{ site.baseurl }}{{ addons64x.path }}" alt="{{ addons64x.basename }}">
-  					<div class="card-img-overlay">
-  						<h3 class="card-title">{{ addons64x.basename }}</h3>
-  					</div>
-  					<a class="stretched-link" href="{{ site.baseurl }}/article/compliance64xAddons/{{ addons64x.basename }}"></a>
-  				</div>
-
-  			{%- endif -%}
-
-  		{%- endif -%}
-  	{%- endfor -%}
+  	{% assign counter = 0 %}
+  	{% include matching_articles.html search_string='compliance64xAddons/' %}
   </div>
+  {% if counter != 0 %}
 	<a class="btn btn-lg block btn-dark mt-4" href="{{ site.baseurl }}/addons64x">See More</a>
+  {% else %}
+  <p class="text-center">Coming soon!</p>
+  {% endif %}
 </div>
 
 <h2 class="display-4 my-5 text-center">Bedrock 32x</h2>
 <div class="card card-body">
   <div class="res-grid-3">
-  	{%- assign global_counter = 0 -%}
-
-  	{%- for addons32xbedrock in site.static_files -%}
-  		{%- if addons32xbedrock.path contains 'image/article/compliance32xBedrockAddons' -%}
-
-  			{%- assign global_counter = global_counter | plus: 1 -%}
-
-  			{%- if global_counter < 7 -%}
-
-  				<div class="card">
-  					<img class="card-img" style="min-height: 100%" src="{{ site.baseurl }}{{ addons32xbedrock.path }}" alt="{{ addons32xbedrock.basename }}">
-  					<div class="card-img-overlay">
-  						<h3 class="card-title">{{ addons32xbedrock.basename }}</h3>
-  					</div>
-  					<a class="stretched-link" href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ addons32xbedrock.basename }}"></a>
-  				</div>
-
-  			{%- endif -%}
-
-  		{%- endif -%}
-  	{%- endfor -%}
+  	{% assign counter = 0 %}
+  	{% include matching_articles.html search_string='compliance32xBedrockAddons/' %}
   </div>
+  {% if counter != 0 %}
 	<a class="btn btn-lg block btn-dark mt-4" href="{{ site.baseurl }}/addons32xBedrock">See More</a>
+  {% else %}
+  <p class="text-center">Coming soon!</p>
+  {% endif %}
 </div>
 
 <h2 class="display-4 my-5 text-center">Bedrock 64x</h2>
 <div class="card card-body">
   <div class="res-grid-3">
-  	{%- assign global_counter = 0 -%}
-
-  	{%- for addons64xbedrock in site.static_files -%}
-  		{%- if addons64xbedrock.path contains 'image/article/compliance64xBedrockAddons' -%}
-
-  			{%- assign global_counter = global_counter | plus: 1 -%}
-
-  			{%- if global_counter < 7 -%}
-
-  				<div class="card">
-  					<img class="card-img" style="min-height: 100%" src="{{ site.baseurl }}{{ addons64xbedrock.path }}" alt="{{ addons64xbedrock.basename }}">
-  					<div class="card-img-overlay">
-  						<h3 class="card-title">{{ addons64xbedrock.basename }}</h3>
-  					</div>
-  					<a class="stretched-link" href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ addons64xbedrock.basename }}"></a>
-  				</div>
-
-  		  {%- endif -%}
-
-      {%- endif -%}
-  	{%- endfor -%}
+  	{% assign counter = 0 %}
+  	{% include matching_articles.html search_string='compliance64xBedrockAddons/' %}
   </div>
+  {% if counter != 0 %}
 	<a class="btn btn-lg block btn-dark mt-4" href="{{ site.baseurl }}/addons64xBedrock">See More</a>
+  {% else %}
+  <p class="text-center">Coming soon!</p>
+  {% endif %}
 </div>

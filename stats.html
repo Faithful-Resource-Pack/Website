@@ -5,12 +5,32 @@ title: Statistics
 <div id="stats" class="text-center">
 	<h1 class="display-3 my-5">Compliance Statistics</h1>
 
+	<h2 class="display-4 my-5">Main Pack</h2>
+	<div class="res-grid-2">
+		<h3>32x Releases</h3>
+		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance32x/'" | size }}</span></h3>
+		<h3>64x Releases</h3>
+		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance64x/'" | size }}</span></h3>
+	</div>
+
+	<h2 class="display-4 my-5">Add-Ons</h2>
+	<div class="res-grid-4">
+		<h3>32x Add-Ons</h3>
+		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance32xAddons/'" | size }}</span></h3>
+		<h3>32x Bedrock Add-Ons</h3>
+		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance32xBedrockAddons/'" | size }}</span></h3>
+		<h3>64x Add-Ons</h3>
+		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance64xAddons/'" | size }}</span></h3>
+		<h3>64x Bedrock Add-Ons</h3>
+		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance64xBedrockAddons/'" | size }}</span></h3>
+	</div>
+
 	<h2 class="display-4 my-5">Mods</h2>
 	<div v-html="loadingMessage"></div>
 
-	<div class="auto-flex">
-		<div v-for="(mKey, index) in keys" :key="index" class="mb-3">
-			<h3 class="mb-4" v-text="messages[mKey]"></h3>
+	<div class="res-grid-3">
+		<div v-for="(mKey, index) in keys" :key="index">
+			<h3 v-text="messages[mKey]"></h3>
 			<h3><span class="badge badge-primary h1" v-text="$data[mKey]"></span></h3>
 		</div>
 	</div>

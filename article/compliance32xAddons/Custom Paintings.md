@@ -1,5 +1,5 @@
 ---
-title: Custom Paintings - 32x
+title: Custom Paintings
 permalink: /article/compliance32xAddons/Custom%20Paintings
 comments: true
 comments-id: CustomPaintings
@@ -12,7 +12,7 @@ authors:
     - https://twitter.com/Casilios
   - Curiouscat
 
-download: 
+download:
   - 1.15-1.16.1:
     - https://github.com/Compliance-Addons/Addons/raw/master/32x/Custom%20Paintings/Custom%20Paintings%201.15-1.16.1.zip
   - 1.16.2:

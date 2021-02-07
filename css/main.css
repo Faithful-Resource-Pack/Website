@@ -171,8 +171,6 @@ hr {
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
 }
 .dropup .dropdown-menu {
   top: auto;
@@ -812,7 +810,7 @@ hr {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius-1x);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .badge-primary {
@@ -1174,10 +1172,8 @@ a.btn.disabled {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background: #131313 url(../image/background/bg_light_background.png) repeat;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
 }
 .card-body {
   flex: 1 1 auto;
@@ -1214,15 +1210,6 @@ a.btn.disabled {
     margin-bottom: 0;
     margin-left: 15px;
   }
-}
-.card-img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1.25rem;
-  border-radius: calc(0.25rem - 1px);
 }
 .card-img,
 .card-img-top,
@@ -1284,17 +1271,6 @@ a.btn.disabled {
     display: block;
     content: "";
 }
-.stretched-link::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  pointer-events: auto;
-  content: "";
-  background-color: rgba(0, 0, 0, 0);
-}
 /*!
  * Bootstrap end
  */
@@ -1342,13 +1318,6 @@ img:not(.img-gallery) {
 	padding-top: 100px;
 	padding-bottom: 100px
 }
-.placeholder {
-  height: 100%;
-	background-image: url(/image/icon/compliance_32x.png), url(/image/background/bg_light_foreground.png);
-	background-repeat: no-repeat, repeat;
-	background-position: center, center;
-	background-size: auto 75%, auto;
-}
 .right-reading {
 	direction: rtl
 }
@@ -1376,13 +1345,6 @@ img:not(.img-gallery) {
 	}
 }
 /** FANCY CARDS **/
-.card {
-	background: #1C1C1C;
-	border: 0 !important
-}
-div.dropdown-menu {
-	border: 0
-}
 img.fancy-card-2x {
 	max-height: 32rem;
 }
@@ -1403,10 +1365,10 @@ img.fancy-card-2x {
 	font-weight: 300;
 	color: rgba(255, 255, 255, .7)
 }
-.card, .card p, .card > a {
+.card, .card p, .card > h2 > a {
 	color: rgba(255, 255, 255, .7)
 }
-.card > a:hover {
+.card > h2 > a:hover {
 	color: rgba(255, 255, 255, .9)
 }
 .card-img-top {
@@ -1414,17 +1376,32 @@ img.fancy-card-2x {
 	cursor: pointer;
 	color: #000
 }
-.item > .card {
-  position: relative;
-  height: 10rem;
+#ScreenshotCarousel {
+	background: #000
 }
-.item > .card > img {
+/* carousel cards */
+.item > .card {
+  margin: 3px 6px 9px
+}
+.img-card {
+  position: relative;
+  height: 0;
+  padding-top: 50%
+}
+.img-card > img, .placeholder {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
   height: 100%;
+  transition: all .5s;
+  background: #000
 }
-.item > .card > h3 {
+ .img-card > img:hover {
+  transform: scale(1.1);
+  filter: brightness(110%)
+}
+.img-card > h3 {
   position: absolute;
   bottom: 0;
   margin: 8px;
@@ -1433,8 +1410,11 @@ img.fancy-card-2x {
 	font-size: 1.5rem;
 	font-weight: bold
 }
-#ScreenshotCarousel {
-	background: #000
+.placeholder {
+	background-image: url(/image/icon/compliance_32x.png), url(/image/background/bg_light_foreground.png);
+	background-repeat: no-repeat, repeat;
+	background-position: center, center;
+	background-size: auto 75%, auto;
 }
 /** Custom Bootstrap-like **/
 .block {
@@ -1547,17 +1527,16 @@ img.fancy-card-2x {
 }
 /** CUSTOM SCROLLBAR **/
 ::-webkit-scrollbar{
-	width: 17px
+	width: 16px;
+  background: #0E0E0E
 }
 ::-webkit-scrollbar-button{
-	height: 17px
-}
-::-webkit-scrollbar-track{
-	background: #0E0E0E
+	height: 16px
 }
 ::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb{
 	background: #3E3E3E;
-	border: 2px solid #0E0E0E
+	border: 2px solid #0E0E0E;
+  border-radius: var(--border-radius-1x)
 }
 ::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover{
 	background: #575757
@@ -1639,9 +1618,8 @@ img.fancy-card-2x {
   right: 0;
   outline: 0;
   border: 0;
-  margin: 1.25rem;
+  margin: 8px;
   background: none;
-  z-index: 2;
 }
 .rem-button {
   color: #f44336;

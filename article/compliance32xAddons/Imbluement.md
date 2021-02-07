@@ -1,5 +1,5 @@
 ---
-title: Imbluement - 32x
+title: Imbluement
 permalink: /article/compliance32xAddons/Imbluement
 comments: true
 comments-id: Imbluement
@@ -10,7 +10,7 @@ long_text: 'Changes all things "enchanting" to "imbluing" for consistency with l
 authors:
   - Cyberization
 
-download: 
+download:
   - 1.16:
     - https://github.com/Compliance-Addons/Addons/raw/master/32x/Imbluement/Imbluement%20-%201.16.zip
 ---

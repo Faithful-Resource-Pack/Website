@@ -1,5 +1,5 @@
 ---
-title: Half-Width Items - 32x
+title: Half-Width Items
 permalink: /article/compliance32xAddons/Half-Width%20Items
 comments: true
 comments-id: HalfWidthItems
@@ -10,7 +10,7 @@ long_text: 1x1 item width of 32x items
 authors:
   - Azure Onyxscore
 
-download: 
-  - CurseForge: 
+download:
+  - CurseForge:
     - https://www.curseforge.com/minecraft/texture-packs/half-width-items
 ---

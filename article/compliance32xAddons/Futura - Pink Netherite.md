@@ -1,5 +1,5 @@
 ---
-title: Futura - Pink Netherite - 32x
+title: Futura - Pink Netherite
 permalink: /article/compliance32xAddons/Futura%20-%20Pink%20Netherite
 comments: true
 comments-id: FuturaPink
@@ -10,7 +10,7 @@ long_text: 'Does the same things as normal <a href="./Futura">Futura</a>, but it
 authors:
   - Neluś
 
-download: 
-  - 1.16: 
+download:
+  - 1.16:
     - https://github.com/Compliance-Addons/Addons/raw/master/32x/Futura%20-%20Pink%20Netherite/Futura%20-%20Pink%20Netherite%201.16.zip
 ---
