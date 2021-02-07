@@ -1211,15 +1211,6 @@ a.btn.disabled {
     margin-left: 15px;
   }
 }
-.card-img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1.25rem;
-  border-radius: calc(0.25rem - 1px);
-}
 .card-img,
 .card-img-top,
 .card-img-bottom {
@@ -1280,17 +1271,6 @@ a.btn.disabled {
     display: block;
     content: "";
 }
-.stretched-link::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  pointer-events: auto;
-  content: "";
-  background-color: rgba(0, 0, 0, 0);
-}
 /*!
  * Bootstrap end
  */
@@ -1337,13 +1317,6 @@ img:not(.img-gallery) {
 .container {
 	padding-top: 100px;
 	padding-bottom: 100px
-}
-.placeholder {
-  height: 100%;
-	background-image: url(/image/icon/compliance_32x.png), url(/image/background/bg_light_foreground.png);
-	background-repeat: no-repeat, repeat;
-	background-position: center, center;
-	background-size: auto 75%, auto;
 }
 .right-reading {
 	direction: rtl
@@ -1412,9 +1385,10 @@ img.fancy-card-2x {
 }
 .img-card {
   position: relative;
-  height: 10rem
+  height: 0;
+  padding-top: 50%
 }
-.img-card > img {
+.img-card > img, .placeholder {
   position: absolute;
   top: 0;
   left: 0;
@@ -1435,6 +1409,12 @@ img.fancy-card-2x {
 	text-shadow: 0 3px 6px rgba(0,0,0,0.5);
 	font-size: 1.5rem;
 	font-weight: bold
+}
+.placeholder {
+	background-image: url(/image/icon/compliance_32x.png), url(/image/background/bg_light_foreground.png);
+	background-repeat: no-repeat, repeat;
+	background-position: center, center;
+	background-size: auto 75%, auto;
 }
 /** Custom Bootstrap-like **/
 .block {
@@ -1638,9 +1618,8 @@ img.fancy-card-2x {
   right: 0;
   outline: 0;
   border: 0;
-  margin: 1.25rem;
+  margin: 8px;
   background: none;
-  z-index: 2;
 }
 .rem-button {
   color: #f44336;

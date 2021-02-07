@@ -24,9 +24,9 @@ function updateView() {
     })
     locFavs.forEach((item, i) => {
       favContainer.append(template.content.cloneNode(true))
-      document.getElementsByClassName('card-img')[i].src = item.imgURL
-      document.getElementsByClassName('stretched-link')[i].href = item.link
-      document.getElementsByClassName('card-title')[i].innerHTML = item.title
+      document.getElementsByClassName('fav_img')[i].src = item.imgURL
+      document.getElementsByClassName('img-card')[i].href = item.link
+      document.getElementsByClassName('fav_title')[i].innerHTML = item.title
       document.getElementsByClassName('rem-button')[i].onclick = () => { removeFromFavs(item.link) }
     })
   } else {
