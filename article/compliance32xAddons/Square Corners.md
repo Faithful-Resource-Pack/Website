@@ -3,6 +3,7 @@ title: Square Corners - 32x
 permalink: /article/compliance32xAddons/Square%20Corners
 comments: true
 comments-id: SquareCorners
+header-img: article/compliance32xAddons/Square Corners.jpg
 carousel-img: article/carousel/Square Corners/
 show_carousel_name: true
 long_text: Gives the containers square corners to be more uniform with other UI elements. Also available in Dark, based off of jogurciQ's Dark UI.

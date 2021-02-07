@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<h2 class="display-4 my-5 text-center">{{ page.title }}</h2>
+<p class="card card-body mb-5">
+  Add-ons can be placed on top of the main pack to expand and customize it to your liking.
+  Check out our awesome collection of add-ons below and fall in love with the endless possibilities.
+</p>
+
+<template id="template">
+  <div class="card">
+    <img class="card-img" style="min-height: 100%">
+    <a class="stretched-link"></a>
+    <div class="card-img-overlay">
+      <h3 class="card-title"></h3>
+      <button class="rem-button" type="button"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+</template>
+
+<div id="favorites" class="card card-body res-grid-4 mb-5" style="display: none"></div>
+
+<div class="card card-body res-grid-3">
+
+	{% for sub_page in site.pages %}
+		{% if sub_page.path contains page.search_string %}
+
+			<div class="card">
+				<img class="card-img" style="min-height: 100%" src="{{ site.baseurl }}/image/{{ sub_page.header-img }}" alt="{{ sub_page.title }}">
+				<div class="card-img-overlay">
+					<h3 class="card-title">{{ sub_page.title }}</h3>
+          <button class="fav-button" type="button" onclick="addToFavs('{{ site.baseurl }}/image/{{ sub_page.header-img }}', '{{ sub_page.title }}', '{{ site.baseurl }}{{ sub_page.url }}')"><i class="fas fa-star"></i></button>
+				</div>
+				<a class="stretched-link" href="{{ site.baseurl }}{{ sub_page.url }}"></a>
+			</div>
+
+		{% endif %}
+	{% endfor %}
+
+</div>
+
+<script src="{{ site.baseurl }}/js/favorite-addons.js" type="module"></script>
