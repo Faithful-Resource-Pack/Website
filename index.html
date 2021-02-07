@@ -100,15 +100,15 @@ title: Home
 
 			{% assign counter = 0 %}
 
-			{% for image in site.static_files %}
-				{% if image.path contains 'image/article/compliance32xAddons/' %}
+			{% for page in site.pages %}
+				{% if page.path contains 'compliance32xAddons/' %}
 					{% assign counter = counter | plus: 1 %}
 
 					{% if counter < 9 %}
 						<div class="item">
-							<a class="card img-card" href="{{ site.baseurl }}/article/compliance32xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-								<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-								<h3>{{ image.basename }}</h3>
+							<a class="card img-card" href="{{ site.baseurl }}{{ page.url }}" rel="noopener">
+								<img src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="{{ page.title }}">
+								<h3>{{ page.title }}</h3>
 							</a>
 						</div>
 					{% endif %}
@@ -198,15 +198,15 @@ title: Home
 
 			{% assign counter = 0 %}
 
-			{% for image in site.static_files %}
-				{% if image.path contains 'image/article/compliance64xAddons/' %}
+			{% for page in site.pages %}
+				{% if page.path contains 'compliance64xAddons/' %}
 					{% assign counter = counter | plus: 1 %}
 
 					{% if counter < 9 %}
 						<div class="item">
-							<a class="card img-card" href="{{ site.baseurl }}/article/compliance64xAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-								<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-								<h3>{{ image.basename }}</h3>
+							<a class="card img-card" href="{{ site.baseurl }}{{ page.url }}" rel="noopener">
+								<img src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="{{ page.title }}">
+								<h3>{{ page.title }}</h3>
 							</a>
 						</div>
 					{% endif %}
