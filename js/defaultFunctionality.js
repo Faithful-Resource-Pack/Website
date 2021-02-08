@@ -126,7 +126,7 @@ window.addEventListener('scroll', e => {
 }, true)
 
 //default layout
-$('#topCarousel').owlCarousel({
+/*$('#topCarousel').owlCarousel({
   center: true,
   loop:true,
   autoplay: true,
@@ -141,7 +141,17 @@ $('#topCarousel').owlCarousel({
     1024: { items: 4 }
   },
   onInitialized: addDotButtonLabel
-})
+})*/
+
+tns({
+    container: '#topCarousel',
+    center: true,
+    items: 4,
+    controls: false,
+    autoplay: true,
+    autoplayPosition: 'bottom',
+    navPosition: 'bottom'
+  });
 
 //fix non centered icons
 document.addEventListener('DOMContentLoaded', () => { window.dispatchEvent(new Event('resize')) })

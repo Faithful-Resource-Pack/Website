@@ -1,0 +1,10 @@
+.owl-carousel {
+  height: 64px;
+  overflow: hidden;
+}
+.owl-carousel::before {
+  display: block;
+  height: 100%;
+  background: red;
+  content: 'Temporarily Disabled'
+}

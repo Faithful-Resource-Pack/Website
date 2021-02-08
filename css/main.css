@@ -1501,6 +1501,7 @@ img.fancy-card-2x {
 }
 /* Carousel arrow hover animation */
 .item img {
+  display: block;
 	margin: 0 auto
 }
 .item a img {
