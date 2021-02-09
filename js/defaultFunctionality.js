@@ -126,32 +126,19 @@ window.addEventListener('scroll', e => {
 }, true)
 
 //default layout
-/*$('#topCarousel').owlCarousel({
+tns({
+  container: '#topCarousel',
   center: true,
-  loop:true,
+  controls: false,
   autoplay: true,
-  lazyLoad: true,
-  margin: 20,
-  responsiveClass: true,
-  autoplayTimeout: 4000,
-  smartSpeed: 800,
+  autoplayPosition: 'bottom',
+  navPosition: 'bottom',
   responsive: {
     0: { items: 1 },
     600: { items: 3 },
     1024: { items: 4 }
-  },
-  onInitialized: addDotButtonLabel
-})*/
-
-tns({
-    container: '#topCarousel',
-    center: true,
-    items: 4,
-    controls: false,
-    autoplay: true,
-    autoplayPosition: 'bottom',
-    navPosition: 'bottom'
-  });
+  }
+})
 
 //fix non centered icons
 document.addEventListener('DOMContentLoaded', () => { window.dispatchEvent(new Event('resize')) })

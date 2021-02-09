@@ -47,7 +47,7 @@ title: Home
 <div class="card card-body">
 		<h2 class="card-title text-center">Main Pack</h2>
 
-		<div id="compliance32x" class="owl-carousel owl-theme">
+		<div id="compliance32x">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -71,7 +71,7 @@ title: Home
 		<br>
 
 		<h2 class="card-title text-center">Programmer Art</h2>
-		<div id="compliance32xProgArt" class="owl-carousel owl-theme">
+		<div id="compliance32xProgArt">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -96,7 +96,7 @@ title: Home
 
 		<h2 class="card-title text-center"> <a href="https://compliancepack.net/addons32x">Add-Ons</a> </h2>
 
-		<div id="compliance32xAddons" class="owl-carousel owl-theme">
+		<div id="compliance32xAddons">
 
 			{% assign counter = 0 %}
 
@@ -144,7 +144,7 @@ title: Home
 <div class="card card-body">
 		<h2 class="card-title text-center">Main Pack</h2>
 
-		<div id="compliance64x" class="owl-carousel owl-theme">
+		<div id="compliance64x">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -169,7 +169,7 @@ title: Home
 
 		<h2 class="card-title text-center">Programmer Art</h2>
 
-		<div id="compliance64xProgArt" class="owl-carousel owl-theme">
+		<div id="compliance64xProgArt">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -194,7 +194,7 @@ title: Home
 
 		<h2 class="card-title text-center"><a href="https://compliancepack.net/addons64x">Add-Ons</a></h2>
 
-		<div id="compliance64xAddons" class="owl-carousel owl-theme">
+		<div id="compliance64xAddons">
 
 			{% assign counter = 0 %}
 
@@ -233,7 +233,7 @@ title: Home
 <div class="card card-body">
 		<h2 class="card-title text-center">32x</h2>
 
-		<div id="compliance32xBedrock" class="owl-carousel owl-theme">
+		<div id="compliance32xBedrock">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -258,7 +258,7 @@ title: Home
 
 		<h2 class="card-title text-center">64x</h2>
 
-		<div id="compliance64xBedrock" class="owl-carousel owl-theme">
+		<div id="compliance64xBedrock">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -283,7 +283,7 @@ title: Home
 
 		<h2 class="card-title text-center">32x Add-Ons</h2>
 
-		<div id="compliance32xBedrockAddons" class="owl-carousel owl-theme">
+		<div id="compliance32xBedrockAddons">
 
 			{% assign listIsEmpty = true %}
 			{% for image in site.static_files %}
@@ -308,7 +308,7 @@ title: Home
 
 		<h2 class="card-title text-center">64x Add-Ons</h2>
 
-		<div id="compliance64xBedrockAddons" class="owl-carousel owl-theme">
+		<div id="compliance64xBedrockAddons">
 
 			{% assign listIsEmpty = true %}
 			{% for image in site.static_files %}
@@ -433,27 +433,24 @@ title: Home
 		</div>
 
 <script>
-  $(document).ready(() => {
-    const owlConfig = {
-      margin: 18,
-      responsiveClass: true,
-      responsive: {
+  document.addEventListener('DOMContentLoaded', () => {
+		const tnsConfig = {
+		  controls: false,
+		  navPosition: 'bottom',
+		  responsive: {
         0: { items: 1 },
         600: { items: 2 },
         1024: { items: 3 }
-      },
-      onInitialized: addDotButtonLabel
-    }
-
-    $('#compliance32x').owlCarousel(owlConfig)
-    $('#compliance32xProgArt').owlCarousel(owlConfig)
-    $('#compliance32xAddons').owlCarousel(owlConfig)
-    $('#compliance64x').owlCarousel(owlConfig)
-    $('#compliance64xProgArt').owlCarousel(owlConfig)
-    $('#compliance64xAddons').owlCarousel(owlConfig)
-    $('#compliance32xBedrock').owlCarousel(owlConfig)
-    $('#compliance32xBedrockAddons').owlCarousel(owlConfig)
-    $('#compliance64xBedrock').owlCarousel(owlConfig)
-    $('#compliance64xBedrockAddons').owlCarousel(owlConfig)
+		  }
+		}
+		const carousels = [
+			'#compliance32x', '#compliance32xProgArt', '#compliance32xAddons',
+			'#compliance64x', '#compliance64xProgArt', '#compliance64xAddons',
+			'#compliance32xBedrock', '#compliance32xBedrockAddons', '#compliance64xBedrock', '#compliance64xBedrockAddons'
+		]
+		carousels.forEach(item => {
+			tnsConfig.container = item
+			tns(tnsConfig)
+		})
   })
 </script>
