@@ -42,7 +42,7 @@ layout: default
 {%- if page.carousel-img -%}
 	<!-- {{ page.carousel-img }} -->
 	<div class="card card-body">
-		<div id="carousel-img" class="owl-carousel owl-theme">
+		<div id="carousel-img">
 
 			{%- for image in site.static_files -%}
 				{%- if image.path contains page.carousel-img -%}
@@ -65,39 +65,36 @@ layout: default
 
 	<script>
 		function ShowFullscreen(img_path){
-			var modal = document.getElementById("SF")
+			var modal = document.getElementById('SF')
 
-			modal.style.display = "block";
+			modal.style.display = 'block'
 
 			// close modal:
-			var span = document.getElementById("SF-Span");
-			span.onclick = function() {
-				modal.style.display = "none";
+			var span = document.getElementById('SF-Span')
+			span.onclick = () => {
+				modal.style.display = 'none';
 			}
 			// when pressing escape key:
-			$(document).keydown(function(event) {
-				if (event.keyCode == 27) {
-					modal.style.display = "none";
-				}
-			});
+			document.addEventListener('keydown', event => {
+				if (event.keyCode == 27) modal.style.display = 'none'
+			})
 
 			// set img in modal:
-			var img = document.getElementById("SF-Img");
-			img.src = img_path;
+			var img = document.getElementById('SF-Img')
+			img.src = img_path
 		}
-	</script>
 
-	<script>
-		$(document).ready(() => {
-			$('#carousel-img').owlCarousel({
-				margin: 30,
-				responsiveClass: true,
+		document.addEventListener('DOMContentLoaded', () => {
+			tns({
+			  container: '#carousel-img',
+			  controls: false,
+			  navPosition: 'bottom',
+				gutter: 20,
 				responsive: {
 					0: { items: 1 },
 					600: { items: 2 },
 					1024: { items: 3 }
-				},
-        onInitialized: addDotButtonLabel
+				}
 			})
 		})
 	</script>
@@ -126,9 +123,26 @@ layout: default
 
 {%- if page.main_changelog -%}
 	<script>
-		$(function(){
-			$('#changelog').load('{{ site.baseurl }}/{{ page.main_changelog }}');
-		});
+		function ShowAll() {
+		 	var old = document.getElementById('old');
+		  var btn = document.getElementById('old-btn');
+
+	    if ( old.style.display == 'none' ){
+	      old.style.display = 'block';
+	      btn.innerHTML = 'Hide';
+	    } else {
+	      old.style.display = 'none';
+	      btn.innerHTML = 'All';
+	    }
+	  }
+
+		fetch('{{ site.baseurl }}/{{ page.main_changelog }}')
+		  .then(response => {
+		    return response.text()
+		  })
+		  .then(body => {
+		    document.querySelector('#changelog').innerHTML = body
+		  })
 	</script>
 	<div id='changelog'></div>
 {%- endif -%}

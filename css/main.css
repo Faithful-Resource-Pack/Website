@@ -1569,7 +1569,7 @@ img.fancy-card-2x {
 .modal {
 	display: none;
 	position: fixed;
-	z-index: 11;
+	z-index: 1100;
 	padding-top: 100px;
 	left: 0;
 	top: 0;

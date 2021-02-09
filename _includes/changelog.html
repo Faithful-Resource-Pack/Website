@@ -56,18 +56,3 @@
   {%- endfor -%}
   <button onclick="ShowAll()" class="btn btn-dark btn-lg block">Hide</button>
 </div>
-
-<script>
-  function ShowAll() {
-    var old = document.getElementById('old');
-    var btn = document.getElementById('old-btn');
-
-    if ( old.style.display == 'none' ){
-      old.style.display = 'block';
-      btn.innerHTML = 'Hide';
-    } else {
-      old.style.display = 'none';
-      btn.innerHTML = 'All';
-    }
-  }
-</script>
