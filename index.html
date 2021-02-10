@@ -47,7 +47,7 @@ title: Home
 <div class="card card-body">
 		<h2 class="card-title text-center">Main Pack</h2>
 
-		<div id="compliance32x">
+		<div class="no-js" id="compliance32x">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -56,7 +56,7 @@ title: Home
 
 					<div class="item">
 						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: '-', '/' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
 							<h3>{{ image.basename | replace: '-A', ' Alpha ' | replace: '-B', ' Beta ' }}</h3>
 						</a>
 					</div>
@@ -71,7 +71,7 @@ title: Home
 		<br>
 
 		<h2 class="card-title text-center">Programmer Art</h2>
-		<div id="compliance32xProgArt">
+		<div class="no-js" id="compliance32xProgArt">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -80,7 +80,7 @@ title: Home
 
 					<div class="item">
 						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>
@@ -96,7 +96,7 @@ title: Home
 
 		<h2 class="card-title text-center"> <a href="https://compliancepack.net/addons32x">Add-Ons</a> </h2>
 
-		<div id="compliance32xAddons">
+		<div class="no-js" id="compliance32xAddons">
 
 			{% assign counter = 0 %}
 
@@ -107,7 +107,7 @@ title: Home
 					{% if counter < 9 %}
 						<div class="item">
 							<a class="card img-card" href="{{ site.baseurl }}{{ page.url }}" rel="noopener">
-								<img src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="{{ page.title }}">
+								<img src="{{ site.baseurl }}/image/{{ page.header-img }}" loading="lazy" alt="{{ page.title }}">
 								<h3>{{ page.title }}</h3>
 							</a>
 						</div>
@@ -116,7 +116,7 @@ title: Home
 					{% if counter == 9 %}
 						<div class="item">
 							<a class="card img-card" href="{{ site.baseurl }}/addons32x">
-								<img src="{{ site.baseurl }}/image/carousel/see_more.png" alt="">
+								<img src="{{ site.baseurl }}/image/carousel/see_more.png" loading="lazy" alt="See more...">
 								<h3>See more...</h3>
 							</a>
 						</div>
@@ -144,7 +144,7 @@ title: Home
 <div class="card card-body">
 		<h2 class="card-title text-center">Main Pack</h2>
 
-		<div id="compliance64x">
+		<div class="no-js" id="compliance64x">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -153,7 +153,7 @@ title: Home
 
 					<div class="item">
 						<a class="card img-card" href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: '-', '/' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
 							<h3>{{ image.basename | replace: '-A', ' Alpha ' }}</h3>
 						</a>
 					</div>
@@ -169,7 +169,7 @@ title: Home
 
 		<h2 class="card-title text-center">Programmer Art</h2>
 
-		<div id="compliance64xProgArt">
+		<div class="no-js" id="compliance64xProgArt">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -178,7 +178,7 @@ title: Home
 
 					<div class="item">
 						<a class="card img-card" href="{{ site.baseurl }}/article/compliance64xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>
@@ -194,7 +194,7 @@ title: Home
 
 		<h2 class="card-title text-center"><a href="https://compliancepack.net/addons64x">Add-Ons</a></h2>
 
-		<div id="compliance64xAddons">
+		<div class="no-js" id="compliance64xAddons">
 
 			{% assign counter = 0 %}
 
@@ -205,7 +205,7 @@ title: Home
 					{% if counter < 9 %}
 						<div class="item">
 							<a class="card img-card" href="{{ site.baseurl }}{{ page.url }}" rel="noopener">
-								<img src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="{{ page.title }}">
+								<img src="{{ site.baseurl }}/image/{{ page.header-img }}" loading="lazy" alt="{{ page.title }}">
 								<h3>{{ page.title }}</h3>
 							</a>
 						</div>
@@ -214,7 +214,7 @@ title: Home
 					{% if counter == 9 %}
 						<div class="item">
 							<a class="card img-card" href="{{ site.baseurl }}/addons64x">
-								<img src="{{ site.baseurl }}/image/carousel/see_more.png" alt="">
+								<img src="{{ site.baseurl }}/image/carousel/see_more.png" loading="lazy" alt="See more...">
 								<h3>See more...</h3>
 							</a>
 						</div>
@@ -233,7 +233,7 @@ title: Home
 <div class="card card-body">
 		<h2 class="card-title text-center">32x</h2>
 
-		<div id="compliance32xBedrock">
+		<div class="no-js" id="compliance32xBedrock">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -242,7 +242,7 @@ title: Home
 
 					<div class="item">
 						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32xBedrock/{{ image.basename | replace: '-', '/' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
 							<h3>{{ image.basename | replace: '-B', ' Beta ' }}</h3>
 						</a>
 					</div>
@@ -258,7 +258,7 @@ title: Home
 
 		<h2 class="card-title text-center">64x</h2>
 
-		<div id="compliance64xBedrock">
+		<div class="no-js" id="compliance64xBedrock">
 
 			{% assign listIsEmpty = true %}
 			{% for image in reversed_files %}
@@ -267,7 +267,7 @@ title: Home
 
 					<div class="item">
 						<a class="card img-card" href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: '-', '/' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
 							<h3>{{ image.basename | replace: '-A', ' Alpha '}}</h3>
 						</a>
 					</div>
@@ -283,7 +283,7 @@ title: Home
 
 		<h2 class="card-title text-center">32x Add-Ons</h2>
 
-		<div id="compliance32xBedrockAddons">
+		<div class="no-js" id="compliance32xBedrockAddons">
 
 			{% assign listIsEmpty = true %}
 			{% for image in site.static_files %}
@@ -292,7 +292,7 @@ title: Home
 
 					<div class="item">
 						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>
@@ -308,7 +308,7 @@ title: Home
 
 		<h2 class="card-title text-center">64x Add-Ons</h2>
 
-		<div id="compliance64xBedrockAddons">
+		<div class="no-js" id="compliance64xBedrockAddons">
 
 			{% assign listIsEmpty = true %}
 			{% for image in site.static_files %}
@@ -317,7 +317,7 @@ title: Home
 
 					<div class="item">
 						<a class="card img-card" href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
 							<h3>{{ image.basename }}</h3>
 						</a>
 					</div>

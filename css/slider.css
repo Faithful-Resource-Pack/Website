@@ -1,14 +1,9 @@
-.owl-carousel {
-  height: 64px;
-  overflow: hidden;
+.no-js {
+  display: none;
 }
-.owl-carousel::before {
+.tns-outer .no-js {
   display: block;
-  height: 100%;
-  background: red;
-  content: 'Deprecated carousel. Please report this site to one of our team members.'
 }
-
 .tns-outer [data-action] {
   display: none;
 }
