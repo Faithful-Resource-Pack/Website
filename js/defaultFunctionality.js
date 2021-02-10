@@ -126,21 +126,18 @@ window.addEventListener('scroll', e => {
 }, true)
 
 //default layout
-$('#topCarousel').owlCarousel({
+tns({
+  container: '#topCarousel',
   center: true,
-  loop:true,
+  controls: false,
   autoplay: true,
-  lazyLoad: true,
-  margin: 20,
-  responsiveClass: true,
-  autoplayTimeout: 4000,
-  smartSpeed: 800,
+  autoplayPosition: 'bottom',
+  navPosition: 'bottom',
   responsive: {
     0: { items: 1 },
     600: { items: 3 },
     1024: { items: 4 }
-  },
-  onInitialized: addDotButtonLabel
+  }
 })
 
 //fix non centered icons
