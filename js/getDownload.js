@@ -1,7 +1,6 @@
-
-// Used in download.html
-
+// Used in downloads.html
 // Thx to : https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
+
 var getJSON = function(url, callback) {
 	var xhr = new XMLHttpRequest();
 
@@ -21,17 +20,18 @@ var getJSON = function(url, callback) {
 	xhr.send();
 };
 
-function getDownload(id, release, prefix){
+function getDownload(id, release, file, prefix, org_name){
 
+	file = file - 1;
 	release = release - 1;
-	var	url = 'https://api.github.com/repos/Compliance-Resource-Pack/' + prefix + '/releases';
+	var url = 'https://api.github.com/repos/'+ org_name + '/' + prefix + '/releases';
 
 	getJSON(url, function(err, data) {
 		if (err !== null) {
 			console.log('Something went wrong: ' + err);
 		} else {
-			count = data[release]['assets'][0]['download_count'];
-			document.getElementById(id).innerHTML = count + `<i style="margin-left: 10px" class="fas fa-download"></i>`;
+			count = data[release]['assets'][file]['download_count'];
+			document.getElementById(id + '_' + file).innerHTML = count + `<i style="margin-left: 10px" class="fas fa-download"></i>`;
 		}
 	});
 }
