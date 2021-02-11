@@ -5,6 +5,6 @@ export default {
   },
   template:
   `<div>
-    <h1>{{ version }}</h1>
+    <h1>{{ $route.params.version }} {{ $route.params.section }}</h1>
   </div>`
 }
