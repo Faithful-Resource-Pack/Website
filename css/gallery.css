@@ -28,6 +28,7 @@
 	left: 0;
 	height: 100%;
 	width: 100%;
+	background: #000;
 	border-radius: var(--border-radius-2x);
 }
 .gallery-item > .fas {
@@ -36,6 +37,7 @@
 	margin: var(--border-radius-1x);
 	padding: var(--border-radius-1x);
 	background: rgba(0, 0, 0, .5);
+	color: #fff;
 	border-radius: var(--border-radius-1x);
 	text-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
 	opacity: 0;
