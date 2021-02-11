@@ -74,10 +74,13 @@ permalink: /comments-policy
 	Load('en.html'); // load english by default
 
 	function Load(file){
-		jQuery.get('{{site.baseurl}}/comments-policy/'+ file, function(data) {
-			var output = document.getElementById('output');
-			output.innerHTML = data;
-		});
+		fetch('{{site.baseurl}}/comments-policy/' + file)
+		  .then(response => {
+		    return response.text()
+		  })
+		  .then(body => {
+		    document.getElementById('output').innerHTML = body
+		  })
 
 		var warning = document.getElementById('warning');
 		if (file != 'en.html'){
