@@ -3,17 +3,10 @@ layout: default
 title: Gallery
 ---
 <div id="app">
-  <div class="auto-flex">
-    <router-link class="btn btn-dark mr-1 mb-1" to="/java-32x/blocks">Java 32x</router-link>
-    <router-link class="btn btn-dark mr-1 mb-1" to="/java-64x/blocks">Java 64x</router-link>
-    <router-link class="btn btn-dark mr-1 mb-1" to="/bedrock-32x/blocks">Bedrock 32x</router-link>
-    <router-link class="btn btn-dark mr-1 mb-1" to="/bedrock-64x/blocks">Bedrock 64x</router-link>
-    <router-link class="btn btn-dark mr-1 mb-1" to="/dungeons/blocks">Dungeons</router-link>
-    <router-link class="btn btn-dark mr-1 mb-1" to="/education/blocks">Education</router-link>
-  </div>
   <router-view></router-view>
 </div>
 
+<link rel="stylesheet" href="{{ site.baseurl }}/css/gallery.css">
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.1/dist/vue-router.min.js"></script>
 <script src="{{ site.baseurl }}/js/gallery/index.js" type="module"></script>
