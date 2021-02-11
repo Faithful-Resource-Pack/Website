@@ -1,6 +1,5 @@
 const VERSION_JAVA = '1.17'
 const BRANCH_JAVA = 'Jappa-1.17'
-const VERSION_BEDROCK = '1.16.100'
 const BRANCH_BEDROCK = 'Jappa-1.16.200'
 window.ERROR_IMG = './image/gallery/not-found.png'
 
@@ -20,9 +19,7 @@ export default {
   },
   data() {
     return {
-      imageArray: [
-        { title: 'Dummy', path: 'https://raw.githubusercontent.com/Compliance-Resource-Pack/Resource-Pack-32x/' + BRANCH_JAVA + '/assets/minecraft/textures/block/barrel_top.png' }
-      ],
+      imageArray: [],
       versions: [
         { title: 'java-32x' },
         { title: 'java-64x' },
@@ -34,7 +31,7 @@ export default {
       javaSections: ['block', 'colormap', 'effect', 'entity', 'environment', 'font', 'gui', 'item', 'map', 'misc', 'mob_effect', 'models', 'painting', 'particle'],
       bedrockSections: ['blocks', 'colormap', 'effect', 'entity', 'environment', 'gui', 'items', 'map', 'misc', 'models', 'painting', 'particle', 'ui'],
       dungeonsSections: ['blocks', 'components', 'decor', 'effects', 'entity', 'equipment', 'items', 'materials', 'others', 'ui'],
-      educationSections: ['null'],
+      educationSections: [],
 
       currentType: '',
       currentSections: [],
@@ -66,7 +63,7 @@ export default {
         <i class="fas fa-expand" v-on:click="fullscreen(item.path)"></i>
         <div class="info">
           <p>{{ item.title }}</p>
-          <p>More soon</p>
+          <p class="secondary">{{ item.artist }}</p>
         </div>
       </div>
     </div>
@@ -87,13 +84,11 @@ export default {
         else this.currentRepository = 'Compliance-Bedrock-32x'
         this.currentBranch = BRANCH_BEDROCK
       } else if (tempVersion.includes(TYPE_DUNGEONS)) {
-        alert('not yet implemented')
         this.currentType = TYPE_DUNGEONS
         this.currentSections = this.dungeonsSections
         this.currentRepository = null
         this.currentBranch = null
       } else if (tempVersion.includes(TYPE_EDUACTION)) {
-        alert('not yet implemented')
         this.currentType = TYPE_EDUACTION
         this.currentSections = this.educationSections
         this.currentRepository = 'Education-Edition'
@@ -102,6 +97,17 @@ export default {
     },
     async update() {
       this.loadType()
+
+      if (this.currentType == TYPE_DUNGEONS || this.currentType == TYPE_EDUACTION) {
+        this.imageArray = [
+          {
+            title: 'Missing Config File!',
+            path: window.ERROR_IMG,
+            artist: 'Please contact us!'
+          }
+        ]
+      }
+
       let contributors = await fetch('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/contributors/' + this.currentType + '.json')
                           .then(response => response.json())
       let tempArray = []
@@ -113,7 +119,8 @@ export default {
           let builtUrl = 'https://raw.githubusercontent.com/Compliance-Resource-Pack/' + this.currentRepository + '/' + this.currentBranch + currentItem
           tempArray.push({
             title: currentItem.substring(currentItem.lastIndexOf('/') + 1, currentItem.lastIndexOf('.')).replace(/(.{3})/g,"$1\xAD"),
-            path: builtUrl
+            path: builtUrl,
+            artist: 'Missing artist info'
           })
         }
       })

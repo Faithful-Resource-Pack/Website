@@ -73,6 +73,9 @@
 	margin-top: 1rem;
 	margin-bottom: 0;
 }
+.gallery-item:hover > .info > p.secondary {
+	color: rgba(255, 255, 255, .7);
+}
 img.modal-content {
   width: auto;
   height: 70%;
