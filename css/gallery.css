@@ -14,7 +14,6 @@
 	position: relative;
 	height: 0;
 	padding-top: 100%;
-	background: #000;
 	color: #fff;
 	border-radius: var(--border-radius-2x);
 	box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
@@ -28,7 +27,7 @@
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background: #000;
+	background: #000 url(../image/gallery/transparent.png) repeat;
 	border-radius: var(--border-radius-2x);
 }
 .gallery-item > .fas {
@@ -73,4 +72,10 @@
 	color: #fff;
 	margin-top: 1rem;
 	margin-bottom: 0;
+}
+img.modal-content {
+  width: auto;
+  height: 70%;
+  max-height: 70vh;
+  max-width: 70vw;
 }
