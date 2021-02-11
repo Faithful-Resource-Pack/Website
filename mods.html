@@ -27,7 +27,8 @@ title: Mods
 
   <template v-if="isMounted">
     <button id="DownloadLocally" :disabled="$refs.localDownload.canDownloadLocally" class="btn block btn-lg btn-primary fancy-card-2x" v-on:click="$refs.localDownload.openConfirmModal(undefined)">Download Resource Pack</button>
-    <div v-if="modSelection.length != 0 && $refs.localDownload.canDownloadLocally" class="advice text-center">Error: Packs Versions are not compatible</div>
+    <div v-if="modSelection.length != 0 && $refs.localDownload.canDownloadLocally" class="advice text-center">The versions you have selected are incompatible</div>
+		<div v-if="modSelection.length == 0" class="advice text-center">Please select the packs you want with a matching pack version first</div>
   </template>
 
   <br>
