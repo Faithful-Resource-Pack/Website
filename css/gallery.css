@@ -28,7 +28,8 @@
 	height: 100%;
 	width: 100%;
 	background: #000 url(../image/gallery/transparent.png) repeat;
-	border-radius: var(--border-radius-2x);
+	border-radius: var(--border-radius-1x);
+	object-fit: contain;
 }
 .gallery-item > .fas {
 	position: absolute;
