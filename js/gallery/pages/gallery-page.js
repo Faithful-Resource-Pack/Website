@@ -43,8 +43,8 @@ export default {
   },
   template:
   `<div>
-    <div ref="modal" class="modal">
-      <span class="close" v-on:click="closeModal()">×</span>
+    <div ref="modal" class="modal" v-on:click="closeModal()">
+      <span class="close">×</span>
       <img ref="modal_img" class="modal-content">
     </div>
     <div class="mb-4">

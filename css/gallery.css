@@ -82,4 +82,5 @@ img.modal-content {
   height: 70%;
   max-height: 70vh;
   max-width: 70vw;
+  object-fit: contain;
 }
