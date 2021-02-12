@@ -144,7 +144,7 @@ export default {
       for (const item of textures) {
         if (this.currentType == TYPE_JAVA) currentItem = '/assets/' + item.version[VERSION_JAVA]
         else if (this.currentType == TYPE_BEDROCK) currentItem = '/' + item.path
-        if (currentItem.includes(this.$route.params.section + '/')) {
+        if (currentItem.includes('/' + this.$route.params.section + '/')) {
           tempArray.push({
             title: currentItem.substring(currentItem.lastIndexOf('/') + 1, currentItem.lastIndexOf('.')).replace(/(.{3})/g,"$1\xAD"),
             path: 'https://raw.githubusercontent.com/Compliance-Resource-Pack/' + this.currentRepository + '/' + this.currentBranch + currentItem,
