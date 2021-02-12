@@ -33,12 +33,13 @@ export default {
       currentType: '',
       currentTypeObject: '',
       currentRepository: '',
-      currentBranch: ''
+      currentBranch: '',
+      searchString: ''
     }
   },
   watch:{
-    $route() {
-      this.update()
+    $route(to) {
+      if(!to.path.includes('search')) this.update()
     }
   },
   template:
@@ -50,6 +51,7 @@ export default {
     <div class="mb-4">
       <router-link v-for="item in window.data.versions" :key="item" class="btn btn-dark mr-1 mb-2" :to="'/' + item + '/' + $route.params.section">{{ window.capitalize(item) }}</router-link>
     </div>
+    <input id="SearchBar" type="text" placeholder="Search for a texture name or path..." title="Type something" class="fancy-card-1x mb-4" v-model="searchString" v-on:keyup.enter="showResults()">
     <div class="mb-4">
       <router-link v-for="item in currentSections" :key="item" class="btn btn-dark mr-1 mb-2" :to="'/' + $route.params.version + '/' + item">{{ window.capitalize(item) }}</router-link>
     </div>
@@ -125,6 +127,23 @@ export default {
       }
       return readableArtists.length < 1 ? ARTIST_UNKNOWN : readableArtists.join(', ')
     },
+    async search(string) {
+      let textures = await fetch('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/contributors/' + this.currentType + '.json').then(response => response.json())
+      let tempArray = []
+      let currentItem = null
+      for (const item of textures) {
+        if (this.currentType == TYPE_JAVA) currentItem = '/assets/' + item.version[VERSION_JAVA]
+        else if (this.currentType == TYPE_BEDROCK) currentItem = '/' + item.path
+        if (currentItem.toLowerCase().includes(string.toLowerCase())) {
+          tempArray.push({
+            title: currentItem.substring(currentItem.lastIndexOf('/') + 1, currentItem.lastIndexOf('.')).replace(/(.{3})/g,"$1\xAD"),
+            path: 'https://raw.githubusercontent.com/Compliance-Resource-Pack/' + this.currentRepository + '/' + this.currentBranch + currentItem,
+            artist: await this.getArtists(item)
+          })
+        }
+      }
+      return tempArray
+    },
     async update() {
       this.loadType()
 
@@ -138,21 +157,12 @@ export default {
         ]
       }
 
-      let textures = await fetch('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/contributors/' + this.currentType + '.json').then(response => response.json())
-      let tempArray = []
-      let currentItem = null
-      for (const item of textures) {
-        if (this.currentType == TYPE_JAVA) currentItem = '/assets/' + item.version[VERSION_JAVA]
-        else if (this.currentType == TYPE_BEDROCK) currentItem = '/' + item.path
-        if (currentItem.includes('/' + this.$route.params.section + '/')) {
-          tempArray.push({
-            title: currentItem.substring(currentItem.lastIndexOf('/') + 1, currentItem.lastIndexOf('.')).replace(/(.{3})/g,"$1\xAD"),
-            path: 'https://raw.githubusercontent.com/Compliance-Resource-Pack/' + this.currentRepository + '/' + this.currentBranch + currentItem,
-            artist: await this.getArtists(item)
-          })
-        }
-      }
-      this.imageArray = tempArray
+      this.imageArray = await this.search('/' + this.$route.params.section + '/')
+    },
+    async showResults() {
+      this.$router.push('/' + this.$route.params.version + '/search')
+      this.imageArray = await this.search(this.searchString)
+      this.searchString = ''
     },
     fullscreen(path) {
       this.$refs.modal_img.src = path

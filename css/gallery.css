@@ -10,6 +10,14 @@
   background-color: #23276b;
   border-color: #1d2164;
 }
+#SearchBar {
+	background: #fff url(../image/css/search.svg) no-repeat;
+	background-position: 10px 12px;
+	width: 100%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 0
+}
 .gallery-item {
 	position: relative;
 	height: 0;
