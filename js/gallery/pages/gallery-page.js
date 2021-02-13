@@ -1,7 +1,7 @@
 const VERSION_JAVA = '1.17'
 const BRANCH_JAVA = 'Jappa-1.17'
 const BRANCH_BEDROCK = 'Jappa-1.16.200'
-const ERROR_IMG = './image/gallery/not-found.png'
+window.ERROR_IMG = './image/gallery/not-found.png'
 
 const TYPE_JAVA = 'java'
 const TYPE_BEDROCK = 'bedrock'
@@ -22,10 +22,6 @@ window.cache = {}
 
 window.capitalize = string => {
   return string.charAt(0).toUpperCase() + string.slice(1)
-}
-
-window.imageError = e => {
-  e.src = ERROR_IMG
 }
 
 window.getJson = async url => {
@@ -63,7 +59,7 @@ export default {
     <div ref="modal" class="modal" v-on:click="closeModal()">
       <span class="close">×</span>
       <div class="modal-content">
-        <img ref="modal_img" class="mb-2" onerror="window.imageError(this)">
+        <img ref="modal_img" class="mb-2" onerror="this.src = ERROR_IMG">
         <h1 ref="modal_h1"></h1>
         <p ref="modal_p"></p>
       </div>
@@ -77,7 +73,7 @@ export default {
     </div>
     <div class="res-grid-6">
       <div v-for="item in imageArray" :key="item.path" class="gallery-item">
-        <img :src="item.path" loading="lazy" :alt="item.title" onerror="window.imageError(this)">
+        <img :src="item.path" loading="lazy" :alt="item.title" onerror="this.src = ERROR_IMG">
         <a :href="item.path" download class="fas fa-download"></a>
         <i class="fas fa-expand" v-on:click="fullscreen(item)"></i>
         <div class="info">
