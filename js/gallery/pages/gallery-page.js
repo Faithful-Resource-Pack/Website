@@ -12,10 +12,10 @@ const ARTIST_UNKNOWN = 'Unknown'
 
 window.data = {
   versions: ['java-32x', 'java-64x', 'bedrock-32x', 'bedrock-64x', 'dungeons', 'education'],
-  javaSections: ['block', 'effect', 'entity', 'environment', 'font', 'gui', 'item', 'map', 'misc', 'mob_effect', 'models', 'painting', 'particle'],
-  bedrockSections: ['blocks', 'effect', 'entity', 'environment', 'gui', 'items', 'map', 'misc', 'models', 'painting', 'particle', 'ui'],
-  dungeonsSections: ['blocks', 'components', 'decor', 'effects', 'entity', 'equipment', 'items', 'materials', 'others', 'ui'],
-  educationSections: []
+  javaSections: ['all', 'block', 'effect', 'entity', 'environment', 'font', 'gui', 'item', 'map', 'misc', 'mob_effect', 'models', 'painting', 'particle'],
+  bedrockSections: ['all', 'blocks', 'effect', 'entity', 'environment', 'gui', 'items', 'map', 'misc', 'models', 'painting', 'particle', 'ui'],
+  dungeonsSections: ['all', 'blocks', 'components', 'decor', 'effects', 'entity', 'equipment', 'items', 'materials', 'others', 'ui'],
+  educationSections: ['all']
 }
 
 window.cache = {}
@@ -50,8 +50,8 @@ export default {
     }
   },
   watch:{
-    $route(to) {
-      if(!to.path.includes('search')) this.update()
+    $route() {
+      this.update()
     }
   },
   template:
@@ -137,7 +137,8 @@ export default {
       }
       return readableArtists.length < 1 ? ARTIST_UNKNOWN : readableArtists.join(', ')
     },
-    async search(string) {
+    async filter(string) {
+      if (string.toLowerCase().includes('all')) string = ''
       let textures = await window.getJson('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/contributors/' + this.currentType + '.json')
       let tempArray = []
       let currentItem = null
@@ -145,7 +146,10 @@ export default {
         if (this.currentType == TYPE_JAVA) currentItem = '/assets/' + item.version[VERSION_JAVA]
         else if (this.currentType == TYPE_BEDROCK) currentItem = '/' + item.path
         let artists = await this.getArtists(item)
-        if (currentItem.toLowerCase().includes(string.toLowerCase()) || artists.toLowerCase().includes(string.toLowerCase())) {
+        if (
+          (currentItem.toLowerCase().includes(this.searchString.toLowerCase()) || artists.toLowerCase().includes(this.searchString.toLowerCase()))
+          && currentItem.toLowerCase().includes(string.toLowerCase())
+        ) {
           tempArray.push({
             title: currentItem.substring(currentItem.lastIndexOf('/') + 1, currentItem.lastIndexOf('.')).replace(/(.{3})/g,"$1\xAD"),
             path: 'https://raw.githubusercontent.com/Compliance-Resource-Pack/' + this.currentRepository + '/' + this.currentBranch + currentItem,
@@ -164,14 +168,13 @@ export default {
           path: window.ERROR_IMG,
           artist: 'Please contact us!'
         }]
+        return
       }
 
-      this.imageArray = await this.search('/' + this.$route.params.section + '/')
+      this.imageArray = await this.filter('/' + this.$route.params.section + '/')
     },
-    async showResults() {
-      this.$router.push('/' + this.$route.params.version + '/search')
-      this.imageArray = await this.search(this.searchString)
-      this.searchString = ''
+    showResults() {
+      if (this.$route.params.section != 'all') this.$router.push('/' + this.$route.params.version + '/all')
     },
     fullscreen(item) {
       this.$refs.modal_img.src = item.path
