@@ -34,16 +34,16 @@ table {
 	width: 100%
 }
 th:nth-child(1) {
-	width: 42%
+	width: 32%
 }
 th:nth-child(2) {
-	width: 24%
+	width: 20%
 }
 th:nth-child(3) {
 	width: 28%
 }
 th:nth-child(4) {
-	width: 6%
+	width: 20%
 }
 
 @media screen and (max-width: 480px) {
