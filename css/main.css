@@ -1442,10 +1442,13 @@ img.fancy-card-2x {
   max-width: 100%;
   flex: 1;
 }
-.res-grid-4, .res-grid-3, .res-grid-2 {
+.res-grid-6, .res-grid-4, .res-grid-3, .res-grid-2 {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(1, 1fr);
+}
+.res-grid-6 {
+  grid-template-columns: repeat(2, 2fr);
 }
 /** NAVBAR **/
 .dropdown-menu-center {
@@ -1644,6 +1647,9 @@ img.fancy-card-2x {
   .res-grid-4, .res-grid-3 {
     grid-template-columns: repeat(3, 3fr);
   }
+  .res-grid-6 {
+    grid-template-columns: repeat(4, 4fr);
+  }
 }
 @media (min-width: 992px) {
   .container {
@@ -1651,6 +1657,9 @@ img.fancy-card-2x {
   }
   .res-grid-4 {
     grid-template-columns: repeat(4, 4fr);
+  }
+  .res-grid-6 {
+    grid-template-columns: repeat(6, 6fr);
   }
 }
 @media (min-width: 1200px) {
