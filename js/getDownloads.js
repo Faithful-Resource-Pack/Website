@@ -33,6 +33,7 @@ async function run() {
 	await getDownloads('c32-j-alpha-1', 8, DEFAULT_ORG, 'Compliance-Java-32x')
 
 	await getDownloads('c32-b-beta-1', 1, DEFAULT_ORG, 'Compliance-Java-32x')
+	await getDownloads('c64-b-alpha-2', 1, DEFAULT_ORG, 'Compliance-Bedrock-64x')
 
 	await getDownloads('c32-d-beta-1', 1, DUNGEONS_ORG, 'Resource-Pack')
 }
