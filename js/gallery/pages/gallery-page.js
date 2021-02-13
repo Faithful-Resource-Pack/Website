@@ -10,8 +10,6 @@ const TYPE_EDUACTION = 'education'
 
 const ARTIST_UNKNOWN = 'Unknown'
 
-window.profileCache = null
-
 window.data = {
   versions: ['java-32x', 'java-64x', 'bedrock-32x', 'bedrock-64x', 'dungeons', 'education'],
   javaSections: ['block', 'effect', 'entity', 'environment', 'font', 'gui', 'item', 'map', 'misc', 'mob_effect', 'models', 'painting', 'particle'],
@@ -20,12 +18,26 @@ window.data = {
   educationSections: []
 }
 
+window.cache = {}
+
 window.capitalize = string => {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-window.imageError = (e) => {
+window.imageError = e => {
   e.src = ERROR_IMG
+}
+
+window.getJson = async url => {
+  if (window.cache.hasOwnProperty(url)) {
+    console.log('cached: ' + url)
+    return window.cache[url]
+  } else {
+    console.log('new: ' + url)
+    let data = await fetch(url).then(response => response.json())
+    window.cache[url] = data
+    return data
+  }
 }
 
 export default {
@@ -117,13 +129,7 @@ export default {
     async getArtists(object) {
       let readableArtists = []
       if (object[this.currentTypeObject].hasOwnProperty('author')) {
-        let profiles = null
-        if (window.profileCache == null) {
-          profiles = await fetch('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/profiles.json').then(response => response.json())
-          window.profileCache = profiles
-        } else {
-          profiles = window.profileCache
-        }
+        let profiles = await window.getJson('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/profiles.json')
         object[this.currentTypeObject].author.forEach(item => {
           for (const profile of profiles) {
             if (item === profile.id) {
@@ -136,17 +142,18 @@ export default {
       return readableArtists.length < 1 ? ARTIST_UNKNOWN : readableArtists.join(', ')
     },
     async search(string) {
-      let textures = await fetch('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/contributors/' + this.currentType + '.json').then(response => response.json())
+      let textures = await window.getJson('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/contributors/' + this.currentType + '.json')
       let tempArray = []
       let currentItem = null
       for (const item of textures) {
         if (this.currentType == TYPE_JAVA) currentItem = '/assets/' + item.version[VERSION_JAVA]
         else if (this.currentType == TYPE_BEDROCK) currentItem = '/' + item.path
-        if (currentItem.toLowerCase().includes(string.toLowerCase())) {
+        let artists = await this.getArtists(item)
+        if (currentItem.toLowerCase().includes(string.toLowerCase()) || artists.toLowerCase().includes(string.toLowerCase())) {
           tempArray.push({
             title: currentItem.substring(currentItem.lastIndexOf('/') + 1, currentItem.lastIndexOf('.')).replace(/(.{3})/g,"$1\xAD"),
             path: 'https://raw.githubusercontent.com/Compliance-Resource-Pack/' + this.currentRepository + '/' + this.currentBranch + currentItem,
-            artist: await this.getArtists(item)
+            artist: artists
           })
         }
       }
@@ -156,13 +163,11 @@ export default {
       this.loadType()
 
       if (this.currentType == TYPE_DUNGEONS || this.currentType == TYPE_EDUACTION) {
-        this.imageArray = [
-          {
-            title: 'Missing Config File!',
-            path: window.ERROR_IMG,
-            artist: 'Please contact us!'
-          }
-        ]
+        this.imageArray = [{
+          title: 'Missing Config File!',
+          path: window.ERROR_IMG,
+          artist: 'Please contact us!'
+        }]
       }
 
       this.imageArray = await this.search('/' + this.$route.params.section + '/')
