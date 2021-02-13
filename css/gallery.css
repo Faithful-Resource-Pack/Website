@@ -85,10 +85,16 @@
 .gallery-item:hover > .info > p.secondary {
 	color: rgba(255, 255, 255, .7);
 }
-img.modal-content {
-  width: auto;
-  height: 70%;
+.modal-content > * {
+  text-align: center;
+  color: #fff;
+}
+.modal-content > img {
+  display: block;
+  width: 70%;
+  height: auto;
   max-height: 70vh;
   max-width: 70vw;
+  margin: auto;
   object-fit: contain;
 }

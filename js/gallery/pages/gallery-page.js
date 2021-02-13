@@ -1,7 +1,7 @@
 const VERSION_JAVA = '1.17'
 const BRANCH_JAVA = 'Jappa-1.17'
 const BRANCH_BEDROCK = 'Jappa-1.16.200'
-window.ERROR_IMG = './image/gallery/not-found.png'
+const ERROR_IMG = './image/gallery/not-found.png'
 
 const TYPE_JAVA = 'java'
 const TYPE_BEDROCK = 'bedrock'
@@ -22,6 +22,10 @@ window.data = {
 
 window.capitalize = string => {
   return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
+window.imageError = (e) => {
+  e.src = ERROR_IMG
 }
 
 export default {
@@ -46,7 +50,11 @@ export default {
   `<div>
     <div ref="modal" class="modal" v-on:click="closeModal()">
       <span class="close">×</span>
-      <img ref="modal_img" class="modal-content">
+      <div class="modal-content">
+        <img ref="modal_img" class="mb-2" onerror="window.imageError(this)">
+        <h1 ref="modal_h1"></h1>
+        <p ref="modal_p"></p>
+      </div>
     </div>
     <div class="mb-4">
       <router-link v-for="item in window.data.versions" :key="item" class="btn btn-dark mr-1 mb-2" :to="'/' + item + '/' + $route.params.section">{{ window.capitalize(item) }}</router-link>
@@ -57,9 +65,9 @@ export default {
     </div>
     <div class="res-grid-6">
       <div v-for="item in imageArray" :key="item.path" class="gallery-item">
-        <img :src="item.path" loading="lazy" :alt="item.title" onerror="this.src = window.ERROR_IMG">
+        <img :src="item.path" loading="lazy" :alt="item.title" onerror="window.imageError(this)">
         <a :href="item.path" download class="fas fa-download"></a>
-        <i class="fas fa-expand" v-on:click="fullscreen(item.path)"></i>
+        <i class="fas fa-expand" v-on:click="fullscreen(item)"></i>
         <div class="info">
           <p>{{ item.title }}</p>
           <p class="secondary">{{ item.artist }}</p>
@@ -164,8 +172,10 @@ export default {
       this.imageArray = await this.search(this.searchString)
       this.searchString = ''
     },
-    fullscreen(path) {
-      this.$refs.modal_img.src = path
+    fullscreen(item) {
+      this.$refs.modal_img.src = item.path
+      this.$refs.modal_h1.innerHTML = item.title
+      this.$refs.modal_p.innerHTML = item.artist
       this.$refs.modal.style.display = 'block'
     },
     closeModal() {
