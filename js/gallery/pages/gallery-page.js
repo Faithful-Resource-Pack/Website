@@ -91,11 +91,11 @@ export default {
         this.currentSections = window.data.javaSections
         if (tempVersion.includes('64')) {
           this.currentTypeObject = 'c64'
-          this.currentRepository = 'Resource-Pack-64x'
+          this.currentRepository = 'Compliance-Java-64x'
         }
         else {
           this.currentTypeObject = 'c32'
-          this.currentRepository = 'Resource-Pack-32x'
+          this.currentRepository = 'Compliance-Java-32x'
         }
         this.currentBranch = BRANCH_JAVA
       } else if (tempVersion.includes(TYPE_BEDROCK)) {
