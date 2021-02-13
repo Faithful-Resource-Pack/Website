@@ -41,19 +41,17 @@
 }
 .gallery-item > .fas {
 	position: absolute;
-	display: block;
+	display: none;
 	margin: var(--border-radius-1x);
 	padding: var(--border-radius-1x);
 	background: rgba(0, 0, 0, .5);
 	color: #fff;
 	border-radius: var(--border-radius-1x);
 	text-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
-	opacity: 0;
 	cursor: pointer;
-	transition: .3s all;
 }
 .gallery-item:hover > .fas {
-	opacity: 1;
+  display: block;
 }
 .fa-download {
 	bottom: 0;
