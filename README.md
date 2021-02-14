@@ -23,7 +23,7 @@ You can create a [fork](https://github.com/Compliance-Resource-Pack/Website/netw
 
 ### Installation process
 
-You need a two requirements before developing the website. First you need Ruby ([download page](https://www.ruby-lang.org/en/downloads/)). With Ruby you will need to install [Jekyll](https://jekyllrb.com/) by typing the following command in your favorite terminal:
+You need a two requirements before developing the website. First you need [Ruby](https://www.ruby-lang.org/en/downloads/). With Ruby you will need to install [Jekyll](https://jekyllrb.com/) by typing the following command in your favorite terminal:
 ```
 gem install bundler jekyll
 ```
@@ -35,11 +35,11 @@ bundle install
 
 Then you need to build the website with this command:
 ```
-jekyll build
+bundle exec jekyll build
 ```
 
 Eventually, in order to automatically rebuild the website if an existing file was updated, you can run:
 ```
-jekyll serve
+bundle exec jekyll serve
 ```
 After that you can enjoy your website on your local machine at the following address: http://127.0.0.1:4000/. Enjoy!
