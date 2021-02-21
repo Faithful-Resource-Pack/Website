@@ -24,7 +24,7 @@
 	padding-top: 100%;
 	color: #fff;
 	border-radius: var(--border-radius-2x);
-	box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+	box-shadow: var(--card-shadow);
 }
 .gallery-item:hover > * {
 	z-index: 3;
@@ -47,7 +47,7 @@
 	background: rgba(0, 0, 0, .5);
 	color: #fff;
 	border-radius: var(--border-radius-1x);
-	text-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+	text-shadow: var(--card-shadow);
 	cursor: pointer;
 }
 .gallery-item:hover > .fas {
@@ -72,7 +72,7 @@
 	padding: 3rem 1.5rem 1.5rem;
 	border-radius: var(--border-radius-2x);
 	background: #343a40;
-	box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+	box-shadow: var(--card-shadow);
 	z-index: 2;
 }
 .gallery-item:hover > .info > p {

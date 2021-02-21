@@ -2,7 +2,8 @@
 :root {
   --primary: #007bff;
   --border-radius-1x: 12px;
-  --border-radius-2x: 24px
+  --border-radius-2x: 24px;
+  --card-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23)
 }
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -1350,7 +1351,7 @@ img.fancy-card-2x {
 }
 .btn, .dropdown-menu, .fancy-card-1x, *.card, .fancy-card-2x {
 	overflow: hidden;
-	box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23)
+	box-shadow: var(--card-shadow)
 }
 .btn, .dropdown-menu, *.card *.card, .fancy-card-1x {
 	border-radius: var(--border-radius-1x)
@@ -1406,7 +1407,7 @@ img.fancy-card-2x {
   bottom: 0;
   margin: 8px;
 	color: rgba(255, 255, 255, .9);
-	text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	text-shadow: var(--card-shadow);
 	font-size: 1.5rem;
 	font-weight: bold
 }
@@ -1426,12 +1427,24 @@ img.fancy-card-2x {
 	line-height: 1.2
 }
 .banner {
-  margin: 16px;
   padding: 16px;
-  background: #f44336;
   color: #fff;
   text-align: center;
   border-radius: var(--border-radius-1x);
+  box-shadow: var(--card-shadow)
+}
+.banner a {
+  color: #fff;
+  font-weight: bold;
+}
+.banner a:hover {
+  text-decoration: underline;
+}
+.red.banner {
+  background: #f44336;
+}
+.purple.banner {
+  background: #7289DA;
 }
 .auto-flex {
   display: flex;
