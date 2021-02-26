@@ -1430,7 +1430,7 @@ img.fancy-card-2x {
   padding: 16px;
   color: #fff;
   text-align: center;
-  border-radius: var(--border-radius-1x);
+  border-radius: var(--border-radius-2x);
   box-shadow: var(--card-shadow)
 }
 .banner a {
@@ -1445,6 +1445,24 @@ img.fancy-card-2x {
 }
 .purple.banner {
   background: #7289DA;
+}
+.cookie.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #131313 url(../image/background/bg_light_background.png) repeat;
+  background-blend-mode: screen;
+  z-index: 5000;
+}
+.cookie-text {
+  float: left;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.f-right {
+  float: right;
 }
 .auto-flex {
   display: flex;
