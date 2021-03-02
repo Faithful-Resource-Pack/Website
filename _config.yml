@@ -13,3 +13,6 @@ defaults:
       path: "article"
     values:
       layout: "article"
+
+sass:
+  sourcemap: never
