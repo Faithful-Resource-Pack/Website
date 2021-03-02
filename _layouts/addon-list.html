@@ -21,8 +21,7 @@ layout: default
 <div id="favorites" class="card card-body res-grid-4 mb-5" style="display: none"></div>
 
 <div class="card card-body res-grid-3">
-  {% assign sorted_pages = site.pages | sort: "title" %}
-  {% for sub_page in sorted_pages %}
+  {% for sub_page in site.pages %}
     {% if sub_page.path contains page.search_string %}
 
       <div class="card">
