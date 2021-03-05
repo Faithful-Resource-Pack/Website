@@ -3,7 +3,7 @@ title: Ruby Add-on
 permalink: /article/compliance32xAddons/Ruby%20Addon
 comments: true
 comments-id: RubyAddon
-header-img: article/compliance32xAddons/Ruby Addon.png
+header-img: article/compliance32xAddons/Ruby Addon.jpg
 
 long_text: Makes emeralds look like rubies.
 

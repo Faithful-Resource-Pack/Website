@@ -3,7 +3,7 @@ title: Round Targets
 permalink: /article/compliance32xAddons/Round%20Targets
 comments: true
 comments-id: RoundTargets
-header-img: article/compliance32xAddons/Round Targets.png
+header-img: article/compliance32xAddons/Round Targets.jpg
 
 long_text: An addon that makes the target blocks round.
 

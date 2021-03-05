@@ -3,7 +3,7 @@ title: Festive
 permalink: /article/compliance32xAddons/Festive
 comments: true
 comments-id: Festive
-header-img: article/compliance32xAddons/Festive.png
+header-img: article/compliance32xAddons/Festive.jpg
 
 carousel-img: article/carousel/Festive/
 show_carousel_name: false
