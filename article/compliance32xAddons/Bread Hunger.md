@@ -6,6 +6,7 @@ comments-id: BreadHunger
 header-img: article/compliance32xAddons/Bread Hunger.jpg
 
 long_text: Replaces the drumsticks in the hunger bar with bread.
+           v1.1 more compliant texture
 
 authors:
   - BellPepperBrian
