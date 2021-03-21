@@ -1,5 +1,8 @@
 /* eslint new-cap: 0 */
-/* global MinecraftUtils, axios, idb, JSZip */
+/* global MinecraftUtils, axios, idb, JSZip, fetch */
+
+const PATH_PACK_PNG = '/image/icon/compliance_mods_256.png'
+const MCMETA_DESCRIPTION = 'Compliance Mods'
 
 const ResourcePackCreator = { // eslint-disable-line no-unused-vars
   packVersions: Array[String],
@@ -7,6 +10,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
   databasePromise: undefined,
   storeName: undefined,
   zipOptions: undefined,
+  fullPackageVersion: undefined,
 
   modPackageVersion: function (modSelection) {
     // you can pack mods if they have the same package version number
@@ -58,6 +62,8 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     if (result === -1) {
       throw new Error('No package versions file')
     }
+
+    this.fullPackageVersion = result
 
     return result
   },
@@ -206,21 +212,34 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
             if (success === modSelection.length) {
               logListener({
                 step: 2,
-                message: 'Zipping...'
+                message: 'Inserting pack.png and pack.mcmeta into final zip'
               })
 
-              finalZip.generateAsync(this.zipOptions, metadata => {
+              fetch(PATH_PACK_PNG).then(packImage => {
+                return packImage.blob()
+              }).then(packImageBlob => {
+                finalZip.file('pack.png', packImageBlob, { blob: true })
+
+                finalZip.file('pack.mcmeta', `{"pack": {"pack_format": ${this.fullPackageVersion}, "description": "${MCMETA_DESCRIPTION}"}}`)
+
                 logListener({
                   step: 2,
-                  message: metadata.percent.toFixed(2)
+                  message: 'Zipping...'
                 })
-              }).then(blob => {
-                logListener({
-                  step: 3,
-                  message: blob
+
+                finalZip.generateAsync(this.zipOptions, metadata => {
+                  logListener({
+                    step: 2,
+                    message: metadata.percent.toFixed(2)
+                  })
+                }).then(blob => {
+                  logListener({
+                    step: 3,
+                    message: blob
+                  })
+                }, err => {
+                  console.error(err)
                 })
-              }, err => {
-                console.error(err)
               })
             }
           }).catch(err => {
