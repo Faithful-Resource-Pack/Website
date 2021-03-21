@@ -171,7 +171,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     },
     modToRepoURL: function (mod) {
       if (mod.orgRepo) {
-        return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
+        return 'https://github.com/Compliance-Mods/' + this.modToRepoName(mod)
       } else {
         return mod.extRepo
       }
