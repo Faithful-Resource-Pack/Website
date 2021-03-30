@@ -1,4 +1,4 @@
-/* global Element */
+/* global Element, Event, tns */
 
 Element.prototype.siblingElements = function () {
   if (this.parentNode === null) return []
@@ -119,7 +119,7 @@ document.querySelectorAll('[data-ride="carousel"]').forEach(item => {
   }
 })
 
-//default layout
+// default layout
 tns({
   container: '#topCarousel',
   center: true,
@@ -135,7 +135,7 @@ tns({
   }
 })
 
-//fix non centered icons
+// fix non centered icons
 document.addEventListener('DOMContentLoaded', () => {
   window.dispatchEvent(new Event('resize'))
 
