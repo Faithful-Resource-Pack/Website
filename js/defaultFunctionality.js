@@ -119,12 +119,6 @@ document.querySelectorAll('[data-ride="carousel"]').forEach(item => {
   }
 })
 
-// set sticky menu
-const topNavbar = document.getElementById('topNavbar')
-window.addEventListener('scroll', e => {
-  topNavbar.classList.toggle('fixed', window.scrollY > topNavbar.offsetTop)
-}, true)
-
 //default layout
 tns({
   container: '#topCarousel',
@@ -142,4 +136,13 @@ tns({
 })
 
 //fix non centered icons
-document.addEventListener('DOMContentLoaded', () => { window.dispatchEvent(new Event('resize')) })
+document.addEventListener('DOMContentLoaded', () => {
+  window.dispatchEvent(new Event('resize'))
+
+  // set sticky menu
+  const topNavbar = document.getElementById('topNavbar')
+  const topCarousel = document.querySelector('[id^=topCarousel]')
+  window.addEventListener('scroll', () => {
+    topNavbar.classList.toggle('fixed', window.scrollY > (topCarousel.offsetTop + topCarousel.offsetHeight))
+  }, true)
+})
