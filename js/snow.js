@@ -7,7 +7,7 @@ if ((month == 0 || month == 11) && !matchMedia('(prefers-reduced-motion)').match
   // Custom CSS
   const snowCSS = document.createElement("link")
   snowCSS.rel = "stylesheet"
-  snowCSS.href = "/css/snow.min.css"
+  snowCSS.href = "/css/snow.css"
   snowCSS.type = "text/css"
   document.getElementsByTagName("head")[0].appendChild(snowCSS)
 

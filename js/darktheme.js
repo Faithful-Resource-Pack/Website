@@ -57,7 +57,7 @@ window.changeMod = change => {
 
   // update theme
   if (theme.currentTheme === 'dark' || (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)) {
-    css.href = '/css/dark.min.css'
+    css.href = '/css/dark.css'
   } else {
     css.href = ''
   }

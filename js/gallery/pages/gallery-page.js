@@ -62,7 +62,7 @@ export default {
 		}
 	},
 	template:
-	`<div>
+	`<div id="gallery">
 		<div ref="modal" class="modal" v-on:click="closeModal()">
 			<span class="close">×</span>
 			<div class="modal-content">

@@ -15,4 +15,6 @@ defaults:
       layout: "article"
 
 sass:
+  sass_dir: css
   sourcemap: never
+  style: compressed
