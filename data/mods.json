@@ -149,7 +149,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.4",
+      "1.16.5",
       "1.15.2",
       "1.14.4",
       "1.12.2"
@@ -163,7 +163,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.3",
+      "1.16.5",
       "1.15.2"
     ],
     "curse": "advancements-enlarger",
@@ -290,7 +290,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.3",
+      "1.16.5",
       "1.15.2",
       "1.14.4",
       "1.13.2",
@@ -516,7 +516,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.3",
+      "1.16.5",
       "1.15.2"
     ],
     "curse": "beenfo",
@@ -564,7 +564,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.3",
+      "1.16.5",
       "1.15.2"
     ],
     "curse": "better-enchanted-books",
@@ -1213,7 +1213,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.3",
+      "1.16.5",
       "1.15.2",
       "1.14.4",
       "1.13.2"
@@ -2136,7 +2136,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.4"
+      "1.16.5"
     ],
     "curse": "health-overlay-fabric",
     "orgRepo": "healthoverlay"
@@ -2476,7 +2476,7 @@
       "aliases": [ "Just Enough Items", "JEI" ]
     },
     "versions": [
-      "1.16.3",
+      "1.16.5",
       "1.15.2",
       "1.14.4",
       "1.13.2",
@@ -2830,7 +2830,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.3",
+      "1.16.5",
       "1.15.2"
     ],
     "curse": "mo-glass",
@@ -2842,7 +2842,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.3",
+      "1.16.5",
       "1.15.2",
       "1.14.4"
     ],
@@ -3129,7 +3129,7 @@
       "aliases": []
     },
     "versions": [
-      "1.16.3"
+      "1.16.5"
     ],
     "curse": "netherite-horse-armor",
     "orgRepo": "netheritehorsearmor"
