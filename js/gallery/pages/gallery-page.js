@@ -213,8 +213,8 @@ export default {
 
 			this.imageArray = await this.filter('/' + this.$route.params.section + '/')
 		},
-		showResults() {
-			if (this.$route.params.section != 'all') this.$router.push('/' + this.$route.params.version + '/all')
+		showResults: async function() {
+			this.imageArray = await this.filter('/' + this.$route.params.section + '/')
 		},/*
 		animate() {
 			for (const item of this.textures) {
