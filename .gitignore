@@ -5,3 +5,4 @@ _site/
 .jekyll-metadata
 debug.log
 .DS_Store
+_start.bat
