@@ -40,7 +40,7 @@ Vue.component('zip-options', {
       specialCompressionLabels: {
         0: 'No compression',
         1: 'Best speed',
-        7: 'Recommanded',
+        7: 'Recommended',
         9: 'Best compression'
       },
       archiveName: ''
