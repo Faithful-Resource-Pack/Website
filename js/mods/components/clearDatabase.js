@@ -26,7 +26,7 @@ Vue.component('clear-database', {
       }
 
       request.onerror = function (event) {
-        console.error('Erreur lors de la suppression de la base', event)
+        console.error('Error when clearing database', event)
       }
 
       request.onblocked = function (_event) {

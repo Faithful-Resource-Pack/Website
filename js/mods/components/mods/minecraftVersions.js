@@ -27,11 +27,9 @@ Vue.component('minecraft-versions', {
       })
     },
     elementsPerLine: function () {
-      if (!!this.$props.breakpoints.lg && !this.$props.breakpoints.md) { return this.$props.versions.length }
-
-      if (!!this.$props.breakpoints.md && !this.$props.breakpoints.sm) { return 6 }
-
-      if (!!this.$props.breakpoints.sm && !this.$props.breakpoints.xs) { return 3 }
+      if (!!this.$props.breakpoints.lg && !this.$props.breakpoints.md) return this.$props.versions.length
+      if (!!this.$props.breakpoints.md && !this.$props.breakpoints.sm) return 6
+      if (!!this.$props.breakpoints.sm && !this.$props.breakpoints.xs) return 3
 
       return 1
     },

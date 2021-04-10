@@ -117,7 +117,7 @@ Vue.component('local-download', {
       // terminate (or re-terminate old worker)
       if (this.currentWorker) this.currentWorker.terminate()
 
-      this.currentWorker = new Worker('/js/worker/downloadWorker.js')
+      this.currentWorker = new Worker('/js/mods/worker/downloadWorker.js')
 
       // listen to logs
       this.currentWorker.onmessage = function (e) {
