@@ -2,13 +2,17 @@
 ---
 
 /** LICENSE & COMMENTS POLICY **/
-.btn-flag {
-	margin-right: 10px;
-	margin-top: 10px;
-	min-width: 120px;
-	font-size-adjust: 0.5
+.flag {
+	text-align: justify;
+	vertical-align: middle;
+	padding: 0px;
+	padding-left: 15px;
 }
-.btn-flag > img {
-	width: 64px;
-	height: 42px
+.flag > img {
+	width: 32px;
+	height: 16px;
+}
+.dropdown-menu-right {
+	right: 0;
+	left: auto;
 }

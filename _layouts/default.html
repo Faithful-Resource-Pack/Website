@@ -41,7 +41,7 @@ layout: compress
 	</div>
 
 	<header>
-		<!-- carousel of other websites -->
+		<!-- carousel of other pages -->
 		<div class="no-js" id="topCarousel">
 			<div class="item">
 				<a href="{{ site.baseurl }}/#compliance-32x" title="Compliance">
@@ -189,6 +189,13 @@ layout: compress
 						</a>
 					</li>
 
+					<li class="nav-item">
+						<a class="nav-link" href="{{ site.baseurl }}/about">
+							<i style="margin-left: 5px" class="fas fa-question-circle"></i>
+							About
+						</a>
+					</li>
+
 				</ul>
 			</div>
 			<div>
@@ -228,7 +235,7 @@ layout: compress
 		<p>
 			Website made by and for the Compliance Community
 		</p>
-    <small>CompliPage-{{ site.time | date: "%Y-%m-%d-%H:%M" }}</small>
+    <small>CompliPage - {{ site.time | date: "%Y/%m/%d %H:%M" }}</small>
 	</footer>
 
 	<!--div class="cookie banner m-3">

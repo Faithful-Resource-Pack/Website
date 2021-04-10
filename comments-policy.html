@@ -5,63 +5,69 @@ permalink: /comments-policy
 ---
 
 <link rel="stylesheet" href="{{ site.baseurl }}/css/license.css">
-<div class="auto-flex mb-4">
-	<button class="btn btn-dark btn-flag disabled" onclick="Load('cn.html')">
-		<img src="{{ site.baseurl }}/image/flags/cn.png" height="34" alt="FlagCZ">
-		CN
+
+<div class="dropdown" align="right">
+	<button type="button" class="btn btn-dark btn-flag dropwdown-toggle" id="navbardrop" data-toggle="dropdown">
+		<i class="fas fa-globe"></i>
 	</button>
-	<button class="btn btn-dark btn-flag" onclick="Load('cz.html')">
-		<img src="{{ site.baseurl }}/image/flags/cz.png" height="34" alt="FlagCZ">
-		CZ
-	</button>
-	<button class="btn btn-dark btn-flag" onclick="Load('de.html')">
-		<img src="{{ site.baseurl }}/image/flags/de.png" height="34" alt="FlagCZ">
-		DE
-	</button>
-	<button class="btn btn-dark btn-flag" onclick="Load('en.html')">
-		<img src="{{ site.baseurl }}/image/flags/en.png" height="34" alt="FlagEN">
-		EN
-	</button>
-	<button class="btn btn-dark btn-flag disabled" onclick="Load('es.html')">
-		<img src="{{ site.baseurl }}/image/flags/es.png" height="34" alt="FlagES">
-		ES
-	</button>
-	<button class="btn btn-dark btn-flag" onclick="Load('fr.html')">
-		<img src="{{ site.baseurl }}/image/flags/fr.png" height="34" alt="FlagFR">
-		FR
-	</button>
-	<button class="btn btn-dark btn-flag disabled" onclick="Load('it.html')">
-		<img src="{{ site.baseurl }}/image/flags/it.png" height="34" alt="FlagIT">
-		IT
-	</button>
-	<button class="btn btn-dark btn-flag disabled" onclick="Load('pk.html')">
-		<img src="{{ site.baseurl }}/image/flags/pk.png" height="34" alt="FlagPK">
-		PK
-	</button>
-	<button class="btn btn-dark btn-flag" onclick="Load('pl.html')">
-		<img src="{{ site.baseurl }}/image/flags/pl.png" height="34" alt="FlagPL">
-		PL
-	</button>
-	<button class="btn btn-dark btn-flag" onclick="Load('pt.html')">
-		<img src="{{ site.baseurl }}/image/flags/pt.png" height="34" alt="FlagPT">
-		PT
-	</button>
-	<button class="btn btn-dark btn-flag" onclick="Load('ro.html')">
-		<img src="{{ site.baseurl }}/image/flags/ro.png" height="34" alt="FlagRO">
-		RO
-	</button>
-	<button class="btn btn-dark btn-flag" onclick="Load('ru.html')">
-		<img src="{{ site.baseurl }}/image/flags/ru.png" height="34" alt="FlagRU">
-		RU
-	</button>
-	<button class="btn btn-dark btn-flag disabled" onclick="Load('sk.html')">
-		<img src="{{ site.baseurl }}/image/flags/sk.png" height="34" alt="FlagSK">
-		SK
-	</button>
-	<button class="btn btn-dark btn-flag disabled" onclick="Load('tw.html')">
-		<img src="{{ site.baseurl }}/image/flags/tw.png" height="34" alt="FlagSK">
-		TW
-	</button>
+	<div class="dropdown-menu dropdown-menu-right">
+		<button class="flag dropdown-item disabled" onclick="Load('cn.html')">
+			<img src="{{ site.baseurl }}/image/flags/cn.png" height="34" alt="FlagCN">
+			CN
+		</button>
+		<button class="flag dropdown-item" onclick="Load('cz.html')">
+			<img src="{{ site.baseurl }}/image/flags/cz.png" height="34" alt="FlagCZ">
+			CZ
+		</button>
+		<button class="flag dropdown-item" onclick="Load('de.html')">
+			<img src="{{ site.baseurl }}/image/flags/de.png" height="34" alt="FlagCZ">
+			DE
+		</button>
+		<button class="flag dropdown-item" onclick="Load('en.html')">
+			<img src="{{ site.baseurl }}/image/flags/en.png" height="34" alt="FlagEN">
+			EN
+		</button>
+		<button class="flag dropdown-item disabled" onclick="Load('es.html')">
+			<img src="{{ site.baseurl }}/image/flags/es.png" height="34" alt="FlagES">
+			ES
+		</button>
+		<button class="flag dropdown-item" onclick="Load('fr.html')">
+			<img src="{{ site.baseurl }}/image/flags/fr.png" height="34" alt="FlagFR">
+			FR
+		</button>
+		<button class="flag dropdown-item disabled" onclick="Load('it.html')">
+			<img src="{{ site.baseurl }}/image/flags/it.png" height="34" alt="FlagIT">
+			IT
+		</button>
+		<button class="flag dropdown-item disabled" onclick="Load('pk.html')">
+			<img src="{{ site.baseurl }}/image/flags/pk.png" height="34" alt="FlagPK">
+			PK
+		</button>
+		<button class="flag dropdown-item" onclick="Load('pl.html')">
+			<img src="{{ site.baseurl }}/image/flags/pl.png" height="34" alt="FlagPL">
+			PL
+		</button>
+		<button class="flag dropdown-item" onclick="Load('pt.html')">
+			<img src="{{ site.baseurl }}/image/flags/pt.png" height="34" alt="FlagPT">
+			PT
+		</button>
+		<button class="flag dropdown-item" onclick="Load('ro.html')">
+			<img src="{{ site.baseurl }}/image/flags/ro.png" height="34" alt="FlagRO">
+			RO
+		</button>
+		<button class="flag dropdown-item" onclick="Load('ru.html')">
+			<img src="{{ site.baseurl }}/image/flags/ru.png" height="34" alt="FlagRU">
+			RU
+		</button>
+		<button class="flag dropdown-item disabled" onclick="Load('sk.html')">
+			<img src="{{ site.baseurl }}/image/flags/sk.png" height="34" alt="FlagSK">
+			SK
+		</button>
+		<button class="flag dropdown-item disabled" onclick="Load('tw.html')">
+			<img src="{{ site.baseurl }}/image/flags/tw.png" height="34" alt="FlagSK">
+			TW
+		</button>
+	</div>
 </div>
 
 <div id="output"></div>
@@ -74,7 +80,7 @@ permalink: /comments-policy
 	Load('en.html'); // load english by default
 
 	function Load(file){
-		fetch('{{site.baseurl}}/comments-policy/' + file)
+		fetch('{{site.baseurl}}/translated/comments-policy/' + file)
 		  .then(response => {
 		    return response.text()
 		  })
