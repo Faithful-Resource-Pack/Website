@@ -22,7 +22,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   mounted: function () {
-    getJSON('data/mods.json', (err, json) => {
+    getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/mods/mods.json', (err, json) => {
       if (err) {
         console.error(err)
         return

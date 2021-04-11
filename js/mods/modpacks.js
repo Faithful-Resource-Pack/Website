@@ -36,7 +36,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       const that = this
       const relativePath = codeName + '/' + modpackVersion
 
-      getRequest('/data/modpack/' + relativePath + '/modlist.html', {}, function (html, err) {
+      getRequest('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/modpack/' + relativePath + '/modlist.html', {}, function (html, err) {
         if (err) {
           console.error(relativePath, err)
           return
@@ -57,13 +57,13 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
           modpackVersion: modpackVersion,
           minecraftVersion: minecraftVersion,
           blackList: blackList,
-          coverSource: 'data/modpack/' + relativePath + '/../pack.png',
+          coverSource: 'https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/modpack/' + relativePath + '/../pack.png',
           modList: modNames
         })
       })
     },
     downloadAllModpacks: function () {
-      getJSON('data/mods.json', (err, json) => {
+      getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/mods/mods.json', (err, json) => {
         if (err) {
           console.error(err)
           return
@@ -73,7 +73,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         this.mods = json
       })
 
-      getJSON('/data/modpack/modpackList.json', (err, json) => {
+      getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/modpack/modpackList.json', (err, json) => {
         if (err) {
           console.error(err)
           return
@@ -222,7 +222,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   created: function () {
-    getJSON('data/versions.json', (err, json) => {
+    getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/mods/versions.json', (err, json) => {
       if (err) {
         console.error(err)
         return
