@@ -1,15 +1,19 @@
-const VERSION_JAVA = '1.17'
-const VERSION_BEDROCK = '1.16.210'
-const BRANCH_JAVA = 'Jappa-1.17'
-const BRANCH_BEDROCK = 'Jappa-1.16.210'
-window.ERROR_IMG = './image/gallery/not-found.png'
+const VERSION_JAVA     = '1.17'
+const VERSION_BEDROCK  = '1.16.210'
+const VERSION_DUNGEONS = 'master'
 
-const TYPE_JAVA = 'java'
-const TYPE_BEDROCK = 'bedrock'
-const TYPE_DUNGEONS = 'dungeons'
-const TYPE_EDUCATION = 'education'
+const BRANCH_JAVA      = 'Jappa-1.17'
+const BRANCH_BEDROCK   = 'Jappa-1.16.210'
+const BRANCH_DUNGEONS  = 'master'
+
+const TYPE_JAVA        = 'java'
+const TYPE_BEDROCK     = 'bedrock'
+const TYPE_DUNGEONS    = 'dungeons'
+const TYPE_EDUCATION   = 'education'
 
 const ARTIST_UNKNOWN = 'Unknown'
+
+window.ERROR_IMG = './image/gallery/not-found.png'
 
 import { MCAnimation } from '../MCAnimation.js'
 
@@ -46,14 +50,15 @@ export default {
 	name: 'gallery-page',
 	data() {
 		return {
-			textures:          null,
-			currentSections:   [],
-			imageArray:        [],
-			currentType:       '',
-			currentTypeObject: '',
-			currentRepository: '',
-			currentBranch:     '',
-			searchString:      ''
+			textures:            null,
+			currentSections:     [],
+			imageArray:          [],
+			currentType:         '',
+			currentTypeObject:   '',
+			currentOrganization: '',
+			currentRepository:   '',
+			currentBranch:       '',
+			searchString:        ''
 		}
 	},
 	watch:{
@@ -72,9 +77,9 @@ export default {
 				</div>
 				<div class="tooltip">
 					<h1 ref="modal_h1"></h1>
-					<p ref="modal_author"></p>
-					<p ref="modal_date"></p>
-					<p ref="modal_animated"></p>
+					<p class="full" ref="modal_author"></p>
+					<p class="full" ref="modal_date"></p>
+					<p class="full" ref="modal_animated"></p>
 				</div>
 			</div>
 		</div>
@@ -107,8 +112,8 @@ export default {
 		loadType() {
 			let tempVersion = this.$route.params.version.toLowerCase()
 			if (tempVersion.includes(TYPE_JAVA)) {
-				this.currentType = TYPE_JAVA
-				this.currentSections = window.data.javaSections
+				this.currentType         = TYPE_JAVA
+				this.currentSections     = window.data.javaSections
 				if (tempVersion.includes('64')) {
 					this.currentTypeObject = 'c64'
 					this.currentRepository = 'Compliance-Java-64x'
@@ -117,10 +122,13 @@ export default {
 					this.currentTypeObject = 'c32'
 					this.currentRepository = 'Compliance-Java-32x'
 				}
+
+				this.currentOrganization = 'Compliance-Resource-Pack'
 				this.currentBranch = BRANCH_JAVA
-			} else if (tempVersion.includes(TYPE_BEDROCK)) {
-				this.currentType = TYPE_BEDROCK
-				this.currentSections = window.data.bedrockSections
+			}
+			else if (tempVersion.includes(TYPE_BEDROCK)) {
+				this.currentType         = TYPE_BEDROCK
+				this.currentSections     = window.data.bedrockSections
 				if (tempVersion.includes('64')) {
 					this.currentTypeObject = 'c64'
 					this.currentRepository = 'Compliance-Bedrock-64x'
@@ -129,13 +137,20 @@ export default {
 					this.currentTypeObject = 'c32'
 					this.currentRepository = 'Compliance-Bedrock-32x'
 				}
-				this.currentBranch = BRANCH_BEDROCK
-			} else if (tempVersion.includes(TYPE_DUNGEONS)) {
-				this.currentType = TYPE_DUNGEONS
-				this.currentSections = window.data.dungeonsSections
-				this.currentRepository = null
-				this.currentBranch = null
-			} else if (tempVersion.includes(TYPE_EDUCATION)) {
+
+				this.currentOrganization = 'Compliance-Resource-Pack'
+				this.currentBranch       = BRANCH_BEDROCK
+			} 
+			else if (tempVersion.includes(TYPE_DUNGEONS)) {
+				this.currentType         = TYPE_DUNGEONS
+				this.currentSections     = window.data.dungeonsSections
+				this.currentTypeObject   = 'c32' // c64 doesn't exist yet and could be easily implemented like that
+
+				this.currentOrganization = 'Compliance-Dungeons'
+				this.currentRepository   = 'Resource-Pack'
+				this.currentBranch       = BRANCH_DUNGEONS
+			} 
+			else if (tempVersion.includes(TYPE_EDUCATION)) {
 				this.currentType = TYPE_EDUCATION
 				this.currentSections = window.data.educationSections
 				this.currentRepository = 'Education-Edition'
@@ -164,6 +179,19 @@ export default {
 			let tempArray   = []
 			let currentItem = null
 			let date        = null
+
+			if (this.currentType == TYPE_DUNGEONS) {
+				if (string == '/blocks/')     string = '/Block%20Textures/'
+				if (string == '/components/') string = '/Content/Components/'
+				if (string == '/decor/')      string = '/Content/Decor/'
+				if (string == '/effects/')    string = '/Content/Effects/'
+				if (string == '/entity/')     string = '/Content/Actors/Characters/'
+				if (string == '/equipment/')  string = '/Content/Actors/Equipment/'
+				if (string == '/items/')      string = '/Content/Actors/Items/'
+				if (string == '/materials/')  string = '/Content/Materials/'
+				if (string == '/others/')     string = '/Content/' // REGEX to specify: Cues or Meshes or Models or SaveIcons or Textures or	indicator.png
+				if (string == '/ui/')         string = '/Content/UI/'
+			}
 		
 			for (const item of this.textures) {
 
@@ -179,13 +207,28 @@ export default {
 					else date = item.c64.date || 'Unknown'
 				}
 
+				else if (this.currentType == TYPE_DUNGEONS) {
+					currentItem = '/' + item.version[VERSION_DUNGEONS]
+					/*if (this.currentTypeObject == 'c32')*/ date = item.c32.date || 'Unknown'
+					/*else date = item.c64.date || 'Unknown' // for C64x dungeons ()*/
+				}
+
 				let artists = await this.getArtists(item)
 
-				if ((currentItem.toLowerCase().includes(this.searchString.toLowerCase()) || artists.toLowerCase().includes(this.searchString.toLowerCase())) && currentItem.toLowerCase().includes(string.toLowerCase())) {
+
+				if (
+						(
+							currentItem.toLowerCase().includes(this.searchString.toLowerCase()) 
+							|| 
+							artists.toLowerCase().includes(this.searchString.toLowerCase())
+						) 
+					&& 
+						currentItem.toLowerCase().includes(string.toLowerCase())
+					) {
 					tempArray.push({
 						title:    currentItem.substring(currentItem.lastIndexOf('/') + 1, currentItem.lastIndexOf('.')).replace(/(.{3})/g,"$1\xAD"),
 						name:     currentItem.substring(currentItem.lastIndexOf('/') + 1, currentItem.lastIndexOf('.')),
-						path:     'https://raw.githubusercontent.com/Compliance-Resource-Pack/' + this.currentRepository + '/' + this.currentBranch + currentItem,
+						path:     'https://raw.githubusercontent.com/' + this.currentOrganization + '/' + this.currentRepository + '/' + this.currentBranch + currentItem,
 						artist:   artists,
 						date:     date,
 						animated: item.animated,
@@ -198,7 +241,7 @@ export default {
 		async update() {
 			this.loadType()
 
-			if (this.currentType == TYPE_DUNGEONS || this.currentType == TYPE_EDUCATION) {
+			if (this.currentType == TYPE_EDUCATION) {
 				this.imageArray = [{
 					title: 'Missing Config File!',
 					name: undefined,

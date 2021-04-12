@@ -152,7 +152,13 @@
 .gallery-item .popover-bottom > p.full {
 	color: #ccc;
 	font-weight: 50;
-	margin-bottom: 0.2rem;
+	margin-bottom: .2rem;
+}
+
+.tooltip > p.full {
+	color: #ccc;
+	font-weight: 50;
+	margin-bottom: .2rem;
 }
 
 .modal-content > * {
