@@ -18,11 +18,65 @@ window.ERROR_IMG = './image/gallery/not-found.png'
 import { MCAnimation } from '../MCAnimation.js'
 
 window.data = {
-	versions: ['java-32x', 'java-64x', 'bedrock-32x', 'bedrock-64x', 'dungeons', 'education'],
-	javaSections: ['all', 'block', 'effect', 'entity', 'environment', 'font', 'gui', 'item', 'map', 'misc', 'mob_effect', 'models', 'painting', 'particle'],
-	bedrockSections: ['all', 'blocks', 'effect', 'entity', 'environment', 'gui', 'items', 'map', 'misc', 'models', 'painting', 'particle', 'ui'],
-	dungeonsSections: ['all', 'blocks', 'components', 'decor', 'effects', 'entity', 'equipment', 'items', 'materials', 'others', 'ui'],
-	educationSections: ['all']
+	versions: [
+		{ name: 'java-32x' }, 
+		{ name: 'java-64x' },
+		{ name: 'bedrock-32x' },
+		{ name: 'bedrock-64x' },
+		{ name: 'dungeons' },
+		{ name: 'education', disabled: true }
+	],
+	javaSections: [
+		{ name: 'all', },
+		{ name: 'block', },
+		{ name: 'effect', },
+		{ name: 'entity', },
+		{ name: 'environment', },
+		{ name: 'font', },
+		{ name: 'gui', },
+		{ name: 'item', },
+		{ name: 'map', },
+		{ name: 'misc', },
+		{ name: 'mob_effect', },
+		{ name: 'models' },
+		{ name: 'painting', },
+		{ name: 'particle' }
+	],
+	bedrockSections: [
+		{ name: 'all' },
+		{ name: 'blocks' },
+		{ name: 'effect' },
+		{ name: 'entity' },
+		{ name: 'environment' },
+		{ name: 'gui' },
+		{ name: 'items' },
+		{ name: 'map' },
+		{ name: 'misc' },
+		{ name: 'models' },
+		{ name: 'painting' },
+		{ name: 'particle' },
+		{ name: 'ui' }
+	],
+	dungeonsSections: [
+		{ name: 'all', disabled: true },
+		{ name: 'actors' },
+		{ name: 'block' },
+		{ name: 'components' },
+		{ name: 'cues' },
+		{ name: 'decor' },
+		{ name: 'dlc3' }, 
+		{ name: 'dlc4' }, 
+		{ name: 'effects' },
+		{ name: 'materials' },
+		{ name: 'meshes' },
+		{ name: 'patches' },
+		{ name: 'save_icons' },
+		{ name: 'textures' },
+		{ name: 'ui' }
+	],
+	educationSections: [
+		{ name: 'all', disabled: true }
+	]
 }
 
 window.cache = {}
@@ -30,6 +84,9 @@ window.cache = {}
 window.capitalize = string => {
 	if (string == 'gui') return 'GUI'
 	if (string == 'ui') return 'UI'
+	if (string == 'dlc3') return 'DLC 3'
+	if (string == 'dlc4') return 'DLC 4'
+	if (string == 'save_icons') return 'Save Icons'
 	if (string == 'mob_effect') return 'Mob Effect'
 	else return string.charAt(0).toUpperCase() + string.slice(1)
 }
@@ -84,11 +141,11 @@ export default {
 			</div>
 		</div>
 		<div class="mb-4">
-			<router-link v-for="item in window.data.versions" :key="item" class="btn btn-dark mr-1 mb-2" :to="'/' + item + '/' + $route.params.section">{{ window.capitalize(item) }}</router-link>
+			<router-link v-for="item in window.data.versions" :key="item" class="btn btn-dark mr-1 mb-2" :class="(item.disabled)?'disabled':''" :to="'/' + item.name + '/' + $route.params.section">{{ window.capitalize(item.name) }}</router-link>
 		</div>
 		<input id="SearchBar" type="text" placeholder="Search for a texture name or author..." title="Type something" class="fancy-card-1x mb-4" v-model="searchString" v-on:keyup.enter="showResults()">
 		<div class="mb-4">
-			<router-link v-for="item in currentSections" :key="item" class="btn btn-dark mr-1 mb-2" :to="'/' + $route.params.version + '/' + item">{{ window.capitalize(item) }}</router-link>
+			<router-link v-for="item in currentSections" :key="item" class="btn btn-dark mr-1 mb-2" :class="(item.disabled)?'disabled':''" :to="'/' + $route.params.version + '/' + item.name">{{ window.capitalize(item.name) }}</router-link>
 		</div>
 		<div ref="grid" class="res-grid-6">
 			<div v-for="item in imageArray" :key="item.path" class="gallery-item" >
@@ -174,25 +231,28 @@ export default {
 		},
 		async filter(string) {
 			if (string.toLowerCase().includes('all')) string = ''
-		
-			this.textures   = await window.getJson('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/contributors/' + this.currentType + '.json')
+			var subfolder = '';
+			if (this.currentType == TYPE_DUNGEONS) {
+				if (string == '/actors/')     { subfolder = '/actors' }
+				if (string == '/block/')      { subfolder = '/block_textures'; string = '/Block%20Textures/' }
+				if (string == '/components/') { subfolder = '/components' }
+				if (string == '/cues/')       { subfolder = '/cues' }
+				if (string == '/decor/')      { subfolder = '/decor' }
+				if (string == '/dlc3/')       { subfolder = '/dlc3'; string = '/Content_DLC3/' }
+				if (string == '/dlc4/')       { subfolder = '/dlc4'; string = '/Content_DLC4/' }
+				if (string == '/effects/')    { subfolder = '/effects' }
+				if (string == '/materials/')  { subfolder = '/materials' }
+				if (string == '/meshes/')     { subfolder = '/meshes' }
+				if (string == '/patches/')    { subfolder = '/patches'; string = '/Patch' } // could be '/Patch1/' or '/Patch2/'
+				if (string == '/save_icons/') { subfolder = '/save_icons'; string = '/SaveIcons/' }
+				if (string == '/textures/')   { subfolder = '/textures' }
+				if (string == '/ui/')         { subfolder = '/ui' }
+			}
+			this.textures = await window.getJson('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/contributors/' + this.currentType + subfolder + '.json')
 			let tempArray   = []
 			let currentItem = null
 			let date        = null
 
-			if (this.currentType == TYPE_DUNGEONS) {
-				if (string == '/blocks/')     string = '/Block%20Textures/'
-				if (string == '/components/') string = '/Content/Components/'
-				if (string == '/decor/')      string = '/Content/Decor/'
-				if (string == '/effects/')    string = '/Content/Effects/'
-				if (string == '/entity/')     string = '/Content/Actors/Characters/'
-				if (string == '/equipment/')  string = '/Content/Actors/Equipment/'
-				if (string == '/items/')      string = '/Content/Actors/Items/'
-				if (string == '/materials/')  string = '/Content/Materials/'
-				if (string == '/others/')     string = '/Content/' // REGEX to specify: Cues or Meshes or Models or SaveIcons or Textures or	indicator.png
-				if (string == '/ui/')         string = '/Content/UI/'
-			}
-		
 			for (const item of this.textures) {
 
 				if (this.currentType == TYPE_JAVA) {
@@ -209,12 +269,12 @@ export default {
 
 				else if (this.currentType == TYPE_DUNGEONS) {
 					currentItem = '/' + item.version[VERSION_DUNGEONS]
+					if (currentItem.startsWith('/Dungeons')) console.log(currentItem);
 					/*if (this.currentTypeObject == 'c32')*/ date = item.c32.date || 'Unknown'
 					/*else date = item.c64.date || 'Unknown' // for C64x dungeons ()*/
 				}
 
 				let artists = await this.getArtists(item)
-
 
 				if (
 						(
