@@ -7,7 +7,7 @@ window.ERROR_IMG = './image/gallery/not-found.png'
 const TYPE_JAVA = 'java'
 const TYPE_BEDROCK = 'bedrock'
 const TYPE_DUNGEONS = 'dungeons'
-const TYPE_EDUACTION = 'education'
+const TYPE_EDUCATION = 'education'
 
 const ARTIST_UNKNOWN = 'Unknown'
 
@@ -24,15 +24,15 @@ window.data = {
 window.cache = {}
 
 window.capitalize = string => {
-	if (string == 'gui') return 'GUI';
-	if (string == 'ui') return 'UI';
-	if (string == 'mob_effect') return 'Mob Effect';
+	if (string == 'gui') return 'GUI'
+	if (string == 'ui') return 'UI'
+	if (string == 'mob_effect') return 'Mob Effect'
 	else return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 window.getJson = async url => {
 	if (window.cache.hasOwnProperty(url)) {
-		console.log('cached: ' + url)
+		//console.log('cached: ' + url)
 		return window.cache[url]
 	} else {
 		console.log('new: ' + url)
@@ -70,8 +70,12 @@ export default {
 					<img class="modal-img" ref="modal_img" onerror="this.src = ERROR_IMG">
 					<div class="modal-animated" ref="modal_canvas" ></div>
 				</div>
-				<h1 ref="modal_h1"></h1>
-				<p ref="modal_p"></p>
+				<div class="tooltip">
+					<h1 ref="modal_h1"></h1>
+					<p ref="modal_author"></p>
+					<p ref="modal_date"></p>
+					<p ref="modal_animated"></p>
+				</div>
 			</div>
 		</div>
 		<div class="mb-4">
@@ -84,21 +88,17 @@ export default {
 		<div ref="grid" class="res-grid-6">
 			<div v-for="item in imageArray" :key="item.path" class="gallery-item" >
 
-				<div v-if="item.animated" :ref="item.name">
-					<img loading="lazy" onerror="this.src = ERROR_IMG" :src="item.path" :alt="item.title" />
-				</div>
-				<div v-else>
-					<img loading="lazy" onerror="this.src = ERROR_IMG" :src="item.path" :alt="item.title" />
-				</div>
+				<div><img loading="lazy" onerror="this.src = ERROR_IMG" :src="item.path" :alt="item.title" /></div>
 
 				<a :href="item.path" download class="fas fa-download"></a>
 				<i class="fas fa-expand" v-on:click="fullscreen(item)"></i>
 
 				<div class="popover">
 					<h5>{{ item.title }}</h5>
-					<p class="secondary"><i class="fas fa-user"></i> {{ item.artist }}</p>
-					<p class="secondary"><i class="far fa-calendar"></i> {{ item.date }}</p>
-					<p class="secondary" v-if="item.animated"><i class="fas fa-file-code"></i> Animated</p>
+					<p class="empty"><i class="fas fa-user"></i> {{ item.artist }}</p>
+					<p class="empty"><i class="far fa-calendar"></i> {{ item.date }}</p>
+					<!--<p class="empty"><i class="fas fa-vector-square"></i> {{ item.size }}</p>-->
+					<p class="full" v-if="item.animated"><i class="fas fa-file-code"></i> Animated</p>
 				</div>
 			</div>
 		</div>
@@ -135,8 +135,8 @@ export default {
 				this.currentSections = window.data.dungeonsSections
 				this.currentRepository = null
 				this.currentBranch = null
-			} else if (tempVersion.includes(TYPE_EDUACTION)) {
-				this.currentType = TYPE_EDUACTION
+			} else if (tempVersion.includes(TYPE_EDUCATION)) {
+				this.currentType = TYPE_EDUCATION
 				this.currentSections = window.data.educationSections
 				this.currentRepository = 'Education-Edition'
 				this.currentBranch = null
@@ -179,7 +179,7 @@ export default {
 					else date = item.c64.date || 'Unknown'
 				}
 
-				let artists  = await this.getArtists(item)
+				let artists = await this.getArtists(item)
 
 				if ((currentItem.toLowerCase().includes(this.searchString.toLowerCase()) || artists.toLowerCase().includes(this.searchString.toLowerCase())) && currentItem.toLowerCase().includes(string.toLowerCase())) {
 					tempArray.push({
@@ -198,7 +198,7 @@ export default {
 		async update() {
 			this.loadType()
 
-			if (this.currentType == TYPE_DUNGEONS || this.currentType == TYPE_EDUACTION) {
+			if (this.currentType == TYPE_DUNGEONS || this.currentType == TYPE_EDUCATION) {
 				this.imageArray = [{
 					title: 'Missing Config File!',
 					name: undefined,
@@ -212,19 +212,22 @@ export default {
 			}
 
 			this.imageArray = await this.filter('/' + this.$route.params.section + '/')
+			this.setNonEmpty()
+			this.popoverOffset()
 		},
 		showResults: async function() {
 			this.imageArray = await this.filter('/' + this.$route.params.section + '/')
-		},/*
-		animate() {
-			for (const item of this.textures) {
-				if (item.animated == true) console.log(item.name)
-			}
-		},*/
+			this.setNonEmpty()
+			this.popoverOffset()
+		},
 		fullscreen(item) {
 			this.$refs.modal_img.src       = item.path
 			this.$refs.modal_h1.innerHTML  = item.title
-			this.$refs.modal_p.innerHTML   = '<i class="fas fa-user"></i> ' + item.artist + '<br><i class="far fa-calendar"></i> ' + item.date
+			this.$refs.modal_author.innerHTML   = '<i class="fas fa-user"></i> ' + item.artist
+			this.$refs.modal_date.innerHTML     = '<i class="far fa-calendar"></i> ' + item.date
+			if (item.animated) this.$refs.modal_animated.innerHTML = '<i class="fas fa-file-code"></i> Animated'
+			else this.$refs.modal_animated.innerHTML = ''
+			
 			this.$refs.modal.style.display = 'block'
 
 			if (item.animated) {
@@ -240,11 +243,53 @@ export default {
 			} else this.$refs.modal_canvas.style.display = 'none'
 		},
 		closeModal() {
-			this.$refs.modal.style.display        = 'none'
+			this.$refs.modal.style.display    = 'none'
 			this.$refs.modal_canvas.innerHTML = ''
+		},
+		setNonEmpty() {
+			Vue.nextTick(function () {
+				document.querySelectorAll(".empty").forEach(el => {
+					const html = el.innerHTML
+					if (!html.includes("Unknown")) {
+						el.classList.remove("empty")
+						el.classList.add("full")
+					}
+				})
+			})
+		},
+		popoverOffset() {
+			Vue.nextTick(function () {
+				document.querySelectorAll(".popover").forEach(el => {
+					const pos = el.offsetLeft + el.offsetParent.offsetLeft + el.offsetWidth
+					var ratio = 3/4 * window.innerWidth
+					
+					if (window.innerWidth < 1000) ratio = 8/10 * window.innerWidth
+					if (window.innerWidth <  835) ratio = 9/10 * window.innerWidth
+
+					if (window.innerWidth > 770) {
+						if (pos > ratio) {
+							el.classList.add("popover-inverted")
+							el.classList.remove("popover")
+						}
+						else {
+							el.classList.add("popover")
+							el.classList.remove("popover-inverted")
+						}
+					}
+					else {
+						el.classList.add("popover-bottom")
+						el.classList.remove("popover")
+						el.classList.remove("popover-inverted")
+					}
+
+				})
+
+				//console.log(window.innerWidth)
+			})
 		}
 	},
 	mounted() {
 		this.update()
+		window.addEventListener('resize', this.popoverOffset)
 	}
 }

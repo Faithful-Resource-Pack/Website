@@ -14,10 +14,6 @@
 	border-color: #1d2164;
 }
 
-.foreground {
-	overflow-x: hidden;
-}
-
 #SearchBar {
 	background: #fff url(../image/css/search.svg) no-repeat;
 	background-position: 10px 12px;
@@ -44,7 +40,7 @@
 	height: 100%;
 	width: 100%;
 	background: #000 url(../image/gallery/transparent.png) repeat;
-	border-radius: var(--border-radius-1x);
+	border-radius: var(--border-radius-0x);
 	object-fit: contain;
 }
 .gallery-item > .fas {
@@ -70,38 +66,91 @@
 	right: 0;
 }
 
-.popover {
+.tooltip {
+	margin-top: 10px;
+	padding: .7rem;
+}
+
+.tooltip > p {
+	margin-bottom: .25rem;
+}
+
+.popover, 
+.popover-inverted, 
+.popover-bottom {
 	visibility: hidden;
 	position: absolute;
 	opacity: 0;
-	border-radius: var(--border-radius-2x);
-	background: #131313 url(../image/background/bg_light_background.png) repeat;
+	background: rgba(16, 0, 16, .941);
 	box-shadow: var(--card-shadow);
-	padding: 0.7rem;
+	border-style: solid;
+	border-width: 2px;
+	border-image: linear-gradient(180deg, rgba(80,0,255,.314), rgba(40,0,127,.314)) 1;
+	padding: .7rem;
+}
+
+.popover {
+	top: 0;
 	width: 300px !important;
+	left: 80%;
 }
-.popover:before {
-	position: absolute;
-	z-index: -1;
-	content: "";
+
+.popover-inverted {
+	top: 0;
+	width: 300px !important;
+	right: 80%;
 }
-.gallery-item:hover .popover {
+
+.popover-bottom {
+	top: 80%;
+	width: 150px !important;
+}
+
+.gallery-item:hover .popover, 
+.gallery-item:hover .popover-inverted, 
+.gallery-item:hover .popover-bottom {
 	visibility: visible;
 	z-index: 2;
 	opacity: 1;
-	transform: translate(0, -8px);
-	transition: all 0.5s cubic-bezier(0.75, 0, 0, 1);
-	left: 0;
+	transition: all .5s cubic-bezier(.75, 0, 0, 1);
 }
-.gallery-item:hover .popover:hover {
+
+.gallery-item:hover .popover {
+	left: 105%;
+}
+
+.gallery-item:hover .popover-inverted {
+	right: 105%;
+}
+
+.gallery-item:hover .popover-bottom {
+	top: 105%;
+}
+
+.popover:before, .popover-inverted:before {
+	position: absolute;
+	z-index: -1;
+}
+.gallery-item:hover .popover:hover, 
+.gallery-item:hover .popover-inverted:hover, 
+.gallery-item:hover .popover-bottom:hover {
 	visibility: hidden;
 }
-.gallery-item .popover > h5 {
-	color: rgba(0, 255, 255, .9);
+.gallery-item .popover > h5, 
+.gallery-item .popover-inverted > h5, 
+.gallery-item .popover-bottom > h5 {
+	color: #fcfcfc;
 	font-weight: 150;
 }
-.gallery-item .popover > p.secondary {
-	color: rgba(255, 255, 255, .7);
+.gallery-item .popover > p.empty, 
+.gallery-item .popover-inverted > p.empty, 
+.gallery-item .popover-bottom > p.empty {
+	display: none;
+}
+.gallery-item .popover > p.full, 
+.gallery-item .popover-inverted > p.full, 
+.gallery-item .popover-bottom > p.full {
+	color: #ccc;
 	font-weight: 50;
 	margin-bottom: 0.2rem;
 }
