@@ -44,9 +44,10 @@ async function run() {
 	await getDownloads('c32-b-beta-2', 5, DEFAULT_ORG, 'Compliance-Bedrock-32x')
 	await getDownloads('c32-b-beta-1', 6, DEFAULT_ORG, 'Compliance-Java-32x')
 
-	await getDownloads('c64-b-alpha-4', 1, DEFAULT_ORG, 'Compliance-Bedrock-64x')
-	await getDownloads('c64-b-alpha-3', 2, DEFAULT_ORG, 'Compliance-Bedrock-64x')
-	await getDownloads('c64-b-alpha-2', 3, DEFAULT_ORG, 'Compliance-Bedrock-64x')
+	await getDownloads('c64-b-alpha-5', 1, DEFAULT_ORG, 'Compliance-Bedrock-64x')
+	await getDownloads('c64-b-alpha-4', 2, DEFAULT_ORG, 'Compliance-Bedrock-64x')
+	await getDownloads('c64-b-alpha-3', 3, DEFAULT_ORG, 'Compliance-Bedrock-64x')
+	await getDownloads('c64-b-alpha-2', 4, DEFAULT_ORG, 'Compliance-Bedrock-64x')
 
 	await getDownloads('c32-d-beta-1', 1, DUNGEONS_ORG, 'Resource-Pack')
 }
