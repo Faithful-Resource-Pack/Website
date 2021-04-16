@@ -1,0 +1,23 @@
+{
+  "github": [
+    {
+      "file": "Compliance Dungeons 32x",
+      "file_type": "GitHub",
+      "links": {
+        "github": "https://github.com/Compliance-Dungeons/Resource-Pack"
+      }
+    }
+  ],
+  "1.8.6.0": [
+    {
+      "file": "Compliance Dungeons 32x",
+      "file_type": "B",
+      "file_version": 1,
+      "date": "19/01/2021",
+      "size": "26.6 MB",
+      "links": {
+        "github": "https://github.com/Compliance-Dungeons/Resource-Pack/releases/download/B1/1-ComplianceDungeons_beta1.pak"
+      }
+    }
+  ]
+}

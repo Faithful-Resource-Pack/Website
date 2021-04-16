@@ -1,0 +1,73 @@
+{
+  "github": [
+    {
+      "file": "Compliance 32x",
+      "file_type": "GitHub",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-32x/"
+      }
+    }
+  ],
+  "1.16.220": [
+    {
+      "file": "Compliance 32x",
+      "file_type": "B",
+      "file_version": 6,
+      "size": "14 MB",
+      "date": "12/04/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-32x/releases/download/beta-6/Compliance-32x-Bedrock-Beta-6.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 32x",
+      "file_type": "B",
+      "file_version": 5,
+      "size": "14 MB",
+      "date": "27/03/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-32x/releases/download/beta-5/Compliance-32x-Bedrock-Beta-5.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 32x",
+      "file_type": "B",
+      "file_version": 4,
+      "size": "14 MB",
+      "date": "13/03/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-32x/releases/download/beta-4/Compliance-32x-Bedrock-Beta-4.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 32x",
+      "file_type": "B",
+      "file_version": 3,
+      "size": "13.9 MB",
+      "date": "26/02/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-32x/releases/download/beta-3/Compliance-32x-Bedrock-Beta-3.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 32x",
+      "file_type": "B",
+      "file_version": 2,
+      "size": "13.8 MB",
+      "date": "13/02/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-32x/releases/download/beta-2/Compliance-32x-Bedrock-Beta-2.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 32x",
+      "file_type": "B",
+      "file_version": 1,
+      "size": "14.3 MB",
+      "date": "30/01/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Resource-Pack-32x/releases/download/beta-1/Compliance-32x-Bedrock-Beta-1.mcpack"
+      }
+    }
+  ]
+}

@@ -1,7 +1,137 @@
 ---
 ---
 
+.collapsible, .content {
+	padding: .2rem;
+	color: var(--text-color);
+	border-radius: var(--border-radius-0x);
+
+	padding-left: .7rem;
+	padding-right: .7rem;
+}
+
+.collapsible:hover, .content:hover {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.content {
+	display: none;
+	max-height: 0;
+	overflow: hidden;
+	transition: 5 0.2s ease-out;
+}
+
+.outline {
+	background: #131313 url(../image/background/bg_light_background.png) repeat;
+	border-radius: var(--border-radius-0x);
+	padding: .7rem;
+	overflow-x: auto;
+	margin-bottom: 2rem;
+}
+
+th > p, td > p {
+	color: #ccc;
+	padding: .2rem;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+th {
+	text-align: center;
+	width: calc(40% / 3);
+}
+th > p {
+	font-size: 20px;
+}
+th.large {
+	text-align: left;
+	padding-left: .7rem;
+	width: 60%
+}
+td {
+	text-align: center;
+	vertical-align: middle;
+	width: calc(40px / 3);
+}
+td > p {
+	font-size: 18px;
+}
+td.small {
+	width: 30px;
+}
+td.large {
+	text-align: left;
+	width: 55%
+}
+td.before {
+	width: 5px
+}
+
+thead > tr {
+	padding: .2rem .7rem;
+	margin-bottom: .7rem;
+	background-color: #343A40;
+	border-radius: var(--border-radius-1x);
+	width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+span {
+	padding: .2rem .4rem;
+	border-radius: 3px;
+}
+
+.dl-btn {
+	color: #ccc;
+	margin: auto .2rem;
+	padding: .2rem .4rem;
+	border-radius: 3px;
+}
+.dl-btn:hover {
+	color: #eee;
+}
+
+.github {
+	background-color: rgb(255, 255, 255);
+	color: #111;
+}
+
+.latest {
+	background-color: rgb(255, 255, 255);
+	color: #111;
+}
+
+.blue {
+	background-color: rgb(60, 111, 221);
+	color: #fff;
+}
+
+.green {
+	background-color: rgb(80, 202, 24);
+	color: #111;
+}
+
+.yellow {
+	background-color: rgb(214, 160, 23);
+	color: #111;
+}
+
+.version {
+	background-color: rgb(192, 37, 68);
+	color: #fff;
+}
+
+.notfound {
+	background: #131313 url(../image/gallery/transparent.png) repeat;
+}
+
+
 /** DOWNLOAD TABLES **/
+/*
 .table {
 	background-color: #1c1c1c;
 	color: #ccc;
@@ -60,3 +190,4 @@ th:nth-child(4) {
 		display: none
 	}
 }
+*/

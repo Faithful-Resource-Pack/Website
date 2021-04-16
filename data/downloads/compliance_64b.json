@@ -1,0 +1,53 @@
+{
+  "github": [
+    {
+      "file": "Compliance 64x",
+      "file_type": "GitHub",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/"
+      }
+    }
+  ],
+  "1.16.220": [
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
+      "file_version": 5,
+      "size": "7.53 MB",
+      "date": "15/04/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/alpha-5/Compliance_64x_Bedrock_-_Alpha_5.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
+      "file_version": 4,
+      "size": "6.86 MB",
+      "date": "24/03/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/alpha-4/Compliance_64x_-_Alpha_4_-_Bedrock_Edition.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
+      "file_version": 3,
+      "size": "6.57 MB",
+      "date": "25/02/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/alpha-3/Compliance_64x_-_Bedrock_Alpha_3.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
+      "file_version": 2,
+      "size": "6.81 MB",
+      "date": "07/02/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/alpha-2/Compliance_64x_-_Bedrock_Alpha_2.mcpack"
+      }
+    }
+  ]
+}
