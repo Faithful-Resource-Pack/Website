@@ -125,7 +125,7 @@ export default {
 	},
 	template:
 	`<div id="gallery">
-		<div ref="modal" class="modal" v-on:click="closeModal()">
+		<div ref="modal" class="modal" v-on:click="closeModal($event)">
 			<span class="close">×</span>
 			<div class="modal-content">
 				<div class="modal-textures">
@@ -335,8 +335,8 @@ export default {
 
 			if (item.animated) {
 				var mca = undefined
-				console.log(item)
-				console.log(item.mcmeta)
+				// console.log(item)
+				// console.log(item.mcmeta)
 				if (item.mcmeta) {
 					mca = new MCAnimation(item.path, item.mcmeta)
 				} else mca = new MCAnimation(item.path)
@@ -345,9 +345,12 @@ export default {
 				this.$refs.modal_canvas.style.display = 'block'
 			} else this.$refs.modal_canvas.style.display = 'none'
 		},
-		closeModal() {
-			this.$refs.modal.style.display    = 'none'
-			this.$refs.modal_canvas.innerHTML = ''
+		closeModal(event) {
+			// only close if the user click in the span, the containing div of the img, or the cross
+			if (event.srcElement.innerHTML == '×' || event.srcElement.innerHTML.startsWith('<span') || event.srcElement.innerHTML.startsWith('<img') || event.srcElement.innerHTML.startsWith('<canvas')) {
+				this.$refs.modal.style.display    = 'none'
+				this.$refs.modal_canvas.innerHTML = ''
+			}
 		},
 		setNonEmpty() {
 			Vue.nextTick(function () {
