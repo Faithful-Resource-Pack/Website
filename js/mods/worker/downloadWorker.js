@@ -1,6 +1,6 @@
 /* global ResourcePackCreator, self, postMessage, importScripts */
 
-importScripts('../core/MinecraftUtils.js', '../core/ResourcePackCreator.js', '../axios.min.js', '../jszip.min.js', 'https://unpkg.com/idb@5/build/iife/index-min.js')
+importScripts('../core/MinecraftUtils.js', '../core/ResourcePackCreator.js', '../../axios.min.js', '../jszip.min.js', 'https://unpkg.com/idb@5/build/iife/index-min.js')
 
 const sendMessage = function (type, content) {
   postMessage({
