@@ -8,7 +8,7 @@
   {%- for version in changelog -%}
     {%- assign counter = counter | plus: 1 -%}
 
-    {% if counter < CHANGELOG_LIMIT %}
+    {%- if counter < CHANGELOG_LIMIT -%}
 
       <h1 class="card-title text-center">{{ version.first[0] }}</h1>
       {%- for type in version.first[1] -%}
@@ -36,7 +36,7 @@
   {%- for version in changelog -%}
     {%- assign counter = counter | plus: 1 -%}
 
-    {% if counter >= CHANGELOG_LIMIT %}
+    {%- if counter >= CHANGELOG_LIMIT -%}
 
       <h1 class="card-title text-center">{{ version.first[0] }}</h1>
       {%- for type in version.first[1] -%}

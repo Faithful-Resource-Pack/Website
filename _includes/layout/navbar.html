@@ -1,0 +1,68 @@
+<nav class="custom-navbar navbar navbar-expand-sm navbar-dark" id="topNavbar">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
+    aria-label="Menu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <img src="{{site.baseurl}}/image/home/logo.png" class="custom-navbar-brand" alt="Compliance">
+
+  <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ site.baseurl }}/">
+          <i style="margin-right: 5px" class="fas fa-home"></i>
+          Home
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ site.baseurl }}/downloads">
+          <i style="margin-right: 5px" class="fas fa-angle-double-down"></i>
+          Downloads
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+          <i style="margin-right: 5px" class="fas fa-plus"></i>
+          Add-Ons
+        </span>
+        <div class="dropdown-menu dropdown-menu-center">
+          <a class="dropdown-item" href="{{ site.baseurl }}/addons32x">Java 32x</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/addons64x">Java 64x</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/addons32xBedrock">Bedrock 32x</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/addons64xBedrock">Bedrock 64x</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/addonCollections">Collections</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ site.baseurl }}/tweaks">
+          <i style="margin-right: 5px" class="fas fa-cog"></i>
+          Tweaks
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+          <i style="margin-right: 5px" class="fas fa-wrench"></i>
+          Modding
+        </span>
+        <div class="dropdown-menu dropdown-menu-center">
+          <a class="dropdown-item" href="{{ site.baseurl }}/mods">Mods</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/modpacks">Modpacks</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/datapacks">Datapacks</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ site.baseurl }}/gallery">
+          <i style="margin-right: 5px" class="fas fa-image"></i>
+          Gallery
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

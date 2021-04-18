@@ -12,23 +12,23 @@ layout: default
 	<h3 class="display my-5 text-center">
 		By&nbsp;
 		{%- assign author_nb = page.authors.size -%}
-		{% for author in page.authors %}
+		{%- for author in page.authors -%}
 			{%- assign author_nb = author_nb | minus: 1 -%}
 
-			{% if author.first %}
+			{%- if author.first -%}
 				{%- if author_nb != 0 -%}
 					<a href="{{ author.first | shift }}">{{ author.first | pop }}</a>,
 				{%- else -%}
 					<a href="{{ author.first | shift }}">{{ author.first | pop }}</a>
 				{%- endif -%}
-			{% else %}
+			{%- else -%}
 				{%- if author_nb != 0 -%}
 					{{ author }},
 				{%- else -%}
 					{{ author }}
 				{%- endif -%}
-			{% endif %}
-		{% endfor %}
+			{%- endif -%}
+		{%- endfor -%}
 	</h3>
 {%- endif -%}
 

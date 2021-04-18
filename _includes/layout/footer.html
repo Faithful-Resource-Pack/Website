@@ -1,0 +1,76 @@
+<footer>
+  <!-- navigation bar -->
+  <nav class="custom-navbar navbar navbar-expand-sm navbar-dark mb-2" id="bottomNavbar">
+
+    <div>
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/license">
+            <i style="margin-right: 5px" class="fas fa-gavel"></i>
+            License
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/comments-policy">
+            <i style="margin-right: 5px" class="fas fa-scroll"></i>
+            Comments Policy
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/about">
+            <i style="margin-left: 5px" class="fas fa-question-circle"></i>
+            About
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/stats">
+            <i style="margin-right: 5px" class="fas fa-chart-bar"></i>
+            Statistics
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    <div>
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Compliance-Resource-Pack" rel="noopener">
+            <i style="margin-right: 5px" class="fab fa-github"></i>
+            GitHub
+          </a>
+        </li>
+
+        <li class="nav-item dropup">
+          <span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+            <i style="margin-right: 5px" class="fab fa-discord"></i>
+            Discord
+          </span>
+          <div class="dropdown-menu dropdown-menu-center">
+            <a class="dropdown-item" href="https://discord.gg/sN9YRQbBv7" rel="noopener">Compliance 32x</a>
+            <a class="dropdown-item" href="https://discord.com/invite/Tqtwtgh" rel="noopener">Compliance 64x</a>
+            <a class="dropdown-item" href="https://discord.gg/qVeDfZw" rel="noopener">Compliance Add-Ons</a>
+            <a class="dropdown-item" href="https://discord.com/invite/QF2CAX7" rel="noopener">Compliance Mods</a>
+            <a class="dropdown-item" href="https://discord.gg/6psYdRF" rel="noopener">Compliance Tweaks</a>
+            <a class="dropdown-item" href="https://discord.gg/eeVpygu" rel="noopener">Compliance Dungeons</a>
+          </div>
+        </li>
+
+        <li class="nav-item theme-switch-wrapper">
+          <btn id="DarkMode" onclick="changeMod(true)" class="nav-link">
+            <i style="margin-right: 5px" class="fas fa-adjust"></i> Auto Theme
+          </btn>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+  <p>
+    Website made by and for the Compliance Community
+  </p>
+  <small>CompliPage - {{ site.time | date: "%Y/%m/%d %H:%M" }}</small>
+</footer>
