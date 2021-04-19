@@ -4,6 +4,10 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en">
 
+<script>
+	window.location.replace('{{ page.discord }}');
+</script>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,10 +26,6 @@ layout: compress
   <meta http-equiv="Refresh" content="0; url={{ page.discord }}">
   <title>Discord - {{ page.title }}</title>
 </head>
-
-<script>
-  window.location.replace('{{ page.discord }}');
-</script>
 
 <body style="background-color: black; color: white">
   <p>If the redirection failed, follow <a href="{{ page.discord }}">this link</a>.</p>

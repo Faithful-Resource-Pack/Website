@@ -295,7 +295,7 @@ hr {
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
-@media (min-width: 680px) {
+@media (min-width: 576px) {
   .navbar-expand-sm {
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -1294,6 +1294,7 @@ footer {
 	text-align: center
 }
 header {
+  min-height: 256px;
   padding-bottom: 0.5rem;
 }
 footer, footer p {
