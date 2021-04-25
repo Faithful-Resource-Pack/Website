@@ -1365,10 +1365,10 @@ img.fancy-card-2x {
 	box-shadow: var(--card-shadow)
 }
 .btn, .dropdown-menu, *.card *.card, .fancy-card-1x {
-	border-radius: var(--border-radius-1x)
+	border-radius: var(--border-radius-0x)
 }
 *.card, .fancy-card-2x {
-	border-radius: var(--border-radius-2x)
+	border-radius: var(--border-radius-0x)
 }
 .card-body > :first-child {
 	margin-top: 0
@@ -1384,7 +1384,7 @@ img.fancy-card-2x {
 	color: rgba(255, 255, 255, .9)
 }
 .card-img-top {
-	border-radius: var(--border-radius-2x);
+	border-radius: var(--border-radius-0x);
 	cursor: pointer;
 	color: #000
 }
@@ -1441,7 +1441,7 @@ img.fancy-card-2x {
   padding: 16px;
   color: #fff;
   text-align: center;
-  border-radius: var(--border-radius-2x);
+  border-radius: var(--border-radius-0x);
   box-shadow: var(--card-shadow)
 }
 .banner a {
@@ -1575,21 +1575,21 @@ img.fancy-card-2x {
 /** CUSTOM SCROLLBAR **/
 ::-webkit-scrollbar{
 	width: 16px;
-  background: #0E0E0E
+	background: #F1F1F1
 }
 ::-webkit-scrollbar-button{
 	height: 16px
 }
 ::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb{
-	background: #3E3E3E;
-	border: 2px solid #0E0E0E;
-  border-radius: var(--border-radius-1x)
+	background: #C1C1C1;
+	border: 2px solid #F1F1F1;
+	border-radius: var(--border-radius-1x)
 }
 ::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover{
-	background: #575757
+	background: #A8A8A8
 }
 ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
-	background: #878787
+	background: #787878
 }
 /* NAVBAR */
 @media (min-width: 800px) {

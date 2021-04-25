@@ -28,7 +28,7 @@ input[type=checkbox], input[type=radio], label {
 }
 
 input[type=radio] + label {
-	border-radius: var(--border-radius-2x);
+	border-radius: var(--border-radius-0x);
 	border: 1px solid rgba(255, 255, 255, .7);
 	padding: 2px 8px
 }
@@ -94,7 +94,7 @@ input[type=radio]:checked + label {
 .customModal .customModalContent {
 	background: #232323;
 	color: rgba(255, 255, 255, .9);
-	border-radius: var(--border-radius-2x);
+	border-radius: var(--border-radius-0x);
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 600px;
 	max-width: 100%;
@@ -240,7 +240,7 @@ input[type=radio]:checked + label {
 	height: 65px;
 	background: center/contain url('../image/icon/compliance_mods_transparent.png') no-repeat;
 	image-rendering: pixelated;
-	border-radius: var(--border-radius-1x);
+	border-radius: var(--border-radius-0x);
 	flex: none
 }
 .selected-mod .mod-img-overlay {

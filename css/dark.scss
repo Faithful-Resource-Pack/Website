@@ -46,3 +46,18 @@ label, input {
 .advice {
 	color: rgba(255, 255, 255, .7);
 }
+
+/** CUSTOM SCROLLBAR **/
+::-webkit-scrollbar{
+	background: #0E0E0E;
+}
+::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb{
+	background: #3E3E3E;
+	border: 2px solid #0E0E0E;
+}
+::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover{
+	background: #575757
+}
+::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
+	background: #878787
+}
