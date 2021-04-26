@@ -60,7 +60,7 @@ const v = new Vue({
               <template v-for="(item, keyA) in getDownloads(key, j)">
                 <tr class="collapsible" v-on:click="toggleContent($event)">
                   <td v-if="item[1]" class="before">➕</td>
-                  <td v-else class="before"></td>
+                  <td v-else class="before-empty"></td>
 
                   <td class="large">
                     <p>
@@ -84,33 +84,28 @@ const v = new Vue({
                   </td>
 
                   <td class="small" v-if="item[0].links.github" :colspan="item[0].links.curse ? 1 : 2">
-                    <p>
-                      <template v-if="item[0].links.github">
-                        <a class="dl-btn" :href="item[0].links.github"><i class="fab fa-github"></i></a>
-                        <template v-if="item[0].file_type != 'GitHub'">
-                          <br>
-                          {{ getGitHubDownload(item[0], 0, key, j) }}
-                        </template>
-                        <template v-else>
-                          <br>
-                          GitHub
-                        </template>
+                    <a v-if="item[0].links.github" class="btn btn-dark btn-dl" :href="item[0].links.github">
+                      <i style="margin-right: 4px" class="fab fa-github"></i>
+                      <template v-if="item[0].file_type != 'GitHub'">
+                        {{ getGitHubDownload(item[0], 0, key, j) }}
                       </template>
-                    </p>
+                      <template v-else>
+                        GitHub
+                      </template>
+                    </a>
                   </td>
 
                   <td class="small" v-if="item[0].links.curse" :colspan="item[0].links.github ? 1 : 2">
-                    <p>
-                      <a class="dl-btn" :href="item[0].links.curse"><i class="fas fa-fire"></i></a>
-                      <br>
+                    <a v-if="item[0].links.curse" class="btn btn-dark btn-dl" :href="item[0].links.curse">
+                      <i style="margin-right: 4px" class="fas fa-fire"></i>
                       {{ getCurseDownload() }}
-                    </p>
+                    </a>
                   </td>
 
                 </tr>
 
                 <tr class="content" v-for="(subItem, keyB) in item" v-if="keyB > 0">
-                  <td class="before"></td>
+                  <td class="before-empty"></td>
 
                   <td class="large">
                     <p>
@@ -133,21 +128,17 @@ const v = new Vue({
                   </td>
 
                   <td class="small" v-if="subItem.links.github" :colspan="subItem.links.curse ? 1 : 2">
-                    <p>
-                      <template v-if="subItem.links.github">
-                        <a class="dl-btn" :href="subItem.links.github"><i class="fab fa-github"></i></a>
-                        <br>
-                        {{ getGitHubDownload(subItem, keyB, key, j) }}
-                      </template>
-                    </p>
+                    <a v-if="subItem.links.github" class="btn btn-dark btn-dl" :href="subItem.links.github">
+                      <i style="margin-right: 4px" class="fab fa-github"></i>
+                      {{ getGitHubDownload(subItem, keyB, key, j) }}
+                    </a>
                   </td>
 
                   <td class="small" v-if="subItem.links.curse" :colspan="subItem.links.github ? 1 : 2">
-                    <p>
-                      <a class="dl-btn" :href="subItem.links.curse"><i class="fas fa-fire"></a>
-                      <br>
+                    <a v-if="subItem.links.curse" class="btn btn-dark btn-dl" :href="subItem.links.curse">
+                      <i style="margin-right: 4px" class="fas fa-fire"></i>
                       {{ getCurseDownload() }}
-                    </p>
+                    </a>
                   </td>
                 </tr>
               </template>
@@ -176,9 +167,9 @@ const v = new Vue({
       const div = event.currentTarget
       div.classList.toggle("active")
       var divContent = div.nextElementSibling
-      
-      // detect if the user clicked on a <i></i> (which is the download button)
-      if (event.srcElement.innerHTML != "") {
+
+      // detect if the user clicked on a <a></a> with a <i></i> inside (which is the download button)
+      if (!event.srcElement.innerHTML.startsWith("<i") && !event.srcElement.innerHTML == "") {
         while (divContent) {
           // break if the while loop goes to the next collapsible el
           if (divContent.classList != 'content') break
@@ -219,7 +210,7 @@ const v = new Vue({
         release = data.github.length - item.github_version
       }
 
-      if (!data.github[release]) return '.'
+      if (!data.github[release]) return 'GitHub'
 
       // get download from all assets, (in case a file has been reuploaded under the same github tag)
       data.github[release]["assets"].forEach(asset => {

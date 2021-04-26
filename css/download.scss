@@ -46,25 +46,29 @@ th > p {
 th.large {
 	text-align: left;
 	padding-left: .7rem;
-	width: 60%
+	width: 50%
 }
 td {
 	text-align: center;
 	vertical-align: middle;
-	width: calc(40px / 3);
+	width: calc(50% / 3);
 }
 td > p {
 	font-size: 18px;
 }
 td.small {
-	width: 30px;
+	width: calc(50% / 6);
 }
 td.large {
 	text-align: left;
-	width: 55%
+	width: 45%
 }
 td.before {
-	width: 5px
+	cursor: pointer;
+	width: 5%
+}
+td.before-empty {
+	width: 5%
 }
 
 thead > tr {
@@ -85,14 +89,13 @@ span {
 	border-radius: 3px;
 }
 
-.dl-btn {
-	color: #ccc;
-	margin: auto .2rem;
-	padding: .2rem .4rem;
-	border-radius: 3px;
+.btn-dl {
+	padding: 0.1rem 0.4rem;
+	width: 90px;
 }
-.dl-btn:hover {
-	color: #eee;
+
+.btn-dl > i {
+	font-size: small;
 }
 
 .github {
