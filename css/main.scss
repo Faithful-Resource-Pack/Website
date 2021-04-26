@@ -1574,15 +1574,16 @@ img.fancy-card-2x {
 }
 /** CUSTOM SCROLLBAR **/
 ::-webkit-scrollbar{
-	width: 16px;
+	width: 8px;
 	background: #F1F1F1
 }
 ::-webkit-scrollbar-button{
-	height: 16px
+	height: 8px
 }
+
 ::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb{
 	background: #C1C1C1;
-	border: 2px solid #F1F1F1;
+	border: 1px solid #F1F1F1;
 }
 ::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover{
 	background: #A8A8A8
