@@ -12,6 +12,16 @@
     {
       "file": "Compliance 64x",
       "file_type": "A",
+      "file_version": 6,
+      "size": "7.31 MB",
+      "date": "28/04/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/alpha-6/Compliance_64x_-_Parity_Update.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
       "file_version": 5,
       "size": "7.53 MB",
       "date": "15/04/2021",

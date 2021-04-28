@@ -12,6 +12,15 @@
     {
       "file": "Compliance 64x",
       "file_type": "A",
+      "file_version": 6,
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Java-64x/releases/download/alpha-6/Compliance_64x_-_Parity_Update.zip",
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-64x/files/3291993"
+      }
+    },
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
       "file_version": 5,
       "github_version": 2,
       "links": {
