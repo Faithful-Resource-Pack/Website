@@ -3,6 +3,7 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+.vscode/
 debug.log
 .DS_Store
 _start.bat
