@@ -249,8 +249,14 @@ input[type=radio]:checked + label {
 	border-radius: var(--border-radius-1x);
 	background: rgba(0, 123, 255, 0.64) center/75% url('../image/css/checked.svg') no-repeat
 }
-.mod-checkbox, .mod-radio {
-	display: none
+.mod-checkbox {
+	display: none;
+}
+label.mod-radio {
+	margin-right: .25rem;
+}
+.mod-radio {
+	vertical-align: middle;
 }
 .mod-info, .selected-mod .mod-radio-group {
 	position: relative;
