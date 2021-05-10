@@ -185,7 +185,7 @@ input[type=radio]:checked + label {
 .advice {
 	margin: 1px 0 0;
 	font-size: 0.75em;
-	opacity: 0.75
+	opacity: 0.75;
 }
 
 .modNotChosen {
@@ -257,10 +257,20 @@ label.mod-radio {
 }
 .mod-radio {
 	vertical-align: middle;
+	margin-left: 5px;
 }
 .mod-info, .selected-mod .mod-radio-group {
 	position: relative;
 	z-index: 2
+}
+.badge {
+	border-radius: var(--border-radius-0x) !important;
+}
+.advice-subtitle {
+	font-size: 100%;
+}
+.advice-important {
+	color:rgb(175, 24, 24);
 }
 
 /** MODPACKS **\
