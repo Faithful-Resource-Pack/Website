@@ -143,7 +143,7 @@ export default {
 		<div class="mb-4">
 			<router-link v-for="item in window.data.versions" :key="item" class="btn btn-dark mr-1 mb-2" :class="(item.disabled)?'disabled':''" :to="'/' + item.name + '/' + $route.params.section">{{ window.capitalize(item.name) }}</router-link>
 		</div>
-		<input id="SearchBar" type="text" placeholder="Search for a texture name or author..." title="Type something" class="fancy-card-1x mb-4" v-model="searchString" v-on:keyup.enter="showResults()">
+		<input id="SearchBar" type="text" placeholder="Search for a texture name..." title="Type something" class="fancy-card-1x mb-4" v-model="searchString" v-on:keyup.enter="showResults()">
 		<div class="mb-4">
 			<router-link v-for="item in currentSections" :key="item" class="btn btn-dark mr-1 mb-2" :class="(item.disabled)?'disabled':''" :to="'/' + $route.params.version + '/' + item.name">{{ window.capitalize(item.name) }}</router-link>
 		</div>
