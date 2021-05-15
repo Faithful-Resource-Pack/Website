@@ -157,7 +157,7 @@ export default {
 
 				<div class="popover">
 					<h5>{{ item.title }}</h5>
-					<p class="empty"><i class="fas fa-user"></i> {{ item.artist }}</p>
+					<!--<p class="empty"><i class="fas fa-user"></i> {{ item.artist }}</p>-->
 					<p class="empty"><i class="far fa-calendar"></i> {{ item.date }}</p>
 					<!--<p class="empty"><i class="fas fa-vector-square"></i> {{ item.size }}</p>-->
 					<p class="full" v-if="item.animated"><i class="fas fa-file-code"></i> Animated</p>
@@ -326,7 +326,7 @@ export default {
 		fullscreen(item) {
 			this.$refs.modal_img.src       = item.path
 			this.$refs.modal_h1.innerHTML  = item.title
-			this.$refs.modal_author.innerHTML   = '<i class="fas fa-user"></i> ' + item.artist
+			//this.$refs.modal_author.innerHTML   = '<i class="fas fa-user"></i> ' + item.artist
 			this.$refs.modal_date.innerHTML     = '<i class="far fa-calendar"></i> ' + item.date
 			if (item.animated) this.$refs.modal_animated.innerHTML = '<i class="fas fa-file-code"></i> Animated'
 			else this.$refs.modal_animated.innerHTML = ''
