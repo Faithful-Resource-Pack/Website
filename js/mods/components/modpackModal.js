@@ -12,7 +12,7 @@ Vue.component('modpack-modal', {
         <p class="mb-0">Mod list (<span>{{ modpack.modList.length }}</span>): <span>{{ numberOfModsFound }}</span> found, <span>{{ numberOfModsBlackListed }}</span> ignored - coverage: <span>{{ coveragePercentage }}</span>%</p>\
         <div id="modList" class="mt-2 mx-n3 mb-3">\
           <ul class="px-3 py-2">\
-            <li v-for="(mod, index) in modpack.modList" :key="index">{{ mod }} - <span :class="{ \'text-success\' : modcorrespondance[index], \'text-danger\' : modcorrespondance[index] === undefined, \'text-warning\' : typeof(modcorrespondance[index]) === \'string\' }">{{ typeof(modcorrespondance[index]) === \'object\' ? \'Found\' : (modcorrespondance[index] === undefined ? \'Not found\' : modcorrespondance[index]) }} </span></li>\
+            <li v-for="(mod, index) in modpack.modList" :key="index">{{ mod }} - <span :class="{ \'text-success\' : modcorrespondance[index], \'text-danger\' : modcorrespondance[index] === undefined, \'text-warning\' : typeof(modcorrespondance[index]) === \'string\' && modcorrespondance[index].startsWith(\'Not\')}">{{ typeof(modcorrespondance[index]) === \'object\' ? \'Found\' : (modcorrespondance[index] === undefined ? \'Not found\' : modcorrespondance[index]) }} </span></li>\
           </ul>\
         </div>\
         <div class="text-right">\
