@@ -1,25 +1,22 @@
 ---
 ---
 
+@import "css/variables";
+
 @font-face {
   font-family: Compliance;
   src: url("../data/font/Compliance.ttf") format("truetype");
 }
 
 /* Basic layout */
-:root {
-  --primary: #007bff;
-  --border-radius-0x: 6px;
-  --border-radius-1x: 12px;
-  --border-radius-2x: 24px;
-  --card-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23)
-}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 /* Important Bootstrap */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -70,12 +67,12 @@ ol, ul, dl {
   list-style-position: inside;
 }
 a {
-  color: #007bff;
+  color: $primary;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #0056b3;
+  color: $primary-dark;
 }
 a:not([href]):not([class]) {
   color: inherit;
@@ -224,7 +221,7 @@ hr {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #007bff;
+  background-color: $primary;
 }
 .dropdown-item.disabled, .dropdown-item:disabled {
   color: #6c757d;
@@ -822,12 +819,12 @@ hr {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: var(--border-radius-1x);
+  border-radius: $border-radius-1x;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .badge-primary {
   color: #fff;
-  background-color: #007bff;
+  background-color: $primary;
 }
 .badge-success {
   color: #fff;
@@ -901,7 +898,7 @@ input[type="month"].form-control {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #007bff;
+  background-color: $primary;
   transition: width 0.6s ease;
 }
 .progress-bar-striped {
@@ -956,13 +953,13 @@ a.btn.disabled {
 }
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: $primary;
+  border-color: $primary;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: $primary-hover;
+  border-color: $primary-hover-border;
 }
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
@@ -972,8 +969,8 @@ a.btn.disabled {
 }
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: $primary;
+  border-color: $primary;
 }
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
@@ -1362,13 +1359,13 @@ img.fancy-card-2x {
 }
 .btn, .dropdown-menu, .fancy-card-1x, *.card, .fancy-card-2x {
 	overflow: hidden;
-	box-shadow: var(--card-shadow)
+	box-shadow: $card-shadow
 }
 .btn, .dropdown-menu, *.card *.card, .fancy-card-1x {
-	border-radius: var(--border-radius-0x)
+	border-radius: $border-radius-0x
 }
 *.card, .fancy-card-2x {
-	border-radius: var(--border-radius-0x)
+	border-radius: $border-radius-0x
 }
 .card-body > :first-child {
 	margin-top: 0
@@ -1384,7 +1381,7 @@ img.fancy-card-2x {
 	color: rgba(255, 255, 255, .9)
 }
 .card-img-top {
-	border-radius: var(--border-radius-0x);
+	border-radius: $border-radius-0x;
 	cursor: pointer;
 	color: #000
 }
@@ -1418,7 +1415,7 @@ img.fancy-card-2x {
   bottom: 0;
   margin: 8px;
 	color: rgba(255, 255, 255, .9);
-	text-shadow: var(--card-shadow);
+	text-shadow: $card-shadow;
 	font-size: 1.5rem;
 	font-weight: 500;
 }
@@ -1441,8 +1438,8 @@ img.fancy-card-2x {
   padding: 16px;
   color: #fff;
   text-align: center;
-  border-radius: var(--border-radius-0x);
-  box-shadow: var(--card-shadow)
+  border-radius: $border-radius-0x;
+  box-shadow: $card-shadow
 }
 .banner a {
   color: #fff;

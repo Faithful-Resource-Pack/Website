@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "css/variables";
+
 .router-link-active {
 	background-color: #343a80;
 	border-color: #343a80;
@@ -27,8 +29,8 @@
 	height: 0;
 	padding-top: 100%;
 	color: #fff;
-	border-radius: var(--border-radius-2x);
-	box-shadow: var(--card-shadow);
+	border-radius: $border-radius-2x;
+	box-shadow: $card-shadow;
 }
 .gallery-item:hover > * {
 	z-index: 3;
@@ -40,18 +42,18 @@
 	height: 100%;
 	width: 100%;
 	background: #000 url(../image/gallery/transparent.png) repeat;
-	border-radius: var(--border-radius-0x);
+	border-radius: $border-radius-0x;
 	object-fit: contain;
 }
 .gallery-item > .fas {
 	position: absolute;
 	display: none;
-	margin: var(--border-radius-1x);
-	padding: var(--border-radius-1x);
+	margin: $border-radius-1x;
+	padding: $border-radius-1x;
 	background: rgba(0, 0, 0, .5);
 	color: #fff;
-	border-radius: var(--border-radius-0x);
-	text-shadow: var(--card-shadow);
+	border-radius: $border-radius-0x;
+	text-shadow: $card-shadow;
 	cursor: pointer;
 }
 .gallery-item:hover > .fas {
@@ -82,7 +84,7 @@
 	position: absolute;
 	opacity: 0;
 	background: rgba(16, 0, 16, .941);
-	box-shadow: var(--card-shadow);
+	box-shadow: $card-shadow;
 	border-style: solid;
 	border-width: 2px;
 	border-image: linear-gradient(180deg, rgba(80,0,255,.314), rgba(40,0,127,.314)) 1;

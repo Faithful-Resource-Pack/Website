@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "css/variables";
+
 /* Versions btn for small screen */
 @media (max-width: 777px) {
 	.btn-group {
@@ -28,14 +30,14 @@ input[type=checkbox], input[type=radio], label {
 }
 
 input[type=radio] + label {
-	border-radius: var(--border-radius-0x);
+	border-radius: $border-radius-0x;
 	border: 1px solid rgba(255, 255, 255, .7);
 	padding: 2px 8px
 }
 
 input[type=radio]:checked + label {
-	background-color: var(--primary);
-	border-color: var(--primary);
+	background-color: $primary;
+	border-color: $primary;
 	color: white
 }
 
@@ -94,7 +96,7 @@ input[type=radio]:checked + label {
 .customModal .customModalContent {
 	background: #232323;
 	color: rgba(255, 255, 255, .9);
-	border-radius: var(--border-radius-0x);
+	border-radius: $border-radius-0x;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	width: 600px;
 	max-width: 100%;
@@ -138,7 +140,7 @@ input[type=radio]:checked + label {
 }
 .progress-bar,
 #downloadModalContent #zipProgressBar > * {
-	background-color: var(--primary)
+	background-color: $primary
 }
 #downloadModalContent #zipProgressBar > * {
 	transition: unset
@@ -240,13 +242,13 @@ input[type=radio]:checked + label {
 	height: 65px;
 	background: center/contain url('../image/icon/compliance_mods_transparent.png') no-repeat;
 	image-rendering: pixelated;
-	border-radius: var(--border-radius-0x);
+	border-radius: $border-radius-0x;
 	flex: none
 }
 .selected-mod .mod-img-overlay {
 	width: 100%;
 	height: 100%;
-	border-radius: var(--border-radius-1x);
+	border-radius: $border-radius-1x;
 	background: rgba(0, 123, 255, 0.64) center/75% url('../image/css/checked.svg') no-repeat
 }
 .mod-checkbox {
@@ -264,7 +266,7 @@ label.mod-radio {
 	z-index: 2
 }
 .badge {
-	border-radius: var(--border-radius-0x) !important;
+	border-radius: $border-radius-0x !important;
 }
 .advice-subtitle {
 	font-size: 100%;
