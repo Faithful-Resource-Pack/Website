@@ -59,9 +59,9 @@ title: Home
 					{% assign listIsEmpty = false %}
 
 					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: '-', '/' }}" rel="noopener">
+						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: '-', '/' | replace: '91', '1' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename | replace: '-A', ' Alpha ' | replace: '-B', ' Beta ' }}</h3>
+							<h3>{{ image.basename | replace: '-A', ' Alpha ' | replace: '-B', ' Beta ' | replace: '91', '1' }}</h3>
 						</a>
 					</div>
 
@@ -245,9 +245,9 @@ title: Home
 					{% assign listIsEmpty = false %}
 
 					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32xBedrock/{{ image.basename | replace: '-', '/' }}" rel="noopener">
+						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32xBedrock/{{ image.basename | replace: '-', '/' | replace: '91', '1' }}" rel="noopener">
 							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename | replace: '-B', ' Beta ' }}</h3>
+							<h3>{{ image.basename | replace: '-B', ' Beta ' | replace: '91', '1' }}</h3>
 						</a>
 					</div>
 
