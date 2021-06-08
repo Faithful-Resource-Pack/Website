@@ -3,459 +3,77 @@ layout: default
 title: Home
 ---
 
+<link rel="stylesheet" href="{{ site.baseurl }}/css/index.css">
+
+<h1 align="center">Compliance Packs</h1>
+<div class="res-grid-3">
+  <div class="card">
+    <img class="centered" src="{{ site.baseurl }}/image/icon/compliance_32x.png" alt="Compliance 32x">
+    <h1 align="center">32x</h1><br>
+    <p align="center">
+      <a class="btn btn-dark btn-index" href="{{ site.baseurl }}/compliance32x/latest">Latest</a>
+    </p>
+  </div>
+  <div class="card">
+    <img class="centered" src="{{ site.baseurl }}/image/icon/compliance_64x.png" alt="Compliance 64x">
+    <h1 align="center">64x</h1><br>
+    <p align="center">
+      <a class="btn btn-dark btn-index" href="{{ site.baseurl }}/compliance64x/latest">Latest</a>
+    </p>
+  </div>
+  <div class="card">
+    <img class="centered" src="{{ site.baseurl }}/image/icon/compliance_dungeons.png" alt="Compliance Dungeons">
+    <h1 align="center">Dungeons 32x</h1><br>
+    <p align="center">
+      <a class="btn btn-dark btn-index" href="{{ site.baseurl }}/compliance32xDungeons/latest">Latest</a>
+    </p>
+  </div>
+</div>
+
+<br>
+
 <p class="purple banner">
-	Join <a href="https://discord.gg/sN9YRQbBv7">our Discord</a> now and contribute to the project!
+  Join <strong><a href="https://discord.gg/sN9YRQbBv7">our Discord</a></strong> now and contribute to the project!
 </p>
 
-{% assign reversed_files = site.static_files | reverse %}
+<hr>
+<br>
+<h1 align="center">Addons</h1>
+<div class="res-grid-4">
+  {% for page in site.pages %}
+  {% if page.path contains 'addons/' %}
+  
+  <a class="card img-card addon" href="{{ site.baseurl }}{{ page.url }}">
+    <img src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="{{ page.title }}">
+    <h3>{{ page.title }}</h3>
+  </a>
 
-<!-- Screenshots carousel preview -->
-<div id="ScreenshotCarousel" class="carousel slide fancy-card-2x" data-ride="carousel">
-	<!-- indicators -->
-	<ul class="carousel-indicators">
-		{% assign ImgCounter = 0 %}
-		{% for image in site.static_files %}
-			{% if image.path contains '/image/home/carousel' %}
-				<li data-target="#ScreenshotCarousel" {% if ImgCounter == 0 %}class="active" {% endif %}data-slide-to="{{ ImgCounter }}"></li>
-				{% assign ImgCounter = ImgCounter | plus: 1 %}
-			{%endif %}
-		{% endfor %}
-	</ul>
+  {% endif %}
+  {% endfor %}
+  <a class="card img-card" rel="noopener" href="{{ site.baseurl }}/addons">
+    <img src="{{ site.baseurl }}/image/home/see_more.png" loading="lazy" alt="See more" style="background: #0000 !important;">
+    <h3>See More</h3>
+  </a>
 
-	<!-- slideshow -->
-	<div class="carousel-inner">
-		{% assign ImgCounter = 0 %}
-		{% for image in site.static_files %}
-			{% if image.path contains '/image/home/carousel' %}
-				<div class="carousel-item{% if ImgCounter == 0 %} active{% endif %}">
-					<img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-				</div>
-				{% assign ImgCounter = ImgCounter | plus: 1 %}
-			{% endif %}
-		{% endfor %}
-	</div>
-
-	<!-- left & right controls -->
-	<a href="#ScreenshotCarousel" class="carousel-control-prev" data-slide="prev" aria-label="Previous">
-		<span class="carousel-control-prev-icon"></span>
-	</a>
-	<a href="#ScreenshotCarousel" class="carousel-control-next" data-slide="next" aria-label="Next">
-		<span class="carousel-control-next-icon"></span>
-	</a>
+  <script>
+    var array = document.getElementsByClassName("addon")
+    while (array.length > 3) {
+      var index = Math.floor(Math.random() * array.length)
+      array[index].parentNode.removeChild(array[index])
+      array = document.getElementsByClassName("addon")
+    }
+  </script>
 </div>
 
 <hr>
+<br>
+<h1 align="center">Compliance News</h1>
 
-<!-- COMPLIANCE 32x -->
-<h1 id="compliance-32x" class="display-3 my-5 text-center">Com&shy;pli&shy;ance 32x</h1>
-<div class="card card-body">
-		<h2 class="card-title text-center">Main Pack</h2>
-
-		<div class="no-js" id="compliance32x">
-
-			{% assign listIsEmpty = true %}
-			{% for image in reversed_files %}
-				{% if image.path contains 'image/article/compliance32x/' %}
-					{% assign listIsEmpty = false %}
-
-					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32x/{{ image.basename | replace: '-', '/' | replace: '91', '1' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename | replace: '-A', ' Alpha ' | replace: '-B', ' Beta ' | replace: '91', '1' }}</h3>
-						</a>
-					</div>
-
-				{% endif %}
-			{% endfor %}
-			{% if listIsEmpty %}
-				{% include empty_carousel.html %}
-			{% endif %}
-		</div>
-
-		<br>
-
-		<h2 class="card-title text-center">Programmer Art</h2>
-		<div class="no-js" id="compliance32xProgArt">
-
-			{% assign listIsEmpty = true %}
-			{% for image in reversed_files %}
-				{% if image.path contains 'image/article/compliance32xProgArt/' %}
-					{% assign listIsEmpty = false %}
-
-					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename }}</h3>
-						</a>
-					</div>
-
-				{% endif %}
-			{% endfor %}
-			{% if listIsEmpty %}
-				{% include empty_carousel.html %}
-			{% endif %}
-		</div>
-
-		<br>
-
-		<h2 class="card-title text-center"> <a href="https://compliancepack.net/addons32x">Add-Ons</a> </h2>
-
-		<div class="no-js" id="compliance32xAddons">
-
-			{% assign counter = 0 %}
-
-			{% for page in site.pages %}
-				{% if page.path contains 'compliance32xAddons/' %}
-					{% assign counter = counter | plus: 1 %}
-
-					{% if counter < 9 %}
-						<div class="item">
-							<a class="card img-card" href="{{ site.baseurl }}{{ page.url }}" rel="noopener">
-								<img src="{{ site.baseurl }}/image/{{ page.header-img }}" loading="lazy" alt="{{ page.title }}">
-								<h3>{{ page.title }}</h3>
-							</a>
-						</div>
-					{% endif %}
-
-					{% if counter == 9 %}
-						<div class="item">
-							<a class="card img-card" href="{{ site.baseurl }}/addons32x">
-								<img src="{{ site.baseurl }}/image/carousel/see_more.png" loading="lazy" alt="See more...">
-								<h3>See more...</h3>
-							</a>
-						</div>
-					{% endif %}
-
-				{% endif %}
-			{% endfor %}
-		</div>
-
-		<br>
-
-		<h2 class="card-title text-center">Mod Support</h2>
-
-		<div class="res-grid-2">
-			<a href="{{ site.baseurl }}/mods" class="btn btn-dark btn-lg block">Mods</a>
-			<a href="{{ site.baseurl }}/modpacks" class="btn btn-dark btn-lg block">Modpacks</a>
-		</div>
-
+<div class="res-grid-3">
+  {%- for post in site.posts -%}
+    <a class="card img-card" rel="noopener" href="{{ site.baseurl }}{{ post.permalink }}">
+      <img src="{{ site.baseurl }}/image/{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
+      <h3>{{ post.title }}</h3>
+    </a>
+  {%- endfor -%}
 </div>
-
-<hr>
-
-<!-- COMPLIANCE 64x -->
-<h1 id="compliance-64x" class="display-3 my-5 text-center">Com&shy;pli&shy;ance 64x</h1>
-<div class="card card-body">
-		<h2 class="card-title text-center">Main Pack</h2>
-
-		<div class="no-js" id="compliance64x">
-
-			{% assign listIsEmpty = true %}
-			{% for image in reversed_files %}
-				{% if image.path contains 'image/article/compliance64x/' %}
-					{% assign listIsEmpty = false %}
-
-					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance64x/{{ image.basename | replace: '-', '/' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename | replace: '-A', ' Alpha ' }}</h3>
-						</a>
-					</div>
-
-				{% endif %}
-			{% endfor %}
-			{% if listIsEmpty %}
-				{% include empty_carousel.html %}
-			{% endif %}
-		</div>
-
-		<br>
-
-		<h2 class="card-title text-center">Programmer Art</h2>
-
-		<div class="no-js" id="compliance64xProgArt">
-
-			{% assign listIsEmpty = true %}
-			{% for image in reversed_files %}
-				{% if image.path contains 'image/article/compliance64xProgArt/' %}
-					{% assign listIsEmpty = false %}
-
-					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance64xProgArt/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename }}</h3>
-						</a>
-					</div>
-
-				{% endif %}
-			{% endfor %}
-			{% if listIsEmpty %}
-				{% include empty_carousel.html %}
-			{% endif %}
-		</div>
-
-		<br>
-
-		<h2 class="card-title text-center"><a href="https://compliancepack.net/addons64x">Add-Ons</a></h2>
-
-		<div class="no-js" id="compliance64xAddons">
-
-			{% assign counter = 0 %}
-
-			{% for page in site.pages %}
-				{% if page.path contains 'compliance64xAddons/' %}
-					{% assign counter = counter | plus: 1 %}
-
-					{% if counter < 9 %}
-						<div class="item">
-							<a class="card img-card" href="{{ site.baseurl }}{{ page.url }}" rel="noopener">
-								<img src="{{ site.baseurl }}/image/{{ page.header-img }}" loading="lazy" alt="{{ page.title }}">
-								<h3>{{ page.title }}</h3>
-							</a>
-						</div>
-					{% endif %}
-
-					{% if counter == 9 %}
-						<div class="item">
-							<a class="card img-card" href="{{ site.baseurl }}/addons64x">
-								<img src="{{ site.baseurl }}/image/carousel/see_more.png" loading="lazy" alt="See more...">
-								<h3>See more...</h3>
-							</a>
-						</div>
-					{% endif %}
-
-				{% endif %}
-			{% endfor %}
-		</div>
-
-</div>
-
-<hr>
-
-<!-- COMPLIANCE BEDROCK -->
-<h1 class="display-3 my-5 text-center">Com&shy;pli&shy;ance for Bedrock Edition</h1>
-<div class="card card-body">
-		<h2 class="card-title text-center">32x</h2>
-
-		<div class="no-js" id="compliance32xBedrock">
-
-			{% assign listIsEmpty = true %}
-			{% for image in reversed_files %}
-				{% if image.path contains 'image/article/compliance32xBedrock/' %}
-					{% assign listIsEmpty = false %}
-
-					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32xBedrock/{{ image.basename | replace: '-', '/' | replace: '91', '1' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename | replace: '-B', ' Beta ' | replace: '91', '1' }}</h3>
-						</a>
-					</div>
-
-				{% endif %}
-			{% endfor %}
-			{% if listIsEmpty %}
-				{% include empty_carousel.html %}
-			{% endif %}
-		</div>
-
-		<br>
-
-		<h2 class="card-title text-center">64x</h2>
-
-		<div class="no-js" id="compliance64xBedrock">
-
-			{% assign listIsEmpty = true %}
-			{% for image in reversed_files %}
-				{% if image.path contains 'image/article/compliance64xBedrock/' %}
-					{% assign listIsEmpty = false %}
-
-					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance64xBedrock/{{ image.basename | replace: '-', '/' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename | replace: '-A', ' Alpha '}}</h3>
-						</a>
-					</div>
-
-				{% endif %}
-			{% endfor %}
-			{% if listIsEmpty %}
-				{% include empty_carousel.html %}
-			{% endif %}
-		</div>
-
-		<br>
-
-		<h2 class="card-title text-center">32x Add-Ons</h2>
-
-		<div class="no-js" id="compliance32xBedrockAddons">
-
-			{% assign listIsEmpty = true %}
-			{% for image in site.static_files %}
-				{% if image.path contains 'image/article/compliance32xBedrockAddons/' %}
-					{% assign listIsEmpty = false %}
-
-					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance32xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename }}</h3>
-						</a>
-					</div>
-
-				{% endif %}
-			{% endfor %}
-			{% if listIsEmpty %}
-				{% include empty_carousel.html %}
-			{% endif %}
-		</div>
-
-		<br>
-
-		<h2 class="card-title text-center">64x Add-Ons</h2>
-
-		<div class="no-js" id="compliance64xBedrockAddons">
-
-			{% assign listIsEmpty = true %}
-			{% for image in site.static_files %}
-				{% if image.path contains 'image/article/compliance64xBedrockAddons/' %}
-					{% assign listIsEmpty = false %}
-
-					<div class="item">
-						<a class="card img-card" href="{{ site.baseurl }}/article/compliance64xBedrockAddons/{{ image.basename | replace: '.', '_' }}" rel="noopener">
-							<img src="{{ site.baseurl }}{{ image.path }}" loading="lazy" alt="{{ image.basename }}">
-							<h3>{{ image.basename }}</h3>
-						</a>
-					</div>
-
-				{% endif %}
-			{% endfor %}
-			{% if listIsEmpty %}
-				{% include empty_carousel.html %}
-			{% endif %}
-		</div>
-
-</div>
-
-<hr>
-
-<!-- COMPLIANCE DUNGEONS -->
-<h1 id="compliance-dungeons" class="display-3 my-5 text-center">Com&shy;pli&shy;ance Mods for Mi&shy;ne&shy;craft Dun&shy;geons</h1>
-		<div class="card-deck">
-			{% comment %}Compliance Skin Pack Card
-			<div class="card card-in">
-				<div class="card-img card-img-top" style="background-image: url({{ site.baseurl }}/image/home/ComplianceDungeon_skinpack_beta2.jpg);" title="Card image">
-					<img src="{{ site.baseurl }}/image/home/16x9.png" alt="ratio" />
-				</div>
-				<div class="card-body">
-					Card text
-					<h2 class="card-title h4">Compliance Skin Pack</h2>
-					<h3 class="card-title h5">Available skins:</h3>
-					<div class="auto-flex">
-						<ul>
-							<li>Deborn</li>
-							<li>Haragon</li>
-							<li>Juknum</li>
-						</ul>
-						<ul>
-							<li>Pomik108</li>
-							<li>RobertR11</li>
-							<li>Seirin-Blu</li>
-						</ul>
-						<ul>
-							<li>Tekayo</li>
-							<li>Terrifik</li>
-							<li>SuperMario20</li>
-						</ul>
-					</div>
-					<div class="dropup">
-						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Download</button>
-						<div class="dropdown-menu">
-							GitHub link
-							<h4 class="dropdown-header">Compile yourself</h4>
-							<a class="dropdown-item" href="https://github.com/Faithful-Dungeons/Skin-Mod" rel="noopener">GitHub</a>
-
-							Release links
-							<h4 class="dropdown-header">Releases</h4>
-							<span class="dropdown-item disabled">None</span>
-
-							Beta links
-							<h4 class="dropdown-header">Betas</h4>
-							<a class="dropdown-item" href="https://github.com/Faithful-Dungeons/Skin-Mod/releases/download/B1/1-FaithfulDungeonsTeamSkinMod.pak" rel="noopener">Beta 1</a>
-							<a class="dropdown-item" href="https://github.com/Faithful-Dungeons/Skin-Mod/releases/download/B2/1-FaithfulDungeonsTeamSkinPackB2.pak" rel="noopener">Beta 2</a>
-							<a class="dropdown-item disabled" href="#">Beta 3 (Winter DLC)</a>
-						</div>
-
-						<a href="https://dokucraft.co.uk/stash/?help=modding-dungeons" rel="noopener" class="btn btn-info">Installation</a>
-						<a href="https://github.com/Faithful-Dungeons/Skin-Mod/issues" rel="noopener" class="btn btn-warning">Report Issues</a>
-					</div>
-				</div>
-			</div>{% endcomment %}
-
-			<!-- Compliance Resource Pack Card -->
-			<div class="card card-in">
-				<a href="{{ site.baseurl }}/article/compliance32xDungeons/B1">
-					<div class="card-img card-img-top" style="background-image: url({{ site.baseurl }}/image/article/compliance32xDungeons/B1.jpg);" title="Card image">
-						<img src="{{ site.baseurl }}/image/home/16x9.png" alt="ratio" />
-					</div>
-				</a>
-				<div class="card-body">
-					<!-- Card text -->
-					<h2 class="card-title h4">Compliance Resource Pack</h2>
-					<h3 class="card-title h5">Progress of Beta 1:</h3>
-					<div class="auto-flex">
-						<ul>
-							<li>Blocks: 47%</li>
-							<li>Equipments: 0%</li>
-							<li>Items: 7%</li>
-						</ul>
-						<ul>
-							<li>Mobs: 41%</li>
-							<li>Prefabs: 8%</li>
-							<li>Total: 28%</li>
-						</ul>
-					</div>
-						<div class="dropup">
-						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Download</button>
-						<div class="dropdown-menu">
-							<!-- GitHub link -->
-							<h4 class="dropdown-header">Compile yourself</h4>
-							<a class="dropdown-item" href="https://github.com/Faithful-Dungeons/Resource-Pack" rel="noopener">GitHub</a>
-
-							<!-- Release links -->
-							<h4 class="dropdown-header">Releases</h4>
-							<span class="dropdown-item disabled">None</span>
-
-							<!-- Beta links -->
-							<h4 class="dropdown-header">Betas</h4>
-							<a class="dropdown-item" href="https://github.com/Compliance-Dungeons/Resource-Pack/releases/download/B1/1-ComplianceDungeons_beta1.pak" rel="noopener">Beta 1</a>
-						</div>
-
-						<a href="https://dokucraft.co.uk/stash/?help=modding-dungeons" rel="noopener" class="btn btn-info">Installation</a>
-						<a href="https://github.com/Compliance-Dungeons/Resource-Pack/issues" rel="noopener" class="btn btn-warning">Report Issues</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-		const tnsConfig = {
-		  controls: false,
-		  navPosition: 'bottom',
-		  mouseDrag: true,
-		  responsive: {
-        0: { items: 1 },
-        600: { items: 2 },
-        1024: { items: 3 }
-		  }
-		}
-		const carousels = [
-			'#compliance32x', '#compliance32xProgArt', '#compliance32xAddons',
-			'#compliance64x', '#compliance64xProgArt', '#compliance64xAddons',
-			'#compliance32xBedrock', '#compliance32xBedrockAddons', '#compliance64xBedrock', '#compliance64xBedrockAddons'
-		]
-		carousels.forEach(item => {
-			tnsConfig.container = item
-			tns(tnsConfig)
-		})
-  })
-</script>

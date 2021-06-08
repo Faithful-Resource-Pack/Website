@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Statistics
 ---
 
@@ -16,7 +17,7 @@ title: Statistics
 	<h2 class="display-4 my-5">Add-Ons</h2>
 	<div class="res-grid-4">
 		<h3>32x Add-Ons</h3>
-		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance32xAddons/'" | size }}</span></h3>
+		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance32x/addons/'" | size }}</span></h3>
 		<h3>32x Bedrock Add-Ons</h3>
 		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance32xBedrockAddons/'" | size }}</span></h3>
 		<h3>64x Add-Ons</h3>

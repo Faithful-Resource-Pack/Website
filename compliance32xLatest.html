@@ -1,0 +1,13 @@
+---
+layout: none
+title: Latest Release
+permalink: compliance32x/latest
+---
+
+{%- assign found = false -%}
+{%- for post in site.posts -%}
+  {%- if post.path contains "C32" and found == false -%}
+    {{ post }}
+    {%- assign found = true -%}
+  {%- endif -%}
+{%- endfor -%}

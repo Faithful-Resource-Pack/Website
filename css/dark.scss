@@ -2,17 +2,27 @@
 ---
 
 .background {
-	background: #131313 url(../image/background/bg_light_background.png) repeat
+	background: #131313 url(../image/background/bg_dark_background.png) repeat
 }
 .foreground {
 	background:
-		url(../image/background/bg_light_transition_top.png) top repeat-x,
-		url(../image/background/bg_light_transition_bottom.png) bottom repeat-x,
+		url(../image/background/bg_dark_transition_top.png) top repeat-x,
+		url(../image/background/bg_dark_transition_bottom.png) bottom repeat-x,
 		#0C0C0C url(../image/background/bg_dark_foreground.png) repeat
 }
 .placeholder {
-	background-image: url(/image/icon/compliance_32x.png), url(/image/background/bg_dark_foreground.png);
+	background-image: url(../image/icon/compliance_32x.png), url(../image/background/bg_dark_foreground.png);
 }
+.card {
+	background: #0C0C0C url(../image/background/bg_dark_background.png);
+}
+#topNavbar.fixed {
+	background: #0C0C0C url(../image/background/bg_dark_background.png);
+}
+.outline {
+	background: #0C0C0C url(../image/background/bg_dark_background.png) !important;
+}
+
 .dropdown-menu {
 	background-color: #1C1C1C
 }
