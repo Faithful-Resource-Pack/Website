@@ -114,11 +114,11 @@ layout: default
 {%- if page.downloads -%}
 	<h2 class="display-4 my-5 text-center">Downloads</h2>
 	{%- for item in page.downloads -%}
-		<h4 align="center">{{ item.first | pop }}</h4>
+		<h1 class="my-3" align="center">{{ item.first | pop }}</h1>
 		{%- for subitem in item -%}
 			<p align="center">
-				{%- if subitem[1]["GitHub"] -%}<a href="{{ subitem[1]["GitHub"] }}" class="btn btn-dark"><i style="margin-right: 10px" class="fab fa-github"></i>GitHub</a>&nbsp;{%- endif -%}
-				{%- if subitem[1]["CurseForge"] -%}<a href="{{ subitem[1]["CurseForge"] }}" class="btn btn-dark"><i style="margin-right: 10px" class="fas fa-fire"></i>CurseForge</a>{%- endif -%}
+				{%- if subitem[1]["GitHub"] -%}<a href="{{ subitem[1]["GitHub"] }}" class="btn block btn-lg btn-primary"><i style="margin-right: 10px" class="fab fa-github"></i>GitHub</a>&nbsp;{%- endif -%}
+				{%- if subitem[1]["CurseForge"] -%}<a href="{{ subitem[1]["CurseForge"] }}" class="btn block btn-lg btn-primary"><i style="margin-right: 10px" class="fas fa-fire"></i>CurseForge</a>{%- endif -%}
 			</p>
 		{%- endfor -%}
 		<br>
