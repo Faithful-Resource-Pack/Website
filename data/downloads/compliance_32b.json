@@ -8,6 +8,18 @@
       }
     }
   ],
+  "1.17.0": [
+    {
+      "file": "Compliance 32x",
+      "file_type": "B",
+      "file_version": 11,
+      "size": "10.5 MB",
+      "date": "20/06/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-32x/releases/download/beta-11/Compliance-32x-Bedrock-Beta-11.mcpack"
+      }
+    }
+  ],
   "1.16.220": [
     {
       "file": "Compliance 32x",
