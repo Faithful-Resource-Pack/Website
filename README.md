@@ -27,6 +27,10 @@ You need a two requirements before developing the website. First you need [Ruby]
 ```
 gem install bundler jekyll
 ```
+**If you are using Ruby 3 or higher, you also need to install webrick:**
+```
+gem install webrick
+```
 
 Then you need to install the bundle provided in the [Gemfile](./Gemfile):
 ```
