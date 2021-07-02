@@ -9,7 +9,8 @@ header-img: compliance32x/addons/Better Tiling Deepslate Tiles.jpg
 long_text: Makes Deepslate Tiles Block Tile better.
 
 authors:
-  - https://twitter.com/ralphofficial5
+  - RalphOfficial:
+    - https://twitter.com/ralphofficial5
 
 download:
   - Planet Minecraft:
