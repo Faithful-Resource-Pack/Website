@@ -4,7 +4,7 @@ title: Bowls to Cups
 permalink: /addons/compliance32x/BowlstoCups
 comments: true
 comments-id: BowlstoCups
-header-img: compliance32x/addons/Bowls to Cups.jpg
+header-img: compliance32x/addons/Bowls To Cups.jpg
 
 long_text: Changes Bowls to Look like Cups
 
