@@ -18,5 +18,4 @@ download:
     - https://github.com/Compliance-Addons/Addons/raw/master/32x/Better%20Netherite/Emissive%20Better%20Netherite%20Java%20C32x.zip
   - 1.17.x Bedrock:
     - https://www.planetminecraft.com/texture-pack/better-netherite-bedrock-for-compliance-32x/
-
 ---
