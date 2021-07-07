@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Gilded Ores
-permalink: /addons/compliance32x/Gilded%Ores
+permalink: /addons/compliance32x/GildedOres
 comments: true
 comments-id: Gilded Ores
 header-img: compliance32x/addons/Gilded Ores.jpg
