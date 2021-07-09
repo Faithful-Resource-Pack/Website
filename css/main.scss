@@ -34,18 +34,9 @@ body {
   font-size: 1.1rem;
   color: #212529;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, h7 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  line-height: 1.2;
-}
-h7 {
-  margin-top: 0;
-  margin-bottom: 0rem;
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
   line-height: 1.2;
 }
 h1, .h1 {
@@ -937,7 +928,6 @@ input[type="month"].form-control {
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
-  margin-bottom: 20px;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
