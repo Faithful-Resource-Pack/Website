@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Gilded Ores
+title: Goldy Diamondy
 permalink: /addons/compliance64x/GoldyDiamondy
 comments: true
 comments-id: GildedOres
@@ -13,5 +13,5 @@ authors:
 
 download:
   - 1.17:
-    - https://github.com/Compliance-Addons/Addons/raw/master/64x/Gilded%20Ores/Compliance%2064x%20-%20Goldy%20Diamondy.zip
+    - https://github.com/Compliance-Addons/Addons/raw/master/64x/Goldy%20Diamondy/Compliance%2064x%20-%20Goldy%20Diamondy.zip
 ---
