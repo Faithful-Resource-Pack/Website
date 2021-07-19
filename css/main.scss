@@ -1715,6 +1715,10 @@ img.fancy-card-2x {
 	.modal-content {
 		width: 100%
 	}
+  .poster > img:nth-of-type(1) {
+    height: 200px;
+    width: fit-content;
+  }
 }
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
 img[src$=".png"], img[src$=".gif"] {
