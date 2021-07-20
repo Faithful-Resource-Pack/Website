@@ -87,7 +87,11 @@ title: Home
 <div class="res-grid-3">
   {%- for post in site.posts -%}
     <a class="card img-card" rel="noopener" href="{{ site.baseurl }}{{ post.permalink }}">
+      {%- if post.header-img -%}
       <img src="{{ site.baseurl }}/image/{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
+      {%- else -%}
+      <img src="{{ site.baseurl }}/image/discord/c32x.png" loading="lazy" alt="{{ post.title }}">
+      {%- endif -%}
       <h3>{{ post.title }}</h3>
     </a>
   {%- endfor -%}

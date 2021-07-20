@@ -1413,6 +1413,10 @@ img.fancy-card-2x {
   transform: scale(1.1);
   filter: brightness(110%)
 }
+.img-card > img:focus, .img-card > img:active {
+  transform: scale(1);
+  filter: brightness(100%)
+}
 .img-card > h3 {
   position: absolute;
   bottom: 0;
@@ -1555,6 +1559,9 @@ img.fancy-card-2x {
 }
 #topCarousel .item a img:hover {
 	transform: scale(1.1)
+}
+#topCarousel .item a img:focus, #topCarousel .item a img:active {
+	transform: scale(1)
 }
 /** BASIC CAROUSEL **/
 /* Make the image fully responsive (carousel) */

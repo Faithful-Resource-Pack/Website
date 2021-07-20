@@ -10,7 +10,9 @@
 
     {% if counter < CHANGELOG_LIMIT %}
 
+      {%- if page.single-changelog == nul -%}
       <h1 class="card-title text-center">{{ version.first[0] }}</h1>
+      {%- endif -%}
       {%- for type in version.first[1] -%}
         <h3 class="card-title text-left">{{ type.first[0] }}:</h3>
         {%- for category in type.first[1] -%}
@@ -29,6 +31,7 @@
 
 {%- assign counter = 0 -%}
 
+{%- if page.single-changelog == null -%}
 <button id="old-btn" onclick="ShowAll()" class="btn btn-dark btn-lg block">All</button>
 
 <div id="old" style="display: none;">
@@ -55,4 +58,5 @@
     {%- endif -%}
   {%- endfor -%}
   <button onclick="ShowAll()" class="btn btn-dark btn-lg block">Hide</button>
+{%- endif -%}
 </div>
