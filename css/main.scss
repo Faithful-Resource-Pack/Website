@@ -1728,11 +1728,7 @@ img.fancy-card-2x {
   }
 }
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
-img[src$=".png"], img[src$=".gif"] {
-	image-rendering: pixelated;
-	image-rendering: -moz-crisp-edges;
-	image-rendering: -o-crisp-edges;
-	-ms-interpolation-mode: nearest-neighbor;
+img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 	-webkit-user-drag: none;
 	-khtml-user-drag: none;
 	-moz-user-drag: none;
