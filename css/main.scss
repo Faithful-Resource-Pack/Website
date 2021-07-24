@@ -1413,6 +1413,10 @@ img.fancy-card-2x {
   transform: scale(1.1);
   filter: brightness(110%)
 }
+.img-card > img:focus, .img-card > img:active {
+  transform: scale(1);
+  filter: brightness(100%)
+}
 .img-card > h3 {
   position: absolute;
   bottom: 0;
@@ -1555,6 +1559,9 @@ img.fancy-card-2x {
 }
 #topCarousel .item a img:hover {
 	transform: scale(1.1)
+}
+#topCarousel .item a img:focus, #topCarousel .item a img:active {
+	transform: scale(1)
 }
 /** BASIC CAROUSEL **/
 /* Make the image fully responsive (carousel) */
@@ -1715,13 +1722,13 @@ img.fancy-card-2x {
 	.modal-content {
 		width: 100%
 	}
+  .poster > img:nth-of-type(1) {
+    height: 200px;
+    width: fit-content;
+  }
 }
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
-img[src$=".png"], img[src$=".gif"] {
-	image-rendering: pixelated;
-	image-rendering: -moz-crisp-edges;
-	image-rendering: -o-crisp-edges;
-	-ms-interpolation-mode: nearest-neighbor;
+img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 	-webkit-user-drag: none;
 	-khtml-user-drag: none;
 	-moz-user-drag: none;

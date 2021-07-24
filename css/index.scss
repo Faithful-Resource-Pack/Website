@@ -56,3 +56,14 @@
   max-width: 960px;
   max-height: 540px;
 }
+
+.poster {
+  position: relative;
+  display: inline;
+}
+
+.wordmark {
+  position: absolute;
+  top: 11%;
+  right: 0;
+}

@@ -8,7 +8,10 @@ title: Home
 <h1 align="center">Discover Compliance</h1><br>
 <div class="res-grid-3">
   <div class="card">
-    <img class="card-image" src="{{ site.baseurl }}/image/home/poster_32.png" alt="Compliance 32x">
+    <div class="poster">
+      <img class="card-image" src="{{ site.baseurl }}/image/home/poster_32.png" alt="Compliance 32x">
+      <img class="card-image wordmark" src="{{ site.baseurl }}/image/home/c32.png" alt="Compliance 32x wordmark">
+    </div>
 	  <div class="card-body">
       <div class="card-text auto-flex">
         <h7 class="my-2 text-center" style="min-height: 65px">A double resolution texture pack that stays true to the original Minecraft textures.</h7><br>
@@ -17,7 +20,10 @@ title: Home
     </div>
   </div>
   <div class="card">
-    <img class="card-image" src="{{ site.baseurl }}/image/home/poster_64.png" alt="Compliance 64x">
+    <div class="poster">
+      <img class="card-image" src="{{ site.baseurl }}/image/home/poster_64.png" alt="Compliance 64x">
+      <img class="card-image wordmark" src="{{ site.baseurl }}/image/home/c64.png" alt="Compliance 64x wordmark">
+    </div>
     <div class="card-body">
       <div class="card-text auto-flex">
 	      <h7 class="my-2 text-center" style="min-height: 65px">A texture pack that quadruples the resolution of Minecraft's default textures.</h7><br>
@@ -26,7 +32,10 @@ title: Home
     </div>
   </div>
   <div class="card">
-    <img class="card-image" src="{{ site.baseurl }}/image/home/poster_dungeons.png" alt="Compliance Dungeons">
+    <div class="poster">
+      <img class="card-image" src="{{ site.baseurl }}/image/home/poster_dungeons.png" alt="Compliance Dungeons">
+      <img class="card-image wordmark" src="{{ site.baseurl }}/image/home/cdun.png" alt="Compliance Dungeons wordmark">
+    </div>
     <div class="card-body">
       <div class="card-text auto-flex">
   	    <h7 class="my-2 text-center" style="min-height: 65px">A mod for Minecraft Dungeons that doubles the resolution of textures.</h7><br>
@@ -78,7 +87,11 @@ title: Home
 <div class="res-grid-3">
   {%- for post in site.posts -%}
     <a class="card img-card" rel="noopener" href="{{ site.baseurl }}{{ post.permalink }}">
+      {%- if post.header-img -%}
       <img src="{{ site.baseurl }}/image/{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
+      {%- else -%}
+      <img src="{{ site.baseurl }}/image/discord/c32x.png" loading="lazy" alt="{{ post.title }}">
+      {%- endif -%}
       <h3>{{ post.title }}</h3>
     </a>
   {%- endfor -%}
