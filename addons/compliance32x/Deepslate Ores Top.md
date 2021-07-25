@@ -15,5 +15,5 @@ download:
   - 1.17 Java:
     - https://github.com/Compliance-Addons/Addons/raw/master/32x/Deepslate%20Ore%20Top%20Textures/DeepslateOreTops-C32x.zip
   - 1.17 Bedrock:
-	- https://github.com/Compliance-Addons/Addons/raw/master/32x/Deepslate%20Ore%20Top%20Textures/DeepslateOreTops-C32x-BE.mcpack
+    - https://github.com/Compliance-Addons/Addons/raw/master/32x/Deepslate%20Ore%20Top%20Textures/DeepslateOreTops-C32x-BE.mcpack
 ---
