@@ -21,5 +21,5 @@ jobs:
           TMP_DIR=$(mktemp -d -t jekyll-XXXXXX)
           cd "$TMP_DIR"
           git clone https://github.com/${{ github.repository }}.git
-          bundle exec jekyll
+          bundle exec jekyll build
           rsync -av ./_site/ ${{ secrets.USERNAME }}/Website/
