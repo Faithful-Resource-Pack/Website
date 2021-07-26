@@ -1,0 +1,25 @@
+name: Deploy Website
+
+on:
+#   push:
+#     branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Executing remote command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSH }}
+        script: |
+          TMP_DIR=$(mktemp -d -t jekyll-XXXXXX)
+          cd $TMP_DIR
+          git clone https://github.com/${{ github.repository }}.git
+          bundle exec jekyll
+          rsync - avh ./_site/ /root/Website/
