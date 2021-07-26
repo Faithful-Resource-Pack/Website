@@ -19,7 +19,7 @@ jobs:
         KEY: ${{ secrets.SSH }}
         script: |
           TMP_DIR=$(mktemp -d -t jekyll-XXXXXX)
-          cd $TMP_DIR
+          cd "$TMP_DIR"
           git clone https://github.com/${{ github.repository }}.git
           bundle exec jekyll
-          rsync - avh ./_site/ /root/Website/
+          rsync -av ./_site/ ${{ secrets.USERNAME }}/Website/
