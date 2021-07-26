@@ -18,8 +18,11 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSH }}
         script: |
+          rm -rf /tmp/jekyll-*
           TMP_DIR=$(mktemp -d -t jekyll-XXXXXX)
           cd "$TMP_DIR"
-          git clone https://github.com/${{ github.repository }}.git
+          git init
+          git remote add origin https://github.com/${{ github.repository }}.git
+          git pull origin master
           bundle exec jekyll build
           rsync -av ./_site/ ${{ secrets.USERNAME }}/Website/
