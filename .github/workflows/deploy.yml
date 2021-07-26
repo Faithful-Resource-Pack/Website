@@ -26,4 +26,7 @@ jobs:
           git pull origin master
           bundle install
           bundle exec jekyll build
-          rsync -av ./_site/ /${{ secrets.USERNAME }}/Website/
+          rsync -av ./_site/ /${{ secrets.USERNAME }}/WebApp/
+          cd /${{ secrets.USERNAME }}/WebApp/
+          git pull
+          pm2 restart "APP"
