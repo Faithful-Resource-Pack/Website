@@ -9,7 +9,7 @@ header-img: compliance32x/addons/Stone Bricks Styled Quartz Bricks.jpg
 long_text: Makes quartz bricks look similar to Stone Bricks.
 
 authors:
-  - Alkatreize
+  - RalphOfficia
 
 download:
   - Planet Minecraft:
