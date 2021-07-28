@@ -5,6 +5,7 @@ permalink: /addons/compliance32x/Entity%20Healthbars
 comments: true
 comments-id: EntityHealthbars32x
 header-img: compliance32x/addons/Entity Healthbars.jpg
+optifine: true
 
 carousel-img: article/carousel/Entity Healthbars/32x/
 show_carousel_name: false

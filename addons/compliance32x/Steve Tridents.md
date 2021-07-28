@@ -5,6 +5,7 @@ permalink: /addons/compliance32x/Steve%20Tridents
 comments: true
 comments-id: SteveTridents
 header-img: compliance32x/addons/Steve Tridents.jpg
+optifine: true
 
 long_text: Remodels the trident to steve <br><bold>Requires Optifine</bold>
 

@@ -5,6 +5,7 @@ permalink: /addons/compliance32x/Emissive%20Compliance
 comments: true
 comments-id: EmissiveCompliance
 header-img: compliance32x/addons/Emissive Compliance.jpg
+optifine: true
 
 long_text: Adds emissive textures that glow in the dark. Needs optifine and make sure emissive textures are enabled in video settings> Quality.
 

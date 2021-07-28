@@ -61,6 +61,9 @@ title: Home
   <a class="card img-card addon" href="{{ site.baseurl }}{{ page.url }}">
     <img src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="{{ page.title }}">
     <h3>{{ page.title }}</h3>
+    {% if page.optifine == true %}
+      <img class="optifine" src="{{ site.baseurl }}/image/icon/optifine.png" alt="requires optifine" loading="lazy">
+    {% endif %}
   </a>
 
   {% endif %}

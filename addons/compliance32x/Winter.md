@@ -5,6 +5,7 @@ permalink: /addons/compliance32x/Winter
 comments: false
 comments-id: Winter
 header-img: compliance32x/addons/Winter.jpg
+optifine: true
 
 long_text: |
   Winter is a resource pack for Minecraft Java Edition that works as an add-on for other resourcepacks.

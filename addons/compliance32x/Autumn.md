@@ -5,6 +5,7 @@ permalink: /addons/compliance32x/Autumn
 comments: false
 comments-id: Autumn
 header-img: compliance32x/addons/Autumn.jpg
+optifine: true
 
 long_text: |
   Autumn is a resource pack for Minecraft Java Edition that works as an add-on for other resourcepacks.

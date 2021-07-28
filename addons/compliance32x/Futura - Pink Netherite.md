@@ -5,6 +5,7 @@ permalink: /addons/compliance32x/Futura%20-%20Pink%20Netherite
 comments: true
 comments-id: FuturaPink
 header-img: compliance32x/addons/Futura - Pink Netherite.jpg
+optifine: true
 
 long_text: 'Does the same things as normal <a href="./Futura">Futura</a>, but it is pink colored.<br><strong>Requires OptiFine Settings: Animated textures, Emissive texturse, Custom Item Textures (CIT)</strong>'
 
