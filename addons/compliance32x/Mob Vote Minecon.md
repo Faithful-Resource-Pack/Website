@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Mob Vote Minecon
-permalink: /addons/compliance32x/MobVoteMinecon
+title: Mob Vote Minecraft Live
+permalink: /addons/compliance32x/MobVoteMinecraftLive
 comments: true
-comments-id: MobVoteMinecon
+comments-id: MobVoteMinecraftLive
 header-img: compliance32x/addons/Mob Vote.jpg
 
 long_text: This pack adds the 6 entities from the mob votes, excluding the phantom and glow squid as thats already in the game.
