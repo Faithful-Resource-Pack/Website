@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 3D Dripstone
-permalink: /addons/compliance32x/3DDripstone
+permalink: /addons/compliance32x/3D%20Dripstone
 comments: true
 comments-id: 3DDripstone
 header-img: compliance32x/addons/3D Dripstone.jpg

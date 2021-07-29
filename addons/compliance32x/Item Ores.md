@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Item Ores
-permalink: /addons/compliance32x/ItemOres
+permalink: /addons/compliance32x/Item%20Ores
 comments: true
 comments-id: ItemOres
 header-img: compliance32x/addons/Item Ores.jpg

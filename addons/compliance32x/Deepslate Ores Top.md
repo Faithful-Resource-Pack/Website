@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Deepslate Ore Top Textures
-permalink: /addons/compliance32x/DeepslateOreTopTextures
+permalink: /addons/compliance32x/Deepslate%20Ore%20Top%20Textures
 comments: true
 comments-id: DeepslateOreTopTextures
 header-img: compliance32x/addons/Deepslate Ore Top Textures.jpg

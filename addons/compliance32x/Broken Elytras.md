@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Broken Elytras
-permalink: /addons/compliance32x/Broken%20Elytra
+permalink: /addons/compliance32x/Broken%20Elytras
 comments: true
 comments-id: BrokenElytras
 header-img: compliance32x/addons/Broken Elytra.jpg

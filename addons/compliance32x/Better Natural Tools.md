@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Better Natural Tools
-permalink: /addons/compliance32x/BetterNaturalTools
+permalink: /addons/compliance32x/Better%20Natural%20Tools
 comments: true
 comments-id: BetterNaturalTools
 header-img: compliance32x/addons/Better Natural Tools.jpg

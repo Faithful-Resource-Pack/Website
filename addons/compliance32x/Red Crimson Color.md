@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Red Crimson Color
-permalink: /addons/compliance32x/RedCrimsonColor
+permalink: /addons/compliance32x/Red%20Crimson%20Color
 comments: true
 comments-id: RedCrimsonColor
 header-img: compliance32x/addons/Crimson Red.jpg

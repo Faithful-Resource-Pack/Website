@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Stone Bricks Styled Quartz Bricks
-permalink: /addons/compliance32x/StoneBricksStyledQuartzBricks
+permalink: /addons/compliance32x/Stone%20Bricks%20Styled%20Quartz%20Bricks
 comments: true
 comments-id: StoneBricksStyledQuartzBricks
 header-img: compliance32x/addons/Stone Bricks Styled Quartz Bricks.jpg

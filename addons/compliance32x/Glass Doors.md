@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Glass Doors
-permalink: /addons/compliance32x/GlassDoors
+permalink: /addons/compliance32x/Glass%20Doors
 comments: true
 comments-id: GlassDoors
 header-img: compliance32x/addons/Glass Door.jpg
 
-long_text: Adds a fresh glass pane to doors.
+long_text: Adds a fresh glass panes to doors.
 
 authors:
   - RobertR11

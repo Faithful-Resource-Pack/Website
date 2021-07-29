@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Better Netherite
-permalink: /addons/compliance32x/BetterNetherite
+permalink: /addons/compliance32x/Better%20Netherite
 comments: true
 comments-id: Better Netherite
 header-img: compliance32x/addons/Better Netherite.jpg

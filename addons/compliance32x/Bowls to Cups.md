@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bowls to Cups
-permalink: /addons/compliance32x/BowlstoCups
+permalink: /addons/compliance32x/Bowls20to%20Cups
 comments: true
 comments-id: BowlstoCups
 header-img: compliance32x/addons/Bowls To Cups.jpg

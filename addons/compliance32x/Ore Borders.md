@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ore Borders
-permalink: /addons/compliance32x/OreBorders
+permalink: /addons/compliance32x/Ore%20Borders
 comments: true
 comments-id: OreBorders
 header-img: compliance32x/addons/OreOutlines.jpg
