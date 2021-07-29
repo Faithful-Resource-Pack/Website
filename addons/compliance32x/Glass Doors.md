@@ -6,7 +6,7 @@ comments: true
 comments-id: GlassDoors
 header-img: compliance32x/addons/Glass Door.jpg
 
-long_text: Add a fresh glass pane to doors.
+long_text: Adds a fresh glass pane to doors.
 
 authors:
   - RobertR11
