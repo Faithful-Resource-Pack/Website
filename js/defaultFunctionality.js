@@ -124,15 +124,11 @@ tns({
   container: '#topCarousel',
   center: true,
   controls: false,
+  nav: false,
   autoplay: true,
   autoplayPosition: 'bottom',
-  navPosition: 'bottom',
   mouseDrag: true,
-  responsive: {
-    0: { items: 1 },
-    600: { items: 3 },
-    1024: { items: 4 }
-  }
+  items: 1
 })
 
 // fix non centered icons
