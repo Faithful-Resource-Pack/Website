@@ -1,55 +1,19 @@
 ---
 layout: default
-title: Add-Ons
+title: Add-ons
 ---
-<h2 class="display-4 my-5 text-center">Java 32x</h2>
-<div class="card card-body">
-  <div class="res-grid-3">
-  	{% assign counter = 0 %}
-  	{% include matching_articles.html search_string='addons/compliance32x/' %}
-  </div>
-  {% if counter != 0 %}
-  <a class="btn btn-lg block btn-dark mt-4" href="{{ site.baseurl }}/addons32x">See More</a>
-  {% else %}
-  <p class="text-center">Coming soon!</p>
-  {% endif %}
-</div>
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 
-<h2 class="display-4 my-5 text-center">Java 64x</h2>
-<div class="card card-body">
-  <div class="res-grid-3">
-  	{% assign counter = 0 %}
-  	{% include matching_articles.html search_string='addons/compliance64x/' %}
-  </div>
-  {% if counter != 0 %}
-	<a class="btn btn-lg block btn-dark mt-4" href="{{ site.baseurl }}/addons64x">See More</a>
-  {% else %}
-  <p class="text-center">Coming soon!</p>
-  {% endif %}
-</div>
+<v-app id="app">
+  <router-view></router-view>
+</v-app>
 
-<h2 class="display-4 my-5 text-center">Bedrock 32x</h2>
-<div class="card card-body">
-  <div class="res-grid-3">
-  	{% assign counter = 0 %}
-  	{% include matching_articles.html search_string='addons/compliance32xBedrock/' %}
-  </div>
-  {% if counter != 0 %}
-	<a class="btn btn-lg block btn-dark mt-4" href="{{ site.baseurl }}/addons32xBedrock">See More</a>
-  {% else %}
-  <p class="text-center">Coming soon!</p>
-  {% endif %}
-</div>
-
-<h2 class="display-4 my-5 text-center">Bedrock 64x</h2>
-<div class="card card-body">
-  <div class="res-grid-3">
-  	{% assign counter = 0 %}
-  	{% include matching_articles.html search_string='addons/compliance64xBedrock/' %}
-  </div>
-  {% if counter != 0 %}
-	<a class="btn btn-lg block btn-dark mt-4" href="{{ site.baseurl }}/addons64xBedrock">See More</a>
-  {% else %}
-  <p class="text-center">Coming soon!</p>
-  {% endif %}
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.1/dist/vue-router.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script src="/js/ajax.js"></script>
+<script src="/js/addons/index.js" type="module"></script>
