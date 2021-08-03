@@ -12,7 +12,7 @@ export default {
       <div class="card card-body" v-if="Object.keys(fav).length">
         <div class="res-grid-3" style="grid-gap: 0 1.5rem !important">
           <div v-for="(addon, index) in fav">
-            <router-link class="card img-card" :to="addon.id" v-if="addon.status == 'approved'">
+            <router-link class="card img-card" :to="'/addons/' + addon.id" v-if="addon.status == 'approved'">
               <img :src="addon.images.header">
               <h3>{{ addon.title }}</h3>
               <div class="addon-flags">
@@ -43,7 +43,7 @@ export default {
       <div class="card card-body">
         <div class="res-grid-3" style="grid-gap: 0 1.5rem !important">
           <div v-for="(addon, index) in addons">
-            <router-link class="card img-card" :to="addon.id" v-if="addon.status == 'approved'">
+            <router-link class="card img-card" :to="'/addons/' + addon.id" v-if="addon.status == 'approved'">
               <img :src="addon.images.header">
               <h3>{{ addon.title }}</h3>
               <div class="addon-flags">
