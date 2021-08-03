@@ -6,12 +6,12 @@ const AddonPage = () => import('./addon-page.js')
 const AddonPost = () => import('./addon-post.js')
 
 const routes = [
-  { path: '/addons/:addon', component: AddonPost, name: 'addon-post' },
-  { path: '/addons', component: AddonPage, name: 'addon-page' }
+  { path: '/:addon', component: AddonPost, name: 'addon-post' },
+  { path: '/', component: AddonPage, name: 'addon-page' }
 ]
 
 const router = new VueRouter({
-  routes: routes
+  routes
 })
 
 let v = new Vue({

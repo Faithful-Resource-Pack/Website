@@ -4,20 +4,26 @@ export default {
   name: 'addon-page',
   template: `
     <v-container
-      style="max-width: 1140px; padding-top: 100px"
+      style="max-width: 1140px; padding-top: 100px; padding-bottom: 100px"
     >
       <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem">Compliance Add-Ons</h2>
 
       <h3 class="text-center" v-if="Object.keys(fav).length">Favorites</h3>
       <div class="card card-body" v-if="Object.keys(fav).length">
-        <div class="res-grid-3" style="grid-gap: 0 1.5rem !important">
-          <div v-for="(addon, index) in fav">
-            <router-link class="card img-card" :to="'/addons/' + addon.id" v-if="addon.status == 'approved'">
+        <div class="res-grid-3">
+          <div v-for="(addon, index) in fav" class="hovering-effect" style="margin-bottom: calc(-28px)">
+            <router-link class="card img-card" :to="addon.id" v-if="addon.status == 'approved'">
               <img :src="addon.images.header">
+              <div class="img-card-shadow"></div>
               <h3>{{ addon.title }}</h3>
-              <div class="addon-flags">
-                <img :style="{'margin-bottom': addon.optifine ? '5px' : 'auto'}" v-if="addon.type.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
-                <img v-if="addon.optifine" :src="optifine" alt="requires optifine" loading="lazy">
+              <div class="addon-flags" :style="{'margin-bottom': '-5px' }">
+                <img :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('Java')" :src="java" alt="available for Java Edition" loading="lazy">
+                <img :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
+                <img :style="{'margin-bottom': '5px' }" v-if="addon.optifine" :src="optifine" alt="requires optifine" loading="lazy">
+              </div>
+              <div class="addon-tags">
+                <p :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('32x')" >32x</p>
+                <p :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('64x')" >64x</p>
               </div>
             </router-link>
             <v-btn
@@ -41,14 +47,20 @@ export default {
       </template>
 
       <div class="card card-body">
-        <div class="res-grid-3" style="grid-gap: 0 1.5rem !important">
-          <div v-for="(addon, index) in addons">
-            <router-link class="card img-card" :to="'/addons/' + addon.id" v-if="addon.status == 'approved'">
+        <div class="res-grid-3">
+          <div v-for="(addon, index) in addons" class="hovering-effect" style="margin-bottom: calc(-28px)">
+            <router-link class="card img-card" :to="addon.id" v-if="addon.status == 'approved'">
               <img :src="addon.images.header">
+              <div class="img-card-shadow"></div>
               <h3>{{ addon.title }}</h3>
-              <div class="addon-flags">
-                <img :style="{'margin-bottom': addon.optifine ? '5px' : 'auto'}" v-if="addon.type.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
-                <img v-if="addon.optifine" :src="optifine" alt="requires optifine" loading="lazy">
+              <div class="addon-flags" :style="{'margin-bottom': '-5px' }">
+                <img :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('Java')" :src="java" alt="available for Java Edition" loading="lazy">
+                <img :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
+                <img :style="{'margin-bottom': '5px' }" v-if="addon.optifine" :src="optifine" alt="requires optifine" loading="lazy">
+              </div>
+              <div class="addon-tags">
+                <p :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('32x')" >32x</p>
+                <p :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('64x')" >64x</p>
               </div>
             </router-link>
             <v-btn
@@ -57,7 +69,7 @@ export default {
               :color="fav[addon.id] ? '#FFC83D' : 'rgba(0, 0, 0, 0.5)' "
               icon
 
-              style="position: relative; top: calc(-100% + 2px + 28px); left: 2px;"
+              style="relative; top: calc(-100% + 2px + 28px); left: 2px;"
             >
               <v-icon>mdi-star</v-icon>
             </v-btn>
@@ -70,6 +82,9 @@ export default {
       addons: {},
       optifine: '/image/icon/optifine.png',
       bedrock: '/image/icon/bedrock.png',
+      java: '/image/icon/java.png',
+      img32: '/image/icon/32_transparent.png',
+      img64: '/image/icon/64_transparent.png',
       fav: {}
     }
   },
