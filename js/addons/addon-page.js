@@ -16,14 +16,14 @@ export default {
               <img :src="addon.images.header">
               <div class="img-card-shadow"></div>
               <h3>{{ addon.title }}</h3>
-              <div class="addon-flags" :style="{'margin-bottom': '-5px' }">
-                <img :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('Java')" :src="java" alt="available for Java Edition" loading="lazy">
-                <img :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
-                <img :style="{'margin-bottom': '5px' }" v-if="addon.optifine" :src="optifine" alt="requires optifine" loading="lazy">
+              <div class="addon-flags" style="margin-bottom: 5px;">
+                <img style="margin-bottom: 5px;" v-if="addon.type.includes('Java')" :src="java" alt="available for Java Edition" loading="lazy">
+                <img style="margin-bottom: 5px;" v-if="addon.type.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
+                <img style="margin-bottom: 5px;" v-if="addon.optifine" :src="optifine" alt="requires optifine" loading="lazy">
               </div>
               <div class="addon-tags">
-                <p :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('32x')" >32x</p>
-                <p :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('64x')" >64x</p>
+                <p style="margin-bottom: 5px; margin-right: 5px;" v-if="addon.type.includes('32x')" >32x</p>
+                <p style="margin-bottom: 5px;" v-if="addon.type.includes('64x')" >64x</p>
               </div>
             </router-link>
             <v-btn
@@ -53,14 +53,14 @@ export default {
               <img :src="addon.images.header">
               <div class="img-card-shadow"></div>
               <h3>{{ addon.title }}</h3>
-              <div class="addon-flags" :style="{'margin-bottom': '-5px' }">
-                <img :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('Java')" :src="java" alt="available for Java Edition" loading="lazy">
-                <img :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
-                <img :style="{'margin-bottom': '5px' }" v-if="addon.optifine" :src="optifine" alt="requires optifine" loading="lazy">
+              <div class="addon-flags" style="margin-bottom: -5px;">
+                <img style="margin-bottom: 5px;" v-if="addon.type.includes('Java')" :src="java" alt="available for Java Edition" loading="lazy">
+                <img style="margin-bottom: 5px;" v-if="addon.type.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
+                <img style="margin-bottom: 5px;" v-if="addon.optifine" :src="optifine" alt="requires optifine" loading="lazy">
               </div>
               <div class="addon-tags">
-                <p :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('32x')" >32x</p>
-                <p :style="{'margin-bottom': '5px' }" v-if="addon.type.includes('64x')" >64x</p>
+                <p style="margin-bottom: 5px; margin-right: 5px" v-if="addon.type.includes('32x')" >32x</p>
+                <p style="margin-bottom: 5px;" v-if="addon.type.includes('64x')" >64x</p>
               </div>
             </router-link>
             <v-btn
