@@ -169,11 +169,11 @@ export default {
   computed: {},
   mounted: function() {
 
-    getJSON(`https://compliancepack.net:8081/firestorm/files/addons.json`, (err, json) => {
+    getJSON(`https://database.compliancepack.net/firestorm/files/addons.json`, (err, json) => {
       if (err) return console.error(err)
       this.addon = json[this.$route.params.addon]
 
-      getJSON(`https://compliancepack.net:8081/firestorm/files/users.json`, (err, json) => {
+      getJSON(`https://database.compliancepack.net/firestorm/files/users.json`, (err, json) => {
         if (err) return console.error(err)
         
         for (const userID in json) {
