@@ -26,7 +26,7 @@ jobs:
           git pull origin master
           bundle install
           bundle exec jekyll build
-          rsync -av ./_site/ /var/www/html/compliancepack.net
+          cp -a ./_site/. /var/www/html/compliancepack.net
           cd /var/www/html/webapp.compliancepack.net
           git pull
           pm2 restart "APP"
