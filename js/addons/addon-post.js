@@ -98,14 +98,14 @@ export default {
               <template v-if="addon.optifine">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="optifine" alt="requires optifine" loading="lazy">
-                  <p class="addon-flags-big-text">This Add-on require <a href="https://optifine.net/home">optifine</a></p>
+                  <p class="addon-flags-big-text">This add-on requires <a href="https://optifine.net/downloads">Optifine</a></p>
                 </div>
                 <br>
               </template>
               <template v-if="addon.type && addon.type.includes('Java')">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="java" alt="java support" loading="lazy">
-                  <p class="addon-flags-big-text">This Add-on is made for the Java Edition!</p>
+                  <p class="addon-flags-big-text">This add-on was made for the Java Edition.</p>
                 </div>
                 <br>
               </template>
@@ -113,7 +113,7 @@ export default {
               <template v-if="addon.type && addon.type.includes('Bedrock')">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="bedrock" alt="bedrock support" loading="lazy">
-                  <p class="addon-flags-big-text">This Add-on got a Bedrock support!</p>
+                  <p class="addon-flags-big-text">This add-on has Bedrock support.</p>
                 </div>
                 <br>
               </template>

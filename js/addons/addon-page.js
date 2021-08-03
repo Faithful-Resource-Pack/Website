@@ -6,7 +6,7 @@ export default {
     <v-container
       style="max-width: 1140px; padding-top: 100px; padding-bottom: 100px"
     >
-      <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem">Compliance Add-Ons</h2>
+      <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem">Add-ons</h2>
 
       <h3 class="text-center" v-if="Object.keys(fav).length">Favorites</h3>
       <div class="card card-body" v-if="Object.keys(fav).length">
