@@ -169,11 +169,11 @@ export default {
   computed: {},
   mounted: function() {
 
-    getJSON(`http://194.163.144.230:8081/firestorm/files/addons.json`, (err, json) => {
+    getJSON(`https://compliancepack.net:8081/firestorm/files/addons.json`, (err, json) => {
       if (err) return console.error(err)
       this.addon = json[this.$route.params.addon]
 
-      getJSON(`http://194.163.144.230:8081/firestorm/files/users.json`, (err, json) => {
+      getJSON(`https://compliancepack.net:8081/firestorm/files/users.json`, (err, json) => {
         if (err) return console.error(err)
         
         for (const userID in json) {

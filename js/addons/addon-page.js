@@ -89,7 +89,7 @@ export default {
     }
   },
   mounted: function() {
-    fetch('http://194.163.144.230:8081/firestorm/files/addons.json')
+    fetch('https://compliancepack.net:8081/firestorm/files/addons.json')
     .then(response => {
       return response.json()
     })
