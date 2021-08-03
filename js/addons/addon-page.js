@@ -83,8 +83,6 @@ export default {
       optifine: '/image/icon/optifine.png',
       bedrock: '/image/icon/bedrock.png',
       java: '/image/icon/java.png',
-      img32: '/image/icon/32_transparent.png',
-      img64: '/image/icon/64_transparent.png',
       fav: {}
     }
   },
