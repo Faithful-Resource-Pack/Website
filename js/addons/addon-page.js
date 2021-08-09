@@ -41,14 +41,50 @@ export default {
       </div>
 
       <template v-if="Object.keys(fav).length">
-        <hr>
         <br>
-        <h3 class="text-center" >All</h3>
+        <h3 class="text-center">All</h3>
       </template>
 
       <div class="card card-body">
+        <h4 class="text-center">Search</h4>
+        <div class="checkbox-container">
+          <v-checkbox
+            v-for="type in editions"
+            v-model="selectedEditions"
+            :label="type"
+            :value="type"
+            color="primary"
+            @change="startSearch"
+          >
+          </v-checkbox>
+          <v-checkbox
+            v-for="type in res"
+            v-model="selectedRes"
+            :label="type"
+            :value="type"
+            color="primary"
+            @change="startSearch"
+          >
+          </v-checkbox>
+        </div>
+        <v-text-field
+          v-model="search"
+          :append-outer-icon="search ? 'mdi-send' : undefined"
+          filled
+          clear-icon="mdi-close"
+          clearable
+          color="primary"
+          placeholder="Search add-on name"
+          type="text"
+          v-on:keyup.enter="startSearch"
+          @click:append-outer="startSearch"
+          @click:clear="clearSearch"
+        ></v-text-field>
+      </div>
+      <br>
+      <div class="card card-body">
         <div class="res-grid-3">
-          <div v-for="(addon, index) in addons" class="hovering-effect" style="margin-bottom: calc(-28px)">
+          <div v-for="(addon, index) in searchedAddons" v-if="searchedAddons != {}" class="hovering-effect" style="margin-bottom: calc(-28px)">
             <router-link class="card img-card" :to="addon.id" v-if="addon.status == 'approved'">
               <img :src="addon.images.header">
               <div class="img-card-shadow"></div>
@@ -74,19 +110,66 @@ export default {
               <v-icon>mdi-star</v-icon>
             </v-btn>
           </div>
+          <div v-else>
+            No results found for {{ search }}
+          </div>
         </div>
       </div>
     </v-container>`,
   data() {
     return {
       addons: {},
+      searchedAddons: {},
+      search: '',
       optifine: '/image/icon/optifine.png',
       bedrock: '/image/icon/bedrock.png',
       java: '/image/icon/java.png',
+      editions: [ 'Java', 'Bedrock' ],
+      res: [ '32x', '64x' ],
+      selectedEditions: [ 'Java', 'Bedrock' ],
+      selectedRes: [ '32x', '64x' ],
       fav: {}
     }
   },
   methods: {
+    startSearch: function () {
+      if (this.search == '' && this.editions.length + this.res.length == this.selectedEditions.length + this.selectedRes.length) this.searchedAddons = this.addons
+      else {
+        this.searchedAddons = {}
+
+        for (const addonID in this.addons) {
+          if (this.addons[addonID].title.toLowerCase().includes(this.search.toLowerCase()) || this.search == '') {
+
+            let local_res = []
+            let local_editions = []
+
+            // split types of an addon (res + edition : res & edition)
+            for (let i = 0; this.addons[addonID].type[i]; i++) {
+              if (this.editions.includes(this.addons[addonID].type[i]))
+                local_editions.push(this.addons[addonID].type[i])
+              if (this.res.includes(this.addons[addonID].type[i]))
+                local_res.push(this.addons[addonID].type[i])
+            }
+
+            // search if edition then check if res
+            for (let i = 0; local_editions[i]; i++) {
+              if (this.selectedEditions.includes(local_editions[i])) {
+                for (let j = 0; local_res[j]; j++) {
+                  if (this.selectedRes.includes(local_res[j])) this.searchedAddons[addonID] = this.addons[addonID]
+                }
+              }
+            }
+
+          }
+        }
+      }
+
+      this.$forceUpdate() // force update (because it can be a bit long to process)
+    },
+    clearSearch: function () {
+      this.search = ''
+      this.startSearch()
+    },
     checkFav: function (addon) {
       if (!this.fav[addon.id]) {
         this.fav[addon.id] = addon
@@ -106,7 +189,10 @@ export default {
     .then(response => {
       return response.json()
     })
-    .then(data => this.addons = data)
+    .then(data => {
+      this.addons = data
+      this.searchedAddons = data
+    })
 
     this.fav = JSON.parse(window.localStorage.getItem("favAddons") || "{}")
   },

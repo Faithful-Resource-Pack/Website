@@ -1795,7 +1795,7 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 }
 
 .hovering-effect:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
 }
 
 .addon-flags-big {
@@ -1856,4 +1856,41 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
   color: white;
   background-color: #343a40;
   border-radius: $border-radius-0x;
+}
+
+.checkbox-container {
+  flex-direction: row;
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-radius: $border-radius-0x;
+
+  & > div > div > div > label {
+	  color: rgba(255,255,255,.8) !important;
+    font-size: 20px;
+  }
+
+  & > div > div > div > div > i {
+	  color: rgba(255,255,255,.5) !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .checkbox-container {
+    flex-direction: column;
+  }
+}
+
+.v-text-field__slot {
+  & > input {
+    color: rgba(255,255,255,.8) !important;
+  }
+  & > input::placeholder {
+    color: rgba(255,255,255,.5) !important;
+  }
+}
+
+.theme--light.v-text-field--filled>.v-input__control>.v-input__slot {
+  background: rgba(255,255,255,0.1) !important;
 }
