@@ -83,8 +83,8 @@ export default {
       </div>
       <br>
       <div class="card card-body">
-        <div class="res-grid-3">
-          <div v-for="(addon, index) in searchedAddons" v-if="searchedAddons != {}" class="hovering-effect" style="margin-bottom: calc(-28px)">
+        <div class="res-grid-3" v-if="Object.keys(searchedAddons).length">
+          <div v-for="(addon, index) in searchedAddons" class="hovering-effect" style="margin-bottom: calc(-28px)">
             <router-link class="card img-card" :to="addon.id" v-if="addon.status == 'approved'">
               <img :src="addon.images.header">
               <div class="img-card-shadow"></div>
@@ -110,9 +110,12 @@ export default {
               <v-icon>mdi-star</v-icon>
             </v-btn>
           </div>
-          <div v-else>
-            No results found for {{ search }}
-          </div>
+        </div>
+        <div v-else-if="loading">
+          <p align="center"><i>Loading Add-ons, please wait...</i></p>
+        </div>
+        <div v-else>
+          <p align="center"><i>No results found {{ search ? 'for ' + search : '' }}</i></p>
         </div>
       </div>
     </v-container>`,
@@ -121,6 +124,7 @@ export default {
       addons: {},
       searchedAddons: {},
       search: '',
+      loading: true,
       optifine: '/image/icon/optifine.png',
       bedrock: '/image/icon/bedrock.png',
       java: '/image/icon/java.png',
@@ -192,6 +196,7 @@ export default {
     .then(data => {
       this.addons = data
       this.searchedAddons = data
+      this.loading = false
     })
 
     this.fav = JSON.parse(window.localStorage.getItem("favAddons") || "{}")
