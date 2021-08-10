@@ -85,7 +85,7 @@ const v = new Vue({
 
                   <td class="small" v-if="item[0].links.github" :colspan="item[0].links.curse ? 1 : 2">
                     <a v-if="item[0].links.github" class="btn btn-dark btn-dl" :href="item[0].links.github">
-                      <i style="margin-right: 4px" class="fab fa-github"></i>
+                      <i style="margin-right: 4px" class="fas fa-download"></i>
                       <template v-if="item[0].file_type != 'GitHub'">
                         {{ getGitHubDownload(item[0], 0, key, j) }}
                       </template>
@@ -129,7 +129,7 @@ const v = new Vue({
 
                   <td class="small" v-if="subItem.links.github" :colspan="subItem.links.curse ? 1 : 2">
                     <a v-if="subItem.links.github" class="btn btn-dark btn-dl" :href="subItem.links.github">
-                      <i style="margin-right: 4px" class="fab fa-download"></i>
+                      <i style="margin-right: 4px" class="fas fa-download"></i>
                       {{ getGitHubDownload(subItem, keyB, key, j) }}
                     </a>
                   </td>
