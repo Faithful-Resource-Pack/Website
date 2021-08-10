@@ -129,7 +129,7 @@ const v = new Vue({
 
                   <td class="small" v-if="subItem.links.github" :colspan="subItem.links.curse ? 1 : 2">
                     <a v-if="subItem.links.github" class="btn btn-dark btn-dl" :href="subItem.links.github">
-                      <i style="margin-right: 4px" class="fab fa-github"></i>
+                      <i style="margin-right: 4px" class="fab fa-download"></i>
                       {{ getGitHubDownload(subItem, keyB, key, j) }}
                     </a>
                   </td>
