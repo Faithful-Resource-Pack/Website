@@ -1,4 +1,4 @@
-/* global Vuetify */
+/* global fetch */
 
 export default {
   name: 'addon-page',
@@ -11,8 +11,8 @@ export default {
       <h3 class="text-center" v-if="Object.keys(fav).length">Favorites</h3>
       <div class="card card-body" v-if="Object.keys(fav).length">
         <div class="res-grid-3">
-          <div v-for="(addon, index) in fav" class="hovering-effect" style="margin-bottom: calc(-28px)">
-            <router-link class="card img-card" :to="addon.id" v-if="addon.status == 'approved'">
+          <div v-for="(addon, index) in fav" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.status === 'approved'">
+            <router-link class="card img-card" :to="addon.id">
               <img :src="addon.images.header">
               <div class="img-card-shadow"></div>
               <h3>{{ addon.title }}</h3>
@@ -84,8 +84,8 @@ export default {
       <br>
       <div class="card card-body">
         <div class="res-grid-3" v-if="Object.keys(searchedAddons).length">
-          <div v-for="(addon, index) in searchedAddons" class="hovering-effect" style="margin-bottom: calc(-28px)">
-            <router-link class="card img-card" :to="addon.id" v-if="addon.status == 'approved'">
+          <div v-for="(addon, index) in searchedAddons" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.status === 'approved'">
+            <router-link class="card img-card" :to="addon.id">
               <img :src="addon.images.header">
               <div class="img-card-shadow"></div>
               <h3>{{ addon.title }}</h3>
@@ -119,7 +119,7 @@ export default {
         </div>
       </div>
     </v-container>`,
-  data() {
+  data () {
     return {
       addons: {},
       searchedAddons: {},
@@ -128,42 +128,38 @@ export default {
       optifine: '/image/icon/optifine.png',
       bedrock: '/image/icon/bedrock.png',
       java: '/image/icon/java.png',
-      editions: [ 'Java', 'Bedrock' ],
-      res: [ '32x', '64x' ],
-      selectedEditions: [ 'Java', 'Bedrock' ],
-      selectedRes: [ '32x', '64x' ],
+      editions: ['Java', 'Bedrock'],
+      res: ['32x', '64x'],
+      selectedEditions: ['Java', 'Bedrock'],
+      selectedRes: ['32x', '64x'],
       fav: {}
     }
   },
   methods: {
     startSearch: function () {
-      if (this.search == '' && this.editions.length + this.res.length == this.selectedEditions.length + this.selectedRes.length) this.searchedAddons = this.addons
+      if (this.search === '' && this.editions.length + this.res.length === this.selectedEditions.length + this.selectedRes.length) this.searchedAddons = this.addons
       else {
         this.searchedAddons = {}
 
         for (const addonID in this.addons) {
-          if (this.addons[addonID].title.toLowerCase().includes(this.search.toLowerCase()) || this.search == '') {
-
-            let local_res = []
-            let local_editions = []
+          if (this.addons[addonID].title.toLowerCase().includes(this.search.toLowerCase()) || this.search === '') {
+            const localRes = []
+            const localEditions = []
 
             // split types of an addon (res + edition : res & edition)
             for (let i = 0; this.addons[addonID].type[i]; i++) {
-              if (this.editions.includes(this.addons[addonID].type[i]))
-                local_editions.push(this.addons[addonID].type[i])
-              if (this.res.includes(this.addons[addonID].type[i]))
-                local_res.push(this.addons[addonID].type[i])
+              if (this.editions.includes(this.addons[addonID].type[i])) localEditions.push(this.addons[addonID].type[i])
+              if (this.res.includes(this.addons[addonID].type[i])) localRes.push(this.addons[addonID].type[i])
             }
 
             // search if edition then check if res
-            for (let i = 0; local_editions[i]; i++) {
-              if (this.selectedEditions.includes(local_editions[i])) {
-                for (let j = 0; local_res[j]; j++) {
-                  if (this.selectedRes.includes(local_res[j])) this.searchedAddons[addonID] = this.addons[addonID]
+            for (let i = 0; localEditions[i]; i++) {
+              if (this.selectedEditions.includes(localEditions[i])) {
+                for (let j = 0; localRes[j]; j++) {
+                  if (this.selectedRes.includes(localRes[j])) this.searchedAddons[addonID] = this.addons[addonID]
                 }
               }
             }
-
           }
         }
       }
@@ -177,28 +173,26 @@ export default {
     checkFav: function (addon) {
       if (!this.fav[addon.id]) {
         this.fav[addon.id] = addon
-        window.localStorage.setItem("favAddons", JSON.stringify(this.fav))
-      }
-
-      else {
+        window.localStorage.setItem('favAddons', JSON.stringify(this.fav))
+      } else {
         delete this.fav[addon.id]
-        window.localStorage.setItem("favAddons", JSON.stringify(this.fav))
+        window.localStorage.setItem('favAddons', JSON.stringify(this.fav))
       }
 
       this.$forceUpdate()
     }
   },
-  mounted: function() {
+  mounted: function () {
     fetch('https://database.compliancepack.net/firestorm/files/addons.json')
-    .then(response => {
-      return response.json()
-    })
-    .then(data => {
-      this.addons = data
-      this.searchedAddons = data
-      this.loading = false
-    })
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        this.addons = data
+        this.searchedAddons = data
+        this.loading = false
+      })
 
-    this.fav = JSON.parse(window.localStorage.getItem("favAddons") || "{}")
-  },
+    this.fav = JSON.parse(window.localStorage.getItem('favAddons') || '{}')
+  }
 }
