@@ -1243,6 +1243,14 @@ a.btn.disabled {
     margin-bottom: 0;
     margin-left: 15px;
   }
+  #stats-addons{
+    .badge-container {
+      display: inline;
+    }
+    .badge {
+      margin: 20px;
+    }
+  }
 }
 .card-img,
 .card-img-top,
@@ -1810,6 +1818,12 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
   padding-right: 10px;
   margin-top: auto;
   margin-bottom: auto !important;
+}
+
+#stats-addons {
+  .badge {
+    margin: 10px;
+  }
 }
 
 .card-widget {

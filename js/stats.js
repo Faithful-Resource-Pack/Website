@@ -1,9 +1,10 @@
 /* global Vue, getJSON, */
 
+Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 const v = new Vue({ // eslint-disable-line no-unused-vars
   el: '#stats',
   data: {
-
+    addons: {},
     keys: ['numberOfMinecraftVersions', 'totalNumberOfResourcePacksStored', 'numberOfModsSupported'],
     messages: {
       loading: 'Loading',
@@ -16,9 +17,33 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     numberOfModsSupported: undefined,
     totalNumberOfResourcePacksStored: undefined
   },
+  methods: {
+  },
   computed: {
     loadingMessage: function () {
-      return this.loading ? '<i class="fas fa-circle-notch fa-spin"></i> ' + this.messages.loading : ''
+      return '<i class="fas fa-circle-notch fa-spin"></i> ' + this.messages.loading
+    },
+    addonsStats: function () {
+      // super duper dynamic addons stats
+      const result = {}
+      const editions = []
+      Object.values(this.addons).map(e => e.type).forEach(types => {
+        types.filter(e => !isNaN(parseInt(e))).forEach(resolution => {
+          if(result[resolution] === undefined) result[resolution] = {}
+          types.filter(e => isNaN(parseInt(e))).forEach(edition => {
+            if(editions.indexOf(edition) === -1) editions.push(edition)
+            if(result[resolution][edition] === undefined) result[resolution][edition] = 0
+            result[resolution][edition]++
+          })
+        })
+      })
+      Object.keys(result).forEach(res => {
+        editions.forEach(e => {
+          if(result[res][e] === undefined) result[res][e] = 0
+        })
+      })
+
+      return result
     }
   },
   mounted: function () {
@@ -48,5 +73,16 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       this.loading = false
     })
+
+    fetch('https://database.compliancepack.net/firestorm/files/addons.json')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        this.addons = data
+      })
+      .catch(() => {
+        this.addons = undefined
+      })
   }
 })
