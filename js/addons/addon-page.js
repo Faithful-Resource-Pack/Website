@@ -184,13 +184,13 @@ export default {
   },
   mounted: function () {
     fetch('https://database.compliancepack.net/firestorm/files/addons.json')
-      .then(response => {
-        return response.json()
-      })
+      .then(res => res.json())
       .then(data => {
         this.addons = data
         this.searchedAddons = data
         this.loading = false
+
+        for (const addonID in this.addons) this.addons[addonID].id = addonID // fix missing ID (property value)
       })
 
     this.fav = JSON.parse(window.localStorage.getItem('favAddons') || '{}')
