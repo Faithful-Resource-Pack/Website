@@ -63,21 +63,21 @@ layout: compress
 
 					<li class="nav-item">
 						<a class="nav-link" href="{{ site.baseurl }}/">
-							<i style="margin-right: 5px" class="fas fa-home"></i>
+							<i class="fas fa-home"></i>
 							Home
 						</a>
 					</li>
 
 					<li class="nav-item">
 						<a class="nav-link" href="{{ site.baseurl }}/downloads">
-							<i style="margin-right: 5px" class="fas fa-angle-double-down"></i>
+							<i class="fas fa-angle-double-down"></i>
 							Downloads
 						</a>
 					</li>
 
 					<li class="nav-item">
 						<span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
-							<i style="margin-right: 5px" class="fas fa-plus"></i>
+							<i class="fas fa-plus"></i>
 							Add-ons
 						</span>
 						<div class="dropdown-menu dropdown-menu-center">
@@ -87,7 +87,7 @@ layout: compress
 					</li>
 
 					<!-- carousel of other pages -->
-					<div class="no-js" id="topCarousel">
+					<li class="no-js" id="topCarousel">
 						<div class="item">
 							<a href="{{ site.baseurl }}/compliance32x/latest" title="Compliance">
 								<img src="{{ site.baseurl }}/image/icon/compliance_32x.svg" style="width: 48px; height: 48px" alt="Compliance 32x">
@@ -118,18 +118,18 @@ layout: compress
 								<img src="{{ site.baseurl }}/image/icon/compliance_tweaks.svg" style="width: 48px; height: 48px" alt="Compliance Tweaks">
 							</a>
 						</div>
-					</div>
+					</li>
 
 					<li class="nav-item">
 						<a class="nav-link" href="{{ site.baseurl }}/tweaks">
-							<i style="margin-right: 5px" class="fas fa-cog"></i>
+							<i class="fas fa-cog"></i>
 							Tweaks
 						</a>
 					</li>
 
 					<li class="nav-item">
 						<span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
-							<i style="margin-right: 5px" class="fas fa-wrench"></i>
+							<i class="fas fa-wrench"></i>
 							Modding
 						</span>
 						<div class="dropdown-menu dropdown-menu-center">
@@ -140,9 +140,9 @@ layout: compress
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/gallery">
-							<i style="margin-right: 5px" class="fas fa-image"></i>
-							Gallery
+						<a class="nav-link" href="https://webapp.compliancepack.net/">
+							<i class="fas fa-cogs"></i>
+							Web App
 						</a>
 					</li>
 
@@ -169,21 +169,21 @@ layout: compress
 
 					<li class="nav-item">
 						<a class="nav-link" href="{{ site.baseurl }}/license">
-							<i style="margin-right: 5px" class="fas fa-gavel"></i>
+							<i class="fas fa-gavel"></i>
 							License
 						</a>
 					</li>
 
-					<li class="nav-item">
+					<li class="nav-item unsized">
 						<a class="nav-link" href="{{ site.baseurl }}/comments-policy">
-							<i style="margin-right: 5px" class="fas fa-scroll"></i>
+							<i class="fas fa-scroll"></i>
 							Comments Policy
 						</a>
 					</li>
 
 					<li class="nav-item">
 						<a class="nav-link" href="{{ site.baseurl }}/stats">
-							<i style="margin-right: 5px" class="fas fa-chart-bar"></i>
+							<i class="fas fa-chart-bar"></i>
 							Statistics
 						</a>
 					</li>
@@ -200,16 +200,23 @@ layout: compress
 			<div>
 				<ul class="navbar-nav">
 
-					<li class="nav-item">
-						<a class="nav-link" href="https://github.com/Compliance-Resource-Pack" rel="noopener">
-							<i style="margin-right: 5px" class="fab fa-github"></i>
+					<li class="nav-item dropup">
+						<span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+							<i class="fab fa-github"></i>
 							GitHub
-						</a>
+						</span>
+						<div class="dropdown-menu dropdown-menu-center">
+							<a class="dropdown-item" href="https://github.com/Compliance-Resource-Pack" rel="noopener">Compliance</a>
+							<a class="dropdown-item" href="https://github.com/Compliance-Addons" rel="noopener">Compliance Addons</a>
+							<a class="dropdown-item" href="https://github.com/Compliance-Dungeons" rel="noopener">Compliance Dungeons</a>
+							<a class="dropdown-item" href="https://github.com/Compliance-Mods" rel="noopener">Compliance Mods</a>
+							<a class="dropdown-item" href="https://github.com/ComplianceTweaks" rel="noopener">Compliance Tweaks</a>
+						</div>
 					</li>
 
 					<li class="nav-item dropup">
 						<span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
-							<i style="margin-right: 5px" class="fab fa-discord"></i>
+							<i class="fab fa-discord"></i>
 							Discord
 						</span>
 						<div class="dropdown-menu dropdown-menu-center">
@@ -221,7 +228,7 @@ layout: compress
 
 					<li class="nav-item theme-switch-wrapper">
 						<btn id="DarkMode" onclick="changeMod(true)" class="nav-link">
-							<i style="margin-right: 5px" class="fas fa-adjust"></i> Auto Theme
+							<i class="fas fa-adjust"></i> Auto Theme
 						</btn>
 					</li>
 
@@ -236,19 +243,6 @@ layout: compress
 		</p>
     <small>CompliPage - {{ site.time | date: "%Y/%m/%d %H:%M" }}</small>
 	</footer>
-
-	<!--div class="cookie banner m-3">
-		<div class="cookie-text">
-			We use Google Analytics to deliver the best possible user experience.
-			To find out more read our <a href="/">Privacy Policy</a>.
-		</div>
-		<button class="btn btn-primary f-right">
-			Accept
-		</button>
-		<button class="btn btn-dark f-right mr-2">
-			Reject
-		</button>
-	</div-->
 
   <script src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
 	<script src="{{ site.baseurl }}/js/snow.js" type="module"></script>

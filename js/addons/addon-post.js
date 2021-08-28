@@ -1,4 +1,4 @@
-/* global getJSON, marked */
+/* global fetch, marked */
 
 const addonModal = () => import('./addon-post-modal.js')
 
@@ -9,8 +9,16 @@ export default {
   },
   template: `
     <v-container
+      v-if="loading"
       style="max-width: 1140px; padding-top: 100px; padding-bottom: 100px"
-      v-if="addon.status == 'approved'"
+    >
+      <div class="card card-body">
+        <p align="center">The add-on is loading, please wait...</p>
+      </div>
+    </v-container>
+    <v-container
+      style="max-width: 1140px; padding-top: 100px; padding-bottom: 100px"
+      v-else-if="addon.status == 'approved'"
     >
 
       <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem;">{{ addon.title }}</h2>
@@ -149,8 +157,8 @@ export default {
       v-else
     >
       <div class="card card-body">
-        <p align="justify">Addon status: {{ addon.status }}</p>
-        <p align="justify" v-if="addon.approval?.reason">Reason: {{ addon.approval.reason }}</p>
+        <p align="center">Addon status: {{ addon.status }}</p>
+        <p align="center" v-if="addon.approval?.reason">Reason: {{ addon.approval.reason }}<br>If you are the author of this add-on, please use the <a href="https://webapp.compliancepack.net/">Compliance Web Application</a> to edit your add-on</p>
       </div>
     </v-container>
     `,
@@ -164,7 +172,8 @@ export default {
       img32: '/image/icon/32.png',
       img64: '/image/icon/64.png',
       modal: false,
-      modalImage: ''
+      modalImage: '',
+      loading: true
     }
   },
   methods: {
@@ -181,34 +190,43 @@ export default {
     }
   },
   mounted: function () {
-    getJSON('https://database.compliancepack.net/firestorm/files/addons.json', (err, json) => {
-      if (err) return console.error(err)
-      this.addon = json[this.$route.params.addon]
-
-      getJSON('https://database.compliancepack.net/firestorm/files/users.json', (err, json) => {
-        if (err) return console.error(err)
-        for (const userID in json) {
-          if (this.addon.authors.includes(userID)) {
-            this.authors[userID] = json[userID]
-          }
-        }
-
-        this.$forceUpdate()
-
-        if (this.addon.comments) {
-          const disqus_config = function () {
-            this.page.url = 'https://compliancepack.net/' + this.addon.id // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = this.addon.id // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
-
-          (function () { // DON'T EDIT BELOW THIS LINE
-            const d = document; const s = d.createElement('script')
-            s.src = 'https://compliance-2.disqus.com/embed.js'
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s)
-          })()
-        }
+    fetch('https://database.compliancepack.net/firestorm/files/addons.json')
+      .then(res => res.json())
+      .then(data => {
+        this.addon = data[this.$route.params.addon]
+        this.addon.id = this.$route.params.addon // fix missing ID field (property value)
       })
-    })
+      .then(() => {
+        fetch('https://database.compliancepack.net/firestorm/files/users.json')
+          .then(res => res.json())
+          .then(data => {
+            
+            this.addon.authors.forEach(authorID => {
+              this.authors[authorID] = data[authorID]
+            })
+
+            if (this.addon.comments && this.addon.status == 'approved') {
+              const disqus_config = function () {
+                this.page.url = 'https://compliancepack.net/' + this.addon.id // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = this.addon.id // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+
+              (function () { // DON'T EDIT BELOW THIS LINE
+                const d = document; const s = d.createElement('script')
+                s.src = 'https://compliance-2.disqus.com/embed.js'
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s)
+              })()
+            }
+
+            this.loading = false
+            this.$forceUpdate()
+          })
+      })
+      .catch(err => {
+        console.error(err)
+        this.addon = {}
+        this.loading = false
+      })
   }
 }
