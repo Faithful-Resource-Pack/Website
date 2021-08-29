@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Statistics
 ---
 
@@ -15,19 +15,17 @@ title: Statistics
 	</div>
 
 	<h2 class="display-4 my-5">Add-Ons</h2>
-	<div class="res-grid-4">
-		<h3>32x Add-Ons</h3>
-		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance32x/addons/'" | size }}</span></h3>
-		<h3>32x Bedrock Add-Ons</h3>
-		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance32xBedrockAddons/'" | size }}</span></h3>
-		<h3>64x Add-Ons</h3>
-		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance64xAddons/'" | size }}</span></h3>
-		<h3>64x Bedrock Add-Ons</h3>
-		<h3><span class="badge badge-primary h1">{{ site.pages | where_exp:"item", "item.url contains 'compliance64xBedrockAddons/'" | size }}</span></h3>
+	<div v-if="Object.keys(addonsStats).length === 0 && addons !== undefined" v-html="loadingMessage"></div>
+	<div id="stats-addons" class="res-grid-2">
+		<template v-for="res in Object.keys(addonsStats)" :key="res">
+			<div v-for="edi, e_i in Object.keys(addonsStats[res])" :key="edi">
+				<h3><span v-text="res + ' ' + edi + ' Add-Ons'"></span><div class="badge-container"><span class="badge badge-primary h1" v-text="addonsStats[res][edi]"></span></div></h3>
+			</div>
+		</template>
 	</div>
 
 	<h2 class="display-4 my-5">Mods</h2>
-	<div v-html="loadingMessage"></div>
+	<div v-if="loading" v-html="loadingMessage"></div>
 
 	<div class="res-grid-3">
 		<div v-for="(mKey, index) in keys" :key="index">

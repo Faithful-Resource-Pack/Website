@@ -257,14 +257,34 @@ hr {
   .navbar {
     justify-content: center;
   }
-} 
+}
 
+.nav-item {
+  width: 125px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  &.unsized {
+    width: auto
+  }
+
+  > .nav-link > i {
+    margin-right: 10px
+  }
+
+  > .nav-link {
+    display: flex;
+    align-items: center;
+  }
+}
 .navbar-nav {
   display: flex;
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  align-items: center;
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -1243,6 +1263,14 @@ a.btn.disabled {
     margin-bottom: 0;
     margin-left: 15px;
   }
+  #stats-addons{
+    .badge-container {
+      display: inline;
+    }
+    .badge {
+      margin: 20px;
+    }
+  }
 }
 .card-img,
 .card-img-top,
@@ -1812,6 +1840,12 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
   margin-bottom: auto !important;
 }
 
+#stats-addons {
+  .badge {
+    margin: 10px;
+  }
+}
+
 .card-widget {
   height: 66px;
   padding: 0;
@@ -1893,4 +1927,13 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 
 .theme--light.v-text-field--filled>.v-input__control>.v-input__slot {
   background: rgba(255,255,255,0.1) !important;
+}
+
+.btn-lang {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  justify-content: center;
 }
