@@ -40,13 +40,26 @@ Vue.component('minecraft-mod', {
       return String(repoName + '-' + version.replace(/\./g, ''))
     },
     search (index, searchFilter, _fullName = false) {
+      if(searchFilter === undefined) return Promise.reject(new Error('searchFilter is undefined'))
+
       return new Promise((resolve, reject) => {
         const size = index * 25
-        const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://addons-ecs.forgesvc.net/api/v2/addon/search?gameId=432&pageSize=${size}&sectionId=6&searchFilter=${searchFilter}`)}`
+        const api_url = `https://addons-ecs.forgesvc.net/api/v2/addon/search?gameId=432&pageSize=${size}&sectionId=6&searchFilter=${searchFilter}`
+        const url = `https://api.allorigins.win/get?url=${encodeURIComponent(api_url)}`
+        // get allows us to have better control over the content returned and the status code
+        // here we sometimes have an 400 status code
 
         axios(url)
           .then(res => {
-            const result = res.data.find(mod => {
+            if(res.status !== 200 || res.data.status.http_code !== 200) { // verify request if it went well
+              reject(new Error(`Could not load url: ${ api_url }`))
+              return
+            }
+
+            // parse content
+            const json = JSON.parse(res.data.contents)
+
+            const result = json.find(mod => {
               let found = false
               if (this.curseName !== _NO_LINK) {
                 found = mod.websiteUrl.split('/').pop() === this.curseName
