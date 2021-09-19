@@ -7,4 +7,5 @@ _site/
 debug.log
 .DS_Store
 _start.bat
-firestorm
+node_modules/
+.env

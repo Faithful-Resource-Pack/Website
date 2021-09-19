@@ -10,6 +10,10 @@ defaults:
     values:
       layout: "default"
 
+exclude:
+  - node_modules
+  - /package*.json
+
 sass:
   sass_dir: css
   sourcemap: never

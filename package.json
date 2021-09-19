@@ -1,0 +1,32 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Compliance Website",
+  "main": "index.js",
+  "scripts": {
+    "ji": "bundle install",
+    "jb": "bundle exec jekyll build",
+    "start": "npm run ji && npm run jb && pm2 start \"node _site/index.js\" --name \"WEBSITE\"",
+    "dev-watch-site": "bundle exec jekyll build --watch",
+    "dev-watch-app": "node_modules\\.bin\\nodemon _site/index.js --watch _site/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Compliance-Resource-Pack/Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Compliance Resource Pack License",
+  "bugs": {
+    "url": "https://github.com/Compliance-Resource-Pack/Website/issues"
+  },
+  "homepage": "https://github.com/Compliance-Resource-Pack/Website#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

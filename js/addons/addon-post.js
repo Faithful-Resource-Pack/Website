@@ -1,6 +1,9 @@
-/* global fetch, marked */
+/* global fetch, marked, firestorm */
 
 const addonModal = () => import('./addon-post-modal.js')
+
+const FIRESTORM_URL = 'https://database.compliancepack.net/firestorm/'
+firestorm.address(FIRESTORM_URL)
 
 export default {
   name: 'addon-page',
@@ -164,6 +167,10 @@ export default {
     `,
   data () {
     return {
+      collections: {
+        addons: firestorm.collection('addons'),
+        users: firestorm.collection('users')
+      },
       addon: {},
       authors: {},
       optifine: '/image/icon/optifine.png',
@@ -190,38 +197,37 @@ export default {
     }
   },
   mounted: function () {
-    fetch('https://database.compliancepack.net/firestorm/files/addons.json')
-      .then(res => res.json())
+    // TODO: remove route compatibility and get direct data with %data% replacement
+    const addonId = window.addon ? window.addon[firestorm.ID_FIELD] : this.$route.params.addon
+    const addonPromise = window.addon ? Promise.resolve(window.addon) : this.collections.addons.get(addonId)
+
+    addonPromise
       .then(data => {
-        this.addon = data[this.$route.params.addon]
-        this.addon.id = this.$route.params.addon // fix missing ID field (property value)
+        this.addon = data
+        this.addon.id = addonId // fix missing ID field (property value)
+
+        return window.addon ? Promise.resolve(window.authors) : this.collections.users.searchKeys(this.addon.authors || [])
       })
-      .then(() => {
-        fetch('https://database.compliancepack.net/firestorm/files/users.json')
-          .then(res => res.json())
-          .then(data => {
-            
-            this.addon.authors.forEach(authorID => {
-              this.authors[authorID] = data[authorID]
-            })
+      .then(_contributors => {
+        const contributors = _contributors.reduce((acc, cur) => { acc[cur[firestorm.ID_FIELD]] = cur; return acc }, {})
+        this.authors = contributors
 
-            if (this.addon.comments && this.addon.status == 'approved') {
-              const disqus_config = function () {
-                this.page.url = 'https://compliancepack.net/' + this.addon.id // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = this.addon.id // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-              };
+        if (this.addon.comments && this.addon.status == 'approved') {
+          const disqus_config = function () {
+            this.page.url = 'https://compliancepack.net/' + this.addon.id // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = this.addon.id // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
 
-              (function () { // DON'T EDIT BELOW THIS LINE
-                const d = document; const s = d.createElement('script')
-                s.src = 'https://compliance-2.disqus.com/embed.js'
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s)
-              })()
-            }
+          (function () { // DON'T EDIT BELOW THIS LINE
+            const d = document; const s = d.createElement('script')
+            s.src = 'https://compliance-2.disqus.com/embed.js'
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s)
+          })()
+        }
 
-            this.loading = false
-            this.$forceUpdate()
-          })
+        this.loading = false
+        this.$forceUpdate()
       })
       .catch(err => {
         console.error(err)
