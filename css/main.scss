@@ -1761,6 +1761,8 @@ img.fancy-card-2x {
 	}
   .poster > img:nth-of-type(1) {
     height: 200px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
     width: fit-content;
   }
 }
