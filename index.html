@@ -56,8 +56,9 @@ title: Home
 <script src="//unpkg.com/alpinejs" defer></script>
 <script>
   const NB_ITEMS = 3
+  const LOADING_ID = "loading"
   const DEFAULT = new Array(NB_ITEMS).fill({
-    id: "loading",
+    id: LOADING_ID,
     title: "Loading...",
     images: {
       header: "{{ site.baseurl }}/image/home/see_more.png"
@@ -92,7 +93,7 @@ title: Home
 <h1 align="center">Add-Ons</h1>
 <div class="res-grid-4" x-data="add" @click="console.log(addons)">
   <template x-for="addon in addons">
-    <a class="card img-card addon" x-bind:href="'/addons#/' + addon.id">
+    <a class="card img-card addon" x-bind:href="addon.id === LOADING_ID ? '' : '/addons#/' + addon.id">
       <img x-bind:src="addon.images.header" x-bind:alt="addon.title">
       <div class="img-card-shadow"></div>
       <h3 x-text="addon.title"></h3>
