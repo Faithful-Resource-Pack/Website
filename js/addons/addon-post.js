@@ -206,9 +206,16 @@ export default {
             })
 
             if (this.addon.comments && this.addon.status == 'approved') {
-              const disqus_config = function () {
-                this.page.url = 'https://compliancepack.net/' + this.addon.id // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = this.addon.id // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              // disqus config must be generated server-side
+              // so need hard coded value for the piece
+              // we need values accessible
+
+              // the id must get out of scope
+              var addon_disqus_id = this.addon.id
+              // disqus must be a global window variable (here we are in an anonymous promise function)
+              window.disqus_config = function () {
+                this.page.url = 'https://compliancepack.net/' + addon_disqus_id// Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = addon_disqus_id // Replace PAGE_IDENTIFIER with your page's unique identifier variable
               };
 
               (function () { // DON'T EDIT BELOW THIS LINE
