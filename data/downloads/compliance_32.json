@@ -12,6 +12,15 @@
     {
       "file": "Compliance 32x",
       "file_type": "B",
+      "file_version": 16,
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Java-32x/releases/download/beta-16/Compliance-32x-Java-Beta-16.zip",
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-32x/download/3516535"
+      }
+    },
+    {
+      "file": "Compliance 32x",
+      "file_type": "B",
       "file_version": 15,
       "links": {
         "github": "https://github.com/Compliance-Resource-Pack/Compliance-Java-32x/releases/download/beta-15/Compliance-32x-Java-Beta-15.zip",
