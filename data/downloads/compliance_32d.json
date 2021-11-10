@@ -8,7 +8,17 @@
       }
     }
   ],
-  "1.8.6.0": [
+  "1.10.3.0": [
+    {
+      "file": "Compliance Dungeons 32x",
+      "file_type": "B",
+      "file_version": 2,
+      "date": "10/11/2021",
+      "size": "24.2 MB",
+      "links": {
+        "github": "https://github.com/Compliance-Dungeons/Resource-Pack/releases/download/B2/1-Compliance-Dungeons-Beta-2.pak"
+      }
+    },
     {
       "file": "Compliance Dungeons 32x",
       "file_type": "B",

@@ -1401,6 +1401,10 @@ img:not(.img-gallery) {
 	.h2 {
 		font-size: 1.25rem !important
 	}
+.poster > img:nth-of-type(1) {
+    height: 200px;
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1000px) {
 	.small-screen-warning {
@@ -1759,12 +1763,6 @@ img.fancy-card-2x {
 	.modal-content {
 		width: 100%
 	}
-  .poster > img:nth-of-type(1) {
-    height: 200px;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content;
-  }
 }
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
 img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
