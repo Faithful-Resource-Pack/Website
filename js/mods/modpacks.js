@@ -128,9 +128,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
           return
         }
 
-        // this.globalBlackList = json.globalBlackList // TODO
-
-        // sort by mod name value
+        // sort by modpack name value
         let sortable = []
         for (const mod in json) {
           sortable.push([mod, json[mod]])
@@ -148,20 +146,8 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
           Object.keys(modpack.versions).forEach(version => {
             this.downloadModpackFromModlist(modpack.id, modpack.name, version, modpack.versions[version].minecraft, modpack.versions[version].mods)
           })
-
-          // TODO
-          // Object.keys(modpack.versions).forEach(minecraftVersion => {
-          //   modpack.versions[minecraftVersion].forEach(modpackVersion => {
-          //     let finalBlacklist = []
-          //     if ('default' in this.globalBlackList) finalBlacklist = [...finalBlacklist, ...this.globalBlackList.default]
-          //     if (minecraftVersion in this.globalBlackList) finalBlacklist = [...finalBlacklist, ...this.globalBlackList[minecraftVersion]]
-          //     if ('default' in modpack.blackList) finalBlacklist = [...finalBlacklist, ...modpack.blackList.default]
-          //     if (minecraftVersion in modpack.blackList) finalBlacklist = [...finalBlacklist, ...modpack.blackList[minecraftVersion]]
-
-          //     this.downloadModpackFromModlist(modpack.codeName, modpack.displayName, modpackVersion, minecraftVersion, finalBlacklist)
-          //   })
-          // })
         })
+
       })
     }
   },
@@ -186,82 +172,9 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       return this.modpacks
     },
-    modListCorrespondance: function () {
-      if (!this.currentModpack) return undefined
-
-      const result = []
-
-      // console.log(this.currentModpack.modList)
-
-      let notfound
-      let supportedModIndex
-      let startIndex = 0
-      this.currentModpack.modList.forEach(mod => {
-        notfound = true
-        supportedModIndex = startIndex
-
-        // optimized search :
-        // this.mods[supportedModIndex].name.displayName <= mod, we stop looking if name is greater
-        // <= VERY important so that if result is equal it doesn't exit
-
-        // console.info(this.mods[supportedModIndex].name.displayName,mod)
-        // console.info(supportedModIndex < this.mods.length, this.mods[supportedModIndex].name.displayName <= mod, notfound)
-
-        while (supportedModIndex < this.mods.length && this.mods[supportedModIndex].name.displayName <= mod && notfound) {
-          // console.log(mod + ' / ' + this.mods[supportedModIndex].name.displayName)
-
-          if (this.mods[supportedModIndex].name.displayName === mod) {
-            if (this.mods[supportedModIndex].versions.includes(this.currentModpack.minecraftVersion)) {
-              // console.log('found')
-              result.push(this.mods[supportedModIndex])
-            } else {
-              result.push('Not in ' + this.currentModpack.minecraftVersion)
-            }
-
-            notfound = false
-            startIndex = supportedModIndex
-          }
-
-          if (this.currentModpack.blackList.includes(mod)) {
-            // console.log('blacklisted:' + mod)
-            result.push('No textures')
-            notfound = false
-            startIndex = supportedModIndex
-          }
-
-          ++supportedModIndex
-        }
-
-        // optimized search
-        if (notfound) {
-          // console.log('not found')
-          result.push(undefined)
-          if (supportedModIndex < this.mods.length) {
-            startIndex = supportedModIndex
-          }
-        }
-      })
-
-      // console.log(result)
-
-      return result
-    },
-    emptyTable: function () {
-      if (this.loading || this.modpacks.length === 0) return this.sentences.loading
-
-      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) {
-        return this.sentences.noResultsVersion + ' ' + this.form.search
-      }
-
-      if (this.filteredModpacks.length === 0) return this.sentences.noresults + this.form.search
-
-      return ''
-    },
     searchAdvice: function () {
       if (this.modpacks.length === 0) { return '' }
-
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) { return this.sentences.typeAnotherVersion + ' ' + this.form.search }
-
       if (this.form.search.length < this.form.minSearchLetters) { return String((this.form.minSearchLetters - this.form.search.length) + ' ' + this.sentences.lettersLeft) }
 
       return ''
