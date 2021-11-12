@@ -1949,3 +1949,11 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
     background-image: url('../image/icon/arrow-up-right-square-fill.svg');
   }
 }
+
+input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}

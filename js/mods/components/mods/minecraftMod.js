@@ -22,7 +22,7 @@ Vue.component('minecraft-mod', {
         <div :class="{ modNotChosen: !mod.selected }" class="mod-radio-group">
           <template v-for="(version, vindex) in minecraftVersions":key="modIds[vindex]">
             <input :disabled="!mod.selected" type="radio" :id="modIds[vindex] + '-' + version" :name="modIds[vindex]"  v-model="mod.versionSelected" :value="version" class="mod-radio">
-            <label :for="modIds[vindex] + '-' + version" class="mod-radio">{{ version }}</label>
+            <label :for="modIds[vindex] + '-' + version">{{ version }}</label>
           </template>
         </div>
       </div>
