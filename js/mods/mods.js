@@ -1,5 +1,10 @@
 /* global location, Vue, MinecraftUtils, getJSON */
 
+Object.filter = (obj, predicate) =>
+  Object.keys(obj)
+    .filter(key => predicate(obj[key]))
+    .reduce((res, key) => (res[key] = obj[key], res), {});
+
 Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 const v = new Vue({ // eslint-disable-line no-unused-vars
   el: '#app',
@@ -59,16 +64,17 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       return ''
     },
+    /**
+     * Filter mods following the research
+     * @returns {Object} corresponding mods
+     */
     filteredMods: function () {
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0)))) {
         return this.mods.filter(mod => {
-          const versions = mod.versions
           let found = false
-
           let i = 0
-          while (i < versions.length && !found) {
-            found = mod.versions[i].startsWith(this.form.search)
-
+          while (i < mod.resource_pack.versions.length && !found) {
+            found = mod.resource_pack.versions[i].startsWith(this.form.search)
             ++i
           }
 
@@ -102,11 +108,11 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       const mcVersions = []
 
       for (let i = 0; i < this.mods.length; ++i) {
-        for (let a = 0; a < this.mods[i].versions.length; ++a) {
+        for (let a = 0; a < this.mods[i].resource_pack.versions.length; ++a) {
           let index
-          if ((index = mcVersions.findIndex(item => item.version === this.mods[i].versions[a])) === -1) {
+          if ((index = mcVersions.findIndex(item => item.version === this.mods[i].resource_pack.versions[a])) === -1) {
             mcVersions.push({
-              version: this.mods[i].versions[a],
+              version: this.mods[i].resource_pack.versions[a],
               count: 1
             })
           } else {
@@ -163,24 +169,19 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
   },
   methods: {
     modToDisplayName: function (mod) {
-      return mod.name.displayName
+      return mod.name
     },
     modToRepoName: function (mod) {
-      if (mod.extRepo) return mod.extRepo.split('/').pop()
-      else return mod.orgRepo
+      return mod.resource_pack.git_repository.split('/').pop()
     },
     modToRepoURL: function (mod) {
-      if (mod.orgRepo) {
-        return 'https://github.com/Compliance-Mods/' + this.modToRepoName(mod)
-      } else {
-        return mod.extRepo
-      }
+      return mod.resource_pack.git_repository
     },
     modToSelection: function (mod, version = undefined) {
       return {
         name: this.modToRepoName(mod),
         displayName: this.modToDisplayName(mod),
-        repositoryURL: this.modToRepoURL(mod, version),
+        repositoryURL: this.modToRepoURL(mod),
         version: mod.versionSelected || version
       }
     },
@@ -215,13 +216,29 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
   mounted: function () {
     this.isMounted = true
 
-    getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/mods/mods.json', (err, json) => {
+    // acquire mods json from compliance database
+    getJSON('https://database.compliancepack.net/firestorm/files/mods.json', (err, json) => {
       if (err) {
         console.error(err)
         return
       }
+
+      // sort by mod name value
+      let sortable = []
+      for (const mod in json) {
+        sortable.push([mod, json[mod]])
+      }
+      sortable.sort((a, b) => {
+        if (a[1].name.toLowerCase() < b[1].name.toLowerCase()) return -1
+        if (a[1].name.toLowerCase() > b[1].name.toLowerCase()) return 1
+        return 0
+      })
+
+      let sorted = []
+      sortable.forEach(item => sorted.push({ ...item[1], id: item[0] }))
+
+      this.mods = sorted
       this.loading = false
-      this.mods = json
     })
 
     getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/mods/versions.json', (err, json) => {

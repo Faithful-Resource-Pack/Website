@@ -187,7 +187,7 @@ input[type=radio]:checked + label {
 
 .advice {
 	margin: 1px 0 0;
-	font-size: 0.75em;
+	font-size: 1em;
 	opacity: 0.75;
 }
 
@@ -236,7 +236,30 @@ input[type=radio]:checked + label {
 	font-size: 0
 }
 .mod-bar-item {
-	margin-right: 1.25rem
+	margin-right: 1.25rem;
+	width: calc(100% - 1.25rem);
+}
+.mod-title {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+	div {
+		display: flex;
+		flex-direction: row;
+		padding: 5px;
+    align-items: flex-end;
+
+		h4, h5 {
+			margin: 0;
+		}
+		
+		h5 {
+			margin-bottom: 2px;
+		}
+	}
 }
 .mod-img {
 	width: 65px;
@@ -244,7 +267,8 @@ input[type=radio]:checked + label {
 	background: center/contain url('../image/icon/compliance_mods_transparent.png') no-repeat;
 	image-rendering: pixelated;
 	border-radius: $border-radius-0x;
-	flex: none
+	flex: none;
+	margin-right: 1.25rem;
 }
 .selected-mod .mod-img-overlay {
 	width: 100%;

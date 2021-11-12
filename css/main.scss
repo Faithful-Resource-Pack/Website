@@ -1937,3 +1937,15 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
   padding: 0;
   justify-content: center;
 }
+
+.icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &.arrow-up-right {
+    background-image: url('../image/icon/arrow-up-right-square-fill.svg');
+  }
+}
