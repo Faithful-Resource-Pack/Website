@@ -8,6 +8,7 @@ export default {
     addonModal
   },
   template: `
+    <h1 class="text-center red" style="border-radius: 6px">Add-ons are on maintenance for the 29th November 2021.<br>Please come back in a few hours.</h1>
     <v-container
       v-if="loading"
       style="max-width: 1140px; padding-top: 100px; padding-bottom: 100px"

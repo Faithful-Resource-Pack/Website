@@ -18,6 +18,7 @@ export default {
   <v-container
     style="max-width: 1140px; padding-top: 100px; padding-bottom: 100px"
   >
+	<h1 class="text-center red" style="border-radius: 6px">Add-ons are on maintenance for the 29th November 2021.<br>Please come back in a few hours.</h1>
     <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem">Add-ons</h2>
 
     <template v-if="Object.keys(fav).length">
