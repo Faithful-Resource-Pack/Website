@@ -236,11 +236,13 @@ export default {
         }
 
         this.loading = false
+        window.scrollTo(0, 0)
       })
       .catch(err => {
         console.error(err)
         this.addon = {}
         this.loading = false
+        window.scrollTo(0, 0)
       })
   }
 }
