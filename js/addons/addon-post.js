@@ -190,7 +190,6 @@ export default {
       return this.files.filter(el => el.use === 'carousel').map(el => el.source)
     },
     getDownloads() {
-      console.log(this.files.filter(el => el.use === 'download'))
       return this.files.filter(el => el.use === 'download')
     }
   },
