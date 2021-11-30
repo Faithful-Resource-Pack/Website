@@ -29,7 +29,7 @@ export default {
         <!-- this cause a warning message from vue, but idk what's happening since this doesn't happens on the webapp, only here :/ -->
         <addon-modal :dialog="modal" :close="closeModal" :image="modalImage"></addon-modal>
         
-        <div class="card card-body">
+        <div class="card card-body" v-if="getCarousel().length">
           <h3 class="text-center">Screenshots</h3>
           <div class="res-grid-3">
             <div v-if="files.length" v-for="(image, index) in getCarousel()">
