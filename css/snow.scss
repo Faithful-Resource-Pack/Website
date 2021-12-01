@@ -25,12 +25,20 @@
 	margin-top: 15px
 }
 
+.card.author-widget {
+	padding-top: 1.25rem;
+}
+
 .btn {
 	border: 0 !important;
 	padding-top: 15px;
 	background-image: url(../image/background/snow_overlay_small.png);
 	background-position: top center;
 	background-repeat: repeat-x
+}
+
+.btn-dl {
+	background-size: 20% auto;
 }
 
 .snowflake0, .snowflake1, .snowflake2, .snowflake3 {
