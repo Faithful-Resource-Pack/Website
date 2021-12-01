@@ -1847,7 +1847,8 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 }
 
 .card-widget {
-  height: 66px;
+  /* Temporarily disabled for snow overlay
+  height: 66px;*/
   padding: 0;
   flex-direction: row;
   align-items: center;

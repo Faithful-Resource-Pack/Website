@@ -9,9 +9,16 @@
 }
 
 .card {
-  background:
-    url(../image/background/snow_overlay.png) top center repeat-x,
-    #1C1C1C
+	background:
+		url(../image/background/snow_overlay.png), url(../image/background/bg_light_background.png) top center repeat-x;
+		background-position: top center;
+		background-color: #131313, #131313;
+		background-repeat: repeat-x, repeat;
+
+}
+
+.author-widget, .card-widget {
+	padding-top: 20px;
 }
 
 .card-body {
