@@ -1,15 +1,18 @@
 ---
 layout: default
-title: "Add-on : %title% by %authors%"
+title: "Add-on : %name% by %authors%"
 long_text: "%description%"
+addon-img: "%header_img%"
 ---
 <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 <script>
-  window.addon = JSON.parse('%data.addon%')
-  window.authors = JSON.parse('%data.authors%')
+  window.addon = '%data.addon%'
+  window.authors = '%data.authors%'
+  window.slug = '%data.slug%'
+  window.files = '%data.files%'
 </script>
 
 <v-app id="app">

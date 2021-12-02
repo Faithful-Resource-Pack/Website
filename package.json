@@ -6,9 +6,9 @@
   "scripts": {
     "ji": "bundle install",
     "jb": "bundle exec jekyll build",
-    "start": "npm run ji && npm run jb && pm2 start \"node _site/index.js\" --name \"WEBSITE\"",
+    "start": "npm run ji && npm run jb && pm2 start \"node index.js\" --name \"WEBSITE\"",
     "dev-watch-site": "bundle exec jekyll build --watch",
-    "dev-watch-app": "node_modules\\.bin\\nodemon _site/index.js --watch _site/index.js"
+    "dev-watch-app": "node_modules\\.bin\\nodemon index.js --watch index.js --ignore '_site/**'"
   },
   "repository": {
     "type": "git",

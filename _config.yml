@@ -13,6 +13,9 @@ defaults:
 exclude:
   - node_modules
   - /package*.json
+  - /index.js
+  - /.github
+  - /README.md
 
 sass:
   sass_dir: css

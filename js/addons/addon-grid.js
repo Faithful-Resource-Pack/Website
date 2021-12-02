@@ -4,7 +4,7 @@ export default {
   <div class="card card-body">
     <div class="res-grid-3">
       <div v-for="(addon, index) in addons" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.approval.status === 'approved'">
-        <router-link class="card img-card" :to="addon.slug">
+        <a class="card img-card" :href="'/addons/' + addon.slug">
           <img :src="'https://database.compliancepack.net/images/addons/' + addon.slug + '/header'">
           <div class="img-card-shadow"></div>
           <h3>{{ addon.name }}</h3>
@@ -17,7 +17,7 @@ export default {
             <p style="margin-bottom: 5px; margin-right: 5px;" v-if="addon.options.tags.includes('32x')" >32x</p>
             <p style="margin-bottom: 5px;" v-if="addon.options.tags.includes('64x')" >64x</p>
           </div>
-        </router-link>
+        </a>
         <v-btn
           @click="action(addon)"
           small
