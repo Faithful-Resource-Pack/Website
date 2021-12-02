@@ -240,7 +240,9 @@ const v = new Vue({
         let date = ""
         let dateF = ""
         let dateA = []
-        data.curse.files.forEach(el => {
+
+        const files = data && data.curse && data.curse.files ? data.curse.files : []
+        files.forEach(el => {
           if (el.id == id) {
             dateF = el.uploaded_at
             dateA = dateF.split('-')
@@ -260,7 +262,8 @@ const v = new Vue({
 
       if (id != 0) {
         let size = 0
-        data.curse.files.forEach(el => {
+        const files = data && data.curse && data.curse.files ? data.curse.files : []
+        files.forEach(el => {
           if (el.id == id) size = el.filesize
         })
         return `${(size/1000000).toFixed(2)} MB`

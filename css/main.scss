@@ -1401,6 +1401,10 @@ img:not(.img-gallery) {
 	.h2 {
 		font-size: 1.25rem !important
 	}
+.poster > img:nth-of-type(1) {
+    height: 200px;
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1000px) {
 	.small-screen-warning {
@@ -1759,10 +1763,6 @@ img.fancy-card-2x {
 	.modal-content {
 		width: 100%
 	}
-  .poster > img:nth-of-type(1) {
-    height: 200px;
-    width: fit-content;
-  }
 }
 /* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
 img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
@@ -1847,7 +1847,8 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 }
 
 .card-widget {
-  height: 66px;
+  /* Temporarily disabled for snow overlay
+  height: 66px;*/
   padding: 0;
   flex-direction: row;
   align-items: center;
@@ -1936,4 +1937,24 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
   width: 40px;
   padding: 0;
   justify-content: center;
+}
+
+.icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &.arrow-up-right {
+    background-image: url('../image/icon/arrow-up-right-square-fill.svg');
+  }
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
 }

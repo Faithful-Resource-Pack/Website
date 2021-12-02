@@ -30,21 +30,37 @@ input[type=checkbox], input[type=radio], label {
 }
 
 input[type=radio] + label {
-	border-radius: $border-radius-0x;
-	border: 1px solid rgba(255, 255, 255, .7);
-	padding: 2px 8px
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	display: inline-flex;
+	flex-direction: row;
+	padding-right: 5px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	align-items: flex-end;
+	color: #ddd;
 }
 
+input[type=radio] + label::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: relative;
+	margin: 5px;
+	filter: invert(100%);
+}
+
+input[type=radio] + label::before {
+  background: url('../image/icon/circle.svg') no-repeat center;
+}
+input[type=radio]:checked + label::before {
+  background: url('../image/icon/check-circle-fill.svg') no-repeat center;
+}
 input[type=radio]:checked + label {
-	background-color: $primary;
 	border-color: $primary;
-	color: white
-}
-
-.modNotChosen input[type=radio]:checked + label {
-	background-color: transparent;
-	border: 1px solid rgba(255, 255, 255, .7);
-	color: white
+  background: $primary;
 }
 
 #zipOptions ::-webkit-input-placeholder {
@@ -187,7 +203,7 @@ input[type=radio]:checked + label {
 
 .advice {
 	margin: 1px 0 0;
-	font-size: 0.75em;
+	font-size: 1em;
 	opacity: 0.75;
 }
 
@@ -236,15 +252,38 @@ input[type=radio]:checked + label {
 	font-size: 0
 }
 .mod-bar-item {
-	margin-right: 1.25rem
+	width: 100%;
+}
+.mod-title {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+	div {
+		display: flex;
+		flex-direction: row;
+		padding: 5px;
+    align-items: flex-end;
+
+		h4, h5 {
+			margin: 0;
+		}
+		
+		h5 {
+			margin-bottom: 2px;
+		}
+	}
 }
 .mod-img {
 	width: 65px;
 	height: 65px;
 	background: center/contain url('../image/icon/compliance_mods_transparent.png') no-repeat;
 	image-rendering: pixelated;
-	border-radius: $border-radius-0x;
-	flex: none
+	border-radius: $border-radius-1x;
+	flex: none;
+	margin-right: 1.25rem;
 }
 .selected-mod .mod-img-overlay {
 	width: 100%;
@@ -262,6 +301,7 @@ label.mod-radio {
 	vertical-align: middle;
 	margin-left: 5px;
 }
+
 .mod-info, .selected-mod .mod-radio-group {
 	position: relative;
 	z-index: 2
@@ -273,7 +313,7 @@ label.mod-radio {
 	font-size: 100%;
 }
 .advice-important {
-	color:rgb(175, 24, 24);
+	color:#f14b4b;
 }
 
 /** MODPACKS **\

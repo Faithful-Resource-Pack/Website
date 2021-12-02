@@ -10,7 +10,7 @@ title: Modpacks
 
   <local-download ref="localDownload" canPack="true"></local-download>
 
-  <modpack-modal id="modpackModal" :modpack="currentModpack" :modpackmodalopened="modpackModalOpened" :onclose="function() { modpackModalOpened = false }" :modcorrespondance="modListCorrespondance"></modpack-modal>
+  <modpack-modal id="modpackModal" :modpack="currentModpack" :modpackmodalopened="modpackModalOpened" :onclose="function() { modpackModalOpened = false }" :mods="mods"></modpack-modal>
 
     <div class="card mb-4">
       <div class="search-bar-container">
@@ -20,26 +20,26 @@ title: Modpacks
     </div>
 
     <div class="res-grid-4">
-      <modpack-card v-for="(m, mindex) in filteredSortedModpacks" :key="mindex" :modpack="m" :onbuttonclick="function(){ openModpackModal(mindex)  }"></modpack-card>
+      <modpack-card v-for="(m, mindex) in filteredModpacks" :key="mindex" :modpack="m" :onbuttonclick="function(){ openModpackModal(mindex)  }"></modpack-card>
     </div>
 
     <h3 v-if='filteredModpacks.length == 0' id="noresults" class="text-center" v-html="emptyTable"></h3>
   </div>
 </div>
 
-<script src="/js/ajax.js"></script>
-<script src="/js/mods/core/MinecraftUtils.js"></script>
+<script src="js/ajax.js"></script>
+<script src="js/mods/core/MinecraftUtils.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="/js/mods/components/customModal.js"></script>
-<script src="/js/mods/components/modpackModal.js"></script>
-<script src="/js/mods/components/modpackCard.js"></script>
-
+<script src="js/mods/components/customModal.js"></script>
+<script src="js/mods/components/modpackModal.js"></script>
+<script src="js/mods/components/modpackCard.js"></script>
+<script src="js/axios.min.js"></script>
 <script src="https://unpkg.com/idb@5/build/iife/index-min.js"></script>
-<script src="/js/mods/components/clearDatabase.js"></script>
-<script src="/js/mods/components/zipOptions.js"></script>
+<script src="js/mods/components/clearDatabase.js"></script>
+<script src="js/mods/components/zipOptions.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2/moment.min.js"></script>
-<script src="/js/mods/core/ResourcePackCreator.js"></script>
-<script src="/js/mods/FileSaver.min.js"></script>
-<script src="/js/mods/components/localDownload.js"></script>
+<script src="js/mods/core/ResourcePackCreator.js"></script>
+<script src="js/mods/FileSaver.min.js"></script>
+<script src="js/mods/components/localDownload.js"></script>
 
-<script src="/js/mods/modpacks.js"></script>
+<script src="js/mods/modpacks.js"></script>

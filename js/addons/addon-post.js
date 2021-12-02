@@ -21,21 +21,21 @@ export default {
     </v-container>
     <v-container
       style="max-width: 1140px; padding-top: 100px; padding-bottom: 100px"
-      v-else-if="addon.status == 'approved'"
+      v-else-if="addon.approval.status == 'approved'"
     >
 
-      <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem;">{{ addon.title }}</h2>
+      <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem;">{{ addon.name }}</h2>
       <!-- the if statement is here to hide warning message from vue -->
-      <img v-if="addon.images" :src="addon.images.header" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px;">
+      <img v-if="files.length" :src="getHeader()" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px;">
 
-      <template v-if="addon.images && addon.images.carousel[0]">
+      <template>
         <!-- this cause a warning message from vue, but idk what's happening since this doesn't happens on the webapp, only here :/ -->
         <addon-modal :dialog="modal" :close="closeModal" :image="modalImage"></addon-modal>
         
-        <div class="card card-body">
+        <div class="card card-body" v-if="getCarousel().length">
           <h3 class="text-center">Screenshots</h3>
           <div class="res-grid-3">
-            <div v-for="(image, index) in addon.images.carousel">
+            <div v-if="files.length" v-for="(image, index) in getCarousel()">
               <div class="card img-card">
                 <img :src="image" @click="openModal(image)">
               </div>
@@ -94,27 +94,21 @@ export default {
             <v-col>
               <h3 class="text-center">Downloads</h3>
               <div class="card card-body">
-                <template v-for="(downloads, name, index) in addon.downloads">
-                  <h4 class="text-center">{{ name }}</h4>
-                  <a v-for="(link, subindex) in downloads" :href="link" class="btn btn-dark" style="color: white; margin-bottom: 10px">
-                    <template v-if="link.includes('curseforge')"><v-icon color="orange">mdi-fire</v-icon> CurseForge</template>
-                    <template v-else-if="link.includes('planetminecraft')"><v-icon color="green">mdi-earth</v-icon> Planet Minecraft</template>
-                    <template v-else-if="link.includes('github')"><v-icon color="white">mdi-github-circle</v-icon> GitHub</template>
-                    <template v-else><v-icon color="white">mdi-link</v-icon> Download Link</template>
-                  </a>
+                <template v-for="file in getDownloads()">
+                  <a :href="file.source" class="btn btn-dark" style="color: white; width: 100%; margin: 5px 0">{{ file.name }}</a>
                 </template>
               </div>
             </v-col>
             <v-col>
               <h3 class="text-center">Information</h3>
-              <template v-if="addon.optifine">
+              <template v-if="addon.options.optifine">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="optifine" alt="requires optifine" loading="lazy">
                   <p class="addon-flags-big-text">This add-on requires <a href="https://optifine.net/downloads">Optifine</a></p>
                 </div>
                 <br>
               </template>
-              <template v-if="addon.type && addon.type.includes('Java')">
+              <template v-if="addon.options.tags && addon.options.tags.includes('Java')">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="java" alt="java support" loading="lazy">
                   <p class="addon-flags-big-text">This add-on was made for the Java Edition.</p>
@@ -122,7 +116,7 @@ export default {
                 <br>
               </template>
 
-              <template v-if="addon.type && addon.type.includes('Bedrock')">
+              <template v-if="addon.options.tags && addon.options.tags.includes('Bedrock')">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="bedrock" alt="bedrock support" loading="lazy">
                   <p class="addon-flags-big-text">This add-on has Bedrock support.</p>
@@ -134,10 +128,10 @@ export default {
                 <v-col
                   style="display: flex; align-content: stretch; justify-content: flex-start"
                 >
-                  <div v-if="addon.type && addon.type.includes('32x')" class="card card-body card-widget-square" style="margin-right: 24px">
+                  <div v-if="addon.options.tags && addon.options.tags.includes('32x')" class="card card-body card-widget-square" style="margin-right: 24px">
                     <img class="addon-flags-big" :src="img32" alt="32x support" loading="lazy">
                   </div>
-                  <div v-if="addon.type && addon.type.includes('64x')" class="card card-body card-widget-square">
+                  <div v-if="addon.options.tags && addon.options.tags.includes('64x')" class="card card-body card-widget-square">
                     <img class="addon-flags-big" :src="img64" alt="64x support" loading="lazy">
                   </div>
                 </v-col>
@@ -148,7 +142,7 @@ export default {
         </v-col>
       </v-row>
 
-      <template v-if="addon.comments">
+      <template v-if="addon.options.comments">
         <br>
         <h3 class="text-center card-title">Comments</h3>
         <div id="disqus_thread" class="card card-body"></div>
@@ -160,19 +154,20 @@ export default {
       v-else
     >
       <div class="card card-body">
-        <p align="center">Addon status: {{ addon.status }}</p>
+        <p align="center">Addon status: {{ addon.approval.status }}</p>
         <p align="center" v-if="addon.approval?.reason">Reason: {{ addon.approval.reason }}<br>If you are the author of this add-on, please use the <a href="https://webapp.compliancepack.net/">Compliance Web Application</a> to edit your add-on</p>
       </div>
     </v-container>
     `,
-  data () {
+  data() {
     return {
       collections: {
         addons: firestorm.collection('addons'),
         users: firestorm.collection('users')
       },
       addon: {},
-      authors: {},
+      files: [],
+      authors: [],
       optifine: '/image/icon/optifine.png',
       bedrock: '/image/icon/bedrock.png',
       java: '/image/icon/java.png',
@@ -194,28 +189,48 @@ export default {
     },
     compiledMarkdown: function (markdown) {
       return marked(markdown, { sanitize: true })
+    },
+    getHeader() {
+      return this.files.filter(el => el.use === 'header')[0].source
+    },
+    getCarousel() {
+      return this.files.filter(el => el.use === 'carousel').map(el => el.source)
+    },
+    getDownloads() {
+      return this.files.filter(el => el.use === 'download')
     }
   },
-  mounted: function () {
-    // TODO: remove route compatibility and get direct data with %data% replacement
-    const addonId = window.addon ? window.addon[firestorm.ID_FIELD] : this.$route.params.addon
-    const addonPromise = window.addon ? Promise.resolve(window.addon) : this.collections.addons.get(addonId)
-
-    addonPromise
-      .then(data => {
-        this.addon = data
-        this.addon.id = addonId // fix missing ID field (property value)
-
-        return window.addon ? Promise.resolve(window.authors) : this.collections.users.searchKeys(this.addon.authors || [])
+  beforeMount: function () {
+    fetch(`https://api.compliancepack.net/v1/search?collection=addons&field=slug&criteria===&value=${this.$route.params.addon}`)
+      .then(response => response.json())
+      .then(data => this.addon = data[0])
+      .then(() => {
+        this.addon.authors.forEach(authorID => {
+          fetch(`https://api.compliancepack.net/v1/user/${authorID}`)
+            .then(response => response.json())
+            .then(author => {
+              this.authors.push(author)
+            })
+        })
       })
-      .then(_contributors => {
-        const contributors = _contributors.reduce((acc, cur) => { acc[cur[firestorm.ID_FIELD]] = cur; return acc }, {})
-        this.authors = contributors
+      .then(() => {
+        fetch(`https://api.compliancepack.net/v1/search?collection=files&field=parent.id&criteria===&value=${this.addon.id}`)
+          .then(response => response.json())
+          .then(data => this.files = data)
+      })
+      .finally(() => {
+        if (this.addon.options.comments && this.addon.approval.status === 'approved') {
+          // disqus config must be generated server-side
+          // so need hard coded value for the piece
+          // we need values accessible
 
-        if (this.addon.comments && this.addon.status == 'approved') {
-          const disqus_config = function () {
-            this.page.url = 'https://compliancepack.net/' + this.addon.id // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = this.addon.id // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          // the id must get out of scope
+          let addon_disqus_id = this.addon.slug
+
+          // disqus must be a global window variable (here we are in an anonymous promise function)
+          window.disqus_config = function () {
+            this.page.url = 'https://www.compliancepack.net/' + addon_disqus_id // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = addon_disqus_id                              // Replace PAGE_IDENTIFIER with your page's unique identifier variable
           };
 
           (function () { // DON'T EDIT BELOW THIS LINE
@@ -227,12 +242,13 @@ export default {
         }
 
         this.loading = false
-        this.$forceUpdate()
+        window.scrollTo(0, 0)
       })
       .catch(err => {
         console.error(err)
         this.addon = {}
         this.loading = false
+        window.scrollTo(0, 0)
       })
   }
 }

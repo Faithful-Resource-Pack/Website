@@ -2,7 +2,7 @@
 /* eslint no-multi-str: 0 */
 
 const _MOD_NOT_FOUND_MESSAGE = 'Found no thumbnail for this mod'
-const _NO_LINK = undefined
+const _NO_LINK = null
 const _NO_ICON = '/image/icon/compliance_mods.png'
 const _NO_ATTACHMENTS = -1
 
@@ -11,23 +11,22 @@ Vue.component('minecraft-mod', {
     mod: Object
   },
   template:
-    '<li class="mod-bar" :class="{ \'selected-mod\': mod.selected }">\
-      <label :for="repoName" class="mod-label">Select this mod</label>\
-      <div :style="imageStyle" class="mod-bar-item mod-img">\
-        <div class="mod-img-overlay"></div>\
-      </div>\
-      <div class="mod-bar-item">\
-        <input :id="repoName" type="checkbox" v-model="mod.selected" class="mod-checkbox">\
-        <span v-html="title"></span>\
-        <br>\
-        <div :class="{ \'mt-1\': true, modNotChosen: !mod.selected }" class="mod-radio-group">\
-          <template v-for="(version, vindex) in minecraftVersions":key="modIds[vindex]">\
-            <input :disabled="!mod.selected" type="radio" :id="modIds[vindex]" :name="modIds[vindex]"  v-model="mod.versionSelected" :value="version" class="mod-radio">\
-            <label :for="modIds[vindex]" class="mod-radio">{{ version }}</label>\
-          </template>\
-        </div>\
-      </div>\
-    </li>',
+    `<li class="mod-bar" :class="{ 'selected-mod': mod.selected }" v-if="!mod.blacklisted && mod.resource_pack.versions.length > 0">
+      <label :for="repoURL" class="mod-label">Select this mod</label>
+      <div :style="imageStyle" class="mod-img">
+        <div class="mod-img-overlay"></div>
+      </div>
+      <div class="mod-bar-item">
+        <input :id="repoURL" type="checkbox" v-model="mod.selected" class="mod-checkbox">
+        <div class="mod-title" v-html="title"></div>
+        <div :class="{ modNotChosen: !mod.selected }" class="mod-radio-group">
+          <template v-for="(version, vindex) in minecraftVersions":key="modIds[vindex]">
+            <input :disabled="!mod.selected" type="radio" :id="modIds[vindex] + '-' + version" :name="modIds[vindex]"  v-model="mod.versionSelected" :value="version" class="mod-radio">
+            <label :for="modIds[vindex] + '-' + version">{{ version }}</label>
+          </template>
+        </div>
+      </div>
+    </li>`,
   data() {
     return {
       searchPages: 3,
@@ -36,84 +35,46 @@ Vue.component('minecraft-mod', {
     }
   },
   methods: {
-    modId: function (repoName, version) {
-      return String(repoName + '-' + version.replace(/\./g, ''))
+    modId() {
+      return this.mod.id
     },
-    search (index, searchFilter, _fullName = false) {
-      if(searchFilter === undefined) return Promise.reject(new Error('searchFilter is undefined'))
+    searchCurseforge(id) {
+      if (id === undefined) return Promise.reject(new Error('id is undefined'))
 
       return new Promise((resolve, reject) => {
-        const size = index * 25
-        const api_url = `https://addons-ecs.forgesvc.net/api/v2/addon/search?gameId=432&pageSize=${size}&sectionId=6&searchFilter=${searchFilter}`
+        const api_url = `https://addons-ecs.forgesvc.net/api/v2/addon/${id}`
         const url = `https://api.allorigins.win/get?url=${encodeURIComponent(api_url)}`
         // get allows us to have better control over the content returned and the status code
-        // here we sometimes have an 400 status code
 
         axios(url)
           .then(res => {
-            if(res.status !== 200 || res.data.status.http_code !== 200) { // verify request if it went well
-              reject(new Error(`Could not load url: ${ api_url }`))
-              return
-            }
+            if (res.status !== 200 || res.data.status.http_code !== 200) return reject(new Error(`Could not load url: ${api_url}`))
 
             // parse content
-            const json = JSON.parse(res.data.contents)
+            const result = JSON.parse(res.data.contents)
 
-            const result = json.find(mod => {
-              let found = false
-              if (this.curseName !== _NO_LINK) {
-                found = mod.websiteUrl.split('/').pop() === this.curseName
-              }
-
-              return found || mod.name.toLowerCase() === this.displayName.toLowerCase()
-            })
-
-            if (result) {
-              resolve(result)
-            } else {
-              reject(result)
-            }
+            if (result) return resolve(result)
+            return reject(result)
           })
           .catch(err => {
             reject(new Error(err))
           })
       })
     },
-    makeSearch: function (index = 1, fullName = false) {
+    makeSearch: function (id) {
       return new Promise((resolve, reject) => {
-        const searchFilter = fullName ? this.displayName : this.curseName
-        this.search(index, searchFilter)
+        if (isNaN(id)) resolve({})
+        else this.searchCurseforge(id)
           .then(results => {
             resolve(results)
-          }).catch(err => {
-            if (isNaN(err)) {
-              if (index < this.searchPages) {
-                this.makeSearch(index + 1, fullName).then(res => {
-                  resolve(res)
-                }).catch(err => {
-                  reject(err)
-                })
-              } else {
-                if (!fullName) {
-                  this.makeSearch(1, true).then(res => {
-                    resolve(res)
-                  }).catch(err => {
-                    reject(err)
-                  })
-                } else {
-                  // no mod was found
-                  reject(new Error(_MOD_NOT_FOUND_MESSAGE))
-                }
-              }
-            } else {
-              // Axios error
-              reject(new Error(err))
-            }
+          })
+          .catch(err => {
+            reject(new Error(_MOD_NOT_FOUND_MESSAGE + '\n' + err))
           })
       })
     },
-    updateThumbnail: function () {
-      const result = this.$parent.searchCache(this.displayName)
+    updateThumbnail() {
+      const result = this.$parent.searchCache(this.name)
 
       if (result) {
         this.imageSource = result.imageSource
@@ -121,13 +82,13 @@ Vue.component('minecraft-mod', {
         return
       }
 
-      this.makeSearch().then(result => {
+      this.makeSearch(this.mod.id).then(result => {
         const attachments = result.attachments
 
         // set icon with default attachment
         let index = _NO_ATTACHMENTS
-        if (attachments.length > 0) {
-          index = Math.max(0, attachments.findIndex(att => att.isDefault))
+        if (attachments && attachments.length > 0) {
+          index = Math.max(0, attachments.findIndex(att => att.isDefault)) // isDefault: true -> current project image
           this.imageSource = attachments[index].thumbnailUrl
         }
 
@@ -136,14 +97,14 @@ Vue.component('minecraft-mod', {
 
         // add image to cache
         this.$parent.thumbnailCache.push({
-          modName: this.displayName,
+          modName: this.name,
           imageSource: this.imageSource,
           link: this.link
         })
       }).catch(err => {
         if (err.message !== _MOD_NOT_FOUND_MESSAGE) {
           console.error(err)
-          console.error(this.curseName || this.displayName)
+          console.error(this.name)
         } else {
           this.$parent.thumbnailCache.push({
             modName: this.dispatch,
@@ -155,40 +116,43 @@ Vue.component('minecraft-mod', {
     }
   },
   computed: {
-    aliases: function () {
-      return '<span class="advice">' + this.$props.mod.name.aliases.join(', ') + '</span>'
+    /** @returns {String} of joined aliases in <span>*/
+    aliases() {
+      return this.$props.mod.aliases.length > 0 ? '&nbsp;&dash;&nbsp;<h5 class="advice">' + this.$props.mod.aliases.join(', ') + '</h5>' : ''
     },
-    curseName: function () {
-      return this.$props.mod.curse || _NO_LINK
+    /** @returns {String} complete curseforge mod url*/
+    curseURL() {
+      return this.$props.mod.curseURL || _NO_LINK
     },
-    info: function () {
-      const link = 'https://www.curseforge.com/minecraft/mc-mods/' + this.curseName
+    /** @returns {String} info link to curseforge's mod page*/
+    info() {
+      const link = this.$props.mod.curse_url || _NO_LINK
 
       if (link === _NO_LINK) return ''
-
-      return '<a href="' + link + '" target="_blank" rel="noopener" title="' + link + '" class="ml-2 mod-info"><i class="fas fa-info-circle"></i></a>'
+      return '<a href="' + link + '" target="_blank" rel="noopener" title="' + link + '" class="mod-info icon arrow-up-right"></a>'
     },
-    displayName: function () {
-      return this.$props.mod.name.displayName
+    /** @returns {String} main mod name s*/
+    name() {
+      return this.$props.mod.name
     },
-    imageStyle: function () {
-      if (this.imageSource !== _NO_ICON) {
-        return 'background-image: url(' + this.imageSource + ')'
-      }
-
+    /** @returns {String} background-img OR set opacity to 1*/
+    imageStyle() {
+      if (this.imageSource !== _NO_ICON) return 'background-image: url(' + this.imageSource + ')'
       return 'opacity: 1'
     },
-    minecraftVersions: function () {
-      return this.$props.mod.versions
+    /** @returns {Array} of available versions */
+    minecraftVersions() {
+      return this.$props.mod.resource_pack.versions
     },
-    repoName: function () {
-      return this.$props.mod.extRepo || this.$props.mod.orgRepo
+    /** @return {String} git repository full url */
+    repoURL() {
+      return this.$props.mod.resource_pack.git_repository
     },
-    modIds: function () {
-      return this.minecraftVersions.map(v => this.modId(this.repoName, v))
+    modIds() {
+      return this.minecraftVersions.map(v => this.modId())
     },
-    title: function () {
-      return this.displayName + ' ' + this.aliases + ' ' + this.info
+    title() {
+      return `<div><h4>${this.name}</h4>${this.aliases}</div>${this.info}`
     }
   },
   watch: {
@@ -198,7 +162,7 @@ Vue.component('minecraft-mod', {
       }
     }
   },
-  created: function () {
+  created() {
     this.updateThumbnail()
   }
 })

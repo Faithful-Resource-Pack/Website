@@ -85,7 +85,7 @@ export default {
 
   </v-container>
   `,
-  data () {
+  data() {
     return {
       addons: {},
       searchedAddons: {},
@@ -154,9 +154,9 @@ export default {
       .then(data => {
         this.addons = sortObj(data)
         this.loading = false
-        
+
         for (const addonID in this.addons) this.addons[addonID].id = addonID // fix missing ID (property value)
-  
+
         this.searchedAddons = this.addons
       })
 

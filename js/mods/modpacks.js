@@ -1,6 +1,9 @@
-/* global Vue, getJSON, getRequest, MinecraftUtils, location */
+/* global Vue, axios, getJSON, getRequest, MinecraftUtils, location */
 
-const regex = /\s\(by\s.*\)/
+const _MODPACK_NOT_FOUND_MESSAGE = 'Found no thumbnail for this modpack'
+const _NO_LINK = null
+const _NO_ICON = '/image/icon/compliance_mods.png'
+const _NO_ATTACHMENTS = -1
 
 Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 const v = new Vue({ // eslint-disable-line no-unused-vars
@@ -32,68 +35,119 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       this.currentModpackIndex = index
       this.modpackModalOpened = true
     },
-    downloadModpackFromModlist: function (codeName, displayName, modpackVersion, minecraftVersion, blackList = []) {
-      const that = this
-      const relativePath = codeName + '/' + modpackVersion
-
-      getRequest('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/modpack/' + relativePath + '/modlist.html', {}, function (html, err) {
-        if (err) {
-          console.error(relativePath, err)
-          return
-        }
-
-        // filling list with html content
-        const modNamesList = document.createElement('ul')
-        modNamesList.innerHTML = html
-
-        // extracting mod names from list
-        const modNamesElements = [...modNamesList.getElementsByTagName('li')]
-
-        const modNames = modNamesElements.map(mod => mod.textContent.replace(regex, '')).sort()
-
-        // pushing mods
-        that.modpacks.push({
-          modpackName: displayName,
-          modpackVersion: modpackVersion,
-          minecraftVersion: minecraftVersion,
-          blackList: blackList,
-          coverSource: 'https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/modpack/' + relativePath + '/../pack.png',
-          modList: modNames
-        })
+    makeSearch(id) {
+      return new Promise((resolve, reject) => {
+        if (isNaN(id)) resolve({})
+        else this.searchCursforge(id)
+          .then(results => {
+            resolve(results)
+          })
+          .catch(err => {
+            reject(new Error(_MODPACK_NOT_FOUND_MESSAGE + '\n' + err))
+          })
       })
     },
-    downloadAllModpacks: function () {
-      getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/mods/mods.json', (err, json) => {
-        if (err) {
-          console.error(err)
-          return
-        }
+    searchCursforge(id) {
+      if (id === undefined) return Promise.reject(new Error('modpack id is undefined'))
 
-        this.loading = false
-        this.mods = json
+      return new Promise((resolve, reject) => {
+        const api_url = `https://addons-ecs.forgesvc.net/api/v2/addon/${id}`
+        const url = `https://api.allorigins.win/get?url=${encodeURIComponent(api_url)}`
+        // get allows us to have better control over the content returned and the status code
+
+        axios(url)
+          .then(res => {
+            if (res.status !== 200 || res.data.status.http_code !== 200) return reject(new Error(`Could not load url: ${api_url}`))
+
+            // parse content
+            const result = JSON.parse(res.data.contents)
+
+            if (result) return resolve(result)
+            return reject(result)
+          })
+          .catch(err => {
+            reject(new Error(err))
+          })
       })
+    },
+    downloadModpackFromModlist: function (modpackId, modpackName, modpackVersion, minecraftVersion, modsId = []) {
+      // const that = this
+      // const relativePath = codeName + '/' + modpackVersion
 
-      getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/modpack/modpackList.json', (err, json) => {
-        if (err) {
-          console.error(err)
-          return
-        }
+      this.makeSearch(modpackId)
+        .then(result => {
+          const attachments = result.attachments
+          let imageSource = _NO_ICON
 
-        this.globalBlackList = json.globalBlackList
+          // set icon with default attachement
+          let index = _NO_ATTACHMENTS
+          if (attachments && attachments.length > 0) {
+            index = Math.max(0, attachments.findIndex(att => att.isDefault)) // isDefault: true -> current project image
+            imageSource = attachments[index].thumbnailUrl
+          }
 
-        json.modpacks.forEach(modpack => {
-          Object.keys(modpack.versions).forEach(minecraftVersion => {
-            modpack.versions[minecraftVersion].forEach(modpackVersion => {
-              let finalBlacklist = []
-              if ('default' in this.globalBlackList) finalBlacklist = [...finalBlacklist, ...this.globalBlackList.default]
-              if (minecraftVersion in this.globalBlackList) finalBlacklist = [...finalBlacklist, ...this.globalBlackList[minecraftVersion]]
-              if ('default' in modpack.blackList) finalBlacklist = [...finalBlacklist, ...modpack.blackList.default]
-              if (minecraftVersion in modpack.blackList) finalBlacklist = [...finalBlacklist, ...modpack.blackList[minecraftVersion]]
-
-              this.downloadModpackFromModlist(modpack.codeName, modpack.displayName, modpackVersion, minecraftVersion, finalBlacklist)
-            })
+          // set link
+          this.modpacks.push({
+            modpackName: modpackName,
+            modpackVersion: modpackVersion,
+            minecraftVersion: minecraftVersion,
+            coverSource: imageSource,
+            modList: modsId
           })
         })
+        .catch(err => {
+          if (err.message !== _MODPACK_NOT_FOUND_MESSAGE) {
+            console.error(err)
+            console.error(this.name)
+          }
+          else {
+            this.modpacks.push({
+              modpackName: modpackName,
+              modpackVersion: modpackVersion,
+              minecraftVersion: minecraftVersion,
+              coverSource: _NO_LINK,
+              modList: modsId
+            })
+          }
+        })
+    },
+    downloadAllModpacks: function () {
+      getJSON('https://database.compliancepack.net/firestorm/files/mods.json', (err, json) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+
+        this.mods = json
+        this.loading = false
+      })
+
+      getJSON('https://database.compliancepack.net/firestorm/files/modpacks.json', (err, json) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+
+        // sort by modpack name value
+        let sortable = []
+        for (const mod in json) {
+          sortable.push([mod, json[mod]])
+        }
+        sortable.sort((a, b) => {
+          if (a[1].name.toLowerCase() < b[1].name.toLowerCase()) return -1
+          if (a[1].name.toLowerCase() > b[1].name.toLowerCase()) return 1
+          return 0
+        })
+
+        let sorted = []
+        sortable.forEach(item => sorted.push({ ...item[1], id: item[0] }))
+
+        sorted.forEach(modpack => {
+          Object.keys(modpack.versions).forEach(version => {
+            this.downloadModpackFromModlist(modpack.id, modpack.name, version, modpack.versions[version].minecraft, modpack.versions[version].mods)
+          })
+        })
+
       })
     }
   },
@@ -118,104 +172,9 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       return this.modpacks
     },
-    filteredSortedModpacks: function () {
-      return this.filteredModpacks.sort((a, b) => {
-        let result = 0
-
-        if (a.modpackName === b.modpackName) {
-          if (a.modpackVersion === b.modpackVersion) {
-            const numbers = MinecraftUtils.minecraftVersionsToNumbers(a.minecraftVersion, b.minecraftVersion)
-            result = numbers[0] > numbers[1] ? 1 : -1
-          } else {
-            if (parseFloat(a.modpackVersion) === parseFloat(b.modpackVersion)) {
-              result = a.modpackVersion > b.modpackVersion ? 1 : -1
-            } else {
-              result = parseFloat(a.modpackVersion) > parseFloat(b.modpackVersion) ? 1 : -1
-            }
-          }
-        } else {
-          result = a.modpackName > b.modpackName ? 1 : -1
-        }
-
-        return result
-      })
-    },
-    modListCorrespondance: function () {
-      if (!this.currentModpack) return undefined
-
-      const result = []
-
-      console.log(this.currentModpack.modList)
-
-      let notfound
-      let supportedModIndex
-      let startIndex = 0
-      this.currentModpack.modList.forEach(mod => {
-        notfound = true
-        supportedModIndex = startIndex
-
-        // optimized search :
-        // this.mods[supportedModIndex].name.displayName <= mod, we stop looking if name is greater
-        // <= VERY important so that if result is equal it doesn't exit
-
-        // console.info(this.mods[supportedModIndex].name.displayName,mod)
-        // console.info(supportedModIndex < this.mods.length, this.mods[supportedModIndex].name.displayName <= mod, notfound)
-
-        while (supportedModIndex < this.mods.length && this.mods[supportedModIndex].name.displayName <= mod && notfound) {
-          // console.log(mod + ' / ' + this.mods[supportedModIndex].name.displayName)
-
-          if (this.mods[supportedModIndex].name.displayName === mod) {
-            if (this.mods[supportedModIndex].versions.includes(this.currentModpack.minecraftVersion)) {
-              // console.log('found')
-              result.push(this.mods[supportedModIndex])
-            } else {
-              result.push('Not in ' + this.currentModpack.minecraftVersion)
-            }
-
-            notfound = false
-            startIndex = supportedModIndex
-          }
-
-          if (this.currentModpack.blackList.includes(mod)) {
-            // console.log('blacklisted:' + mod)
-            result.push('No textures')
-            notfound = false
-            startIndex = supportedModIndex
-          }
-
-          ++supportedModIndex
-        }
-
-        // optimized search
-        if (notfound) {
-          // console.log('not found')
-          result.push(undefined)
-          if (supportedModIndex < this.mods.length) {
-            startIndex = supportedModIndex
-          }
-        }
-      })
-
-      // console.log(result)
-
-      return result
-    },
-    emptyTable: function () {
-      if (this.loading || this.modpacks.length === 0) return this.sentences.loading
-
-      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) {
-        return this.sentences.noResultsVersion + ' ' + this.form.search
-      }
-
-      if (this.filteredModpacks.length === 0) return this.sentences.noresults + this.form.search
-
-      return ''
-    },
     searchAdvice: function () {
       if (this.modpacks.length === 0) { return '' }
-
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) { return this.sentences.typeAnotherVersion + ' ' + this.form.search }
-
       if (this.form.search.length < this.form.minSearchLetters) { return String((this.form.minSearchLetters - this.form.search.length) + ' ' + this.sentences.lettersLeft) }
 
       return ''

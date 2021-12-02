@@ -9,13 +9,24 @@
 }
 
 .card {
-  background:
-    url(../image/background/snow_overlay.png) top center repeat-x,
-    #1C1C1C
+	background:
+		url(../image/background/snow_overlay.png), url(../image/background/bg_light_background.png) top center repeat-x;
+		background-position: top center;
+		background-color: #131313, #131313;
+		background-repeat: repeat-x, repeat;
+
+}
+
+.author-widget, .card-widget {
+	padding-top: 20px;
 }
 
 .card-body {
 	margin-top: 15px
+}
+
+.card.author-widget {
+	padding-top: 1.25rem;
 }
 
 .btn {
@@ -24,6 +35,10 @@
 	background-image: url(../image/background/snow_overlay_small.png);
 	background-position: top center;
 	background-repeat: repeat-x
+}
+
+.btn-dl {
+	background-size: 20% auto;
 }
 
 .snowflake0, .snowflake1, .snowflake2, .snowflake3 {

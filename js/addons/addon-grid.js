@@ -3,19 +3,19 @@ export default {
   template: `
   <div class="card card-body">
     <div class="res-grid-3">
-      <div v-for="(addon, index) in addons" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.status === 'approved'">
-        <router-link class="card img-card" :to="addon.id">
-          <img :src="addon.images.header">
+      <div v-for="(addon, index) in addons" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.approval.status === 'approved'">
+        <router-link class="card img-card" :to="addon.slug">
+          <img :src="'https://database.compliancepack.net/images/addons/' + addon.slug + '/header'">
           <div class="img-card-shadow"></div>
-          <h3>{{ addon.title }}</h3>
+          <h3>{{ addon.name }}</h3>
           <div class="addon-flags" style="margin-bottom: 5px;">
-            <img style="margin-bottom: 5px;" v-if="addon.type.includes('Java')" :src="java" alt="available for Java Edition" loading="lazy">
-            <img style="margin-bottom: 5px;" v-if="addon.type.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
-            <img style="margin-bottom: 5px;" v-if="addon.optifine" :src="optifine" alt="requires optifine" loading="lazy">
+            <img style="margin-bottom: 5px;" v-if="addon.options.tags.includes('Java')" :src="java" alt="available for Java Edition" loading="lazy">
+            <img style="margin-bottom: 5px;" v-if="addon.options.tags.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
+            <img style="margin-bottom: 5px;" v-if="addon.options.optifine" :src="optifine" alt="requires optifine" loading="lazy">
           </div>
           <div class="addon-tags">
-            <p style="margin-bottom: 5px; margin-right: 5px;" v-if="addon.type.includes('32x')" >32x</p>
-            <p style="margin-bottom: 5px;" v-if="addon.type.includes('64x')" >64x</p>
+            <p style="margin-bottom: 5px; margin-right: 5px;" v-if="addon.options.tags.includes('32x')" >32x</p>
+            <p style="margin-bottom: 5px;" v-if="addon.options.tags.includes('64x')" >64x</p>
           </div>
         </router-link>
         <v-btn
@@ -53,11 +53,13 @@ export default {
       required: true
     }
   },
-  data () {
+  data() {
     return {
       optifine: '/image/icon/optifine.png',
       bedrock: '/image/icon/bedrock.png',
       java: '/image/icon/java.png',
     }
+  },
+  methods: {
   }
 }

@@ -121,10 +121,11 @@ class Collection {
 
   /**
    * Search through collection
-   * @param {SearchOption[]} searchOptions
+   * @param {SearchOption[]} searchOptions Array of search options
+   * @param {(Number|false|true)?} random Random result seed, disabled by default, but can activated with true or a given seed
    * @returns {Promise<T[]>}
    */
-  search(searchOptions) {
+  search(searchOptions, random=false) {
     if(!Array.isArray(searchOptions))
       return Promise.reject(new Error('searchOptions shall be an array'))
 
@@ -141,12 +142,26 @@ class Collection {
       //TODO: add more strict value field warnings in JS and PHP
     })
 
+    let params = {
+      "collection": this.collectionName,
+      "command": "search",
+      "search": searchOptions
+    }
+
+    if(random !== false) {
+      if(random === true) {
+        params.random = {}
+      } else {
+        let seed = parseInt(random)
+        if(isNaN(seed)) return Promise.reject(new Error('random takes as parameter true, false or an integer value'))
+        params.random = {
+          "seed": seed
+        }
+      }
+    }
+
     return new Promise((resolve, reject) => {
-      this.__get_request({
-        "collection": this.collectionName,
-        "command": "search",
-        "search": searchOptions
-      }).then(res => {
+      this.__get_request(params).then(res => {
         const arr = []
 
         Object.keys(res).forEach(contribID => {
@@ -231,6 +246,48 @@ class Collection {
         resolve(data)
       })
       .catch(reject)
+    })
+  }
+
+  /**
+   * Returns random max entries offsetted with a given seed
+   * @param {Integer} max 
+   * @param {Integer} seed 
+   * @param {Integer} offset 
+   * @returns {Promise} entries
+   */
+  random(max, seed, offset) {
+    const params = {}
+    if(max !== undefined) {
+      if(typeof(max) !== 'number' || !Number.isInteger(max) || max < -1) return Promise.reject(new Error('Expected integer >= -1 for the max'))
+      params.max = max
+    }
+
+    const hasSeed = seed !== undefined
+    const hasOffset = offset !== undefined
+    if(hasOffset && !hasSeed) return Promise.reject(new Error('You can\'t put an offset without a seed'))
+
+    if(hasOffset && (typeof(offset) !== 'number' || !Number.isInteger(offset) || offset < 0)) return Promise.reject(new Error('Expected integer >= -1 for the max'))
+    
+    if(hasSeed) {
+      if((typeof(seed) !== 'number' || !Number.isInteger(seed))) return Promise.reject(new Error('Expected integer for the seed'))
+      
+      if(!hasOffset) offset = 0
+      params.seed = seed
+      params.offset = offset
+    }
+
+    return this.__get_request({
+      'collection': this.collectionName,
+      'command': 'random',
+      'random': params
+    }).then(data => {
+      Object.keys(data).forEach(key => {
+        data[key][ID_FIELD_NAME] = key
+        this.addMethods(data[key])
+      })
+
+      return Promise.resolve(data)
     })
   }
 
