@@ -42,6 +42,7 @@ export default {
           v-for="type in editions"
           v-model="selectedEditions"
           :label="type"
+          :disabled="selectedEditions.length === 1 && selectedEditions[0] === type"
           :value="type"
           color="primary"
           @change="startSearch"
@@ -51,6 +52,7 @@ export default {
           v-for="type in res"
           v-model="selectedRes"
           :label="type"
+          :disabled="selectedRes.length === 1 && selectedRes[0] === type"
           :value="type"
           color="primary"
           @change="startSearch"
@@ -63,7 +65,7 @@ export default {
         filled
         clear-icon="mdi-close"
         clearable
-        color="primary"
+        dark
         placeholder="Search add-on name"
         type="text"
         v-on:keyup.enter="startSearch"
@@ -108,14 +110,15 @@ export default {
         this.searchedAddons = {}
 
         for (const addonID in this.addons) {
-          if (this.addons[addonID].title.toLowerCase().includes(this.search.toLowerCase()) || this.search === '') {
+          if (this.addons[addonID].name.toLowerCase().includes(this.search.toLowerCase()) || this.search === '') {
             const localRes = []
             const localEditions = []
 
             // split types of an addon (res + edition : res & edition)
-            for (let i = 0; this.addons[addonID].type[i]; i++) {
-              if (this.editions.includes(this.addons[addonID].type[i])) localEditions.push(this.addons[addonID].type[i])
-              if (this.res.includes(this.addons[addonID].type[i])) localRes.push(this.addons[addonID].type[i])
+            const tags = this.addons[addonID].options.tags
+            for (let tagIndex = 0; tagIndex < tags.length; tagIndex++) {
+              if (this.editions.includes(tags[tagIndex])) localEditions.push(tags[tagIndex])
+              if (this.res.includes(tags[tagIndex])) localRes.push(tags[tagIndex])
             }
 
             // search if edition then check if res
