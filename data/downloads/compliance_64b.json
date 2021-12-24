@@ -11,12 +11,12 @@
   "1.16.220": [
     {
       "file": "Compliance 64x",
-      "file_type": "A",
-      "file_version": 6,
-      "size": "7.40 MB",
-      "date": "23/05/2021",
+      "file_type": "B",
+      "file_version": 2,
+      "date": "24/12/2021",
       "links": {
-        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/alpha-6.1/Compliance_64x_-_Bedrock_Edition.mcpack"
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/beta-2/Compliance.64x.Bedrock.Beta.2.mcpack",
+		"curse": "https://www.curseforge.com/minecraft/mc-addons/compliance-64x-bedrock/files/3578945"
       }
     },
     {

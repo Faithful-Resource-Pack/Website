@@ -8,14 +8,14 @@
       }
     }
   ],
-  "1.16": [
+  "1.18": [
     {
       "file": "Compliance 64x",
-      "file_type": "A",
-      "file_version": 6,
+      "file_type": "B",
+      "file_version": 2,
       "links": {
-        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Java-64x/releases/download/alpha-6/Compliance_64x_-_Parity_Update.zip",
-        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-64x/files/3291993"
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Java-64x/",
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-64x/files/3578938
       }
     },
     {
