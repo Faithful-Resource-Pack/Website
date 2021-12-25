@@ -13,11 +13,55 @@
       "file": "Compliance 64x",
       "file_type": "B",
       "file_version": 2,
-      "size": "6.51 MB",
+      "size": "6.52 MB",
       "date": "24/12/2021",
+      "latest": "latest",
       "links": {
-        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/beta-2/Compliance.64x.Bedrock.Beta.2.mcpack",
-		"curse": "https://www.curseforge.com/minecraft/mc-addons/compliance-64x-bedrock/files/3578945"
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/beta-2/Compliance.64x.Bedrock.Beta.2.mcpack"
+      }
+    }
+  ],
+  "1.17.x": [
+    {
+      "file": "Compliance 64x",
+      "file_type": "B",
+      "file_version": 1,
+      "size": "6.13 MB",
+      "date": "27/10/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/beta-1/Compliance.64x.Bedrock.-.Beta.1.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
+      "file_version": 8,
+      "size": "7.61 MB",
+      "date": "08/08/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/alpha-8/Compliance.64x.-.Bedrock.mcpack"
+      }
+    },
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
+      "file_version": 7,
+      "size": "7.17 MB",
+      "date": "07/05/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/alpha-7/Compliance.64x.Bedrock.-.Anniversary.Update.mcpack"
+      }
+    }
+  ],
+  "1.16.x": [
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
+      "file_version": 6,
+      "size": "7.40 MB",
+      "date": "23/05/2021",
+      "links": {
+        "github": "https://github.com/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases/download/alpha-6.1/Compliance_64x_-_Bedrock_Edition.mcpack"
       }
     },
     {

@@ -44,7 +44,7 @@ const v = new Vue({
     <template v-for="(i, key) in packType">
       <h2>Compliance for {{ key }}:</h2>
       <template v-for="j in packType[key]">
-        <h3>{{ j }}</h3>
+        <h2>{{ j }}</h2>
         <div class="outline">
           <table>
             <thead>
@@ -67,7 +67,7 @@ const v = new Vue({
                       {{ item[0].file }}
                       <span v-if="keyA != 'github'" class="version">{{ keyA }}</span>
                       <span :class="labelColor(item[0])">{{ labelText(item[0]) }}</span>
-                      <span v-if="keyA != 'github'" class="latest">Latest</span>
+                      <span v-if="keyA != 'github' && item[0].latest" class="latest">Latest</span>
                     </p>
                   </td>
 
@@ -85,9 +85,9 @@ const v = new Vue({
 
                   <td class="small" v-if="item[0].links.github" :colspan="item[0].links.curse ? 1 : 2">
                     <a v-if="item[0].links.github" class="btn btn-dark btn-dl" :href="item[0].links.github">
-                      <i style="margin-right: 4px" class="fas fa-download"></i>
+                      <i style="margin-right: 4px" class="fab fa-github"></i>
                       <template v-if="item[0].file_type != 'GitHub'">
-                        {{ getGitHubDownload(item[0], 0, key, j) }}
+                        Github
                       </template>
                       <template v-else>
                         GitHub
@@ -98,7 +98,7 @@ const v = new Vue({
                   <td class="small" v-if="item[0].links.curse" :colspan="item[0].links.github ? 1 : 2">
                     <a v-if="item[0].links.curse" class="btn btn-dark btn-dl" :href="item[0].links.curse">
                       <i style="margin-right: 4px" class="fas fa-fire"></i>
-                      {{ getCurseDownload() }}
+                      Curse
                     </a>
                   </td>
 
@@ -129,15 +129,15 @@ const v = new Vue({
 
                   <td class="small" v-if="subItem.links.github" :colspan="subItem.links.curse ? 1 : 2">
                     <a v-if="subItem.links.github" class="btn btn-dark btn-dl" :href="subItem.links.github">
-                      <i style="margin-right: 4px" class="fas fa-download"></i>
-                      {{ getGitHubDownload(subItem, keyB, key, j) }}
+                      <i style="margin-right: 4px" class="fab fa-github"></i>
+                      Github
                     </a>
                   </td>
 
                   <td class="small" v-if="subItem.links.curse" :colspan="subItem.links.github ? 1 : 2">
                     <a v-if="subItem.links.curse" class="btn btn-dark btn-dl" :href="subItem.links.curse">
                       <i style="margin-right: 4px" class="fas fa-fire"></i>
-                      {{ getCurseDownload() }}
+                      Curse
                     </a>
                   </td>
                 </tr>
@@ -200,6 +200,7 @@ const v = new Vue({
       else if (type == 'Bedrock' && size == '64x') return this.downloads.c64b
       else if (type == 'Dungeons' && size == '32x') return this.downloads.c32d
     },
+    /* unused
     getGitHubDownload(item, release, type, size) {
       if (!this.isMounted) return
       let data  = this.getRelease(type, size)
@@ -221,6 +222,7 @@ const v = new Vue({
     getCurseDownload() {
       return 'Curse'
     },
+    */
     getRelease(type, size) {
       if (type == 'Java' && size == '32x') return this.releases.c32
       else if (type == 'Java' && size == '64x') return this.releases.c64

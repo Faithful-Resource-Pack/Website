@@ -21,9 +21,9 @@ export default {
       v-else-if="addon.approval.status == 'approved'"
     >
 
-      <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem;">{{ addon.name }}</h2>
+      <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem">{{ addon.name }}</h2>
       <!-- the if statement is here to hide warning message from vue -->
-      <img v-if="files.length" :src="getHeader()" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px;">
+      <img v-if="files.length" :src="getHeader()" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
       <template>
         <!-- this cause a warning message from vue, but idk what's happening since this doesn't happens on the webapp, only here :/ -->
@@ -47,13 +47,13 @@ export default {
           'display': $vuetify.breakpoint.mdAndUp ? 'flex' : 'block'
         }"
       >
-        <v-col class="col-2" :sm="$vuetify.breakpoint.mdAndUp ? 3 : 2" style="max-width: 100%;">
+        <v-col class="col-2" :sm="$vuetify.breakpoint.mdAndUp ? 3 : 2" style="max-width: 100%">
 
           <!-- Only 1 authors -->
           <template v-if="Object.keys(authors).length == 1">
             <h3 class="text-center">Author</h3>
-            <img v-if="authors[Object.keys(authors)[0]].uuid" alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px;" :src="($vuetify.breakpoint.mdAndUp ? 'https://visage.surgeplay.com/full/256/' : 'https://visage.surgeplay.com/head/128/') + authors[Object.keys(authors)[0]].uuid" />
-            <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px;" src="https://visage.surgeplay.com/head/128/X-Steve" />
+            <img v-if="authors[Object.keys(authors)[0]].uuid" alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" :src="($vuetify.breakpoint.mdAndUp ? 'https://visage.surgeplay.com/full/256/' : 'https://visage.surgeplay.com/head/128/') + authors[Object.keys(authors)[0]].uuid" />
+            <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" src="https://visage.surgeplay.com/head/128/X-Steve" />
             <h4 class="card card-title text-center author-widget">{{ authors[Object.keys(authors)[0]].username }}</h4>
           </template>
 
@@ -67,8 +67,8 @@ export default {
             >
               <v-row v-for="(author, index) in authors">
                 <v-col style="margin: 0 5px" :key="index">
-                  <img v-if="author.uuid" alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px;" :src="'https://visage.surgeplay.com/head/128/' + author.uuid" />
-                  <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px;" src="https://visage.surgeplay.com/head/128/X-Steve" />
+                  <img v-if="author.uuid" alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" :src="'https://visage.surgeplay.com/head/128/' + author.uuid" />
+                  <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" src="https://visage.surgeplay.com/head/128/X-Steve" />
                   <h4 class="card card-title text-center author-widget">{{ author.username }}</h4>
                 </v-col>
               </v-row>
@@ -76,7 +76,7 @@ export default {
           </template>
         </v-col>
 
-        <v-col class="col-10" :sm="$vuetify.breakpoint.mdAndUp ? 9 : 10" style="max-width: 100%;">
+        <v-col class="col-10" :sm="$vuetify.breakpoint.mdAndUp ? 9 : 10" style="max-width: 100%">
           <div class="card card-body">
             <p align="justify" v-html="compiledMarkdown(addon.description)"></p>
           </div>
