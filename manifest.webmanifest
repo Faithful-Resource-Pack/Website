@@ -1,0 +1,28 @@
+{
+  "name": "Compliance Resource Pack",
+  "short_name": "Compliance",
+  "description": "Default styled 32x and 64x resource packs for Minecraft.",
+  "start_url": "/",
+  "scope": ".",
+  "display": "minimal-ui",
+  "theme_color": "#76C945",
+  "background_color": "#76C945",
+  "icons": [
+    {
+      "src": "/image/pwa/app-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/image/pwa/app-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/image/pwa/app-maskable-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}
