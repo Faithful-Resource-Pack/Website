@@ -10,17 +10,14 @@ layout: compress
 	<meta name="keywords" content="Minecraft, Java, Bedrock, Dungeons, Resource, Pack, Resource-Pack, Resourcepack, Compliance, Mods, Faithful, 32x, x32, 32x32, 64x, x64, 64x64">
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#76C945">
 	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#00552B">
-	<meta name="msapplication-TileColor" content="#76c945">
-	<link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-title" content="Compliance">
+	<link rel="manifest" href="{{ site.baseurl }}/manifest.webmanifest">
 
-	<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/image/pwa/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/image/pwa/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="{{ site.baseurl }}/image/pwa/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="{{ site.baseurl }}/image/pwa/app-192x192.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/image/pwa/favicon-16x16.png">
-	<link rel="mask-icon" href="{{ site.baseurl }}/image/pwa/safari-pinned-tab.svg" color="#76c945">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="Compliance">
-	<meta name="application-name" content="Compliance">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/image/pwa/apple-touch-icon-180x180.png">
 
 	<meta property="og:image" content="{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}{{ site.baseurl }}/image/home/og_logo.png{% endif %}" />
 	<meta property="twitter:image" content="{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}{{ site.baseurl }}/image/home/og_logo.png{% endif %}" />
@@ -265,7 +262,7 @@ layout: compress
 	<script>
 		if ("serviceWorker" in navigator) {
 			window.addEventListener("load", () => {
-				navigator.serviceWorker.register("/Website-1/service-worker.js");
+				navigator.serviceWorker.register("/service-worker.js");
 			});
 		}
 	</script>
