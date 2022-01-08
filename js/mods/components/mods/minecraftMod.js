@@ -14,6 +14,7 @@ Vue.component('minecraft-mod', {
     `<li class="mod-bar" :class="{ 'selected-mod': mod.selected }" v-if="!mod.blacklisted && mod.resource_pack.versions.length > 0">
       <label :for="repoURL" class="mod-label">Select this mod</label>
       <div :style="imageStyle" class="mod-img">
+        <img :src="imageSource" :alt="name" :title="name" loading="lazy" />
         <div class="mod-img-overlay"></div>
       </div>
       <div class="mod-bar-item">
@@ -137,7 +138,7 @@ Vue.component('minecraft-mod', {
     },
     /** @returns {String} background-img OR set opacity to 1*/
     imageStyle() {
-      if (this.imageSource !== _NO_ICON) return 'background-image: url(' + this.imageSource + ')'
+      if (this.imageSource !== _NO_ICON) return ''
       return 'opacity: 1'
     },
     /** @returns {Array} of available versions */

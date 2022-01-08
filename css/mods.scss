@@ -277,15 +277,24 @@ input[type=radio]:checked + label {
 	}
 }
 .mod-img {
+	position: relative;
+	text-align: center;
 	width: 65px;
 	height: 65px;
-	background: center/contain url('../image/icon/compliance_mods_transparent.png') no-repeat;
-	image-rendering: pixelated;
-	border-radius: $border-radius-1x;
 	flex: none;
 	margin-right: 1.25rem;
+
+	&, .mod-img img {
+		image-rendering: pixelated;
+		border-radius: $border-radius-1x;
+	}
 }
 .selected-mod .mod-img-overlay {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	border-radius: $border-radius-1x;
