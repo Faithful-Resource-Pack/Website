@@ -23,6 +23,7 @@
 - [ ] **Russian**
 - [x] **Spanish** (_@Zeuselpro[ᴘᴇ]_)
 - [x] **Sweedish** (_@znop_)
+- [x] **Vietnamese** (_@Lightening_)
 
 ## Translation: "Comments Policy"
 
