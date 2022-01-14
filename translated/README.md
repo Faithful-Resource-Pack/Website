@@ -4,6 +4,7 @@
 ## Translation: "About"
 
 - [ ] **Arabic**
+- [ ] **Brazilian** (_@PedroESP_01_)
 - [ ] **Danish**
 - [ ] **Dutch**
 - [ ] **Czech**
