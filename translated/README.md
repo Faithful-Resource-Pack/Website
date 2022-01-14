@@ -20,7 +20,7 @@
 - [x] **Ukranian** (_@justphoenixer_)
 - [ ] **Romanian**
 - [ ] **Russian**
-- [ ] **Spanish**
+- [x] **Spanish** (_@Zeuselpro[ᴘᴇ]_)
 - [x] **Sweedish** (_@znop_)
 
 ## Translation: "Comments Policy"
