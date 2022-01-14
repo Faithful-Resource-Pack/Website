@@ -4,7 +4,7 @@
 ## Translation: "About"
 
 - [ ] **Arabic**
-- [ ] **Brazilian** (_@PedroESP_01_)
+- [x] **Brazilian** (_@PedroESP_01_)
 - [ ] **Danish**
 - [ ] **Dutch**
 - [ ] **Czech**
@@ -21,7 +21,7 @@
 - [x] **Ukranian** (_@justphoenixer_)
 - [ ] **Romanian**
 - [ ] **Russian**
-- [x] **Spanish** (_@Zeuselpro[ᴘᴇ]_)
+- [x] **Spanish** (_@Zeuselpro[ᴘᴇ]_, _@Téo_)
 - [x] **Sweedish** (_@znop_)
 - [x] **Vietnamese** (_@Lightening_)
 
@@ -45,12 +45,13 @@
 - [ ] **Urdu**
 - [x] **Romanian** (_@Ozzymand_)
 - [x] **Russian** (_@ProstoProstoChelovek_)
-- [ ] **Spanish**
+- [x] **Spanish** (_@Téo_)
 - [x] **Sweedish** (_@znop_)
 
 ## Translation: "Licence"
 
 - [ ] **Arabic**
+- [x] **Brazilian** (_@PedroESP_01_)
 - [ ] **Danish**
 - [ ] **Dutch**
 - [x] **Chinese** (_@Modcore2-LOCAL.jar_)
@@ -69,7 +70,7 @@
 - [x] **Urdu** (_@TheSpecifiedGamerTSG_)
 - [x] **Romanian** (_@Ozzymand_)
 - [x] **Russian** (_@Fractalis_)
-- [x] **Spanish** (_@MrKirby48_)
+- [x] **Spanish** (_@MrKirby48_, _@Téo_)
 - [x] **Slovak** (Pomi108's friend)
 - [x] **Sweedish** (_@znop_)
 - [x] **Taiwanese** (_@Modcore2-LOCAL.jar_)
