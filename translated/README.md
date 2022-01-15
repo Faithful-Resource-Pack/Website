@@ -75,4 +75,4 @@
 - [x] **Spanish** (_@MrKirby48_, _@Téo_)
 - [x] **Slovak** (Pomi108's friend)
 - [x] **Sweedish** (_@znop_)
-- [x] **Taiwanese** (_@Modcore2-LOCAL.jar_)
+- [x] **Taiwanese** (_@GuanranNot928_)
