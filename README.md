@@ -13,11 +13,11 @@
   </div>
 </p>
 
-## 这是什么网页？
+## 这是什么网站？
 这个网页是为了展示所有关于 Compliance Resource Pack 的东西.。你可以在这里找到材质包,，附加组件,，模组支持和更多。
 你还可以根据下面的教程向我们贡献。
 
-## 想要贡献？ 贡献！
+## 想要贡献？
 
 你可以创建一个关于这个 Repository 的 [fork](https://github.com/Compliance-Resource-Pack/Website/network/members) , 做好你的改动之后创建一个 [pull request](https://github.com/Compliance-Resource-Pack/Website/compare)
 
@@ -46,4 +46,4 @@ bundle exec jekyll build
 ```
 bundle exec jekyll serve
 ```
-最后你可以在本地浏览你的网页： http://127.0.0.1:4000/ 。Enjoy！
+最后你可以在本地浏览你的网页： http://127.0.0.1:4000/ 。
