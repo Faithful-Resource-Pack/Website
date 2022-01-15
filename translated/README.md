@@ -7,6 +7,7 @@
 - [x] **Brazilian** (_@PedroESP_01_)
 - [ ] **Danish**
 - [ ] **Dutch**
+- [ ] **Chinese** (_@GuanranNot928_)
 - [ ] **Czech**
 - **English**
 - [x] **French** (_@Juknum_)
@@ -30,6 +31,7 @@
 - [ ] **Arabic**
 - [ ] **Danish**
 - [ ] **Dutch**
+- [ ] **Chinese** (_@GuanranNot928_)
 - [x] **Czech** (_@Pomi108_)
 - **English**
 - [x] **French** (_@Juknum_)
@@ -54,7 +56,7 @@
 - [x] **Brazilian** (_@PedroESP_01_)
 - [ ] **Danish**
 - [ ] **Dutch**
-- [x] **Chinese** (_@Modcore2-LOCAL.jar_)
+- [x] **Chinese** (_@GuanranNot928_)
 - [x] **Czech** (_@Pomi108_)
 - **English**
 - [x] **French** (_@Juknum_)
