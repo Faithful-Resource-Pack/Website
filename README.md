@@ -14,12 +14,12 @@
 </p>
 
 ## 这是什么网站？
-这个网页是为了展示所有关于 Compliance Resource Pack 的东西.。你可以在这里找到材质包,，附加组件,，模组支持和更多。
+这个网页是为了展示所有关于 Compliance Resource Pack 的东西。你可以在这里找到材质包，附加组件，模组支持和更多。
 你还可以根据下面的教程向我们贡献。
 
 ## 想要贡献？
 
-你可以创建一个关于这个 Repository 的 [fork](https://github.com/Compliance-Resource-Pack/Website/network/members) , 做好你的改动之后创建一个 [pull request](https://github.com/Compliance-Resource-Pack/Website/compare)
+你可以创建一个关于这个 Repository 的 [fork](https://github.com/Compliance-Resource-Pack/Website/network/members) ，做好你的改动之后创建一个 [pull request](https://github.com/Compliance-Resource-Pack/Website/compare)
 
 ### 安装过程
 
