@@ -23,6 +23,7 @@
 - [ ] **Russian**
 - [x] **Spanish** (_@Zeuselpro[ᴘᴇ]_, _@Téo_)
 - [x] **Sweedish** (_@znop_)
+- [x] **Turkish** (_@egeesin_)
 - [x] **Vietnamese** (_@Lightening_)
 
 ## Translation: "Comments Policy"
@@ -47,6 +48,7 @@
 - [x] **Russian** (_@ProstoProstoChelovek_)
 - [x] **Spanish** (_@Téo_)
 - [x] **Sweedish** (_@znop_)
+- [x] **Turkish** (_@egeesin_)
 
 ## Translation: "Licence"
 
@@ -74,3 +76,4 @@
 - [x] **Slovak** (Pomi108's friend)
 - [x] **Sweedish** (_@znop_)
 - [x] **Taiwanese** (_@Modcore2-LOCAL.jar_)
+- [x] **Turkish** (_@egeesin_)
