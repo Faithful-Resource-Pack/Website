@@ -27,12 +27,14 @@ layout: compress
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/slider.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css" id="darkcss">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/light.css" importance="high">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css" importance="high" id="darkcss">
+	<script src="{{ site.baseurl }}/js/theme.js" importance="high" type="module"></script>
 
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/slider.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
 
 	<!-- Font awesome icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -257,7 +259,6 @@ layout: compress
 
 	<script src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
 	<script src="{{ site.baseurl }}/js/snow.js" type="module"></script>
-	<script src="{{ site.baseurl }}/js/darktheme.js" type="module"></script>
 	<script>
 		if ("serviceWorker" in navigator) {
 			window.addEventListener("load", () => {
