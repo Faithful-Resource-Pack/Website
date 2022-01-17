@@ -127,9 +127,9 @@ title: Home
   {%- for post in site.posts -%}
     <a class="card img-card" rel="noopener" href="{{ site.baseurl }}{{ post.permalink }}">
       {%- if post.header-img -%}
-      <img src="{{ site.baseurl }}/image/{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
+      <img src="{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
       {%- else -%}
-      <img src="{{ site.baseurl }}/image/redirect/c32x.png" loading="lazy" alt="{{ post.title }}">
+      <img src="https://database.compliancepack.net/images/website/posts/placeholder.jpg" loading="lazy" alt="{{ post.title }}">
       {%- endif -%}
       <h3>{{ post.title }}</h3>
     </a>
