@@ -6,5 +6,4 @@ _site/
 .vscode/
 debug.log
 .DS_Store
-_start.bat
 firestorm

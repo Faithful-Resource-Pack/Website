@@ -5,13 +5,13 @@ layout: compress
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Compliance - {{ page.title }}</title>
+	<title>{{ page.title }} - Compliance</title>
 	<meta name="description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Compliance, a default-style 32x and 64x resource pack for Minecraft Java, Bedrock, Education and Dungeons.{% endif %}" />
 	<meta name="keywords" content="Minecraft, Java, Bedrock, Dungeons, Resource, Pack, Resource-Pack, Resourcepack, Compliance, Mods, Faithful, 32x, x32, 32x32, 64x, x64, 64x64">
 	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#00552B">
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#76C945">
-        <meta name="apple-mobile-web-app-capable" content="no">
-        <meta name="apple-mobile-web-app-title" content="Compliance">
+	<meta name="apple-mobile-web-app-capable" content="no">
+	<meta name="apple-mobile-web-app-title" content="Compliance">
 	<link rel="manifest" href="{{ site.baseurl }}/manifest.webmanifest">
 
 	<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/image/pwa/favicon-32x32.png">
@@ -27,12 +27,14 @@ layout: compress
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/slider.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css" id="darkcss">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/light.css" importance="high">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css" importance="high" id="darkcss">
+	<script src="{{ site.baseurl }}/js/theme.js" importance="high" type="module"></script>
 
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/slider.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
 
 	<!-- Font awesome icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -232,8 +234,7 @@ layout: compress
 							Discord
 						</span>
 						<div class="dropdown-menu dropdown-menu-center">
-							<a class="dropdown-item" href="https://discord.gg/sN9YRQbBv7" rel="noopener">Compliance 32x</a>
-							<a class="dropdown-item" href="https://discord.gg/Tqtwtgh" rel="noopener">Compliance 64x</a>
+							<a class="dropdown-item" href="https://discord.gg/sN9YRQbBv7" rel="noopener">Compliance</a>
 							<a class="dropdown-item" href="https://discord.gg/qVeDfZw" rel="noopener">Compliance Extras</a>
 						</div>
 					</li>
@@ -258,7 +259,6 @@ layout: compress
 
 	<script src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
 	<script src="{{ site.baseurl }}/js/snow.js" type="module"></script>
-	<script src="{{ site.baseurl }}/js/darktheme.js" type="module"></script>
 	<script>
 		if ("serviceWorker" in navigator) {
 			window.addEventListener("load", () => {
