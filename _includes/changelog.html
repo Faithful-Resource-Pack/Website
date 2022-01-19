@@ -34,7 +34,7 @@
 {%- if page.single-changelog == null -%}
 <button id="old-btn" onclick="ShowAll()" class="btn btn-dark btn-lg block">All</button>
 
-<div id="old" style="display: none;">
+<div id="old" style="display: none">
   <hr>
   {%- for version in changelog -%}
     {%- assign counter = counter | plus: 1 -%}

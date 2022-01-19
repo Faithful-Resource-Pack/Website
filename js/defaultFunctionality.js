@@ -137,8 +137,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // set sticky menu
   const topNavbar = document.getElementById('topNavbar')
+  const topNavbarParent = topNavbar.parentElement
   const topCarousel = document.querySelector('[id^=topCarousel]')
   window.addEventListener('scroll', () => {
-    topNavbar.classList.toggle('fixed', window.scrollY > (topCarousel.offsetTop + topCarousel.offsetHeight))
+    const topNavbarHeight = topNavbar.offsetHeight
+    const isScrolling = window.scrollY > (topNavbar.offsetTop + topNavbarHeight)
+    topNavbar.classList.toggle('fixed', isScrolling)
+
+    if(isScrolling) {
+      topNavbarParent.style.paddingTop = topNavbarHeight + 'px'
+    } else {
+      topNavbarParent.style.paddingTop = '0px'
+    }
   }, true)
 })

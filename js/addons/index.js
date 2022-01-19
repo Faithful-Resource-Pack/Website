@@ -16,5 +16,16 @@ const router = new VueRouter({
 let v = new Vue({
   router, 
   el: "#app",
-  vuetify: new Vuetify()
+  vuetify: new Vuetify({
+    theme: {
+      themes: {
+        light: {
+          primary: '#FFFFFF',
+        },
+        dark: {
+          primary: '#FFFFFF',
+        }
+      }
+    }
+  })
 })

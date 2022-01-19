@@ -12,15 +12,20 @@ layout: compress
 	
 	<meta name="keywords" content="Minecraft, Java, Bedrock, Dungeons, Resource, Pack, Resource-Pack, Resourcepack, Compliance, Mods, Faithful, 32x, x32, 32x32, 64x, x64, 64x64">
 	
-	<meta name="theme-color" content="#76C945">
-
-	<link rel="icon" href="{{ site.baseurl }}/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
-	<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
-	<link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png"/>
-
 	<meta property="og:image"      content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}{{ site.baseurl }}/image/home/og_logo.png{% endif %}{% endif %}" />
 	<meta property="twitter:image" content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}{{ site.baseurl }}/image/home/og_logo.png{% endif %}{% endif %}" />
+	
+	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#00552B">
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#76C945">
+	
+	<meta name="apple-mobile-web-app-capable" content="no">
+	<meta name="apple-mobile-web-app-title" content="Compliance">
+	<link rel="manifest" href="{{ site.baseurl }}/manifest.webmanifest">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/image/pwa/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="{{ site.baseurl }}/image/pwa/app-192x192.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/image/pwa/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/image/pwa/apple-touch-icon-180x180.png">
 	<meta name="twitter:card" content="summary_large_image">
 
 	<meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
@@ -50,7 +55,7 @@ layout: compress
 	<header>
 
 		<noscript>
-			<img src="{{ site.baseurl }}/image/icon/compliance_32x.svg" class="center" style="width: 128px; height: 128px;" alt="Compliance">
+			<img src="{{ site.baseurl }}/image/icon/compliance_32x.svg" class="center" style="width: 128px; height: 128px" alt="Compliance">
 			<p class="red banner m-3">
 				Please enable JavaScript for menus and carousels to work!
 			</p>
@@ -256,8 +261,15 @@ layout: compress
     <small>CompliPage - {{ site.time | date: "%Y/%m/%d %H:%M" }}</small>
 	</footer>
 
-  <script src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
+	<script src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
 	<script src="{{ site.baseurl }}/js/snow.js" type="module"></script>
 	<script src="{{ site.baseurl }}/js/darktheme.js" type="module"></script>
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", () => {
+				navigator.serviceWorker.register("/service-worker.js");
+			});
+		}
+	</script>
 </body>
 </html>

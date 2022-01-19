@@ -8,14 +8,51 @@
       }
     }
   ],
-  "1.16": [
+  "1.18.x": [
+    {
+      "file": "Compliance 64x",
+      "file_type": "B",
+      "file_version": 2,
+      "latest": "latest",
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-64x/download/3578938"
+      }
+    }
+  ],
+  "1.17.x": [
+    {
+      "file": "Compliance 64x",
+      "file_type": "B",
+      "file_version": 1,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-64x/download/3506544"
+      }
+    },
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
+      "file_version": 8,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-64x/download/3419568"
+      }
+    },
+    {
+      "file": "Compliance 64x",
+      "file_type": "A",
+      "file_version": 7,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-64x/download/3377543"
+      }
+    }
+  ],
+  "1.16.x": [
     {
       "file": "Compliance 64x",
       "file_type": "A",
       "file_version": 6,
       "links": {
         "github": "https://github.com/Compliance-Resource-Pack/Compliance-Java-64x/releases/download/alpha-6/Compliance_64x_-_Parity_Update.zip",
-        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-64x/files/3291993"
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/compliance-64x/download/3291993"
       }
     },
     {
