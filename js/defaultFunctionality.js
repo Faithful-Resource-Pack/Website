@@ -1,4 +1,4 @@
-/* global Element, Event, tns */
+/* global Element, Event */
 
 Element.prototype.siblingElements = function () {
   if (this.parentNode === null) return []
@@ -117,18 +117,6 @@ document.querySelectorAll('[data-ride="carousel"]').forEach(item => {
       }, 600)
     }
   }
-})
-
-// default layout
-tns({
-  container: '#topCarousel',
-  center: true,
-  controls: false,
-  nav: false,
-  autoplay: true,
-  autoplayPosition: 'bottom',
-  mouseDrag: true,
-  items: 1
 })
 
 // fix non centered icons

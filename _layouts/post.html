@@ -83,21 +83,6 @@ layout: default
 			var img = document.getElementById('SF-Img')
 			img.src = img_path
 		}
-
-		document.addEventListener('DOMContentLoaded', () => {
-			tns({
-			  container: '#carousel-img',
-			  controls: false,
-			  navPosition: 'bottom',
-			  mouseDrag: true,
-				gutter: 20,
-				responsive: {
-					0: { items: 1 },
-					600: { items: 2 },
-					1024: { items: 3 }
-				}
-			})
-		})
 	</script>
 {%- endif -%}
 

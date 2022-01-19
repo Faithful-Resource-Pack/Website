@@ -316,12 +316,6 @@ hr {
 }
 
 @media (max-width: 760px) {
-  .tns-outer {
-    position: absolute;
-    top: 3.5rem;
-    right: calc(50% - 40px)
-  }
-
   .navbar-nav {
     max-width: 150px;
     text-align: center;
@@ -1578,17 +1572,13 @@ img.fancy-card-2x {
 	height: 100%
 }
 /* Carousel arrow hover animation */
-.item img {
-  display: block;
-	margin: 0 auto
-}
-.item a img {
+.icon-hover {
 	transition: all .5s ease
 }
-#topCarousel .item a img:hover {
+.icon-hover:hover {
 	transform: scale(1.1)
 }
-#topCarousel .item a img:focus, #topCarousel .item a img:active {
+.icon-hover:focus, .icon-hover:active {
 	transform: scale(1)
 }
 /** BASIC CAROUSEL **/
