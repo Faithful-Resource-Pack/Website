@@ -5,7 +5,7 @@ layout: compress
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Compliance - {{ page.title }}</title>
+	<title>{{ page.title }} - Compliance</title>
 	<meta name="description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Compliance, a default-style 32x and 64x resource pack for Minecraft Java, Bedrock, Education and Dungeons.{% endif %}" />
 	<meta name="og:description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Compliance, a default-style 32x and 64x resource pack for Minecraft Java, Bedrock, Education and Dungeons.{% endif %}" />
 	<meta name="twitter:description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Compliance, a default-style 32x and 64x resource pack for Minecraft Java, Bedrock, Education and Dungeons.{% endif %}" />
@@ -17,7 +17,7 @@ layout: compress
 	
 	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#00552B">
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#76C945">
-	
+
 	<meta name="apple-mobile-web-app-capable" content="no">
 	<meta name="apple-mobile-web-app-title" content="Compliance">
 	<link rel="manifest" href="{{ site.baseurl }}/manifest.webmanifest">
@@ -32,12 +32,10 @@ layout: compress
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/slider.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css" id="darkcss">
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/light.css" importance="high">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css" importance="high" id="darkcss">
+	<script src="{{ site.baseurl }}/js/theme.js" importance="high" type="module"></script>
 
 	<!-- Font awesome icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -55,9 +53,8 @@ layout: compress
 	<header>
 
 		<noscript>
-			<img src="{{ site.baseurl }}/image/icon/compliance_32x.svg" class="center" style="width: 128px; height: 128px" alt="Compliance">
 			<p class="red banner m-3">
-				Please enable JavaScript for menus and carousels to work!
+				Please enable JavaScript for various features to work.
 			</p>
 		</noscript>
 
@@ -96,39 +93,9 @@ layout: compress
 						</div>
 					</li>
 
-					<!-- carousel of other pages -->
-					<li class="no-js" id="topCarousel">
-						<div class="item">
-							<a href="{{ site.baseurl }}/compliance32x/latest" title="Compliance">
-								<img src="{{ site.baseurl }}/image/icon/compliance_32x.svg" style="width: 48px; height: 48px" alt="Compliance 32x">
-							</a>
-						</div>
-						<div class="item">
-							<a href="{{ site.baseurl }}/compliance64x/latest" title="Compliance 64x">
-								<img src="{{ site.baseurl }}/image/icon/compliance_64x.svg" style="width: 48px; height: 48px" alt="Compliance 64x">
-							</a>
-						</div>
-						<div class="item">
-							<a href="{{ site.baseurl }}/addons" title="Compliance Add-Ons">
-								<img src="{{ site.baseurl }}/image/icon/compliance_addons.svg" style="width: 48px; height: 48px" alt="Compliance Add-Ons">
-							</a>
-						</div>
-						<div class="item">
-							<a href="{{ site.baseurl }}/compliance32xDungeons/latest" title="Compliance Dungeons">
-								<img src="{{ site.baseurl }}/image/icon/compliance_dungeons.svg" style="width: 48px; height: 48px" alt="Compliance Dungeons">
-							</a>
-						</div>
-						<div class="item">
-							<a href="{{ site.baseurl }}/mods" title="Compliance Mods">
-								<img src="{{ site.baseurl }}/image/icon/compliance_mods.svg" style="width: 48px; height: 48px" alt="Compliance Mods">
-							</a>
-						</div>
-						<div class="item">
-							<a href="{{ site.baseurl }}/tweaks" title="Compliance Tweaks">
-								<img src="{{ site.baseurl }}/image/icon/compliance_tweaks.svg" style="width: 48px; height: 48px" alt="Compliance Tweaks">
-							</a>
-						</div>
-					</li>
+					<a href="{{ site.baseurl }}/" title="Compliance">
+						<img class="icon-hover" src="{{ site.baseurl }}/image/icon/compliance_32x.svg" style="width: 48px; height: 48px" alt="Compliance 32x">
+					</a>
 
 					<li class="nav-item">
 						<a class="nav-link" href="{{ site.baseurl }}/tweaks">
@@ -237,8 +204,7 @@ layout: compress
 							Discord
 						</span>
 						<div class="dropdown-menu dropdown-menu-center">
-							<a class="dropdown-item" href="https://discord.gg/sN9YRQbBv7" rel="noopener">Compliance 32x</a>
-							<a class="dropdown-item" href="https://discord.gg/Tqtwtgh" rel="noopener">Compliance 64x</a>
+							<a class="dropdown-item" href="https://discord.gg/sN9YRQbBv7" rel="noopener">Compliance</a>
 							<a class="dropdown-item" href="https://discord.gg/qVeDfZw" rel="noopener">Compliance Extras</a>
 						</div>
 					</li>
@@ -263,7 +229,6 @@ layout: compress
 
 	<script src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
 	<script src="{{ site.baseurl }}/js/snow.js" type="module"></script>
-	<script src="{{ site.baseurl }}/js/darktheme.js" type="module"></script>
 	<script>
 		if ("serviceWorker" in navigator) {
 			window.addEventListener("load", () => {

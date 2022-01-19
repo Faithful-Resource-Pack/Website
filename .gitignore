@@ -9,3 +9,4 @@ debug.log
 _start.bat
 node_modules/
 .env
+firestorm
