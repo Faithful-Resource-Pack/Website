@@ -102,7 +102,7 @@ title: Home
 <h1 align="center">Add-ons</h1>
 <div class="res-grid-4" x-data="add" @click="console.log(addons)">
   <template x-for="addon in addons">
-    <a class="card img-card addon" x-bind:href="addon.slug === LOADING_ID ? '' : '/addons#/' + addon.slug">
+    <a class="card img-card addon" x-bind:href="addon.slug === LOADING_ID ? '' : '/addons/' + addon.slug">
       <img x-bind:src="addon.slug === LOADING_ID ? '{{ site.baseurl }}/image/home/see_more.png' : 'https://database.compliancepack.net/images/addons/' + addon.slug + '/header'" x-bind:alt="addon.name" loading="lazy">
       <div class="img-card-shadow"></div>
       <h3 x-text="addon.name"></h3>

@@ -13,7 +13,7 @@ const NOT_FOUND_PAGE = __dirname + "/_site/404.html"
 
 const ADDON_PAGE = __dirname + "/_site/addon.html"
 const ADDON_REPLACE_TOKEN = (token) => `%${token}%`
-const ADDON_FIELD_REPLACE = ['name', 'description', 'author']
+const ADDON_FIELD_REPLACE = ['name', 'description', 'authors']
 
 firestorm.address(process.env.FIRESTORM_URL)
 
@@ -79,7 +79,6 @@ app.get('/addons/:name/?', (req, res) => {
     }
 
     const authorArray = addon.authors.map(author => contributors[author]).filter(e => !!e).map(user => user.username).filter(e => !!e)
-    console.log(addon)
     const dataReplaced = ADDON_FIELD_REPLACE.reduce((acc, token) => { acc[token] = addon[token]; return acc }, {})
     dataReplaced.authors = authorArray.join(', ')
 
