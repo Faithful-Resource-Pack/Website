@@ -3,6 +3,7 @@
 
 ## Translation: "About"
 
+- [x] **Afrikaans** (_@ShaunRoselt_)
 - [ ] **Arabic**
 - [x] **Brazilian** (_@PedroESP_01_)
 - [ ] **Danish**
@@ -28,6 +29,7 @@
 
 ## Translation: "Comments Policy"
 
+- [x] **Afrikaans** (_@ShaunRoselt_)
 - [ ] **Arabic**
 - [ ] **Danish**
 - [ ] **Dutch**
@@ -52,6 +54,7 @@
 
 ## Translation: "Licence"
 
+- [x] **Afrikaans** (_@ShaunRoselt_)
 - [ ] **Arabic**
 - [x] **Brazilian** (_@PedroESP_01_)
 - [ ] **Danish**
