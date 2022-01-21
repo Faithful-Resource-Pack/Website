@@ -42,21 +42,8 @@ Then you need to build the website with this command:
 bundle exec jekyll build
 ```
 
-New hybrid website to allow dynamic content with Jekyll!
-
-Install all dependencies :
+Eventually, in order to automatically rebuild the website if an existing file was updated, you can run:
 ```
-npm install --save-dev
+bundle exec jekyll serve
 ```
-
-Setup .env file at root following .env.example file
-
-Eventually, in order to automatically rebuild the website if an existing file was updated, you can run in **2 different** terminals:
-```
-npm run dev-watch-site
-```
-```
-npm run dev-watch-app
-```
-
-After that you can enjoy your website on your local machine at the following address: http://127.0.0.1:&lt;PORT&gt;/. Enjoy!
+After that you can enjoy your website on your local machine at the following address: http://127.0.0.1:4000/. Enjoy!

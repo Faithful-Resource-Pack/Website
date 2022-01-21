@@ -1,9 +1,6 @@
-/* global fetch, marked, firestorm */
+/* global fetch, marked */
 
 const addonModal = () => import('./addon-post-modal.js')
-
-const FIRESTORM_URL = 'https://database.compliancepack.net/firestorm/'
-firestorm.address(FIRESTORM_URL)
 
 export default {
   name: 'addon-page',
@@ -161,10 +158,6 @@ export default {
     `,
   data() {
     return {
-      collections: {
-        addons: firestorm.collection('addons'),
-        users: firestorm.collection('users')
-      },
       addon: {},
       files: [],
       authors: [],
@@ -198,47 +191,20 @@ export default {
     },
     getDownloads() {
       return this.files.filter(el => el.use === 'download')
-    },
-    add_disqus() {
-      if (this.addon.options.comments && this.addon.approval.status === 'approved') {
-        // disqus config must be generated server-side
-        // so need hard coded value for the piece
-        // we need values accessible
-
-        // the id must get out of scope
-        let addon_disqus_id = this.addon.slug
-
-        // disqus must be a global window variable (here we are in an anonymous promise function)
-        window.disqus_config = function () {
-          this.page.url = 'https://www.compliancepack.net/' + addon_disqus_id // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = addon_disqus_id                              // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-
-        (function () { // DON'T EDIT BELOW THIS LINE
-          const d = document; const s = d.createElement('script')
-          s.src = 'https://compliance-2.disqus.com/embed.js'
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s)
-        })()
-      }
-    },
-    search_authors() {
-      this.addon.authors.forEach(authorID => {
-        fetch(`https://api.compliancepack.net/v1/user/${authorID}`)
-          .then(response => response.json())
-          .then(author => {
-            this.authors.push(author)
-          })
-      })
     }
   },
   beforeMount: function () {
-    if(!window.slug && this.$route) {
-      fetch(`https://api.compliancepack.net/v1/search?collection=addons&field=slug&criteria===&value=${window.slug}`)
+    fetch(`https://api.compliancepack.net/v1/search?collection=addons&field=slug&criteria===&value=${this.$route.params.addon}`)
       .then(response => response.json())
       .then(data => this.addon = data[0])
       .then(() => {
-        this.search_authors()
+        this.addon.authors.forEach(authorID => {
+          fetch(`https://api.compliancepack.net/v1/user/${authorID}`)
+            .then(response => response.json())
+            .then(author => {
+              this.authors.push(author)
+            })
+        })
       })
       .then(() => {
         fetch(`https://api.compliancepack.net/v1/search?collection=files&field=parent.id&criteria===&value=${this.addon.id}`)
@@ -246,7 +212,28 @@ export default {
           .then(data => this.files = data)
       })
       .finally(() => {
-        this.add_disqus()
+        if (this.addon.options.comments && this.addon.approval.status === 'approved') {
+          // disqus config must be generated server-side
+          // so need hard coded value for the piece
+          // we need values accessible
+
+          // the id must get out of scope
+          let addon_disqus_id = this.addon.slug
+
+          // disqus must be a global window variable (here we are in an anonymous promise function)
+          window.disqus_config = function () {
+            this.page.url = 'https://www.compliancepack.net/' + addon_disqus_id // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = addon_disqus_id                              // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+
+          (function () { // DON'T EDIT BELOW THIS LINE
+            const d = document; const s = d.createElement('script')
+            s.src = 'https://compliance-2.disqus.com/embed.js'
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s)
+          })()
+        }
+
         this.loading = false
         window.scrollTo(0, 0)
       })
@@ -256,14 +243,5 @@ export default {
         this.loading = false
         window.scrollTo(0, 0)
       })
-    } else {
-      this.addon = window.addon
-      this.search_authors()
-      this.files = window.files
-
-      this.add_disqus()
-      this.loading = false
-      window.scrollTo(0, 0)
-    }
   }
 }
