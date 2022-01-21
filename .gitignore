@@ -6,4 +6,7 @@ _site/
 .vscode/
 debug.log
 .DS_Store
+_start.bat
+node_modules/
+.env
 firestorm
