@@ -11,9 +11,9 @@ layout: compress
 	<meta name="description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Compliance, a default-style 32x and 64x resource pack for Minecraft Java, Bedrock, Education and Dungeons.{% endif %}" />
 
 	<!-- Facebook Meta Tags -->
-	<meta property="og:url" content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}">
-	<meta property="og:type" content="website">
-	<meta property="og.title" content="{{page.title}} - Compliance">
+	<meta property="og:url" content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{page.title}} - Compliance" />
 	<meta property="og:description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Compliance, a default-style 32x and 64x resource pack for Minecraft Java, Bedrock, Education and Dungeons.{% endif %}" />
 	<meta property="og:image" content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}{{ site.baseurl }}/image/home/og_logo.png{% endif %}{% endif %}" />
 
