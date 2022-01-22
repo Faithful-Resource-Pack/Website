@@ -1,4 +1,4 @@
-url: "https://compliancepack.net/"
+url: "https://compliancepack.net"
 
 compress_html:
   comments: ["<!-- ", " -->"]
