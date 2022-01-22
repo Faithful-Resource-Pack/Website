@@ -67,11 +67,11 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
           // resource pack sum
           ++resourcePacks
         })
+        // mod sum
         ++modAmount
       })
 
 
-      //console.log(versions)
       this.numberOfMinecraftVersions = versionList.length
       this.numberOfModsSupported = modAmount
       this.totalNumberOfResourcePacksStored = resourcePacks
