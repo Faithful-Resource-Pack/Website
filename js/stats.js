@@ -27,7 +27,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       // super duper dynamic addons stats
       const result = {}
       const editions = []
-      Object.values(this.addons).map(e => e.type).forEach(types => {
+      Object.values(this.addons).map(e => e.options.tags).forEach(types => {
         types.filter(e => !isNaN(parseInt(e))).forEach(resolution => {
           if(result[resolution] === undefined) result[resolution] = {}
           types.filter(e => isNaN(parseInt(e))).forEach(edition => {
