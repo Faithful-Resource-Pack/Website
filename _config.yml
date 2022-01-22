@@ -1,4 +1,4 @@
-url: "https://compliancepack.net/"
+url: "https://compliancepack.net"
 
 compress_html:
   comments: ["<!-- ", " -->"]
@@ -9,6 +9,13 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+exclude:
+  - node_modules
+  - /package*.json
+  - /index.js
+  - /.github
+  - /README.md
 
 sass:
   sass_dir: css
