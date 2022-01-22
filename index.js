@@ -20,6 +20,10 @@ firestorm.address(process.env.FIRESTORM_URL)
 const addons = firestorm.collection("addons")
 const users = firestorm.collection("users")
 
+app.use(express.static(__dirname + '/_site/', {
+  extensions:["html", "htm"]
+}))
+
 // redirect addon pagee because it is a "template" page
 app.get('/addon', (req, res, next) => {
   if(req.url === '/addon') {
@@ -50,7 +54,7 @@ app.get('/addons/', (req, res, next) => {
   next()
 })
 
-app.get('/addons/:name/?', (req, res) => {
+app.get('/addons/:name/?', (req, res, next) => {
   const addonPromise = Promise.all([
     axios.get(`https://api.compliancepack.net/v1/search?collection=addons&field=slug&criteria===&value=${req.params.name}`),
   ])
@@ -99,13 +103,10 @@ app.get('/addons/:name/?', (req, res) => {
     res.send(data)
     res.end()
   }).catch(err => {
-    res.end()
+    next()
   })
 })
 
-app.use(express.static(__dirname + '/_site/', {
-  extensions: ['html', 'htm'],
-}))
 
 app.use(function (req, res, next) {
   res.status(404).sendFile(NOT_FOUND_PAGE)
