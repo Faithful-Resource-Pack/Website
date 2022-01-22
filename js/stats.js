@@ -47,28 +47,33 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   mounted: function () {
-    getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/mods/mods.json', (err, json) => {
+    getJSON('https://database.compliancepack.net/firestorm/files/mods.json', (err, json) => {
       if (err) {
         console.error(err)
         return
       }
 
       const mods = json
-      const versions = []
+      const versionList = []
       let resourcePacks = 0
+      let modAmount = 0
 
-      mods.forEach(mod => {
-        mod.versions.forEach(version => {
+
+      Object.values(mods).map(e => e.resource_pack.versions).forEach(versions => {
+        versions.forEach(version => {
           // version sum
-          if (!versions.includes(version)) versions.push(version)
+          if (!versionList.includes(version)) versionList.push(version)
 
           // resource pack sum
           ++resourcePacks
         })
+        ++modAmount
       })
 
-      this.numberOfMinecraftVersions = versions.length
-      this.numberOfModsSupported = mods.length
+
+      //console.log(versions)
+      this.numberOfMinecraftVersions = versionList.length
+      this.numberOfModsSupported = modAmount
       this.totalNumberOfResourcePacksStored = resourcePacks
 
       this.loading = false
