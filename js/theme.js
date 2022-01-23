@@ -1,7 +1,7 @@
 /* global localStorage */
 
-const css = document.getElementById('darkcss')
-const btn = document.getElementById('DarkMode')
+const css = document.getElementById('theme')
+const btn = document.getElementById('ThemeBtn')
 
 const THEME_VALUES = [
   {
