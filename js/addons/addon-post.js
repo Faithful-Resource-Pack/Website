@@ -74,7 +74,6 @@ export default {
                   <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" src="https://visage.surgeplay.com/head/128/X-Steve" />
                   <div class="card card-title text-center author-widget">
                     <h4>{{ author.username }}</h4>
-                    <br>
                     <div class="author-socials">
                       <a v-for="m in author.media" :key="m.type + '-' + m.link" :href="m.link" target="_blank" rel="noreferrer" >
                         <img v-if="MEDIAS_TO_ICONS[m.type].src" width="24" height="24" :src="MEDIAS_TO_ICONS[m.type].src" alt="m.type" />
