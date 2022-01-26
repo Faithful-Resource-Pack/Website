@@ -77,8 +77,8 @@ export default {
                     <div class="author-socials">
                       <a v-for="m in author.media" :key="m.type + '-' + m.link" :href="m.link" target="_blank" rel="noreferrer" >
                         <img v-if="MEDIAS_TO_ICONS[m.type].src" width="24" height="24" :src="MEDIAS_TO_ICONS[m.type].src" alt="m.type" />
-                        <i v-else-if="MEDIAS_TO_ICONS[m.type].fas" class="fas">{{ MEDIAS_TO_ICONS[m.type].fas }}</i>
-                        <i v-else-if="MEDIAS_TO_ICONS[m.type].fab" class="fab">{{ MEDIAS_TO_ICONS[m.type].fab }}</i>
+                        <i v-else-if="MEDIAS_TO_ICONS[m.type].fas" :class="MEDIAS_TO_ICONS[m.type].fas"></i>
+                        <i v-else-if="MEDIAS_TO_ICONS[m.type].fab" :class="MEDIAS_TO_ICONS[m.type].fab"></i>
                         <i v-else class="fab">{{ MEDIAS_TO_ICONS["Other"].fab }}</i>
                       </a>
                     </div>
@@ -188,18 +188,19 @@ export default {
       loading: true,
       MEDIAS_TO_ICONS: {
         "CurseForge":  { src: '/image/addons/curseforge.svg' },
-        "GitHub": { fab: '' },
-        "Patreon": { fab: '' },
-        "Paypal": { fab: '' },
-        "Planet Minecraft": { src: '/image/addons/planet_minecraft.png' },
-        "PSN": { fab: '' },
-        "Reddit": { fab: '' },
-        "Steam": { fab: '' },
-        "Twitter": { fab: '' },
-        "Website": { fas: '' },
-        "Xbox": { fab: '' },
-        "YouTube": { fab: '' },
-        "Other": { fas: '' }
+        "GitHub": { fab: 'fab fa-github' },
+        "Patreon": { fab: 'fab fa-patreon' },
+        "Paypal": { fab: 'fab fa-paypal' },
+        // Planet Minecraft's icon in opaque is really bad, so we just use a normal globe
+        "Planet Minecraft": { fas: 'fas fa-globe' },
+        "PSN": { fab: 'fab fa-playstation' },
+        "Reddit": { fab: 'fab fa-reddit' },
+        "Steam": { fab: 'fab fa-steam' },
+        "Twitter": { fab: 'fab fa-twitter' },
+        "Website": { fas: 'fas fa-globe' },
+        "Xbox": { fab: 'fab fa-xbox' },
+        "YouTube": { fab: 'fab fa-youtube' },
+        "Other": { fas: 'fas fa-globe' }
       }      
     }
   },
