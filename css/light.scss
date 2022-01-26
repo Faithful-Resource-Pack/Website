@@ -1,0 +1,66 @@
+---
+---
+
+.background {
+	background: #EEEDE5 url(../image/background/bg_light_background.png) repeat
+}
+.foreground {
+	background:
+		url(../image/background/bg_light_transition_top.png) top repeat-x,
+		url(../image/background/bg_light_transition_bottom.png) bottom repeat-x,
+		#EEEDE5 url(../image/background/bg_light_foreground.png) repeat
+}
+.placeholder {
+	background-image: url(../image/icon/compliance_32x.png), url(../image/background/bg_light_foreground.png);
+}
+.card {
+	background: #EEEDE5 url(../image/background/bg_light_background.png) repeat;
+}
+#topNavbar.fixed {
+	background: #EEEDE5 url(../image/background/bg_light_background.png);
+}
+.outline {
+	background: #EEEDE5 url(../image/background/bg_light_background.png) !important;
+}
+
+.dropdown-menu {
+	background-color: #fff;
+}
+.dropdown-item {
+	color: #212529;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+	color: #16181b;
+	background-color: #f8f9fa;
+}
+
+hr {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+label, input {
+	color: #212529;
+}
+
+#SearchBar {
+	color: #fff;
+}
+
+.advice {
+	color: #212529;
+}
+
+/** CUSTOM SCROLLBAR **/
+::-webkit-scrollbar{
+	background: #F1F1F1
+}
+::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb{
+	background: #C1C1C1;
+	border: 1px solid #F1F1F1;
+}
+::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover{
+	background: #A8A8A8
+}
+::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
+	background: #787878
+}

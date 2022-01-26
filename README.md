@@ -13,37 +13,48 @@
   </div>
 </p>
 
-## 这是什么网站？
-这个网页是为了展示所有关于 Compliance Resource Pack 的东西。你可以在这里找到材质包，附加组件，模组支持和更多。
-你还可以根据下面的教程向我们贡献。
+## What is this website?
+This website was created to show off everything related to the Compliance Resource Pack for Minecraft. On it you'll find the main pack, add-ons, mod support and much more.
+You can also contribute thanks to the instructions below.
 
-## 想要贡献？
+## You want to contribute? Contribute!
 
-你可以创建一个关于这个 Repository 的 [fork](https://github.com/Compliance-Resource-Pack/Website/network/members) ，做好你的改动之后创建一个 [pull request](https://github.com/Compliance-Resource-Pack/Website/compare)
+You can create a [fork](https://github.com/Compliance-Resource-Pack/Website/network/members) of this repository, apply your changes/additions and then create a [pull request](https://github.com/Compliance-Resource-Pack/Website/compare)
 
-### 安装过程
+### Installation process
 
-在编写网站前你需要满足两个要求。首先你需要 [Ruby](https://www.ruby-lang.org/en/downloads/)。安装完 Ruby 之后你需要运行以下命令来安装 [Jekyll](https://jekyllrb.com/) ：
+You need a two requirements before developing the website. First you need [Ruby](https://www.ruby-lang.org/en/downloads/). With Ruby you will need to install [Jekyll](https://jekyllrb.com/) by typing the following command in your favorite terminal:
 ```
 gem install bundler jekyll
 ```
-**如果你在使用 Ruby 3 或更高，你还需要安装 Webrick：**
+**If you are using Ruby 3 or higher, you also need to install webrick:**
 ```
 gem install webrick
 ```
 
-接下来你需要安装 [Gemfile](./Gemfile) 提供的 Bundle：
+Then you need to install the bundle provided in the [Gemfile](./Gemfile):
 ```
 bundle install
 ```
 
-你需要运行这条命令来创建网页：
+Then you need to build the website with this command:
 ```
 bundle exec jekyll build
 ```
 
-最后，如果现有的文件被更新，为了自动重建网站，你可以运行：
+New hybrid website to allow dynamic content with Jekyll!
+
+Install all dependencies :
 ```
-bundle exec jekyll serve
+npm install --save-dev
 ```
-最后你可以在本地浏览你的网页： http://127.0.0.1:4000/ 。
+
+Setup .env file at root following .env.example file
+
+Eventually, in order to automatically rebuild the website if an existing file was updated, you can run in **2 different** terminals:
+```
+npm run dev-watch-site
+```
+```
+npm run dev-watch-app
+```

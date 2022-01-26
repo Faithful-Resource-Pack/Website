@@ -133,7 +133,6 @@ hr {
   margin-bottom: 1rem;
   border: 0;
   height: 1px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 .container {
   width: 100%;
@@ -178,7 +177,6 @@ hr {
   color: #212529;
   text-align: left;
   list-style: none;
-  background-color: #fff;
   background-clip: padding-box;
 }
 .dropup .dropdown-menu {
@@ -207,16 +205,13 @@ hr {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
 }
 .dropdown-item:hover, .dropdown-item:focus {
-  color: #16181b;
   text-decoration: none;
-  background-color: #f8f9fa;
 }
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
@@ -321,12 +316,6 @@ hr {
 }
 
 @media (max-width: 760px) {
-  .tns-outer {
-    position: absolute;
-    top: 3.5rem;
-    right: calc(50% - 40px)
-  }
-
   .navbar-nav {
     max-width: 150px;
     text-align: center;
@@ -1225,7 +1214,6 @@ a.btn.disabled {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background: #131313 url(../image/background/bg_light_background.png) repeat;
   background-clip: border-box;
 }
 .card-body {
@@ -1362,16 +1350,6 @@ img:not(.img-gallery) {
 	footer {
 		padding: 4rem 2rem
 	}
-}
-/** BACKGROUND **/
-.background {
-	background: #131313 url(../image/background/bg_light_background.png) repeat
-}
-.foreground {
-	background:
-		url(../image/background/bg_light_transition_top.png) top repeat-x,
-		url(../image/background/bg_light_transition_bottom.png) bottom repeat-x,
-		#EEEDE5 url(../image/background/bg_light_foreground.png) repeat
 }
 /** MAIN STUFF **/
 .container {
@@ -1594,17 +1572,13 @@ img.fancy-card-2x {
 	height: 100%
 }
 /* Carousel arrow hover animation */
-.item img {
-  display: block;
-	margin: 0 auto
-}
-.item a img {
+.icon-hover {
 	transition: all .5s ease
 }
-#topCarousel .item a img:hover {
+.icon-hover:hover {
 	transform: scale(1.1)
 }
-#topCarousel .item a img:focus, #topCarousel .item a img:active {
+.icon-hover:focus, .icon-hover:active {
 	transform: scale(1)
 }
 /** BASIC CAROUSEL **/
@@ -1626,21 +1600,9 @@ img.fancy-card-2x {
 /** CUSTOM SCROLLBAR **/
 ::-webkit-scrollbar{
 	width: 8px;
-	background: #F1F1F1
 }
 ::-webkit-scrollbar-button{
 	height: 8px
-}
-
-::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb{
-	background: #C1C1C1;
-	border: 1px solid #F1F1F1;
-}
-::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover{
-	background: #A8A8A8
-}
-::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
-	background: #787878
 }
 /* NAVBAR */
 @media (min-width: 800px) {
@@ -1764,7 +1726,7 @@ img.fancy-card-2x {
 		width: 100%
 	}
 }
-/* make images not draggable and rendering pixelated (so block textures aren't getting blurred) */
+/* make images not draggable */
 img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 	-webkit-user-drag: none;
 	-khtml-user-drag: none;

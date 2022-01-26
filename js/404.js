@@ -17,7 +17,7 @@ async function boom() {
 		}
 		explosion.classList.remove("hidden");
 		tnt.classList.add("hidden");
-		for (var i = 0; i <= 16; i++) {
+		for (var i = 0; i <= 15; i++) {
 			await sleep(FRAME_TIME*1.3);
 			explosion.src = "../image/404/explosion_" + i + ".png";
 		}

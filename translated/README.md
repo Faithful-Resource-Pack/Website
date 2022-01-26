@@ -3,6 +3,7 @@
 
 ## Translation: "About"
 
+- [x] **Afrikaans** (_@ShaunRoselt_)
 - [ ] **Arabic**
 - [x] **Brazilian** (_@PedroESP_01_)
 - [ ] **Danish**
@@ -24,10 +25,12 @@
 - [ ] **Russian**
 - [x] **Spanish** (_@Zeuselpro[ᴘᴇ]_, _@Téo_)
 - [x] **Sweedish** (_@znop_)
+- [x] **Turkish** (_@egeesin_)
 - [x] **Vietnamese** (_@Lightening_)
 
 ## Translation: "Comments Policy"
 
+- [x] **Afrikaans** (_@ShaunRoselt_)
 - [ ] **Arabic**
 - [ ] **Danish**
 - [ ] **Dutch**
@@ -49,9 +52,11 @@
 - [x] **Russian** (_@ProstoProstoChelovek_)
 - [x] **Spanish** (_@Téo_)
 - [x] **Sweedish** (_@znop_)
+- [x] **Turkish** (_@egeesin_)
 
 ## Translation: "Licence"
 
+- [x] **Afrikaans** (_@ShaunRoselt_)
 - [ ] **Arabic**
 - [x] **Brazilian** (_@PedroESP_01_)
 - [ ] **Danish**
@@ -75,4 +80,5 @@
 - [x] **Spanish** (_@MrKirby48_, _@Téo_)
 - [x] **Slovak** (Pomi108's friend)
 - [x] **Sweedish** (_@znop_)
-- [x] **Taiwanese** (_@GuanranNot928_)
+- [x] **Taiwanese** (_@Modcore2-LOCAL.jar_)
+- [x] **Turkish** (_@egeesin_)

@@ -157,7 +157,7 @@ const v = new Vue({
       if (item.file_type == "R") return "green"
       if (item.file_type == "B") return "blue"
       if (item.file_type == "A") return "yellow"
-      else return "notfound"
+      else return "green"
     },
     labelText(item) {
       if (item.file_type == "GitHub") return 'GitHub'
