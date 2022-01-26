@@ -72,7 +72,17 @@ export default {
                 <v-col style="margin: 0 5px" :key="index">
                   <img v-if="author.uuid" alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" :src="'https://visage.surgeplay.com/head/128/' + author.uuid" />
                   <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" src="https://visage.surgeplay.com/head/128/X-Steve" />
-                  <h4 class="card card-title text-center author-widget">{{ author.username }}</h4>
+                  <h4 class="card card-title text-center author-widget">
+                    {{ author.username }}<br>
+                    <div class="author-socials">
+                      <a v-for="m in author.media" :key="m.type + '-' + m.link" :href="m.link" target="_blank" rel="noreferrer" >
+                        <img v-if="MEDIAS_TO_ICONS[m.type].src" width="24" height="24" :src="MEDIAS_TO_ICONS[m.type].src" alt="m.type" />
+                        <i v-else-if="MEDIAS_TO_ICONS[m.type].fas" class="fas">{{ MEDIAS_TO_ICONS[m.type].fas }}</i>
+                        <i v-else-if="MEDIAS_TO_ICONS[m.type].fab" class="fab">{{ MEDIAS_TO_ICONS[m.type].fab }}</i>
+                        <i v-else class="fab">{{ MEDIAS_TO_ICONS["Other"].fab }}</i>
+                      </a>
+                    </div>
+                  </h4>
                 </v-col>
               </v-row>
             </div>
@@ -175,7 +185,22 @@ export default {
       img64: '/image/icon/64.png',
       modal: false,
       modalImage: '',
-      loading: true
+      loading: true,
+      MEDIAS_TO_ICONS: {
+        "CurseForge":  { src: '/image/addons/curseforge.svg' },
+        "GitHub": { fab: '' },
+        "Patreon": { fab: '' },
+        "Paypal": { fab: '' },
+        "Planet Minecraft": { src: '/image/addons/planet_minecraft.png' },
+        "PSN": { fab: '' },
+        "Reddit": { fab: '' },
+        "Steam": { fab: '' },
+        "Twitter": { fab: '' },
+        "Website": { fas: '' },
+        "Xbox": { fab: '' },
+        "YouTube": { fab: '' },
+        "Other": { fas: '' }
+      }      
     }
   },
   methods: {

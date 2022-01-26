@@ -1825,12 +1825,22 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 }
 
 .author-widget {
+  display: block;
   margin-top: 15px;
   max-width: max-content;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.author-widget .author-socials:not(:empty) {
+  margin: 4px 0;
+}
+
+.author-widget a, .v-application .author-widget a {
+  color: white;
+  margin: 0 5px;
 }
 
 .img-card > img:hover {
