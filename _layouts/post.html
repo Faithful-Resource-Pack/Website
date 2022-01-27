@@ -102,8 +102,8 @@ layout: default
 		<h1 class="my-3" align="center">{{ item.first | pop }}</h1>
 		{%- for subitem in item -%}
 			<p align="center">
-				{%- if subitem[1]["GitHub"] -%}<a href="{{ subitem[1]["GitHub"] }}" class="btn block btn-lg btn-primary"><i style="margin-right: 10px" class="fab fa-github"></i>GitHub</a>&nbsp;{%- endif -%}
-				{%- if subitem[1]["CurseForge"] -%}<a href="{{ subitem[1]["CurseForge"] }}" class="btn block btn-lg btn-primary"><i style="margin-right: 10px" class="fas fa-fire"></i>CurseForge</a>{%- endif -%}
+				{%- if subitem[1]["GitHub"] -%}<a href="{{ subitem[1]["GitHub"] }}" class="btn block btn-lg btn-primary"><i style="margin-right: 10px" class="fab"></i>GitHub</a>&nbsp;{%- endif -%}
+				{%- if subitem[1]["CurseForge"] -%}<a href="{{ subitem[1]["CurseForge"] }}" class="btn block btn-lg btn-primary"><i style="margin-right: 10px" class="fas"></i>CurseForge</a>{%- endif -%}
 			</p>
 		{%- endfor -%}
 		<br>
@@ -117,7 +117,7 @@ layout: default
 		<h2 class="display-4 my-5 text-center">Download</h2>
 	{%- endif -%}
 	{%- for item in page.download -%}
-		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn block btn-lg btn-primary fancy-card-2x my-3"><i style="margin-right: 5px" class="fas fa-download"></i>{{ item.first | pop}}</a>
+		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn block btn-lg btn-primary fancy-card-2x my-3"><i style="margin-right: 5px" class="fas"></i>{{ item.first | pop}}</a>
 	{%- endfor -%}
 {%- endif -%}
 

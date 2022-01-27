@@ -204,7 +204,7 @@ export default {
         "Planet Minecraft": { fas: '' },
         "PSN": { fab: '' },
         "Reddit": { fab: '' },
-        "Steam": { fab: '' },
+        "Steam": { fab: '' },
         "Twitter": { fab: '' },
         "Website": { fas: '' },
         "Xbox": { fab: '' },

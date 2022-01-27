@@ -21,7 +21,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
   },
   computed: {
     loadingMessage: function () {
-      return '<i class="fas fa-circle-notch fa-spin"></i> ' + this.messages.loading
+      return '<i class="fas spin"></i> ' + this.messages.loading
     },
     addonsStats: function () {
       // super duper dynamic addons stats

@@ -85,7 +85,7 @@ const v = new Vue({
 
                   <td class="small" v-if="item[0].links.github" :colspan="item[0].links.curse ? 1 : 2">
                     <a v-if="item[0].links.github" class="btn btn-dark btn-dl" :href="item[0].links.github">
-                      <i style="margin-right: 4px" class="fab fa-github"></i>
+                      <i style="margin-right: 4px" class="fab"></i>
                       <template v-if="item[0].file_type != 'GitHub'">
                         Github
                       </template>
@@ -97,7 +97,7 @@ const v = new Vue({
 
                   <td class="small" v-if="item[0].links.curse" :colspan="item[0].links.github ? 1 : 2">
                     <a v-if="item[0].links.curse" class="btn btn-dark btn-dl" :href="item[0].links.curse">
-                      <i style="margin-right: 4px" class="fas fa-fire"></i>
+                      <i style="margin-right: 4px" class="fas"></i>
                       Curse
                     </a>
                   </td>
@@ -129,14 +129,14 @@ const v = new Vue({
 
                   <td class="small" v-if="subItem.links.github" :colspan="subItem.links.curse ? 1 : 2">
                     <a v-if="subItem.links.github" class="btn btn-dark btn-dl" :href="subItem.links.github">
-                      <i style="margin-right: 4px" class="fab fa-github"></i>
+                      <i style="margin-right: 4px" class="fab"></i>
                       Github
                     </a>
                   </td>
 
                   <td class="small" v-if="subItem.links.curse" :colspan="subItem.links.github ? 1 : 2">
                     <a v-if="subItem.links.curse" class="btn btn-dark btn-dl" :href="subItem.links.curse">
-                      <i style="margin-right: 4px" class="fas fa-fire"></i>
+                      <i style="margin-right: 4px" class="fas"></i>
                       Curse
                     </a>
                   </td>
