@@ -1834,6 +1834,10 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
   padding-right: 20px;
 }
 
+.author-widget h4 {
+  margin-bottom: 0;
+}
+
 .author-widget .author-socials:not(:empty) {
   margin: 4px 0;
 }

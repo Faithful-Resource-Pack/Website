@@ -60,7 +60,7 @@ export default {
             <div class="card card-title text-center author-widget">
               <h4>{{ authors[Object.keys(authors)[0]].username }}</h4>
               <div class="author-socials">
-                <a v-for="m in authors[Object.keys(authors)[0]].media" :key="m.type + '-' + m.link" :href="m.link" target="_blank" rel="noreferrer" >
+                <a v-for="m in authors[Object.keys(authors)[0]].media" :key="m.type + '-' + m.link" :href="formatUrl(m.link)" target="_blank" rel="noreferrer" >
                   <img v-if="MEDIAS_TO_ICONS[m.type].src" width="24" height="24" :src="MEDIAS_TO_ICONS[m.type].src" :alt="m.type" />
                   <i v-else-if="MEDIAS_TO_ICONS[m.type].fas" class="fas">{{ MEDIAS_TO_ICONS[m.type].fas }}</i>
                   <i v-else-if="MEDIAS_TO_ICONS[m.type].fab" class="fab">{{ MEDIAS_TO_ICONS[m.type].fab }}</i>
@@ -85,7 +85,7 @@ export default {
                   <div class="card card-title text-center author-widget">
                     <h4>{{ author.username }}</h4>
                     <div class="author-socials">
-                      <a v-for="m in author.media" :key="m.type + '-' + m.link" :href="m.link" target="_blank" rel="noreferrer" >
+                      <a v-for="m in author.media" :key="m.type + '-' + m.link" :href="formatUrl(m.link)" target="_blank" rel="noreferrer" >
                         <img v-if="MEDIAS_TO_ICONS[m.type].src" width="24" height="24" :src="MEDIAS_TO_ICONS[m.type].src" :alt="m.type" />
                         <i v-else-if="MEDIAS_TO_ICONS[m.type].fas" class="fas">{{ MEDIAS_TO_ICONS[m.type].fas }}</i>
                         <i v-else-if="MEDIAS_TO_ICONS[m.type].fab" class="fab">{{ MEDIAS_TO_ICONS[m.type].fab }}</i>
@@ -224,6 +224,9 @@ export default {
     },
     compiledMarkdown: function (markdown) {
       return marked(markdown, { sanitize: true })
+    },
+    formatUrl(url) {
+      return !/^https?:\/\//i.test(url) ? `http://${url}` : url
     },
     getHeader() {
       return this.files.filter(el => el.use === 'header')[0].source

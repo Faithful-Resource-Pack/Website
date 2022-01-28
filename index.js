@@ -63,6 +63,7 @@ app.get('/addons/:name/?', (req, res, next) => {
   addonPromise.then(results => {
     let addons = results[0].data
     addon = addons[0]
+
     return Promise.all([
       users.searchKeys(addon.authors),
       axios.get(`https://api.compliancepack.net/v1/search?collection=files&field=parent.id&criteria===&value=${addon.id}`)
@@ -97,6 +98,7 @@ app.get('/addons/:name/?', (req, res, next) => {
       data = data.replaceAll(ADDON_REPLACE_TOKEN('header_img'), header_url)
     }
 
+    //! please use Node v15+ for support of replaceAll
     data = data.replaceAll("'" + ADDON_REPLACE_TOKEN('data.addon') + "'", JSON.stringify(addon))
     data = data.replaceAll("'" + ADDON_REPLACE_TOKEN('data.authors') + "'", JSON.stringify(_contributors))
     data = data.replaceAll("'" + ADDON_REPLACE_TOKEN('data.slug') + "'", JSON.stringify(req.params.name))
