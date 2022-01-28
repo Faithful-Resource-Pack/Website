@@ -6,15 +6,15 @@ const btn = document.getElementById('ThemeBtn')
 const THEME_VALUES = [
   {
     value: 'auto',
-    html: '<i style="margin-right: 5px" class="fas fa-adjust"></i> Auto Theme'
+    html: '<i style="margin-right: 5px" class="fas"></i> Auto Theme'
   },
   {
     value: 'dark',
-    html: '<i style="margin-right: 5px" class="fas fa-moon"></i> Dark Theme'
+    html: '<i style="margin-right: 5px" class="fas"></i> Dark Theme'
   },
   {
     value: 'light',
-    html: '<i style="margin-right: 5px" class="fas fa-sun"></i> Light Theme'
+    html: '<i style="margin-right: 5px" class="fas"></i> Light Theme'
   }
 ]
 

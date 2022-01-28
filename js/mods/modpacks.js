@@ -23,7 +23,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     sentences: {
       searchAdvice: 'You can search by name or by version',
       lettersLeft: 'letters to start search...',
-      loading: '<i class="fas fa-circle-notch fa-spin"></i> Loading mods...',
+      loading: '<i class="fas spin"></i> Loading mods...',
       failed: 'Failed to load mods. Check console for more informations',
       noresults: 'No results found for your search: ',
       noResultsVersion: 'No results found for version',

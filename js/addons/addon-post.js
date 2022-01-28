@@ -57,7 +57,17 @@ export default {
             <h3 class="text-center">Author</h3>
             <img v-if="authors[Object.keys(authors)[0]].uuid" alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" :src="($vuetify.breakpoint.mdAndUp ? 'https://visage.surgeplay.com/full/256/' : 'https://visage.surgeplay.com/head/128/') + authors[Object.keys(authors)[0]].uuid" />
             <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" src="https://visage.surgeplay.com/head/128/X-Steve" />
-            <h4 class="card card-title text-center author-widget">{{ authors[Object.keys(authors)[0]].username }}</h4>
+            <div class="card card-title text-center author-widget">
+              <h4>{{ authors[Object.keys(authors)[0]].username }}</h4>
+              <div class="author-socials">
+                <a v-for="m in authors[Object.keys(authors)[0]].media" :key="m.type + '-' + m.link" :href="formatUrl(m.link)" target="_blank" rel="noreferrer" >
+                  <img v-if="MEDIAS_TO_ICONS[m.type].src" width="24" height="24" :src="MEDIAS_TO_ICONS[m.type].src" :alt="m.type" />
+                  <i v-else-if="MEDIAS_TO_ICONS[m.type].fas" class="fas">{{ MEDIAS_TO_ICONS[m.type].fas }}</i>
+                  <i v-else-if="MEDIAS_TO_ICONS[m.type].fab" class="fab">{{ MEDIAS_TO_ICONS[m.type].fab }}</i>
+                  <i v-else class="fab">{{ MEDIAS_TO_ICONS["Other"].fab }}</i>
+                </a>
+              </div>
+            </div>
           </template>
 
           <template v-else>
@@ -72,7 +82,17 @@ export default {
                 <v-col style="margin: 0 5px" :key="index">
                   <img v-if="author.uuid" alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" :src="'https://visage.surgeplay.com/head/128/' + author.uuid" />
                   <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" src="https://visage.surgeplay.com/head/128/X-Steve" />
-                  <h4 class="card card-title text-center author-widget">{{ author.username }}</h4>
+                  <div class="card card-title text-center author-widget">
+                    <h4>{{ author.username }}</h4>
+                    <div class="author-socials">
+                      <a v-for="m in author.media" :key="m.type + '-' + m.link" :href="formatUrl(m.link)" target="_blank" rel="noreferrer" >
+                        <img v-if="MEDIAS_TO_ICONS[m.type].src" width="24" height="24" :src="MEDIAS_TO_ICONS[m.type].src" :alt="m.type" />
+                        <i v-else-if="MEDIAS_TO_ICONS[m.type].fas" class="fas">{{ MEDIAS_TO_ICONS[m.type].fas }}</i>
+                        <i v-else-if="MEDIAS_TO_ICONS[m.type].fab" class="fab">{{ MEDIAS_TO_ICONS[m.type].fab }}</i>
+                        <i v-else class="fab">{{ MEDIAS_TO_ICONS["Other"].fab }}</i>
+                      </a>
+                    </div>
+                  </div>
                 </v-col>
               </v-row>
             </div>
@@ -175,7 +195,22 @@ export default {
       img64: '/image/icon/64.png',
       modal: false,
       modalImage: '',
-      loading: true
+      loading: true,
+      MEDIAS_TO_ICONS: {
+        "CurseForge":  { src: '/image/addons/curseforge.svg' },
+        "GitHub": { fab: '' },
+        "Patreon": { fab: '' },
+        "Paypal": { fab: '' },
+        "Planet Minecraft": { fas: '' },
+        "PSN": { fab: '' },
+        "Reddit": { fab: '' },
+        "Steam": { fab: '' },
+        "Twitter": { fab: '' },
+        "Website": { fas: '' },
+        "Xbox": { fab: '' },
+        "YouTube": { fab: '' },
+        "Other": { fas: '' }
+      }      
     }
   },
   methods: {
@@ -189,6 +224,9 @@ export default {
     },
     compiledMarkdown: function (markdown) {
       return marked(markdown, { sanitize: true })
+    },
+    formatUrl(url) {
+      return !/^https?:\/\//i.test(url) ? `http://${url}` : url
     },
     getHeader() {
       return this.files.filter(el => el.use === 'header')[0].source

@@ -1825,12 +1825,26 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 }
 
 .author-widget {
+  display: block;
   margin-top: 15px;
   max-width: max-content;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.author-widget h4 {
+  margin-bottom: 0;
+}
+
+.author-widget .author-socials:not(:empty) {
+  margin: 4px 0;
+}
+
+.author-widget a, .v-application .author-widget a {
+  color: white;
+  margin: 0 5px;
 }
 
 .img-card > img:hover {
@@ -1919,4 +1933,36 @@ input[type=radio] {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
+}
+
+/* Fix icons being displayed in italic */
+.fab, .fas {
+  font-style: normal;
+}
+
+.spin {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
