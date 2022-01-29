@@ -250,7 +250,7 @@ hr {
 
 @media (max-width: 760px) {
   .navbar {
-    justify-content: center;
+    padding: 0.5rem 1rem 0.5rem 1rem;
   }
 }
 
@@ -315,13 +315,23 @@ hr {
   border-radius: 0.25rem;
 }
 
+.nav-icon-mobile {
+  display: none;
+}
+
 @media (max-width: 760px) {
   .navbar-nav {
     max-width: 150px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 10px;
+  }
+  .navbar-nav a img {
+    display: none;
+  }
+  .nav-icon-mobile {
+    display: block;
   }
 }
 
@@ -1371,10 +1381,10 @@ img:not(.img-gallery) {
 }
 @media screen and (max-width: 768px) {
 	.display-3 {
-		font-size: 2.25rem
+		font-size: 2.75rem
 	}
 	.display-4 {
-		font-size: 1.75rem
+		font-size: 2.5rem
 	}
 	.h2 {
 		font-size: 1.25rem !important
