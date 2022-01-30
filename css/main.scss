@@ -199,6 +199,10 @@ hr+br+h1 {
       margin-left: 36px;
       padding-left: 0;
 
+      &:hover {
+        background: transparent !important;
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
