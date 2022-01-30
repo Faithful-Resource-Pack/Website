@@ -1,7 +1,7 @@
 export default {
   name: 'addon-grid',
   template: `
-  <div class="card card-body">
+  <div class="card card-body addon-grid">
     <div class="res-grid-3">
       <div v-for="(addon, index) in addons" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.approval.status === 'approved'">
         <a class="card img-card" :href="'/addons/' + addon.slug">

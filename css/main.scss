@@ -1386,6 +1386,22 @@ a.btn.disabled {
     margin-left: 15px;
   }
 }
+@media (max-width: 760px) {
+  .addon-grid {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+
+    & + br {
+      display: none;
+
+      & + h3 {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
 /* Improvable Bootstrap */
 .embed-responsive {
     position: relative;
@@ -2010,12 +2026,28 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 }
 
 .checkbox-container {
-  flex-direction: row;
-  display: flex;
-  align-content: space-around;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  border-radius: $border-radius-0x;
+
+  .v-input {
+    text-align: center;
+    margin: 0;
+    padding: 0.25rem 0;
+
+    .v-input__slot {
+      display: inline;
+
+      > * {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    .v-label {
+      color: white !important;
+      font-size: inherit; 
+    }
+
+    margin-bottom: 1rem;
+  }
 
   & > div > div > div > label {
 	  color: rgba(255,255,255,.8) !important;
