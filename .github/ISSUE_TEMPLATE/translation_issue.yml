@@ -1,0 +1,32 @@
+name: Translation issue
+description: File a translation issue report
+title: "[Translation] "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this translation issue report!
+  - type: textarea
+    attributes:
+      label: Where is the issue?
+      description: Tell us which language is wrongly translated and on which page it occurs
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected translation
+      description: If you're able to fix the issue yourself, feel free to add the fixed translation here
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Screenshot(s)
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Notes
+      description: Add any other context about the problem that doesn't fit into any category here
+    validations:
+      required: false
