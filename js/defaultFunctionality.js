@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // set sticky menu
   const topNavbar = document.getElementById('topNavbar')
   const topNavbarParent = topNavbar.parentElement
-  const topCarousel = document.querySelector('[id^=topCarousel]')
-  window.addEventListener('scroll', () => {
+
+  function changeTopNavbar() {
     const topNavbarHeight = topNavbar.offsetHeight
     const isScrolling = window.scrollY > (topNavbar.offsetTop + topNavbarHeight)
     topNavbar.classList.toggle('fixed', isScrolling)
@@ -137,5 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       topNavbarParent.style.paddingTop = '0px'
     }
-  }, true)
+  }
+
+  changeTopNavbar() // Fix when reloading page already scrolled down, for example home page
+
+  window.addEventListener('scroll', () => changeTopNavbar(), true)
 })
