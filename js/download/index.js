@@ -142,14 +142,14 @@ const v = new Vue({
                   </td>
 
                   <td
-                    v-for="(origin, originKey, originIndex) in subItem"
+                    v-for="(origin, originKey, originIndex) in subItem.links"
                     :key="key + '-' + j + '-' + keyA + '-' + origin"
                     :class="['small', 'downloads', { 'desktop': originIndex > 0 }]"
-                    :colspan="Object.keys(item[0].links).length > 1 ? 1 : 2"
+                    :colspan="Object.keys(subItem.links).length > 1 ? 1 : 2"
                   >
                     <template v-if="originIndex == 0">
                       <a
-                        v-for="(originMobile, originMobileKey, originMobileIndex) in item[0].links"
+                        v-for="(originMobile, originMobileKey, originMobileIndex) in subItem.links"
                         :key="'mobile-' + key + '-' + j + '-' + keyA + '-' + origin"
                         :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
                         target="_blank"
