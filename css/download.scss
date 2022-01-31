@@ -3,6 +3,10 @@
 
 @import "./variables";
 
+h2 {
+	margin-top: 0.5rem;
+}
+
 .collapsible, .content {
 	padding: .2rem;
 	border-radius: $border-radius-0x;
@@ -16,9 +20,11 @@
 
 .content {
 	display: none;
-	max-height: 0;
 	overflow: hidden;
 	transition: 5 0.2s ease-out;
+}
+.content.active {
+	display: table-row;
 }
 
 .outline {
@@ -89,6 +95,18 @@ main span {
 	border-radius: 3px;
 }
 
+.download-table span.link-text {
+	padding: 0;
+}
+
+.mobile {
+	display: none;
+}
+
+.download-table .toggle {
+	user-select: none;
+}
+
 .btn-dl {
 	padding: 0.1rem 0.4rem;
 	width: 90px;
@@ -96,6 +114,7 @@ main span {
 
 .btn-dl > i {
 	font-size: small;
+	margin-right: 8px;
 }
 
 .github {
@@ -126,6 +145,120 @@ main span {
 .version {
 	background-color: rgb(192, 37, 68);
 	color: #fff;
+}
+
+@media (max-width: 760px) {
+	.outline {
+		margin: 0;
+		padding: 0;
+	}
+
+	br + br {
+		display: none;
+	}
+
+	.mobile {
+		display: block;
+	}
+
+	.download-table {
+		&, tbody, tr {
+			width: 100%;
+			display: block;
+		}
+
+		span {
+			padding: 0;
+		}
+
+		thead {
+			display: none;
+		}
+
+		tr {
+			display: block;
+			padding: 0.25rem 0.5rem;
+			display: flex;
+			align-items: stretch;
+			border-radius: 0;
+
+			&:hover {
+				background-color: transparent !important;
+			}
+
+			&:last-child {
+				border-bottom: 0px none;
+			}
+
+			&.content {
+				display: none;
+			}
+
+			&.content.active {
+				display: flex;
+			}
+		}
+
+		td {
+			p {
+				padding: 0;
+			}
+
+			&.toggle {
+				flex: 0 0 24px;
+				padding: .2rem 0;
+			}
+
+			&.details {
+				flex: 1 1 auto;
+				padding: .2rem .4rem;
+
+				span {
+					padding: .2rem .4rem;
+				}
+
+				.name {
+					display: block;
+					padding: 0;
+				}
+
+				.date-mobile {
+					display: block;
+				}
+			}
+
+			&.size, &.date, &.desktop {
+				display: none !important;
+			}
+
+			&.downloads {
+				flex: 0 0 30px;
+				width: auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+
+				.btn-dl {
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					padding: 0;
+
+					i {
+						display: block;
+						height: 30px;
+						line-height: 30px;
+						margin-right: 0 !important;
+					}
+				}
+
+				.link-text {
+					display: none;
+				}
+			}
+		}
+	}
 }
 
 /** DOWNLOAD TABLES **/

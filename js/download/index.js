@@ -46,7 +46,7 @@ const v = new Vue({
       <template v-for="j in packType[key]">
         <h2>{{ j }}</h2>
         <div class="outline">
-          <table>
+          <table class="download-table">
             <thead>
               <tr>
                 <th colspan="2" class="large"><p>File</p></th>
@@ -58,86 +58,118 @@ const v = new Vue({
             <tbody>
             
               <template v-for="(item, keyA) in getDownloads(key, j)">
-                <tr class="collapsible" v-on:click="toggleContent($event)">
-                  <td v-if="item[1]" class="before">➕</td>
-                  <td v-else class="before-empty"></td>
+                <tr class="collapsible" v-on:click="toggleContent($event, keyA, j, key)">
+                  <td v-if="item[1]" class="toggle before" :ref="'toggle-' + key + '-' + j + '-' + keyA">➕</td>
+                  <td v-else class="toggle before-empty"></td>
 
-                  <td class="large">
+                  <td class="large details">
                     <p>
-                      {{ item[0].file }}
-                      <span v-if="keyA != 'github'" class="version">{{ keyA }}</span>
+                      <span class="name">{{ item[0].file }}</span>
+                      <span class="version" v-text="keyA != 'github' ? keyA : 'Repository'" ></span>
                       <span :class="labelColor(item[0])">{{ labelText(item[0]) }}</span>
                       <span v-if="keyA != 'github' && item[0].latest" class="latest">Latest</span>
                     </p>
+                    <p class="mobile" v-show="getDate(item[0], key, j)">{{ getDate(item[0], key, j) + ' - ' + getSize(item[0], key, j) }}</p>
                   </td>
 
-                  <td>
+                  <td class="date">
                     <p>
                       {{ getDate(item[0], key, j) }}
                     </p>
                   </td>
 
-                  <td>
+                  <td class="size">
                     <p>
                       {{ getSize(item[0], key, j) }}
                     </p>
                   </td>
 
-                  <td class="small" v-if="item[0].links.github" :colspan="item[0].links.curse ? 1 : 2">
-                    <a v-if="item[0].links.github" class="btn btn-dark btn-dl" :href="item[0].links.github">
-                      <i style="margin-right: 4px" class="fab"></i>
-                      <template v-if="item[0].file_type != 'GitHub'">
-                        Github
+                  <td
+                    v-for="(origin, originKey, originIndex) in item[0].links"
+                    :key="key + '-' + j + '-' + keyA + '-' + origin"
+                    :class="['small', 'downloads', { 'desktop': originIndex > 0 }]"
+                    :colspan="Object.keys(item[0].links).length > 1 ? 1 : 2"
+                  >
+                    <template v-if="originIndex == 0">
+                      <a
+                        v-for="(originMobile, originMobileKey, originMobileIndex) in item[0].links"
+                        :key="'mobile-' + key + '-' + j + '-' + keyA + '-' + origin"
+                        :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
+                        target="_blank"
+                        :href="origin"
+                      >
+                        <template v-if="originMobileKey === 'curse'">
+                          <i class="fas"></i><span class="link-text">Curse</span>
+                        </template>
+                        <template v-if="originMobileKey === 'github'">
+                          <i class="fab"></i><span class="link-text">GitHub</span>
+                        </template>
+                      </a>
+                    </template>
+                    <a v-else target="_blank" class="btn btn-dark btn-dl" :href="origin">
+                      <template v-if="originKey === 'curse'">
+                        <i class="fas"></i><span class="link-text">Curse</span>
                       </template>
-                      <template v-else>
-                        GitHub
+                      <template v-if="originKey === 'github'">
+                        <i class="fab"></i><span class="link-text">GitHub</span>
                       </template>
                     </a>
                   </td>
-
-                  <td class="small" v-if="item[0].links.curse" :colspan="item[0].links.github ? 1 : 2">
-                    <a v-if="item[0].links.curse" class="btn btn-dark btn-dl" :href="item[0].links.curse">
-                      <i style="margin-right: 4px" class="fas"></i>
-                      Curse
-                    </a>
-                  </td>
-
                 </tr>
 
-                <tr class="content" v-for="(subItem, keyB) in item" v-if="keyB > 0">
-                  <td class="before-empty"></td>
+                <tr :ref="'content-' + key + '-' + j + '-' + keyA" class="content" v-for="(subItem, keyB) in item" v-if="keyB > 0">
+                  <td class="before-empty toggle"></td>
 
-                  <td class="large">
+                  <td class="large details">
                     <p>
-                      {{ subItem.file }}
+                      <span class="name">{{ subItem.file }}</span>
                       <span v-if="keyB != 'github'" class="version">{{ keyA }}</span>
                       <span :class="labelColor(subItem)">{{ labelText(subItem) }}</span>
                     </p>
+                    <p class="mobile" v-show="getDate(item[0], key, j)">{{ getDate(item[0], key, j) + ' - ' + getSize(item[0], key, j) }}</p>
                   </td>
 
-                  <td>
+                  <td class="date">
                     <p>
                       {{ getDate(subItem, key, j) }}
                     </p>
                   </td>
 
-                  <td>
+                  <td class="size">
                     <p>
                       {{ getSize(subItem, key, j) }}
                     </p>
                   </td>
 
-                  <td class="small" v-if="subItem.links.github" :colspan="subItem.links.curse ? 1 : 2">
-                    <a v-if="subItem.links.github" class="btn btn-dark btn-dl" :href="subItem.links.github">
-                      <i style="margin-right: 4px" class="fab"></i>
-                      Github
-                    </a>
-                  </td>
-
-                  <td class="small" v-if="subItem.links.curse" :colspan="subItem.links.github ? 1 : 2">
-                    <a v-if="subItem.links.curse" class="btn btn-dark btn-dl" :href="subItem.links.curse">
-                      <i style="margin-right: 4px" class="fas"></i>
-                      Curse
+                  <td
+                    v-for="(origin, originKey, originIndex) in subItem"
+                    :key="key + '-' + j + '-' + keyA + '-' + origin"
+                    :class="['small', 'downloads', { 'desktop': originIndex > 0 }]"
+                    :colspan="Object.keys(item[0].links).length > 1 ? 1 : 2"
+                  >
+                    <template v-if="originIndex == 0">
+                      <a
+                        v-for="(originMobile, originMobileKey, originMobileIndex) in item[0].links"
+                        :key="'mobile-' + key + '-' + j + '-' + keyA + '-' + origin"
+                        :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
+                        target="_blank"
+                        :href="origin"
+                      >
+                        <template v-if="originMobileKey === 'curse'">
+                          <i class="fas"></i><span class="link-text">Curse</span>
+                        </template>
+                        <template v-if="originMobileKey === 'github'">
+                          <i class="fab"></i><span class="link-text">GitHub</span>
+                        </template>
+                      </a>
+                    </template>
+                    <a v-else target="_blank" class="btn btn-dark btn-dl" :href="origin">
+                      <template v-if="originKey === 'curse'">
+                        <i class="fas"></i><span class="link-text">Curse</span>
+                      </template>
+                      <template v-if="originKey === 'github'">
+                        <i class="fab"></i><span class="link-text">GitHub</span>
+                      </template>
                     </a>
                   </td>
                 </tr>
@@ -163,35 +195,25 @@ const v = new Vue({
       if (item.file_type == "GitHub") return 'GitHub'
       else return item.file_type + item.file_version
     },
-    toggleContent(event) {
-      const div = event.currentTarget
-      div.classList.toggle("active")
-      var divContent = div.nextElementSibling
+    /**
+     * Collapse group deploy code
+     * @param {Event} event click event
+     * @param {String} version 
+     */
+    toggleContent(event, version, res, edition) {
+      // if parent src element is a link <a>
+      if(event.target.parentElement.tagName === "A") return
 
-      // detect if the user clicked on a <a></a> with a <i></i> inside (which is the download button)
-      if (!event.srcElement.innerHTML.startsWith("<i") && !event.srcElement.innerHTML == "") {
-        while (divContent) {
-          // break if the while loop goes to the next collapsible el
-          if (divContent.classList != 'content') break
+      const suffix = edition + '-' + res + '-' + version
 
-          if (divContent.style.maxHeight) {
-            divContent.style.maxHeight = "0px"
-            divContent.style.display   = null
-            divContent.style.maxHeight = null
-          }
-          else {
-            divContent.style.display   = "table-row"
-            divContent.style.maxHeight = divContent.scrollHeight + "px"
-          }
-          divContent = divContent.nextElementSibling
-        }
-        
-        const divPlus = div.firstChild
-        if (div.firstChild.innerHTML != "") {
-          if (div.classList.contains("active")) divPlus.innerHTML = "➖"
-          else divPlus.innerHTML = "➕"
-        }
-      }
+      // change plus to minus
+      const toggleElement = this.$refs['toggle-' + suffix][0]
+      toggleElement.innerText = toggleElement.innerText === '➕' ? '➖' : '➕'
+
+      // deploy content
+      this.$refs['content-' + suffix].forEach(content => {
+        content.classList.toggle("active")
+      })
     },
     getDownloads(type, size) {
       if (type == 'Java' && size == '32x') return this.downloads.c32
