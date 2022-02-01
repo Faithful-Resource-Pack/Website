@@ -241,7 +241,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       this.loading = false
     })
 
-    getJSON('https://raw.githubusercontent.com/Compliance-Resource-Pack/JSON/main/mods/versions.json', (err, json) => {
+    getJSON('https://database.compliancepack.net/firestorm/files/versions.json', (err, json) => {
       if (err) {
         console.error(err)
         return
