@@ -2,7 +2,7 @@
 
 var window = self
 
-importScripts('../core/MinecraftUtils.js', '../core/ResourcePackCreator.js', '../../axios.min.js', '../jszip.min.js', 'https://unpkg.com/idb@5/build/iife/index-min.js')
+importScripts('../core/MinecraftUtils.js', '../core/ResourcePackCreator.js', '../../axios.min.js', '../jszip.min.js', 'https://cdn.jsdelivr.net/npm/idb@6.1.5/build/iife/index-min.js')
 
 const sendMessage = function (type, content) {
   postMessage({
