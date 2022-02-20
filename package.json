@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/Compliance-Resource-Pack/Website#readme",
   "dependencies": {
-    "axios": "^0.25.0",
+    "axios": "^0.26.0",
     "dotenv": "^16.0.0",
-    "express": "^4.17.2"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "concurrently": "^7.0.0",
