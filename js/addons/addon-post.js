@@ -25,7 +25,7 @@ export default {
     >
 
       <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem">{{ addon.name }}</h2>
-      <img :src="'https://api.compliancepack.net/v2/addons/' + window.slug + '/header'" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
+      <img :src="getHeader()" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
       <template>
         <!-- this cause a warning message from vue, but idk what's happening since this doesn't happens on the webapp, only here :/ -->
@@ -227,7 +227,7 @@ export default {
       return this.files.filter(el => el.use === 'header')[0].source
     },
     getCarousel() {
-      return this.files.filter(el => el.use === 'carousel').map(el => el.source)
+      return this.files.filter(el => el.use === 'carousel' || el.use === 'screenshot').map(el => el.source)
     },
     getDownloads() {
       return this.files.filter(el => el.use === 'download')

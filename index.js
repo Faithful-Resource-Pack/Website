@@ -13,7 +13,7 @@ const NOT_FOUND_PAGE = __dirname + "/_site/404.html"
 
 const ADDON_PAGE = __dirname + "/_site/addon.html"
 const ADDON_REPLACE_TOKEN = (token) => `%${token}%`
-const ADDON_FIELD_REPLACE = ['url', 'name', 'description', 'authors']
+const ADDON_FIELD_REPLACE = ['url', 'name', 'description', 'authors', "header_img"]
 
 firestorm.address(process.env.FIRESTORM_URL)
 
@@ -55,28 +55,21 @@ app.get('/addons/', (req, res, next) => {
 })
 
 app.get('/addons/:name/?', (req, res, next) => {
-  const addonPromise = Promise.all([
-    axios.get(`https://api.compliancepack.net/v1/search?collection=addons&field=slug&criteria===&value=${req.params.name}`),
-  ])
-
   let addon, files, header_url = '/image/home/og_logo.png'
-  addonPromise.then(results => {
-    let addons = results[0].data
-    addon = addons[0]
 
-    return Promise.all([
-      users.searchKeys(addon.authors),
-      axios.get(`https://api.compliancepack.net/v1/search?collection=files&field=parent.id&criteria===&value=${addon.id}`)
-    ])
-  }).then(results => {
-    const _contributors = results[0]
-    files = results[1].data
+  axios.get(`https://api.compliancepack.net/v2/addons/${req.params.name}/all`)
+  .then(result => {
+    addon = result.data
+    return users.searchKeys(addon.authors)
+  }).then(async (result) => {
+    const authors = result
+    files = addon.files
 
     try {
       header_url = files.filter(el => el.use === 'header')[0].source
     } catch (_error) {}
 
-    const contributors = _contributors.reduce((acc, cur) => { acc[cur[ID_FIELD]] = cur; return acc }, {})
+    const contributors = authors.reduce((acc, cur) => { acc[cur[ID_FIELD]] = cur; return acc }, {})
   
     if(!addon || !addon.approval || addon.approval.status !== 'approved') {
       res.sendFile(NOT_FOUND_PAGE)
@@ -89,24 +82,30 @@ app.get('/addons/:name/?', (req, res, next) => {
 
     dataReplaced.url = `${req.originalUrl}`
 
+    // load addon post page
     let data = fs.readFileSync(ADDON_PAGE, 'utf8')
+
+    // replace header if existing
+    if(header_url) {
+      dataReplaced.header_img = header_url
+    }
+
+    // replace all header values
     ADDON_FIELD_REPLACE.forEach(token => {
       data = data.replaceAll(ADDON_REPLACE_TOKEN(token), dataReplaced[token])
     })
 
-    if(header_url) {
-      data = data.replaceAll(ADDON_REPLACE_TOKEN('header_img'), header_url)
-    }
-
+    // replace script value
     //! please use Node v15+ for support of replaceAll
     data = data.replaceAll("'" + ADDON_REPLACE_TOKEN('data.addon') + "'", JSON.stringify(addon))
-    data = data.replaceAll("'" + ADDON_REPLACE_TOKEN('data.authors') + "'", JSON.stringify(_contributors))
+    data = data.replaceAll("'" + ADDON_REPLACE_TOKEN('data.authors') + "'", JSON.stringify(authors))
     data = data.replaceAll("'" + ADDON_REPLACE_TOKEN('data.slug') + "'", JSON.stringify(req.params.name))
     data = data.replaceAll("'" + ADDON_REPLACE_TOKEN('data.files') + "'", JSON.stringify(files))
 
     res.send(data)
     res.end()
   }).catch(err => {
+    console.trace(err)
     next()
   })
 })
