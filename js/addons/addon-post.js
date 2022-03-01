@@ -25,8 +25,7 @@ export default {
     >
 
       <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem">{{ addon.name }}</h2>
-      <!-- the if statement is here to hide warning message from vue -->
-      <img v-if="files.length" :src="getHeader()" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
+      <img :src="'https://api.compliancepack.net/v2/addons/' + window.slug + '/header'" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
       <template>
         <!-- this cause a warning message from vue, but idk what's happening since this doesn't happens on the webapp, only here :/ -->
@@ -181,10 +180,6 @@ export default {
     `,
   data() {
     return {
-      collections: {
-        addons: firestorm.collection('addons'),
-        users: firestorm.collection('users')
-      },
       addon: {},
       files: [],
       authors: [],
