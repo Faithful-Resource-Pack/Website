@@ -166,7 +166,7 @@ export default {
     }
   },
   mounted: function () {
-    fetch('https://database.compliancepack.net/firestorm/files/addons.json')
+    fetch('https://api.compliancepack.net/v2/addons/approved')
       .then(res => res.json())
       .then(data => {
         this.addons = sortObj(data)

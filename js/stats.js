@@ -79,7 +79,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       this.loading = false
     })
 
-    fetch('https://database.compliancepack.net/firestorm/files/addons.json')
+    fetch('https://api.compliancepack.net/v2/addons/approved')
       .then(response => {
         return response.json()
       })
