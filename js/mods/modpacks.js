@@ -181,7 +181,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   created: function () {
-    getJSON('https://database.compliancepack.net/firestorm/files/versions.json', (err, json) => {
+    getJSON('https://api.compliancepack.net/v2/mods/pack_versions', (err, json) => {
       if (err) {
         console.error(err)
         return
