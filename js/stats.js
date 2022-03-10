@@ -47,7 +47,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   mounted: function () {
-    getJSON('https://database.compliancepack.net/firestorm/files/mods.json', (err, json) => {
+    getJSON('https://api.compliancepack.net/v2/mods/raw', (err, json) => {
       if (err) {
         console.error(err)
         return
