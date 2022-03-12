@@ -51,6 +51,7 @@ export default {
               :disabled="selectedEditions.length === 1 && selectedEditions[0] === type"
               :value="type"
               color="primary"
+              dark
               hide-details
               @change="startSearch"
             />
@@ -66,6 +67,7 @@ export default {
                 :disabled="selectedRes.length === 1 && selectedRes[0] === type"
                 :value="type"
                 color="primary"
+                dark
                 hide-details
                 @change="startSearch"
               />
