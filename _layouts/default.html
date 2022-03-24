@@ -44,7 +44,7 @@ layout: compress
 
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css" importance="high" id="theme">
-	<script src="{{ site.baseurl }}/js/theme.js" importance="high" type="module"></script>
+	<script defer src="{{ site.baseurl }}/js/theme.js" importance="high" type="module"></script>
 
 	<!-- Font awesome icons -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/solid.min.css">
@@ -240,8 +240,8 @@ layout: compress
     <small>CompliPage - {{ site.time | date: "%Y/%m/%d %H:%M" }}</small>
 	</footer>
 
-	<script src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
-	<script src="{{ site.baseurl }}/js/snow.js" type="module"></script>
+	<script defer src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
+	<script defer src="{{ site.baseurl }}/js/snow.js" type="module"></script>
 	<script>
 		if ("serviceWorker" in navigator) {
 			window.addEventListener("load", () => {

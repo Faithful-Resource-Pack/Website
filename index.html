@@ -51,9 +51,10 @@ title: Home
   <a href="https://discord.gg/sN9YRQbBv7">Join our Discord now and contribute to the project!</a>
 </p>
 
-<script src="js/axios.min.js"></script>
+<script defer src="js/axios.min.js"></script>
+<!-- for some reason the inline script below doesn't like this one to be loaded deffered -->
 <script src="js/firestorm.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.0/dist/cdn.min.js" defer></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.0/dist/cdn.min.js"></script>
 <script>
   const NB_ITEMS = 3
   const LOADING_ID = "loading"
