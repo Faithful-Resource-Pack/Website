@@ -8,6 +8,7 @@ const { ID_FIELD } = require('./js/firestorm')
 const firestorm = require('./js/firestorm')
 
 const app = express()
+app.disable('x-powered-by');
 
 const NOT_FOUND_PAGE = __dirname + "/_site/404.html"
 
