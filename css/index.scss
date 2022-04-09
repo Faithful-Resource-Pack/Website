@@ -69,11 +69,26 @@
 }
 
 .discover {
-  height: 420px;
+  min-height: 420px;
 }
 
 .discover-secondary {
-  height: 320px;
+  min-height: 320px;
+}
+
+.discover-secondary > .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .discover .poster img:not(.wordmark) {
