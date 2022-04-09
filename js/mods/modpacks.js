@@ -112,7 +112,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         })
     },
     downloadAllModpacks: function () {
-      getJSON('https://api.compliancepack.net/v2/mods/raw', (err, json) => {
+      getJSON('https://api.faithfulpack.net/v2/mods/raw', (err, json) => {
         if (err) {
           console.error(err)
           return
@@ -122,7 +122,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         this.loading = false
       })
 
-      getJSON('https://api.compliancepack.net/v2/modpacks/raw', (err, json) => {
+      getJSON('https://api.faithfulpack.net/v2/modpacks/raw', (err, json) => {
         if (err) {
           console.error(err)
           return
@@ -181,7 +181,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   created: function () {
-    getJSON('https://api.compliancepack.net/v2/mods/pack_versions', (err, json) => {
+    getJSON('https://api.faithfulpack.net/v2/mods/pack_versions', (err, json) => {
       if (err) {
         console.error(err)
         return

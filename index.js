@@ -58,7 +58,7 @@ app.get('/addons/', (req, res, next) => {
 app.get('/addons/:name/?', (req, res, next) => {
   let addon, files, header_url = '/image/home/og_logo.png'
 
-  axios.get(`https://api.compliancepack.net/v2/addons/${req.params.name}/all`)
+  axios.get(`https://api.faithfulpack.net/v2/addons/${req.params.name}/all`)
   .then(result => {
     addon = result.data
     return users.searchKeys(addon.authors)

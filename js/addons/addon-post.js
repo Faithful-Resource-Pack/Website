@@ -174,7 +174,7 @@ export default {
     >
       <div class="card card-body">
         <p align="center">Addon status: {{ addon.approval.status }}</p>
-        <p align="center" v-if="addon.approval?.reason">Reason: {{ addon.approval.reason }}<br>If you are the author of this add-on, please use the <a href="https://webapp.compliancepack.net/">Compliance Web Application</a> to edit your add-on</p>
+        <p align="center" v-if="addon.approval?.reason">Reason: {{ addon.approval.reason }}<br>If you are the author of this add-on, please use the <a href="https://webapp.faithfulpack.net/">Compliance Web Application</a> to edit your add-on</p>
       </div>
     </v-container>
     `,
@@ -243,7 +243,7 @@ export default {
 
         // disqus must be a global window variable (here we are in an anonymous promise function)
         window.disqus_config = function () {
-          this.page.url = 'https://www.compliancepack.net/' + addon_disqus_id // Replace PAGE_URL with your page's canonical URL variable
+          this.page.url = 'https://www.faithfulpack.net/' + addon_disqus_id // Replace PAGE_URL with your page's canonical URL variable
           this.page.identifier = addon_disqus_id                              // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
 
@@ -257,7 +257,7 @@ export default {
     },
     search_authors() {
       this.addon.authors.forEach(authorID => {
-        fetch(`https://api.compliancepack.net/v1/user/${authorID}`)
+        fetch(`https://api.faithfulpack.net/v1/user/${authorID}`)
           .then(response => response.json())
           .then(author => {
             this.authors.push(author)
@@ -267,14 +267,14 @@ export default {
   },
   beforeMount: function () {
     if(!window.slug && this.$route) {
-      fetch(`https://api.compliancepack.net/v1/search?collection=addons&field=slug&criteria===&value=${window.slug}`)
+      fetch(`https://api.faithfulpack.net/v1/search?collection=addons&field=slug&criteria===&value=${window.slug}`)
       .then(response => response.json())
       .then(data => this.addon = data[0])
       .then(() => {
         this.search_authors()
       })
       .then(() => {
-        fetch(`https://api.compliancepack.net/v1/search?collection=files&field=parent.id&criteria===&value=${this.addon.id}`)
+        fetch(`https://api.faithfulpack.net/v1/search?collection=files&field=parent.id&criteria===&value=${this.addon.id}`)
           .then(response => response.json())
           .then(data => this.files = data)
       })

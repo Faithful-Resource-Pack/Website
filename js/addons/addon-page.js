@@ -168,7 +168,7 @@ export default {
     }
   },
   mounted: function () {
-    fetch('https://api.compliancepack.net/v2/addons/approved')
+    fetch('https://api.faithfulpack.net/v2/addons/approved')
       .then(res => res.json())
       .then(data => {
         this.addons = sortObj(data)
