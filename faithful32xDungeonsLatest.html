@@ -1,12 +1,12 @@
 ---
 layout: none
 title: Latest Release
-permalink: compliance32xDungeons/latest
+permalink: faithful32xDungeons/latest
 ---
 
 {%- assign found = false -%}
 {%- for post in site.posts -%}
-  {%- if post.path contains "CD32" and found == false -%}
+  {%- if post.path contains "CD32" or post.path contains "FD32" and found == false -%}
     {{ post }}
     {%- assign found = true -%}
   {%- endif -%}
