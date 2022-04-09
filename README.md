@@ -59,4 +59,4 @@ npm run dev-watch-site
 npm run dev-watch-app
 ```
 
-After that you can enjoy your website on your local machine at the following address: http://127.0.0.1:&lt;PORT&gt;/. Enjoy!
+After that you can enjoy your website on your local machine at the following address: http://127.0.0.1:&lt;PORT&gt;/. Enjoy! 
