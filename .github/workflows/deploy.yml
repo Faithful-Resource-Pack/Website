@@ -27,7 +27,7 @@ jobs:
           npm run jb
           pm2 restart "WEBSITE"
 
-          cd /var/www/html/webapp.compliancepack.net
+          cd /var/www/html/webapp.faithfulpack.net
           git stash
           git pull
           npm install
