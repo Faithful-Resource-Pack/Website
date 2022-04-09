@@ -42,7 +42,7 @@ const v = new Vue({
   <div>
     <h1 class="display-3 my-5 text-center">Downloads</h1>
     <template v-for="(i, key) in packType">
-      <h2>Compliance for {{ key }}:</h2>
+      <h2>Faithful for {{ key }}:</h2>
       <template v-for="j in packType[key]">
         <h2>{{ j }}</h2>
         <div class="outline">
@@ -306,7 +306,7 @@ const v = new Vue({
       if (err) return console.error(err)
       this.downloads.c32 = json
     })
-    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Faithful-Java-32x/releases', (err, json) => {
+    getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Java-32x/releases', (err, json) => {
       if (err) return console.error(err)
       this.releases.c32.github = json
     })
@@ -320,7 +320,7 @@ const v = new Vue({
       if (err) return console.error(err)
       this.downloads.c64 = json
     })
-    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Faithful-Java-64x/releases', (err, json) => {
+    getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Java-64x/releases', (err, json) => {
       if (err) return console.error(err)
       this.releases.c64.github = json
     })
@@ -334,7 +334,7 @@ const v = new Vue({
       if (err) return console.error(err)
       this.downloads.c32b = json
     })
-    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Faithful-Bedrock-32x/releases', (err, json) => {
+    getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases', (err, json) => {
       if (err) return console.error(err)
       this.releases.c32b.github = json
     })
@@ -344,7 +344,7 @@ const v = new Vue({
       if (err) return console.error(err)
       this.downloads.c64b = json
     })
-    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Faithful-Bedrock-64x/releases', (err, json) => {
+    getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases', (err, json) => {
       if (err) return console.error(err)
       this.releases.c64b.github = json
     })
