@@ -63,6 +63,27 @@
 
 .wordmark {
   position: absolute;
-  top: 11%;
+  top: 8%;
   right: 0;
+  padding: 30px;
+}
+
+.discover {
+  height: 420px;
+}
+
+.discover-secondary {
+  height: 320px;
+}
+
+.discover .poster img:not(.wordmark) {
+  height: 260px;
+}
+
+.discover-secondary .poster img:not(.wordmark) {
+  height: 160px;
+}
+
+.discover .poster img:not(.wordmark), .discover-secondary .poster img:not(.wordmark) {
+  width: 100%;
 }
