@@ -4,7 +4,7 @@
 try {
   let NAME // eslint-disable-line
 } catch (_e) {}
-NAME = 'Compliance Mods' // eslint-disable-line
+NAME = 'Faithful Mods' // eslint-disable-line
 
 Vue.component('local-download', {
   props: ['canpack', 'versions'],

@@ -2,7 +2,7 @@
 /* global MinecraftUtils, axios, idb, JSZip, fetch */
 
 const PATH_PACK_PNG = '/image/icon/compliance_mods_256.png'
-const MCMETA_DESCRIPTION = 'Compliance Mods'
+const MCMETA_DESCRIPTION = 'Faithful Mods'
 
 const ResourcePackCreator = { // eslint-disable-line no-unused-vars
   packVersions: Array[String],
