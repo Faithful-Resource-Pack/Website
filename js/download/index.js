@@ -306,7 +306,7 @@ const v = new Vue({
       if (err) return console.error(err)
       this.downloads.c32 = json
     })
-    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Compliance-Java-32x/releases', (err, json) => {
+    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Faithful-Java-32x/releases', (err, json) => {
       if (err) return console.error(err)
       this.releases.c32.github = json
     })
@@ -320,7 +320,7 @@ const v = new Vue({
       if (err) return console.error(err)
       this.downloads.c64 = json
     })
-    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Compliance-Java-64x/releases', (err, json) => {
+    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Faithful-Java-64x/releases', (err, json) => {
       if (err) return console.error(err)
       this.releases.c64.github = json
     })
@@ -334,7 +334,7 @@ const v = new Vue({
       if (err) return console.error(err)
       this.downloads.c32b = json
     })
-    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Compliance-Bedrock-32x/releases', (err, json) => {
+    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Faithful-Bedrock-32x/releases', (err, json) => {
       if (err) return console.error(err)
       this.releases.c32b.github = json
     })
@@ -344,7 +344,7 @@ const v = new Vue({
       if (err) return console.error(err)
       this.downloads.c64b = json
     })
-    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Compliance-Bedrock-64x/releases', (err, json) => {
+    getJSON('https://api.github.com/repos/Compliance-Resource-Pack/Faithful-Bedrock-64x/releases', (err, json) => {
       if (err) return console.error(err)
       this.releases.c64b.github = json
     })
@@ -354,7 +354,7 @@ const v = new Vue({
       if (err) return console.error(err)
       this.downloads.c32d = json
     })
-    getJSON('https://api.github.com/repos/Compliance-Dungeons/Resource-Pack/releases', (err, json) => {
+    getJSON('https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/releases', (err, json) => {
       if (err) return console.error(err)
       this.releases.c32d.github = json
     })

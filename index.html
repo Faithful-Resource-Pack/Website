@@ -128,7 +128,7 @@ title: Home
       optifine: false,
     },
   })
-  firestorm.address('https://database.compliancepack.net/firestorm/')
+  firestorm.address('https://database.faithfulpack.net/firestorm/')
   document.addEventListener('alpine:init', () => {
     Alpine.data('add', () => ({
       addons: DEFAULT,
@@ -163,7 +163,7 @@ title: Home
 <div class="res-grid-4" x-data="add" @click="console.log(addons)">
   <template x-for="addon in addons">
     <a class="card img-card addon" x-bind:href="addon.slug === LOADING_ID ? '' : '/addons/' + addon.slug">
-      <img x-bind:src="addon.slug === LOADING_ID ? '{{ site.baseurl }}/image/home/see_more.png' : 'https://database.compliancepack.net/images/addons/' + addon.slug + '/header'" x-bind:alt="addon.name" loading="lazy">
+      <img x-bind:src="addon.slug === LOADING_ID ? '{{ site.baseurl }}/image/home/see_more.png' : 'https://database.faithfulpack.net/images/addons/' + addon.slug + '/header'" x-bind:alt="addon.name" loading="lazy">
       <div class="img-card-shadow"></div>
       <h3 x-text="addon.name"></h3>
       <div class="addon-flags" style="margin-bottom: 5px">
@@ -189,7 +189,7 @@ title: Home
       {%- if post.header-img -%}
       <img src="{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
       {%- else -%}
-      <img src="https://database.compliancepack.net/images/website/posts/placeholder.jpg" loading="lazy" alt="{{ post.title }}">
+      <img src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy" alt="{{ post.title }}">
       {%- endif -%}
       <h3>{{ post.title }}</h3>
     </a>

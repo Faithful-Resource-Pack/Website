@@ -2,7 +2,7 @@
 
 const addonModal = () => import('./addon-post-modal.js')
 
-const FIRESTORM_URL = 'https://database.compliancepack.net/firestorm/'
+const FIRESTORM_URL = 'https://database.faithfulpack.net/firestorm/'
 firestorm.address(FIRESTORM_URL)
 
 export default {
