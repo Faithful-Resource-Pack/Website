@@ -4,7 +4,7 @@
 @import "./variables";
 
 @font-face {
-  font-family: Compliance;
+  font-family: Faithful;
   src: url("../data/font/Faithful.ttf") format("truetype");
 }
 
@@ -22,7 +22,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: Compliance !important;
+  font-family: Faithful !important;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif; */
   
   line-height: 1.5;
@@ -1602,7 +1602,7 @@ img.fancy-card-2x {
 	font-weight: 400;
 }
 .placeholder {
-	background-image: url(/image/icon/compliance_32x.png), url(/image/background/bg_light_foreground.png);
+	background-image: url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png), url(/image/background/bg_light_foreground.png);
 	background-repeat: no-repeat, repeat;
 	background-position: center, center;
 	background-size: auto 75%, auto;
@@ -2010,11 +2010,11 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 
 .v-application {
   background-color: #0000 !important;
-  font-family: Compliance !important;
+  font-family: Faithful !important;
 }
 
 .v-application .display-3, .v-application .display-4 {
-  font-family: Compliance !important;
+  font-family: Faithful !important;
 }
 
 .tag-black {

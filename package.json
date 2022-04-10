@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "Compliance Website",
+  "description": "Faithful Website",
   "main": "index.js",
   "scripts": {
     "ji": "bundle install",
@@ -17,7 +17,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "Compliance Resource Pack License",
+  "license": "Faithful Resource Pack License",
   "bugs": {
     "url": "https://github.com/Faithful-Resource-Pack/Website/issues"
   },

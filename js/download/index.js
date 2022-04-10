@@ -301,7 +301,7 @@ const v = new Vue({
   mounted: function () {
     this.isMounted = true
 
-    // COMPLIANCE 32x
+    // Faithful 32x
     getJSON('data/downloads/compliance_32.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c32 = json
@@ -315,7 +315,7 @@ const v = new Vue({
       this.releases.c32.curse = json
     })
 
-    // COMPLIANCE 64x
+    // Faithful 64x
     getJSON('data/downloads/compliance_64.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c64 = json
@@ -329,7 +329,7 @@ const v = new Vue({
       this.releases.c64.curse = json
     })
 
-    // COMPLIANCE 32x BEDROCK
+    // Faithful 32x BEDROCK
     getJSON('data/downloads/compliance_32b.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c32b = json
@@ -339,7 +339,7 @@ const v = new Vue({
       this.releases.c32b.github = json
     })
 
-    // COMPLIANCE 64x BEDROCK
+    // Faithful 64x BEDROCK
     getJSON('data/downloads/compliance_64b.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c64b = json
@@ -349,7 +349,7 @@ const v = new Vue({
       this.releases.c64b.github = json
     })
 
-    // COMPLIANCE 32x DUNGEONS
+    // Faithful 32x DUNGEONS
     getJSON('data/downloads/compliance_32d.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c32d = json

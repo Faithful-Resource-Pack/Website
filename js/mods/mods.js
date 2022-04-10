@@ -216,7 +216,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
   mounted: function () {
     this.isMounted = true
 
-    // acquire mods json from compliance database
+    // acquire mods json from Faithful database
     getJSON('https://api.faithfulpack.net/v2/mods/raw', (err, json) => {
       if (err) {
         console.error(err)

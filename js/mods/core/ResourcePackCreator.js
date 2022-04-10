@@ -1,7 +1,7 @@
 /* eslint new-cap: 0 */
 /* global MinecraftUtils, axios, idb, JSZip, fetch */
 
-const PATH_PACK_PNG = '/image/icon/compliance_mods_256.png'
+const PATH_PACK_PNG = 'https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png'
 const MCMETA_DESCRIPTION = 'Faithful Mods'
 
 const ResourcePackCreator = { // eslint-disable-line no-unused-vars

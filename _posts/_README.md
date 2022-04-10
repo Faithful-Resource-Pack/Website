@@ -1,4 +1,4 @@
-# How to add an article to Compliance Website :
+# How to add an article to Faithful Website :
 - Add an image in `image/article/<compliance ...>/<mc_version>.png`  
 - Add a markdown file inside `article/<compliance ...>/<mc_version>.md` :warning: **You should replace "." with "\_"**
 

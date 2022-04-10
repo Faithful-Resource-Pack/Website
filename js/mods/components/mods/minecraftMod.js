@@ -3,7 +3,7 @@
 
 const _MOD_NOT_FOUND_MESSAGE = 'Found no thumbnail for this mod'
 const _NO_LINK = null
-const _NO_ICON = '/image/icon/compliance_mods.png'
+const _NO_ICON = 'https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png'
 const _NO_ATTACHMENTS = -1
 
 Vue.component('minecraft-mod', {

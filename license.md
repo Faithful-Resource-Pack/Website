@@ -1,13 +1,13 @@
 <div id="English">
-	<h1>Compliance Resource Pack License</h1>
+	<h1>Faithful Resource Pack License</h1>
 	<p align="justify">
-		BY USING COMPLIANCE YOU AGREE TO THESE TERMS AND CONDITIONS. IF YOU DISTRIBUTE COMPLIANCE IN ANY FORM, THIS LICENSE MUST BE INCLUDED INSIDE OF THE ZIP FILE.
+		BY USING FAITHFUL YOU AGREE TO THESE TERMS AND CONDITIONS. IF YOU DISTRIBUTE FAITHFUL IN ANY FORM, THIS LICENSE MUST BE INCLUDED INSIDE OF THE ZIP FILE.
 	</p>
 	<h2>Definitions</h2>
 	<p align="justify">
 		The pack refers to any copyrightable work licensed under this license.
 		<br>
-		The Compliance Team staff refers to the persons in possession of the Discord accounts with the online nicknames Sei#0721, jogurciQ#7641, Juknum#6148, PeJohn#4519, Pomik108#1378 and RobertR11#7841.
+		The Faithful Team staff refers to the persons in possession of the Discord accounts with the online nicknames Sei#0721, jogurciQ#7641, Juknum#6148, PeJohn#4519, Pomik108#1378 and RobertR11#7841.
 		<br>
 		A pack can be considered to be an add-on if it can only work in combination with the original pack in a way that makes sense.
 		<br>
@@ -17,7 +17,7 @@
 	<p align="justify">
 		If you wish to distribute the pack (whether that is a modified copy or an identical copy), you have to comply with the following terms and conditions:
 		<ol>
-			<li>You are required to get permission from the Compliance Team staff.</li>
+			<li>You are required to get permission from the Faithful Team staff.</li>
 			<li>You are required to link back to https://www.faithfulpack.net in an appropriate place.</li>
 			<li>You may not make money off of the pack in any form.</li>
 			<li>You are required to include this license in all copies.</li>
@@ -25,7 +25,7 @@
 	</p>
 	<h2>Exceptions</h2>
 	<p align="justify">
-		You are not required to get permission from the Compliance Team staff if your pack can be considered to be an add-on.
+		You are not required to get permission from the Faithful Team staff if your pack can be considered to be an add-on.
 	</p>
 	<h2>Usage of The Pack</h2>
 	<p>
@@ -40,6 +40,6 @@
 	</p>
 	<h2>Final Note</h2>
 	<p align="justify">
-		The Compliance Team staff has the final say over any distribution and usage of the pack. We have the right to deny anyone the distribution or re-use of the pack. If you do not follow the terms and conditions of this license, legal action may be taken.
+		The Faithful Team staff has the final say over any distribution and usage of the pack. We have the right to deny anyone the distribution or re-use of the pack. If you do not follow the terms and conditions of this license, legal action may be taken.
 	</p>
 </div>

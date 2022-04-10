@@ -174,7 +174,7 @@ export default {
     >
       <div class="card card-body">
         <p align="center">Addon status: {{ addon.approval.status }}</p>
-        <p align="center" v-if="addon.approval?.reason">Reason: {{ addon.approval.reason }}<br>If you are the author of this add-on, please use the <a href="https://webapp.faithfulpack.net/">Compliance Web Application</a> to edit your add-on</p>
+        <p align="center" v-if="addon.approval?.reason">Reason: {{ addon.approval.reason }}<br>If you are the author of this add-on, please use the <a href="https://webapp.faithfulpack.net/">Faithful Web Application</a> to edit your add-on</p>
       </div>
     </v-container>
     `,
