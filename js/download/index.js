@@ -95,7 +95,6 @@ const v = new Vue({
                         v-for="(originMobile, originMobileKey, originMobileIndex) in item[0].links"
                         :key="'mobile-' + key + '-' + j + '-' + keyA + '-' + origin"
                         :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
-                        target="_blank"
                         :href="origin"
                       >
                         <template v-if="originMobileKey === 'curse'">
@@ -106,7 +105,7 @@ const v = new Vue({
                         </template>
                       </a>
                     </template>
-                    <a v-else target="_blank" class="btn btn-dark btn-dl" :href="origin">
+                    <a v-else class="btn btn-dark btn-dl" :href="origin">
                       <template v-if="originKey === 'curse'">
                         <i class="fas"></i><span class="link-text">Curse</span>
                       </template>
@@ -152,7 +151,6 @@ const v = new Vue({
                         v-for="(originMobile, originMobileKey, originMobileIndex) in subItem.links"
                         :key="'mobile-' + key + '-' + j + '-' + keyA + '-' + origin"
                         :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
-                        target="_blank"
                         :href="origin"
                       >
                         <template v-if="originMobileKey === 'curse'">
@@ -163,7 +161,7 @@ const v = new Vue({
                         </template>
                       </a>
                     </template>
-                    <a v-else target="_blank" class="btn btn-dark btn-dl" :href="origin">
+                    <a v-else class="btn btn-dark btn-dl" :href="origin">
                       <template v-if="originKey === 'curse'">
                         <i class="fas"></i><span class="link-text">Curse</span>
                       </template>
