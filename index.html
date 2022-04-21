@@ -113,8 +113,6 @@ title: Home
 </p>
 
 <script defer src="js/axios.min.js"></script>
-<!-- for some reason the inline script below doesn't like this one to be loaded deffered -->
-<script src="js/firestorm.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.0/dist/cdn.min.js"></script>
 <script>
   const NB_ITEMS = 3
@@ -130,16 +128,12 @@ title: Home
       optifine: false,
     },
   })
-  firestorm.address('https://database.faithfulpack.net/firestorm/')
   document.addEventListener('alpine:init', () => {
     Alpine.data('add', () => ({
       addons: DEFAULT,
       init() {
-        firestorm.collection('addons').search([{
-          "field": "approval.status",
-          "criteria": "==",
-          "value": "approved"
-        }], true)
+        fetch('https://api.faithfulpack.net/v2/addons/approved')
+          .then(res => res.json())
           .then(val => {
             const res = []
 
