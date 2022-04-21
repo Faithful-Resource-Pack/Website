@@ -186,7 +186,7 @@ title: Home
 <h1 align="center">Faithful News</h1>
 
 <div class="res-grid-3">
-  {%- for post in site.posts -%}
+  {%- for post in site.posts limit:6 -%}
     <a class="card img-card" rel="noopener" href="{{ site.baseurl }}{{ post.permalink }}">
       {%- if post.header-img -%}
       <img src="{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
@@ -197,3 +197,5 @@ title: Home
     </a>
   {%- endfor -%}
 </div>
+<br>
+<a class="btn btn-dark col-6 center" href="{{ site.baseurl }}/news">See more</a>
