@@ -43,9 +43,11 @@ layout: compress
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link rel="stylesheet" href="" id="theme">
+	<!-- Slimmed down version of actual theme script to speed up theme loading -->
+	<script>const css=document.getElementById('theme');const btn=document.getElementById('ThemeBtn');const THEME_VALUES=[{value:'auto'},{value:'dark'},{value:'light'}];const THEME_DEFAULT_VALUE=THEME_VALUES[0].value;const THEME_LOCALSTORAGE_KEY='theme';window.theme={get currentTheme(){return localStorage.getItem(THEME_LOCALSTORAGE_KEY)||THEME_DEFAULT_VALUE}};if(theme.currentTheme==='dark'||(theme.currentTheme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches)){css.href='/css/dark.css'}else{css.href='/css/light.css'}</script>
+	<script defer src="{{ site.baseurl }}/js/theme.js" type="module"></script>
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/dark.css" importance="high" id="theme">
-	<script defer src="{{ site.baseurl }}/js/theme.js" importance="high" type="module"></script>
 
 	<!-- Font awesome icons -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/solid.min.css">
