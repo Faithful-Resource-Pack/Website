@@ -35,19 +35,6 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       this.currentModpackIndex = index
       this.modpackModalOpened = true
     },
-    emptyTable: function () {
-      if (this.loading === true) return this.sentences.loading
-
-      if (this.mods.length === 0) return this.sentences.failed
-
-      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredMods.length === 0) {
-        return this.sentences.noResultsVersion + ' ' + this.form.search
-      }
-
-      if (this.filteredMods.length === 0) return this.sentences.noresults + this.form.search
-
-      return ''
-    },
     downloadModpackFromModList: function (modpackId, modpackName, modpackVersion, minecraftVersion, modsId = []) {
       this.modpacks.push({
         modpackName: modpackName,
