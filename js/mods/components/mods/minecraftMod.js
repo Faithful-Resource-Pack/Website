@@ -14,7 +14,8 @@ Vue.component('minecraft-mod', {
     `<li class="mod-bar" :class="{ 'selected-mod': mod.selected }" v-if="!mod.blacklisted && mod.resource_pack.versions.length > 0">
       <label :for="repoURL" class="mod-label">Select this mod</label>
       <div :style="imageStyle" class="mod-img">
-        <img :src="imageSource" :alt="name" :title="name" loading="lazy" />
+        <img :src="'https://api.faithfulpack.net/v2/mods/' + this.modId() + '/thumbnail'" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" :alt="name" :title="name" loading="lazy" />
+        <img :src="imageSource" style="display: none; opacity: .3" />
         <div class="mod-img-overlay"></div>
       </div>
       <div class="mod-bar-item">
@@ -39,82 +40,6 @@ Vue.component('minecraft-mod', {
     modId() {
       return this.mod.id
     },
-    searchCurseforge(id) {
-      if (id === undefined) return Promise.reject(new Error('id is undefined'))
-
-      return new Promise((resolve, reject) => {
-        const api_url = `https://addons-ecs.forgesvc.net/api/v2/addon/${id}`
-        const url = `https://api.allorigins.win/get?url=${encodeURIComponent(api_url)}`
-        // get allows us to have better control over the content returned and the status code
-
-        axios(url)
-          .then(res => {
-            if (res.status !== 200 || res.data.status.http_code !== 200) return reject(new Error(`Could not load url: ${api_url}`))
-
-            // parse content
-            const result = JSON.parse(res.data.contents)
-
-            if (result) return resolve(result)
-            return reject(result)
-          })
-          .catch(err => {
-            reject(new Error(err))
-          })
-      })
-    },
-    makeSearch: function (id) {
-      return new Promise((resolve, reject) => {
-        if (isNaN(id)) resolve({})
-        else this.searchCurseforge(id)
-          .then(results => {
-            resolve(results)
-          })
-          .catch(err => {
-            reject(new Error(_MOD_NOT_FOUND_MESSAGE + '\n' + err))
-          })
-      })
-    },
-    updateThumbnail() {
-      const result = this.$parent.searchCache(this.name)
-
-      if (result) {
-        this.imageSource = result.imageSource
-        this.link = result.link
-        return
-      }
-
-      this.makeSearch(this.mod.id).then(result => {
-        const attachments = result.attachments
-
-        // set icon with default attachment
-        let index = _NO_ATTACHMENTS
-        if (attachments && attachments.length > 0) {
-          index = Math.max(0, attachments.findIndex(att => att.isDefault)) // isDefault: true -> current project image
-          this.imageSource = attachments[index].thumbnailUrl
-        }
-
-        // set link
-        this.link = result.websiteUrl
-
-        // add image to cache
-        this.$parent.thumbnailCache.push({
-          modName: this.name,
-          imageSource: this.imageSource,
-          link: this.link
-        })
-      }).catch(err => {
-        if (err.message !== _MOD_NOT_FOUND_MESSAGE) {
-          console.error(err)
-          console.error(this.name)
-        } else {
-          this.$parent.thumbnailCache.push({
-            modName: this.dispatch,
-            imageSource: this.imageSource,
-            link: _NO_LINK
-          })
-        }
-      })
-    }
   },
   computed: {
     /** @returns {String} of joined aliases in <span>*/
@@ -156,14 +81,4 @@ Vue.component('minecraft-mod', {
       return `<div><h4>${this.name}</h4>${this.aliases}</div>${this.info}`
     }
   },
-  watch: {
-    mod: function (newValue, oldValue) {
-      if (oldValue !== newValue) {
-        this.updateThumbnail()
-      }
-    }
-  },
-  created() {
-    this.updateThumbnail()
-  }
 })

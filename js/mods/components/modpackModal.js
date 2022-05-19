@@ -76,55 +76,15 @@ Vue.component('modpack-modal', {
       }
 
       this.modsNames[id] = _TEXT_LOADING
-      const that = this
-      this.makeSearch(id)
-        .then(res => {
-          that.modsNames[id] = res.name
-        })
-        .catch(err => {
-          that.modsNames[id] = 'Not found: ' + id
-          console.error(err)
-        })
-        .finally(() => {
-          that.$forceUpdate()
-        })
-
+      this.getName(id).then(() => this.$forceUpdate());
     },
-    makeSearch: function (id) {
-      return new Promise((resolve, reject) => {
-        if (isNaN(id)) resolve({})
-        else this.searchCurseforge(id)
-          .then(results => {
-            resolve(results)
-          })
-          .catch(err => {
-            reject(new Error(_MOD_NOT_FOUND_MESSAGE + '\n' + err))
-          })
-      })
+    getName(id) {
+      if (this.mods[id]) this.modsNames[id] = this.mods[id].name;
+      return axios.get(`https://api.faithfulpack.net/v2/mods/${id}/curseforge/name`)
+        .then(res => { this.modsNames[id] = res.data })
+        .catch(() => { this.modsNames[id] = 'Not Found on CurseForge API: ' + id });
     },
-    searchCurseforge(id) {
-      if (id === undefined) return Promise.reject(new Error('id is undefined'))
 
-      return new Promise((resolve, reject) => {
-        const api_url = `https://addons-ecs.forgesvc.net/api/v2/addon/${id}`
-        const url = `https://api.allorigins.win/get?url=${encodeURIComponent(api_url)}`
-        // get allows us to have better control over the content returned and the status code
-
-        axios(url)
-          .then(res => {
-            if (res.status !== 200 || res.data.status.http_code !== 200) return reject(new Error(`Could not load url: ${api_url}`))
-
-            // parse content
-            const result = JSON.parse(res.data.contents)
-
-            if (result) return resolve(result)
-            return reject(result)
-          })
-          .catch(err => {
-            reject(new Error(err))
-          })
-      })
-    },
     findMods: function () {
       const results = []
       this.modsFound = 0

@@ -35,83 +35,29 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       this.currentModpackIndex = index
       this.modpackModalOpened = true
     },
-    makeSearch(id) {
-      return new Promise((resolve, reject) => {
-        if (isNaN(id)) resolve({})
-        else this.searchCursforge(id)
-          .then(results => {
-            resolve(results)
-          })
-          .catch(err => {
-            reject(new Error(_MODPACK_NOT_FOUND_MESSAGE + '\n' + err))
-          })
+    emptyTable: function () {
+      if (this.loading === true) return this.sentences.loading
+
+      if (this.mods.length === 0) return this.sentences.failed
+
+      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredMods.length === 0) {
+        return this.sentences.noResultsVersion + ' ' + this.form.search
+      }
+
+      if (this.filteredMods.length === 0) return this.sentences.noresults + this.form.search
+
+      return ''
+    },
+    downloadModpackFromModList: function (modpackId, modpackName, modpackVersion, minecraftVersion, modsId = []) {
+      this.modpacks.push({
+        modpackName: modpackName,
+        modpackVersion: modpackVersion,
+        minecraftVersion: minecraftVersion,
+        coverSource: `https://api.faithfulpack.net/v2/mods/${modpackId}/thumbnail`,
+        modList: modsId,
       })
     },
-    searchCursforge(id) {
-      if (id === undefined) return Promise.reject(new Error('modpack id is undefined'))
-
-      return new Promise((resolve, reject) => {
-        const api_url = `https://addons-ecs.forgesvc.net/api/v2/addon/${id}`
-        const url = `https://api.allorigins.win/get?url=${encodeURIComponent(api_url)}`
-        // get allows us to have better control over the content returned and the status code
-
-        axios(url)
-          .then(res => {
-            if (res.status !== 200 || res.data.status.http_code !== 200) return reject(new Error(`Could not load url: ${api_url}`))
-
-            // parse content
-            const result = JSON.parse(res.data.contents)
-
-            if (result) return resolve(result)
-            return reject(result)
-          })
-          .catch(err => {
-            reject(new Error(err))
-          })
-      })
-    },
-    downloadModpackFromModlist: function (modpackId, modpackName, modpackVersion, minecraftVersion, modsId = []) {
-      // const that = this
-      // const relativePath = codeName + '/' + modpackVersion
-
-      this.makeSearch(modpackId)
-        .then(result => {
-          const attachments = result.attachments
-          let imageSource = _NO_ICON
-
-          // set icon with default attachement
-          let index = _NO_ATTACHMENTS
-          if (attachments && attachments.length > 0) {
-            index = Math.max(0, attachments.findIndex(att => att.isDefault)) // isDefault: true -> current project image
-            imageSource = attachments[index].thumbnailUrl
-          }
-
-          // set link
-          this.modpacks.push({
-            modpackName: modpackName,
-            modpackVersion: modpackVersion,
-            minecraftVersion: minecraftVersion,
-            coverSource: imageSource,
-            modList: modsId
-          })
-        })
-        .catch(err => {
-          if (err.message !== _MODPACK_NOT_FOUND_MESSAGE) {
-            console.error(err)
-            console.error(this.name)
-          }
-          else {
-            this.modpacks.push({
-              modpackName: modpackName,
-              modpackVersion: modpackVersion,
-              minecraftVersion: minecraftVersion,
-              coverSource: _NO_LINK,
-              modList: modsId
-            })
-          }
-        })
-    },
-    downloadAllModpacks: function () {
+    getDataFromDB: function () {
       getJSON('https://api.faithfulpack.net/v2/mods/raw', (err, json) => {
         if (err) {
           console.error(err)
@@ -144,7 +90,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
         sorted.forEach(modpack => {
           Object.keys(modpack.versions).forEach(version => {
-            this.downloadModpackFromModlist(modpack.id, modpack.name, version, modpack.versions[version].minecraft, modpack.versions[version].mods)
+            this.downloadModpackFromModList(modpack.id, modpack.name, version, modpack.versions[version].minecraft, modpack.versions[version].mods)
           })
         })
 
@@ -190,6 +136,6 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       this.versions = json
     })
 
-    this.downloadAllModpacks()
+    this.getDataFromDB()
   }
 })
