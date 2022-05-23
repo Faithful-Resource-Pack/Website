@@ -12,7 +12,7 @@
         cols="5"
         class="d-flex justify-end"
       >
-        <v-btn-localized to="/">{{ $t('navbar.btn_home') }}</v-btn-localized>
+        <v-btn-localized color="#fff" to="/">{{ $t('navbar.btn_home') }}</v-btn-localized>
         <dropdown-menu :menus="getMenus('downloads')" :name="$t('navbar.btn_downloads')"></dropdown-menu>
         <dropdown-menu :menus="getMenus('addons')" :name="$t('navbar.btn_addons')"></dropdown-menu>
       </v-col>
@@ -29,8 +29,8 @@
       >
         <dropdown-menu :menus="getMenus('tweaks')" :name="$t('navbar.btn_tweaks')"></dropdown-menu>
         <dropdown-menu :menus="getMenus('modding')" :name="$t('navbar.btn_modding')"></dropdown-menu>
-        <v-btn v-if="!user.isUserLoggedIn()" @click="user.login()">{{ $t('navbar.btn_login') }}</v-btn>
-        <v-btn-localized v-else to="/profile">{{ $t('navbar.btn_profile') }}</v-btn-localized>
+        <v-btn color="#fff" v-if="!user.isUserLoggedIn()" @click="user.login()">{{ $t('navbar.btn_login') }}</v-btn>
+        <v-btn-localized color="#fff" v-else to="/profile">{{ $t('navbar.btn_profile') }}</v-btn-localized>
       </v-col>
     </v-row>
   </v-app-bar>
@@ -48,7 +48,7 @@
         <v-btn icon="mdi-menu" @click="showNavbarMenu = !showNavbarMenu"></v-btn>
       </v-row>
       <v-row v-if="showNavbarMenu" class="mt-5">
-        <v-list>
+        <v-list class="bg-transparent">
           <v-list-item><v-btn-localized to="/">{{ $t('navbar.btn_home') }}</v-btn-localized></v-list-item>
           <v-list-item><dropdown-menu :menus="getMenus('downloads')" :name="$t('navbar.btn_downloads')"></dropdown-menu></v-list-item>
           <v-list-item><dropdown-menu :menus="getMenus('addons')" :name="$t('navbar.btn_addons')"></dropdown-menu></v-list-item>
@@ -66,6 +66,13 @@
   <!-- fake margin for the fixed navbar -->
   <div style="height: 80px;"></div>
 </template>
+
+<style lang="scss">
+.v-app-bar {
+  background-image: var(--v-background-image) !important;
+  background-repeat: repeat !important;
+}
+</style>
 
 <script lang="ts">
 import { defineComponent } from 'vue';

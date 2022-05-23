@@ -16,6 +16,11 @@
 </template>
 
 <style lang="scss">
+.v-layout {
+  background-image: var(--v-foreground-image) !important;
+  background-repeat: repeat !important;
+}
+
 ::-webkit-scrollbar{
   width: 8px;
 }

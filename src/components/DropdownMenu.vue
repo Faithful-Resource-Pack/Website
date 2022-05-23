@@ -1,7 +1,7 @@
 <template>
   <v-menu transition="slide-y-transition">
     <template v-slot:activator="{ props }">
-      <v-btn v-bind="props">{{ name }}</v-btn>
+      <v-btn v-bind="props" color="#fff">{{ name }}</v-btn>
     </template>
     <v-list>
       <v-list-item-localized
