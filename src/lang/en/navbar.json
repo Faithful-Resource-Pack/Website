@@ -1,0 +1,22 @@
+{
+  "btn_home": "Home",
+  "btn_downloads": "Downloads",
+  "btn_tweaks": "Tweaks",
+  "btn_addons": "Add-ons",
+  "btn_modding": "Mods",
+  "btn_login": "Login",
+  "btn_profile": "Profile",
+  "addons": {
+    "submit": "Submit a new Add-on",
+    "review": "Review an Add-on"
+  },
+  "tweaks": {
+    "submit": "Submit a new Tweak",
+    "review": "Review an Tweak"
+  },
+  "modding": {
+    "submit_mod": "Submit a new Mod",
+    "submit_modpack": "Submit a new Modpack",
+    "review": "Review a Mods and Modpacks"
+  }
+}

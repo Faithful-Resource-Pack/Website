@@ -1,0 +1,26 @@
+{
+  "cSpell.words": [
+    "materialdesignicons",
+    "pinia",
+    "scripthost",
+    "webfontloader"
+  ],
+  "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+  },
+  "prettier.singleQuote": true,
+  "prettier.requireConfig": true,
+  "files.eol": "\n",
+}
