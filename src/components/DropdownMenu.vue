@@ -1,7 +1,8 @@
 <template>
   <v-menu transition="slide-y-transition">
     <template v-slot:activator="{ props }">
-      <v-btn v-bind="props" color="#fff">{{ name }}</v-btn>
+      <v-btn v-if="name" v-bind="props" color="#eee">{{ name }}</v-btn>
+      <v-btn v-if="icon" v-bind="props" color="#eee" variant="text" density="comfortable" small class="mr-2" :icon="icon"></v-btn>
     </template>
     <v-list>
       <v-list-item-localized
@@ -33,7 +34,11 @@ export default defineComponent({
     },
     name: {
       type: String,
-      required: true,
+      required: false,
+    },
+    icon: {
+      type: String,
+      required: false,
     },
   },
 });

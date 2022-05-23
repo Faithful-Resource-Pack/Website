@@ -12,7 +12,7 @@
         cols="5"
         class="d-flex justify-end"
       >
-        <v-btn-localized color="#fff" to="/">{{ $t('navbar.btn_home') }}</v-btn-localized>
+        <v-btn-localized color="#eee" to="/">{{ $t('navbar.btn_home') }}</v-btn-localized>
         <dropdown-menu :menus="getMenus('downloads')" :name="$t('navbar.btn_downloads')"></dropdown-menu>
         <dropdown-menu :menus="getMenus('addons')" :name="$t('navbar.btn_addons')"></dropdown-menu>
       </v-col>
@@ -29,8 +29,8 @@
       >
         <dropdown-menu :menus="getMenus('tweaks')" :name="$t('navbar.btn_tweaks')"></dropdown-menu>
         <dropdown-menu :menus="getMenus('modding')" :name="$t('navbar.btn_modding')"></dropdown-menu>
-        <v-btn color="#fff" v-if="!user.isUserLoggedIn()" @click="user.login()">{{ $t('navbar.btn_login') }}</v-btn>
-        <v-btn-localized color="#fff" v-else to="/profile">{{ $t('navbar.btn_profile') }}</v-btn-localized>
+        <v-btn color="#eee" v-if="!user.isUserLoggedIn()" @click="user.login()">{{ $t('navbar.btn_login') }}</v-btn>
+        <v-btn-localized color="#eee" v-else to="/profile">{{ $t('navbar.btn_profile') }}</v-btn-localized>
       </v-col>
     </v-row>
   </v-app-bar>
@@ -45,18 +45,18 @@
           <img :src="FAITHFUL_TEXT" alt="" height="24">
         </localized-link>
 
-        <v-btn icon="mdi-menu" @click="showNavbarMenu = !showNavbarMenu"></v-btn>
+        <v-btn color="#eee" icon="mdi-menu" @click="showNavbarMenu = !showNavbarMenu"></v-btn>
       </v-row>
       <v-row v-if="showNavbarMenu" class="mt-5">
         <v-list class="bg-transparent">
-          <v-list-item><v-btn-localized to="/">{{ $t('navbar.btn_home') }}</v-btn-localized></v-list-item>
+          <v-list-item><v-btn-localized color="#eee" to="/">{{ $t('navbar.btn_home') }}</v-btn-localized></v-list-item>
           <v-list-item><dropdown-menu :menus="getMenus('downloads')" :name="$t('navbar.btn_downloads')"></dropdown-menu></v-list-item>
           <v-list-item><dropdown-menu :menus="getMenus('addons')" :name="$t('navbar.btn_addons')"></dropdown-menu></v-list-item>
           <v-list-item><dropdown-menu :menus="getMenus('tweaks')" :name="$t('navbar.btn_tweaks')"></dropdown-menu></v-list-item>
           <v-list-item><dropdown-menu :menus="getMenus('modding')" :name="$t('navbar.btn_modding')"></dropdown-menu></v-list-item>
           <v-list-item>
-            <v-btn v-if="!user.isUserLoggedIn()" @click="user.login()">{{ $t('navbar.btn_login') }}</v-btn>
-            <v-btn-localized v-else to="/profile">{{ $t('navbar.btn_profile') }}</v-btn-localized>
+            <v-btn color="#eee" v-if="!user.isUserLoggedIn()" @click="user.login()">{{ $t('navbar.btn_login') }}</v-btn>
+            <v-btn-localized color="#eee" v-else to="/profile">{{ $t('navbar.btn_profile') }}</v-btn-localized>
           </v-list-item>
         </v-list>
       </v-row>
@@ -64,7 +64,7 @@
   </v-app-bar>
 
   <!-- fake margin for the fixed navbar -->
-  <div style="height: 80px;"></div>
+  <div style="height: 64px;"></div>
 </template>
 
 <style lang="scss">
@@ -91,8 +91,11 @@ export default defineComponent({
       showNavbarMenu: false,
       FAITHFUL_TEXT: 'https://database.faithfulpack.net/images/branding/wordmarks/default/flat/faithful_flat.png',
       FAITHFUL_LOGO: 'https://database.faithfulpack.net/images/branding/logos/transparent/512/plain_logo.png',
+      FAITHFUL_CLASSIC_LOGO: 'https://database.faithfulpack.net/images/branding/logos/transparent/512/cf_plain_logo.png',
       FAITHFUL_32X_LOGO: 'https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png',
       FAITHFUL_64X_LOGO: 'https://database.faithfulpack.net/images/branding/logos/transparent/512/f64_logo.png',
+      FAITHFUL_CLASSIC_32X_LOGO: 'https://database.faithfulpack.net/images/branding/logos/transparent/512/cf32_logo.png',
+      FAITHFUL_CLASSIC_64X_LOGO: 'https://database.faithfulpack.net/images/branding/logos/transparent/512/cf64_logo.png',
       FAITHFUL_TWEAKS_LOGO: 'https://database.faithfulpack.net/images/branding/logos/transparent/512/tweaks_logo.png',
       FAITHFUL_ADDONS_LOGO: 'https://database.faithfulpack.net/images/branding/logos/transparent/512/addons_logo.png',
       FAITHFUL_MODS_LOGO: 'https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png',
@@ -122,10 +125,12 @@ export default defineComponent({
             {
               name: 'Classic Faithful x32',
               path: '/downloads/classic-faithful-x32',
+              img: this.FAITHFUL_CLASSIC_32X_LOGO,
             },
             {
               name: 'Classic Faithful x64',
               path: '/downloads/classic-faithful-x64',
+              img: this.FAITHFUL_CLASSIC_64X_LOGO,
             },
           );
           break;
@@ -139,6 +144,7 @@ export default defineComponent({
             {
               name: 'Classic Faithful Addons',
               path: '/addons/classic-faithful',
+              img: this.FAITHFUL_CLASSIC_LOGO,
             },
           );
 
@@ -168,6 +174,7 @@ export default defineComponent({
             {
               name: 'Classic Faithful Tweaks',
               path: '/tweaks/classic-faithful',
+              img: this.FAITHFUL_CLASSIC_LOGO,
             },
           );
 
@@ -195,16 +202,19 @@ export default defineComponent({
               img: this.FAITHFUL_MODS_LOGO,
             },
             {
-              name: 'Classic Faithful Mods',
-              path: '/mods/classic-faithful',
-            },
-            {
               name: 'Faithful Modpacks',
               path: '/modpacks/faithful',
+              img: this.FAITHFUL_MODS_LOGO,
+            },
+            {
+              name: 'Classic Faithful Mods',
+              path: '/mods/classic-faithful',
+              img: this.FAITHFUL_CLASSIC_LOGO,
             },
             {
               name: 'Classic Faithful Modpacks',
               path: '/modpacks/classic-faithful',
+              img: this.FAITHFUL_CLASSIC_LOGO,
             },
           );
 

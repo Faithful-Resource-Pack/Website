@@ -1,6 +1,12 @@
 <template>
   <v-app :theme="theme">
-    <router-view />
+    <main-navbar />
+
+    <v-container>
+      <router-view />
+    </v-container>
+
+    <main-footer />
 
     <v-snackbar
       v-model="errorHandler.displayed"
@@ -46,9 +52,15 @@
 import { defineComponent, ref } from 'vue';
 import errorHandlerStore from '@/stores/errorHandler';
 import userStore from '@/stores/user';
+import MainNavbar from '@/components/MainNavbar.vue';
+import MainFooter from '@/components/MainFooter.vue';
 
 export default defineComponent({
   name: 'App',
+  components: {
+    MainNavbar,
+    MainFooter,
+  },
   data() {
     return {
       isDark: false,
