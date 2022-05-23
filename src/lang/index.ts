@@ -42,6 +42,7 @@ async function loadLocales(lang: string) {
 
 for (let i = 0; i < langs.length; i += 1) {
   const lang = langs[i];
+  console.log(lang);
 
   // urls (router)
   if (lang !== 'en') localizedURLs[lang] = (await import(`./${lang}/urls.json`)).default;

@@ -17,6 +17,26 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/HomeView.vue'),
   },
   {
+    path: '/statistics',
+    name: 'statistics',
+    component: () => import('@/views/StatisticsView.vue'),
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import('@/views/AboutView.vue'),
+  },
+  {
+    path: '/comments-policy',
+    name: 'comments-policy',
+    component: () => import('@/views/CommentsPolicyView.vue'),
+  },
+  {
+    path: '/license',
+    name: 'license',
+    component: () => import('@/views/LicenseView.vue'),
+  },
+  {
     path: '/downloads',
     name: 'downloads',
     component: () => import('@/views/HomeView.vue'),
@@ -160,10 +180,5 @@ const routerOptions = {
 };
 
 const router = createLangRouter(langRouterOptions, routerOptions);
-
-router.beforeEach((to, from, next) => {
-  if (to.fullPath.endsWith('/')) next(to.fullPath.slice(0, -1));
-  else next();
-});
 
 export default router;
