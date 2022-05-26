@@ -20,6 +20,6 @@ Vue.component('minecraft-mod-list', {
   },
   template:
     '<ul class="mod-ul">\
-      <minecraft-mod v-for="mod in mods" :key="modToRepoName(mod)" :mod="mod"></minecraft-mod>\
+      <minecraft-mod v-for="(mod, index) in mods" :key="index" :mod="mod"></minecraft-mod>\
     </ul>'
 })
