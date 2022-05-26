@@ -1,17 +1,17 @@
-<p align="center">
-  <a href="https://Faithfulpack.net/" target="_blank">
-    <img src="https://github.com/Faithful-Resource-Pack/Branding/blob/main/logos/transparent/512/plain_logo.png?raw=true" alt="logo">
-  </a>
-  <h1 align="center">Faithful Website</h1>
+<img src="https://database.faithfulpack.net/images/branding/logos/transparent/256/plain_logo.png" alt="Faithful Logo" align="right">
+<div align="center">
+  <h1>Faithful Website</h1>
+  <h3>The official website of the Faithful resource pack</h3>
 
-  <div align="center">
+![RepoSize](https://img.shields.io/github/repo-size/Faithful-Resource-Pack/Website)
+![Issues](https://img.shields.io/github/issues/Faithful-Resource-Pack/Website)
+![PullRequests](https://img.shields.io/github/issues-pr/Faithful-Resource-Pack/Website)
 
-![RepoSize](https://img.shields.io/github/repo-size/Faithful-Resource-Pack/Website?style=flat-square)
-![Issues](https://img.shields.io/github/issues/Faithful-Resource-Pack/Website?style=flat-square)
-![PullRequests](https://img.shields.io/github/issues-pr/Faithful-Resource-Pack/Website?style=flat-square)
-![Stars](https://img.shields.io/github/stars/Faithful-Resource-Pack/Website?style=flat-square)
-  </div>
-</p>
+![Status](https://status.faithfulpack.net/api/badge/2/status)
+![Uptime](https://status.faithfulpack.net/api/badge/2/uptime/24?label=24h%20&labelSuffix=Uptime)
+</div>
+
+---
 
 ## What is this website?
 
