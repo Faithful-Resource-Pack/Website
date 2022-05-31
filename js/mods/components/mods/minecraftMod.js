@@ -12,14 +12,14 @@ Vue.component('minecraft-mod', {
   },
   template:
     `<li class="mod-bar" :class="{ 'selected-mod': mod.selected }" v-if="!mod.blacklisted && mod.resource_pack.versions.length > 0">
-      <label :for="repoURL" class="mod-label">Select this mod</label>
+      <label :for="modId" class="mod-label">Select this mod</label>
       <div :style="imageStyle" class="mod-img">
-        <img :src="$root.apiURL + '/v2/mods/' + this.modId() + '/thumbnail'" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" :alt="name" :title="name" loading="lazy" />
+        <img :src="$root.apiURL + '/v2/mods/' + this.modId + '/thumbnail'" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" :alt="name" :title="name" loading="lazy" />
         <img :src="imageSource" style="display: none; opacity: .3" />
         <div class="mod-img-overlay"></div>
       </div>
       <div class="mod-bar-item">
-        <input :id="repoURL" type="checkbox" v-model="mod.selected" class="mod-checkbox">
+        <input :id="modId" type="checkbox" v-model="mod.selected" class="mod-checkbox">
         <div class="mod-title" v-html="title"></div>
         <div :class="{ modNotChosen: !mod.selected }" class="mod-radio-group"
           ><template v-for="(version, vindex) in minecraftVersions":key="modIds[vindex]"
@@ -42,11 +42,6 @@ Vue.component('minecraft-mod', {
       imageSource: _NO_ICON,
       link: _NO_LINK
     }
-  },
-  methods: {
-    modId() {
-      return this.mod.id
-    },
   },
   computed: {
     /** @returns {String} of joined aliases in <span>*/
@@ -81,8 +76,11 @@ Vue.component('minecraft-mod', {
     repoURL() {
       return this.$props.mod.resource_pack.git_repository
     },
+    modId() {
+      return this.mod.id
+    },
     modIds() {
-      return this.minecraftVersions.map(v => this.modId())
+      return this.minecraftVersions.map(v => this.modId)
     },
     title() {
       return `<div><h4>${this.name}</h4>${this.aliases}</div>${this.info}`
