@@ -29,6 +29,14 @@ input[type=checkbox], input[type=radio], label {
 	margin-left: -5px
 }
 
+.mod-radio-group input {
+	display: none;
+}
+
+.mod-radio-group {
+	margin-top: -2px;
+}
+
 input[type=radio] + label {
 	border: 1px solid #ddd;
 	border-radius: 10px;
@@ -41,6 +49,8 @@ input[type=radio] + label {
 	user-select: none;
 	align-items: flex-end;
 	color: #ddd;
+	margin-right: 4px;
+	margin-top: 2px;
 }
 
 input[type=radio] + label::before {
@@ -354,4 +364,35 @@ label.mod-radio {
 	padding-left: 0;
 	padding-right: 0;
 	margin-bottom: 0
+}
+
+@media (max-width: 760px) {
+	.mod-bar {
+		padding: 0.625rem;
+	}
+
+	.mod-img {
+		width: 32px;
+		height: 32px;
+		float: left;
+		margin-right: 0.625rem;
+	}
+
+	.mod-title {
+		align-items: flex-start;
+
+		div {
+			padding-top: 0;
+			display: block;
+
+			.dash {
+				display: none;
+			}
+		}
+
+		.icon {
+			margin-top: -5px;
+			margin-right: -5px;
+		}
+	}
 }

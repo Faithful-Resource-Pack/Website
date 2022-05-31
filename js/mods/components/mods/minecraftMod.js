@@ -14,18 +14,25 @@ Vue.component('minecraft-mod', {
     `<li class="mod-bar" :class="{ 'selected-mod': mod.selected }" v-if="!mod.blacklisted && mod.resource_pack.versions.length > 0">
       <label :for="repoURL" class="mod-label">Select this mod</label>
       <div :style="imageStyle" class="mod-img">
-        <img :src="'https://api.faithfulpack.net/v2/mods/' + this.modId() + '/thumbnail'" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" :alt="name" :title="name" loading="lazy" />
+        <img :src="$root.apiURL + '/v2/mods/' + this.modId() + '/thumbnail'" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" :alt="name" :title="name" loading="lazy" />
         <img :src="imageSource" style="display: none; opacity: .3" />
         <div class="mod-img-overlay"></div>
       </div>
       <div class="mod-bar-item">
         <input :id="repoURL" type="checkbox" v-model="mod.selected" class="mod-checkbox">
         <div class="mod-title" v-html="title"></div>
-        <div :class="{ modNotChosen: !mod.selected }" class="mod-radio-group">
-          <template v-for="(version, vindex) in minecraftVersions":key="modIds[vindex]">
-            <input :disabled="!mod.selected" type="radio" :id="modIds[vindex] + '-' + version" :name="modIds[vindex]"  v-model="mod.versionSelected" :value="version" class="mod-radio">
-            <label :for="modIds[vindex] + '-' + version">{{ version }}</label>
-          </template>
+        <div :class="{ modNotChosen: !mod.selected }" class="mod-radio-group"
+          ><template v-for="(version, vindex) in minecraftVersions":key="modIds[vindex]"
+            ><input
+              :disabled="!mod.selected"
+              type="radio"
+              :id="modIds[vindex] + '-' + version"
+              :name="modIds[vindex]"
+              v-model="mod.versionSelected"
+              :value="version"
+              class="mod-radio"
+            ><label :for="modIds[vindex] + '-' + version">{{ version }}</label
+            ></template>
         </div>
       </div>
     </li>`,
@@ -44,7 +51,7 @@ Vue.component('minecraft-mod', {
   computed: {
     /** @returns {String} of joined aliases in <span>*/
     aliases() {
-      return this.$props.mod.aliases.length > 0 ? '&nbsp;&dash;&nbsp;<h5 class="advice">' + this.$props.mod.aliases.join(', ') + '</h5>' : ''
+      return this.$props.mod.aliases.length > 0 ? '<span class="dash">&nbsp;&dash;&nbsp;</span><h5 class="advice">' + this.$props.mod.aliases.join(', ') + '</h5>' : ''
     },
     /** @returns {String} complete curseforge mod url*/
     curseURL() {

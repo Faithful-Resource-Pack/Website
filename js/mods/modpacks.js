@@ -30,6 +30,13 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       typeAnotherVersion: 'Try to type another version than'
     }
   },
+  computed: {
+    apiURL: function () {
+      return window.location.hostname === '127.0.0.1' ?
+        'http://localhost:8000' :
+        'https://api.faithfulpack.net'
+    }
+  },
   methods: {
     openModpackModal: function (index) {
       this.currentModpackIndex = index
@@ -40,12 +47,12 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         modpackName: modpackName,
         modpackVersion: modpackVersion,
         minecraftVersion: minecraftVersion,
-        coverSource: `https://api.faithfulpack.net/v2/mods/${modpackId}/thumbnail`,
+        coverSource: `${this.apiURL}/v2/mods/${modpackId}/thumbnail`,
         modList: modsId,
       })
     },
     getDataFromDB: function () {
-      getJSON('https://api.faithfulpack.net/v2/mods/raw', (err, json) => {
+      getJSON(`${this.apiURL}/v2/mods/raw`, (err, json) => {
         if (err) {
           console.error(err)
           return
@@ -55,7 +62,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         this.loading = false
       })
 
-      getJSON('https://api.faithfulpack.net/v2/modpacks/raw', (err, json) => {
+      getJSON(`${this.apiURL}/v2/modpacks/raw`, (err, json) => {
         if (err) {
           console.error(err)
           return
@@ -114,7 +121,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   created: function () {
-    getJSON('https://api.faithfulpack.net/v2/mods/pack_versions', (err, json) => {
+    getJSON(`${this.apiURL}/v2/mods/pack_versions`, (err, json) => {
       if (err) {
         console.error(err)
         return
