@@ -293,10 +293,20 @@ input[type=radio]:checked + label {
 	height: 65px;
 	flex: none;
 	margin-right: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5px;
+	margin-bottom: -5px;
 
 	&, .mod-img img {
 		image-rendering: pixelated;
 		border-radius: $border-radius-1x;
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
 	}
 }
 .selected-mod .mod-img-overlay {
