@@ -193,8 +193,6 @@ hr+br+h1 {
     }
 
     & > .dropdown-item {
-      margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
       color: rgba(255,255,255,0.5);
       margin-left: 36px;
       padding-left: 0;
@@ -301,7 +299,7 @@ hr+br+h1 {
   }
 
   .navbar {
-    padding: 0.5rem 1rem 0;
+    padding: 0.5rem 1rem;
   }
   .navbar.fixed {
     padding-bottom: 0.5rem;
@@ -383,9 +381,7 @@ hr+br+h1 {
 @media (max-width: 760px) {
   .navbar-nav {
     text-align: initial;
-    margin-top: 10px;
-    padding-top: 0.25rem;
-    padding-bottom: 0.5rem;
+    margin-top: 0.5rem;
 
     & .nav-item {
       width: 100%;

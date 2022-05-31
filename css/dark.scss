@@ -14,8 +14,8 @@
 .card {
 	background: #0C0C0C url(../image/background/bg_dark_background.png) repeat;
 }
-#topNavbar.fixed {
-	background: #0C0C0C url(../image/background/bg_dark_background.png);
+#topNavbar, #topNavbar.fixed {
+	background: #0C0C0C url(../image/background/bg_dark_background.png) repeat !important;
 }
 .outline {
 	background: #0C0C0C url(../image/background/bg_dark_background.png) !important;
