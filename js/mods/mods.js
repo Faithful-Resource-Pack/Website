@@ -87,7 +87,22 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         })
       }
 
-      if (this.form.search.length >= this.form.minSearchLetters) { return this.mods.filter(mod => this.modToDisplayName(mod).toLowerCase().includes(this.form.search.toLowerCase())) }
+      if (this.form.search.length >= this.form.minSearchLetters) {
+        return this.mods.filter(mod => {
+          const searchTerm = this.form.search.toLowerCase()
+          if (this.modToDisplayName(mod).toLowerCase().includes(searchTerm)) return true
+          
+          let inAliases = false
+          let i = 0
+          let aliases = mod.aliases || []
+          while (i < aliases.length && !inAliases) {
+            inAliases = aliases[i].toLowerCase().includes(searchTerm)
+            i++;
+          }
+          
+          return inAliases
+        })
+      }
       return this.mods
     },
     exactVersionMode: function () {
