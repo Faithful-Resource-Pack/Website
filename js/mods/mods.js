@@ -192,6 +192,10 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       return mod.name
     },
     modToRepoName: function (mod) {
+      if(!mod || !mod.resource_pack || !mod.resource_pack.git_repository) {
+        console.error(mod)
+        throw new Error("Mod doesn't have a repository")
+      }
       return mod.resource_pack.git_repository.split('/').pop()
     },
     modToRepoURL: function (mod) {
