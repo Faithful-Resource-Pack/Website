@@ -30,13 +30,6 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       typeAnotherVersion: 'Try to type another version than'
     }
   },
-  computed: {
-    apiURL: function () {
-      return window.location.hostname === '127.0.0.1' ?
-        'http://localhost:8000' :
-        'https://api.faithfulpack.net'
-    }
-  },
   methods: {
     openModpackModal: function (index) {
       this.currentModpackIndex = index
@@ -92,6 +85,11 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   computed: {
+    apiURL: function () {
+      return window.location.hostname === '127.0.0.1' ?
+        'http://localhost:8000' :
+        'https://api.faithfulpack.net'
+    },
     currentModpack: function () {
       return this.currentModpackIndex > -1 ? this.modpacks[this.currentModpackIndex] : undefined
     },
