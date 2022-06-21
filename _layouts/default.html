@@ -32,7 +32,6 @@ layout: compress
 
 	<meta name="apple-mobile-web-app-capable" content="no">
 	<meta name="apple-mobile-web-app-title" content="Faithful">
-	<link rel="manifest" href="{{ site.baseurl }}/manifest.webmanifest">
 
 	<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/image/pwa/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="192x192" href="{{ site.baseurl }}/image/pwa/app-192x192.png">
@@ -245,12 +244,5 @@ layout: compress
 
 	<script defer src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
 	<script defer src="{{ site.baseurl }}/js/snow.js" type="module"></script>
-	<script>
-		if ("serviceWorker" in navigator) {
-			window.addEventListener("load", () => {
-				navigator.serviceWorker.register("/service-worker.js");
-			});
-		}
-	</script>
 </body>
 </html>

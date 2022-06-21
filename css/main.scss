@@ -1617,7 +1617,7 @@ img.fancy-card-2x {
   box-shadow: $card-shadow
 }
 .banner a {
-  color: #fff;
+  color: #fff !important; /* vue moment */
   font-weight: 500;
 }
 .banner a:hover {
