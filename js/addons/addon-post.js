@@ -13,14 +13,14 @@ export default {
   template: `
     <v-container
       v-if="loading"
-      style="max-width: 1140px; padding-top: 100px; padding-bottom: 100px"
+      style="max-width: 1140px"
     >
       <div class="card card-body">
         <p align="center">The add-on is loading, please wait...</p>
       </div>
     </v-container>
     <v-container
-      style="max-width: 1140px; padding-top: 100px; padding-bottom: 100px"
+      style="max-width: 1140px"
       v-else-if="addon.approval.status == 'approved'"
     >
 
