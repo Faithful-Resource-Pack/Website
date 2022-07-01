@@ -88,7 +88,7 @@ layout: default
 
 {%- if page.long_text -%}
 	<div class="card card-body">
-		<p class="h2 m-0" align="justify">
+		<p class="h4 m-0" align="justify">
 			{{ page.long_text }}
 		</p>
 	</div>
@@ -99,11 +99,17 @@ layout: default
 {%- if page.downloads -%}
 	<h2 class="display-4 my-5 text-center">Downloads</h2>
 	{%- for item in page.downloads -%}
-		<h1 class="my-3" align="center">{{ item.first | pop }}</h1>
-		{%- for subitem in item -%}
+		<h1 class="my-3" align="center">{{ item.first[0] }}</h1>
+		{%- for subitem in item.first[1] -%}
 			<p align="center">
-				{%- if subitem[1]["GitHub"] -%}<a href="{{ subitem[1]["GitHub"] }}" class="btn block btn-lg btn-primary"><i style="margin-right: 10px" class="fab"></i>GitHub</a>&nbsp;{%- endif -%}
-				{%- if subitem[1]["CurseForge"] -%}<a href="{{ subitem[1]["CurseForge"] }}" class="btn block btn-lg btn-primary"><i style="margin-right: 10px" class="fas"></i>CurseForge</a>{%- endif -%}
+				<a href="{{ subitem[1] }}" class="btn block btn-lg btn-primary">
+					{%- if subitem[0] == "GitHub" -%}
+						<i style="margin-right: 10px" class="fab"></i>
+					{%- elsif subitem[0] == "CurseForge" -%}
+						<i style="margin-right: 10px" class="fas"></i>
+					{%- endif -%}
+					{{ subitem[0] }}
+				</a>
 			</p>
 		{%- endfor -%}
 		<br>
