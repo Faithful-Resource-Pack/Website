@@ -3,7 +3,7 @@ export default {
   template: `
   <div class="card card-body addon-grid">
     <div class="res-grid-3">
-      <div v-for="(addon, index) in addons" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.approval.status === 'approved'">
+      <div v-for="(addon, index) in addons_sorted" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.approval.status === 'approved'">
         <a class="card img-card" :href="'/addons/' + addon.slug">
           <img :src="'https://database.faithfulpack.net/images/addons/' + addon.slug + '/header'" loading="lazy">
           <div class="img-card-shadow"></div>
@@ -60,6 +60,17 @@ export default {
       java: '/image/icon/java.png',
     }
   },
-  methods: {
+  computed: {
+    addons_sorted: function() {
+      let sorted = Object.values(this.addons)
+      sorted.sort((a,b) => {
+        let an = a.name.trim().toLowerCase()
+        let bn = b.name.trim().toLowerCase()
+        
+        return an === bn ? 0 : (an > bn ? 1 : -1)
+      })
+
+      return sorted
+    }
   }
 }

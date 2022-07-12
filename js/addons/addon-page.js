@@ -2,13 +2,6 @@
 
 const AddonGrid = () => import('./addon-grid.js')
 
-function sortObj(obj) {
-  return Object.keys(obj).sort().reduce((res, key) => {
-    res[key] = obj[key]
-    return res
-  }, {});
-}
-
 export default {
   name: 'addon-page',
   components: {
@@ -171,7 +164,7 @@ export default {
     fetch('https://api.faithfulpack.net/v2/addons/approved')
       .then(res => res.json())
       .then(data => {
-        this.addons = sortObj(data)
+        this.addons = data
         this.loading = false
 
         for (const addonID in this.addons) this.addons[addonID].id = addonID // fix missing ID (property value)
