@@ -9,7 +9,8 @@
     "start": "npm run ji && npm run jb && pm2 start \"node index.js\" --name \"WEBSITE\"",
     "dev": "concurrently \"npm:dev-*\"",
     "dev-watch-site": "bundle exec jekyll build --watch",
-    "dev-watch-app": "node_modules\\.bin\\nodemon index.js --watch index.js --ignore '_site/**'"
+    "dev-watch-app": "node_modules\\.bin\\nodemon index.js --watch index.js --ignore '_site/**'",
+    "thumbs": "node thumbs.js && rm -rf _site/thumbs ; cp -r thumbs/ _site/"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,11 @@
     "express": "^4.17.3"
   },
   "devDependencies": {
+    "cheerio": "^1.0.0-rc.12",
     "concurrently": "^7.0.0",
-    "nodemon": "^2.0.15"
+    "esm": "^3.2.25",
+    "globby": "^13.1.2",
+    "nodemon": "^2.0.15",
+    "sharp": "^0.30.7"
   }
 }

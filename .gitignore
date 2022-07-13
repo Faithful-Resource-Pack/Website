@@ -9,3 +9,5 @@ debug.log
 node_modules/
 .env
 firestorm
+thumbs/
+.unlighthouse/

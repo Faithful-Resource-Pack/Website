@@ -1559,7 +1559,7 @@ img.fancy-card-2x {
   height: 0;
   padding-top: 50%
 }
-.img-card > img:first-of-type, .placeholder {
+.img-card > img:first-of-type, .img-card > picture > img:first-of-type, .placeholder {
   position: absolute;
   top: 0;
   left: 0;
@@ -1568,11 +1568,14 @@ img.fancy-card-2x {
   transition: all .5s;
   background: #000
 }
- .img-card > img:first-of-type:hover {
+ .img-card > img:first-of-type, .img-card > picture > img:first-of-type:hover {
   transform: scale(1.1);
   filter: brightness(110%)
 }
-.img-card > img:first-of-type:focus, .img-card > img:first-of-type:active {
+.img-card > img:first-of-type:focus,
+.img-card > img:first-of-type:active,
+.img-card > picture > img:first-of-type:focus,
+.img-card > picture > img:first-of-type:active {
   transform: scale(1);
   filter: brightness(100%)
 }
