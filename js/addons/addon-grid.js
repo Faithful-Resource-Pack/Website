@@ -4,7 +4,7 @@ export default {
   <div class="card card-body addon-grid">
     <div class="res-grid-3">
       <div v-for="(addon, index) in addons_sorted" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.approval.status === 'approved'">
-        <a class="card img-card" :href="'/addons/' + addon.slug">
+        <a class="card img-card addon-img-card" :href="'/addons/' + addon.slug">
           <img :src="'https://database.faithfulpack.net/images/addons/' + addon.slug + '/header'" loading="lazy">
           <div class="img-card-shadow"></div>
           <h3>{{ addon.name }}</h3>

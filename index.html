@@ -159,7 +159,7 @@ title: Home
 <h1 align="center">Add-ons</h1>
 <div class="res-grid-4" x-data="add" @click="console.log(addons)">
   <template x-for="addon in addons">
-    <a class="card img-card addon" x-bind:href="addon.slug === LOADING_ID ? '' : '/addons/' + addon.slug">
+    <a class="card img-card addon-img-card" x-bind:href="addon.slug === LOADING_ID ? '' : '/addons/' + addon.slug">
       <img x-bind:src="addon.slug === LOADING_ID ? '{{ site.baseurl }}/image/home/see_more.png' : 'https://database.faithfulpack.net/images/addons/' + addon.slug + '/header'" x-bind:alt="addon.name" loading="lazy">
       <div class="img-card-shadow"></div>
       <h3 x-text="addon.name"></h3>
@@ -170,7 +170,7 @@ title: Home
       </div>
     </a>
   </template>
-  <a class="card img-card" rel="noopener" href="{{ site.baseurl }}/addons">
+  <a class="card img-card addon-img-card" rel="noopener" href="{{ site.baseurl }}/addons">
     <img src="{{ site.baseurl }}/image/home/see_more.png" loading="lazy" alt="See more" style="background: #0000 !important">
     <h3>See More</h3>
   </a>

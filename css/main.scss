@@ -1559,6 +1559,9 @@ img.fancy-card-2x {
   height: 0;
   padding-top: 50%
 }
+.addon-img-card {
+  padding-top: 56.25%; // 9.0/16.0*100
+}
 .img-card > img:first-of-type, .placeholder {
   position: absolute;
   top: 0;
