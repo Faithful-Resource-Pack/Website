@@ -1516,9 +1516,6 @@ img:not(.img-gallery) {
 	}
 }
 /** FANCY CARDS **/
-img.fancy-card-2x {
-	max-height: 32rem;
-}
 .btn, .dropdown-menu, .fancy-card-1x, *.card, .fancy-card-2x {
 	overflow: hidden;
 	box-shadow: $card-shadow
@@ -1557,10 +1554,7 @@ img.fancy-card-2x {
 .img-card {
   position: relative;
   height: 0;
-  padding-top: 50%
-}
-.addon-img-card {
-  padding-top: 56.25%; // 9.0/16.0*100
+  padding-top: 56.25%
 }
 .img-card > img:first-of-type, .placeholder {
   position: absolute;
