@@ -1,3 +1,4 @@
+const { default: axios } = require('axios')
 const express = require('express')
 const fs = require('fs')
 
@@ -57,9 +58,9 @@ app.get('/addons/', (req, res, next) => {
 app.get('/addons/:name/?', (req, res, next) => {
   let addon, files, header_url = '/image/home/og_logo.png'
 
-  fetch(`https://api.faithfulpack.net/v2/addons/${req.params.name}/all`)
-  .then(async result => {
-    addon = await result.json()
+  axios.get(`https://api.faithfulpack.net/v2/addons/${req.params.name}/all`)
+  .then(result => {
+    addon = result.data
     return users.searchKeys(addon.authors)
   }).then(async (result) => {
     const authors = result
