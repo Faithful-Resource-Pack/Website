@@ -18,7 +18,6 @@ const ADDON_FIELD_REPLACE = ['url', 'name', 'description', 'authors', "header_im
 
 firestorm.address(process.env.FIRESTORM_URL)
 
-const addons = firestorm.collection("addons")
 const users = firestorm.collection("users")
 
 app.use(express.static(__dirname + '/_site/', {

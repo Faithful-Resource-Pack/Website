@@ -2,6 +2,10 @@
 layout: default
 ---
 
+{%- if page.discontinued -%}
+	<h2 class="red banner">This project has been discontinued.</h2>
+{%- endif -%}
+
 {%- if page.title -%}
 	<h2 class="display-3 my-5 text-center">{{ page.title }}</h2>
 {%- else -%}

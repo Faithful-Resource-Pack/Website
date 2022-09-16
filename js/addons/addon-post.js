@@ -1,9 +1,6 @@
-/* global fetch, marked, firestorm */
+/* global fetch, marked */
 
 const addonModal = () => import('./addon-post-modal.js')
-
-const FIRESTORM_URL = 'https://database.faithfulpack.net/firestorm/'
-firestorm.address(FIRESTORM_URL)
 
 export default {
   name: 'addon-page',
