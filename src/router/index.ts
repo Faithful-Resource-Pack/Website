@@ -51,7 +51,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/addons',
     name: 'addons',
-    component: () => import('@/views/HomeView.vue'),
     children: [
       {
         path: 'new',
@@ -66,7 +65,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: ':pack',
         name: 'addons-per-pack',
-        component: () => import('@/views/HomeView.vue'),
+        component: () => import('@/views/addons/AddonsView.vue'),
       },
     ],
   },

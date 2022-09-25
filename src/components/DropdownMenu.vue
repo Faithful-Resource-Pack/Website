@@ -9,6 +9,7 @@
         v-for="(link, i) in menus"
         :to="link.path"
         :key="i"
+        class="list-item-localized"
       >
         <v-icon v-if="link.icon" :icon="link.icon" class="mr-2"></v-icon>
         <img v-if="link.img && link.icon === undefined" :src="link.img" alt="" height="24" class="mr-2" />
@@ -17,6 +18,13 @@
     </v-list>
   </v-menu>
 </template>
+
+<style lang="scss">
+.list-item-localized > .v-list-item__content {
+  display: flex;
+  flex-direction: row;
+}
+</style>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
