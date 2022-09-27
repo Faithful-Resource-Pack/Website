@@ -2072,10 +2072,11 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 .btn-lang {
   display: flex;
   align-items: center;
-  height: 40px;
-  width: 40px;
-  padding: 0;
   justify-content: center;
+
+  > i {
+    margin-right: 10px;
+  }
 }
 
 .icon {

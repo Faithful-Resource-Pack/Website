@@ -1,17 +1,25 @@
 ---
 ---
 
-/** LICENSE & COMMENTS POLICY **/
 .flag {
-	text-align: justify;
-	vertical-align: middle;
-	padding-left: 15px;
+	display: flex;
+	text-align: center;
+
+	> div {
+		width: 40px;
+
+		> img {
+			height: 16px;
+			vertical-align: text-top;
+		}
+	}
 }
-.flag > img {
-	width: 32px;
-	height: 16px;
-}
+
 .dropdown-menu-right {
 	right: 0;
 	left: auto;
+}
+
+ol {
+	list-style-position: outside;
 }
