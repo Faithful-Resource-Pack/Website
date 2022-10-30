@@ -9,7 +9,9 @@
     "start": "npm run ji && npm run jb && pm2 start \"node index.js\" --name \"WEBSITE\"",
     "dev": "concurrently \"npm:dev-*\"",
     "dev-watch-site": "bundle exec jekyll build --watch",
-    "dev-watch-app": "node_modules\\.bin\\nodemon index.js --watch index.js --ignore '_site/**'"
+    "dev-watch-app": "node_modules\\.bin\\nodemon index.js --watch index.js --ignore '_site/**'",
+    "dev-watch-app-unix": "node_modules/.bin/nodemon index.js --watch index.js --ignore '_site/**'"
+
   },
   "repository": {
     "type": "git",
