@@ -17,17 +17,17 @@
 This website was created to show off everything related to the Faithful Resource Pack for Minecraft. On it you'll find the main pack, add-ons, mod support and much more.
 You can also contribute thanks to the instructions below.
 
-## You want to contribute? Contribute!
+## Do you want to contribute? Contribute!
 
 You can create a [fork](https://github.com/Faithful-Resource-Pack/Website/network/members) of this repository, apply your changes/additions and then create a [pull request](https://github.com/Faithful-Resource-Pack/Website/compare)
 
-### Installation process
+# Installation process:
 
-You need a two requirements before developing the website. First you need [Ruby](https://www.ruby-lang.org/en/downloads/). With Ruby you will need to install [Jekyll](https://jekyllrb.com/) by typing the following command in your favorite terminal:
+There are two requirements before developing/previewing the website. First you need [Ruby](https://www.ruby-lang.org/en/downloads/). With Ruby you will need to install [Jekyll](https://jekyllrb.com/) by typing the following command in your favorite terminal:
 ```
 gem install bundler jekyll
 ```
-**If you are using Ruby 3 or higher, you also need to install webrick:**
+**If you are using Ruby 3 or higher, you also need to install Webrick:**
 ```
 gem install webrick
 ```
@@ -49,14 +49,22 @@ Install all dependencies :
 npm install --save-dev
 ```
 
-Setup .env file at root following .env.example file
+Create a `.env` file in the root folder, following the formatting of the `.env.example` file
 
-Eventually, in order to automatically rebuild the website if an existing file was updated, you can run in **2 different** terminals:
+
+If you're using Windows (or any OS that uses backslashes for file paths), run these commands in **separate terminals** to preview and automatically rebuild the website if an existing file changes:
 ```
 npm run dev-watch-site
-```
-```
+
 npm run dev-watch-app
 ```
 
-After that you can enjoy your website on your local machine at the following address: http://127.0.0.1:&lt;PORT&gt;/. Enjoy! 
+If you're using Mac/Linux (or any OS that uses regular slashes for file paths), run these commands in **separate terminals** to preview and automatically rebuild the website if an existing file changes:
+
+```
+npm run dev-watch-site
+
+npm run dev-watch-app-unix
+```
+
+After that you can enjoy your website on your local machine at http://localhost:8110, where the numbers at the end are the PORT number in the `.env` file created earlier. Enjoy! 
