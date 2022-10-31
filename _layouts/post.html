@@ -107,9 +107,9 @@ layout: default
 		{%- for subitem in item.first[1] -%}
 			<p align="center">
 				<a href="{{ subitem[1] }}" class="btn block btn-lg btn-primary">
-					{%- if subitem[0] == "GitHub" -%}
+					{%- if subitem[0] contains "GitHub" -%}
 						<i style="margin-right: 10px" class="fab"></i>
-					{%- elsif subitem[0] == "CurseForge" -%}
+					{%- elsif subitem[0] contains "CurseForge" -%}
 						<i style="margin-right: 10px" class="fas"></i>
 					{%- endif -%}
 					{{ subitem[0] }}
