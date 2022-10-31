@@ -111,6 +111,12 @@ layout: default
 						<i style="margin-right: 10px" class="fab"></i>
 					{%- elsif subitem[0] contains "CurseForge" -%}
 						<i style="margin-right: 10px" class="fas"></i>
+					{%- elsif subitem[0] contains "PlanetMinecraft" or subitem[0] contains "PMC" -%}
+						<i style="margin-right: 10px" class="fas"></i>
+					{%- elsif subitem[0] contains "MCPEDL" -%}
+						<i style="margin-right: 10px" class="fas"></i>
+					{%- elsif subitem[0] contains "Modrinth" -%}
+						<i style="margin-right: 10px" class="fas"></i>
 					{%- endif -%}
 					{{ subitem[0] }}
 				</a>
