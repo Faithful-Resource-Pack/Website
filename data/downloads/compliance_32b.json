@@ -12,8 +12,18 @@
     {
       "file": "Faithful 32x",
       "file_type": "R",
-      "file_version": 2,
+      "file_version": 3,
       "latest": "latest",
+      "date": "24/10/2022",
+      "links": {
+        "github": "https://database.faithfulpack.net/packs/32x-Bedrock/October%202022/Faithful%2032x%20-%201.19.mcpack",
+        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/4060626"
+      }
+    },
+    {
+      "file": "Faithful 32x",
+      "file_type": "R",
+      "file_version": 2,
       "date": "06/08/2022",
       "links": {
         "github": "https://database.faithfulpack.net/packs/32x-Bedrock/August%202022/Faithful%2032x%20-%201.19.mcpack",
