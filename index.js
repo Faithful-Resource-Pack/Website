@@ -13,12 +13,28 @@ app.disable('x-powered-by');
 const NOT_FOUND_PAGE = __dirname + "/_site/404.html"
 
 const ADDON_PAGE = __dirname + "/_site/addon.html"
+const COFFEE_PAGE = __dirname + "/_site/coffee.html"
 const ADDON_REPLACE_TOKEN = (token) => `%${token}%`
 const ADDON_FIELD_REPLACE = ['url', 'name', 'description', 'authors', "header_img"]
 
 firestorm.address(process.env.FIRESTORM_URL)
 
 const users = firestorm.collection("users")
+
+app.get(['/coffee', '/teapot'], (req, res) => {
+    let data = fs.readFileSync(COFFEE_PAGE, 'utf8')
+
+    let title_el = data.match(/<title>(.+)<\/title>/)
+    if(title_el) {
+        let title_str = title_el[1]
+        let title_split = title_str.split(' - ')
+        title_split[0] = req.path.includes('teapot') ? 'Teapot' : 'Coffee'
+        data = data.replace(/<title>.+<\/title>/, `<title>${title_split.join(' - ')}</title>`)
+    }
+
+    res.status(418).send(data)
+    res.end()
+})
 
 app.use(express.static(__dirname + '/_site/', {
   extensions:["html", "htm"]
@@ -109,7 +125,6 @@ app.get('/addons/:name/?', (req, res, next) => {
     next()
   })
 })
-
 
 app.use(function (req, res, next) {
   res.status(404).sendFile(NOT_FOUND_PAGE)
