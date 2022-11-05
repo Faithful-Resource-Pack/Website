@@ -8,6 +8,8 @@ function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+document.body.classList.add('error')
+
 async function boom() {
 	if (!exploded) {
 		for (var i = 0; i < 8; i++) {

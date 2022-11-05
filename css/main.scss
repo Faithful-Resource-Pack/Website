@@ -1426,7 +1426,27 @@ html {
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
-  box-shadow: 0 5px 5px 5px rgba(0,0,0,1);
+    position: relative;
+}
+footer #shadow {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 5px;
+    overflow: hidden;
+}
+.error footer #shadow {
+    display: none;
+}
+footer #shadow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    box-shadow: 0 5px 5px 5px rgba(0,0,0,1);
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 footer, footer p {
   color: rgba(255, 255, 255, .7);
@@ -1670,6 +1690,10 @@ img:not(.img-gallery) {
 #topNavbar {
   position: relative;
   box-shadow: 0 0 5px 0 rgba(0,0,0,1);
+}
+body.error #topNavbar {
+    box-shadow: none;
+    background: none !important;
 }
 #topNavbar.fixed {
   z-index: 1000;
