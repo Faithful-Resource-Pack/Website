@@ -120,7 +120,7 @@ export default {
               <template v-if="addon.options.optifine">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="optifine" alt="requires optifine" loading="lazy">
-                  <p class="addon-flags-big-text">This add-on requires <a href="https://optifine.net/downloads">Optifine</a></p>
+                  <p class="addon-flags-big-text">This add-on requires <a href="https://optifine.net/downloads">OptiFine</a></p>
                 </div>
                 <br>
               </template>
