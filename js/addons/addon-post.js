@@ -127,7 +127,7 @@ export default {
               <template v-if="addon.options.tags && addon.options.tags.includes('Java')">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="java" alt="java support" loading="lazy">
-                  <p class="addon-flags-big-text">This add-on was made for the Java Edition.</p>
+                  <p class="addon-flags-big-text">This add-on supports Java Edition.</p>
                 </div>
                 <br>
               </template>
@@ -135,7 +135,7 @@ export default {
               <template v-if="addon.options.tags && addon.options.tags.includes('Bedrock')">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="bedrock" alt="bedrock support" loading="lazy">
-                  <p class="addon-flags-big-text">This add-on has Bedrock support.</p>
+                  <p class="addon-flags-big-text">This add-on supports Bedrock Edition.</p>
                 </div>
                 <br>
               </template>
