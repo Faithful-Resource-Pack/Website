@@ -30,7 +30,7 @@
 
 	<nav class="navbar">
 		<a class="nav-icon-mobile" href="/" title="Faithful">
-			<img src="/images/branding/navbar-wordmark.png" style="height: 32px" alt="Faithful 32x" />
+			<img src="/images/branding/wordmark.png" style="height: 32px" alt="Faithful 32x" />
 		</a>
 
 		<button

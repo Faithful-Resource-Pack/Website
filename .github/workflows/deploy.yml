@@ -1,0 +1,25 @@
+name: Svelte site CI
+
+on:
+  push:
+    branches: [ SvelteKit ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Executing remote command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSH }}
+        script: |
+          cd /var/www/html/beta.faithfulpack.net/
+          git stash
+          git pull
+          pnpm install
+          pnpm build
+          pm2 restart "website-svelte" || pm2 start --name "website-svelte" "PORT=1511 node build/"
