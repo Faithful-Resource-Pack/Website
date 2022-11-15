@@ -1,23 +1,26 @@
 import preprocess from "svelte-preprocess";
 import { mdsvex } from "mdsvex";
 import mdsvexConfig from "./mdsvex.config.js";
-import adapter from '@sveltejs/adapter-node';
+import adapter from "@sveltejs/adapter-node";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    "extensions": [".svelte", ...mdsvexConfig.extensions],
+	extensions: [".svelte", ...mdsvexConfig.extensions],
 
-    kit: {
+	kit: {
 		adapter: adapter()
 	},
 
-    preprocess: [mdsvex(mdsvexConfig), preprocess({
-        scss: {
-            "prependData": "@use \"src/variables.scss\" as *;"
-        },
+	preprocess: [
+		mdsvex(mdsvexConfig),
+		preprocess({
+			scss: {
+				prependData: '@use "src/css/variables.scss" as *;'
+			},
 
-        postcss: true
-    })]
+			postcss: true
+		})
+	]
 };
 
 export default config;

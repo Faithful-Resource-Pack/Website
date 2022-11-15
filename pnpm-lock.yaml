@@ -1,8 +1,9 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fortawesome/free-solid-svg-icons': ^6.2.0
   '@sveltejs/adapter-node': 1.0.0-next.100
-  '@sveltejs/kit': 1.0.0-next.545
+  '@sveltejs/kit': 1.0.0-next.547
   autoprefixer: ^10.4.13
   cssnano: ^5.1.14
   eslint: ^8.27.0
@@ -16,13 +17,15 @@ specifiers:
   sass: ^1.56.1
   svelte: ^3.53.1
   svelte-check: ^2.9.2
+  svelte-fa: ^3.0.3
   svelte-preprocess: ^4.10.7
   typescript: ^4.8.4
-  vite: ^3.2.3
+  vite: ^3.2.4
 
 devDependencies:
+  '@fortawesome/free-solid-svg-icons': 6.2.0
   '@sveltejs/adapter-node': 1.0.0-next.100
-  '@sveltejs/kit': 1.0.0-next.545_svelte@3.53.1+vite@3.2.3
+  '@sveltejs/kit': 1.0.0-next.547_svelte@3.53.1+vite@3.2.4
   autoprefixer: 10.4.13_postcss@8.4.19
   cssnano: 5.1.14_postcss@8.4.19
   eslint: 8.27.0
@@ -36,9 +39,10 @@ devDependencies:
   sass: 1.56.1
   svelte: 3.53.1
   svelte-check: 2.9.2_lae5lhfxexyizvi5yxbuu4veoq
+  svelte-fa: 3.0.3
   svelte-preprocess: 4.10.7_ztdwsf43ldp256fmlyzwyi56jy
   typescript: 4.8.4
-  vite: 3.2.3_sass@1.56.1
+  vite: 3.2.4_sass@1.56.1
 
 packages:
 
@@ -75,6 +79,20 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@fortawesome/fontawesome-common-types/6.2.0:
+    resolution: {integrity: sha512-rBevIsj2nclStJ7AxTdfsa3ovHb1H+qApwrxcTVo+NNdeJiB9V75hsKfrkG5AwNcRUNxrPPiScGYCNmLMoh8pg==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: true
+
+  /@fortawesome/free-solid-svg-icons/6.2.0:
+    resolution: {integrity: sha512-UjCILHIQ4I8cN46EiQn0CZL/h8AwCGgR//1c4R96Q5viSRwuKVo0NdQEc4bm+69ZwC0dUvjbDqAHF1RR5FA3XA==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.2.0
     dev: true
 
   /@humanwhocodes/config-array/0.11.7:
@@ -211,8 +229,8 @@ packages:
       rollup: 2.79.1
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.545_svelte@3.53.1+vite@3.2.3:
-    resolution: {integrity: sha512-YZvv7PyFrnWizZOdIGtUk0MrE/cWjlrjnz8lOn3rdEh9o/uyLxS6GmKz4kiItrf9xn+ciARWw7jZ0rMo8D8hfg==}
+  /@sveltejs/kit/1.0.0-next.547_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-QhmoRt0nHISyl+0KRUoo/lod79eBSBgBqxb3E1hWLQLKF7vX5bCkXcZ84WReQtDwHkqvPrmJK2IBcF6za5nhjw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -220,7 +238,7 @@ packages:
       svelte: ^3.44.0
       vite: ^3.2.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.1.0_svelte@3.53.1+vite@3.2.3
+      '@sveltejs/vite-plugin-svelte': 1.1.0_svelte@3.53.1+vite@3.2.4
       '@types/cookie': 0.5.1
       cookie: 0.5.0
       devalue: 4.2.0
@@ -233,13 +251,13 @@ packages:
       svelte: 3.53.1
       tiny-glob: 0.2.9
       undici: 5.12.0
-      vite: 3.2.3_sass@1.56.1
+      vite: 3.2.4_sass@1.56.1
     transitivePeerDependencies:
       - diff-match-patch
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.1.0_svelte@3.53.1+vite@3.2.3:
+  /@sveltejs/vite-plugin-svelte/1.1.0_svelte@3.53.1+vite@3.2.4:
     resolution: {integrity: sha512-cFRfEdztubtj1c/rYh7ArK7XCfFJn6wG6+J8/e9amFsKtEJILovoBrK0/mxt1AjPQg0vaX+fHPKvhx+q8mTPaQ==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -256,7 +274,7 @@ packages:
       magic-string: 0.26.7
       svelte: 3.53.1
       svelte-hmr: 0.15.0_svelte@3.53.1
-      vite: 3.2.3_sass@1.56.1
+      vite: 3.2.4_sass@1.56.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2099,6 +2117,10 @@ packages:
       - sugarss
     dev: true
 
+  /svelte-fa/3.0.3:
+    resolution: {integrity: sha512-GIikJjcVCD+5Y/x9hZc2R4gvuA0gVftacuWu1a+zVQWSFjFYZ+hhU825x+QNs2slsppfrgmFiUyU9Sz9gj4Rdw==}
+    dev: true
+
   /svelte-hmr/0.15.0_svelte@3.53.1:
     resolution: {integrity: sha512-Aw21SsyoohyVn4yiKXWPNCSW2DQNH/76kvUnE9kpt4h9hcg9tfyQc6xshx9hzgMfGF0kVx0EGD8oBMWSnATeOg==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -2263,8 +2285,8 @@ packages:
       unist-util-stringify-position: 2.0.3
     dev: true
 
-  /vite/3.2.3_sass@1.56.1:
-    resolution: {integrity: sha512-h8jl1TZ76eGs3o2dIBSsvXDLb1m/Ec1iej8ZMdz+PsaFUsftZeWe2CZOI3qogEsMNaywc17gu0q6cQDzh/weCQ==}
+  /vite/3.2.4_sass@1.56.1:
+    resolution: {integrity: sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
