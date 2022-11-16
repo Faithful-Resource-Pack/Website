@@ -117,6 +117,10 @@
 			justify-content: space-between;
 		}
 
+		a {
+			text-decoration: none;
+		}
+
 		.nav-icon-mobile {
 			display: none;
 			@media (max-width: 760px) {
