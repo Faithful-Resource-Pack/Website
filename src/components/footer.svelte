@@ -13,17 +13,17 @@
 </script>
 
 <footer>
-    <div class="footer-left">
+    <div>
         <a href="/"><img class="footer-wordmark" src="/images/branding/wordmark.png" alt="Faithful"></a>
         <br>
         <p>theme button here</p>
         <p>language button here</p>
         <br>
-        <a class= "blue_text" href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>
+        <a class="link" href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>
         <p>&copy; { year } Faithful Resource Pack</p>
     </div>
     <div>
-    <div class="footer-right">
+    <div class="footer-nav">
         <div class="footer-row">
             <h3><Fa icon={faInfoCircle}/> Info</h3>
             <ul>
@@ -119,8 +119,8 @@
             </ul>
         </div>
     </div>
-    <div class="footer-minecraft">
-        <p>"Minecraft" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the <a class="blue_text" href="https://www.minecraft.net">official site</a> to get the game!</p>
+    <div class="footer-trademark">
+        <p>"Minecraft" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the <a class="link" href="https://www.minecraft.net">official site</a> to get the game!</p>
     </div>
 </footer>
 
@@ -131,38 +131,27 @@
         display: flex;
         justify-content: center;
         color: rgb(180, 180, 180);
+        box-shadow: 0 0 5px 0 #000;
 
-        a {
-            color: rgb(180, 180, 180);
-        } 
+        .footer-row {
+            a {
+                color: rgb(180, 180, 180);
+            }
 
-        .blue_text {
-            color: $primary;
-            text-decoration: none;
-        }
-        .blue_text:hover {
-            color: $primary-dark;
-            text-decoration: none;
+            h3 {
+                margin-top: 0;
+            }
         }
 
         .footer-wordmark {
             max-width: 240px;
         }
 
-        .footer-left {
-            margin-top: 10px;
-            p {
-                margin-top: 12px;
-                padding: 0;
-            }
-        }
-
-        .footer-right {
+        .footer-nav {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            gap: 0 60px;
-            margin-top: 10px;
+            gap: 30px 60px;
 
             ul {
                 list-style: none;
@@ -173,6 +162,5 @@
                 }
             }
         }
-        // was trying to center the .footer-minecraft text on the entire screen rather than just the div, didn't work lol
     }
 </style>

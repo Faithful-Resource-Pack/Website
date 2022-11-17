@@ -23,10 +23,8 @@ specifiers:
   typescript: ^4.9.3
   vite: ^3.2.4
 
-dependencies:
-  '@fortawesome/free-brands-svg-icons': 6.2.1
-
 devDependencies:
+  '@fortawesome/free-brands-svg-icons': 6.2.1
   '@fortawesome/free-solid-svg-icons': 6.2.1
   '@sveltejs/adapter-node': 1.0.0-next.100
   '@sveltejs/kit': 1.0.0-next.548_svelte@3.53.1+vite@3.2.4
@@ -89,6 +87,7 @@ packages:
     resolution: {integrity: sha512-Sz07mnQrTekFWLz5BMjOzHl/+NooTdW8F8kDQxjWwbpOJcnoSg4vUDng8d/WR1wOxM0O+CY9Zw0nR054riNYtQ==}
     engines: {node: '>=6'}
     requiresBuild: true
+    dev: true
 
   /@fortawesome/free-brands-svg-icons/6.2.1:
     resolution: {integrity: sha512-L8l4MfdHPmZlJ72PvzdfwOwbwcCAL0vx48tJRnI6u1PJXh+j2f3yDoKyQgO3qjEsgD5Fr2tQV/cPP8F/k6aUig==}
@@ -96,7 +95,7 @@ packages:
     requiresBuild: true
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.2.1
-    dev: false
+    dev: true
 
   /@fortawesome/free-solid-svg-icons/6.2.1:
     resolution: {integrity: sha512-oKuqrP5jbfEPJWTij4sM+/RvgX+RMFwx3QZCZcK9PrBDgxC35zuc7AOFsyMjMd/PIFPeB2JxyqDr5zs/DZFPPw==}

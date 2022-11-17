@@ -17,3 +17,10 @@ a {
 		text-decoration: underline;
 	}
 }
+
+.link {
+	color: $primary;
+}
+.link:hover, .link:focus {
+	color: $primary-hover;
+}
