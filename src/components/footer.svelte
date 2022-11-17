@@ -1,21 +1,31 @@
 <script>
+	import Fa from "svelte-fa/src/fa.svelte";
+    import {
+		faGithub
+	} from "@fortawesome/free-brands-svg-icons";
+    import {
+        faInfoCircle,
+        faScroll,
+        faBook,
+        faComment
+    } from "@fortawesome/free-solid-svg-icons";
 	let year = new Date().getFullYear().toString();
 </script>
 
 <footer>
-    <div>
+    <div class="footer-left">
         <img class="footer-wordmark" src="/images/branding/wordmark.png" alt="Faithful">
         <br>
         <p>theme button here</p>
         <p>language button here</p>
         <br>
-        <a href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>
+        <a class= "blue_text" href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>
         <p>&copy; { year } Faithful Resource Pack</p>
     </div>
     <div>
     <div class="footer-nav">
         <div class="footer-row">
-            <h3>Info</h3>
+            <h3><Fa icon={faInfoCircle}/> Info</h3>
             <ul>
                 <li>
                     <a href="/installation">Installation</a>
@@ -27,27 +37,27 @@
                     <a href="/team">Team</a>
                 </li>
                 <li>
-                    <a href="https://docs.faithfulpack.net">Docs</a>
+                    <a href="/branding">Branding</a>
                 </li>
                 <li>
-                    <a href="/branding">Branding</a>
+                    <a href="/stats">Statistics</a>
                 </li>
             </ul>
         </div>
         <div class="footer-row">
-            <h3>Listings</h3>
+            <h3><Fa icon={faBook}/> Listings</h3>
             <ul>
                 <li>
-                    <a href="/placeholder">CurseForge</a>
+                    <a href="https://www.curseforge.com/members/faithful_resource_pack/projects">CurseForge</a>
                 </li>
                 <li>
-                    <a href="/placeholder">Modrinth</a>
+                    <a href="https://modrinth.com/user/Faithful-Resource-Pack">Modrinth</a>
                 </li>
                 <li>
-                    <a href="/placeholder">Planet Minecraft</a>
+                    <a href="https://www.planetminecraft.com/member/faithful_resource_pack">Planet Minecraft</a>
                 </li>
                 <li>
-                    <a href="/placeholder">MCPEDL</a>
+                    <a href="https://mcpedl.com/user/faithful-resource-pack">MCPEDL</a>
                 </li>
                 <li>
                     <a href="/placeholder">Minecraft Forum</a>
@@ -55,66 +65,62 @@
             </ul>
         </div>
         <div class="footer-row">
-            <h3>Media</h3>
+            <h3><Fa icon={faComment}/> Media</h3>
             <ul>
                 <li>
-                    <a href="/placeholder">Twitter</a>
+                    <a href="https://twitter.com/FaithfulPack">Twitter</a>
                 </li>
                 <li>
-                    <a href="/placeholder">Patreon</a>
+                    <a href="https://www.patreon.com/Faithful_Resource_Pack">Patreon</a>
                 </li>
                 <li>
-                    <a href="/placeholder">Reddit</a>
+                    <a href="https://www.reddit.com/r/faithfulpack/">Reddit</a>
                 </li>
                 <li>
-                    <a href="/placeholder">Main Discord</a>
+                    <a href="https://discord.gg/sN9YRQbBv7">Main Discord</a>
                 </li>
                 <li>
-                    <a href="/placeholder">CF Discord</a>
+                    <a href="https://discord.gg/KSEhCVtg4J">CF Discord</a>
                 </li>
             </ul>
         </div>
         <div class="footer-row">
-            <h3>Resources</h3>
+            <h3><Fa icon = {faScroll}/> Resources</h3>
             <ul>
                 <li>
-                    <a href="/placeholder">Faithful Guidelines</a>
+                    <a href="https://docs.faithfulpack.net">Docs</a>
                 </li>
                 <li>
-                    <a href="/placeholder">CF Guidelines</a>
-                </li>
-                <li>
-                    <a href="/palceholder">Contributor's Handbook</a>
+                    <a href="https://docs.faithfulpack.net/pages/textures/contributor-handbook">Contributor's Handbook</a>
                 </li>
                 <li>
                     <a href="https://status.faithfulpack.net">Status</a>
                 </li>
                 <li>
-                    <a href="/stats">Statistics</a>
+                    <a href="https://translate.faithfulpack.net">Translate</a>
                 </li>
                 <li>
-                    <a href="https://translate.faithfulpack.net">Translate</a>
+                    <a href="/news">News</a>
                 </li>
             </ul>
         </div>
         <div class="footer-row">
-            <h3>Repositories</h3>
+            <h3><Fa icon={faGithub}/> GitHub</h3>
             <ul>
                 <li>
-                    <a href="/placholder">Faithful</a>
+                    <a href="https://github.com/Faithful-Resource-Pack">Faithful</a>
                 </li>
                 <li>
-                    <a href="/placeholder">Classic Faithful</a>
+                    <a href="https://github.com/ClassicFaithful">Classic Faithful</a>
                 </li>
                 <li>
-                    <a href="/placeholder">CF32 Mods</a>
+                    <a href="https://github.com/Faithful-Mods">Faithful Mods</a>
                 </li>
             </ul>
         </div>
-        </div>
-        <div class="mc-trademark">
-            <p>"Minecraft" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the <a href="https://www.minecraft.net/">official site</a> to get the game!</p>
-        </div>
+    </div>
+    <div class="footer-minecraft">
+        <p>"Minecraft" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the <a class="blue_text" href="https://www.minecraft.net">official site</a> to get the game!</p>
     </div>
 </footer>
 
@@ -128,6 +134,15 @@
 
         a {
             color: rgb(180, 180, 180);
+        } 
+
+        .blue_text {
+            color: rgb(47, 125, 247);
+            text-decoration: none;
+        }
+        .blue_text:hover {
+            color: rgb(31, 88, 173);
+            text-decoration: none;
         }
 
         .footer-wordmark {
@@ -139,19 +154,24 @@
             flex-direction: row;
             flex-wrap: wrap;
             gap: 0 60px;
+            margin-top: 10px;
 
             ul {
                 list-style: none;
                 padding: 0;
 
                 li + li {
-                    margin-top: 6px;
+                    margin-top: 12px;
                 }
             }
         }
-
-        .mc-trademark a {
-            text-decoration: underline;
+        .footer-left {
+            margin-top: 10px;
+            p {
+                margin-top: 12px;
+                padding: 0;
+            }
         }
+        // was trying to center the .footer-minecraft text on the entire screen rather than just the div, didn't work lol
     }
 </style>

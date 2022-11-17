@@ -3,7 +3,7 @@
 	import Fa from "svelte-fa/src/fa.svelte";
 	import {
 		faHouse,
-		faDownload,
+		faAngleDoubleDown,
 		faPlus,
 		faWrench,
 		faImages,
@@ -55,7 +55,7 @@
 
 			<div class="nav-item">
 				<a class="nav-link" href="/downloads">
-					<Fa icon={faDownload} />
+					<Fa icon={faAngleDoubleDown} />
 					Downloads
 				</a>
 			</div>
