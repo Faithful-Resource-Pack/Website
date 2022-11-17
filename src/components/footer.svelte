@@ -60,7 +60,7 @@
                     <a href="https://mcpedl.com/user/faithful-resource-pack">MCPEDL</a>
                 </li>
                 <li>
-                    <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/3164503-classic-faithful">Minecraft Forum</a>
+                    <a href="https://www.minecraftforum.net/members/Faithful_Resource_Pack">Minecraft Forum</a>
                 </li>
             </ul>
         </div>
