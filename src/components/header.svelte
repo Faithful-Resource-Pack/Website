@@ -55,7 +55,7 @@
 
 			<div class="nav-item">
 				<a class="nav-link" href="/downloads">
-					<Fa icon={faAngleDoubleDown} />
+					<Fa icon={faDownload} />
 					Downloads
 				</a>
 			</div>
