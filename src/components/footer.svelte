@@ -14,7 +14,7 @@
 
 <footer>
     <div class="footer-left">
-        <img class="footer-wordmark" src="/images/branding/wordmark.png" alt="Faithful">
+        <a href="/"><img class="footer-wordmark" src="/images/branding/wordmark.png" alt="Faithful"></a>
         <br>
         <p>theme button here</p>
         <p>language button here</p>
@@ -23,7 +23,7 @@
         <p>&copy; { year } Faithful Resource Pack</p>
     </div>
     <div>
-    <div class="footer-nav">
+    <div class="footer-right">
         <div class="footer-row">
             <h3><Fa icon={faInfoCircle}/> Info</h3>
             <ul>
@@ -60,7 +60,7 @@
                     <a href="https://mcpedl.com/user/faithful-resource-pack">MCPEDL</a>
                 </li>
                 <li>
-                    <a href="/placeholder">Minecraft Forum</a>
+                    <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/3164503-classic-faithful">Minecraft Forum</a>
                 </li>
             </ul>
         </div>
@@ -137,11 +137,11 @@
         } 
 
         .blue_text {
-            color: rgb(47, 125, 247);
+            color: $primary;
             text-decoration: none;
         }
         .blue_text:hover {
-            color: rgb(31, 88, 173);
+            color: $primary-dark;
             text-decoration: none;
         }
 
@@ -149,7 +149,15 @@
             max-width: 240px;
         }
 
-        .footer-nav {
+        .footer-left {
+            margin-top: 10px;
+            p {
+                margin-top: 12px;
+                padding: 0;
+            }
+        }
+
+        .footer-right {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -163,13 +171,6 @@
                 li + li {
                     margin-top: 12px;
                 }
-            }
-        }
-        .footer-left {
-            margin-top: 10px;
-            p {
-                margin-top: 12px;
-                padding: 0;
             }
         }
         // was trying to center the .footer-minecraft text on the entire screen rather than just the div, didn't work lol
