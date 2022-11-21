@@ -8,6 +8,17 @@
       }
     }
   ],
+  "22w46a": [
+    {
+      "file": "Faithful 32x",
+      "file_type": "Snapshot",
+      "date": "21/11/2022",
+      "links": {
+        "github": "https://database.faithfulpack.net/packs/32x-Java/Snapshots/Faithful%2032x%20-%2022w46a.zip",
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-32x/download/4103384"
+      }
+    }
+  ],
   "1.19.x": [
     {
       "file": "Faithful 32x",
