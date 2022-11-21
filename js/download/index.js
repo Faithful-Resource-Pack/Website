@@ -188,10 +188,12 @@ const v = new Vue({
       if (item.file_type == "R") return "green"
       if (item.file_type == "B") return "blue"
       if (item.file_type == "A") return "yellow"
+      if (item.file_type == "Snapshot") return "black"
       else return "green"
     },
     labelText(item) {
       if (item.file_type == "GitHub") return 'GitHub'
+      else if (!item.file_version) return item.file_type
       else return item.file_type + item.file_version
     },
     /**
