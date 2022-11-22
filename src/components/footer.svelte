@@ -10,6 +10,7 @@ import {
   faSun,
   faMoon
 } from "@fortawesome/free-solid-svg-icons";
+	import Theme from "./theme.svelte";
 
 let year = new Date().getFullYear().toString();
 </script>
@@ -17,13 +18,13 @@ let year = new Date().getFullYear().toString();
 <footer class="footer">
   <div class="footer-row">
     <div class="footer-element">
-      <div class="footer-head">
+      <div class="footer-center footer-head">
         <a href="/"><img class="footer-wordmark" src="/images/branding/wordmark.png" alt="Faithful"></a>
       </div>
       <ul class="footer-content">
         <div class="btns">
-          <button disabled><Fa icon={faGlobe}/></button>
-          <button disabled><Fa icon={faMoon}/></button>
+          <button disabled><Fa style="width: 32px !important; height: 32px !important;" icon={faGlobe} /></button>
+          <button disabled><Theme /></button>
         </div>
         <li></li>
         <li><a class="link" href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a></li>
@@ -126,6 +127,7 @@ let year = new Date().getFullYear().toString();
     > .btns {
       height: 3.6em;
       display: flex;
+      justify-content: center;
       gap: 4px;
 
       > button {
@@ -183,5 +185,15 @@ let year = new Date().getFullYear().toString();
       max-width: 200px;
     }
   }
+
+  &-center {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+#globe {
+  height: 32px;
+  width: 32px;
 }
 </style>
