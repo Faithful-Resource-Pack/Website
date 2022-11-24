@@ -3,7 +3,7 @@
 	import Fa from "svelte-fa/src/fa.svelte";
 	import {
 		faHouse,
-		faAngleDoubleDown,
+		faDownload,
 		faPlus,
 		faWrench,
 		faImages,
@@ -13,14 +13,6 @@
 	function toggleMenu() {
 		document.getElementsByClassName("navbar-nav")[0].classList.toggle("show");
 	}
-
-	onMount(() => {
-		document.querySelectorAll('[data-toggle="dropdown"]').forEach((item) => {
-			item.addEventListener("click", () => {
-				item.parentNode.classList.toggle("show");
-			});
-		});
-	});
 </script>
 
 <header>
@@ -55,7 +47,7 @@
 
 			<div class="nav-item">
 				<a class="nav-link" href="/downloads">
-					<Fa icon={faAngleDoubleDown} />
+					<Fa icon={faDownload} />
 					Downloads
 				</a>
 			</div>
@@ -76,14 +68,10 @@
 			</a>
 
 			<div class="nav-item">
-				<span class="nav-link dropdown-toggle" data-toggle="dropdown">
+				<a class="nav-link" href="/modding">
 					<Fa icon={faWrench} />
 					Modding
-				</span>
-				<div class="dropdown-menu dropdown-menu-center">
-					<a class="dropdown-item" href="/mods">Mods</a>
-					<a class="dropdown-item" href="/modpacks">Modpacks</a>
-				</div>
+				</a>
 			</div>
 
 			<div class="nav-item">
@@ -198,55 +186,6 @@
 						color: rgb(220, 220, 220);
 						cursor: pointer;
 						transform: scale(0.95);
-					}
-				}
-
-				.dropdown-toggle::after {
-					content: "";
-					border-top: 0.3em solid;
-					border-right: 0.3em solid transparent;
-					border-left: 0.3em solid transparent;
-					display: inline-block;
-					margin-left: 4px;
-					vertical-align: middle;
-				}
-
-				&.show {
-					.dropdown-menu {
-						display: block;
-					}
-					.nav-link {
-						color: #fff;
-					}
-					.dropdown-toggle::after {
-						transform: rotate(180deg);
-					}
-				}
-
-				.dropdown-menu {
-					display: none;
-					position: absolute;
-					top: 100%;
-					box-shadow: 0 0 10px rgba(0, 0, 0, 20%);
-					border-radius: 4px;
-
-					@media (max-width: 760px) {
-						position: static;
-						background-color: transparent;
-						box-shadow: none;
-						margin: 0;
-						padding: 0;
-					}
-
-					.dropdown-item {
-						display: block;
-						padding: 8px 18px;
-						border-radius: 4px;
-
-						@media (max-width: 760px) {
-							color: rgb(180, 180, 180);
-							background: none;
-						}
 					}
 				}
 			}

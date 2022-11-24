@@ -4,6 +4,10 @@ body {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+main {
+	text-align: center;
+}
+
 *,
 *::before,
 *::after {
@@ -67,12 +71,21 @@ button:disabled {
 	100% { transform: scale(1); }
 }
 
-@keyframes slide_right_in {
-	0% { translate: 0; }
-	100% { translate: 10px; }
-}
+.banner {
+	padding: 16px 28px;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+	font-size: 25px;
+	font-weight: 500;
 
-@keyframes slide_right_out {
-	0% { translate: 10px; }
-	100% { translate: 0; }
+	a {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	&.purple {
+		background: #5865F2;
+	}
 }

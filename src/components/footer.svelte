@@ -112,12 +112,6 @@ let year = new Date().getFullYear().toString();
     text-align: center;
   }
 
-  &-element {
-    width: calc(60% / 4);
-    min-width: 150px;
-    padding: 0 1em;
-  }
-
   &-content {
     list-style: none;
     padding: 0;
@@ -152,26 +146,14 @@ let year = new Date().getFullYear().toString();
   }
 
   &-row {
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 1080px;
     justify-content: center;
+    gap: 50px;
 
     >:first-child {
-      width: 100%;
       max-width: 240px;
-    }
-
-    >:not(:first-child) > .footer-content > li {
-      max-width: fit-content;
-      animation: slide_right_out 600ms ease-in-out;
-
-      &:hover {
-        animation: slide_right_in 200ms ease-in-out forwards;
-      }
     }
   }
 
