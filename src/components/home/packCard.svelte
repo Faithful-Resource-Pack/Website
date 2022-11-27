@@ -67,14 +67,20 @@
 
             a {
                 display: block;
+                border-radius: 10px;
                 width: 100%;
                 padding: 8px;
                 color: inherit;
+                transition: all 0.2s ease-out;
 
                 & > * {
                     display: inline-block;
                     vertical-align: bottom;
                 }
+            }
+            > :hover {
+                background: #fff;
+                color: #000;
             }
         }
     }

@@ -1,28 +1,28 @@
 <script lang="ts">
 	import PackCardList from "../components/home/packCardList.svelte";
 
-    const SEE_MORE = 'See more';
+    const SEE_MORE = 'See More';
     const projects = {
         links: [
             [{href: '/faithful-32x', title: SEE_MORE}],
             [{href: '/faithful-64x', title: SEE_MORE}],
-            [{href: '/classic-faithful-32x-jappa', title: 'New Textures (Jappa)'},
-             {href: '/classic-faithful-32x-pa', title: 'Classic Textures (PA)'}],
-            [{href: '/classic-faithful-64x', title: SEE_MORE}],
+            [{href: '/classicfaithful/32x-jappa', title: 'New Textures (Jappa)'},
+             {href: '/classicfaithful/32x-programmer-art', title: 'Classic Textures (PA)'}],
+            [{href: '/classicfaithful/64x-jappa', title: SEE_MORE}],
         ],
         urls: [
             { 
                 title: "Faithful 32x",
-                background: "https://database.faithfulpack.net/images/branding/backgrounds/f32.png",
+                background: "https://database.faithfulpack.net/images/branding/site/posters/poster_32.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png"},
             { 
                 title: "Faithful 64x",
-                background: "https://database.faithfulpack.net/images/branding/backgrounds/f64.png",
+                background: "https://database.faithfulpack.net/images/branding/site/posters/poster_64.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f64_logo.png"
             },
             { 
                 title: "Classic Faithful 32x",
-                background: "https://database.faithfulpack.net/images/branding/backgrounds/cf32.png",
+                background: "https://database.faithfulpack.net/images/branding/site/posters/poster_cf32.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png"
             },
             {
@@ -44,7 +44,7 @@
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/addons_logo.png"
             },
             {
-                title: "Mods support",
+                title: "Mod Support",
                 background: "https://database.faithfulpack.net/images/branding/backgrounds/mods.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/mods_logo.png"
             }
@@ -90,9 +90,7 @@
     <img class="highlight-wordmark" src="/images/branding/wordmark.png" alt="Faithful Wordmark">
     <h1>Providing a higher-resolution experience<br> since 2010.</h1>
     <p class="banner purple">
-        Join 
-        <a href="https://discord.gg/sN9YRQbBv7">our Discord</a>
-        now and contribute to the project!
+        <a href="https://discord.gg/sN9YRQbBv7">Join our Discord now and contribute to the project!</a>
     </p>
 </div>
 
@@ -101,7 +99,7 @@
 <PackCardList items={projects} />
 
 <p id="handy-guide" class="text-center">
-    Not sure which one to pick? Check out our <a href="/handy-guide" class="subbed">handy guide</a>.
+    Not sure which one to pick? Check out our <a href="/installation" class="subbed">handy guide</a>.
 </p>
 
 <h1 class="title text-center">Faithful Extras</h1>
@@ -163,6 +161,12 @@
             max-width: 100%;
             font-size: 1.2rem;
             font-weight: 600;
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
         }
     }
 
