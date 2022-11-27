@@ -136,12 +136,19 @@ let year = new Date().getFullYear().toString();
 
     > li {
       height: 1.8em;
+      display: flex;
       white-space: nowrap;
 
       > a {
-        color: $text-dark-bg; 
-      }
+        color: $text-dark-bg;
+        transition: all 0.1s ease-out;
 
+        &:hover {
+          color: rgb(220, 220, 220);
+          cursor: pointer;
+          transform: scale(0.95);
+        }
+      }
     }
   }
 

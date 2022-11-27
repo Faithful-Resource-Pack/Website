@@ -53,7 +53,7 @@
 			</div>
 
 			<div class="nav-item">
-				<a class="nav-link" href="/addons">
+				<a class="nav-link" href="/add-ons">
 					<Fa icon={faPlus} />
 					Add-ons
 				</a>
