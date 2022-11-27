@@ -62,7 +62,7 @@
 			<a href="/" title="Faithful">
 				<img
 					src="/images/branding/f32_logo.svg"
-					style="width: 48px; height: 48px"
+					style="width: 48px; height: 48px; display: block"
 					alt="Faithful 32x"
 				/>
 			</a>
@@ -92,8 +92,12 @@
 </header>
 
 <style lang="scss">
+	header {
+		top: 0px;
+		position: sticky;
+		z-index: 1000;
+	}
 	.navbar {
-		position: relative;
 		box-shadow: 0 0 5px 0 #000;
 		padding: 10px;
 

@@ -16,6 +16,7 @@ let year = new Date().getFullYear().toString();
 </script>
 
 <footer class="footer">
+  <div id="shadow"></div>
   <div class="footer-row">
     <div class="footer-element">
       <div class="footer-center footer-head">
@@ -107,6 +108,7 @@ let year = new Date().getFullYear().toString();
 .footer {
   padding: 2em;
   color: $text-dark-bg;
+  position: relative;
 
   &-trademark {
     text-align: center;
@@ -178,6 +180,25 @@ let year = new Date().getFullYear().toString();
   &-center {
     text-align: center;
     justify-content: center;
+  }
+
+  #shadow {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 5px;
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      box-shadow: 0 5px 5px 5px #000;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
   }
 }
 

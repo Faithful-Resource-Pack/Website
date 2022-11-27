@@ -12,3 +12,9 @@
 </main>
 
 <Footer />
+
+<style lang="scss">
+	main {
+		padding-bottom: 50px;
+	}
+</style>

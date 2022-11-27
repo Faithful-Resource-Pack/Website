@@ -6,4 +6,27 @@ declare namespace App {
 	// interface PageData {}
 	// interface Error {}
 	// interface Platform {}
+	
+
+    interface CardLink {
+        href: string,
+        title: string
+    };
+
+	interface CardUrl {
+		title: string, 
+		background: string,
+		src: string
+	}
+
+	interface CardList {
+		links: Array<CardLink[]>,
+		urls: Array<CardUrl>
+	}
+
+	interface Post {
+		permalink: string,
+		title: string,
+		headerImage: string
+	}
 }
