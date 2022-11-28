@@ -8,13 +8,17 @@
 <Header />
 
 <main>
-	<slot />
+	<div id="container">
+		<slot />
+	</div>
 </main>
 
 <Footer />
 
 <style lang="scss">
 	main {
-		padding-bottom: 50px;
+		// css trick for margin inside
+		margin: -1px 0 0;
+		padding: 1px 0 50px;
 	}
 </style>

@@ -1,7 +1,7 @@
 .background {
 	background: #eeede5 url("/images/background/bg_light_background.png") repeat;
 }
-body {
+main {
 	background: #eeede5 url("/images/background/bg_light_foreground.png") repeat;
 }
 .placeholder {
@@ -14,7 +14,7 @@ body {
 /*#topNavbar.fixed {
 	background: #EEEDE5 url("/images/background/bg_light_background.png");
 }*/
-.navbar, footer {
+.navbar, body {
 	background: #eeede5 url("/images/background/bg_light_background.png");
 }
 .outline {
