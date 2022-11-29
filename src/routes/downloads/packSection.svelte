@@ -1,0 +1,49 @@
+<script lang="ts">
+	import DownloadTable from "./downloadTable.svelte";
+
+    export let pack: App.Pack;
+</script>
+
+<div class="pack" style={`--pack-background: url(${pack.background_url})`}>
+    <h2>{ pack.name }</h2>
+
+    {#each pack.editions as edition}
+    <h3>{edition.name}</h3>
+
+    {#if edition.name.toLowerCase().includes('dungeons')}
+    <div class="container">
+        <h2 class="red banner">This project has been discontinued.</h2>
+    </div>
+    {/if}
+    
+    <div class="container">
+        <DownloadTable downloads={edition.downloads} />
+    </div>
+    {/each}
+</div>
+
+<style lang="scss">
+    .pack {
+        background-size: cover;
+        background-position: center;
+        background-image: var(--pack-background);
+        text-align: center;
+        padding: 1.7rem 0;
+
+        & > h2, & > h3 {
+            color: white;
+        }
+
+        & > h2 {
+            font-size: 2rem;
+            text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+            margin: 0;
+        }
+
+        & > h3 {
+            font-size: 1.7rem;
+            margin: 1.2rem 0;
+            font-weight: 500;
+        }
+    }
+</style>

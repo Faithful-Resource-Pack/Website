@@ -29,4 +29,27 @@ declare namespace App {
 		title: string,
 		headerImage: string
 	}
+
+	interface Download {
+		file: string,
+		file_type: string,
+		file_version?: number,
+		size?: string,
+		latest?: 'latest',
+		date: string,
+		links: Record<string, string>
+	}
+
+	interface DownloadList extends Record<string, Download[]> {}
+
+	interface PackEdition {
+		name: string,
+		downloads: DownloadList
+	}
+
+	interface Pack {
+		name: string,
+		background_url: string,
+		editions: Array<PackEdition>
+	}
 }

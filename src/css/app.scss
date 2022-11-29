@@ -60,6 +60,11 @@ button:enabled {
 	}
 }
 
+.title {
+	font-size: 3.4rem;
+	margin: 2rem 0;
+}
+
 button:disabled {
 	cursor: not-allowed;
 	color: $text-half-dark-bg;
@@ -198,4 +203,26 @@ button:disabled {
 	&.purple {
 		background: #5865F2;
 	}
+	
+	&.red {
+		background: #f44336;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width:1140px
+	}
+}
+   
+.container {
+	width:100%;
+	padding-right:15px;
+	padding-left:15px;
+	margin-right:auto;
+	margin-left:auto
+}
+
+.space_bottom {
+	height: 50px;
 }

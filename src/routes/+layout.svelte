@@ -8,9 +8,7 @@
 <Header />
 
 <main>
-	<div id="container">
-		<slot />
-	</div>
+	<slot />
 </main>
 
 <Footer />
@@ -19,6 +17,6 @@
 	main {
 		// css trick for margin inside
 		margin: -1px 0 0;
-		padding: 1px 0 50px;
+		padding: 1px 0 0;
 	}
 </style>

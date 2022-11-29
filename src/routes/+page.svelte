@@ -126,7 +126,9 @@
     </a>
     {/each}
 </div><br>
-<a class="btn btn-dark col-6 center text-center" href="/news">{ SEE_MORE }</a>
+<a class="btn btn-dark col-6 center text-center" href="/news" id="more_news">{ SEE_MORE }</a>
+
+<div class="space_bottom"></div>
 
 <style lang="scss">
     $spacing: 2rem;
@@ -173,11 +175,6 @@
                 text-decoration: underline;
             }
         }
-    }
-
-    .title {
-        font-size: 3.4rem;
-        margin: $spacing 0;
     }
 
     #handy-guide {
