@@ -11,6 +11,8 @@ Try checking your spelling or going to the main page to find what you were looki
 			: $page.error?.message
 	);
 
+	$: explosions = [...Array(16).keys()].map((key) => `/images/404/explosion_${key}.png`);
+
 	function sleep(ms: number) {
 		return new Promise((resolve) => setTimeout(resolve, ms));
 	}
@@ -90,6 +92,10 @@ Try checking your spelling or going to the main page to find what you were looki
 
 <svelte:head>
 	<title>{$page.status} - Faithful</title>
+	{#each explosions as image}
+      <link rel="preload" as="image" href={image} />
+    {/each}
+	<link rel="preload" as="image" href="/images/404/tnt_side_on.png" />
 </svelte:head>
 
 <div>
