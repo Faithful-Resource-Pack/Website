@@ -32,7 +32,6 @@ export const load: Load = async () => {
       Object.keys(json).forEach(version => {
         const releases = json[version];
         releases.forEach((release: any) => {
-          console.log('ver', release)
           const curse_link = release.links.curse;
           if(curse_link) {
             const curse_id = curse_link.split('/').pop();
@@ -70,6 +69,36 @@ export const load: Load = async () => {
         },{
           name: "Bedrock Edition",
           downloads: jsons[3]
+        }]
+      }, {
+        name: "Classic Faithful 32x\nJappa",
+        background_url: "https://static.wixstatic.com/media/89b89d_a8ca95a9d0dd42bca13a163616d0fcef~mv2.png/v1/fill/w_1920,h_580,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_a8ca95a9d0dd42bca13a163616d0fcef~mv2.png",
+        editions: [{
+          name: "Java Edition",
+          downloads: {}
+        },{
+          name: "Bedrock Edition",
+          downloads: {}
+        }]
+      }, {
+        name: "Classic Faithful 32x\nProgrammer Art",
+        background_url: "https://static.wixstatic.com/media/89b89d_a4d64e249fc64a09b6b3881f6e91d519~mv2.png/v1/fill/w_1920,h_580,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_a4d64e249fc64a09b6b3881f6e91d519~mv2.png",
+        editions: [{
+          name: "Java Edition",
+          downloads: {}
+        },{
+          name: "Bedrock Edition",
+          downloads: {}
+        }]
+      }, {
+        name: "Classic Faithful 64x",
+        background_url: "https://static.wixstatic.com/media/89b89d_7fb681a21b974342916ea071d06f1049~mv2.png/v1/fill/w_1920,h_531,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_7fb681a21b974342916ea071d06f1049~mv2.png",
+        editions: [{
+          name: "Java Edition",
+          downloads: {}
+        },{
+          name: "Bedrock Edition",
+          downloads: {}
         }]
       }]
     };

@@ -34,6 +34,7 @@
 			}
 		}
 	}
+	const text_latest = 'Latest';
 </script>
 
 <td class="large details">
@@ -41,7 +42,7 @@
 		<span class="name">{text_name}</span>
 		<span class="version">{text_version}</span>
 		<span class={class_release}>{text_release}</span>
-		{#if latest}<span class="latest">Latest</span>{/if}
+		{#if latest}<span class="latest">{text_latest}</span>{/if}
 	</p>
 	{#if text_date}<p class="mobile">{text_date} - {text_size}</p>{/if}
 </td><td class="date">
@@ -49,8 +50,8 @@
 </td><td class="size">
 	<p>{text_size}</p>
 </td>
-<td class="small downloads" colspan={2 / Object.entries(links).length}>
 {#each Object.entries(links) as [origin, link], i}
+<td class="small downloads" colspan={2 / Object.entries(links).length}>
 		<a href={link} class="btn btn-dark btn-dl">
 			{#if origin === "curse"}
 				<Fa icon={faFireFlameCurved} /><span class="link-text">Curse</span>
@@ -60,8 +61,8 @@
 				<span class="link-text">{origin}</span>
 			{/if}
 		</a>
-{/each}
 </td>
+{/each}
 
 <style lang="scss">
 	td {
@@ -124,6 +125,10 @@
 	}
 	.btn-dl span.link-text {
 		margin-left: 8px;
+	}
+
+	.downloads + .downloads > *:first-child {
+		margin-left: 1px;
 	}
 
 	@media (max-width: 760px) {

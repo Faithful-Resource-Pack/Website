@@ -2,24 +2,31 @@
 	import DownloadTable from "./downloadTable.svelte";
 
     export let pack: App.Pack;
+
+    const coming_soon = 'Coming soon';
+    const project_discontinued = 'This project has been discontinued.';
 </script>
 
 <div class="pack" style={`--pack-background: url(${pack.background_url})`}>
-    <h2>{ pack.name }</h2>
+    <h2>{@html pack.name.replace('\n', '<br>') }</h2>
 
-    {#each pack.editions as edition}
-    <h3>{edition.name}</h3>
+    {#if pack.editions.length === 0 || pack.editions.map(e => e.downloads).reduce((sum,d) => sum + Object.keys(d).length, 0) === 0}
+        <p class="coming-soon"><i>{ coming_soon }</i></p>
+    {:else}
+        {#each pack.editions as edition}
+        <h3>{edition.name}</h3>
 
-    {#if edition.name.toLowerCase().includes('dungeons')}
-    <div class="container">
-        <h2 class="red banner">This project has been discontinued.</h2>
-    </div>
+        {#if edition.name.toLowerCase().includes('dungeons')}
+        <div class="container">
+            <h2 class="red banner">{ project_discontinued }</h2>
+        </div>
+        {/if}
+        
+        <div class="container">
+            <DownloadTable downloads={edition.downloads} />
+        </div>
+        {/each}
     {/if}
-    
-    <div class="container">
-        <DownloadTable downloads={edition.downloads} />
-    </div>
-    {/each}
 </div>
 
 <style lang="scss">
@@ -30,13 +37,17 @@
         text-align: center;
         padding: 1.7rem 0;
 
-        & > h2, & > h3 {
+        & > h2, & > h3, & > .coming-soon {
             color: white;
+            text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+        }
+
+        & > .coming-soon {
+            font-size: 1.5em;
         }
 
         & > h2 {
             font-size: 2rem;
-            text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
             margin: 0;
         }
 
