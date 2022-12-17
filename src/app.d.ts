@@ -52,4 +52,15 @@ declare namespace App {
 		background_url: string,
 		editions: Array<PackEdition>
 	}
+
+	interface FavoriteAddonStore {
+		favorites: Array<string>
+	}
+
+	interface SearchAddonStore {
+		search: string,
+		categories: Array<string>;
+		editions: Array<string>,
+		resolutions: Array<string>
+	}
 }
