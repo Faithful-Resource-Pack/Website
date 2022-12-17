@@ -12,6 +12,12 @@
 			"$src": [
 				"src/"
 			],
+			"$stores":[
+				"src/stores"
+			],
+			"$stores/*":[
+				"src/stores/*"
+			],
 			"$lib":[
 				"src/lib"
 			],

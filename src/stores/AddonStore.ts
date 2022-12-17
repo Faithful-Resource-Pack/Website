@@ -22,15 +22,29 @@ export let favoriteStore = createJSONStore('ADDON_FAVORITES', {
     };
 })
 
-export let searchStore = createJSONStore('ADDON_SEARCH', {
-    categories: [],
+export const CheckboxTypesValues = [
+	"editions",
+	"resolutions"
+] as const;
+export type CheckboxType = typeof CheckboxTypesValues[number];
+
+export type CheckboxChoices = {
+    [K in CheckboxType]: string[]
+}
+
+export let checkboxChoices: CheckboxChoices = {
     editions: ['Java', 'Bedrock'],
     resolutions: ['32x', '64x'],
+}
+
+export let searchStore = createJSONStore('ADDON_SEARCH', {
+    categories: [],
+    ...checkboxChoices,
     search: ''
 } as App.SearchAddonStore, writable => {
     const { subscribe, update } = writable;
     return {
-        ...subscribe,
+        subscribe,
         clearCategories() {
             update(v => {
                 v.categories = []

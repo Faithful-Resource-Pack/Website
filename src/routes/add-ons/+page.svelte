@@ -2,56 +2,93 @@
     import AddonCategories from "$components/addons/AddonCategories.svelte";
 	import AddonResults from "$components/addons/AddonResults.svelte";
 	import AddonSearch from "$components/addons/AddonSearch.svelte";
+	import AddonFavorites from "$components/addons/AddonFavorites.svelte";
 
     const text_title = 'Add-ons';
     const text_desc = `Customise your game experience!\nBrought to you by the community.`.replace('\n', '<br>');
     const text_how_to_install = 'How to install add-ons';
 </script>
 
-<img class="addon_background" src="/images/background/Add-ons.png" alt="Add-ons background">
 <div id="addon_header" class="text-center">
-    <h1 class="title">{ text_title }</h1>
-    <p>{ @html text_desc }</p>
-    <p><i>{ text_how_to_install }</i></p>
-    <h3>placeholder text because the background would go over the footer lol</h3>
-    <h3>placeholder text because the background would go over the footer lol</h3>
+    <img class="addon_background" src="/images/background/Add-ons.png" alt="Add-ons background">
+    <div id="addon_header_text">
+        <h1 class="title">{ text_title }</h1>
+        <p>{ @html text_desc }</p>
+        <p><i><a href="#howto">{ text_how_to_install }</a></i></p>
+    </div>
 </div>
-    
-<div id="addon_container" class="container">
-    <AddonCategories />
-    <div id="addon_main">
-        <div class="addon_search">
-            <AddonSearch />
-        </div><div class="addon_main">
-            <AddonResults class="addon_main" />
+
+<div class="container">
+    <div id="addon_favorites">
+        <AddonFavorites />
+    </div><div id="addon_content">
+        <div id="addon_categories">
+            <AddonCategories />
+        </div><div id="addon_main">
+            <div id="addon_search">
+                <AddonSearch />
+            </div><div id="addon_results">
+                <AddonResults />
+            </div>
         </div>
     </div>
 </div>
 
+<span class="space_bottom"></span>
+
 <style lang="scss">
+    $overflow: 200px;
+    $spacing: 12px;
+
     #addon_header {
         position: relative;
+        overflow: hidden;
+        padding: 1px 0 $overflow;
+        margin-bottom: -$overflow;
 
-        p i {
+        #addon_header_text {
+            position: relative;
+        }
+
+        p i a {
+            color: inherit;
             text-decoration: underline;
         }
     }
+    #addon_header + * {
+        min-height: $overflow;
+    }
 
     .addon_background {
+        height: 100%;
         width: 100%;
+        object-fit: cover;
         position: absolute;
-        mask: linear-gradient(180deg, #000, transparent);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        mask: linear-gradient(0deg, transparent 0%, black 100%);
         filter: saturate(0.7);
     }
     
-    #addon_container > *{
-        display: inline-block;
-    }
-    .addon_search {
-        width: 30%;
-        padding-right: 20px;
-    }
-    .addon_main {
-        width: 70%;
+    #addon_content {
+
+        & > * {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        #addon_categories {
+            width: 30%;
+            padding-right: $spacing;
+            margin-bottom: $spacing;
+        }
+        #addon_main {
+            width: 70%;
+
+            & > * {
+                margin-bottom: $spacing;
+            }
+        }
     }
 </style>

@@ -25,6 +25,14 @@ a {
 	}
 }
 
+.noselect {
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 .link {
 	color: $primary !important;
 }
@@ -111,6 +119,11 @@ button:disabled {
 	min-width: 0;
 	word-wrap: break-word;
 	background-clip: border-box;
+}
+.card-body {
+	flex: 1 1 auto;
+	min-height: 1px;
+	padding: 1.25rem;
 }
 .img-card > h3 {
 	position: absolute;

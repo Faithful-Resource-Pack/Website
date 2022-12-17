@@ -10,7 +10,8 @@ export function toggleInArray<T>(arr: Array<T>, e: T): Array<T> {
 }
 
 export function toggleMin<T>(arr: Array<T>, e: T) {
-    let after = toggleInArray(arr, e);
-    if(after.length === 1) return arr;
-    return after;
+    const vFoundIndex = arr.indexOf(e);
+    if(vFoundIndex !== -1 && arr.length === 1) return arr;
+
+    return toggleInArray(arr, e);
 }
