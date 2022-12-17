@@ -6,3 +6,9 @@ node_modules
 .env
 .env.*
 !.env.example
+_site/
+.idea/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.vscode/
