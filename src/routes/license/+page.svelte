@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>License - Faithful</title>
+</svelte:head>
+
 <div>
     <h1>FAITHFUL RESOURCE PACK LICENSE</h1>
     <p>Version 2, 27th September 2022<br><br>
