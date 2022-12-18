@@ -1,11 +1,13 @@
 import { createJSONStore } from "$lib/createStore";
 import { toggleInArray, toggleMin } from "$lib/utils";
-import type { Addon } from "src/interfaces/addons";
+import type { Addon, AddonTagArray } from "$interfaces/addons";
 import { writable, derived, type Writable } from "svelte/store";
 
-export let addonStore: Writable<Array<Addon>|undefined> = writable(undefined);
+type AddonStore = Array<Addon>|undefined;
+export let addonStore: Writable<AddonStore> = writable(undefined);
 
-export let loadingStore = derived(addonStore, aS => aS === undefined);
+let addonsLoading = (aS: AddonStore) => aS === undefined;
+export let loadingStore = derived(addonStore, addonsLoading);
 
 export let favoriteStore = createJSONStore('ADDON_FAVORITES', {
     favorites: []
@@ -20,6 +22,10 @@ export let favoriteStore = createJSONStore('ADDON_FAVORITES', {
             }))
         }
     };
+})
+
+export let favoriteResultStore = derived([favoriteStore, addonStore], ([favorites, addons]) => {
+    return addons!== undefined ? addons.filter(a => a.id && favorites.favorites.includes(String(a.id))) : []
 })
 
 export const CheckboxTypesValues = [
@@ -51,6 +57,17 @@ export let searchStore = createJSONStore('ADDON_SEARCH', {
                 return v
             })
         },
+        allCategoriesSelected(choices: string[]) {
+            return derived(writable, s => {
+                let found = true;
+                let i = 0;
+                while(i < choices.length && found) {
+                    found = s.categories.indexOf(choices[i]) !== -1
+                    i++;
+                }
+                return found;
+            })
+        },
         clearSearch() {
             update(v => {
                 v.search = ''
@@ -62,4 +79,94 @@ export let searchStore = createJSONStore('ADDON_SEARCH', {
         toggleResolution: (res: string)    => update(v => ({ ...v, resolutions: toggleMin(v.resolutions, res) })),
         setSearch: (search: string)        => update(v => ({ ...v, search }))
     }
+})
+
+export let startStore = function() {
+    let {subscribe, update} = writable({
+        started: false,
+        prev: 0,
+        now: 0,
+        results: [] as Addon[]
+    });
+
+    return {
+        subscribe,
+        //prev and now are used to trigger new search
+        startSearch: () => update(v => ({
+            ...v,
+            prev: v.now,
+            now: v.now+1,
+            results: v.results
+        })),
+        setResults: (results: Addon[]) => update(v => ({
+            ...v,
+            started: true,
+            prev: v.now,
+            now: v.now,
+            results
+        }))
+    }
+}();
+
+// no access to values of search or start, need to listen all of them
+export let resultStore = derived([startStore, searchStore, addonStore], ([start, search, addons]) => {
+    if(addons === undefined || start.prev === start.now) return start.results;
+
+    //* Search
+    let res = addons as Addon[];
+    if(search.search !== '') {
+        const lc_search = search.search.toLowerCase();
+        res = res.filter(a => a.name.toLowerCase().includes(lc_search))
+    }
+
+    //* categories
+    if(search.categories.length > 0)
+    {
+        res = res.filter(a => {
+            if(!('categories' in a)) return true;
+            if(a.categories && Array.isArray(a.categories) && a.categories.length === 0) return true;
+            let a_categories = a.categories as string[];
+
+            let add = false;
+            let i = 0;
+            while(i < search.categories.length && !add)
+            {
+                add = a_categories.includes(search.categories[i]);
+                i++;
+            }
+
+            return add;
+        })
+    }
+
+    //* resolutions
+    res = res.filter(a => {
+        let add = false;
+
+        let i = 0;
+        while(i < search.resolutions.length && !add) {
+            add = (a.options.tags as string[]).includes(search.resolutions[i]);
+            i++;
+        }
+
+        return add;
+    });
+
+    //* editions
+    res = res.filter(a => {
+        let add = false;
+
+        let i = 0;
+        while(i < search.editions.length && !add) {
+            add = (a.options.tags as string[]).includes(search.editions[i]);
+            i++;
+        }
+
+        return add;
+    });
+
+    //* apply
+    startStore.setResults(res);
+
+    return res;
 })

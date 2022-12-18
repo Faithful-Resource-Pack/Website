@@ -23,7 +23,11 @@
 			],
 			"$lib/*":[
 				"src/lib/*"
-			]
+			],
+			"$components/*":[
+				"src/components/*"
+			],
+			"$interfaces/*":["src/interfaces/*"]
 		},
 		"rootDirs": [
 			"."

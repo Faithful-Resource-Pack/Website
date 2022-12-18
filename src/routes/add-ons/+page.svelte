@@ -3,6 +3,7 @@
 	import AddonResults from "$components/addons/AddonResults.svelte";
 	import AddonSearch from "$components/addons/AddonSearch.svelte";
 	import AddonFavorites from "$components/addons/AddonFavorites.svelte";
+	import AddonSubmit from "$components/addons/AddonSubmit.svelte";
 
     const text_title = 'Add-ons';
     const text_desc = `Customise your game experience!\nBrought to you by the community.`.replace('\n', '<br>');
@@ -22,8 +23,9 @@
     <div id="addon_favorites">
         <AddonFavorites />
     </div><div id="addon_content">
-        <div id="addon_categories">
+        <div id="addon_side">
             <AddonCategories />
+            <AddonSubmit />
         </div><div id="addon_main">
             <div id="addon_search">
                 <AddonSearch />
@@ -78,10 +80,14 @@
             vertical-align: top;
         }
 
-        #addon_categories {
+        #addon_side {
             width: 30%;
             padding-right: $spacing;
-            margin-bottom: $spacing;
+
+            // how to style child component
+            & :global( > *) {
+                margin-bottom: $spacing;
+            }
         }
         #addon_main {
             width: 70%;
