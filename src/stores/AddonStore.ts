@@ -32,14 +32,14 @@ export type CheckboxChoices = {
     [K in CheckboxType]: string[]
 }
 
-export let checkboxChoices: CheckboxChoices = {
+export const checkboxChoices: CheckboxChoices = {
     editions: ['Java', 'Bedrock'],
     resolutions: ['32x', '64x'],
 }
 
 export let searchStore = createJSONStore('ADDON_SEARCH', {
     categories: [],
-    ...checkboxChoices,
+    ...JSON.parse(JSON.stringify(checkboxChoices)), // deep copy
     search: ''
 } as App.SearchAddonStore, writable => {
     const { subscribe, update } = writable;
