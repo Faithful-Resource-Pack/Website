@@ -11,5 +11,8 @@ module.exports = {
 		browser: true,
 		es2017: true,
 		node: true
-	}
+	},
+	"no-restricted-imports": ["error", {
+		"patterns": [".*"]
+	}],
 };
