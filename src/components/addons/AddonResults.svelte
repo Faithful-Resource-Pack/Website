@@ -6,6 +6,7 @@
     import { loadingStore, addonStore, resultStore, startStore } from "$stores/AddonStore";
 	import { onMount } from "svelte";
 	import { derived } from "svelte/store";
+	import AddonCard from "./AddonCard.svelte";
 
     addonStore.set(undefined)
     onMount(() => {
@@ -25,17 +26,20 @@
 
         return isResult ? result : addons;
     })
+
+    const sorted = derived(displayed, (d) => d?.sort((a,b) => a.name < b.name ? -1 : (a.name==b.name ? 0 : 1)))
 </script>
 
 <div class="card card-body">
     {#if $loadingStore }
         <div><Fa icon={faSpinner} spin /> { text_loading }</div>
-    {:else if $addonStore?.length === 0}
+    {:else if $addonStore?.length === 0 || $sorted === undefined}
         <div>{ text_addon_not_found }</div>
     {:else}
-        RESULTS HERE:
-        <div>
-            { JSON.stringify($displayed)}
+        <div class="res-grid-3">
+            {#each $sorted as addon}
+                <AddonCard addon={addon} />
+            {/each}
         </div>
     {/if}
 </div>

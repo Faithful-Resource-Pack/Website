@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Checkbox from "$components/common/checkbox.svelte";
 	import { searchStore, startStore } from "$stores/AddonStore";
-	import { derived } from "svelte/store";
 
     const text_categories = "Categories";
     const ALL = 'All';

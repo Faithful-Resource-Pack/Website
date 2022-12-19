@@ -68,6 +68,11 @@ button:enabled {
 	}
 }
 
+.title-image {
+	height: 100px;
+	filter: drop-shadow(0 0 7px rgba(0,0,0,0.6));
+	margin-right: 0.5rem;
+}
 .title {
 	font-size: 3.4rem;
 	margin: 2rem 0;
@@ -128,9 +133,16 @@ button:disabled {
 .card-body-thin {
 	padding: 0.8rem;
 }
+.img-card > .img-bottom {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
 .img-card > h3 {
 	position: absolute;
 	bottom: 0;
+}
+.img-card h3 {
 	margin: 8px;
 	color: rgba(255,255,255,0.9);
 	text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
@@ -194,6 +206,11 @@ button:disabled {
 
 .text-center {
 	text-align: center !important;
+}
+
+.middle > * {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 @keyframes btn_clicked {
