@@ -6,6 +6,15 @@ import { writable, derived, type Writable } from "svelte/store";
 type AddonStore = Array<Addon>|undefined;
 export let addonStore: Writable<AddonStore> = writable(undefined);
 
+export let authorStore = derived(addonStore, addons => {
+    if(addons === undefined) return undefined;
+
+    return addons.map(a => a.authors)
+        .flat()
+        .filter((e,i,a) => a.indexOf(e) === i)
+        .sort((a,b) => a.toLowerCase() < b.toLowerCase() ? -1 : (a.toLowerCase()==b.toLowerCase() ? 0 : 1))
+});
+
 let addonsLoading = (aS: AddonStore) => aS === undefined;
 export let loadingStore = derived(addonStore, addonsLoading);
 
@@ -46,7 +55,8 @@ export const checkboxChoices: CheckboxChoices = {
 export let searchStore = createJSONStore('ADDON_SEARCH', {
     categories: [],
     ...JSON.parse(JSON.stringify(checkboxChoices)), // deep copy
-    search: ''
+    search: '',
+    authors: []
 } as App.SearchAddonStore, writable => {
     const { subscribe, update } = writable;
     return {
@@ -77,7 +87,24 @@ export let searchStore = createJSONStore('ADDON_SEARCH', {
         toggleCategory: (category: string) => update(v => ({ ...v, categories:  toggleInArray(v.categories, category) })),
         toggleEdition: (edition: string)   => update(v => ({ ...v, editions:    toggleMin(v.editions, edition) })),
         toggleResolution: (res: string)    => update(v => ({ ...v, resolutions: toggleMin(v.resolutions, res) })),
-        setSearch: (search: string)        => update(v => ({ ...v, search }))
+        setSearch: (search: string)        => update(v => ({ ...v, search })),
+
+        allAuthorsSelected() {
+            return derived([writable, authorStore], ([s, choices]) => {
+                if(choices === undefined) return false;
+
+                let found = true;
+                let i = 0;
+                while(i < choices.length && found) {
+                    found = (s.authors || []).indexOf(choices[i]) !== -1
+                    i++;
+                }
+                return found;
+            })
+        },
+        clearAuthors: () => update(v => ({ ...v, authors: []})),
+        selectAllAuthors: (authors: string[]) => update(v => ({ ...v, authors})),
+        toggleAuthor: (author: string) => update(v => ({ ...v, authors: toggleInArray(v.authors || [], author)})),
     }
 })
 
@@ -117,6 +144,26 @@ export let resultStore = derived([startStore, searchStore, addonStore], ([start,
     if(search.search !== '') {
         const lc_search = search.search.toLowerCase();
         res = res.filter(a => a.name.toLowerCase().includes(lc_search))
+    }
+
+    //* authors
+    if(search.authors !== undefined && Array.isArray(search.authors)) {
+        if(search.authors.length > 0)
+        {
+            res = res.filter(a => {
+                let a_authors = a.authors as string[];
+    
+                let add = false;
+                let i = 0;
+                while(i < search.authors.length && !add)
+                {
+                    add = a_authors.includes(search.authors[i]);
+                    i++;
+                }
+    
+                return add;
+            })
+        }
     }
 
     //* categories

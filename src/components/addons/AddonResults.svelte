@@ -4,6 +4,7 @@
 		faSpinner
 	} from "@fortawesome/free-solid-svg-icons";
     import { loadingStore, addonStore, resultStore, startStore } from "$stores/AddonStore";
+	import { userNameStore } from "$stores/UserStore";
 	import { onMount } from "svelte";
 	import { derived } from "svelte/store";
 	import AddonCard from "./AddonCard.svelte";
@@ -14,6 +15,11 @@
             .then(res => res.json())
             .then(data => {
                 addonStore.set(data)
+            })
+        fetch('https://api.faithfulpack.net/v2/users/names')
+            .then(res => res.json())
+            .then(data => {
+                userNameStore.set(data)
             })
     })
 

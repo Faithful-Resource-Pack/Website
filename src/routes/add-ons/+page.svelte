@@ -4,6 +4,7 @@
 	import AddonSearch from "$components/addons/AddonSearch.svelte";
 	import AddonFavorites from "$components/addons/AddonFavorites.svelte";
 	import AddonSubmit from "$components/addons/AddonSubmit.svelte";
+	import AddonAuthors from "$components/addons/AddonAuthors.svelte";
 
     const text_title = 'Add-ons';
     const text_desc = `Customise your game experience!\nBrought to you by the community.`.replace('\n', '<br>');
@@ -32,6 +33,7 @@
     </div><div id="addon_content">
         <div id="addon_side">
             <AddonCategories />
+            <AddonAuthors />
             <AddonSubmit />
         </div><div id="addon_main">
             <div id="addon_search">

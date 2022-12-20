@@ -10,6 +10,14 @@ export function createStore<T, V>(key: string, default_value: T, parse: (v: stri
         initial = default_value;
     }
 
+    if(typeof initial == 'object' && !Array.isArray(initial))
+    {
+        Object.keys(default_value as object).forEach(key => {
+            if(!(key in (initial as object)))
+                (initial as Record<string, any>)[key] = (default_value as Record<string, any>)[key]
+        });
+    }
+
     const my_writable = writable(initial);
     my_writable.subscribe(v => {
         if (browser) {

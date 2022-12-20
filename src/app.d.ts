@@ -61,6 +61,7 @@ declare namespace App {
 		search: string,
 		categories: Array<string>;
 		editions: Array<string>,
-		resolutions: Array<string>
+		resolutions: Array<string>,
+		authors: Array<string>,
 	}
 }
