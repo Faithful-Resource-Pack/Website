@@ -98,7 +98,7 @@
 	}
 	span {
 		padding: 0.2rem 0.4rem;
-		border-radius: 3px;
+		border-radius: $border-radius;
 	}
 	.mobile {
 		display: none;

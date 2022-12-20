@@ -68,7 +68,7 @@
         background-color: hsla(0,0%,100%,.08);
         border: 1px solid hsla(0,0%,0%,.2);
         border-bottom: thin solid white;
-        border-radius: 4px 4px 0 0;
+        border-radius: 6px 6px 0 0;
         color: inherit;
         height: 44px;
         line-height: 20px;

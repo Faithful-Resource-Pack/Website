@@ -24,7 +24,7 @@
 <style lang="scss">
 	.outline {
 		background: #131313 url(/images/background/bg_light_background.png) repeat;
-		border-radius: 6px;
+		border-radius: $border-radius;
 		padding: 0.7rem;
 		overflow-x: auto;
 		margin-bottom: 2rem;
@@ -35,7 +35,7 @@
 	}
 	thead > tr {
 		background-color: #343a40;
-		border-radius: 12px;
+		border-radius: $border-radius;
 	}
 	th > p {
 		font-size: 20px;

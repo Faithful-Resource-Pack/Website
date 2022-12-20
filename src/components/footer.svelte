@@ -130,7 +130,7 @@ let year = new Date().getFullYear().toString();
         padding: .7em;
         background: transparent;
         border: none;
-        border-radius: 50%;
+        border-radius: $border-radius;
       }
     }
 

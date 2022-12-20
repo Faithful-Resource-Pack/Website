@@ -91,7 +91,7 @@
         & > img {
             height: 32px;
             width: 32px;
-            border-radius: 6px;
+            border-radius: $border-radius;
             margin-top  : 5px;
 
             & + img {

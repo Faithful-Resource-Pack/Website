@@ -126,7 +126,7 @@
 			font-size: 1.25rem;
 			background-color: transparent;
 			border: 1px solid rgb(128, 128, 128);
-			border-radius: 4px;
+			border-radius: $border-radius;
 
 			@media (max-width: 760px) {
 				display: block;

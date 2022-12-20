@@ -31,7 +31,7 @@
         background-position: center;
         background-size: cover;
         padding: 16px;
-        border-radius: 10px;
+        border-radius: $border-radius;
 
         display: flex;
         flex-direction: column;
@@ -58,7 +58,7 @@
             background: black;
             color: white;
             font-weight: 300;
-            border-radius: 10px;
+            border-radius: $border-radius;
             letter-spacing: 1.5px;
 
             &:last-child {
@@ -67,7 +67,7 @@
 
             a {
                 display: block;
-                border-radius: 10px;
+                border-radius: $border-radius;
                 width: 100%;
                 padding: 8px;
                 color: inherit;

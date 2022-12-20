@@ -1,16 +1,13 @@
 /* Variables and mixins declared here will be available in all other SCSS files */
 $primary: #007bff;
-$primary-dark: #0056b3;
 $primary-hover: #0069d9;
-$primary-hover-border: #0062cc;
 
 $text-dark-bg: #b4b4b4;
 $text-half-dark-bg: #b4b4b480;
 
 $blurple: #5865f2;
+$red: #f44336;
 
-$border-radius-0x: 6px;
-$border-radius-1x: 12px;
-$border-radius-2x: 24px;
+$border-radius: 6px;
 
 $card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
