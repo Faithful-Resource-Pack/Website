@@ -166,6 +166,9 @@
             max-width: 100%;
             font-size: 1.2rem;
             font-weight: 600;
+            @media only screen and (max-width: 992px) {
+                width: 100%;
+	        }
             a {
                 text-decoration: none;
             }
@@ -186,6 +189,7 @@
         max-width: 100%;
         margin: 0 auto;
         font-size: 0.8rem;
+        padding: 0 2rem;
     }
 
     .img-card > h3 {

@@ -91,6 +91,13 @@ button:disabled {
 
 .res-grid-3 {
 	grid-template-columns: repeat(3, 3fr);
+
+	@media only screen and (max-width: 992px) {
+		grid-template-columns: repeat(2, 2fr);
+	}
+	@media only screen and (max-width: 600px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
 .img-card {
@@ -119,8 +126,6 @@ button:disabled {
 }
 .card {
 	position: relative;
-	display: flex;
-	flex-direction: column;
 	min-width: 0;
 	word-wrap: break-word;
 	background-clip: border-box;
