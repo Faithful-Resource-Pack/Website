@@ -82,4 +82,24 @@
             flex-grow: 1;
         }
     }
+
+    @media only screen and (max-width: 992px) and (min-width: 600px) {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .card > div , .card li, .card > div > span {
+            display: flex;
+            align-items: center;
+            flex-basis: 30%;
+
+            & > *:first-child {
+                flex-basis: 60%;
+                flex-grow: 0;
+            }
+        }
+    }
 </style>

@@ -80,6 +80,9 @@
     }
     
     #addon_content {
+        display: flex;
+        flex-direction: row;
+        gap: $spacing;
 
         & > * {
             display: inline-block;
@@ -87,7 +90,7 @@
         }
 
         #addon_side {
-            width: 30%;
+            width: 25%;
             padding-right: $spacing;
 
             // how to style child component
@@ -100,10 +103,25 @@
             }
         }
         #addon_main {
-            width: 70%;
+            width: 75%;
 
             & > * {
                 margin-bottom: $spacing;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+        #addon_content {
+            flex-direction: column;
+
+            #addon_side {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            #addon_main {
+                width: 100%;
             }
         }
     }
