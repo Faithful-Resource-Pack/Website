@@ -18,12 +18,13 @@
         margin-top: 0.8rem;
         background: white;
         color: #D9AF00;
-        padding: 0.8rem;
         font-size: 1.1rem;
         font-weight: 600;
 
         a {
-            color: inherit
+            padding: 0.8rem;
+            color: inherit;
+            display: block;
         }
     }
 </style>
