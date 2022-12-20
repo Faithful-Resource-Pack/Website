@@ -11,3 +11,12 @@ $red: #f44336;
 $border-radius: 6px;
 
 $card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+// Extra small devices (phones, 600px and down)
+$width-XS: max-width 600px;
+// Small devices (portrait tablets and large phones, 768px and down)
+$width-S: max-width 768px;
+// Medium devices (landscape tablets, 992px and down)
+$width-M: max-width 992px;
+// Larger devices (small laptops / small desktops, 1200px and down)
+$width-L: max-width 1200px;
