@@ -235,6 +235,12 @@ button:disabled {
 	font-size: 25px;
 	font-weight: 500;
 
+	> a {
+		margin: -16px -28px;
+		padding: 16px 28px;
+		display: block;
+	}
+
 	a {
 		color: #fff;
 		text-decoration: underline;
