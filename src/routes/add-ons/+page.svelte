@@ -63,6 +63,7 @@
         }
     }
     #addon_header + * {
+        position: relative;
         min-height: $overflow;
     }
 
