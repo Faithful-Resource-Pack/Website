@@ -128,8 +128,6 @@
 </div><br>
 <a class="btn btn-dark col-6 center text-center" href="/news" id="more_news">{ SEE_MORE }</a>
 
-<div class="space_bottom"></div>
-
 <style lang="scss">
     $spacing: 2rem;
 

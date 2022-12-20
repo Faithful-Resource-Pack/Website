@@ -43,8 +43,6 @@
     </div>
 </div>
 
-<span class="space_bottom"></span>
-
 <style lang="scss">
     $overflow: 200px;
     $spacing: 12px;
@@ -94,6 +92,10 @@
             // how to style child component
             & :global( > *) {
                 margin-bottom: $spacing;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
         #addon_main {
