@@ -3,39 +3,64 @@
 	import type { UserName } from "$interfaces/user";
 	import { authorStore, searchStore, startStore } from "$stores/AddonStore";
 	import { userNameStore } from "$stores/UserStore";
-    import { derived } from "svelte/store"
+    import { derived } from "svelte/store";
+    import Select from 'svelte-select';
 
 	const text_all = "All";
 	const text_authors = "Authors";
 
 	const allChecked = searchStore.allAuthorsSelected();
-    const clear = () => searchStore.clearAuthors();
+    const clear = () => {
+        searchStore.clearAuthors();
+        startStore.startSearch();
+    }
 	const selectAll = () => {
         let authors = $authorStore;
         if(authors === undefined) return;
 		searchStore.selectAllAuthors(authors);
         startStore.startSearch();
 	};
-	const toggle = (category: string) => {
-		searchStore.toggleAuthor(category);
-        startStore.startSearch();
-	};
     
     const addonUsersStore = derived([authorStore, userNameStore], ([authors, userNames]) => {
-        if(authors === undefined || userNames === undefined) return undefined;
+        if(authors === undefined || userNames === undefined) return null;
 
         return (authors
             .map(a => [a, userNames.filter(u => u.id === a)[0]] as [string, UserName | undefined])
             .filter(e => e[1] !== undefined) as [string, UserName][])
             .map(e => [e[0],e[1].username])
             .filter(e => e[1] !== undefined)
-            .sort((a,b) => a[1].toLowerCase() < b[1].toLowerCase() ? -1 : (a[1].toLowerCase()==b[1].toLowerCase() ? 0 : 1));
+            .sort((a,b) => a[1].toLowerCase() < b[1].toLowerCase() ? -1 : (a[1].toLowerCase()==b[1].toLowerCase() ? 0 : 1))
+            .map(([id, username]) => ({ value: id, label: username }));
     });
+
+    const placeholder_author_select = 'Select authors';
+
+    const change = (val: { detail: {value: string, label: string }[] }) => {
+        if(!val.detail) {
+            clear();
+            return;
+        }
+        let detail = Array.isArray(val.detail) ? val.detail : [val.detail];
+        let ids = detail.map(d => d.value);
+        searchStore.selectAllAuthors(ids);
+        startStore.startSearch();
+    }
+
+    const searchUserValues = derived([searchStore, userNameStore], ([search, userNames]): {value: string, label: string }[] | undefined => {
+        if(userNames === undefined) return []
+
+        let res = ((search.authors || [])
+            .map(a => [a, userNames.filter(u => u.id === a)[0]] as [string, UserName | undefined])
+            .filter(e => e[1] !== undefined) as [string, UserName][])
+            .map(e => ({ value: e[0], label: e[1].username}))
+
+        return res.length ? res : undefined
+    })
 </script>
 
 {#if $addonUsersStore !== undefined}
 <div class="card card-body">
-	<div>
+	<div class="header">
 		<h3>{text_authors}</h3>
 
 		<span
@@ -46,14 +71,16 @@
 			<Checkbox value={$allChecked} />
 		</span>
 	</div>
-	<ul>
-		{#each $addonUsersStore as [author_id, author]}
-			<li on:click={() => toggle(author_id)} on:keypress={() => {}}>
-				<div class="label">{author}</div>
-				<Checkbox value={$searchStore.authors.includes(author_id)} />
-			</li>
-		{/each}
-	</ul>
+    {#if !$allChecked}
+        <div><Select
+            items={$addonUsersStore}
+            multiple searchable clearable
+            placeholder={placeholder_author_select}
+            --multi-select-padding=" 0 0 0 8px"
+            on:change={change} value={$searchUserValues}
+            on:clear={change}
+        /></div>
+    {/if}
 </div>
 {/if}
 <style lang="scss">
@@ -66,46 +93,37 @@
         padding-right: 5px;
     }
 
-    li, .label {
+    .label {
         cursor: pointer;
     }
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 10px 0 0;
-
-        max-height: 8.1rem;
-        overflow: auto;
-        background: #242424;
+    .card {
+        overflow: visible;
     }
 
-    .card > div , .card li, .card > div > span {
+    :global(.svelte-select) {
+        color: black;
+    }
+
+    :global(.svelte-select .indicators ) {
+        height: 40px;
+    }
+
+    :global(.svelte-select-list) {
+        z-index: 1000;
+        color: black;
+    }
+
+    .card > .header + * {
+        margin-top: .8rem;
+    }
+
+    .card > .header , .card > .header > span {
         display: flex;
         align-items: center;
 
         & > *:first-child {
             flex-grow: 1;
-        }
-    }
-
-    @media only screen and (max-width: 992px) and (min-width: 600px) {
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: flex-end;
-        }
-
-        .card > div , .card li, .card > div > span {
-            display: flex;
-            align-items: center;
-            flex-basis: 30%;
-
-            & > *:first-child {
-                flex-basis: 60%;
-                flex-grow: 0;
-            }
         }
     }
 </style>
