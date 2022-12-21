@@ -35,6 +35,11 @@
 
         display: flex;
         flex-direction: column;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 
     img {
