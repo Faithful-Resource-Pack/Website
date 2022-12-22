@@ -42,6 +42,7 @@
         }
         let detail = Array.isArray(val.detail) ? val.detail : [val.detail];
         let ids = detail.map(d => d.value);
+        searchStore.clearAuthors();
         searchStore.selectAllAuthors(ids);
         startStore.startSearch();
     }
@@ -77,7 +78,7 @@
             multiple searchable clearable
             placeholder={placeholder_author_select}
             --multi-select-padding=" 0 0 0 8px"
-            on:change={change} value={$searchUserValues}
+            on:input={change} value={$searchUserValues}
             on:clear={change}
         /></div>
     {/if}
