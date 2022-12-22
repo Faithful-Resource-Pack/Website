@@ -42,9 +42,9 @@
         </span>
     </div>
     <ul>
-        {#each Object.entries(CATEGORIES) as [category, text_category] }
+        {#each Object.entries(CATEGORIES).sort() as [category, text_category] }
             <li on:click={() => toggle(category) } on:keypress={() => {}}>
-                <div class="label">{ text_category[0].toUpperCase() + text_category.substring(1) }</div>
+                <div class="label">{ text_category }</div>
                 <Checkbox
                     value={$searchStore.categories.includes(category)}
                 />
@@ -59,9 +59,13 @@
         font-size: 1.5rem;
     }
 
+    li {
+        padding: 2px 0;
+    }
+
     .label {
-        font-size: 1.5rem;
         padding-right: 5px;
+        text-transform: capitalize;
     }
 
     li, .label {
