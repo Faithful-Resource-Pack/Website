@@ -101,8 +101,8 @@
 		box-shadow: 0 0 5px 0 #000;
 		padding: 10px;
 
-		@media (max-width: 760px) {
-			padding: 16px;
+		@media (max-width: $width-S) {
+			padding: $small-spacing;
 			display: flex;
 			flex-wrap: wrap;
 			align-items: center;
@@ -115,7 +115,7 @@
 
 		.nav-icon-mobile {
 			display: none;
-			@media (max-width: 760px) {
+			@media (max-width: $width-S) {
 				display: block;
 			}
 		}
@@ -128,7 +128,7 @@
 			border: 1px solid rgb(128, 128, 128);
 			border-radius: $border-radius;
 
-			@media (max-width: 760px) {
+			@media (max-width: $width-S) {
 				display: block;
 			}
 
@@ -148,7 +148,7 @@
 			align-items: center;
 			flex-basis: 100%;
 
-			@media (max-width: 760px) {
+			@media (max-width: $width-S) {
 				align-items: flex-start;
 				flex-direction: column;
 				padding-left: 0;
@@ -161,7 +161,7 @@
 			& > a {
 				transition: all 0.2s ease-out;
 
-				@media (max-width: 760px) {
+				@media (max-width: $width-S) {
 					display: none;
 				}
 
@@ -175,7 +175,7 @@
 				display: flex;
 				justify-content: center;
 
-				@media (max-width: 760px) {
+				@media (max-width: $width-S) {
 					width: 100%;
 					display: block;
 					padding: 8px 0;

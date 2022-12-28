@@ -35,7 +35,12 @@
 
         display: flex;
         flex-direction: column;
+        align-items: center;
         transition: all 0.2s ease;
+
+        & > ul {
+            align-self: stretch;
+        }
 
         &:hover {
             transform: scale(1.05);
@@ -44,10 +49,12 @@
 
     img {
         width: 256px;
+        max-width: 100%;
     }
 
     h1 {
         width: 256px;
+        max-width: 100%;
         text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
         flex-grow: 1;
     }

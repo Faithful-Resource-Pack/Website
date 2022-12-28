@@ -21,6 +21,8 @@ $width-M: 992px;
 // Larger devices (small laptops / small desktops, 1200px and down)
 $width-L: 1200px;
 
+$small-spacing: 16px;
+
 @mixin noselect {
 	cursor: pointer;
 	-webkit-user-select: none;

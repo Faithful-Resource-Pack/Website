@@ -13,11 +13,22 @@
     {/each}
 </div>
 
-<style>
+<style lang="scss">
     #packCardList {
         display: flex;
         gap: 30px;
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    @media (max-width: $width-XS) {
+        #packCardList {
+            padding: $small-spacing;
+            
+            :global( > *) {
+                width: 100%;
+            }
+            gap: $small-spacing;
+        }
     }
 </style>

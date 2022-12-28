@@ -198,4 +198,24 @@
         background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
         width: 100%;
     }
+
+    @media (max-width: $width-XS) {
+        #upspace {
+            display: none;
+        }
+        .highlight-wordmark {
+            margin-top: 2rem;
+        }
+        #posts, .highlight-section, .highlight-section h1, .highlight-section .banner.purple, #handy-guide {
+            padding-left: $small-spacing;
+            padding-right: $small-spacing;
+        }
+        #posts {
+            grid-gap: $small-spacing;
+        }
+        
+        #more_news {
+            width: calc(100% - 2*$small-spacing);
+        }
+    }
 </style>
