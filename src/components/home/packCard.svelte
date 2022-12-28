@@ -11,8 +11,11 @@
     $: styles = src.includes('cf') ? 'transform: scale(0.8)' : '';
 </script>
 
-<div class="pack-card" style="--bg: url({background})" >
-    <img src={src} alt={title} style={styles} />
+<div class="pack-card">
+    <div class="bg-container">
+        <img class="bg" src={background} alt={title} />
+    </div>
+    <img class="image" src={src} alt={title} style={styles} />
     <h1 class="text-center">{title}</h1>
 
     <ul>
@@ -32,22 +35,43 @@
         background-size: cover;
         padding: 16px;
         border-radius: $border-radius;
+        position: relative;
 
         display: flex;
         flex-direction: column;
         align-items: center;
-        transition: all 0.2s ease;
 
         & > ul {
             align-self: stretch;
         }
 
-        &:hover {
+        & > * {
+            position: relative;
+        }
+
+        &:hover .bg-container .bg {
             transform: scale(1.05);
         }
     }
 
-    img {
+    .bg-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: $border-radius;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.2s ease;
+        }
+    }
+
+    .image {
         width: 256px;
         max-width: 100%;
     }
