@@ -1,6 +1,6 @@
 <script>
 import Fa from "svelte-fa/src/fa.svelte";
-import { faGithub, faThemeco } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faInfoCircle,
   faScroll,
@@ -8,23 +8,36 @@ import {
   faComment,
   faGlobe,
   faSun,
-  faMoon
+  faMoon,
+  faCaretDown as faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
 
 let year = new Date().getFullYear().toString();
+
+let toggleThis = "";
+const TOGGLE_CLASS = " toggled";
+const toggle = function(arg) {
+  return () => {
+    toggleThis = toggleThis === arg ? '' : arg
+  }
+}
+
+// * i18n
+const text_lang = "Language";
+const text_theme = "Theme";
 </script>
 
 <footer class="footer">
   <div id="shadow"></div>
   <div class="footer-row">
-    <div class="footer-element">
+    <div id="wordmark-element" class="footer-element">
       <div class="footer-head">
         <a href="/"><img class="footer-wordmark" src="/images/branding/wordmark.png" alt="Faithful"></a>
       </div>
       <ul class="footer-content">
         <div class="btns">
-          <button disabled><Fa icon={faGlobe}/></button>
-          <button disabled><Fa icon={faMoon}/></button>
+          <button disabled><Fa icon={faGlobe}/><span class="mobile">{text_lang}</span></button>
+          <button disabled><Fa icon={faMoon}/><span class="mobile">{text_theme}</span></button>
         </div>
         <li></li>
         <li><a class="link" href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a></li>
@@ -34,8 +47,8 @@ let year = new Date().getFullYear().toString();
 
     
     <div class="footer-element">
-      <div class="footer-head">
-        <h3><Fa icon={faInfoCircle}/> Info</h3>
+      <div class={"footer-head" + (toggleThis === 'Info' ? TOGGLE_CLASS : '')} on:click={toggle('Info')} on:keypress={() => {}}>
+        <h3><Fa icon={faInfoCircle}/> Info <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
         <li><a href="/installation">Installation</a></li>
@@ -47,8 +60,8 @@ let year = new Date().getFullYear().toString();
     </div>
 
     <div class="footer-element">
-      <div class="footer-head">
-        <h3><Fa icon={faBook}/> Listings</h3>
+      <div class={"footer-head" + (toggleThis === 'Listings' ? TOGGLE_CLASS : '')} on:click={toggle('Listings')} on:keypress={() => {}}>
+        <h3><Fa icon={faBook}/> Listings <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
         <li><a href="https://www.curseforge.com/members/faithful_resource_pack/projects">CurseForge</a></li>
@@ -60,8 +73,8 @@ let year = new Date().getFullYear().toString();
     </div>
 
     <div class="footer-element">
-      <div class="footer-head">
-        <h3><Fa icon={faComment}/> Media</h3>
+      <div class={"footer-head" + (toggleThis === 'Media' ? TOGGLE_CLASS : '')} on:click={toggle('Media')} on:keypress={() => {}}>
+        <h3><Fa icon={faComment}/> Media <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
         <li><a href="https://twitter.com/FaithfulPack">Twitter</a></li>
@@ -73,8 +86,8 @@ let year = new Date().getFullYear().toString();
     </div>
 
     <div class="footer-element">
-      <div class="footer-head">
-        <h3><Fa icon = {faScroll}/> Resources</h3>
+      <div class={"footer-head" + (toggleThis === 'Resources' ? TOGGLE_CLASS : '')} on:click={toggle('Resources')} on:keypress={() => {}}>
+        <h3><Fa icon = {faScroll}/> Resources <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
         <li><a href="/news">News</a></li>
@@ -86,8 +99,8 @@ let year = new Date().getFullYear().toString();
     </div>
 
     <div class="footer-element">
-      <div class="footer-head">
-        <h3><Fa icon={faGithub}/> GitHub</h3>
+      <div class={"footer-head" + (toggleThis === 'GitHub' ? TOGGLE_CLASS : '')} on:click={toggle('GitHub')} on:keypress={() => {}}>
+        <h3><Fa icon={faGithub}/> GitHub <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
         <li><a href="https://github.com/Faithful-Resource-Pack">Faithful</a></li>
@@ -109,8 +122,18 @@ let year = new Date().getFullYear().toString();
   color: $text-dark-bg;
   position: relative;
 
+  @media (max-width: $width-S) {
+    padding: 16px;
+    text-align: center;
+  }
+
   &-trademark {
     text-align: center;
+    @media (max-width: $width-S) {
+      p {
+        margin-bottom: 0;
+      };
+    }
   }
 
   &-content {
@@ -121,6 +144,15 @@ let year = new Date().getFullYear().toString();
 
     > .btns {
       height: 3.6em;
+      @media (max-width: $width-S) {
+        display: block;
+        height: auto;
+        margin-bottom: 16px;
+
+        & + li {
+          display: none;
+        }
+      }
       display: flex;
       gap: 4px;
 
@@ -131,12 +163,19 @@ let year = new Date().getFullYear().toString();
         background: transparent;
         border: none;
         border-radius: $border-radius;
+
+        @media (max-width: $width-S) {
+          margin: -.7em 0;
+        }
       }
     }
 
     > li {
       height: 1.8em;
       display: flex;
+      @media (max-width: $width-S) {
+        display: block;
+      }
       white-space: nowrap;
 
       > a {
@@ -161,6 +200,13 @@ let year = new Date().getFullYear().toString();
 
     >:first-child {
       max-width: 240px;
+      @media (max-width: $width-S) {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: $width-XS) {
+      display: block;
     }
   }
 
@@ -172,6 +218,10 @@ let year = new Date().getFullYear().toString();
     justify-content: left;
     > a > img {
       max-width: 200px;
+    }
+
+    & > h3 :global(svg + svg) {
+      display: none;
     }
   }
 
@@ -204,4 +254,85 @@ let year = new Date().getFullYear().toString();
   height: 32px;
   width: 32px;
 }
+
+.mobile {
+  display: none;
+  @media (max-width: $width-XS) {
+    display: initial;
+  }
+}
+
+@media (max-width: $width-S) {
+  #wordmark-element .footer-head {
+    display: none;
+
+    & + * {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: $width-XS) {
+  .footer-content > .btns {
+    display: flex;
+    justify-content: center;
+
+    & > button {
+      display: flex;
+      align-items: center;
+      width: auto;
+
+      & :global(.svelte-fa) {
+        width: auto;
+      }
+
+      & .mobile {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+  #wordmark-element .footer-content {
+    display: block;
+  }
+
+  .footer-head {
+    @include noselect();
+
+    display: block;
+    height: auto;
+
+    & > h3 {
+      margin-top: 8px;
+      margin-bottom: 0;
+
+      & :global(svg + svg) {
+        display: inline !important;
+      }
+    }
+  }
+
+  :global(.footer-head.toggled + .footer-content) {
+    display: inline-block;
+
+    background: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0 1rem !important;
+    border-radius: 6px;
+    margin-top: 6px !important;
+
+    > li {
+      height: auto !important;
+      padding: 0.25rem 1.5rem;
+    }
+  }
+
+  :global(.footer-head.toggled) h3 :global(svg + svg) {
+    transform: rotate(180deg);
+  }
+
+  :global(.footer-content) {
+    display: none;
+  }
+}
+
 </style>
