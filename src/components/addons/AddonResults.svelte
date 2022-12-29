@@ -35,10 +35,13 @@
     const sorted = derived(displayed, (d) => d?.sort((a,b) => a.name < b.name ? -1 : (a.name==b.name ? 0 : 1)))
 </script>
 
+{#if $loadingStore }
 <div class="card card-body">
-    {#if $loadingStore }
-        <div><Fa icon={faSpinner} spin /> { text_loading }</div>
-    {:else if $addonStore?.length === 0 || $sorted === undefined}
+    <div><Fa icon={faSpinner} spin /> { text_loading }</div>
+</div>
+{:else}
+<div id="results" class="card card-body">
+    {#if $addonStore?.length === 0 || $sorted === undefined}
         <div>{ text_addon_not_found }</div>
     {:else}
         <div class="res-grid-3">
@@ -48,3 +51,16 @@
         </div>
     {/if}
 </div>
+{/if}
+
+<style lang="scss">
+    @media(max-width: $width-XS) {
+        #results {
+            @include transparent;
+
+            > div.res-grid-3 {
+                grid-gap: $small-spacing;
+            }
+        }
+    }
+</style>

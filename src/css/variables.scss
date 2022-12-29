@@ -30,3 +30,9 @@ $small-spacing: 16px;
 	-ms-user-select: none;
 	user-select: none;
 }
+
+@mixin transparent {
+	background: none !important;
+	box-shadow: none !important;
+	padding: 0 !important;
+}
