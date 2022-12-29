@@ -20,6 +20,7 @@
 		searchStore.selectAllAuthors(authors);
         startStore.startSearch();
 	};
+    const floatingConfig = {autoUpdate: true}; // auto update size on results and scroll
     
     const addonUsersStore = derived([authorStore, userNameStore], ([authors, userNames]) => {
         if(authors === undefined || userNames === undefined) return null;
@@ -80,6 +81,7 @@
             --multi-select-padding=" 0 0 0 8px"
             on:input={change} value={$searchUserValues}
             on:clear={change}
+            {floatingConfig}
         /></div>
     {/if}
 </div>
