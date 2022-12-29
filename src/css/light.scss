@@ -1,3 +1,5 @@
+html.light {
+
 .background {
 	background: #eeede5 url("/images/background/bg_light_background.png") repeat;
 }
@@ -11,9 +13,6 @@ main {
 .card {
 	background: #eeede5 url("/images/background/bg_light_background.png") repeat;
 }
-/*#topNavbar.fixed {
-	background: #EEEDE5 url("/images/background/bg_light_background.png");
-}*/
 .navbar, body {
 	background: #eeede5 url("/images/background/bg_light_background.png");
 }
@@ -47,4 +46,6 @@ input {
 
 .advice {
 	color: #212529;
+}
+
 }

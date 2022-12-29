@@ -9,8 +9,12 @@ import {
   faGlobe,
   faSun,
   faMoon,
+  faCircleHalfStroke,
   faCaretDown as faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
+
+import { themeStore } from "$stores/ThemeStore";
+import { derived } from "svelte/store";
 
 let year = new Date().getFullYear().toString();
 
@@ -24,7 +28,13 @@ const toggle = function(arg) {
 
 // * i18n
 const text_lang = "Language";
-const text_theme = "Theme";
+
+const text_theme = derived(themeStore, v => (v[0].toUpperCase() + v.substring(1) + " Theme"));
+const icon_theme = derived(themeStore, v => {
+  if(v === 'auto') return faCircleHalfStroke
+  else if(v === 'dark') return faMoon
+  else return faSun
+})
 </script>
 
 <footer class="footer">
@@ -36,10 +46,12 @@ const text_theme = "Theme";
       </div>
       <ul class="footer-content">
         <div class="btns">
-          <button disabled><Fa icon={faGlobe}/><span class="mobile">{text_lang}</span></button>
-          <button disabled><Fa icon={faMoon}/><span class="mobile">{text_theme}</span></button>
+          <button disabled><Fa icon={faGlobe}/><span>{text_lang}</span></button>
+          <!-- focus trick to reenable focus css animation -->
+          <button on:click={themeStore.next} on:focus={(e) => setTimeout(() => e.target.blur(), 200)}>
+            <Fa icon={$icon_theme}/><span>{$text_theme}</span>
+          </button>
         </div>
-        <li></li>
         <li><a class="link" href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a></li>
         <li>&copy; { year } Faithful Resource Pack</li>
       </ul>
@@ -122,7 +134,7 @@ const text_theme = "Theme";
   color: $text-dark-bg;
   position: relative;
 
-  @media (max-width: $width-S) {
+  @media (max-width: $width-XS) {
     padding: 16px;
     text-align: center;
   }
@@ -141,34 +153,6 @@ const text_theme = "Theme";
     padding: 0;
     margin: 0;
     margin-top: 1em;
-
-    > .btns {
-      height: 3.6em;
-      @media (max-width: $width-S) {
-        display: block;
-        height: auto;
-        margin-bottom: 16px;
-
-        & + li {
-          display: none;
-        }
-      }
-      display: flex;
-      gap: 4px;
-
-      > button {
-        height: 3.6em;
-        width: 3.6em;
-        padding: .7em;
-        background: transparent;
-        border: none;
-        border-radius: $border-radius;
-
-        @media (max-width: $width-S) {
-          margin: -.7em 0;
-        }
-      }
-    }
 
     > li {
       height: 1.8em;
@@ -250,44 +234,69 @@ const text_theme = "Theme";
   }
 }
 
-.mobile {
-  display: none;
-  @media (max-width: $width-XS) {
-    display: initial;
-  }
-}
+#wordmark-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-@media (max-width: $width-S) {
-  #wordmark-element .footer-head {
-    display: none;
+  .footer-content {
+    margin-top: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 
-    & + * {
-      margin-top: 0;
+    .btns {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      > button {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: none;
+        border-radius: $border-radius;
+
+        &:hover {
+          backdrop-filter: none;
+        }
+
+        & :global(.svelte-fa) {
+          width: 26px;
+          height: 26px !important;
+        }
+
+        > span {
+          margin-left: 0.5rem;
+          font-weight: 600;
+          font-size: 1.2em;
+        }
+      }
     }
   }
 }
 
 @media (max-width: $width-XS) {
-  .footer-content > .btns {
-    display: flex;
-    justify-content: center;
+  #wordmark-element {
+    .footer-content > .btns {
+      flex-direction: row;
+      justify-content: center;
+      margin: -$small-spacing;
+      margin-bottom: 0;
 
-    & > button {
-      display: flex;
-      align-items: center;
-      width: auto;
-
-      & :global(.svelte-fa) {
-        width: auto;
-      }
-
-      & .mobile {
-        margin-left: 0.5rem;
+      button {
+        padding: $small-spacing;
+        justify-content: center;
       }
     }
-  }
-  #wordmark-element .footer-content {
-    display: block;
+    .footer-wordmark {
+      display: none;
+    }
+    .footer-content {
+      display: block;
+    }
   }
 
   .footer-head {

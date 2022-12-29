@@ -1,3 +1,5 @@
+@use "dark.scss";
+
 body {
 	margin: 0;
 	background-color: rgba(0, 0, 0, 0.5);
@@ -72,6 +74,14 @@ button:enabled {
 .title {
 	font-size: 3.4rem;
 	margin: 2rem 0;
+}
+
+.mobile {
+	display: none;
+
+	@media (max-width: $width-XS) {
+		display: initial;
+	}
 }
 
 button:disabled {
