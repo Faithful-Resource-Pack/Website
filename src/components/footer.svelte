@@ -250,11 +250,6 @@ const text_theme = "Theme";
   }
 }
 
-#globe {
-  height: 32px;
-  width: 32px;
-}
-
 .mobile {
   display: none;
   @media (max-width: $width-XS) {
