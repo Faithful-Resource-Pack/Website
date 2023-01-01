@@ -30,7 +30,7 @@
 
 <div class="card card-body">
     <div class="text-center">Search</div>
-    <div id="checkboxes">
+    <div class="checkboxes">
         {#each $checkboxes as checkbox}
             <Checkbox
                 value={checkbox.checked}
@@ -40,7 +40,7 @@
                 />
         {/each}
     </div>
-    <form id="searchbox" on:submit|preventDefault={search}>
+    <form on:submit|preventDefault={search}>
         <Input
             type="search"
             placeholder={placeholder_searchbox}
@@ -54,11 +54,20 @@
 </div>
 
 <style lang="scss">
-    #checkboxes {
+    .checkboxes {
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
         text-align: center;
         margin: 20px 0;
+
+        @media (max-width: 400px) {
+            > :global(.checkbox) {
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 10px;
+                align-items: center;
+            }
+        }
     }
 </style>
