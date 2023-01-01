@@ -32,7 +32,7 @@
             <Fa icon={$favoriteStore.favorites.includes(String(addon.id)) ? faXmark : faStar } size="1x" translateY={-0.2} />
         </span>
         <img
-			src={`https://database.faithfulpack.net/images/addons/${ addon.slug }/header`}
+			src={`https://database.faithfulpack.net/images/addons/${ addon.slug }/header?w=570`}
 			loading="lazy"
             alt={addon.name}
 		/>
