@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-select": "^5.0.2"
+		"svelte-select": "^5.0.2",
+		"sveltekit-i18n": "^2.2.2"
 	}
 }

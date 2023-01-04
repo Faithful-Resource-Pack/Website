@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
 import Fa from "svelte-fa/src/fa.svelte";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { t, locale, locales, loadTranslations } from '$lib/translations';
 import {
   faInfoCircle,
   faScroll,
@@ -15,12 +16,13 @@ import {
 
 import { themeStore } from "$stores/ThemeStore";
 import { derived } from "svelte/store";
+	import { langStore } from "$stores/LangStore";
 
 let year = new Date().getFullYear().toString();
 
 let toggleThis = "";
 const TOGGLE_CLASS = " toggled";
-const toggle = function(arg) {
+const toggle = function(arg: string) {
   return () => {
     toggleThis = toggleThis === arg ? '' : arg
   }
@@ -35,6 +37,14 @@ const icon_theme = derived(themeStore, v => {
   else if(v === 'dark') return faMoon
   else return faSun
 })
+
+export const load = async ({ url }) => {
+  const { pathname } = url;
+  const defaultLocale = 'en'; // get from cookie / user session etc...
+  const initLocale = locale.get() || defaultLocale; 
+  await loadTranslations(initLocale, pathname); // keep this just before the `return`
+  return {};
+}
 </script>
 
 <footer class="footer">
@@ -46,8 +56,11 @@ const icon_theme = derived(themeStore, v => {
       </div>
       <ul class="footer-content">
         <div class="btns">
-          <button disabled><Fa icon={faGlobe}/><span>{text_lang}</span></button>
-          <!-- focus trick to reenable focus css animation -->
+          
+          <button disabled on:click={langStore.next} on:focus={(e) => setTimeout(() => e.target.blur(), 200)}>
+            <Fa icon={faGlobe}/><span>{$t($locale)}</span>
+          </button>
+
           <button on:click={themeStore.next} on:focus={(e) => setTimeout(() => e.target.blur(), 200)}>
             <Fa icon={$icon_theme}/><span>{$text_theme}</span>
           </button>

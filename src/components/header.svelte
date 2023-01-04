@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from "svelte";
+	import { t } from "$lib/translations";
 	import Fa from "svelte-fa/src/fa.svelte";
 	import {
 		faHouse,
@@ -9,6 +9,7 @@
 		faImages,
 		faCircleQuestion
 	} from "@fortawesome/free-solid-svg-icons";
+
 
 	function toggleMenu() {
 		document.getElementsByClassName("navbar-nav")[0].classList.toggle("show");
@@ -41,21 +42,21 @@
 			<div class="nav-item">
 				<a class="nav-link" href="/">
 					<Fa icon={faHouse} />
-					Home
+					{ $t('header.home') }
 				</a>
 			</div>
 
 			<div class="nav-item">
 				<a class="nav-link" href="/downloads">
 					<Fa icon={faDownload} />
-					Downloads
+					{ $t('header.downloads') }
 				</a>
 			</div>
 
 			<div class="nav-item">
 				<a class="nav-link" href="/add-ons">
 					<Fa icon={faPlus} />
-					Add-ons
+					{ $t('header.addons') }
 				</a>
 			</div>
 
@@ -70,21 +71,21 @@
 			<div class="nav-item">
 				<a class="nav-link" href="/modding">
 					<Fa icon={faWrench} />
-					Modding
+					{ $t('header.modding') }
 				</a>
 			</div>
 
 			<div class="nav-item">
 				<a class="nav-link" href="/gallery">
 					<Fa icon={faImages} />
-					Gallery
+					{ $t('header.gallery') }
 				</a>
 			</div>
 
 			<div class="nav-item">
 				<a class="nav-link" href="/about">
 					<Fa icon={faCircleQuestion} />
-					About
+					{ $t('header.about') }
 				</a>
 			</div>
 		</div>
@@ -171,7 +172,7 @@
 			}
 
 			.nav-item {
-				width: 125px;
+				min-width: 125px;
 				display: flex;
 				justify-content: center;
 

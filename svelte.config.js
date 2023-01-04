@@ -10,10 +10,11 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-        alias: {
-            $components: path.resolve('./src/components'),
-            $stores: path.resolve('./src/stores')
-        }
+		alias: {
+			$components: path.resolve("./src/components"),
+			$stores: path.resolve("./src/stores"),
+			$locales: path.resolve("./src/locales")
+		}
 	},
 
 	preprocess: [

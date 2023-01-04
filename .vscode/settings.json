@@ -13,5 +13,12 @@
         "**/.settings": true,
         "**/.factorypath": true,
         "**/node_modules": true
-    }
+    },
+    "cSpell.words": [
+        "cpath",
+        "csvg",
+        "fortawesome",
+        "mdsvex",
+        "sveltekit"
+    ]
 }

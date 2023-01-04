@@ -12,28 +12,33 @@
 			"$src": [
 				"src/"
 			],
-			"$stores":[
+			"$stores": [
 				"src/stores"
 			],
-			"$stores/*":[
+			"$stores/*": [
 				"src/stores/*"
 			],
-			"$lib":[
+			"$lib": [
 				"src/lib"
 			],
-			"$lib/*":[
+			"$lib/*": [
 				"src/lib/*"
 			],
-			"$components/*":[
+			"$components/*": [
 				"src/components/*"
 			],
-			"$interfaces/*":["src/interfaces/*"]
+			"$interfaces/*": [
+				"src/interfaces/*"
+			],
+			"$locales/*": [
+				"src/locales/*"
+			],
 		},
 		"rootDirs": [
 			"."
 		],
 	},
-    "exclude": [
-        "./src/routes/layout.svelte"
-    ]
+	"exclude": [
+		"./src/routes/layout.svelte"
+	]
 }
