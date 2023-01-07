@@ -112,6 +112,12 @@ Vue.component('local-download', {
       ResourcePackCreator.packVersions = this.$root.versions
       ResourcePackCreator.zipOptions = this.$root.$refs.zipOptions.zipOptions
       ResourcePackCreator.downloadLocally(this.modSelection, forceDownload, this.logHandler)
+      .catch(err => {
+        this.logHandler({
+          step: 0,
+          message: err
+        })
+      })
     },
     downloadWithWorker: function (modSelection, forceDownload, logListener) {
       // terminate (or re-terminate old worker)

@@ -127,6 +127,13 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       this.versions = json
     })
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      retryAxios.attach(axios, {
+        retries: 5,
+        retryDelay: () => 3000
+      })
+    })
 
     this.getDataFromDB()
   }

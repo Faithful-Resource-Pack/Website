@@ -2,7 +2,7 @@
 
 var window = self
 
-importScripts('../core/MinecraftUtils.js', '../core/ResourcePackCreator.js', '../../axios.min.js', '../jszip.min.js', 'https://cdn.jsdelivr.net/npm/idb@6.1.5/build/iife/index-min.js')
+importScripts('../core/MinecraftUtils.js', '../core/ResourcePackCreator.js', '../../axios.min.js', '../jszip.min.js', 'https://cdn.jsdelivr.net/npm/idb@6.1.5/build/iife/index-min.js', 'https://unpkg.com/retry-axios@2.4.0/dist/index.umd.js')
 
 const sendMessage = function (type, content) {
   postMessage({
@@ -17,6 +17,11 @@ self.addEventListener('message', ev => {
   let modSelection, canPack
   switch (message.channel) {
     case 'createPack':
+      retryAxios.attach(axios, {
+        retries: 5,
+        retryDelay: () => 500
+      })
+
       modSelection = message.data.modSelection
 
       canPack = ResourcePackCreator.canPackMods(modSelection)
@@ -28,6 +33,9 @@ self.addEventListener('message', ev => {
 
       ResourcePackCreator.downloadLocally(modSelection, message.data.forceDownload, function (log) {
         sendMessage('log', log)
+      })
+      .catch((err) => {
+        sendMessage('log', err)
       })
 
       break

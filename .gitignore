@@ -9,3 +9,4 @@ debug.log
 node_modules/
 .env
 firestorm
+.svelte-kit

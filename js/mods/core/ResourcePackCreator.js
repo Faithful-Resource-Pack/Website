@@ -1,8 +1,85 @@
 /* eslint new-cap: 0 */
-/* global MinecraftUtils, axios, idb, JSZip, fetch */
+/* global MinecraftUtils, axios, idb, JSZip, axiosRetry, fetch */
 
 const PATH_PACK_PNG = 'https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png'
 const MCMETA_DESCRIPTION = 'Faithful Mods'
+
+/**
+ * Resolves after delay
+ * @param {number} delay 
+ * @param {T|undefined} value 
+ * @returns {Promise<T|undefined>}
+ * @template T
+ */
+Promise.sleep = function(delay, value = undefined) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(value)
+        }, delay)
+    })
+}
+
+/**
+ * @callback PromiseCallback
+ * @returns {Promise<any>}
+ */
+
+/**
+ * Executes promises one after the others
+ * @param {Array<PromiseCallback>} arr Promise array
+ * @param {number} throttle Throttle  in ms
+ * @param {number} delay Delay in ms
+ * @param {any[]} results Promise results
+ * @returns {Promise<any[]>} all results if successful
+ */
+Promise.throttle = function(arr, throttle, delay, results = []) {
+    if(arr.length === 0)
+        return results;
+
+    const start = new Date().getTime();
+    const one = arr.shift();
+
+    return one()
+    .then((res) => {
+        let end = new Date().getTime();
+        let duration = end - start;
+        return Promise.sleep(duration < throttle ? Math.min(throttle - duration, delay) : delay, res)
+    })
+    .then((res) => {
+        results.push(res)
+        return Promise.throttle(arr, throttle, delay, results)
+    })
+}
+
+/**
+ * This callback is displayed as part of the Requester class.
+ * @callback LogCallback
+ * @param {{ step: number, message: string }} logMessage
+ */
+
+/**
+ * @typedef ModResponse
+ * @type {object}
+ * @property {Blob} response Response data
+ */
+
+/**
+ * @typedef Mod Mod data object
+ * @type {object}
+ * @property {string} displayName 
+ * @property {string} name 
+ * @property {string} repositoryURL 
+ * @property {string} version 
+ */
+
+/**
+ * @typedef ModSelection Mod selection
+ * @type {object}
+ * @property {string} name Mod name
+ * @property {string} displayName Mod displayed name
+ * @property {string} repositoryURL Mod github repo URL
+ * @property {string} version mod minecraft version
+ */
 
 const ResourcePackCreator = { // eslint-disable-line no-unused-vars
   packVersions: Array[String],
@@ -12,6 +89,11 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
   zipOptions: undefined,
   fullPackageVersion: undefined,
 
+  /**
+   * Gives package version based on mod selection
+   * @param {Array<ModSelection>} modSelection 
+   * @return {number|undefined} package version or undefined
+   */
   modPackageVersion: function (modSelection) {
     // you can pack mods if they have the same package version number
     // (list of package number must not change)
@@ -38,6 +120,11 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     return versionChanged ? undefined : currentPackageVersion
   },
 
+  /**
+   * Gives package veriosn based on minecraft version
+   * @param {string} modVersion Mod minecraft version
+   * @returns {number} mod package version
+   */
   packageVersion: function (modVersion) {
     const numbers = MinecraftUtils.minecraftVersionToNumberArray(modVersion)
 
@@ -94,6 +181,12 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     }
   },
 
+  /**
+   * Tells whether the pack can be made or not
+   * @param {ModSelection[]} modSelection Given mod selection array
+   * @param {number | undefined} modPackageVersion optional found mod package version
+   * @returns {boolean} Allowed to make a pack
+   */
   canPackMods: function (modSelection, modPackageVersion = undefined) {
     if (modSelection) {
       return this.modPackageVersion(modSelection) !== undefined
@@ -102,65 +195,84 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     return modPackageVersion !== undefined
   },
 
+  /**
+   * Sends request and saves result to db
+   * @param {Mod} mod Mod object
+   * @returns {Promise<ModResponse>}
+   */
   requestDownloadMod: function (mod) {
-    return new Promise((resolve, reject) => {
-      axios({
-        url:
-          'https://api.allorigins.win/raw?url=' + mod.repositoryURL + '/archive/' + mod.version + '.zip',
-        method: 'GET',
-        responseType: 'blob' // important
-      })
-        .then(res => {
-          const fileKey = this.fileKey(mod)
-
-          this.database.delete(this.storeName, fileKey).then(() => {
-            this.database.put(this.storeName, res.data, fileKey)
-          })
-
-          resolve(res)
-        })
-        .catch(error => {
-          reject(error)
-        })
+    return axios({
+      url:
+        'https://api.allorigins.win/raw?url=' + mod.repositoryURL + '/archive/' + mod.version + '.zip',
+      method: 'GET',
+      responseType: 'blob' // important
     })
+      .then(res => {
+        const fileKey = this.fileKey(mod)
+
+        this.database.delete(this.storeName, fileKey).then(() => {
+          this.database.put(this.storeName, res.data, fileKey)
+        })
+
+        return res
+      })
   },
 
   fileKey: function (mod) {
     return mod.name + '-' + mod.version
   },
 
-  getMod: function (mod, forceDownlaod = false, logListener = function () {}) {
-    if (forceDownlaod) { return this.requestDownloadMod(mod) }
+  /**
+   * 
+   * @param {*} mod Mod object
+   * @param {boolean} forceDownload Force Mod download
+   * @param {LogCallback} logListener 
+   * @returns {Promise<ModResponse>} Mod downloaded or loaded
+   */
+  getMod: function (mod, forceDownload = false, logListener = function () {}) {
+    if (forceDownload) { return this.requestDownloadMod(mod) }
 
+    // only proceed if database loaded
     if (typeof this.database === 'object' && 'get' in this.database) {
-      return new Promise((resolve, reject) => {
-        const fileKey = this.fileKey(mod)
+      const fileKey = this.fileKey(mod)
 
-        this.database.get(this.storeName, fileKey).then(res => {
-          logListener({
-            step: 2,
-            message: 'Already downloaded ' + mod.displayName + ' v' + mod.version + ' in cache'
-          })
-          if (!res) { this.requestDownloadMod(mod).then(resolve).catch(reject) } else { resolve({ data: res }) }
-        }).catch(() => {
-          this.requestDownloadMod(mod).then(resolve).catch(reject)
+      return this.database.get(this.storeName, fileKey).then(res => {
+        logListener({
+          step: 0,
+          message: 'Already downloaded ' + mod.displayName + ' v' + mod.version + ' in cache'
         })
+
+        if(res) {
+          return Promise.resolve({ data: res })
+        }
+
+        // fallback on catch
+        return Promise.reject('Download required')
+      }).catch(() => {
+        return this.requestDownloadMod(mod)
       })
     } else {
       return this.requestDownloadMod(mod)
     }
   },
 
+  /**
+   * 
+   * @param {Array<ModSelection>} modSelection Mods selected
+   * @param {boolean} forceDownload Force remote download
+   * @param {LogCallback} logListener callback listener
+   * @returns {Promise<void>}
+   */
   downloadLocally: function (modSelection, forceDownload = false, logListener = function () {}) {
+    // database not loaded yet
     if (!this.database) {
-      this.databasePromise.then(() => {
-        this.downloadLocally(modSelection, forceDownload, logListener)
+      return this.databasePromise.then(() => {
+        return this.downloadLocally(modSelection, forceDownload, logListener)
       })
-
-      return
     }
 
-    if (!this.storeName || !this.zipOptions || modSelection.length === 0) return
+    if (!this.storeName || !this.zipOptions) return Promise.reject('Elements missing')
+    if(modSelection.length === 0) return Promise.resolve() // successfully finished doing nothing
 
     // create final zip
     const finalZip = new JSZip()
@@ -168,86 +280,111 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     const promises = []
 
     modSelection.forEach(mod => {
-      logListener({
-        step: 0,
-        message: 'Downloading ' + mod.displayName + ' v' + mod.version + '...'
-      })
 
-      promises.push(this.getMod(mod, forceDownload, logListener))
+      promises.push(() => {
+        logListener({
+          step: 0,
+          message: 'Downloading ' + mod.displayName + ' v' + mod.version + '...'
+        })
+        return this.getMod(mod, forceDownload, logListener)
+      })
     })
 
     let success = 0
-    Promise.all(promises).then((values) => {
-      this.currentStep = 1
-      values.forEach((res, index) => {
-        logListener({
-          step: 1,
-          message: 'Extracting ' + modSelection[index].displayName + ' into final zip'
-        })
-        if (res.data.type === 'text/xml') {
-          console.warn(modSelection[index])
-        }
-
-        const fileKey = this.fileKey(modSelection[index])
-
-        // load this pack
-        const zip = new JSZip()
-
-        zip.loadAsync(res.data)
-          .then((zip) => {
-            const keys = Object.keys(zip.files)
-
-            let newName
-            for (let i = 0; i < keys.length; ++i) {
-              newName = keys[i].replace(fileKey + '/', '')
-
-              if (newName.trim() !== '') {
-                finalZip.files[newName] = zip.files[keys[i]]
-                finalZip.files[newName].name = newName
+    return Promise.throttle(promises, 3000, 20).then((values) => {
+      return new Promise((resolve, reject) => {
+        this.currentStep = 1
+        values.forEach((res, index) => {
+          logListener({
+            step: 1,
+            message: 'Extracting ' + modSelection[index].displayName + ' into final zip'
+          })
+          if (res.data.type === 'text/xml') {
+            console.warn(modSelection[index])
+          }
+  
+          const fileKey = this.fileKey(modSelection[index])
+  
+          // load this pack
+          const zip = new JSZip()
+  
+          zip.loadAsync(res.data)
+            .then((zip) => {
+              const keys = Object.keys(zip.files)
+  
+              let newName
+              for (let i = 0; i < keys.length; ++i) {
+                newName = keys[i].replace(fileKey + '/', '')
+  
+                if (newName.trim() !== '') {
+                  finalZip.files[newName] = zip.files[keys[i]]
+                  finalZip.files[newName].name = newName
+                }
               }
-            }
-
-            ++success
-            // if all archives have been successfully added
-            if (success === modSelection.length) {
-              logListener({
-                step: 2,
-                message: 'Inserting pack.png and pack.mcmeta into final zip'
-              })
-
-              fetch(PATH_PACK_PNG).then(packImage => {
-                return packImage.blob()
-              }).then(packImageBlob => {
-                finalZip.file('pack.png', packImageBlob, { blob: true })
-
-                finalZip.file('pack.mcmeta', `{"pack": {"pack_format": ${this.fullPackageVersion}, "description": "${MCMETA_DESCRIPTION}"}}`)
-
+  
+              ++success
+              // if all archives have been successfully added
+              if (success === modSelection.length) {
                 logListener({
                   step: 2,
-                  message: 'Zipping...'
+                  message: 'Inserting pack.png and pack.mcmeta into final zip'
                 })
-
-                finalZip.generateAsync(this.zipOptions, metadata => {
+  
+                fetch(PATH_PACK_PNG).then(packImage => {
+                  return packImage.blob()
+                }).then(packImageBlob => {
+                  finalZip.file('pack.png', packImageBlob, { blob: true })
+  
+                  finalZip.file('pack.mcmeta', `{"pack": {"pack_format": ${this.fullPackageVersion}, "description": "${MCMETA_DESCRIPTION}"}}`)
+  
                   logListener({
                     step: 2,
-                    message: metadata.percent.toFixed(2)
+                    message: 'Zipping...'
                   })
-                }).then(blob => {
-                  logListener({
-                    step: 3,
-                    message: blob
+  
+                  finalZip.generateAsync(this.zipOptions, metadata => {
+                    logListener({
+                      step: 2,
+                      message: metadata.percent.toFixed(2)
+                    })
+                  }).then(blob => {
+                    logListener({
+                      step: 3,
+                      message: blob
+                    })
+
+                    resolve() // * SUCCESS
+                  }).catch(err => {
+                    console.error(err)
+                    reject(err)
                   })
-                }, err => {
-                  console.error(err)
                 })
-              })
-            }
-          }).catch(err => {
-            console.error('request', err)
-          })
+                .catch(reject)
+                return
+              }
+            }).catch(reject)
+        })
       })
-    }).catch(reason => {
-      console.error(reason)
+    }).catch((...args) => {
+      console.error(...args)
+      const error = args[0]
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        // The request was made but no response was received
+        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        // http.ClientRequest in node.js
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+      return Promise.reject(...args)
     })
   },
 
