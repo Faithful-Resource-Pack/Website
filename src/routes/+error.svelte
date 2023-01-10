@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import { derived, writable } from "svelte/store";
+	import Header from "$components/header.svelte";
+	import Footer from "$components/footer.svelte";
 
 	const notFound = derived(page, (p) => p.status === 404);
 	const title = derived(notFound, (n) => (n ? "Are you lost in The End?" : $page.status));
@@ -97,6 +99,8 @@
 	<link rel="preload" as="image" href="/images/404/tnt_side_on.png" />
 </svelte:head>
 
+<Header />
+
 <div>
 	<div class="text-center">
 		<h1>{$title}</h1>
@@ -125,6 +129,8 @@
 		<img id="explosion" class:hidden={!$tnt.explosionShow} src={$tnt.explosionStep} alt="Boom" />
 	</div>
 {/if}
+
+<Footer />
 
 <!-- Only way to import scss for specific page on +error.svelte page -->
 {#if err}
