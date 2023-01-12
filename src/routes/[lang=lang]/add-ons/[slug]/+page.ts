@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import { parse } from 'marked';
  
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }) {
@@ -19,7 +20,7 @@ export async function load({ fetch, params }) {
         name: addonData.name,
         slug: addonData.slug,
         image: header,
-        description: addonData.description,
+        description: await parse(addonData.description),
         information: addonData.options,
         downloads: fileData
     };

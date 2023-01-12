@@ -63,7 +63,7 @@
         <div class="addon-details-right">
             <img class="addon-header" src="https://database.faithfulpack.net/images/addons/{data.slug}/header" alt="{data.name} header">
             <div class="card card-body addon-description">
-                <p align="justify">{data.description}</p>
+                {@html data.description}
             </div>
         </div>
     </div>
