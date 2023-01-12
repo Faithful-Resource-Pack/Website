@@ -3,12 +3,8 @@
     export let data;
 </script>
 
-<svelte:head>
-    <title>Addon: {data.title} - Faithful</title>
-</svelte:head>
-
 <div class="container">
-    <h1 class="text-center title">{data.title}</h1>
+    <h1 class="text-center title">{data.name}</h1>
     <div class="addon-details">
         <div class="addon-details-left">
             <div class="addon-author-list">
@@ -65,7 +61,7 @@
             </div>
         </div>
         <div class="addon-details-right">
-            <img class="addon-header" src="https://database.faithfulpack.net/images/addons/{data.slug}/header" alt="{data.title} header">
+            <img class="addon-header" src="https://database.faithfulpack.net/images/addons/{data.slug}/header" alt="{data.name} header">
             <div class="card card-body addon-description">
                 <p align="justify">{data.description}</p>
             </div>

@@ -47,6 +47,7 @@ export const load: Load = async () => {
     });
 
     return {
+      title: "Downloads",
       packs: [{
         name: "Faithful 32x",
         background_url: "https://static.wixstatic.com/media/89b89d_00d0142aaa2741b9a39b1a610593bc7e~mv2.png/v1/fill/w_1290,h_1156,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_00d0142aaa2741b9a39b1a610593bc7e~mv2.png",

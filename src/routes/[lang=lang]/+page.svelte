@@ -86,10 +86,6 @@
         ];
 </script>
 
-<svelte:head>
-    <title>Home - Faithful</title>
-</svelte:head>
-
 <div class="highlight-section text-center">
     <div id="upspace"></div>
     <img class="highlight-wordmark" src="/images/branding/wordmark.png" alt="Faithful Wordmark">

@@ -11,9 +11,14 @@ export async function load({ fetch, params }) {
     const fileRes = await fetch(`https://api.faithfulpack.net/v2/addons/${params.slug}/files/downloads`)
     const fileData = await fileRes.json()
 
+    const headerRes = await fetch(`https://api.faithfulpack.net/v2/addons/${params.slug}/files/header`)
+    const header = await headerRes.json()
+
     return {
-        title: addonData.name,
+        title: `Addon: ${addonData.name}`,
+        name: addonData.name,
         slug: addonData.slug,
+        image: header,
         description: addonData.description,
         information: addonData.options,
         downloads: fileData

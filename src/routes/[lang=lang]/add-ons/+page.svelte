@@ -11,10 +11,6 @@
     const text_how_to_install = 'How to install add-ons';
 </script>
 
-<svelte:head>
-    <title>Add-ons - Faithful</title>
-</svelte:head>
-
 <div id="addon_header" class="text-center">
     <img class="addon_background" src="/images/background/Add-ons.png" alt="Add-ons background">
     <div id="addon_header_text">
