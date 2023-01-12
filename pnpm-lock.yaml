@@ -20,13 +20,13 @@ specifiers:
   svelte-check: ^3.0.2
   svelte-fa: ^3.0.3
   svelte-preprocess: ^5.0.0
-  svelte-select: ^5.0.2
+  svelte-select: ^5.1.1
   sveltekit-i18n: ^2.2.2
   typescript: ^4.9.4
   vite: ^4.0.4
 
 dependencies:
-  svelte-select: 5.0.2_atrrhq7vg4ekua4nnyrpuardle
+  svelte-select: 5.1.1_atrrhq7vg4ekua4nnyrpuardle
   sveltekit-i18n: 2.2.2_svelte@3.55.1
 
 devDependencies:
@@ -2253,8 +2253,8 @@ packages:
       typescript: 4.9.4
     dev: true
 
-  /svelte-select/5.0.2_atrrhq7vg4ekua4nnyrpuardle:
-    resolution: {integrity: sha512-SsyIwcRVl38041xk7HoPCAew8D6ypTrMvoNcwOgAEWz9Yycgd/uZ58gMSubxSDtkW/ohuYmmHf5OlGCKIqn9Cw==}
+  /svelte-select/5.1.1_atrrhq7vg4ekua4nnyrpuardle:
+    resolution: {integrity: sha512-jDVgH5oovRedHkZ8ZXreF31GBmT6ZAubnEXAL4XkbLs9iHzercoOM49NmnEQ6goezbejTJKdH0kM/X8YC8jriw==}
     dependencies:
       '@floating-ui/dom': 1.0.12
       svelte-floating-ui: 1.1.6_atrrhq7vg4ekua4nnyrpuardle
