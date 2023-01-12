@@ -39,7 +39,7 @@
                 <div class="card card-body">
                     {#if data.information.optifine == true}
                         <div class="addon-info">
-                            <img src="/images/icon/optifine.png" alt="requires optifine">
+                            <img class="addon-info-img" src="/images/icon/optifine.png" alt="requires optifine">
                             <p>This add-on requires <a href="https://optifine.net/downloads">OptiFine</a>
                         </div>
                     {/if}
@@ -47,16 +47,16 @@
                     {#each data.information.tags as info}
                         <div class="addon-info">
                             {#if info == "Java"}
-                                <img src="/images/icon/java.png" alt="java support">
+                                <img class="addon-info-img" src="/images/icon/java.png" alt="java support">
                                 <p>This add-on supports Java Edition</p>
                             {:else if info == "Bedrock"}
-                                <img src="/images/icon/bedrock.png" alt="bedrock support">
+                                <img class="addon-info-img" src="/images/icon/bedrock.png" alt="bedrock support">
                                 <p>This add-on supports Bedrock Edition</p>
                             {:else if info == "32x"}
-                                <img src="/images/icon/32.png" alt="for 32x">
+                                <img class="addon-info-img" src="/images/icon/32.png" alt="for 32x">
                                 <p>This add-on was made for Faithful 32x</p>
                             {:else if info == "64x"}
-                                <img src="/images/icon/64.png" alt="for 64x">
+                                <img class="addon-info-img" src="/images/icon/64.png" alt="for 64x">
                                 <p>This add-on was made for Faithful 64x</p>
                             {/if}
                         </div>
@@ -119,12 +119,13 @@
                     display: flex;
                     align-items: center;
                     gap: 10px;
+                    
 
                     &:not(:last-child) {
                         margin-bottom: 10px;
                     }
 
-                    img {
+                    .addon-info-img {
                         max-height: 56px;
                         max-width: 56px;
                         border-radius: $border-radius;
