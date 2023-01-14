@@ -31,9 +31,8 @@ export const load: PageLoad = async function({ fetch, params }) {
         
         const desc_txt = DOMPurify.sanitize(marked.parse(addonData.description, {
             renderer
-        }))
-        
-        short = desc_txt.replace(/\n+ ?/g, ' ').trim()
+        })).replace(/\n+ ?/g, ' ').trim()
+
         short = `${desc_txt.split(' ').reduce((acc: string, cur: string) => {
             if(acc.length + cur.length + 1 < 158) acc += ' ' + cur
             return acc
