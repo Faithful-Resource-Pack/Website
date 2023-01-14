@@ -1,4 +1,21 @@
 <script lang="ts">
+    import Fa from "svelte-fa/src/fa.svelte";
+    import {
+        faGithub,
+        faPatreon,
+        faPaypal,
+        faPlaystation,
+        faReddit,
+        faSteam,
+        faTwitter,
+        faXbox,
+        faYoutube
+    } from "@fortawesome/free-brands-svg-icons";
+    import {
+        faCubes,
+        faGlobe
+    } from "@fortawesome/free-solid-svg-icons";
+    
     export let data: any;
 
     let text_id = 'ID: ' + data.id
@@ -6,6 +23,22 @@
         ?.toLocaleDateString('pt-br')
         .split( '/' ).reverse( ).join('-')
     let text_last_updated = 'Last updated: ' + (text_date_last_updated || 'Unknown')
+
+    let media_icons = {
+        "CurseForge": { src: "/images/add-ons/curseforge.svg" },
+        "GitHub": { fa: faGithub },
+        "Patreon": { fa: faPatreon },
+        "Paypal": { fa: faPaypal },
+        "Planet Minecraft": { fa: faCubes },
+        "PSN": { fa: faPlaystation },
+        "Reddit": { fa: faReddit },
+        "Steam": { fa: faSteam },
+        "Twitter": { fa: faTwitter },
+        "Website": { fa: faGlobe },
+        "Xbox": { fa: faXbox },
+        "YouTube": { fa: faYoutube },
+        "Other": { fa: faGlobe }
+      }
 </script>
 
 <div class="container">
@@ -13,21 +46,38 @@
     <div class="addon-details">
         <div class="addon-details-left">
             <div class="addon-author-list">
-                <h2 class="text-center">Authors</h2>
+                {#if data.authors.length == 1}
+                    <h2 class="text-center">Author</h2>
+                {:else}
+                    <h2 class="text-center">Authors</h2>
+                {/if}
                 <div>
+                {#each data.authors as author}
                     <div class="addon-author">
-                        <img src="https://visage.surgeplay.com/full/256/X-Efe" alt="Efe">
-                        <div class="card addon-author-name">
-                            <h4>Efe Placeholder</h4>
+                        {#if author.uuid}
+                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{author.uuid}" alt="Skin of {author.username}">
+                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{author.uuid}" alt="Skin of {author.username}">
+                        {:else}
+                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" alt="Skin of {author.username}"> 
+                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" alt="Skin of {author.username}"> 
+                        {/if}
+                        <div class="card addon-author-name text-center">
+                            <h4>{author.username}</h4>
+                            <div>
+                                {#each author.media as media}
+                                    <a href={media.link} target="_blank" rel="noreferrer">
+                                        {#if media_icons[media.type].fa}
+                                            <Fa icon={media_icons[media.type].fa}/>
+                                        {:else}
+                                            <img width=20 height=20 src={media_icons[media.type].src} alt={media.type} />
+                                        {/if}
+                                    </a>
+                                {/each}
+                            </div>
                         </div>
                     </div>
-                    <div class="addon-author">
-                        <img src="https://visage.surgeplay.com/full/256/X-Steve" alt="Steve">
-                        <div class="card addon-author-name">
-                            <h4>Steven Placeholder</h4>
-                        </div>
-                    </div>
-                </div>
+                {/each}
+            </div>
             </div>
             <div>
                 <h2 class="text-center">Downloads</h2>
@@ -109,11 +159,28 @@
                         align-items: center;
                         flex-direction: column;
 
+                        &-head {
+                            display: none;
+                        }
+
                         &-name {
                             max-width: max-content;
 
                             h4 {
                                 margin: 8px 16px;
+                            }
+
+                            div {
+                                margin-bottom: 6px;
+                            }
+
+                            a {
+                                margin: 0 4px;
+                                color: #fff;
+
+                                img {
+                                    vertical-align: middle;
+                                }
                             }
                         }
                     }
@@ -181,8 +248,7 @@
     }
 
     .banner {
-        margin-top: $spacing;
-        margin-bottom: $spacing;
+        margin: $spacing 0;
     }
 
     @media(max-width: $width-S) {
@@ -200,6 +266,15 @@
             #addons-info .card + .card {
                 margin-top: 15px;
             }
+        }
+    }
+
+    @media(max-width: $width-L) {
+        .addon-author-skin {
+            display: none;
+        }
+        .addon-author-head {
+            display: block !important;
         }
     }
 </style>
