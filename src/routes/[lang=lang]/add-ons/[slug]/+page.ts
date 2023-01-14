@@ -33,10 +33,11 @@ export const load: PageLoad = async function({ fetch, params }) {
             renderer
         })).replace(/\n+ ?/g, ' ').trim()
 
-        short = `${desc_txt.split(' ').reduce((acc: string, cur: string) => {
-            if(acc.length + cur.length + 1 < 158) acc += ' ' + cur
-            return acc
-        }, '')}...`.substring(1) // remove first space
+        short = `${desc_txt.split(' ').reduce(([acc, done]: [string, boolean], cur: string): [string, boolean] => {
+            if(!done && acc.length + cur.length + 1 < 158) acc += ' ' + cur
+            else done = true
+            return [acc, done]
+        }, ['', false])[0]}...`.substring(1) // remove first space
     }
 
     return {
