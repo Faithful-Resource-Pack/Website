@@ -159,6 +159,10 @@
                         align-items: center;
                         flex-direction: column;
 
+                        & > img {
+                            margin-bottom: 10px;
+                        }
+
                         &-head {
                             display: none;
                         }
