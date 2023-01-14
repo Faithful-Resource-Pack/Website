@@ -35,7 +35,8 @@
 			],
 		},
 		"rootDirs": [
-			"."
+			".",
+			".svelte-kit/types"
 		],
 	},
 	"exclude": [

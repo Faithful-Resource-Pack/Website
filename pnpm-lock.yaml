@@ -5,12 +5,13 @@ specifiers:
   '@fortawesome/free-solid-svg-icons': ^6.2.1
   '@sveltejs/adapter-node': 1.1.0
   '@sveltejs/kit': 1.0.11
+  '@types/marked': ^4.0.8
   autoprefixer: ^10.4.13
   cssnano: ^5.1.14
   eslint: ^8.31.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-svelte3: ^4.0.0
-  marked: ^4.2.5
+  marked: ^4.2.12
   postcss: ^8.4.21
   postcss-load-config: ^4.0.1
   prettier: ^2.8.2
@@ -26,7 +27,7 @@ specifiers:
   vite: ^4.0.4
 
 dependencies:
-  marked: 4.2.5
+  marked: 4.2.12
   svelte-select: 5.1.1_atrrhq7vg4ekua4nnyrpuardle
   sveltekit-i18n: 2.2.2_svelte@3.55.1
 
@@ -35,6 +36,7 @@ devDependencies:
   '@fortawesome/free-solid-svg-icons': 6.2.1
   '@sveltejs/adapter-node': 1.1.0_@sveltejs+kit@1.0.11
   '@sveltejs/kit': 1.0.11_svelte@3.55.1+vite@4.0.4
+  '@types/marked': 4.0.8
   autoprefixer: 10.4.13_postcss@8.4.21
   cssnano: 5.1.14_postcss@8.4.21
   eslint: 8.31.0
@@ -510,6 +512,10 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
+    dev: true
+
+  /@types/marked/4.0.8:
+    resolution: {integrity: sha512-HVNzMT5QlWCOdeuBsgXP8EZzKUf0+AXzN+sLmjvaB3ZlLqO+e4u0uXrdw9ub69wBKFs+c6/pA4r9sy6cCDvImw==}
     dev: true
 
   /@types/node/18.11.9:
@@ -1408,8 +1414,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /marked/4.2.5:
-    resolution: {integrity: sha512-jPueVhumq7idETHkb203WDD4fMA3yV9emQ5vLwop58lu8bTclMghBWcYAavlDqIEMaisADinV1TooIFCfqOsYQ==}
+  /marked/4.2.12:
+    resolution: {integrity: sha512-yr8hSKa3Fv4D3jdZmtMMPghgVt6TWbk86WQaWhDloQjRSQhMMYCAro7jP7VDJrjjdV8pxVxMssXS8B8Y5DZ5aw==}
     engines: {node: '>= 12'}
     hasBin: true
     dev: false

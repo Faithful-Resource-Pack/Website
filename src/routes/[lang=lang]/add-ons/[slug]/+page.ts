@@ -1,8 +1,8 @@
 import { error } from '@sveltejs/kit';
-import { parse } from 'marked';
- 
-/** @type {import('./$types').PageLoad} */
-export async function load({ fetch, params }) {
+import { marked } from 'marked';
+import type { PageLoad } from './$types';
+
+export const load: PageLoad = async function({ fetch, params }) {
     const addonRes = await fetch(`https://api.faithfulpack.net/v2/addons/${params.slug}`)
     const addonData = await addonRes.json()
 
@@ -20,7 +20,7 @@ export async function load({ fetch, params }) {
         name: addonData.name,
         slug: addonData.slug,
         image: header,
-        description: await parse(addonData.description),
+        description: await marked.parse(addonData.description),
         information: addonData.options,
         downloads: fileData
     };

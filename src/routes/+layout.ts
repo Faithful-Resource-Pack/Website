@@ -1,12 +1,12 @@
 import { loadTranslations, locale } from "$lib/translations";
-import type { LayoutServerLoad } from "./$types";
+import type { LayoutLoad } from "./$types";
 
 interface Internationalization {
 	lang: string;
 	subject: string;
 }
 
-export const load: LayoutServerLoad = async ({ url }) => {
+export const load: LayoutLoad = async ({ url }) => {
 	const { pathname } = url;
 
 	const lang = `${pathname.match(/[^/]+?(?=\/|$)/) || ""}`;
