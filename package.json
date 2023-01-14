@@ -36,6 +36,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"isomorphic-dompurify": "^0.26.0",
+		"kramed-text-renderer": "^0.2.1",
 		"marked": "^4.2.12",
 		"svelte-select": "^5.1.1",
 		"sveltekit-i18n": "^2.2.2"

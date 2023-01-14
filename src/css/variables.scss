@@ -36,3 +36,19 @@ $small-spacing: 16px;
 	box-shadow: none !important;
 	padding: 0 !important;
 }
+
+/**
+ *  Select any range in {h1, h2, h3, h4, h5, h6}.
+ * 
+ *  e.g. usage
+ *    #{headings('', 1, 6, '.--attr')} { ... }
+ */
+@function headings($before: '', $from: 1, $to: 6, $after: '') {
+	@if $from ==$to {
+		@return '#{$before} h#{$from}#{$after}';
+	}
+
+	@else {
+		@return '#{$before} h#{$from}#{$after}, '+headings($before, $from+1, $to, $after);
+	}
+}

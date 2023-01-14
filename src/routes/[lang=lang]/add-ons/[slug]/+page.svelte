@@ -1,6 +1,11 @@
-<script>
-    /** @type {import('./$types').PageData} */
-    export let data;
+<script lang="ts">
+    export let data: any;
+
+    let text_id = 'ID: ' + data.id
+    let text_date_last_updated: boolean|string = data.lastUpdated && new Date(data.lastUpdated)
+        ?.toLocaleDateString('pt-br')
+        .split( '/' ).reverse( ).join('-')
+    let text_last_updated = 'Last updated: ' + (text_date_last_updated || 'Unknown')
 </script>
 
 <div class="container">
@@ -30,7 +35,7 @@
                     <a class="btn btn-dark block" href={download.links}>{download.key}</a>
                 {/each}
             </div>
-            <div>
+            <div id="addons-info">
                 <h2 class="text-center">Information</h2>
                 <div class="card card-body">
                     {#if data.information.optifine == true}
@@ -58,12 +63,19 @@
                         </div>
                     {/each}
                 </div>
+                <div class="card card-body" id="info-list">
+                    <ul>
+                        <li>{text_id}</li>
+                        <li>{text_last_updated}</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="addon-details-right">
             <img class="addon-header" src="https://database.faithfulpack.net/images/addons/{data.slug}/header" alt="{data.name} header">
             <div class="card card-body addon-description">
-                {@html data.description}
+                <!-- required div to have vertical margin collapsing -->
+                <div>{@html data.description}</div>
             </div>
         </div>
     </div>
@@ -73,6 +85,8 @@
 </div>
 
 <style lang="scss">
+    $spacing: 20px;
+
     .addon-details {
         display: flex;
         flex-wrap: wrap;
@@ -132,11 +146,20 @@
                     }
                 }
             }
+
+            #addons-info .card + .card {
+                margin-top: $spacing;
+            }
+
+            #addons-info #info-list ul {
+                margin: 0;
+                padding-left: 1em;
+            }
         }
 
         &-right {
             flex: 0 0 75%;
-            padding-left: 20px;
+            padding-left: $spacing;
 
             .addon-header {
                 width: 100%;
@@ -144,7 +167,22 @@
                 margin-bottom: 20px;
                 box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
             }
+
+            // Markdown description css 
+            & .addon-description > div {
+                & > :global(*:first-child) {
+                    margin-top: 0;
+                }
+                & > :global(*:last-child) {
+                    margin-bottom: 0;
+                }
+            }
         }
+    }
+
+    .banner {
+        margin-top: $spacing;
+        margin-bottom: $spacing;
     }
 
     @media(max-width: $width-S) {
@@ -157,6 +195,10 @@
 
             .addon-author-list h2 {
                 margin-top: revert;
+            }
+
+            #addons-info .card + .card {
+                margin-top: 15px;
             }
         }
     }

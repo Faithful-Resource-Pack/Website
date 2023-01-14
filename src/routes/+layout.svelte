@@ -11,7 +11,7 @@
 	// HEAD data
 	const title = derived(page, (p) =>  (p?.data?.title ? (p.data.title + ' - Faithful') : 'Faithful'))
 	const description = derived(page, (p) => {
-		return p.data.description || "Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock."
+		return p.data.embed_description || p.data.description || "Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock."
 	})
 	const image = derived(page, (p) => {
 		return p.data.image || "https://database.faithfulpack.net/images/branding/site/banners/universal_banner.png"

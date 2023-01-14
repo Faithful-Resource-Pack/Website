@@ -1,5 +1,8 @@
 import { error } from '@sveltejs/kit';
 import { marked } from 'marked';
+//@ts-ignore
+import TextRenderer from 'kramed-text-renderer';
+import DOMPurify from 'isomorphic-dompurify';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async function({ fetch, params }) {
@@ -14,13 +17,37 @@ export const load: PageLoad = async function({ fetch, params }) {
 
     const headerRes = await fetch(`https://api.faithfulpack.net/v2/addons/${params.slug}/files/header`)
     const header = await headerRes.json()
+    
+    const desc_md = DOMPurify.sanitize(await marked.parse(addonData.description))
+    //@ts-ignore
+    let short: string | undefined = addonData.short_description
+    if(short === undefined)
+    {
+        let renderer = TextRenderer()
+        renderer.heading = function() { return '' }
+        renderer.listitem = function(text: string) { return `- ${text}\n` }
+        renderer.text = function(t: string) { return t }
+        marked.use();
+        
+        const desc_txt = DOMPurify.sanitize(marked.parse(addonData.description, {
+            renderer
+        }))
+        
+        short = desc_txt.replace(/\n+ ?/g, ' ').trim()
+        short = `${desc_txt.split(' ').reduce((acc: string, cur: string) => {
+            if(acc.length + cur.length + 1 < 158) acc += ' ' + cur
+            return acc
+        }, '')}...`.substring(1) // remove first space
+    }
 
     return {
+        id: addonData.id,
         title: `Addon: ${addonData.name}`,
         name: addonData.name,
         slug: addonData.slug,
         image: header,
-        description: await marked.parse(addonData.description),
+        embed_description: short,
+        description: desc_md,
         information: addonData.options,
         downloads: fileData
     };
