@@ -9,7 +9,8 @@
         faSteam,
         faTwitter,
         faXbox,
-        faYoutube
+        faYoutube,
+		type IconDefinition
     } from "@fortawesome/free-brands-svg-icons";
     import {
         faCubes,
@@ -24,7 +25,7 @@
         .split( '/' ).reverse( ).join('-')
     let text_last_updated = 'Last updated: ' + (text_date_last_updated || 'Unknown')
 
-    let media_icons = {
+    let media_icons: Record<string, { fa?: IconDefinition, src?: string }> = {
         "CurseForge": { src: "/images/add-ons/curseforge.svg" },
         "GitHub": { fa: faGithub },
         "Patreon": { fa: faPatreon },
@@ -66,7 +67,7 @@
                             <div>
                                 {#each author.media as media}
                                     <a href={media.link} target="_blank" rel="noreferrer">
-                                        {#if media_icons[media.type].fa}
+                                        {#if 'fa' in media_icons[media.type] }
                                             <Fa icon={media_icons[media.type].fa}/>
                                         {:else}
                                             <img width=20 height=20 src={media_icons[media.type].src} alt={media.type} />
