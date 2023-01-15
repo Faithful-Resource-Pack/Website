@@ -2,7 +2,7 @@
     export let data: any;
 
     let text_id = 'ID: ' + data.id
-    let text_date_last_updated: boolean|string = data.lastUpdated && new Date(data.lastUpdated)
+    let text_date_last_updated: boolean|string = (!!data.lastUpdated) && new Date(data.lastUpdated)
         ?.toLocaleDateString('pt-br')
         .split( '/' ).reverse( ).join('-')
     let text_last_updated = 'Last updated: ' + (text_date_last_updated || 'Unknown')

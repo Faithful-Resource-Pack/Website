@@ -49,6 +49,7 @@ export const load: PageLoad = async function({ fetch, params }) {
         embed_description: short,
         description: desc_md,
         information: addonData.options,
+        lastUpdated: addonData.last_updated,
         downloads: fileData
     };
 }
