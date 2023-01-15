@@ -17,6 +17,9 @@ export const load: PageLoad = async function({ fetch, params }) {
 
     const headerRes = await fetch(`https://api.faithfulpack.net/v2/addons/${params.slug}/files/header`)
     const header = await headerRes.json()
+
+    const AuthorRes = await fetch(`https://api.faithfulpack.net/v2/addons/${params.slug}/authors`)
+    const AuthorData = await AuthorRes.json()
     
     const desc_md = DOMPurify.sanitize(await marked.parse(addonData.description))
     //@ts-ignore
@@ -50,6 +53,7 @@ export const load: PageLoad = async function({ fetch, params }) {
         description: desc_md,
         information: addonData.options,
         lastUpdated: addonData.last_updated,
-        downloads: fileData
+        downloads: fileData,
+        authors: AuthorData,
     };
 }
