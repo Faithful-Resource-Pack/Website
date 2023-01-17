@@ -20,5 +20,9 @@
         "fortawesome",
         "mdsvex",
         "sveltekit"
-    ]
+    ],
+    "yaml.schemas": {
+        "file:///home/r-mes/.vscode-server/extensions/atlassian.atlascode-2.10.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
+        "https://json.schemastore.org/github-workflow.json": "file:///c%3A/Users/yannl.THEROLF-PC/Desktop/TheRolf/SiteWeb/faithful-website/.github/workflows/deploy.yml"
+    }
 }

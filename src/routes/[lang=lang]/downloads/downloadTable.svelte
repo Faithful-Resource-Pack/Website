@@ -45,7 +45,7 @@
 		text-align: left;
 	}
 	th > p,
-	td > p {
+	:global(td > p) {
 		color: #ccc;
 		padding: 0.2rem;
 		margin-bottom: 0;

@@ -21,6 +21,7 @@
 		"@material/card": "^14.0.0",
 		"@material/dom": "^14.0.0",
 		"@material/elevation": "^14.0.0",
+		"@material/image-list": "^14.0.0",
 		"@material/ripple": "^14.0.0",
 		"@material/rtl": "^14.0.0",
 		"@material/shape": "^14.0.0",
