@@ -4,6 +4,7 @@
 	background: #131313 url(/images/background/bg_dark_background.png) repeat
 }
 main {
+	color: white;
 	background: #0C0C0C url(/images/background/bg_dark_foreground.png) repeat
 }
 .placeholder {
@@ -30,6 +31,10 @@ main {
 .dropdown-item:hover {
 	color: rgba(255, 255, 255, .7);
 	background-color: #141414
+}
+
+.gallery-result {
+	background: url(/transparency.png) !important;
 }
 
 html:not(.light) {

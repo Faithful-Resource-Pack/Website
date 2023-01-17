@@ -28,10 +28,14 @@
     }
     const append = () => dispatch('append');
 
+    const onkeypress = (e: KeyboardEvent) => {
+        if(e.key === "Enter") return append()
+        return false
+    }
 </script>
 
 <div class={classes}>
-    <input use:typeAction {placeholder} bind:value>
+    <input use:typeAction {placeholder} bind:value on:keypress={onkeypress}>
     <span class="after">
         {#if clearable && value }
             <span class="clear" on:click={clear} on:keypress={() => {}}><Fa icon={faXmark} size="1.3x" /></span> 
