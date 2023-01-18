@@ -22,8 +22,11 @@ export const load: PageLoad = ((pageLoad) => {
         params.set(def[0], val)
     });
 
+    // hash not accessible
+    const absoluteURL = pageLoad.url.pathname + pageLoad.url.search;
+
     if(changed) {
-        throw redirect(301, pageLoad.url.toString())
+        throw redirect(301, absoluteURL)
     }
 
     return {
