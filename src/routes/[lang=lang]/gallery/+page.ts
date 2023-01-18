@@ -1,3 +1,4 @@
+import { settings } from '$stores/SettingStore';
 import { redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
@@ -7,7 +8,7 @@ export const load: PageLoad = ((pageLoad) => {
 
     const PARAMS_DEFAULT = [
         ['pack', 'faithful_32x'],
-        ['edition', 'java'],
+        ['edition', 'first'],
         ['version', 'latest'],
         ['tag', 'all']
     ]
@@ -31,7 +32,7 @@ export const load: PageLoad = ((pageLoad) => {
 
     return {
         pack: params.get('pack') || 'faithful_32x',
-        edition: params.get('edition') || 'java',
+        edition: params.get('edition') || 'first',
         version: params.get('version') || 'latest',
         tag: params.get('tag') || 'all',
         show: params.get('show'),

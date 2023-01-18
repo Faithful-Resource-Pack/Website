@@ -14,7 +14,7 @@ let settingsStore = readable<{
         settings.tags = tags
         set({ loading: false, loaded: true, data: settings })
     })
-    .catch(err => console.log(err))
+    .catch(err => console.error("Failed to load settings", err))
 
     return () => {}
 })

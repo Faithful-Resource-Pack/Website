@@ -1,54 +1,30 @@
 <script lang="ts">
 // [pack][x+2f][edition][x+2f][version][x+2f][tags]
-import { afterUpdate, onMount, tick } from 'svelte';
-import { derived } from 'svelte/store';
+import { onMount, tick } from 'svelte';
 
 import UrlStore from '$stores/UrlStore';
 import { settings } from '$stores/SettingStore';
-import { gallerySearch, galleryRowItems } from '$stores/GalleryStore';
-
-import Checkbox from '$components/common/checkbox.svelte';
-import Input from '$components/common/input.svelte';
-import GallerySelect from '$components/gallery/gallerySelect.svelte';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import Slider from '@smui/slider';
-import { Image } from '@smui/image-list';
-
-let text_title_gallery = 'Gallery';
-
-let options = derived(settings, (s) => {
-    if(!s) return null
-
-    return Object.entries<string[]>({
-        packs: ["original_16x", "faithful_32x", "faithful_64x"],
-        tags: ['all', ...s.tags],
-        versions: s.versions.java.map((e: string) => e.toLowerCase()),
-        editions: s.editions.map((e: string) => e.toLowerCase()),
-    })
-    .map(([key, values]) => ({
-        name: key.slice(0,-1), // TODO: use name to replace with i18n
-        param: key.slice(0,-1),
-        items: values,
-        items_labels: values.map((v) => v) // TODO: use i18n inside map
-    }))
-})
+import { gallerySearch } from '$stores/GalleryStore';
+import GalleryOptions from '$components/gallery/galleryOptions.svelte';
+import Fa from "svelte-fa/src/fa.svelte";
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 onMount(() => {
     UrlStore.subscribe((e) => {
         if(e === null) return;
         gallerySearch.update();
-        tick()
+    })
+
+    settings.subscribe((s) => {
+        if(s === null) return;
+
+        // first search
+        tick() // leave a tick by safety
         .then(() => {
-            search()
+            search('first search')
         })
     })
 })
-
-let placeholder_search = 'Search texture name';
-let text_max_items_per_row = 'Max items per row';
-let text_full_width_view = 'Full width view'; // TODO: i18n
-let label_full_width_view = 'Show gallery with full width'; // TODO: i18n
-let text_gallery_search = 'Search';
 
 $: result_class = $gallerySearch.full_width ? 'full_width' : 'container';
 
@@ -59,9 +35,12 @@ const PACK_TO_RES: Record<string, string> = {
     'faithful_64x': '64x'
 }
 
+let result_el: HTMLElement;
+
 let results: any = undefined;
 
-function search() {
+function search(_origin?: string) {
+    if($settings === null) return;
     let params = gallerySearch.getAllParams();
     let params_obj = [...params.entries()].reduce((acc, cur) => {
         acc[cur[0]] = cur[1]
@@ -70,35 +49,36 @@ function search() {
     params_obj.res = PACK_TO_RES[params_obj.pack];
     let { res, edition, version, tag } = params_obj;
 
+    if(edition === 'first') edition = $settings.packs[params_obj.pack].editions[0];
     if(version === 'latest') version = $settings.versions[edition][0];
     
     let url = `https://api.faithfulpack.net/v2/gallery/${res}/${edition}/${version}/${tag}`;
+
     if($gallerySearch.search_text) {
         url += `?search=${$gallerySearch.search_text}`
     }
 
-    fetch(url)
+    window.fetch(url)
     .then(res => {
-        console.log(res)
         return res.json()
     })
     .then(json => {
+        console.log(typeof(json))
         results = json;
     })
 }
 
-let result_el: HTMLElement;
 let gap: number;
-let column_number: number;
+let column_number: number = 0;
 
-// TODO: use
 let font_size_not_done = {
     id: '16px',
     name: '16px',
     message: '16px',
 }
 
-afterUpdate(() => {
+function compute_grid() {
+    if(result_el === null) return;
     let base_columns = $gallerySearch.items_per_row;
 
     // TODO: responsive
@@ -141,78 +121,82 @@ afterUpdate(() => {
         name: `${font_size * 2}px`,
         message: `${font_size * 1.2}px`,
     };
+}
+
+let scrolled = 0;
+
+onMount(() => {
+    UrlStore.subscribe(() => {
+        search("url changed");
+    })
+
+    window.onresize = () => {
+        tick().then(() => {
+            compute_grid();
+        });
+    }
+
+    gallerySearch.subscribe(() => {
+        tick().then(() => {
+            compute_grid();
+        });
+    })
+
+    window.onscroll = () => {
+        scrolled = window.scrollY;
+    }
+
+    compute_grid();
 })
 
+let text_title_gallery = 'Gallery';
 let text_not_done = "Texture is missing or blacklisted!";
+
+const lines_per_block = 5;
+$: results_per_block = column_number * lines_per_block;
+$: sliced_results = results ? results.slice(0,results_per_block) : undefined;
 
 $: styles_gallery_result = `gap: ${gap}px; grid-template-columns: repeat(${column_number}, 1fr);`
 $: styles_gallery_text = Object.entries(font_size_not_done).map(([c, e]) => `--not-done-${c}: ${e}; `).join(' ')
 $: styles_gallery = styles_gallery_result + ' ' + styles_gallery_text;
+
+function handleImageError(e: Event) {
+    let target = e.target as HTMLImageElement;
+    target.style.display='none';
+    let next = target.nextElementSibling as HTMLElement | null;
+    if(next) next.style.display='flex';
+    let parent = target.parentElement as HTMLElement | null;
+    if(parent) {
+        parent.style.background='rgba(0,0,0,0.3)';
+        parent.classList.add('rounded');
+    }
+}
+
+function go_up() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+}
 </script>
 
 <h1 class="title text-center">{ text_title_gallery }</h1>
 
-<div class="container">
-    <div class="card card-body" id="search-card" bind:this={result_el}>
-        {#if $options === null}
-            <div>Loading settings...</div>
-        {:else}
-            <div id="options">
-                {#each $options as option}
-                    <GallerySelect {...option} />
-                {/each}
-                <div class="last-fields">
-                    <div class="small-name">{text_max_items_per_row}</div>
-                    <div id="row-slider">
-                        <div>
-                            <Slider
-                                bind:value={$gallerySearch.items_per_row}
-                                {...$galleryRowItems}
-                                step={1}
-                                style="--mdc-theme-primary: white; --mdc-theme-on-primary: white"
-                                discrete
-                                tickMarks
-                                input$aria-label={text_max_items_per_row}
-                            />
-                        </div>
-                        <div>{$gallerySearch.items_per_row}</div>
-                    </div>
-                </div>
-                <div class="last-fields">
-                    <div class="small-name">{text_full_width_view}</div>
-                    <div id="full-width-checkbox">
-                        <Checkbox
-                            value={$gallerySearch.full_width}
-                            on:change={gallerySearch.toggleFullWidth}
-                            label={label_full_width_view} />
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="small-name">{text_gallery_search}</div>
-                <Input
-                    bind:value={$gallerySearch.search_text}
-                    placeholder={placeholder_search} clearable
-                    appendIcon={$gallerySearch.search_text ? faMagnifyingGlass: undefined}
-                    on:clear={search} on:append={search}
-                />
-            </div>
-        {/if}
-    </div> 
-</div>
-<div id="results" class={result_class} style={styles_gallery}>
-    {#if results === undefined}
+<GalleryOptions on:search={() => search()} />
+
+<div id="results" class={result_class} style={styles_gallery} bind:this={result_el}>
+    {#if !results}
         <p>No search started</p>
     {:else if results.length === 0}
         <p>No results</p>
     {:else}
-        {#each results as texture}
+        {#each sliced_results as texture}
             <div class="gallery-result">
                 <!-- @ts-ignore -->
                 <img
                     src={texture.url}
                     alt={texture.name}
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.style.background='rgba(0,0,0,0.3)';this.parentElement.classList.add('rounded')"
+                    on:error={handleImageError}
                 />
                 <div class="not-done" style="display: none;">
                     <h1 class="not-done-id">#{ texture.textureID }</h1>
@@ -224,61 +208,17 @@ $: styles_gallery = styles_gallery_result + ' ' + styles_gallery_text;
     {/if}
 </div>
 
+<div id="uparrow" class={scrolled > 300 ? 'show' : ''} on:click={go_up} on:keypress={() => {}}>
+    <Fa icon={faArrowUp} size="lg"/>
+</div>
+
 <style lang="scss">
-    #search-card {
-        overflow: visible;
-
-        #options {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            align-items: center;
-            gap: $small-spacing;
-
-            :global( > *) {
-                flex: 1 0 calc(33% - 2*$small-spacing);
-            }
-            margin-bottom: $small-spacing;
-        }
-        
-        :global(.small-name) {
-            font-size: small;
-            text-transform: uppercase;
-            margin-bottom: 0.5em;
-        }
-
-        #row-slider {
-            display: flex;
-            align-items: center;
-            &>div:first-child {
-                :global( > *) {
-                    margin-top: -3px;
-                    margin-bottom: -3px;
-                }
-                flex-grow: 1;
-            }
-            & > div + div {
-                text-align: center;
-                width: 24px;
-                margin-right: 24px;
-                font-weight: 600;
-            }
-        }
-
-        #full-width-checkbox {
-            height: 42px;
-            display: flex;
-            align-items: center;
-        }
-    }
-
     :global(.full_width) {
         padding: 0 $small-spacing;
     }
     
     #results {
         margin-top: $small-spacing;
-        transition: all 2s ease;
         display: grid;
         gap: 16px;
         min-height: 0;  /* NEW */
@@ -288,7 +228,6 @@ $: styles_gallery = styles_gallery_result + ' ' + styles_gallery_text;
             position: relative;
             aspect-ratio: 1/1;
             background-size: cover !important;
-            background: url(/transparency-light.png);
             overflow: hidden;  /* NEW */
             min-width: 0;      /* NEW; needed for Firefox */
 
@@ -326,5 +265,49 @@ $: styles_gallery = styles_gallery_result + ' ' + styles_gallery_text;
                 }
             }
         }
+    }
+
+    @media (max-width: $width-S) {
+        #results {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+
+    @media (max-width: $width-XS) {
+        #results {
+            grid-template-columns: repeat(1, 1fr) !important;
+        }
+    }
+
+    #uparrow {
+        position: fixed;
+        color: white;
+        bottom: 64px;
+        right: 64px;
+        z-index: 202;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        opacity: 0;
+        transform: scale(0);
+        transition: opacity .3s ease, background .3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        &:global(.show) {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    :global(html.light) #uparrow {
+        background: white;
+        color: grey;
     }
 </style>

@@ -36,7 +36,15 @@
         })
     })
     let change = (e: any) => {
-        gallerySearch.setParam(param, e.detail.value);
+        let params_to_change: [string, string][] = [];
+        params_to_change.push([param, e.detail.value]);
+        if(param === 'pack') {
+            params_to_change.push(['edition', 'first']);
+            params_to_change.push(['version', 'latest']);
+        } else if(param === 'edition') {
+            params_to_change.push(['version', 'latest']);
+        }
+        gallerySearch.setParams(params_to_change);
     }
 </script>
 
