@@ -27,7 +27,8 @@ export const load: PageLoad = ((pageLoad) => {
     const absoluteURL = pageLoad.url.pathname + pageLoad.url.search;
 
     if(changed) {
-        throw redirect(301, absoluteURL)
+        // Temporary Redirect
+        throw redirect(307, absoluteURL)
     }
 
     return {
