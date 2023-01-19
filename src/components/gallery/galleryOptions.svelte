@@ -142,8 +142,20 @@
         }
 
         @media (max-width: $width-XS) {
+            #options {
+                gap: 0.5em;
+                margin-bottom: 0.5em;
+            }
             #options :global( > *) {
                 flex: 1 0 100%;
+            }
+            #row-slider {
+                & > *:first-child:global( > *) {
+                    margin-left: 0;
+                }
+                & > *:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }
