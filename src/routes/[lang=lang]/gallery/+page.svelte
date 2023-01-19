@@ -124,7 +124,7 @@ function compute_grid() {
 }
 
 let scrolled = 0;
-
+let bottom_element: HTMLElement;
 onMount(() => {
     UrlStore.subscribe(() => {
         search("url changed");
@@ -144,6 +144,10 @@ onMount(() => {
 
     window.onscroll = () => {
         scrolled = window.scrollY;
+
+        if(bottom_element && isScrolledIntoView(bottom_element, 600)) {
+          blocks_displayed++;
+        }
     }
 
     compute_grid();
@@ -154,7 +158,9 @@ let text_not_done = "Texture is missing or blacklisted!";
 
 const lines_per_block = 5;
 $: results_per_block = column_number * lines_per_block;
-$: sliced_results = results ? results.slice(0,results_per_block) : undefined;
+let blocks_displayed = 1;
+$: results_displayed = results_per_block * blocks_displayed;
+$: sliced_results = results ? results.slice(0,results_displayed) : undefined;
 
 $: styles_gallery_result = `gap: ${gap}px; grid-template-columns: repeat(${column_number}, 1fr);`
 $: styles_gallery_text = Object.entries(font_size_not_done).map(([c, e]) => `--not-done-${c}: ${e}; `).join(' ')
@@ -178,6 +184,15 @@ function go_up() {
         behavior: "smooth",
     });
 }
+
+function isScrolledIntoView(el: HTMLElement, margin: number = 0) {
+    let rect = el.getBoundingClientRect();
+    let elemTop = rect.top;
+    let elemBottom = rect.bottom;
+
+    let isVisible = elemTop < window.innerHeight + margin && elemBottom >= 0;
+    return isVisible;
+}
 </script>
 
 <h1 class="title text-center">{ text_title_gallery }</h1>
@@ -192,7 +207,6 @@ function go_up() {
     {:else}
         {#each sliced_results as texture}
             <div class="gallery-result">
-                <!-- @ts-ignore -->
                 <img
                     src={texture.url}
                     alt={texture.name}
@@ -206,6 +220,7 @@ function go_up() {
             </div>
         {/each}
     {/if}
+    <div class="bottomElement" bind:this={bottom_element}></div>
 </div>
 
 <div id="uparrow" class={scrolled > 300 ? 'show' : ''} on:click={go_up} on:keypress={() => {}}>
