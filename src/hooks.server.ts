@@ -7,6 +7,14 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const { url, request } = event;
 	const { pathname } = url;
 
+	// no error on favicon.ico not found
+	if (pathname === '/favicon.ico') {
+		return new Response(undefined, {
+			headers: { location: 'https://raw.githubusercontent.com/Faithful-Resource-Pack/Branding/main/site/favicon.ico' },
+			status: 307
+		});
+	}
+
 	if (routeRegex.test(pathname)) {
 		const supportedLocales = locales.get();
 
