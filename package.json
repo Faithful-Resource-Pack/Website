@@ -14,7 +14,6 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@fortawesome/free-brands-svg-icons": "^6.2.1",
 		"@fortawesome/free-solid-svg-icons": "^6.2.1",
 		"@material/animation": "^14.0.0",
 		"@material/base": "^14.0.0",
@@ -56,7 +55,10 @@
 		"isomorphic-dompurify": "^0.26.0",
 		"kramed-text-renderer": "^0.2.1",
 		"marked": "^4.2.12",
+		"moment": "^2.29.4",
+		"svelte-icomoon": "^0.4.4",
 		"svelte-select": "^5.1.1",
-		"sveltekit-i18n": "^2.2.2"
+		"sveltekit-i18n": "^2.2.2",
+		"tippy.js": "^6.3.7"
 	}
 }

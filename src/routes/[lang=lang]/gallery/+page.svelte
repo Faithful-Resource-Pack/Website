@@ -8,6 +8,7 @@ import { gallerySearch } from '$stores/GalleryStore';
 import GalleryOptions from '$components/gallery/galleryOptions.svelte';
 import Fa from "svelte-fa/src/fa.svelte";
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import GalleryTooltip from '$components/gallery/galleryTooltip.svelte';
 
 onMount(() => {
     UrlStore.subscribe((e) => {
@@ -80,11 +81,6 @@ let font_size_not_done = {
 function compute_grid() {
     if(result_el === null) return;
     let base_columns = $gallerySearch.items_per_row;
-
-    // TODO: responsive
-    /* if (breakpoints.smAndDown) {
-        base_columns = breakpoints.smOnly ? 2 : 1;
-    } */
 
     // constants
     const MIN_WIDTH = 110;
@@ -174,7 +170,17 @@ function handleImageError(e: Event) {
     let parent = target.parentElement as HTMLElement | null;
     if(parent) {
         parent.style.background='rgba(0,0,0,0.3)';
-        parent.classList.add('rounded');
+    }
+}
+
+function handleImageLoaded(e: Event) {
+    let target = e.target as HTMLImageElement;
+    target.style.display='inherit';
+    let next = target.nextElementSibling as HTMLElement | null;
+    if(next) next.style.display='none';
+    let parent = target.parentElement as HTMLElement | null;
+    if(parent) {
+        parent.style.background='inherit';
     }
 }
 
@@ -207,16 +213,21 @@ function isScrolledIntoView(el: HTMLElement, margin: number = 0) {
     {:else}
         {#each sliced_results as texture}
             <div class="gallery-result">
-                <img
-                    src={texture.url}
-                    alt={texture.name}
-                    on:error={handleImageError}
-                />
-                <div class="not-done" style="display: none;">
-                    <h1 class="not-done-id">#{ texture.textureID }</h1>
-                    <h3 class="not-done-name">{ texture.name }</h3>
-                    <p class="not-done-message">{ text_not_done }</p>
+                <div class="content tooltip-target">
+                    <img
+                        src={texture.url}
+                        alt={texture.name}
+                        on:load={handleImageLoaded}
+                        on:error={handleImageError}
+                    />
+                    <div class="not-done" style="display: none;">
+                        <h1 class="not-done-id">#{ texture.textureID }</h1>
+                        <h3 class="not-done-name">{ texture.name }</h3>
+                        <p class="not-done-message">{ text_not_done }</p>
+                    </div>
                 </div>
+
+                <GalleryTooltip {texture} />
             </div>
         {/each}
     {/if}
@@ -246,7 +257,7 @@ function isScrolledIntoView(el: HTMLElement, margin: number = 0) {
             overflow: hidden;  /* NEW */
             min-width: 0;      /* NEW; needed for Firefox */
 
-            :global( > *) {
+            .content, .content:global( > *) {
                 aspect-ratio: 1/1;
                 position: absolute;
                 height: 100%;

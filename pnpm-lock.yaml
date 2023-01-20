@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fortawesome/free-brands-svg-icons': ^6.2.1
   '@fortawesome/free-solid-svg-icons': ^6.2.1
   '@material/animation': ^14.0.0
   '@material/base': ^14.0.0
@@ -28,6 +27,7 @@ specifiers:
   isomorphic-dompurify: ^0.26.0
   kramed-text-renderer: ^0.2.1
   marked: ^4.2.12
+  moment: ^2.29.4
   postcss: ^8.4.21
   postcss-load-config: ^4.0.1
   prettier: ^2.8.3
@@ -37,9 +37,11 @@ specifiers:
   svelte: ^3.55.1
   svelte-check: ^3.0.2
   svelte-fa: ^3.0.3
+  svelte-icomoon: ^0.4.4
   svelte-preprocess: ^5.0.0
   svelte-select: ^5.1.1
   sveltekit-i18n: ^2.2.2
+  tippy.js: ^6.3.7
   typescript: ^4.9.4
   vite: ^4.0.4
 
@@ -47,11 +49,13 @@ dependencies:
   isomorphic-dompurify: 0.26.0
   kramed-text-renderer: 0.2.1
   marked: 4.2.12
+  moment: 2.29.4
+  svelte-icomoon: 0.4.4
   svelte-select: 5.1.1_atrrhq7vg4ekua4nnyrpuardle
   sveltekit-i18n: 2.2.2_svelte@3.55.1
+  tippy.js: 6.3.7
 
 devDependencies:
-  '@fortawesome/free-brands-svg-icons': 6.2.1
   '@fortawesome/free-solid-svg-icons': 6.2.1
   '@material/animation': 14.0.0
   '@material/base': 14.0.0
@@ -321,14 +325,6 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@fortawesome/free-brands-svg-icons/6.2.1:
-    resolution: {integrity: sha512-L8l4MfdHPmZlJ72PvzdfwOwbwcCAL0vx48tJRnI6u1PJXh+j2f3yDoKyQgO3qjEsgD5Fr2tQV/cPP8F/k6aUig==}
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dependencies:
-      '@fortawesome/fontawesome-common-types': 6.2.1
-    dev: true
-
   /@fortawesome/free-solid-svg-icons/6.2.1:
     resolution: {integrity: sha512-oKuqrP5jbfEPJWTij4sM+/RvgX+RMFwx3QZCZcK9PrBDgxC35zuc7AOFsyMjMd/PIFPeB2JxyqDr5zs/DZFPPw==}
     engines: {node: '>=6'}
@@ -514,6 +510,10 @@ packages:
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
+
+  /@popperjs/core/2.11.6:
+    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
+    dev: false
 
   /@rollup/plugin-commonjs/24.0.0_rollup@3.7.5:
     resolution: {integrity: sha512-0w0wyykzdyRRPHOb0cQt14mIBLujfAv6GgP6g8nvg/iBxEm112t3YPPq+Buqe2+imvElTka+bjNlJ/gB56TD8g==}
@@ -1934,6 +1934,10 @@ packages:
       minimist: 1.2.7
     dev: true
 
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
+
   /mri/1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -2734,6 +2738,10 @@ packages:
       svelte: 3.55.1
     dev: true
 
+  /svelte-icomoon/0.4.4:
+    resolution: {integrity: sha512-C6so9nJKNp2q88cUW5BANyqZy4EsHLFGn6t1hp9OrnI/z5GBdbXrsNMMVXtYYT/qw221uB6KMwGPv8Fcw7UcoA==}
+    dev: false
+
   /svelte-preprocess/5.0.0_kmnkm63hwcse26ffcjvrch7uda:
     resolution: {integrity: sha512-q7lpa7i2FBu8Pa+G0MmuQQWETBwCKgsGmuq1Sf6n8q4uaG9ZLcLP0Y+etC6bF4sE6EbLxfiI38zV6RfPe3RSfg==}
     engines: {node: '>= 14.10.0'}
@@ -2848,6 +2856,12 @@ packages:
       globalyzer: 0.1.0
       globrex: 0.1.2
     dev: true
+
+  /tippy.js/6.3.7:
+    resolution: {integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==}
+    dependencies:
+      '@popperjs/core': 2.11.6
+    dev: false
 
   /to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
