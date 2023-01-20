@@ -101,13 +101,6 @@
 		}
 	}
 
-	.texture-id {
-		font-size: 1.05em;
-		opacity: 0.7;
-		font-weight: 300;
-		text-transform: uppercase;
-	}
-
 	.texture-title {
 		font-weight: 600;
 		margin: .2em 0;
