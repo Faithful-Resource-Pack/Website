@@ -5,7 +5,10 @@ interface Post {
     name: string,
     title: string,
     permalink: string,
-    headerImage: string,
+    headerImg: string,
+    downloads: string,
+    downlaod: string,
+    mainChangelog: string
 };
 
 let _posts = readable({

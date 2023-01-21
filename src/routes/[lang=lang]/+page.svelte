@@ -91,8 +91,8 @@
     {:else}
         {#each $posts.slice(0,6) as post }
         <a class="card img-card" rel="noopener" href="{ post.permalink }">
-            {#if post.headerImage }
-                <img src={ post.headerImage } loading="lazy" alt={ post.title }>
+            {#if post.headerImg }
+                <img src={ post.headerImg } loading="lazy" alt={ post.title }>
             {:else}
                 <img src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy" alt={ post.title }>
             {/if}
