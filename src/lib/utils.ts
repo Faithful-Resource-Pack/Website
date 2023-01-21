@@ -43,3 +43,11 @@ export function mergeDeep(target: any, ...sources: any[]): any {
 
 	return mergeDeep(target, ...sources);
 }
+
+export function toCamel(s: string) {
+	return s.replace(/([-_][a-z])/ig, ($1) => {
+		return $1.toUpperCase()
+			.replace('-', '')
+			.replace('_', '');
+	});
+};

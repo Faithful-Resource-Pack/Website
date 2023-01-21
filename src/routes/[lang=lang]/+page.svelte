@@ -1,5 +1,7 @@
 <script lang="ts">
     import PackCardList from "$components/home/packCardList.svelte";
+	import postStore, { postListStore, postStoreError } from "$stores/PostStore";
+	import { derived } from "svelte/store";
 
     const SEE_MORE = 'See More';
     const projects = {
@@ -51,39 +53,9 @@
         ]
     }
 
-    // TODO: change with real posts
-    const posts: App.Post[] = [
-        {
-            "permalink": "https://faithfulpack.net/faithful32x/22w46a",
-            "title": "Faithful 32x – Snapshot 22w46a",
-            "headerImage": "https://database.faithfulpack.net/images/website/posts/32x/S_22w46a.jpg"
-        },
-        {
-            "permalink": "https://faithfulpack.net/faithful64x/B6",
-            "title": "Faithful 64x Beta 6",
-            "headerImage": "https://database.faithfulpack.net/images/website/posts/64x/B6.jpg"
-        },
-        {
-            "permalink": "https://faithfulpack.net/faithful32x/R3",
-            "title": "Faithful 32x – October 2022 Releases",
-            "headerImage": "https://database.faithfulpack.net/images/website/posts/32x/R3.jpg"
-        },
-        {
-            "permalink": "https://faithfulpack.net/License%20Update",
-            "title": "An Update To Our License",
-            "headerImage": "https://database.faithfulpack.net/images/website/posts/other/steve_license.jpg"
-        },
-        {
-            "permalink": "https://faithfulpack.net/faithful32xDungeons/The%20Fate%20of%20Faithful%20Dungeons",
-            "title": "The Fate of Faithful Dungeons",
-            "headerImage": "https://database.faithfulpack.net/images/website/posts/32xDungeons/discontinue.jpg"
-        },
-        {
-            "permalink": "https://faithfulpack.net/faithful32x/R2",
-            "title": "Faithful 32x – August 2022 Releases",
-            "headerImage": "https://database.faithfulpack.net/images/website/posts/32x/R2.jpg"
-        }
-        ];
+    let posts = postListStore;
+    console.log($posts);
+    let postsError = postStoreError;
 </script>
 
 <div class="highlight-section text-center">
@@ -110,17 +82,25 @@
 <h1 class="title text-center">Faithful News</h1>
 
 <div id="posts" class="res-grid-3">
-    {#each posts as post}
-    <a class="card img-card" rel="noopener" href="{ post.permalink }">
-        {#if post.headerImage }
-            <img src={ post.headerImage } loading="lazy" alt={ post.title }>
+    {#if $posts === undefined}
+        {#if $postsError !== undefined}
+            <div class="axios-error">{ JSON.stringify($postsError) }</div>
         {:else}
-            <img src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy" alt={ post.title }>
+            <h1 class="title text-center">Laoding...</h1>
         {/if}
+    {:else}
+        {#each $posts.slice(0,6) as post }
+        <a class="card img-card" rel="noopener" href="{ post.permalink }">
+            {#if post.headerImage }
+                <img src={ post.headerImage } loading="lazy" alt={ post.title }>
+            {:else}
+                <img src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy" alt={ post.title }>
+            {/if}
 
-        <h3>{ post.title }</h3>
-    </a>
-    {/each}
+            <h3>{ post.title }</h3>
+        </a>
+        {/each}
+    {/if}
 </div><br>
 <a class="btn btn-dark col-6 center text-center" href="/news" id="more_news">{ SEE_MORE }</a>
 
