@@ -10,3 +10,6 @@ node_modules/
 .env
 firestorm
 .svelte-kit
+/posts.json
+/build
+/static
