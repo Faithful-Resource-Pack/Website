@@ -13,10 +13,12 @@ import {
   faCircleHalfStroke,
   faCaretDown as faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
+import I18n from "./common/i18n.svelte";
 
 import { themeStore } from "$stores/ThemeStore";
 import { derived } from "svelte/store";
-	import { langStore } from "$stores/LangStore";
+import { langStore } from "$stores/LangStore";
+import type { PageLoad } from "../routes/[lang=lang]/$types";
 
 let year = new Date().getFullYear().toString();
 
@@ -28,9 +30,6 @@ const toggle = function(arg: string) {
   }
 }
 
-// * i18n
-const text_lang = "Language";
-
 const text_theme = derived(themeStore, v => (v[0].toUpperCase() + v.substring(1) + " Theme"));
 const icon_theme = derived(themeStore, v => {
   if(v === 'auto') return faCircleHalfStroke
@@ -38,12 +37,16 @@ const icon_theme = derived(themeStore, v => {
   else return faSun
 })
 
-export const load = async ({ url }) => {
+export const load: PageLoad = async ({ url }) => {
   const { pathname } = url;
   const defaultLocale = 'en'; // get from cookie / user session etc...
   const initLocale = locale.get() || defaultLocale; 
   await loadTranslations(initLocale, pathname); // keep this just before the `return`
   return {};
+}
+
+export const blur = (e: FocusEvent) => {
+  setTimeout(() => (e.target as HTMLButtonElement).blur(), 200)
 }
 </script>
 
@@ -57,11 +60,11 @@ export const load = async ({ url }) => {
       <ul class="footer-content">
         <div class="btns">
           
-          <button disabled on:click={langStore.next} on:focus={(e) => setTimeout(() => e.target.blur(), 200)}>
+          <button on:click={langStore.next} on:focus={blur}>
             <Fa icon={faGlobe}/><span>{$t($locale)}</span>
           </button>
 
-          <button on:click={themeStore.next} on:focus={(e) => setTimeout(() => e.target.blur(), 200)}>
+          <button on:click={themeStore.next} on:focus={blur}>
             <Fa icon={$icon_theme}/><span>{$text_theme}</span>
           </button>
         </div>
@@ -73,52 +76,52 @@ export const load = async ({ url }) => {
     
     <div class="footer-element">
       <div class={"footer-head" + (toggleThis === 'Info' ? TOGGLE_CLASS : '')} on:click={toggle('Info')} on:keypress={() => {}}>
-        <h3><Fa icon={faInfoCircle}/> Info <Fa icon={faChevronDown} size="sm"/></h3>
+        <h3><Fa icon={faInfoCircle}/> { $t('footer.info.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
-        <li><a href="/installation">Installation</a></li>
-        <li><a href="/license">License</a></li>
-        <li><a href="/team">Team</a></li>
-        <li><a href="/branding">Branding</a></li>
-        <li><a href="/stats">Statistics</a></li>
+        <li><a href="/installation">{ $t('footer.info.installation') }</a></li>
+        <li><a href="/license">{ $t('footer.info.license') }</a></li>
+        <li><a href="/team">{ $t('footer.info.team') }</a></li>
+        <li><a href="/branding">{ $t('footer.info.branding') }</a></li>
+        <li><a href="/stats">{ $t('footer.info.stats') }</a></li>
       </ul>
     </div>
 
     <div class="footer-element">
       <div class={"footer-head" + (toggleThis === 'Listings' ? TOGGLE_CLASS : '')} on:click={toggle('Listings')} on:keypress={() => {}}>
-        <h3><Fa icon={faBook}/> Listings <Fa icon={faChevronDown} size="sm"/></h3>
+        <h3><Fa icon={faBook}/> { $t('footer.listings.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
         <li><a href="https://www.curseforge.com/members/faithful_resource_pack/projects">CurseForge</a></li>
         <li><a href="https://modrinth.com/user/Faithful-Resource-Pack">Modrinth</a></li>
         <li><a href="https://www.planetminecraft.com/member/faithful_resource_pack">Planet Minecraft</a></li>
         <li><a href="https://mcpedl.com/user/faithful-resource-pack">MCPEDL</a></li>
-        <li><a href="https://www.minecraftforum.net/members/Faithful_Resource_Pack">Minecraft Forum</a></li>
+        <li><a href="https://www.minecraftforum.net/members/Faithful_Resource_Pack">{ $t('footer.listings.minecraft_forum') }</a></li>
       </ul>
     </div>
 
     <div class="footer-element">
       <div class={"footer-head" + (toggleThis === 'Media' ? TOGGLE_CLASS : '')} on:click={toggle('Media')} on:keypress={() => {}}>
-        <h3><Fa icon={faComment}/> Media <Fa icon={faChevronDown} size="sm"/></h3>
+        <h3><Fa icon={faComment}/> { $t('footer.media.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
         <li><a href="https://twitter.com/FaithfulPack">Twitter</a></li>
         <li><a href="https://www.patreon.com/Faithful_Resource_Pack">Patreon</a></li>
         <li><a href="https://www.reddit.com/r/faithfulpack/">Reddit</a></li>
-        <li><a href="https://discord.gg/sN9YRQbBv7">Main Discord</a></li>
-        <li><a href="https://discord.gg/KSEhCVtg4J">CF Discord</a></li>
+        <li><a href="https://discord.gg/sN9YRQbBv7">{ $t('footer.media.main_discord') }</a></li>
+        <li><a href="https://discord.gg/KSEhCVtg4J">{ $t('footer.media.cf_discord') }</a></li>
       </ul>
     </div>
 
     <div class="footer-element">
       <div class={"footer-head" + (toggleThis === 'Resources' ? TOGGLE_CLASS : '')} on:click={toggle('Resources')} on:keypress={() => {}}>
-        <h3><Fa icon = {faScroll}/> Resources <Fa icon={faChevronDown} size="sm"/></h3>
+        <h3><Fa icon = {faScroll}/> { $t('footer.resources.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
-        <li><a href="/news">News</a></li>
-        <li><a href="https://docs.faithfulpack.net">Docs</a></li>
-        <li><a href="https://status.faithfulpack.net">Status</a></li>
-        <li><a href="https://translate.faithfulpack.net">Translate</a></li>
+        <li><a href="/news">{ $t('footer.resources.news') }</a></li>
+        <li><a href="https://docs.faithfulpack.net">{ $t('footer.resources.docs') }</a></li>
+        <li><a href="https://status.faithfulpack.net">{ $t('footer.resources.status') }</a></li>
+        <li><a href="https://translate.faithfulpack.net">{ $t('footer.resources.translate') }</a></li>
         <li><a href="https://docs.faithfulpack.net/pages/textures/contributor-handbook">Contributor's Handbook</a></li>
       </ul>
     </div>
@@ -136,7 +139,9 @@ export const load = async ({ url }) => {
   </div>
 
   <div class="footer-trademark">
-    <p>"Minecraft" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the <a class="link" href="https://www.minecraft.net">official site</a> to get the game!</p>
+    <p><I18n path="footer.minecraft_trademark" slots={({
+      website: ' <a class="link" href="https://www.minecraft.net" target="_blank">$1</a>'
+    })} /></p>
   </div>
 </footer>
 
