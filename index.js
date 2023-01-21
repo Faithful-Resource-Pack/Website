@@ -151,11 +151,11 @@ function generate_posts_json() {
       return acc;
     }, {});
   })
-  .then(result => {
+  .then(async result => {
     posts_map = result
     posts_map_loading = false
 
-    fs.writeFile(EXTRACTED_POSTS_PATH, JSON.stringify(result))
+    await fs.writeFile(EXTRACTED_POSTS_PATH, JSON.stringify(result))
     
     return result
   })
