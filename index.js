@@ -1,5 +1,6 @@
 const { default: axios } = require('axios')
 const express = require('express')
+var cors = require('cors')
 const fs = require('fs').promises
 const { readFileSync } = require('fs')
 const createDOMPurify = require('dompurify')
@@ -7,6 +8,14 @@ const { JSDOM } = require('jsdom')
 const { parse } = require('path')
 
 require('dotenv').config()
+
+const corsOptions = {
+  origin: '*',
+  methods: [],
+  allowedHeaders: [],
+  exposedHeaders: [],
+  credentials: true
+};
 
 const window = new JSDOM('').window
 const DOMPurify = createDOMPurify(window)
@@ -161,7 +170,7 @@ function generate_posts_json() {
   })
 }
 
-app.get('/posts.json', (_, res) => {
+app.get('/posts.json', cors(corsOptions), (_, res) => {
   generate_posts_json()
   .then(() => {
     res.sendFile(EXTRACTED_POSTS_PATH)
