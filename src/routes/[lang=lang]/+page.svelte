@@ -13,16 +13,16 @@
             [{href: '/classicfaithful/64x-jappa', title: SEE_MORE}],
         ],
         urls: [
-            { 
+            {
                 title: "Faithful 32x",
                 background: "https://database.faithfulpack.net/images/branding/site/posters/poster_32.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png"},
-            { 
+            {
                 title: "Faithful 64x",
                 background: "https://database.faithfulpack.net/images/branding/site/posters/poster_64.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f64_logo.png"
             },
-            { 
+            {
                 title: "Classic Faithful 32x",
                 background: "https://database.faithfulpack.net/images/branding/site/posters/poster_cf32.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png"
@@ -86,7 +86,7 @@
         {#if $postsError !== undefined}
             <div class="axios-error">{ JSON.stringify($postsError) }</div>
         {:else}
-            <h1 class="title text-center">Laoding...</h1>
+            <h1 class="title text-center">Loading...</h1>
         {/if}
     {:else}
         {#each $posts.slice(0,6) as post }
@@ -115,7 +115,7 @@
         padding: 0 $spacing 1px;
 
         #upspace {
-            height: 88px;   
+            height: 88px;
         }
 
         .highlight-wordmark {
@@ -189,7 +189,7 @@
         #posts {
             grid-gap: $small-spacing;
         }
-        
+
         #more_news {
             width: calc(100% - 2*$small-spacing);
         }
