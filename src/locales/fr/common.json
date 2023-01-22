@@ -4,6 +4,38 @@
     "downloads": "Téléchargements",
     "about": "À propos",
     "addons": "Add-ons",
-    "modding": "Modding"
+    "modding": "Modding",
+    "gallery": "Galerie"
+  },
+  "footer": {
+    "light_theme": "Thème clair",
+    "dark_theme": "Thème sombre",
+    "auto_theme": "Thème auto",
+    "info": {
+      "title": "Infos",
+      "installation": "Installation",
+      "license": "Licence",
+      "team": "Équipe",
+      "branding": "Image de marque",
+      "stats": "Statistiques"
+    },
+    "listings": {
+      "title": "Listes",
+      "minecraft_forum": "Forum Minecraft"
+    },
+    "media": {
+      "title": "Médias",
+      "main_discord": "Discord Principal 🇬🇧",
+      "cf_discord": "Discord CF 🇬🇧"
+    },
+    "resources": {
+      "title": "Ressources",
+      "news": "Actualités",
+      "docs": "Documentations",
+      "status": "Statut",
+      "translate": "Traduire",
+      "contributors_handbook": "Guide du contributeur"
+    },
+    "minecraft_trademark": "\"Minecraft\" est une marque commerciale de Microsoft Corporation et n'est pas affiliée à ce site. Rendez-vous sur le {website}site officiel{/website} pour obtenir le jeu !"
   }
 }
