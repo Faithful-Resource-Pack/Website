@@ -1,0 +1,41 @@
+{
+  "header": {
+    "home": "Home",
+    "downloads": "Downloads",
+    "about": "About",
+    "addons": "Add-ons",
+    "modding": "Modding",
+    "gallery": "Gallery"
+  },
+  "footer": {
+    "light_theme": "Light Theme",
+    "dark_theme": "Dark Theme",
+    "auto_theme": "Auto Theme",
+    "info": {
+      "title": "Info",
+      "installation": "Installation",
+      "license": "License",
+      "team": "Team",
+      "branding": "Branding",
+      "stats": "Statistics"
+    },
+    "listings": {
+      "title": "Listings",
+      "minecraft_forum": "Minecraft Forum"
+    },
+    "media": {
+      "title": "Media",
+      "main_discord": "Main Discord",
+      "cf_discord": "CF Discord"
+    },
+    "resources": {
+      "title": "Resources",
+      "news": "News",
+      "docs": "Docs",
+      "status": "Status",
+      "translate": "Translate",
+      "contributors_handbook": "Contributor's Handbook"
+    },
+    "minecraft_trademark": "\"Minecraft\" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the {website}official site{/website} to get the game!"
+  }
+}
