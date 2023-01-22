@@ -64,7 +64,6 @@ function search(_origin?: string) {
         return res.json()
     })
     .then(json => {
-        console.log(typeof(json))
         results = json;
     })
 }

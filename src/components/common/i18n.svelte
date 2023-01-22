@@ -17,8 +17,6 @@
     });
 
     const sanitized = DOMPurify.sanitize(inner);
-
-    console.log(sanitized);
     
     let final = `${tags[0]}${sanitized}${tags[1]}`;
 </script>
