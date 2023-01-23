@@ -95,15 +95,29 @@ button:disabled {
 	grid-template-columns: repeat(1, 1fr);
 }
 
-.res-grid-3 {
-	grid-template-columns: repeat(3, 3fr);
-
+@mixin grid_shrink {
 	@media only screen and (max-width: 992px) {
 		grid-template-columns: repeat(2, 2fr);
 	}
 	@media only screen and (max-width: 600px) {
 		grid-template-columns: repeat(1, 1fr);
 	}
+}
+
+.res-grid-4 {
+	grid-template-columns: repeat(4, 4fr);
+
+	@media only screen and (max-width: 1100px) {
+		grid-template-columns: repeat(3, 3fr);
+	}
+
+	@include grid_shrink();
+}
+
+.res-grid-3 {
+	grid-template-columns: repeat(3, 3fr);
+
+	@include grid_shrink();
 }
 
 .img-card {
