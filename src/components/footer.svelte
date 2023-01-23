@@ -1,7 +1,7 @@
 <script lang="ts">
 import Fa from "svelte-fa/src/fa.svelte";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { t, locale, locales, loadTranslations } from '$lib/translations';
+import { t, locale, locales, loadTranslations, supportedLocales } from '$lib/translations';
 import {
   faInfoCircle,
   faScroll,
@@ -19,6 +19,9 @@ import { themeStore } from "$stores/ThemeStore";
 import { derived } from "svelte/store";
 import { langStore } from "$stores/LangStore";
 import type { PageLoad } from "../routes/[lang=lang]/$types";
+import { onMount } from "svelte";
+import UrlStore from "$stores/UrlStore";
+import Optional from "$lib/optional";
 
 let year = new Date().getFullYear().toString();
 
@@ -48,6 +51,56 @@ export const load: PageLoad = async ({ url }) => {
 export const blur = (e: FocusEvent) => {
   setTimeout(() => (e.target as HTMLButtonElement).blur(), 200)
 }
+
+function urlToLang(url: string): [string, string[], URL] | null {
+  let ourUrl = new URL(url);
+  let pathname = ourUrl.pathname;
+  let pathSplit = pathname.split('/');
+  pathSplit.shift(); // remove first empty string
+  let possibleLang = pathSplit.shift();
+  if(possibleLang && supportedLocales.includes(possibleLang))
+  {
+    return [possibleLang, pathSplit, ourUrl];
+  }
+  return null;
+}
+
+onMount(() => {
+  // watch lang and change history
+  langStore.subscribe((newLang) => {
+    let currentUrl = window.location.toString();
+    let oldLang = urlToLang(currentUrl);
+
+    if(oldLang && newLang != oldLang[0]) {
+      const [_, pathSplit, urlObject] = oldLang;
+      pathSplit.splice(0,0,newLang);
+      urlObject.pathname = '/' + pathSplit.join('/');
+      let newUrl = urlObject.toString();
+
+      if(currentUrl != newUrl) {
+        if('pushState' in window.history) {
+          window.history.pushState({}, "", newUrl);
+        } else {
+          location.replace(newUrl);
+        }
+      }
+    }
+  })
+
+  // watch URL (history) and change language
+  UrlStore.subscribe((evt) => {
+    let detail = Optional(evt).chain(evt => evt.detail);
+
+    let newUrl = detail.chain(detail => detail.newURL);
+    let langUrl = newUrl.chain(u => urlToLang(u)).value || undefined;
+
+    let storedLang = locale.get();
+
+    if(langUrl && storedLang && storedLang != langUrl[0]) {
+      locale.set(langUrl[0]);
+    }
+  })
+})
 </script>
 
 <footer class="footer">
