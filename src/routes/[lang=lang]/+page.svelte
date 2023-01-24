@@ -6,11 +6,11 @@
     const SEE_MORE = 'See More';
     const projects = {
         links: [
-            [{href: '/packs/faithful-32x', title: SEE_MORE}],
-            [{href: '/packs/faithful-64x', title: SEE_MORE}],
-            [{href: '/packs/classic-faithful-32x-jappa', title: 'New Textures (Jappa)'},
-                {href: '/packs/classic-faithful-32x-programmer-art', title: 'Classic Textures (PA)'}],
-            [{href: '/packs/classic-faithful-64x', title: SEE_MORE}],
+            [{href: '/faithful-32x', title: SEE_MORE}],
+            [{href: '/faithful-64x', title: SEE_MORE}],
+            [{href: '/classicfaithful/32x-jappa', title: 'New Textures (Jappa)'},
+                {href: '/classicfaithful/32x-programmer-art', title: 'Classic Textures (PA)'}],
+            [{href: '/classicfaithful/64x-jappa', title: SEE_MORE}],
         ],
         urls: [
             {
@@ -54,6 +54,7 @@
     }
 
     let posts = postListStore;
+    console.log($posts);
     let postsError = postStoreError;
 </script>
 
