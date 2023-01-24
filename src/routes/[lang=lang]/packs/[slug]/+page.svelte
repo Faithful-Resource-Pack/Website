@@ -1,6 +1,9 @@
 <script lang="ts">
     export let data: any;
-    import ("img-comparison-slider");
+    import { onMount } from 'svelte';
+	onMount(() => {
+		import ('img-comparison-slider');
+	});
 </script>
 
 <div class="highlight-section text-center" style="background-image: url({data.background})">
