@@ -1,6 +1,8 @@
 <script lang="ts">
     export let data: any;
     import { onMount } from 'svelte';
+    import Carousel from 'svelte-carousel';
+    import { browser } from '$app/environment';
 	onMount(() => {
 		import ('img-comparison-slider');
 	});
@@ -29,7 +31,27 @@
         src="/images/comparisons/default.png"
         alt="Vanilla"
     />
- </img-comparison-slider>
+    <svg slot="handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
+        <path stroke="#fff" d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2" stroke-width="1" fill="#fff" vector-effect="non-scaling-stroke"></path>
+    </svg>
+</img-comparison-slider>
+
+<!--
+    Do I look like I want to do a carousel by myself? Hell nah
+-->
+{#if browser}
+    <Carousel
+        dots={false}
+        particlesToShow={3}
+    >
+        <img src="https://database.faithfulpack.net/images/website/posts/32x/S_22w46a.jpg" alt="yes">
+        <img src="https://database.faithfulpack.net/images/website/posts/32x/R4.jpg" alt="yes">
+        <img src="https://database.faithfulpack.net/images/website/posts/32x/R3.jpg" alt="yes">
+        <img src="https://database.faithfulpack.net/images/website/posts/32x/R2.jpg" alt="yes">
+        <img src="https://database.faithfulpack.net/images/website/posts/32x/R1.jpg" alt="yes">
+        <img src="https://database.faithfulpack.net/images/website/posts/32x/B20.jpg" alt="yes">
+    </Carousel>
+{/if}
 
 <style lang="scss">
     .highlight-section {
@@ -40,11 +62,11 @@
         margin-bottom: 2rem;
 
         .highlight-logotext {
-            height: 200px;
+            width: 80%;
         }
 
         .card {
-            width: 30%;
+            width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -58,12 +80,38 @@
         width: 60%;
         border-radius: $border-radius;
 
+        &:hover {
+            cursor: col-resize;
+        }
+
         &:focus {
             outline: none;
         }
 
         img {
             width: 100%;
+        }
+    }
+
+    @media (max-width: $width-M) {
+        .highlight-section {
+            .highlight-logotext{
+                width: 100%;
+            }
+            
+            .card {
+                width: 90%;
+            }
+        }
+
+        img-comparison-slider {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: $width-M) {
+        .highlight-section .btn {
+            width: 49%;
         }
     }
 </style>
