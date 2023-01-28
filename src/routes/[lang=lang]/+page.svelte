@@ -125,9 +125,7 @@
 
         h1 {
             color: #fff;
-            text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
-            font-weight: 600;
-            font-size: 2rem;
+            text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
 
         h1, .banner.purple {
