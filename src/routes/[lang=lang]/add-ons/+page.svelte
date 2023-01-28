@@ -16,7 +16,7 @@
     <div id="addon_header_text">
         <h1 class="title middle">
             <img class="title-image" src="https://database.faithfulpack.net/images/branding/logos/transparent/128/addons_logo.png" alt="Addons"
-            /><span>{ text_title }</span>
+            /><span class="h1">{ text_title }</span>
         </h1>
         <p>{ @html text_desc }</p>
         <p><i><a href="#howto">{ text_how_to_install }</a></i></p>
