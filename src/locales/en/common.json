@@ -58,11 +58,11 @@
       "main_pack": "Main Pack",
       "32_releases": "32x Releases",
       "64_releases": "64x Releases",
-      "add_ons": "Add-Ons",
+      "add_ons": "Add-ons",
       "mods": "Mods"
     },
     "mods": {
-      "minecraftVersions": "Minecraft Versions Supported",
+      "minecraftVersions": "Minecraft Versions supported",
       "modsSupported": "Mods Supported",
       "resourcePackStored": "Mod Resource Packs Stored"
     },
