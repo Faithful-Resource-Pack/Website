@@ -1,4 +1,11 @@
 {
+  "common": {
+    "loading": "Chargement...",
+    "yes": "Oui",
+    "no": "Non",
+    "submit": "Soumettre",
+    "cancel": "Annuler"
+  },
   "header": {
     "home": "Accueil",
     "downloads": "Téléchargements",
@@ -37,5 +44,37 @@
       "contributors_handbook": "Guide du contributeur"
     },
     "minecraft_trademark": "\"Minecraft\" est une marque commerciale de Microsoft Corporation et n'est pas affiliée à ce site. Rendez-vous sur le {website}site officiel{/website} pour obtenir le jeu !"
+  },
+  "team": {
+    "title": {
+      "our_team": "Rencontrer l'équipe",
+      "additional_developers": "Autres développeurs"
+    },
+    "default_location": ""
+  },
+  "stats": {
+    "title": {
+      "page": "Statistiques du Faithful",
+      "main_pack": "Pack Principal",
+      "32_releases": "Versions 32x",
+      "64_releases": "Versions 64x",
+      "add_ons": "Add-ons",
+      "mods": "Mods"
+    },
+    "mods": {
+      "minecraftVersions": "Versions Minecraft supportées",
+      "modsSupported": "Mods supportés",
+      "resourcePackStored": "Packs de ressources de mod stockés"
+    },
+    "add_ons": {
+      "32x": {
+        "Java": "Add-ons Java 32x",
+        "Bedrock": "Add-ons Bedrock 32x"
+      },
+      "64x": {
+        "Java": "Add-ons Java 64x",
+        "Bedrock": "Add-ons Bedrock 64x"
+      }
+    }
   }
 }
