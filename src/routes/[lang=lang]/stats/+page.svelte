@@ -36,9 +36,9 @@
 	<h2 class="display-4 my-5">{$t("stats.title.main_pack")}</h2>
 	<div class="res-grid-2">
 		<h3>{$t("stats.title.32_releases")}</h3>
-		<h3><span class="badge badge-primary h1">{$count_32_releases}</span></h3>
+		<h3><span class="badge badge-primary">{$count_32_releases}</span></h3>
 		<h3>{$t("stats.title.64_releases")}</h3>
-		<h3><span class="badge badge-primary h1">{$count_64_releases}</span></h3>
+		<h3><span class="badge badge-primary">{$count_64_releases}</span></h3>
 	</div>
 
 	<h2 class="display-4 my-5 ">{$t("stats.title.add_ons")}</h2>
@@ -50,7 +50,7 @@
                         <h3><span>
                             { $t(`stats.add_ons.${res}.${edition}`) }
                         </span><div class="badge-container">
-                            <span class="badge badge-primary h1">{ value }</span>
+                            <span class="badge badge-primary">{ value }</span>
                         </div></h3>
                     </div>
                 {/each}
@@ -67,7 +67,7 @@
             {#each Object.entries($modStatsStore) as [key, value]}
                 <div>
                     <h3>{$t("stats.mods." + key)}</h3>
-                    <h3><span class="badge badge-primary h1">{value}</span></h3>
+                    <h3><span class="badge badge-primary">{value}</span></h3>
                 </div>
             {/each}
         </div>
@@ -81,6 +81,7 @@
         font-size: 1.2em;
     }
     .badge {
+        text-align: center;
         display: inline-block;
         padding: 0.25em 0.4em;
         font-size: 75%;
@@ -102,6 +103,14 @@
         .badge-container {
             display: inline;
         }
+    }
+
+    h3 * {
+        font-family: inherit;
+    }
+
+    h3 .badge {
+        font-weight: normal;
     }
     
     @media (min-width: $width-L) {
