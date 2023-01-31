@@ -37,5 +37,12 @@
       "contributors_handbook": "Contributor's Handbook"
     },
     "minecraft_trademark": "\"Minecraft\" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the {website}official site{/website} to get the game!"
+  },
+  "team": {
+    "title": {
+      "our_team": "Meet the Team",
+      "additional_developers": "Additional Developers"
+    },
+    "default_location": "Earth-1"
   }
 }
