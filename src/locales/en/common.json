@@ -1,4 +1,11 @@
 {
+  "common": {
+    "loading": "Loading...",
+    "yes": "Yes",
+    "no": "No",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
   "header": {
     "home": "Home",
     "downloads": "Downloads",
@@ -37,5 +44,37 @@
       "contributors_handbook": "Contributor's Handbook"
     },
     "minecraft_trademark": "\"Minecraft\" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the {website}official site{/website} to get the game!"
+  },
+  "team": {
+    "title": {
+      "our_team": "Meet the Team",
+      "additional_developers": "Additional Developers"
+    },
+    "default_location": "Earth-1"
+  },
+  "stats": {
+    "title": {
+      "page": "Faithful Statistics",
+      "main_pack": "Main Pack",
+      "32_releases": "32x Releases",
+      "64_releases": "64x Releases",
+      "add_ons": "Add-Ons",
+      "mods": "Mods"
+    },
+    "mods": {
+      "minecraftVersions": "Minecraft Versions Supported",
+      "modsSupported": "Mods Supported",
+      "resourcePackStored": "Mod Resource Packs Stored"
+    },
+    "add_ons": {
+      "32x": {
+        "Java": "32x Java Add-Ons",
+        "Bedrock": "32x Bedrock Add-Ons"
+      },
+      "64x": {
+        "Java": "64x Java Add-Ons",
+        "Bedrock": "64x Bedrock Add-Ons"
+      }
+    }
   }
 }
