@@ -3,7 +3,7 @@
     "loading": "Chargement...",
     "yes": "Oui",
     "no": "Non",
-    "submit": "Soumettre",
+    "submit": "Envoyer",
     "cancel": "Annuler"
   },
   "header": {
@@ -47,14 +47,14 @@
   },
   "team": {
     "title": {
-      "our_team": "Rencontrer l'équipe",
+      "our_team": "Rencontrer l'Équipe",
       "additional_developers": "Autres développeurs"
     },
     "default_location": ""
   },
   "stats": {
     "title": {
-      "page": "Statistiques du Faithful",
+      "page": "Statistiques de Faithful",
       "main_pack": "Pack Principal",
       "32_releases": "Versions 32x",
       "64_releases": "Versions 64x",
