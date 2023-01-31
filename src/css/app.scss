@@ -1,4 +1,5 @@
 @use "dark.scss";
+@import url("https://database.faithfulpack.net/fonts/FaithfulFont/stylesheet.css");
 
 body {
 	margin: 0;
@@ -12,6 +13,30 @@ body {
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
 		sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: "Faithful 32x";
+}
+
+h1, h2, .h1, .h2 {
+	font-weight: 600; // Semibold
+}
+
+h3, h4, h5, h6, .h3, .h4, .h5, .h6 {
+	font-weight: normal;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.semibold {
+	font-weight: 600;
+}
+
+.regular, .normal {
+	font-weight: normal;
 }
 
 a {

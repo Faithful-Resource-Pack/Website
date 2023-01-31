@@ -16,7 +16,7 @@
         <img class="bg" src={background} alt={title} />
     </div>
     <img class="image" src={src} alt={title} style={styles} />
-    <h1 class="text-center">{title}</h1>
+    <h2 class="text-center">{title}</h2>
 
     <ul>
         {#each links as link }
@@ -76,7 +76,7 @@
         max-width: 100%;
     }
 
-    h1 {
+    h2 {
         width: 256px;
         max-width: 100%;
         text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
