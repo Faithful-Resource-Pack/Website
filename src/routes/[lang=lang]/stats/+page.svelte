@@ -112,7 +112,15 @@
     h3 .badge {
         font-weight: normal;
     }
-    
+
+    h1 {
+        font-weight: 900;
+    }
+
+    h2 {
+        font-weight: 600;
+    }
+
     @media (min-width: $width-L) {
         .container {
            max-width: 1140px;
