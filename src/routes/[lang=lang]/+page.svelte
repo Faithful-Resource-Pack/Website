@@ -60,7 +60,7 @@
 <div class="highlight-section text-center">
     <div id="upspace"></div>
     <img class="highlight-wordmark" src="/images/branding/wordmark.png" alt="Faithful Wordmark">
-    <h1>Providing a higher-resolution experience<br> since 2010.</h1>
+    <h1 id="tagline">Providing a higher-resolution experience since 2010.</h1>
     <p class="banner purple">
         <a href="https://discord.gg/sN9YRQbBv7">Join our Discord now and contribute to the project!</a>
     </p>
@@ -114,7 +114,7 @@
         padding: 0 $spacing 1px;
 
         #upspace {
-            height: 88px;
+            height: 80px;
         }
 
         .highlight-wordmark {
@@ -157,6 +157,10 @@
         font-weight: 500;
     }
 
+    #tagline {
+        font-weight: 300;
+    }
+
     #posts {
         width: 1140px;
         max-width: 100%;
@@ -176,13 +180,16 @@
         #upspace {
             display: none;
         }
+
         .highlight-wordmark {
             margin-top: 2rem;
         }
+
         #posts, .highlight-section, .highlight-section h1, .highlight-section .banner.purple, #handy-guide {
             padding-left: $small-spacing;
             padding-right: $small-spacing;
         }
+
         #posts {
             grid-gap: $small-spacing;
         }
