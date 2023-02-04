@@ -60,7 +60,7 @@
 <div class="highlight-section text-center">
     <div id="upspace"></div>
     <img class="highlight-wordmark" src="/images/branding/wordmark.png" alt="Faithful Wordmark">
-    <h1 id="tagline">Providing a higher-resolution experience since 2010.</h1>
+    <h2 id="tagline">Providing a higher-resolution experience since 2010.</h2>
     <p class="banner purple">
         <a href="https://discord.gg/sN9YRQbBv7">Join our Discord now and contribute to the project!</a>
     </p>
@@ -123,7 +123,7 @@
             max-width: 100%;
         }
 
-        h1 {
+        h2 {
             color: #fff;
             text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
