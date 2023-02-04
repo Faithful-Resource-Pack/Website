@@ -96,7 +96,7 @@
                 <img src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy" alt={ post.title }>
             {/if}
 
-            <h3>{ post.title }</h3>
+            <h3 id="post-title">{ post.title }</h3>
         </a>
         {/each}
     {/if}
@@ -165,8 +165,12 @@
         width: 1140px;
         max-width: 100%;
         margin: 0 auto;
-        font-size: 0.8rem;
         padding: 0 2rem;
+    }
+
+    #post-title {
+        font-size: 1rem;
+        font-weight: 600;
     }
 
     .img-card > h3 {

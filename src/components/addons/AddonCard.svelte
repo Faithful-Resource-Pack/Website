@@ -106,7 +106,7 @@
         margin-left: 8px;
 
         & > p {
-            margin: 0 5px 0 0;
+            margin: 0 5px 5px 0;
         }
     }
     .addon-favorite {
