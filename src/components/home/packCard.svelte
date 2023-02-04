@@ -81,7 +81,7 @@
         max-width: 100%;
         text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
         flex-grow: 1;
-        color: rgba(255, 255, 255, 1);
+        color: #fff;
     }
 
     ul {

@@ -55,8 +55,9 @@
 
         #addon_header_text {
             position: relative;
+
             h1, h2, h4, p {
-                color: rgba(255, 255, 255, 1);
+                color: #fff;
             }
         }
 

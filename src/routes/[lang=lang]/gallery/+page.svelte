@@ -200,7 +200,7 @@ function isScrolledIntoView(el: HTMLElement, margin: number = 0) {
 }
 </script>
 
-<h1 class="title text-center" id="gallery-title">{ text_title_gallery }</h1>
+<h1 class="title text-center bold">{ text_title_gallery }</h1>
 
 <GalleryOptions on:search={() => search()} />
 
@@ -302,10 +302,6 @@ function isScrolledIntoView(el: HTMLElement, margin: number = 0) {
         #results {
             grid-template-columns: repeat(1, 1fr) !important;
         }
-    }
-
-    #gallery-title {
-        font-weight: 900;
     }
 
     #uparrow {

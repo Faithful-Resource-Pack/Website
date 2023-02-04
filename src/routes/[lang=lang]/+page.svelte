@@ -60,7 +60,7 @@
 <div class="highlight-section text-center">
     <div id="upspace"></div>
     <img class="highlight-wordmark" src="/images/branding/wordmark.png" alt="Faithful Wordmark">
-    <h2 id="tagline">Providing a higher-resolution experience since 2010.</h2>
+    <h2 class="regular">Providing a higher-resolution experience since 2010.</h2>
     <p class="banner purple">
         <a href="https://discord.gg/sN9YRQbBv7">Join our Discord now and contribute to the project!</a>
     </p>
@@ -96,7 +96,7 @@
                 <img src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy" alt={ post.title }>
             {/if}
 
-            <h3 id="post-title">{ post.title }</h3>
+            <h3>{ post.title }</h3>
         </a>
         {/each}
     {/if}
@@ -128,7 +128,7 @@
             text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
 
-        h1, .banner.purple {
+        h2, .banner.purple {
             margin: $spacing 0;
         }
 
@@ -157,10 +157,6 @@
         font-weight: 500;
     }
 
-    #tagline {
-        font-weight: 300;
-    }
-
     #posts {
         width: 1140px;
         max-width: 100%;
@@ -168,16 +164,13 @@
         padding: 0 2rem;
     }
 
-    #post-title {
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 1);
-    }
-
     .img-card > h3 {
         margin: 0;
         padding: 8px;
         background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
         width: 100%;
+        color: #fff;
+        font-size: 1.2rem;
     }
 
     @media (max-width: $width-XS) {
@@ -189,7 +182,7 @@
             margin-top: 2rem;
         }
 
-        #posts, .highlight-section, .highlight-section h1, .highlight-section .banner.purple, #handy-guide {
+        #posts, .highlight-section, .highlight-section h2, .highlight-section .banner.purple, #handy-guide {
             padding-left: $small-spacing;
             padding-right: $small-spacing;
         }
