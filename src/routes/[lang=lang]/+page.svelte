@@ -170,7 +170,7 @@
 
     #post-title {
         font-size: 1rem;
-        font-weight: 600;
+        color: rgba(255, 255, 255, 1);
     }
 
     .img-card > h3 {

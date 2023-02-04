@@ -78,7 +78,7 @@
 
         h3 {
             font-size: 1rem;
-            font-weight: 600;
+            color: rgba(255, 255, 255, 1);
         }
     }
     .addon-flags {
@@ -107,6 +107,7 @@
 
         & > p {
             margin: 0 5px 5px 0;
+            color: rgba(255, 255, 255, 1);
         }
     }
     .addon-favorite {
