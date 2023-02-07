@@ -1,0 +1,80 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "yes": "Si",
+    "no": "No",
+    "submit": "Entregar",
+    "cancel": "Anular"
+  },
+  "header": {
+    "home": "Casa",
+    "downloads": "Descargas",
+    "about": "Acerca de",
+    "addons": "Complementos",
+    "modding": "Modding",
+    "gallery": "Galería"
+  },
+  "footer": {
+    "light_theme": "Tema Claro",
+    "dark_theme": "Tema Oscuro",
+    "auto_theme": "Tema Automático",
+    "info": {
+      "title": "Info",
+      "installation": "Instalación",
+      "license": "Licencia",
+      "team": "Equipo",
+      "branding": "Marca",
+      "stats": "Estadísticas"
+    },
+    "listings": {
+      "title": "Anuncios",
+      "minecraft_forum": "Mundo Minecraft"
+    },
+    "media": {
+      "title": "Media",
+      "main_discord": "Discord Principal",
+      "cf_discord": "Discord de Classic Faithful"
+    },
+    "resources": {
+      "title": "Recursos",
+      "news": "Noticias",
+      "docs": "Documentos",
+      "status": "Estado",
+      "translate": "Traduce",
+      "contributors_handbook": "Manual del colaborador"
+    },
+    "minecraft_trademark": "\"Minecraft\" es una marca registrada de Microsoft Corporation y no está afiliada a este sitio. ¡Visita el {website}sitio oficial{/website} para obtener el juego!"
+  },
+  "team": {
+    "title": {
+      "our_team": "Conoce el Equipo",
+      "additional_developers": "Desarrolladores adicionales"
+    },
+    "default_location": ""
+  },
+  "stats": {
+    "title": {
+      "page": "Estadísticas de Faithful",
+      "main_pack": "Pack Principal",
+      "32_releases": "Versiones de 32x",
+      "64_releases": "Versiones de 64x",
+      "add_ons": "Complementos",
+      "mods": "Mods"
+    },
+    "mods": {
+      "minecraftVersions": "Versiones de Minecraft soportadas",
+      "modsSupported": "Mods soportados",
+      "resourcePackStored": "Resourse packs para mods almacenados"
+    },
+    "add_ons": {
+      "32x": {
+        "Java": "Complementos de Java 32x",
+        "Bedrock": "Complementos de Bedrock 32x"
+      },
+      "64x": {
+        "Java": "Complementos de Java 64x",
+        "Bedrock": "Complementos de Bedrock 64x"
+      }
+    }
+  }
+}
