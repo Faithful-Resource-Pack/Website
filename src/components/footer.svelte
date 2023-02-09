@@ -43,7 +43,7 @@ const icon_theme = derived(themeStore, v => {
 export const load: PageLoad = async ({ url }) => {
   const { pathname } = url;
   const defaultLocale = 'en'; // get from cookie / user session etc...
-  const initLocale = locale.get() || defaultLocale; 
+  const initLocale = locale.get() || defaultLocale;
   await loadTranslations(initLocale, pathname); // keep this just before the `return`
   return {};
 }
@@ -112,13 +112,13 @@ onMount(() => {
       </div>
       <ul class="footer-content">
         <div class="btns">
-          
+
           <button on:click={langStore.next} on:focus={blur}>
-            <Fa icon={faGlobe}/><span>{$t($locale)}</span>
+            <Fa icon={faGlobe}/><span class='h6'>{$t($locale)}</span>
           </button>
 
           <button on:click={themeStore.next} on:focus={blur}>
-            <Fa icon={$icon_theme}/><span>{$text_theme}</span>
+            <Fa icon={$icon_theme}/><span class='h6'>{$text_theme}</span>
           </button>
         </div>
         <li><a class="link" href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a></li>
@@ -126,7 +126,7 @@ onMount(() => {
       </ul>
     </div>
 
-    
+
     <div class="footer-element">
       <div class={"footer-head" + (toggleThis === 'Info' ? TOGGLE_CLASS : '')} on:click={toggle('Info')} on:keypress={() => {}}>
         <h3><Fa icon={faInfoCircle}/> { $t('footer.info.title') } <Fa icon={faChevronDown} size="sm"/></h3>
@@ -340,8 +340,7 @@ onMount(() => {
         }
 
         > span {
-          margin-left: 0.5rem;
-          font-weight: 600;
+          margin-left: 1rem;
           font-size: 1.2em;
         }
       }
