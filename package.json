@@ -45,7 +45,6 @@
 		"sass": "^1.58.0",
 		"smui-theme": "7.0.0-beta.0",
 		"svelte": "^3.55.1",
-		"svelte-carousel": "^1.0.22",
 		"svelte-check": "^3.0.3",
 		"svelte-fa": "^3.0.3",
 		"svelte-preprocess": "^5.0.1",
@@ -54,6 +53,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"img-comparison-slider": "^7.8.1",
 		"isomorphic-dompurify": "^0.26.0",
 		"kramed-text-renderer": "^0.2.1",
 		"marked": "^4.2.12",

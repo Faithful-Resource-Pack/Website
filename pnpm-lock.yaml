@@ -25,6 +25,7 @@ specifiers:
   eslint: ^8.33.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-svelte3: ^4.0.0
+  img-comparison-slider: ^7.8.1
   isomorphic-dompurify: ^0.26.0
   kramed-text-renderer: ^0.2.1
   marked: ^4.2.12
@@ -36,7 +37,6 @@ specifiers:
   sass: ^1.58.0
   smui-theme: 7.0.0-beta.0
   svelte: ^3.55.1
-  svelte-carousel: ^1.0.22
   svelte-check: ^3.0.3
   svelte-fa: ^3.0.3
   svelte-icomoon: ^0.4.4
@@ -49,6 +49,7 @@ specifiers:
   vite: ^4.1.1
 
 dependencies:
+  img-comparison-slider: 7.8.1
   isomorphic-dompurify: 0.26.0
   kramed-text-renderer: 0.2.1
   marked: 4.2.12
@@ -91,7 +92,6 @@ devDependencies:
   sass: 1.58.0
   smui-theme: 7.0.0-beta.0
   svelte: 3.55.1
-  svelte-carousel: 1.0.22
   svelte-check: 3.0.3_2fhq4e3e5we74q3fjwcjkwqgle
   svelte-fa: 3.0.3
   svelte-preprocess: 5.0.1_3b5ianm2ugvkaapjtuwrpxqq7a
@@ -1651,6 +1651,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /img-comparison-slider/7.8.1:
+    resolution: {integrity: sha512-6teIV8iW5q0C2SnEFN0ybuLx586ietPWwyg7V9O8R/I2RGvbM6Mz21Hh5ZVmx0opdzFjpSd226qOepZcxdKi+Q==}
+    dev: false
+
   /immutable/4.2.2:
     resolution: {integrity: sha512-fTMKDwtbvO5tldky9QZ2fMX7slR0mYpY5nbnFWYp0fOzDhHqhgIw9KoYgxLWsoNTS9ZHGauHj18DTyEw6BK3Og==}
     dev: true
@@ -1852,18 +1856,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       p-locate: 5.0.0
-    dev: true
-
-  /lodash.clonedeep/4.5.0:
-    resolution: {integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==}
-    dev: true
-
-  /lodash.get/4.4.2:
-    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-    dev: true
-
-  /lodash.isequal/4.5.0:
-    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
     dev: true
 
   /lodash.memoize/4.1.2:
@@ -2713,12 +2705,6 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-carousel/1.0.22:
-    resolution: {integrity: sha512-s00UL7lhAIQACooM4xYW5LdNbwKztdpYZLnRyW0qL0vdaZayLeiHsZj/JxQZHk9vbddVqGo1kn+pQSaSVhJqWA==}
-    dependencies:
-      simply-reactive: github.com/vadimkorr/simply-reactive/8d1ae831b2fbba1cf4446543f954b4efe28013e0
-    dev: true
-
   /svelte-check/3.0.3_2fhq4e3e5we74q3fjwcjkwqgle:
     resolution: {integrity: sha512-ByBFXo3bfHRGIsYEasHkdMhLkNleVfszX/Ns1oip58tPJlKdo5Ssr8kgVIuo5oq00hss8AIcdesuy0Xt0BcTvg==}
     hasBin: true
@@ -3172,14 +3158,4 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-    dev: true
-
-  github.com/vadimkorr/simply-reactive/8d1ae831b2fbba1cf4446543f954b4efe28013e0:
-    resolution: {tarball: https://codeload.github.com/vadimkorr/simply-reactive/tar.gz/8d1ae831b2fbba1cf4446543f954b4efe28013e0}
-    name: simply-reactive
-    version: 1.0.0
-    dependencies:
-      lodash.clonedeep: 4.5.0
-      lodash.get: 4.4.2
-      lodash.isequal: 4.5.0
     dev: true
