@@ -712,7 +712,7 @@ button:disabled {
 
 .banner {
 	padding: 16px 28px;
-    color: #fff;
+    color: #fff !important;
     text-align: center;
     border-radius: $border-radius;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
@@ -733,7 +733,7 @@ button:disabled {
 	&.purple {
 		background: $blurple;
 	}
-	
+
 	&.red {
 		background: $red;
 	}
@@ -744,7 +744,7 @@ button:disabled {
 		max-width: 1400px;
 	}
 }
-   
+
 .container {
 	width: 100%;
 	padding-right: 15px;
