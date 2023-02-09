@@ -1,8 +1,8 @@
 <script lang="ts">
     export let data: any;
     import { onMount } from 'svelte';
-    import Carousel from 'svelte-carousel';
-    import { browser } from '$app/environment';
+    import { register } from 'swiper/element/bundle';
+    register();
 	onMount(() => {
 		import ('img-comparison-slider');
 	});
@@ -20,6 +20,7 @@
     </div>
 </div>
 
+<h1 class="text-center">Comparison</h1>
 <img-comparison-slider class="center" value="60">
     <img
         slot="first"
@@ -36,22 +37,24 @@
     </svg>
 </img-comparison-slider>
 
-<!--
-    Do I look like I want to do a carousel by myself? Hell nah
--->
-{#if browser}
-    <Carousel
-        dots={false}
-        particlesToShow={3}
-    >
-        <img src="https://database.faithfulpack.net/images/website/posts/32x/S_22w46a.jpg" alt="yes">
-        <img src="https://database.faithfulpack.net/images/website/posts/32x/R4.jpg" alt="yes">
-        <img src="https://database.faithfulpack.net/images/website/posts/32x/R3.jpg" alt="yes">
-        <img src="https://database.faithfulpack.net/images/website/posts/32x/R2.jpg" alt="yes">
-        <img src="https://database.faithfulpack.net/images/website/posts/32x/R1.jpg" alt="yes">
-        <img src="https://database.faithfulpack.net/images/website/posts/32x/B20.jpg" alt="yes">
-    </Carousel>
-{/if}
+<h1 class="text-center">Screenshots</h1>
+<swiper-container
+    navigation={true}
+    slides-per-view={3}
+    grab-cursor={true}
+    space-between={20}
+    loop={true}
+    autoplay-delay={3000}
+    autoplay-disable-on-interaction={false}
+>
+    <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/S_22w46a.jpg" alt="yes"></swiper-slide>
+    <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/R4.jpg" alt="yes"></swiper-slide>
+    <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/R2.jpg" alt="yes"></swiper-slide>
+    <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/R1.jpg" alt="yes"></swiper-slide>
+    <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/B20.jpg" alt="yes"></swiper-slide>
+    <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/B9.jpg" alt="yes"></swiper-slide>
+    <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/B10.jpg" alt="yes"></swiper-slide>
+</swiper-container>
 
 <style lang="scss">
     .highlight-section {
@@ -69,6 +72,10 @@
             width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        h1 {
+            margin: 0;
         }
 
         .btn {
@@ -92,6 +99,17 @@
             width: 100%;
         }
     }
+
+    swiper-container {
+        margin: 0 20px;
+
+        img {
+            width: 100%;
+            border-radius: $border-radius;
+        }
+    }
+
+    :root{--swiper-theme-color:#fff}
 
     @media (max-width: $width-M) {
         .highlight-section {

@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fortawesome/free-brands-svg-icons': ^6.2.1
-  '@fortawesome/free-solid-svg-icons': ^6.2.1
+  '@fortawesome/free-brands-svg-icons': ^6.3.0
+  '@fortawesome/free-solid-svg-icons': ^6.3.0
   '@material/animation': ^14.0.0
   '@material/base': ^14.0.0
   '@material/card': ^14.0.0
@@ -17,25 +17,23 @@ specifiers:
   '@material/typography': ^14.0.0
   '@smui/image-list': 7.0.0-beta.0
   '@smui/slider': 7.0.0-beta.0
-  '@sveltejs/adapter-node': ^1.1.4
-  '@sveltejs/kit': ^1.3.2
+  '@sveltejs/adapter-node': ^1.1.8
+  '@sveltejs/kit': ^1.5.3
   '@types/marked': ^4.0.8
   autoprefixer: ^10.4.13
-  axios: ^1.2.5
   cssnano: ^5.1.14
-  eslint: ^8.32.0
+  eslint: ^8.33.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-svelte3: ^4.0.0
-  img-comparison-slider: ^7.8.1
   isomorphic-dompurify: ^0.26.0
   kramed-text-renderer: ^0.2.1
   marked: ^4.2.12
   moment: ^2.29.4
   postcss: ^8.4.21
   postcss-load-config: ^4.0.1
-  prettier: ^2.8.3
+  prettier: ^2.8.4
   prettier-plugin-svelte: ^2.9.0
-  sass: ^1.57.1
+  sass: ^1.58.0
   smui-theme: 7.0.0-beta.0
   svelte: ^3.55.1
   svelte-carousel: ^1.0.22
@@ -43,27 +41,27 @@ specifiers:
   svelte-fa: ^3.0.3
   svelte-icomoon: ^0.4.4
   svelte-preprocess: ^5.0.1
-  svelte-select: ^5.1.3
+  svelte-select: ^5.2.1
   sveltekit-i18n: ^2.2.2
+  swiper: ^9.0.3
   tippy.js: ^6.3.7
-  typescript: ^4.9.4
-  vite: ^4.0.4
+  typescript: ^4.9.5
+  vite: ^4.1.1
 
 dependencies:
-  axios: 1.2.5
-  img-comparison-slider: 7.8.1
   isomorphic-dompurify: 0.26.0
   kramed-text-renderer: 0.2.1
   marked: 4.2.12
   moment: 2.29.4
   svelte-icomoon: 0.4.4
-  svelte-select: 5.1.3_atrrhq7vg4ekua4nnyrpuardle
+  svelte-select: 5.2.1_4x7phaipmicbaooxtnresslofa
   sveltekit-i18n: 2.2.2_svelte@3.55.1
+  swiper: 9.0.3
   tippy.js: 6.3.7
 
 devDependencies:
-  '@fortawesome/free-brands-svg-icons': 6.2.1
-  '@fortawesome/free-solid-svg-icons': 6.2.1
+  '@fortawesome/free-brands-svg-icons': 6.3.0
+  '@fortawesome/free-solid-svg-icons': 6.3.0
   '@material/animation': 14.0.0
   '@material/base': 14.0.0
   '@material/card': 14.0.0
@@ -76,29 +74,29 @@ devDependencies:
   '@material/slider': 14.0.0
   '@material/theme': 14.0.0
   '@material/typography': 14.0.0
-  '@smui/image-list': 7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle
-  '@smui/slider': 7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle
-  '@sveltejs/adapter-node': 1.1.4_@sveltejs+kit@1.3.2
-  '@sveltejs/kit': 1.3.2_svelte@3.55.1+vite@4.0.4
+  '@smui/image-list': 7.0.0-beta.0_4x7phaipmicbaooxtnresslofa
+  '@smui/slider': 7.0.0-beta.0_4x7phaipmicbaooxtnresslofa
+  '@sveltejs/adapter-node': 1.1.8_@sveltejs+kit@1.5.3
+  '@sveltejs/kit': 1.5.3_svelte@3.55.1+vite@4.1.1
   '@types/marked': 4.0.8
   autoprefixer: 10.4.13_postcss@8.4.21
   cssnano: 5.1.14_postcss@8.4.21
-  eslint: 8.32.0
-  eslint-config-prettier: 8.6.0_eslint@8.32.0
-  eslint-plugin-svelte3: 4.0.0_tmo5zkisvhu6htudosk5k7m6pu
+  eslint: 8.33.0
+  eslint-config-prettier: 8.6.0_eslint@8.33.0
+  eslint-plugin-svelte3: 4.0.0_4omm2ewoudhgnmf7aocafatnc4
   postcss: 8.4.21
   postcss-load-config: 4.0.1_postcss@8.4.21
-  prettier: 2.8.3
-  prettier-plugin-svelte: 2.9.0_kdmmghgdi3ngrsq6otxkjilbry
-  sass: 1.57.1
+  prettier: 2.8.4
+  prettier-plugin-svelte: 2.9.0_jrsxveqmsx2uadbqiuq74wlc4u
+  sass: 1.58.0
   smui-theme: 7.0.0-beta.0
   svelte: 3.55.1
   svelte-carousel: 1.0.22
-  svelte-check: 3.0.3_mraflicfyjy3x4taxigiwsr23i
+  svelte-check: 3.0.3_2fhq4e3e5we74q3fjwcjkwqgle
   svelte-fa: 3.0.3
-  svelte-preprocess: 5.0.1_kmnkm63hwcse26ffcjvrch7uda
-  typescript: 4.9.4
-  vite: 4.0.4_sass@1.57.1
+  svelte-preprocess: 5.0.1_3b5ianm2ugvkaapjtuwrpxqq7a
+  typescript: 4.9.5
+  vite: 4.1.1_sass@1.58.0
 
 packages:
 
@@ -327,26 +325,26 @@ packages:
       '@floating-ui/core': 1.1.0
     dev: false
 
-  /@fortawesome/fontawesome-common-types/6.2.1:
-    resolution: {integrity: sha512-Sz07mnQrTekFWLz5BMjOzHl/+NooTdW8F8kDQxjWwbpOJcnoSg4vUDng8d/WR1wOxM0O+CY9Zw0nR054riNYtQ==}
+  /@fortawesome/fontawesome-common-types/6.3.0:
+    resolution: {integrity: sha512-4BC1NMoacEBzSXRwKjZ/X/gmnbp/HU5Qqat7E8xqorUtBFZS+bwfGH5/wqOC2K6GV0rgEobp3OjGRMa5fK9pFg==}
     engines: {node: '>=6'}
     requiresBuild: true
     dev: true
 
-  /@fortawesome/free-brands-svg-icons/6.2.1:
-    resolution: {integrity: sha512-L8l4MfdHPmZlJ72PvzdfwOwbwcCAL0vx48tJRnI6u1PJXh+j2f3yDoKyQgO3qjEsgD5Fr2tQV/cPP8F/k6aUig==}
+  /@fortawesome/free-brands-svg-icons/6.3.0:
+    resolution: {integrity: sha512-xI0c+a8xnKItAXCN8rZgCNCJQiVAd2Y7p9e2ND6zN3J3ekneu96qrePieJ7yA7073C1JxxoM3vH1RU7rYsaj8w==}
     engines: {node: '>=6'}
     requiresBuild: true
     dependencies:
-      '@fortawesome/fontawesome-common-types': 6.2.1
+      '@fortawesome/fontawesome-common-types': 6.3.0
     dev: true
 
-  /@fortawesome/free-solid-svg-icons/6.2.1:
-    resolution: {integrity: sha512-oKuqrP5jbfEPJWTij4sM+/RvgX+RMFwx3QZCZcK9PrBDgxC35zuc7AOFsyMjMd/PIFPeB2JxyqDr5zs/DZFPPw==}
+  /@fortawesome/free-solid-svg-icons/6.3.0:
+    resolution: {integrity: sha512-x5tMwzF2lTH8pyv8yeZRodItP2IVlzzmBuD1M7BjawWgg9XAvktqJJ91Qjgoaf8qJpHQ8FEU9VxRfOkLhh86QA==}
     engines: {node: '>=6'}
     requiresBuild: true
     dependencies:
-      '@fortawesome/fontawesome-common-types': 6.2.1
+      '@fortawesome/fontawesome-common-types': 6.3.0
     dev: true
 
   /@humanwhocodes/config-array/0.11.8:
@@ -595,67 +593,67 @@ packages:
       rollup: 3.10.1
     dev: true
 
-  /@smui/common/7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle:
+  /@smui/common/7.0.0-beta.0_4x7phaipmicbaooxtnresslofa:
     resolution: {integrity: sha512-JFbmbXR/j3NdUPC1Nn28LDH62WVv6AaKQVr4VVmutgBYAkMy+QIQhG/kvFBP4Shr2gG8DLQyXGSK0wHHgiONlw==}
     dependencies:
       '@material/dom': 14.0.0
       '@tsconfig/svelte': 3.0.0
-      svelte2tsx: 0.5.23_atrrhq7vg4ekua4nnyrpuardle
+      svelte2tsx: 0.5.23_4x7phaipmicbaooxtnresslofa
     transitivePeerDependencies:
       - svelte
       - typescript
     dev: true
 
-  /@smui/image-list/7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle:
+  /@smui/image-list/7.0.0-beta.0_4x7phaipmicbaooxtnresslofa:
     resolution: {integrity: sha512-U/yYXxBdE0AGsdQEHhEOaT1VXEfy1afOIT+AkPY2acUyKKBJbweOO3YgGWtePPbC81tje+0ADjMQqChcKLSO5g==}
     dependencies:
       '@material/image-list': 14.0.0
-      '@smui/common': 7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle
-      svelte2tsx: 0.5.23_atrrhq7vg4ekua4nnyrpuardle
+      '@smui/common': 7.0.0-beta.0_4x7phaipmicbaooxtnresslofa
+      svelte2tsx: 0.5.23_4x7phaipmicbaooxtnresslofa
     transitivePeerDependencies:
       - svelte
       - typescript
     dev: true
 
-  /@smui/ripple/7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle:
+  /@smui/ripple/7.0.0-beta.0_4x7phaipmicbaooxtnresslofa:
     resolution: {integrity: sha512-2G9ILzcNAWeL8NgqW4tuBJXuh0gfGj01CtlGeRUSUNG5AxM3zLECrTEEqKdX25wtJf+QxBqV1Zi3ZqFDm3lzDg==}
     dependencies:
       '@material/dom': 14.0.0
       '@material/ripple': 14.0.0
-      '@smui/common': 7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle
-      svelte2tsx: 0.5.23_atrrhq7vg4ekua4nnyrpuardle
+      '@smui/common': 7.0.0-beta.0_4x7phaipmicbaooxtnresslofa
+      svelte2tsx: 0.5.23_4x7phaipmicbaooxtnresslofa
     transitivePeerDependencies:
       - svelte
       - typescript
     dev: true
 
-  /@smui/slider/7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle:
+  /@smui/slider/7.0.0-beta.0_4x7phaipmicbaooxtnresslofa:
     resolution: {integrity: sha512-Qnt4k1f68FyByWBIk8PGo8ghpFgAutCDjD7OVzigYJPnWPEyTo9y+JR2EK7SRe9jJ916WD/ZgOBIoS4hkcjSAQ==}
     dependencies:
       '@material/dom': 14.0.0
       '@material/slider': 14.0.0
-      '@smui/common': 7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle
-      '@smui/ripple': 7.0.0-beta.0_atrrhq7vg4ekua4nnyrpuardle
-      svelte2tsx: 0.5.23_atrrhq7vg4ekua4nnyrpuardle
+      '@smui/common': 7.0.0-beta.0_4x7phaipmicbaooxtnresslofa
+      '@smui/ripple': 7.0.0-beta.0_4x7phaipmicbaooxtnresslofa
+      svelte2tsx: 0.5.23_4x7phaipmicbaooxtnresslofa
     transitivePeerDependencies:
       - svelte
       - typescript
     dev: true
 
-  /@sveltejs/adapter-node/1.1.4_@sveltejs+kit@1.3.2:
-    resolution: {integrity: sha512-3iEBqi1fXLXP9YIbVuz2LXajoebRJCmAFEQbN40DlxAnA7G+InxUgnqFun3q9gBMz2Qvd99K51g/HxWetXRe8Q==}
+  /@sveltejs/adapter-node/1.1.8_@sveltejs+kit@1.5.3:
+    resolution: {integrity: sha512-jxvj+E24SziP/0IhNWDxNeleC/S5yeEMhAYKuuKIyygw7C8NjyrbwUEizBjn4sb/XyGfJWw1/yoXqtCANoyl4g==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
       '@rollup/plugin-commonjs': 24.0.1_rollup@3.10.1
       '@rollup/plugin-json': 6.0.0_rollup@3.10.1
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.10.1
-      '@sveltejs/kit': 1.3.2_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/kit': 1.5.3_svelte@3.55.1+vite@4.1.1
       rollup: 3.10.1
     dev: true
 
-  /@sveltejs/kit/1.3.2_svelte@3.55.1+vite@4.0.4:
-    resolution: {integrity: sha512-sCJORYwK/DY4SEmlmaGSzO/7K/dpb2QXJIHy6di5FV/9p8OSeMjlbOFxZMKzW7PHH6jCaKkoApgjkbI+A/y/qw==}
+  /@sveltejs/kit/1.5.3_svelte@3.55.1+vite@4.1.1:
+    resolution: {integrity: sha512-R0WsMf8yhtU31jiDzaj2zMchCyDsBcSlDFJJ24EzJyOeZ+VJvDLg7YbegvbNU0vfdfRUTWhIrCSaOQ6po+oEVQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -663,10 +661,10 @@ packages:
       svelte: ^3.54.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.1.1
       '@types/cookie': 0.5.1
       cookie: 0.5.0
-      devalue: 4.2.2
+      devalue: 4.2.3
       esm-env: 1.0.0
       kleur: 4.1.5
       magic-string: 0.27.0
@@ -676,13 +674,13 @@ packages:
       sirv: 2.0.2
       svelte: 3.55.1
       tiny-glob: 0.2.9
-      undici: 5.16.0
-      vite: 4.0.4_sass@1.57.1
+      undici: 5.18.0
+      vite: 4.1.1_sass@1.58.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/2.0.2_svelte@3.55.1+vite@4.0.4:
+  /@sveltejs/vite-plugin-svelte/2.0.2_svelte@3.55.1+vite@4.1.1:
     resolution: {integrity: sha512-xCEan0/NNpQuL0l5aS42FjwQ6wwskdxC3pW1OeFtEKNZwRg7Evro9lac9HesGP6TdFsTv2xMes5ASQVKbCacxg==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -695,8 +693,8 @@ packages:
       magic-string: 0.27.0
       svelte: 3.55.1
       svelte-hmr: 0.15.1_svelte@3.55.1
-      vite: 4.0.4_sass@1.57.1
-      vitefu: 0.2.4_vite@4.0.4
+      vite: 4.1.1_sass@1.58.0
+      vitefu: 0.2.4_vite@4.1.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -859,16 +857,6 @@ packages:
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
     dev: true
-
-  /axios/1.2.5:
-    resolution: {integrity: sha512-9pU/8mmjSSOb4CXVsvGIevN+MlO/t9OWtKadTaLuN85Gge3HGorUckgp8A/2FH4V4hJ7JuQ3LIeI7KAV9ITZrQ==}
-    dependencies:
-      follow-redirects: 1.15.2
-      form-data: 4.0.0
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
-    dev: false
 
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -1193,8 +1181,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /devalue/4.2.2:
-    resolution: {integrity: sha512-Pkwd8qrI9O20VJ14fBNHu+on99toTNZFbgWRpZbC0zbDXpnE2WHYcrC1fHhMsF/3Ee+2yaW7vEujAT7fCYgqrA==}
+  /devalue/4.2.3:
+    resolution: {integrity: sha512-JG6Q248aN0pgFL57e3zqTVeFraBe+5W2ugvv1mLXsJP6YYIYJhRZhAl7QP8haJrqob6X10F9NEkuCvNILZTPeQ==}
     dev: true
 
   /doctrine/3.0.0:
@@ -1316,22 +1304,22 @@ packages:
       source-map: 0.6.1
     dev: false
 
-  /eslint-config-prettier/8.6.0_eslint@8.32.0:
+  /eslint-config-prettier/8.6.0_eslint@8.33.0:
     resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: 8.32.0
+      eslint: 8.33.0
     dev: true
 
-  /eslint-plugin-svelte3/4.0.0_tmo5zkisvhu6htudosk5k7m6pu:
+  /eslint-plugin-svelte3/4.0.0_4omm2ewoudhgnmf7aocafatnc4:
     resolution: {integrity: sha512-OIx9lgaNzD02+MDFNLw0GEUbuovNcglg+wnd/UY0fbZmlQSz7GlQiQ1f+yX0XvC07XPcDOnFcichqI3xCwp71g==}
     peerDependencies:
       eslint: '>=8.0.0'
       svelte: ^3.2.0
     dependencies:
-      eslint: 8.32.0
+      eslint: 8.33.0
       svelte: 3.55.1
     dev: true
 
@@ -1343,13 +1331,13 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-utils/3.0.0_eslint@8.32.0:
+  /eslint-utils/3.0.0_eslint@8.33.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.32.0
+      eslint: 8.33.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -1363,8 +1351,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint/8.32.0:
-    resolution: {integrity: sha512-nETVXpnthqKPFyuY2FNjz/bEd6nbosRgKbkgS/y1C7LJop96gYHWpiguLecMHQ2XCPxn77DS0P+68WzG6vkZSQ==}
+  /eslint/8.33.0:
+    resolution: {integrity: sha512-WjOpFQgKK8VrCnAtl8We0SUOy/oVZ5NHykyMiagV1M9r8IFpIJX7DduK6n1mpfhlG7T1NLWm2SuD8QB7KFySaA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -1379,7 +1367,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.32.0
+      eslint-utils: 3.0.0_eslint@8.33.0
       eslint-visitor-keys: 3.3.0
       espree: 9.4.1
       esquery: 1.4.0
@@ -1517,16 +1505,6 @@ packages:
   /flatted/3.2.7:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
-
-  /follow-redirects/1.15.2:
-    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dev: false
 
   /form-data/4.0.0:
     resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
@@ -1672,10 +1650,6 @@ packages:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
     dev: true
-
-  /img-comparison-slider/7.8.1:
-    resolution: {integrity: sha512-6teIV8iW5q0C2SnEFN0ybuLx586ietPWwyg7V9O8R/I2RGvbM6Mz21Hh5ZVmx0opdzFjpSd226qOepZcxdKi+Q==}
-    dev: false
 
   /immutable/4.2.2:
     resolution: {integrity: sha512-fTMKDwtbvO5tldky9QZ2fMX7slR0mYpY5nbnFWYp0fOzDhHqhgIw9KoYgxLWsoNTS9ZHGauHj18DTyEw6BK3Og==}
@@ -2481,25 +2455,21 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte/2.9.0_kdmmghgdi3ngrsq6otxkjilbry:
+  /prettier-plugin-svelte/2.9.0_jrsxveqmsx2uadbqiuq74wlc4u:
     resolution: {integrity: sha512-3doBi5NO4IVgaNPtwewvrgPpqAcvNv0NwJNflr76PIGgi9nf1oguQV1Hpdm9TI2ALIQVn/9iIwLpBO5UcD2Jiw==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
-      prettier: 2.8.3
+      prettier: 2.8.4
       svelte: 3.55.1
     dev: true
 
-  /prettier/2.8.3:
-    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
-
-  /proxy-from-env/1.1.0:
-    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
-    dev: false
 
   /psl/1.9.0:
     resolution: {integrity: sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==}
@@ -2605,8 +2575,8 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /sass/1.57.1:
-    resolution: {integrity: sha512-O2+LwLS79op7GI0xZ8fqzF7X2m/m8WFfI02dHOdsK5R2ECeS5F62zrwg/relM1rjSLy7Vd/DiMNIvPrQGsA0jw==}
+  /sass/1.58.0:
+    resolution: {integrity: sha512-PiMJcP33DdKtZ/1jSjjqVIKihoDc6yWmYr9K/4r3fVVIEDAluD0q7XZiRKrNJcPK3qkLRF/79DND1H5q1LBjgg==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -2653,7 +2623,7 @@ packages:
     dependencies:
       '@material/theme': 14.0.0
       node-fetch: 2.6.8
-      sass: 1.57.1
+      sass: 1.58.0
       yargs: 17.6.2
     transitivePeerDependencies:
       - encoding
@@ -2677,6 +2647,10 @@ packages:
   /source-map/0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
+
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+    dev: false
 
   /stable/0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
@@ -2745,7 +2719,7 @@ packages:
       simply-reactive: github.com/vadimkorr/simply-reactive/8d1ae831b2fbba1cf4446543f954b4efe28013e0
     dev: true
 
-  /svelte-check/3.0.3_mraflicfyjy3x4taxigiwsr23i:
+  /svelte-check/3.0.3_2fhq4e3e5we74q3fjwcjkwqgle:
     resolution: {integrity: sha512-ByBFXo3bfHRGIsYEasHkdMhLkNleVfszX/Ns1oip58tPJlKdo5Ssr8kgVIuo5oq00hss8AIcdesuy0Xt0BcTvg==}
     hasBin: true
     peerDependencies:
@@ -2758,8 +2732,8 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.55.1
-      svelte-preprocess: 5.0.1_kmnkm63hwcse26ffcjvrch7uda
-      typescript: 4.9.4
+      svelte-preprocess: 5.0.1_3b5ianm2ugvkaapjtuwrpxqq7a
+      typescript: 4.9.5
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -2776,11 +2750,11 @@ packages:
     resolution: {integrity: sha512-GIikJjcVCD+5Y/x9hZc2R4gvuA0gVftacuWu1a+zVQWSFjFYZ+hhU825x+QNs2slsppfrgmFiUyU9Sz9gj4Rdw==}
     dev: true
 
-  /svelte-floating-ui/1.1.6_atrrhq7vg4ekua4nnyrpuardle:
+  /svelte-floating-ui/1.1.6_4x7phaipmicbaooxtnresslofa:
     resolution: {integrity: sha512-lJfrc34+xSxKs+5AtnYj32uRIjaxGjhT92cOiNL3zEqaJ755JxUqXCf6tk+9G1wkCuqkK9A8tscVBsyY3iLmVQ==}
     dependencies:
       '@floating-ui/dom': 1.1.0
-      svelte2tsx: 0.5.23_atrrhq7vg4ekua4nnyrpuardle
+      svelte2tsx: 0.5.23_4x7phaipmicbaooxtnresslofa
     transitivePeerDependencies:
       - svelte
       - typescript
@@ -2799,7 +2773,7 @@ packages:
     resolution: {integrity: sha512-C6so9nJKNp2q88cUW5BANyqZy4EsHLFGn6t1hp9OrnI/z5GBdbXrsNMMVXtYYT/qw221uB6KMwGPv8Fcw7UcoA==}
     dev: false
 
-  /svelte-preprocess/5.0.1_kmnkm63hwcse26ffcjvrch7uda:
+  /svelte-preprocess/5.0.1_3b5ianm2ugvkaapjtuwrpxqq7a:
     resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -2843,18 +2817,18 @@ packages:
       magic-string: 0.27.0
       postcss: 8.4.21
       postcss-load-config: 4.0.1_postcss@8.4.21
-      sass: 1.57.1
+      sass: 1.58.0
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 3.55.1
-      typescript: 4.9.4
+      typescript: 4.9.5
     dev: true
 
-  /svelte-select/5.1.3_atrrhq7vg4ekua4nnyrpuardle:
-    resolution: {integrity: sha512-fh7p9r/n6RwNgkQQKbhTPRY0U9T+jlCjxnn49HDAJAmvuV6MVZplyP83fCbawrmrQvaES3UrU4PBSCcEe8RlmQ==}
+  /svelte-select/5.2.1_4x7phaipmicbaooxtnresslofa:
+    resolution: {integrity: sha512-m/4FwYLYYGUY8f263BT8whYdjKowEgwPQWrjV6F2l1RflWzVfFIXdzB4GnBLDB82/0ycBeAhOz9vLaIeZGBm9w==}
     dependencies:
       '@floating-ui/dom': 1.1.0
-      svelte-floating-ui: 1.1.6_atrrhq7vg4ekua4nnyrpuardle
+      svelte-floating-ui: 1.1.6_4x7phaipmicbaooxtnresslofa
     transitivePeerDependencies:
       - svelte
       - typescript
@@ -2864,7 +2838,7 @@ packages:
     resolution: {integrity: sha512-S+87/P0Ve67HxKkEV23iCdAh/SX1xiSfjF1HOglno/YTbSTW7RniICMCofWGdJJbdjw3S+0PfFb1JtGfTXE0oQ==}
     engines: {node: '>= 8'}
 
-  /svelte2tsx/0.5.23_atrrhq7vg4ekua4nnyrpuardle:
+  /svelte2tsx/0.5.23_4x7phaipmicbaooxtnresslofa:
     resolution: {integrity: sha512-jYFnugTQRFmUpvLXPQrKzVYcW5ErT+0QCxg027Zx9BuvYefMZFuoBSTDYe7viPEFGrPPiLgT2m7f5n9khE7f7Q==}
     peerDependencies:
       svelte: ^3.24
@@ -2873,7 +2847,7 @@ packages:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
       svelte: 3.55.1
-      typescript: 4.9.4
+      typescript: 4.9.5
 
   /sveltekit-i18n/2.2.2_svelte@3.55.1:
     resolution: {integrity: sha512-6eygICleGCSL7elY7A3trF8XUhV+mlW56ZSoD0UUKXlw+Y6u0MTTHDq48u1LyY73SfnlbPHXgTarhTjZ0BvUKA==}
@@ -2898,6 +2872,13 @@ packages:
       picocolors: 1.0.0
       stable: 0.1.8
     dev: true
+
+  /swiper/9.0.3:
+    resolution: {integrity: sha512-hHYI6CeUHcDyv6IakzAQrUv6nS5BMRn6KOkui16nhtdgYBlWgUdlaMbcdT0o4RJxpwSktCTLgpBtCm+WwwVYRw==}
+    engines: {node: '>= 4.7.0'}
+    dependencies:
+      ssr-window: 4.0.2
+    dev: false
 
   /symbol-tree/3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
@@ -2975,13 +2956,13 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typescript/4.9.4:
-    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  /undici/5.16.0:
-    resolution: {integrity: sha512-KWBOXNv6VX+oJQhchXieUznEmnJMqgXMbs0xxH2t8q/FUAWSJvOSr/rMaZKnX5RIVq7JDn0JbP4BOnKG2SGXLQ==}
+  /undici/5.18.0:
+    resolution: {integrity: sha512-1iVwbhonhFytNdg0P4PqyIAXbdlVZVebtPDvuM36m66mRw4OGrCm2MYynJv/UENFLdP13J1nPVQzVE2zTs1OeA==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
@@ -3020,8 +3001,8 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
-  /vite/4.0.4_sass@1.57.1:
-    resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
+  /vite/4.1.1_sass@1.58.0:
+    resolution: {integrity: sha512-LM9WWea8vsxhr782r9ntg+bhSFS06FJgCvvB0+8hf8UWtvaiDagKYWXndjfX6kGl74keHJUcpzrQliDXZlF5yg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3049,12 +3030,12 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.10.1
-      sass: 1.57.1
+      sass: 1.58.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
 
-  /vitefu/0.2.4_vite@4.0.4:
+  /vitefu/0.2.4_vite@4.1.1:
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
@@ -3062,7 +3043,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.0.4_sass@1.57.1
+      vite: 4.1.1_sass@1.58.0
     dev: true
 
   /w3c-xmlserializer/4.0.0:

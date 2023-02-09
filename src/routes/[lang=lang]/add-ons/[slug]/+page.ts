@@ -1,14 +1,14 @@
 import { error } from '@sveltejs/kit';
 import { marked } from 'marked';
-import axios from 'axios';
 //@ts-ignore
 import TextRenderer from 'kramed-text-renderer';
 import DOMPurify from 'isomorphic-dompurify';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async function({ fetch, params }) {
-    const addonData = await (await axios.get(`https://api.faithfulpack.net/v2/addons/${params.slug}`)).data;
-    // const addonData = await addonRes.json();
+    const addonRes = await fetch(`https://api.faithfulpack.net/v2/addons/${params.slug}`)
+    .catch((err) => { console.error('addonData', err); throw err;})
+    const addonData = await addonRes.json();
 
     if (addonData.name == "NotFound")
         throw error(404, 'Not found');
