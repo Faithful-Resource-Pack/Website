@@ -2,7 +2,7 @@
     <title>License - Faithful</title>
 </svelte:head>
 
-<div>
+<div class="container">
     <h1>FAITHFUL RESOURCE PACK LICENSE</h1>
     <p>Version 2, 27th September 2022<br><br>
     Copyright © Faithful Resource Pack</p>
@@ -63,13 +63,12 @@
 
 <style lang="scss">
     div {
-        margin-left: 300px;
-        margin-right: 300px;
-        margin-top: 50px;
-        margin-bottom: 50px;
         text-align: left;
     }
     li {
         margin-top: 10px;
+    }
+    a {
+        word-wrap: break-word;
     }
 </style>
