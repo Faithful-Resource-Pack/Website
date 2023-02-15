@@ -45,7 +45,7 @@
     <div>
         <h1>A HISTORY OF SOMETHING</h1>
         <p>[placeholder title] We've got an over-a-decade-long history of making quality textures for Minecraft. Being one of the first ever texture packs to be developed, Faithful has secured its place among the most well-known Minecraft projects.</p>
-        <a class="button" href="/history">JOIN OUR DISCORD<Fa icon={faAngleRight} /></a>
+        <a class="button" href="/history">READ MORE<Fa icon={faAngleRight} /></a>
     </div>
     <img src="/images/about/4.png" alt="placeholder">
 </div>
