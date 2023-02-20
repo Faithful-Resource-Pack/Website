@@ -8,6 +8,17 @@
       }
     }
   ],
+  "1.19.60": [
+    {
+      "file": "Faithful 64x",
+      "file_type": "B",
+      "file_version": 7,
+      "latest": "latest",
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4174222"
+      }
+    }
+  ],
   "1.18.x": [
     {
       "file": "Faithful 64x",
@@ -15,7 +26,6 @@
       "file_version": 4,
       "size": "6.88 MB",
       "date": "14/04/2022",
-      "latest": "latest",
       "links": {
         "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/beta-4/Faithful.64x.Beta.4.mcpack"
       }
