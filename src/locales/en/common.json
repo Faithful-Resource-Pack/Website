@@ -62,7 +62,7 @@
       "mods": "Mods"
     },
     "mods": {
-      "minecraftVersions": "Minecraft Versions Supported",
+      "minecraftVersions": "Minecraft Versions supported",
       "modsSupported": "Mods Supported",
       "resourcePackStored": "Mod Resource Packs Stored"
     },
