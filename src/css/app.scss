@@ -739,6 +739,18 @@ button:disabled {
 	}
 }
 
+.background_transition {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	mask: linear-gradient(0deg, transparent 0%, black 100%);
+	filter: saturate(0.7);
+}
+
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1400px;

@@ -90,10 +90,7 @@
 			background-color: $bg;
 			color: white;
 			text-align: left;
-			font-family: "Roboto", sans-serif;
 			pointer-events: none;
-
-			-webkit-box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.7);
 			box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.7);
 		}
 		.tippy-arrow {

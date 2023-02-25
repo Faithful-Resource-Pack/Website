@@ -6,14 +6,14 @@
 	import AddonSubmit from "$components/addons/AddonSubmit.svelte";
 	import AddonAuthors from "$components/addons/AddonAuthors.svelte";
 
-    const text_title = 'Add-ons';
-    const text_desc_1 = `Customise your game experience!`;
-    const text_desc_2 = `Brought to you by the community.`;
-    const text_how_to_install = 'How to install add-ons';
+    const text_title = "Add-ons";
+    const text_desc_1 = "Customise your game experience!";
+    const text_desc_2 = "Brought to you by the community.";
+    const text_how_to_install = "How to install add-ons";
 </script>
 
 <div id="addon_header" class="text-center">
-    <img class="addon_background" src="/images/background/Add-ons.png" alt="Add-ons background">
+    <img class="background_transition" src="/images/background/Add-ons.jpg" alt="Add-ons background">
     <div id="addon_header_text">
         <h1 class="title middle">
             <img class="title-image" src="https://database.faithfulpack.net/images/branding/logos/transparent/128/addons_logo.png" alt="Add-ons"
@@ -53,7 +53,7 @@
         padding: 1px 0 $overflow;
         margin-bottom: -$overflow;
 
-        #addon_header_text {
+        &_text {
             position: relative;
 
             h1, h2, h4, p {
@@ -69,18 +69,6 @@
     #addon_header + * {
         position: relative;
         min-height: $overflow;
-    }
-
-    .addon_background {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        mask: linear-gradient(0deg, transparent 0%, black 100%);
-        filter: saturate(0.7);
     }
 
     #addon_content {

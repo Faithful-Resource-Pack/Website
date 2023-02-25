@@ -3,20 +3,21 @@
 	import postStore, { postListStore, postStoreError } from "$stores/PostStore";
 	import { derived } from "svelte/store";
 
-    const SEE_MORE = 'See More';
+    const SEE_MORE = "See More";
     const projects = {
         links: [
-            [{href: '/packs/faithful-32x', title: SEE_MORE}],
-            [{href: '/packs/faithful-64x', title: SEE_MORE}],
-            [{href: '/packs/classic-faithful-32x-jappa', title: 'New Textures (Jappa)'},
-                {href: '/packs/classic-faithful-32x-programmer-art', title: 'Classic Textures (PA)'}],
-            [{href: '/packs/classic-faithful-64x', title: SEE_MORE}],
+            [{href: "/packs/faithful-32x", title: SEE_MORE}],
+            [{href: "/packs/faithful-64x", title: SEE_MORE}],
+            [{href: "/packs/classic-faithful-32x-jappa", title: "New Textures (Jappa)"},
+                {href: "/packs/classic-faithful-32x-programmer-art", title: "Classic Textures (PA)"}],
+            [{href: "/packs/classic-faithful-64x", title: SEE_MORE}],
         ],
         urls: [
             {
                 title: "Faithful 32x",
                 background: "https://database.faithfulpack.net/images/branding/site/posters/poster_32.png",
-                src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png"},
+                src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png"
+            },
             {
                 title: "Faithful 64x",
                 background: "https://database.faithfulpack.net/images/branding/site/posters/poster_64.png",
@@ -36,8 +37,8 @@
     }
     const extras = {
         links: [
-            [{href: '/add-ons', title: SEE_MORE }],
-            [{href: '/modding', title: SEE_MORE}]
+            [{href: "/add-ons", title: SEE_MORE }],
+            [{href: "/modding", title: SEE_MORE}]
         ],
         urls: [
             {
@@ -108,7 +109,7 @@
 
     .highlight-section {
         display: block;
-        background-image: url(/images/placeholder_background.png);
+        background-image: url(/images/background/placeholder_background.jpg);
         background-size: cover;
         background-position: center;
         padding: 0 $spacing 1px;

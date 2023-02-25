@@ -19,12 +19,11 @@
     <h2 class="text-center">{title}</h2>
 
     <ul>
-        {#each links as link }
+        {#each links as link}
             <li class="text-center"><a href={link.href}><span>{link.title}</span> <span><Fa icon={faChevronRight} scale={0.8} /></span></a></li>
         {/each}
     </ul>
 </div>
-
 
 <style lang="scss">
     .pack-card {
