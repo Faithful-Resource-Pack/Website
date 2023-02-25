@@ -7,7 +7,8 @@
 	import AddonAuthors from "$components/addons/AddonAuthors.svelte";
 
     const text_title = 'Add-ons';
-    const text_desc = `Customise your game experience!\nBrought to you by the community.`.replace('\n', '<br>');
+    const text_desc_1 = `Customise your game experience!`;
+    const text_desc_2 = `Brought to you by the community.`;
     const text_how_to_install = 'How to install add-ons';
 </script>
 
@@ -15,11 +16,12 @@
     <img class="addon_background" src="/images/background/Add-ons.png" alt="Add-ons background">
     <div id="addon_header_text">
         <h1 class="title middle">
-            <img class="title-image" src="https://database.faithfulpack.net/images/branding/logos/transparent/128/addons_logo.png" alt="Addons"
-            /><span>{ text_title }</span>
+            <img class="title-image" src="https://database.faithfulpack.net/images/branding/logos/transparent/128/addons_logo.png" alt="Add-ons"
+            /><span class="h1 bold">{ text_title }</span>
         </h1>
-        <p>{ @html text_desc }</p>
-        <p><i><a href="#howto">{ text_how_to_install }</a></i></p>
+        <h2>{ @html text_desc_1 }</h2>
+        <h4>{ @html text_desc_2 }</h4>
+        <p><i><a href="/installation">{ text_how_to_install }</a></i></p>
     </div>
 </div>
 
@@ -53,6 +55,10 @@
 
         #addon_header_text {
             position: relative;
+
+            h1, h2, h4, p {
+                color: #fff;
+            }
         }
 
         p i a {
@@ -76,7 +82,7 @@
         mask: linear-gradient(0deg, transparent 0%, black 100%);
         filter: saturate(0.7);
     }
-    
+
     #addon_content {
         display: flex;
         flex-direction: row;

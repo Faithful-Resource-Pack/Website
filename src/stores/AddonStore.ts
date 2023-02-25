@@ -217,3 +217,27 @@ export let resultStore = derived([startStore, searchStore, addonStore], ([start,
 
     return res;
 })
+
+export let addonStatsStore = derived(addonStore, s => {
+    if(s === undefined) return undefined;
+
+    const result: Record<string, Record<string, number>> = {}
+    const editions: string[] = []
+    Object.values(s).map(e => e.options.tags).forEach(types => {
+      types.filter(e => !Number.isNaN(Number.parseInt(e, 10))).forEach(resolution => {
+        if(result[resolution] === undefined) result[resolution] = {}
+        types.filter(e => Number.isNaN(Number.parseInt(e, 10))).forEach(edition => {
+          if(editions.indexOf(edition) === -1) editions.push(edition)
+          if(result[resolution][edition] === undefined) result[resolution][edition] = 0
+          result[resolution][edition]++
+        })
+      })
+    })
+    Object.keys(result).forEach(res => {
+      editions.forEach(e => {
+        if(result[res][e] === undefined) result[res][e] = 0
+      })
+    })
+
+    return result;
+});

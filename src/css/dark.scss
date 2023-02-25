@@ -1,5 +1,3 @@
-
-
 .background {
 	background: #131313 url(/images/background/bg_dark_background.png) repeat
 }
@@ -25,11 +23,11 @@ main {
 	background-color: #1C1C1C
 }
 .dropdown-item {
-	color: rgba(255, 255, 255, .7)
+	color: #bdbdbd;
 }
 .dropdown-item:focus,
 .dropdown-item:hover {
-	color: rgba(255, 255, 255, .7);
+	color: #bdbdbd;
 	background-color: #141414
 }
 
@@ -39,7 +37,7 @@ main {
 
 html:not(.light) {
     ul, ol, li, h1, h2, h3, h4, h5, h6, p {
-        color: rgba(255, 255, 255, .7)
+        color: #bdbdbd;
     }
 }
 
@@ -48,7 +46,7 @@ hr {
 }
 
 input {
-	color: rgba(255, 255, 255, .7);
+	color: #bdbdbd;
 }
 
 #SearchBar {
@@ -57,4 +55,8 @@ input {
 
 .advice {
 	color: rgba(255, 255, 255, .7);
+}
+
+.button-theme {
+	color: #000;
 }

@@ -52,7 +52,7 @@ function search(_origin?: string) {
 
     if(edition === 'first') edition = $settings.packs[params_obj.pack].editions[0];
     if(version === 'latest') version = $settings.versions[edition][0];
-    
+
     let url = `https://api.faithfulpack.net/v2/gallery/${res}/${edition}/${version}/${tag}`;
 
     if($gallerySearch.search_text) {
@@ -64,7 +64,6 @@ function search(_origin?: string) {
         return res.json()
     })
     .then(json => {
-        console.log(typeof(json))
         results = json;
     })
 }
@@ -201,7 +200,7 @@ function isScrolledIntoView(el: HTMLElement, margin: number = 0) {
 }
 </script>
 
-<h1 class="title text-center">{ text_title_gallery }</h1>
+<h1 class="title text-center bold">{ text_title_gallery }</h1>
 
 <GalleryOptions on:search={() => search()} />
 
@@ -242,7 +241,7 @@ function isScrolledIntoView(el: HTMLElement, margin: number = 0) {
     :global(.full_width) {
         padding: 0 $small-spacing;
     }
-    
+
     #results {
         margin-top: $small-spacing;
         display: grid;

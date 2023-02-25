@@ -39,8 +39,6 @@ let _posts = readable({
             return acc;
         }, {} as Record<string, Post>)
 
-        console.log(modified)
-
         set({
             data: modified,
             error: undefined

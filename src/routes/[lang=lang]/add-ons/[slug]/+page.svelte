@@ -16,8 +16,10 @@
         faCubes,
         faGlobe
     } from "@fortawesome/free-solid-svg-icons";
+	import ImagePreviewer from "$components/common/imagePreviewer.svelte";
+	import type { PageData } from "./$types";
     
-    export let data: any;
+    export let data: PageData;
 
     let text_id = 'ID: ' + data.id
     let text_date_last_updated: boolean|string = (!!data.lastUpdated) && new Date(data.lastUpdated)
@@ -40,10 +42,14 @@
         "YouTube": { fa: faYoutube },
         "Other": { fa: faGlobe }
       }
+
+      let screenList = data.screenshots.map((e: string,i: number) => ({ image: e, alt: "Screenshot " + i}))
+      let previewerDisplayed = false
+      let previewer: ImagePreviewer
 </script>
 
 <div class="container">
-    <h1 class="text-center title">{data.name}</h1>
+    <h1 class="text-center title bold">{data.name}</h1>
     <div class="addon-details">
         <div class="addon-details-left">
             <div class="addon-author-list">
@@ -124,6 +130,12 @@
         </div>
         <div class="addon-details-right">
             <img class="addon-header" src="https://database.faithfulpack.net/images/addons/{data.slug}/header" alt="{data.name} header">
+            {#if screenList.length > 0}
+                <h2 class="text-center">Screenshots</h2>
+                <svelte:component
+                    this={ImagePreviewer} bind:this={previewer}
+                    bind:displayed={previewerDisplayed} images={screenList} />
+            {/if}
             <div class="card card-body addon-description">
                 <!-- required div to have vertical margin collapsing -->
                 <div>{@html data.description}</div>
@@ -175,7 +187,7 @@
                                 margin: 8px 16px;
                             }
 
-                            div {
+                            div:not(:empty) {
                                 margin-bottom: 6px;
                             }
 
@@ -236,8 +248,11 @@
             .addon-header {
                 width: 100%;
                 border-radius: $border-radius;
-                margin-bottom: 20px;
                 box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+            }
+
+            .addon-description {
+                margin-top: 20px;
             }
 
             // Markdown description css 

@@ -68,12 +68,12 @@
     },
     "add_ons": {
       "32x": {
-        "Java": "32x Java Add-Ons",
-        "Bedrock": "32x Bedrock Add-Ons"
+        "Java": "32x Java Add-ons",
+        "Bedrock": "32x Bedrock Add-ons"
       },
       "64x": {
-        "Java": "64x Java Add-Ons",
-        "Bedrock": "64x Bedrock Add-Ons"
+        "Java": "64x Java Add-ons",
+        "Bedrock": "64x Bedrock Add-ons"
       }
     }
   }

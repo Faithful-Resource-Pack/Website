@@ -15,7 +15,7 @@ export const load: Load = async () => {
 
     const results = await Promise.all(URLS.map(u => fetch(u)));
     let jsons = await Promise.all(results.map(r => r.json()));
-    
+
     // https://github.com/Faithful-Resource-Pack/Website/blob/master/js/download/index.js
     const CURSE_API = 'https://api.cfwidget.com/'
     const CURSE_PACK_TO_ID = {
@@ -72,7 +72,7 @@ export const load: Load = async () => {
           downloads: jsons[3]
         }]
       }, {
-        name: "Classic Faithful 32x\nJappa",
+        name: "Classic Faithful 32x Jappa",
         background_url: "https://static.wixstatic.com/media/89b89d_a8ca95a9d0dd42bca13a163616d0fcef~mv2.png/v1/fill/w_1920,h_580,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_a8ca95a9d0dd42bca13a163616d0fcef~mv2.png",
         editions: [{
           name: "Java Edition",
@@ -82,7 +82,7 @@ export const load: Load = async () => {
           downloads: {}
         }]
       }, {
-        name: "Classic Faithful 32x\nProgrammer Art",
+        name: "Classic Faithful 32x Programmer Art",
         background_url: "https://static.wixstatic.com/media/89b89d_a4d64e249fc64a09b6b3881f6e91d519~mv2.png/v1/fill/w_1920,h_580,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_a4d64e249fc64a09b6b3881f6e91d519~mv2.png",
         editions: [{
           name: "Java Edition",

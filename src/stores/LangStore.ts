@@ -14,10 +14,14 @@ export let langStore = createStore<
 	defaultLocale,
 	(v) => v as LangValue,
 	(w) => {
-		let { subscribe, update } = w;
+		let { subscribe, update, set } = w;
 
 		return {
 			subscribe,
+			set: function(lang: string) {
+				if(!supportedLocales.includes(lang)) return;
+				set(lang);
+			},
 			next: function () {
 				update((v) => {
 					let i = supportedLocales.indexOf(v);
@@ -31,7 +35,7 @@ export let langStore = createStore<
 	}
 );
 
-export let themeValueWatch = function (listener: (value: LangValue) => void) {
+export let langValueWatch = function (listener: (value: LangValue) => void) {
 	let lastValue: LangValue;
 
 	onlanguagechange = (event) => {

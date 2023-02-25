@@ -17,7 +17,6 @@ export let gallerySearch = createJSONStore('GALLERY_SEARCH', {
 
     return {
         set: function(val: any) {
-            console.log('set')
             set(val)
         },
         subscribe,

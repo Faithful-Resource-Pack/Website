@@ -31,6 +31,15 @@ $small-spacing: 16px;
 	user-select: none;
 }
 
+@mixin zoomin {
+	transition: all .5s;
+
+	&:hover {
+		transform: scale(1.1);
+		filter: brightness(110%);
+	}
+}
+
 @mixin transparent {
 	background: none !important;
 	box-shadow: none !important;

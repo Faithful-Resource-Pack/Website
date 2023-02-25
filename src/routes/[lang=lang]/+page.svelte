@@ -6,11 +6,11 @@
     const SEE_MORE = 'See More';
     const projects = {
         links: [
-            [{href: '/faithful-32x', title: SEE_MORE}],
-            [{href: '/faithful-64x', title: SEE_MORE}],
-            [{href: '/classicfaithful/32x-jappa', title: 'New Textures (Jappa)'},
-                {href: '/classicfaithful/32x-programmer-art', title: 'Classic Textures (PA)'}],
-            [{href: '/classicfaithful/64x-jappa', title: SEE_MORE}],
+            [{href: '/packs/faithful-32x', title: SEE_MORE}],
+            [{href: '/packs/faithful-64x', title: SEE_MORE}],
+            [{href: '/packs/classic-faithful-32x-jappa', title: 'New Textures (Jappa)'},
+                {href: '/packs/classic-faithful-32x-programmer-art', title: 'Classic Textures (PA)'}],
+            [{href: '/packs/classic-faithful-64x', title: SEE_MORE}],
         ],
         urls: [
             {
@@ -54,14 +54,13 @@
     }
 
     let posts = postListStore;
-    console.log($posts);
     let postsError = postStoreError;
 </script>
 
 <div class="highlight-section text-center">
     <div id="upspace"></div>
     <img class="highlight-wordmark" src="/images/branding/wordmark.png" alt="Faithful Wordmark">
-    <h1>Providing a higher-resolution experience<br> since 2010.</h1>
+    <h2 class="regular">Providing a higher-resolution experience since 2010.</h2>
     <p class="banner purple">
         <a href="https://discord.gg/sN9YRQbBv7">Join our Discord now and contribute to the project!</a>
     </p>
@@ -115,7 +114,7 @@
         padding: 0 $spacing 1px;
 
         #upspace {
-            height: 88px;
+            height: 80px;
         }
 
         .highlight-wordmark {
@@ -124,14 +123,12 @@
             max-width: 100%;
         }
 
-        h1 {
+        h2 {
             color: #fff;
-            text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
-            font-weight: 500;
-            font-size: 2rem;
+            text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
 
-        h1, .banner.purple {
+        h2, .banner.purple {
             margin: $spacing 0;
         }
 
@@ -164,7 +161,6 @@
         width: 1140px;
         max-width: 100%;
         margin: 0 auto;
-        font-size: 0.8rem;
         padding: 0 2rem;
     }
 
@@ -173,19 +169,24 @@
         padding: 8px;
         background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
         width: 100%;
+        color: #fff;
+        font-size: 1.2rem;
     }
 
     @media (max-width: $width-XS) {
         #upspace {
             display: none;
         }
+
         .highlight-wordmark {
             margin-top: 2rem;
         }
-        #posts, .highlight-section, .highlight-section h1, .highlight-section .banner.purple, #handy-guide {
+
+        #posts, .highlight-section, .highlight-section h2, .highlight-section .banner.purple, #handy-guide {
             padding-left: $small-spacing;
             padding-right: $small-spacing;
         }
+
         #posts {
             grid-gap: $small-spacing;
         }
