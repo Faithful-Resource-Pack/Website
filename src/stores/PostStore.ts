@@ -1,6 +1,11 @@
 import { toCamel } from '$lib/utils';
 import { derived, readable } from 'svelte/store';
 
+type PostAuthor = {
+    first: string,
+    second: string
+} | string
+
 interface Post {
     name: string,
     title: string,
@@ -8,17 +13,13 @@ interface Post {
     headerImg: string,
     downloads: string,
     downlaod: string,
-    mainChangelog: string
+    mainChangelog: string,
+    discontinued: boolean,
+    authors: PostAuthor[] | undefined
 };
 
-let _posts = readable({
-    data: undefined,
-    error: undefined
-} as {
-    data: Record<string, Post> | undefined,
-    error: Error | undefined,
-}, (set) => {
-    fetch('https://faithfulpack.net/posts.json')
+const readPosts = function() {
+    return fetch('https://faithfulpack.net/posts.json')
     .then(res => res.json())
     .then((json: Record<string, any>) => {
         let modified = Object.entries(json)
@@ -39,6 +40,19 @@ let _posts = readable({
             return acc;
         }, {} as Record<string, Post>)
 
+        return modified
+    })
+}
+
+let _posts = readable({
+    data: undefined,
+    error: undefined
+} as {
+    data: Record<string, Post> | undefined,
+    error: Error | undefined,
+}, (set) => {
+    readPosts()
+    .then((modified) => {
         set({
             data: modified,
             error: undefined
@@ -70,4 +84,4 @@ const postListStore = derived(postStore, v => {
 const postStoreError = derived(_posts, v => v.error);
 
 export default postStore;
-export { postStore, postStoreError, postListStore };
+export { postStore, postStoreError, postListStore, readPosts };

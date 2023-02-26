@@ -1,5 +1,6 @@
 <script lang="ts">
     import PackCardList from "$components/home/packCardList.svelte";
+	import NewsGrid from "$components/news/newsGrid.svelte";
 	import postStore, { postListStore, postStoreError } from "$stores/PostStore";
 	import { derived } from "svelte/store";
 
@@ -81,27 +82,9 @@
 
 <h1 class="title text-center">Faithful News</h1>
 
-<div id="posts" class="res-grid-3">
-    {#if $posts === undefined}
-        {#if $postsError !== undefined}
-            <div class="axios-error">{ JSON.stringify($postsError) }</div>
-        {:else}
-            <h1 class="title text-center">Loading...</h1>
-        {/if}
-    {:else}
-        {#each $posts.slice(0,6) as post }
-        <a class="card img-card" rel="noopener" href="{ post.permalink }">
-            {#if post.headerImg }
-                <img src={ post.headerImg } loading="lazy" alt={ post.title }>
-            {:else}
-                <img src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy" alt={ post.title }>
-            {/if}
 
-            <h3>{ post.title }</h3>
-        </a>
-        {/each}
-    {/if}
-</div><br>
+<NewsGrid limit={6} />
+<br>
 <a class="btn btn-dark col-6 center text-center" href="/news" id="more_news">{ SEE_MORE }</a>
 
 <style lang="scss">
@@ -158,22 +141,6 @@
         font-weight: 500;
     }
 
-    #posts {
-        width: 1140px;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .img-card > h3 {
-        margin: 0;
-        padding: 8px;
-        background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
-        width: 100%;
-        color: #fff;
-        font-size: 1.2rem;
-    }
-
     @media (max-width: $width-XS) {
         #upspace {
             display: none;
@@ -183,13 +150,9 @@
             margin-top: 2rem;
         }
 
-        #posts, .highlight-section, .highlight-section h2, .highlight-section .banner.purple, #handy-guide {
+        .highlight-section, .highlight-section h2, .highlight-section .banner.purple, #handy-guide {
             padding-left: $small-spacing;
             padding-right: $small-spacing;
-        }
-
-        #posts {
-            grid-gap: $small-spacing;
         }
 
         #more_news {
