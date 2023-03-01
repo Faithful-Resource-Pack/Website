@@ -4,7 +4,9 @@
     "yes": "Yes",
     "no": "No",
     "submit": "Submit",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "all": "All",
+    "unknown": "Unknown"
   },
   "header": {
     "home": "Home",
@@ -76,5 +78,90 @@
         "Bedrock": "64x Bedrock Add-ons"
       }
     }
+  },
+  "license": {
+    "title": "FAITHFUL LICENSE",
+    "usage": {
+      "title": "You may do the following:",
+      "1": "Use our work as placeholders.",
+      "2": "Use our work as a base or reference for your own content (e.g. modded textures, content creator edits).",
+      "3": "Use a few textures that you cannot properly make, such as painting or particle textures.",
+      "4": "Distribute a modified copy of a pack as a content creator with your videos or streams.",
+      "5": "Use our work for adventure maps, server resource packs, mod textures, or data packs."
+    },
+    "requirements": {
+      "title": "By doing any of the above, you agree to follow these requirements:",
+      "1": "Give clear credit in an appropriate place (e.g. video descriptions, pack.mcmetas, listing descriptions).",
+      "2": "Link back to our website, which you can find here:",
+      "3": "Don't take credit for work you didn't make and always give proper attribution to any work you use or modify. In addition, try to be somewhat specific about what you're using, as \"GUI originally from Faithful 32x\" works a lot better than \"some textures from Faithful\". Just be honest about what you're using, use common sense when in doubt, and you'll be fine.",
+      "4": "Do not monetize content that contains any of our work, modified or not, under any circumstances. This includes locking your content behind a paywall (including the Minecraft Marketplace) or monetizing download links. Taking voluntary donations is still allowed, but if it feels like you're profiting off our work don't do it.",
+      "5": "Don't make your projects look official when they aren't. Examples of this behavior would include copying our branding or marking a project as \"official\" in a way that would confuse the average viewer into believing a project is official when it isn't.",
+      "6": "This file, unmodified, must be included in any content which contains any of our work."
+    },
+    "exceptions": {
+      "title": "Exceptions:",
+      "1": "If you're doing anything privately or undistributed to our work (e.g. custom edit for personal use, unpublished add-ons, mod support, personal Minecraft server resource pack, or edits either by you or from different packs) you can safely disregard all of these requirements since you are not gaining unfairly from us in any form.",
+      "2": "Projects not directly related to textures (e.g. website, bot) may have separate licenses with different terms. Check their respective pages or repositories for more information. If nothing is mentioned, assume that all rights remain reserved.",
+      "3": "If you are using textures made before March 2016 (Minecraft Release 1.9). These textures are licensed under Vattic's original Faithful 32x32 license, which has different requirements compared with this license. If you're interested, you can find the original license here under \"Usage Guidelines\":"
+    },
+    "reserve_right": {
+      "title": "We reserve the right to:",
+      "1": "Refuse the ability to use, distribute, or modify any work made by us for any person or group. This action would be final, generally only in the case of unusual circumstances.",
+      "2": "Take legal action if you do not comply with these guidelines.",
+      "3": "Change this license at any time for any reason."
+    }
+  },
+  "add-ons": {
+    "description_1": "Customise your game experience!",
+    "description_2": "Brought to you by the community.",
+    "how_to_install": "How to install add-ons",
+    "all_add-ons": "All add-ons",
+    "favorites": "Favorites",
+    "categories": {
+      "title": "Categories",
+      "blocks": "Blocks",
+      "items": "Items",
+      "mobs": "Mobs",
+      "user_interface": "User Interface",
+      "3d": "3D",
+      "consistency": "Consistency",
+      "utilities": "Utilities",
+      "redstone": "Redstone",
+      "fixes": "Fixes",
+      "pbr": "PBR",
+      "funny": "funny"
+    },
+    "authors": {
+      "title": "Authors",
+      "search_placeholder": "Select authors"
+    },
+    "submit": {
+      "title": "Don't see what you're looking for?",
+      "button": "Submit an add-on"
+    },
+    "search": {
+      "title": "Search",
+      "search_placeholder": "Search add-on name"
+    },
+    "post": {
+      "last_updated": "Last updated:",
+      "author": "Author",
+      "authors": "Authors",
+      "downloads": "Downloads",
+      "information": "Information",
+      "requirement": "This add-on requires",
+      "java": "This add-on supports Java Edition",
+      "bedrock": "This add-on supports Bedrock Edition",
+      "32x": "This add-on was made for Faithful 32x",
+      "64x": "This add-on was made for Faithful 64x",
+      "screenshots": "Screenshots",
+      "discussion": "Start a discussion in our Discord!"
+    }
+  },
+  "modding": {
+    "title": "Mods",
+    "description": "Faithful textures for your favourite mods.",
+    "how_to_install": "How to install mod support packs",
+    "choose_pack": "Choose a pack to get started:"
   }
 }

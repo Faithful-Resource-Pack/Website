@@ -5,9 +5,10 @@
 	import { userNameStore } from "$stores/UserStore";
     import { derived } from "svelte/store";
     import Select from 'svelte-select';
+    import { t } from "$lib/translations";
 
-	const text_all = "All";
-	const text_authors = "Authors";
+	const text_all = $t("common.all");
+	const text_authors = $t("add-ons.authors.title");
 
 	const allChecked = searchStore.allAuthorsSelected();
     const clear = () => {
@@ -34,7 +35,7 @@
             .map(([id, username]) => ({ value: id, label: username }));
     });
 
-    const placeholder_author_select = 'Select authors';
+    const placeholder_author_select = $t("add-ons.authors.search_placeholder");
 
     const change = (val: { detail: {value: string, label: string }[] }) => {
         if(!val.detail) {

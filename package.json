@@ -30,11 +30,11 @@
 		"@material/typography": "^14.0.0",
 		"@smui/slider": "7.0.0-beta.0",
 		"@sveltejs/adapter-node": "^1.2.0",
-		"@sveltejs/kit": "^1.8.5",
+		"@sveltejs/kit": "^1.9.2",
 		"@types/marked": "^4.0.8",
 		"autoprefixer": "^10.4.13",
 		"cssnano": "^5.1.15",
-		"eslint": "^8.34.0",
+		"eslint": "^8.35.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"postcss": "^8.4.21",
@@ -59,7 +59,7 @@
 		"moment": "^2.29.4",
 		"svelte-select": "^5.3.1",
 		"sveltekit-i18n": "^2.2.2",
-		"swiper": "^9.0.5",
+		"swiper": "^9.1.0",
 		"tippy.js": "^6.3.7"
 	}
 }

@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-
+    import { error } from '@sveltejs/kit';
 
     let tot = 0;
     const ids = [
@@ -24,6 +24,7 @@
         img.onload = () => {
             document.getElementById('teacup').style.opacity = '1'
         }
+        throw error(418, "I'm a teapot");
     })
 </script>
 

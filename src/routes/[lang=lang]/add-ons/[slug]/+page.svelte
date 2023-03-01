@@ -18,6 +18,7 @@
     } from "@fortawesome/free-solid-svg-icons";
 	import ImagePreviewer from "$components/common/imagePreviewer.svelte";
 	import type { PageData } from "./$types";
+    import { t } from "$lib/translations";
     
     export let data: PageData;
 
@@ -25,7 +26,7 @@
     let text_date_last_updated: boolean|string = (!!data.lastUpdated) && new Date(data.lastUpdated)
         ?.toLocaleDateString('pt-br')
         .split( '/' ).reverse( ).join('-')
-    let text_last_updated = 'Last updated: ' + (text_date_last_updated || 'Unknown')
+    let text_last_updated = $t("add-ons.post.last_updated") + " " + (text_date_last_updated || $t("common.unknown"))
 
     let media_icons: Record<string, { fa?: IconDefinition, src?: string }> = {
         "CurseForge": { src: "/images/add-ons/curseforge.svg" },
@@ -54,19 +55,19 @@
         <div class="addon-details-left">
             <div class="addon-author-list">
                 {#if data.authors.length == 1}
-                    <h2 class="text-center">Author</h2>
+                    <h2 class="text-center">{$t("add-ons.post.author")}</h2>
                 {:else}
-                    <h2 class="text-center">Authors</h2>
+                    <h2 class="text-center">{$t("add-ons.post.authors")}</h2>
                 {/if}
                 <div>
                 {#each data.authors as author}
                     <div class="addon-author">
                         {#if author.uuid}
-                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{author.uuid}" alt="Skin of {author.username}">
-                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{author.uuid}" alt="Skin of {author.username}">
+                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{author.uuid}" loading="lazy" alt="Skin of {author.username}">
+                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{author.uuid}" loading="lazy" alt="Skin of {author.username}">
                         {:else}
-                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" alt="Skin of {author.username}"> 
-                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" alt="Skin of {author.username}"> 
+                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" loading="lazy" alt="Skin of {author.username}"> 
+                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" loading="lazy" alt="Skin of {author.username}"> 
                         {/if}
                         <div class="card addon-author-name text-center">
                             <h4>{author.username}</h4>
@@ -87,35 +88,35 @@
             </div>
             </div>
             <div>
-                <h2 class="text-center">Downloads</h2>
+                <h2 class="text-center">{$t("add-ons.post.downloads")}</h2>
                 {#each data.downloads as download}
                     <a class="btn btn-dark block" href={download.links}>{download.key}</a>
                 {/each}
             </div>
             <div id="addons-info">
-                <h2 class="text-center">Information</h2>
+                <h2 class="text-center">{$t("add-ons.post.information")}</h2>
                 <div class="card card-body">
                     {#if data.information.optifine == true}
                         <div class="addon-info">
-                            <img class="addon-info-img" src="/images/icon/optifine.png" alt="requires optifine">
-                            <p>This add-on requires <a href="https://optifine.net/downloads">OptiFine</a>
+                            <img class="addon-info-img" src="/images/icon/optifine.png" loading="lazy" alt="requires optifine">
+                            <p>{$t("add-ons.post.requirement")} <a href="https://optifine.net/downloads">OptiFine</a>
                         </div>
                     {/if}
 
                     {#each data.information.tags as info}
                         <div class="addon-info">
                             {#if info == "Java"}
-                                <img class="addon-info-img" src="/images/icon/java.png" alt="java support">
-                                <p>This add-on supports Java Edition</p>
+                                <img class="addon-info-img" src="/images/icon/java.png" loading="lazy" alt="java support">
+                                <p>{$t("add-ons.post.java")}</p>
                             {:else if info == "Bedrock"}
-                                <img class="addon-info-img" src="/images/icon/bedrock.png" alt="bedrock support">
-                                <p>This add-on supports Bedrock Edition</p>
+                                <img class="addon-info-img" src="/images/icon/bedrock.png" loading="lazy" alt="bedrock support">
+                                <p>{$t("add-ons.post.bedrock")}</p>
                             {:else if info == "32x"}
-                                <img class="addon-info-img" src="/images/icon/32.png" alt="for 32x">
-                                <p>This add-on was made for Faithful 32x</p>
+                                <img class="addon-info-img" src="/images/icon/32.png" loading="lazy" alt="for 32x">
+                                <p>{$t("add-ons.post.32x")}</p>
                             {:else if info == "64x"}
-                                <img class="addon-info-img" src="/images/icon/64.png" alt="for 64x">
-                                <p>This add-on was made for Faithful 64x</p>
+                                <img class="addon-info-img" src="/images/icon/64.png" loading="lazy" alt="for 64x">
+                                <p>{$t("add-ons.post.64x")}</p>
                             {/if}
                         </div>
                     {/each}
@@ -131,7 +132,7 @@
         <div class="addon-details-right">
             <img class="addon-header" src="https://database.faithfulpack.net/images/addons/{data.slug}/header" alt="{data.name} header">
             {#if screenList.length > 0}
-                <h2 class="text-center">Screenshots</h2>
+                <h2 class="text-center">{$t("add-ons.post.screenshots")}</h2>
                 <svelte:component
                     this={ImagePreviewer} bind:this={previewer}
                     bind:displayed={previewerDisplayed} images={screenList} />
@@ -143,7 +144,7 @@
         </div>
     </div>
     <p class="banner purple">
-        <a href="https://discord.gg/sN9YRQbBv7">Start a discussion in our Discord!</a>
+        <a href="https://discord.gg/sN9YRQbBv7">{$t("add-ons.post.discussion")}</a>
     </p>
 </div>
 

@@ -1,21 +1,22 @@
 <script lang="ts">
 	import Checkbox from "$components/common/checkbox.svelte";
 	import { searchStore, startStore } from "$stores/AddonStore";
+    import { t } from "$lib/translations";
 
-    const text_categories = "Categories";
-    const ALL = 'All';
+    const text_categories = $t("add-ons.categories.title");
+    const ALL = $t("common.all");
     const CATEGORIES: Record<string,string> = {
-        "blocks": "blocks",
-        "items": "items",
-        "mobs": "mobs",
-        "ui": "user interface",
-        "3d": "3D",
-        "consistency": "consistency",
-        "utilities": "utilities",
-        "redstone": "redstone",
-        "fixes": "fixes",
-        "pbr": "PBR",
-        "funny": "funny"
+        "blocks": $t("add-ons.categories.blocks"),
+        "items": $t("add-ons.categories.items"),
+        "mobs": $t("add-ons.categories.mobs"),
+        "ui": $t("add-ons.categories.user_interface"),
+        "3d": $t("add-ons.categories.3d"),
+        "consistency": $t("add-ons.categories.consistency"),
+        "utilities": $t("add-ons.categories.utilities"),
+        "redstone": $t("add-ons.categories.redstone"),
+        "fixes": $t("add-ons.categories.fixes"),
+        "pbr": $t("add-ons.categories.pbr"),
+        "funny": $t("add-ons.categories.funny")
     };
 
     const allChecked = searchStore.allCategoriesSelected(Object.keys(CATEGORIES))

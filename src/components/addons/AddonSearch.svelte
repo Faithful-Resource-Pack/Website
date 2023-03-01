@@ -4,6 +4,7 @@
 	import Checkbox from "$components/common/checkbox.svelte";
 	import Input from "$components/common/input.svelte";
 	import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+    import { t } from "$lib/translations";
 
     let checkboxes = derived(searchStore, s => {
         return CheckboxTypesValues.map((t) => (
@@ -16,7 +17,7 @@
         )).flat()
     })
 
-    const placeholder_searchbox = 'Search add-on name';
+    const placeholder_searchbox = $t("add-ons.search.search_placeholder");
     let value_searchbox = '';
     searchStore.subscribe(s => {
         value_searchbox = s.search;
@@ -29,7 +30,7 @@
 </script>
 
 <div class="card card-body">
-    <div class="text-center">Search</div>
+    <div class="text-center">{$t("add-ons.search.title")}</div>
     <div class="checkboxes">
         {#each $checkboxes as checkbox}
             <Checkbox

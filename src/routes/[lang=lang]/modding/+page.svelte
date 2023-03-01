@@ -1,9 +1,6 @@
 <script>
     import ModPackCard from "$components/mods/modPackCard.svelte";
-    
-    const text_title = "Mods";
-    const text_desc_1 = "Faithful textures for your favourite mods.";
-    const text_how_to_install = "How to install mod support packs";
+    import { t } from "$lib/translations";
 
     const projects = {
         links: [
@@ -30,12 +27,12 @@
     <div id="mods_header_text">
         <h1 class="title middle">
             <img class="title-image" src="https://database.faithfulpack.net/images/branding/logos/transparent/128/mods_logo.png" alt="Mods"
-            /><span class="h1 bold">{ text_title }</span>
+            /><span class="h1 bold">{$t("modding.title")}</span>
         </h1>
-        <h2>{ @html text_desc_1 }</h2>
-        <p><i><a href="/installation">{ text_how_to_install }</a></i></p>
+        <h2>{$t("modding.description")}</h2>
+        <p><i><a href="/modding/installation">{$t("modding.how_to_install")}</a></i></p>
         <br>
-        <h1>Choose a pack to get started:</h1>
+        <h1>{$t("modding.choose_pack")}</h1>
     </div>
 </div>
 

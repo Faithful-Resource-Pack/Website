@@ -1,6 +1,8 @@
 <script lang="ts">
-    const text_question = `Don't see what you're looking for?`;
-    const text_button = `Submit an add-on`;
+    import { t } from "$lib/translations";
+
+    const text_question = $t("add-ons.submit.title");
+    const text_button = $t("add-ons.submit.button");
 </script>
 <div class="card card-body card-body-thin text-center">
     <div>{text_question}</div>

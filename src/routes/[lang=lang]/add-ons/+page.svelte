@@ -5,11 +5,7 @@
 	import AddonFavorites from "$components/addons/AddonFavorites.svelte";
 	import AddonSubmit from "$components/addons/AddonSubmit.svelte";
 	import AddonAuthors from "$components/addons/AddonAuthors.svelte";
-
-    const text_title = "Add-ons";
-    const text_desc_1 = "Customise your game experience!";
-    const text_desc_2 = "Brought to you by the community.";
-    const text_how_to_install = "How to install add-ons";
+    import { t } from "$lib/translations";
 </script>
 
 <div id="addon_header" class="text-center">
@@ -17,11 +13,11 @@
     <div id="addon_header_text">
         <h1 class="title middle">
             <img class="title-image" src="https://database.faithfulpack.net/images/branding/logos/transparent/128/addons_logo.png" alt="Add-ons"
-            /><span class="h1 bold">{ text_title }</span>
+            /><span class="h1 bold">Add-ons</span>
         </h1>
-        <h2>{ @html text_desc_1 }</h2>
-        <h4>{ @html text_desc_2 }</h4>
-        <p><i><a href="/installation">{ text_how_to_install }</a></i></p>
+        <h2>{$t("add-ons.description_1")}</h2>
+        <h4>{$t("add-ons.description_2")}</h4>
+        <p><i><a href="/installation">{$t("add-ons.how_to_install")}</a></i></p>
     </div>
 </div>
 
