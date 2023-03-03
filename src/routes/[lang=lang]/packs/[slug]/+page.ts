@@ -5,31 +5,31 @@ const projects = {
     "faithful-32x": {
         title: "Faithful 32x",
         link: "faithful-32x",
-        logotext: "https://database.faithfulpack.net/images/branding/logotexts/f32_logotext.png",
+        logotext: "https://database.faithfulpack.net/images/branding/site/logotexts/f32_logotext.png",
         background: "https://database.faithfulpack.net/images/branding/backgrounds/f32.png"
     },
     "faithful-64x": {
         title: "Faithful 64x",
         link: "faithful-64x",
-        logotext: "https://database.faithfulpack.net/images/branding/logotexts/f64_logotext.png",
+        logotext: "https://database.faithfulpack.net/images/branding/site/logotexts/f64_logotext.png",
         background: "https://database.faithfulpack.net/images/branding/backgrounds/f64.png"
     },
     "classic-faithful-32x-jappa": {
         title: "Classic Faithful 32x Jappa",
         link: "classic-faithful-32x-jappa",
-        logotext: "https://database.faithfulpack.net/images/branding/logotexts/cf32_logotext.png",
+        logotext: "https://database.faithfulpack.net/images/branding/site/logotexts/cf32_logotext.png",
         background: "https://database.faithfulpack.net/images/branding/backgrounds/cf32.png"
     },
     "classic-faithful-32x-programmer-art": {
         title: "Classic Faithful 32x Programmer Art",
         link: "classic-faithful-32x-programmer-art",
-        logotext: "https://database.faithfulpack.net/images/branding/logotexts/cf32pa_logotext.png",
+        logotext: "https://database.faithfulpack.net/images/branding/site/logotexts/cf32pa_logotext.png",
         background: "https://database.faithfulpack.net/images/branding/backgrounds/cf32pa.png"
     },
     "classic-faithful-64x": {
         title: "Classic Faithful 64x",
         link: "classic-faithful-64x",
-        logotext: "https://database.faithfulpack.net/images/branding/logotexts/cf64_logotext.png",
+        logotext: "https://database.faithfulpack.net/images/branding/site/logotexts/cf64_logotext.png",
         background: "https://database.faithfulpack.net/images/branding/backgrounds/cf64.png"
     }
 }

@@ -2,6 +2,8 @@
     export let data: any;
     import { onMount } from 'svelte';
     import { register } from 'swiper/element/bundle';
+    import { t } from "$lib/translations";
+
     register();
 	onMount(() => {
 		import ('img-comparison-slider');
@@ -11,8 +13,8 @@
 <div class="highlight-section text-center" style="background-image: url({data.background})">
     <img class="highlight-logotext" src={data.logotext} alt="{data.title} logotext">
     <div class="card card-body">
-        <h1>About</h1>
-        <p>Blah blah blah, short description of the pack, its artstyle, quick history, blah blah blah, AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+        <h1>{$t("packs.about")}</h1>
+        <p>{@html $t(`packs.${data.link}`)}</p>
         <div>
             <a class="btn btn-dark" href="/downloads#{data.link}">Download</a>
             <a class="btn btn-dark" href="/news/{data.link}/latest">View latest post</a>
@@ -20,24 +22,26 @@
     </div>
 </div>
 
-<h1 class="text-center">Comparison</h1>
-<img-comparison-slider class="center" value="60">
-    <img
-        slot="first"
-        src="/images/comparisons/faithful 32x.png"
-        alt="{data.title}"
-    />
-    <img
-        slot="second"
-        src="/images/comparisons/default.png"
-        alt="Vanilla"
-    />
-    <svg slot="handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
-        <path stroke="#fff" d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2" stroke-width="1" fill="#fff" vector-effect="non-scaling-stroke"></path>
-    </svg>
-</img-comparison-slider>
+<div class="container">
+    <h1 class="text-center">{$t("packs.comparison")}</h1>
+    <img-comparison-slider class="center" value="60">
+        <img
+            slot="first"
+            src="/images/comparisons/faithful 32x.png"
+            alt="{data.title}"
+        />
+        <img
+            slot="second"
+            src="/images/comparisons/default.png"
+            alt="Vanilla"
+        />
+        <svg slot="handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
+            <path stroke="#fff" d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2" stroke-width="1" fill="#fff" vector-effect="non-scaling-stroke"></path>
+        </svg>
+    </img-comparison-slider>
+</div>
 
-<h1 class="text-center">Screenshots</h1>
+<h1 class="text-center">{$t("packs.screenshots")}</h1>
 <swiper-container
     navigation={true}
     slides-per-view={3}
@@ -65,7 +69,8 @@
         margin-bottom: 2rem;
 
         .highlight-logotext {
-            width: 80%;
+            max-width: 800px;
+            padding: 20px;
         }
 
         .card {

@@ -16,8 +16,8 @@ specifiers:
   '@material/theme': ^14.0.0
   '@material/typography': ^14.0.0
   '@smui/slider': 7.0.0-beta.0
-  '@sveltejs/adapter-node': ^1.2.0
-  '@sveltejs/kit': ^1.9.2
+  '@sveltejs/adapter-node': ^1.2.1
+  '@sveltejs/kit': ^1.10.0
   '@types/marked': ^4.0.8
   autoprefixer: ^10.4.13
   cssnano: ^5.1.15
@@ -73,8 +73,8 @@ devDependencies:
   '@material/theme': 14.0.0
   '@material/typography': 14.0.0
   '@smui/slider': 7.0.0-beta.0_4x7phaipmicbaooxtnresslofa
-  '@sveltejs/adapter-node': 1.2.0_@sveltejs+kit@1.9.2
-  '@sveltejs/kit': 1.9.2_svelte@3.55.1+vite@4.1.4
+  '@sveltejs/adapter-node': 1.2.1_@sveltejs+kit@1.10.0
+  '@sveltejs/kit': 1.10.0_svelte@3.55.1+vite@4.1.4
   '@types/marked': 4.0.8
   autoprefixer: 10.4.13_postcss@8.4.21
   cssnano: 5.1.15_postcss@8.4.21
@@ -634,20 +634,20 @@ packages:
       - typescript
     dev: true
 
-  /@sveltejs/adapter-node/1.2.0_@sveltejs+kit@1.9.2:
-    resolution: {integrity: sha512-j0nxkrNZ4zBkOIOtqHUET5l8qvcFo64xNL2xv8F1QICkz746o5DVCGaJEPC3B2X2fTklXExxe80yXZhf38p6zg==}
+  /@sveltejs/adapter-node/1.2.1_@sveltejs+kit@1.10.0:
+    resolution: {integrity: sha512-mEGDCaZVU3qvFdUI8CMKv+BSzpBYpTpcx85u8bfJ+vcv57pu4UXjZg7ivOoxWZdunUeqq4oEyE+kHmlgBRAalg==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
       '@rollup/plugin-commonjs': 24.0.1_rollup@3.10.1
       '@rollup/plugin-json': 6.0.0_rollup@3.10.1
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.10.1
-      '@sveltejs/kit': 1.9.2_svelte@3.55.1+vite@4.1.4
+      '@sveltejs/kit': 1.10.0_svelte@3.55.1+vite@4.1.4
       rollup: 3.10.1
     dev: true
 
-  /@sveltejs/kit/1.9.2_svelte@3.55.1+vite@4.1.4:
-    resolution: {integrity: sha512-KYDrzs9bdoK+3typr5eBa+8q+RFwZdI80tuSL1yU99Rn5hZsEbcj4tlBGVvlL7SHxJdMUiDUYhTznbpb7CIs9A==}
+  /@sveltejs/kit/1.10.0_svelte@3.55.1+vite@4.1.4:
+    resolution: {integrity: sha512-0P35zHrByfbF3Ym3RdQL+RvzgsCDSyO3imSwuZ67XAD5HoCQFF3a8Mhh0V3sObz3rc5aJd4Qn82UpAihJqZ6gQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
