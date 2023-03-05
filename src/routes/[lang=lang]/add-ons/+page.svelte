@@ -15,8 +15,7 @@
             <img class="title-image" src="https://database.faithfulpack.net/images/branding/logos/transparent/128/addons_logo.png" alt="Add-ons"
             /><span class="h1 bold">Add-ons</span>
         </h1>
-        <h2>{$t("add-ons.description_1")}</h2>
-        <h4>{$t("add-ons.description_2")}</h4>
+        <h2>{$t("add-ons.description")}</h2>
         <p><i><a href="/installation">{$t("add-ons.how_to_install")}</a></i></p>
     </div>
 </div>

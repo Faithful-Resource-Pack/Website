@@ -112,8 +112,7 @@
     }
   },
   "add-ons": {
-    "description_1": "Customise your game experience!",
-    "description_2": "Brought to you by the community.",
+    "description": "Customise your experience with our community-made modifications!",
     "how_to_install": "How to install add-ons",
     "all_add-ons": "All add-ons",
     "favorites": "Favorites",
