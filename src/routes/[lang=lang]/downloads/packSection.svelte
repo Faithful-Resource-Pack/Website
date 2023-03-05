@@ -8,7 +8,7 @@
 </script>
 
 <div class="pack" style={`--pack-background: url(${pack.background_url})`}>
-    <h2>{@html pack.name.replace('\n', '<br>') }</h2>
+    <h2 class="semibold">{@html pack.name.replace('\n', '<br>') }</h2>
 
     {#if pack.editions.length === 0 || pack.editions.map(e => e.downloads).reduce((sum,d) => sum + Object.keys(d).length, 0) === 0}
         <p class="coming-soon"><i>{ coming_soon }</i></p>
@@ -21,7 +21,7 @@
             <h2 class="red banner">{ project_discontinued }</h2>
         </div>
         {/if}
-        
+
         <div class="container">
             <DownloadTable downloads={edition.downloads} />
         </div>

@@ -11,7 +11,7 @@
 
 <div class="section green">
     <div>
-        <h1>UPSCALING THE LOOK OF MINECRAFT</h1>
+        <h1 class="normal">UPSCALING THE LOOK OF MINECRAFT</h1>
         <p>Faithful aims to re-create Minecraft's original textures at higher resolutions, while staying true to their original look and feel.</p>
         <a class="button" href="https://docs.faithfulpack.net/pages/textures/contributor-handbook" target="_blank" rel="noreferrer">HOW TO CONTRIBUTE<Fa icon={faAngleRight} /></a>
     </div>
@@ -20,7 +20,7 @@
 <div class="section">
     <img src="/images/about/2.png" alt="placeholder">
     <div>
-        <h1>FREE AND OPEN-SOURCE</h1>
+        <h1 class="normal">FREE AND OPEN-SOURCE</h1>
         <p>
             All our textures, as well as the code of all our related projects, are available on GitHub.
             <br>
@@ -31,7 +31,7 @@
 </div>
 <div class="section blue">
     <div>
-        <h1>CROSS-PLATFORM</h1>
+        <h1 class="normal">CROSS-PLATFORM</h1>
         <p>Faithful is available for many Java Edition versions as well as Bedrock Edition. This means it can be used on all devices that support manual installation of resource packs.</p>
         <a class="button" href="/installation">HOW TO INSTALL<Fa icon={faAngleRight} /></a>
     </div>
@@ -40,21 +40,21 @@
 <div class="section">
     <img src="/images/about/2.png" alt="placeholder">
     <div>
-        <h1>MADE BY THE COMMUNITY</h1>
+        <h1 class="normal">MADE BY THE COMMUNITY</h1>
         <p>The project is made possible entirely by talented volunteer artists and developers working in their free time. Faithful is all about the fans – Come talk to us and get involved!</p>
         <a class="button button-theme" href="https://discord.gg/sN9YRQbBv7" target="_blank" rel="noreferrer">JOIN OUR DISCORD<Fa icon={faAngleRight} /></a>
     </div>
 </div>
 <div class="section pink">
     <div>
-        <h1>A HISTORY OF SOMETHING</h1>
+        <h1 class="normal">A HISTORY OF SOMETHING</h1>
         <p>[placeholder title] We've got an over-a-decade-long history of making quality textures for Minecraft. Being one of the first ever texture packs to be developed, Faithful has secured its place among the most well-known Minecraft projects.</p>
         <a class="button" href="/history">READ MORE<Fa icon={faAngleRight} /></a>
     </div>
     <img src="/images/about/4.png" alt="placeholder">
 </div>
 <div class="faq">
-    <h1>ANY MORE QUESTIONS?</h1>
+    <h1 class="normal">ANY MORE QUESTIONS?</h1>
     <a class="button button-theme" href="/faq">VIEW FAQ<Fa icon={faAngleRight} /></a>
 </div>
 
