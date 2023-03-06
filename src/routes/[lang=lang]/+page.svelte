@@ -31,7 +31,7 @@
             },
             {
                 title: "Classic Faithful 64x",
-                background: "https://database.faithfulpack.net/images/branding/backgrounds/cf64.png",
+                background: "https://database.faithfulpack.net/images/branding/site/posters/poster_cf64.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/cf64_logo.png"
             },
         ]
@@ -44,12 +44,12 @@
         urls: [
             {
                 title: "Add-ons",
-                background: "https://database.faithfulpack.net/images/branding/backgrounds/add-ons.png",
+                background: "https://database.faithfulpack.net/images/branding/site/posters/poster_addons.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/addons_logo.png"
             },
             {
                 title: "Mod Support",
-                background: "https://database.faithfulpack.net/images/branding/backgrounds/mods.png",
+                background: "https://database.faithfulpack.net/images/branding/site/posters/poster_mods.png",
                 src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/mods_logo.png"
             }
         ]
