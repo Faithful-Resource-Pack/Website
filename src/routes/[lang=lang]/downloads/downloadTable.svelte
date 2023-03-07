@@ -51,8 +51,6 @@
 		margin-bottom: 0;
 		vertical-align: middle;
 	}
-	élément {
-	}
 
 	@media (max-width: 760px) {
 		.download-table thead {

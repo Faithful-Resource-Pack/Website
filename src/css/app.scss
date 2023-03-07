@@ -105,23 +105,17 @@ button:enabled {
 	margin: 2rem 0;
 }
 
+.subtitle {
+	font-size: 2.4rem;
+    margin: 0;
+}
+
 .mobile {
 	display: none;
 
 	@media (max-width: $width-XS) {
 		display: initial;
 	}
-}
-
-.display-3 {
-	font-size:3rem;
-	font-weight:300;
-	line-height:1.2
-}
-.display-4 {
-	font-size:2.4rem;
-	font-weight:300;
-	line-height:1.2
 }
 
 @media screen and (max-width: 768px) {

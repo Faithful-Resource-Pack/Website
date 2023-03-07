@@ -31,9 +31,9 @@
 </script>
 
 <div class="container text-center">
-	<h1 class="display-3 my-5">{$t("stats.title.page")}</h1>
+	<h1 class="title text-center bold">{$t("stats.title.page")}</h1>
 
-	<h2 class="display-4 my-5">{$t("stats.title.main_pack")}</h2>
+	<h2 class="subtitle text-center semibold">{$t("stats.title.main_pack")}</h2>
 	<div class="res-grid-2">
 		<h3>{$t("stats.title.32_releases")}</h3>
 		<h3><span class="badge badge-primary">{$count_32_releases}</span></h3>
@@ -41,7 +41,7 @@
 		<h3><span class="badge badge-primary">{$count_64_releases}</span></h3>
 	</div>
 
-	<h2 class="display-4 my-5 ">{$t("stats.title.add_ons")}</h2>
+	<h2 class="subtitle text-center semibold">{$t("stats.title.add_ons")}</h2>
 	{#if $addonStatsStore !== undefined}
 	    <div class="res-grid-2">
             {#each Object.entries($addonStatsStore) as [res, edition_record]}
@@ -61,7 +61,7 @@
         {(console.log($addonStatsStore), '')}
 	{/if}
 
-	<h2 class="display-4 my-5 ">{$t("stats.title.mods")}</h2>
+	<h2 class="subtitle text-center semibold">{$t("stats.title.mods")}</h2>
 	{#if $modStatsStore !== undefined}
         <div class="res-grid-3">
             {#each Object.entries($modStatsStore) as [key, value]}
@@ -111,14 +111,6 @@
 
     h3 .badge {
         font-weight: normal;
-    }
-
-    h1 {
-        font-weight: bold;
-    }
-
-    h2 {
-        font-weight: 600;
     }
 
     @media (min-width: $width-L) {
