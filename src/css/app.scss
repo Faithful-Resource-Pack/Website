@@ -44,6 +44,7 @@ h1, .h1 {
 }
 
 a {
+	font-family: inherit;
 	text-decoration: none;
 	color: $primary;
 	&:hover {
@@ -54,6 +55,13 @@ a {
 		color: inherit;
 		text-decoration: underline;
 	}
+}
+
+hr {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 0;
+	height: 1px;
 }
 
 .noselect {
@@ -598,7 +606,7 @@ button:disabled {
 .card, .card p, .card > h2 > a {
 	color: rgba(255,255,255,0.7);
 }
-.card, .fancy-card-2x {
+.card, .fancy-card-2x, .fancy-card-1x {
 	border-radius: $border-radius;
 }
 .card {
@@ -670,6 +678,17 @@ button:disabled {
 .btn:hover {
 	color: #212529;
 	text-decoration: none;
+}
+.btn-primary {
+	color: #fff;
+	background-color: #007bff;
+	border-color: #007bff;
+
+	&:hover {
+		color: #fff;
+		background-color: #0069d9;
+		border-color: #0062cc;
+	}
 }
 
 .btn-dark {
@@ -749,7 +768,7 @@ button:disabled {
 	filter: saturate(0.7);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $width-L) {
 	.container {
 		max-width: 1400px;
 	}

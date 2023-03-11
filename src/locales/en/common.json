@@ -6,7 +6,9 @@
     "submit": "Submit",
     "cancel": "Cancel",
     "all": "All",
-    "unknown": "Unknown"
+    "unknown": "Unknown",
+    "discord_banner.contribute": "Join our Discord now and contribute to the project!",
+    "discord_banner.discussion": "Start a discussion in our Discord!"
   },
   "header": {
     "home": "Home",

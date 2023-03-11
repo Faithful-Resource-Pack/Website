@@ -1,8 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { marked } from 'marked';
-//@ts-ignore
-import TextRenderer from 'kramed-text-renderer';
-import DOMPurify from 'isomorphic-dompurify';
+import { shortMd, parseMd } from '$lib/shortMd';
+
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async function({ fetch, params }) {
@@ -29,26 +27,12 @@ export const load: PageLoad = async function({ fetch, params }) {
     .catch((err) => { console.error('screenshots', err); throw err;})
     const screenData = await screenRes.json()
     
-    const desc_md = DOMPurify.sanitize(await marked.parse(addonData.description))
+    const desc_md = parseMd(addonData.description)
     //@ts-ignore
     let short: string | undefined = addonData.short_description
     if(short === undefined)
     {
-        let renderer = TextRenderer()
-        renderer.heading = function() { return '' }
-        renderer.listitem = function(text: string) { return `- ${text}\n` }
-        renderer.text = function(t: string) { return t }
-        marked.use();
-        
-        const desc_txt = DOMPurify.sanitize(marked.parse(addonData.description, {
-            renderer
-        })).replace(/\n+ ?/g, ' ').trim()
-
-        short = `${desc_txt.split(' ').reduce(([acc, done]: [string, boolean], cur: string): [string, boolean] => {
-            if(!done && acc.length + cur.length + 1 < 158) acc += ' ' + cur
-            else done = true
-            return [acc, done]
-        }, ['', false])[0]}...`.substring(1) // remove first space
+        short = shortMd(addonData.description)
     }
 
     return {

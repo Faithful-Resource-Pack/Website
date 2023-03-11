@@ -1,8 +1,7 @@
 <script lang="ts">
+    import DiscordBanner from "$components/common/discordBanner.svelte";
     import PackCardList from "$components/home/packCardList.svelte";
-	import NewsGrid from "$components/news/newsGrid.svelte";
-	import postStore, { postListStore, postStoreError } from "$stores/PostStore";
-	import { derived } from "svelte/store";
+    import NewsGrid from "$components/news/newsGrid.svelte";
 
     const SEE_MORE = "See More";
     const projects = {
@@ -54,18 +53,13 @@
             }
         ]
     }
-
-    let posts = postListStore;
-    let postsError = postStoreError;
 </script>
 
 <div class="highlight-section text-center">
     <div id="upspace"></div>
     <img class="highlight-wordmark" src="/images/branding/wordmark.png" alt="Faithful Wordmark">
     <h2 class="regular">Providing a higher-resolution experience since 2010.</h2>
-    <p class="banner purple">
-        <a href="https://discord.gg/sN9YRQbBv7">Join our Discord now and contribute to the project!</a>
-    </p>
+    <DiscordBanner text="contribute" />
 </div>
 
 <h1 class="title text-center">Faithful Projects</h1>
@@ -112,26 +106,12 @@
             text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
         }
 
-        h2, .banner.purple {
-            margin: $spacing 0;
+        h2, :global(.banner.purple) {
+            margin-top: $spacing;
+            margin-bottom: $spacing;
         }
-
-        .banner.purple {
-            width: 60%;
-            margin-left: auto;
-            margin-right: auto  ;
-            max-width: 100%;
-            font-size: 1.2rem;
-            font-weight: 600;
-            @media only screen and (max-width: 992px) {
-                width: 100%;
-	        }
-            a {
-                text-decoration: none;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
+        :global(.banner.purple) {
+		    width: 60%;
         }
     }
 
@@ -150,7 +130,7 @@
             margin-top: 2rem;
         }
 
-        .highlight-section, .highlight-section h2, .highlight-section .banner.purple, #handy-guide {
+        .highlight-section, .highlight-section h2, :global(.highlight-section .banner.purple), #handy-guide {
             padding-left: $small-spacing;
             padding-right: $small-spacing;
         }
