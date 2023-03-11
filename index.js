@@ -65,11 +65,12 @@ const EXTRACT = [
   ['comments', true],
   ['comments-id', true],
   ['header-img', true],
+  ['discontinued', true],
   ['long_text', false],
   ['changelog', false, 1, true],
   ['single-changelog', true],
   ['expanded-changelog', true],
-  ['downloads', false],
+  ['downloads', false, 2],
   ['download', false],
   ['main_changelog', true],
 ]
