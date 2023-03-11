@@ -5,6 +5,7 @@
 	import DownloadButton from '$components/common/downloadButton.svelte';
 	import DiscordBanner from '$components/common/discordBanner.svelte';
 	import ChangeLog from "./changeLog.svelte"
+	import List from './list.svelte';
 	
     export let data: PageData;
 
@@ -19,13 +20,13 @@
 
 
 {#if post.discontinued}
-	<h2 class="red banner">This project has been discontinued.</h2>
+<div class="container"><h2 class="red banner">This project has been discontinued.</h2></div>
 {/if}
 
 {#if post.title}
-	<h2 class="display-3 my-5 text-center">{ post.title }</h2>
+	<h2 class="display-3 my-5 text-center" title={post.name}>{ post.title }</h2>
 {:else}
-	<h2 class="display-3 my-5 text-center">Unknown Title</h2>
+	<h2 class="display-3 my-5 text-center">{ post.name }</h2>
 {/if}
 
 <div class="container">
@@ -60,20 +61,6 @@
 			{/each}
 		</h3>
 	{/if}
-	{#if post.downloads && Array.isArray(post.downloads) }
-		<h2 class="display-4 my-5 text-center">Downloads</h2>
-		{#each post.downloads as item}
-			<h1 class="my-3" style="text-align: center">{ item[0] }</h1>
-			{#each item[1] as subitem}
-				<p style="text-align: center">
-					<a href="{ subitem[1] }" class="btn block btn-lg btn-primary">
-						{ subitem[0] }
-					</a>
-				</p>
-			{/each}
-			<br>
-		{/each}
-	{/if}
 	{#if post.downloads}
 		{#if Object.entries(post.downloads).length > 1}
 			<h2 class="display-4 my-5 text-center">Downloads</h2>
@@ -100,11 +87,17 @@
 		{/each}
 	{/if}
 
-	<DiscordBanner text="discussion" />
-
 	{#if mainChangelodLoaded}
 		<ChangeLog main text={mainChangelodLoaded} />
 	{/if}
+	{#if post.changelog}
+		<h2 class="display-4 my-5 text-center">Changelog</h2>
+		<div class="card card-body my-5 changelog">
+			<List list={post.changelog} tags={['h3','h4']} />
+		</div>
+	{/if}
+
+	<DiscordBanner text="discussion" />
 </div>
 
 <style lang="scss">
@@ -122,4 +115,6 @@
 	#post-header-img {
 		width: 100%;
 	}
+
+
 </style>

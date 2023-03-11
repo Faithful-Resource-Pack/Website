@@ -44,7 +44,6 @@ h1, .h1 {
 }
 
 a {
-	font-family: inherit;
 	text-decoration: none;
 	color: $primary;
 	&:hover {
@@ -55,6 +54,10 @@ a {
 		color: inherit;
 		text-decoration: underline;
 	}
+}
+
+u, i, a, strong, em {
+	font-family: inherit;
 }
 
 hr {

@@ -1,3 +1,4 @@
+import { parseMdList, type ListItem } from '$lib/shortMd';
 import { toCamel } from '$lib/utils';
 import { derived, readable } from 'svelte/store';
 
@@ -14,6 +15,7 @@ interface Post {
     downloads: Record<string, [string, string][]>,
     download: string,
     mainChangelog: string,
+    changelog?: ListItem[],
     expandedChangelog?: boolean,
     singleChangelog?: boolean,
     discontinued?: boolean,
@@ -38,6 +40,7 @@ const readPosts = function() {
                 upper_post[post_prop] = post_val;
                 upper_post[post_prop] = treatBoolean(upper_post[post_prop])
                 upper_post[post_prop] = treatDownloads(post_prop, upper_post[post_prop])
+                upper_post[post_prop] = treatChangelog(post_prop, upper_post[post_prop])
                 return upper_post;
             }, {} as Record<string, any>);
 
@@ -131,6 +134,11 @@ function treatDownloads(property: string, value: string): Record<string, [string
     }
 
     return recordList.reduce((occ, [key, val]) => ({...occ, [key]: val}), {})
+}
+
+function treatChangelog(property: string, value: string): ListItem[] | string {
+    if(property !== 'changelog') return value;
+    return parseMdList(value);
 }
 
 function treatBoolean(value: string): boolean | string {
