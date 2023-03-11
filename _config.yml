@@ -16,6 +16,7 @@ exclude:
   - /index.js
   - /.github
   - /README.md
+  - posts.json
 
 sass:
   sass_dir: css

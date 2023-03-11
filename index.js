@@ -66,6 +66,7 @@ const EXTRACT = [
   ['comments-id', true],
   ['header-img', true],
   ['long_text', false],
+  ['changelog', false, 1, true],
   ['single-changelog', true],
   ['expanded-changelog', true],
   ['downloads', false],
@@ -80,9 +81,10 @@ const EXTRACT = [
  * 
  * @return {{[tag]: string} | undefined} 
  */
-function extract(input, [tag, oneline, accepted_empty_lines]) {
-  let i = input.findIndex(l => l.startsWith(`${tag}:`))
-  if(i === -1) return undefined
+function extract(input, [tag, oneline, accepted_empty_lines, is_list]) {
+  let start = input.findIndex(l => l.startsWith(`${tag}:`))
+  if(start === -1) return undefined
+  let i = start
 
   if(oneline) {
     let line = input[i]
@@ -92,7 +94,8 @@ function extract(input, [tag, oneline, accepted_empty_lines]) {
     return line_cleaned
   }
 
-  accepted_empty_lines = accepted_empty_lines || 1;
+  is_list = !!is_list;
+  accepted_empty_lines = accepted_empty_lines !== undefined ? accepted_empty_lines : 1;
 
   let res = input[i].replace(`${tag}:`, '');
   i++;
@@ -106,7 +109,7 @@ function extract(input, [tag, oneline, accepted_empty_lines]) {
     if(!is_empty) empty_lines = 0;
     else empty_lines++;
 
-    if(empty_lines >= accepted_empty_lines) {
+    if((is_list && i > 0 && !/^\s/.test(line)) || empty_lines >= accepted_empty_lines) {
       running = false;
     } else {
       res += '\n' + line;
@@ -145,7 +148,7 @@ function generate_posts_json() {
         name: parse(e.name).name
       }
 
-      let lines = md.split('\n').filter(l => l !== '---')
+      let lines = md.split('\n').filter(l => l.trim() !== '---')
       EXTRACT.forEach((e) => {
         extracted = extract(lines, e)
         if(['long_text', 'downloads', 'main_changelog'].indexOf(e[0]) !== -1 && !!extracted)
