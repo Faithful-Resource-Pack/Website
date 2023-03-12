@@ -7,13 +7,38 @@
 		faPlus,
 		faWrench,
 		faImages,
-		faCircleQuestion
+		faCircleQuestion,
+		faCube
 	} from "@fortawesome/free-solid-svg-icons";
 
 
 	function toggleMenu() {
 		document.getElementsByClassName("navbar-nav")[0].classList.toggle("show");
 	}
+
+	const PROJECTS = [{
+		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png',
+		text: 'Faithful 32x',
+		link: '/packs/faithful-32x'
+	},{
+		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/f64_logo.png',
+		text: 'Faithful 64x',
+		link: '/packs/faithful-32x'
+	},{
+		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png',
+		text: 'Classic Faithful 32x\nJappa',
+		link: '/packs/classic-faithful-32x-jappa'
+	},{
+		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32pa_logo.png',
+		text: 'Classic Faithful 32x\nProgrammer Art',
+		link: '/packs/classic-faithful-32x-programmer-art'
+	},{
+		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf64_logo.png',
+		text: 'Classic Faithful 64x',
+		link: '/packs/classic-faithful-32x'
+	}]
+
+	let projectsShown = false;
 </script>
 
 <header>
@@ -39,6 +64,24 @@
 		</button>
 
 		<div class="navbar-nav">
+			<div class="nav-item" id="project-navigation-mobile"
+			on:click={() => projectsShown = !projectsShown} on:keypress={() => {}}>
+				<span class="nav-link dropdown-toggle" class:opened={projectsShown}>
+					<Fa icon={faCube} />
+					{ $t('header.projects') }
+				</span>
+				{#if projectsShown}
+					<div class="dropdown-menu dropdown-menu-center">
+						{#each PROJECTS as project}
+							<div><a class="dropdown-item nav-link project" href={project.link}>
+								<img src={project.image+'?h=16'} alt={project.text}
+								/> {project.text}
+							</a></div>
+						{/each}
+					</div>
+				{/if}
+			</div>
+
 			<div class="nav-item">
 				<a class="nav-link" href="/">
 					<Fa icon={faHouse} />
@@ -60,13 +103,14 @@
 				</a>
 			</div>
 
-			<a href="/" title="Faithful">
+			<div title={$t('header.projects')} id="logo" class="nav-link" class:opened={projectsShown}
+				on:click={() => projectsShown = !projectsShown} on:keypress={() => {}}>
 				<img
 					src="/images/branding/f32_logo.svg"
 					style="width: 48px; height: 48px; display: block"
 					alt="Faithful 32x"
 				/>
-			</a>
+			</div>
 
 			<div class="nav-item">
 				<a class="nav-link" href="/modding">
@@ -90,9 +134,36 @@
 			</div>
 		</div>
 	</nav>
+
+	<div id="project-navigation" class="desktop" class:show={projectsShown}>
+		<div class="project-card btn main">
+			{#each PROJECTS as project}
+				<a href={project.link} class="project">
+					<img src={project.image+'?h=64'} alt={project.text}
+					/><pre class="text"><p>{ project.text}</p></pre>
+				</a>
+			{/each}
+		</div>
+	</div>
 </header>
 
 <style lang="scss">
+	$navbar-padding: 10px;
+
+	// include in interesting parts
+	@mixin link($color, $color_hover) {
+		text-decoration: none;
+		color: $color;
+		font-weight: 500;
+		transition: all 0.1s ease-out;
+
+		&:hover {
+			color: $color_hover;
+			cursor: pointer;
+			transform: scale(0.95);
+		}
+	}
+
 	header {
 		top: 0px;
 		position: sticky;
@@ -100,7 +171,9 @@
 	}
 	.navbar {
 		box-shadow: 0 0 5px 0 #000;
-		padding: 10px;
+		position: relative;
+		z-index: 1000;
+		padding: $navbar-padding;
 
 		@media (max-width: $width-S) {
 			padding: $small-spacing;
@@ -159,15 +232,23 @@
 				}
 			}
 
-			& > a {
+			#logo {
+				cursor: pointer;
+				border-radius: $border-radius;
 				transition: all 0.2s ease-out;
 
 				@media (max-width: $width-S) {
 					display: none;
 				}
 
-				&:hover {
+				&:hover, &.opened {
 					transform: scale(1.1);
+				}
+
+				&.opened {
+					// 15
+					background: rgba(235,235,235,0.2);
+					box-shadow: 0 0 1px rgba(235,235,235,1);
 				}
 			}
 
@@ -183,17 +264,109 @@
 				}
 
 				.nav-link {
-					color: rgb(180, 180, 180);
-					font-weight: 500;
-					transition: all 0.1s ease-out;
-
-					&:hover {
-						color: rgb(220, 220, 220);
-						cursor: pointer;
-						transform: scale(0.95);
-					}
+					@include link(rgb(180, 180, 180), rgb(220, 220, 220));
+					display: inline;
 				}
 			}
 		}
+	}
+
+	#project-navigation {
+		z-index: 999;
+		left: 0;
+		right: 0;
+		position: absolute;
+		text-align: center;
+		transition: transform 0.2s ease-in-out;
+		transform: translateY(calc(-100% - $navbar-padding));
+		top: calc(100% + $navbar-padding);
+
+		&.show {
+			transform: none;
+		}
+
+		> .project-card {
+			padding: $navbar-padding;
+
+			> * {
+				display: inline-block;
+				vertical-align: top;
+			}
+		}
+
+		@media (max-width: $width-S) {
+			display: none;
+		}
+
+		.project {
+			color: inherit;
+			margin: 0 $navbar-padding;
+			@include link(inherit, inherit);
+
+			& > .text {
+				opacity: .8;
+				margin: 0;
+				font-size: 0.9em;
+				font-weight: 600;
+
+				& * {
+					margin: 0;
+				}
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	#project-navigation-mobile {
+		@media (min-width: $width-S) {
+			display: none;
+		}
+		.dropdown-menu {
+			background: transparent;
+			box-shadow: none;
+			font-size: inherit;
+		}
+
+		.dropdown-menu {
+			margin-top: 8px;
+		}
+	}
+
+	.dropdown-toggle {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.dropdown-toggle.opened::after {
+		transform: rotate(180deg);
+	}
+
+	.dropdown-toggle::after {
+		display: inline-block;
+		margin-left: 0.255em;
+		vertical-align: 0.255em;
+		content: "";
+		border-top: 0.3em solid;
+		border-right: 0.3em solid transparent;
+		border-bottom: 0;
+		border-left: 0.3em solid transparent;
+	}
+
+	.dropdown-item {
+		display: block;
+		width: 100%;
+		padding: 0.25rem 0 0.25rem 1.5rem;
+		clear: both;
+		font-weight: 400;
+		text-align: inherit;
+		white-space: nowrap;
+		background-color: transparent;
+		border: 0;
 	}
 </style>
