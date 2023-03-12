@@ -169,6 +169,7 @@
 		position: sticky;
 		z-index: 1000;
 	}
+
 	.navbar {
 		box-shadow: 0 0 5px 0 #000;
 		position: relative;
@@ -277,12 +278,14 @@
 		right: 0;
 		position: absolute;
 		text-align: center;
-		transition: transform 0.2s ease-in-out;
+		opacity: 0;
+		transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;;
 		transform: translateY(calc(-100% - $navbar-padding));
 		top: calc(100% + $navbar-padding);
 
 		&.show {
 			transform: none;
+			opacity: 1;
 		}
 
 		> .project-card {
