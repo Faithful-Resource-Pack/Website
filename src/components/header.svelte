@@ -35,7 +35,7 @@
 	},{
 		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf64_logo.png',
 		text: 'Classic Faithful 64x',
-		link: '/packs/classic-faithful-32x'
+		link: '/packs/classic-faithful-64x'
 	}]
 
 	let projectsShown = false;
@@ -64,6 +64,13 @@
 		</button>
 
 		<div class="navbar-nav">
+			<div class="nav-item">
+				<a class="nav-link" href="/">
+					<Fa icon={faHouse} />
+					{ $t('header.home') }
+				</a>
+			</div>
+
 			<div class="nav-item" id="project-navigation-mobile"
 			on:click={() => projectsShown = !projectsShown} on:keypress={() => {}}>
 				<span class="nav-link dropdown-toggle" class:opened={projectsShown}>
@@ -80,13 +87,6 @@
 						{/each}
 					</div>
 				{/if}
-			</div>
-
-			<div class="nav-item">
-				<a class="nav-link" href="/">
-					<Fa icon={faHouse} />
-					{ $t('header.home') }
-				</a>
 			</div>
 
 			<div class="nav-item">
