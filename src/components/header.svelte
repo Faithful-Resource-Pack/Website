@@ -23,7 +23,7 @@
 	},{
 		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/f64_logo.png',
 		text: 'Faithful 64x',
-		link: '/packs/faithful-32x'
+		link: '/packs/faithful-64x'
 	},{
 		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png',
 		text: 'Classic Faithful 32x\nJappa',
