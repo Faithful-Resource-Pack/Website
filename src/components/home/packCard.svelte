@@ -50,7 +50,6 @@
 
         &:hover .bg-container .bg {
             transform: scale(1.1);
-            filter: brightness(110%);
         }
     }
 
