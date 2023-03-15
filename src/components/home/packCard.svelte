@@ -49,7 +49,8 @@
         }
 
         &:hover .bg-container .bg {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            filter: brightness(110%);
         }
     }
 
@@ -66,7 +67,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.2s ease;
+            transition: all .5s;
         }
     }
 
@@ -108,7 +109,7 @@
                 width: 100%;
                 padding: 8px;
                 color: inherit;
-                transition: all 0.2s ease-out;
+                transition: all 0.2s;
 
                 & > * {
                     display: inline-block;
