@@ -73,6 +73,7 @@
     .image {
         width: 256px;
         max-width: 100%;
+        filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
     }
 
     h2 {
