@@ -20,7 +20,7 @@ You can create a [fork](https://github.com/Faithful-Resource-Pack/Website/networ
 
 # Installation process:
 
-There are two requirements before developing/previewing the website. First you need [Ruby](https://www.ruby-lang.org/en/downloads/). With Ruby you will need to install [Jekyll](https://jekyllrb.com/) by typing the following command in your favorite terminal:
+There are two requirements before developing or previewing the website. First you need [Ruby](https://www.ruby-lang.org/en/downloads/). With Ruby you will need to install [Jekyll](https://jekyllrb.com/) by typing the following command in your favorite terminal:
 ```
 gem install bundler jekyll
 ```
@@ -34,34 +34,25 @@ Then you need to install the bundle provided in the [Gemfile](./Gemfile):
 bundle install
 ```
 
-Then you need to build the website with this command:
+After that, you need to build the website with this command:
 ```
 bundle exec jekyll build
 ```
 
-New hybrid website to allow dynamic content with Jekyll!
+Now we have a hybrid website with dynamic content using Jekyll!
 
-Install all dependencies :
+Install all dependencies:
 ```
 npm install --save-dev
 ```
 
-Create a `.env` file in the root folder, following the formatting of the `.env.example` file
+Create a file called `.env` in the root folder, following the formatting of the `.env.example` file
 
-
-If you're using Windows (or any OS that uses backslashes for file paths), run these commands in **separate terminals** to preview and automatically rebuild the website if an existing file changes:
+From there, run these commands in **separate terminal windows** to preview and automatically rebuild the website if an existing file changes:
 ```
 npm run dev-watch-site
 
 npm run dev-watch-app
 ```
 
-If you're using Mac/Linux (or any OS that uses regular slashes for file paths), run these commands in **separate terminals** to preview and automatically rebuild the website if an existing file changes:
-
-```
-npm run dev-watch-site
-
-npm run dev-watch-app-unix
-```
-
-After that you can enjoy your website on your local machine at http://localhost:8110, where the numbers at the end are the PORT number in the `.env` file created earlier. Enjoy! 
+After that you can enjoy your website on your local machine at http://localhost:8110, where the numbers at the end are the PORT number in the `.env` file created earlier. Enjoy!
