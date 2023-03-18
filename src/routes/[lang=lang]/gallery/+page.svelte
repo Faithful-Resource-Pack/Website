@@ -256,7 +256,7 @@ function isScrolledIntoView(el: HTMLElement, margin: number = 0) {
             overflow: hidden;  /* NEW */
             min-width: 0;      /* NEW; needed for Firefox */
 
-            .content, .content:global( > *) {
+            .content/*, .content:global( > *)*/ {
                 aspect-ratio: 1/1;
                 position: absolute;
                 height: 100%;

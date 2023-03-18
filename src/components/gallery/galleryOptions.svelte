@@ -150,7 +150,7 @@
                 flex: 1 0 100%;
             }
             #row-slider {
-                & > *:first-child:global( > *) {
+                & > *:first-child/*:global( > *)*/ {
                     margin-left: 0;
                 }
                 & > *:last-child {
