@@ -7,6 +7,31 @@
     register();
 	onMount(() => {
 		import ('img-comparison-slider');
+
+        const swiperEl = document.querySelector('swiper-container');
+        const swiperParams = {
+            navigation: true,
+            slidesPerView: 3,
+            grabCursor: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplayDelay: 3000,
+            autoplayDisableOnInteraction: false,
+            breakpoints: {
+                600: {
+                    slidesPerView: 1,
+                },
+                992: {
+                    slidesPerView: 2,
+                },
+                1200: {
+                    slidesPerView: 3,
+                }
+            },
+        };
+
+        Object.assign(swiperEl, swiperParams);
+        swiperEl.initialize();
 	});
 </script>
 
@@ -42,15 +67,7 @@
 </div>
 
 <h1 class="text-center">{$t("packs.screenshots")}</h1>
-<swiper-container
-    navigation={true}
-    slides-per-view={3}
-    grab-cursor={true}
-    space-between={20}
-    loop={true}
-    autoplay-delay={3000}
-    autoplay-disable-on-interaction={false}
->
+<swiper-container>
     <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/S_22w46a.jpg" alt="yes"></swiper-slide>
     <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/R4.jpg" alt="yes"></swiper-slide>
     <swiper-slide><img src="https://database.faithfulpack.net/images/website/posts/32x/R2.jpg" alt="yes"></swiper-slide>

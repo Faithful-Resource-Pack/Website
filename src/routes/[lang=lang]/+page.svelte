@@ -74,7 +74,7 @@
 
 <PackCardList items={extras} />
 
-<h1 class="title text-center">Faithful News</h1>
+<h1 class="title text-center">News</h1>
 
 
 <NewsGrid limit={6} />
