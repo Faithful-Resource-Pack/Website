@@ -25,7 +25,7 @@
         #packCardList {
             padding: $small-spacing;
             
-            :global( > *) {
+            & > :global(.pack-card) {
                 width: 100%;
             }
             gap: $small-spacing;

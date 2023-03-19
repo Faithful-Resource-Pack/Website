@@ -16,6 +16,7 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSH }}
+        script_stop: true
         script: |
           cd /var/www/html/beta.faithfulpack.net/
           git stash

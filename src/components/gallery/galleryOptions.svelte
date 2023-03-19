@@ -50,7 +50,7 @@
             <div class="last-fields">
                 <div class="small-name">{text_max_items_per_row}</div>
                 <div id="row-slider">
-                    <div>
+                    <div id="slider-container">
                         <Slider
                             bind:value={$gallerySearch.items_per_row}
                             {...$galleryRowItems}
@@ -61,7 +61,7 @@
                             input$aria-label={text_max_items_per_row}
                         />
                     </div>
-                    <div>{$gallerySearch.items_per_row}</div>
+                    <div id="items-per-row">{$gallerySearch.items_per_row}</div>
                 </div>
             </div>
             <div class="last-fields">
@@ -99,7 +99,7 @@
             align-items: center;
             gap: $small-spacing;
 
-            :global( > *) {
+            & > :global(div) {
                 flex: 1 0 calc(33% - 2*$small-spacing);
             }
             margin-bottom: $small-spacing;
@@ -114,14 +114,14 @@
         #row-slider {
             display: flex;
             align-items: center;
-            &>div:first-child {
-                :global( > *) {
+            & > #slider-container {
+                & > :global(.mdc-slider) {
                     margin-top: -3px;
                     margin-bottom: -3px;
                 }
                 flex-grow: 1;
             }
-            & > div + div {
+            & > #items-per-row {
                 text-align: center;
                 width: 24px;
                 margin-right: 24px;
@@ -136,7 +136,7 @@
         }
 
         @media (max-width: $width-M) {
-            #options :global( > *) {
+            #options > div {
                 flex: 1 0 calc(50% - $small-spacing);
             }
         }
@@ -146,14 +146,14 @@
                 gap: 0.5em;
                 margin-bottom: 0.5em;
             }
-            #options :global( > *) {
+            #options > div {
                 flex: 1 0 100%;
             }
             #row-slider {
-                & > *:first-child/*:global( > *)*/ {
+                & > #slider-container > :global(.mdc-slider) {
                     margin-left: 0;
                 }
-                & > *:last-child {
+                & > #items-per-row {
                     margin-right: 0;
                 }
             }
