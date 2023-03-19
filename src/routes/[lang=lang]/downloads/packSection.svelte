@@ -51,5 +51,11 @@
             margin: 1.2rem 0;
             font-weight: 500;
         }
+
+        @media screen and (max-width: $width-S) {
+            h3, .h3 {
+		        font-size: 1.25rem;
+            }
+        }
     }
 </style>

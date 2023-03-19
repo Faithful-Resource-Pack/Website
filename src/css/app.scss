@@ -129,12 +129,15 @@ button:enabled {
 	}
 }
 
-@media screen and (max-width: 768px) {
-	.display-3 {
-	 font-size:2rem
+@media screen and (max-width: $width-S) {
+	.title {
+		font-size: 2.5rem;
 	}
-	.display-4 {
-	 font-size:1.8rem
+	.subtitle {
+		font-size: 1.5rem;
+	}
+	h2, .h2 {
+		font-size: 1.25em;
 	}
 }
 
@@ -756,6 +759,10 @@ button:disabled {
 
 	&.red {
 		background: $red;
+	}
+
+	@media screen and (max-width: $width-S) {
+		font-size: 16px;
 	}
 }
 
