@@ -62,7 +62,7 @@
     <DiscordBanner text="contribute" />
 </div>
 
-<h1 class="title text-center">Faithful Projects</h1>
+<h1 class="title text-center">Projects</h1>
 
 <PackCardList items={projects} />
 
@@ -70,7 +70,7 @@
     Not sure which one to pick? Check out our <a href="/installation" class="subbed">handy guide</a>.
 </p>
 
-<h1 class="title text-center">Faithful Extras</h1>
+<h1 class="title text-center">Extras</h1>
 
 <PackCardList items={extras} />
 
