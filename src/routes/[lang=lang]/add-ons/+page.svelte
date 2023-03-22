@@ -51,7 +51,7 @@
         &_text {
             position: relative;
 
-            h1, h2, h4, p {
+            h1, h2, p {
                 color: #fff;
             }
         }

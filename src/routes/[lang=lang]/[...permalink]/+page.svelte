@@ -12,10 +12,6 @@
     $:post = data.post;
 	$:post_text = post.longText;
 	$:mainChangelodLoaded = data.mainChangelogLoaded;
-
-	onMount(() => {
-		console.log(post)
-	})
 </script>
 
 
@@ -24,68 +20,76 @@
 {/if}
 
 {#if post.title}
-	<h2 class="display-3 my-5 text-center" title={post.name}>{ post.title }</h2>
+	<h1 class="text-center title" title={post.name}>{ post.title }</h1>
 {:else}
-	<h2 class="display-3 my-5 text-center">{ post.name }</h2>
+	<h1 class="text-center title">{ post.name }</h1>
 {/if}
 
 <div class="container">
-	{#if post.headerImg}
-		<img id="post-header-img" class="fancy-card-1x card" src={post.headerImg} alt={post.name} />
-	{/if}
+	<div class="post-details">
+		<div class="post-details-left">
+			{#if post.authors }
+				<h3 class="display text-center">
+				By&nbsp;
+				{#each post.authors as author, i}
+					{#if typeof(author) === 'string' }
+						{#if i != post.authors.length }
+							{ author },
+						{:else}
+							{ author }
+						{/if}
+					{:else}
+						{#if i != post.authors.length }
+							<a href="{ author.first }">{ author.first }</a>,
+						{:else}
+							<a href="{ author.first }">{ author.first }</a>
+						{/if}
+					{/if}
+				{/each}
+			</h3>
+		{/if}
+		{#if post.downloads}
+			{#if Object.entries(post.downloads).length > 1}
+				<h2 class="display-4 text-center">Downloads</h2>
+			{:else}
+				<h2 class="display-4 text-center">Download</h2>
+			{/if}
+			{#each Object.entries(post.downloads) as [title, items] }
+				<h3 class="my-3 text-center">{title}</h3>
+				{#each items as item}
+				<DownloadButton href={item[1]} text={item[0]} />
+				{/each}
+			{/each}
+		{/if}
+		{#if post.download}
+			{#if Object.entries(post.download).length > 1}
+				<h2 class="display-4 text-center">Downloads</h2>
+			{:else}
+				<h2 class="display-4 text-center">Download</h2>
+			{/if}
+			{#each Object.entries(post.download) as [text, items] }
+				{#each items as item}
+				<DownloadButton href={item[0]} text={text} />
+				{/each}
+			{/each}
+		{/if}
+		</div>
+		<div class="post-details-right">
+			{#if post.headerImg}
+				<img id="post-header-img" class="fancy-card-1x card" src={post.headerImg} alt={post.name} />
+			{/if}
 
-	<div class="card card-body my-5">
-		<p id="text" class="h4 m-0">
-			{@html marked.parseInline(post_text, {
-				breaks: true,
-			})}
-		</p>
+			<div class="card card-body">
+				<p id="text" class="h4 m-0">
+					{@html marked.parseInline(post_text, {
+						breaks: true,
+					})}
+				</p>
+			</div>
+		</div>
 	</div>
-	{#if post.authors }
-		<h3 class="display my-5 text-center">
-			By&nbsp;
-			{#each post.authors as author, i}
-				{#if typeof(author) === 'string' }
-					{#if i != post.authors.length }
-						{ author },
-					{:else}
-						{ author }
-					{/if}
-				{:else}
-					{#if i != post.authors.length }
-						<a href="{ author.first }">{ author.first }</a>,
-					{:else}
-						<a href="{ author.first }">{ author.first }</a>
-					{/if}
-				{/if}
-			{/each}
-		</h3>
-	{/if}
-	{#if post.downloads}
-		{#if Object.entries(post.downloads).length > 1}
-			<h2 class="display-4 my-5 text-center">Downloads</h2>
-		{:else}
-			<h2 class="display-4 my-5 text-center">Download</h2>
-		{/if}
-		{#each Object.entries(post.downloads) as [title, items] }
-			<h3 class="my-3 text-center">{title}</h3>
-			{#each items as item}
-			<DownloadButton href={item[1]} text={item[0]} />
-			{/each}
-		{/each}
-	{/if}
-	{#if post.download}
-		{#if Object.entries(post.download).length > 1}
-			<h2 class="display-4 my-5 text-center">Downloads</h2>
-		{:else}
-			<h2 class="display-4 my-5 text-center">Download</h2>
-		{/if}
-		{#each Object.entries(post.download) as [text, items] }
-			{#each items as item}
-			<DownloadButton href={item[0]} text={text} />
-			{/each}
-		{/each}
-	{/if}
+
+	<DiscordBanner text="discussion" />
 
 	{#if mainChangelodLoaded}
 		<ChangeLog main text={mainChangelodLoaded} />
@@ -96,14 +100,24 @@
 			<List list={post.changelog} tags={['h3','h4']} />
 		</div>
 	{/if}
-
-	<DiscordBanner text="discussion" />
 </div>
 
 <style lang="scss">
-	@media (min-width: $width-L) {
-		.container {
-			max-width: 1140px;
+	.post-details {
+		display: flex;
+        flex-wrap: wrap;
+
+		&-left {
+			flex: 0 0 25%;
+		}
+
+		&-right {
+			flex: 0 0 75%;
+            padding-left: 20px;
+
+			.card {
+				margin-top: 20px;
+			}
 		}
 	}
 
@@ -116,5 +130,14 @@
 		width: 100%;
 	}
 
+	@media(max-width: $width-S) {
+        .post-details {
+            flex-direction: column-reverse;
+
+            &-right {
+                padding-left: 0;
+            }
+        }
+    }
 
 </style>
