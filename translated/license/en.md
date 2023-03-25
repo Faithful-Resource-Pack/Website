@@ -32,7 +32,7 @@ Copyright © Faithful Resource Pack
 
 5: Don't make your projects look official when they aren't. Examples of this behavior would include copying our branding or marking a project as "official" in a way that would confuse the average viewer into believing a project is official when it isn't.
 
-6: This file, unmodified, must be included in any content which contains any of our work.
+6: [This file](https://database.faithfulpack.net/packs/LICENSE.txt), unmodified, must be included in any content which contains any of our work.
 
 
 ## Exceptions:
