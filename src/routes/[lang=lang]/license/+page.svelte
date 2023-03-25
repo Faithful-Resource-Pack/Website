@@ -45,6 +45,8 @@
         <li>{$t("license.requirements.5")}</li>
 
         <li>{$t("license.requirements.6")}</li>
+
+        <a class="btn btn-dark" href="https://database.faithfulpack.net/packs/LICENSE.txt">{$t("license.download")}</a>
     </ol>
 
     <h2>{$t("license.exceptions.title")}</h2>
