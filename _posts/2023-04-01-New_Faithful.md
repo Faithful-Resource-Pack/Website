@@ -22,6 +22,6 @@ changelog:
 single-changelog: true
 
 download:
-  - Download New Faithful:
-      - Java 1.19.4: https://database.faithfulpack.net/packs/New-Faithful/New%20Faithful.zip
+  - Java 1.19.4:
+      - https://database.faithfulpack.net/packs/New-Faithful/New%20Faithful.zip
 ---
