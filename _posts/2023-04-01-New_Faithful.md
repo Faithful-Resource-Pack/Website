@@ -22,6 +22,6 @@ changelog:
 single-changelog: true
 
 download:
-  - Java 1.19.4:
+  - Java 1.19.4 (810 MB):
       - https://database.faithfulpack.net/packs/New-Faithful/New%20Faithful.zip
 ---
