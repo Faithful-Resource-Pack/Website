@@ -9,16 +9,19 @@ long_text: "For as long as Faithful has existed, we've been getting requests for
 changelog:
   - New Faithful:
     - Added:
-      - All the missing textures. Seriously. All of them.
+      - Textures:
+        - All the missing textures. Seriously. All of them.
     - Changed:
-      - All textures are now upscaled with the power of AI for the perfect Minecraft experience.
+      - Textures:
+        - All textures are now upscaled with the power of AI for the perfect Minecraft experience.
     - Fixed:
-      - Various:
+      - Textures:
         - Textures no longer look bad.
 
 
 single-changelog: true
 
-downloads:
+download:
   - Download New Faithful:
-      Java 1.19.4: https://database.faithfulpack.net/packs/New-Faithful/New%20Faithful.zip
+      - Java 1.19.4: https://database.faithfulpack.net/packs/New-Faithful/New%20Faithful.zip
+---
