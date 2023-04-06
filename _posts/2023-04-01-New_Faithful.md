@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing the New Faithful
+title: [APRIL FOOLS] Introducing the New Faithful
 permalink: /newfaithful/release
 header-img: https://database.faithfulpack.net/images/website/posts/other/new_faithful.jpg
 
