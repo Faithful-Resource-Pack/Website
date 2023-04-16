@@ -279,7 +279,7 @@
 		position: absolute;
 		text-align: center;
 		opacity: 0;
-		transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;;
+		transition: all 0.2s ease-in-out;
 		transform: translateY(calc(-100% - $navbar-padding));
 		top: calc(100% + $navbar-padding);
 

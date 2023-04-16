@@ -310,6 +310,13 @@ onMount(() => {
   flex-direction: column;
   justify-content: space-between;
 
+    .footer-wordmark {
+      transition: all 0.2s ease-out;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
   .footer-content {
     margin-top: 0;
     flex-grow: 1;
