@@ -6,12 +6,12 @@
 	import DiscordBanner from '$components/common/discordBanner.svelte';
 	import ChangeLog from "./changeLog.svelte"
 	import List from './list.svelte';
-	
+
     export let data: PageData;
 
     $:post = data.post;
 	$:post_text = post.longText;
-	$:mainChangelodLoaded = data.mainChangelogLoaded;
+	$:mainChangelogLoaded = data.mainChangelogLoaded;
 </script>
 
 
@@ -19,13 +19,12 @@
 <div class="container"><h2 class="red banner">This project has been discontinued.</h2></div>
 {/if}
 
-{#if post.title}
-	<h1 class="text-center title" title={post.name}>{ post.title }</h1>
-{:else}
-	<h1 class="text-center title">{ post.name }</h1>
-{/if}
-
 <div class="container">
+	{#if post.title}
+		<h1 class="text-center title" title={post.name}>{ post.title }</h1>
+	{:else}
+		<h1 class="text-center title">{ post.name }</h1>
+	{/if}
 	<div class="post-details">
 		<div class="post-details-left">
 			{#if post.authors }
@@ -80,7 +79,7 @@
 			{/if}
 
 			<div class="card card-body">
-				<p id="text" class="h4 m-0">
+				<p id="text" class="m-0">
 					{@html marked.parseInline(post_text, {
 						breaks: true,
 					})}
@@ -91,8 +90,8 @@
 
 	<DiscordBanner text="discussion" />
 
-	{#if mainChangelodLoaded}
-		<ChangeLog main text={mainChangelodLoaded} />
+	{#if mainChangelogLoaded}
+		<ChangeLog main text={mainChangelogLoaded} />
 	{/if}
 	{#if post.changelog}
 		<h2 class="display-4 my-5 text-center">Changelog</h2>

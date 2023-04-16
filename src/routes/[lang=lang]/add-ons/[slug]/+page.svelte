@@ -18,8 +18,9 @@
     } from "@fortawesome/free-solid-svg-icons";
 	import ImagePreviewer from "$components/common/imagePreviewer.svelte";
 	import type { PageData } from "./$types";
+	import DiscordBanner from '$components/common/discordBanner.svelte';
     import { t } from "$lib/translations";
-    
+
     export let data: PageData;
 
     let text_id = 'ID: ' + data.id
@@ -44,13 +45,13 @@
         "Other": { fa: faGlobe }
       }
 
-      let screenList = data.screenshots.map((e: string,i: number) => ({ image: e, alt: "Screenshot " + i}))
-      let previewerDisplayed = false
-      let previewer: ImagePreviewer
+      let screenList = data.screenshots.map((e: string,i: number) => ({ image: e, alt: "Screenshot " + i}));
+      let previewerDisplayed = false;
+      let previewer: ImagePreviewer;
 </script>
 
 <div class="container">
-    <h1 class="text-center title bold">{data.name}</h1>
+    <h1 class="text-center title">{ data.name }</h1>
     <div class="addon-details">
         <div class="addon-details-left">
             <div class="addon-author-list">
@@ -63,11 +64,11 @@
                 {#each data.authors as author}
                     <div class="addon-author">
                         {#if author.uuid}
-                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{author.uuid}" loading="lazy" alt="Skin of {author.username}">
-                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{author.uuid}" loading="lazy" alt="Skin of {author.username}">
+                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{author.uuid}" loading="lazy" alt="{author.username}'s Skin">
+                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{author.uuid}" loading="lazy" alt="{author.username}'s Skin">
                         {:else}
-                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" loading="lazy" alt="Skin of {author.username}"> 
-                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" loading="lazy" alt="Skin of {author.username}"> 
+                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" loading="lazy" alt="Skin of {author.username}">
+                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" loading="lazy" alt="Skin of {author.username}">
                         {/if}
                         <div class="card addon-author-name text-center">
                             <h4>{author.username}</h4>
@@ -143,9 +144,7 @@
             </div>
         </div>
     </div>
-    <p class="banner purple">
-        <a href="https://discord.gg/sN9YRQbBv7">{$t("add-ons.post.discussion")}</a>
-    </p>
+    <DiscordBanner text="discussion" />
 </div>
 
 <style lang="scss">
@@ -214,7 +213,7 @@
                     display: flex;
                     align-items: center;
                     gap: 10px;
-                    
+
 
                     &:not(:last-child) {
                         margin-bottom: 10px;
@@ -256,7 +255,7 @@
                 margin-top: 20px;
             }
 
-            // Markdown description css 
+            // Markdown description css
             & .addon-description > div {
                 & > :global(*:first-child) {
                     margin-top: 0;
@@ -266,10 +265,6 @@
                 }
             }
         }
-    }
-
-    .banner {
-        margin: $spacing 0;
     }
 
     @media(max-width: $width-S) {

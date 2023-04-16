@@ -10,7 +10,7 @@
     $: cleanedText = text.replace(/^(-|\s)+/, '')
 </script>
 
-<a href={cleanedLink} target="_blank" rel="noreferrer" class="btn block btn-lg btn-primary fancy-card-2x my-3">
+<a href={cleanedLink} target="_blank" rel="noreferrer" class="btn btn-primary block">
     {#if text.includes("GitHub") }
         <Fa icon={faGithub} />
     {:else if text.includes("CurseForge") }
@@ -26,8 +26,7 @@
 </a>
 
 <style lang="scss">
-	.btn-primary {
-		font-family: 'Faithful 32x' !important;
-		font-weight: 300;
+	.btn {
+        margin-bottom: 10px;
 	}
 </style>
