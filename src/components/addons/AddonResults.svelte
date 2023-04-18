@@ -3,7 +3,7 @@
 	import {
 		faSpinner
 	} from "@fortawesome/free-solid-svg-icons";
-    import { loadingStore, addonStore, resultStore, startStore } from "$stores/AddonStore";
+    import { loadingStore, addonStore, resultStore, startStore, sortedResultStore, sortStore } from "$stores/AddonStore";
 	import { userNameStore } from "$stores/UserStore";
 	import { onMount } from "svelte";
 	import { derived } from "svelte/store";
@@ -26,13 +26,12 @@
     const text_loading = 'Loading...';
     const text_addon_not_found = 'No add-on found'
 
-    const displayed = derived([startStore, resultStore, addonStore], ([start, result, addons]) => {
-        const isResult = start.started && addons !== undefined;
+    const displayed = sortedResultStore;
 
-        return isResult ? result : addons;
-    })
-
-    const sorted = derived(displayed, (d) => d?.sort((a,b) => a.name < b.name ? -1 : (a.name==b.name ? 0 : 1)))
+    $: showDate = derived(sortStore, type => type.startsWith('date'))
+    $: {
+        console.log($showDate, $sortStore);
+    }
 </script>
 
 {#if $loadingStore }
@@ -41,12 +40,12 @@
 </div>
 {:else}
 <div id="results" class="card card-body">
-    {#if $addonStore?.length === 0 || $sorted === undefined}
+    {#if $addonStore?.length === 0 || $displayed === undefined}
         <div>{ text_addon_not_found }</div>
     {:else}
         <div class="res-grid-3">
-            {#each $sorted as addon}
-                <AddonCard addon={addon} />
+            {#each $displayed as addon}
+                <AddonCard addon={addon} showDate={$showDate} />
             {/each}
         </div>
     {/if}
@@ -57,6 +56,7 @@
     @media(max-width: $width-XS) {
         #results {
             @include transparent;
+            overflow: visible;
 
             > div.res-grid-3 {
                 grid-gap: $small-spacing;

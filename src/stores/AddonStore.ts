@@ -1,4 +1,4 @@
-import { createJSONStore } from "$lib/createStore";
+import { createJSONStore, createStore } from "$lib/createStore";
 import { toggleInArray, toggleMin } from "$lib/utils";
 import type { Addon, AddonTagArray } from "$interfaces/addons";
 import { writable, derived, type Writable } from "svelte/store";
@@ -216,6 +216,94 @@ export let resultStore = derived([startStore, searchStore, addonStore], ([start,
     startStore.setResults(res);
 
     return res;
+})
+
+export let resultDisplayedStore = derived([startStore, resultStore, addonStore], ([start, result, addons]) => {
+    const isResult = start.started && addons !== undefined;
+
+    return isResult ? result : addons;
+})
+
+//* data for sort types
+export const SORT_TYPES_DEFAULT = 'name_asc';
+export const SORT_TYPES = [
+    SORT_TYPES_DEFAULT,
+    'name_desc',
+    'date_asc',
+    'date_desc'
+]
+
+//* sort type stored in local storage
+export let sortStore = createStore('ADDON_SORT', '', v => v, writable => {
+    let { set, subscribe, update } = writable;
+    return {
+        subscribe,
+        set: function(type: string): Promise<void> {
+            if(type === '') type = SORT_TYPES_DEFAULT;
+            if(SORT_TYPES.indexOf(type) === -1) return Promise.reject(new Error('Invalid sort type'));
+            set(type);
+            return Promise.resolve();
+        },
+        previous: function() {
+            update(v => {
+                if(v === '') v = SORT_TYPES_DEFAULT;
+                let index = SORT_TYPES.indexOf(v)
+                let new_index = (SORT_TYPES.length+index-1)%SORT_TYPES.length;
+                return SORT_TYPES[new_index];
+            })
+        },
+        next: function() {
+            update(v => {
+                if(v === '') v = SORT_TYPES_DEFAULT
+                let index = SORT_TYPES.indexOf(v)
+                let new_index = (index+1)%SORT_TYPES.length;
+                return SORT_TYPES[new_index];
+            })
+        }
+    }
+})
+
+const numberToUne = (a: number) => a === 0 ? 0 : a / Math.abs(a)
+const sortByName = (a: Addon, b: Addon) => a.name.localeCompare(b.name)
+
+const sortFunctions: Record<string, ((a: Addon,b: Addon) => number) | undefined> = {
+    'name_desc': (a,b) => b.name.localeCompare(a.name),
+    'date_asc': (a,b) => {
+        if(a.last_updated && b.last_updated) return numberToUne(a.last_updated - b.last_updated);
+        else if( a.last_updated && !b.last_updated) return -1; // a is more recent
+        else if(!a.last_updated &&  b.last_updated) return 1; // b ismore recent
+        return sortByName(a,b); // both are old
+    },
+    'date_desc': (a,b) => {
+        if(a.last_updated && b.last_updated) return numberToUne(b.last_updated - a.last_updated);
+        else if( a.last_updated && !b.last_updated) return 1; // a is more recent
+        else if(!a.last_updated &&  b.last_updated) return -1; // b ismore recent
+        return sortByName(a,b); // both are old
+    },
+};
+
+export let sortedResultStore = derived([resultDisplayedStore, sortStore], ([result, sortType]) => {
+    if(result === undefined) return undefined;
+
+    let sortedResult: Addon[] = result;
+    sortedResult = sortedResult.sort(sortByName);
+
+    let foundSortFunction = sortFunctions[sortType];
+    if(foundSortFunction !== undefined) {
+        if(sortType.startsWith('date')) {
+            const [dated, others] = sortedResult.reduce((acc, cur) => {
+                if(cur.last_updated) acc[0].push(cur)
+                else acc[1].push(cur)
+                return acc
+            }, [[],[]] as [Addon[],Addon[]]);
+            sortedResult = [...dated.sort(foundSortFunction), ...others.sort(sortByName)]
+        } else {
+            sortedResult = sortedResult.sort(foundSortFunction);
+        }
+    }
+    // else already sorted by ascending name
+    
+    return sortedResult;
 })
 
 export let addonStatsStore = derived(addonStore, s => {

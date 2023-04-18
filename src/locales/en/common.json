@@ -146,6 +146,16 @@
       "title": "Search",
       "search_placeholder": "Search add-on name"
     },
+    "sort": {
+      "found_results": "{{count:gt; 0:<b>{{count}} {{count; 1:result; default:results}}</b>; default:<b>No results</b>}} found",
+      "sort_by": "Sort by",
+      "types": {
+        "name_asc": "Name: Ascending",
+        "name_desc": "Name: Descending",
+        "date_asc": "Date: Oldest to newest",
+        "date_desc": "Date: Newest to oldest"
+      }
+    },
     "post": {
       "last_updated": "Last updated:",
       "author": "Author",

@@ -5,6 +5,7 @@
 	import AddonFavorites from "$components/addons/AddonFavorites.svelte";
 	import AddonSubmit from "$components/addons/AddonSubmit.svelte";
 	import AddonAuthors from "$components/addons/AddonAuthors.svelte";
+	import AddonSort from "$components/addons/AddonSort.svelte";
     import { t } from "$lib/translations";
 </script>
 
@@ -32,6 +33,7 @@
             <div id="addon_search">
                 <AddonSearch />
             </div><div id="addon_results">
+                <AddonSort />
                 <AddonResults />
             </div>
         </div>
@@ -92,7 +94,7 @@
         #addon_main {
             width: 75%;
 
-            & > * {
+            & > * :global(> div) {
                 margin-bottom: $spacing;
             }
         }

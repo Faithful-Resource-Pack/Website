@@ -43,7 +43,7 @@
 	}
 
 	function timestampToDate(c: number): string {
-		return $momentStore.moment.date(c).format("ll");
+		return $momentStore.moment.unix(c).format("ll");
 	}
 
 	let text_modded_texture = "Modded texture";
