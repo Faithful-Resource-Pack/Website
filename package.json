@@ -6,7 +6,7 @@
   "scripts": {
     "ji": "bundle install",
     "jb": "bundle exec jekyll build",
-    "start": "npm run ji && npm run jb && pm2 start \"node index.js\" --name \"WEBSITE\"",
+    "start": "pnpm run ji && pnpm run jb && pm2 start \"node index.js\" --name \"WEBSITE\"",
     "dev": "concurrently \"npm:dev-*\"",
     "dev-watch-site": "bundle exec jekyll build --watch",
     "dev-watch-app": "nodemon index.js --watch index.js --ignore '_site/**'"
