@@ -139,28 +139,40 @@ layout: default
 
 {%- if page.main_changelog -%}
 	<script>
-		function ShowAll() {
-		 	var old = document.getElementById('old');
-		  var btn = document.getElementById('old-btn');
+		const path = "{{ page.main_changelog }}".split('.').shift();
 
-	    if ( old.style.display == 'none' ){
-	      old.style.display = 'block';
-	      btn.innerHTML = 'Hide';
-	    } else {
-	      old.style.display = 'none';
-	      btn.innerHTML = 'All';
-	    }
-	  }
+		function format_html(obj, lvl=3) {
+			let result
+			if(Array.isArray(obj)) {
+				result = `<ul>${obj.map(e => format_html(e, lvl+1)).join('')}</ul>`;
+			} else if(typeof(obj) === 'string') {
+				result = `<li>${obj}</li>`;
+			} else {
+				result = Object.entries(obj)
+					.map(([key, val]) => `<h${lvl} class="card-title text-left">${key}:</h${lvl}>${format_html(val, lvl+1)}`).join('');
+			}
+			console.log(obj, result);
+			return result;
+		}
 
-		fetch('{{ site.baseurl }}/{{ page.main_changelog }}')
+		fetch(`{{ site.baseurl }}/${path}.json`)
 		  .then(response => {
-		    return response.text()
+		    return response.json();
 		  })
 		  .then(body => {
-		    document.querySelector('#changelog').innerHTML = body
-		  })
+			const beta_alpha_regex = /(Alpha|Beta)\s+\d+/;
+			const match = "{{ page.title }}".match(beta_alpha_regex);
+			if(match)
+			{
+				const my_release = body[match[0]];
+				document.querySelector('#changelog').innerHTML = format_html(my_release);
+			}
+		  });
 	</script>
-	<div id='changelog'></div>
+	<h2 class="display-4 my-5 text-center">Changelog</h2>
+	<div class="card card-body">
+		<div id='changelog'></div>
+	</div>
 {%- endif -%}
 
 {%- if page.changelog -%}

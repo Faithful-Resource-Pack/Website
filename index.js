@@ -5,7 +5,8 @@ const fs = require('fs').promises
 const { readFileSync } = require('fs')
 const createDOMPurify = require('dompurify')
 const { JSDOM } = require('jsdom')
-const { parse } = require('path')
+const { parse, join } = require('path')
+const yaml = require('js-yaml');
 
 require('dotenv').config()
 
@@ -181,6 +182,75 @@ app.get('/posts.json', cors(corsOptions), (_, res) => {
   })
   .catch(err => {
     res.status(403).send(err.message).end()
+  })
+})
+
+function transformData(obj) {
+  if(obj === null) return {}
+
+  if(Array.isArray(obj)) {
+    if(typeof(obj[0]) === 'string') {
+      return obj
+    } else {
+      return obj.reduce((acc, cur) => ({
+        ...acc,
+        [Object.keys(cur)[0]]: transformData(Object.values(cur)[0])
+      }), {})
+    }
+  }
+  return obj
+}
+
+/**
+ * @param {String} filePath path to the changelog
+ * @returns {Promise<any>} JS Object returned
+ */
+function extract_changelog(filePath) {
+  return fs.readFile(filePath, 'utf8')
+    .then((data) => {
+      // Split the file contents into an array of lines
+      const lines = data.trim().split('\n');
+
+      // Remove the first two and last three lines
+      lines.splice(0, 2);
+      lines.splice(-3);
+
+      // Join the remaining lines into a single string
+      const yamlString = lines.join('\n');
+
+      // Parse the YAML string into a JavaScript object
+      return yaml.load(yamlString);
+    })
+    .then(obj => {
+      const root = Object.values(obj)[0];
+      return transformData(root)
+    })
+}
+
+const CHANGELOGS_DIR = './changelogs'
+const CHANGELOGS = ['compliance32.html', 'dungeons.html']
+const CHANGELOGS_OBJ = []
+const CHANGELOGS_LOADING = []
+
+CHANGELOGS.forEach((changelog,i) => {
+  CHANGELOGS_LOADING[i] = true
+
+  const changelogPath = join(__dirname, CHANGELOGS_DIR, changelog)
+  const stem = parse(changelogPath).name
+
+  extract_changelog(changelogPath)
+    .then(obj => {
+      CHANGELOGS_OBJ[i] = obj
+      CHANGELOGS_LOADING[i] = false
+    })
+
+  app.get(`/changelogs/${stem}.json`, cors(corsOptions), (_, res) => {
+    if(CHANGELOGS_LOADING[i]) {
+      res.status(403).send('loading').end()
+      return
+    }
+
+    return res.json(CHANGELOGS_OBJ[i]).end()
   })
 })
 
