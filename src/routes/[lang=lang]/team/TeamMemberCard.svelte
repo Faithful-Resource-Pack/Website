@@ -27,8 +27,9 @@
 <div class="team-card card card-body" style={`background: ${color} !important`}>
     <div class="top">
         <img class="card" src={user.avatar} alt={user.username}>
-        <h2 class="username semibold">{user.username}<span id="tag">{user.discord_tag}</span></h2>
+        <h2 class="username semibold">{user.username}<span id="tag">#{user.discord_tag}</span></h2>
     </div>
+    {#if user.bio || user_location || user.timezone || user.pronouns}
     <div class="body">
         {#if user.bio}
         <p><i>{user.bio}</i></p>
@@ -45,12 +46,13 @@
             {/if}
         </ul>
     </div>
+    {/if}
 </div>
 
 
 <style lang="scss">
     img {
-        width: 165px;
+        width: 164px;
         max-width: 100%;
         margin: 0 auto;
         border-radius: 10px;
@@ -68,7 +70,8 @@
         text-align: center;
 
         .top {
-            padding: $small-spacing;
+            padding: $small-spacing + 22; // this way the top padding is even with the sides
+            padding-bottom: $small-spacing; // but the bottom isn't super huge
 
             .username {
                 margin: $small-spacing 0 0;
