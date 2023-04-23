@@ -792,3 +792,8 @@ button:disabled {
 	margin-right: auto;
 	margin-left: auto;
 }
+
+.noSelect {
+	user-select: none;
+	-webkit-user-drag: none;
+}

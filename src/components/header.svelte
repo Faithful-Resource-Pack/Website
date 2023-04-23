@@ -249,7 +249,6 @@
 				&.opened {
 					// 15
 					background: rgba(235,235,235,0.2);
-					box-shadow: 0 0 1px rgba(235,235,235,1);
 				}
 			}
 
