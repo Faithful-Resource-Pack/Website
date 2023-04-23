@@ -7,12 +7,11 @@
         avatar: string,
         username: string,
         discord_tag: string,
-        bio: string,
+        bio?: string,
         timezone?: string,
         city?: string,
         country?: string,
         pronouns?: string,
-        favorite_game?: string
     };
     export let color = '#39bc9c';
 
@@ -32,7 +31,9 @@
         <h2 class="username">{user.username}<span id="tag">{user.discord_tag}</span></h2>
     </div>
     <div class="body">
+        {#if user.bio}
         <p><i>{user.bio}</i></p>
+        {/if}
         <ul>
             {#if user_location}
                 <li><Fa fw icon={faLocationDot} size="lg"/>{user_location}</li>
@@ -42,9 +43,6 @@
             {/if}
             {#if user.pronouns}
                 <li><Fa fw icon={faUniversalAccess} size="lg"/>{user.pronouns}</li>
-            {/if}
-            {#if user.favorite_game}
-                <li><Fa fw icon={faGamepad} size="lg"/>{user.favorite_game}</li>
             {/if}
         </ul>
     </div>
