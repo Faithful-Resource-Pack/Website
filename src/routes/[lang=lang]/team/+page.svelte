@@ -7,19 +7,22 @@
     const USER_PLACEHOLDER = {
         avatar: "/images/steve-alex-selfie.jpg",
         username: `Alex`,
-        description: `Short description of what you generally
-        do in Faithful. Lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aliquam ornare wisi eu metus.`,
-        hobbies: `Likes/hobbies`,
-        pronouns: `she/npc`
+        discord_tag: `#1234`,
+        bio: `Short description of what you generally do in Faithful.`,
+        timezone: `MC Standard Time`,
+        city: `My World`,
+        country: `Minecraft`,
+        pronouns: `she/npc`,
+        favorite_game: `Minecraft`
     };
+
     const userData = Array(8).fill(USER_PLACEHOLDER);
     const additionalData = Array(1).fill(USER_PLACEHOLDER);
 </script>
 
 <div class="container">
     <h1 class="title bold text-center">
-    { $t('team.title.our_team') }
+        { $t('team.title.our_team') }
     </h1>
 
     <div class="card-grid">
@@ -29,7 +32,7 @@
     </div>
 
     <h1 class="title text-center">
-    { $t('team.title.additional_developers') }
+        { $t('team.title.additional_developers') }
     </h1>
 
     <div class="card-grid">

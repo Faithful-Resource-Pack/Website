@@ -1,42 +1,49 @@
 <script lang="ts">
-    import { faEarthEurope, faGamepad, faHeart, faUniversalAccess } from "@fortawesome/free-solid-svg-icons";
+    import { faEarthEurope, faGamepad, faComment, faUniversalAccess, faLocationDot } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa/src/fa.svelte";
     import { t } from '$lib/translations';
 
     export let user: {
         avatar: string,
         username: string,
-        description: string,
+        discord_tag: string,
+        bio: string,
+        timezone?: string,
         city?: string,
         country?: string,
-        hobbies: string,
         pronouns?: string,
         favorite_game?: string
     };
     export let color = '#39bc9c';
 
-    let user_location = $t('team.default_location');
-    if(user.country || user.city) {
-        if(!user.country && !user.city) {
-            user_location = user.country || user.city;
-        } else {
-            user_location = `${user.country}, ${user.city}`;
+    let user_location: string;
+    if (user.country && user.city)
+        user_location = `${user.city}, ${user.country}`;
+    else
+        if (user.country || user.city) {
+            user_location = user.country ?? user.city ?? ''; // the last bit is needed to make typescript not give an error
         }
-    }
+
 </script>
 
 <div class="team-card card card-body" style={`background: ${color} !important`}>
     <div class="top">
         <img class="card" src={user.avatar} alt={user.username}>
-        <h2 class="username">{user.username}</h2>
+        <h2 class="username">{user.username}<span id="tag">{user.discord_tag}</span></h2>
     </div>
     <div class="body">
-        <p><i>{user.description}</i></p>
+        <p><i>{user.bio}</i></p>
         <ul>
-            <li><Fa fw icon={faEarthEurope} size="lg"/>{user_location}</li>
-            <li><Fa fw icon={faHeart} size="lg"/>{user.hobbies}</li>
-            <li><Fa fw icon={faUniversalAccess} size="lg"/>{user.pronouns}</li>
-            {#if !user.pronouns}
+            {#if user_location}
+                <li><Fa fw icon={faLocationDot} size="lg"/>{user_location}</li>
+            {/if}
+            {#if user.timezone}
+                <li><Fa fw icon={faEarthEurope} size="lg"/>{user.timezone}</li>
+            {/if}
+            {#if user.pronouns}
+                <li><Fa fw icon={faUniversalAccess} size="lg"/>{user.pronouns}</li>
+            {/if}
+            {#if user.favorite_game}
                 <li><Fa fw icon={faGamepad} size="lg"/>{user.favorite_game}</li>
             {/if}
         </ul>
@@ -55,6 +62,8 @@
         width: 210px;
         max-width: 100%;
         margin: 0 auto $small-spacing;
+        color: white;
+        opacity: 0.75;
     }
     .team-card {
         max-width: 100%;
@@ -67,7 +76,15 @@
             .username {
                 margin: $small-spacing 0 0;
                 color: white;
+
+                #tag {
+                    margin: $small-spacing 0 0;
+                    opacity: 0.75;
+                    font-size: 1.1rem;
+                    font-family: "Faithful 32x";
+                }
             }
+
         }
 
         .body {
