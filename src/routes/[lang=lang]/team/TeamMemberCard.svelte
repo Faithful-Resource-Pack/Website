@@ -27,7 +27,7 @@
 <div class="team-card card card-body" style={`background: ${color} !important`}>
     <div class="top">
         <img class="card" src={user.avatar} alt={user.username}>
-        <h2 class="username">{user.username}<span id="tag">{user.discord_tag}</span></h2>
+        <h2 class="username semibold">{user.username}<span id="tag">{user.discord_tag}</span></h2>
     </div>
     <div class="body">
         {#if user.bio}
@@ -79,6 +79,8 @@
                     opacity: 0.75;
                     font-size: 1.1rem;
                     font-family: "Faithful 32x";
+                    font-weight: normal !important;
+                    word-wrap: normal;
                 }
             }
 
