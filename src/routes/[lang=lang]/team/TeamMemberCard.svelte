@@ -1,7 +1,6 @@
 <script lang="ts">
     import { faEarthEurope, faGamepad, faComment, faUniversalAccess, faLocationDot } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa/src/fa.svelte";
-    import { t } from '$lib/translations';
 
     export let user: {
         avatar: string,
