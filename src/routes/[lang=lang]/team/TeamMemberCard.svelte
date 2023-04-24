@@ -5,7 +5,7 @@
     export let user: {
         avatar: string,
         username: string,
-        discord_tag: string,
+        discordTag: number,
         bio?: string,
         timezone?: string,
         city?: string,
@@ -14,12 +14,12 @@
     };
     export let color = '#39bc9c';
 
-    let user_location: string;
+    let userLocation: string;
     if (user.country && user.city)
-        user_location = `${user.city}, ${user.country}`;
+        userLocation = `${user.city}, ${user.country}`;
     else
         if (user.country || user.city) {
-            user_location = user.country ?? user.city ?? ''; // the last bit is needed to make typescript not give an error
+            userLocation = user.country ?? user.city ?? ''; // the last bit is needed to make typescript not give an error
         }
 
 </script>
@@ -27,16 +27,16 @@
 <div class="team-card card card-body" style={`background: ${color} !important`}>
     <div class="top">
         <img class="card" src={user.avatar} alt={user.username}>
-        <h2 class="username semibold">{user.username}<span id="tag">#{user.discord_tag}</span></h2>
+        <h2 class="username semibold">{user.username}<span id="tag">#{user.discordTag}</span></h2>
     </div>
-    {#if user.bio || user_location || user.timezone || user.pronouns}
+    {#if user.bio || userLocation || user.timezone || user.pronouns}
     <div class="body">
         {#if user.bio}
         <p><i>{user.bio}</i></p>
         {/if}
         <ul>
-            {#if user_location}
-                <li><Fa fw icon={faLocationDot} size="lg"/>{user_location}</li>
+            {#if userLocation}
+                <li><Fa fw icon={faLocationDot} size="lg"/>{userLocation}</li>
             {/if}
             {#if user.timezone}
                 <li><Fa fw icon={faEarthEurope} size="lg"/>{user.timezone}</li>

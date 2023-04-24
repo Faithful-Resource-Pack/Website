@@ -7,7 +7,7 @@
     const USER_PLACEHOLDER = {
         avatar: "/images/steve-alex-selfie.jpg",
         username: `Alex`,
-        discord_tag: `1234`,
+        discordTag: 1234,
         bio: `Bio with further information if wanted or necessary. Should be optional.`,
         timezone: `MC Standard Time`,
         city: `My World`,
