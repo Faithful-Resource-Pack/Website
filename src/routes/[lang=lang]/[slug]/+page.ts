@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
+import type { PageLoad } from '../packs/[slug]/$types';
 
 const projects = {
     "faithful-32x": {
