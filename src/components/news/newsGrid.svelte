@@ -28,7 +28,7 @@
 					<img src={post.headerImg} loading="lazy" alt={post.title} />
 				{:else}
 					<img
-						src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg"
+						src="https://database.faithfulpack.net/images/branding/backgrounds/forest.png"
 						loading="lazy"
 						alt={post.title}
 					/>
