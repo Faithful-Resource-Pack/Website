@@ -17,7 +17,7 @@
 
     let r = Math.random()
     let id = (ids.filter(e => r <= e[1]).shift() || ids[0])[0]
-    
+
     onMount(() => {
         let img = document.getElementById('bucket')
         img.src = `https://api.faithfulpack.net/v2/textures/${id}/url/faithful_64x/latest`
@@ -29,7 +29,7 @@
 </script>
 
 <div id="stats" class="text-center">
-	<h1 class="display-3 my-5">I'm a teapot</h1>
+	<h1 class="title">I'm a teapot</h1>
 
     <div id="teacup" class="hidden">
         <div id="handle"><div></div></div>

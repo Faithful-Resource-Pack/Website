@@ -49,9 +49,9 @@
 		{/if}
 		{#if post.downloads}
 			{#if Object.entries(post.downloads).length > 1}
-				<h2 class="display-4 text-center">Downloads</h2>
+				<h2 class="text-center">Downloads</h2>
 			{:else}
-				<h2 class="display-4 text-center">Download</h2>
+				<h2 class="text-center">Download</h2>
 			{/if}
 			{#each Object.entries(post.downloads) as [title, items] }
 				<h3 class="my-3 text-center">{title}</h3>
@@ -62,9 +62,9 @@
 		{/if}
 		{#if post.download}
 			{#if Object.entries(post.download).length > 1}
-				<h2 class="display-4 text-center">Downloads</h2>
+				<h2 class="text-center">Downloads</h2>
 			{:else}
-				<h2 class="display-4 text-center">Download</h2>
+				<h2 class="text-center">Download</h2>
 			{/if}
 			{#each Object.entries(post.download) as [text, items] }
 				{#each items as item}
@@ -94,7 +94,7 @@
 		<ChangeLog main text={mainChangelogLoaded} />
 	{/if}
 	{#if post.changelog}
-		<h2 class="display-4 my-5 text-center">Changelog</h2>
+		<h2 class="subtitle semibold my-5 text-center">Changelog</h2>
 		<div class="card card-body my-5 changelog">
 			<List list={post.changelog} tags={['h3','h4']} />
 		</div>
