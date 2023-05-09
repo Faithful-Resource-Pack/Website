@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { faEarthEurope, faGamepad, faComment, faUniversalAccess, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+    import { faEarthEurope, faUniversalAccess, faLocationDot } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa/src/fa.svelte";
 
     export let user: {

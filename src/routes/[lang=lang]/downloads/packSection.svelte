@@ -53,7 +53,7 @@
         }
 
         @media screen and (max-width: $width-S) {
-            h3, .h3 {
+            h3 {
 		        font-size: 1.25rem;
             }
         }
