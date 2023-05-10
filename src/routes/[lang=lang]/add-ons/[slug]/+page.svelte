@@ -54,40 +54,6 @@
     <h1 class="text-center title">{ data.name }</h1>
     <div class="addon-details">
         <div class="addon-details-left">
-            <div class="addon-author-list">
-                {#if data.authors.length == 1}
-                    <h2 class="text-center">{$t("add-ons.post.author")}</h2>
-                {:else}
-                    <h2 class="text-center">{$t("add-ons.post.authors")}</h2>
-                {/if}
-                <div>
-                {#each data.authors as author}
-                    <div class="addon-author">
-                        {#if author.uuid}
-                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{author.uuid}" loading="lazy" alt="{author.username}'s Skin">
-                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{author.uuid}" loading="lazy" alt="{author.username}'s Skin">
-                        {:else}
-                            <img class="addon-author-skin" src="https://visage.surgeplay.com/full/256/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" loading="lazy" alt="Skin of {author.username}">
-                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" loading="lazy" alt="Skin of {author.username}">
-                        {/if}
-                        <div class="card addon-author-name text-center">
-                            <h4>{author.username}</h4>
-                            <div>
-                                {#each author.media as media}
-                                    <a href={media.link} target="_blank" rel="noreferrer">
-                                        {#if 'fa' in media_icons[media.type] }
-                                            <Fa icon={media_icons[media.type].fa}/>
-                                        {:else}
-                                            <img width=20 height=20 src={media_icons[media.type].src} alt={media.type} />
-                                        {/if}
-                                    </a>
-                                {/each}
-                            </div>
-                        </div>
-                    </div>
-                {/each}
-            </div>
-            </div>
             <div>
                 <h2 class="text-center">{$t("add-ons.post.downloads")}</h2>
                 {#each data.downloads as download}
@@ -121,12 +87,41 @@
                             {/if}
                         </div>
                     {/each}
+                    <br>
+                    <li>{text_id}</li>
+                    <li>{text_last_updated}</li>
                 </div>
-                <div class="card card-body" id="info-list">
-                    <ul>
-                        <li>{text_id}</li>
-                        <li>{text_last_updated}</li>
-                    </ul>
+            </div>
+            <div class="addon-author-list">
+                {#if data.authors.length == 1}
+                    <h2 class="text-center my-3">{$t("add-ons.post.author")}</h2>
+                {:else}
+                    <h2 class="text-center my-3">{$t("add-ons.post.authors")}</h2>
+                {/if}
+                <div>
+                {#each data.authors as author}
+                    <div class="addon-author">
+                        {#if author.uuid}
+                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{author.uuid}" loading="lazy" alt="{author.username}'s Skin">
+                        {:else}
+                            <img class="addon-author-head" src="https://visage.surgeplay.com/head/128/{['X-Steve', 'X-Alex', 'X-Ari', 'X-Efe', 'X-Kai', 'X-Makena', 'X-Noor', 'X-Sunny', 'X-Zuri'][Math.floor(Math.random()*9)]}" loading="lazy" alt="Skin of {author.username}">
+                        {/if}
+                        <div class="card addon-author-name text-center">
+                            <h4>{author.username}</h4>
+                            <div>
+                                {#each author.media as media}
+                                    <a href={media.link} target="_blank" rel="noreferrer">
+                                        {#if 'fa' in media_icons[media.type] }
+                                            <Fa icon={media_icons[media.type].fa}/>
+                                        {:else}
+                                            <img width=20 height=20 src={media_icons[media.type].src} alt={media.type} />
+                                        {/if}
+                                    </a>
+                                {/each}
+                            </div>
+                        </div>
+                    </div>
+                {/each}
                 </div>
             </div>
         </div>
@@ -284,13 +279,7 @@
             }
         }
     }
-
-    @media(max-width: $width-L) {
-        .addon-author-skin {
-            display: none;
-        }
-        .addon-author-head {
-            display: block !important;
-        }
+    .addon-author-head {
+        display: block !important;
     }
 </style>
