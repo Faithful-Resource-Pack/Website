@@ -13,7 +13,7 @@
 		type IconDefinition
     } from "@fortawesome/free-brands-svg-icons";
     import {
-        faCubes,
+        faEarthEurope,
         faGlobe
     } from "@fortawesome/free-solid-svg-icons";
 	import ImagePreviewer from "$components/common/imagePreviewer.svelte";
@@ -34,7 +34,7 @@
         "GitHub": { fa: faGithub },
         "Patreon": { fa: faPatreon },
         "Paypal": { fa: faPaypal },
-        "Planet Minecraft": { fa: faCubes },
+        "Planet Minecraft": { fa: faEarthEurope },
         "PSN": { fa: faPlaystation },
         "Reddit": { fa: faReddit },
         "Steam": { fa: faSteam },

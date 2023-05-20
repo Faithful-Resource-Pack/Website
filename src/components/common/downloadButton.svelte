@@ -1,6 +1,6 @@
 <script lang="ts">
     import Fa from "svelte-fa/src/fa.svelte";
-	import { faFireFlameCurved, faGlobe, faWrench, faCube } from "@fortawesome/free-solid-svg-icons";
+	import { faFireFlameCurved, faEarthEurope, faWrench, faCube } from "@fortawesome/free-solid-svg-icons";
 	import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
     export let href: string;
@@ -16,7 +16,7 @@
     {:else if text.includes("CurseForge") }
         <Fa icon={faFireFlameCurved} />
     {:else if text.includes("PlanetMinecraft") || text.includes("PMC") || text.includes("Planet Minecraft")}
-        <Fa icon={faGlobe} />
+        <Fa icon={faEarthEurope} />
     {:else if text.includes("MCPEDL") }
         <Fa icon={faCube} />
     {:else if text.includes("Modrinth") }
