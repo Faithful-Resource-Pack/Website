@@ -1,8 +1,18 @@
 <script lang="ts">
-	import { postListStore, postStoreError, postStore } from "$stores/PostStore";
+	import { postStore, postListStore } from "$stores/PostStore";
 	import { derived } from "svelte/store";
+	import { onMount } from "svelte";
 
 	export let limit: number | undefined = undefined;
+
+	postStore.set(undefined)
+    onMount(() => {
+        fetch('https://api.faithfulpack.net/v2/posts')
+            .then(res => res.json())
+            .then(data => {
+                postStore.set(data)
+            })
+    })
 
 	let posts = derived(postListStore, (v) => {
 		if (limit === undefined) return v;
@@ -10,17 +20,11 @@
 
 		return v.slice(0, limit);
 	});
-
-	let postsError = postStoreError;
 </script>
 
 <div id="posts" class="container res-grid-3">
 	{#if $posts === undefined}
-		{#if $postsError !== undefined}
-			<div class="axios-error">{JSON.stringify($postsError)}</div>
-		{:else}
-			<h1 class="title text-center">Loading...</h1>
-		{/if}
+		<h1 class="title text-center">Loading...</h1>
 	{:else}
 		{#each $posts as post}
 			<a class="card img-card" rel="noopener" href={post.permalink}>
