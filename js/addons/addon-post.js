@@ -189,7 +189,7 @@ export default {
         "Twitter": { fab: '' },
         "Website": { fas: '' },
         "Xbox": { fab: '' },
-        "YouTube": { fab: '' }
+        "YouTube": { fab: '' },
         "Other": { fas: '' }
       }
     }
