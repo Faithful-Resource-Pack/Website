@@ -27,7 +27,7 @@ export default {
       <template>
         <!-- this cause a warning message from vue, but idk what's happening since this doesn't happens on the webapp, only here :/ -->
         <addon-modal :dialog="modal" :close="closeModal" :image="modalImage"></addon-modal>
-        
+
         <div class="card card-body" v-if="getCarousel().length">
           <h3 class="text-center">Screenshots</h3>
           <div class="res-grid-3">
@@ -38,7 +38,7 @@ export default {
             </div>
           </div>
         </div>
-        
+
         <br>
       </template>
 
@@ -182,16 +182,16 @@ export default {
         "GitHub": { fab: '' },
         "Patreon": { fab: '' },
         "Paypal": { fab: '' },
-        "Planet Minecraft": { fas: '' },
+        "Planet Minecraft": { fas: '' },
         "PSN": { fab: '' },
         "Reddit": { fab: '' },
         "Steam": { fab: '' },
         "Twitter": { fab: '' },
         "Website": { fas: '' },
         "Xbox": { fab: '' },
-        "YouTube": { fab: '' },
+        "YouTube": { fab: '' }
         "Other": { fas: '' }
-      }      
+      }
     }
   },
   methods: {
