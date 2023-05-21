@@ -1,0 +1,22 @@
+{
+  "github": [
+    {
+      "file": "Classic Faithful 32x Jappa",
+      "file_type": "GitHub",
+      "links": {
+        "github": "https://github.com/ClassicFaithful/32x-Jappa-Bedrock"
+      }
+    }
+  ],
+  "Latest": [
+    {
+      "file": "Classic Faithful 32x Jappa",
+      "file_type": "R",
+      "file_version": 1,
+      "latest": "latest",
+      "links": {
+        "direct": "https://database.faithfulpack.net/packs/Classic-32x-Bedrock/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.mcpack"
+      }
+    }
+  ]
+}
