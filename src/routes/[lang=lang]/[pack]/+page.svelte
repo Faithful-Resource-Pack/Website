@@ -42,7 +42,7 @@
         <p>{@html $t(`packs.${data.link}`)}</p>
         <div>
             <a class="btn btn-dark" href="/downloads#{data.link}">Download</a>
-            <a class="btn btn-dark" href="{data.link}/latest">View latest post</a>
+            <a class="btn btn-dark" href={data.postLink || `${data.link}/latest`}>View latest post</a>
         </div>
     </div>
 </div>
