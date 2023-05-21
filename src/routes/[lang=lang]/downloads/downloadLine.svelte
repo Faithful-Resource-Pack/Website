@@ -41,7 +41,7 @@
 	<p>
 		<span class="name">{text_name}</span>
 		<span class="version">{text_version}</span>
-		<span class={class_release}>{text_release}</span>
+		{#if text_release}<span class={class_release}>{text_release}</span>{/if}
 		{#if latest}<span class="latest">{text_latest}</span>{/if}
 	</p>
 	{#if text_date}<p class="mobile">{text_date} - {text_size}</p>{/if}

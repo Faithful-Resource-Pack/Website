@@ -9,6 +9,8 @@ export const load: Load = async () => {
       'compliance_64.json',
       'compliance_64b.json',
       'compliance_32d.json',
+      'cf32j.json',
+      'cf32jb.json'
     ];
 
     const URLS = FILES.map(u => BASE_URL + SUB_PATH + u);
@@ -50,7 +52,7 @@ export const load: Load = async () => {
       title: "Downloads",
       packs: [{
         name: "Faithful 32x",
-        background_url: "https://static.wixstatic.com/media/89b89d_00d0142aaa2741b9a39b1a610593bc7e~mv2.png/v1/fill/w_1290,h_1156,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_00d0142aaa2741b9a39b1a610593bc7e~mv2.png",
+        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/f32.png",
         editions: [{
           name: "Java Edition",
           downloads: jsons[0]
@@ -63,7 +65,7 @@ export const load: Load = async () => {
         }]
       },{
         name: "Faithful 64x",
-        background_url: "https://static.wixstatic.com/media/89b89d_90727d52167648538da52c71ae08b61c~mv2.png/v1/fill/w_1290,h_531,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_90727d52167648538da52c71ae08b61c~mv2.png",
+        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/f64.png",
         editions: [{
           name: "Java Edition",
           downloads: jsons[2]
@@ -73,17 +75,17 @@ export const load: Load = async () => {
         }]
       }, {
         name: "Classic Faithful 32x Jappa",
-        background_url: "https://static.wixstatic.com/media/89b89d_a8ca95a9d0dd42bca13a163616d0fcef~mv2.png/v1/fill/w_1920,h_580,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_a8ca95a9d0dd42bca13a163616d0fcef~mv2.png",
+        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/cf32.png",
         editions: [{
           name: "Java Edition",
-          downloads: {}
+          downloads: jsons[5]
         },{
           name: "Bedrock Edition",
-          downloads: {}
+          downloads: jsons[6]
         }]
       }, {
         name: "Classic Faithful 32x Programmer Art",
-        background_url: "https://static.wixstatic.com/media/89b89d_a4d64e249fc64a09b6b3881f6e91d519~mv2.png/v1/fill/w_1920,h_580,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_a4d64e249fc64a09b6b3881f6e91d519~mv2.png",
+        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/cf32pa.png",
         editions: [{
           name: "Java Edition",
           downloads: {}
@@ -93,7 +95,7 @@ export const load: Load = async () => {
         }]
       }, {
         name: "Classic Faithful 64x",
-        background_url: "https://static.wixstatic.com/media/89b89d_7fb681a21b974342916ea071d06f1049~mv2.png/v1/fill/w_1920,h_531,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/89b89d_7fb681a21b974342916ea071d06f1049~mv2.png",
+        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/cf64.png",
         editions: [{
           name: "Java Edition",
           downloads: {}
