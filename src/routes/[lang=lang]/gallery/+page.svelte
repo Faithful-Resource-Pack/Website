@@ -50,7 +50,7 @@ function search(_origin?: string) {
     params_obj.res = PACK_TO_RES[params_obj.pack];
     let { res, edition, version, tag } = params_obj;
 
-    if(edition === 'first') edition = $settings.packs[params_obj.pack].editions[0];
+    if(edition === 'java') edition = $settings.packs[params_obj.pack].editions[0];
     if(version === 'latest') version = $settings.versions[edition][0];
 
     let url = `https://api.faithfulpack.net/v2/gallery/${res}/${edition}/${version}/${tag}`;

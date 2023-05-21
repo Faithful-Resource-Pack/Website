@@ -81,8 +81,7 @@ export let galleryOptionStore = {
 
         let value_pack = gallerySearch.getParam('pack') as string;
         let value_edition = gallerySearch.getParam('edition') as string;
-        let current_edition = value_edition == "first"
-            ? vSettings.packs[value_pack].editions[0] : value_edition;
+        let current_edition = value_edition
 
         let res = Object.entries<string[]>({
             packs: ["original_16x", "faithful_32x", "faithful_64x"],

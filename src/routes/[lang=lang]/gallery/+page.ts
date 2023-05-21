@@ -8,7 +8,7 @@ export const load: PageLoad = ((pageLoad) => {
 
     const PARAMS_DEFAULT = [
         ['pack', 'faithful_32x'],
-        ['edition', 'first'],
+        ['edition', 'java'],
         ['version', 'latest'],
         ['tag', 'all']
     ]
