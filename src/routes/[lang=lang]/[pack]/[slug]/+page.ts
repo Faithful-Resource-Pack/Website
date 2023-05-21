@@ -1,11 +1,11 @@
 export const load = async function({ params }) {
-    let permalink = `%2F${params.pack}%2F${params.slug}`
+    // Why do I need to encode things twice? No clue
+    let permalink = encodeURIComponent(`/${params.pack}/${encodeURIComponent(params.slug)}`)
 
     if (params.slug === "latest") {
         const postRes = await fetch("https://api.faithfulpack.net/v2/posts")
         .catch((err) => { console.error('postData', err); throw err;})
         const postData = await postRes.json();
-       
 
         for (const [key, pack] of Object.entries(postData).reverse()) {
             if (pack.permalink.startsWith(`/${params.pack}/`)) {
