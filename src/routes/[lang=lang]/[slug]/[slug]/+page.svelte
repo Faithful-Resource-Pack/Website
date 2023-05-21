@@ -20,42 +20,44 @@
 		<h1 class="text-center title">{ data.title }</h1>
 	{/if}
 	<div class="post-details">
-		<div class="post-details-left">
-			<!--{#if data.authors }
-				<h3 class="display text-center">
-				By&nbsp;
-				{#each data.authors as author, i}
-					{#if typeof(author) === 'string' }
-						{#if i != data.authors.length }
-							{ author },
-						{:else}
-							{ author }
-						{/if}
-					{:else}
-						{#if i != data.authors.length }
-							<a href="{ author.first }">{ author.first }</a>,
-						{:else}
-							<a href="{ author.first }">{ author.first }</a>
-						{/if}
-					{/if}
-				{/each}
-			</h3>
-		{/if}-->
 		{#if data.downloads}
-			{#if Object.keys(data.downloads).length > 1}
-				<h2 class="text-center">Downloads</h2>
-			{:else}
-				<h2 class="text-center">Download</h2>
-			{/if}
-			{#each Object.entries(data.downloads) as [title, items] }
-				<h3 class="my-3 text-center">{title}</h3>
-				{#each items as item}
-					<DownloadButton href={item.url} text={item.name} />
+			<div class="post-details-left">
+				<!--{#if data.authors }
+					<h3 class="display text-center">
+						By&nbsp;
+						{#each data.authors as author, i}
+							{#if typeof(author) === 'string' }
+								{#if i != data.authors.length }
+									{ author },
+								{:else}
+									{ author }
+								{/if}
+							{:else}
+								{#if i != data.authors.length }
+									<a href="{ author.first }">{ author.first }</a>,
+								{:else}
+									<a href="{ author.first }">{ author.first }</a>
+								{/if}
+							{/if}
+						{/each}
+					</h3>
+				{/if}-->
+
+				{#if Object.keys(data.downloads).length > 1}
+					<h2 class="text-center">Downloads</h2>
+				{:else}
+					<h2 class="text-center">Download</h2>
+				{/if}
+				{#each Object.entries(data.downloads) as [title, items] }
+					<h3 class="my-3 text-center">{title}</h3>
+					{#each items as item}
+						<DownloadButton href={item.url} text={item.name} />
+					{/each}
 				{/each}
-			{/each}
+
+			</div>
 		{/if}
-		</div>
-		<div class="post-details-right">
+		<div class={data.downloads ? "post-details-right" : ""}>
 			{#if data.headerImg}
 				<img id="post-header-img" class="fancy-card-1x card" src={data.headerImg} alt={data.title} />
 			{/if}
@@ -92,10 +94,10 @@
 		&-right {
 			flex: 0 0 75%;
             padding-left: 20px;
+		}
 
-			.card {
-				margin-top: 20px;
-			}
+		div.card {
+			margin-top: 20px;
 		}
 	}
 
