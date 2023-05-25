@@ -31,8 +31,11 @@
     </div>
 {/if}
 
-<style>
-    li {
-		margin-bottom: 4px;
-	}
+<style lang="scss">
+    #changelog {
+        margin-left: 18px;
+        li {
+            margin-bottom: 10px;
+        }
+    }
 </style>
