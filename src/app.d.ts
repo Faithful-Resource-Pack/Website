@@ -6,7 +6,7 @@ declare namespace App {
 	// interface PageData {}
 	// interface Error {}
 	// interface Platform {}
-	
+
 
     interface CardLink {
         href: string,
@@ -14,7 +14,7 @@ declare namespace App {
     };
 
 	interface CardUrl {
-		title: string, 
+		title: string,
 		background: string,
 		src: string
 	}
@@ -63,5 +63,11 @@ declare namespace App {
 		editions: Array<string>,
 		resolutions: Array<string>,
 		authors: Array<string>,
+	}
+
+	interface FaqArray {
+		question: string,
+		answer: string,
+		keywords: string[],
 	}
 }
