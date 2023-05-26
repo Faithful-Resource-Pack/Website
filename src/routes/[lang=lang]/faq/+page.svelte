@@ -1,15 +1,14 @@
 <script lang="ts">
-    import parseMd from "$lib/shortMd";
+    import { parseMd } from "$lib/shortMd";
     import strings from "./strings.json";
     const faqArray: App.FaqArray[] = strings.en_US.faq;
 
     function cleanDiscordFormatting(text: string) {
-        return parseMd(
+        return parseMd (
             text
-                .replace(/in <#[^]+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)")
-                .replace(/<[^]+>/, "")
-                .replace("()", ""),
-            6000
+                .replace(/in <#[^]+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)") // removes channel links
+                .replace(/<[^]+>/, "") // removes pings
+                .replace("()", "") // removes stray parentheses left by removing pings
         );
     }
 </script>
