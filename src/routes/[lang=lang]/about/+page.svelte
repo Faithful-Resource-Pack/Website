@@ -5,10 +5,6 @@
 	} from "@fortawesome/free-solid-svg-icons";
 </script>
 
-<svelte:head>
-    <title>About - Faithful</title>
-</svelte:head>
-
 <div class="section green">
     <div>
         <h1 class="normal">UPSCALING THE LOOK OF MINECRAFT</h1>

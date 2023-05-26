@@ -2,19 +2,15 @@
     import { t } from "$lib/translations";
 </script>
 
-<svelte:head>
-    <title>License - Faithful</title>
-</svelte:head>
+<h1 class="title text-center bold">{$t("license.title")}</h1>
+<h3 class="text-center">
+    Version 3 - 20th February 2023
+    <br><br>
+    Copyright © Faithful Resource Pack
+    <br>
+</h3>
 
-<div class="container">
-    <h1>{$t("license.title")}</h1>
-
-    <p>
-        Version 3 - 20th February 2023
-        <br><br>
-        Copyright © Faithful Resource Pack
-    </p>
-
+<div class="slim-container">
     <h2>{$t("license.usage.title")}</h2>
 
     <ol>
@@ -72,7 +68,7 @@
     </ol>
 
     <br>
-    <h3 class="text-center">Translations may be inaccurate, only the English version is valid.</h3>
+    <h2 class="semibold text-center">Only the English version is legally valid. Translations may not be entirely accurate!</h2>
 </div>
 
 <style lang="scss">
@@ -80,7 +76,12 @@
         text-align: left;
     }
     li {
-        margin-top: 10px;
+        margin-bottom: 15px;
+        line-height: 25px;
+    }
+
+    ol {
+        margin-left: 20px;
     }
     a {
         word-wrap: break-word;

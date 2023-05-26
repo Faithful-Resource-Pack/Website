@@ -783,6 +783,9 @@ button:disabled {
 	.container {
 		max-width: 1400px;
 	}
+	.slim-container {
+		max-width: 1200px;
+	}
 }
 
 .container {
@@ -791,6 +794,15 @@ button:disabled {
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.slim-container {
+	width: 100%;
+	padding-right: 60px;
+	padding-left: 60px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
 }
 
 .noSelect {
