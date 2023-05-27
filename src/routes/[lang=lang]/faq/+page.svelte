@@ -1,8 +1,6 @@
 <script lang="ts">
+    export let data: any;
     import { parseMd } from "$lib/shortMd";
-    import strings from "./strings.json";
-    const faqArray: App.FaqArray[] = strings.en_US.faq;
-
     function cleanDiscordFormatting(text: string) {
         return parseMd (
             text
@@ -15,7 +13,7 @@
 
 <h1 class="title text-center bold">Frequently Asked Questions</h1>
 <div class="slim-container">
-    {#each faqArray as faq}
+    {#each data.faqArray as faq}
         <h2>{faq.question}</h2>
         <p class="answer">{@html cleanDiscordFormatting(faq.answer)}</p>
     {/each}
