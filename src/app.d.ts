@@ -70,4 +70,8 @@ declare namespace App {
 		answer: string,
 		keywords: string[],
 	}
+
+	interface FaqObject {
+		faqArray: FaqArray[],
+	}
 }
