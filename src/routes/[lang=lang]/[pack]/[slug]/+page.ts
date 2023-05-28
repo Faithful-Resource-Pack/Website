@@ -9,7 +9,6 @@ export const load = async function({ params }) {
 
         for (const [key, pack] of Object.entries(postData).reverse()) {
             if (pack.permalink.startsWith(`/${params.pack}/`)) {
-                console.log("bal")
                 return {
                     id: pack.id,
                     title: pack.title,
