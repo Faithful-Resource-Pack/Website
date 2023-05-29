@@ -18,7 +18,7 @@ import I18n from "./common/i18n.svelte";
 import { themeStore } from "$stores/ThemeStore";
 import { derived } from "svelte/store";
 import { langStore } from "$stores/LangStore";
-import type { PageLoad } from "../routes/[lang=lang]/$types";
+import type { PageLoad } from "../routes/$types";
 import { onMount } from "svelte";
 import UrlStore from "$stores/UrlStore";
 import Optional from "$lib/optional";
@@ -40,67 +40,15 @@ const icon_theme = derived(themeStore, v => {
   else return faSun
 })
 
-export const load: PageLoad = async ({ url }) => {
-  const { pathname } = url;
+onMount(async () => {
   const defaultLocale = 'en'; // get from cookie / user session etc...
-  const initLocale = locale.get() || defaultLocale;
-  await loadTranslations(initLocale, pathname); // keep this just before the `return`
-  return {};
-}
+  const initLocale = localStorage.getItem("LANG") || defaultLocale;
+  await loadTranslations(initLocale); // keep this just before the `return`
+})
 
 export const blur = (e: FocusEvent) => {
   setTimeout(() => (e.target as HTMLButtonElement).blur(), 200)
 }
-
-function urlToLang(url: string): [string, string[], URL] | null {
-  let ourUrl = new URL(url);
-  let pathname = ourUrl.pathname;
-  let pathSplit = pathname.split('/');
-  pathSplit.shift(); // remove first empty string
-  let possibleLang = pathSplit.shift();
-  if(possibleLang && supportedLocales.includes(possibleLang))
-  {
-    return [possibleLang, pathSplit, ourUrl];
-  }
-  return null;
-}
-
-onMount(() => {
-  // watch lang and change history
-  langStore.subscribe((newLang) => {
-    let currentUrl = window.location.toString();
-    let oldLang = urlToLang(currentUrl);
-
-    if(oldLang && newLang != oldLang[0]) {
-      const [_, pathSplit, urlObject] = oldLang;
-      pathSplit.splice(0,0,newLang);
-      urlObject.pathname = '/' + pathSplit.join('/');
-      let newUrl = urlObject.toString();
-
-      if(currentUrl != newUrl) {
-        if('pushState' in window.history) {
-          window.history.pushState({}, "", newUrl);
-        } else {
-          location.replace(newUrl);
-        }
-      }
-    }
-  })
-
-  // watch URL (history) and change language
-  UrlStore.subscribe((evt) => {
-    let detail = Optional(evt).chain(evt => evt.detail);
-
-    let newUrl = detail.chain(detail => detail.newURL);
-    let langUrl = newUrl.chain(u => urlToLang(u)).value || undefined;
-
-    let storedLang = locale.get();
-
-    if(langUrl && storedLang && storedLang != langUrl[0]) {
-      locale.set(langUrl[0]);
-    }
-  })
-})
 </script>
 
 <footer class="footer">

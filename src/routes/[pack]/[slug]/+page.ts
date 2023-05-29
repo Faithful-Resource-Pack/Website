@@ -1,6 +1,11 @@
-export const load = async function({ params }) {
+import { error } from '@sveltejs/kit';
+
+export const load = async function({ fetch, params }) {
     // Why do I need to encode things twice? No clue
     let permalink = encodeURIComponent(`/${params.pack}/${encodeURIComponent(params.slug)}`)
+
+    if (!params.pack.includes("faithful") && !params.pack.includes("compliance"))
+        throw error(404, 'Not found');
 
     if (params.slug === "latest") {
         const postRes = await fetch("https://api.faithfulpack.net/v2/posts")

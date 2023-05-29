@@ -15,7 +15,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		});
 	}
 
-	if (routeRegex.test(pathname)) {
+	/*if (routeRegex.test(pathname)) {
 		const supportedLocales = locales.get();
 
 		let locale = '';
@@ -57,7 +57,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		return resolve(event, {
 			transformPageChunk: ({ html }) => html.replace(/<html.*>/, `<html lang="${locale}">`)
 		});
-	}
+	}*/
 
 	return resolve(event);
 };
