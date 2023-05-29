@@ -19,23 +19,23 @@
 	const PROJECTS = [{
 		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png',
 		text: 'Faithful 32x',
-		link: '/packs/faithful-32x'
+		link: '/faithful32x'
 	},{
 		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/f64_logo.png',
 		text: 'Faithful 64x',
-		link: '/packs/faithful-64x'
+		link: '/faithful64x'
 	},{
 		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png',
 		text: 'Classic Faithful 32x\nJappa',
-		link: '/packs/classic-faithful-32x-jappa'
+		link: '/classicfaithful32xjappa'
 	},{
 		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32pa_logo.png',
 		text: 'Classic Faithful 32x\nProgrammer Art',
-		link: '/packs/classic-faithful-32x-programmer-art'
+		link: '/classicfaithful32xprogrammerart'
 	},{
 		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf64_logo.png',
 		text: 'Classic Faithful 64x',
-		link: '/packs/classic-faithful-64x'
+		link: '/classicfaithful64x'
 	}]
 
 	let projectsShown = false;
