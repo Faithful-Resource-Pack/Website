@@ -1,7 +1,7 @@
 <script lang="ts">
     export let data: App.FaqObject;
     import { parseMd } from "$lib/shortMd";
-    import { sanitize } from "isomorphic-dompurify";
+    import DOMPurify from 'isomorphic-dompurify';
     function cleanDiscordFormatting(text: string) {
         return parseMd ( // parseMd already runs DOMPurify so we're good on that end I think
             text
@@ -15,7 +15,7 @@
 <h1 class="title text-center bold">Frequently Asked Questions</h1>
 <div class="slim-container">
     {#each data.faqArray as faq}
-        <h2>{sanitize(faq.question)}</h2>
+        <h2>{DOMPurify.sanitize(faq.question)}</h2>
         <p class="answer">{@html cleanDiscordFormatting(faq.answer)}</p>
     {/each}
 </div>

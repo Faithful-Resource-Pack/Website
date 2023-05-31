@@ -1,11 +1,11 @@
 import { marked } from 'marked';
 //@ts-ignore
 import TextRenderer from 'kramed-text-renderer';
-import { sanitize } from 'isomorphic-dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 
 const parseMd = function (md: string, inline?: boolean) {
-    if (inline) return sanitize(marked.parseInline(md, {breaks: true}))
-    return sanitize(marked.parse(md))
+    if (inline) return DOMPurify.sanitize(marked.parseInline(md, {breaks: true}))
+    return DOMPurify.sanitize(marked.parse(md))
 }
 
 const shortMd = function (md: string, length = 157) {
@@ -16,7 +16,7 @@ const shortMd = function (md: string, length = 157) {
     renderer.br = function () { return ' ' }
     renderer.hr = function () { return ' ' }
 
-    const desc_txt = sanitize(marked.parse(md, {
+    const desc_txt = DOMPurify.sanitize(marked.parse(md, {
         renderer
     })).replace(/\n+ ?/g, ' ').trim()
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { sanitize } from 'isomorphic-dompurify';
+  import DOMPurify from 'isomorphic-dompurify';
     import { t } from '$lib/translations';
 	import { derived, readable, writable } from 'svelte/store';
 
@@ -21,7 +21,7 @@
             value.update(v => v.replace(re, val))
         });
     }
-    $: sanitized = derived(value, val => sanitize(val));
+    $: sanitized = derived(value, val => DOMPurify.sanitize(val));
     $: final = derived(sanitized, s => `${tags[0]}${s}${tags[1]}`);
 </script>
 
