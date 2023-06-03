@@ -6,11 +6,13 @@
     const SEE_MORE = "See More";
     const projects = {
         links: [
-            [{href: "/faithful32x", title: SEE_MORE}],
-            [{href: "/faithful64x", title: SEE_MORE}],
-            [{href: "/classicfaithful32xjappa", title: "New Textures (Jappa)"},
-                {href: "/classicfaithful32xprogrammerart", title: "Classic Textures (PA)"}],
-            [{href: "/classicfaithful64x", title: SEE_MORE}],
+            [{ href: "/faithful32x", title: SEE_MORE }],
+            [{ href: "/faithful64x", title: SEE_MORE }],
+            [
+                { href: "/classicfaithful32xjappa", title: "New Textures (Jappa)" },
+                { href: "/classicfaithful32xprogrammerart", title: "Classic Textures (PA)" }
+            ],
+            [{ href: "/classicfaithful64x", title: SEE_MORE }],
         ],
         urls: [
             {
@@ -37,8 +39,8 @@
     }
     const extras = {
         links: [
-            [{href: "/add-ons", title: SEE_MORE }],
-            [{href: "/modding", title: SEE_MORE}]
+            [{ href: "/add-ons", title: SEE_MORE }],
+            [{ href: "/modding", title: SEE_MORE }]
         ],
         urls: [
             {

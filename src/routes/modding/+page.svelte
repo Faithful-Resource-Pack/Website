@@ -4,8 +4,8 @@
 
     const projects = {
         links: [
-            {href: "/modding/faithful-32x" },
-            {href: "/modding/classic-faithful-32x",}
+            { href: "/modding/faithful-32x" },
+            { href: "/modding/classic-faithful-32x" },
         ],
         urls: [
             {
@@ -75,7 +75,7 @@
     @media (max-width: $width-XS) {
         #packCardList {
             padding: $small-spacing;
-            
+
             :global( > *) {
                 width: 100%;
             }

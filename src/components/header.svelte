@@ -200,8 +200,7 @@
 			padding: 0.25rem 0.75rem;
 			font-size: 1.25rem;
 			background-color: transparent;
-			border: 1px solid rgb(128, 128, 128);
-			border-radius: $border-radius;
+			border: none;
 
 			@media (max-width: $width-S) {
 				display: block;
