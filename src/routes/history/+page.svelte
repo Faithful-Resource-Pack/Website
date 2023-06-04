@@ -116,7 +116,7 @@
 	function generateReferences(references: string[]) {
 		return references.map(reference => {
 			i++;
-			return `<a href="${reference}">[${i}]</a>`;
+			return `<sup><a href="${reference}">[${i}]</a></sup>`;
 		}).join(' ');
 	}
 </script>
@@ -133,8 +133,8 @@
 				</div>
 			{/if}
 			<div class="timeline-item">
-				<h3 class="timeline-date {option.importance === "low" ? "text-background" : "semibold"}">{option.time || ""}</h3>
-				<div class="timeline-seperator">
+				<h3 class="timeline-date {option.importance === "low" ? "text-background" : ""}">{option.time || ""}</h3>
+				<div class="timeline-separator">
 					<span class={option.importance === "low" ? "timeline-dot" : option.importance === "normal" ? "timeline-square" : "timeline-diamond"}></span>
 					{#if i != 0 && options[i+1] && option.year == options[i+1].year || i == 0}
 						<span class="timeline-connector"></span>
@@ -179,7 +179,7 @@
 			text-align: right;
 		}
 
-		&-seperator {
+		&-separator {
 			align-items: center;
     		display: flex;
     		flex: 0;
