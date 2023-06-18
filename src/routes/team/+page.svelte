@@ -5,6 +5,7 @@
     // TODO: replace with real API data
     // TODO: make a page in website to add profiles and edit profiles displayed
     const USER_PLACEHOLDER = {
+        color: '#39bc9c',
         avatar: "/images/steve-alex-selfie.jpg",
         display: `Alex`,
         username: `alex`,
@@ -37,7 +38,7 @@
 
     <div class="card-grid">
         {#each additionalData as user}
-            <TeamMemberCard {user} color="#3498db" />
+            <TeamMemberCard {user} />
         {/each}
     </div>
 </div>
