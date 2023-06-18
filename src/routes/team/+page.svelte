@@ -14,7 +14,7 @@
         timezone: `MC Standard Time`,
         city: `My World`,
         country: `Minecraft`,
-        pronouns: `she/npc`
+        // pronouns: `she/npc`
     };
 
     const userData = Array(8).fill(USER_PLACEHOLDER);

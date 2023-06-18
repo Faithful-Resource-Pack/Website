@@ -28,14 +28,23 @@
 <div class="team-card card card-body" style={`background: ${user.color} !important`}>
     <img class="card" src={user.avatar} alt={user.username}>
     <h2 class="display-name semibold">{user.display}</h2>
-    {#if user.id && user}
-        <a href="https://discord.com/users/{user.id}">
-            <h3 class="username hoverable">@{user.username}</h3>
-        </a>
+    {#if user.id && user.username}
+        <h3 style="margin: 0 auto;">
+            <a class="username hoverable" href="https://discord.com/users/{user.id}">@{user.username}</a>
+            {#if user.pronouns}
+            <span class="username">• {user.pronouns}</span>
+            {/if}
+        </h3>
     {:else if user.username}
-        <h3 class="username">@{user.username}</h3>
+        <h3 class="username">@{user.username}
+        {#if user.pronouns}
+            • {user.pronouns}
+        {/if}
+        </h3>
+    {:else if user.pronouns}
+        <h3 class="username">{user.pronouns}</h3>
     {/if}
-    {#if user.bio || userLocation || user.timezone || user.pronouns}
+    {#if user.bio || userLocation || user.timezone}
     <div class="body">
         {#if user.bio}
         <p><i>{user.bio}</i></p>
@@ -46,9 +55,6 @@
             {/if}
             {#if user.timezone}
                 <li><Fa fw icon={faEarthEurope} size="lg"/>{user.timezone}</li>
-            {/if}
-            {#if user.pronouns}
-                <li><Fa fw icon={faUniversalAccess} size="lg"/>{user.pronouns}</li>
             {/if}
         </ul>
     </div>
@@ -78,6 +84,7 @@
             margin: $small-spacing 0 0;
             color: white;
         }
+
         .username {
             color: white;
             margin: 0 0 0 0;
@@ -90,6 +97,7 @@
         }
 
         .hoverable {
+            color: white;
             &:hover {
                 opacity: 1;
             }
