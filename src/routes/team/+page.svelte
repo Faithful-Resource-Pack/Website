@@ -1,6 +1,8 @@
 <script lang="ts">
     import TeamMemberCard from "./TeamMemberCard.svelte";
     import { t } from '$lib/translations';
+    import { faGithub } from "@fortawesome/free-brands-svg-icons";
+    import { faLink } from "@fortawesome/free-solid-svg-icons";
 
     // TODO: replace with real API data
     // TODO: make a page in website to add profiles and edit profiles displayed
@@ -14,7 +16,11 @@
         timezone: `MC Standard Time`,
         city: `My World`,
         country: `Minecraft`,
-        // pronouns: `she/npc`
+        pronouns: `she/npc`,
+        socials: [
+            { href: "https://faithfulpack.net", title: "Website", icon: faLink },
+            { href: "https://github.com/Faithful-Resource-Pack", title: "GitHub", icon: faGithub },
+        ],
     };
 
     const userData = Array(8).fill(USER_PLACEHOLDER);

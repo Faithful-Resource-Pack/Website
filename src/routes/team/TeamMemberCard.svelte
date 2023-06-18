@@ -13,6 +13,7 @@
         city?: string,
         country?: string,
         pronouns?: string,
+        socials: App.CardLink[] // this was not the intended purpose but it works really well
     };
 
     let userLocation: string;
@@ -30,7 +31,7 @@
     <h2 class="display-name semibold">{user.display}</h2>
     {#if user.id && user.username}
         <h3 style="margin: 0 auto;">
-            <a class="username hoverable" href="https://discord.com/users/{user.id}">@{user.username}</a>
+            <a class="username username-hover" href="https://discord.com/users/{user.id}">@{user.username}</a>
             {#if user.pronouns}
             <span class="username">• {user.pronouns}</span>
             {/if}
@@ -55,6 +56,18 @@
             {/if}
             {#if user.timezone}
                 <li><Fa fw icon={faEarthEurope} size="lg"/>{user.timezone}</li>
+            {/if}
+            {#if user.socials}
+                {#each user.socials as social}
+                    <a href={social.href}>
+                        <li class="social-hover">
+                            {#if social.icon}
+                                <Fa fw icon={social.icon} size="lg" />
+                            {/if}
+                            {social.title}
+                        </li>
+                    </a>
+                {/each}
             {/if}
         </ul>
     </div>
@@ -93,13 +106,20 @@
             font-family: "Faithful 32x";
             font-weight: normal !important;
             word-wrap: normal;
-            transition: all 0.2s ease;
         }
 
-        .hoverable {
+        .username-hover {
             color: white;
+            transition: all 0.2s ease;
             &:hover {
                 opacity: 1;
+            }
+        }
+
+        .social-hover {
+            transition: all 0.2s ease;
+            &:hover {
+                opacity: 0.5;
             }
         }
 

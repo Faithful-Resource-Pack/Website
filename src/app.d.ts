@@ -1,5 +1,8 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
+
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons"
+
 // and what to do when importing types
 declare namespace App {
 	// interface Locals {}
@@ -7,10 +10,10 @@ declare namespace App {
 	// interface Error {}
 	// interface Platform {}
 
-
     interface CardLink {
         href: string,
-        title: string
+        title: string,
+		icon?: IconDefinition
     };
 
 	interface CardUrl {
