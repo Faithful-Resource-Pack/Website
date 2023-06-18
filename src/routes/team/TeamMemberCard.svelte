@@ -4,8 +4,9 @@
 
     export let user: {
         avatar: string,
-        username: string,
-        discordTag: number,
+        display: string,
+        username?: string,
+        id?: string,
         bio?: string,
         timezone?: string,
         city?: string,
@@ -27,7 +28,14 @@
 <div class="team-card card card-body" style={`background: ${color} !important`}>
     <div class="top">
         <img class="card" src={user.avatar} alt={user.username}>
-        <h2 class="username semibold">{user.username}<span id="tag">#{user.discordTag}</span></h2>
+        <h2 class="display-name semibold">{user.display}</h2>
+        {#if user.id && user.username}
+            <a href="https://discord.com/users/{user.id}">
+                <h3 class="username hoverable">@{user.username}</h3>
+            </a>
+        {:else if user.username}
+            <h3 class="username">@{user.username}</h3>
+        {/if}
     </div>
     {#if user.bio || userLocation || user.timezone || user.pronouns}
     <div class="body">
@@ -73,20 +81,26 @@
             padding: $small-spacing + 22; // this way the top padding is even with the sides
             padding-bottom: $small-spacing; // but the bottom isn't super huge
 
-            .username {
+            .display-name {
                 margin: $small-spacing 0 0;
                 color: white;
-
-                #tag {
-                    margin: $small-spacing 0 0;
-                    opacity: 0.75;
-                    font-size: 1.1rem;
-                    font-family: "Faithful 32x";
-                    font-weight: normal !important;
-                    word-wrap: normal;
-                }
             }
+            .username {
+                color: white;
+                margin: 0 0 0 0;
+                opacity: 0.5;
+                font-size: 1.1rem;
+                font-family: "Faithful 32x";
+                font-weight: normal !important;
+                word-wrap: normal;
+                transition: all 0.2s ease;
+            }
+        }
 
+        .hoverable {
+            &:hover {
+                opacity: 1;
+            }
         }
 
         .body {

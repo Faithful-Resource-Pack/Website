@@ -6,8 +6,9 @@
     // TODO: make a page in website to add profiles and edit profiles displayed
     const USER_PLACEHOLDER = {
         avatar: "/images/steve-alex-selfie.jpg",
-        username: `Alex`,
-        discordTag: 1234,
+        display: `Alex`,
+        username: `alex`,
+        id: `123456789876543210`,
         bio: `Bio with further information if wanted or necessary. Should be optional.`,
         timezone: `MC Standard Time`,
         city: `My World`,
