@@ -100,13 +100,13 @@
       "3": "Don't take credit for work you didn't make and always give proper attribution to any work you use or modify. In addition, try to be somewhat specific about what you're using, as \"GUI originally from Faithful 32x\" works a lot better than \"some textures from Faithful\". Just be honest about what you're using, use common sense when in doubt, and you'll be fine.",
       "4": "Do not monetize content that contains any of our work, modified or not, under any circumstances. This includes locking your content behind a paywall (including the Minecraft Marketplace) or monetizing download links. Taking voluntary donations is still allowed, but if it feels like you're profiting off our work don't do it.",
       "5": "Don't make your projects look official when they aren't. Examples of this behavior would include copying our branding or marking a project as \"official\" in a way that would confuse the average viewer into believing a project is official when it isn't.",
-      "6": "This file, unmodified, must be included in any content which contains any of our work."
+      "6": "{link}This file{/link}, unmodified, must be included in any content which contains any of our work."
     },
     "exceptions": {
       "title": "Exceptions:",
       "1": "If you're doing anything privately or undistributed to our work (e.g. custom edit for personal use, unpublished add-ons, mod support, personal Minecraft server resource pack, or edits either by you or from different packs) you can safely disregard all of these requirements since you are not gaining unfairly from us in any form.",
       "2": "Projects not directly related to textures (e.g. website, bot) may have separate licenses with different terms. Check their respective pages or repositories for more information. If nothing is mentioned, assume that all rights remain reserved.",
-      "3": "If you are using textures made before March 2016 (Minecraft Release 1.9). These textures are licensed under Vattic's original Faithful 32x32 license, which has different requirements compared with this license. If you're interested, you can find the original license here under \"Usage Guidelines\":"
+      "3": "If you are using textures made before March 2016 (Minecraft Release 1.9). These textures are licensed under Vattic's original Faithful 32x32 license, which has different requirements compared with this license. If you're interested, you can find the {original}original license here{/original} under \"Usage Guidelines\"."
     },
     "reserve_right": {
       "title": "We reserve the right to:",

@@ -1,16 +1,18 @@
 <script lang="ts">
     import { t } from "$lib/translations";
+    import I18n from "../../components/common/i18n.svelte";
 </script>
 
+<div class="slim-container">
 <h1 class="title text-center bold">{$t("license.title")}</h1>
 <h3 class="text-center">
     Version 3 - 20th February 2023
     <br><br>
     Copyright © Faithful Resource Pack
-    <br>
+    <br><br>
+    <a class="btn btn-dark" href="https://database.faithfulpack.net/packs/LICENSE.txt">{$t("license.download")}</a>
+    <br><br>
 </h3>
-
-<div class="slim-container">
     <h2>{$t("license.usage.title")}</h2>
 
     <ol>
@@ -40,9 +42,9 @@
 
         <li>{$t("license.requirements.5")}</li>
 
-        <li>{$t("license.requirements.6")}</li>
-
-        <a class="btn btn-dark" href="https://database.faithfulpack.net/packs/LICENSE.txt">{$t("license.download")}</a>
+        <li><I18n path="license.requirements.6" slots={({
+            link: '<a href="https://database.faithfulpack.net/packs/LICENSE.txt" target="_blank" rel="noopener noreferrer">$1</a>'
+        })}/></li>
     </ol>
 
     <h2>{$t("license.exceptions.title")}</h2>
@@ -52,8 +54,9 @@
 
         <li>{$t("license.exceptions.2")}</li>
 
-        <li>{$t("license.exceptions.3")}
-            <a href="https://web.archive.org/web/20150607220656/http://www.minecraftforum.net:80/forums/mapping-and-modding/resource-packs/1223254-faithful-32x32-pack-update-red-cat-clay-1-8">https://web.archive.org/web/20150607220656/http://www.minecraftforum.net:80/forums/mapping-and-modding/resource-packs/1223254-faithful-32x32-pack-update-red-cat-clay-1-8</a>
+        <li><I18n path="license.exceptions.3" slots={({
+            original: '<a href="https://web.archive.org/web/20150607220656/http://www.minecraftforum.net:80/forums/mapping-and-modding/resource-packs/1223254-faithful-32x32-pack-update-red-cat-clay-1-8" target="_blank" rel="noopener noreferrer">$1</a>'
+        })} />
         </li>
     </ol>
 
@@ -72,9 +75,10 @@
 </div>
 
 <style lang="scss">
-    div {
+    .slim-container {
         text-align: left;
     }
+
     li {
         margin-bottom: 15px;
         line-height: 25px;
@@ -83,7 +87,12 @@
     ol {
         margin-left: 20px;
     }
+
     a {
         word-wrap: break-word;
+    }
+
+    .btn {
+        width: 75%;
     }
 </style>
