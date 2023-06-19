@@ -76,4 +76,9 @@ declare namespace App {
 	interface FaqObject {
 		faqArray: FaqArray[],
 	}
+
+	interface IconOptions {
+		url?: string,
+		badge?: string
+	}
 }

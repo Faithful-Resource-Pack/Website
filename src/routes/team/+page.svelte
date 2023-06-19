@@ -2,7 +2,7 @@
     import TeamMemberCard from "./TeamMemberCard.svelte";
     import { t } from '$lib/translations';
     // TODO: replace with real API data
-    // TODO: make a page in website to add profiles and edit profiles displayed
+    // TODO: make a page in website to add profiles and edit profiles displayed (similar to github)
     import data from './userData.json';
 </script>
 

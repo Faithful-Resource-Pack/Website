@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { faGithub, faInstagram, faReddit, faSteam, faTwitter } from "@fortawesome/free-brands-svg-icons";
-    import { faClock, faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+    import { faClock, faCode, faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa/src/fa.svelte";
     export let user: {
         color: string,
@@ -16,6 +16,8 @@
         socials?: App.CardLink[] // this was not the intended purpose but it works really well
     };
 
+    const TMP = Array(3).fill({ name: "Developer", color: "#ac5ed1" });
+
     const lightness = (hex: string) => {
         hex = hex.replace(/#/g, '')
         const Rlin = (parseInt(hex.substring(0, 2), 16) / 255.0) ** 2.218;
@@ -27,15 +29,24 @@
         return 60 > (Math.pow(Ylum, 0.43) * 100) ? '#fff': '#000';
     }
 
-    const getIcon = (url: string) => {
-        url = url.replace(/https:\/\//g, '').replace(/\/.+/, ''); // trim off unnecessary info and return base url
-        switch (url) {
-            case 'github.com': return faGithub;
-            case 'twitter.com': return faTwitter;
-            case 'reddit.com': return faReddit;
-            case 'instagram.com': return faInstagram;
-            case 'steamcommunity.com': return faSteam;
-            default: return faLink;
+    const getIcon = (options: App.IconOptions) => {
+        // trim off unnecessary info and return base url
+        if (options.url) {
+            const url = options.url
+                ? options.url.replace(/https:\/\//g, '').replace(/\/.+/, '')
+                : 'none'
+            switch (url) {
+                case 'github.com': return faGithub;
+                case 'twitter.com': return faTwitter;
+                case 'reddit.com': return faReddit;
+                case 'instagram.com': return faInstagram;
+                case 'steamcommunity.com': return faSteam;
+                default: return faLink;
+            };
+        } else {
+            switch (options.badge.toLowerCase()) {
+                case 'developer': return faCode;
+            }
         }
     }
 
@@ -87,14 +98,21 @@
                 {#each user.socials as social}
                     <a href={social.href} target="_blank" rel="noopener noreferrer">
                         <li class="social-hover">
-                            <Fa fw icon={getIcon(social.href)} size="lg" />{social.title}</li>
+                            <Fa fw icon={getIcon({ url: social.href})} size="lg" />{social.title}
+                        </li>
                     </a>
                 {/each}
             {/if}
         </ul>
     </div>
+    <div class="badges">
+        {#each TMP as badge}
+            <div class="badge" style="background-color: {badge.color};">
+                <Fa size="2.5rem" color="#fff" icon={getIcon({ badge: badge.name} )} />
+            </div>
+        {/each}
+    </div>
 </div>
-
 
 <style lang="scss">
     .team-card {
@@ -102,61 +120,80 @@
         background-blend-mode: multiply;
         padding: 0;
         text-align: center;
+    }
 
-        img {
-            width: 100%;
-            border-radius: $border-radius;
+    img {
+        width: 100%;
+        border-radius: $border-radius;
+    }
+
+    p {
+        margin: 0 auto $small-spacing;
+        color: var(--textColor);
+        opacity: 0.75;
+    }
+
+    .display-name {
+        font-size: 1.75rem;
+        margin: $small-spacing 5px;
+        color: var(--textColor);
+    }
+
+    .username {
+        color: var(--textColor);
+        margin: 0 auto;
+        opacity: 0.5;
+        font-size: 1.1rem;
+        font-family: "Faithful 32x";
+        font-weight: normal !important;
+        word-wrap: normal;
+    }
+
+    .username-hover {
+        color: var(--textColor);
+        transition: all 0.2s ease;
+        &:hover {
+            opacity: 1;
         }
+    }
+
+    .social-hover {
+        transition: all 0.2s ease;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: $small-spacing;
 
         p {
-            margin: 0 auto $small-spacing;
-            color: var(--textColor);
-            opacity: 0.75;
-        }
-
-        .display-name {
-            font-size: 1.75rem;
-            margin: $small-spacing 5px;
-            color: var(--textColor);
-        }
-
-        .username {
-            color: var(--textColor);
-            margin: 0 auto;
-            opacity: 0.5;
-            font-size: 1.1rem;
-            font-family: "Faithful 32x";
-            font-weight: normal !important;
-            word-wrap: normal;
-        }
-
-        .username-hover {
-            color: var(--textColor);
-            transition: all 0.2s ease;
-            &:hover {
-                opacity: 1;
-            }
-        }
-
-        .social-hover {
-            transition: all 0.2s ease;
-            &:hover {
-                opacity: 0.5;
-            }
-        }
-
-        .body {
-            flex-grow: 1;
-            padding: $small-spacing;
             display: flex;
-            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 
-            p {
-                display: flex;
-                flex-grow: 1;
-                justify-content: center;
-                align-items: center;
-            }
+    .badges {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: $small-spacing;
+        margin-bottom: $small-spacing;
+
+        .badge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            outline: 3px solid #fff;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 100%;
         }
     }
 
