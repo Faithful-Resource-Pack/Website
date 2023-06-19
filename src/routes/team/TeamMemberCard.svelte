@@ -180,15 +180,15 @@
 
     .badges {
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
         justify-content: space-evenly;
-        margin-top: $small-spacing;
-        margin-bottom: $small-spacing;
+        margin-bottom: 20px;
 
         .badge {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 5px 5px;
             outline: 3px solid #fff;
             filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
             height: 3.5rem;
