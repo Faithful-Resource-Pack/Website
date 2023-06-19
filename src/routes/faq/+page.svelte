@@ -12,8 +12,8 @@
     }
 </script>
 
-<h1 class="title text-center bold">Frequently Asked Questions</h1>
 <div class="slim-container">
+    <h1 class="title text-center bold">Frequently Asked Questions</h1>
     {#each data.faqArray as faq}
         <h2>{DOMPurify.sanitize(faq.question)}</h2>
         <p class="answer">{@html cleanDiscordFormatting(faq.answer)}</p>
