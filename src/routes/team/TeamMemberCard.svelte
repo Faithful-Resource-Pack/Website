@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { faGithub, faInstagram, faReddit, faSteam, faTwitter } from "@fortawesome/free-brands-svg-icons";
-    import { faEarthEurope, faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+    import { faClock, faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa/src/fa.svelte";
     export let user: {
         color: string,
@@ -50,7 +50,10 @@
         }
 </script>
 
-<div class="team-card card card-body" style={`background: ${user.color} !important; --textColor: ${textColor}`}>
+<div class="team-card card card-body" style={
+    `background: ${user.color} url("/images/background/bg_light_foreground.png") repeat;
+    --textColor: ${textColor}`
+}>
     <img class="card" src={user.avatar} alt={user.username}>
     <h2 class="display-name semibold">{user.display}</h2>
     {#if user.id && user.username}
@@ -78,7 +81,7 @@
                 <li><Fa fw icon={faLocationDot} size="lg"/>{userLocation}</li>
             {/if}
             {#if user.timezone}
-                <li><Fa fw icon={faEarthEurope} size="lg"/>{user.timezone}</li>
+                <li><Fa fw icon={faClock} size="lg"/>{user.timezone}</li>
             {/if}
             {#if user.socials}
                 {#each user.socials as social}
@@ -96,6 +99,7 @@
 <style lang="scss">
     .team-card {
         max-width: 100%;
+        background-blend-mode: multiply;
         padding: 0;
         text-align: center;
 
