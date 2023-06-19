@@ -1,7 +1,6 @@
 <script lang="ts">
-    import { faEarthEurope, faUniversalAccess, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+    import { faEarthEurope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa/src/fa.svelte";
-
     export let user: {
         color: string,
         avatar: string,
@@ -16,6 +15,19 @@
         socials: App.CardLink[] // this was not the intended purpose but it works really well
     };
 
+    const lightness = (hex: string) => {
+        hex = hex.replace('#', '')
+        const Rlin = (parseInt(hex.substring(0, 2), 16) / 255.0) ** 2.218;
+        const Glin = (parseInt(hex.substring(2, 4), 16) / 255.0) ** 2.218;
+        const Blin = (parseInt(hex.substring(4, 6), 16) / 255.0) ** 2.218;
+
+        const Ylum = Rlin * 0.2126 + Glin * 0.7156 + Blin * 0.0722; // to get best visibility on weirdly colored surfaces
+
+        return 70 > (Math.pow(Ylum, 0.43) * 100) ? '#fff': '#000';
+    }
+
+    const textColor = lightness(user.color);
+
     let userLocation: string;
     if (user.country && user.city)
         userLocation = `${user.city}, ${user.country}`;
@@ -26,7 +38,7 @@
 
 </script>
 
-<div class="team-card card card-body" style={`background: ${user.color} !important`}>
+<div class="team-card card card-body" style={`background: ${user.color} !important; --textColor: ${textColor}`}>
     <img class="card" src={user.avatar} alt={user.username}>
     <h2 class="display-name semibold">{user.display}</h2>
     {#if user.id && user.username}
@@ -89,17 +101,17 @@
             width: 210px;
             max-width: 100%;
             margin: 0 auto $small-spacing;
-            color: white;
+            color: var(--textColor);
             opacity: 0.75;
         }
 
         .display-name {
             margin: $small-spacing 0 0;
-            color: white;
+            color: var(--textColor);
         }
 
         .username {
-            color: white;
+            color: var(--textColor);
             margin: 0 0 0 0;
             opacity: 0.5;
             font-size: 1.1rem;
@@ -109,7 +121,7 @@
         }
 
         .username-hover {
-            color: white;
+            color: var(--textColor);
             transition: all 0.2s ease;
             &:hover {
                 opacity: 1;
@@ -146,7 +158,7 @@
             line-height: 1.7;
             font-weight: 600;
 
-            color: white;
+            color: var(--textColor);
 
             :global(*) {
                 margin-right:5px;
