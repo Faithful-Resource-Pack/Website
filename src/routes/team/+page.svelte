@@ -1,49 +1,32 @@
 <script lang="ts">
     import TeamMemberCard from "./TeamMemberCard.svelte";
     import { t } from '$lib/translations';
-    import { faGithub } from "@fortawesome/free-brands-svg-icons";
-    import { faLink } from "@fortawesome/free-solid-svg-icons";
-
     // TODO: replace with real API data
     // TODO: make a page in website to add profiles and edit profiles displayed
-    const USER_PLACEHOLDER = {
-        color: '#39bc9c',
-        avatar: "/images/steve-alex-selfie.jpg",
-        display: `Alex`,
-        username: `alex`,
-        id: `123456789876543210`,
-        bio: `Bio with further information if wanted or necessary. Should be optional.`,
-        timezone: `MC Standard Time`,
-        city: `My World`,
-        country: `Minecraft`,
-        pronouns: `she/npc`,
-        socials: [
-            { href: "https://faithfulpack.net", title: "Website", icon: faLink },
-            { href: "https://github.com/Faithful-Resource-Pack", title: "GitHub", icon: faGithub },
-        ],
-    };
-
-    const userData = Array(8).fill(USER_PLACEHOLDER);
-    const additionalData = Array(1).fill(USER_PLACEHOLDER);
+    import data from './userData.json';
 </script>
 
 <div class="container">
-    <h1 class="title bold text-center">
+    <h1 class="title text-center bold">
         { $t('team.title.our_team') }
     </h1>
 
+    <h2 class="subtitle text-center semibold">
+        { $t('team.title.managers') }
+    </h2>
+
     <div class="card-grid">
-        {#each userData as user}
+        {#each data.managers as user}
             <TeamMemberCard {user} />
         {/each}
     </div>
 
-    <h1 class="title text-center">
+    <h2 class="subtitle text-center semibold">
         { $t('team.title.additional_developers') }
-    </h1>
+    </h2>
 
     <div class="card-grid">
-        {#each additionalData as user}
+        {#each data.developers as user}
             <TeamMemberCard {user} />
         {/each}
     </div>
@@ -51,7 +34,12 @@
 
 <style lang="scss">
     $cell-width: 240px;
-    $grid-gap: $small-spacing;
+    $grid-gap: 30px;
+
+    h2 {
+        margin: $grid-gap;
+    }
+
     .card-grid {
         width: calc(calc(4 * $cell-width) + calc(3 * $grid-gap));
         max-width: 100%;

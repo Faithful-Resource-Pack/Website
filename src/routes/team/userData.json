@@ -1,0 +1,89 @@
+{
+    "managers": [
+        {
+            "color": "#0b6801",
+            "avatar": "images/team/fhlx.jpg",
+            "display": "FHLX",
+            "username": "fhlx",
+            "id": "672989591283695618",
+            "bio": "I'm a former YouTuber and competitive player, and I lead the Classic Faithful team!",
+            "timezone": "EDT",
+            "country": "Argentina, US"
+        },
+        {
+            "color": "#242529",
+            "avatar": "images/team/evorp.jpg",
+            "display": "Evorp",
+            "username": "evorp",
+            "id": "360249987927638016",
+            "bio": "i started a cult as an april fools joke and it was all downhill from there...",
+            "timezone": "US Pacific",
+            "pronouns": "any/any"
+        },
+        {
+            "color": "#802361",
+            "avatar": "images/team/harya_.jpg",
+            "display": "HARYA",
+            "username": "harya_",
+            "id": "340497757410295808",
+            "bio": "The manager of Faithful 64x. Beat maker.",
+            "timezone": "CEST",
+            "pronouns": "he/him"
+        },
+        {
+            "color": "#731a19",
+            "avatar": "images/team/juknum.jpg",
+            "display": "Juknum",
+            "username": "juknum",
+            "id": "207471947662098432",
+            "bio": "I plead guilty to everything bugged out there!",
+            "timezone": "CEST",
+            "country": "France"
+        },
+        {
+            "color": "#dd431d",
+            "avatar": "images/team/ninventoo.jpg",
+            "display": "Ninventoo",
+            "id": "838924839086981130",
+            "bio": "I’ve been involved with Faithful in one form or another since 2019 and currently assist in managing the Faithful Community.",
+            "country": "USA",
+            "timezone": "EST",
+            "pronouns": "he/him"
+        },
+        {
+            "color": "#f786d6",
+            "avatar": "images/team/pomi108.jpg",
+            "display": "Pomi108",
+            "username": "pomi108",
+            "id": "331073143613423616",
+            "bio": "I maintain Faithful 32x, draw stuff occasionally and dabble in Source Engine mapping.",
+            "country": "Czechia",
+            "city": "Prague",
+            "timezone": "CEST",
+            "pronouns": "she/her"
+        },
+        {
+            "color": "#724b70",
+            "avatar": "images/team/robertr11.jpg",
+            "display": "RobertR11",
+            "username": "robertr11",
+            "id": "473860522710794250"
+        },
+        {
+            "color": "#b34847",
+            "avatar": "images/team/seirin_blu.jpg",
+            "display": "Sei",
+            "username": "seirin-blu",
+            "id": "401627057915691009"
+        }
+    ],
+    "developers": [
+        {
+            "color": "#058686",
+            "avatar": "images/team/therolf.jpg",
+            "display": "TheRolf",
+            "username": "therolf",
+            "id": "173336582265241601"
+        }
+    ]
+}

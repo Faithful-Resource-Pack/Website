@@ -53,6 +53,7 @@
   "team": {
     "title": {
       "our_team": "Meet the Team",
+      "managers": "Managers",
       "additional_developers": "Additional Developers"
     }
   },

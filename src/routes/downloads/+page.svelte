@@ -6,7 +6,7 @@ import PackSection from './packSection.svelte';
 <h1 class="title text-center bold">Downloads</h1>
 
 {#each $page.data.packs as pack}
-<PackSection pack={pack} />
+    <PackSection pack={pack} />
 {/each}
 
 <style>

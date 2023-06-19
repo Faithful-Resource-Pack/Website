@@ -12,7 +12,7 @@
         city?: string,
         country?: string,
         pronouns?: string,
-        socials: App.CardLink[] // this was not the intended purpose but it works really well
+        socials?: App.CardLink[] // this was not the intended purpose but it works really well
     };
 
     const lightness = (hex: string) => {
@@ -23,7 +23,7 @@
 
         const Ylum = Rlin * 0.2126 + Glin * 0.7156 + Blin * 0.0722; // to get best visibility on weirdly colored surfaces
 
-        return 70 > (Math.pow(Ylum, 0.43) * 100) ? '#fff': '#000';
+        return 60 > (Math.pow(Ylum, 0.43) * 100) ? '#fff': '#000';
     }
 
     const textColor = lightness(user.color);
@@ -35,7 +35,6 @@
         if (user.country || user.city) {
             userLocation = user.country ?? user.city ?? ''; // the last bit is needed to make typescript not give an error
         }
-
 </script>
 
 <div class="team-card card card-body" style={`background: ${user.color} !important; --textColor: ${textColor}`}>
@@ -45,7 +44,7 @@
         <h3 style="margin: 0 auto;">
             <a class="username username-hover" href="https://discord.com/users/{user.id}">@{user.username}</a>
             {#if user.pronouns}
-            <span class="username">• {user.pronouns}</span>
+                <span class="username">• {user.pronouns}</span>
             {/if}
         </h3>
     {:else if user.username}
@@ -57,7 +56,6 @@
     {:else if user.pronouns}
         <h3 class="username">{user.pronouns}</h3>
     {/if}
-    {#if user.bio || userLocation || user.timezone}
     <div class="body">
         {#if user.bio}
         <p><i>{user.bio}</i></p>
@@ -83,7 +81,6 @@
             {/if}
         </ul>
     </div>
-    {/if}
 </div>
 
 
@@ -95,7 +92,7 @@
 
         img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: $border-radius;
         }
         p {
             width: 210px;
@@ -106,6 +103,7 @@
         }
 
         .display-name {
+            font-size: 1.75rem;
             margin: $small-spacing 0 0;
             color: var(--textColor);
         }
