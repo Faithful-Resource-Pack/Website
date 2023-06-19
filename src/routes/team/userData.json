@@ -109,7 +109,15 @@
             "avatar": "images/team/therolf.jpg",
             "display": "TheRolf",
             "username": "therolf",
-            "id": "173336582265241601"
+            "id": "173336582265241601",
+            "bio": "Passionate developer who came to help the community grow through tools. Now, I mostly fix Juknum's bugs.",
+            "country": "France",
+            "timezone": "CEST",
+            "socials": [
+                { "title": "Website", "href": "https://therolf.fr/" },
+                { "title": "GitHub", "href": "https://github.com/TheRolfFR" },
+                { "title": "Twitter", "href": "https://twitter.com/TheRolfFR" }
+            ]
         }
     ]
 }
