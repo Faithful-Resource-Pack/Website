@@ -12,8 +12,7 @@ declare namespace App {
 
     interface CardLink {
         href: string,
-        title: string,
-		icon?: IconDefinition
+        title: string
     };
 
 	interface CardUrl {

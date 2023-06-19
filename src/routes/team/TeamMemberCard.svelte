@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { faEarthEurope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+	import { faGithub, faInstagram, faReddit, faSteam, faTwitter } from "@fortawesome/free-brands-svg-icons";
+    import { faEarthEurope, faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa/src/fa.svelte";
     export let user: {
         color: string,
@@ -16,7 +17,7 @@
     };
 
     const lightness = (hex: string) => {
-        hex = hex.replace('#', '')
+        hex = hex.replace(/#/g, '')
         const Rlin = (parseInt(hex.substring(0, 2), 16) / 255.0) ** 2.218;
         const Glin = (parseInt(hex.substring(2, 4), 16) / 255.0) ** 2.218;
         const Blin = (parseInt(hex.substring(4, 6), 16) / 255.0) ** 2.218;
@@ -24,6 +25,18 @@
         const Ylum = Rlin * 0.2126 + Glin * 0.7156 + Blin * 0.0722; // to get best visibility on weirdly colored surfaces
 
         return 60 > (Math.pow(Ylum, 0.43) * 100) ? '#fff': '#000';
+    }
+
+    const getIcon = (url: string) => {
+        url = url.replace(/https:\/\//g, '').replace(/\/.+/, ''); // trim off unnecessary info and return base url
+        switch (url) {
+            case 'github.com': return faGithub;
+            case 'twitter.com': return faTwitter;
+            case 'reddit.com': return faReddit;
+            case 'instagram.com': return faInstagram;
+            case 'steamcommunity.com': return faSteam;
+            default: return faLink;
+        }
     }
 
     const textColor = lightness(user.color);
@@ -69,13 +82,9 @@
             {/if}
             {#if user.socials}
                 {#each user.socials as social}
-                    <a href={social.href}>
+                    <a href={social.href} target="_blank" rel="noopener noreferrer">
                         <li class="social-hover">
-                            {#if social.icon}
-                                <Fa fw icon={social.icon} size="lg" />
-                            {/if}
-                            {social.title}
-                        </li>
+                            <Fa fw icon={getIcon(social.href)} size="lg" />{social.title}</li>
                     </a>
                 {/each}
             {/if}
@@ -94,9 +103,8 @@
             width: 100%;
             border-radius: $border-radius;
         }
+
         p {
-            width: 210px;
-            max-width: 100%;
             margin: 0 auto $small-spacing;
             color: var(--textColor);
             opacity: 0.75;
@@ -104,13 +112,13 @@
 
         .display-name {
             font-size: 1.75rem;
-            margin: $small-spacing 0 0;
+            margin: $small-spacing 5px;
             color: var(--textColor);
         }
 
         .username {
             color: var(--textColor);
-            margin: 0 0 0 0;
+            margin: 0 auto;
             opacity: 0.5;
             font-size: 1.1rem;
             font-family: "Faithful 32x";
@@ -140,7 +148,10 @@
             flex-direction: column;
 
             p {
+                display: flex;
                 flex-grow: 1;
+                justify-content: center;
+                align-items: center;
             }
         }
     }

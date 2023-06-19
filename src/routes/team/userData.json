@@ -8,7 +8,12 @@
             "id": "672989591283695618",
             "bio": "I'm a former YouTuber and competitive player, and I lead the Classic Faithful team!",
             "timezone": "EDT",
-            "country": "Argentina, US"
+            "country": "Argentina, US",
+            "socials": [
+                { "title": "GitHub", "href": "https://github.com/FHLX-J" },
+                { "title": "Twitter", "href": "https://twitter.com/FHLX_" },
+                { "title": "Instagram", "href": "https://instagram.com/FHLX__" }
+            ]
         },
         {
             "color": "#242529",
@@ -18,7 +23,11 @@
             "id": "360249987927638016",
             "bio": "i started a cult as an april fools joke and it was all downhill from there...",
             "timezone": "US Pacific",
-            "pronouns": "any/any"
+            "pronouns": "any/any",
+            "socials": [
+                { "title": "Website", "href": "https://3vorp.github.io" },
+                { "title": "GitHub", "href": "https://github.com/3vorp" }
+            ]
         },
         {
             "color": "#802361",
@@ -28,7 +37,10 @@
             "id": "340497757410295808",
             "bio": "The manager of Faithful 64x. Beat maker.",
             "timezone": "CEST",
-            "pronouns": "he/him"
+            "pronouns": "he/him",
+            "socials": [
+                { "title": "Twitter", "href": "https://twitter.com/HARAG0NMC" }
+            ]
         },
         {
             "color": "#731a19",
@@ -38,7 +50,11 @@
             "id": "207471947662098432",
             "bio": "I plead guilty to everything bugged out there!",
             "timezone": "CEST",
-            "country": "France"
+            "country": "France",
+            "socials": [
+                { "title": "GitHub", "href": "https://github.com/Juknum" },
+                { "title": "Twitter", "href": "https://twitter.com/Juknum_" }
+            ]
         },
         {
             "color": "#dd431d",
@@ -48,7 +64,12 @@
             "bio": "I’ve been involved with Faithful in one form or another since 2019 and currently assist in managing the Faithful Community.",
             "country": "USA",
             "timezone": "EST",
-            "pronouns": "he/him"
+            "pronouns": "he/him",
+            "socials": [
+                { "title": "GitHub", "href": "https://github.com/Ninventoo" },
+                { "title": "Twitter", "href": "https://twitter.com/ninventoo" },
+                { "title": "Steam", "href": "https://steamcommunity.com/id/Ninventoo/" }
+            ]
         },
         {
             "color": "#f786d6",
@@ -60,7 +81,11 @@
             "country": "Czechia",
             "city": "Prague",
             "timezone": "CEST",
-            "pronouns": "she/her"
+            "pronouns": "she/her",
+            "socials": [
+                { "title": "Steam", "href": "https://steamcommunity.com/id/Pomi108/" },
+                { "title": "GitHub", "href": "https://github.com/Pomi108" }
+            ]
         },
         {
             "color": "#724b70",
