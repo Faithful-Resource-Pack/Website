@@ -58,24 +58,6 @@
             ]
         },
         {
-            "color": "#731a19",
-            "avatar": "images/team/juknum.jpg",
-            "display": "Juknum",
-            "username": "juknum",
-            "id": "207471947662098432",
-            "bio": "I plead guilty to everything bugged out there!",
-            "timezone": "CEST",
-            "country": "France",
-            "socials": [
-                { "title": "GitHub", "href": "https://github.com/Juknum" },
-                { "title": "Twitter", "href": "https://twitter.com/Juknum_" }
-            ],
-            "roles": [
-                { "color": "#ac5ed1", "name": "Development Manager" },
-                { "color": "#d1ac5e", "name": "Contributor" }
-            ]
-        },
-        {
             "color": "#dd431d",
             "avatar": "images/team/ninventoo.jpg",
             "display": "Ninventoo",
@@ -154,6 +136,24 @@
         }
     ],
     "developers": [
+        {
+            "color": "#731a19",
+            "avatar": "images/team/juknum.jpg",
+            "display": "Juknum",
+            "username": "juknum",
+            "id": "207471947662098432",
+            "bio": "I plead guilty to everything bugged out there!",
+            "timezone": "CEST",
+            "country": "France",
+            "socials": [
+                { "title": "GitHub", "href": "https://github.com/Juknum" },
+                { "title": "Twitter", "href": "https://twitter.com/Juknum_" }
+            ],
+            "roles": [
+                { "color": "#ac5ed1", "name": "Development Manager" },
+                { "color": "#d1ac5e", "name": "Contributor" }
+            ]
+        },
         {
             "color": "#058686",
             "avatar": "images/team/therolf.jpg",
