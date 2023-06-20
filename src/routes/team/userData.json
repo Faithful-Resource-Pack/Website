@@ -13,6 +13,10 @@
                 { "title": "GitHub", "href": "https://github.com/FHLX-J" },
                 { "title": "Twitter", "href": "https://twitter.com/FHLX_" },
                 { "title": "Instagram", "href": "https://instagram.com/FHLX__" }
+            ],
+            "roles": [
+                { "color": "#5ed1c5", "name": "Classic Faithful Manager" },
+                { "color": "#d1ac5e", "name": "Contributor" }
             ]
         },
         {
@@ -27,6 +31,11 @@
             "socials": [
                 { "title": "Website", "href": "https://3vorp.github.io" },
                 { "title": "GitHub", "href": "https://github.com/3vorp" }
+            ],
+            "roles": [
+                { "color": "#ac5ed1", "name": "Developer" },
+                { "color": "#5e84d1", "name": "Moderation Manager" },
+                { "color": "#d1ac5e", "name": "Contributor" }
             ]
         },
         {
@@ -41,6 +50,11 @@
             "pronouns": "he/him",
             "socials": [
                 { "title": "Twitter", "href": "https://twitter.com/HARAG0NMC" }
+            ],
+            "roles": [
+                { "color": "#5ed1c5", "name": "Faithful 64x Manager" },
+                { "color": "#b1484b", "name": "Art Director Council" },
+                { "color": "#d1ac5e", "name": "Contributor" }
             ]
         },
         {
@@ -55,6 +69,9 @@
             "socials": [
                 { "title": "GitHub", "href": "https://github.com/Juknum" },
                 { "title": "Twitter", "href": "https://twitter.com/Juknum_" }
+            ],
+            "roles": [
+                { "color": "#ac5ed1", "name": "Development Manager" }
             ]
         },
         {
@@ -70,6 +87,10 @@
                 { "title": "GitHub", "href": "https://github.com/Ninventoo" },
                 { "title": "Twitter", "href": "https://twitter.com/ninventoo" },
                 { "title": "Steam", "href": "https://steamcommunity.com/id/Ninventoo/" }
+            ],
+            "roles": [
+                { "color": "#5e84d1", "name": "Moderation Manager" },
+                { "color": "#5dd861", "name": "Social Media Manager" }
             ]
         },
         {
@@ -86,6 +107,10 @@
             "socials": [
                 { "title": "Steam", "href": "https://steamcommunity.com/id/Pomi108/" },
                 { "title": "GitHub", "href": "https://github.com/Pomi108" }
+            ],
+            "roles": [
+                { "color": "#5ed1c5", "name": "Faithful 32x Manager" },
+                { "color": "#d1ac5e", "name": "Contributor" }
             ]
         },
         {
@@ -93,14 +118,29 @@
             "avatar": "images/team/robertr11.jpg",
             "display": "RobertR11",
             "username": "robertr11",
-            "id": "473860522710794250"
+            "id": "473860522710794250",
+            "roles": [
+                { "color": "#ac5ed1", "name": "Development Manager" }
+            ]
         },
         {
             "color": "#b34847",
             "avatar": "images/team/seirin_blu.jpg",
             "display": "Sei",
             "username": "seirin-blu",
-            "id": "401627057915691009"
+            "id": "401627057915691009",
+            "bio": "I'm Seirin or Sei. I am have worked on or managed Faithful over the past four years in some form or another. I also build mechanical keyboards and collect vintage ones.",
+            "country": "US",
+            "city": "West Coast",
+            "timezone": "PDT",
+            "pronouns": "any/any",
+            "socials": [
+                { "title": "Twitter", "href": "https://twitter.com/Seirin_Blu" }
+            ],
+            "roles": [
+                { "color": "#5dd861", "name": "Social Media Manager" },
+                { "color": "#d1ac5e", "name": "Contributor" }
+            ]
         }
     ],
     "developers": [
@@ -117,6 +157,9 @@
                 { "title": "Website", "href": "https://therolf.fr/" },
                 { "title": "GitHub", "href": "https://github.com/TheRolfFR" },
                 { "title": "Twitter", "href": "https://twitter.com/TheRolfFR" }
+            ],
+            "roles": [
+                { "color": "#ac5ed1", "name": "Developer" }
             ]
         }
     ]

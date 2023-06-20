@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { faGithub, faInstagram, faReddit, faSteam, faTwitter } from "@fortawesome/free-brands-svg-icons";
-    import { faClock, faCode, faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+    import { faClock, faCode, faComment, faCube, faEye, faGavel, faGem, faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa/src/fa.svelte";
     export let user: {
         color: string,
@@ -14,9 +14,8 @@
         country?: string,
         pronouns?: string,
         socials?: App.CardLink[] // this was not the intended purpose but it works really well
+        roles?: any[]
     };
-
-    const TMP = Array(3).fill({ name: "Developer", color: "#ac5ed1" });
 
     const lightness = (hex: string) => {
         hex = hex.replace(/#/g, '')
@@ -35,7 +34,7 @@
             const url = options.url
                 ? options.url.replace(/https:\/\//g, '').replace(/\/.+/, '')
                 : 'none'
-            switch (url) {
+            switch (url) { // parsing the url rather than the name so people can add custom name fields
                 case 'github.com': return faGithub;
                 case 'twitter.com': return faTwitter;
                 case 'reddit.com': return faReddit;
@@ -46,6 +45,13 @@
         } else {
             switch (options.badge.toLowerCase()) {
                 case 'developer': return faCode;
+                case 'contributor': return faGem;
+                case 'moderator':
+                case 'moderation manager': return faGavel;
+                case 'council':
+                case 'art director council': return faEye;
+                case 'social media manager': return faComment;
+                default: return faCube;
             }
         }
     }
@@ -106,9 +112,14 @@
         </ul>
     </div>
     <div class="badges">
-        {#each TMP as badge}
-            <div class="badge" style="background-color: {badge.color};">
-                <Fa size="2.5rem" color="#fff" icon={getIcon({ badge: badge.name} )} />
+        {#each user.roles ?? [] as badge, i}
+            <div class="badge-unit">
+                <div class="badge-display" style="background-color: {badge.color};">
+                    <Fa size="2.5rem" color="#fff" icon={getIcon({ badge: badge.name} )} />
+                </div>
+                <div class="badge-tooltip">
+                    {badge.name}
+                </div>
             </div>
         {/each}
     </div>
@@ -184,16 +195,37 @@
         justify-content: space-evenly;
         margin-bottom: 20px;
 
-        .badge {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 5px 5px;
-            outline: 3px solid #fff;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-            height: 3.5rem;
-            width: 3.5rem;
-            border-radius: 100%;
+        .badge-unit {
+            .badge-tooltip {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 30px;
+                width: 120px;
+                position: absolute;
+                bottom: 100px;
+                background: black;
+                border-radius: $border-radius;
+                visibility: hidden;
+            }
+
+            .badge-display {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 5px 5px;
+                outline: 3px solid #fff;
+                filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+                height: 3.5rem;
+                width: 3.5rem;
+                border-radius: 100%;
+            }
+        }
+
+        &:hover {
+            .badge-tooltip {
+                visibility: visible;
+            }
         }
     }
 
