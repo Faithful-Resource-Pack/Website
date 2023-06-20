@@ -119,7 +119,7 @@
                 <Fa size="2.5rem" color="#fff" icon={getIcon({ badge: badge.name} )} />
             </div>
             <div use:tooltip>
-                <h3 class="badge-tooltip">{badge.name}</h3>
+                <span class="badge-tooltip">{badge.name}</span>
             </div>
         {/each}
     </div>
