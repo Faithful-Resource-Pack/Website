@@ -119,6 +119,13 @@
             "display": "RobertR11",
             "username": "robertr11",
             "id": "473860522710794250",
+            "bio": "I mainly develop for Faithful and various side projects. August 12 2036 the heat death of the universe",
+            "country": "Germany",
+            "timezone": "CEST",
+            "pronouns": "he/him",
+            "socials": [
+                { "title": "GitHub", "href": "https://github.com/RobertRR11" }
+            ],
             "roles": [
                 { "color": "#ac5ed1", "name": "Development Manager" }
             ]

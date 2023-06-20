@@ -45,6 +45,7 @@
             };
         } else {
             switch (options.badge.toLowerCase()) {
+                case 'development manager':
                 case 'developer': return faCode;
                 case 'contributor': return faGem;
                 case 'moderator':
