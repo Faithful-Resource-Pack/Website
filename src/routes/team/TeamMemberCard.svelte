@@ -2,6 +2,7 @@
 	import { faGithub, faInstagram, faReddit, faSteam, faTwitter } from "@fortawesome/free-brands-svg-icons";
     import { faClock, faCode, faComment, faCube, faEye, faGavel, faGem, faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa/src/fa.svelte";
+    import tooltip from "$lib/tooltip";
     export let user: {
         color: string,
         avatar: string,
@@ -113,13 +114,11 @@
     </div>
     <div class="badges">
         {#each user.roles ?? [] as badge, i}
-            <div class="badge-unit">
-                <div class="badge-display" style="background-color: {badge.color};">
-                    <Fa size="2.5rem" color="#fff" icon={getIcon({ badge: badge.name} )} />
-                </div>
-                <div class="badge-tooltip">
-                    {badge.name}
-                </div>
+            <div class="badge-display" style="background-color: {badge.color};">
+                <Fa size="2.5rem" color="#fff" icon={getIcon({ badge: badge.name} )} />
+            </div>
+            <div use:tooltip>
+                <h3 class="badge-tooltip">{badge.name}</h3>
             </div>
         {/each}
     </div>
@@ -195,37 +194,16 @@
         justify-content: space-evenly;
         margin-bottom: 20px;
 
-        .badge-unit {
-            .badge-tooltip {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 30px;
-                width: 120px;
-                position: absolute;
-                bottom: 100px;
-                background: black;
-                border-radius: $border-radius;
-                visibility: hidden;
-            }
-
-            .badge-display {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 5px 5px;
-                outline: 3px solid #fff;
-                filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-                height: 3.5rem;
-                width: 3.5rem;
-                border-radius: 100%;
-            }
-        }
-
-        &:hover {
-            .badge-tooltip {
-                visibility: visible;
-            }
+        .badge-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px 5px;
+            outline: 3px solid #fff;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 100%;
         }
     }
 
