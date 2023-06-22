@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { parseMd } from '$lib/shortMd';
 
+	let innerWidth: number;
+
 	// have fun translating this
 	// missing mobile layout
 	// also someone needs to mark which events are important
@@ -113,13 +115,20 @@
 
 	// I can't believe this is the only way I managed to do this
 	let i = 0;
-	function generateReferences(references: string[]) {
+	let j = 0;
+	function generateReferences(references: string[], mobile: boolean) {
 		return references.map(reference => {
+			if (mobile) {
+				j++;
+				return `<sup><a href="${reference}">[${j}]</a></sup>`;
+			}
 			i++;
 			return `<sup><a href="${reference}">[${i}]</a></sup>`;
 		}).join(' ');
 	}
 </script>
+
+<svelte:window bind:innerWidth />
 
 <div class="container">
     <h1 class="text-center title">Faithful's History</h1>
@@ -132,21 +141,41 @@
 					<h1 class="year text-center"><a href={'#' + option.year}>{option.year}</a></h1>
 				</div>
 			{/if}
-			<div class="timeline-item">
-				<h3 class="timeline-date {option.importance === "low" ? "text-background" : ""}">{option.time || ""}</h3>
-				<div class="timeline-separator">
-					<span class={option.importance === "low" ? "timeline-dot" : option.importance === "normal" ? "timeline-square" : "timeline-diamond"}></span>
-					{#if i != 0 && options[i+1] && option.year == options[i+1].year || i == 0}
-						<span class="timeline-connector"></span>
-					{/if}
+			{#if innerWidth <= 768}
+				<div class="timeline-item">
+					<div class="timeline-date-mobile">
+						<span class={option.importance === "low" ? "timeline-dot" : option.importance === "normal" ? "timeline-square" : "timeline-diamond"}></span>
+						<h3 class="timeline-date {option.importance === "low" ? "text-background" : ""}">{option.time || ""}</h3>
+					</div>
+					<div class="timeline-text-mobile">
+						<div class="timeline-separator">
+							<span class="timeline-connector"></span>
+						</div>
+						<p class={option.importance === "low" ? "text-background" : ""}>
+							{@html parseMd(option.text, true)}
+							{#if option.references}
+								{@html generateReferences(option.references, false)}
+							{/if}
+						</p>
+					</div>
 				</div>
-				<p class={option.importance === "low" ? "text-background" : ""}>
-					{@html parseMd(option.text, true)}
-					{#if option.references}
-						{@html generateReferences(option.references)}
-					{/if}
-				</p>
-			</div>
+			{:else}
+				<div class="timeline-item">
+					<h3 class="timeline-date {option.importance === "low" ? "text-background" : ""}">{option.time || ""}</h3>
+					<div class="timeline-separator">
+						<span class={option.importance === "low" ? "timeline-dot" : option.importance === "normal" ? "timeline-square" : "timeline-diamond"}></span>
+						{#if i != 0 && options[i+1] && option.year == options[i+1].year || i == 0}
+							<span class="timeline-connector"></span>
+						{/if}
+					</div>
+					<p class={option.importance === "low" ? "text-background" : ""}>
+						{@html parseMd(option.text, true)}
+						{#if option.references}
+							{@html generateReferences(option.references, true)}
+						{/if}
+					</p>
+				</div>
+			{/if}
 		{/each}
 	</div>
 </div>
@@ -177,6 +206,16 @@
 		&-date {
 			order: 1;
 			text-align: right;
+
+			&-mobile {
+				align-items: center;
+    			display: flex;
+    			flex: 0;
+			}
+		}
+
+		&-text-mobile {
+    		display: flex;
 		}
 
 		&-separator {
@@ -214,6 +253,27 @@
 			background-color: #fff;
     		flex-grow: 1;
     		width: 6px;
+		}
+	}
+
+	@media only screen and (max-width: $width-S) {
+		.timeline {
+			p {
+				margin: 12px;
+			}
+
+			h3, h3.text-background {
+				margin: 0 12px 2px 12px;
+			}
+
+			&-item {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			&-connector {
+				margin-left: 3px;
+			}
 		}
 	}
 
