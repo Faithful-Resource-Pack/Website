@@ -73,6 +73,9 @@
                 {/if}
             {/each}
         </tr>
+        {#if i + 1 < TMP.length}
+            <tr><td colspan=6><hr></td></tr>
+        {/if}
         {/each}
 
     </table>
@@ -91,6 +94,15 @@
         p {
             margin: 1rem 4vw;
         }
+
+        hr {
+            margin: 0 auto;
+            border-top: 1px solid #ffffff44;
+        }
+    }
+
+    :global(html.light hr) {
+        border-top: 1px solid #00000044 !important;
     }
 
 </style>
