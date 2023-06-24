@@ -3,6 +3,7 @@
 	import { faXmark } from "@fortawesome/free-solid-svg-icons";
     export let data: any;
     const TMP = data.data;
+    const parseNumber = Intl.NumberFormat(undefined, { notation: 'compact', maximumFractionDigits: 0 })
 </script>
 
 <div class="container">
@@ -18,6 +19,8 @@
                     <td><h1>{value}</h1></td>
                 {:else if value == "X"}
                     <td><Fa icon={faXmark} /></td>
+                {:else if typeof(value) == "number"}
+                    <td><p>{parseNumber.format(value)}</p></td>
                 {:else}
                     <td><p>{value}</p></td>
                 {/if}
@@ -47,12 +50,12 @@
 
         hr {
             margin: 0 auto;
-            border-top: 1px solid #ffffff44;
+            border-top: 1px solid #bdbdbdaa;
         }
     }
 
     :global(html.light hr) {
-        border-top: 1px solid #00000044 !important;
+        border-top: 1px solid #000000aa !important;
     }
 
 </style>

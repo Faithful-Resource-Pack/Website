@@ -1,4 +1,15 @@
 export const load = async function({ params }) {
+    /**
+     * API LINKS TO FETCH FROM:
+     * WEBSITE: WIP by robert probably maybe not
+     * CURSE: api.cfwidget.com/<project id>
+     * MODRINTH: api.modrinth.com/v2/project/<project id>
+     * PMC: not available (use fallback stats)
+     * MCPEDL: not available (use fallback stats)
+     * ADDONS: api.faithfulpack.net/v2/addons/stats
+     * MODS: not available (mods gone + not sorted by pack yet)
+     */
+
     return { data: [
         {
             name: " ", // nbps to ensure text doesn't get wrapped weirdly
@@ -13,18 +24,18 @@ export const load = async function({ params }) {
         {
             name: "CurseForge",
             values: [
-                "1M",
-                "2M",
-                "3K",
-                "100",
-                "400K"
+                1000000,
+                2000000,
+                3000,
+                100,
+                400000
             ]
         },
         {
             name: "Modrinth",
             values: [
-                "10K",
-                "15K",
+                10000,
+                15000,
                 "X",
                 "X",
                 "X"
@@ -33,17 +44,17 @@ export const load = async function({ params }) {
         {
             name: "Planet Minecraft",
             values: [
-                "300K",
-                "200K",
-                "10K",
-                "500",
-                "15K"
+                300000,
+                200000,
+                10000,
+                500,
+                15000
             ]
         },
         {
             name: "MCPEDL",
             values: [
-                "3K",
+                3000,
                 "X",
                 "X",
                 "X",
