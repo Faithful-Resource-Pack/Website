@@ -1,9 +1,44 @@
 export const load = async function({ params }) {
+    const config: Object = {
+        curse: [
+            436482, // curse project id
+            419139,
+            561185,
+            667237,
+            414275
+        ],
+        modrinth: [
+            'w0TnApzs',
+            'r4GILswZ'
+        ]
+    }
+
+    let listings: any = config;
+
+    for (let [key, value] of Object.entries(config)) {
+        let i = 0;
+        listings[key] = Array(5).fill('X'); // CHANGE THIS IF MORE PROJECTS ARE ADDED IN FUTURE
+        for (let id of value) {
+            switch (key) {
+                case 'curse':
+                    const curseRes = await fetch(`https://api.cfwidget.com/${id}`);
+                    const curseResponse = await curseRes.json();
+                    listings[key][i] = curseResponse.downloads.total;
+                    break;
+                case 'modrinth':
+                    const modrinthRes = await fetch(`https://api.modrinth.com/v2/project/${id}`);
+                    const modrinthResponse = await modrinthRes.json();
+                    listings[key][i] = modrinthResponse.downloads;
+                    break;
+            }
+            ++i;
+        }
+    }
+
+    console.log(listings.curse)
     /**
      * API LINKS TO FETCH FROM:
      * WEBSITE: WIP by robert probably maybe not
-     * CURSE: api.cfwidget.com/<project id>
-     * MODRINTH: api.modrinth.com/v2/project/<project id>
      * PMC: not available (use fallback stats)
      * MCPEDL: not available (use fallback stats)
      * ADDONS: api.faithfulpack.net/v2/addons/stats
@@ -23,23 +58,11 @@ export const load = async function({ params }) {
         },
         {
             name: "CurseForge",
-            values: [
-                1000000,
-                2000000,
-                3000,
-                100,
-                400000
-            ]
+            values: listings.curse
         },
         {
             name: "Modrinth",
-            values: [
-                10000,
-                15000,
-                "X",
-                "X",
-                "X"
-            ]
+            values: listings.modrinth
         },
         {
             name: "Planet Minecraft",
