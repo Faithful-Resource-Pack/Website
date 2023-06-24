@@ -1,20 +1,23 @@
 <script lang="ts">
 	import DownloadLine from "./downloadLine.svelte";
+	import Fa from "svelte-fa/src/fa.svelte";
+	import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 	export let version: string;
 	export let downloads: App.Download[];
 
 	$: collapsible = downloads.length > 1;
 	let opened = false;
-	$: collapseIcon = opened ? "➖" : "➕";
+	$: collapseIcon = opened ? faMinus : faPlus;
 	$: collapseClass = collapsible ? (opened ? "opened" : "collapsed") : "";
 	$: downloadOffset = collapsible ? 1 : 0;
 </script>
 
 {#if collapsible}
 	<tr class="collapsible" on:click={() => (opened = !opened)}>
-		<td class="toggle before">
-			{collapseIcon}
+		<td class="btn btn-dark btn-dl">
+			{version}
+			<Fa icon={collapseIcon} />
 		</td>
 		<DownloadLine {version} download={downloads[0]} />
 	</tr>
@@ -26,9 +29,14 @@
 	</tr>
 {/each}
 
-<style>
+<style lang="scss">
 	td {
 		user-select: none;
+
+		&.btn {
+			width: 90px;
+			padding: 0.1rem 0.4rem;
+		}
 	}
 	td.before {
 		cursor: pointer;

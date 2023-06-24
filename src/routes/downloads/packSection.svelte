@@ -7,7 +7,7 @@
     const project_discontinued = 'This project has been discontinued.';
 </script>
 
-<div class="pack" style={`--pack-background: url(${pack.background_url})`}>
+<div class="pack">
     <h2 class="semibold subtitle">{@html pack.name.replace('\n', '<br>') }</h2>
 
     {#if pack.editions.length === 0 || pack.editions.map(e => e.downloads).reduce((sum, d) => sum + Object.keys(d).length, 0) === 0}
@@ -33,14 +33,8 @@
     .pack {
         background-size: cover;
         background-position: center;
-        background-image: var(--pack-background);
         text-align: center;
         padding: 1.7rem 0;
-
-        & > h2, & > h3, & > .coming-soon {
-            color: white;
-            text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
-        }
 
         & > .coming-soon {
             font-size: 1.5em;

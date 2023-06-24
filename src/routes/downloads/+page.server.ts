@@ -52,7 +52,6 @@ export const load: Load = async () => {
       title: "Downloads",
       packs: [{
         name: "Faithful 32x",
-        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/f32.png",
         editions: [{
           name: "Java Edition",
           downloads: jsons[0]
@@ -65,7 +64,6 @@ export const load: Load = async () => {
         }]
       },{
         name: "Faithful 64x",
-        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/f64.png",
         editions: [{
           name: "Java Edition",
           downloads: jsons[2]
@@ -75,7 +73,6 @@ export const load: Load = async () => {
         }]
       }, {
         name: "Classic Faithful 32x Jappa",
-        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/cf32.png",
         editions: [{
           name: "Java Edition",
           downloads: jsons[5]
@@ -85,7 +82,6 @@ export const load: Load = async () => {
         }]
       }, {
         name: "Classic Faithful 32x Programmer Art",
-        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/cf32pa.png",
         editions: [{
           name: "Java Edition",
           downloads: {}
@@ -95,7 +91,6 @@ export const load: Load = async () => {
         }]
       }, {
         name: "Classic Faithful 64x",
-        background_url: "https://database.faithfulpack.net/images/branding/backgrounds/cf64.png",
         editions: [{
           name: "Java Edition",
           downloads: {}

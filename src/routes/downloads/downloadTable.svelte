@@ -7,10 +7,10 @@
 	<table class="download-table">
 		<thead>
 			<tr>
-				<th colspan="2" class="large"><p>File</p></th>
-				<th><p>Date</p></th>
-				<th><p>Size</p></th>
+				<th colspan="2" class="large"><p>Version</p></th>
 				<th colspan="2"><p>Downloads</p></th>
+				<th><p>Size</p></th>
+				<th><p>Date</p></th>
 			</tr>
 		</thead>
 		<tbody>

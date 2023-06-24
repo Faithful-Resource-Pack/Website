@@ -40,15 +40,10 @@
 <td class="large details">
 	<p>
 		<span class="name">{text_name}</span>
-		<span class="version">{text_version}</span>
 		{#if text_release}<span class={class_release}>{text_release}</span>{/if}
 		{#if latest}<span class="latest">{text_latest}</span>{/if}
 	</p>
 	{#if text_date}<p class="mobile">{text_date} - {text_size}</p>{/if}
-</td><td class="date">
-	<p>{text_date}</p>
-</td><td class="size">
-	<p>{text_size}</p>
 </td>
 {#each Object.entries(links) as [origin, link], i}
 <td class="small downloads" colspan={2 / Object.entries(links).length}>
@@ -63,6 +58,12 @@
 		</a>
 </td>
 {/each}
+<td class="size">
+	<p>{text_size}</p>
+</td>
+<td class="date">
+	<p>{text_date}</p>
+</td>
 
 <style lang="scss">
 	td {
