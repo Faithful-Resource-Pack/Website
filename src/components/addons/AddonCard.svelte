@@ -2,9 +2,9 @@
     import Fa from "svelte-fa/src/fa.svelte";
 	import { faStar, faXmark } from "@fortawesome/free-solid-svg-icons";
     import type { Addon, AddonTagArray, AddonTag } from "$interfaces/addons";
-	import { momentStore } from "$stores/GlobalStore";
 	import { favoriteStore } from "$stores/AddonStore";
-	import moment from "moment";
+    import { DateTime } from "luxon";
+
     export let addon: Addon;
     export let showDate: boolean = false;
 
@@ -29,7 +29,7 @@
         "optifine": "requires optifine",
     } as Record<FlagArray[number], string>;;
 
-    $: date_text = addon.last_updated ? $momentStore.moment.unix(addon.last_updated/1000).format("LL").replace(/ /g, '\u00a0') : undefined;
+    $: date_text = addon.last_updated ? DateTime.fromMillis(addon.last_updated).toLocaleString(DateTime.DATE_MED) : undefined;
 </script>
 <div class="hovering-effect">
 	<a href={'/add-ons/' + addon.slug } class="card img-card">

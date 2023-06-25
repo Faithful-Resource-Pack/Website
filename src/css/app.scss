@@ -776,6 +776,7 @@ button:disabled {
 	left: 50%;
 	transform: translateX(-50%);
 	mask: linear-gradient(0deg, transparent 0%, black 100%);
+	-webkit-mask: linear-gradient(0deg, transparent 0%, black 100%);
 	filter: saturate(0.7);
 }
 

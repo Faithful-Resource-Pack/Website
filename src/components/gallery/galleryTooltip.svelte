@@ -4,10 +4,10 @@
 	import Fa from "svelte-fa/src/fa.svelte";
 	import { faClock, faUser, faUsers, faWrench } from "@fortawesome/free-solid-svg-icons";
 	import Icon from "$components/common/icon.svelte";
-	import { momentStore } from "$stores/GlobalStore";
 	import tooltip from "$lib/tooltip";
 	import { gallerySearch } from "$stores/GalleryStore";
 	import { derived } from "svelte/store";
+	import { DateTime } from "luxon";
 
 	export let texture: any;
 
@@ -36,14 +36,14 @@
 			.map((d: string | number) => discordIDtoName(d).replace(/\s/gm, "\u00A0"))
 	).value;
 
-	$: last_contribution_date = Optional(last_contribution).chain((c) => timestampToDate(c)).value;
+	$: last_contribution_date = Optional(last_contribution).chain((c) => timestampToDate(c.date)).value;
 
 	function discordIDtoName(id: string | number): string {
 		return $contributionAuthors[id]?.username || String(id)
 	}
 
 	function timestampToDate(c: number): string {
-		return $momentStore.moment.unix(c).format("ll");
+		return DateTime.fromMillis(c).toLocaleString(DateTime.DATE_MED);
 	}
 
 	let text_modded_texture = "Modded texture";
