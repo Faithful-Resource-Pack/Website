@@ -150,7 +150,7 @@
                 { "title": "Twitter", "href": "https://twitter.com/Juknum_" }
             ],
             "roles": [
-                { "color": "#ac5ed1", "name": "Development Manager" },
+                { "color": "#ac5ed1", "name": "Developer" },
                 { "color": "#d1ac5e", "name": "Contributor" }
             ]
         },

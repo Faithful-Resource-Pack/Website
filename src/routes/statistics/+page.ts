@@ -35,7 +35,6 @@ export const load = async function({ params }) {
         }
     }
 
-    console.log(listings.curse)
     /**
      * API LINKS TO FETCH FROM:
      * WEBSITE: WIP by robert probably maybe not
