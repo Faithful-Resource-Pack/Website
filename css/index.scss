@@ -102,3 +102,11 @@
 .discover .poster img:not(.wordmark), .discover-secondary .poster img:not(.wordmark) {
   width: 100%;
 }
+
+  @media (min-width: 576px) {
+  #last-grid > * {
+    max-width: 50%;
+    justify-self: center;
+    grid-column: span 2;
+  }
+}
