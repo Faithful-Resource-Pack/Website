@@ -17,6 +17,8 @@
 
 ## For macOS only:
 
+> For more details about this process, check out [this article](https://mac.install.guide/ruby/12.html).
+
 You will first need [chruby](https://github.com/postmodern/chruby) to override the system Ruby. The easiest way is with [Homebrew](https://brew.sh/).
 ```
 brew install ruby-install chruby
