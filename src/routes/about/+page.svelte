@@ -100,7 +100,8 @@
     }
 
     .button {
-        background: #fff;
+        background: white;
+        color: black;
         font-size: 1.1rem;
         font-weight: 600;
         padding: 12px 22px;
@@ -108,25 +109,31 @@
         transition: all 0.2s ease;
         &:hover {
             opacity: 0.66;
+            color: initial;
         }
     }
 
     .green {
-        background: #76c944 url("/images/background/bg_light_foreground.png") repeat;
-        background-blend-mode: multiply;
+        background: #0d0d0d url("/images/background/bg_light_background.png") repeat;
+        background-blend-mode: screen;
 
-        h1, p {
+        h1 {
+            color: #76c944;
+        }
+
+        p {
             color: #fff;
         }
 
         .button {
-            color: #76c944;
+            background: white !important;
+            color: #76c944 !important;
         }
     }
 
     .blue {
-        background: #3498db url("/images/background/bg_light_foreground.png") repeat;
-	    background-blend-mode: multiply;
+        background: #0d0d0d url("/images/background/bg_light_background.png") repeat;
+	    background-blend-mode: screen;
         height: 460px;
 
         div {
@@ -134,7 +141,11 @@
             width: 40%;
         }
 
-        h1, p {
+        h1 {
+            color: #3498db;
+        }
+
+        p {
             color: #fff;
         }
 
@@ -145,20 +156,60 @@
         }
 
         .button {
-            color: #3498db;
+            background: white !important;
+            color: #3498db !important;
         }
     }
 
     .pink {
-        background: #ac1e63 url("/images/background/bg_light_foreground.png") repeat;
-        background-blend-mode: multiply;
+        background: #0d0d0d url("/images/background/bg_light_background.png") repeat;
+	    background-blend-mode: screen;
 
-        h1, p {
+        h1 {
+            color: #ac1e63;
+        }
+
+        p {
             color: #fff;
         }
 
         .button {
-            color: #ac1e63;
+            background: white !important;
+            color: #ac1e63 !important;
+        }
+    }
+
+    :global(html.light) {
+        .button {
+            background: black;
+            color: white;
+        }
+
+        .green {
+            background: #76c944 url("/images/background/bg_light_foreground.png") repeat;
+            background-blend-mode: multiply;
+
+            h1 {
+                color: #fff;
+            }
+        }
+
+        .blue {
+            background: #3498db url("/images/background/bg_light_foreground.png") repeat;
+            background-blend-mode: multiply;
+
+            h1 {
+                color: #fff;
+            }
+        }
+
+        .pink {
+            background: #ac1e63 url("/images/background/bg_light_foreground.png") repeat;
+            background-blend-mode: multiply;
+
+            h1 {
+                color: #fff;
+            }
         }
     }
 
