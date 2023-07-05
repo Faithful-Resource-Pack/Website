@@ -42,7 +42,6 @@
 						{/each}
 					</h3>
 				{/if}-->
-
 				{#if Object.keys(data.downloads).length > 1}
 					<h2 class="text-center">Downloads</h2>
 				{:else}
@@ -54,7 +53,9 @@
 						<DownloadButton href={item.url} text={item.name} />
 					{/each}
 				{/each}
-
+				<div class="card card-body">
+					<li>Published { data.date }</li>
+				</div>
 			</div>
 		{/if}
 		<div class={data.downloads ? "post-details-right" : ""}>
