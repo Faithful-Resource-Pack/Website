@@ -71,7 +71,7 @@
 				</a>
 			</div>
 
-			<div class="nav-item" id="project-navigation-mobile"
+			<div class="nav-item" id="project-navigation-mobile" role="button" tabindex="0"
 			on:click={() => projectsShown = !projectsShown} on:keypress={() => {}}>
 				<span class="nav-link dropdown-toggle" class:opened={projectsShown}>
 					<Fa icon={faCube} />
@@ -103,7 +103,7 @@
 				</a>
 			</div>
 
-			<div title={$t('header.projects')} id="logo" class="nav-link" class:opened={projectsShown}
+			<div title={$t('header.projects')} id="logo" class="nav-link" class:opened={projectsShown} role="button" tabindex="0"
 				on:click={() => projectsShown = !projectsShown} on:keypress={() => {}}>
 				<img
 					src="/images/branding/f32_logo.svg"

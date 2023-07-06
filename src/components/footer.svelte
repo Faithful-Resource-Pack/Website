@@ -76,7 +76,7 @@ export const blur = (e: FocusEvent) => {
 
 
     <div class="footer-element">
-      <div class={"footer-head" + (toggleThis === 'Info' ? TOGGLE_CLASS : '')} on:click={toggle('Info')} on:keypress={() => {}}>
+      <div class={"footer-head" + (toggleThis === 'Info' ? TOGGLE_CLASS : '')} role="button" tabindex="0" on:click={toggle('Info')} on:keypress={() => {}}>
         <h3><Fa icon={faInfoCircle}/> { $t('footer.info.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
@@ -89,7 +89,7 @@ export const blur = (e: FocusEvent) => {
     </div>
 
     <div class="footer-element">
-      <div class={"footer-head" + (toggleThis === 'Listings' ? TOGGLE_CLASS : '')} on:click={toggle('Listings')} on:keypress={() => {}}>
+      <div class={"footer-head" + (toggleThis === 'Listings' ? TOGGLE_CLASS : '')} role="button" tabindex="0" on:click={toggle('Listings')} on:keypress={() => {}}>
         <h3><Fa icon={faBook}/> { $t('footer.listings.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
@@ -102,7 +102,7 @@ export const blur = (e: FocusEvent) => {
     </div>
 
     <div class="footer-element">
-      <div class={"footer-head" + (toggleThis === 'Media' ? TOGGLE_CLASS : '')} on:click={toggle('Media')} on:keypress={() => {}}>
+      <div class={"footer-head" + (toggleThis === 'Media' ? TOGGLE_CLASS : '')} role="button" tabindex="0" on:click={toggle('Media')} on:keypress={() => {}}>
         <h3><Fa icon={faComment}/> { $t('footer.media.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
@@ -115,7 +115,7 @@ export const blur = (e: FocusEvent) => {
     </div>
 
     <div class="footer-element">
-      <div class={"footer-head" + (toggleThis === 'Resources' ? TOGGLE_CLASS : '')} on:click={toggle('Resources')} on:keypress={() => {}}>
+      <div class={"footer-head" + (toggleThis === 'Resources' ? TOGGLE_CLASS : '')} role="button" tabindex="0" on:click={toggle('Resources')} on:keypress={() => {}}>
         <h3><Fa icon = {faScroll}/> { $t('footer.resources.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
@@ -128,7 +128,7 @@ export const blur = (e: FocusEvent) => {
     </div>
 
     <div class="footer-element">
-      <div class={"footer-head" + (toggleThis === 'GitHub' ? TOGGLE_CLASS : '')} on:click={toggle('GitHub')} on:keypress={() => {}}>
+      <div class={"footer-head" + (toggleThis === 'GitHub' ? TOGGLE_CLASS : '')} role="button" tabindex="0" on:click={toggle('GitHub')} on:keypress={() => {}}>
         <h3><Fa icon={faGithub}/> GitHub <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">

@@ -9,6 +9,8 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div
             class="card"
+            role="button"
+            tabindex="0"
 	        on:click={goto(`${item}`)}
         >
             <img class="noSelect" src="/images/about/2.png" alt="placeholder">

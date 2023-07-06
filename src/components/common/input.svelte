@@ -38,10 +38,10 @@
     <input use:typeAction {placeholder} bind:value on:keypress={onkeypress}>
     <span class="after">
         {#if clearable && value }
-            <span class="clear" on:click={clear} on:keypress={() => {}}><Fa icon={faXmark} size="1.3x" /></span> 
+            <span class="clear" role="button" tabindex="0" on:click={clear} on:keypress={() => {}}><Fa icon={faXmark} size="1.3x" /></span> 
         {/if}
         {#if appendIcon }
-            <span class="append" on:click={append} on:keypress={() => {}}><Fa icon={appendIcon} size="1.3x" /></span>
+            <span class="append" role="button" tabindex="0" on:click={append} on:keypress={() => {}}><Fa icon={appendIcon} size="1.3x" /></span>
         {/if}
     </span>
 </div>
