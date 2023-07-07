@@ -8,6 +8,17 @@
       }
     }
   ],
+  "1.20.x": [
+    {
+      "file": "Faithful 64x",
+      "file_type": "B",
+      "file_version": 9,
+      "latest": "latest",
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/files/4626080"
+      }
+    }
+  ],
   "1.19.60": [
     {
       "file": "Faithful 64x",
