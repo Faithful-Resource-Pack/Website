@@ -148,7 +148,7 @@ title: Home
 
 <hr>
 <br>
-<h1 align="center">Add-ons</h1>
+<h1 class="display-4" align="center">Add-ons</h1>
 <div class="res-grid-4" x-data="add" @click="console.log(addons)">
   <template x-for="addon in addons">
     <a class="card img-card" x-bind:href="addon.slug === LOADING_ID ? '' : '/addons/' + addon.slug">
@@ -170,7 +170,7 @@ title: Home
 
 <hr>
 <br>
-<h1 align="center">Faithful News</h1>
+<h1 class="display-4" align="center">Faithful News</h1>
 
 <div class="res-grid-3">
   {%- for post in site.posts limit:6 -%}

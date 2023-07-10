@@ -44,7 +44,7 @@ If you see Ruby version 2.6.8, it is the system Ruby and you likely forgot to cl
 
 You can use the built-in [Ruby](https://www.ruby-lang.org/en/downloads/) installer, or any other package management system.
 
-# Previewing and building:
+## Dependencies:
 
 With Ruby you will need to install [Jekyll](https://jekyllrb.com/) by typing the following command in your favorite terminal:
 ```
@@ -68,6 +68,8 @@ bundle exec jekyll build
 
 Now we have a hybrid website with dynamic content using Jekyll!
 
+## Running
+
 Install all dependencies:
 ```
 pnpm install
@@ -75,11 +77,9 @@ pnpm install
 
 Create a file called `.env` in the root folder, following the formatting of the `.env.example` file
 
-From there, run these commands in **separate terminal windows** to preview and automatically rebuild the website if an existing file changes:
+Run this command to start a development version of the site that automatically regenerates if a file changes:
 ```
-pnpm dev-watch-site
-
-pnpm dev-watch-app
+pnpm dev
 ```
 
 After that you can enjoy your website on your local machine at http://localhost:8110, where the numbers at the end are the PORT number in the `.env` file created earlier. Enjoy!
