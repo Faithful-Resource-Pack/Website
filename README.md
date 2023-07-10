@@ -17,7 +17,7 @@
 - Ruby https://www.ruby-lang.org/en/downloads/ (https://mac.install.guide/ruby/12.html for MacOS)
 - Jekyll & Webrick (`gem install bundler jekyll` + `gem install webrick`)
 
-## Running:
+## Running
 
 Create a file called `.env` in the root folder, using [`.env.example`](.env.example) as a template.
 
