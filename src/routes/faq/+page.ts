@@ -1,7 +1,8 @@
 export const load = async function({ params }) {
-    const faqRes = await fetch("https://raw.githubusercontent.com/Faithful-Resource-Pack/Discord-Bot/javascript/resources/strings.json")
+    // importing from the bot repository so that if you update one the other updates automatically
+    const faqRes = await fetch("https://raw.githubusercontent.com/Faithful-Resource-Pack/Discord-Bot/typescript/json/faq.json")
     .catch((err) => { console.log('faq strings', err); throw err; });
-    const faqData: App.FaqArray[] = (await faqRes.json()).faq;
+    const faqData: App.FaqArray[] = await faqRes.json();
 
     return { faqArray: faqData }; // why does it have to return an object aaaaaaa
 };
