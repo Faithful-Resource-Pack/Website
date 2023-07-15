@@ -233,7 +233,7 @@ function isScrolledIntoView(el: HTMLElement, margin: number = 0) {
     <div class="bottomElement" bind:this={bottom_element}></div>
 </div>
 
-<div id="uparrow" class={scrolled > 300 ? 'show' : ''} on:click={go_up} on:keypress={() => {}}>
+<div id="uparrow" class={scrolled > 300 ? 'show' : ''} role="button" tabindex="0" on:click={go_up} on:keypress={() => {}}>
     <Fa icon={faArrowUp} size="lg"/>
 </div>
 
