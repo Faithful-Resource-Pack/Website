@@ -106,8 +106,8 @@ export const blur = (e: FocusEvent) => {
         <h3><Fa icon={faComment}/> { $t('footer.media.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
+        <li><a href="/news">{ $t('footer.resources.news') }</a></li>
         <li><a href="https://twitter.com/FaithfulPack">Twitter</a></li>
-        <li><a href="https://www.patreon.com/Faithful_Resource_Pack">Patreon</a></li>
         <li><a href="https://www.reddit.com/r/faithfulpack/">Reddit</a></li>
         <li><a href="https://discord.gg/sN9YRQbBv7">{ $t('footer.media.main_discord') }</a></li>
         <li><a href="https://discord.gg/KSEhCVtg4J">{ $t('footer.media.cf_discord') }</a></li>
@@ -119,7 +119,7 @@ export const blur = (e: FocusEvent) => {
         <h3><Fa icon = {faScroll}/> { $t('footer.resources.title') } <Fa icon={faChevronDown} size="sm"/></h3>
       </div>
       <ul class="footer-content">
-        <li><a href="/news">{ $t('footer.resources.news') }</a></li>
+        <li><a href="/faq">FAQ</a></li>
         <li><a href="https://docs.faithfulpack.net">{ $t('footer.resources.docs') }</a></li>
         <li><a href="https://status.faithfulpack.net">{ $t('footer.resources.status') }</a></li>
         <li><a href="https://translate.faithfulpack.net">{ $t('footer.resources.translate') }</a></li>
