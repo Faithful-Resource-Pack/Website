@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { page } from '$app/stores';  
     import SelectionCard from "$components/selectionCard.svelte";
+    import { parseMd } from '$lib/shortMd';
 
-    let selection = $page.url.pathname.slice(0, -1).split("/").pop();
+    export let data: any;
     const editions = [
         "Java",
         "Bedrock",
@@ -11,10 +11,11 @@
 </script>
 
 <div class="container">
-    {#if selection === "Windows" }
+    {#if data.system === "Windows" }
         <h1 class="text-center">Which Minecraft edition are you playing?</h1>
         <SelectionCard items={editions} />
     {:else}
-        <p>balls</p>
+        <h1 class="text-center">Installation instructions for {data.system}</h1>
+        {@html parseMd(data.markdown)}
     {/if}
 </div>

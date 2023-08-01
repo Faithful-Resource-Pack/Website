@@ -1,19 +1,18 @@
 import type { Load } from '@sveltejs/kit';
 
-export const load: Load = async () => {
-    const BASE_URL = 'https://faithfulpack.net';
-    const SUB_PATH = '/data/downloads/';
+export const load: Load = async ({fetch}) => {
+    const path = '/json/';
     const FILES = [
-      'compliance_32.json',
-      'compliance_32b.json',
-      'compliance_64.json',
-      'compliance_64b.json',
-      'compliance_32d.json',
+      'f32.json',
+      'f32b.json',
+      'f64.json',
+      'f64b.json',
+      'f32d.json',
       'cf32j.json',
       'cf32jb.json'
     ];
 
-    const URLS = FILES.map(u => BASE_URL + SUB_PATH + u);
+    const URLS = FILES.map(u => path + u);
 
     const results = await Promise.all(URLS.map(u => fetch(u)));
     let jsons = await Promise.all(results.map(r => r.json()));

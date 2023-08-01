@@ -11,7 +11,7 @@
             class="card"
             role="button"
             tabindex="0"
-	        on:click={goto(`${item}`)}
+	        on:click={goto(`${encodeURIComponent(item)}`)}
         >
             <img class="noSelect" src="/images/about/2.png" alt="placeholder">
             <h2 class="text-center">{item}</h2>
