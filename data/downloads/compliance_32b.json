@@ -16,7 +16,7 @@
       "latest": "latest",
       "date": "27/05/2023",
       "links": {
-        "github": "https://database.faithfulpack.net/packs/32x-Bedrock/May%202023/Faithful%2032x%20-%201.19.mcpack",
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/May%202023/Faithful%2032x%20-%201.19.mcpack",
         "curse": "https://legacy.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/4576516"
       }
     },
@@ -27,7 +27,7 @@
       "latest": "latest",
       "date": "06/04/2023",
       "links": {
-        "github": "https://database.faithfulpack.net/packs/32x-Bedrock/April%202023/Faithful%2032x%20-%201.19.mcpack",
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/April%202023/Faithful%2032x%20-%201.19.mcpack",
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/4478164"
       }
     },
@@ -37,7 +37,7 @@
       "file_version": 5,
       "date": "25/02/2023",
       "links": {
-        "github": "https://database.faithfulpack.net/packs/32x-Bedrock/February%202023/Faithful%2032x%20-%201.19.mcpack",
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/February%202023/Faithful%2032x%20-%201.19.mcpack",
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/4411778"
       }
     },
@@ -47,7 +47,7 @@
       "file_version": 4,
       "date": "8/12/2022",
       "links": {
-        "github": "https://database.faithfulpack.net/packs/32x-Bedrock/December%202022/Faithful%2032x%20-%201.19.mcpack",
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/December%202022/Faithful%2032x%20-%201.19.mcpack",
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/4147635"
       }
     },
@@ -57,7 +57,7 @@
       "file_version": 3,
       "date": "24/10/2022",
       "links": {
-        "github": "https://database.faithfulpack.net/packs/32x-Bedrock/October%202022/Faithful%2032x%20-%201.19.mcpack",
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/October%202022/Faithful%2032x%20-%201.19.mcpack",
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/4060626"
       }
     },
@@ -67,7 +67,7 @@
       "file_version": 2,
       "date": "06/08/2022",
       "links": {
-        "github": "https://database.faithfulpack.net/packs/32x-Bedrock/August%202022/Faithful%2032x%20-%201.19.mcpack",
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/August%202022/Faithful%2032x%20-%201.19.mcpack",
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/3921836"
       }
     },
@@ -77,7 +77,7 @@
       "file_version": 1,
       "date": "01/07/2022",
       "links": {
-        "github": "https://database.faithfulpack.net/packs/32x-Bedrock/July%202022/Faithful%2032x%20-%201.19.mcpack",
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/July%202022/Faithful%2032x%20-%201.19.mcpack",
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/3856253"
       }
     }
@@ -90,7 +90,7 @@
       "size": "9.5 MB",
       "date": "14/02/2022",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-20/Compliance-32x-Bedrock-Beta-20.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-20/Compliance-32x-Bedrock-Beta-20.mcpack"
       }
     },
     {
@@ -100,7 +100,7 @@
       "size": "9.5 MB",
       "date": "16/01/2022",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-19/Compliance-32x-Bedrock-Beta-19.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-19/Compliance-32x-Bedrock-Beta-19.mcpack"
       }
     },
     {
@@ -110,7 +110,7 @@
       "size": "8.8 MB",
       "date": "28/12/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-18/Compliance-32x-Bedrock-Beta-18.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-18/Compliance-32x-Bedrock-Beta-18.mcpack"
       }
     },
     {
@@ -120,7 +120,7 @@
       "size": "8.1 MB",
       "date": "14/12/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-17/Compliance-32x-Bedrock-Beta-17.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-17/Compliance-32x-Bedrock-Beta-17.mcpack"
       }
     }
   ],
@@ -132,7 +132,7 @@
       "size": "8.0 MB",
       "date": "05/11/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-16/Compliance-32x-Bedrock-Beta-16.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-16/Compliance-32x-Bedrock-Beta-16.mcpack"
       }
     },
     {
@@ -142,7 +142,7 @@
       "size": "7.7 MB",
       "date": "22/09/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-15/Compliance-32x-Bedrock-Beta-15.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-15/Compliance-32x-Bedrock-Beta-15.mcpack"
       }
     },
     {
@@ -152,7 +152,7 @@
       "size": "10.5 MB",
       "date": "30/08/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-14/Compliance-32x-Bedrock-Beta-14.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-14/Compliance-32x-Bedrock-Beta-14.mcpack"
       }
     },
     {
@@ -162,7 +162,7 @@
       "size": "8.0 MB",
       "date": "13/08/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-13/Compliance-32x-Bedrock-Beta-13.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-13/Compliance-32x-Bedrock-Beta-13.mcpack"
       }
     },
     {
@@ -172,7 +172,7 @@
       "size": "9.5 MB",
       "date": "21/07/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-12/Compliance-32x-Bedrock-Beta-12.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-12/Compliance-32x-Bedrock-Beta-12.mcpack"
       }
     },
     {
@@ -182,7 +182,7 @@
       "size": "10.5 MB",
       "date": "20/06/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-11/Compliance-32x-Bedrock-Beta-11.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-11/Compliance-32x-Bedrock-Beta-11.mcpack"
       }
     }
   ],
@@ -194,7 +194,7 @@
       "size": "14.5 MB",
       "date": "06/06/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-10/Compliance-32x-Bedrock-Beta-10.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-10/Compliance-32x-Bedrock-Beta-10.mcpack"
       }
     },
     {
@@ -204,7 +204,7 @@
       "size": "14.6 MB",
       "date": "25/05/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-9/Compliance-32x-Bedrock-Beta-9.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-9/Compliance-32x-Bedrock-Beta-9.mcpack"
       }
     },
     {
@@ -214,7 +214,7 @@
       "size": "14.6 MB",
       "date": "09/05/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-8/Compliance-32x-Bedrock-Beta-8.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-8/Compliance-32x-Bedrock-Beta-8.mcpack"
       }
     },
     {
@@ -224,7 +224,7 @@
       "size": "14.6 MB",
       "date": "25/04/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-7/Compliance-32x-Bedrock-Beta-7.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-7/Compliance-32x-Bedrock-Beta-7.mcpack"
       }
     },
     {
@@ -234,7 +234,7 @@
       "size": "14.4 MB",
       "date": "12/04/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-6/Compliance-32x-Bedrock-Beta-6.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-6/Compliance-32x-Bedrock-Beta-6.mcpack"
       }
     },
     {
@@ -244,7 +244,7 @@
       "size": "14.3 MB",
       "date": "27/03/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-5/Compliance-32x-Bedrock-Beta-5.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-5/Compliance-32x-Bedrock-Beta-5.mcpack"
       }
     },
     {
@@ -254,7 +254,7 @@
       "size": "14 MB",
       "date": "13/03/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-4/Compliance-32x-Bedrock-Beta-4.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-4/Compliance-32x-Bedrock-Beta-4.mcpack"
       }
     },
     {
@@ -264,7 +264,7 @@
       "size": "13.9 MB",
       "date": "26/02/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-3/Compliance-32x-Bedrock-Beta-3.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-3/Compliance-32x-Bedrock-Beta-3.mcpack"
       }
     },
     {
@@ -274,7 +274,7 @@
       "size": "13.8 MB",
       "date": "13/02/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-2/Compliance-32x-Bedrock-Beta-2.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases/download/beta-2/Compliance-32x-Bedrock-Beta-2.mcpack"
       }
     },
     {
@@ -284,7 +284,7 @@
       "size": "14.3 MB",
       "date": "30/01/2021",
       "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Resource-Pack-32x/releases/download/beta-1/Compliance-32x-Bedrock-Beta-1.mcpack"
+        "download": "https://github.com/Faithful-Resource-Pack/Resource-Pack-32x/releases/download/beta-1/Compliance-32x-Bedrock-Beta-1.mcpack"
       }
     }
   ]

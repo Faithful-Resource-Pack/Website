@@ -57,7 +57,7 @@ const v = new Vue({
               </tr>
             </thead>
             <tbody>
-            
+
               <template v-for="(item, keyA) in getDownloads(key, j)">
                 <tr class="collapsible" v-on:click="toggleContent($event, keyA, j, key)">
                   <td v-if="item[1]" class="toggle before" :ref="'toggle-' + key + '-' + j + '-' + keyA">➕</td>
@@ -68,7 +68,7 @@ const v = new Vue({
                       <span class="name">{{ item[0].file }}</span>
                       <span class="version" v-text="keyA != 'github' ? keyA : 'Repository'" ></span>
                       <span :class="labelColor(item[0])">{{ labelText(item[0]) }}</span>
-                      <span v-if="keyA != 'github' && item[0].latest" class="latest">Latest</span>
+                      <span v-if="keyA != 'download' && item[0].latest" class="latest">Latest</span>
                     </p>
                     <p class="mobile" v-show="getDate(item[0], key, j)">{{ getDate(item[0], key, j) + ' - ' + getSize(item[0], key, j) }}</p>
                   </td>
@@ -101,7 +101,10 @@ const v = new Vue({
                         <template v-if="originMobileKey === 'curse'">
                           <i class="fas"></i><span class="link-text">Curse</span>
                         </template>
-                        <template v-if="originMobileKey === 'github'">
+                        <template v-if="originMobileKey === 'download'">
+                          <i class="fas"></i><span class="link-text">Download</span>
+                        </template>
+                        <template v-if="originKey === 'github'">
                           <i class="fab"></i><span class="link-text">GitHub</span>
                         </template>
                       </a>
@@ -109,6 +112,9 @@ const v = new Vue({
                     <a v-else class="btn btn-dark btn-dl" :href="origin">
                       <template v-if="originKey === 'curse'">
                         <i class="fas"></i><span class="link-text">Curse</span>
+                      </template>
+                      <template v-if="originKey === 'download'">
+                        <i class="fas"></i><span class="link-text">Download</span>
                       </template>
                       <template v-if="originKey === 'github'">
                         <i class="fab"></i><span class="link-text">GitHub</span>
@@ -123,7 +129,7 @@ const v = new Vue({
                   <td class="large details">
                     <p>
                       <span class="name">{{ subItem.file }}</span>
-                      <span v-if="keyB != 'github'" class="version">{{ keyA }}</span>
+                      <span v-if="keyB != 'download'" class="version">{{ keyA }}</span>
                       <span :class="labelColor(subItem)">{{ labelText(subItem) }}</span>
                     </p>
                     <p class="mobile" v-show="getDate(item[0], key, j)">{{ getDate(item[0], key, j) + ' - ' + getSize(item[0], key, j) }}</p>
@@ -157,7 +163,10 @@ const v = new Vue({
                         <template v-if="originMobileKey === 'curse'">
                           <i class="fas"></i><span class="link-text">Curse</span>
                         </template>
-                        <template v-if="originMobileKey === 'github'">
+                        <template v-if="originMobileKey === 'download'">
+                          <i class="fas"></i><span class="link-text">Download</span>
+                        </template>
+                        <template v-if="originKey === 'github'">
                           <i class="fab"></i><span class="link-text">GitHub</span>
                         </template>
                       </a>
@@ -165,6 +174,9 @@ const v = new Vue({
                     <a v-else class="btn btn-dark btn-dl" :href="origin">
                       <template v-if="originKey === 'curse'">
                         <i class="fas"></i><span class="link-text">Curse</span>
+                      </template>
+                      <template v-if="originKey === 'download'">
+                        <i class="fas"></i><span class="link-text">Download</span>
                       </template>
                       <template v-if="originKey === 'github'">
                         <i class="fab"></i><span class="link-text">GitHub</span>
@@ -184,7 +196,7 @@ const v = new Vue({
   computed: {},
   methods: {
     labelColor(item) {
-      if (item.file_type == "GitHub") return "github"
+      if (item.file_type == "Download") return "github"
       if (item.file_type == "R") return "green"
       if (item.file_type == "B") return "blue"
       if (item.file_type == "A") return "yellow"
@@ -192,14 +204,14 @@ const v = new Vue({
       else return "green"
     },
     labelText(item) {
-      if (item.file_type == "GitHub") return 'GitHub'
+      if (item.file_type == "Download") return 'Download'
       else if (!item.file_version) return item.file_type
       else return item.file_type + item.file_version
     },
     /**
      * Collapse group deploy code
      * @param {Event} event click event
-     * @param {String} version 
+     * @param {String} version
      */
     toggleContent(event, version, res, edition) {
       // if parent src element is a link <a>
@@ -234,7 +246,7 @@ const v = new Vue({
         release = data.github.length - item.github_version
       }
 
-      if (!data.github[release]) return 'GitHub'
+      if (!data.github[release]) return 'Download'
 
       // get download from all assets, (in case a file has been reuploaded under the same github tag)
       data.github[release]["assets"].forEach(asset => {
