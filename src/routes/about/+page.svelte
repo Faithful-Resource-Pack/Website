@@ -50,7 +50,7 @@
             <br><br>
             Simply read our contribution handbook and follow the steps — it's that easy to make your mark on Faithful forever!
         </p>
-        <a class="button" href="https://docs.faithfulpack.net/pages/textures/contributor-handbook" target="_blank" rel="noreferrer">HOW TO CONTRIBUTE<Fa icon={faAngleRight} /></a>
+        <a class="button" href="https://docs.faithfulpack.net/pages/manuals/contributor-handbook" target="_blank" rel="noreferrer">HOW TO CONTRIBUTE<Fa icon={faAngleRight} /></a>
     </div>
 </div>
 <div class="section pink">

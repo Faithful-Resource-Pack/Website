@@ -123,7 +123,7 @@ export const blur = (e: FocusEvent) => {
         <li><a href="https://docs.faithfulpack.net">{ $t('footer.resources.docs') }</a></li>
         <li><a href="https://status.faithfulpack.net">{ $t('footer.resources.status') }</a></li>
         <li><a href="https://translate.faithfulpack.net">{ $t('footer.resources.translate') }</a></li>
-        <li><a href="https://docs.faithfulpack.net/pages/textures/contributor-handbook">Contributor's Handbook</a></li>
+        <li><a href="https://docs.faithfulpack.net/pages/manuals/contributor-handbook">Contributor's Handbook</a></li>
       </ul>
     </div>
 
