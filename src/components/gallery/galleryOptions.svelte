@@ -2,7 +2,7 @@
     import { gallerySearch, galleryRowItems, galleryOptionStore } from '$stores/GalleryStore';
     import GallerySelect from '$components/gallery/gallerySelect.svelte';
     import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-    import Slider from '@smui/slider';
+    import { createSlider, melt, type CreateSliderProps } from '@melt-ui/svelte';
     import Checkbox from '$components/common/checkbox.svelte';
     import Input from '$components/common/input.svelte';
     import { derived } from 'svelte/store';
@@ -29,6 +29,21 @@
         }))
     })
 
+    const sliderChange: CreateSliderProps['onValueChange'] = ({ curr, next }) => {
+        $gallerySearch.items_per_row = next[0]
+        return next
+    }
+
+    const {
+        elements: { root, range, thumb },
+        states: { value }
+    } = createSlider({
+        defaultValue: [7],
+        min: 1,
+        max: 16,
+        onValueChange: sliderChange
+    });
+
     let placeholder_search = 'Search texture name';
     let text_max_items_per_row = 'Max items per row desired';
     let text_full_width_view = 'Full width view'; // TODO: i18n
@@ -51,17 +66,17 @@
                 <div class="small-name">{text_max_items_per_row}</div>
                 <div id="row-slider">
                     <div id="slider-container">
-                        <Slider
-                            bind:value={$gallerySearch.items_per_row}
-                            {...$galleryRowItems}
-                            step={1}
-                            style="--mdc-theme-primary: white; --mdc-theme-on-primary: white"
-                            discrete
-                            tickMarks
-                            input$aria-label={text_max_items_per_row}
-                        />
+                        <span use:melt={$root} class="slider">
+                            <span class="slider-track">
+                                <span use:melt={$range} class="slider-track-active" />
+                            </span>
+                            <span
+                                use:melt={$thumb()}
+                                class="slider-thumb"
+                            />
+                        </span>
                     </div>
-                    <div id="items-per-row">{$gallerySearch.items_per_row}</div>
+                    <div id="items-per-row">{$value}</div>
                 </div>
             </div>
             <div class="last-fields">
@@ -89,6 +104,35 @@
 </div>
 
 <style lang="scss">
+    .slider {
+        align-items: center;
+        position: relative;
+        display: flex;
+        height: 48px;
+        margin: 0 24px;
+
+        &-track {
+            background-color: rgba($color: #fff, $alpha: .24);
+            height: 4px;
+            display: block;
+            border-radius: 2px;
+            width: 100%;
+        }
+
+        &-track-active {
+            background-color: #fff;
+            height: 4px;
+        }
+
+        &-thumb {
+            border-radius: 9999px;
+            display: block;
+            background-color: #fff;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    }
+
     #search-card {
         overflow: visible;
 

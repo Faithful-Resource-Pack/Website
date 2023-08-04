@@ -13,5 +13,4 @@ _site/
 .jekyll-metadata
 .vscode/
 vite.config.js*
-static/smui.css
 /posts.json

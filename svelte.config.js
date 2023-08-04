@@ -1,6 +1,8 @@
 import preprocess from "svelte-preprocess";
 import adapter from "@sveltejs/adapter-node";
 import path from 'path';
+import { preprocessMeltUI } from '@melt-ui/pp'
+import sequence from 'svelte-sequential-preprocessor'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -15,13 +17,14 @@ const config = {
 		}
 	},
 
-	preprocess: [
+	preprocess: sequence([
 		preprocess({
 			scss: {
 				prependData: '@use "src/css/variables.scss" as *;'
 			}
-		})
-	]
+		}),
+		preprocessMeltUI()
+	])
 };
 
 export default config;
