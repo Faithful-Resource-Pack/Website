@@ -1,7 +1,7 @@
 import type { Load } from '@sveltejs/kit';
+import path from "path";
 
 export const load: Load = async ({fetch}) => {
-    const path = '/json/';
     const FILES = [
       'f32.json',
       'f32b.json',
@@ -12,10 +12,18 @@ export const load: Load = async ({fetch}) => {
       'cf32jb.json'
     ];
 
-    const URLS = FILES.map(u => path + u);
+    // * Load JSON dynamically
+    // https://stackoverflow.com/a/70057440/6594899
+    const data = import.meta.glob('/static/json/(cf|f)*.json');
+    let json_map: Record<string, any> = {}
+    for (const filepath in data) {
+      const module = await data[filepath]() as any;
+      json_map[path.basename(filepath)] = module.default;
+    }
 
-    const results = await Promise.all(URLS.map(u => fetch(u)));
-    let jsons = await Promise.all(results.map(r => r.json()));
+    // retransform into files ordered list with the power of keys
+    // ! to respect indexes used below in the final output
+    let jsons: any[] = FILES.map( filename => json_map[filename] )
 
     // https://github.com/Faithful-Resource-Pack/Website/blob/master/js/download/index.js
     const CURSE_API = 'https://api.cfwidget.com/'
