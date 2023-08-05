@@ -25,7 +25,11 @@ export const load: Load = async ({fetch}) => {
       'c64': 419139,
     }
     const CURSE_URLS = Object.values(CURSE_PACK_TO_ID).map(id => `${CURSE_API}${id}`);
-    const curse_results = await Promise.all(CURSE_URLS.map(u => fetch(u)));
+    const all_results = await Promise.allSettled(CURSE_URLS.map(u => fetch(u)));
+    const failed_results = all_results.filter((r) => r.status === "rejected").map((_,i) => CURSE_URLS[i]);
+    if( failed_results.length > 0 ) console.error("Failed to fetch privided URLs: ", failed_results);
+    const curse_results = all_results.map(r => r.status === "fulfilled" ? r.value : undefined )
+      .filter(r => r !== undefined) as Response[];
     const curse_jsons = await Promise.all(curse_results.map(r => r.json()));
     const curse_files = curse_jsons.map(r => r.files).flat();
 

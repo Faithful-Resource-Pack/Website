@@ -9,7 +9,10 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"pm2:restart": "pm2 restart website-svelte --time",
+		"pm2:start": "pm2 start --name \"website-svelte\" \"PORT=1511 node build/\" --time",
+		"pm2:build_and_start": "pnpm run build && pnpm run pm2:restart || pmpm run pm2:start"
 	},
 	"devDependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.4.2",

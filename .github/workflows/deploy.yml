@@ -22,5 +22,4 @@ jobs:
           git stash
           git pull
           pnpm install
-          pnpm build
-          pm2 restart "website-svelte" || pm2 start --name "website-svelte" "PORT=1511 node build/"
+          pnpm run pm2:build_and_start
