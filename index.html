@@ -130,9 +130,11 @@ title: Home
           .then(val => {
             const res = []
 
-            // manual fix for broken random
+            let items = val
             for (let i = 0; i <NB_ITEMS; i++) {
-              const element = val[(Math.random() * val.length) | 0]
+              // splice removes element from list and returns the retrieved elements
+              // removes duplicate suggested add-ons
+              const element = items.splice((Math.random() * items.length) | 0, 1)[0]
               res.push(element)
             }
             this.addons = res
