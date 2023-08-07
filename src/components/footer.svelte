@@ -1,7 +1,7 @@
 <script lang="ts">
 import Fa from "svelte-fa/src/fa.svelte";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { t, locale, locales, loadTranslations, supportedLocales } from '$lib/translations';
+import { t, locale, locales, loadTranslations} from '$lib/translations';
 import {
   faInfoCircle,
   faScroll,
@@ -11,17 +11,17 @@ import {
   faSun,
   faMoon,
   faCircleHalfStroke,
-  faCaretDown as faChevronDown
+  faCaretDown as faChevronDown,
+  faCheck
 } from "@fortawesome/free-solid-svg-icons";
 import I18n from "./common/i18n.svelte";
+import { createSelect, melt, type CreateSelectProps } from '@melt-ui/svelte';
+import { fly } from 'svelte/transition';
 
 import { themeStore } from "$stores/ThemeStore";
 import { derived } from "svelte/store";
 import { langStore } from "$stores/LangStore";
-import type { PageLoad } from "../routes/$types";
 import { onMount } from "svelte";
-import UrlStore from "$stores/UrlStore";
-import Optional from "$lib/optional";
 
 let year = new Date().getFullYear().toString();
 
@@ -49,6 +49,30 @@ onMount(async () => {
 export const blur = (e: FocusEvent) => {
   setTimeout(() => (e.target as HTMLButtonElement).blur(), 200)
 }
+
+const selectChange: CreateSelectProps['onValueChange'] = ({ curr, next }) => {
+  if (curr !== next) langStore.set(next)
+  return next
+}
+ 
+const {
+  elements: { trigger, menu, option },
+  states: { valueLabel, open },
+  helpers: { isSelected },
+} = createSelect({
+  forceVisible: true,
+  defaultValue: $locale,
+  onValueChange: selectChange
+});
+
+function getFlagEmoji(countryCode: string) {
+  if (countryCode === "en") countryCode = "gb"
+  const codePoints = countryCode
+    .toUpperCase()
+    .split("")
+    .map(char =>  127397 + char.charCodeAt());
+  return String.fromCodePoint(...codePoints);
+}
 </script>
 
 <footer class="footer">
@@ -60,10 +84,36 @@ export const blur = (e: FocusEvent) => {
       </div>
       <ul class="footer-content">
         <div class="btns">
-
-          <button on:click={langStore.next} on:focus={blur}>
-            <Fa icon={faGlobe}/><span class='h6'>{$t($locale)}</span>
+          <button
+            class="dropdown"
+            use:melt={$trigger}
+            aria-label="Languages"
+          >
+          <Fa icon={faGlobe}/>
+          <span class='h6'>{$valueLabel || 'Select a Language'}</span>
+            <Fa icon={faChevronDown}/>
           </button>
+          {#if $open}
+            <div
+              class="dropdown-menu"
+              use:melt={$menu}
+              transition:fly={{ duration: 100, y: -5 }}
+            >
+              {#each $locales as locale}
+                <div
+                  class="dropdown-item"
+                  use:melt={$option({ value: locale, label: $t(locale) })}
+                >
+                  {#if $isSelected(locale)}
+                    <div class="dropdown-check">
+                      <Fa icon={faCheck} size="sm"/>
+                    </div>
+                  {/if}
+                  {$t(locale) + " " + getFlagEmoji(locale)}
+                </div>
+              {/each}
+            </div>
+          {/if}
 
           <button on:click={themeStore.next} on:focus={blur}>
             <Fa icon={$icon_theme}/><span class='h6'>{$text_theme}</span>
@@ -147,6 +197,24 @@ export const blur = (e: FocusEvent) => {
 </footer>
 
 <style lang="scss">
+
+.dropdown {
+  &-menu {
+    border-radius: $border-radius;
+    padding: 8px;
+  }
+
+  &-item {
+    position: relative;
+    padding: 6px 0 6px 32px;
+    border-radius: $border-radius;
+  }
+
+  &-check {
+    position: absolute;
+    left: 8px;
+  }
+}
 
 .footer {
   padding: 2em;

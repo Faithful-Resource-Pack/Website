@@ -8,6 +8,7 @@ export let langStore = createStore<
 	LangValue,
 	Readable<LangValue> & {
 		next: () => void;
+		set: (lang: string) => void;
 	}
 >(
 	"LANG",
@@ -19,7 +20,8 @@ export let langStore = createStore<
 		return {
 			subscribe,
 			set: function(lang: string) {
-				if(!supportedLocales.includes(lang)) return;
+				if (!supportedLocales.includes(lang)) return;
+				locale.set(lang);
 				set(lang);
 			},
 			next: function () {

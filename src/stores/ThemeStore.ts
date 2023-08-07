@@ -7,9 +7,12 @@ const DEFAULT = 'auto';
 const VALUES = [DEFAULT, DARK, LIGHT] as const;
 type ThemeValue = typeof VALUES[number];
 
-export let themeStore = createStore<ThemeValue,Readable<ThemeValue> & {
-    next: () => void
-}>('THEME', DEFAULT, v => v as ThemeValue, (w) => {
+export let themeStore = createStore<
+    ThemeValue,
+    Readable<ThemeValue> & {
+        next: () => void
+    }
+>('THEME', DEFAULT, v => v as ThemeValue, (w) => {
     let { subscribe, update } = w;
 
     return {
