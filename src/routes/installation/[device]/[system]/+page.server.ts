@@ -1,5 +1,3 @@
-export const trailingSlash = "always";
-
 export const load = async function({ fetch, params }) {
     if (params.system == "Windows") return {
         system: params.system
