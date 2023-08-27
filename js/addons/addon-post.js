@@ -97,7 +97,7 @@ export default {
 
         <v-col class="col-10" :sm="$vuetify.breakpoint.mdAndUp ? 9 : 10" style="max-width: 100%">
           <div class="card card-body">
-            <p align="justify" v-html="compiledMarkdown(addon.description)"></p>
+            <p v-html="compiledMarkdown(addon.description)"></p>
           </div>
 
           <br>
