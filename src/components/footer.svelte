@@ -50,6 +50,7 @@ export const blur = (e: FocusEvent) => {
   setTimeout(() => (e.target as HTMLButtonElement).blur(), 200)
 }
 
+// this should work but doesn't, thank you melt ui
 const selectChange: CreateSelectProps['onValueChange'] = ({ curr, next }) => {
   if (curr !== next) langStore.set(next)
   return next
@@ -57,12 +58,13 @@ const selectChange: CreateSelectProps['onValueChange'] = ({ curr, next }) => {
  
 const {
   elements: { trigger, menu, option },
-  states: { valueLabel, open },
+  states: { selectedLabel, open },
   helpers: { isSelected },
 } = createSelect({
   forceVisible: true,
-  defaultValue: $locale,
-  onValueChange: selectChange
+  // this should work but doesn't, thank you melt ui
+  defaultValueLabel: $locale,
+  onSelectChange: selectChange
 });
 
 function getFlagEmoji(countryCode: string) {
@@ -90,7 +92,7 @@ function getFlagEmoji(countryCode: string) {
             aria-label="Languages"
           >
           <Fa icon={faGlobe}/>
-          <span class='h6'>{$valueLabel || 'Select a Language'}</span>
+          <span class='h6'>{$selectedLabel || 'Select a Language'}</span>
             <Fa icon={faChevronDown}/>
           </button>
           {#if $open}
