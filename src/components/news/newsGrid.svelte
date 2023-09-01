@@ -2,6 +2,7 @@
 	import { postStore, postListStore } from "$stores/PostStore";
 	import { derived } from "svelte/store";
 	import { onMount } from "svelte";
+	import {  wrapVuelteStore } from "$lib/vuelteStore";
 
 	export let limit: number | undefined = undefined;
 
@@ -13,6 +14,9 @@
                 postStore.set(data)
             })
     })
+
+	// dollar notation allows auto onMount and auto onDestroy
+	$: vueltePosts = wrapVuelteStore("postStore", postStore);
 
 	let posts = derived(postListStore, (v) => {
 		if (limit === undefined) return v;
