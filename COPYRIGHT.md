@@ -6,7 +6,12 @@ The following files are licensed as follows:
 
 > Faithful License https://faithfulpack.net/license
 
-- /image/*
+- image/*
+
+The following files are licensed as follows:
+
+> SIL Open Font License https://opensource.org/license/ofl-1-1/
+
 - data/font/Faithful.ttf
 
 ## External logos
