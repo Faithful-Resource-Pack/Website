@@ -220,7 +220,7 @@ export default {
     },
     search_authors() {
       this.addon.authors.forEach(authorID => {
-        fetch(`https://api.faithfulpack.net/v1/user/${authorID}`)
+        fetch(`https://api.faithfulpack.net/v2/users/${authorID}`)
           .then(response => response.json())
           .then(author => {
             this.authors.push(author)
@@ -230,14 +230,14 @@ export default {
   },
   beforeMount: function () {
     if(!window.slug && this.$route) {
-      fetch(`https://api.faithfulpack.net/v1/search?collection=addons&field=slug&criteria===&value=${window.slug}`)
+      fetch(`https://api.faithfulpack.net/v2/addons/${window.slug}`)
       .then(response => response.json())
       .then(data => this.addon = data[0])
       .then(() => {
         this.search_authors()
       })
       .then(() => {
-        fetch(`https://api.faithfulpack.net/v1/search?collection=files&field=parent.id&criteria===&value=${this.addon.id}`)
+        fetch(`https://api.faithfulpack.net/v2/addons/${this.addon.id}`)
           .then(response => response.json())
           .then(data => this.files = data)
       })
