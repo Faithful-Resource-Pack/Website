@@ -8,19 +8,6 @@
       }
     }
   ],
-  "1.20.1": [
-    {
-      "file": "Faithful 32x",
-      "file_type": "R",
-      "file_version": 8,
-      "latest": "latest",
-      "date": "27/08/2023",
-      "links": {
-        "download": "https://database.faithfulpack.net/packs/32x-Java/August%202023/Faithful%2032x%20-%201.20.1.zip",
-        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/4724322"
-      }
-    }
-  ],
   "1.20.2": [
     {
       "file": "Faithful 32x",
@@ -31,6 +18,19 @@
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/August%202023/Faithful%2032x%20-%201.20.2.zip",
         "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/4724323"
+      }
+    }
+  ],
+  "1.20.1": [
+    {
+      "file": "Faithful 32x",
+      "file_type": "R",
+      "file_version": 8,
+      "latest": "latest",
+      "date": "27/08/2023",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/August%202023/Faithful%2032x%20-%201.20.1.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/4724322"
       }
     }
   ],
