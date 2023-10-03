@@ -55,7 +55,7 @@ const selectChange: CreateSelectProps['onValueChange'] = ({ curr, next }) => {
   if (curr !== next) langStore.set(next)
   return next
 }
- 
+
 const {
   elements: { trigger, menu, option },
   states: { valueLabel, open },
@@ -135,7 +135,7 @@ function getFlagEmoji(countryCode: string) {
         <li><a href="/installation">{ $t('footer.info.installation') }</a></li>
         <li><a href="/license">{ $t('footer.info.license') }</a></li>
         <li><a href="/team">{ $t('footer.info.team') }</a></li>
-        <li><a href="/branding">{ $t('footer.info.branding') }</a></li>
+        <li><a href="https://docs.faithfulpack.net/pages/manuals/branding-guidelines">{ $t('footer.info.branding') }</a></li>
         <li><a href="/stats">{ $t('footer.info.stats') }</a></li>
       </ul>
     </div>
