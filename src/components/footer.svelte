@@ -186,7 +186,6 @@ function getFlagEmoji(countryCode: string) {
       <ul class="footer-content">
         <li><a href="https://github.com/Faithful-Resource-Pack">Faithful</a></li>
         <li><a href="https://github.com/ClassicFaithful">Classic Faithful</a></li>
-        <li><a href="https://github.com/Faithful-Mods">Faithful Mods</a></li>
       </ul>
     </div>
   </div>
