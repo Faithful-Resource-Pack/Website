@@ -1,5 +1,5 @@
 # How to add an article to Faithful Website :
-- Add an image in `image/article/<compliance ...>/<mc_version>.png`  
+- Add an image in `image/article/<compliance ...>/<mc_version>.png`
 - Add a markdown file inside `article/<compliance ...>/<mc_version>.md` :warning: **You should replace "." with "\_"**
 
 Use this file as an example for your markdown file:
@@ -21,7 +21,7 @@ long_text: Lorem ipsum doloret and i like compliance // can be removed
 
 added: // can be: 'removed', 'changed', 'fixed', 'added'
   - Blocks: // can be everything you want
-    - Stone <strong>@Juknum</strong> // use html balises to underline/bold text
+    - Stone <strong>@Juknum</strong> // use html tags to underline/bold text
 
 // you can add each category that you want:
 changed:
@@ -36,7 +36,7 @@ authors:
   - RobertR11
 
 // can be removed:
-download: 
+download:
   - Planet Minecraft:
     - https://www.planetminecraft.com/texture-pack/
   - CurseForge:
