@@ -166,7 +166,7 @@
 	    background-blend-mode: screen;
 
         h1 {
-            color: #ac1e63;
+            color: #db5697;
         }
 
         p {
