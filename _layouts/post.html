@@ -149,7 +149,9 @@ layout: default
 				result = `<li>${obj}</li>`;
 			} else {
 				result = Object.entries(obj)
-					.map(([key, val]) => `<h${lvl} class="card-title text-left">${key}:</h${lvl}>${format_html(val, lvl+1)}`).join('');
+					.map(([key, val]) =>
+						`<h${lvl} class="card-title text-left">${key}:</h${lvl}>${format_html(val, lvl+1)}`)
+					.join('');
 			}
 			console.log(obj, result);
 			return result;

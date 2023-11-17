@@ -22,7 +22,7 @@
               {%- for category in game-version.first[1] -%}
                 {%- if category.first[1] == nul -%}
 
-                  <li class="card-title h5 text-left">{{ category }}:</li>
+                  <li class="card-title h5 text-left">{{ category }}</li>
 
                 {%- else -%}
 
@@ -37,7 +37,7 @@
                         {%- endfor -%}
                         </ul>
                       {%- else -%}
-                        <li class="card-title text-left">{{ item }}:</li>
+                        <li class="card-title text-left">{{ item }}</li>
                       {%- endif -%}
                     {%- endfor -%}
                   </ul>
