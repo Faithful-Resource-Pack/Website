@@ -26,7 +26,7 @@ export const load: PageLoad = async function({ fetch, params }) {
     const screenRes = await fetch(`https://api.faithfulpack.net/v2/addons/${params.slug}/files/screenshots`)
     .catch((err) => { console.error('screenshots', err); throw err;})
     const screenData = await screenRes.json()
-    
+
     const desc_md = parseMd(addonData.description)
     //@ts-ignore
     let short: string | undefined = addonData.short_description
@@ -37,7 +37,7 @@ export const load: PageLoad = async function({ fetch, params }) {
 
     return {
         id: addonData.id,
-        title: `Addon: ${addonData.name}`,
+        title: `Add-on: ${addonData.name}`,
         name: addonData.name,
         slug: addonData.slug,
         image: header,
