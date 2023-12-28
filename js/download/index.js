@@ -315,7 +315,7 @@ const v = new Vue({
     this.isMounted = true
 
     // Faithful 32x
-    getJSON('data/downloads/compliance_32.json', (err, json) => {
+    getJSON('data/downloads/faithful_java_32x.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c32 = json
     })
@@ -329,7 +329,7 @@ const v = new Vue({
     })
 
     // Faithful 64x
-    getJSON('data/downloads/compliance_64.json', (err, json) => {
+    getJSON('data/downloads/faithful_java_64x.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c64 = json
     })
@@ -343,7 +343,7 @@ const v = new Vue({
     })
 
     // Faithful 32x BEDROCK
-    getJSON('data/downloads/compliance_32b.json', (err, json) => {
+    getJSON('data/downloads/faithful_bedrock_32x.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c32b = json
     })
@@ -353,7 +353,7 @@ const v = new Vue({
     })
 
     // Faithful 64x BEDROCK
-    getJSON('data/downloads/compliance_64b.json', (err, json) => {
+    getJSON('data/downloads/faithful_bedrock_64x.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c64b = json
     })
@@ -363,7 +363,7 @@ const v = new Vue({
     })
 
     // Faithful 32x DUNGEONS
-    getJSON('data/downloads/compliance_32d.json', (err, json) => {
+    getJSON('data/downloads/faithful_dungeons_32x.json', (err, json) => {
       if (err) return console.error(err)
       this.downloads.c32d = json
     })
