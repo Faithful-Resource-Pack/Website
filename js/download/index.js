@@ -14,26 +14,26 @@ const v = new Vue({
       "Dungeons": [ '32x' ]
     },
     downloads: {
-      c32: [], c64: [],
-      c32b: [], c64b: [],
-      c32d: []
+      f32: [], f64: [],
+      f32b: [], f64b: [],
+      f32d: []
     },
     releases: {
-      c32: {
+      f32: {
         github: [],
         curse: []
       },
-      c64: {
+      f64: {
         github: [],
         curse: []
       },
-      c32b: {
+      f32b: {
         github: []
       },
-      c64b: {
+      f64b: {
         github: []
       },
-      c32d: {
+      f32d: {
         github: []
       }
     }
@@ -229,11 +229,19 @@ const v = new Vue({
       })
     },
     getDownloads(type, size) {
-      if (type == 'Java' && size == '32x') return this.downloads.c32
-      else if (type == 'Java' && size == '64x') return this.downloads.c64
-      else if (type == 'Bedrock' && size == '32x') return this.downloads.c32b
-      else if (type == 'Bedrock' && size == '64x') return this.downloads.c64b
-      else if (type == 'Dungeons' && size == '32x') return this.downloads.c32d
+      switch (type) {
+        case 'Java':
+          if (size == '32x') return this.downloads.f32
+          if (size == '64x') return this.downloads.f64
+          break
+        case 'Bedrock':
+          if (size == '32x') return this.downloads.f32b
+          if (size == '64x') return this.downloads.f64b
+          break
+        case 'Dungeons':
+          if (size == '32x') return this.downloads.f32d
+          break
+      }
     },
     /* unused
     getGitHubDownload(item, release, type, size) {
@@ -259,11 +267,11 @@ const v = new Vue({
     },
     */
     getRelease(type, size) {
-      if (type == 'Java' && size == '32x') return this.releases.c32
-      else if (type == 'Java' && size == '64x') return this.releases.c64
-      else if (type == 'Bedrock' && size == '32x') return this.releases.c32b
-      else if (type == 'Bedrock' && size == '64x') return this.releases.c64b
-      else if (type == 'Dungeons' && size == '32x') return this.releases.c32d
+      if (type == 'Java' && size == '32x') return this.releases.f32
+      else if (type == 'Java' && size == '64x') return this.releases.f64
+      else if (type == 'Bedrock' && size == '32x') return this.releases.f32b
+      else if (type == 'Bedrock' && size == '64x') return this.releases.f64b
+      else if (type == 'Dungeons' && size == '32x') return this.releases.f32d
       else return undefined
     },
     getDate(item, type, size) {
@@ -317,59 +325,59 @@ const v = new Vue({
     // Faithful 32x
     getJSON('data/downloads/faithful_java_32x.json', (err, json) => {
       if (err) return console.error(err)
-      this.downloads.c32 = json
+      this.downloads.f32 = json
     })
     getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Java-32x/releases', (err, json) => {
       if (err) return console.error(err)
-      this.releases.c32.github = json
+      this.releases.f32.github = json
     })
     getJSON(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.cfwidget.com/436482`)}`, (err, json) => {
       if (err) return console.error(err)
-      this.releases.c32.curse = json
+      this.releases.f32.curse = json
     })
 
     // Faithful 64x
     getJSON('data/downloads/faithful_java_64x.json', (err, json) => {
       if (err) return console.error(err)
-      this.downloads.c64 = json
+      this.downloads.f64 = json
     })
     getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Java-64x/releases', (err, json) => {
       if (err) return console.error(err)
-      this.releases.c64.github = json
+      this.releases.f64.github = json
     })
     getJSON(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.cfwidget.com/419139`)}`, (err, json) => {
       if (err) return console.error(err)
-      this.releases.c64.curse = json
+      this.releases.f64.curse = json
     })
 
     // Faithful 32x BEDROCK
     getJSON('data/downloads/faithful_bedrock_32x.json', (err, json) => {
       if (err) return console.error(err)
-      this.downloads.c32b = json
+      this.downloads.f32b = json
     })
     getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases', (err, json) => {
       if (err) return console.error(err)
-      this.releases.c32b.github = json
+      this.releases.f32b.github = json
     })
 
     // Faithful 64x BEDROCK
     getJSON('data/downloads/faithful_bedrock_64x.json', (err, json) => {
       if (err) return console.error(err)
-      this.downloads.c64b = json
+      this.downloads.f64b = json
     })
     getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases', (err, json) => {
       if (err) return console.error(err)
-      this.releases.c64b.github = json
+      this.releases.f64b.github = json
     })
 
     // Faithful 32x DUNGEONS
     getJSON('data/downloads/faithful_dungeons_32x.json', (err, json) => {
       if (err) return console.error(err)
-      this.downloads.c32d = json
+      this.downloads.f32d = json
     })
     getJSON('https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/releases', (err, json) => {
       if (err) return console.error(err)
-      this.releases.c32d.github = json
+      this.releases.f32d.github = json
     })
 
   }
