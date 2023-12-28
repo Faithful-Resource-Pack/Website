@@ -196,17 +196,19 @@ const v = new Vue({
   computed: {},
   methods: {
     labelColor(item) {
-      if (item.file_type == "Download") return "github"
-      if (item.file_type == "R") return "green"
-      if (item.file_type == "B") return "blue"
-      if (item.file_type == "A") return "yellow"
-      if (item.file_type == "Snapshot") return "black"
-      else return "green"
+      switch (item.file_type) {
+        case "Download": return "github"
+        case "R": return "green"
+        case "B": return "blue"
+        case "A": return "yellow"
+        case "Snapshot": return "black"
+        default: return "green"
+      }
     },
     labelText(item) {
       if (item.file_type == "Download") return 'Download'
-      else if (!item.file_version) return item.file_type
-      else return item.file_type + item.file_version
+      if (!item.file_version) return item.file_type
+      return item.file_type + item.file_version
     },
     /**
      * Collapse group deploy code
@@ -267,17 +269,24 @@ const v = new Vue({
     },
     */
     getRelease(type, size) {
-      if (type == 'Java' && size == '32x') return this.releases.f32
-      else if (type == 'Java' && size == '64x') return this.releases.f64
-      else if (type == 'Bedrock' && size == '32x') return this.releases.f32b
-      else if (type == 'Bedrock' && size == '64x') return this.releases.f64b
-      else if (type == 'Dungeons' && size == '32x') return this.releases.f32d
-      else return undefined
+      switch (type) {
+        case 'Java':
+          if (size == '32x') return this.releases.f32
+          if (size == '64x') return this.releases.f64
+          break
+        case 'Bedrock':
+          if (size == '32x') return this.releases.f32b
+          if (size == '64x') return this.releases.f64b
+          break
+        case 'Dungeons':
+          if (size == '32x') return this.releases.f32d
+          break
+      }
     },
     getDate(item, type, size) {
       if (!this.isMounted) return
 
-      let id   = this.getId(item)
+      let id = this.getId(item)
       let data = this.getRelease(type, size)
       if (id == 0 && item.date) return item.date
 
@@ -300,7 +309,7 @@ const v = new Vue({
     getSize(item, type, size) {
       if (!this.isMounted) return
 
-      let id   = this.getId(item)
+      let id = this.getId(item)
       let data = this.getRelease(type, size)
 
       if (id == 0 && item.size) return item.size
