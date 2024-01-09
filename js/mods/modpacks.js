@@ -1,4 +1,4 @@
-/* global Vue, axios, getJSON, getRequest, MinecraftUtils, location */
+/* global Vue, axios, MinecraftUtils, location */
 
 const _MODPACK_NOT_FOUND_MESSAGE = 'Found no thumbnail for this modpack'
 const _NO_LINK = null
@@ -13,7 +13,6 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     currentModpackIndex: -1,
     modpacks: [],
     mods: [],
-    versions: [],
     globalBlackList: [],
     loading: true,
     form: {
@@ -31,11 +30,11 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   methods: {
-    openModpackModal: function (index) {
+    openModpackModal(index) {
       this.currentModpackIndex = index
       this.modpackModalOpened = true
     },
-    downloadModpackFromModList: function (modpackId, modpackName, modpackVersion, minecraftVersion, modsId = []) {
+    downloadModpackFromModList(modpackId, modpackName, modpackVersion, minecraftVersion, modsId = []) {
       this.modpacks.push({
         modpackName: modpackName,
         modpackVersion: modpackVersion,
@@ -44,56 +43,51 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         modList: modsId,
       })
     },
-    getDataFromDB: function () {
-      getJSON(`${this.apiURL}/v2/mods/raw`, (err, json) => {
-        if (err) {
-          console.error(err)
-          return
-        }
-
-        this.mods = json
-        this.loading = false
-      })
-
-      getJSON(`${this.apiURL}/v2/modpacks/raw`, (err, json) => {
-        if (err) {
-          console.error(err)
-          return
-        }
-
-        // sort by modpack name value
-        let sortable = []
-        for (const mod in json) {
-          sortable.push([mod, json[mod]])
-        }
-        sortable.sort((a, b) => {
-          if (a[1].name.toLowerCase() < b[1].name.toLowerCase()) return -1
-          if (a[1].name.toLowerCase() > b[1].name.toLowerCase()) return 1
-          return 0
+    getDataFromDB() {
+      fetch(`${this.apiURL}/v2/mods/raw`)
+        .then((res) => res.json())
+        .then((json) => {
+          this.mods = json
+          this.loading = false
         })
+        .catch(console.error)
 
-        let sorted = []
-        sortable.forEach(item => sorted.push({ ...item[1], id: item[0] }))
-
-        sorted.forEach(modpack => {
-          Object.keys(modpack.versions).forEach(version => {
-            this.downloadModpackFromModList(modpack.id, modpack.name, version, modpack.versions[version].minecraft, modpack.versions[version].mods)
+      fetch(`${this.apiURL}/v2/modpacks/raw`)
+        .then((res) => res.json())
+        .then((json) => {
+          // sort by modpack name value
+          const sortable = []
+          for (const mod in json) {
+            sortable.push([mod, json[mod]])
+          }
+          sortable.sort((a, b) => {
+            if (a[1].name.toLowerCase() < b[1].name.toLowerCase()) return -1
+            if (a[1].name.toLowerCase() > b[1].name.toLowerCase()) return 1
+            return 0
           })
-        })
 
+          const sorted = []
+          sortable.forEach(item => sorted.push({ ...item[1], id: item[0] }))
+
+          sorted.forEach(modpack => {
+            Object.keys(modpack.versions).forEach(version => {
+              this.downloadModpackFromModList(modpack.id, modpack.name, version, modpack.versions[version].minecraft, modpack.versions[version].mods)
+            })
+        })
+        .catch(console.error)
       })
     }
   },
   computed: {
-    apiURL: function () {
+    apiURL() {
       return window.location.hostname === '127.0.0.1' ?
         'http://localhost:8000' :
         'https://api.faithfulpack.net'
     },
-    currentModpack: function () {
+    currentModpack() {
       return this.currentModpackIndex > -1 ? this.modpacks[this.currentModpackIndex] : undefined
     },
-    filteredModpacks: function () {
+    filteredModpacks() {
       if (this.modpacks.length === 0) {
         return []
       }
@@ -110,7 +104,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       return this.modpacks
     },
-    searchAdvice: function () {
+    searchAdvice() {
       if (this.modpacks.length === 0) { return '' }
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) { return this.sentences.typeAnotherVersion + ' ' + this.form.search }
       if (this.form.search.length < this.form.minSearchLetters) { return String((this.form.minSearchLetters - this.form.search.length) + ' ' + this.sentences.lettersLeft) }
@@ -118,16 +112,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       return ''
     }
   },
-  created: function () {
-    getJSON(`${this.apiURL}/v2/mods/pack_versions`, (err, json) => {
-      if (err) {
-        console.error(err)
-        return
-      }
-
-      this.versions = json
-    })
-    
+  created() {
     document.addEventListener('DOMContentLoaded', () => {
       retryAxios.attach(axios, {
         retries: 5,

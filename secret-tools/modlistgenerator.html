@@ -25,29 +25,29 @@ title: Utilities - modlist.html generator
       totalMods: 0
     },
     watch: {
-      manifestInput: function(v1, v2) {
+      manifestInput(v1, v2) {
         console.info(this, v1, v2)
       }
     },
     computed: {
-      canGenerateModlist: function() {
+      canGenerateModlist() {
         return this.firstFile !== undefined
       },
-      isGenerating: function() {
+      isGenerating() {
         return this.progress != 0
       },
-      generatedPercent: function() {
+      generatedPercent() {
         if(this.totalMods <= 0)
           return ''
 
         return (this.progress / this.totalMods * 100).toFixed(2)
       },
-      genPer: function() {
+      genPer() {
         return this.generatedPercent + '%'
       }
     },
     methods: {
-      changeFirstFile : function(event) {
+      changeFirstFile (event) {
         if(!event.target || !event.target.files || !event.target.files.length)
           return
 

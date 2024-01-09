@@ -61,12 +61,12 @@ export default {
     }
   },
   computed: {
-    addons_sorted: function() {
+    addons_sorted() {
       let sorted = Object.values(this.addons)
       sorted.sort((a,b) => {
         let an = a.name.trim().toLowerCase()
         let bn = b.name.trim().toLowerCase()
-        
+
         return an === bn ? 0 : (an > bn ? 1 : -1)
       })
 

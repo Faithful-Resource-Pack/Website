@@ -195,15 +195,15 @@ export default {
     }
   },
   methods: {
-    openModal: function (base64) {
+    openModal(base64) {
       this.modalImage = base64
       this.modal = true
     },
-    closeModal: function () {
+    closeModal() {
       this.modalImage = ''
       this.modal = false
     },
-    compiledMarkdown: function (markdown) {
+    compiledMarkdown(markdown) {
       return marked(markdown, { sanitize: true })
     },
     formatUrl(url) {
@@ -228,7 +228,7 @@ export default {
       })
     }
   },
-  beforeMount: function () {
+  beforeMount() {
     if(!window.slug && this.$route) {
       fetch(`https://api.faithfulpack.net/v2/addons/${window.slug}`)
       .then(response => response.json())

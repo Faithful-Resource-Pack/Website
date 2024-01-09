@@ -19,21 +19,21 @@ Vue.component('minecraft-versions', {
     return {}
   },
   computed: {
-    orderedVersions: function () {
+    orderedVersions() {
       return this.$props.versions.sort(function (a, b) {
         const numbers = MinecraftUtils.minecraftVersionsToNumbers([a.version, b.version])
 
         return (numbers[0] > numbers[1] ? -1 : 1)
       })
     },
-    elementsPerLine: function () {
+    elementsPerLine() {
       if (!!this.$props.breakpoints.lg && !this.$props.breakpoints.md) return this.$props.versions.length
       if (!!this.$props.breakpoints.md && !this.$props.breakpoints.sm) return 6
       if (!!this.$props.breakpoints.sm && !this.$props.breakpoints.xs) return 3
 
       return 1
     },
-    versionsOrganized: function () {
+    versionsOrganized() {
       const result = []
 
       for (let i = 0; i < this.orderedVersions.length; ++i) {
@@ -48,7 +48,7 @@ Vue.component('minecraft-versions', {
     }
   },
   methods: {
-    downloadVersion: function (version) {
+    downloadVersion(version) {
       if (this.$root.handleDownload) {
         this.$root.handleDownload('version', {
           version: version

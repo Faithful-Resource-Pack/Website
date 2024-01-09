@@ -82,14 +82,14 @@ Vue.component('local-download', {
     }
   },
   methods: {
-    closeModal: function () {
+    closeModal() {
       this.modalOpened = false
 
       if (this.navigatorSupportsWorkers && this.currentWorker !== undefined) {
         this.currentWorker.terminate()
       }
     },
-    downloadLocally: function (forceDownload = false) {
+    downloadLocally(forceDownload = false) {
       // hide confirm modal
       this.confirmOpened = false
       this.logs = []
@@ -119,7 +119,7 @@ Vue.component('local-download', {
         })
       })
     },
-    downloadWithWorker: function (modSelection, forceDownload, logListener) {
+    downloadWithWorker(modSelection, forceDownload, logListener) {
       // terminate (or re-terminate old worker)
       if (this.currentWorker) this.currentWorker.terminate()
 
@@ -161,7 +161,7 @@ Vue.component('local-download', {
         }
       })
     },
-    logHandler: function (log) {
+    logHandler(log) {
       if (log.step < 3) {
         this.currentStep = log.step
 
@@ -182,27 +182,27 @@ Vue.component('local-download', {
         this.isDownloading = false
       }
     },
-    addLog: function (value, isError = false) {
+    addLog(value, isError = false) {
       this.logs.push({
         type: isError ? 'error' : 'log',
         value: '' + value
       })
     },
-    modToDisplayName: function (mod) {
+    modToDisplayName(mod) {
       return mod.name.displayName
     },
-    modToRepoName: function (mod) {
+    modToRepoName(mod) {
       if (mod.extRepo) return mod.extRepo.split('/').pop()
       else return mod.orgRepo
     },
-    modToRepoURL: function (mod) {
+    modToRepoURL(mod) {
       if (mod.orgRepo) {
         return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
       } else {
         return mod.extRepo
       }
     },
-    modToSelection: function (mod, version = undefined) {
+    modToSelection(mod, version = undefined) {
       return {
         name: this.modToRepoName(mod),
         displayName: this.modToDisplayName(mod),
@@ -210,12 +210,12 @@ Vue.component('local-download', {
         version: mod.versionSelected || version
       }
     },
-    openConfirmModal: function (modSelection = undefined) {
+    openConfirmModal(modSelection = undefined) {
       this.modSelection = (!modSelection) ? this.$root.modSelection : modSelection
 
       this.confirmOpened = true
     },
-    downloadZip: function () {
+    downloadZip() {
       if (this.finalZip !== undefined) {
         const customName = this.$root.$refs.zipOptions.customArchiveName
         const archiveName = customName || NAME + ' Resource Pack ' + ((new Date()).getTime())
@@ -225,12 +225,12 @@ Vue.component('local-download', {
   },
   watch: {
     logs: {
-      currentStep: function (newValue, oldValue) {
+      currentStep(newValue, oldValue) {
         if (oldValue === 1 && newValue === 2) {
           this.startTime.set(new Date())
         }
       },
-      handler: function () {
+      handler() {
         // scroll to bottom
         Vue.nextTick(() => {
           const objDiv = this.$refs.log
@@ -241,25 +241,25 @@ Vue.component('local-download', {
     }
   },
   computed: {
-    canCloseModal: function () {
+    canCloseModal() {
       return this.navigatorSupportsWorkers || (this.modalOpened && !this.isDownloading)
     },
-    canDownloadLocally: function () {
+    canDownloadLocally() {
       return !this.$props.canpack
     },
-    isGenerating: function () {
+    isGenerating() {
       return this.generatedPercent > 0
     },
-    latestLog: function () {
+    latestLog() {
       return (this.logs.length > 0) ? this.logs[this.logs.length - 1].value || '' : ''
     },
-    navigatorSupportsWorkers: function () {
+    navigatorSupportsWorkers() {
       return typeof (Worker) === 'function'
     },
-    reasonCantDownload: function () {
+    reasonCantDownload() {
       return 'This selection cannot be packed (Pack versions not compatible)'
     },
-    timeLeft: function () {
+    timeLeft() {
       // we need to multiply duration by percent
 
       /*
@@ -283,7 +283,7 @@ Vue.component('local-download', {
 
       return (h > 0 ? h + 'h ' : '') + (m > 0 ? m + 'min ' : '') + s + 's'
     },
-    cancelTitle: function () {
+    cancelTitle() {
       return this.navigatorSupportsWorkers
         ? 'Your browser supports Web Workers :). You can cancel this script immediatly.'
         : "Your navigator doesn't supports Web Workers :(. You can't cancel this script."

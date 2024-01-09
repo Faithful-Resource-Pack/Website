@@ -1,4 +1,4 @@
-/* global location, Vue, MinecraftUtils, getJSON */
+/* global location, Vue, MinecraftUtils */
 
 Object.filter = (obj, predicate) =>
   Object.keys(obj)
@@ -37,12 +37,12 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     windowSize: window.innerWidth
   },
   computed: {
-    apiURL: function () {
+    apiURL() {
       return window.location.hostname === '127.0.0.1' ?
         'http://localhost:8000' :
         'https://api.faithfulpack.net'
     },
-    breakpoints: function () {
+    breakpoints() {
       const result = {}
 
       const keys = Object.keys(this.breakpointLimits)
@@ -53,10 +53,10 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       return result
     },
-    canPackMods: function () {
+    canPackMods() {
       return this.modPackageVersion !== undefined
     },
-    emptyTable: function () {
+    emptyTable() {
       if (this.loading === true) return this.sentences.loading
 
       if (this.mods.length === 0) return this.sentences.failed
@@ -73,7 +73,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
      * Filter mods following the research
      * @returns {Object} corresponding mods
      */
-    filteredMods: function () {
+    filteredMods() {
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0)))) {
         return this.mods.filter(mod => {
           let found = false
@@ -91,7 +91,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         return this.mods.filter(mod => {
           const searchTerm = this.form.search.toLowerCase()
           if (this.modToDisplayName(mod).toLowerCase().includes(searchTerm)) return true
-          
+
           let inAliases = false
           let i = 0
           let aliases = mod.aliases || []
@@ -99,13 +99,13 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
             inAliases = aliases[i].toLowerCase().includes(searchTerm)
             i++;
           }
-          
+
           return inAliases
         })
       }
       return this.mods
     },
-    exactVersionMode: function () {
+    exactVersionMode() {
       if (this.loadingVersions) { return false }
 
       return this.modSelection.findIndex(mod => {
@@ -114,17 +114,17 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         return correspondingNumbers[1] < correspondingNumbers[0]
       }) !== -1
     },
-    modSelection: function () {
+    modSelection() {
       const selection = this.mods.filter(mod => mod.selected && !!mod.versionSelected)
 
       return selection.map(mod => {
         return this.modToSelection(mod)
       })
     },
-    downloadButtonText: function () {
+    downloadButtonText() {
       return this.isLoadingDownload ? '<i class="fas spin"></i> Sending request...' : 'Download Resource Pack'
     },
-    minecraftVersions: function () {
+    minecraftVersions() {
       const mcVersions = []
 
       for (let i = 0; i < this.mods.length; ++i) {
@@ -143,7 +143,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       return mcVersions
     },
-    modPackageVersion: function () {
+    modPackageVersion() {
       // you can pack mods if they have the same package version number
       // (list of package number must not change)
 
@@ -179,7 +179,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       return versionChanged ? undefined : (result || minecraftVersion)
     },
-    searchAdvice: function () {
+    searchAdvice() {
       if (this.loading === true || this.mods.length === 0) { return '' }
 
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredMods.length === 0) { return this.sentences.typeAnotherVersion + ' ' + this.form.search }
@@ -188,20 +188,20 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     }
   },
   methods: {
-    modToDisplayName: function (mod) {
+    modToDisplayName(mod) {
       return mod.name
     },
-    modToRepoName: function (mod) {
+    modToRepoName(mod) {
       if(!mod || !mod.resource_pack || !mod.resource_pack.git_repository) {
         console.error(mod)
         throw new Error("Mod doesn't have a repository")
       }
       return mod.resource_pack.git_repository.split('/').pop()
     },
-    modToRepoURL: function (mod) {
+    modToRepoURL(mod) {
       return mod.resource_pack.git_repository
     },
-    modToSelection: function (mod, version = undefined) {
+    modToSelection(mod, version = undefined) {
       return {
         name: this.modToRepoName(mod),
         displayName: this.modToDisplayName(mod),
@@ -209,7 +209,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         version: mod.versionSelected || version
       }
     },
-    packageVersion: function (modVersion) {
+    packageVersion(modVersion) {
       const numbers = MinecraftUtils.minecraftVersionToNumberArray(modVersion)
 
       const versionKeys = Object.keys(this.versions)
@@ -230,55 +230,50 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         ++i
       }
 
-      if (result === -1) {
+      if (result === -1)
         throw new Error('No versions file')
-      }
 
       return result
     }
   },
-  mounted: function () {
+  mounted() {
     this.isMounted = true
 
     // acquire mods json from Faithful database
-    getJSON(`${this.apiURL}/v2/mods/raw`, (err, json) => {
-      if (err) {
-        console.error(err)
-        return
-      }
+    fetch(`${this.apiURL}/v2/mods/raw`)
+      .then((res) => res.json())
+      .then((json) => {
+        // sort by mod name value
+        const sortable = []
+        for (const mod in json) {
+          sortable.push([mod, json[mod]])
+        }
+        sortable.sort((a, b) => {
+          if (a[1].name.toLowerCase() < b[1].name.toLowerCase()) return -1
+          if (a[1].name.toLowerCase() > b[1].name.toLowerCase()) return 1
+          return 0
+        })
 
-      // sort by mod name value
-      let sortable = []
-      for (const mod in json) {
-        sortable.push([mod, json[mod]])
-      }
-      sortable.sort((a, b) => {
-        if (a[1].name.toLowerCase() < b[1].name.toLowerCase()) return -1
-        if (a[1].name.toLowerCase() > b[1].name.toLowerCase()) return 1
-        return 0
+        const sorted = []
+        sortable.forEach(item => sorted.push({ ...item[1], id: item[0] }))
+
+        this.mods = sorted
+        this.loading = false
       })
+      .catch(console.error)
 
-      let sorted = []
-      sortable.forEach(item => sorted.push({ ...item[1], id: item[0] }))
-
-      this.mods = sorted
-      this.loading = false
-    })
-
-    getJSON(`${this.apiURL}/v2/mods/pack_versions`, (err, json) => {
-      if (err) {
-        console.error(err)
-        return
-      }
-
-      this.loadingVersions = false
-      this.versions = json
-    })
+    fetch(`${this.apiURL}/v2/mods/pack_versions`)
+      .then((res) => res.json())
+      .then((json) => {
+        this.loadingVersions = false
+        this.versions = json
+      })
+      .catch(console.error)
 
     // we need this part for breakpoints
     this.windowSize = window.innerWidth
     window.addEventListener('resize', () => { this.windowSize = window.innerWidth })
-    
+
     document.addEventListener('DOMContentLoaded', () => {
       retryAxios.attach(axios, {
         retries: 5,

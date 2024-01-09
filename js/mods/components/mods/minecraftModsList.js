@@ -11,10 +11,10 @@ Vue.component('minecraft-mod-list', {
     }
   },
   methods: {
-    searchCache: function (modName) {
+    searchCache(modName) {
       return this.thumbnailCache.filter(mod => modName === mod.modName)[0]
     },
-    modToRepoName: function (mod) {
+    modToRepoName(mod) {
       return mod.resource_pack.git_repository ? mod.resource_pack.git_repository.split('/').pop() : null
     }
   },

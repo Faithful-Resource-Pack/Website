@@ -16,7 +16,7 @@ Vue.component('download-minecraft-version', {
     return {}
   },
   methods: {
-    dv: function () {
+    dv() {
       if (this.$root.$refs.localDownload && !!this.$root.$refs.localDownload.openConfirmModal) {
         this.$root.$refs.localDownload.openConfirmModal(this.$root.mods.filter(mod => mod.resource_pack.versions.includes(this.$props.value.version)).map(mod => {
           return this.$root.modToSelection(mod, this.$props.value.version)

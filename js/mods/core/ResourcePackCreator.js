@@ -6,8 +6,8 @@ const MCMETA_DESCRIPTION = 'Faithful Mods'
 
 /**
  * Resolves after delay
- * @param {number} delay 
- * @param {T|undefined} value 
+ * @param {number} delay
+ * @param {T|undefined} value
  * @returns {Promise<T|undefined>}
  * @template T
  */
@@ -66,10 +66,10 @@ Promise.throttle = function(arr, throttle, delay, results = []) {
 /**
  * @typedef Mod Mod data object
  * @type {object}
- * @property {string} displayName 
- * @property {string} name 
- * @property {string} repositoryURL 
- * @property {string} version 
+ * @property {string} displayName
+ * @property {string} name
+ * @property {string} repositoryURL
+ * @property {string} version
  */
 
 /**
@@ -91,10 +91,10 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
 
   /**
    * Gives package version based on mod selection
-   * @param {Array<ModSelection>} modSelection 
+   * @param {Array<ModSelection>} modSelection
    * @return {number|undefined} package version or undefined
    */
-  modPackageVersion: function (modSelection) {
+  modPackageVersion(modSelection) {
     // you can pack mods if they have the same package version number
     // (list of package number must not change)
 
@@ -125,7 +125,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
    * @param {string} modVersion Mod minecraft version
    * @returns {number} mod package version
    */
-  packageVersion: function (modVersion) {
+  packageVersion(modVersion) {
     const numbers = MinecraftUtils.minecraftVersionToNumberArray(modVersion)
 
     const packageVersionKeys = Object.keys(this.packVersions)
@@ -155,16 +155,16 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     return result
   },
 
-  modToDisplayName: function (mod) {
+  modToDisplayName(mod) {
     return mod.name.displayName
   },
 
-  modToRepoName: function (mod) {
+  modToRepoName(mod) {
     if (mod.name.extRepo) return mod.name.extRepo.split('/').pop()
     else return mod.name.orgRepo
   },
 
-  modToRepoURL: function (mod) {
+  modToRepoURL(mod) {
     if (mod.orgRepo) {
       return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
     } else {
@@ -172,7 +172,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     }
   },
 
-  modToSelection: function (mod, version = undefined) {
+  modToSelection(mod, version = undefined) {
     return {
       name: this.modToRepoName(mod),
       displayName: this.modToDisplayName(mod),
@@ -187,7 +187,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
    * @param {number | undefined} modPackageVersion optional found mod package version
    * @returns {boolean} Allowed to make a pack
    */
-  canPackMods: function (modSelection, modPackageVersion = undefined) {
+  canPackMods(modSelection, modPackageVersion = undefined) {
     if (modSelection) {
       return this.modPackageVersion(modSelection) !== undefined
     }
@@ -200,7 +200,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
    * @param {Mod} mod Mod object
    * @returns {Promise<ModResponse>}
    */
-  requestDownloadMod: function (mod) {
+  requestDownloadMod(mod) {
     return axios({
       url:
         'https://api.allorigins.win/raw?url=' + mod.repositoryURL + '/archive/' + mod.version + '.zip',
@@ -218,18 +218,18 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
       })
   },
 
-  fileKey: function (mod) {
+  fileKey(mod) {
     return mod.name + '-' + mod.version
   },
 
   /**
-   * 
+   *
    * @param {*} mod Mod object
    * @param {boolean} forceDownload Force Mod download
-   * @param {LogCallback} logListener 
+   * @param {LogCallback} logListener
    * @returns {Promise<ModResponse>} Mod downloaded or loaded
    */
-  getMod: function (mod, forceDownload = false, logListener = function () {}) {
+  getMod(mod, forceDownload = false, logListener = function () {}) {
     if (forceDownload) { return this.requestDownloadMod(mod) }
 
     // only proceed if database loaded
@@ -257,13 +257,13 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
   },
 
   /**
-   * 
+   *
    * @param {Array<ModSelection>} modSelection Mods selected
    * @param {boolean} forceDownload Force remote download
    * @param {LogCallback} logListener callback listener
    * @returns {Promise<void>}
    */
-  downloadLocally: function (modSelection, forceDownload = false, logListener = function () {}) {
+  downloadLocally(modSelection, forceDownload = false, logListener = function () {}) {
     // database not loaded yet
     if (!this.database) {
       return this.databasePromise.then(() => {
@@ -302,26 +302,26 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
           if (res.data.type === 'text/xml') {
             console.warn(modSelection[index])
           }
-  
+
           const fileKey = this.fileKey(modSelection[index])
-  
+
           // load this pack
           const zip = new JSZip()
-  
+
           zip.loadAsync(res.data)
             .then((zip) => {
               const keys = Object.keys(zip.files)
-  
+
               let newName
               for (let i = 0; i < keys.length; ++i) {
                 newName = keys[i].replace(fileKey + '/', '')
-  
+
                 if (newName.trim() !== '') {
                   finalZip.files[newName] = zip.files[keys[i]]
                   finalZip.files[newName].name = newName
                 }
               }
-  
+
               ++success
               // if all archives have been successfully added
               if (success === modSelection.length) {
@@ -329,19 +329,19 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
                   step: 2,
                   message: 'Inserting pack.png and pack.mcmeta into final zip'
                 })
-  
+
                 fetch(PATH_PACK_PNG).then(packImage => {
                   return packImage.blob()
                 }).then(packImageBlob => {
                   finalZip.file('pack.png', packImageBlob, { blob: true })
-  
+
                   finalZip.file('pack.mcmeta', `{"pack": {"pack_format": ${this.fullPackageVersion}, "description": "${MCMETA_DESCRIPTION}"}}`)
-  
+
                   logListener({
                     step: 2,
                     message: 'Zipping...'
                   })
-  
+
                   finalZip.generateAsync(this.zipOptions, metadata => {
                     logListener({
                       step: 2,
@@ -388,7 +388,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     })
   },
 
-  openDatabase: function (dataBaseName, databaseVersion, storeName) {
+  openDatabase(dataBaseName, databaseVersion, storeName) {
     this.storeName = storeName
 
     this.databasePromise = new Promise((resolve, reject) => {

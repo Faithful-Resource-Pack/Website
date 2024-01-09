@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/Faithful-Resource-Pack/Website#readme",
   "dependencies": {
-    "axios": "^1.6.3",
+    "axios": "^1.6.5",
     "cors": "^2.8.5",
-    "dompurify": "^3.0.6",
+    "dompurify": "^3.0.8",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "js-yaml": "^4.1.0",
-    "jsdom": "^23.0.1"
+    "jsdom": "^23.2.0"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",

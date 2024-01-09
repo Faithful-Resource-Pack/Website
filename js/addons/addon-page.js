@@ -27,7 +27,7 @@ export default {
       <br>
       <h3 class="text-center">All</h3>
     </template>
-    
+
     <div class="card card-body">
       <h4 class="text-center">Search</h4>
       <div class="checkbox-container">
@@ -113,7 +113,7 @@ export default {
     }
   },
   methods: {
-    startSearch: function () {
+    startSearch() {
       if (this.search === '' && this.editions.length + this.res.length === this.selectedEditions.length + this.selectedRes.length) this.searchedAddons = this.addons
       else {
         this.searchedAddons = {}
@@ -144,11 +144,11 @@ export default {
 
       this.$forceUpdate() // force update (because it can be a bit long to process)
     },
-    clearSearch: function () {
+    clearSearch() {
       this.search = ''
       this.startSearch()
     },
-    checkFav: function (addon) {
+    checkFav(addon) {
       if (!this.fav[addon.id]) {
         this.fav[addon.id] = addon
         window.localStorage.setItem('favAddons', JSON.stringify(this.fav))
@@ -160,7 +160,7 @@ export default {
       this.$forceUpdate()
     }
   },
-  mounted: function () {
+  mounted() {
     fetch('https://api.faithfulpack.net/v2/addons/approved')
       .then(res => res.json())
       .then(data => {

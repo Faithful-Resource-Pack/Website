@@ -1,5 +1,5 @@
 const MinecraftUtils = { // eslint-disable-line no-unused-vars
-  minecraftVersionToNumberArray: function (version) {
+  minecraftVersionToNumberArray(version) {
     const numbers = version.split('.')
     if (numbers.length < 3) {
       for (let i = 0; i < 3 - numbers.length; ++i) {
@@ -9,7 +9,7 @@ const MinecraftUtils = { // eslint-disable-line no-unused-vars
 
     return numbers.map(number => parseInt(number))
   },
-  minecraftVersionsToNumbers: function (numbers) {
+  minecraftVersionsToNumbers(numbers) {
     // initial numbers : 1.10, 1.7.9, 1.11.2 ( 1.7.9 < 1.10 < 1.11.2 )
     //          result : 1100,  1079, 1112   (  1079 < 1100 < 1112 )
 

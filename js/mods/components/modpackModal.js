@@ -31,7 +31,7 @@ Vue.component('modpack-modal', {
     }
   },
   computed: {
-    modSelection: function () {
+    modSelection() {
       const result = []
 
       // build mod selections following mods found
@@ -46,13 +46,13 @@ Vue.component('modpack-modal', {
 
       return result
     },
-    numberOfModsFound: function () {
+    numberOfModsFound() {
       return this.modsFound
     },
-    numberOfModsIgnored: function () {
+    numberOfModsIgnored() {
       return this.modsIgnored
     },
-    coveragePercentage: function () {
+    coveragePercentage() {
       this.findMods()
       return (((this.numberOfModsIgnored + this.numberOfModsFound) * 100) / this.$props.modpack.modList.length).toFixed(2)
     }
@@ -67,7 +67,7 @@ Vue.component('modpack-modal', {
     }
   },
   methods: {
-    searchModName: function (id) {
+    searchModName(id) {
       if (this.modsNames[id] && this.modsNames[id] != _TEXT_LOADING) return
 
       if (this.mods[id]) {
@@ -85,7 +85,7 @@ Vue.component('modpack-modal', {
         .catch(() => { this.modsNames[id] = 'Not Found on CurseForge API: ' + id });
     },
 
-    findMods: function () {
+    findMods() {
       const results = []
       this.modsFound = 0
       this.modsIgnored = 0
@@ -109,7 +109,7 @@ Vue.component('modpack-modal', {
 
       return results
     },
-    findMod: function (id) {
+    findMod(id) {
       if (this.mods[id] && this.mods[id].blacklisted)
         return `<span class="text-success">No textures</span>`
 
@@ -124,7 +124,7 @@ Vue.component('modpack-modal', {
 
       return `<span class="text-danger">Not found</span>`
     },
-    download: function () {
+    download() {
       if (!this.modSelection || !Array.isArray(this.modSelection) || this.modSelection.length === 0) return
       this.$props.onclose()
       this.$root.$refs.localDownload.openConfirmModal(this.modSelection)

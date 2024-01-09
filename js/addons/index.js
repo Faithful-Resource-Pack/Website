@@ -1,4 +1,4 @@
-/* global Vue, getJSON, VueRouter, Vuetify */
+/* global Vue, VueRouter, Vuetify */
 
 Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 
@@ -15,7 +15,7 @@ const router = new VueRouter({
 })
 
 let v = new Vue({
-  router, 
+  router,
   el: "#app",
   vuetify: new Vuetify({
     theme: {

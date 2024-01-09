@@ -1,4 +1,4 @@
-/* global location, Vue, getJSON, axios, getHTML */
+/* global location, Vue, axios, getHTML */
 
 let cache = {}
 
@@ -328,66 +328,96 @@ const v = new Vue({
       else return 0
     }
   },
-  mounted: function () {
+  mounted() {
     this.isMounted = true
 
     // Faithful 32x
-    getJSON('data/downloads/faithful_java_32x.json', (err, json) => {
-      if (err) return console.error(err)
-      this.downloads.f32 = json
-    })
-    getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Java-32x/releases', (err, json) => {
-      if (err) return console.error(err)
-      this.releases.f32.github = json
-    })
-    getJSON(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.cfwidget.com/436482`)}`, (err, json) => {
-      if (err) return console.error(err)
-      this.releases.f32.curse = json
-    })
+    fetch('data/downloads/faithful_java_32x.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.downloads.f32 = json
+      })
+      .catch(console.error)
+
+    fetch('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Java-32x/releases')
+      .then((res) => res.json())
+      .then((json) => {
+        this.releases.f32.github = json
+      })
+      .catch(console.error)
+
+    fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.cfwidget.com/436482`)}`)
+      .then((res) => res.json())
+      .then((json) => {
+        this.releases.f32.curse = json
+      })
+      .catch(console.error)
 
     // Faithful 64x
-    getJSON('data/downloads/faithful_java_64x.json', (err, json) => {
-      if (err) return console.error(err)
-      this.downloads.f64 = json
-    })
-    getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Java-64x/releases', (err, json) => {
-      if (err) return console.error(err)
-      this.releases.f64.github = json
-    })
-    getJSON(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.cfwidget.com/419139`)}`, (err, json) => {
-      if (err) return console.error(err)
-      this.releases.f64.curse = json
-    })
+    fetch('data/downloads/faithful_java_64x.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.downloads.f64 = json
+      })
+      .catch(console.error)
+
+    fetch('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Java-64x/releases')
+      .then((res) => res.json())
+      .then((json) => {
+        this.releases.f64.github = json
+      })
+      .catch(console.error)
+
+    fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.cfwidget.com/419139`)}`)
+      .then((res) => res.json())
+      .then((json) => {
+        this.releases.f64.curse = json
+      })
+      .catch(console.error)
 
     // Faithful 32x BEDROCK
-    getJSON('data/downloads/faithful_bedrock_32x.json', (err, json) => {
-      if (err) return console.error(err)
-      this.downloads.f32b = json
-    })
-    getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases', (err, json) => {
-      if (err) return console.error(err)
-      this.releases.f32b.github = json
-    })
+    fetch('data/downloads/faithful_bedrock_32x.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.downloads.f32b = json
+      })
+      .catch(console.error)
+
+    fetch('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Bedrock-32x/releases')
+      .then((res) => res.json())
+      .then((json) => {
+        this.releases.f32b.github = json
+      })
+      .catch(console.error)
 
     // Faithful 64x BEDROCK
-    getJSON('data/downloads/faithful_bedrock_64x.json', (err, json) => {
-      if (err) return console.error(err)
-      this.downloads.f64b = json
-    })
-    getJSON('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases', (err, json) => {
-      if (err) return console.error(err)
-      this.releases.f64b.github = json
-    })
+    fetch('data/downloads/faithful_bedrock_64x.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.downloads.f64b = json
+      })
+      .catch(console.error)
+
+    fetch('https://api.github.com/repos/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases')
+      .then((res) => res.json())
+      .then((json) => {
+        this.releases.f64b.github = json
+      })
+      .catch(console.error)
 
     // Faithful 32x DUNGEONS
-    getJSON('data/downloads/faithful_dungeons_32x.json', (err, json) => {
-      if (err) return console.error(err)
-      this.downloads.f32d = json
-    })
-    getJSON('https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/releases', (err, json) => {
-      if (err) return console.error(err)
-      this.releases.f32d.github = json
-    })
+    fetch('data/downloads/faithful_dungeons_32x.json')
+      .then((res) => res.json())
+      .then((json) => {
+        this.downloads.f32d = json
+      })
+      .catch(console.error)
 
+    fetch('https://api.github.com/repos/Faithful-Dungeons/Resource-Pack/releases')
+      .then((res) => res.json())
+      .then((json) => {
+        this.releases.f32d.github = json
+      })
+      .catch(console.error)
   }
 })

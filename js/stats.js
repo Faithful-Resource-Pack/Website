@@ -1,4 +1,4 @@
-/* global Vue, getJSON, */
+/* global Vue */
 
 Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 const v = new Vue({ // eslint-disable-line no-unused-vars
@@ -20,10 +20,10 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
   methods: {
   },
   computed: {
-    loadingMessage: function () {
+    loadingMessage() {
       return '<i class="fas spin"></i> ' + this.messages.loading
     },
-    addonsStats: function () {
+    addonsStats() {
       // super duper dynamic addons stats
       const result = {}
       const editions = []
@@ -46,38 +46,36 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       return result
     }
   },
-  mounted: function () {
-    getJSON('https://api.faithfulpack.net/v2/mods/raw', (err, json) => {
-      if (err) {
-        console.error(err)
-        return
-      }
-
-      const mods = json
-      const versionList = []
-      let resourcePacks = 0
-      let modAmount = 0
+  mounted() {
+    fetch('https://api.faithfulpack.net/v2/mods/raw')
+      .then((res) => res.json())
+      .then((json) => {
+        const mods = json
+        const versionList = []
+        let resourcePacks = 0
+        let modAmount = 0
 
 
-      Object.values(mods).map(e => e.resource_pack.versions).forEach(versions => {
-        versions.forEach(version => {
-          // version sum
-          if (!versionList.includes(version)) versionList.push(version)
+        Object.values(mods).map(e => e.resource_pack.versions).forEach(versions => {
+          versions.forEach(version => {
+            // version sum
+            if (!versionList.includes(version)) versionList.push(version)
 
-          // resource pack sum
-          ++resourcePacks
+            // resource pack sum
+            ++resourcePacks
+          })
+          // mod sum
+          ++modAmount
         })
-        // mod sum
-        ++modAmount
+
+
+        this.numberOfMinecraftVersions = versionList.length
+        this.numberOfModsSupported = modAmount
+        this.totalNumberOfResourcePacksStored = resourcePacks
+
+        this.loading = false
       })
-
-
-      this.numberOfMinecraftVersions = versionList.length
-      this.numberOfModsSupported = modAmount
-      this.totalNumberOfResourcePacksStored = resourcePacks
-
-      this.loading = false
-    })
+      .catch(console.error);
 
     fetch('https://api.faithfulpack.net/v2/addons/approved')
       .then(response => {

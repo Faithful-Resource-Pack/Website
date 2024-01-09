@@ -8,7 +8,7 @@ Vue.component('clear-database', {
       <button class="btn block btn-dark" v-on:click="clearDB">Clear database</button>\
     </div>',
   methods: {
-    clearDB: function () {
+    clearDB() {
       const dbName = this.$root.$refs.localDownload.dbName
 
       // try to close db
