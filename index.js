@@ -119,61 +119,57 @@ function extract(input, [tag, oneline, accepted_empty_lines, is_list]) {
 }
 
 const EXTRACTED_POSTS_PATH = `${__dirname}/posts.json`;
-let posts_map = undefined;
-let posts_map_loading = false;
-function generate_posts_json() {
-    if (posts_map_loading) return Promise.reject(new Error("Loading"));
-    if (!!posts_map) return Promise.resolve(posts_map);
+let postsMap = undefined;
+let postsMapLoading = false;
+async function generatePostJSON() {
+    if (postsMapLoading) return Promise.reject(new Error("Loading"));
+    if (!!postsMap) return Promise.resolve(postsMap);
 
-    posts_map_loading = true;
+    postsMapLoading = true;
 
-    const dir_posts = `${__dirname}/_posts`;
-    return readdir(dir_posts, { withFileTypes: true })
-        .then((dirs) =>
-            dirs.filter((e) => e.isFile() && e.name.endsWith(".md") && !e.name.startsWith("_"))
-        )
-        .then((md_files) =>
-            Promise.all(
-                md_files.map((e) => Promise.all([e, readFile(`${dir_posts}/${e.name}`, "utf8")]))
-            )
-        )
-        .then((md_contents) => {
-            return md_contents
-                .map(([e, md]) => {
-                    let tmp = {
-                        name: parse(e.name).name,
-                    };
+    const dirPosts = `${__dirname}/_posts`;
+    const dirs = await readdir(dirPosts, { withFileTypes: true });
+    const mdFiles = dirs.filter(
+        (e) => e.isFile() && e.name.endsWith(".md") && !e.name.startsWith("_")
+    );
+    const mdContents = await Promise.all(
+        mdFiles.map((e) => Promise.all([e, readFile(`${dirPosts}/${e.name}`, "utf8")]))
+    );
 
-                    let lines = md.split("\n").filter((l) => l.trim() !== "---");
-                    EXTRACT.forEach((e) => {
-                        extracted = extract(lines, e);
-                        if (
-                            ["long_text", "downloads", "main_changelog"].indexOf(e[0]) !== -1 &&
-                            !!extracted
-                        )
-                            tmp[e[0]] = DOMPurify.sanitize(extracted);
-                        else tmp[e[0]] = extracted;
-                    });
+    const result = mdContents
+        .map(([e, md]) => {
+            let tmp = {
+                name: parse(e.name).name,
+            };
 
-                    return tmp;
-                })
-                .reduce((acc, cur) => {
-                    acc[cur.name] = cur;
-                    return acc;
-                }, {});
+            let lines = md.split("\n").filter((l) => l.trim() !== "---");
+            EXTRACT.forEach((e) => {
+                const extracted = extract(lines, e);
+                if (
+                    ["long_text", "downloads", "main_changelog"].indexOf(e[0]) !== -1 &&
+                    !!extracted
+                )
+                    tmp[e[0]] = DOMPurify.sanitize(extracted);
+                else tmp[e[0]] = extracted;
+            });
+
+            return tmp;
         })
-        .then(async (result) => {
-            posts_map = result;
-            posts_map_loading = false;
+        .reduce((acc, cur) => {
+            acc[cur.name] = cur;
+            return acc;
+        }, {});
 
-            await writeFile(EXTRACTED_POSTS_PATH, JSON.stringify(result));
+    postsMap = result;
+    postsMapLoading = false;
 
-            return result;
-        });
+    await writeFile(EXTRACTED_POSTS_PATH, JSON.stringify(result));
+
+    return result;
 }
 
 app.get("/posts.json", cors(corsOptions), (_, res) => {
-    generate_posts_json()
+    generatePostJSON()
         .then(() => {
             res.sendFile(EXTRACTED_POSTS_PATH);
         })
@@ -184,47 +180,37 @@ app.get("/posts.json", cors(corsOptions), (_, res) => {
 
 function transformData(obj) {
     if (obj === null) return {};
+    if (!Array.isArray(obj) || typeof obj[0] === "string") return obj;
 
-    if (Array.isArray(obj)) {
-        if (typeof obj[0] === "string") {
-            return obj;
-        } else {
-            return obj.reduce(
-                (acc, cur) => ({
-                    ...acc,
-                    [Object.keys(cur)[0]]: transformData(Object.values(cur)[0]),
-                }),
-                {}
-            );
-        }
-    }
-    return obj;
+    return obj.reduce(
+        (acc, cur) => ({
+            ...acc,
+            [Object.keys(cur)[0]]: transformData(Object.values(cur)[0]),
+        }),
+        {}
+    );
 }
 
 /**
  * @param {String} filePath path to the changelog
  * @returns {Promise<any>} JS Object returned
  */
-function extractChangelog(filePath) {
-    return readFile(filePath, "utf8")
-        .then((data) => {
-            // Split the file contents into an array of lines
-            const lines = data.trim().split("\n");
+async function extractChangelog(filePath) {
+    const data = await readFile(filePath, "utf8")
+    // Split the file contents into an array of lines
+    const lines = data.trim().split("\n");
 
-            // Remove the first two and last three lines
-            lines.splice(0, 2);
-            lines.splice(-3);
+    // Remove the first two and last three lines
+    lines.splice(0, 2);
+    lines.splice(-3);
 
-            // Join the remaining lines into a single string
-            const yamlString = lines.join("\n");
+    // Join the remaining lines into a single string
+    const yamlString = lines.join("\n");
 
-            // Parse the YAML string into a JavaScript object
-            return yaml.load(yamlString);
-        })
-        .then((obj) => {
-            const root = Object.values(obj)[0];
-            return transformData(root);
-        });
+    // Parse the YAML string into a JavaScript object
+    const obj = await yaml.load(yamlString);
+    const root = Object.values(obj)[0];
+    return transformData(root);
 }
 
 const CHANGELOGS_DIR = "./changelogs";
@@ -294,6 +280,7 @@ app.get("/addons/:name/?", (req, res, next) => {
         files,
         header_url = "/image/home/og_logo.png";
 
+    // using promise chain for better error handler
     fetch(`https://api.faithfulpack.net/v2/addons/${req.params.name}/all`)
         .then((res) => res.json())
         .then(async (result) => {

@@ -84,16 +84,12 @@ permalink: /about
 <script>
   Load('en.html'); // load english by default
 
-  function Load(file) {
-    fetch('{{site.baseurl}}/translated/about/' + file)
-      .then(response => {
-        return response.text()
-      })
-      .then(body => {
-        document.getElementById('output').innerHTML = body
-      })
+  async function Load(file) {
+    const response = await fetch('{{site.baseurl}}/translated/about/' + file)
+    const body = await response.text()
+    document.getElementById('output').innerHTML = body
 
-    var warning = document.getElementById('warning');
+    const warning = document.getElementById('warning');
     if (file != 'en.html') {
       warning.style.display = 'block';
     } else {
