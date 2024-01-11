@@ -1,7 +1,6 @@
-const { default: axios } = require("axios");
 const express = require("express");
 var cors = require("cors");
-const fs = require("fs").promises;
+const { readdir, readFile, writeFile } = require("fs").promises;
 const { readFileSync } = require("fs");
 const createDOMPurify = require("dompurify");
 const { JSDOM } = require("jsdom");
@@ -18,8 +17,7 @@ const corsOptions = {
     credentials: true,
 };
 
-const window = new JSDOM("").window;
-const DOMPurify = createDOMPurify(window);
+const DOMPurify = createDOMPurify(new JSDOM("").window);
 
 const app = express();
 app.disable("x-powered-by");
@@ -31,15 +29,15 @@ const COFFEE_PAGE = __dirname + "/_site/coffee.html";
 const ADDON_REPLACE_TOKEN = (token) => `%${token}%`;
 const ADDON_FIELD_REPLACE = ["url", "name", "description", "authors", "header_img"];
 
-app.get(["/coffee", "/teapot"], (req, res) => {
-    let data = readFileSync(COFFEE_PAGE, "utf8");
+app.get(["/coffee", "/teapot"], async (req, res) => {
+    let data = await readFile(COFFEE_PAGE, "utf8");
 
-    let title_el = data.match(/<title>(.+)<\/title>/);
-    if (title_el) {
-        let title_str = title_el[1];
-        let title_split = title_str.split(" - ");
-        title_split[0] = req.path.includes("teapot") ? "Teapot" : "Coffee";
-        data = data.replace(/<title>.+<\/title>/, `<title>${title_split.join(" - ")}</title>`);
+    const titleEl = data.match(/<title>(.+)<\/title>/);
+    if (titleEl) {
+        const titleStr = titleEl[1];
+        const titleSplit = titleStr.split(" - ");
+        titleSplit[0] = req.path.includes("teapot") ? "Teapot" : "Coffee";
+        data = data.replace(/<title>.+<\/title>/, `<title>${titleSplit.join(" - ")}</title>`);
     }
 
     res.status(418).send(data);
@@ -130,14 +128,13 @@ function generate_posts_json() {
     posts_map_loading = true;
 
     const dir_posts = `${__dirname}/_posts`;
-    return fs
-        .readdir(dir_posts, { withFileTypes: true })
+    return readdir(dir_posts, { withFileTypes: true })
         .then((dirs) =>
             dirs.filter((e) => e.isFile() && e.name.endsWith(".md") && !e.name.startsWith("_"))
         )
         .then((md_files) =>
             Promise.all(
-                md_files.map((e) => Promise.all([e, fs.readFile(`${dir_posts}/${e.name}`, "utf8")]))
+                md_files.map((e) => Promise.all([e, readFile(`${dir_posts}/${e.name}`, "utf8")]))
             )
         )
         .then((md_contents) => {
@@ -169,7 +166,7 @@ function generate_posts_json() {
             posts_map = result;
             posts_map_loading = false;
 
-            await fs.writeFile(EXTRACTED_POSTS_PATH, JSON.stringify(result));
+            await writeFile(EXTRACTED_POSTS_PATH, JSON.stringify(result));
 
             return result;
         });
@@ -208,9 +205,8 @@ function transformData(obj) {
  * @param {String} filePath path to the changelog
  * @returns {Promise<any>} JS Object returned
  */
-function extract_changelog(filePath) {
-    return fs
-        .readFile(filePath, "utf8")
+function extractChangelog(filePath) {
+    return readFile(filePath, "utf8")
         .then((data) => {
             // Split the file contents into an array of lines
             const lines = data.trim().split("\n");
@@ -242,7 +238,7 @@ CHANGELOGS.forEach((changelog, i) => {
     const changelogPath = join(__dirname, CHANGELOGS_DIR, changelog);
     const stem = parse(changelogPath).name;
 
-    extract_changelog(changelogPath).then((obj) => {
+    extractChangelog(changelogPath).then((obj) => {
         CHANGELOGS_OBJ[i] = obj;
         CHANGELOGS_LOADING[i] = false;
     });
@@ -263,7 +259,7 @@ app.use(
     })
 );
 
-// redirect addon pagee because it is a "template" page
+// redirect addon page because it is a "template" page
 app.get("/addon", (req, res, next) => {
     if (req.url === "/addon") {
         req.url = "/addons";
@@ -298,10 +294,10 @@ app.get("/addons/:name/?", (req, res, next) => {
         files,
         header_url = "/image/home/og_logo.png";
 
-    axios
-        .get(`https://api.faithfulpack.net/v2/addons/${req.params.name}/all`)
+    fetch(`https://api.faithfulpack.net/v2/addons/${req.params.name}/all`)
+        .then((res) => res.json())
         .then(async (result) => {
-            addon = result.data;
+            addon = result;
             const res = await fetch(`https://api.faithfulpack.net/v2/users/raw`);
             const users = await res.json();
             return Object.values(users).filter((user) => addon.authors.includes(user.id));
@@ -311,7 +307,7 @@ app.get("/addons/:name/?", (req, res, next) => {
             files = addon.files;
 
             try {
-                header_url = files.filter((el) => el.use === "header")[0].source;
+                header_url = files.find((el) => el.use === "header").source;
             } catch (_error) {}
 
             if (!addon || !addon.approval || addon.approval.status !== "approved") {
@@ -324,16 +320,17 @@ app.get("/addons/:name/?", (req, res, next) => {
                 .filter((e) => !!e)
                 .map((user) => user.username)
                 .filter((e) => !!e);
+
             const dataReplaced = ADDON_FIELD_REPLACE.reduce((acc, token) => {
                 acc[token] = addon[token];
                 return acc;
             }, {});
-            dataReplaced.authors = authorArray.join(", ");
 
+            dataReplaced.authors = authorArray.join(", ");
             dataReplaced.url = `${req.originalUrl}`;
 
             // load addon post page
-            let data = await fs.readFile(ADDON_PAGE, "utf8");
+            let data = await readFile(ADDON_PAGE, "utf8");
 
             // replace header if existing
             if (header_url) {
@@ -347,22 +344,17 @@ app.get("/addons/:name/?", (req, res, next) => {
 
             // replace script value
             //! please use Node v15+ for support of replaceAll
-            data = data.replaceAll(
-                "'" + ADDON_REPLACE_TOKEN("data.addon") + "'",
-                JSON.stringify(addon)
-            );
-            data = data.replaceAll(
-                "'" + ADDON_REPLACE_TOKEN("data.authors") + "'",
-                JSON.stringify(authors)
-            );
-            data = data.replaceAll(
-                "'" + ADDON_REPLACE_TOKEN("data.slug") + "'",
-                JSON.stringify(req.params.name)
-            );
-            data = data.replaceAll(
-                "'" + ADDON_REPLACE_TOKEN("data.files") + "'",
-                JSON.stringify(files)
-            );
+            data = data
+                .replaceAll("'" + ADDON_REPLACE_TOKEN("data.addon") + "'", JSON.stringify(addon))
+                .replaceAll(
+                    "'" + ADDON_REPLACE_TOKEN("data.authors") + "'",
+                    JSON.stringify(authors)
+                )
+                .replaceAll(
+                    "'" + ADDON_REPLACE_TOKEN("data.slug") + "'",
+                    JSON.stringify(req.params.name)
+                )
+                .replaceAll("'" + ADDON_REPLACE_TOKEN("data.files") + "'", JSON.stringify(files));
 
             res.send(data);
             res.end();
