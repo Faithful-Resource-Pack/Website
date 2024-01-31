@@ -1,7 +1,6 @@
 const express = require("express");
-var cors = require("cors");
+const cors = require("cors");
 const { readdir, readFile, writeFile } = require("fs").promises;
-const { readFileSync } = require("fs");
 const createDOMPurify = require("dompurify");
 const { JSDOM } = require("jsdom");
 const { parse, join } = require("path");
