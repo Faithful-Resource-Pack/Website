@@ -6,15 +6,20 @@ Vue.component('minecraft-versions', {
     versions: Array,
     breakpoints: Object
   },
-  template:
-    '<div id="minecraftVersions">\
-      <div>\
-        <div v-for="(line, index) in versionsOrganized" :key="index" class="auto-flex mt-0 mx-0 btn-group-custom">\
-          <download-minecraft-version v-for="version in line" :key="version.version" :value="version" :block="breakpoints.lg && !breakpoints.md" />\
-        </div>\
-      </div>\
-    </div>',
-
+  template: `
+    <div id="minecraftVersions">
+      <div>
+        <div v-for="(line, index) in versionsOrganized" :key="index" class="auto-flex mt-0 mx-0 btn-group-custom">
+          <download-minecraft-version
+            v-for="version in line"
+            :key="version.version"
+            :value="version"
+            :block="breakpoints.lg && !breakpoints.md"
+          />
+        </div>
+      </div>
+    </div>
+  `,
   data () {
     return {}
   },

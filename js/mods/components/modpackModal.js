@@ -5,8 +5,8 @@ const _TEXT_LOADING = 'Loading...'
 
 Vue.component('modpack-modal', {
   props: ['modpackmodalopened', 'modpack', 'onclose', 'mods'],
-  template:
-    `<custom-modal v-if="modpack" :modalOpened="modpackmodalopened" :closeOnClick="onclose">
+  template: `
+    <custom-modal v-if="modpack" :modalOpened="modpackmodalopened" :closeOnClick="onclose">
       <h3 class="mt-0">{{ modpack.modpackName }}</h3>
       <p class="advice mb-0">Modpack version: <span>{{ modpack.modpackVersion }}</span></p>
       <p class="advice">Minecraft version: <span>{{ modpack.minecraftVersion }}</span></p>
@@ -22,7 +22,8 @@ Vue.component('modpack-modal', {
           <button class="btn btn-dark" v-on:click="download">Download</button>
         </div>
       </template>
-    </custom-modal>`,
+    </custom-modal>
+  `,
   data() {
     return {
       modsFound: 0,

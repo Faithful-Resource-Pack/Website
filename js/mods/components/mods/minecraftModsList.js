@@ -2,6 +2,11 @@
 /* eslint no-multi-str: 0 */
 
 Vue.component('minecraft-mod-list', {
+  template: `
+    <ul class="mod-ul">
+      <minecraft-mod v-for="(mod, index) in mods" :key="index" :mod="mod"></minecraft-mod>
+    </ul>
+  `,
   props: {
     mods: Object
   },
@@ -18,8 +23,4 @@ Vue.component('minecraft-mod-list', {
       return mod.resource_pack.git_repository ? mod.resource_pack.git_repository.split('/').pop() : null
     }
   },
-  template:
-    '<ul class="mod-ul">\
-      <minecraft-mod v-for="(mod, index) in mods" :key="index" :mod="mod"></minecraft-mod>\
-    </ul>'
 })

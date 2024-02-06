@@ -2,11 +2,12 @@
 /* eslint no-multi-str: 0 */
 
 Vue.component('clear-database', {
-  template:
-  '<div>\
-      <label for="clearDatabase" class="block pb-1">Database</label>\
-      <button class="btn block btn-dark" v-on:click="clearDB">Clear database</button>\
-    </div>',
+  template: `
+    <div>
+      <label for="clearDatabase" class="block pb-1">Database</label>
+      <button class="btn block btn-dark" v-on:click="clearDB">Clear database</button>
+    </div>
+  `,
   methods: {
     clearDB() {
       const dbName = this.$root.$refs.localDownload.dbName

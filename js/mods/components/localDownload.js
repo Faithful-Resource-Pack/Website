@@ -8,40 +8,50 @@ NAME = 'Faithful Mods' // eslint-disable-line
 
 Vue.component('local-download', {
   props: ['canpack', 'versions'],
-  template:
-    '<div>\
-      <custom-modal contentId="cacheClear" :modalOpened="confirmOpened" :closeOnClick="function() { confirmOpened = false }"> \
-        <h3>Do you want to use cached versions?</h3>\
-        <p class="mb-2">Some mod resource packs may already have been downloaded. Do you want to use the cached versions? Using the cached versions is usually faster but can cause outdated textures.</p>\
-        <div class="text-center auto-flex px-2">\
-          <button type="button" class="btn btn-dark mx-1 mt-2" v-on:click="downloadLocally(true)">No</button>\
-          <button type="button" class="btn btn-dark mx-1 mt-2" v-on:click="downloadLocally(false)">Yes</button>\
-        </div>\
-      </custom-modal>\
-      \
-      <custom-modal id="downloadModal" contentId="downloadModalContent" :modalOpened="modalOpened" :closeOnClick="closeModal">\
-        <div id="steps">\
-          <template v-for="(step, index) in steps" :key="step.name" >\
-            <div class="text-center">\
-              <button :disabled="index != currentStep" class="mx-auto px-0 btn btn-dark">{{ index+1 }}</button>\
-            </div>\
-            <div v-if="index < steps.length -1" class="line col"></div>\
-          </template>\
-        </div>\
-        <h3 class="mt-3 mb-1">{{ "Step " + (currentStep+1) + ": " + steps[currentStep].name }}</h3>\
-        <p v-if="currentStep < 2">{{ latestLog }}</p>\
-        <p v-else>{{ steps[currentStep].content }}<span v-if="isGenerating">{{ timeLeft }}</span></p>\
-        <div id="zipProgressBar" v-if="isGenerating" class="progress my-3">\
-          <div :class="{ \'progress-bar\': true, \'progress-bar-striped\': parseInt(generatedPercent) < 100, \'progress-bar-animated\': parseInt(generatedPercent) < 100 }" role="progressbar" :style="{ width: generatedPercent + \'%\' }" :aria-valuenow="generatedPercent" aria-valuemin="0" aria-valuemax="100">{{ generatedPercent + "%" }}</div>\
-        </div>\
-        <div id="logs" ref="log">\
-          <div v-for="(log, index) in logs" :key="index" :class="{ log: true, error: log.type === \'error\' }" :title="log.value">{{ log.value }}</div>\
-        </div>\
-        <div id="bottomButtons" class="text-right mt-3">\
-        <button :disabled="!finalZip" v-on:click="downloadZip" class="btn btn-dark mt-2 mr-2">Download Zip</button><button v-on:click="closeModal" :title="cancelTitle" :disabled="!canCloseModal" class="btn btn-dark mt-2">Cancel</button>\
-        </div>\
-      </custom-modal>\
-    </div>',
+  template: `
+    <div>
+      <custom-modal contentId="cacheClear" :modalOpened="confirmOpened" :closeOnClick="function() { confirmOpened = false }">
+        <h3>Do you want to use cached versions?</h3>
+        <p class="mb-2">Some mod resource packs may already have been downloaded. Do you want to use the cached versions? Using the cached versions is usually faster but can cause outdated textures.</p>
+        <div class="text-center auto-flex px-2">
+          <button type="button" class="btn btn-dark mx-1 mt-2" v-on:click="downloadLocally(true)">No</button>
+          <button type="button" class="btn btn-dark mx-1 mt-2" v-on:click="downloadLocally(false)">Yes</button>
+        </div>
+      </custom-modal>
+      <custom-modal id="downloadModal" contentId="downloadModalContent" :modalOpened="modalOpened" :closeOnClick="closeModal">
+        <div id="steps">
+          <template v-for="(step, index) in steps" :key="step.name" >
+            <div class="text-center">
+              <button :disabled="index != currentStep" class="mx-auto px-0 btn btn-dark">{{ index+1 }}</button>
+            </div>
+            <div v-if="index < steps.length -1" class="line col"></div>
+          </template>
+        </div>
+        <h3 class="mt-3 mb-1">{{ "Step " + (currentStep+1) + ": " + steps[currentStep].name }}</h3>
+        <p v-if="currentStep < 2">{{ latestLog }}</p>
+        <p v-else>{{ steps[currentStep].content }}<span v-if="isGenerating">{{ timeLeft }}</span></p>
+        <div id="zipProgressBar" v-if="isGenerating" class="progress my-3">
+          <div
+            role="progressbar"
+            :class="{ \'progress-bar\': true, \'progress-bar-striped\': parseInt(generatedPercent) < 100, \'progress-bar-animated\': parseInt(generatedPercent) < 100 }"
+            :style="{ width: generatedPercent + \'%\' }" :aria-valuenow="generatedPercent" aria-valuemin="0" aria-valuemax="100">{{ generatedPercent + "%" }}
+          </div>
+        </div>
+        <div id="logs" ref="log">
+          <div
+            v-for="(log, index) in logs"
+            :key="index"
+            :class="{ log: true, error: log.type === \'error\' }"
+            :title="log.value"
+          >
+            {{ log.value }}
+          </div>
+        </div>
+        <div id="bottomButtons" class="text-right mt-3">
+        <button :disabled="!finalZip" v-on:click="downloadZip" class="btn btn-dark mt-2 mr-2">Download Zip</button><button v-on:click="closeModal" :title="cancelTitle" :disabled="!canCloseModal" class="btn btn-dark mt-2">Cancel</button>
+        </div>
+      </custom-modal>
+    </div>`,
   data () {
     return {
       dbName: 'mods',

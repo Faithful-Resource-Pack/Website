@@ -16,10 +16,11 @@ Vue.component('custom-modal', {
       required: true
     }
   },
-  template: '<div id="cacheClear" class="customModal" v-show="modalOpened">\
-    <div class="customModalBackground" v-on:click="closeOnClick"></div>\
-    <div :id="contentId" class="customModalContent p-3">\
-      <slot></slot>\
-    </div><span class="taille">\
-  </div>'
+  template: `
+    <div id="cacheClear" class="customModal" v-show="modalOpened">
+      <div class="customModalBackground" v-on:click="closeOnClick"></div>
+      <div :id="contentId" class="customModalContent p-3">
+        <slot></slot>
+      </div><span class="taille">
+    </div>`,
 })

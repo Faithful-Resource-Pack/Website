@@ -10,8 +10,8 @@ Vue.component('minecraft-mod', {
   props: {
     mod: Object
   },
-  template:
-    `<li class="mod-bar" :class="{ 'selected-mod': mod.selected }" v-if="!mod.blacklisted && mod.resource_pack.versions.length > 0">
+  template: `
+    <li class="mod-bar" :class="{ 'selected-mod': mod.selected }" v-if="!mod.blacklisted && mod.resource_pack.versions.length > 0">
       <label :for="modId" class="mod-label">Select this mod</label>
       <div :style="imageStyle" class="mod-img">
         <img :src="$root.apiURL + '/v2/mods/' + this.modId + '/thumbnail'" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" :alt="name" :title="name" loading="lazy" />
@@ -35,7 +35,8 @@ Vue.component('minecraft-mod', {
             ></template>
         </div>
       </div>
-    </li>`,
+    </li>
+  `,
   data() {
     return {
       searchPages: 3,
