@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "Faithful Website",
+  "description": "The official website for the Faithful Project.",
   "main": "index.js",
   "scripts": {
     "ji": "bundle install",
