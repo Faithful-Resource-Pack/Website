@@ -66,6 +66,12 @@ const EXTRACT = [
     ["main_changelog", true],
 ];
 
+function cleanLine(line) {
+    if (line.startsWith('"')) line = line.substring(1);
+    if (line.endsWith('"')) line = line.slice(0, -1);
+    return line;
+}
+
 /**
  * definitions
  * @param {string[]} input lines
@@ -73,53 +79,35 @@ const EXTRACT = [
  *
  * @return {{[tag]: string} | undefined}
  */
-function extract(input, [tag, oneline, accepted_empty_lines, is_list]) {
-    let start = input.findIndex((l) => l.startsWith(`${tag}:`));
+function extract(input, [tag, oneline, acceptedEmptyLines, isList]) {
+    const start = input.findIndex((l) => l.startsWith(`${tag}:`));
     if (start === -1) return undefined;
     let i = start;
 
-    if (oneline) {
-        let line = input[i];
-        let line_cleaned = line.replace(`${tag}:`, "").trim();
-        if (line_cleaned.startsWith('"')) line_cleaned = line_cleaned.substring(1);
-        if (line_cleaned.endsWith('"')) line_cleaned = line_cleaned.slice(0, -1);
-        return line_cleaned;
-    }
+    if (oneline) return cleanLine(input[i].replace(`${tag}:`, "").trim());
 
-    is_list = !!is_list;
-    accepted_empty_lines = accepted_empty_lines !== undefined ? accepted_empty_lines : 1;
+    acceptedEmptyLines ??= 1;
 
     let res = input[i].replace(`${tag}:`, "");
     i++;
 
-    let running = true;
-    let empty_lines = 0;
-    while (running && i < input.length) {
+    for (let emptyLines = 0; i < input.length; ++i) {
         line = input[i];
 
-        let is_empty = line.trim() === "";
-        if (!is_empty) empty_lines = 0;
-        else empty_lines++;
+        if (!line.trim() === "") emptyLines = 0;
+        else emptyLines++;
 
-        if ((is_list && i > 0 && !/^\s/.test(line)) || empty_lines >= accepted_empty_lines) {
-            running = false;
-        } else {
-            res += "\n" + line;
-        }
-
-        i++;
+        if ((isList && i > 0 && !/^\s/.test(line)) || emptyLines >= acceptedEmptyLines) break;
+        res += "\n" + line;
     }
 
-    let line_cleaned = res.trim();
-    if (line_cleaned.startsWith('"')) line_cleaned = line_cleaned.substring(1);
-    if (line_cleaned.endsWith('"')) line_cleaned = line_cleaned.slice(0, -1);
-
-    return line_cleaned;
+    return cleanLine(res.trim());
 }
 
 const EXTRACTED_POSTS_PATH = `${__dirname}/posts.json`;
 let postsMap = undefined;
 let postsMapLoading = false;
+
 async function generatePostJSON() {
     if (postsMapLoading) return Promise.reject(new Error("Loading"));
     if (!!postsMap) return Promise.resolve(postsMap);
@@ -137,11 +125,11 @@ async function generatePostJSON() {
 
     const result = mdContents
         .map(([e, md]) => {
-            let tmp = {
+            const tmp = {
                 name: parse(e.name).name,
             };
 
-            let lines = md.split("\n").filter((l) => l.trim() !== "---");
+            const lines = md.split("\n").filter((l) => l.trim() !== "---");
             EXTRACT.forEach((e) => {
                 const extracted = extract(lines, e);
                 if (
@@ -169,12 +157,8 @@ async function generatePostJSON() {
 
 app.get("/posts.json", cors(corsOptions), (_, res) => {
     generatePostJSON()
-        .then(() => {
-            res.sendFile(EXTRACTED_POSTS_PATH);
-        })
-        .catch((err) => {
-            res.status(403).send(err.message).end();
-        });
+        .then(() => res.sendFile(EXTRACTED_POSTS_PATH))
+        .catch((err) => res.status(403).send(err.message).end());
 });
 
 function transformData(obj) {
@@ -195,7 +179,7 @@ function transformData(obj) {
  * @returns {Promise<any>} JS Object returned
  */
 async function extractChangelog(filePath) {
-    const data = await readFile(filePath, "utf8")
+    const data = await readFile(filePath, "utf8");
     // Split the file contents into an array of lines
     const lines = data.trim().split("\n");
 
@@ -275,26 +259,28 @@ app.get("/addons/", (req, res, next) => {
 });
 
 app.get("/addons/:name/?", (req, res, next) => {
-    let addon,
-        files,
-        header_url = "/image/home/og_logo.png";
+    let addon;
+    let files;
+    let headerURL = "/image/home/og_logo.png";
 
-    // using promise chain for better error handler
+    // using promise chain for better error handling
     fetch(`https://api.faithfulpack.net/v2/addons/${req.params.name}/all`)
         .then((res) => res.json())
         .then(async (result) => {
             addon = result;
-            const res = await fetch(`https://api.faithfulpack.net/v2/users/${addon.authors.join(',')}`);
-            const json_response = await res.json();
+            const res = await fetch(
+                `https://api.faithfulpack.net/v2/users/${addon.authors.join(",")}`
+            );
+            const users = await res.json();
 
-            return Array.isArray(json_response) ? json_response : [json_response];
+            return Array.isArray(users) ? users : [users];
         })
         .then(async (result) => {
             const authors = result;
             files = addon.files;
 
             try {
-                header_url = files.find((el) => el.use === "header").source;
+                headerURL = files.find((el) => el.use === "header").source;
             } catch (_error) {}
 
             if (!addon || !addon.approval || addon.approval.status !== "approved") {
@@ -302,9 +288,7 @@ app.get("/addons/:name/?", (req, res, next) => {
                 return;
             }
 
-            const authorArray = authors
-                .map((user) => user.username)
-                .filter((e) => !!e);
+            const authorArray = authors.map((user) => user.username).filter((e) => !!e);
 
             const dataReplaced = ADDON_FIELD_REPLACE.reduce((acc, token) => {
                 acc[token] = addon[token];
@@ -318,9 +302,7 @@ app.get("/addons/:name/?", (req, res, next) => {
             let data = await readFile(ADDON_PAGE, "utf8");
 
             // replace header if existing
-            if (header_url) {
-                dataReplaced.header_img = header_url;
-            }
+            if (headerURL) dataReplaced.header_img = headerURL;
 
             // replace all header values
             ADDON_FIELD_REPLACE.forEach((token) => {
@@ -350,10 +332,8 @@ app.get("/addons/:name/?", (req, res, next) => {
         });
 });
 
-app.use(function (req, res, next) {
-    res.status(404).sendFile(NOT_FOUND_PAGE);
-});
+app.use((req, res, next) => res.status(404).sendFile(NOT_FOUND_PAGE));
 
-app.listen(process.env.PORT, () => {
-    console.log(`Website listening at http://localhost:${process.env.PORT} in ${__dirname}`);
-});
+app.listen(process.env.PORT, () =>
+    console.log(`Website listening at http://localhost:${process.env.PORT} in ${__dirname}`)
+);
