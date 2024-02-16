@@ -284,9 +284,10 @@ app.get("/addons/:name/?", (req, res, next) => {
         .then((res) => res.json())
         .then(async (result) => {
             addon = result;
-            const res = await fetch(`https://api.faithfulpack.net/v2/users/raw`);
-            const users = await res.json();
-            return Object.values(users).filter((user) => addon.authors.includes(user.id));
+            const res = await fetch(`https://api.faithfulpack.net/v2/users/${addon.authors.join(',')}`);
+            const json_response = await res.json();
+
+            return Array.isArray(json_response) ? json_response : [json_response];
         })
         .then(async (result) => {
             const authors = result;
@@ -301,9 +302,7 @@ app.get("/addons/:name/?", (req, res, next) => {
                 return;
             }
 
-            const authorArray = addon.authors
-                .map((author) => authors[author])
-                .filter((e) => !!e)
+            const authorArray = authors
                 .map((user) => user.username)
                 .filter((e) => !!e);
 
