@@ -34,7 +34,7 @@
 		"svelte-preprocess": "^5.1.1",
 		"svelte-sequential-preprocessor": "^2.0.1",
 		"typescript": "^5.3.3",
-		"vite": "^4.5.1",
+		"vite": "^4.5.2",
 		"vite-plugin-lightningcss": "^0.0.5"
 	},
 	"type": "module",
