@@ -1,18 +1,14 @@
-export const load = async function ({ params }) {
-	const config: Object = {
-		curse: [
-			436482, // curse project id
-			419139,
-			561185,
-			667237,
-			414275,
-		],
-		modrinth: ["w0TnApzs", "r4GILswZ"],
+/** @todo nuke this because I had no idea how to use js at the time */
+export async function load() {
+	const config = {
+		// curse project id
+		curse: [436482, 419139, 561185, 667237, 414275],
+		modrinth: ["w0TnApzs", "r4GILswZ", "woZSVbVu", "bkFF9W8s"],
 	};
 
-	let listings: any = config;
+	const listings = {} as Record<string, string[]>;
 
-	for (let [key, value] of Object.entries(config)) {
+	for (const [key, value] of Object.entries(config)) {
 		let i = 0;
 		listings[key] = Array(5).fill("X"); // CHANGE THIS IF MORE PROJECTS ARE ADDED IN FUTURE
 		for (let id of value) {
@@ -65,4 +61,4 @@ export const load = async function ({ params }) {
 			},
 		],
 	}; // why does it have to return an object aaaaaaa
-};
+}
