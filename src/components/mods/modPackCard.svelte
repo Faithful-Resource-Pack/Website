@@ -3,7 +3,7 @@
 	export let background: string;
 	export let src: string;
 
-	export let links: App.CardLink[];
+	export let links: CardLink[];
 
 	$: styles = src.includes("cf") ? "transform: scale(0.8)" : "";
 </script>

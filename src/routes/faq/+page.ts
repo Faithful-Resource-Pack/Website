@@ -6,7 +6,7 @@ export const load = async function ({ params }) {
 		console.log("faq strings", err);
 		throw err;
 	});
-	const faqData: App.FaqArray[] = await faqRes.json();
+	const faqData: FaqArray[] = await faqRes.json();
 
 	return { faqArray: faqData }; // why does it have to return an object aaaaaaa
 };

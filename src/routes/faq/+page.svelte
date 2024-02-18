@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let data: App.FaqObject;
+	export let data: FaqObject;
 	import { parseMd } from "$lib/shortMd";
 	import DOMPurify from "isomorphic-dompurify";
 	function cleanDiscordFormatting(text: string) {

@@ -4,7 +4,7 @@
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 
 // and what to do when importing types
-declare namespace App {
+declare global {
 	// interface Locals {}
 	// interface PageData {}
 	// interface Error {}

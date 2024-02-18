@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PackCard from "./packCard.svelte";
 
-	export let items: App.CardList;
+	export let items: CardList;
 
 	$: urls = items.urls;
 	$: links = items.links;

@@ -25,7 +25,7 @@ export let favoriteStore = createJSONStore(
 	"ADDON_FAVORITES",
 	{
 		favorites: [],
-	} as App.FavoriteAddonStore,
+	} as FavoriteAddonStore,
 	(writable) => {
 		const { subscribe, update } = writable;
 
@@ -65,7 +65,7 @@ export let searchStore = createJSONStore(
 		...JSON.parse(JSON.stringify(checkboxChoices)), // deep copy
 		search: "",
 		authors: [],
-	} as App.SearchAddonStore,
+	} as SearchAddonStore,
 	(writable) => {
 		const { subscribe, update } = writable;
 		return {

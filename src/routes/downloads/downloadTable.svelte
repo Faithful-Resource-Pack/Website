@@ -1,6 +1,6 @@
 <script lang="ts">
 	import DownloadItem from "./downloadItem.svelte";
-	export let downloads: App.DownloadList;
+	export let downloads: DownloadList;
 </script>
 
 <div class="outline">

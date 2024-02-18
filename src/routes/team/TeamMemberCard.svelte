@@ -30,7 +30,7 @@
 		city?: string;
 		country?: string;
 		pronouns?: string;
-		socials?: App.CardLink[]; // this was not the intended purpose but it works really well
+		socials?: CardLink[]; // this was not the intended purpose but it works really well
 		roles?: any[];
 	};
 
@@ -45,13 +45,12 @@
 		return 60 > Math.pow(Ylum, 0.43) * 100 ? "#fff" : "#000";
 	};
 
-	const getIcon = (options: App.IconOptions) => {
+	const getIcon = (options: IconOptions) => {
 		// trim off unnecessary info and return base url
 		if (options.url) {
 			const url = options.url ? options.url.replace(/https:\/\//g, "").replace(/\/.+/, "") : "none";
-			switch (
-				url // parsing the url rather than the name so people can add custom name fields
-			) {
+			// parsing the url rather than the name so people can add custom name fields
+			switch (url) {
 				case "github.com":
 					return faGithub;
 				case "twitter.com":
@@ -66,7 +65,7 @@
 					return faLink;
 			}
 		} else {
-			switch (options.badge.toLowerCase()) {
+			switch (options.badge?.toLowerCase()) {
 				case "development manager":
 				case "developer":
 					return faCode;
@@ -144,7 +143,7 @@
 		</ul>
 	</div>
 	<div class="badges">
-		{#each user.roles ?? [] as badge, i}
+		{#each user.roles ?? [] as badge}
 			<div class="badge-display" style="background-color: {badge.color};">
 				<Fa size="2.5rem" color="#fff" icon={getIcon({ badge: badge.name })} />
 			</div>

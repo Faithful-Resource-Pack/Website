@@ -1,7 +1,7 @@
 <script lang="ts">
 	import DownloadTable from "./downloadTable.svelte";
 
-	export let pack: App.Pack;
+	export let pack: Pack;
 
 	const coming_soon = "Coming soon";
 	const project_discontinued = "This project has been discontinued.";

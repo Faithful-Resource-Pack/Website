@@ -4,7 +4,7 @@
 	import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 	export let version: string;
-	export let downloads: App.Download[];
+	export let downloads: Download[];
 
 	$: collapsible = downloads.length > 1;
 	let opened = false;

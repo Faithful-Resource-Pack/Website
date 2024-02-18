@@ -4,7 +4,7 @@
 	import { faFireFlameCurved } from "@fortawesome/free-solid-svg-icons";
 
 	export let version: string;
-	export let download: App.Download;
+	export let download: Download;
 
 	$: text_name = download.file;
 	$: text_version = version === "github" ? "Repository" : version;
