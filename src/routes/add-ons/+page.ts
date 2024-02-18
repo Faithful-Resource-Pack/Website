@@ -1,6 +1,6 @@
 /** @type {import('./$types').PageLoad} */
 export function load() {
-    return {
-        title: "Add-ons"
-    }
+	return {
+		title: "Add-ons",
+	};
 }

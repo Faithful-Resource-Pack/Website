@@ -1,138 +1,138 @@
 {
-  "github": [
-    {
-      "file": "Faithful 64x",
-      "file_type": "GitHub",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/"
-      }
-    }
-  ],
-  "1.19.60": [
-    {
-      "file": "Faithful 64x",
-      "file_type": "B",
-      "file_version": 7,
-      "latest": "latest",
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4174222"
-      }
-    }
-  ],
-  "1.18.x": [
-    {
-      "file": "Faithful 64x",
-      "file_type": "B",
-      "file_version": 4,
-      "size": "6.88 MB",
-      "date": "14/04/2022",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/beta-4/Faithful.64x.Beta.4.mcpack"
-      }
-    },
-    {
-      "file": "Compliance 64x",
-      "file_type": "B",
-      "file_version": 3,
-      "size": "6.76 MB",
-      "date": "19/02/2022",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/beta-3/Compliance.64x.BE.-.Beta.3.mcpack"
-      }
-    },
-    {
-      "file": "Compliance 64x",
-      "file_type": "B",
-      "file_version": 2,
-      "size": "6.52 MB",
-      "date": "24/12/2021",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/beta-2/Compliance.64x.Bedrock.Beta.2.mcpack"
-      }
-    }
-  ],
-  "1.17.x": [
-    {
-      "file": "Compliance 64x",
-      "file_type": "B",
-      "file_version": 1,
-      "size": "6.13 MB",
-      "date": "27/10/2021",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/beta-1/Compliance.64x.Bedrock.-.Beta.1.mcpack"
-      }
-    },
-    {
-      "file": "Compliance 64x",
-      "file_type": "A",
-      "file_version": 8,
-      "size": "7.61 MB",
-      "date": "08/08/2021",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-8/Compliance.64x.-.Bedrock.mcpack"
-      }
-    },
-    {
-      "file": "Compliance 64x",
-      "file_type": "A",
-      "file_version": 7,
-      "size": "7.17 MB",
-      "date": "07/05/2021",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-7/Compliance.64x.Bedrock.-.Anniversary.Update.mcpack"
-      }
-    }
-  ],
-  "1.16.x": [
-    {
-      "file": "Compliance 64x",
-      "file_type": "A",
-      "file_version": 6,
-      "size": "7.40 MB",
-      "date": "23/05/2021",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-6.1/Compliance_64x_-_Bedrock_Edition.mcpack"
-      }
-    },
-    {
-      "file": "Compliance 64x",
-      "file_type": "A",
-      "file_version": 5,
-      "size": "7.53 MB",
-      "date": "15/04/2021",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-5/Compliance_64x_Bedrock_-_Alpha_5.mcpack"
-      }
-    },
-    {
-      "file": "Compliance 64x",
-      "file_type": "A",
-      "file_version": 4,
-      "size": "6.86 MB",
-      "date": "24/03/2021",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-4/Compliance_64x_-_Alpha_4_-_Bedrock_Edition.mcpack"
-      }
-    },
-    {
-      "file": "Compliance 64x",
-      "file_type": "A",
-      "file_version": 3,
-      "size": "6.57 MB",
-      "date": "25/02/2021",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-3/Compliance_64x_-_Bedrock_Alpha_3.mcpack"
-      }
-    },
-    {
-      "file": "Compliance 64x",
-      "file_type": "A",
-      "file_version": 2,
-      "size": "6.81 MB",
-      "date": "07/02/2021",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-2/Compliance_64x_-_Bedrock_Alpha_2.mcpack"
-      }
-    }
-  ]
+	"github": [
+		{
+			"file": "Faithful 64x",
+			"file_type": "GitHub",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/"
+			}
+		}
+	],
+	"1.19.60": [
+		{
+			"file": "Faithful 64x",
+			"file_type": "B",
+			"file_version": 7,
+			"latest": "latest",
+			"links": {
+				"curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4174222"
+			}
+		}
+	],
+	"1.18.x": [
+		{
+			"file": "Faithful 64x",
+			"file_type": "B",
+			"file_version": 4,
+			"size": "6.88 MB",
+			"date": "14/04/2022",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/beta-4/Faithful.64x.Beta.4.mcpack"
+			}
+		},
+		{
+			"file": "Compliance 64x",
+			"file_type": "B",
+			"file_version": 3,
+			"size": "6.76 MB",
+			"date": "19/02/2022",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/beta-3/Compliance.64x.BE.-.Beta.3.mcpack"
+			}
+		},
+		{
+			"file": "Compliance 64x",
+			"file_type": "B",
+			"file_version": 2,
+			"size": "6.52 MB",
+			"date": "24/12/2021",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/beta-2/Compliance.64x.Bedrock.Beta.2.mcpack"
+			}
+		}
+	],
+	"1.17.x": [
+		{
+			"file": "Compliance 64x",
+			"file_type": "B",
+			"file_version": 1,
+			"size": "6.13 MB",
+			"date": "27/10/2021",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/beta-1/Compliance.64x.Bedrock.-.Beta.1.mcpack"
+			}
+		},
+		{
+			"file": "Compliance 64x",
+			"file_type": "A",
+			"file_version": 8,
+			"size": "7.61 MB",
+			"date": "08/08/2021",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-8/Compliance.64x.-.Bedrock.mcpack"
+			}
+		},
+		{
+			"file": "Compliance 64x",
+			"file_type": "A",
+			"file_version": 7,
+			"size": "7.17 MB",
+			"date": "07/05/2021",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-7/Compliance.64x.Bedrock.-.Anniversary.Update.mcpack"
+			}
+		}
+	],
+	"1.16.x": [
+		{
+			"file": "Compliance 64x",
+			"file_type": "A",
+			"file_version": 6,
+			"size": "7.40 MB",
+			"date": "23/05/2021",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-6.1/Compliance_64x_-_Bedrock_Edition.mcpack"
+			}
+		},
+		{
+			"file": "Compliance 64x",
+			"file_type": "A",
+			"file_version": 5,
+			"size": "7.53 MB",
+			"date": "15/04/2021",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-5/Compliance_64x_Bedrock_-_Alpha_5.mcpack"
+			}
+		},
+		{
+			"file": "Compliance 64x",
+			"file_type": "A",
+			"file_version": 4,
+			"size": "6.86 MB",
+			"date": "24/03/2021",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-4/Compliance_64x_-_Alpha_4_-_Bedrock_Edition.mcpack"
+			}
+		},
+		{
+			"file": "Compliance 64x",
+			"file_type": "A",
+			"file_version": 3,
+			"size": "6.57 MB",
+			"date": "25/02/2021",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-3/Compliance_64x_-_Bedrock_Alpha_3.mcpack"
+			}
+		},
+		{
+			"file": "Compliance 64x",
+			"file_type": "A",
+			"file_version": 2,
+			"size": "6.81 MB",
+			"date": "07/02/2021",
+			"links": {
+				"github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/releases/download/alpha-2/Compliance_64x_-_Bedrock_Alpha_2.mcpack"
+			}
+		}
+	]
 }

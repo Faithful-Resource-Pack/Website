@@ -7,12 +7,12 @@ import lang from "$locales/lang.json";
 import { mergeDeep } from "$lib/utils";
 
 const config: Config = {
-	fallbackLocale: 'en',
+	fallbackLocale: "en",
 	translations: {
 		// start with empty object not to compy inside en "reference"
 		en: mergeDeep({}, en, lang),
 		fr: mergeDeep({}, en, fr, lang),
-	}
+	},
 };
 
 export const defaultLocale = "en";

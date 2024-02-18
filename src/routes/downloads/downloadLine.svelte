@@ -14,7 +14,7 @@
 			R: "green",
 			B: "blue",
 			A: "yellow",
-			Snapshot: "black"
+			Snapshot: "black",
 		}[download.file_type] || "green";
 	let text_release: string;
 	$: {
@@ -34,7 +34,7 @@
 			}
 		}
 	}
-	const text_latest = 'Latest';
+	const text_latest = "Latest";
 </script>
 
 <td class="large details">
@@ -46,7 +46,7 @@
 	{#if text_date}<p class="mobile">{text_date} - {text_size}</p>{/if}
 </td>
 {#each Object.entries(links) as [origin, link], i}
-<td class="small downloads" colspan={2 / Object.entries(links).length}>
+	<td class="small downloads" colspan={2 / Object.entries(links).length}>
 		<a href={link} class="btn btn-dark btn-dl">
 			{#if origin === "curse"}
 				<Fa icon={faFireFlameCurved} /><span class="link-text">Curse</span>
@@ -56,7 +56,7 @@
 				<span class="link-text">{origin}</span>
 			{/if}
 		</a>
-</td>
+	</td>
 {/each}
 <td class="size">
 	<p>{text_size}</p>
@@ -148,9 +148,9 @@
 		.size {
 			display: none;
 		}
-    td p {
-      padding: 0;
-    }
+		td p {
+			padding: 0;
+		}
 		td.details {
 			flex: 1 1 auto;
 			padding: 0.2rem 0.4rem;

@@ -7,39 +7,7 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"baseUrl": ".",
-		"paths": {
-			"$src": [
-				"src/"
-			],
-			"$stores": [
-				"src/stores"
-			],
-			"$stores/*": [
-				"src/stores/*"
-			],
-			"$lib": [
-				"src/lib"
-			],
-			"$lib/*": [
-				"src/lib/*"
-			],
-			"$components/*": [
-				"src/components/*"
-			],
-			"$interfaces/*": [
-				"src/interfaces/*"
-			],
-			"$locales/*": [
-				"src/locales/*"
-			],
-		},
-		"rootDirs": [
-			".",
-			".svelte-kit/types"
-		],
+		"rootDirs": [".", ".svelte-kit/types"]
 	},
-	"exclude": [
-		"./src/routes/layout.svelte"
-	]
+	"exclude": ["./src/routes/layout.svelte"]
 }

@@ -2,7 +2,7 @@ import { createStore } from "$lib/createStore";
 import { locale, defaultLocale, supportedLocales } from "$lib/translations";
 import type { Readable } from "svelte/store";
 
-type LangValue = typeof supportedLocales[number];
+type LangValue = (typeof supportedLocales)[number];
 
 export let langStore = createStore<
 	LangValue,
@@ -19,7 +19,7 @@ export let langStore = createStore<
 
 		return {
 			subscribe,
-			set: function(lang: string) {
+			set: function (lang: string) {
 				if (!supportedLocales.includes(lang)) return;
 				locale.set(lang);
 				set(lang);
@@ -32,9 +32,9 @@ export let langStore = createStore<
 					locale.set(supportedLocales[next]);
 					return supportedLocales[next];
 				});
-			}
+			},
 		};
-	}
+	},
 );
 
 export let langValueWatch = function (listener: (value: LangValue) => void) {

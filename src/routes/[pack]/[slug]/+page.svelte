@@ -1,23 +1,22 @@
 <script lang="ts">
-	import { marked } from 'marked';
-    import type { PageData } from './$types';
-	import DownloadButton from '$components/common/downloadButton.svelte';
-	import DiscordBanner from '$components/common/discordBanner.svelte';
-	import ChangeLog from "./changeLog.svelte"
+	import { marked } from "marked";
+	import type { PageData } from "./$types";
+	import DownloadButton from "$components/common/downloadButton.svelte";
+	import DiscordBanner from "$components/common/discordBanner.svelte";
+	import ChangeLog from "./changeLog.svelte";
 
-    export let data: PageData;
+	export let data: PageData;
 </script>
 
-
 {#if data.discontinued}
-<div class="container"><h2 class="red banner">This project has been discontinued.</h2></div>
+	<div class="container"><h2 class="red banner">This project has been discontinued.</h2></div>
 {/if}
 
 <div class="container">
 	{#if data.title}
-		<h1 class="text-center title">{ data.title }</h1>
+		<h1 class="text-center title">{data.title}</h1>
 	{:else}
-		<h1 class="text-center title">{ data.title }</h1>
+		<h1 class="text-center title">{data.title}</h1>
 	{/if}
 	<div class="post-details">
 		{#if data.downloads}
@@ -47,20 +46,25 @@
 				{:else}
 					<h2 class="text-center">Download</h2>
 				{/if}
-				{#each Object.entries(data.downloads) as [title, items] }
+				{#each Object.entries(data.downloads) as [title, items]}
 					<h3 class="my-3 text-center">{title}</h3>
 					{#each items as item}
 						<DownloadButton href={item.url} text={item.name} />
 					{/each}
 				{/each}
 				<div class="card card-body">
-					<li>Published { data.date }</li>
+					<li>Published {data.date}</li>
 				</div>
 			</div>
 		{/if}
 		<div class={data.downloads ? "post-details-right" : ""}>
 			{#if data.headerImg}
-				<img id="post-header-img" class="fancy-card-1x card" src={data.headerImg} alt={data.title} />
+				<img
+					id="post-header-img"
+					class="fancy-card-1x card"
+					src={data.headerImg}
+					alt={data.title}
+				/>
 			{/if}
 
 			<div class="card card-body">
@@ -86,7 +90,7 @@
 <style lang="scss">
 	.post-details {
 		display: flex;
-        flex-wrap: wrap;
+		flex-wrap: wrap;
 
 		&-left {
 			flex: 0 0 25%;
@@ -94,7 +98,7 @@
 
 		&-right {
 			flex: 0 0 75%;
-            padding-left: 20px;
+			padding-left: 20px;
 		}
 
 		div.card {
@@ -111,13 +115,13 @@
 		width: 100%;
 	}
 
-	@media(max-width: $width-S) {
-        .post-details {
-            flex-direction: column-reverse;
+	@media (max-width: $width-S) {
+		.post-details {
+			flex-direction: column-reverse;
 
-            &-right {
-                padding-left: 0;
-            }
-        }
-    }
+			&-right {
+				padding-left: 0;
+			}
+		}
+	}
 </style>

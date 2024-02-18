@@ -1,80 +1,80 @@
 {
-  "common": {
-    "loading": "Ładowanie...",
-    "yes": "Tak",
-    "no": "Nie",
-    "submit": "Zatwierdź",
-    "cancel": "Anuluj"
-  },
-  "header": {
-    "home": "Strona Główna",
-    "downloads": "Pliki do Pobrania",
-    "about": "O Nas",
-    "addons": "Rozszerzenia",
-    "modding": "Modyfikacje",
-    "gallery": "Galeria"
-  },
-  "footer": {
-    "light_theme": "Jasny Motyw",
-    "dark_theme": "Ciemny Motyw",
-    "auto_theme": "Automatyczny Motyw",
-    "info": {
-      "title": "Informacje",
-      "installation": "Instalacja",
-      "license": "Licencja",
-      "team": "Zespół",
-      "branding": "Marka",
-      "stats": "Statystyki"
-    },
-    "listings": {
-      "title": "Wpisy",
-      "minecraft_forum": "Forum Minecraft"
-    },
-    "media": {
-      "title": "Pliki",
-      "main_discord": "Główny Discord",
-      "cf_discord": "Discord CF"
-    },
-    "resources": {
-      "title": "Źródła",
-      "news": "Aktualności",
-      "docs": "Dokumentacja",
-      "status": "Status",
-      "translate": "Tłumaczenie",
-      "contributors_handbook": "Podręcznik Wkładców"
-    },
-    "minecraft_trademark": "\"Minecraft\" jest znakiem towarowym Microsoft Corporation i nie jest powiązany z tą stroną. Odwiedź oficjalną stronę {website}{/website}, aby uzyskać grę!"
-  },
-  "team": {
-    "title": {
-      "our_team": "Poznaj nasz Zespół",
-      "additional_developers": "Dodatkowi Twórcy"
-    },
-    "default_location": ""
-  },
-  "stats": {
-    "title": {
-      "page": "Statystyki Faithful",
-      "main_pack": "Główna Paczka",
-      "32_releases": "Wydania 32x",
-      "64_releases": "Wydania 64x",
-      "add_ons": "Dodatki",
-      "mods": "Modyfikacje"
-    },
-    "mods": {
-      "minecraftVersions": "Wspierane wersje Minecraft",
-      "modsSupported": "Wspierane Modyfikacje",
-      "resourcePackStored": "Przechowywane Paczki Modyfikacji"
-    },
-    "add_ons": {
-      "32x": {
-        "Java": "Dodatki Java 32x",
-        "Bedrock": "Dodatki Bedrock 32x"
-      },
-      "64x": {
-        "Java": "Dodatki Java 64x",
-        "Bedrock": "Dodatki Bedrock 64x"
-      }
-    }
-  }
+	"common": {
+		"loading": "Ładowanie...",
+		"yes": "Tak",
+		"no": "Nie",
+		"submit": "Zatwierdź",
+		"cancel": "Anuluj"
+	},
+	"header": {
+		"home": "Strona Główna",
+		"downloads": "Pliki do Pobrania",
+		"about": "O Nas",
+		"addons": "Rozszerzenia",
+		"modding": "Modyfikacje",
+		"gallery": "Galeria"
+	},
+	"footer": {
+		"light_theme": "Jasny Motyw",
+		"dark_theme": "Ciemny Motyw",
+		"auto_theme": "Automatyczny Motyw",
+		"info": {
+			"title": "Informacje",
+			"installation": "Instalacja",
+			"license": "Licencja",
+			"team": "Zespół",
+			"branding": "Marka",
+			"stats": "Statystyki"
+		},
+		"listings": {
+			"title": "Wpisy",
+			"minecraft_forum": "Forum Minecraft"
+		},
+		"media": {
+			"title": "Pliki",
+			"main_discord": "Główny Discord",
+			"cf_discord": "Discord CF"
+		},
+		"resources": {
+			"title": "Źródła",
+			"news": "Aktualności",
+			"docs": "Dokumentacja",
+			"status": "Status",
+			"translate": "Tłumaczenie",
+			"contributors_handbook": "Podręcznik Wkładców"
+		},
+		"minecraft_trademark": "\"Minecraft\" jest znakiem towarowym Microsoft Corporation i nie jest powiązany z tą stroną. Odwiedź oficjalną stronę {website}{/website}, aby uzyskać grę!"
+	},
+	"team": {
+		"title": {
+			"our_team": "Poznaj nasz Zespół",
+			"additional_developers": "Dodatkowi Twórcy"
+		},
+		"default_location": ""
+	},
+	"stats": {
+		"title": {
+			"page": "Statystyki Faithful",
+			"main_pack": "Główna Paczka",
+			"32_releases": "Wydania 32x",
+			"64_releases": "Wydania 64x",
+			"add_ons": "Dodatki",
+			"mods": "Modyfikacje"
+		},
+		"mods": {
+			"minecraftVersions": "Wspierane wersje Minecraft",
+			"modsSupported": "Wspierane Modyfikacje",
+			"resourcePackStored": "Przechowywane Paczki Modyfikacji"
+		},
+		"add_ons": {
+			"32x": {
+				"Java": "Dodatki Java 32x",
+				"Bedrock": "Dodatki Bedrock 32x"
+			},
+			"64x": {
+				"Java": "Dodatki Java 64x",
+				"Bedrock": "Dodatki Bedrock 64x"
+			}
+		}
+	}
 }

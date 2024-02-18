@@ -45,9 +45,7 @@ export function mergeDeep(target: any, ...sources: any[]): any {
 }
 
 export function toCamel(s: string) {
-	return s.replace(/([-_][a-z])/ig, ($1) => {
-		return $1.toUpperCase()
-			.replace('-', '')
-			.replace('_', '');
+	return s.replace(/([-_][a-z])/gi, ($1) => {
+		return $1.toUpperCase().replace("-", "").replace("_", "");
 	});
-};
+}

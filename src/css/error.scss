@@ -1,53 +1,55 @@
 h1,
 p {
-    color: #ccc;
+	color: #ccc;
 }
 main,
 footer,
 .navbar {
-    background: transparent !important;
+	background: transparent !important;
 }
 
 body {
-    .navbar,
-    footer #shadow::after {
-        box-shadow: none !important;
-    }
+	.navbar,
+	footer #shadow::after {
+		box-shadow: none !important;
+	}
 }
 body {
-    background: #120e19 url(/images/background/the_end.jpg) no-repeat center !important;
+	background: #120e19 url(/images/background/the_end.jpg) no-repeat center !important;
 }
 
 main {
-    padding-top: 50px !important;
+	padding-top: 50px !important;
 }
 
 #animation_container {
-    position: relative;
-    height: 64px;
-    width: 128px;
-    margin: 100px auto 50px;
+	position: relative;
+	height: 64px;
+	width: 128px;
+	margin: 100px auto 50px;
 }
 #tnt {
-    position: absolute;
-    left: 32px;
-    cursor: url("/images/404/flint_and_steel.png") 16 16, pointer;
-    image-rendering: pixelated;
-    width: 64px;
-    height: 64px;
+	position: absolute;
+	left: 32px;
+	cursor:
+		url("/images/404/flint_and_steel.png") 16 16,
+		pointer;
+	image-rendering: pixelated;
+	width: 64px;
+	height: 64px;
 }
 #diamond {
-    position: absolute;
-    image-rendering: pixelated;
-    left: 32px;
-    width: 64px;
-    height: 64px;
+	position: absolute;
+	image-rendering: pixelated;
+	left: 32px;
+	width: 64px;
+	height: 64px;
 }
 #explosion {
-    position: absolute;
-    left: 32px;
+	position: absolute;
+	left: 32px;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }

@@ -45,25 +45,25 @@
 	td.before-empty {
 		width: 5%;
 	}
-  tr:hover {
-    background-color: rgba(255,255,255,0.1) !important;
-  }
-  tr.collapsed {
-    display: none;
-  }
-  tr.opened {
-    height: autot;
-  }
-  @media (max-width: 760px) {
-    tr {
-      padding: 0.25rem 0.5rem;
-      display: flex;
-      align-items: stretch;
-      border-radius: 0;
-    }
-    td.toggle {
-      flex: 0 0 24px;
-      padding: .2rem 0;
-    }
-  }
+	tr:hover {
+		background-color: rgba(255, 255, 255, 0.1) !important;
+	}
+	tr.collapsed {
+		display: none;
+	}
+	tr.opened {
+		height: autot;
+	}
+	@media (max-width: 760px) {
+		tr {
+			padding: 0.25rem 0.5rem;
+			display: flex;
+			align-items: stretch;
+			border-radius: 0;
+		}
+		td.toggle {
+			flex: 0 0 24px;
+			padding: 0.2rem 0;
+		}
+	}
 </style>

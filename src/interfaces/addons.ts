@@ -18,6 +18,6 @@ export interface Addon {
 		comments: boolean; // true if comments are enabled on this addon
 		optifine: boolean; // true if the pack require optifine to work properly
 		tags: AddonTagArray; // Edition + Resolution
-	}
+	};
 	last_updated?: number; // present if was updated since field apparition, gives timestamp
 }

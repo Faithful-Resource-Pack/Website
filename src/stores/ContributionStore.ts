@@ -6,7 +6,7 @@ type Contribution = any;
 let _contributions = readable(
 	{
 		data: undefined,
-		error: undefined
+		error: undefined,
 	} as {
 		data: Record<string, Record<string, Contribution[]>> | undefined;
 		error: Error | undefined;
@@ -24,20 +24,20 @@ let _contributions = readable(
 
 						acc[cur.pack][cur.texture].push({
 							contributors: cur.authors,
-							date: cur.date
+							date: cur.date,
 						});
 
 						return acc;
 					});
 				set({
 					data: reduced,
-					error: undefined
+					error: undefined,
 				});
 			})
 			.catch((err: Error) => {
 				set({ data: undefined, error: err });
 			});
-	}
+	},
 );
 
 let contributionStore = derived(_contributions, (res) => res.data);
@@ -60,8 +60,8 @@ let contributionAuthors = readable({} as Record<string, Contributor>, (set) => {
 						acc[cur.id] = cur;
 						return acc;
 					},
-					{} as Record<string, Contributor>
-				)
+					{} as Record<string, Contributor>,
+				),
 			);
 		});
 });

@@ -2,24 +2,24 @@ name: Svelte site CI
 
 on:
   push:
-    branches: [ SvelteKit ]
+    branches: [SvelteKit]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Executing remote command
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSH }}
-        script_stop: true
-        script: |
-          cd /var/www/html/beta.faithfulpack.net/
-          git stash
-          git pull
-          pnpm install
-          pnpm run pm2:build_and_start
+      - name: Executing remote command
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSH }}
+          script_stop: true
+          script: |
+            cd /var/www/html/beta.faithfulpack.net/
+            git stash
+            git pull
+            pnpm install
+            pnpm run pm2:build_and_start

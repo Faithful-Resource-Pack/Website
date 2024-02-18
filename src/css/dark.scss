@@ -1,26 +1,28 @@
 .background {
-	background: #131313 url(/images/background/bg_dark_background.png) repeat
+	background: #131313 url(/images/background/bg_dark_background.png) repeat;
 }
-main, .main {
+main,
+.main {
 	color: white;
-	background: #0C0C0C url(/images/background/bg_dark_foreground.png) repeat
+	background: #0c0c0c url(/images/background/bg_dark_foreground.png) repeat;
 }
 .placeholder {
-	background-image: url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png), url(/images/background/bg_dark_foreground.png),
-    url(/images/background/bg_dark_foreground.png);
+	background-image: url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png),
+		url(/images/background/bg_dark_foreground.png), url(/images/background/bg_dark_foreground.png);
 }
 .card {
-	background: #0C0C0C url(/images/background/bg_dark_background.png) repeat;
+	background: #0c0c0c url(/images/background/bg_dark_background.png) repeat;
 }
-.navbar, body {
-	background: #0C0C0C url(/images/background/bg_dark_background.png);
+.navbar,
+body {
+	background: #0c0c0c url(/images/background/bg_dark_background.png);
 }
 .outline {
-	background: #0C0C0C url(/images/background/bg_dark_background.png) !important;
+	background: #0c0c0c url(/images/background/bg_dark_background.png) !important;
 }
 
 .dropdown-menu {
-	background-color: #1C1C1C
+	background-color: #1c1c1c;
 }
 .dropdown-item {
 	color: #bdbdbd;
@@ -28,7 +30,7 @@ main, .main {
 .dropdown-item:focus,
 .dropdown-item:hover {
 	color: #bdbdbd;
-	background-color: #141414
+	background-color: #141414;
 }
 
 .gallery-result {
@@ -36,13 +38,22 @@ main, .main {
 }
 
 html:not(.light) {
-    ul, ol, li, h1, h2, h3, h4, h5, h6, p {
-        color: #bdbdbd;
-    }
+	ul,
+	ol,
+	li,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		color: #bdbdbd;
+	}
 }
 
 hr {
-	border-top: 1px solid rgba(255, 255, 255, .1)
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 input {

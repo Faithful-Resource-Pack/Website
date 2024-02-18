@@ -10,7 +10,9 @@ $red: #f44336;
 
 $border-radius: 6px;
 
-$card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$card-shadow:
+	0 3px 6px rgba(0, 0, 0, 0.16),
+	0 3px 6px rgba(0, 0, 0, 0.23);
 
 // Extra small devices (phones, 600px and down)
 $width-XS: 600px;
@@ -32,7 +34,7 @@ $small-spacing: 16px;
 }
 
 @mixin zoomin {
-	transition: all .5s;
+	transition: all 0.5s;
 
 	&:hover {
 		transform: scale(1.1);
@@ -52,12 +54,10 @@ $small-spacing: 16px;
  *  e.g. usage
  *    #{headings('', 1, 6, '.--attr')} { ... }
  */
-@function headings($before: '', $from: 1, $to: 6, $after: '') {
+@function headings($before: "", $from: 1, $to: 6, $after: "") {
 	@if $from ==$to {
-		@return '#{$before} h#{$from}#{$after}';
-	}
-
-	@else {
-		@return '#{$before} h#{$from}#{$after}, '+headings($before, $from+1, $to, $after);
+		@return "#{$before} h#{$from}#{$after}";
+	} @else {
+		@return "#{$before} h#{$from}#{$after}, " + headings($before, $from + 1, $to, $after);
 	}
 }

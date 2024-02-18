@@ -1,80 +1,80 @@
 {
-  "common": {
-    "loading": "Chargement...",
-    "yes": "Oui",
-    "no": "Non",
-    "submit": "Envoyer",
-    "cancel": "Annuler"
-  },
-  "header": {
-    "home": "Accueil",
-    "downloads": "Téléchargements",
-    "about": "À propos",
-    "addons": "Add-ons",
-    "modding": "Modding",
-    "gallery": "Galerie"
-  },
-  "footer": {
-    "light_theme": "Thème clair",
-    "dark_theme": "Thème sombre",
-    "auto_theme": "Thème auto",
-    "info": {
-      "title": "Infos",
-      "installation": "Installation",
-      "license": "Licence",
-      "team": "Équipe",
-      "branding": "Image de marque",
-      "stats": "Statistiques"
-    },
-    "listings": {
-      "title": "Listes",
-      "minecraft_forum": "Forum Minecraft"
-    },
-    "media": {
-      "title": "Médias",
-      "main_discord": "Discord Principal 🇬🇧",
-      "cf_discord": "Discord CF 🇬🇧"
-    },
-    "resources": {
-      "title": "Ressources",
-      "news": "Actualités",
-      "docs": "Documentations",
-      "status": "Statut",
-      "translate": "Traduire",
-      "contributors_handbook": "Guide du contributeur"
-    },
-    "minecraft_trademark": "\"Minecraft\" est une marque commerciale de Microsoft Corporation et n'est pas affiliée à ce site. Rendez-vous sur le {website}site officiel{/website} pour obtenir le jeu !"
-  },
-  "team": {
-    "title": {
-      "our_team": "Rencontrer l'Équipe",
-      "additional_developers": "Autres développeurs"
-    },
-    "default_location": ""
-  },
-  "stats": {
-    "title": {
-      "page": "Statistiques de Faithful",
-      "main_pack": "Pack Principal",
-      "32_releases": "Versions 32x",
-      "64_releases": "Versions 64x",
-      "add_ons": "Add-ons",
-      "mods": "Mods"
-    },
-    "mods": {
-      "minecraftVersions": "Versions Minecraft supportées",
-      "modsSupported": "Mods supportés",
-      "resourcePackStored": "Packs de ressources de mod stockés"
-    },
-    "add_ons": {
-      "32x": {
-        "Java": "Add-ons Java 32x",
-        "Bedrock": "Add-ons Bedrock 32x"
-      },
-      "64x": {
-        "Java": "Add-ons Java 64x",
-        "Bedrock": "Add-ons Bedrock 64x"
-      }
-    }
-  }
+	"common": {
+		"loading": "Chargement...",
+		"yes": "Oui",
+		"no": "Non",
+		"submit": "Envoyer",
+		"cancel": "Annuler"
+	},
+	"header": {
+		"home": "Accueil",
+		"downloads": "Téléchargements",
+		"about": "À propos",
+		"addons": "Add-ons",
+		"modding": "Modding",
+		"gallery": "Galerie"
+	},
+	"footer": {
+		"light_theme": "Thème clair",
+		"dark_theme": "Thème sombre",
+		"auto_theme": "Thème auto",
+		"info": {
+			"title": "Infos",
+			"installation": "Installation",
+			"license": "Licence",
+			"team": "Équipe",
+			"branding": "Image de marque",
+			"stats": "Statistiques"
+		},
+		"listings": {
+			"title": "Listes",
+			"minecraft_forum": "Forum Minecraft"
+		},
+		"media": {
+			"title": "Médias",
+			"main_discord": "Discord Principal 🇬🇧",
+			"cf_discord": "Discord CF 🇬🇧"
+		},
+		"resources": {
+			"title": "Ressources",
+			"news": "Actualités",
+			"docs": "Documentations",
+			"status": "Statut",
+			"translate": "Traduire",
+			"contributors_handbook": "Guide du contributeur"
+		},
+		"minecraft_trademark": "\"Minecraft\" est une marque commerciale de Microsoft Corporation et n'est pas affiliée à ce site. Rendez-vous sur le {website}site officiel{/website} pour obtenir le jeu !"
+	},
+	"team": {
+		"title": {
+			"our_team": "Rencontrer l'Équipe",
+			"additional_developers": "Autres développeurs"
+		},
+		"default_location": ""
+	},
+	"stats": {
+		"title": {
+			"page": "Statistiques de Faithful",
+			"main_pack": "Pack Principal",
+			"32_releases": "Versions 32x",
+			"64_releases": "Versions 64x",
+			"add_ons": "Add-ons",
+			"mods": "Mods"
+		},
+		"mods": {
+			"minecraftVersions": "Versions Minecraft supportées",
+			"modsSupported": "Mods supportés",
+			"resourcePackStored": "Packs de ressources de mod stockés"
+		},
+		"add_ons": {
+			"32x": {
+				"Java": "Add-ons Java 32x",
+				"Bedrock": "Add-ons Bedrock 32x"
+			},
+			"64x": {
+				"Java": "Add-ons Java 64x",
+				"Bedrock": "Add-ons Bedrock 64x"
+			}
+		}
+	}
 }

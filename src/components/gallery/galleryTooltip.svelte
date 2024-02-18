@@ -13,7 +13,7 @@
 
 	$: modded = ["assets/forge", "assets/fml", "assets/fabric", "assets/modmenu"].reduce(
 		(acc, cur) => acc || texture.url.includes(cur),
-		false
+		false,
 	);
 
 	let pack = derived(gallerySearch, () => gallerySearch.getParam("pack") as string);
@@ -24,22 +24,25 @@
 		.chain((contribs) => contribs[$pack])
 		.chain((res_contribs) => res_contribs[texture.textureID])
 		.chain((contribs) =>
-			contribs.reduce((a, b) => (a = a.date > b.date ? a : b), contribs[0])
+			contribs.reduce((a, b) => (a = a.date > b.date ? a : b), contribs[0]),
 		).value;
 
 	$: icon = Optional(last_contribution).chain((contrib) =>
-		contrib.contributors.length > 1 ? faUsers : faUser
+		contrib.contributors.length > 1 ? faUsers : faUser,
 	).value;
 
 	$: last_contribution_names = Optional(last_contribution).chain((c) =>
-		(c.contributors as any[])
-			.map((d: string | number) => discordIDtoName(d).replace(/\s/gm, "\u00A0"))
+		(c.contributors as any[]).map((d: string | number) =>
+			discordIDtoName(d).replace(/\s/gm, "\u00A0"),
+		),
 	).value;
 
-	$: last_contribution_date = Optional(last_contribution).chain((c) => timestampToDate(c.date)).value;
+	$: last_contribution_date = Optional(last_contribution).chain((c) =>
+		timestampToDate(c.date),
+	).value;
 
 	function discordIDtoName(id: string | number): string {
-		return $contributionAuthors[id]?.username || String(id)
+		return $contributionAuthors[id]?.username || String(id);
 	}
 
 	function timestampToDate(c: number): string {
@@ -54,14 +57,20 @@
 	<h2 class="texture-title">{texture.name}</h2>
 	<div class="texture-contribution">
 		{#if modded}
-			<div><Fa icon={faWrench} /> { text_modded_texture }</div>
+			<div><Fa icon={faWrench} /> {text_modded_texture}</div>
 		{/if}
 		{#if mojang}
-			<div><Icon name="mojang" color="#ec343c" size="1em" style="margin-right: 0.5em"/>Mojang Studios</div>
+			<div>
+				<Icon name="mojang" color="#ec343c" size="1em" style="margin-right: 0.5em" />Mojang Studios
+			</div>
 		{:else if last_contribution_names}
-			<p><Fa {icon} /> {#each last_contribution_names as name, i}
-				<span>{name}</span>{#if i < last_contribution_names.length-1}, {/if}
-			{/each}</p>
+			<p>
+				<Fa {icon} />
+				{#each last_contribution_names as name, i}
+					<span>{name}</span>{#if i < last_contribution_names.length - 1},
+					{/if}
+				{/each}
+			</p>
 			<p><Fa icon={faClock} /> {last_contribution_date}</p>
 		{:else}
 			<div>
@@ -71,7 +80,7 @@
 	</div>
 	<div class="texture-tags">
 		<span class="texture-tag id-tag">
-			{'#' + texture.textureID}
+			{"#" + texture.textureID}
 		</span>{#each texture.tags as tag}
 			<span class="texture-tag">
 				{tag}
@@ -100,7 +109,7 @@
 
 	.texture-title {
 		font-weight: 600;
-		margin: .2em 0;
+		margin: 0.2em 0;
 	}
 
 	.texture-contribution {
@@ -122,7 +131,7 @@
 		padding: 0 1em;
 		height: 2em;
 		border-radius: 1em;
-		background:  adjust-color($color: $bg, $alpha: 1.0, $lightness: +10%);
+		background: adjust-color($color: $bg, $alpha: 1, $lightness: +10%);
 		display: inline-block;
 		margin-left: $tag_spacing;
 	}

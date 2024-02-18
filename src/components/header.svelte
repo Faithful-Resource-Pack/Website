@@ -8,35 +8,43 @@
 		faWrench,
 		faImages,
 		faCircleQuestion,
-		faCube
+		faCube,
 	} from "@fortawesome/free-solid-svg-icons";
-
 
 	function toggleMenu() {
 		document.getElementsByClassName("navbar-nav")[0].classList.toggle("show");
 	}
 
-	const PROJECTS = [{
-		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png',
-		text: 'Faithful 32x',
-		link: '/faithful32x'
-	},{
-		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/f64_logo.png',
-		text: 'Faithful 64x',
-		link: '/faithful64x'
-	},{
-		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png',
-		text: 'Classic Faithful 32x\nJappa',
-		link: '/classicfaithful32xjappa'
-	},{
-		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32pa_logo.png',
-		text: 'Classic Faithful 32x\nProgrammer Art',
-		link: '/classicfaithful32xprogrammerart'
-	},{
-		image: 'https://database.faithfulpack.net/images/branding/logos/transparent/256/cf64_logo.png',
-		text: 'Classic Faithful 64x',
-		link: '/classicfaithful64x'
-	}]
+	const PROJECTS = [
+		{
+			image: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png",
+			text: "Faithful 32x",
+			link: "/faithful32x",
+		},
+		{
+			image: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f64_logo.png",
+			text: "Faithful 64x",
+			link: "/faithful64x",
+		},
+		{
+			image:
+				"https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png",
+			text: "Classic Faithful 32x\nJappa",
+			link: "/classicfaithful32xjappa",
+		},
+		{
+			image:
+				"https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32pa_logo.png",
+			text: "Classic Faithful 32x\nProgrammer Art",
+			link: "/classicfaithful32xprogrammerart",
+		},
+		{
+			image:
+				"https://database.faithfulpack.net/images/branding/logos/transparent/256/cf64_logo.png",
+			text: "Classic Faithful 64x",
+			link: "/classicfaithful64x",
+		},
+	];
 
 	let projectsShown = false;
 </script>
@@ -67,23 +75,31 @@
 			<div class="nav-item">
 				<a class="nav-link" href="/">
 					<Fa icon={faHouse} />
-					{ $t('header.home') }
+					{$t("header.home")}
 				</a>
 			</div>
 
-			<div class="nav-item" id="project-navigation-mobile" role="button" tabindex="0"
-			on:click={() => projectsShown = !projectsShown} on:keypress={() => {}}>
+			<div
+				class="nav-item"
+				id="project-navigation-mobile"
+				role="button"
+				tabindex="0"
+				on:click={() => (projectsShown = !projectsShown)}
+				on:keypress={() => {}}
+			>
 				<span class="nav-link dropdown-toggle" class:opened={projectsShown}>
 					<Fa icon={faCube} />
-					{ $t('header.projects') }
+					{$t("header.projects")}
 				</span>
 				{#if projectsShown}
 					<div class="dropdown-menu dropdown-menu-center">
 						{#each PROJECTS as project}
-							<div><a class="dropdown-item nav-link project" href={project.link}>
-								<img src={project.image+'?h=16'} alt={project.text}
-								/> {project.text}
-							</a></div>
+							<div>
+								<a class="dropdown-item nav-link project" href={project.link}>
+									<img src={project.image + "?h=16"} alt={project.text} />
+									{project.text}
+								</a>
+							</div>
 						{/each}
 					</div>
 				{/if}
@@ -92,19 +108,27 @@
 			<div class="nav-item">
 				<a class="nav-link" href="/downloads">
 					<Fa icon={faDownload} />
-					{ $t('header.downloads') }
+					{$t("header.downloads")}
 				</a>
 			</div>
 
 			<div class="nav-item">
 				<a class="nav-link" href="/add-ons">
 					<Fa icon={faPlus} />
-					{ $t('header.addons') }
+					{$t("header.addons")}
 				</a>
 			</div>
 
-			<div title={$t('header.projects')} id="logo" class="nav-link" class:opened={projectsShown} role="button" tabindex="0"
-				on:click={() => projectsShown = !projectsShown} on:keypress={() => {}}>
+			<div
+				title={$t("header.projects")}
+				id="logo"
+				class="nav-link"
+				class:opened={projectsShown}
+				role="button"
+				tabindex="0"
+				on:click={() => (projectsShown = !projectsShown)}
+				on:keypress={() => {}}
+			>
 				<img
 					src="/images/branding/f32_logo.svg"
 					style="width: 48px; height: 48px; display: block"
@@ -115,21 +139,21 @@
 			<div class="nav-item">
 				<a class="nav-link" href="/modding">
 					<Fa icon={faWrench} />
-					{ $t('header.modding') }
+					{$t("header.modding")}
 				</a>
 			</div>
 
 			<div class="nav-item">
 				<a class="nav-link" href="/gallery">
 					<Fa icon={faImages} />
-					{ $t('header.gallery') }
+					{$t("header.gallery")}
 				</a>
 			</div>
 
 			<div class="nav-item">
 				<a class="nav-link" href="/about">
 					<Fa icon={faCircleQuestion} />
-					{ $t('header.about') }
+					{$t("header.about")}
 				</a>
 			</div>
 		</div>
@@ -139,8 +163,8 @@
 		<div class="project-card btn main">
 			{#each PROJECTS as project}
 				<a href={project.link} class="project">
-					<img src={project.image+'?h=64'} alt={project.text}
-					/><pre class="text"><p>{ project.text}</p></pre>
+					<img src={project.image + "?h=64"} alt={project.text} />
+					<pre class="text"><p>{project.text}</p></pre>
 				</a>
 			{/each}
 		</div>
@@ -241,13 +265,14 @@
 					display: none;
 				}
 
-				&:hover, &.opened {
+				&:hover,
+				&.opened {
 					transform: scale(1.1);
 				}
 
 				&.opened {
 					// 15
-					background: rgba(235,235,235,0.2);
+					background: rgba(235, 235, 235, 0.2);
 				}
 			}
 
@@ -305,7 +330,7 @@
 			@include link(inherit, inherit);
 
 			& > .text {
-				opacity: .8;
+				opacity: 0.8;
 				margin: 0;
 				font-size: 0.9em;
 				font-weight: 600;

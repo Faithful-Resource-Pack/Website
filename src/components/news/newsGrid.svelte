@@ -5,14 +5,14 @@
 
 	export let limit: number | undefined = undefined;
 
-	postStore.set(undefined)
-    onMount(() => {
-        fetch('https://api.faithfulpack.net/v2/posts')
-            .then(res => res.json())
-            .then(data => {
-                postStore.set(data)
-            })
-    })
+	postStore.set(undefined);
+	onMount(() => {
+		fetch("https://api.faithfulpack.net/v2/posts")
+			.then((res) => res.json())
+			.then((data) => {
+				postStore.set(data);
+			});
+	});
 
 	let posts = derived(postListStore, (v) => {
 		if (limit === undefined) return v;
@@ -61,11 +61,11 @@
 		font-size: 1.2rem;
 	}
 
-    @media (max-width: $width-XS) {
-        #posts {
-            padding-left: $small-spacing;
-            padding-right: $small-spacing;
-            grid-gap: $small-spacing;
-        }
-    }
+	@media (max-width: $width-XS) {
+		#posts {
+			padding-left: $small-spacing;
+			padding-right: $small-spacing;
+			grid-gap: $small-spacing;
+		}
+	}
 </style>

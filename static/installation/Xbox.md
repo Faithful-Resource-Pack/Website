@@ -20,7 +20,7 @@ Open **Adv File Browser (FullTrust)**. In the left-hand sidebar, click on the th
 [picture]
 Find your resource pack file there and right-click on it to open the context menu. Select Copy.
 [picture]
-Next, open the Local Appdata folder by clicking on the star button in the left-hand sidebar and selecting Local. From this folder, navigate to `Packages > Microsoft.MinecraftUWPConsole_8wekyb3d8bbwe > LocalState > games > com.mojang > resource_packs`. Finally, right-click the empty space and paste the resource pack file here. 
+Next, open the Local Appdata folder by clicking on the star button in the left-hand sidebar and selecting Local. From this folder, navigate to `Packages > Microsoft.MinecraftUWPConsole_8wekyb3d8bbwe > LocalState > games > com.mojang > resource_packs`. Finally, right-click the empty space and paste the resource pack file here.
 [picture]
 The resource pack should now show up in Minecraft!
 

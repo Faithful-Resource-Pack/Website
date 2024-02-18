@@ -10,24 +10,24 @@
 		return v === undefined
 			? 0
 			: v.filter(
-					(p) => p.permalink.includes("compliance32x") || p.permalink.includes("faithful32x")
-			  ).length;
+					(p) => p.permalink.includes("compliance32x") || p.permalink.includes("faithful32x"),
+				).length;
 	});
 	const count_64_releases = derived(postListStore, (v) => {
 		return v === undefined
 			? 0
 			: v.filter(
-					(p) => p.permalink.includes("compliance64x") || p.permalink.includes("faithful64x")
-			  ).length;
+					(p) => p.permalink.includes("compliance64x") || p.permalink.includes("faithful64x"),
+				).length;
 	});
 
-    onMount(() => {
-        fetch('https://api.faithfulpack.net/v2/addons/approved')
-            .then(res => res.json())
-            .then(data => {
-                addonStore.set(data);
-            });
-    })
+	onMount(() => {
+		fetch("https://api.faithfulpack.net/v2/addons/approved")
+			.then((res) => res.json())
+			.then((data) => {
+				addonStore.set(data);
+			});
+	});
 </script>
 
 <div class="container text-center">
@@ -43,79 +43,87 @@
 
 	<h2 class="subtitle text-center semibold">{$t("stats.title.add_ons")}</h2>
 	{#if $addonStatsStore !== undefined}
-	    <div class="res-grid-2">
-            {#each Object.entries($addonStatsStore) as [res, edition_record]}
-                {#each Object.entries(edition_record) as [edition, value]}
-                    <div>
-                        <h3><span>
-                            { $t(`stats.add_ons.${res}.${edition}`) }
-                        </span><div class="badge-container">
-                            <span class="badge badge-primary">{ value }</span>
-                        </div></h3>
-                    </div>
-                {/each}
-            {/each}
-        </div>
+		<div class="res-grid-2">
+			{#each Object.entries($addonStatsStore) as [res, edition_record]}
+				{#each Object.entries(edition_record) as [edition, value]}
+					<div>
+						<h3>
+							<span>
+								{$t(`stats.add_ons.${res}.${edition}`)}
+							</span>
+							<div class="badge-container">
+								<span class="badge badge-primary">{value}</span>
+							</div>
+						</h3>
+					</div>
+				{/each}
+			{/each}
+		</div>
 	{:else}
 		<div>{$t("common.loading")}</div>
-        {(console.log($addonStatsStore), '')}
+		{(console.log($addonStatsStore), "")}
 	{/if}
 
 	<h2 class="subtitle text-center semibold">{$t("stats.title.mods")}</h2>
 	{#if $modStatsStore !== undefined}
-        <div class="res-grid-3">
-            {#each Object.entries($modStatsStore) as [key, value]}
-                <div>
-                    <h3>{$t("stats.mods." + key)}</h3>
-                    <h3><span class="badge badge-primary">{value}</span></h3>
-                </div>
-            {/each}
-        </div>
+		<div class="res-grid-3">
+			{#each Object.entries($modStatsStore) as [key, value]}
+				<div>
+					<h3>{$t("stats.mods." + key)}</h3>
+					<h3><span class="badge badge-primary">{value}</span></h3>
+				</div>
+			{/each}
+		</div>
 	{:else}
 		<div>{$t("common.loading")}</div>
 	{/if}
 </div>
 
 <style lang="scss">
-    h3, .badge {
-        font-size: 1.2em;
-    }
-    .badge {
-        text-align: center;
-        display: inline-block;
-        padding: 0.25em 0.4em;
-        font-size: 75%;
-        font-weight: 700;
-        line-height: 1;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: baseline;
-        border-radius: 12px;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        margin: 10px;
-    }
-    .badge-primary {
-        color: #fff;
-        background-color: #007bff;
-    }
+	h3,
+	.badge {
+		font-size: 1.2em;
+	}
+	.badge {
+		text-align: center;
+		display: inline-block;
+		padding: 0.25em 0.4em;
+		font-size: 75%;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: baseline;
+		border-radius: 12px;
+		transition:
+			color 0.15s ease-in-out,
+			background-color 0.15s ease-in-out,
+			border-color 0.15s ease-in-out,
+			box-shadow 0.15s ease-in-out;
+		margin: 10px;
+	}
+	.badge-primary {
+		color: #fff;
+		background-color: #007bff;
+	}
 
-    @media (min-width: $width-XS) {
-        .badge-container {
-            display: inline;
-        }
-    }
+	@media (min-width: $width-XS) {
+		.badge-container {
+			display: inline;
+		}
+	}
 
-    h3 * {
-        font-family: inherit;
-    }
+	h3 * {
+		font-family: inherit;
+	}
 
-    h3 .badge {
-        font-weight: normal;
-    }
+	h3 .badge {
+		font-weight: normal;
+	}
 
-    @media (min-width: $width-L) {
-        .container {
-           max-width: 1140px;
-        }
-    }
+	@media (min-width: $width-L) {
+		.container {
+			max-width: 1140px;
+		}
+	}
 </style>

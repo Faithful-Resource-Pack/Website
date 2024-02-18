@@ -1,176 +1,168 @@
 {
-    "managers": [
-        {
-            "color": "#0b6801",
-            "avatar": "images/team/fhlx.jpg",
-            "display": "FHLX",
-            "username": "fhlx",
-            "id": "672989591283695618",
-            "bio": "I'm a former YouTuber and competitive player, and I\u00A0lead the Classic Faithful team!",
-            "timezone": "EDT",
-            "country": "Argentina/US",
-            "socials": [
-                { "title": "GitHub", "href": "https://github.com/FHLX-J" },
-                { "title": "Twitter", "href": "https://twitter.com/FHLX_" },
-                { "title": "Instagram", "href": "https://instagram.com/FHLX__" }
-            ],
-            "roles": [
-                { "color": "#5ed1c5", "name": "Classic Faithful Manager" },
-                { "color": "#d1ac5e", "name": "Contributor" }
-            ]
-        },
-        {
-            "color": "#242529",
-            "avatar": "images/team/evorp.jpg",
-            "display": "Evorp",
-            "username": "evorp",
-            "id": "360249987927638016",
-            "bio": "i started a cult as an april fools joke and it was all downhill from there...",
-            "timezone": "US Pacific",
-            "pronouns": "any/any",
-            "socials": [
-                { "title": "Website", "href": "https://3vorp.github.io" },
-                { "title": "GitHub", "href": "https://github.com/3vorp" }
-            ],
-            "roles": [
-                { "color": "#ac5ed1", "name": "Developer" },
-                { "color": "#5e84d1", "name": "Moderation Manager" },
-                { "color": "#d1ac5e", "name": "Contributor" }
-            ]
-        },
-        {
-            "color": "#802361",
-            "avatar": "images/team/harya_.jpg",
-            "display": "HARYA",
-            "username": "harya_",
-            "id": "340497757410295808",
-            "bio": "The manager of Faithful 64x. Beat maker.",
-            "country": "France",
-            "timezone": "CEST",
-            "pronouns": "he/him",
-            "socials": [
-                { "title": "Twitter", "href": "https://twitter.com/HARAG0NMC" }
-            ],
-            "roles": [
-                { "color": "#5ed1c5", "name": "Faithful 64x Manager" },
-                { "color": "#b1484b", "name": "Art Director Council" },
-                { "color": "#d1ac5e", "name": "Contributor" }
-            ]
-        },
-        {
-            "color": "#dd431d",
-            "avatar": "images/team/ninventoo.jpg",
-            "display": "Ninventoo",
-            "username": "ninventoo",
-            "id": "838924839086981130",
-            "bio": "I’ve been involved with Faithful in one form or another since 2019 and currently assist in managing the Faithful Community.",
-            "country": "USA",
-            "timezone": "EST",
-            "pronouns": "he/him",
-            "socials": [
-                { "title": "GitHub", "href": "https://github.com/Ninventoo" },
-                { "title": "Twitter", "href": "https://twitter.com/ninventoo" },
-                { "title": "Steam", "href": "https://steamcommunity.com/id/Ninventoo/" }
-            ],
-            "roles": [
-                { "color": "#5e84d1", "name": "Moderation Manager" },
-                { "color": "#5dd861", "name": "Social Media Manager" }
-            ]
-        },
-        {
-            "color": "#f786d6",
-            "avatar": "images/team/pomi108.jpg",
-            "display": "Pomi108",
-            "username": "pomi108",
-            "id": "331073143613423616",
-            "bio": "I maintain Faithful 32x, draw stuff occasionally and dabble in Source Engine mapping.",
-            "country": "Czechia",
-            "city": "Prague",
-            "timezone": "CEST",
-            "pronouns": "she/her",
-            "socials": [
-                { "title": "Steam", "href": "https://steamcommunity.com/id/Pomi108/" },
-                { "title": "GitHub", "href": "https://github.com/Pomi108" }
-            ],
-            "roles": [
-                { "color": "#5ed1c5", "name": "Faithful 32x Manager" },
-                { "color": "#d1ac5e", "name": "Contributor" }
-            ]
-        },
-        {
-            "color": "#724b70",
-            "avatar": "images/team/robertr11.jpg",
-            "display": "RobertR11",
-            "username": "robertr11",
-            "id": "473860522710794250",
-            "bio": "I mainly develop for Faithful and various side projects. August 12 2036 the heat death of the universe",
-            "country": "Germany",
-            "timezone": "CEST",
-            "pronouns": "he/him",
-            "socials": [
-                { "title": "GitHub", "href": "https://github.com/RobertRR11" }
-            ],
-            "roles": [
-                { "color": "#ac5ed1", "name": "Development Manager" },
-                { "color": "#d1ac5e", "name": "Contributor" }
-            ]
-        },
-        {
-            "color": "#b34847",
-            "avatar": "images/team/seirin_blu.jpg",
-            "display": "Sei",
-            "username": "seirin-blu",
-            "id": "401627057915691009",
-            "bio": "I'm Seirin or Sei. I am have worked on or managed Faithful over the past four years in some form or another. I also build mechanical keyboards and collect vintage ones.",
-            "country": "US",
-            "city": "West Coast",
-            "timezone": "PDT",
-            "pronouns": "any/any",
-            "socials": [
-                { "title": "Twitter", "href": "https://twitter.com/Seirin_Blu" }
-            ],
-            "roles": [
-                { "color": "#5dd861", "name": "Social Media Manager" },
-                { "color": "#d1ac5e", "name": "Contributor" }
-            ]
-        }
-    ],
-    "developers": [
-        {
-            "color": "#731a19",
-            "avatar": "images/team/juknum.jpg",
-            "display": "Juknum",
-            "username": "juknum",
-            "id": "207471947662098432",
-            "bio": "I plead guilty to everything bugged out there!",
-            "timezone": "CEST",
-            "country": "France",
-            "socials": [
-                { "title": "GitHub", "href": "https://github.com/Juknum" },
-                { "title": "Twitter", "href": "https://twitter.com/Juknum_" }
-            ],
-            "roles": [
-                { "color": "#ac5ed1", "name": "Developer" },
-                { "color": "#d1ac5e", "name": "Contributor" }
-            ]
-        },
-        {
-            "color": "#058686",
-            "avatar": "images/team/therolf.jpg",
-            "display": "TheRolf",
-            "username": "therolf",
-            "id": "173336582265241601",
-            "bio": "Passionate developer who came to help the community grow through tools. Now, I\u00A0mostly fix Juknum's bugs.",
-            "country": "France",
-            "timezone": "CEST",
-            "socials": [
-                { "title": "Website", "href": "https://therolf.fr/" },
-                { "title": "GitHub", "href": "https://github.com/TheRolfFR" },
-                { "title": "Twitter", "href": "https://twitter.com/TheRolfFR" }
-            ],
-            "roles": [
-                { "color": "#ac5ed1", "name": "Developer" }
-            ]
-        }
-    ]
+	"managers": [
+		{
+			"color": "#0b6801",
+			"avatar": "images/team/fhlx.jpg",
+			"display": "FHLX",
+			"username": "fhlx",
+			"id": "672989591283695618",
+			"bio": "I'm a former YouTuber and competitive player, and I\u00A0lead the Classic Faithful team!",
+			"timezone": "EDT",
+			"country": "Argentina/US",
+			"socials": [
+				{ "title": "GitHub", "href": "https://github.com/FHLX-J" },
+				{ "title": "Twitter", "href": "https://twitter.com/FHLX_" },
+				{ "title": "Instagram", "href": "https://instagram.com/FHLX__" }
+			],
+			"roles": [
+				{ "color": "#5ed1c5", "name": "Classic Faithful Manager" },
+				{ "color": "#d1ac5e", "name": "Contributor" }
+			]
+		},
+		{
+			"color": "#242529",
+			"avatar": "images/team/evorp.jpg",
+			"display": "Evorp",
+			"username": "evorp",
+			"id": "360249987927638016",
+			"bio": "i started a cult as an april fools joke and it was all downhill from there...",
+			"timezone": "US Pacific",
+			"pronouns": "any/any",
+			"socials": [
+				{ "title": "Website", "href": "https://3vorp.github.io" },
+				{ "title": "GitHub", "href": "https://github.com/3vorp" }
+			],
+			"roles": [
+				{ "color": "#ac5ed1", "name": "Developer" },
+				{ "color": "#5e84d1", "name": "Moderation Manager" },
+				{ "color": "#d1ac5e", "name": "Contributor" }
+			]
+		},
+		{
+			"color": "#802361",
+			"avatar": "images/team/harya_.jpg",
+			"display": "HARYA",
+			"username": "harya_",
+			"id": "340497757410295808",
+			"bio": "The manager of Faithful 64x. Beat maker.",
+			"country": "France",
+			"timezone": "CEST",
+			"pronouns": "he/him",
+			"socials": [{ "title": "Twitter", "href": "https://twitter.com/HARAG0NMC" }],
+			"roles": [
+				{ "color": "#5ed1c5", "name": "Faithful 64x Manager" },
+				{ "color": "#b1484b", "name": "Art Director Council" },
+				{ "color": "#d1ac5e", "name": "Contributor" }
+			]
+		},
+		{
+			"color": "#dd431d",
+			"avatar": "images/team/ninventoo.jpg",
+			"display": "Ninventoo",
+			"username": "ninventoo",
+			"id": "838924839086981130",
+			"bio": "I’ve been involved with Faithful in one form or another since 2019 and currently assist in managing the Faithful Community.",
+			"country": "USA",
+			"timezone": "EST",
+			"pronouns": "he/him",
+			"socials": [
+				{ "title": "GitHub", "href": "https://github.com/Ninventoo" },
+				{ "title": "Twitter", "href": "https://twitter.com/ninventoo" },
+				{ "title": "Steam", "href": "https://steamcommunity.com/id/Ninventoo/" }
+			],
+			"roles": [
+				{ "color": "#5e84d1", "name": "Moderation Manager" },
+				{ "color": "#5dd861", "name": "Social Media Manager" }
+			]
+		},
+		{
+			"color": "#f786d6",
+			"avatar": "images/team/pomi108.jpg",
+			"display": "Pomi108",
+			"username": "pomi108",
+			"id": "331073143613423616",
+			"bio": "I maintain Faithful 32x, draw stuff occasionally and dabble in Source Engine mapping.",
+			"country": "Czechia",
+			"city": "Prague",
+			"timezone": "CEST",
+			"pronouns": "she/her",
+			"socials": [
+				{ "title": "Steam", "href": "https://steamcommunity.com/id/Pomi108/" },
+				{ "title": "GitHub", "href": "https://github.com/Pomi108" }
+			],
+			"roles": [
+				{ "color": "#5ed1c5", "name": "Faithful 32x Manager" },
+				{ "color": "#d1ac5e", "name": "Contributor" }
+			]
+		},
+		{
+			"color": "#724b70",
+			"avatar": "images/team/robertr11.jpg",
+			"display": "RobertR11",
+			"username": "robertr11",
+			"id": "473860522710794250",
+			"bio": "I mainly develop for Faithful and various side projects. August 12 2036 the heat death of the universe",
+			"country": "Germany",
+			"timezone": "CEST",
+			"pronouns": "he/him",
+			"socials": [{ "title": "GitHub", "href": "https://github.com/RobertRR11" }],
+			"roles": [
+				{ "color": "#ac5ed1", "name": "Development Manager" },
+				{ "color": "#d1ac5e", "name": "Contributor" }
+			]
+		},
+		{
+			"color": "#b34847",
+			"avatar": "images/team/seirin_blu.jpg",
+			"display": "Sei",
+			"username": "seirin-blu",
+			"id": "401627057915691009",
+			"bio": "I'm Seirin or Sei. I am have worked on or managed Faithful over the past four years in some form or another. I also build mechanical keyboards and collect vintage ones.",
+			"country": "US",
+			"city": "West Coast",
+			"timezone": "PDT",
+			"pronouns": "any/any",
+			"socials": [{ "title": "Twitter", "href": "https://twitter.com/Seirin_Blu" }],
+			"roles": [
+				{ "color": "#5dd861", "name": "Social Media Manager" },
+				{ "color": "#d1ac5e", "name": "Contributor" }
+			]
+		}
+	],
+	"developers": [
+		{
+			"color": "#731a19",
+			"avatar": "images/team/juknum.jpg",
+			"display": "Juknum",
+			"username": "juknum",
+			"id": "207471947662098432",
+			"bio": "I plead guilty to everything bugged out there!",
+			"timezone": "CEST",
+			"country": "France",
+			"socials": [
+				{ "title": "GitHub", "href": "https://github.com/Juknum" },
+				{ "title": "Twitter", "href": "https://twitter.com/Juknum_" }
+			],
+			"roles": [
+				{ "color": "#ac5ed1", "name": "Developer" },
+				{ "color": "#d1ac5e", "name": "Contributor" }
+			]
+		},
+		{
+			"color": "#058686",
+			"avatar": "images/team/therolf.jpg",
+			"display": "TheRolf",
+			"username": "therolf",
+			"id": "173336582265241601",
+			"bio": "Passionate developer who came to help the community grow through tools. Now, I\u00A0mostly fix Juknum's bugs.",
+			"country": "France",
+			"timezone": "CEST",
+			"socials": [
+				{ "title": "Website", "href": "https://therolf.fr/" },
+				{ "title": "GitHub", "href": "https://github.com/TheRolfFR" },
+				{ "title": "Twitter", "href": "https://twitter.com/TheRolfFR" }
+			],
+			"roles": [{ "color": "#ac5ed1", "name": "Developer" }]
+		}
+	]
 }

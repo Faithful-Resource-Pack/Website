@@ -7,7 +7,7 @@
 	const message = derived(notFound, (n) =>
 		n
 			? `Unfortunately, the page you requested doesn't exist!<br>Try checking your spelling or going to the main page to find what you were looking for.`
-			: $page.error?.message
+			: $page.error?.message,
 	);
 
 	$: explosions = [...Array(16).keys()].map((key) => `/images/404/explosion_${key}.png`);
@@ -23,7 +23,7 @@
 		tntShow: true,
 		explosionShow: false,
 		explosionStep: "/images/404/explosion_0.png",
-		diamondShow: false
+		diamondShow: false,
 	});
 
 	let tnt_handler = derived(tnt, ($tnt) => {
@@ -82,18 +82,18 @@
 					t.exploding = false;
 					return t;
 				});
-			}
+			},
 		};
 	});
-	
-	const err = derived(page, $p => $p !== null);
+
+	const err = derived(page, ($p) => $p !== null);
 </script>
 
 <svelte:head>
 	<title>{$page.status} - Faithful</title>
 	{#each explosions as image}
-      <link rel="preload" as="image" href={image} />
-    {/each}
+		<link rel="preload" as="image" href={image} />
+	{/each}
 	<link rel="preload" as="image" href="/images/404/tnt_side_on.png" />
 </svelte:head>
 
@@ -128,7 +128,7 @@
 
 <!-- Only way to import scss for specific page on +error.svelte page -->
 {#if err}
-<style lang="scss">
-	@import "../css/error.scss";
-</style>
+	<style lang="scss">
+		@import "../css/error.scss";
+	</style>
 {/if}

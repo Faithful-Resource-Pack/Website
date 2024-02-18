@@ -1,8 +1,7 @@
 import preprocess from "svelte-preprocess";
 import adapter from "@sveltejs/adapter-node";
-import path from 'path';
-import { preprocessMeltUI } from '@melt-ui/pp'
-import sequence from 'svelte-sequential-preprocessor'
+import { preprocessMeltUI } from "@melt-ui/pp";
+import sequence from "svelte-sequential-preprocessor";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,20 +10,22 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			$components: path.resolve("./src/components"),
-			$stores: path.resolve("./src/stores"),
-			$locales: path.resolve("./src/locales")
-		}
+			$components: "src/components",
+			$interfaces: "src/interfaces",
+			$stores: "src/stores",
+			$locales: "src/locales",
+			$src: "src",
+		},
 	},
 
 	preprocess: sequence([
 		preprocess({
 			scss: {
-				prependData: '@use "src/css/variables.scss" as *;'
-			}
+				prependData: '@use "src/css/variables.scss" as *;',
+			},
 		}),
-		preprocessMeltUI()
-	])
+		preprocessMeltUI(),
+	]),
 };
 
 export default config;

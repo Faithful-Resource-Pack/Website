@@ -1,190 +1,190 @@
 {
-  "common": {
-    "loading": "Loading...",
-    "yes": "Yes",
-    "no": "No",
-    "submit": "Submit",
-    "cancel": "Cancel",
-    "all": "All",
-    "unknown": "Unknown",
-    "discord_banner.contribute": "Join our Discord now and contribute to the project!",
-    "discord_banner.discussion": "Start a discussion in our Discord!"
-  },
-  "header": {
-    "home": "Home",
-    "projects": "Projects",
-    "downloads": "Downloads",
-    "about": "About",
-    "addons": "Add-ons",
-    "modding": "Modding",
-    "gallery": "Gallery"
-  },
-  "footer": {
-    "light_theme": "Light Theme",
-    "dark_theme": "Dark Theme",
-    "auto_theme": "Auto Theme",
-    "info": {
-      "title": "Info",
-      "installation": "Installation",
-      "license": "License",
-      "team": "Team",
-      "branding": "Branding",
-      "stats": "Statistics"
-    },
-    "listings": {
-      "title": "Listings",
-      "minecraft_forum": "Minecraft Forum"
-    },
-    "media": {
-      "title": "Media",
-      "main_discord": "Main Discord",
-      "cf_discord": "CF Discord"
-    },
-    "resources": {
-      "title": "Resources",
-      "news": "News",
-      "docs": "Docs",
-      "status": "Status",
-      "translate": "Translate",
-      "contributors_handbook": "Contributor's Handbook"
-    },
-    "minecraft_trademark": "\"Minecraft\" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the {website}official site{/website} to get the game!"
-  },
-  "team": {
-    "title": {
-      "our_team": "Meet the Team",
-      "managers": "Managers",
-      "additional_developers": "Additional Developers"
-    }
-  },
-  "stats": {
-    "title": {
-      "page": "Faithful Statistics",
-      "main_pack": "Main Pack",
-      "32_releases": "32x Releases",
-      "64_releases": "64x Releases",
-      "add_ons": "Add-ons",
-      "mods": "Mods"
-    },
-    "mods": {
-      "minecraftVersions": "Minecraft Versions supported",
-      "modsSupported": "Mods Supported",
-      "resourcePackStored": "Mod Resource Packs Stored"
-    },
-    "add_ons": {
-      "32x": {
-        "Java": "32x Java Add-ons",
-        "Bedrock": "32x Bedrock Add-ons"
-      },
-      "64x": {
-        "Java": "64x Java Add-ons",
-        "Bedrock": "64x Bedrock Add-ons"
-      }
-    }
-  },
-  "license": {
-    "title": "Faithful License",
-    "download": "Download License",
-    "usage": {
-      "title": "You may do the following:",
-      "1": "Use our work as placeholders.",
-      "2": "Use our work as a base or reference for your own content (e.g. modded textures, content creator edits).",
-      "3": "Use a few textures that you cannot properly make, such as painting or particle textures.",
-      "4": "Distribute a modified copy of a pack as a content creator with your videos or streams.",
-      "5": "Use our work for adventure maps, server resource packs, mod textures, or data packs."
-    },
-    "requirements": {
-      "title": "By doing any of the above, you agree to follow these requirements:",
-      "1": "Give clear credit in an appropriate place (e.g. video descriptions, pack.mcmetas, listing descriptions).",
-      "2": "Link back to our website, which you can find here:",
-      "3": "Don't take credit for work you didn't make and always give proper attribution to any work you use or modify. In addition, try to be somewhat specific about what you're using, as \"GUI originally from Faithful 32x\" works a lot better than \"some textures from Faithful\". Just be honest about what you're using, use common sense when in doubt, and you'll be fine.",
-      "4": "Do not monetize content that contains any of our work, modified or not, under any circumstances. This includes locking your content behind a paywall (including the Minecraft Marketplace) or monetizing download links. Taking voluntary donations is still allowed, but if it feels like you're profiting off our work don't do it.",
-      "5": "Don't make your projects look official when they aren't. Examples of this behavior would include copying our branding or marking a project as \"official\" in a way that would confuse the average viewer into believing a project is official when it isn't.",
-      "6": "{link}This file{/link}, unmodified, must be included in any content which contains any of our work."
-    },
-    "exceptions": {
-      "title": "Exceptions:",
-      "1": "If you're doing anything privately or undistributed to our work (e.g. custom edit for personal use, unpublished add-ons, mod support, personal Minecraft server resource pack, or edits either by you or from different packs) you can safely disregard all of these requirements since you are not gaining unfairly from us in any form.",
-      "2": "Projects not directly related to textures (e.g. website, bot) may have separate licenses with different terms. Check their respective pages or repositories for more information. If nothing is mentioned, assume that all rights remain reserved.",
-      "3": "If you are using textures made before March 2016 (Minecraft Release 1.9). These textures are licensed under Vattic's original Faithful 32x32 license, which has different requirements compared with this license. If you're interested, you can find the {original}original license here{/original} under \"Usage Guidelines\"."
-    },
-    "reserve_right": {
-      "title": "We reserve the right to:",
-      "1": "Refuse the ability to use, distribute, or modify any work made by us for any person or group. This action would be final, generally only in the case of unusual circumstances.",
-      "2": "Take legal action if you do not comply with these guidelines.",
-      "3": "Change this license at any time for any reason."
-    }
-  },
-  "add-ons": {
-    "description": "Customise your experience with our community-made modifications!",
-    "how_to_install": "How to install add-ons",
-    "all_add-ons": "All add-ons",
-    "favorites": "Favorites",
-    "categories": {
-      "title": "Categories",
-      "blocks": "Blocks",
-      "items": "Items",
-      "mobs": "Mobs",
-      "user_interface": "User Interface",
-      "3d": "3D",
-      "consistency": "Consistency",
-      "utilities": "Utilities",
-      "redstone": "Redstone",
-      "fixes": "Fixes",
-      "pbr": "PBR",
-      "funny": "funny"
-    },
-    "authors": {
-      "title": "Authors",
-      "search_placeholder": "Select authors"
-    },
-    "submit": {
-      "title": "Don't see what you're looking for?",
-      "button": "Submit an add-on"
-    },
-    "search": {
-      "title": "Search",
-      "search_placeholder": "Search add-on name"
-    },
-    "sort": {
-      "found_results": "{{count:gt; 0:<b>{{count}} {{count; 1:result; default:results}}</b>; default:<b>No results</b>}} found",
-      "sort_by": "Sort by",
-      "types": {
-        "name_asc": "Name: Ascending",
-        "name_desc": "Name: Descending",
-        "date_asc": "Date: Oldest to newest",
-        "date_desc": "Date: Newest to oldest"
-      }
-    },
-    "post": {
-      "last_updated": "Last updated:",
-      "author": "Author",
-      "authors": "Authors",
-      "downloads": "Downloads",
-      "information": "Information",
-      "requirement": "This add-on requires",
-      "java": "This add-on supports Java Edition",
-      "bedrock": "This add-on supports Bedrock Edition",
-      "32x": "This add-on was made for Faithful 32x",
-      "64x": "This add-on was made for Faithful 64x",
-      "screenshots": "Screenshots",
-      "discussion": "Start a discussion in our Discord!"
-    }
-  },
-  "modding": {
-    "title": "Mods",
-    "description": "Faithful textures for your favourite mods.",
-    "how_to_install": "How to install mod support packs",
-    "choose_pack": "Choose a pack to get started:"
-  },
-  "packs": {
-    "about": "About",
-    "comparison": "Comparison",
-    "screenshots": "Screenshots",
-    "faithful32x": "The one and only, Faithful 32x boasts a modern, detailed art style that focuses on re-interpreting textures instead of simply redrawing them – taking full advantage of the higher resolution. Its notable features include a limited palette and a strive for consistency.<br><br>The pack has evolved tremendously over the years. Ever since it was originally started by Vattic all the way back in 2010, it has become a cultural icon and has been enjoyed by millions of Minecraft players. Ready to become one of them? Download the pack using the button below!",
-    "faithful64x": "The logical next step in upscaling Minecraft textures. Just like Faithful 32x, this pack is based on the default art – masterfully remade in quadruple the resolution and adding just the right amount of extra detail for the perfect vanilla-style Minecraft experience.<br><br>By basing its textures directly on its 32x counterparts, it achieves great consistency between packs and is always improving in quality. If you're into detailed resource packs but still want that vanilla feel, this pack is for you!",
-    "classicfaithful32xjappa": "Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.<br><br>The Jappa version of Classic Faithful 32x is based on the new, updated Minecraft textures that were introduced in release 1.14, re-interpreted as if Vattic was there to make them himself. Great care has been taken to emulate Vattic's art style as closely as possible.<br>If you've been using Faithful since the old days but prefer the modern look of the new Minecraft textures, you're going to like this pack!",
-    "classicfaithful32xprogrammerart": "Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.<br><br>Classic Faithful 32x Programmer Art goes all out on nostalgia! This pack features all the classic textures by Vattic himself. When applicable, textures from after his era have been made consistent with his art as well, oftentimes using complicated reverse-engineering processes to ensure the pack is as accurate as possible. Install this pack for a true blast from the past!",
-    "classicfaithful64x": "The 64x part in the Classic Faithful lineup, Classic Faithful 64x aims to be a spiritual successor to HiTeeN's original Faithful 64x, as well as many other discontinued 64x projects. Its goal is to bring back the classic “painted” look of Vattic's textures that many players have grown to love over the years, all the while remaking vanilla art in quadruple the resolution.<br><br>Being based on the latest Minecraft textures, this pack is perfect for all enjoyers of the classic Faithful style who want a clean and updated experience."
-  }
+	"common": {
+		"loading": "Loading...",
+		"yes": "Yes",
+		"no": "No",
+		"submit": "Submit",
+		"cancel": "Cancel",
+		"all": "All",
+		"unknown": "Unknown",
+		"discord_banner.contribute": "Join our Discord now and contribute to the project!",
+		"discord_banner.discussion": "Start a discussion in our Discord!"
+	},
+	"header": {
+		"home": "Home",
+		"projects": "Projects",
+		"downloads": "Downloads",
+		"about": "About",
+		"addons": "Add-ons",
+		"modding": "Modding",
+		"gallery": "Gallery"
+	},
+	"footer": {
+		"light_theme": "Light Theme",
+		"dark_theme": "Dark Theme",
+		"auto_theme": "Auto Theme",
+		"info": {
+			"title": "Info",
+			"installation": "Installation",
+			"license": "License",
+			"team": "Team",
+			"branding": "Branding",
+			"stats": "Statistics"
+		},
+		"listings": {
+			"title": "Listings",
+			"minecraft_forum": "Minecraft Forum"
+		},
+		"media": {
+			"title": "Media",
+			"main_discord": "Main Discord",
+			"cf_discord": "CF Discord"
+		},
+		"resources": {
+			"title": "Resources",
+			"news": "News",
+			"docs": "Docs",
+			"status": "Status",
+			"translate": "Translate",
+			"contributors_handbook": "Contributor's Handbook"
+		},
+		"minecraft_trademark": "\"Minecraft\" is a trademark of Microsoft Corporation and not affiliated with this site. Visit the {website}official site{/website} to get the game!"
+	},
+	"team": {
+		"title": {
+			"our_team": "Meet the Team",
+			"managers": "Managers",
+			"additional_developers": "Additional Developers"
+		}
+	},
+	"stats": {
+		"title": {
+			"page": "Faithful Statistics",
+			"main_pack": "Main Pack",
+			"32_releases": "32x Releases",
+			"64_releases": "64x Releases",
+			"add_ons": "Add-ons",
+			"mods": "Mods"
+		},
+		"mods": {
+			"minecraftVersions": "Minecraft Versions supported",
+			"modsSupported": "Mods Supported",
+			"resourcePackStored": "Mod Resource Packs Stored"
+		},
+		"add_ons": {
+			"32x": {
+				"Java": "32x Java Add-ons",
+				"Bedrock": "32x Bedrock Add-ons"
+			},
+			"64x": {
+				"Java": "64x Java Add-ons",
+				"Bedrock": "64x Bedrock Add-ons"
+			}
+		}
+	},
+	"license": {
+		"title": "Faithful License",
+		"download": "Download License",
+		"usage": {
+			"title": "You may do the following:",
+			"1": "Use our work as placeholders.",
+			"2": "Use our work as a base or reference for your own content (e.g. modded textures, content creator edits).",
+			"3": "Use a few textures that you cannot properly make, such as painting or particle textures.",
+			"4": "Distribute a modified copy of a pack as a content creator with your videos or streams.",
+			"5": "Use our work for adventure maps, server resource packs, mod textures, or data packs."
+		},
+		"requirements": {
+			"title": "By doing any of the above, you agree to follow these requirements:",
+			"1": "Give clear credit in an appropriate place (e.g. video descriptions, pack.mcmetas, listing descriptions).",
+			"2": "Link back to our website, which you can find here:",
+			"3": "Don't take credit for work you didn't make and always give proper attribution to any work you use or modify. In addition, try to be somewhat specific about what you're using, as \"GUI originally from Faithful 32x\" works a lot better than \"some textures from Faithful\". Just be honest about what you're using, use common sense when in doubt, and you'll be fine.",
+			"4": "Do not monetize content that contains any of our work, modified or not, under any circumstances. This includes locking your content behind a paywall (including the Minecraft Marketplace) or monetizing download links. Taking voluntary donations is still allowed, but if it feels like you're profiting off our work don't do it.",
+			"5": "Don't make your projects look official when they aren't. Examples of this behavior would include copying our branding or marking a project as \"official\" in a way that would confuse the average viewer into believing a project is official when it isn't.",
+			"6": "{link}This file{/link}, unmodified, must be included in any content which contains any of our work."
+		},
+		"exceptions": {
+			"title": "Exceptions:",
+			"1": "If you're doing anything privately or undistributed to our work (e.g. custom edit for personal use, unpublished add-ons, mod support, personal Minecraft server resource pack, or edits either by you or from different packs) you can safely disregard all of these requirements since you are not gaining unfairly from us in any form.",
+			"2": "Projects not directly related to textures (e.g. website, bot) may have separate licenses with different terms. Check their respective pages or repositories for more information. If nothing is mentioned, assume that all rights remain reserved.",
+			"3": "If you are using textures made before March 2016 (Minecraft Release 1.9). These textures are licensed under Vattic's original Faithful 32x32 license, which has different requirements compared with this license. If you're interested, you can find the {original}original license here{/original} under \"Usage Guidelines\"."
+		},
+		"reserve_right": {
+			"title": "We reserve the right to:",
+			"1": "Refuse the ability to use, distribute, or modify any work made by us for any person or group. This action would be final, generally only in the case of unusual circumstances.",
+			"2": "Take legal action if you do not comply with these guidelines.",
+			"3": "Change this license at any time for any reason."
+		}
+	},
+	"add-ons": {
+		"description": "Customise your experience with our community-made modifications!",
+		"how_to_install": "How to install add-ons",
+		"all_add-ons": "All add-ons",
+		"favorites": "Favorites",
+		"categories": {
+			"title": "Categories",
+			"blocks": "Blocks",
+			"items": "Items",
+			"mobs": "Mobs",
+			"user_interface": "User Interface",
+			"3d": "3D",
+			"consistency": "Consistency",
+			"utilities": "Utilities",
+			"redstone": "Redstone",
+			"fixes": "Fixes",
+			"pbr": "PBR",
+			"funny": "funny"
+		},
+		"authors": {
+			"title": "Authors",
+			"search_placeholder": "Select authors"
+		},
+		"submit": {
+			"title": "Don't see what you're looking for?",
+			"button": "Submit an add-on"
+		},
+		"search": {
+			"title": "Search",
+			"search_placeholder": "Search add-on name"
+		},
+		"sort": {
+			"found_results": "{{count:gt; 0:<b>{{count}} {{count; 1:result; default:results}}</b>; default:<b>No results</b>}} found",
+			"sort_by": "Sort by",
+			"types": {
+				"name_asc": "Name: Ascending",
+				"name_desc": "Name: Descending",
+				"date_asc": "Date: Oldest to newest",
+				"date_desc": "Date: Newest to oldest"
+			}
+		},
+		"post": {
+			"last_updated": "Last updated:",
+			"author": "Author",
+			"authors": "Authors",
+			"downloads": "Downloads",
+			"information": "Information",
+			"requirement": "This add-on requires",
+			"java": "This add-on supports Java Edition",
+			"bedrock": "This add-on supports Bedrock Edition",
+			"32x": "This add-on was made for Faithful 32x",
+			"64x": "This add-on was made for Faithful 64x",
+			"screenshots": "Screenshots",
+			"discussion": "Start a discussion in our Discord!"
+		}
+	},
+	"modding": {
+		"title": "Mods",
+		"description": "Faithful textures for your favourite mods.",
+		"how_to_install": "How to install mod support packs",
+		"choose_pack": "Choose a pack to get started:"
+	},
+	"packs": {
+		"about": "About",
+		"comparison": "Comparison",
+		"screenshots": "Screenshots",
+		"faithful32x": "The one and only, Faithful 32x boasts a modern, detailed art style that focuses on re-interpreting textures instead of simply redrawing them – taking full advantage of the higher resolution. Its notable features include a limited palette and a strive for consistency.<br><br>The pack has evolved tremendously over the years. Ever since it was originally started by Vattic all the way back in 2010, it has become a cultural icon and has been enjoyed by millions of Minecraft players. Ready to become one of them? Download the pack using the button below!",
+		"faithful64x": "The logical next step in upscaling Minecraft textures. Just like Faithful 32x, this pack is based on the default art – masterfully remade in quadruple the resolution and adding just the right amount of extra detail for the perfect vanilla-style Minecraft experience.<br><br>By basing its textures directly on its 32x counterparts, it achieves great consistency between packs and is always improving in quality. If you're into detailed resource packs but still want that vanilla feel, this pack is for you!",
+		"classicfaithful32xjappa": "Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.<br><br>The Jappa version of Classic Faithful 32x is based on the new, updated Minecraft textures that were introduced in release 1.14, re-interpreted as if Vattic was there to make them himself. Great care has been taken to emulate Vattic's art style as closely as possible.<br>If you've been using Faithful since the old days but prefer the modern look of the new Minecraft textures, you're going to like this pack!",
+		"classicfaithful32xprogrammerart": "Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.<br><br>Classic Faithful 32x Programmer Art goes all out on nostalgia! This pack features all the classic textures by Vattic himself. When applicable, textures from after his era have been made consistent with his art as well, oftentimes using complicated reverse-engineering processes to ensure the pack is as accurate as possible. Install this pack for a true blast from the past!",
+		"classicfaithful64x": "The 64x part in the Classic Faithful lineup, Classic Faithful 64x aims to be a spiritual successor to HiTeeN's original Faithful 64x, as well as many other discontinued 64x projects. Its goal is to bring back the classic “painted” look of Vattic's textures that many players have grown to love over the years, all the while remaking vanilla art in quadruple the resolution.<br><br>Being based on the latest Minecraft textures, this pack is perfect for all enjoyers of the classic Faithful style who want a clean and updated experience."
+	}
 }
