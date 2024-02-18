@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Fa from "svelte-fa/src/fa.svelte";
+    import Fa from "svelte-fa";
 	import { faFireFlameCurved, faEarthEurope, faWrench, faCube } from "@fortawesome/free-solid-svg-icons";
 	import { faGithub } from "@fortawesome/free-brands-svg-icons";
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
     import { fade, scale } from 'svelte/transition';
-    import Fa from "svelte-fa/src/fa.svelte";
+    import Fa from "svelte-fa";
 	import { faCaretLeft, faCaretRight, faTimes } from "@fortawesome/free-solid-svg-icons";
 
     type PreviewImage = {
@@ -22,7 +22,7 @@
     const imageList = Array.isArray(images) ? images : [images];
     const imageStringList = imageList.map((e) => ({...e, image: imageToString(e.image)}));
     const multiple = imageList.length > 1;
-    
+
     $: currentImagePreview = imageStringList[Math.min(Math.max(currentImageIndex, 0), imageList.length-1)];
     $: currentImageSrc = currentImagePreview.image;
     $: currentImageAlt = currentImagePreview.alt;
@@ -62,7 +62,7 @@
             behavior: 'smooth'
         })
     }
- 
+
     function handleKeyDown(keys: string|string[], action: Function): (e: KeyboardEvent) => void {
         let keyList: string[] = Array.isArray(keys) ? keys : [keys];
 
@@ -241,7 +241,7 @@
             max-width: 100%;
             max-height: 100%;
             display: block;
-            
+
             @include zoomin;
         }
     }

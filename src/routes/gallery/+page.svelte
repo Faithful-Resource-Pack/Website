@@ -6,7 +6,7 @@ import UrlStore from '$stores/UrlStore';
 import { settings } from '$stores/SettingStore';
 import { gallerySearch } from '$stores/GalleryStore';
 import GalleryOptions from '$components/gallery/galleryOptions.svelte';
-import Fa from "svelte-fa/src/fa.svelte";
+import Fa from "svelte-fa";
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import GalleryTooltip from '$components/gallery/galleryTooltip.svelte';
 

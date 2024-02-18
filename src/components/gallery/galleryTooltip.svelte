@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Optional from "$lib/optional";
 	import contributionStore, { contributionAuthors } from "$stores/ContributionStore";
-	import Fa from "svelte-fa/src/fa.svelte";
+	import Fa from "svelte-fa";
 	import { faClock, faUser, faUsers, faWrench } from "@fortawesome/free-solid-svg-icons";
 	import Icon from "$components/common/icon.svelte";
 	import tooltip from "$lib/tooltip";

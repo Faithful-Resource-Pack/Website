@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Fa from "svelte-fa/src/fa.svelte";
+    import Fa from "svelte-fa";
 	import { faStar, faXmark } from "@fortawesome/free-solid-svg-icons";
     import type { Addon, AddonTagArray, AddonTag } from "$interfaces/addons";
 	import { favoriteStore } from "$stores/AddonStore";

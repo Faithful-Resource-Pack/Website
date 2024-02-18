@@ -1,6 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
-    import Fa from "svelte-fa/src/fa.svelte";
+    import Fa from "svelte-fa";
 	import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 	import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,7 +20,7 @@
         if(value && clearable) class_arr.push('clearable')
         classes = class_arr.join(' ');
     }
-    
+
     const dispatch = createEventDispatcher();
     const clear = () => {
         value = '';
@@ -38,7 +38,7 @@
     <input use:typeAction {placeholder} bind:value on:keypress={onkeypress}>
     <span class="after">
         {#if clearable && value }
-            <span class="clear" role="button" tabindex="0" on:click={clear} on:keypress={() => {}}><Fa icon={faXmark} size="1.3x" /></span> 
+            <span class="clear" role="button" tabindex="0" on:click={clear} on:keypress={() => {}}><Fa icon={faXmark} size="1.3x" /></span>
         {/if}
         {#if appendIcon }
             <span class="append" role="button" tabindex="0" on:click={append} on:keypress={() => {}}><Fa icon={appendIcon} size="1.3x" /></span>

@@ -1,5 +1,5 @@
 <script lang="ts">
-import Fa from "svelte-fa/src/fa.svelte";
+import Fa from "svelte-fa";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { t, locale, locales, loadTranslations} from '$lib/translations';
 import {

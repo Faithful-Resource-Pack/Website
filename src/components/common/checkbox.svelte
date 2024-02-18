@@ -1,6 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
-    import Fa from "svelte-fa/src/fa.svelte";
+    import Fa from "svelte-fa";
 	import {
 		faSquareCheck,
         faSquare
@@ -25,7 +25,7 @@
     .checkbox {
         color: white;
         position: relative;
-        
+
         & .click_zone {
             position: absolute;
             top: 0;

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { faGithub, faInstagram, faReddit, faSteam, faTwitter } from "@fortawesome/free-brands-svg-icons";
     import { faClock, faCode, faComment, faCube, faEye, faGavel, faGem, faLink, faLocationDot } from "@fortawesome/free-solid-svg-icons";
-    import Fa from "svelte-fa/src/fa.svelte";
+    import Fa from "svelte-fa";
     import tooltip from "$lib/tooltip";
     export let user: {
         color: string,
