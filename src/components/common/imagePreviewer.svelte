@@ -73,9 +73,7 @@
 				i++;
 			}
 
-			if (match) {
-				action();
-			}
+			if (match) action();
 		};
 	}
 	const handleEscape = handleKeyDown("Escape", hide);

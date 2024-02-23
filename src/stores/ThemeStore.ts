@@ -21,7 +21,7 @@ export let themeStore = createStore<
 
 		return {
 			subscribe,
-			next: function () {
+			next() {
 				update((v) => {
 					let i = VALUES.indexOf(v);
 					let next = (i + 1) % VALUES.length;

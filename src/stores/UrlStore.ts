@@ -17,10 +17,10 @@ export default readable<null | DetailedEvent>(null, (set) => {
 	const hasNativeEvent = Object.keys(window).includes("onurlchange");
 	let interval: NodeJS.Timer | undefined = undefined;
 
-	let window_url = window as WindowURL;
+	const windowURL = window as WindowURL;
 	const myFunction = (event: Event) => {
-		if (window_url.onurlchange !== undefined) {
-			window_url.onurlchange(event);
+		if (windowURL.onurlchange !== undefined) {
+			windowURL.onurlchange(event);
 		}
 	};
 
@@ -43,7 +43,7 @@ export default readable<null | DetailedEvent>(null, (set) => {
 		window.addEventListener(EVENT_NAME, myFunction);
 	}
 
-	window_url.onurlchange = (e: DetailedEvent) => {
+	windowURL.onurlchange = (e: DetailedEvent) => {
 		set(e);
 	};
 

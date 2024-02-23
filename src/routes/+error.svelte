@@ -31,7 +31,7 @@
 
 		const FRAME_TIME = 12;
 		return {
-			reset: function () {
+			reset() {
 				tnt.update((t) => {
 					t.exploded = false;
 					t.tntShow = true;
@@ -39,14 +39,14 @@
 					return t;
 				});
 			},
-			boom: async function () {
+			async boom() {
 				if ($tnt.exploding || $tnt.exploded) return;
 				tnt.update((t) => {
 					t.exploding = true;
 					return t;
 				});
 
-				for (var i = 0; i < 8; i++) {
+				for (let i = 0; i < 8; ++i) {
 					if (i % 2 === 0)
 						tnt.update((t) => {
 							t.tnt_side = "/images/404/tnt_side_on.png";
@@ -59,6 +59,7 @@
 						});
 					await sleep(FRAME_TIME * 25);
 				}
+
 				tnt.update((t) => {
 					t.tntShow = false;
 					return t;
@@ -68,7 +69,8 @@
 					t.explosionShow = true;
 					return t;
 				});
-				for (var i = 0; i <= 15; i++) {
+
+				for (let i = 0; i <= 15; ++i) {
 					tnt.update((t) => {
 						t.explosionStep = "/images/404/explosion_" + i + ".png";
 						return t;
@@ -106,6 +108,7 @@
 
 {#if $tnt_handler != null}
 	<div id="animation_container">
+		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 		<img
 			id="tnt"
 			class:hidden={!$tnt.tntShow}

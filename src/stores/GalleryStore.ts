@@ -22,21 +22,21 @@ export let gallerySearch = createJSONStore(
 		}));
 
 		return {
-			set: function (val: any) {
+			set(val: any) {
 				set(val);
 			},
 			subscribe,
-			toggleFullWidth: function () {
+			toggleFullWidth() {
 				store.update((g) => ({ ...g, full_width: !g.full_width }));
 			},
-			setItemsPerRow: function (n: number) {
+			setItemsPerRow(n: number) {
 				if (n < ROW_MIN || n > ROW_MAX) return;
 				store.update((g) => ({ ...g, items_per_row: n }));
 			},
-			setSearchText: function (value: string) {
+			setSearchText(value: string) {
 				store.update((g) => ({ ...g, search_text: value }));
 			},
-			setParams: function (params: [string, string][]) {
+			setParams(params: [string, string][]) {
 				if (!location) return;
 				let url = new URL(location.href);
 
@@ -55,17 +55,17 @@ export let gallerySearch = createJSONStore(
 					store.update((s) => s);
 				}
 			},
-			setParam: function (param: string, value: string) {
+			setParam(param: string, value: string) {
 				return this.setParams([[param, value]]);
 			},
-			update: function () {
+			update() {
 				store.update((s) => s);
 			},
-			getParam: function (param: string) {
+			getParam(param: string) {
 				if (!location) return null;
 				return new URL(location.href).searchParams.get(param);
 			},
-			getAllParams: function () {
+			getAllParams() {
 				return new URL(location.href).searchParams;
 			},
 		};
@@ -82,19 +82,19 @@ let optionStore: Writable<OptionParam[] | null> = writable(null);
 let { set, subscribe } = optionStore;
 export let galleryOptionStore = {
 	subscribe,
-	update: function (vSettings: any) {
+	update(vSettings: any) {
 		if (!vSettings) return null;
 
-		let value_pack = gallerySearch.getParam("pack") as string;
-		let value_edition = gallerySearch.getParam("edition") as string;
-		let current_edition = value_edition;
+		const packValue = gallerySearch.getParam("pack") as string;
+		const editionValue = gallerySearch.getParam("edition") as string;
+		const currentEdition = editionValue;
 
 		console.log(vSettings.packs["original_16x"]);
 
-		let res = Object.entries<string[]>({
+		const res = Object.entries<string[]>({
 			packs: ["original_16x", "faithful_32x", "faithful_64x"],
-			editions: vSettings.packs[value_pack].editions.map((e: string) => e.toLowerCase()),
-			versions: vSettings.versions[current_edition].map((e: string) => e.toLowerCase()),
+			editions: vSettings.packs[packValue].editions.map((e: string) => e.toLowerCase()),
+			versions: vSettings.versions[currentEdition].map((e: string) => e.toLowerCase()),
 			tags: ["all", ...vSettings.tags],
 		}).map(([key, values]) => ({
 			param: key.slice(0, -1),

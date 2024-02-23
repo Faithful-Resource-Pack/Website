@@ -25,11 +25,7 @@ export let postStore: Writable<PostStore> = writable(undefined);
 
 const postListStore = derived(postStore, (v) => {
 	if (v === undefined) return undefined;
-
-	let as_array = Object.values(v);
-	as_array.reverse();
-
-	return as_array;
+	return Object.values(v).reverse();
 });
 
 export default postStore;

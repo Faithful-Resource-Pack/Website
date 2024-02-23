@@ -255,13 +255,13 @@ export let sortStore = createStore(
 		let { set, subscribe, update } = writable;
 		return {
 			subscribe,
-			set: function (type: string): Promise<void> {
+			set(type: string): Promise<void> {
 				if (type === "") type = SORT_TYPES_DEFAULT;
 				if (SORT_TYPES.indexOf(type) === -1) return Promise.reject(new Error("Invalid sort type"));
 				set(type);
 				return Promise.resolve();
 			},
-			previous: function () {
+			previous() {
 				update((v) => {
 					if (v === "") v = SORT_TYPES_DEFAULT;
 					let index = SORT_TYPES.indexOf(v);
@@ -269,7 +269,7 @@ export let sortStore = createStore(
 					return SORT_TYPES[new_index];
 				});
 			},
-			next: function () {
+			next() {
 				update((v) => {
 					if (v === "") v = SORT_TYPES_DEFAULT;
 					let index = SORT_TYPES.indexOf(v);

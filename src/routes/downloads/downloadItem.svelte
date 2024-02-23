@@ -38,10 +38,6 @@
 			padding: 0.1rem 0.4rem;
 		}
 	}
-	td.before {
-		cursor: pointer;
-		width: 5%;
-	}
 	td.before-empty {
 		width: 5%;
 	}

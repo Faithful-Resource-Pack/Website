@@ -7,11 +7,11 @@ type Optional<T> = {
 const CreateOptional = function <T>(val: T | null): Optional<T> {
 	return {
 		value: val,
-		chain: function (predicate) {
+		chain(predicate) {
 			if (this.value) return CreateOptional(predicate(this.value));
 			return CreateOptional(null);
 		},
-		unwrap: function () {
+		unwrap() {
 			if (this.value) return this.value;
 			throw new Error(`Falsy unwrap() on ${this.value}`);
 		},

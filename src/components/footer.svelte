@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Fa from "svelte-fa";
 	import { faGithub } from "@fortawesome/free-brands-svg-icons";
-	import { t, locale, locales, loadTranslations } from "$lib/translations";
+	import { t, locale, locales, loadTranslations, defaultLocale } from "$lib/translations";
 	import {
 		faInfoCircle,
 		faScroll,
@@ -23,25 +23,25 @@
 	import { langStore } from "$stores/LangStore";
 	import { onMount } from "svelte";
 
-	let year = new Date().getFullYear().toString();
-
 	let toggleThis = "";
 	const TOGGLE_CLASS = " toggled";
-	const toggle = function (arg: string) {
-		return () => {
-			toggleThis = toggleThis === arg ? "" : arg;
-		};
+	const toggle = (arg: string) => () => {
+		toggleThis = toggleThis === arg ? "" : arg;
 	};
 
 	const text_theme = derived(themeStore, (v) => v[0].toUpperCase() + v.substring(1) + " Theme");
 	const icon_theme = derived(themeStore, (v) => {
-		if (v === "auto") return faCircleHalfStroke;
-		else if (v === "dark") return faMoon;
-		else return faSun;
+		switch (v) {
+			case "light":
+				return faSun;
+			case "dark":
+				return faMoon;
+			default:
+				return faCircleHalfStroke;
+		}
 	});
 
 	onMount(async () => {
-		const defaultLocale = "en"; // get from cookie / user session etc...
 		const initLocale = localStorage.getItem("LANG") || defaultLocale;
 		await loadTranslations(initLocale); // keep this just before the `return`
 	});
@@ -50,12 +50,10 @@
 		setTimeout(() => (e.target as HTMLButtonElement).blur(), 200);
 	};
 
-	// this should work but doesn't, thank you melt ui
 	const selectChange: CreateSelectProps<string, false, any>["onSelectedChange"] = ({
 		curr,
 		next,
 	}) => {
-		console.log(curr, next);
 		if (curr !== next) langStore.set(next.value);
 		return next;
 	};
@@ -117,7 +115,7 @@
 					</button>
 				</div>
 				<li><a class="link" href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a></li>
-				<li>&copy; {year} Faithful Resource Pack</li>
+				<li>&copy; {new Date().getFullYear().toString()} Faithful Resource Pack</li>
 			</ul>
 		</div>
 

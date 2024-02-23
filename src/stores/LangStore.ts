@@ -19,12 +19,12 @@ export let langStore = createStore<
 
 		return {
 			subscribe,
-			set: function (lang: string) {
+			set(lang: string) {
 				if (!supportedLocales.includes(lang)) return;
 				locale.set(lang);
 				set(lang);
 			},
-			next: function () {
+			next() {
 				update((v) => {
 					let i = supportedLocales.indexOf(v);
 					let next = (i + 1) % supportedLocales.length;
