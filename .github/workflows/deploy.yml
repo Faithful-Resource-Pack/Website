@@ -26,11 +26,5 @@ jobs:
           pnpm run ji
           pnpm run jb
           pm2 restart "WEBSITE"
-
-          cd /var/www/html/webapp.faithfulpack.net
-          git stash
-          git pull
-          pnpm install
-          pm2 restart "APP"
     - name: Purge Cloudflare cache
-      run: curl https://api.faithfulpack.net/v1/purge/${{ secrets.PURGE_PASSWORD }}
+      run: "curl https://api.faithfulpack.net/v2/cloudflare/purge -H 'cloudflare: ${{ secrets.PURGE_PASSWORD }}'"
