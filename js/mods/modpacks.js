@@ -73,9 +73,8 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
             Object.keys(modpack.versions).forEach(version => {
               this.downloadModpackFromModList(modpack.id, modpack.name, version, modpack.versions[version].minecraft, modpack.versions[version].mods)
             })
-        })
-        .catch(console.error)
-      })
+          })
+        }).catch(console.error)
     }
   },
   computed: {
