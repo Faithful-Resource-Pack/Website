@@ -7,11 +7,11 @@ const AddonPost = () => import('./addon-post.js')
 
 const routes = [
   { path: '/', component: AddonPage, name: 'addon-page' },
-  { path :'*', redirect: '/' }
+  { path: '*', redirect: '/' }
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
 })
 
 let v = new Vue({
