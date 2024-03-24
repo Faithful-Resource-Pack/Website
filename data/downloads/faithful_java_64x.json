@@ -8,12 +8,22 @@
       }
     }
   ],
+  "1.20.4": [
+    {
+      "file": "Faithful 64x",
+      "file_type": "R",
+      "file_version": 3,
+      "latest": "latest",
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/5207728"
+      }
+    }
+  ],
   "1.20.x": [
     {
       "file": "Faithful 64x",
       "file_type": "B",
       "file_version": 9,
-      "latest": "latest",
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4626083"
       }
