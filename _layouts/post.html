@@ -68,7 +68,7 @@ layout: default
 	</div>
 
 	<script>
-		function ShowFullscreen(img_path){
+		function ShowFullscreen(img_path) {
 			var modal = document.getElementById('SF')
 
 			modal.style.display = 'block'
@@ -143,9 +143,9 @@ layout: default
 
 		function format_html(obj, lvl=3) {
 			let result
-			if(Array.isArray(obj)) {
+			if (Array.isArray(obj)) {
 				result = `<ul>${obj.map(e => format_html(e, lvl+1)).join('')}</ul>`;
-			} else if(typeof(obj) === 'string') {
+			} else if (typeof(obj) === 'string') {
 				result = `<li>${obj}</li>`;
 			} else {
 				result = Object.entries(obj)
@@ -164,7 +164,7 @@ layout: default
 		  .then(body => {
 			const beta_alpha_regex = /(Alpha|Beta)\s+\d+/;
 			const match = "{{ page.title }}".match(beta_alpha_regex);
-			if(match)
+			if (match)
 			{
 				const my_release = body[match[0]];
 				document.querySelector('#changelog').innerHTML = format_html(my_release);

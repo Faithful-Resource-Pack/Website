@@ -14,12 +14,18 @@ title: Statistics
 		<h3><span class="badge badge-primary h1">{{ site.posts | where_exp: "item", "item.url contains 'compliance64x/' or item.url contains 'faithful64x/'" | size }}</span></h3>
 	</div>
 
-	<h2 class="display-4 my-5">Add-Ons</h2>
+	<h2 class="display-4 my-5">Add-ons</h2>
 	<div v-if="Object.keys(addonsStats).length === 0 && addons !== undefined" v-html="loadingMessage"></div>
 	<div id="stats-addons" class="res-grid-2">
 		<template v-for="res in Object.keys(addonsStats)" :key="res">
 			<div v-for="edi, e_i in Object.keys(addonsStats[res])" :key="edi">
-				<h3><span v-text="res + ' ' + edi + ' Add-Ons'"></span><div class="badge-container"><span class="badge badge-primary h1" v-text="addonsStats[res][edi]"></span></div></h3>
+				<h3>
+					<!-- no mustaches to fix jekyll conflicts (pain) -->
+					<span v-text="res + ' ' + edi + ' Add-ons'"></span>
+					<div class="badge-container">
+						<span class="badge badge-primary h1" v-text="addonsStats[res][edi]"></span>
+					</div>
+				</h3>
 			</div>
 		</template>
 	</div>

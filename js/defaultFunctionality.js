@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isScrolling = window.scrollY > (topNavbar.offsetTop + topNavbarHeight)
     topNavbar.classList.toggle('fixed', isScrolling)
 
-    if(isScrolling) {
+    if (isScrolling) {
       topNavbarParent.style.paddingTop = topNavbarHeight + 'px'
     } else {
       topNavbarParent.style.paddingTop = '0px'

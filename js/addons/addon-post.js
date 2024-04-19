@@ -229,7 +229,7 @@ export default {
     }
   },
   beforeMount() {
-    if(!window.slug && this.$route) {
+    if (!window.slug && this.$route) {
       fetch(`https://api.faithfulpack.net/v2/addons/${window.slug}`)
       .then(response => response.json())
       .then(data => this.addon = data[0])

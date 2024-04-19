@@ -17,36 +17,41 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     numberOfModsSupported: undefined,
     totalNumberOfResourcePacksStored: undefined
   },
-  methods: {
-  },
   computed: {
     loadingMessage() {
       return '<i class="fas spin"></i> ' + this.messages.loading
     },
     addonsStats() {
       // super duper dynamic addons stats
-      const result = {}
-      const editions = []
-      Object.values(this.addons).map(e => e.options.tags).forEach(types => {
-        types.filter(e => !isNaN(parseInt(e))).forEach(resolution => {
-          if(result[resolution] === undefined) result[resolution] = {}
-          types.filter(e => isNaN(parseInt(e))).forEach(edition => {
-            if(editions.indexOf(edition) === -1) editions.push(edition)
-            if(result[resolution][edition] === undefined) result[resolution][edition] = 0
-            result[resolution][edition]++
+      const allEditions = [];
+      const result = Object.values(this.addons)
+        .map((e) => e.options.tags)
+        .reduce((acc, tags) => {
+          const resolutions = tags.filter((t) => !isNaN(parseInt(t)));
+          // everything else
+          const editions = tags.filter((t) => !resolutions.includes(t));
+          for (const resolution of resolutions) {
+            acc[resolution] ||= {};
+            for (const edition of editions) {
+              if (!allEditions.includes(edition)) allEditions.push(edition);
+              acc[resolution][edition] ||= 0;
+              ++acc[resolution][edition];
+            }
+          }
+          return acc;
+        }, {})
+      Object.keys(result).forEach((res) => {
+        allEditions
+          .filter((e) => !result[res][e])
+          .forEach((e) => {
+            result[res][e] = 0
           })
-        })
-      })
-      Object.keys(result).forEach(res => {
-        editions.forEach(e => {
-          if(result[res][e] === undefined) result[res][e] = 0
-        })
       })
 
-      return result
+      return result;
     }
   },
-  mounted() {
+  created() {
     fetch('https://api.faithfulpack.net/v2/mods/raw')
       .then((res) => res.json())
       .then((json) => {
@@ -55,8 +60,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         let resourcePacks = 0
         let modAmount = 0
 
-
-        Object.values(mods).map(e => e.resource_pack.versions).forEach(versions => {
+        Object.values(mods).map((e) => e.resource_pack.versions).forEach((versions) => {
           versions.forEach(version => {
             // version sum
             if (!versionList.includes(version)) versionList.push(version)
@@ -78,10 +82,8 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       .catch(console.error);
 
     fetch('https://api.faithfulpack.net/v2/addons/approved')
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         this.addons = data
       })
       .catch(() => {

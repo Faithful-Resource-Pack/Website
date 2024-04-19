@@ -1,7 +1,9 @@
-# FAITHFUL LICENSE
-Version 3 - 20th February 2023
-
-Copyright © Faithful Resource Pack
+<h1 class="display-3 mt-5 text-center">FAITHFUL LICENSE</h1>
+<h3 class="mb-5 text-center">
+	Version 3 - 20th February 2023
+	<br>
+	Copyright © Faithful Resource Pack
+</h3>
 
 
 ## You may do the following:

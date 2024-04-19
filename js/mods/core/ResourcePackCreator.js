@@ -33,7 +33,7 @@ Promise.sleep = function(delay, value = undefined) {
  * @returns {Promise<any[]>} all results if successful
  */
 Promise.throttle = function(arr, throttle, delay, results = []) {
-    if(arr.length === 0)
+    if (arr.length === 0)
         return results;
 
     const start = new Date().getTime();
@@ -242,7 +242,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
           message: 'Already downloaded ' + mod.displayName + ' v' + mod.version + ' in cache'
         })
 
-        if(res) {
+        if (res) {
           return Promise.resolve({ data: res })
         }
 
@@ -272,7 +272,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     }
 
     if (!this.storeName || !this.zipOptions) return Promise.reject('Elements missing')
-    if(modSelection.length === 0) return Promise.resolve() // successfully finished doing nothing
+    if (modSelection.length === 0) return Promise.resolve() // successfully finished doing nothing
 
     // create final zip
     const finalZip = new JSZip()

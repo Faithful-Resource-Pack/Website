@@ -18,8 +18,8 @@ function updateView() {
     favContainer.innerHTML = ''
     let locFavs = favorites
     locFavs.sort((a, b) => {
-      if(a.title < b.title) { return -1; }
-      if(a.title > b.title) { return 1; }
+      if (a.title < b.title) { return -1; }
+      if (a.title > b.title) { return 1; }
       return 0;
     })
     locFavs.forEach((item, i) => {

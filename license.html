@@ -4,7 +4,10 @@ title: License
 permalink: /license
 ---
 
-<link rel="stylesheet" href="{{ site.baseurl }}/css/license.css">
+<link
+	rel="stylesheet"
+	href="{{ site.baseurl }}/css/license.css"
+/>
 
 <!--
 <div class="dropdown" align="right">
@@ -95,25 +98,18 @@ permalink: /license
 
 <div id="output"></div>
 
-<script defer src="https://cdn.jsdelivr.net/npm/marked@4.1.0/marked.min.js"></script>
+<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/marked@4.1.0/marked.min.js"
+></script>
 <script type="module">
-	Load('en'); // load english by default
+	Load("en"); // load english by default
 
-	async function Load(file){
-		fetch(`{{site.baseurl}}/translated/license/${file}.md`)
-		  .then(async response => {
-			const text = await response.text()
-		    return await marked.parse(text)
-		  })
-		  .then(body => {
-		    document.getElementById('output').innerHTML = body
-		  })
-
-		var warning = document.getElementById('warning');
-		if (file != 'en.html'){
-			warning.style.display = 'block';
-		} else {
-			warning.style.display = 'none';
-		}
+	async function Load(file) {
+		const res = await fetch(`{{site.baseurl}}/translated/license/${file}.md`);
+		const text = await res.text();
+		const body = await marked.parse(text);
+		document.getElementById("output").innerHTML = body;
+		document.getElementById("warning").style.display = file == "en.html" ? "none" : "block";
 	}
 </script>

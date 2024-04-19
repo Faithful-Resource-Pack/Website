@@ -42,7 +42,7 @@ const v = new Vue({
   <div>
     <h1 class="display-3 my-5 text-center">Downloads</h1>
     <template v-for="(i, key) in packType">
-      <h2>Faithful for Minecraft: {{ key }}</h2>
+      <h2>Faithful for {{ key }} Edition</h2>
       <h2 v-if="key == 'Dungeons'" class="red banner">This project has been discontinued.</h2>
       <template v-for="j in packType[key]">
         <h2>{{ j }}</h2>
@@ -217,7 +217,7 @@ const v = new Vue({
      */
     toggleContent(event, version, res, edition) {
       // if parent src element is a link <a>
-      if(event.target.parentElement.tagName === "A") return
+      if (event.target.parentElement.tagName === "A") return
 
       const suffix = edition + '-' + res + '-' + version
 

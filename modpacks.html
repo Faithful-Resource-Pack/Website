@@ -21,7 +21,7 @@ title: Modpacks
     </div>
 
     <div class="res-grid-4">
-      <modpack-card v-for="(m, mindex) in filteredModpacks" :key="mindex" :modpack="m" :onbuttonclick="function(){ openModpackModal(mindex)  }"></modpack-card>
+      <modpack-card v-for="(m, mindex) in filteredModpacks" :key="mindex" :modpack="m" :onbuttonclick="function () { openModpackModal(mindex) }"></modpack-card>
     </div>
 
     <h3 v-if='filteredModpacks.length == 0' id="noresults" class="text-center"></h3>

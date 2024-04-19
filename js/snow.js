@@ -2,7 +2,8 @@
 // source : https://www.kirupa.com/html5/the_falling_snow_effect.htm
 
 const month = new Date().getMonth()
-if ((month == 11) && !matchMedia('(prefers-reduced-motion)').matches){ // december because indexed from 0
+// december because indexed from 0
+if (month == 11 && !matchMedia('(prefers-reduced-motion)').matches) {
 
   // Custom CSS
   const snowCSS = document.createElement("link")
