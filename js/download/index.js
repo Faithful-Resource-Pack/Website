@@ -8,15 +8,16 @@ const v = new Vue({
   el: '#app',
   data: {
     isMounted: false,
-    packType: {
-      "Java": [ '32x', '64x' ],
-      "Bedrock": [ '32x', '64x' ],
-      "Dungeons": [ '32x' ]
-    },
     downloads: {
-      f32: [], f64: [],
-      f32b: [], f64b: [],
-      f32d: []
+      "Faithful 32x": {
+        Java: [],
+        Bedrock: [],
+        Dungeons: [],
+      },
+      "Faithful 64x": {
+        Java: [],
+        Bedrock: [],
+      },
     },
     releases: {
       f32: {
@@ -41,11 +42,14 @@ const v = new Vue({
   template: `
   <div>
     <h1 class="display-3 my-5 text-center">Downloads</h1>
-    <template v-for="(i, key) in packType">
-      <h2>Faithful for {{ key }} Edition</h2>
-      <h2 v-if="key == 'Dungeons'" class="red banner">This project has been discontinued.</h2>
-      <template v-for="j in packType[key]">
-        <h2>{{ j }}</h2>
+    <template v-for="pack in Object.keys(downloads)" :key="pack">
+      <h2 class="text-center display-4 mb-0">{{ pack }}</h2>
+      <template v-for="edition in Object.keys(downloads[pack])" :key="edition">
+        <h2 class="text-center my-3" v-if="edition !== 'Dungeons'">{{ edition }} Edition</h2>
+        <div v-else>
+          <h2 class="text-center">Minecraft {{ edition }}</h2>
+          <h2 class="red banner">This project has been discontinued.</h2>
+        </div>
         <div class="outline">
           <table class="download-table">
             <thead>
@@ -57,10 +61,9 @@ const v = new Vue({
               </tr>
             </thead>
             <tbody>
-
-              <template v-for="(item, keyA) in getDownloads(key, j)">
-                <tr class="collapsible" v-on:click="toggleContent($event, keyA, j, key)">
-                  <td v-if="item[1]" class="toggle before" :ref="'toggle-' + key + '-' + j + '-' + keyA">➕</td>
+              <template v-for="(item, keyA) in getDownloads(edition, pack)">
+                <tr class="collapsible" @click="toggleContent($event, keyA, pack, edition)">
+                  <td v-if="item[1]" class="toggle before" :ref="'toggle-' + pack + '-' + edition + '-' + keyA">➕</td>
                   <td v-else class="toggle before-empty"></td>
 
                   <td class="large details">
@@ -70,31 +73,31 @@ const v = new Vue({
                       <span :class="labelColor(item[0])">{{ labelText(item[0]) }}</span>
                       <span v-if="keyA != 'download' && item[0].latest" class="latest">Latest</span>
                     </p>
-                    <p class="mobile" v-show="getDate(item[0], key, j)">{{ getDate(item[0], key, j) + ' - ' + getSize(item[0], key, j) }}</p>
+                    <p class="mobile" v-show="getDate(item[0], pack, edition)">{{ getDate(item[0], pack, edition) + ' - ' + getSize(item[0], pack, edition) }}</p>
                   </td>
 
                   <td class="date">
                     <p>
-                      {{ getDate(item[0], key, j) }}
+                      {{ getDate(item[0], pack, edition) }}
                     </p>
                   </td>
 
                   <td class="size">
                     <p>
-                      {{ getSize(item[0], key, j) }}
+                      {{ getSize(item[0], pack, edition) }}
                     </p>
                   </td>
 
                   <td
                     v-for="(origin, originKey, originIndex) in item[0].links"
-                    :key="key + '-' + j + '-' + keyA + '-' + origin"
+                    :key="pack + '-' + edition + '-' + keyA + '-' + origin"
                     :class="['small', 'downloads', { 'desktop': originIndex > 0 }]"
                     :colspan="Object.keys(item[0].links).length > 1 ? 1 : 2"
                   >
                     <template v-if="originIndex == 0">
                       <a
                         v-for="(originMobile, originMobileKey, originMobileIndex) in item[0].links"
-                        :key="'mobile-' + key + '-' + j + '-' + keyA + '-' + origin"
+                        :key="'mobile-' + pack + '-' + edition + '-' + keyA + '-' + origin"
                         :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
                         :href="origin"
                       >
@@ -123,7 +126,12 @@ const v = new Vue({
                   </td>
                 </tr>
 
-                <tr :ref="'content-' + key + '-' + j + '-' + keyA" class="content" v-for="(subItem, keyB) in item" v-if="keyB > 0">
+                <tr
+                  :ref="'content-' + pack + '-' + edition + '-' + keyA"
+                  class="content"
+                  v-for="(subItem, keyB) in item"
+                  v-if="keyB > 0"
+                >
                   <td class="before-empty toggle"></td>
 
                   <td class="large details">
@@ -132,31 +140,33 @@ const v = new Vue({
                       <span v-if="keyB != 'download'" class="version">{{ keyA }}</span>
                       <span :class="labelColor(subItem)">{{ labelText(subItem) }}</span>
                     </p>
-                    <p class="mobile" v-show="getDate(item[0], key, j)">{{ getDate(item[0], key, j) + ' - ' + getSize(item[0], key, j) }}</p>
+                    <p class="mobile" v-show="getDate(item[0], pack, edition)">
+                      {{ getDate(item[0], edition, pack) + ' - ' + getSize(item[0], edition, pack) }}
+                    </p>
                   </td>
 
                   <td class="date">
                     <p>
-                      {{ getDate(subItem, key, j) }}
+                      {{ getDate(subItem, edition, pack) }}
                     </p>
                   </td>
 
                   <td class="size">
                     <p>
-                      {{ getSize(subItem, key, j) }}
+                      {{ getSize(subItem, edition, pack) }}
                     </p>
                   </td>
 
                   <td
                     v-for="(origin, originKey, originIndex) in subItem.links"
-                    :key="key + '-' + j + '-' + keyA + '-' + origin"
+                    :key="pack + '-' + edition + '-' + keyA + '-' + origin"
                     :class="['small', 'downloads', { 'desktop': originIndex > 0 }]"
                     :colspan="Object.keys(subItem.links).length > 1 ? 1 : 2"
                   >
                     <template v-if="originIndex == 0">
                       <a
                         v-for="(originMobile, originMobileKey, originMobileIndex) in subItem.links"
-                        :key="'mobile-' + key + '-' + j + '-' + keyA + '-' + origin"
+                        :key="'mobile-' + pack + '-' + edition + '-' + keyA + '-' + origin"
                         :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
                         :href="origin"
                       >
@@ -215,11 +225,11 @@ const v = new Vue({
      * @param {Event} event click event
      * @param {String} version
      */
-    toggleContent(event, version, res, edition) {
+    toggleContent(event, version, pack, edition) {
       // if parent src element is a link <a>
       if (event.target.parentElement.tagName === "A") return
 
-      const suffix = edition + '-' + res + '-' + version
+      const suffix = pack + '-' + edition + '-' + version
 
       // change plus to minus
       const toggleElement = this.$refs['toggle-' + suffix][0]
@@ -230,20 +240,8 @@ const v = new Vue({
         content.classList.toggle("active")
       })
     },
-    getDownloads(type, size) {
-      switch (type) {
-        case 'Java':
-          if (size == '32x') return this.downloads.f32
-          if (size == '64x') return this.downloads.f64
-          break
-        case 'Bedrock':
-          if (size == '32x') return this.downloads.f32b
-          if (size == '64x') return this.downloads.f64b
-          break
-        case 'Dungeons':
-          if (size == '32x') return this.downloads.f32d
-          break
-      }
+    getDownloads(edition, pack) {
+      return this.downloads[pack][edition];
     },
     /* unused
     getGitHubDownload(item, release, type, size) {
@@ -268,49 +266,57 @@ const v = new Vue({
       return 'Curse'
     },
     */
-    getRelease(type, size) {
-      switch (type) {
+    getRelease(edition, pack) {
+      switch (edition) {
         case 'Java':
-          if (size == '32x') return this.releases.f32
-          if (size == '64x') return this.releases.f64
+          if (pack == 'Faithful 32x') return this.releases.f32
+          if (pack == 'Faithful 64x') return this.releases.f64
           break
         case 'Bedrock':
-          if (size == '32x') return this.releases.f32b
-          if (size == '64x') return this.releases.f64b
+          if (pack == 'Faithful 32x') return this.releases.f32b
+          if (pack == 'Faithful 64x') return this.releases.f64b
           break
         case 'Dungeons':
-          if (size == '32x') return this.releases.f32d
+          if (pack == 'Faithful 32x') return this.releases.f32d
           break
       }
     },
-    getDate(item, type, size) {
+    toMdyDate(dmyDate) {
+      const [day, month, year] = dmyDate.split("/");
+      return [month, day, year].join("/");
+    },
+    getDate(item, edition, pack) {
       if (!this.isMounted) return
 
       let id = this.getId(item)
-      let data = this.getRelease(type, size)
-      if (id == 0 && item.date) return item.date
+      let data = this.getRelease(edition, pack)
+      if (id == 0 && item.date) {
+        if (navigator.language === "en-US") return this.toMdyDate(item.date)
+        return item.date
+      }
 
       if (id != 0) {
         let date = ""
         let dateF = ""
         let dateA = []
 
-        const files = data && data.curse && data.curse.files ? data.curse.files : []
+        const files = data?.curse?.files || []
         files.forEach(el => {
           if (el.id == id) {
             dateF = el.uploaded_at
             dateA = dateF.split('-')
             date = `${dateA[2].split("T")[0]}/${dateA[1]}/${dateA[0]}`
+            if (navigator.language === "en-US") date = this.toMdyDate(date)
           }
         })
         return date
       }
     },
-    getSize(item, type, size) {
+    getSize(item, edition, pack) {
       if (!this.isMounted) return
 
       let id = this.getId(item)
-      let data = this.getRelease(type, size)
+      let data = this.getRelease(edition, pack)
 
       if (id == 0 && item.size) return item.size
 
@@ -335,7 +341,7 @@ const v = new Vue({
     fetch('data/downloads/faithful_java_32x.json')
       .then((res) => res.json())
       .then((json) => {
-        this.downloads.f32 = json
+        this.downloads["Faithful 32x"].Java = json
       })
       .catch(console.error)
 
@@ -357,7 +363,7 @@ const v = new Vue({
     fetch('data/downloads/faithful_java_64x.json')
       .then((res) => res.json())
       .then((json) => {
-        this.downloads.f64 = json
+        this.downloads["Faithful 64x"].Java = json
       })
       .catch(console.error)
 
@@ -379,7 +385,7 @@ const v = new Vue({
     fetch('data/downloads/faithful_bedrock_32x.json')
       .then((res) => res.json())
       .then((json) => {
-        this.downloads.f32b = json
+        this.downloads["Faithful 32x"].Bedrock = json
       })
       .catch(console.error)
 
@@ -394,7 +400,7 @@ const v = new Vue({
     fetch('data/downloads/faithful_bedrock_64x.json')
       .then((res) => res.json())
       .then((json) => {
-        this.downloads.f64b = json
+        this.downloads["Faithful 64x"].Bedrock = json
       })
       .catch(console.error)
 
@@ -409,7 +415,7 @@ const v = new Vue({
     fetch('data/downloads/faithful_dungeons_32x.json')
       .then((res) => res.json())
       .then((json) => {
-        this.downloads.f32d = json
+        this.downloads["Faithful 32x"].Dungeons = json
       })
       .catch(console.error)
 
