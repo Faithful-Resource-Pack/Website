@@ -12,12 +12,14 @@ const v = new Vue({
       "Faithful 32x": {
         Java: [],
         Bedrock: [],
-        Dungeons: [],
       },
       "Faithful 64x": {
         Java: [],
         Bedrock: [],
       },
+      "Discontinued": {
+        Dungeons: [],
+      }
     },
     releases: {
       f32: {
@@ -47,7 +49,7 @@ const v = new Vue({
       <template v-for="edition in Object.keys(downloads[pack])" :key="edition">
         <h2 class="text-center my-3" v-if="edition !== 'Dungeons'">{{ edition }} Edition</h2>
         <div v-else>
-          <h2 class="text-center">Minecraft {{ edition }}</h2>
+          <h2 class="text-center">Faithful 32x for Minecraft Dungeons</h2>
           <h2 class="red banner">This project has been discontinued.</h2>
         </div>
         <div class="outline">
@@ -415,7 +417,7 @@ const v = new Vue({
     fetch('data/downloads/faithful_dungeons_32x.json')
       .then((res) => res.json())
       .then((json) => {
-        this.downloads["Faithful 32x"].Dungeons = json
+        this.downloads["Discontinued"].Dungeons = json
       })
       .catch(console.error)
 
