@@ -69,3 +69,10 @@ label, input {
 ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
 	background: #878787
 }
+
+.v-menu__content > * {
+	background-color: #0C0C0C !important;
+	& > * {
+		color: rgba(255, 255, 255, .7) !important;
+	}
+}

@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "./variables";
+
 .background {
 	background: #EEEDE5 url(../image/background/bg_light_background.png) repeat
 }
@@ -61,4 +63,8 @@ label, input {
 }
 ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
 	background: #787878
+}
+
+.v-list-item--highlighted > .v-list-item__content > .v-list-item__title {
+	color: $primary;
 }

@@ -1903,7 +1903,22 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 	-khtml-user-drag: none;
 	-moz-user-drag: none;
 	-o-user-drag: none;
-	user-drag: none
+}
+
+.addon-info-subtitle {
+  display: flex;
+  justify-content: space-between;
+  & > * {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+  & > .v-select {
+    max-width: 15rem;
+  }
+}
+
+.v-select__selection {
+  color: rgba(255, 255, 255, .7);
 }
 
 .fav-button {

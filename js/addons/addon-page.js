@@ -82,13 +82,27 @@ export default {
         @click:clear="clearSearch"
       />
       <br>
-      {{ resultCount }} {{ results }} found
+      <div class="addon-info-subtitle">
+        <p>{{ resultCount }} {{ results }} found</p>
+        <br>
+        <v-select
+          base-color="primary"
+          dark
+          hide-details
+          dense
+          v-model="currentSort"
+          :items="sortMethods"
+          item-text="label"
+          item-value="value"
+        />
+      </div>
     </div>
     <br>
     <addon-grid
       :key="Object.keys(fav).length"
       :addons="searchedAddons"
       :action="checkFav"
+      :sort="currentSort"
       icon="mdi-star"
       iconColor="#ffc83d"
       :addonsFav="fav"
@@ -96,6 +110,12 @@ export default {
   </v-container>
   `,
   data() {
+    const sortMethods = [
+      { label: "Date (Newest to Oldest)", value: "dd" },
+      { label: "Date (Oldest to Newest)", value: "da" },
+      { label: "Name (A-Z)", value: "na" },
+      { label: "Name (Z-A)", value: "nd" }
+    ];
     return {
       addons: {},
       searchedAddons: {},
@@ -110,6 +130,8 @@ export default {
       selectedRes: ['32x', '64x'],
       fav: {},
       resultCount: 0,
+      sortMethods,
+      currentSort: sortMethods[0].value,
     }
   },
   methods: {

@@ -3,15 +3,39 @@ export default {
   template: `
   <div class="card card-body addon-grid">
     <div class="res-grid-3">
-      <div v-for="(addon, index) in addons_sorted" class="hovering-effect" style="margin-bottom: calc(-28px)" v-if="addon.approval.status === 'approved'">
+      <div
+        v-for="(addon, index) in sortedAddons"
+        :key="index"
+        class="hovering-effect"
+        style="margin-bottom: calc(-28px)"
+        v-if="addon.approval.status === 'approved'"
+      >
         <a class="card img-card" :href="'/addons/' + addon.slug">
           <img :src="'https://database.faithfulpack.net/images/addons/' + addon.slug + '/header'" loading="lazy">
           <div class="img-card-shadow"></div>
           <h3>{{ addon.name }}</h3>
           <div class="addon-flags" style="margin-bottom: 5px">
-            <img style="margin-bottom: 5px" v-if="addon.options.tags.includes('Java')" :src="java" alt="available for Java Edition" loading="lazy">
-            <img style="margin-bottom: 5px" v-if="addon.options.tags.includes('Bedrock')" :src="bedrock" alt="available for Bedrock Edition" loading="lazy">
-            <img style="margin-bottom: 5px" v-if="addon.options.optifine" :src="optifine" alt="requires optifine" loading="lazy">
+            <img
+              style="margin-bottom: 5px"
+              v-if="addon.options.tags.includes('Java')"
+              :src="java"
+              alt="available for Java Edition"
+              loading="lazy"
+            />
+            <img
+              style="margin-bottom: 5px"
+              v-if="addon.options.tags.includes('Bedrock')"
+              :src="bedrock"
+              alt="available for Bedrock Edition"
+              loading="lazy"
+            />
+            <img
+              style="margin-bottom: 5px"
+              v-if="addon.options.optifine"
+              :src="optifine"
+              alt="requires optifine"
+              loading="lazy"
+            />
           </div>
           <div class="addon-tags">
             <p style="margin-bottom: 5px; margin-right: 5px" v-if="addon.options.tags.includes('32x')" >32x</p>
@@ -25,7 +49,7 @@ export default {
           icon
           style="position: relative; top: calc(-100% + 2px + 28px); left: 2px"
         >
-        <v-icon>{{ icon }}</v-icon>
+          <v-icon>{{ icon }}</v-icon>
         </v-btn>
       </div>
     </div>
@@ -51,7 +75,12 @@ export default {
     iconColor: {
       type: String,
       required: true
-    }
+    },
+    sort: {
+      type: String,
+      required: false,
+      default: "none",
+    },
   },
   data() {
     return {
@@ -61,16 +90,25 @@ export default {
     }
   },
   computed: {
-    addons_sorted() {
-      let sorted = Object.values(this.addons)
-      sorted.sort((a,b) => {
-        let an = a.name.trim().toLowerCase()
-        let bn = b.name.trim().toLowerCase()
-
-        return an === bn ? 0 : (an > bn ? 1 : -1)
+    sortedAddons() {
+      const sorted = Object.values(this.addons).sort((a, b) => {
+        const an = a.name.trim().toLowerCase()
+        const bn = b.name.trim().toLowerCase()
+        const ad = a.last_updated || 0;
+        const bd = b.last_updated || 0;
+        switch (this.sort) {
+          case "na":
+            return an === bn ? 0 : (an > bn ? 1 : -1)
+          case "nd":
+            return an === bn ? 0 : (an > bn ? -1 : 1)
+          case "da":
+            return ad === bd ? 0 : (ad > bd ? 1 : -1)
+          case "dd":
+          default:
+            return ad === bd ? 0 : (ad < bd ? 1 : -1)
+        }
       })
-
-      return sorted
-    }
+      return sorted;
+    },
   }
 }
