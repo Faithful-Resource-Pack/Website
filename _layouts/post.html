@@ -64,17 +64,16 @@ layout: default
 
 	<div id="SF" class="modal">
 		<span id="SF-Span" class="close">&times;</span>
-		<img  id="SF-Img"  class="modal-content">
+		<img id="SF-Img"  class="modal-content">
 	</div>
 
 	<script>
 		function ShowFullscreen(img_path) {
-			var modal = document.getElementById('SF')
-
+			const modal = document.getElementById('SF')
 			modal.style.display = 'block'
 
 			// close modal:
-			var span = document.getElementById('SF-Span')
+			const span = document.getElementById('SF-Span')
 			span.onclick = () => {
 				modal.style.display = 'none';
 			}
@@ -84,7 +83,7 @@ layout: default
 			})
 
 			// set img in modal:
-			var img = document.getElementById('SF-Img')
+			const img = document.getElementById('SF-Img')
 			img.src = img_path
 		}
 	</script>
@@ -133,7 +132,9 @@ layout: default
 		<h2 class="display-4 my-5 text-center">Download</h2>
 	{%- endif -%}
 	{%- for item in page.download -%}
-		<a href="{{ item.first | shift  | join: '</li><li>' }}" class="btn block btn-lg btn-primary fancy-card-2x my-3"><i style="margin-right: 5px" class="fas"></i>{{ item.first | pop}}</a>
+		<a href="{{ item.first | shift | join: '</li><li>' }}" class="btn block btn-lg btn-primary fancy-card-2x my-3">
+			<i style="margin-right: 5px" class="fas"></i>{{ item.first | pop }}
+		</a>
 	{%- endfor -%}
 {%- endif -%}
 
@@ -141,16 +142,16 @@ layout: default
 	<script>
 		const path = "{{ page.main_changelog }}".split('.').shift();
 
-		function format_html(obj, lvl=3) {
+		function formatHTML(obj, lvl=3) {
 			let result
 			if (Array.isArray(obj)) {
-				result = `<ul>${obj.map(e => format_html(e, lvl+1)).join('')}</ul>`;
+				result = `<ul>${obj.map(e => formatHTML(e, lvl+1)).join('')}</ul>`;
 			} else if (typeof(obj) === 'string') {
 				result = `<li>${obj}</li>`;
 			} else {
 				result = Object.entries(obj)
 					.map(([key, val]) =>
-						`<h${lvl} class="card-title text-left">${key}:</h${lvl}>${format_html(val, lvl+1)}`)
+						`<h${lvl} class="card-title text-left">${key}:</h${lvl}>${formatHTML(val, lvl+1)}`)
 					.join('');
 			}
 			console.log(obj, result);
@@ -158,16 +159,13 @@ layout: default
 		}
 
 		fetch(`{{ site.baseurl }}/${path}.json`)
-		  .then(response => {
-		    return response.json();
-		  })
-		  .then(body => {
+		  .then((response) => response.json())
+		  .then((body) => {
 			const beta_alpha_regex = /(Alpha|Beta)\s+\d+/;
 			const match = "{{ page.title }}".match(beta_alpha_regex);
-			if (match)
-			{
+			if (match) {
 				const my_release = body[match[0]];
-				document.querySelector('#changelog').innerHTML = format_html(my_release);
+				document.querySelector('#changelog').innerHTML = formatHTML(my_release);
 			}
 		  });
 	</script>
