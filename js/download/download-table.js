@@ -1,4 +1,5 @@
 const DownloadLine = () => import("./download-line.js")
+
 export default {
 	name: "download-table",
   components: {
