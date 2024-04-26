@@ -10,100 +10,114 @@ const v = new Vue({
     DownloadTable,
   },
   data: {
-    downloads: {
+    alive: {
       "Faithful 32x": {
-        Java: [],
-        Bedrock: [],
+        Java: {
+          downloads: [],
+          files: [],
+        },
+        Bedrock: {
+          downloads: [],
+          files: [],
+        },
       },
       "Faithful 64x": {
-        Java: [],
-        Bedrock: [],
+        Java: {
+          downloads: [],
+          files: [],
+        },
+        Bedrock: {
+          downloads: [],
+          files: [],
+        },
       },
-      "Discontinued": {
-        Dungeons: [],
-      }
     },
-    files: {
-      f32: [],
-      f64: [],
-      f32b: [],
-      f64b: [],
-      f32d: [],
-    }
+    discontinued: {
+      "Faithful 32x for Minecraft Dungeons": {
+        downloads: [],
+        files: [],
+      },
+    },
   },
   template: `
   <div>
     <h1 class="display-3 my-5 text-center">Downloads</h1>
-    <template v-for="pack in Object.keys(downloads)" :key="pack">
+    <template v-for="(editions, pack) in alive" :key="pack">
       <h2 class="text-center display-4 mb-0">{{ pack }}</h2>
-      <template v-for="edition in Object.keys(downloads[pack])" :key="edition">
-        <h2 class="text-center my-3" v-if="edition !== 'Dungeons'">{{ edition }} Edition</h2>
-        <div v-else>
-          <h2 class="text-center">Faithful 32x for Minecraft Dungeons</h2>
-          <h2 class="red banner">This project has been discontinued.</h2>
-        </div>
+      <template v-for="(data, edition) in editions" :key="edition">
+        <h2 class="text-center my-3">{{ edition }} Edition</h2>
         <div class="outline">
           <download-table
-            :edition="edition"
-            :pack="pack"
-            :downloads="getDownloads(edition, pack)"
-            :files="getFiles(edition, pack)"
+            :downloads="data.downloads"
+            :files="data.files"
           />
         </div>
       </template>
       <br><br>
     </template>
+    <h2 class="text-center display-4 mb-0">Discontinued</h2>
+    <template v-for="(data, name) in discontinued" :key="name">
+      <h2 class="text-center">{{ name }}</h2>
+      <h2 class="red banner">This project has been discontinued.</h2>
+      <div class="outline">
+        <download-table
+          :downloads="data.downloads"
+          :files="data.files"
+        />
+      </div>
+    </template>
   </div>
   `,
   methods: {
-    getDownloads(edition, pack) {
-      return this.downloads[pack][edition];
-    },
-    getFiles(edition, pack) {
-      switch (edition) {
-        case 'Java':
-          if (pack == 'Faithful 32x') return this.files.f32
-          if (pack == 'Faithful 64x') return this.files.f64
-          break
-        case 'Bedrock':
-          if (pack == 'Faithful 32x') return this.files.f32b
-          if (pack == 'Faithful 64x') return this.files.f64b
-          break
-        case 'Dungeons':
-          if (pack == 'Faithful 32x') return this.files.f32d
-          break
-      }
-    },
-    fetchDownload(json, pack, edition) {
+    fetchData({ json, curse, name, edition, discontinued }) {
       fetch(`data/downloads/${json}.json`)
         .then((res) => res.json())
-        .then((json) => {
-          this.downloads[pack][edition] = json;
+        .then((downloads) => {
+          if (discontinued) this.discontinued[name].downloads = downloads;
+          else this.alive[name][edition].downloads = downloads;
+        })
+        .catch(console.error)
+      fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.cfwidget.com/${curse}`)}`)
+        .then((res) => res.json())
+        .then(({ files }) => {
+          if (discontinued) this.discontinued[name].files = files;
+          else this.alive[name][edition].files = files;
         })
         .catch(console.error)
     },
-    fetchCurse(curseID, name) {
-      fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.cfwidget.com/${curseID}`)}`)
-        .then((res) => res.json())
-        .then((json) => {
-          this.files[name] = json.files
-        })
-        .catch(console.error)
-    }
   },
   mounted() {
-    // local download jsons
-    this.fetchDownload('faithful_java_32x', "Faithful 32x", "Java");
-    this.fetchDownload('faithful_java_64x', "Faithful 64x", "Java");
-    this.fetchDownload('faithful_bedrock_32x', "Faithful 32x", "Bedrock");
-    this.fetchDownload('faithful_bedrock_64x', "Faithful 64x", "Bedrock");
-    this.fetchDownload('faithful_dungeons_32x', "Discontinued", "Dungeons");
-
-    // curse jsons
-    this.fetchCurse("436482", "f32");
-    this.fetchCurse("419139", "f64");
-    this.fetchCurse("507188", "f32b");
-    this.fetchCurse("694024", "f64b");
-    this.fetchCurse("501546", "f32d");
+    Promise.all([
+      this.fetchData({
+        json: 'faithful_java_32x',
+        curse: "436482",
+        name: "Faithful 32x",
+        edition: "Java"
+      }),
+      this.fetchData({
+        json: 'faithful_java_64x',
+        curse: "419139",
+        name: "Faithful 64x",
+        edition: "Java"
+      }),
+      this.fetchData({
+        json: 'faithful_bedrock_32x',
+        curse: "507188",
+        name: "Faithful 32x",
+        edition: "Bedrock",
+      }),
+      this.fetchData({
+        json: 'faithful_bedrock_64x',
+        curse: "694024",
+        name: "Faithful 64x",
+        edition: "Bedrock",
+      }),
+      this.fetchData({
+        json: 'faithful_dungeons_32x',
+        curse: "501546",
+        name: "Faithful 32x for Minecraft Dungeons",
+        discontinued: true,
+      }),
+    ])
   }
 })

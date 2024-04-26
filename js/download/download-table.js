@@ -5,14 +5,6 @@ export default {
     DownloadLine,
   },
   props: {
-    edition: {
-      type: String,
-      required: true,
-    },
-    pack: {
-      type: String,
-      required: true,
-    },
     downloads: {
       type: Object,
       required: true,
@@ -66,15 +58,15 @@ export default {
   },
   methods: {
     handleOpen(version) {
-      this.openStates[version] = !this.openStates[version];
+      this.openStates[version] = !this.openStates[version]
       // doesn't trigger rerender of subelements
-      this.$forceUpdate();
+      this.$forceUpdate()
     },
     getCurseFile(item) {
       if (item.links.curse) {
         const id = parseInt(item.links.curse.split('/').pop())
-        return this.files.find((el) => el.id === id);
+        return this.files.find((el) => el.id === id)
       }
     },
   },
-};
+}

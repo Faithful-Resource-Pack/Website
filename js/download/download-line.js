@@ -84,12 +84,12 @@ export default {
   },
   methods: {
     toMdyDate(dmyDate) {
-      const [day, month, year] = dmyDate.split("/");
-      return [month, day, year].join("/");
+      const [day, month, year] = dmyDate.split("/")
+      return [month, day, year].join("/")
     },
     handleOpen() {
-      this.showIcon = this.showIcon === "➕" ? "➖" : "➕";
-      this.$emit('click');
+      this.showIcon = this.showIcon === "➕" ? "➖" : "➕"
+      this.$emit('click')
     }
   },
   computed: {
@@ -116,7 +116,7 @@ export default {
       }
 
       // no other way to get dates
-      if (!this.curse) return "Unknown";
+      if (!this.curse) return "Unknown"
       const [year, month, day] = this.curse.uploaded_at.split("T")[0].split('-')
       const date = `${day}/${month}/${year}`
       if (navigator.language === "en-US") return this.toMdyDate(date)
@@ -131,6 +131,6 @@ export default {
     },
   },
   mounted() {
-    this.isMounted = true;
+    this.isMounted = true
   }
 }
