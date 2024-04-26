@@ -83,11 +83,17 @@ export default {
     }
   },
   methods: {
-    toMdyDate(dmyDate) {
-      const [day, month, year] = dmyDate.split("/")
-      return [month, day, year].join("/")
+    getLocalizedDate(dateObj) {
+      const year = dateObj.getFullYear();
+      const month = dateObj.getMonth() + 1; // 0 indexed
+      const day = dateObj.getDate();
+      // mdy for us (expand array if someone else does too)
+      if (["en-US"].includes(navigator.language)) return `${month}/${day}/${year}`;
+      // dmy for everyone else
+      return `${day}/${month}/${year}`;
     },
     handleOpen() {
+      // change icon then pass back to download-table to unhide child
       this.showIcon = this.showIcon === "➕" ? "➖" : "➕"
       this.$emit('click')
     }
@@ -110,17 +116,12 @@ export default {
     },
     date() {
       if (!this.isMounted || this.item.file_type === "GitHub") return
-      if (this.item.date) {
-        if (navigator.language === "en-US") return this.toMdyDate(this.item.date)
-        return this.item.date
-      }
+      if (this.item.date)
+        return this.getLocalizedDate(new Date(this.item.date));
 
       // no other way to get dates
-      if (!this.curse) return "Unknown"
-      const [year, month, day] = this.curse.uploaded_at.split("T")[0].split('-')
-      const date = `${day}/${month}/${year}`
-      if (navigator.language === "en-US") return this.toMdyDate(date)
-      return date
+      if (!this.curse || !this.curse.uploaded_at) return "Unknown"
+      return this.getLocalizedDate(new Date(this.curse.uploaded_at.split("T")[0]));
     },
     size() {
       if (!this.isMounted || this.item.file_type === "GitHub") return

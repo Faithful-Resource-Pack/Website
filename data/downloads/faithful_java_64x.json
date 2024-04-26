@@ -13,7 +13,7 @@
       "file": "Faithful 64x",
       "file_type": "R",
       "file_version": 3,
-      "latest": "latest",
+      "latest": true,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/5207728"
       }
