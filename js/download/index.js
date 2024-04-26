@@ -40,33 +40,29 @@ const v = new Vue({
     },
   },
   template: `
-  <div>
-    <h1 class="display-3 my-5 text-center">Downloads</h1>
-    <template v-for="(editions, pack) in alive" :key="pack">
-      <h2 class="text-center display-4 mb-0">{{ pack }}</h2>
-      <template v-for="(data, edition) in editions" :key="edition">
-        <h2 class="text-center my-3">{{ edition }} Edition</h2>
-        <div class="outline">
+    <div>
+      <h1 class="display-3 my-5 text-center">Downloads</h1>
+      <template v-for="(editions, pack) in alive" :key="pack">
+        <h2 class="text-center display-4 mb-0">{{ pack }}</h2>
+        <template v-for="(data, edition) in editions" :key="edition">
+          <h2 class="text-center my-3">{{ edition }} Edition</h2>
           <download-table
             :downloads="data.downloads"
             :files="data.files"
           />
-        </div>
+        </template>
+        <br><br>
       </template>
-      <br><br>
-    </template>
-    <h2 class="text-center display-4 mb-0">Discontinued</h2>
-    <template v-for="(data, name) in discontinued" :key="name">
-      <h2 class="text-center">{{ name }}</h2>
-      <h2 class="red banner">This project has been discontinued.</h2>
-      <div class="outline">
+      <h2 class="text-center display-4 mb-0">Discontinued</h2>
+      <template v-for="(data, name) in discontinued" :key="name">
+        <h2 class="text-center">{{ name }}</h2>
+        <h2 class="red banner">This project has been discontinued.</h2>
         <download-table
           :downloads="data.downloads"
           :files="data.files"
         />
-      </div>
-    </template>
-  </div>
+      </template>
+    </div>
   `,
   methods: {
     fetchData({ json, curse, name, edition, discontinued }) {

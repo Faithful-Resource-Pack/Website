@@ -16,7 +16,10 @@ title: Mods
 
   <div class="card">
     <div class="card-body">
-      <minecraft-versions :versions="minecraftVersions" :breakpoints="breakpoints"></minecraft-versions>
+      <minecraft-versions
+        :versions="minecraftVersions"
+        :breakpoints="breakpoints"
+      />
     </div>
   </div>
 
@@ -24,7 +27,7 @@ title: Mods
 
   <h2 class="display-4 my-5 text-center">Put Together Your Own Pack</h2>
 
-  <local-download ref="localDownload" :canpack="canPackMods"></local-download>
+  <local-download ref="localDownload" :canpack="canPackMods" />
 
   <template v-if="isMounted">
     <button id="DownloadLocally" :disabled="$refs.localDownload.canDownloadLocally" class="btn block btn-lg btn-primary fancy-card-2x" v-on:click="$refs.localDownload.openConfirmModal(undefined)">Download Resource Pack</button>

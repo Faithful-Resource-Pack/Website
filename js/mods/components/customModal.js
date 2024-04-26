@@ -18,9 +18,9 @@ Vue.component('custom-modal', {
   },
   template: `
     <div id="cacheClear" class="customModal" v-show="modalOpened">
-      <div class="customModalBackground" v-on:click="closeOnClick"></div>
+      <div class="customModalBackground" @click="closeOnClick"></div>
       <div :id="contentId" class="customModalContent p-3">
-        <slot></slot>
+        <slot />
       </div><span class="taille">
     </div>`,
 })

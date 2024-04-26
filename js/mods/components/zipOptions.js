@@ -27,7 +27,7 @@ Vue.component('zip-options', {
           <label for="archiveName" class="block pb-1">Archive name</label>
           <input type="text" autocomplete="false" name="archiveName" :class="{ empty: !archiveName.trim() }" class="form-control fancy-card-1x" v-model="archiveName" id="archiveName" placeholder="Leave empty to generate a unique name">
         </div>
-        <clear-database class="mx-1"></clear-database>
+        <clear-database class="mx-1" />
       </div>
     </div>
   `,

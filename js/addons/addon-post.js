@@ -25,9 +25,7 @@ export default {
       <img :src="getHeader()" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
       <template>
-        <!-- this cause a warning message from vue, but idk what's happening since this doesn't happens on the webapp, only here :/ -->
-        <addon-modal :dialog="modal" :close="closeModal" :image="modalImage"></addon-modal>
-
+        <addon-modal :dialog="modal" :close="closeModal" :image="modalImage" />
         <div class="card card-body" v-if="getCarousel().length">
           <h3 class="text-center">Screenshots</h3>
           <div class="res-grid-3">

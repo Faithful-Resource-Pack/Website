@@ -15,41 +15,43 @@ export default {
     }
   },
 	template: `
-    <table class="download-table">
-      <thead>
-        <tr>
-          <th colspan="2" class="large"><p>File</p></th>
-          <th><p>Date</p></th>
-          <th><p>Size</p></th>
-          <th colspan="2"><p>Downloads</p></th>
-        </tr>
-      </thead>
-      <tbody>
-        <template
-          v-for="(items, version) in downloads"
-          :key="version"
-        >
-          <download-line
-            :nested="items.length <= 1"
-            :item="items[0]"
-            :curse="getCurseFile(items[0])"
-            :version="version"
-            @click="handleOpen(version)"
-          />
+    <div class="outline">
+      <table class="download-table">
+        <thead>
+          <tr>
+            <th colspan="2" class="large"><p>File</p></th>
+            <th><p>Date</p></th>
+            <th><p>Size</p></th>
+            <th colspan="2"><p>Downloads</p></th>
+          </tr>
+        </thead>
+        <tbody>
           <template
-            v-if="openStates[version]"
-            v-for="subItem in items.slice(1)"
+            v-for="(items, version) in downloads"
+            :key="version"
           >
             <download-line
-              nested
-              :item="subItem"
-              :curse="getCurseFile(subItem)"
+              :nested="items.length <= 1"
+              :item="items[0]"
+              :curse="getCurseFile(items[0])"
               :version="version"
+              @click="handleOpen(version)"
             />
+            <template
+              v-if="openStates[version]"
+              v-for="subItem in items.slice(1)"
+            >
+              <download-line
+                nested
+                :item="subItem"
+                :curse="getCurseFile(subItem)"
+                :version="version"
+              />
+            </template>
           </template>
-        </template>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   `,
   data() {
     return {
