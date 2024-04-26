@@ -8,7 +8,7 @@
       }
     }
   ],
-  "1.20.7x": [
+  "1.20.x": [
     {
       "file": "Faithful 64x",
       "file_type": "R",
@@ -17,9 +17,7 @@
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5207808"
       }
-    }
-  ],
-  "1.20.x": [
+    },
     {
       "file": "Faithful 64x",
       "file_type": "B",
