@@ -60,15 +60,15 @@ title: Coffee
         [1743, 0.10], // water
         [1308, 0.10], // axolotl
         [4982, 0.10], // tadpole
-    ].map(e => {
+    ].map((e) => {
         e[1] = e[1] + tot
         tot = e[1]
         return e
     })
 
     let r = Math.random()
-    let id = (ids.filter(e => r <= e[1]).shift() || ids[0])[0]
-    
+    let id = ids.find((e) => r <= e[1]).shift() || ids[0][0]
+
     let img = document.getElementById('bucket')
     img.src = `https://api.faithfulpack.net/v2/textures/${id}/url/faithful_64x/latest`
     img.onload = () => {

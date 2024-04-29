@@ -4,22 +4,26 @@ title: Classic Faithful 64x Jappa
 permalink: /classicfaithful/64x-jappa
 header-img: https://database.faithfulpack.net/images/website/posts/cf64x/cf64_banner.jpg
 
-long_text: "<strong>The 64x part in the Classic Faithful lineup, aiming to bring back the original painted look of Vattic's Faithful pack.</strong> <br><br>Initially part of the “Emulated Vattic Textures” project, or “EM” for short, this pack was designed to upscale textures to 64x resolution using the stylistic direction of Vattic's original Faithful, to match its look and feel but in a higher resolution. While using textures made for HiTeeN's Faithful 64x (one of the first F64 projects which got discontinued years ago due to a number of factors) early on in its development, it was also inspired by a number of other long discontinued Faithful 64x projects such as Affinite's Faithful and Jea Traditional. Another actively developed Faithful 64x, created more recently, was also based on a very different set of principles, and as a result had a very different look and feel compared to Vattic's original Faithful. This left some people wondering about what happened to the classic, “painted” look. <br><br>Now, this “painted” look is back, in 64x and with the new Minecraft textures.<br><br>[NOTE: Missing textures will be present, as the pack is not complete. In addition, Bedrock edition is in early development and is likely to be broken!]"
+long_text: |
+  The 64x part in the Classic Faithful lineup, Classic Faithful 64x aims to be a spiritual successor to HiTeeN's original Faithful 64x, as well as many other discontinued 64x projects. Its goal is to bring back the classic “painted” look of Vattic's textures that many players have grown to love over the years, all the while remaking vanilla art in quadruple the resolution.
+  <br><br>
+  Being based on the latest Minecraft textures, this pack is perfect for all enjoyers of the classic Faithful style who want a clean and updated experience.
+  <br><br>[NOTE: Missing textures will be present, as the pack is not complete. In addition, Bedrock edition is in early development and is likely to be broken!]
 
 downloads:
-  - Latest Version:
-        1.20.X for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.20.1.zip
-        Experimental Bedrock Edition (Use at your own risk!): https://database.faithfulpack.net/packs/Classic-64x-Bedrock/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.mcpack
+- Latest Version:
+    1.20.X for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.20.1.zip
+    Experimental Bedrock Edition (Use at your own risk!): https://database.faithfulpack.net/packs/Classic-64x-Bedrock/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.mcpack
 
-  - Legacy Versions:
-        1.19.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.4.zip
-        1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.3.zip
-        1.19.0 - 1.19.2 for Java Edition (CurseForge): https://www.curseforge.com/minecraft/texture-packs/classic-faithful-64x/download/4064436
+- Legacy Versions:
+    1.19.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.4.zip
+    1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.3.zip
+    1.19.0 - 1.19.2 for Java Edition (CurseForge): https://www.curseforge.com/minecraft/texture-packs/classic-faithful-64x/download/4064436
 
-  - Alternate Listings:
-        GitHub for Java Edition: https://github.com/classicfaithful/64x-jappa
-        GitHub for Bedrock Edition: https://github.com/classicfaithful/64x-jappa-bedrock
-        CurseForge: https://www.curseforge.com/minecraft/texture-packs/classic-faithful-64x
-        Planet Minecraft: https://www.planetminecraft.com/texture-pack/classic-faithful-64x/
+- Alternate Listings:
+    GitHub for Java Edition: https://github.com/classicfaithful/64x-jappa
+    GitHub for Bedrock Edition: https://github.com/classicfaithful/64x-jappa-bedrock
+    CurseForge: https://www.curseforge.com/minecraft/texture-packs/classic-faithful-64x
+    Planet Minecraft: https://www.planetminecraft.com/texture-pack/classic-faithful-64x/
 
 ---

@@ -138,7 +138,7 @@ if (month == 11 && !matchMedia('(prefers-reduced-motion)').matches) {
   // Responsible for moving each snowflake by calling its update function
   //
   function moveSnowflakes() {
-    snowflakes.forEach(item => {
+    snowflakes.forEach((item) => {
       item.update()
     })
 
@@ -147,7 +147,7 @@ if (month == 11 && !matchMedia('(prefers-reduced-motion)').matches) {
       browserWidth = document.documentElement.clientWidth
       browserHeight = document.documentElement.clientHeight
 
-      snowflakes.forEach(item => {
+      snowflakes.forEach((item) => {
         item.xPos = getPosition(50, browserWidth)
         item.yPos = getPosition(50, browserHeight)
       })

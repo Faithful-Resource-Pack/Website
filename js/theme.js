@@ -30,7 +30,7 @@ window.theme = {
   },
 
   get currentThemeIndex() {
-    return THEME_VALUES.findIndex(el => el.value === this.currentTheme)
+    return THEME_VALUES.findIndex((el) => el.value === this.currentTheme)
   },
   set currentThemeIndex(_v) {},
 
@@ -48,7 +48,7 @@ window.theme = {
 // update btn
 btn.innerHTML = theme.currentThemeHTML
 
-window.changeMod = change => {
+window.changeMod = (change) => {
   // true if the btn calls the method, false otherwise
   if (change) {
     window.theme.currentTheme = theme.nextTheme

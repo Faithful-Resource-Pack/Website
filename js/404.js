@@ -5,7 +5,7 @@ const explosion = document.getElementById('explosion');
 let exploded = false;
 
 function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
+	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 document.body.classList.add('error')

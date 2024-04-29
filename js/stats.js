@@ -3,19 +3,21 @@
 Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 const v = new Vue({ // eslint-disable-line no-unused-vars
   el: '#stats',
-  data: {
-    addons: {},
-    keys: ['numberOfMinecraftVersions', 'totalNumberOfResourcePacksStored', 'numberOfModsSupported'],
-    messages: {
-      loading: 'Loading',
-      numberOfMinecraftVersions: 'Minecraft Versions Supported',
-      numberOfModsSupported: 'Mods Supported',
-      totalNumberOfResourcePacksStored: 'Mod Resource Packs Stored'
-    },
-    loading: true,
-    numberOfMinecraftVersions: undefined,
-    numberOfModsSupported: undefined,
-    totalNumberOfResourcePacksStored: undefined
+  data() {
+    return {
+      addons: {},
+      keys: ['numberOfMinecraftVersions', 'totalNumberOfResourcePacksStored', 'numberOfModsSupported'],
+      messages: {
+        loading: 'Loading',
+        numberOfMinecraftVersions: 'Minecraft Versions Supported',
+        numberOfModsSupported: 'Mods Supported',
+        totalNumberOfResourcePacksStored: 'Mod Resource Packs Stored'
+      },
+      loading: true,
+      numberOfMinecraftVersions: undefined,
+      numberOfModsSupported: undefined,
+      totalNumberOfResourcePacksStored: undefined
+    };
   },
   computed: {
     loadingMessage() {
@@ -61,7 +63,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         let modAmount = 0
 
         Object.values(mods).map((e) => e.resource_pack.versions).forEach((versions) => {
-          versions.forEach(version => {
+          versions.forEach((version) => {
             // version sum
             if (!versionList.includes(version)) versionList.push(version)
 

@@ -7,7 +7,7 @@ const MinecraftUtils = { // eslint-disable-line no-unused-vars
       }
     }
 
-    return numbers.map(number => parseInt(number))
+    return numbers.map((number) => parseInt(number))
   },
   minecraftVersionsToNumbers(numbers) {
     // initial numbers : 1.10, 1.7.9, 1.11.2 ( 1.7.9 < 1.10 < 1.11.2 )
@@ -64,6 +64,6 @@ const MinecraftUtils = { // eslint-disable-line no-unused-vars
       }
     }
 
-    return result.map(number => parseInt(number))
+    return result.map((number) => parseInt(number))
   }
 }

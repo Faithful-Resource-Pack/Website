@@ -36,7 +36,7 @@ function updateView() {
 
 window.addToFavs = function (imgURL, title, link) {
   let newFavs = favorites
-  if (!newFavs.some(e => e.link == link)) {
+  if (!newFavs.some((e) => e.link == link)) {
     newFavs.push({
       imgURL: imgURL,
       link: link,

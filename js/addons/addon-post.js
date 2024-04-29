@@ -208,19 +208,19 @@ export default {
       return !/^https?:\/\//i.test(url) ? `http://${url}` : url
     },
     getHeader() {
-      return this.files.filter(el => el.use === 'header')[0].source
+      return this.files.filter((el) => el.use === 'header')[0].source
     },
     getCarousel() {
-      return this.files.filter(el => el.use === 'carousel' || el.use === 'screenshot').map(el => el.source)
+      return this.files.filter((el) => el.use === 'carousel' || el.use === 'screenshot').map((el) => el.source)
     },
     getDownloads() {
-      return this.files.filter(el => el.use === 'download')
+      return this.files.filter((el) => el.use === 'download')
     },
     search_authors() {
-      this.addon.authors.forEach(authorID => {
+      this.addon.authors.forEach((authorID) => {
         fetch(`https://api.faithfulpack.net/v2/users/${authorID}`)
-          .then(response => response.json())
-          .then(author => {
+          .then((response) => response.json())
+          .then((author) => {
             this.authors.push(author)
           })
       })
@@ -229,21 +229,21 @@ export default {
   beforeMount() {
     if (!window.slug && this.$route) {
       fetch(`https://api.faithfulpack.net/v2/addons/${window.slug}`)
-      .then(response => response.json())
-      .then(data => this.addon = data[0])
+      .then((response) => response.json())
+      .then((data) => this.addon = data[0])
       .then(() => {
         this.search_authors()
       })
       .then(() => {
         fetch(`https://api.faithfulpack.net/v2/addons/${this.addon.id}`)
-          .then(response => response.json())
-          .then(data => this.files = data)
+          .then((response) => response.json())
+          .then((data) => this.files = data)
       })
       .finally(() => {
         this.loading = false
         window.scrollTo(0, 0)
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err)
         this.addon = {}
         this.loading = false

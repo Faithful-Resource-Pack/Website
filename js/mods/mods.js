@@ -2,39 +2,41 @@
 
 Object.filter = (obj, predicate) =>
   Object.keys(obj)
-    .filter(key => predicate(obj[key]))
+    .filter((key) => predicate(obj[key]))
     .reduce((res, key) => (res[key] = obj[key], res), {});
 
 Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 const v = new Vue({ // eslint-disable-line no-unused-vars
   el: '#app',
-  data: {
-    form: {
-      search: '',
-      minSearchLetters: 3
-    },
-    isMounted: false,
-    isLoadingDownload: false,
-    loading: true,
-    loadingVersions: true,
-    mods: [],
-    sentences: {
-      searchAdvice: 'You can search by name or by version',
-      lettersLeft: 'letters to start search...',
-      loading: '<i class="fas spin"></i> Loading mods...',
-      failed: 'Failed to load mods. Check console for more informations',
-      noresults: 'No results found for your search: ',
-      noResultsVersion: 'No results found for version',
-      typeAnotherVersion: 'Try to type another version than'
-    },
-    versions: {},
-    breakpointLimits: {
-      xs: 575,
-      sm: 785,
-      md: 1200,
-      lg: Infinity
-    },
-    windowSize: window.innerWidth
+  data() {
+    return {
+      form: {
+        search: '',
+        minSearchLetters: 3
+      },
+      isMounted: false,
+      isLoadingDownload: false,
+      loading: true,
+      loadingVersions: true,
+      mods: [],
+      sentences: {
+        searchAdvice: 'You can search by name or by version',
+        lettersLeft: 'letters to start search...',
+        loading: '<i class="fas spin"></i> Loading mods...',
+        failed: 'Failed to load mods. Check console for more informations',
+        noresults: 'No results found for your search: ',
+        noResultsVersion: 'No results found for version',
+        typeAnotherVersion: 'Try to type another version than'
+      },
+      versions: {},
+      breakpointLimits: {
+        xs: 575,
+        sm: 785,
+        md: 1200,
+        lg: Infinity
+      },
+      windowSize: window.innerWidth
+    };
   },
   computed: {
     apiURL() {
@@ -61,7 +63,11 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
 
       if (this.mods.length === 0) return this.sentences.failed
 
-      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredMods.length === 0) {
+      if (
+        this.form.search.length >= 1 &&
+        !isNaN(parseInt(this.form.search.charAt(0))) &&
+        this.filteredMods.length === 0
+      ) {
         return this.sentences.noResultsVersion + ' ' + this.form.search
       }
 
@@ -75,7 +81,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
      */
     filteredMods() {
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0)))) {
-        return this.mods.filter(mod => {
+        return this.mods.filter((mod) => {
           let found = false
           let i = 0
           while (i < mod.resource_pack.versions.length && !found) {
@@ -88,7 +94,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       }
 
       if (this.form.search.length >= this.form.minSearchLetters) {
-        return this.mods.filter(mod => {
+        return this.mods.filter((mod) => {
           const searchTerm = this.form.search.toLowerCase()
           if (this.modToDisplayName(mod).toLowerCase().includes(searchTerm)) return true
 
@@ -108,16 +114,16 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     exactVersionMode() {
       if (this.loadingVersions) { return false }
 
-      return this.modSelection.findIndex(mod => {
+      return this.modSelection.findIndex((mod) => {
         const correspondingNumbers = MinecraftUtils.minecraftVersionsToNumbers([this.versions['1'].min, mod.version])
 
         return correspondingNumbers[1] < correspondingNumbers[0]
       }) !== -1
     },
     modSelection() {
-      const selection = this.mods.filter(mod => mod.selected && !!mod.versionSelected)
+      const selection = this.mods.filter((mod) => mod.selected && !!mod.versionSelected)
 
-      return selection.map(mod => {
+      return selection.map((mod) => {
         return this.modToSelection(mod)
       })
     },
@@ -130,7 +136,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       for (let i = 0; i < this.mods.length; ++i) {
         for (let a = 0; a < this.mods[i].resource_pack.versions.length; ++a) {
           let index
-          if ((index = mcVersions.findIndex(item => item.version === this.mods[i].resource_pack.versions[a])) === -1) {
+          if ((index = mcVersions.findIndex((item) => item.version === this.mods[i].resource_pack.versions[a])) === -1) {
             mcVersions.push({
               version: this.mods[i].resource_pack.versions[a],
               count: 1
@@ -182,9 +188,15 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
     searchAdvice() {
       if (this.loading === true || this.mods.length === 0) { return '' }
 
-      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredMods.length === 0) { return this.sentences.typeAnotherVersion + ' ' + this.form.search }
+      if (
+        this.form.search.length >= 1 &&
+        !isNaN(parseInt(this.form.search.charAt(0))) &&
+        this.filteredMods.length === 0
+      )
+        return this.sentences.typeAnotherVersion + ' ' + this.form.search
 
-      if (this.form.search.length < this.form.minSearchLetters) { return String((this.form.minSearchLetters - this.form.search.length) + ' ' + this.sentences.lettersLeft) }
+      if (this.form.search.length < this.form.minSearchLetters)
+        return String((this.form.minSearchLetters - this.form.search.length) + ' ' + this.sentences.lettersLeft)
     }
   },
   methods: {
@@ -255,7 +267,7 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
         })
 
         const sorted = []
-        sortable.forEach(item => sorted.push({ ...item[1], id: item[0] }))
+        sortable.forEach((item) => sorted.push({ ...item[1], id: item[0] }))
 
         this.mods = sorted
         this.loading = false

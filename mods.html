@@ -30,9 +30,26 @@ title: Mods
   <local-download ref="localDownload" :canpack="canPackMods" />
 
   <template v-if="isMounted">
-    <button id="DownloadLocally" :disabled="$refs.localDownload.canDownloadLocally" class="btn block btn-lg btn-primary fancy-card-2x" v-on:click="$refs.localDownload.openConfirmModal(undefined)">Download Resource Pack</button>
-    <div v-if="modSelection.length != 0 && $refs.localDownload.canDownloadLocally" class="advice advice-subtitle advice-important text-center">The versions you have selected are not compatible</div>
-		<div v-if="modSelection.length == 0" class="advice advice-subtitle text-center">Please select the packs you want with a matching pack version first</div>
+    <button
+      id="DownloadLocally"
+      :disabled="$refs.localDownload.canDownloadLocally"
+      class="btn block btn-lg btn-primary fancy-card-2x"
+      @click="$refs.localDownload.openConfirmModal(undefined)"
+    >
+      Download Resource Pack
+    </button>
+    <div
+      v-if="modSelection.length != 0 && $refs.localDownload.canDownloadLocally"
+      class="advice advice-subtitle advice-important text-center"
+    >
+      The versions you have selected are not compatible
+    </div>
+		<div
+      v-if="modSelection.length == 0"
+      class="advice advice-subtitle text-center"
+    >
+      Please select the packs you want with a matching pack version first
+    </div>
   </template>
 
   <br>
@@ -50,7 +67,6 @@ title: Mods
 </div>
 
 <script src="https://unpkg.com/retry-axios@2.4.0/dist/index.umd.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 <script defer src="js/mods/polyfill.js"></script>
 <script defer src="js/mods/extensionjs.js"></script>
 <script defer src="js/mods/downloadFile.js"></script>

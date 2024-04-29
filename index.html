@@ -1,12 +1,24 @@
 ---
 layout: default
 title: Home
+no_container: true
 ---
 
 <link rel="stylesheet" href="{{ site.baseurl }}/css/index.css">
 
-<div id="app">
-  <h1 class="display-4" align="center">Discover Faithful</h1><br>
+<!-- outside of container, goes to edge of screen -->
+<div class="highlight-section text-center">
+  <div id="upspace"></div>
+  <img class="highlight-wordmark" src="{{ site.baseurl }}/image/home/wordmark.png" alt="Faithful Wordmark" />
+  <h2>Providing a higher-resolution experience since 2010.</h2>
+  <div class="container">
+    <p class="blurple banner">
+      <a href="https://discord.gg/sN9YRQbBv7">Join our Discord now and contribute to the project!</a>
+    </p>
+  </div>
+</div>
+<div class="container" id="app">
+  <h1 class="display-3 mb-4" align="center">Projects</h1>
   <div class="res-grid-2">
     <div class="card discover">
       <div class="poster">
@@ -66,8 +78,8 @@ title: Home
     </div>
   </div>
 
+  <!--
   <br>
-
   <div class="res-grid-2" id="last-grid">
     <div class="card discover">
       <div class="poster">
@@ -81,7 +93,7 @@ title: Home
         <a class="btn block btn-dark" href="{{ site.baseurl }}/addons">Discover Add-ons</a>
       </div>
     </div>
-    <!-- <div class="card discover">
+    <div class="card discover">
       <div class="poster">
         <img class="card-image" src="{{ site.baseurl }}/image/home/poster_mods.jpg" alt="Faithful Dungeons">
         <img class="card-image wordmark" src="{{ site.baseurl }}/image/home/mods.png" alt="Faithful Mods wordmark">
@@ -97,14 +109,12 @@ title: Home
         </div>
       </div>
     </div>
-    -->
   </div>
-
-  <br>
+  -->
 
   <hr>
   <br>
-  <h1 class="display-4" align="center">Add-ons</h1>
+  <h1 class="display-3" align="center">Add-ons</h1>
   <div class="res-grid-4">
     <template v-for="addon in addons">
       <a class="card img-card" :href="addon.slug === LOADING_ID ? '' : '/addons/' + addon.slug">
@@ -126,8 +136,7 @@ title: Home
 
   <hr>
   <br>
-  <h1 class="display-4" align="center">Faithful News</h1>
-
+  <h1 class="display-3" align="center">News</h1>
   <div class="res-grid-3">
     {%- for post in site.posts limit:6 -%}
       <a class="card img-card" rel="noopener" href="{{ site.baseurl }}{{ post.permalink }}">
@@ -144,7 +153,6 @@ title: Home
   <a class="btn btn-dark col-6 center" href="{{ site.baseurl }}/news">See more</a>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 <script>
   const v = new Vue({
     el: "#app",
@@ -158,8 +166,8 @@ title: Home
     },
     created() {
       fetch('https://api.faithfulpack.net/v2/addons/approved')
-        .then(res => res.json())
-        .then(val => {
+        .then((res) => res.json())
+        .then((val) => {
           const res = []
 
           let items = val

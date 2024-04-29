@@ -10,19 +10,28 @@ title: Utilities - modlist.html generator
     <label for="manifestInput">Insert your manifest.json file: </label>
     <input type="file" name="manifestInput" id="manifestInput" @change="changeFirstFile">
   </div>
-  <div><button class="btn d-block btn-dark" @click="generateModlist" :disabled="!canGenerateModlist">Generate modlist.html</button></div>
+  <div>
+    <button
+      class="btn d-block btn-dark"
+      @click="generateModlist"
+      :disabled="!canGenerateModlist"
+    >
+      Generate modlist.html
+    </button>
+  </div>
   <div v-if="isGenerating" class="progress my-3">
     <div  :class="{ 'progress-bar': true, 'progress-bar-striped': parseInt(generatedPercent) < 100, 'progress-bar-animated': parseInt(generatedPercent) < 100 }"  :style="{ width: generatedPercent + '%' }" role="progressbar" :aria-valuenow="generatedPercent" aria-valuemin="0" aria-valuemax="100" v-html="generatedPercent + '%'"></div>
   </div>
 </div>
-<script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 <script>
-  let v = new Vue({
+  const v = new Vue({
     el: '#modlistGenerator',
-    data: {
-      firstFile : undefined,
-      progress: 0,
-      totalMods: 0
+    data () {
+      return {
+        firstFile : undefined,
+        progress: 0,
+        totalMods: 0
+      };
     },
     watch: {
       manifestInput(v1, v2) {
@@ -55,7 +64,7 @@ title: Utilities - modlist.html generator
 
         console.log(this)
       },
-      generateModlist: async function() {
+      async generateModlist() {
         if (!this.firstFile)
           return
 

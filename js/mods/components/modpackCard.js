@@ -28,7 +28,14 @@ Vue.component('modpack-card', {
             </small>
           </div>
         </div>
-        <button v-on:click="onbuttonclick" :title="cantDownload" :disabled="cantDownload || !modpack.modList || modpack.modList.length == 0" class="btn block btn-dark">Download Resource Pack</button>
+        <button
+          @click="onbuttonclick"
+          :title="cantDownload"
+          :disabled="cantDownload || !modpack.modList || modpack.modList.length == 0"
+          class="btn block btn-dark"
+        >
+          Download Resource Pack
+        </button>
       </div>
     </div>
   </div>`

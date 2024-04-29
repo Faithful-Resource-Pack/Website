@@ -10,12 +10,18 @@ Vue.component('local-download', {
   props: ['canpack', 'versions'],
   template: `
     <div>
-      <custom-modal contentId="cacheClear" :modalOpened="confirmOpened" :closeOnClick="function() { confirmOpened = false }">
+      <custom-modal
+        contentId="cacheClear"
+        :modalOpened="confirmOpened"
+        :closeOnClick="() => { confirmOpened = false }"
+      >
         <h3>Do you want to use cached versions?</h3>
-        <p class="mb-2">Some mod resource packs may already have been downloaded. Do you want to use the cached versions? Using the cached versions is usually faster but can cause outdated textures.</p>
+        <p class="mb-2">
+          Some mod resource packs may already have been downloaded. Do you want to use the cached versions? Using the cached versions is usually faster but can cause outdated textures.
+        </p>
         <div class="text-center auto-flex px-2">
-          <button type="button" class="btn btn-dark mx-1 mt-2" v-on:click="downloadLocally(true)">No</button>
-          <button type="button" class="btn btn-dark mx-1 mt-2" v-on:click="downloadLocally(false)">Yes</button>
+          <button type="button" class="btn btn-dark mx-1 mt-2" @click="downloadLocally(true)">No</button>
+          <button type="button" class="btn btn-dark mx-1 mt-2" @click="downloadLocally(false)">Yes</button>
         </div>
       </custom-modal>
       <custom-modal id="downloadModal" contentId="downloadModalContent" :modalOpened="modalOpened" :closeOnClick="closeModal">
@@ -48,7 +54,21 @@ Vue.component('local-download', {
           </div>
         </div>
         <div id="bottomButtons" class="text-right mt-3">
-        <button :disabled="!finalZip" v-on:click="downloadZip" class="btn btn-dark mt-2 mr-2">Download Zip</button><button v-on:click="closeModal" :title="cancelTitle" :disabled="!canCloseModal" class="btn btn-dark mt-2">Cancel</button>
+          <button
+            :disabled="!finalZip"
+            @click="downloadZip"
+            class="btn btn-dark mt-2 mr-2"
+          >
+            Download Zip
+          </button>
+          <button
+            @click="closeModal"
+            :title="cancelTitle"
+            :disabled="!canCloseModal"
+            class="btn btn-dark mt-2"
+          >
+            Cancel
+          </button>
         </div>
       </custom-modal>
     </div>`,
@@ -122,7 +142,7 @@ Vue.component('local-download', {
       ResourcePackCreator.packVersions = this.$root.versions
       ResourcePackCreator.zipOptions = this.$root.$refs.zipOptions.zipOptions
       ResourcePackCreator.downloadLocally(this.modSelection, forceDownload, this.logHandler)
-      .catch(err => {
+      .catch((err) => {
         this.logHandler({
           step: 0,
           message: err

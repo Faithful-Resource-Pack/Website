@@ -97,8 +97,18 @@ permalink: /license
 -->
 
 <h1 class="display-3 mt-5 text-center" id="license-title"></h1>
-<h3 class="mb-5 text-center" id="license-details"></h3>
+<h3 class="text-center mb-3" id="license-details"></h3>
+<div class="license-download">
+  <a class="btn block btn-dark mb-5" href="https://database.faithfulpack.net/packs/LICENSE.txt">
+    Download License
+  </a>
+</div>
+
 <div id="output"></div>
+
+<h3 id="warning" style="display: none" class="red banner">
+  Translations may not be entirely accurate!
+</h3>
 
 <script
   defer
@@ -109,7 +119,7 @@ permalink: /license
   Load("en"); // load english by default
 
   async function Load(file) {
-    const res = await fetch(`{{site.baseurl}}/translated/license/${file}.md`);
+    const res = await fetch(`{{ site.baseurl }}/translated/license/${file}.md`);
     const text = await res.text();
     const [frontMatter, markdown] = text.split(/---/g);
     const body = await marked.parse(markdown);
@@ -117,5 +127,6 @@ permalink: /license
     document.getElementById("output").innerHTML = body;
     document.getElementById("license-title").innerHTML = header.title;
     document.getElementById("license-details").innerHTML = `${header.version}<br>${header.copyright}`;
+    document.getElementById('warning').style.display = file === "en" ? "none" : "block";
   }
 </script>

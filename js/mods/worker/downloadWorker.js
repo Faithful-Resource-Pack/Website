@@ -11,7 +11,7 @@ const sendMessage = function (type, content) {
   })
 }
 
-self.addEventListener('message', ev => {
+self.addEventListener('message', (ev) => {
   const message = ev.data
 
   let modSelection, canPack

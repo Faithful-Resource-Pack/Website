@@ -11,13 +11,10 @@ const MCMETA_DESCRIPTION = 'Faithful Mods'
  * @returns {Promise<T|undefined>}
  * @template T
  */
-Promise.sleep = function(delay, value = undefined) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(value)
-        }, delay)
-    })
-}
+Promise.sleep = (delay, value = undefined) =>
+  new Promise((resolve) => {
+    setTimeout(() => resolve(value), delay)
+  })
 
 /**
  * @callback PromiseCallback
@@ -33,21 +30,21 @@ Promise.sleep = function(delay, value = undefined) {
  * @returns {Promise<any[]>} all results if successful
  */
 Promise.throttle = function(arr, throttle, delay, results = []) {
-    if (arr.length === 0)
-        return results;
+  if (arr.length === 0)
+    return results;
 
-    const start = new Date().getTime();
-    const one = arr.shift();
+  const start = new Date().getTime();
+  const one = arr.shift();
 
-    return one()
+  return one()
     .then((res) => {
-        let end = new Date().getTime();
-        let duration = end - start;
-        return Promise.sleep(duration < throttle ? Math.min(throttle - duration, delay) : delay, res)
+      let end = new Date().getTime();
+      let duration = end - start;
+      return Promise.sleep(duration < throttle ? Math.min(throttle - duration, delay) : delay, res)
     })
     .then((res) => {
-        results.push(res)
-        return Promise.throttle(arr, throttle, delay, results)
+      results.push(res)
+      return Promise.throttle(arr, throttle, delay, results)
     })
 }
 
@@ -207,7 +204,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
       method: 'GET',
       responseType: 'blob' // important
     })
-      .then(res => {
+      .then((res) => {
         const fileKey = this.fileKey(mod)
 
         this.database.delete(this.storeName, fileKey).then(() => {
@@ -236,7 +233,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
     if (typeof this.database === 'object' && 'get' in this.database) {
       const fileKey = this.fileKey(mod)
 
-      return this.database.get(this.storeName, fileKey).then(res => {
+      return this.database.get(this.storeName, fileKey).then((res) => {
         logListener({
           step: 0,
           message: 'Already downloaded ' + mod.displayName + ' v' + mod.version + ' in cache'
@@ -279,7 +276,7 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
 
     const promises = []
 
-    modSelection.forEach(mod => {
+    modSelection.forEach((mod) => {
 
       promises.push(() => {
         logListener({
@@ -330,11 +327,10 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
                   message: 'Inserting pack.png and pack.mcmeta into final zip'
                 })
 
-                fetch(PATH_PACK_PNG).then(packImage => {
+                fetch(PATH_PACK_PNG).then((packImage) => {
                   return packImage.blob()
-                }).then(packImageBlob => {
+                }).then((packImageBlob) => {
                   finalZip.file('pack.png', packImageBlob, { blob: true })
-
                   finalZip.file('pack.mcmeta', `{"pack": {"pack_format": ${this.fullPackageVersion}, "description": "${MCMETA_DESCRIPTION}"}}`)
 
                   logListener({
@@ -342,19 +338,19 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
                     message: 'Zipping...'
                   })
 
-                  finalZip.generateAsync(this.zipOptions, metadata => {
+                  finalZip.generateAsync(this.zipOptions, (metadata) => {
                     logListener({
                       step: 2,
                       message: metadata.percent.toFixed(2)
                     })
-                  }).then(blob => {
+                  }).then((blob) => {
                     logListener({
                       step: 3,
                       message: blob
                     })
 
                     resolve() // * SUCCESS
-                  }).catch(err => {
+                  }).catch((err) => {
                     console.error(err)
                     reject(err)
                   })
@@ -393,20 +389,17 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
 
     this.databasePromise = new Promise((resolve, reject) => {
       idb.openDB(dataBaseName, databaseVersion, {
-        upgrade (db, _oldVersion, _newVersion, _transaction) {
+        upgrade(db, _oldVersion, _newVersion, _transaction) {
           db.createObjectStore(storeName)
         }
       })
-        .then(db => {
+        .then((db) => {
           this.database = db
-
           resolve()
         })
-        .catch(err => {
+        .catch((err) => {
           this.database = 1
-
           console.error(err)
-
           reject(new Error(err))
         })
     })

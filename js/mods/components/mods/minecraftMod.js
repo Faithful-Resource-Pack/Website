@@ -81,7 +81,7 @@ Vue.component('minecraft-mod', {
       return this.mod.id
     },
     modIds() {
-      return this.minecraftVersions.map(v => this.modId)
+      return this.minecraftVersions.map((v) => this.modId)
     },
     title() {
       return `<div><h4>${this.name}</h4>${this.aliases}</div>${this.info}`

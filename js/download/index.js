@@ -9,35 +9,37 @@ const v = new Vue({
   components: {
     DownloadTable,
   },
-  data: {
-    alive: {
-      "Faithful 32x": {
-        Java: {
-          downloads: [],
-          files: [],
+  data() {
+    return {
+      alive: {
+        "Faithful 32x": {
+          Java: {
+            downloads: [],
+            files: [],
+          },
+          Bedrock: {
+            downloads: [],
+            files: [],
+          },
         },
-        Bedrock: {
+        "Faithful 64x": {
+          Java: {
+            downloads: [],
+            files: [],
+          },
+          Bedrock: {
+            downloads: [],
+            files: [],
+          },
+        },
+      },
+      discontinued: {
+        "Faithful 32x for Minecraft Dungeons": {
           downloads: [],
           files: [],
         },
       },
-      "Faithful 64x": {
-        Java: {
-          downloads: [],
-          files: [],
-        },
-        Bedrock: {
-          downloads: [],
-          files: [],
-        },
-      },
-    },
-    discontinued: {
-      "Faithful 32x for Minecraft Dungeons": {
-        downloads: [],
-        files: [],
-      },
-    },
+    };
   },
   template: `
     <div>

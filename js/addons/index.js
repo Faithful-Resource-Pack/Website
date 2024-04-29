@@ -14,7 +14,7 @@ const router = new VueRouter({
   routes,
 })
 
-let v = new Vue({
+const v = new Vue({
   router,
   el: "#app",
   vuetify: new Vuetify({

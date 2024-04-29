@@ -8,26 +8,28 @@ const _NO_ATTACHMENTS = -1
 Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 const v = new Vue({ // eslint-disable-line no-unused-vars
   el: '#modpacks',
-  data: {
-    modpackModalOpened: false,
-    currentModpackIndex: -1,
-    modpacks: [],
-    mods: [],
-    globalBlackList: [],
-    loading: true,
-    form: {
-      search: '',
-      minSearchLetters: 3
-    },
-    sentences: {
-      searchAdvice: 'You can search by name or by version',
-      lettersLeft: 'letters to start search...',
-      loading: '<i class="fas spin"></i> Loading mods...',
-      failed: 'Failed to load mods. Check console for more informations',
-      noresults: 'No results found for your search: ',
-      noResultsVersion: 'No results found for version',
-      typeAnotherVersion: 'Try to type another version than'
-    }
+  data() {
+    return {
+      modpackModalOpened: false,
+      currentModpackIndex: -1,
+      modpacks: [],
+      mods: [],
+      globalBlackList: [],
+      loading: true,
+      form: {
+        search: '',
+        minSearchLetters: 3
+      },
+      sentences: {
+        searchAdvice: 'You can search by name or by version',
+        lettersLeft: 'letters to start search...',
+        loading: '<i class="fas spin"></i> Loading mods...',
+        failed: 'Failed to load mods. Check console for more informations',
+        noresults: 'No results found for your search: ',
+        noResultsVersion: 'No results found for version',
+        typeAnotherVersion: 'Try to type another version than'
+      },
+    };
   },
   methods: {
     openModpackModal(index) {
@@ -67,11 +69,17 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
           })
 
           const sorted = []
-          sortable.forEach(item => sorted.push({ ...item[1], id: item[0] }))
+          sortable.forEach((item) => sorted.push({ ...item[1], id: item[0] }))
 
-          sorted.forEach(modpack => {
-            Object.keys(modpack.versions).forEach(version => {
-              this.downloadModpackFromModList(modpack.id, modpack.name, version, modpack.versions[version].minecraft, modpack.versions[version].mods)
+          sorted.forEach((modpack) => {
+            Object.keys(modpack.versions).forEach((version) => {
+              this.downloadModpackFromModList(
+                modpack.id,
+                modpack.name,
+                version,
+                modpack.versions[version].minecraft,
+                modpack.versions[version].mods
+              )
             })
           })
         }).catch(console.error)
@@ -92,22 +100,27 @@ const v = new Vue({ // eslint-disable-line no-unused-vars
       }
 
       if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0)))) {
-        return this.modpacks.filter(mp => {
+        return this.modpacks.filter((mp) => {
           return mp.minecraftVersion.startsWith(this.form.search) || mp.modpackVersion.startsWith(this.form.search)
         })
       }
 
       if (this.form.search.length >= this.form.minSearchLetters) {
-        return this.modpacks.filter(mp => mp.modpackName.toLowerCase().includes(this.form.search.toLowerCase()))
+        return this.modpacks.filter((mp) => mp.modpackName.toLowerCase().includes(this.form.search.toLowerCase()))
       }
 
       return this.modpacks
     },
     searchAdvice() {
       if (this.modpacks.length === 0) { return '' }
-      if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0))) && this.filteredModpacks.length === 0) { return this.sentences.typeAnotherVersion + ' ' + this.form.search }
-      if (this.form.search.length < this.form.minSearchLetters) { return String((this.form.minSearchLetters - this.form.search.length) + ' ' + this.sentences.lettersLeft) }
-
+      if (
+        this.form.search.length >= 1 &&
+        !isNaN(parseInt(this.form.search.charAt(0))) &&
+        this.filteredModpacks.length === 0
+      )
+        return this.sentences.typeAnotherVersion + ' ' + this.form.search
+      if (this.form.search.length < this.form.minSearchLetters)
+        return String((this.form.minSearchLetters - this.form.search.length) + ' ' + this.sentences.lettersLeft)
       return ''
     }
   },

@@ -78,7 +78,7 @@ layout: default
 				modal.style.display = 'none';
 			}
 			// when pressing escape key:
-			document.addEventListener('keydown', event => {
+			document.addEventListener('keydown', (event) => {
 				if (event.keyCode == 27) modal.style.display = 'none'
 			})
 
@@ -145,7 +145,7 @@ layout: default
 		function formatHTML(obj, lvl=3) {
 			let result
 			if (Array.isArray(obj)) {
-				result = `<ul>${obj.map(e => formatHTML(e, lvl+1)).join('')}</ul>`;
+				result = `<ul>${obj.map((e) => formatHTML(e, lvl+1)).join('')}</ul>`;
 			} else if (typeof(obj) === 'string') {
 				result = `<li>${obj}</li>`;
 			} else {

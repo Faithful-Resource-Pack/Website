@@ -4,7 +4,7 @@ Vue.config.devtools = location.hostname === 'localhost' || location.hostname ===
 
 const AddonPost = () => import('./addon-post.js')
 
-let v = new Vue({
+const v = new Vue({
   components: {
     AddonPost
   },

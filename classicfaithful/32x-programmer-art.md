@@ -4,37 +4,40 @@ title: Classic Faithful 32x PA
 permalink: /classicfaithful/32x-programmer-art
 header-img: https://database.faithfulpack.net/images/website/posts/cf32x/cf32pa_banner.jpg
 
-long_text: "<strong>A double resolution texture pack that continues Vattic’s original Faithful 32x32 pack with the classic textures.</strong> <br><br>All the way back in 2010, Vattic created some of the first textures in what would become the Faithful 32x32 texture pack. In the following years, it exploded in popularity, but in 2016, Vattic disappeared from the internet, leaving his pack behind. While the textures might have changed and the principles of upscaling textures completely shifted from Vattic’s original Faithful style under the leadership of Kraineff and later the Compliance / Faithful Administration, this is where Classic Faithful PA came in. <br><br>Classic Faithful, formerly named the Emulated Vattic Textures or “EM” project, attempts to answer the question “what if Vattic never left Faithful”. Through hours of extracting layers from 10 year old PSD files, reverse engineering why certain decisions were made, and reapplying those techniques to 1.9+ textures, we’ve gotten pretty close to answering that question. Not only is our fully updated programmer art based pack available, but also Jappa versions of those packs, almost as if Vattic had continued through the texture update, remaking everything that changed. <br><br>So, if you want a blast to the past, here’s the downloads for many legacy versions as well as the latest releases."
+long_text: |
+  Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.
+  <br><br>
+  Classic Faithful 32x Programmer Art goes all out on nostalgia! This pack features all the classic textures by Vattic himself. When applicable, textures from after his era have been made consistent with his art as well, oftentimes using complicated reverse-engineering processes to ensure the pack is as accurate as possible. Install this pack for a true blast from the past!
 
 downloads:
-  - Latest Versions:
-        1.20.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.20.2.zip
-        Latest Release for Bedrock Edition: https://database.faithfulpack.net/packs/Classic-32x-Bedrock/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.mcpack
+- Latest Versions:
+    1.20.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.20.2.zip
+    Latest Release for Bedrock Edition: https://database.faithfulpack.net/packs/Classic-32x-Bedrock/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.mcpack
 
-  - Legacy Versions:
-        1.20.1 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.20.1.zip
-        1.19.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.4.zip
-        1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.3.zip
-        1.19.0 - 1.19.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.2.zip
-        1.18.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.18.2.zip
-        1.17.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.17.1.zip
-        1.16.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.16.5.zip
-        1.15.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.15.2.zip
-        1.14.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.14.4.zip
-        1.13.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.13.2.zip
-        1.12.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.12.2.zip
-        1.11.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.11.2.zip
-        1.10.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.10.2.zip
-        1.9.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.9.4.zip
-        1.8.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.8.9.zip
-        1.7.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.7.10.zip
-        1.6.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.6.4.zip
+- Legacy Versions:
+    1.20.1 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.20.1.zip
+    1.19.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.4.zip
+    1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.3.zip
+    1.19.0 - 1.19.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.2.zip
+    1.18.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.18.2.zip
+    1.17.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.17.1.zip
+    1.16.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.16.5.zip
+    1.15.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.15.2.zip
+    1.14.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.14.4.zip
+    1.13.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.13.2.zip
+    1.12.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.12.2.zip
+    1.11.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.11.2.zip
+    1.10.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.10.2.zip
+    1.9.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.9.4.zip
+    1.8.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.8.9.zip
+    1.7.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.7.10.zip
+    1.6.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.6.4.zip
 
-  - Alternate Listings:
-        GitHub for Java Edition: https://github.com/classicfaithful/32x-programmer-art
-        GitHub for Bedrock Edition: https://github.com/classicfaithful/32x-programmer-art-bedrock
-        GitHub for Add-ons: https://github.com/classicfaithful/32x-programmer-art-add-ons
-        CurseForge: https://www.curseforge.com/minecraft/texture-packs/classic-faithful-32x-pa
-        Planet Minecraft: https://www.planetminecraft.com/texture-pack/classic-faithful-32x-pa
+- Alternate Listings:
+    GitHub for Java Edition: https://github.com/classicfaithful/32x-programmer-art
+    GitHub for Bedrock Edition: https://github.com/classicfaithful/32x-programmer-art-bedrock
+    GitHub for Add-ons: https://github.com/classicfaithful/32x-programmer-art-add-ons
+    CurseForge: https://www.curseforge.com/minecraft/texture-packs/classic-faithful-32x-pa
+    Planet Minecraft: https://www.planetminecraft.com/texture-pack/classic-faithful-32x-pa
 
 ---

@@ -77,23 +77,17 @@ permalink: /about
 
 <div id="output"></div>
 
-<div id="warning" style="display: none">
-  <p align="center"><small>The translation may be inexact, if you find anything wrong, report it on our <a href="https://github.com/Faithful-Resource-Pack/Website/issues/new?assignees=&labels=translation&template=translation-issue.md&title=%5BTRANSLATION%5D" rel="noopener">GitHub</a> or <a data-toggle="tooltip" data-placement="top" title="See Above">Discord</a></small></p>
-</div>
+<h3 id="warning" style="display: none" class="red banner">
+  Translations may not be entirely accurate!
+</h3>
 
 <script>
   Load('en.html'); // load english by default
 
   async function Load(file) {
-    const response = await fetch('{{site.baseurl}}/translated/about/' + file)
+    const response = await fetch('{{ site.baseurl }}/translated/about/' + file)
     const body = await response.text()
     document.getElementById('output').innerHTML = body
-
-    const warning = document.getElementById('warning');
-    if (file != 'en.html') {
-      warning.style.display = 'block';
-    } else {
-      warning.style.display = 'none';
-    }
+    document.getElementById('warning').style.display = file === 'en.html' ? "none" : "block";
   }
 </script>

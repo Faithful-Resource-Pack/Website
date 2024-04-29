@@ -4,37 +4,42 @@ title: Classic Faithful 32x Jappa
 permalink: /classicfaithful/32x-jappa
 header-img: https://database.faithfulpack.net/images/website/posts/cf32x/cf32_banner.jpg
 
-long_text: "<strong>A double resolution texture pack that continues Vattic’s classic faithful style today.</strong> <br><br>Initially part of the “Emulated Vattic Textures” project, or “EM” for short, the pack was designed to fix the stylistic shift that came under the leadership of Kraineff and later the Compliance / Faithful Administration. The main Faithful pack’s art direction shifted to something quite different to the original work Vattic had made, opting instead for a much more detailed, modern style to go along with the new textures the texture artist Jappa had made starting versions 1.14 inclusive. However, it left many people wondering about the state of the “old style” and if it would ever return.<br><br>Now, this original, “painted” style is back, officially."
+long_text: |
+  Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.
+  <br><br>
+  The Jappa version of Classic Faithful 32x is based on the new, updated Minecraft textures that were introduced in release 1.14, re-interpreted as if Vattic was there to make them himself. Great care has been taken to emulate Vattic's art style as closely as possible.
+  <br><br>
+  If you've been using Faithful since the old days but prefer the modern look of the new Minecraft textures, you're going to like this pack!
 
 downloads:
-  - Latest Versions:
-        1.20.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.2.zip
-        Latest Release for Bedrock Edition: https://database.faithfulpack.net/packs/Classic-32x-Bedrock/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.mcpack
+- Latest Versions:
+    1.20.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.2.zip
+    Latest Release for Bedrock Edition: https://database.faithfulpack.net/packs/Classic-32x-Bedrock/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.mcpack
 
-  - Legacy Versions:
-        1.20.1 for Java Edition:  https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.1.zip
-        1.19.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.4.zip
-        1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.3.zip
-        1.19.0 - 1.19.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.2.zip
-        1.18.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.18.2.zip
-        1.17.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.17.1.zip
-        1.16.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.16.5.zip
-        1.15.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.15.2.zip
-        1.14.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.14.4.zip
-        1.13.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.13.2.zip
-        1.12.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.12.2.zip
-        1.11.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.11.2.zip
-        1.10.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.10.2.zip
-        1.9.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.9.4.zip
-        1.8.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.8.9.zip
-        1.7.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.7.10.zip
-        1.6.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.6.4.zip
+- Legacy Versions:
+    1.20.1 for Java Edition:  https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.1.zip
+    1.19.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.4.zip
+    1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.3.zip
+    1.19.0 - 1.19.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.2.zip
+    1.18.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.18.2.zip
+    1.17.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.17.1.zip
+    1.16.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.16.5.zip
+    1.15.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.15.2.zip
+    1.14.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.14.4.zip
+    1.13.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.13.2.zip
+    1.12.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.12.2.zip
+    1.11.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.11.2.zip
+    1.10.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.10.2.zip
+    1.9.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.9.4.zip
+    1.8.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.8.9.zip
+    1.7.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.7.10.zip
+    1.6.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.6.4.zip
 
-  - Alternate Listings:
-        GitHub for Java Edition: https://github.com/classicfaithful/32x-jappa
-        GitHub for Bedrock Edition: https://github.com/classicfaithful/32x-jappa-bedrock
-        GitHub for Add-ons: https://github.com/classicfaithful/32x-jappa-add-ons
-        CurseForge: https://www.curseforge.com/minecraft/texture-packs/classic-faithful-32x-jappa
-        Planet Minecraft: https://www.planetminecraft.com/texture-pack/classic-faithful-32x
+- Alternate Listings:
+    GitHub for Java Edition: https://github.com/classicfaithful/32x-jappa
+    GitHub for Bedrock Edition: https://github.com/classicfaithful/32x-jappa-bedrock
+    GitHub for Add-ons: https://github.com/classicfaithful/32x-jappa-add-ons
+    CurseForge: https://www.curseforge.com/minecraft/texture-packs/classic-faithful-32x-jappa
+    Planet Minecraft: https://www.planetminecraft.com/texture-pack/classic-faithful-32x
 
 ---

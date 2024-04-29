@@ -75,7 +75,7 @@ export default {
           hide-details
           placeholder="Search add-on name"
           type="text"
-          v-on:keyup.enter="startSearch"
+          @keyup.enter="startSearch"
           @click:append="startSearch"
           @click:clear="clearSearch"
         />
@@ -192,8 +192,8 @@ export default {
   },
   mounted() {
     fetch('https://api.faithfulpack.net/v2/addons/approved')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         this.addons = data
         this.loading = false
         this.resultCount = data.length;

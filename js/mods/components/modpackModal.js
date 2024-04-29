@@ -11,15 +11,17 @@ Vue.component('modpack-modal', {
       <p class="advice mb-0">Modpack version: <span>{{ modpack.modpackVersion }}</span></p>
       <p class="advice">Minecraft version: <span>{{ modpack.minecraftVersion }}</span></p>
       <template v-if="modpack.modList && Array.isArray(modpack.modList) && modpack.modList.length">
-        <p class="mb-0">Mod list (<span>{{ modpack.modList.length }}</span>): <span>{{ numberOfModsFound }}</span> found, <span>{{ numberOfModsIgnored }}</span> ignored - coverage: <span>{{ coveragePercentage }}</span>%</p>
+        <p class="mb-0">
+          Mod list (<span>{{ modpack.modList.length }}</span>): <span>{{ numberOfModsFound }}</span> found, <span>{{ numberOfModsIgnored }}</span> ignored - coverage: <span>{{ coveragePercentage }}</span>%
+        </p>
         <div id="modList" class="mt-2 mx-n3 mb-3">
           <ul class="px-3 py-2">
             <li v-for="(id) in modpack.modList" :key="id" v-html="modsNames[id] + ' - ' + findMod(id)"></li>
           </ul>
         </div>
         <div class="text-right">
-          <button class="btn btn-dark mr-2" v-on:click="onclose">Cancel</button>
-          <button class="btn btn-dark" v-on:click="download">Download</button>
+          <button class="btn btn-dark mr-2" @click="onclose">Cancel</button>
+          <button class="btn btn-dark" @click="download">Download</button>
         </div>
       </template>
     </custom-modal>
@@ -36,7 +38,7 @@ Vue.component('modpack-modal', {
       const result = []
 
       // build mod selections following mods found
-      this.findMods().forEach(mod => {
+      this.findMods().forEach((mod) => {
         result.push({
           name: mod.resource_pack.git_repository.split('/').pop(),
           displayName: mod.name,
@@ -62,7 +64,7 @@ Vue.component('modpack-modal', {
     modpackmodalopened(value) {
       if (!value) return
 
-      this.modpack.modList.forEach(id => {
+      this.modpack.modList.forEach((id) => {
         this.searchModName(id)
       })
     }
@@ -82,7 +84,7 @@ Vue.component('modpack-modal', {
     getName(id) {
       if (this.mods[id]) this.modsNames[id] = this.mods[id].name;
       return axios.get(`${this.$root.apiURL}/v2/mods/${id}/curseforge/name`)
-        .then(res => { this.modsNames[id] = res.data })
+        .then((res) => { this.modsNames[id] = res.data })
         .catch(() => { this.modsNames[id] = 'Not Found on CurseForge API: ' + id });
     },
 
@@ -91,7 +93,7 @@ Vue.component('modpack-modal', {
       this.modsFound = 0
       this.modsIgnored = 0
 
-      this.modpack.modList.forEach(modId => {
+      this.modpack.modList.forEach((modId) => {
         switch (this.findMod(modId)) {
           case '<span class="text-success">Found</span>':
             this.modsFound++

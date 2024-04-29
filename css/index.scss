@@ -91,6 +91,30 @@
   }
 }
 
+.highlight-section {
+  display: block;
+  background-image: url(/image/background/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 0 2rem 1px;
+
+  #upspace {
+    height: 80px;
+  }
+
+  .highlight-wordmark {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px #000);
+    max-width: 100%;
+  }
+
+  h2 {
+    color: #fff;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+  }
+}
+
 .discover .poster img:not(.wordmark) {
   height: 260px;
 }

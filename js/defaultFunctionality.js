@@ -3,13 +3,13 @@
 Element.prototype.siblingElements = function () {
   if (this.parentNode === null) return []
 
-  return [...this.parentNode.children].filter(el => el !== this)
+  return [...this.parentNode.children].filter((el) => el !== this)
 }
 
 const DROPDOWN_SHOW_CLASS = 'show'
 
 // at initialization
-document.querySelectorAll('[data-toggle="dropdown"]').forEach(item => {
+document.querySelectorAll('[data-toggle="dropdown"]').forEach((item) => {
   // add click listener to toggle dropdowns
   item.addEventListener('click', () => {
     toggleDropdown(item)
@@ -21,7 +21,7 @@ function toggleDropdown (item) {
   const itemExpanded = item.parentNode.classList.contains(DROPDOWN_SHOW_CLASS)
 
   if (!itemExpanded) { // if I am not expanded, go untoggle all other siblings
-    item.parentNode.siblingElements().filter(el => el.classList.contains(DROPDOWN_SHOW_CLASS)).forEach(otherParent => {
+    item.parentNode.siblingElements().filter((el) => el.classList.contains(DROPDOWN_SHOW_CLASS)).forEach((otherParent) => {
       otherParent.classList.remove(DROPDOWN_SHOW_CLASS)
     })
   }
@@ -30,7 +30,7 @@ function toggleDropdown (item) {
   item.parentNode.classList.toggle(DROPDOWN_SHOW_CLASS)
 }
 
-document.querySelectorAll('[data-toggle="collapse"]').forEach(item => {
+document.querySelectorAll('[data-toggle="collapse"]').forEach((item) => {
   item.dataset.expanded = false
   item.addEventListener('click', () => {
     toggleMenu(item)
@@ -54,19 +54,19 @@ function getNextElement (element, selector) {
   }
 }
 
-document.querySelectorAll('[data-ride="carousel"]').forEach(item => {
+document.querySelectorAll('[data-ride="carousel"]').forEach((item) => {
   const indicators = item.querySelector('.carousel-indicators').children
   const itemCount = indicators.length
   let currentItem = 0
   let blocking = false
 
-  item.querySelector('[data-slide="prev"]').addEventListener('click', e => {
+  item.querySelector('[data-slide="prev"]').addEventListener('click', (e) => {
     e.preventDefault()
     if (currentItem === 0) goToSlide(item, itemCount - 1)
     else goToSlide(item, currentItem - 1)
   })
 
-  item.querySelector('[data-slide="next"]').addEventListener('click', e => {
+  item.querySelector('[data-slide="next"]').addEventListener('click', (e) => {
     e.preventDefault()
     if (currentItem === itemCount - 1) goToSlide(item, 0)
     else goToSlide(item, currentItem + 1)
