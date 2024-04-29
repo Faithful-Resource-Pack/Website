@@ -4,7 +4,7 @@ export default {
   name: 'addon-modal',
   template: `
     <v-dialog
-      v-model="dialog"
+      v-model="modalOpened"
       max-width="1080"
       style="z-index: 99999"
     >
@@ -12,7 +12,7 @@ export default {
     </v-dialog>
   `,
   props: {
-    dialog: {
+    value: {
       type: Boolean,
       required: true
     },
@@ -23,6 +23,19 @@ export default {
     image: {
       type: String,
       required: true
+    }
+  },
+  data() {
+    return {
+      modalOpened: false,
+    }
+  },
+  watch: {
+    value(n) {
+      this.modalOpened = n;
+    },
+    modalOpened(n) {
+      this.$emit("input", n);
     }
   }
 }

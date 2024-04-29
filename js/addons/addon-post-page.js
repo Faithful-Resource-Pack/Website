@@ -4,10 +4,12 @@ Vue.config.devtools = location.hostname === 'localhost' || location.hostname ===
 
 const AddonPost = () => import('./addon-post.js')
 
-const v = new Vue({
-  components: {
-    AddonPost
-  },
-  el: "#app",
-  vuetify: new Vuetify()
+document.addEventListener("DOMContentLoaded", () => {
+  const v = new Vue({
+    components: {
+      AddonPost
+    },
+    el: "#app",
+    vuetify: new Vuetify()
+  })
 })

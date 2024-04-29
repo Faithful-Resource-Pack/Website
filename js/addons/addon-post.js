@@ -25,7 +25,7 @@ export default {
       <img :src="getHeader()" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
       <template>
-        <addon-modal :dialog="modal" :close="closeModal" :image="modalImage" />
+        <addon-modal v-model="modal" :close="closeModal" :image="modalImage" />
         <div class="card card-body" v-if="getCarousel().length">
           <h3 class="text-center">Screenshots</h3>
           <div class="res-grid-3">
