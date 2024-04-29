@@ -24,110 +24,112 @@ title: Utilities - modlist.html generator
   </div>
 </div>
 <script>
-  const v = new Vue({
-    el: '#modlistGenerator',
-    data () {
-      return {
-        firstFile : undefined,
-        progress: 0,
-        totalMods: 0
-      };
-    },
-    watch: {
-      manifestInput(v1, v2) {
-        console.info(this, v1, v2)
-      }
-    },
-    computed: {
-      canGenerateModlist() {
-        return this.firstFile !== undefined
+  document.addEventListener("DOMContentLoaded", () => {
+    const v = new Vue({
+      el: '#modlistGenerator',
+      data () {
+        return {
+          firstFile : undefined,
+          progress: 0,
+          totalMods: 0
+        };
       },
-      isGenerating() {
-        return this.progress != 0
+      watch: {
+        manifestInput(v1, v2) {
+          console.info(this, v1, v2)
+        }
       },
-      generatedPercent() {
-        if (this.totalMods <= 0)
-          return ''
+      computed: {
+        canGenerateModlist() {
+          return this.firstFile !== undefined
+        },
+        isGenerating() {
+          return this.progress != 0
+        },
+        generatedPercent() {
+          if (this.totalMods <= 0)
+            return ''
 
-        return (this.progress / this.totalMods * 100).toFixed(2)
+          return (this.progress / this.totalMods * 100).toFixed(2)
+        },
+        genPer() {
+          return this.generatedPercent + '%'
+        }
       },
-      genPer() {
-        return this.generatedPercent + '%'
-      }
-    },
-    methods: {
-      changeFirstFile (event) {
-        if (!event.target || !event.target.files || !event.target.files.length)
-          return
-
-        this.firstFile = event.target.files[0];
-
-        console.log(this)
-      },
-      async generateModlist() {
-        if (!this.firstFile)
-          return
-
-        this.progress = 0
-
-        let manifest
-
-        try {
-          // load file
-          manifest = JSON.parse(await this.firstFile.text())
-
-          //verify structure
-          if (!manifest.files || !Array.isArray(manifest.files))
+      methods: {
+        changeFirstFile (event) {
+          if (!event.target || !event.target.files || !event.target.files.length)
             return
 
-          this.totalMods = manifest.files.length
+          this.firstFile = event.target.files[0];
+
+          console.log(this)
+        },
+        async generateModlist() {
+          if (!this.firstFile)
+            return
+
           this.progress = 0
 
-          // for each "file"
-          let file, pid, displayName, url, res, author
-          let finalHTML = '<ul>\n'
-          for (let i = 0; i < manifest.files.length; ++i) {
-            this.progress = this.progress + 1
+          let manifest
 
-            // reset to default values
-            file = undefined
-            pid = undefined
-            displayName = ''
+          try {
+            // load file
+            manifest = JSON.parse(await this.firstFile.text())
 
-            // get file entry in array
-            file = manifest.files[i]
-
-            // its project id
-            pid = file.projectID
-            if (isNaN(pid))
+            //verify structure
+            if (!manifest.files || !Array.isArray(manifest.files))
               return
 
-            // get curseforge API
-            url = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://addons-ecs.forgesvc.net/api/v2/addon/${pid}`)}`
-            res = await axios.get(url)
-            if (!res || !res.data)
-              return
+            this.totalMods = manifest.files.length
+            this.progress = 0
 
-            // get data
-            displayName = res.data.name
-            author = res.data.authors[0].name
+            // for each "file"
+            let file, pid, displayName, url, res, author
+            let finalHTML = '<ul>\n'
+            for (let i = 0; i < manifest.files.length; ++i) {
+              this.progress = this.progress + 1
 
-            // append to html
-            finalHTML += '<li><a href="https://minecraft.curseforge.com/mc-mods/' + pid + '">' + displayName + ' (by ' + author + ')</a></li>\n'
+              // reset to default values
+              file = undefined
+              pid = undefined
+              displayName = ''
+
+              // get file entry in array
+              file = manifest.files[i]
+
+              // its project id
+              pid = file.projectID
+              if (isNaN(pid))
+                return
+
+              // get curseforge API
+              url = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://addons-ecs.forgesvc.net/api/v2/addon/${pid}`)}`
+              res = await axios.get(url)
+              if (!res || !res.data)
+                return
+
+              // get data
+              displayName = res.data.name
+              author = res.data.authors[0].name
+
+              // append to html
+              finalHTML += '<li><a href="https://minecraft.curseforge.com/mc-mods/' + pid + '">' + displayName + ' (by ' + author + ')</a></li>\n'
+            }
+
+            // close html
+            finalHTML += '</ul>\n'
+
+            const blob = new Blob([finalHTML], {type: "text/html;charset=utf-8"});
+            saveAs(blob, "modlist.html");
+          } catch(e) {
+            console.error(e)
+            return
           }
-
-          // close html
-          finalHTML += '</ul>\n'
-
-          const blob = new Blob([finalHTML], {type: "text/html;charset=utf-8"});
-          saveAs(blob, "modlist.html");
-        } catch(e) {
-          console.error(e)
-          return
         }
       }
-    }
-  })
+    })
+  });
 </script>
 <script defer src="/js/mods/axios.min.js"></script>
 <script defer src="/js/mods/FileSaver.min.js"></script>

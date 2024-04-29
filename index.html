@@ -154,35 +154,37 @@ no_container: true
 </div>
 
 <script>
-  const v = new Vue({
-    el: "#app",
-    data() {
-      return {
-        addons: [],
-        NB_ITEMS: 3,
-        LOADING_ID: "loading",
+  document.addEventListener("DOMContentLoaded", () => {
+    const v = new Vue({
+      el: "#app",
+      data() {
+        return {
+          addons: [],
+          NB_ITEMS: 3,
+          LOADING_ID: "loading",
 
-      };
-    },
-    created() {
-      fetch('https://api.faithfulpack.net/v2/addons/approved')
-        .then((res) => res.json())
-        .then((val) => {
-          const res = []
+        };
+      },
+      created() {
+        fetch('https://api.faithfulpack.net/v2/addons/approved')
+          .then((res) => res.json())
+          .then((val) => {
+            const res = []
 
-          let items = val
-          for (let i = 0; i < this.NB_ITEMS; i++) {
-            // splice removes element from list and returns the retrieved elements
-            // removes duplicate suggested add-ons
-            const element = items.splice((Math.random() * items.length) | 0, 1)[0]
-            res.push(element)
-          }
-          this.addons = res
-        })
-        .catch((err) => {
-          console.error(err)
-          this.addons = []
-        });
-    }
-  });
+            let items = val
+            for (let i = 0; i < this.NB_ITEMS; i++) {
+              // splice removes element from list and returns the retrieved elements
+              // removes duplicate suggested add-ons
+              const element = items.splice((Math.random() * items.length) | 0, 1)[0]
+              res.push(element)
+            }
+            this.addons = res
+          })
+          .catch((err) => {
+            console.error(err)
+            this.addons = []
+          });
+      }
+    });
+  })
 </script>
