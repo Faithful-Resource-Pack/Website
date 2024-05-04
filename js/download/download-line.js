@@ -79,7 +79,6 @@ export default {
   data() {
     return {
       showIcon: "➕",
-      isMounted: false,
     }
   },
   methods: {
@@ -115,7 +114,7 @@ export default {
       return this.item.file_type + this.item.file_version
     },
     date() {
-      if (!this.isMounted || this.item.file_type === "GitHub") return
+      if (this.item.file_type === "GitHub") return
       if (this.item.date)
         return this.getLocalizedDate(new Date(this.item.date));
 
@@ -124,14 +123,11 @@ export default {
       return this.getLocalizedDate(new Date(this.curse.uploaded_at.split("T")[0]));
     },
     size() {
-      if (!this.isMounted || this.item.file_type === "GitHub") return
+      if (this.item.file_type === "GitHub") return
       // some very old downloads have manual sizes
       if (this.item.size) return this.item.size
       if (!this.curse || !this.curse.filesize) return "Unknown"
       return `${(this.curse.filesize / 1000000).toFixed(2)} MB`
     },
   },
-  mounted() {
-    this.isMounted = true
-  }
 }

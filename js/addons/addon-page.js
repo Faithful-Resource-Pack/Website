@@ -190,7 +190,7 @@ export default {
       return this.resultCount === 1 ? "result" : "results";
     }
   },
-  mounted() {
+  created() {
     fetch('https://api.faithfulpack.net/v2/addons/approved')
       .then((res) => res.json())
       .then((data) => {

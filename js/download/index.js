@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <h2 class="text-center display-4 mb-0">Discontinued</h2>
         <template v-for="(data, name) in discontinued" :key="name">
           <h2 class="text-center">{{ name }}</h2>
-          <h2 class="red banner">This project has been discontinued.</h2>
           <download-table
             :downloads="data.downloads"
             :files="data.files"
@@ -76,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             else this.alive[name][edition].downloads = downloads;
           })
           .catch(console.error)
-        fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.cfwidget.com/${curse}`)}`)
+        fetch(`https://api.cfwidget.com/${curse}`)
           .then((res) => res.json())
           .then(({ files }) => {
             if (discontinued) this.discontinued[name].files = files;
