@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .catch(console.error)
       },
     },
-    mounted() {
+    created() {
       Promise.all([
         this.fetchData({
           json: 'faithful_java_32x',
