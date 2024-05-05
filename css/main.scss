@@ -1638,7 +1638,7 @@ img:not(.img-gallery) {
   color: #fff !important; /* vue moment */
   font-weight: 500;
 }
-.banner:hover {
+a > .banner:hover {
   text-decoration: underline;
 }
 .red.banner {

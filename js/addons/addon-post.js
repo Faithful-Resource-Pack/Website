@@ -158,9 +158,12 @@ export default {
 
       <br><br>
 
+    <a href="https://discord.gg/sN9YRQbBv7">
       <p class="blurple banner">
-      	<a href="https://discord.gg/sN9YRQbBv7">Start a discussion in our Discord!</a>
+        Start a discussion in our Discord!
       </p>
+    </a>
+
     `,
   data() {
     return {
