@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "./variables";
+
 .background {
 	background: #131313 url(../image/background/bg_dark_background.png) repeat
 }
@@ -55,7 +57,7 @@ label, input {
 	color: rgba(255, 255, 255, .7);
 }
 
-/** CUSTOM SCROLLBAR **/
+/** CUSTOM SCROLLBAR */
 ::-webkit-scrollbar{
 	background: #0E0E0E;
 }
@@ -74,5 +76,41 @@ label, input {
 	background-color: #0C0C0C !important;
 	& > * {
 		color: rgba(255, 255, 255, .7) !important;
+	}
+}
+
+.content-container h1 {
+	color: rgba(255, 255, 255, .9);
+}
+
+.about-button {
+	background: white;
+	color: black;
+}
+
+.green {
+	background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
+	background-blend-mode: screen;
+
+	h1 {
+		color: #76c944 !important;
+	}
+}
+
+.blue {
+	background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
+	background-blend-mode: screen;
+
+	h1 {
+		color: #5ebbf9 !important;
+	}
+}
+
+.pink {
+	background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
+	background-blend-mode: screen;
+
+	h1 {
+		color: #fc53a5 !important;
 	}
 }

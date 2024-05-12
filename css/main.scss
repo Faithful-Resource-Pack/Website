@@ -371,8 +371,7 @@ hr+br+h1 {
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border: none;
 }
 
 .nav-icon-mobile {
@@ -448,7 +447,6 @@ hr+br+h1 {
 }
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.1);
 }
 .carousel {
   position: relative;
@@ -2094,19 +2092,6 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
   .checkbox-container {
     flex-direction: column;
   }
-}
-
-.v-text-field__slot {
-  & > input {
-    color: rgba(255,255,255,.8) !important;
-  }
-  & > input::placeholder {
-    color: rgba(255,255,255,.5) !important;
-  }
-}
-
-.theme--light.v-text-field--filled>.v-input__control>.v-input__slot {
-  background: rgba(255,255,255,0.1) !important;
 }
 
 .btn-lang {

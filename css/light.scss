@@ -50,7 +50,7 @@ label, input {
 	color: #212529;
 }
 
-/** CUSTOM SCROLLBAR **/
+/** CUSTOM SCROLLBAR */
 ::-webkit-scrollbar{
 	background: #F1F1F1
 }
@@ -67,4 +67,39 @@ label, input {
 
 .v-list-item--highlighted > .v-list-item__content > .v-list-item__title {
 	color: $primary;
+}
+
+.about-button {
+	background: black;
+	color: white;
+	&:hover {
+		color: white !important;
+	}
+}
+
+.green {
+	background: #22a831 url("/image/background/bg_light_foreground.png") repeat;
+	background-blend-mode: multiply;
+
+	h1 {
+		color: #fff;
+	}
+}
+
+.blue {
+	background: #3498db url("/image/background/bg_light_foreground.png") repeat;
+	background-blend-mode: multiply;
+
+	h1 {
+		color: #fff;
+	}
+}
+
+.pink {
+	background: #ac1e63 url("/image/background/bg_light_foreground.png") repeat;
+	background-blend-mode: multiply;
+
+	h1 {
+		color: #fff;
+	}
 }

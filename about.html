@@ -1,93 +1,116 @@
 ---
 layout: default
 title: About
-permalink: /about
+no_container: true
 ---
 
-<link rel="stylesheet" href="{{ site.baseurl }}/css/license.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/css/about.css">
 
-<div class="dropdown" align="right">
-  <button type="button" class="btn btn-dark btn-flag dropwdown-toggle btn-lang" id="navbardrop" data-toggle="dropdown">
-    <i class="fas"></i>
-    Languages
-  </button>
-  <div class="dropdown-menu dropdown-menu-right">
-    <!--<button class="flag dropdown-item" onclick="Load('cn.html')">
-      <div><img src="https://flagcdn.com/cn.svg" alt="FlagCN"></div>
-      CN
-    </button>
-    <button class="flag dropdown-item" onclick="Load('br.html')">
-      <div><img src="https://flagcdn.com/br.svg" alt="FlagBR"></div>
-      BR
-    </button>
-    <button class="flag dropdown-item" onclick="Load('de.html')">
-      <div><img src="https://flagcdn.com/de.svg" alt="FlagDE"></div>
-      DE
-    </button>-->
-    <button class="flag dropdown-item" onclick="Load('en.html')">
-      <div><img src="https://flagcdn.com/gb.svg" alt="FlagEN"></div>
-      English
-    </button>
-    <!--<button class="flag dropdown-item" onclick="Load('es.html')">
-      <div><img src="https://flagcdn.com/es.svg" alt="FlagES"></div>
-      ES
-    </button>
-    <button class="flag dropdown-item" onclick="Load('fr.html')">
-      <div><img src="https://flagcdn.com/fr.svg" alt="FlagFR"></div>
-      FR
-    </button>
-    <button class="flag dropdown-item" onclick="Load('id.html')">
-      <div><img src="https://flagcdn.com/id.svg" alt="FlagID"></div>
-      ID
-    </button>-->
-     <button class="flag dropdown-item" onclick="Load('kr.html')">
-      <div><img src="https://flagcdn.com/kr.svg" alt="FlagKR"></div>
-      한국어 (Korean)
-    </button>
-    <!--<button class="flag dropdown-item" onclick="Load('pl.html')">
-      <div><img src="https://flagcdn.com/pl.svg" alt="FlagPL"></div>
-      PL
-    </button>
-    <button class="flag dropdown-item" onclick="Load('ru.html')">
-      <div><img src="https://flagcdn.com/ru.svg" alt="FlagRU"></div>
-      RU
-    </button>
-    <button class="flag dropdown-item" onclick="Load('se.html')">
-      <div><img src="https://flagcdn.com/se.svg" alt="FlagSE"></div>
-      SE
-    </button>
-    <button class="flag dropdown-item" onclick="Load('tr.html')">
-      <div><img src="https://flagcdn.com/tr.svg" alt="FlagTR"></div>
-      TR
-    </button>
-    <button class="flag dropdown-item" onclick="Load('ua.html')">
-      <div><img src="https://flagcdn.com/ua.svg" alt="FlagUA"></div>
-      UA
-    </button>
-    <button class="flag dropdown-item" onclick="Load('vn.html')">
-      <div><img src="https://flagcdn.com/vn.svg" alt="FlagVN"></div>
-      VN
-    </button>
-    <button class="flag dropdown-item" onclick="Load('za.html')">
-      <div><img src="https://flagcdn.com/za.svg" alt="FlagZA"></div>
-      ZA
-    </button>-->
+<div class="section green">
+  <div class="container content-container">
+    <div class="about-text">
+      <h1>UPSCALING THE LOOK OF MINECRAFT</h1>
+      <p>
+        Faithful recreates Minecraft's original textures in higher resolutions, while staying
+        true to their original look and feel.
+        <br /><br />
+        With multiple resolutions and styles, everyone can find a pack they like!
+      </p>
+      <a
+        class="about-button"
+        href="https://discord.gg/sN9YRQbBv7"
+        target="_blank"
+        rel="noreferrer"
+      >
+        JOIN OUR DISCORD <i class="fas"></i>
+      </a>
+    </div>
+    <img class="about-image" src="/image/about/faithful.gif" alt="gif of creeper textures" />
   </div>
 </div>
-
-<div id="output"></div>
-
-<h3 id="warning" style="display: none" class="red banner">
-  Translations may not be entirely accurate!
-</h3>
-
-<script>
-  Load('en.html'); // load english by default
-
-  async function Load(file) {
-    const response = await fetch('{{ site.baseurl }}/translated/about/' + file)
-    const body = await response.text()
-    document.getElementById('output').innerHTML = body
-    document.getElementById('warning').style.display = file === 'en.html' ? "none" : "block";
-  }
-</script>
+<div class="section">
+  <div class="container content-container">
+    <img class="about-image" src="/image/about/foss.png" alt="gif of creeper textures" />
+    <div class="about-text">
+      <h1>FREE AND OPEN-SOURCE</h1>
+      <p>
+        The project is made possible entirely by talented volunteer artists and developers working in
+        their free time.
+        <br /><br />
+        All of our textures, as well as the code of all our related projects, are available on GitHub. Take
+        a look and see how the magic happens!
+      </p>
+      <a
+        class="about-button"
+        href="https://github.com/Faithful-Resource-Pack"
+        target="_blank"
+        rel="noreferrer"
+      >
+        VISIT OUR GITHUB <i class="fas"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="section blue">
+  <div class="container content-container">
+    <div class="about-text">
+      <h1>CROSS-PLATFORM</h1>
+      <p>
+        Faithful is available for both the most popular Java Edition versions as well as Bedrock
+        Edition.
+        <br /><br />
+        This means it can be used on all devices that support manual installation of resource packs, from
+        phones to even certain consoles.
+      </p>
+      <a class="about-button" href="/downloads">
+        VIEW DOWNLOADS <i class="fas"></i>
+      </a>
+    </div>
+    <img class="about-image" src="/image/about/platforms.png" alt="placeholder" />
+  </div>
+</div>
+<div class="section">
+  <div class="container content-container">
+    <img class="about-image" src="/image/about/community.png" alt="placeholder" />
+    <div class="about-text">
+      <h1>MADE BY THE COMMUNITY</h1>
+      <p>
+        As a community-driven pack, all our textures are voted on before being added, and we prioritise
+        community feedback above all.
+        <br /><br />
+        Simply read our contribution handbook and follow the steps — it's that easy to make your mark on
+        Faithful forever!
+      </p>
+      <a
+        class="about-button"
+        href="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
+        target="_blank"
+        rel="noreferrer">HOW TO CONTRIBUTE <i class="fas"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="section pink">
+  <div class="container content-container">
+    <div class="about-text">
+      <h1>A HISTORY OF EXPERTISE</h1>
+      <p>
+        We've got over a decade of experience making quality textures for Minecraft, with a rich
+        history spanning from the first releases up to today.
+        <br /><br />
+        Being one of the first ever texture packs to be developed, starting all the way back in 2010, Faithful
+        has secured its place among the most well-known Minecraft projects.
+      </p>
+      <a class="about-button" href="/stats">
+        SEE OUR STATS <i class="fas"></i>
+      </a>
+    </div>
+    <img class="about-image" src="/image/about/history.png" alt="placeholder" />
+  </div>
+</div>
+<div class="container faq">
+  <h1>ANY MORE QUESTIONS?</h1>
+  <a class="about-button" href="/faq">
+    VIEW OUR FAQ <i class="fas"></i>
+  </a>
+</div>
