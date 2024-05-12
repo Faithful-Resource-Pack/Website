@@ -47,10 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
           this.faqs = this.allFaqs
           return
         }
-        this.faqs = this.allFaqs.filter(
-          // partial searches count
-          (faq) => faq.keywords.some((keyword) => keyword.includes(this.search))
-        )
+        // partial searches count
+        this.faqs = this.allFaqs.filter((faq) => faq.question.toLowerCase().includes(this.search.toLowerCase()))
       }
     },
     computed: {
