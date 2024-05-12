@@ -12,10 +12,13 @@ long_text: |
 
 downloads:
 - Latest Version:
-    1.20.X for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.20.1.zip
+    1.20.5 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%20java-latest.zip
     Experimental Bedrock Edition (Use at your own risk!): https://database.faithfulpack.net/packs/Classic-64x-Bedrock/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.mcpack
 
 - Legacy Versions:
+    1.20.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.20.4.zip
+    1.20.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.20.2.zip
+    1.20.1 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.20.1.zip
     1.19.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.4.zip
     1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.3.zip
     1.19.0 - 1.19.2 for Java Edition (CurseForge): https://www.curseforge.com/minecraft/texture-packs/classic-faithful-64x/download/4064436

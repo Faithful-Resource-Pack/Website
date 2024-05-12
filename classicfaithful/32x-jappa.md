@@ -13,10 +13,12 @@ long_text: |
 
 downloads:
 - Latest Versions:
-    1.20.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.2.zip
+    1.20.5 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%20java-latest.zip
     Latest Release for Bedrock Edition: https://database.faithfulpack.net/packs/Classic-32x-Bedrock/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.mcpack
 
 - Legacy Versions:
+    1.20.4 for Java Edition:  https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.4.zip
+    1.20.2 for Java Edition:  https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.2.zip
     1.20.1 for Java Edition:  https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.1.zip
     1.19.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.4.zip
     1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.19.3.zip
