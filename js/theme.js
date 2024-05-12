@@ -56,11 +56,11 @@ window.changeMod = (change) => {
   }
 
   // update theme
-  if (theme.currentTheme === 'dark' || (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)) {
-    css.href = '/css/dark.css'
-  } else {
-    css.href = '/css/light.css'
-  }
+  const isDark = (
+    theme.currentTheme === 'dark' ||
+    (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)
+  )
+  css.href = isDark ? '/css/dark.css' : '/css/light.css'
 }
 
 changeMod(false)
