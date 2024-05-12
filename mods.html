@@ -2,7 +2,6 @@
 layout: default
 title: Mods
 ---
-
 <link rel="stylesheet" href="{{ site.baseurl }}/css/mods.css">
 
 <div id="app">
@@ -44,7 +43,7 @@ title: Mods
     >
       The versions you have selected are not compatible
     </div>
-		<div
+    <div
       v-if="modSelection.length == 0"
       class="advice advice-subtitle text-center"
     >
@@ -56,11 +55,18 @@ title: Mods
 
   <div class="card">
     <div class="search-bar-container">
-      <input id="SearchBar" class="fancy-card-1x" type="text" placeholder="Search for mods or Minecraft version..." title="Type something" v-model="form.search">
+      <input
+        id="SearchBar"
+        class="fancy-card-1x"
+        type="text"
+        placeholder="Search for mods or Minecraft version..."
+        title="Type something"
+        v-model="form.search"
+      >
       <div class="advice" v-text="searchAdvice"></div>
     </div>
 
-    <h3 v-if='filteredMods.length == 0' id="noresults" class="text-center" v-html="emptyTable"></h3>
+    <h3 v-if="filteredMods.length == 0" id="noresults" class="text-center" v-html="emptyTable"></h3>
 
     <minecraft-mod-list :mods="filteredMods"></minecraft-mod-list>
   </div>

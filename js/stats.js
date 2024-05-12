@@ -1,28 +1,33 @@
 /* global Vue */
 
 document.addEventListener("DOMContentLoaded", () => {
-Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-  const v = new Vue({ // eslint-disable-line no-unused-vars
-    el: '#stats',
+  Vue.config.devtools = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  const v = new Vue({
+    // eslint-disable-line no-unused-vars
+    el: "#stats",
     data() {
       return {
         addons: {},
-        keys: ['numberOfMinecraftVersions', 'totalNumberOfResourcePacksStored', 'numberOfModsSupported'],
+        keys: [
+          "numberOfMinecraftVersions",
+          "totalNumberOfResourcePacksStored",
+          "numberOfModsSupported",
+        ],
         messages: {
-          loading: 'Loading',
-          numberOfMinecraftVersions: 'Minecraft Versions Supported',
-          numberOfModsSupported: 'Mods Supported',
-          totalNumberOfResourcePacksStored: 'Mod Resource Packs Stored'
+          loading: "Loading",
+          numberOfMinecraftVersions: "Minecraft Versions Supported",
+          numberOfModsSupported: "Mods Supported",
+          totalNumberOfResourcePacksStored: "Mod Resource Packs Stored",
         },
         loading: true,
         numberOfMinecraftVersions: undefined,
         numberOfModsSupported: undefined,
-        totalNumberOfResourcePacksStored: undefined
+        totalNumberOfResourcePacksStored: undefined,
       };
     },
     computed: {
       loadingMessage() {
-        return '<i class="fas spin"></i> ' + this.messages.loading
+        return '<i class="fas spin"></i> ' + this.messages.loading;
       },
       addonsStats() {
         // super duper dynamic addons stats
@@ -42,56 +47,57 @@ Vue.config.devtools = location.hostname === 'localhost' || location.hostname ===
               }
             }
             return acc;
-          }, {})
+          }, {});
         Object.keys(result).forEach((res) => {
           allEditions
             .filter((e) => !result[res][e])
             .forEach((e) => {
-              result[res][e] = 0
-            })
-        })
+              result[res][e] = 0;
+            });
+        });
 
         return result;
-      }
+      },
     },
     created() {
-      fetch('https://api.faithfulpack.net/v2/mods/raw')
+      fetch("https://api.faithfulpack.net/v2/mods/raw")
         .then((res) => res.json())
         .then((json) => {
-          const mods = json
-          const versionList = []
-          let resourcePacks = 0
-          let modAmount = 0
+          const mods = json;
+          const versionList = [];
+          let resourcePacks = 0;
+          let modAmount = 0;
 
-          Object.values(mods).map((e) => e.resource_pack.versions).forEach((versions) => {
-            versions.forEach((version) => {
-              // version sum
-              if (!versionList.includes(version)) versionList.push(version)
+          Object.values(mods)
+            .map((e) => e.resource_pack.versions)
+            .forEach((versions) => {
+              versions.forEach((version) => {
+                // version sum
+                if (!versionList.includes(version)) versionList.push(version);
 
-              // resource pack sum
-              ++resourcePacks
-            })
-            // mod sum
-            ++modAmount
-          })
+                // resource pack sum
+                ++resourcePacks;
+              });
+              // mod sum
+              ++modAmount;
+            });
 
+          this.numberOfMinecraftVersions = versionList.length;
+          this.numberOfModsSupported = modAmount;
+          this.totalNumberOfResourcePacksStored = resourcePacks;
 
-          this.numberOfMinecraftVersions = versionList.length
-          this.numberOfModsSupported = modAmount
-          this.totalNumberOfResourcePacksStored = resourcePacks
-
-          this.loading = false
+          this.loading = false;
         })
         .catch(console.error);
 
-      fetch('https://api.faithfulpack.net/v2/addons/approved')
+      fetch("https://api.faithfulpack.net/v2/addons/approved")
         .then((response) => response.json())
         .then((data) => {
-          this.addons = data
+          this.addons = data;
         })
         .catch(() => {
-          this.addons = undefined
-        })
-    }
-  })
-})
+          this.addons = undefined;
+        });
+    },
+  });
+});

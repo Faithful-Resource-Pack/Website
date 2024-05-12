@@ -4,102 +4,102 @@
 @import "./variables";
 
 .background {
-	background: #EEEDE5 url(../image/background/bg_light_background.png) repeat
+  background: #EEEDE5 url(../image/background/bg_light_background.png) repeat
 }
 .foreground {
-	background:
-		#EEEDE5 url(../image/background/bg_light_foreground.png) repeat
+  background:
+    #EEEDE5 url(../image/background/bg_light_foreground.png) repeat
 }
 .placeholder {
-	background-image: url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png), url(../image/background/bg_light_foreground.png);
+  background-image: url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png), url(../image/background/bg_light_foreground.png);
 }
 .card {
-	background: #EEEDE5 url(../image/background/bg_light_background.png) repeat;
+  background: #EEEDE5 url(../image/background/bg_light_background.png) repeat;
 }
 #topNavbar.fixed {
-	background: #EEEDE5 url(../image/background/bg_light_background.png);
+  background: #EEEDE5 url(../image/background/bg_light_background.png);
 }
 .outline {
-	background: #EEEDE5 url(../image/background/bg_light_background.png) !important;
+  background: #EEEDE5 url(../image/background/bg_light_background.png) !important;
 }
 
 .dropdown-menu {
-	background-color: #fff;
+  background-color: #fff;
 }
 .dropdown-item {
-	color: #212529;
+  color: #212529;
 }
 .dropdown-item:focus, .dropdown-item:hover {
-	color: #16181b;
-	background-color: #f8f9fa;
+  color: #16181b;
+  background-color: #f8f9fa;
 }
 
 hr {
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 label, input {
-	color: #212529;
+  color: #212529;
 }
 
 #SearchBar {
-	color: #fff;
+  color: #fff;
 }
 
 .advice {
-	color: #212529;
+  color: #212529;
 }
 
 /** CUSTOM SCROLLBAR */
 ::-webkit-scrollbar{
-	background: #F1F1F1
+  background: #F1F1F1
 }
 ::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb{
-	background: #C1C1C1;
-	border: 1px solid #F1F1F1;
+  background: #C1C1C1;
+  border: 1px solid #F1F1F1;
 }
 ::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover{
-	background: #A8A8A8
+  background: #A8A8A8
 }
 ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active{
-	background: #787878
+  background: #787878
 }
 
 .v-list-item--highlighted > .v-list-item__content > .v-list-item__title {
-	color: $primary;
+  color: $primary;
 }
 
 .about-button {
-	background: black;
-	color: white;
-	&:hover {
-		color: white !important;
-	}
+  background: black;
+  color: white;
+  &:hover {
+    color: white !important;
+  }
 }
 
 .green {
-	background: #22a831 url("/image/background/bg_light_foreground.png") repeat;
-	background-blend-mode: multiply;
+  background: #22a831 url("/image/background/bg_light_foreground.png") repeat;
+  background-blend-mode: multiply;
 
-	h1 {
-		color: #fff;
-	}
+  h1 {
+    color: #fff;
+  }
 }
 
 .blue {
-	background: #3498db url("/image/background/bg_light_foreground.png") repeat;
-	background-blend-mode: multiply;
+  background: #3498db url("/image/background/bg_light_foreground.png") repeat;
+  background-blend-mode: multiply;
 
-	h1 {
-		color: #fff;
-	}
+  h1 {
+    color: #fff;
+  }
 }
 
 .pink {
-	background: #ac1e63 url("/image/background/bg_light_foreground.png") repeat;
-	background-blend-mode: multiply;
+  background: #ac1e63 url("/image/background/bg_light_foreground.png") repeat;
+  background-blend-mode: multiply;
 
-	h1 {
-		color: #fff;
-	}
+  h1 {
+    color: #fff;
+  }
 }

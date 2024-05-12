@@ -2,16 +2,19 @@
 layout: default
 title: Home
 ---
-
 <h1 class="display-3 my-5 text-center">Faithful News</h1>
 
 <div class="res-grid-3">
   {%- for post in site.posts -%}
     <a class="card img-card" rel="noopener" href="{{ site.baseurl }}{{ post.permalink }}">
-      {%- if post.header-img -%}
-      <img src="{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
+      {%- if post["header-img"] -%}
+        <img src="{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
       {%- else -%}
-      <img src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy" alt="{{ post.title }}">
+        <img
+          src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg"
+          loading="lazy"
+          alt="{{ post.title }}"
+        >
       {%- endif -%}
       <h3>{{ post.title }}</h3>
     </a>

@@ -1,10 +1,10 @@
 /* global Vue */
 /* eslint no-multi-str: 0 */
 
-const _TEXT_LOADING = 'Loading...'
+const _TEXT_LOADING = "Loading...";
 
-Vue.component('modpack-modal', {
-  props: ['modpackmodalopened', 'modpack', 'onclose', 'mods'],
+Vue.component("modpack-modal", {
+  props: ["modpackmodalopened", "modpack", "onclose", "mods"],
   template: `
     <custom-modal v-if="modpack" :modalOpened="modpackmodalopened" :closeOnClick="onclose">
       <h3 class="mt-0">{{ modpack.modpackName }}</h3>
@@ -30,107 +30,123 @@ Vue.component('modpack-modal', {
     return {
       modsFound: 0,
       modsIgnored: 0,
-      modsNames: {}
-    }
+      modsNames: {},
+    };
   },
   computed: {
     modSelection() {
-      const result = []
+      const result = [];
 
       // build mod selections following mods found
       this.findMods().forEach((mod) => {
         result.push({
-          name: mod.resource_pack.git_repository.split('/').pop(),
+          name: mod.resource_pack.git_repository.split("/").pop(),
           displayName: mod.name,
           repositoryURL: mod.resource_pack.git_repository,
-          version: this.modpack.minecraftVersion
-        })
-      })
+          version: this.modpack.minecraftVersion,
+        });
+      });
 
-      return result
+      return result;
     },
     numberOfModsFound() {
-      return this.modsFound
+      return this.modsFound;
     },
     numberOfModsIgnored() {
-      return this.modsIgnored
+      return this.modsIgnored;
     },
     coveragePercentage() {
-      this.findMods()
-      return (((this.numberOfModsIgnored + this.numberOfModsFound) * 100) / this.$props.modpack.modList.length).toFixed(2)
-    }
+      this.findMods();
+      return (
+        ((this.numberOfModsIgnored + this.numberOfModsFound) * 100) /
+        this.$props.modpack.modList.length
+      ).toFixed(2);
+    },
   },
   watch: {
     modpackmodalopened(value) {
-      if (!value) return
+      if (!value) return;
 
       this.modpack.modList.forEach((id) => {
-        this.searchModName(id)
-      })
-    }
+        this.searchModName(id);
+      });
+    },
   },
   methods: {
     searchModName(id) {
-      if (this.modsNames[id] && this.modsNames[id] != _TEXT_LOADING) return
+      if (this.modsNames[id] && this.modsNames[id] != _TEXT_LOADING) return;
 
       if (this.mods[id]) {
-        this.modsNames[id] = this.mods[id].name
-        return
+        this.modsNames[id] = this.mods[id].name;
+        return;
       }
 
-      this.modsNames[id] = _TEXT_LOADING
+      this.modsNames[id] = _TEXT_LOADING;
       this.getName(id).then(() => this.$forceUpdate());
     },
     getName(id) {
       if (this.mods[id]) this.modsNames[id] = this.mods[id].name;
-      return axios.get(`${this.$root.apiURL}/v2/mods/${id}/curseforge/name`)
-        .then((res) => { this.modsNames[id] = res.data })
-        .catch(() => { this.modsNames[id] = 'Not Found on CurseForge API: ' + id });
+      return axios
+        .get(`${this.$root.apiURL}/v2/mods/${id}/curseforge/name`)
+        .then((res) => {
+          this.modsNames[id] = res.data;
+        })
+        .catch(() => {
+          this.modsNames[id] = "Not Found on CurseForge API: " + id;
+        });
     },
 
     findMods() {
-      const results = []
-      this.modsFound = 0
-      this.modsIgnored = 0
+      const results = [];
+      this.modsFound = 0;
+      this.modsIgnored = 0;
 
       this.modpack.modList.forEach((modId) => {
         switch (this.findMod(modId)) {
           case '<span class="text-success">Found</span>':
-            this.modsFound++
-            results.push(this.mods[modId])
+            this.modsFound++;
+            results.push(this.mods[modId]);
             break;
 
           case `<span class="text-success">No textures</span>`:
           case `<span class="text-success">No textures in ${this.modpack.minecraftVersion}</span>`:
-            this.modsIgnored++
+            this.modsIgnored++;
             break;
 
           default: // not found or not available in current version or blacklisted
             break;
         }
-      })
+      });
 
-      return results
+      return results;
     },
     findMod(id) {
       if (this.mods[id] && this.mods[id].blacklisted)
-        return `<span class="text-success">No textures</span>`
+        return `<span class="text-success">No textures</span>`;
 
-      if (this.mods[id] && this.mods[id].resource_pack.blacklist && this.mods[id].resource_pack.blacklist.includes(this.modpack.minecraftVersion))
-        return `<span class="text-success">No textures in ${this.modpack.minecraftVersion}</span>`
+      if (
+        this.mods[id] &&
+        this.mods[id].resource_pack.blacklist &&
+        this.mods[id].resource_pack.blacklist.includes(this.modpack.minecraftVersion)
+      )
+        return `<span class="text-success">No textures in ${this.modpack.minecraftVersion}</span>`;
 
-      if (this.mods[id] && this.mods[id].resource_pack.versions.includes(this.modpack.minecraftVersion))
-        return `<span class="text-success">Found</span>`
+      if (
+        this.mods[id] &&
+        this.mods[id].resource_pack.versions.includes(this.modpack.minecraftVersion)
+      )
+        return `<span class="text-success">Found</span>`;
 
       if (this.mods[id] && this.mods[id].resource_pack.versions.length !== 0)
-        return `<span class="text-warning">Not in ${this.modpack.minecraftVersion}</span>`
+        return `<span class="text-warning">Not in ${this.modpack.minecraftVersion}</span>`;
 
-      return `<span class="text-danger">Not found</span>`
+      return `<span class="text-danger">Not found</span>`;
     },
     download() {
-      if (!this.modSelection || !Array.isArray(this.modSelection) || this.modSelection.length === 0) return
-      this.$props.onclose()
-      this.$root.$refs.localDownload.openConfirmModal(this.modSelection)
-    }
-  }
-})
+      if (!this.modSelection || !Array.isArray(this.modSelection) || this.modSelection.length === 0)
+        return;
+      this.$props.onclose();
+      this.$root.$refs.localDownload.openConfirmModal(this.modSelection);
+    },
+  },
+});

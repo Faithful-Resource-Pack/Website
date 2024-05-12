@@ -1,8 +1,8 @@
 /* global Vue */
 /* eslint no-multi-str: 0 */
 
-Vue.component('modpack-card', {
-  props: ['modpack', 'cantDownload', 'onbuttonclick'],
+Vue.component("modpack-card", {
+  props: ["modpack", "cantDownload", "onbuttonclick"],
   template: `
     <div class="mb-4">
     <div class="card">
@@ -38,5 +38,5 @@ Vue.component('modpack-card', {
         </button>
       </div>
     </div>
-  </div>`
-})
+  </div>`,
+});

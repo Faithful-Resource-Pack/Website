@@ -79,7 +79,7 @@ export default {
   data() {
     return {
       showIcon: "➕",
-    }
+    };
   },
   methods: {
     getLocalizedDate(dateObj) {
@@ -93,41 +93,46 @@ export default {
     },
     handleOpen() {
       // change icon then pass back to download-table to unhide child
-      this.showIcon = this.showIcon === "➕" ? "➖" : "➕"
-      this.$emit('click')
-    }
+      this.showIcon = this.showIcon === "➕" ? "➖" : "➕";
+      this.$emit("click");
+    },
   },
   computed: {
     labelColor() {
       switch (this.item.file_type) {
-        case "Download": return "github"
-        case "R": return "green"
-        case "B": return "blue"
-        case "A": return "yellow"
-        case "Snapshot": return "black"
-        default: return "green"
+        case "Download":
+          return "github";
+        case "R":
+          return "green";
+        case "B":
+          return "blue";
+        case "A":
+          return "yellow";
+        case "Snapshot":
+          return "black";
+        default:
+          return "green";
       }
     },
     labelText() {
-      if (this.item.file_type == "Download") return 'Download'
-      if (!this.item.file_version) return this.item.file_type
-      return this.item.file_type + this.item.file_version
+      if (this.item.file_type == "Download") return "Download";
+      if (!this.item.file_version) return this.item.file_type;
+      return this.item.file_type + this.item.file_version;
     },
     date() {
-      if (this.item.file_type === "GitHub") return
-      if (this.item.date)
-        return this.getLocalizedDate(new Date(this.item.date));
+      if (this.item.file_type === "GitHub") return;
+      if (this.item.date) return this.getLocalizedDate(new Date(this.item.date));
 
       // no other way to get dates
-      if (!this.curse || !this.curse.uploaded_at) return "Unknown"
+      if (!this.curse || !this.curse.uploaded_at) return "Unknown";
       return this.getLocalizedDate(new Date(this.curse.uploaded_at.split("T")[0]));
     },
     size() {
-      if (this.item.file_type === "GitHub") return
+      if (this.item.file_type === "GitHub") return;
       // some very old downloads have manual sizes
-      if (this.item.size) return this.item.size
-      if (!this.curse || !this.curse.filesize) return "Unknown"
-      return `${(this.curse.filesize / 1000000).toFixed(2)} MB`
+      if (this.item.size) return this.item.size;
+      if (!this.curse || !this.curse.filesize) return "Unknown";
+      return `${(this.curse.filesize / 1000000).toFixed(2)} MB`;
     },
   },
-}
+};

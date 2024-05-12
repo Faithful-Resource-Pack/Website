@@ -2,76 +2,81 @@
 layout: default
 title: Coffee
 ---
-
 <div id="stats" class="text-center">
-	<h1 class="display-3 my-5">I'm a teapot</h1>
+  <h1 class="display-3 my-5">I'm a teapot</h1>
 
-    <div id="teacup" class="hidden">
-        <div id="handle"><div></div></div>
-        <img src="https://api.faithfulpack.net/v2/textures/1579/url/faithful_64x/latest" alt="bucket" id="bucket">
-    </div>
+  <div id="teacup" class="hidden">
+    <div id="handle"><div></div></div>
+    <img
+      src="https://api.faithfulpack.net/v2/textures/1579/url/faithful_64x/latest"
+      alt="bucket"
+      id="bucket"
+    >
+  </div>
 </div>
 
 <style>
-    #teacup {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-    }
-    div#handle, div#handle div::after {
-        border-radius: 50% 0 0 50%;
-        border: 2px solid #343434;
-    }
-    div#handle {
-        width: 50px;
-        height:50px;
-        margin-right: -42px;
-    }
+  #teacup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+  div#handle,
+  div#handle div::after {
+    border-radius: 50% 0 0 50%;
+    border: 2px solid #343434;
+  }
+  div#handle {
+    width: 50px;
+    height: 50px;
+    margin-right: -42px;
+  }
 
-    div#handle > div, div#handle div::after {
-        width: 100%;
-        height:100%;
-    }
+  div#handle > div,
+  div#handle div::after {
+    width: 100%;
+    height: 100%;
+  }
 
-    div#handle div::after {
-        content: "";
-        display: block;
-    }
+  div#handle div::after {
+    content: "";
+    display: block;
+  }
 
-    div#handle > div {
-        border-radius: 50% 0 0 50%;
-        border: 10px solid #d7d7d7;
-    }
-    #bucket {
-        height: 128px;
-        width: 128px;
-        image-rendering: pixelated;
-        position: relative;
-        z-index: 3;
-    }
+  div#handle > div {
+    border-radius: 50% 0 0 50%;
+    border: 10px solid #d7d7d7;
+  }
+  #bucket {
+    height: 128px;
+    width: 128px;
+    image-rendering: pixelated;
+    position: relative;
+    z-index: 3;
+  }
 </style>
 
 <script>
-    let tot = 0;
-    const ids = [
-        [1579, 0.50], // lava
-        [1621, 0.10], // milk
-        [1743, 0.10], // water
-        [1308, 0.10], // axolotl
-        [4982, 0.10], // tadpole
-    ].map((e) => {
-        e[1] = e[1] + tot
-        tot = e[1]
-        return e
-    })
+  let tot = 0;
+  const ids = [
+    [1579, 0.5], // lava
+    [1621, 0.1], // milk
+    [1743, 0.1], // water
+    [1308, 0.1], // axolotl
+    [4982, 0.1], // tadpole
+  ].map((e) => {
+    e[1] = e[1] + tot;
+    tot = e[1];
+    return e;
+  });
 
-    let r = Math.random()
-    let id = (ids.filter(e => r <= e[1]).shift() || ids[0])[0]
+  let r = Math.random();
+  let id = (ids.filter((e) => r <= e[1]).shift() || ids[0])[0];
 
-    let img = document.getElementById('bucket')
-    img.src = `https://api.faithfulpack.net/v2/textures/${id}/url/faithful_64x/latest`
-    img.onload = () => {
-        document.getElementById('teacup').style.opacity = '1'
-    }
+  let img = document.getElementById("bucket");
+  img.src = `https://api.faithfulpack.net/v2/textures/${id}/url/faithful_64x/latest`;
+  img.onload = () => {
+    document.getElementById("teacup").style.opacity = "1";
+  };
 </script>

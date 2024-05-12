@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         allFaqs: [],
         faqs: [],
         search: null,
-      }
+      };
     },
     template: `
       <div>
@@ -40,27 +40,29 @@ document.addEventListener("DOMContentLoaded", () => {
             .replace(/in <#[^]+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)") // removes channel links
             .replace(/<[^]+>/, "") // removes pings
             .replace("()", ""), // removes stray parentheses left by removing pings)
-        )
+        );
       },
       startSearch() {
         if (!this.search || this.search.length < 3) {
-          this.faqs = this.allFaqs
-          return
+          this.faqs = this.allFaqs;
+          return;
         }
         // partial searches count
-        this.faqs = this.allFaqs.filter((faq) => faq.question.toLowerCase().includes(this.search.toLowerCase()))
-      }
+        this.faqs = this.allFaqs.filter((faq) =>
+          faq.question.toLowerCase().includes(this.search.toLowerCase()),
+        );
+      },
     },
     computed: {
       filteredFaqs() {
-        return this.faqs.filter((v) => !v.discord)
+        return this.faqs.filter((v) => !v.discord);
       },
       isDarkMode() {
         return (
-          theme.currentTheme === 'dark' ||
-          (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)
+          theme.currentTheme === "dark" ||
+          (theme.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches)
         );
-      }
+      },
     },
     created() {
       axios
@@ -68,9 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
           "https://raw.githubusercontent.com/Faithful-Resource-Pack/CompliBot/main/json/faq.json",
         )
         .then((res) => {
-          this.allFaqs = res.data
-          this.startSearch()
-        })
+          this.allFaqs = res.data;
+          this.startSearch();
+        });
     },
-  })
-})
+  });
+});

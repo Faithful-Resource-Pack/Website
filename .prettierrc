@@ -1,0 +1,18 @@
+{
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": false,
+  "printWidth": 100,
+  "useTabs": false,
+  "tabWidth": 2,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "parser": "typescript",
+  "plugins": ["@shopify/prettier-plugin-liquid"],
+  "liquidSingleQuote": false,
+  "embeddedSingleQuote": false,
+  "overrides": [
+    { "files": ["*.vue"], "options": { "parser": "vue" } },
+    { "files": ["*.html"], "options": { "parser": "liquid-html" } }
+  ]
+}

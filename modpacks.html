@@ -2,7 +2,6 @@
 layout: default
 title: Modpacks
 ---
-
 <link rel="stylesheet" href="{{ site.baseurl }}/css/mods.css">
 
 <div id="modpacks">
@@ -18,31 +17,30 @@ title: Modpacks
     :onclose="() => { modpackModalOpened = false }"
     :mods="mods"
   />
-    <div class="card mb-4">
-      <div class="search-bar-container">
-        <input
-          id="SearchBar"
-          class="fancy-card-1x"
-          type="text"
-          placeholder="Search for modpacks, modpack version or Minecraft version..."
-          title="Type something"
-          v-model="form.search"
-        >
-        <div class="advice" v-text="searchAdvice"></div>
-      </div>
+  <div class="card mb-4">
+    <div class="search-bar-container">
+      <input
+        id="SearchBar"
+        class="fancy-card-1x"
+        type="text"
+        placeholder="Search for modpacks, modpack version or Minecraft version..."
+        title="Type something"
+        v-model="form.search"
+      >
+      <div class="advice" v-text="searchAdvice"></div>
     </div>
-
-    <div class="res-grid-4">
-      <modpack-card
-        v-for="(m, mindex) in filteredModpacks"
-        :key="mindex"
-        :modpack="m"
-        :onbuttonclick="() => { openModpackModal(mindex) }"
-      />
-    </div>
-
-    <h3 v-if='filteredModpacks.length == 0' id="noresults" class="text-center"></h3>
   </div>
+
+  <div class="res-grid-4">
+    <modpack-card
+      v-for="(m, mindex) in filteredModpacks"
+      :key="mindex"
+      :modpack="m"
+      :onbuttonclick="() => { openModpackModal(mindex) }"
+    />
+  </div>
+
+  <h3 v-if="filteredModpacks.length == 0" id="noresults" class="text-center"></h3>
 </div>
 
 <script src="https://unpkg.com/retry-axios@2.4.0/dist/index.umd.js"></script>

@@ -1,276 +1,360 @@
 ---
 layout: compress
 ---
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-	<!-- HTML Meta Tags -->
-	<title>{{ page.title }} - Faithful</title>
-	<meta name="description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
+    <!-- HTML Meta Tags -->
+    <title>
+      {{ page.title }}
+      - Faithful
+    </title>
+    <meta
+      name="description"
+      content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}"
+    >
 
-	<!-- Open Graph Meta Tags -->
-	<meta property="og:url" content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{{page.title}}" />
-	<meta property="og:description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
-	<meta property="og:image" content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ site.baseurl }}{{ page.header-img }}{% else %}https://database.faithfulpack.net/images/branding/site/banners/universal_banner.png{% endif %}{% endif %}" />
-	<meta property="og:site_name" content="Faithful Resource Pack" />
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:url"
+      content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}"
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{page.title}}">
+    <meta
+      property="og:description"
+      content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}"
+    >
+    <meta
+      property="og:image"
+      content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ site.baseurl }}{{ page.header-img }}{% else %}https://database.faithfulpack.net/images/branding/site/banners/universal_banner.png{% endif %}{% endif %}"
+    >
+    <meta property="og:site_name" content="Faithful Resource Pack">
 
-	<!-- Twitter Meta Tags -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta property="twitter:domain" content="{{ site.url }}">
-	<meta property="twitter:url" content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}">
-	<meta name="twitter:description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
-	<meta property="twitter:image" content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}https://database.faithfulpack.net/images/branding/site/banners/universal_banner.png{% endif %}{% endif %}" />
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="{{ site.url }}">
+    <meta
+      property="twitter:url"
+      content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}"
+    >
+    <meta
+      name="twitter:description"
+      content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}"
+    >
+    <meta
+      property="twitter:image"
+      content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}https://database.faithfulpack.net/images/branding/site/banners/universal_banner.png{% endif %}{% endif %}"
+    >
 
-	<meta name="keywords" content="Minecraft, Java, Bedrock, Resource, Pack, Resource-Pack, Resourcepack, Compliance, Mods, Faithful, 32x, x32, 32x32, 64x, x64, 64x64, Classic Faithful, Classicfaithful, Emulated Vattic, Emulatedvattic">
+    <meta
+      name="keywords"
+      content="Minecraft, Java, Bedrock, Resource, Pack, Resource-Pack, Resourcepack, Compliance, Mods, Faithful, 32x, x32, 32x32, 64x, x64, 64x64, Classic Faithful, Classicfaithful, Emulated Vattic, Emulatedvattic"
+    >
 
-	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#00552B">
-	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#76C945">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#00552B">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#76C945">
 
-	<meta name="apple-mobile-web-app-capable" content="no">
-	<meta name="apple-mobile-web-app-title" content="Faithful">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-title" content="Faithful">
 
-	<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/image/pwa/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="{{ site.baseurl }}/image/pwa/app-192x192.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/image/pwa/favicon-16x16.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/image/pwa/apple-touch-icon-180x180.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ site.baseurl }}/image/pwa/favicon-32x32.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{{ site.baseurl }}/image/pwa/app-192x192.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ site.baseurl }}/image/pwa/favicon-16x16.png"
+    >
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ site.baseurl }}/image/pwa/apple-touch-icon-180x180.png"
+    >
 
-	<meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="" id="theme">
-	<!-- Slimmed down version of actual theme script to speed up theme loading -->
-	<script>const css=document.getElementById('theme');const btn=document.getElementById('ThemeBtn');const THEME_VALUES=[{value:'auto'},{value:'dark'},{value:'light'}];const THEME_DEFAULT_VALUE=THEME_VALUES[0].value;const THEME_LOCALSTORAGE_KEY='theme';window.theme={get currentTheme(){return localStorage.getItem(THEME_LOCALSTORAGE_KEY)||THEME_DEFAULT_VALUE}};if(theme.currentTheme==='dark'||(theme.currentTheme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches)){css.href='/css/dark.css'}else{css.href='/css/light.css'}</script>
-	<script defer src="{{ site.baseurl }}/js/theme.js" type="module"></script>
+    <link rel="stylesheet" href="" id="theme">
+    <!-- Slimmed down version of actual theme script to speed up theme loading -->
+    <script>
+      const css = document.getElementById("theme");
+      const btn = document.getElementById("ThemeBtn");
+      const THEME_VALUES = [{ value: "auto" }, { value: "dark" }, { value: "light" }];
+      const THEME_DEFAULT_VALUE = THEME_VALUES[0].value;
+      const THEME_LOCALSTORAGE_KEY = "theme";
+      window.theme = {
+        get currentTheme() {
+          return localStorage.getItem(THEME_LOCALSTORAGE_KEY) || THEME_DEFAULT_VALUE;
+        },
+      };
+      if (
+        theme.currentTheme === "dark" ||
+        (theme.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        css.href = "/css/dark.css";
+      } else {
+        css.href = "/css/light.css";
+      }
+    </script>
+    <script defer src="{{ site.baseurl }}/js/theme.js" type="module"></script>
 
-	<!-- make vue globally available everywhere -->
-	<script async src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <!-- make vue globally available everywhere -->
+    <script async src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 
-	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 
-	<!-- Font awesome icons -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/solid.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/brands.min.css">
+    <!-- Font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/solid.min.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/brands.min.css"
+    >
+  </head>
 
-</head>
+  <body class="background">
+    <div id="snowflakeContainer">
+      <span class="snowflake0"></span>
+      <span class="snowflake1"></span>
+      <span class="snowflake2"></span>
+      <span class="snowflake3"></span>
+    </div>
 
-<body class="background">
-	<div id="snowflakeContainer">
-		<span class="snowflake0"></span>
-		<span class="snowflake1"></span>
-		<span class="snowflake2"></span>
-		<span class="snowflake3"></span>
-	</div>
+    <header>
+      <noscript>
+        <p class="red banner m-3">Please enable JavaScript for various features to work.</p>
+      </noscript>
 
-	<header>
+      <!-- navigation bar -->
+      <nav class="custom-navbar navbar navbar-expand-sm navbar-dark" id="topNavbar">
+        <a class="nav-icon-mobile" href="{{ site.baseurl }}/" title="Faithful">
+          <img
+            src="{{ site.baseurl }}/image/home/navbar-wordmark.png"
+            style="height: 32px"
+            alt="Faithful 32x"
+          >
+        </a>
 
-		<noscript>
-			<p class="red banner m-3">
-				Please enable JavaScript for various features to work.
-			</p>
-		</noscript>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+          aria-label="Menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-		<!-- navigation bar -->
-		<nav class="custom-navbar navbar navbar-expand-sm navbar-dark" id="topNavbar">
+        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.baseurl }}/">
+                <i class="fas"></i>
+                Home
+              </a>
+            </li>
 
-			<a class="nav-icon-mobile" href="{{ site.baseurl }}/" title="Faithful">
-				<img src="{{ site.baseurl }}/image/home/navbar-wordmark.png" style="height: 32px" alt="Faithful 32x">
-			</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.baseurl }}/downloads">
+                <i class="fas"></i>
+                Downloads
+              </a>
+            </li>
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="Menu">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.baseurl }}/addons">
+                <i class="fas"></i>
+                Add-ons
+              </a>
+            </li>
 
-			<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
-				<ul class="navbar-nav">
+            <a href="{{ site.baseurl }}/" title="Faithful">
+              <img
+                class="icon-hover"
+                src="{{ site.baseurl }}/image/icon/f32_logo.svg"
+                style="width: 48px; height: 48px"
+                alt="Faithful 32x"
+              >
+            </a>
 
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/">
-							<i class="fas"></i>
-							Home
-						</a>
-					</li>
+            <!--
+              <li class="nav-item">
+                <span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                  <i class="fas"></i>
+                  Modding
+                </span>
+                <div class="dropdown-menu dropdown-menu-center">
+                  <a class="dropdown-item" href="{{ site.baseurl }}/mods">Mods</a>
+                  <a class="dropdown-item" href="{{ site.baseurl }}/modpacks">Modpacks</a>
+                </div>
+              </li>
+            -->
 
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/downloads">
-							<i class="fas"></i>
-							Downloads
-						</a>
-					</li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://docs.faithfulpack.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fas"></i>
+                Docs
+              </a>
+            </li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/addons">
-							<i class="fas"></i>
-							Add-ons
-						</a>
-					</li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://webapp.faithfulpack.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fas"></i>
+                Web App
+              </a>
+            </li>
 
-					<a href="{{ site.baseurl }}/" title="Faithful">
-						<img class="icon-hover" src="{{ site.baseurl }}/image/icon/f32_logo.svg" style="width: 48px; height: 48px" alt="Faithful 32x">
-					</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.baseurl }}/about">
+                <i class="fas"></i>
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-					<!-- <li class="nav-item">
-						<span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
-							<i class="fas"></i>
-							Modding
-						</span>
-						<div class="dropdown-menu dropdown-menu-center">
-							<a class="dropdown-item" href="{{ site.baseurl }}/mods">Mods</a>
-							<a class="dropdown-item" href="{{ site.baseurl }}/modpacks">Modpacks</a>
-						</div>
-					</li> -->
+    <main class="foreground">
+      <!-- Page content, centered -->
+      {%- if page.no_container -%}
+        {{ content }}
+      {%- else -%}
+        <div class="container">
+          {{ content }}
+        </div>
+      {%- endif -%}
+    </main>
 
-					<li class="nav-item">
-						<a class="nav-link" href="https://docs.faithfulpack.net/" target="_blank" rel="noopener noreferrer">
-							<i class="fas"></i>
-							Docs
-						</a>
-					</li>
+    <footer>
+      <div id="shadow"></div>
+      <!-- navigation bar -->
+      <nav class="custom-navbar navbar navbar-expand-sm navbar-dark mb-2" id="bottomNavbar">
+        <div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.baseurl }}/license">
+                <i class="fas"></i>
+                License
+              </a>
+            </li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="https://webapp.faithfulpack.net/" target="_blank" rel="noopener noreferrer">
-							<i class="fas"></i>
-							Web App
-						</a>
-					</li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.baseurl }}/privacy"> Privacy Policy </a>
+            </li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/about">
-							<i class="fas"></i>
-							About
-						</a>
-					</li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.baseurl }}/stats">
+                <i class="fas"></i>
+                Statistics
+              </a>
+            </li>
 
-				</ul>
-			</div>
-		</nav>
-	</header>
+            <li class="nav-item">
+              <a class="nav-link" href="https://translate.faithfulpack.net/" rel="noopener">
+                <i style="margin-left: 5px" class="fas"></i>
+                Translate
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="navbar-nav">
+            <li class="nav-item dropup">
+              <span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                <i class="fab"></i>
+                GitHub
+              </span>
+              <div class="dropdown-menu dropdown-menu-center">
+                <a
+                  class="dropdown-item"
+                  href="https://github.com/Faithful-Resource-Pack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Faithful
+                </a>
+                <a
+                  class="dropdown-item"
+                  href="https://github.com/ClassicFaithful"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Classic Faithful
+                </a>
+              </div>
+            </li>
 
-	<main class="foreground">
+            <li class="nav-item dropup">
+              <span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                <i class="fab"></i>
+                Discord
+              </span>
+              <div class="dropdown-menu dropdown-menu-center">
+                <a
+                  class="dropdown-item"
+                  href="https://discord.gg/sN9YRQbBv7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Faithful
+                </a>
+                <a
+                  class="dropdown-item"
+                  href="https://discord.gg/KSEhCVtg4J"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Classic Faithful
+                </a>
+              </div>
+            </li>
 
-		<!-- Page content, centered -->
-		{%- if page.no_container -%}
-		{{ content }}
-		{%- else -%}
-		<div class="container">
-			{{ content }}
-		</div>
-		{%- endif -%}
+            <li class="nav-item theme-switch-wrapper">
+              <btn id="ThemeBtn" onclick="changeMod(true)" class="nav-link">
+                <i class="fas"></i> Auto Theme
+              </btn>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <p>
+        <a href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>
+      </p>
+      <small>&copy; {{ site.time | date: "%Y" }} Faithful Resource Pack</small>
+      <br>
+      <small
+        >NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</small
+      >
+    </footer>
 
-	</main>
-
-	<footer>
-		<div id="shadow"></div>
-		<!-- navigation bar -->
-		<nav class="custom-navbar navbar navbar-expand-sm navbar-dark mb-2" id="bottomNavbar">
-
-			<div>
-				<ul class="navbar-nav">
-
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/license">
-							<i class="fas"></i>
-							License
-						</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/privacy">
-							Privacy Policy
-						</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="{{ site.baseurl }}/stats">
-							<i class="fas"></i>
-							Statistics
-						</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="https://translate.faithfulpack.net/" rel="noopener">
-							<i style="margin-left: 5px" class="fas"></i>
-							Translate
-						</a>
-					</li>
-
-				</ul>
-			</div>
-			<div>
-				<ul class="navbar-nav">
-
-					<li class="nav-item dropup">
-						<span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
-							<i class="fab"></i>
-							GitHub
-						</span>
-						<div class="dropdown-menu dropdown-menu-center">
-							<a
-								class="dropdown-item"
-								href="https://github.com/Faithful-Resource-Pack"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Faithful
-							</a>
-							<a
-								class="dropdown-item"
-								href="https://github.com/ClassicFaithful"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Classic Faithful
-							</a>
-						</div>
-					</li>
-
-					<li class="nav-item dropup">
-						<span class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
-							<i class="fab"></i>
-							Discord
-						</span>
-						<div class="dropdown-menu dropdown-menu-center">
-							<a
-								class="dropdown-item"
-								href="https://discord.gg/sN9YRQbBv7"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Faithful
-							</a>
-							<a
-								class="dropdown-item"
-								href="https://discord.gg/KSEhCVtg4J"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Classic Faithful
-							</a>
-						</div>
-					</li>
-
-					<li class="nav-item theme-switch-wrapper">
-						<btn id="ThemeBtn" onclick="changeMod(true)" class="nav-link">
-							<i class="fas"></i> Auto Theme
-						</btn>
-					</li>
-
-				</ul>
-			</div>
-		</nav>
-		<p>
-			<a href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>
-		</p>
-		<small>&copy; {{ site.time | date: '%Y' }} Faithful Resource Pack</small>
-		<br>
-		<small>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</small>
-	</footer>
-
-	<script defer src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
-	<script defer src="{{ site.baseurl }}/js/snow.js" type="module"></script>
-</body>
+    <script defer src="{{ site.baseurl }}/js/defaultFunctionality.js" type="module"></script>
+    <script defer src="{{ site.baseurl }}/js/snow.js" type="module"></script>
+  </body>
 </html>

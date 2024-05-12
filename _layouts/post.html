@@ -1,188 +1,199 @@
 ---
 layout: default
 ---
-
 {%- if page.discontinued -%}
-	<h2 class="red banner">This project has been discontinued.</h2>
+  <h2 class="red banner">This project has been discontinued.</h2>
 {%- endif -%}
 
 {%- if page.title -%}
-	<h2 class="display-3 my-5 text-center">{{ page.title }}</h2>
+  <h2 class="display-3 my-5 text-center">{{ page.title }}</h2>
 {%- else -%}
-	<h2 class="display-3 my-5 text-center">Unknown Title</h2>
+  <h2 class="display-3 my-5 text-center">Unknown Title</h2>
 {%- endif -%}
 
 {%- if page.authors -%}
-	<h3 class="display my-5 text-center">
-		By&nbsp;
-		{%- assign author_nb = page.authors.size -%}
-		{% for author in page.authors %}
-			{%- assign author_nb = author_nb | minus: 1 -%}
+  <h3 class="display my-5 text-center">
+    By&nbsp;
+    {%- assign author_nb = page.authors.size -%}
+    {% for author in page.authors %}
+      {%- assign author_nb = author_nb | minus: 1 -%}
 
-			{% if author.first %}
-				{%- if author_nb != 0 -%}
-					<a href="{{ author.first | shift }}">{{ author.first | pop }}</a>,
-				{%- else -%}
-					<a href="{{ author.first | shift }}">{{ author.first | pop }}</a>
-				{%- endif -%}
-			{% else %}
-				{%- if author_nb != 0 -%}
-					{{ author }},
-				{%- else -%}
-					{{ author }}
-				{%- endif -%}
-			{% endif %}
-		{% endfor %}
-	</h3>
+      {% if author.first %}
+        {%- if author_nb != 0 -%}
+          <a href="{{ author.first | shift }}">{{ author.first | pop }}</a>,
+        {%- else -%}
+          <a href="{{ author.first | shift }}">{{ author.first | pop }}</a>
+        {%- endif -%}
+      {% else %}
+        {%- if author_nb != 0 -%}
+          {{ author }},
+        {%- else -%}
+          {{ author }}
+        {%- endif -%}
+      {% endif %}
+    {% endfor %}
+  </h3>
 {%- endif -%}
 
-{%- if page.header-img -%}
-	<img class="fancy-card-1x" style="width: 100%" src="{{ page.header-img }}" alt="">
-	<br>
+{%- if page["header-img"] -%}
+  <img class="fancy-card-1x" style="width: 100%" src="{{ page.header-img }}" alt="">
+  <br>
 {%- endif -%}
 
-	<br>
+<br>
 
-{%- if page.carousel-img -%}
-	<!-- {{ page.carousel-img }} -->
-	<div class="card card-body">
-		<div id="carousel-img">
+{%- if page["carousel-img"] -%}
+  <!-- {{ page.carousel-img }} -->
+  <div class="card card-body">
+    <div id="carousel-img">
+      {%- for image in site.static_files -%}
+        {%- if image.path contains page["carousel-img"] -%}
+          <div class="item">
+            <img
+              onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')"
+              id="{{ image.basename | replace: " ", "_" }}"
+              src="{{ site.baseurl }}{{ image.path }}"
+              alt="{{ image.basename }}"
+            >
+            {%- if page.show_carousel_name == true -%}
+              <h4>{{ image.basename }}</h4>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
 
-			{%- for image in site.static_files -%}
-				{%- if image.path contains page.carousel-img -%}
-					<div class="item">
-						<img onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')" id="{{ image.basename | replace: " ", "_" }}" src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
-						{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
-					</div>
-				{%- endif -%}
-			{%- endfor -%}
+  <hr>
 
-		</div>
-	</div>
+  <div id="SF" class="modal">
+    <span id="SF-Span" class="close">&times;</span>
+    <img id="SF-Img" class="modal-content">
+  </div>
 
-	<hr>
+  <script>
+    function ShowFullscreen(img_path) {
+      const modal = document.getElementById("SF");
+      modal.style.display = "block";
 
-	<div id="SF" class="modal">
-		<span id="SF-Span" class="close">&times;</span>
-		<img id="SF-Img"  class="modal-content">
-	</div>
+      // close modal:
+      const span = document.getElementById("SF-Span");
+      span.onclick = () => {
+        modal.style.display = "none";
+      };
+      // when pressing escape key:
+      document.addEventListener("keydown", (event) => {
+        if (event.keyCode == 27) modal.style.display = "none";
+      });
 
-	<script>
-		function ShowFullscreen(img_path) {
-			const modal = document.getElementById('SF')
-			modal.style.display = 'block'
-
-			// close modal:
-			const span = document.getElementById('SF-Span')
-			span.onclick = () => {
-				modal.style.display = 'none';
-			}
-			// when pressing escape key:
-			document.addEventListener('keydown', (event) => {
-				if (event.keyCode == 27) modal.style.display = 'none'
-			})
-
-			// set img in modal:
-			const img = document.getElementById('SF-Img')
-			img.src = img_path
-		}
-	</script>
+      // set img in modal:
+      const img = document.getElementById("SF-Img");
+      img.src = img_path;
+    }
+  </script>
 {%- endif -%}
 
 {%- if page.long_text -%}
-	<div class="card card-body">
-		<p class="h4 m-0">
-			{{ page.long_text }}
-		</p>
-	</div>
+  <div class="card card-body">
+    <p class="h4 m-0">
+      {{ page.long_text }}
+    </p>
+  </div>
 
-	<hr>
+  <hr>
 {%- endif -%}
 
 {%- if page.downloads -%}
-	<h2 class="display-4 my-5 text-center">Downloads</h2>
-	{%- for item in page.downloads -%}
-		<h1 class="my-3" align="center">{{ item.first[0] }}</h1>
-		{%- for subitem in item.first[1] -%}
-			<p align="center">
-				<a href="{{ subitem[1] }}" class="btn block btn-lg btn-primary">
-					{%- if subitem[0] contains "GitHub" -%}
-						<i style="margin-right: 10px" class="fab"></i>
-					{%- elsif subitem[0] contains "CurseForge" -%}
-						<i style="margin-right: 10px" class="fas"></i>
-					{%- elsif subitem[0] contains "PlanetMinecraft" or subitem[0] contains "PMC" or subitem[0] contains "Planet Minecraft"-%}
-						<i style="margin-right: 10px" class="fas"></i>
-					{%- elsif subitem[0] contains "MCPEDL" -%}
-						<i style="margin-right: 10px" class="fas"></i>
-					{%- elsif subitem[0] contains "Modrinth" -%}
-						<i style="margin-right: 10px" class="fas"></i>
-					{%- endif -%}
-					{{ subitem[0] }}
-				</a>
-			</p>
-		{%- endfor -%}
-		<br>
-	{%- endfor -%}
+  <h2 class="display-4 my-5 text-center">Downloads</h2>
+  {%- for item in page.downloads -%}
+    <h1 class="my-3" align="center">{{ item.first[0] }}</h1>
+    {%- for subitem in item.first[1] -%}
+      <p align="center">
+        <a href="{{ subitem[1] }}" class="btn block btn-lg btn-primary">
+          {%- if subitem[0] contains "GitHub" -%}
+            <i style="margin-right: 10px" class="fab"></i>
+          {%- elsif subitem[0] contains "CurseForge" -%}
+            <i style="margin-right: 10px" class="fas"></i>
+          {%- elsif subitem[0] contains "PlanetMinecraft"
+            or subitem[0] contains "PMC"
+            or subitem[0] contains "Planet Minecraft"
+          -%}
+            <i style="margin-right: 10px" class="fas"></i>
+          {%- elsif subitem[0] contains "MCPEDL" -%}
+            <i style="margin-right: 10px" class="fas"></i>
+          {%- elsif subitem[0] contains "Modrinth" -%}
+            <i style="margin-right: 10px" class="fas"></i>
+          {%- endif -%}
+          {{ subitem[0] }}
+        </a>
+      </p>
+    {%- endfor -%}
+    <br>
+  {%- endfor -%}
 {%- endif -%}
 
 {%- if page.download -%}
-	{%- if page.download.size > 1 -%}
-		<h2 class="display-4 my-5 text-center">Downloads</h2>
-	{%- else -%}
-		<h2 class="display-4 my-5 text-center">Download</h2>
-	{%- endif -%}
-	{%- for item in page.download -%}
-		<a href="{{ item.first | shift | join: '</li><li>' }}" class="btn block btn-lg btn-primary fancy-card-2x my-3">
-			<i style="margin-right: 5px" class="fas"></i>{{ item.first | pop }}
-		</a>
-	{%- endfor -%}
+  {%- if page.download.size > 1 -%}
+    <h2 class="display-4 my-5 text-center">Downloads</h2>
+  {%- else -%}
+    <h2 class="display-4 my-5 text-center">Download</h2>
+  {%- endif -%}
+  {%- for item in page.download -%}
+    <a
+      href="{{ item.first | shift | join: '</li><li>' }}"
+      class="btn block btn-lg btn-primary fancy-card-2x my-3"
+    >
+      <i style="margin-right: 5px" class="fas"></i>{{ item.first | pop }}
+    </a>
+  {%- endfor -%}
 {%- endif -%}
 
 {%- if page.main_changelog -%}
-	<script>
-		const path = "{{ page.main_changelog }}".split('.').shift();
+  <script>
+    const path = "{{ page.main_changelog }}".split(".").shift();
 
-		function formatHTML(obj, lvl=3) {
-			let result
-			if (Array.isArray(obj)) {
-				result = `<ul>${obj.map((e) => formatHTML(e, lvl+1)).join('')}</ul>`;
-			} else if (typeof(obj) === 'string') {
-				result = `<li>${obj}</li>`;
-			} else {
-				result = Object.entries(obj)
-					.map(([key, val]) =>
-						`<h${lvl} class="card-title text-left">${key}:</h${lvl}>${formatHTML(val, lvl+1)}`)
-					.join('');
-			}
-			console.log(obj, result);
-			return result;
-		}
+    function formatHTML(obj, lvl = 3) {
+      let result;
+      if (Array.isArray(obj)) {
+        result = `<ul>${obj.map((e) => formatHTML(e, lvl + 1)).join("")}</ul>`;
+      } else if (typeof obj === "string") {
+        result = `<li>${obj}</li>`;
+      } else {
+        result = Object.entries(obj)
+          .map(
+            ([key, val]) =>
+              `<h${lvl} class="card-title text-left">${key}:</h${lvl}>${formatHTML(val, lvl + 1)}`,
+          )
+          .join("");
+      }
+      console.log(obj, result);
+      return result;
+    }
 
-		fetch(`{{ site.baseurl }}/${path}.json`)
-		  .then((response) => response.json())
-		  .then((body) => {
-			const beta_alpha_regex = /(Alpha|Beta)\s+\d+/;
-			const match = "{{ page.title }}".match(beta_alpha_regex);
-			if (match) {
-				const my_release = body[match[0]];
-				document.querySelector('#changelog').innerHTML = formatHTML(my_release);
-			}
-		  });
-	</script>
-	<h2 class="display-4 my-5 text-center">Changelog</h2>
-	<div class="card card-body">
-		<div id='changelog'></div>
-	</div>
+    fetch(`{{ site.baseurl }}/${path}.json`)
+      .then((response) => response.json())
+      .then((body) => {
+        const beta_alpha_regex = /(Alpha|Beta)\s+\d+/;
+        const match = "{{ page.title }}".match(beta_alpha_regex);
+        if (match) {
+          const my_release = body[match[0]];
+          document.querySelector("#changelog").innerHTML = formatHTML(my_release);
+        }
+      });
+  </script>
+  <h2 class="display-4 my-5 text-center">Changelog</h2>
+  <div class="card card-body">
+    <div id="changelog"></div>
+  </div>
 {%- endif -%}
 
 {%- if page.changelog -%}
-	{%- include changelog.html -%}
+  {%- include changelog.html -%}
 {%- endif -%}
 
-<br><br>
+<br>
+<br>
 
 <a href="https://discord.gg/sN9YRQbBv7">
-	<p class="blurple banner">
-		Start a discussion in our Discord!
-	</p>
+  <p class="blurple banner">Start a discussion in our Discord!</p>
 </a>

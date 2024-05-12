@@ -1,16 +1,12 @@
 {% for page in site.pages %}
   {% if page.path contains include.search_string %}
-
     {% assign counter = counter | plus: 1 %}
 
     {% if counter < 7 %}
-
       <a class="card img-card" href="{{ site.baseurl }}{{ page.url }}">
         <img src="{{ site.baseurl }}/image/{{ page.header-img }}" alt="{{ page.title }}">
         <h3>{{ page.title }}</h3>
       </a>
-
     {% endif %}
-
   {% endif %}
 {% endfor %}

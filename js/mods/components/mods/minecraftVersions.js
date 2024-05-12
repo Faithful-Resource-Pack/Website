@@ -1,10 +1,10 @@
 /* global Vue, MinecraftUtils */
 /* eslint no-multi-str: 0 */
 
-Vue.component('minecraft-versions', {
+Vue.component("minecraft-versions", {
   props: {
     versions: Array,
-    breakpoints: Object
+    breakpoints: Object,
   },
   template: `
     <div id="minecraftVersions">
@@ -20,45 +20,46 @@ Vue.component('minecraft-versions', {
       </div>
     </div>
   `,
-  data () {
-    return {}
+  data() {
+    return {};
   },
   computed: {
     orderedVersions() {
       return this.$props.versions.sort(function (a, b) {
-        const numbers = MinecraftUtils.minecraftVersionsToNumbers([a.version, b.version])
+        const numbers = MinecraftUtils.minecraftVersionsToNumbers([a.version, b.version]);
 
-        return (numbers[0] > numbers[1] ? -1 : 1)
-      })
+        return numbers[0] > numbers[1] ? -1 : 1;
+      });
     },
     elementsPerLine() {
-      if (!!this.$props.breakpoints.lg && !this.$props.breakpoints.md) return this.$props.versions.length
-      if (!!this.$props.breakpoints.md && !this.$props.breakpoints.sm) return 6
-      if (!!this.$props.breakpoints.sm && !this.$props.breakpoints.xs) return 3
+      if (!!this.$props.breakpoints.lg && !this.$props.breakpoints.md)
+        return this.$props.versions.length;
+      if (!!this.$props.breakpoints.md && !this.$props.breakpoints.sm) return 6;
+      if (!!this.$props.breakpoints.sm && !this.$props.breakpoints.xs) return 3;
 
-      return 1
+      return 1;
     },
     versionsOrganized() {
-      const result = []
+      const result = [];
 
       for (let i = 0; i < this.orderedVersions.length; ++i) {
         if (i % this.elementsPerLine === 0) {
-          result.push([])
+          result.push([]);
         }
 
-        result[result.length - 1].push(this.orderedVersions[i])
+        result[result.length - 1].push(this.orderedVersions[i]);
       }
 
-      return result
-    }
+      return result;
+    },
   },
   methods: {
     downloadVersion(version) {
       if (this.$root.handleDownload) {
-        this.$root.handleDownload('version', {
-          version: version
-        })
+        this.$root.handleDownload("version", {
+          version: version,
+        });
       }
-    }
-  }
-})
+    },
+  },
+});

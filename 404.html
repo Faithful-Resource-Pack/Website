@@ -4,15 +4,28 @@ title: 404
 permalink: /404.html
 ---
 <div align="center">
-	<h1>Are you lost in The End?</h1>
-	<p style="margin-bottom: 0;">
-		Unfortunately, the page you requested doesn't exist!<br>Try checking your spelling or going to the <strong><a href="/">main page</a></strong> to find what you were looking for.
-	</p>
-	<div id="animation_container">
-		<img id="tnt" src="{{ site.baseurl }}/image/404/tnt_side.png" alt="Boom" onclick="boom()">
-		<img id="diamond" class="hidden" src="{{ site.baseurl }}/image/404/diamond.png" alt="Diamond" onmouseover="boom()">
-		<img id="explosion" class="hidden" src="{{ site.baseurl }}/image/404/explosion_0.png" alt="Boom">
-	</div> 
+  <h1>Are you lost in The End?</h1>
+  <p style="margin-bottom: 0;">
+    Unfortunately, the page you requested doesn't exist!<br>
+    Try checking your spelling or going to the <strong><a href="/">main page</a></strong> to find
+    what you were looking for.
+  </p>
+  <div id="animation_container">
+    <img id="tnt" src="{{ site.baseurl }}/image/404/tnt_side.png" alt="Boom" onclick="boom()">
+    <img
+      id="diamond"
+      class="hidden"
+      src="{{ site.baseurl }}/image/404/diamond.png"
+      alt="Diamond"
+      onmouseover="boom()"
+    >
+    <img
+      id="explosion"
+      class="hidden"
+      src="{{ site.baseurl }}/image/404/explosion_0.png"
+      alt="Boom"
+    >
+  </div>
 </div>
 <link rel="stylesheet" href="{{ site.baseurl }}/css/404.css" id="darkcss">
-<script defer src="{{ site.baseurl }}/js/404.js" ></script>
+<script defer src="{{ site.baseurl }}/js/404.js"></script>

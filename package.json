@@ -8,6 +8,7 @@
     "jb": "bundle exec jekyll build",
     "start": "pnpm run ji && pnpm run jb && pm2 start \"node index.js\" --name \"WEBSITE\"",
     "dev": "concurrently \"npm:dev-*\"",
+    "prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --config .prettierrc --write",
     "dev-watch-site": "bundle exec jekyll build --watch",
     "dev-watch-app": "nodemon index.js --watch index.js --ignore '_site/**'"
   },
@@ -31,7 +32,9 @@
     "jsdom": "^24.0.0"
   },
   "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.5.0",
     "concurrently": "^8.2.2",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5"
   }
 }

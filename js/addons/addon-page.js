@@ -1,11 +1,11 @@
 /* global fetch */
 
-const AddonGrid = () => import('./addon-grid.js')
+const AddonGrid = () => import("./addon-grid.js");
 
 export default {
-  name: 'addon-page',
+  name: "addon-page",
   components: {
-    AddonGrid
+    AddonGrid,
   },
   template: `
     <v-container style="max-width: 1140px; padding: 44px 0 80px;">
@@ -112,53 +112,59 @@ export default {
       { label: "Date (Newest to Oldest)", value: "dd" },
       { label: "Date (Oldest to Newest)", value: "da" },
       { label: "Name (A-Z)", value: "na" },
-      { label: "Name (Z-A)", value: "nd" }
+      { label: "Name (Z-A)", value: "nd" },
     ];
     return {
       addons: {},
       searchedAddons: {},
-      search: '',
+      search: "",
       loading: true,
-      optifine: '/image/icon/optifine.png',
-      bedrock: '/image/icon/bedrock.png',
-      java: '/image/icon/java.png',
-      editions: ['Java', 'Bedrock'],
-      res: ['32x', '64x'],
-      selectedEditions: ['Java', 'Bedrock'],
-      selectedRes: ['32x', '64x'],
+      optifine: "/image/icon/optifine.png",
+      bedrock: "/image/icon/bedrock.png",
+      java: "/image/icon/java.png",
+      editions: ["Java", "Bedrock"],
+      res: ["32x", "64x"],
+      selectedEditions: ["Java", "Bedrock"],
+      selectedRes: ["32x", "64x"],
       fav: {},
       resultCount: 0,
       sortMethods,
       currentSort: sortMethods[0].value,
-    }
+    };
   },
   methods: {
     startSearch() {
       if (
-        this.search === '' &&
-        this.editions.length + this.res.length === this.selectedEditions.length + this.selectedRes.length
+        this.search === "" &&
+        this.editions.length + this.res.length ===
+          this.selectedEditions.length + this.selectedRes.length
       )
-        this.searchedAddons = this.addons
+        this.searchedAddons = this.addons;
       else {
-        this.searchedAddons = {}
+        this.searchedAddons = {};
 
         for (const addonID in this.addons) {
-          if (!this.addons[addonID].name.toLowerCase().includes(this.search.toLowerCase()) && this.search !== '') continue
-          const localRes = []
-          const localEditions = []
+          if (
+            !this.addons[addonID].name.toLowerCase().includes(this.search.toLowerCase()) &&
+            this.search !== ""
+          )
+            continue;
+          const localRes = [];
+          const localEditions = [];
 
           // split types of an addon (res + edition : res & edition)
-          const tags = this.addons[addonID].options.tags
+          const tags = this.addons[addonID].options.tags;
           for (let tagIndex = 0; tagIndex < tags.length; tagIndex++) {
-            if (this.editions.includes(tags[tagIndex])) localEditions.push(tags[tagIndex])
-            if (this.res.includes(tags[tagIndex])) localRes.push(tags[tagIndex])
+            if (this.editions.includes(tags[tagIndex])) localEditions.push(tags[tagIndex]);
+            if (this.res.includes(tags[tagIndex])) localRes.push(tags[tagIndex]);
           }
 
           // search if edition then check if res
           for (let i = 0; localEditions[i]; i++) {
             if (this.selectedEditions.includes(localEditions[i])) {
               for (let j = 0; localRes[j]; j++) {
-                if (this.selectedRes.includes(localRes[j])) this.searchedAddons[addonID] = this.addons[addonID]
+                if (this.selectedRes.includes(localRes[j]))
+                  this.searchedAddons[addonID] = this.addons[addonID];
               }
             }
           }
@@ -167,42 +173,42 @@ export default {
 
       console.log("I made it here!");
       this.resultCount = Object.keys(this.searchedAddons).length;
-      this.$forceUpdate() // force update (because it can be a bit long to process)
+      this.$forceUpdate(); // force update (because it can be a bit long to process)
     },
     clearSearch() {
-      this.search = ''
-      this.startSearch()
+      this.search = "";
+      this.startSearch();
     },
     checkFav(addon) {
       if (!this.fav[addon.id]) {
-        this.fav[addon.id] = addon
-        window.localStorage.setItem('favAddons', JSON.stringify(this.fav))
+        this.fav[addon.id] = addon;
+        window.localStorage.setItem("favAddons", JSON.stringify(this.fav));
       } else {
-        delete this.fav[addon.id]
-        window.localStorage.setItem('favAddons', JSON.stringify(this.fav))
+        delete this.fav[addon.id];
+        window.localStorage.setItem("favAddons", JSON.stringify(this.fav));
       }
 
-      this.$forceUpdate()
-    }
+      this.$forceUpdate();
+    },
   },
   computed: {
     results() {
       return this.resultCount === 1 ? "result" : "results";
-    }
+    },
   },
   created() {
-    fetch('https://api.faithfulpack.net/v2/addons/approved')
+    fetch("https://api.faithfulpack.net/v2/addons/approved")
       .then((res) => res.json())
       .then((data) => {
-        this.addons = data
-        this.loading = false
+        this.addons = data;
+        this.loading = false;
         this.resultCount = data.length;
 
-        for (const addonID in this.addons) this.addons[addonID].id = addonID // fix missing ID (property value)
+        for (const addonID in this.addons) this.addons[addonID].id = addonID; // fix missing ID (property value)
 
-        this.searchedAddons = this.addons
-      })
+        this.searchedAddons = this.addons;
+      });
 
-    this.fav = JSON.parse(window.localStorage.getItem('favAddons') || '{}')
-  }
-}
+    this.fav = JSON.parse(window.localStorage.getItem("favAddons") || "{}");
+  },
+};

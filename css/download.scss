@@ -4,321 +4,321 @@
 @import "./variables";
 
 h2 {
-	margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .collapsible, .content {
-	padding: .2rem;
-	border-radius: $border-radius-0x;
-	padding-left: .7rem;
-	padding-right: .7rem;
+  padding: .2rem;
+  border-radius: $border-radius-0x;
+  padding-left: .7rem;
+  padding-right: .7rem;
 }
 
 .collapsible:hover, .content:hover {
-	background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .content {
-	overflow: hidden;
-	transition: 5 0.2s ease-out;
+  overflow: hidden;
+  transition: 5 0.2s ease-out;
 }
 .content.active {
-	display: table-row;
+  display: table-row;
 }
 
 .outline {
-	background: #131313 url(../image/background/bg_light_background.png) repeat;
-	border-radius: $border-radius-0x;
-	padding: .7rem;
-	overflow-x: auto;
-	margin-bottom: 2rem;
+  background: #131313 url(../image/background/bg_light_background.png) repeat;
+  border-radius: $border-radius-0x;
+  padding: .7rem;
+  overflow-x: auto;
+  margin-bottom: 2rem;
 }
 
 th > p, td > p {
-	color: #ccc;
-	padding: .2rem;
-	margin-bottom: 0;
-	vertical-align: middle;
+  color: #ccc;
+  padding: .2rem;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
 
 th {
-	text-align: center;
-	width: calc(40% / 3);
+  text-align: center;
+  width: calc(40% / 3);
 }
 th > p {
-	font-size: 20px;
+  font-size: 20px;
 }
 th.large {
-	text-align: left;
-	padding-left: .7rem;
-	width: 50%
+  text-align: left;
+  padding-left: .7rem;
+  width: 50%
 }
 td {
-	text-align: center;
-	vertical-align: middle;
-	width: calc(50% / 3);
+  text-align: center;
+  vertical-align: middle;
+  width: calc(50% / 3);
 }
 td > p {
-	font-size: 18px;
+  font-size: 18px;
 }
 td.small {
-	width: calc(50% / 6);
+  width: calc(50% / 6);
 }
 td.large {
-	text-align: left;
-	width: 45%
+  text-align: left;
+  width: 45%
 }
 td.before {
-	cursor: pointer;
-	width: 5%
+  cursor: pointer;
+  width: 5%
 }
 td.before-empty {
-	width: 5%
+  width: 5%
 }
 
 thead > tr {
-	padding: .2rem .7rem;
-	margin-bottom: .7rem;
-	background-color: #343A40;
-	border-radius: $border-radius-1x;
-	width: 100%;
+  padding: .2rem .7rem;
+  margin-bottom: .7rem;
+  background-color: #343A40;
+  border-radius: $border-radius-1x;
+  width: 100%;
 }
 
 table {
-	border-collapse: collapse;
-	width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 main span {
-	padding: .2rem .4rem;
-	border-radius: 3px;
+  padding: .2rem .4rem;
+  border-radius: 3px;
 }
 
 .download-table span.link-text {
-	padding: 0;
+  padding: 0;
 }
 
 .mobile {
-	display: none;
+  display: none;
 }
 
 .download-table .toggle {
-	user-select: none;
+  user-select: none;
 }
 
 .btn-dl {
-	padding: 0.1rem 0.4rem;
-	width: 110px;
+  padding: 0.1rem 0.4rem;
+  width: 110px;
 }
 
 .btn-dl > i {
-	font-size: small;
-	margin-right: 8px;
+  font-size: small;
+  margin-right: 8px;
 }
 
 .github {
-	background-color: rgb(255, 255, 255);
-	color: #111;
+  background-color: rgb(255, 255, 255);
+  color: #111;
 }
 
 .latest {
-	background-color: rgb(255, 255, 255);
-	color: #111;
+  background-color: rgb(255, 255, 255);
+  color: #111;
 }
 
 .blue {
-	background-color: rgb(60, 111, 221);
-	color: #fff;
+  background-color: rgb(60, 111, 221);
+  color: #fff;
 }
 
 .green {
-	background-color: rgb(80, 202, 24);
-	color: #111;
+  background-color: rgb(80, 202, 24);
+  color: #111;
 }
 
 .yellow {
-	background-color: rgb(214, 160, 23);
-	color: #111;
+  background-color: rgb(214, 160, 23);
+  color: #111;
 }
 
 .black {
-	background-color: #000;
-	color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 .version {
-	background-color: rgb(192, 37, 68);
-	color: #fff;
+  background-color: rgb(192, 37, 68);
+  color: #fff;
 }
 
 @media (max-width: 760px) {
-	.outline {
-		margin: 0;
-		padding: 0;
-	}
+  .outline {
+    margin: 0;
+    padding: 0;
+  }
 
-	br + br {
-		display: none;
-	}
+  br + br {
+    display: none;
+  }
 
-	.mobile {
-		display: block;
-	}
+  .mobile {
+    display: block;
+  }
 
-	.download-table {
-		&, tbody, tr {
-			width: 100%;
-			display: block;
-		}
+  .download-table {
+    &, tbody, tr {
+      width: 100%;
+      display: block;
+    }
 
-		span {
-			padding: 0;
-		}
+    span {
+      padding: 0;
+    }
 
-		thead {
-			display: none;
-		}
+    thead {
+      display: none;
+    }
 
-		tr {
-			display: block;
-			padding: 0.25rem 0.5rem;
-			display: flex;
-			align-items: stretch;
-			border-radius: 0;
+    tr {
+      display: block;
+      padding: 0.25rem 0.5rem;
+      display: flex;
+      align-items: stretch;
+      border-radius: 0;
 
-			&:hover {
-				background-color: transparent !important;
-			}
+      &:hover {
+        background-color: transparent !important;
+      }
 
-			&:last-child {
-				border-bottom: 0px none;
-			}
+      &:last-child {
+        border-bottom: 0px none;
+      }
 
-			&.content.active {
-				display: flex;
-			}
-		}
+      &.content.active {
+        display: flex;
+      }
+    }
 
-		td {
-			p {
-				padding: 0;
-			}
+    td {
+      p {
+        padding: 0;
+      }
 
-			&.toggle {
-				flex: 0 0 24px;
-				padding: .2rem 0;
-			}
+      &.toggle {
+        flex: 0 0 24px;
+        padding: .2rem 0;
+      }
 
-			&.details {
-				flex: 1 1 auto;
-				padding: .2rem .4rem;
+      &.details {
+        flex: 1 1 auto;
+        padding: .2rem .4rem;
 
-				span {
-					padding: .2rem .4rem;
-				}
+        span {
+          padding: .2rem .4rem;
+        }
 
-				.name {
-					display: block;
-					padding: 0;
-				}
+        .name {
+          display: block;
+          padding: 0;
+        }
 
-				.date-mobile {
-					display: block;
-				}
-			}
+        .date-mobile {
+          display: block;
+        }
+      }
 
-			&.size, &.date, &.desktop {
-				display: none !important;
-			}
+      &.size, &.date, &.desktop {
+        display: none !important;
+      }
 
-			&.downloads {
-				flex: 0 0 30px;
-				width: auto;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-around;
+      &.downloads {
+        flex: 0 0 30px;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 
-				.btn-dl {
-					width: 30px;
-					height: 30px;
-					line-height: 30px;
-					text-align: center;
-					padding: 0;
+        .btn-dl {
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          padding: 0;
 
-					i {
-						display: block;
-						height: 30px;
-						line-height: 30px;
-						margin-right: 0 !important;
-					}
-				}
+          i {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            margin-right: 0 !important;
+          }
+        }
 
-				.link-text {
-					display: none;
-				}
-			}
-		}
-	}
+        .link-text {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 /** DOWNLOAD TABLES **/
 /*
 .table {
-	background-color: #1c1c1c;
-	color: #ccc;
-	border-radius: $border-radius-1x;
-	overflow: hidden
+  background-color: #1c1c1c;
+  color: #ccc;
+  border-radius: $border-radius-1x;
+  overflow: hidden
 }
 .table thead th {
-	background-color: #343A40;
-	border: 0
+  background-color: #343A40;
+  border: 0
 }
 .table td {
-	border-top: 1px solid #343A40
+  border-top: 1px solid #343A40
 }
 .table tbody+tbody {
-	border: 0
+  border: 0
 }
 .table-hover tbody tr:hover {
-	color: #ccc;
-	background-color: rgba(0,0,0,.15)
+  color: #ccc;
+  background-color: rgba(0,0,0,.15)
 }
 .btn-invisible {
-	background-color: rgba(0,0,0,.25);
-	padding: 5px;
-	border-radius: $border-radius-1x;
-	border: 1px #0000;
-	color: #ccc;
+  background-color: rgba(0,0,0,.25);
+  padding: 5px;
+  border-radius: $border-radius-1x;
+  border: 1px #0000;
+  color: #ccc;
 }
 .btn-invisible:hover {
-	background-color: rgba(0,0,0,.75);
-	color: #fff;
+  background-color: rgba(0,0,0,.75);
+  color: #fff;
 }
 table {
-	width: 100%
+  width: 100%
 }
 th:nth-child(1) {
-	width: 32%
+  width: 32%
 }
 th:nth-child(2) {
-	width: 20%
+  width: 20%
 }
 th:nth-child(3) {
-	width: 28%
+  width: 28%
 }
 th:nth-child(4) {
-	width: 10%
+  width: 10%
 }
 
 @media screen and (max-width: 480px) {
-	th, td, tr {
-		display: block
-	}
-	tr > th:nth-child(1), tr > th:nth-child(2), tr > th:nth-child(3) {
-		width: 100%
-	}
-	th:nth-child(4) {
-		display: none
-	}
+  th, td, tr {
+    display: block
+  }
+  tr > th:nth-child(1), tr > th:nth-child(2), tr > th:nth-child(3) {
+    width: 100%
+  }
+  th:nth-child(4) {
+    display: none
+  }
 }
 */

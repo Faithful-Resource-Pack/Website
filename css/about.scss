@@ -4,96 +4,96 @@
 @import "./variables";
 
 .about-image {
-	max-height: 384px;
-	filter: drop-shadow(0 10px 10px #00000077);
+  max-height: 384px;
+  filter: drop-shadow(0 10px 10px #00000077);
 }
 
 // override container class for flex content
 .content-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 
-	p {
-		// add a bit of padding between the button and text
-		padding-bottom: 1.5rem;
-	}
+  p {
+    // add a bit of padding between the button and text
+    padding-bottom: 1.5rem;
+  }
 }
 
 .faq {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 80px;
-	padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
-	h1 {
-		margin-top: 0;
-		text-align: center;
-	}
+  h1 {
+    margin-top: 0;
+    text-align: center;
+  }
 }
 
 .about-button {
-	padding: 12px 22px;
+  padding: 12px 22px;
   // prevent weird button wrapping issues
   white-space: nowrap;
-	line-height: 1;
-	border-radius: $border-radius-0x;
-	transition: all 0.2s ease;
-	&:hover {
-		opacity: 0.66;
-	}
+  line-height: 1;
+  border-radius: $border-radius-0x;
+  transition: all 0.2s ease;
+  &:hover {
+    opacity: 0.66;
+  }
 }
 
 .green {
   // both light/dark mode use white text
-	p {
-		color: #fff;
-	}
+  p {
+    color: #fff;
+  }
 
-	.about-button {
-		background: white !important;
-		color: #76c944 !important;
-	}
+  .about-button {
+    background: white !important;
+    color: #76c944 !important;
+  }
 }
 
 .blue {
-	p {
-		color: #fff;
-	}
+  p {
+    color: #fff;
+  }
 
-	.about-button {
-		background: white !important;
-		color: #3498db !important;
-	}
+  .about-button {
+    background: white !important;
+    color: #3498db !important;
+  }
 }
 
 .pink {
-	p {
-		color: #fff;
-	}
+  p {
+    color: #fff;
+  }
 
-	.about-button {
-		background: white !important;
-		color: #ac1e63 !important;
-	}
+  .about-button {
+    background: white !important;
+    color: #ac1e63 !important;
+  }
 }
 
 @media (max-width: 1080px) {
   // center content and display vertically on mobile
-	.content-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		max-width: 95%;
-	}
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 95%;
+  }
 }
 
 @media (max-width: 1200px) {
   // override container class to fix margins
-	.container {
-		max-width: 95% !important;
-	}
+  .container {
+    max-width: 95% !important;
+  }
 }

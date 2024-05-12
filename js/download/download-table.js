@@ -1,7 +1,7 @@
-const DownloadLine = () => import("./download-line.js")
+const DownloadLine = () => import("./download-line.js");
 
 export default {
-	name: "download-table",
+  name: "download-table",
   components: {
     DownloadLine,
   },
@@ -13,9 +13,9 @@ export default {
     files: {
       type: Object,
       required: true,
-    }
+    },
   },
-	template: `
+  template: `
     <div class="outline">
       <table class="download-table">
         <thead>
@@ -57,19 +57,19 @@ export default {
   data() {
     return {
       openStates: {},
-    }
+    };
   },
   methods: {
     handleOpen(version) {
-      this.openStates[version] = !this.openStates[version]
+      this.openStates[version] = !this.openStates[version];
       // doesn't trigger rerender of subelements
-      this.$forceUpdate()
+      this.$forceUpdate();
     },
     getCurseFile(item) {
       if (item.links.curse) {
-        const id = parseInt(item.links.curse.split('/').pop())
-        return this.files.find((el) => el.id === id)
+        const id = parseInt(item.links.curse.split("/").pop());
+        return this.files.find((el) => el.id === id);
       }
     },
   },
-}
+};
