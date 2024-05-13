@@ -1,11 +1,11 @@
 /* global fetch, marked */
 
-const addonModal = () => import("./addon-post-modal.js");
+const addonModal = () => import('./addon-post-modal.js')
 
 export default {
-  name: "addon-page",
+  name: 'addon-page',
   components: {
-    addonModal,
+    addonModal
   },
   template: `
     <v-container
@@ -170,97 +170,95 @@ export default {
       addon: {},
       files: [],
       authors: [],
-      optifine: "/image/icon/optifine.png",
-      bedrock: "/image/icon/bedrock.png",
-      java: "/image/icon/java.png",
-      img32: "/image/icon/32.png",
-      img64: "/image/icon/64.png",
+      optifine: '/image/icon/optifine.png',
+      bedrock: '/image/icon/bedrock.png',
+      java: '/image/icon/java.png',
+      img32: '/image/icon/32.png',
+      img64: '/image/icon/64.png',
       modal: false,
-      modalImage: "",
+      modalImage: '',
       loading: true,
       MEDIAS_TO_ICONS: {
-        CurseForge: { src: "/image/addons/curseforge.svg" },
-        GitHub: { fab: "" },
-        Patreon: { fab: "" },
-        Paypal: { fab: "" },
-        "Planet Minecraft": { fas: "" },
-        PSN: { fab: "" },
-        Reddit: { fab: "" },
-        Steam: { fab: "" },
-        Twitter: { fab: "" },
-        Website: { fas: "" },
-        Xbox: { fab: "" },
-        YouTube: { fab: "" },
-        Other: { fas: "" },
-      },
-    };
+        "CurseForge":  { src: '/image/addons/curseforge.svg' },
+        "GitHub": { fab: '' },
+        "Patreon": { fab: '' },
+        "Paypal": { fab: '' },
+        "Planet Minecraft": { fas: '' },
+        "PSN": { fab: '' },
+        "Reddit": { fab: '' },
+        "Steam": { fab: '' },
+        "Twitter": { fab: '' },
+        "Website": { fas: '' },
+        "Xbox": { fab: '' },
+        "YouTube": { fab: '' },
+        "Other": { fas: '' }
+      }
+    }
   },
   methods: {
     openModal(base64) {
-      this.modalImage = base64;
-      this.modal = true;
+      this.modalImage = base64
+      this.modal = true
     },
     closeModal() {
-      this.modalImage = "";
-      this.modal = false;
+      this.modalImage = ''
+      this.modal = false
     },
     compiledMarkdown(markdown) {
-      return marked(markdown, { sanitize: true });
+      return marked(markdown, { sanitize: true })
     },
     formatUrl(url) {
-      return !/^https?:\/\//i.test(url) ? `http://${url}` : url;
+      return !/^https?:\/\//i.test(url) ? `http://${url}` : url
     },
     getHeader() {
-      return this.files.filter((el) => el.use === "header")[0].source;
+      return this.files.filter((el) => el.use === 'header')[0].source
     },
     getCarousel() {
-      return this.files
-        .filter((el) => el.use === "carousel" || el.use === "screenshot")
-        .map((el) => el.source);
+      return this.files.filter((el) => el.use === 'carousel' || el.use === 'screenshot').map((el) => el.source)
     },
     getDownloads() {
-      return this.files.filter((el) => el.use === "download");
+      return this.files.filter((el) => el.use === 'download')
     },
     search_authors() {
       this.addon.authors.forEach((authorID) => {
         fetch(`https://api.faithfulpack.net/v2/users/${authorID}`)
           .then((response) => response.json())
           .then((author) => {
-            this.authors.push(author);
-          });
-      });
-    },
+            this.authors.push(author)
+          })
+      })
+    }
   },
   beforeMount() {
     if (!window.slug && this.$route) {
       fetch(`https://api.faithfulpack.net/v2/addons/${window.slug}`)
-        .then((response) => response.json())
-        .then((data) => (this.addon = data[0]))
-        .then(() => {
-          this.search_authors();
-        })
-        .then(() => {
-          fetch(`https://api.faithfulpack.net/v2/addons/${this.addon.id}`)
-            .then((response) => response.json())
-            .then((data) => (this.files = data));
-        })
-        .finally(() => {
-          this.loading = false;
-          window.scrollTo(0, 0);
-        })
-        .catch((err) => {
-          console.error(err);
-          this.addon = {};
-          this.loading = false;
-          window.scrollTo(0, 0);
-        });
+      .then((response) => response.json())
+      .then((data) => this.addon = data[0])
+      .then(() => {
+        this.search_authors()
+      })
+      .then(() => {
+        fetch(`https://api.faithfulpack.net/v2/addons/${this.addon.id}`)
+          .then((response) => response.json())
+          .then((data) => this.files = data)
+      })
+      .finally(() => {
+        this.loading = false
+        window.scrollTo(0, 0)
+      })
+      .catch((err) => {
+        console.error(err)
+        this.addon = {}
+        this.loading = false
+        window.scrollTo(0, 0)
+      })
     } else {
-      this.addon = window.addon;
-      this.search_authors();
-      this.files = window.files;
+      this.addon = window.addon
+      this.search_authors()
+      this.files = window.files
 
-      this.loading = false;
-      window.scrollTo(0, 0);
+      this.loading = false
+      window.scrollTo(0, 0)
     }
-  },
-};
+  }
+}

@@ -1,5 +1,5 @@
 export default {
-  name: "addon-grid",
+  name: 'addon-grid',
   template: `
     <div class="card card-body addon-grid">
       <div class="res-grid-3">
@@ -58,23 +58,23 @@ export default {
   props: {
     addons: {
       type: Object,
-      required: true,
+      required: true
     },
     addonsFav: {
       type: Object,
-      required: true,
+      required: true
     },
     action: {
       type: Function,
-      required: true,
+      required: true
     },
     icon: {
       type: String,
-      required: true,
+      required: true
     },
     iconColor: {
       type: String,
-      required: true,
+      required: true
     },
     sort: {
       type: String,
@@ -84,31 +84,31 @@ export default {
   },
   data() {
     return {
-      optifine: "/image/icon/optifine.png",
-      bedrock: "/image/icon/bedrock.png",
-      java: "/image/icon/java.png",
-    };
+      optifine: '/image/icon/optifine.png',
+      bedrock: '/image/icon/bedrock.png',
+      java: '/image/icon/java.png',
+    }
   },
   computed: {
     sortedAddons() {
       const sorted = Object.values(this.addons).sort((a, b) => {
-        const an = a.name.trim().toLowerCase();
-        const bn = b.name.trim().toLowerCase();
+        const an = a.name.trim().toLowerCase()
+        const bn = b.name.trim().toLowerCase()
         const ad = a.last_updated || 0;
         const bd = b.last_updated || 0;
         switch (this.sort) {
           case "na":
-            return an === bn ? 0 : an > bn ? 1 : -1;
+            return an === bn ? 0 : (an > bn ? 1 : -1)
           case "nd":
-            return an === bn ? 0 : an > bn ? -1 : 1;
+            return an === bn ? 0 : (an > bn ? -1 : 1)
           case "da":
-            return ad === bd ? 0 : ad > bd ? 1 : -1;
+            return ad === bd ? 0 : (ad > bd ? 1 : -1)
           case "dd":
           default:
-            return ad === bd ? 0 : ad < bd ? 1 : -1;
+            return ad === bd ? 0 : (ad < bd ? 1 : -1)
         }
-      });
+      })
       return sorted;
     },
-  },
-};
+  }
+}

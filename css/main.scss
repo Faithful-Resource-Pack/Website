@@ -1420,11 +1420,11 @@ a.btn.disabled {
  * Bootstrap end
  */
 html {
-  overflow-x: hidden
+	overflow-x: hidden
 }
 footer {
-  padding: 2rem 1rem;
-  text-align: center;
+	padding: 2rem 1rem;
+	text-align: center;
     position: relative;
 }
 footer #shadow {
@@ -1458,9 +1458,9 @@ img:not(.img-gallery) {
   height: auto;
 }
 @media (min-width: 576px) {
-  footer {
-    padding: 4rem 2rem
-  }
+	footer {
+		padding: 4rem 2rem
+	}
 }
 @media (max-width: 760px) {
   footer {
@@ -1491,8 +1491,8 @@ img:not(.img-gallery) {
 }
 /** MAIN STUFF **/
 .container {
-  padding-top: 50px;
-  padding-bottom: 50px
+	padding-top: 50px;
+	padding-bottom: 50px
 }
 @media (max-width: 760px) {
   .container {
@@ -1502,69 +1502,69 @@ img:not(.img-gallery) {
 }
 
 .right-reading {
-  direction: rtl
+	direction: rtl
 }
 .center {
-  display: block;
-  margin: auto !important
+	display: block;
+	margin: auto !important
 }
 .clickable:hover {
-  cursor: pointer
+	cursor: pointer
 }
 .disabled {
-  pointer-events: none
+	pointer-events: none
 }
 @media screen and (max-width: 768px) {
-  .display-3 {
-    font-size: 2.75rem
-  }
-  .display-4 {
-    font-size: 2.5rem
-  }
-  .h2 {
-    font-size: 1.25rem !important
-  }
+	.display-3 {
+		font-size: 2.75rem
+	}
+	.display-4 {
+		font-size: 2.5rem
+	}
+	.h2 {
+		font-size: 1.25rem !important
+	}
 .poster > img:nth-of-type(1) {
     height: 200px;
     width: 100%;
   }
 }
 @media screen and (min-width: 1000px) {
-  .small-screen-warning {
-    display: none
-  }
+	.small-screen-warning {
+		display: none
+	}
 }
 /** FANCY CARDS **/
 .btn, .dropdown-menu, .fancy-card-1x, *.card, .fancy-card-2x {
-  overflow: hidden;
-  box-shadow: $card-shadow
+	overflow: hidden;
+	box-shadow: $card-shadow
 }
 .btn, .dropdown-menu, *.card *.card, .fancy-card-1x {
-  border-radius: $border-radius-0x
+	border-radius: $border-radius-0x
 }
 *.card, .fancy-card-2x {
-  border-radius: $border-radius-0x
+	border-radius: $border-radius-0x
 }
 .card-body > :first-child {
-  margin-top: 0
+	margin-top: 0
 }
 #changelog-title {
-  font-weight: 300;
-  color: rgba(255, 255, 255, .7)
+	font-weight: 300;
+	color: rgba(255, 255, 255, .7)
 }
 .card, .card p, .card > h2 > a {
-  color: rgba(255, 255, 255, .7)
+	color: rgba(255, 255, 255, .7)
 }
 .card > h2 > a:hover {
-  color: rgba(255, 255, 255, .9)
+	color: rgba(255, 255, 255, .9)
 }
 .card-img-top {
-  border-radius: $border-radius-0x;
-  cursor: pointer;
-  color: #000
+	border-radius: $border-radius-0x;
+	cursor: pointer;
+	color: #000
 }
 #ScreenshotCarousel {
-  background: #000
+	background: #000
 }
 /* carousel cards */
 .item > .card {
@@ -1596,25 +1596,25 @@ img:not(.img-gallery) {
   position: absolute;
   bottom: 0;
   margin: 8px;
-  color: rgba(255, 255, 255, .9);
-  text-shadow: $card-shadow;
-  font-size: 1.5rem;
-  font-weight: 500;
+	color: rgba(255, 255, 255, .9);
+	text-shadow: $card-shadow;
+	font-size: 1.5rem;
+	font-weight: 500;
 }
 .img-card > p {
   position: absolute;
   bottom: 16px;
   margin: 8px;
   color: rgba(255,255,255,.9);
-  text-shadow: $card-shadow;
-  font-size: 1.3rem;
-  font-weight: 400;
+	text-shadow: $card-shadow;
+	font-size: 1.3rem;
+	font-weight: 400;
 }
 .placeholder {
-  background-image: url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png), url(/image/background/bg_light_foreground.png);
-  background-repeat: no-repeat, repeat;
-  background-position: center, center;
-  background-size: auto 75%, auto;
+	background-image: url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png), url(/image/background/bg_light_foreground.png);
+	background-repeat: no-repeat, repeat;
+	background-position: center, center;
+	background-size: auto 75%, auto;
 }
 /** Custom Bootstrap-like **/
 .block {
@@ -1622,8 +1622,8 @@ img:not(.img-gallery) {
   width: 100%;
 }
 .display {
-  font-weight: 300;
-  line-height: 1.2
+	font-weight: 300;
+	line-height: 1.2
 }
 .banner {
   padding: 16px;
@@ -1683,8 +1683,8 @@ a > .banner:hover {
 }
 /** NAVBAR **/
 .dropdown-menu-center {
-  right: auto;
-  left: auto
+	right: auto;
+	left: auto
 }
 #topNavbar {
   position: relative;
@@ -1703,9 +1703,9 @@ body.error #topNavbar {
   background: url(../image/background/bg_light_background.png) repeat;
 }
 #bottomNavbar {
-  display: inline-block;
-  width: auto;
-  margin: auto
+	display: inline-block;
+	width: auto;
+	margin: auto
 }
 #bottomNavbar .navbar-nav {
   justify-content: center
@@ -1738,108 +1738,108 @@ body.error #topNavbar {
 /** OWL CAROUSEL **/
 /* Make the image fully responsive (owl carousel) */
 .carousel-inner img {
-  width: 100%;
-  height: 100%
+	width: 100%;
+	height: 100%
 }
 /* Carousel arrow hover animation */
 .icon-hover {
-  transition: all .5s ease
+	transition: all .5s ease
 }
 .icon-hover:hover {
-  transform: scale(1.1)
+	transform: scale(1.1)
 }
 .icon-hover:focus, .icon-hover:active {
-  transform: scale(1)
+	transform: scale(1)
 }
 /** BASIC CAROUSEL **/
 /* Make the image fully responsive (carousel) */
 .carousel-inner img {
-  width: 100%;
-  height: 100%
+	width: 100%;
+	height: 100%
 }
 /* Carousel arrow hover animation */
 .carousel-control-prev-icon, .carousel-control-next-icon {
-  transition: all 1s ease
+	transition: all 1s ease
 }
 .carousel-control-prev:hover .carousel-control-prev-icon {
-  margin-right: 25px
+	margin-right: 25px
 }
 .carousel-control-next:hover .carousel-control-next-icon {
-  margin-left: 25px
+	margin-left: 25px
 }
 /** CUSTOM SCROLLBAR **/
 ::-webkit-scrollbar{
-  width: 8px;
+	width: 8px;
 }
 ::-webkit-scrollbar-button{
-  height: 8px
+	height: 8px
 }
 /* NAVBAR */
 @media (min-width: 800px) {
-  .nav {
-    text-align: center
-  }
-  .nav {
-    display: inline-flex
-  }
+	.nav {
+		text-align: center
+	}
+	.nav {
+		display: inline-flex
+	}
 }
 .nav-link {
-  transition: all .1s ease-out
+	transition: all .1s ease-out
 }
 @media screen and (min-width: 800px) {
-  .nav-link:hover {
-    transform: scale(0.95)
-  }
+	.nav-link:hover {
+		transform: scale(0.95)
+	}
 }
 .nav-link:hover {
-  cursor: pointer
+	cursor: pointer
 }
 /** MODAL **/
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1100;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,.7)
+	display: none;
+	position: fixed;
+	z-index: 1100;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,.7)
 }
 .modal-content {
-  margin: auto;
-  display: block;
-  width: 70%;
-  max-width: 700px;
-  animation-name: zoom;
-  animation-duration: 0.6s
+	margin: auto;
+	display: block;
+	width: 70%;
+	max-width: 700px;
+	animation-name: zoom;
+	animation-duration: 0.6s
 }
 /* Add Animation */
 .modal-content, .caption {
-  animation-name: zoom;
-  animation-duration: 0.6s
+	animation-name: zoom;
+	animation-duration: 0.6s
 }
 @keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
+	from {transform:scale(0)}
+	to {transform:scale(1)}
 }
 /* The Close Button */
 .close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: 500;
-  transition: 0.3s
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: 500;
+	transition: 0.3s
 }
 .close:hover,
 .close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer
 }
 /*addons*/
 .rem-button {
@@ -1892,16 +1892,16 @@ body.error #topNavbar {
 }
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%
-  }
+	.modal-content {
+		width: 100%
+	}
 }
 /* make images not draggable */
 img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
 }
 
 .addon-info-subtitle {
@@ -2079,12 +2079,12 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
   }
 
   & > div > div > div > label {
-    color: rgba(255,255,255,.8) !important;
+	  color: rgba(255,255,255,.8) !important;
     font-size: 20px;
   }
 
   & > div > div > div > div > i {
-    color: rgba(255,255,255,.5) !important;
+	  color: rgba(255,255,255,.5) !important;
   }
 }
 

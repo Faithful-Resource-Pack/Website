@@ -1,18 +1,18 @@
 /* global Vue, VueRouter, Vuetify */
 
 document.addEventListener("DOMContentLoaded", () => {
-  Vue.config.devtools = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 
-  const AddonPage = () => import("./addon-page.js");
+  const AddonPage = () => import('./addon-page.js')
 
   const routes = [
-    { path: "/", component: AddonPage, name: "addon-page" },
-    { path: "*", redirect: "/" },
-  ];
+    { path: '/', component: AddonPage, name: 'addon-page' },
+    { path: '*', redirect: '/' }
+  ]
 
   const router = new VueRouter({
     routes,
-  });
+  })
 
   const v = new Vue({
     router,
@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
       theme: {
         themes: {
           light: {
-            primary: "#FFFFFF",
+            primary: '#FFFFFF',
           },
           dark: {
-            primary: "#FFFFFF",
-          },
-        },
-      },
-    }),
-  });
-});
+            primary: '#FFFFFF',
+          }
+        }
+      }
+    })
+  })
+})

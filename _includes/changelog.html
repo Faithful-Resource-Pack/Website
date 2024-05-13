@@ -9,10 +9,11 @@
     {%- assign counter = counter | plus: 1 -%}
 
     {% if counter < CHANGELOG_LIMIT %}
-      {%- if page["single-changelog"] == nul -%}
-        <h1 class="card-title text-center">{{ version.first[0] }}</h1>
+
+      {%- if page.single-changelog == nul -%}
+      <h1 class="card-title text-center">{{ version.first[0] }}</h1>
       {%- endif -%}
-      {%- if page["expanded-changelog"] != nul -%}
+      {%- if page.expanded-changelog != nul -%}
         {%- for type in version.first[1] -%}
           <h3 class="card-title text-left">{{ type.first[0] }}:</h3>
           {%- for game-version in type.first[1] -%}
@@ -20,24 +21,27 @@
             <ul class="text-left">
               {%- for category in game-version.first[1] -%}
                 {%- if category.first[1] == nul -%}
+
                   <li class="card-title h5 text-left">{{ category }}</li>
 
                 {%- else -%}
+
                   <li class="card-title h5 text-left">{{ category.first[0] }}:</li>
                   <ul class="text-left">
                     {%- for item in category.first[1] -%}
                       {%- if item.first[1] -%}
                         <li class="card-title text-left">{{ item.first[0] }}:</li>
                         <ul class="text-left">
-                          {%- for sub-item in item.first[1] -%}
-                            <li class="card-title text-left">{{ sub-item }}</li>
-                          {%- endfor -%}
+                        {%- for sub-item in item.first[1] -%}
+                          <li class="card-title text-left">{{ sub-item }}</li>
+                        {%- endfor -%}
                         </ul>
                       {%- else -%}
                         <li class="card-title text-left">{{ item }}</li>
                       {%- endif -%}
                     {%- endfor -%}
                   </ul>
+
                 {%- endif -%}
               {%- endfor -%}
             </ul>
@@ -57,35 +61,38 @@
         {%- endfor -%}
       {%- endif -%}
       <hr>
+
     {%- endif -%}
   {%- endfor -%}
 
-  {%- assign counter = 0 -%}
+{%- assign counter = 0 -%}
 
-  {%- if page["single-changelog"] == null -%}
-    <button id="old-btn" onclick="ShowAll()" class="btn btn-dark btn-lg block">All</button>
+{%- if page.single-changelog == null -%}
+<button id="old-btn" onclick="ShowAll()" class="btn btn-dark btn-lg block">All</button>
 
-    <div id="old" style="display: none">
-      <hr>
-      {%- for version in changelog -%}
-        {%- assign counter = counter | plus: 1 -%}
+<div id="old" style="display: none">
+  <hr>
+  {%- for version in changelog -%}
+    {%- assign counter = counter | plus: 1 -%}
 
-        {% if counter >= CHANGELOG_LIMIT %}
-          <h1 class="card-title text-center">{{ version.first[0] }}</h1>
-          {%- for type in version.first[1] -%}
-            <h3 class="card-title text-left">{{ type.first[0] }}:</h3>
-            {%- for category in type.first[1] -%}
-              <h4 class="card-title text-left">{{ category.first[0] }}:</h4>
-              <ul class="text-left">
-                {%- for item in category.first[1] -%}
-                  <li>{{ item }}</li>
-                {%- endfor -%}
-              </ul>
+    {% if counter >= CHANGELOG_LIMIT %}
+
+      <h1 class="card-title text-center">{{ version.first[0] }}</h1>
+      {%- for type in version.first[1] -%}
+        <h3 class="card-title text-left">{{ type.first[0] }}:</h3>
+        {%- for category in type.first[1] -%}
+          <h4 class="card-title text-left">{{ category.first[0] }}:</h4>
+          <ul class="text-left">
+            {%- for item in category.first[1] -%}
+              <li>{{ item }}</li>
             {%- endfor -%}
-          {%- endfor -%}
-          <hr>
-        {%- endif -%}
+          </ul>
+        {%- endfor -%}
       {%- endfor -%}
-      <button onclick="ShowAll()" class="btn btn-dark btn-lg block">Hide</button>
-  {%- endif -%}
+      <hr>
+
+    {%- endif -%}
+  {%- endfor -%}
+  <button onclick="ShowAll()" class="btn btn-dark btn-lg block">Hide</button>
+{%- endif -%}
 </div>

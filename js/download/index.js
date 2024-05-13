@@ -1,12 +1,12 @@
 /* global location, Vue, axios, getHTML */
 
-let cache = {};
-const DownloadTable = () => import("./download-table.js");
+let cache = {}
+const DownloadTable = () => import('./download-table.js')
 
 document.addEventListener("DOMContentLoaded", () => {
-  Vue.config.devtools = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
   const v = new Vue({
-    el: "#app",
+    el: '#app',
     components: {
       DownloadTable,
     },
@@ -74,49 +74,49 @@ document.addEventListener("DOMContentLoaded", () => {
             if (discontinued) this.discontinued[name].downloads = downloads;
             else this.alive[name][edition].downloads = downloads;
           })
-          .catch(console.error);
+          .catch(console.error)
         fetch(`https://api.cfwidget.com/${curse}`)
           .then((res) => res.json())
           .then(({ files }) => {
             if (discontinued) this.discontinued[name].files = files;
             else this.alive[name][edition].files = files;
           })
-          .catch(console.error);
+          .catch(console.error)
       },
     },
     created() {
       Promise.all([
         this.fetchData({
-          json: "faithful_java_32x",
+          json: 'faithful_java_32x',
           curse: "436482",
           name: "Faithful 32x",
-          edition: "Java",
+          edition: "Java"
         }),
         this.fetchData({
-          json: "faithful_java_64x",
+          json: 'faithful_java_64x',
           curse: "419139",
           name: "Faithful 64x",
-          edition: "Java",
+          edition: "Java"
         }),
         this.fetchData({
-          json: "faithful_bedrock_32x",
+          json: 'faithful_bedrock_32x',
           curse: "507188",
           name: "Faithful 32x",
           edition: "Bedrock",
         }),
         this.fetchData({
-          json: "faithful_bedrock_64x",
+          json: 'faithful_bedrock_64x',
           curse: "694024",
           name: "Faithful 64x",
           edition: "Bedrock",
         }),
         this.fetchData({
-          json: "faithful_dungeons_32x",
+          json: 'faithful_dungeons_32x',
           curse: "501546",
           name: "Faithful 32x for Minecraft Dungeons",
           discontinued: true,
         }),
-      ]);
-    },
-  });
-});
+      ])
+    }
+  })
+})

@@ -1,20 +1,20 @@
 /* global Vue */
 /* eslint no-multi-str: 0 */
 
-Vue.component("custom-modal", {
+Vue.component('custom-modal', {
   props: {
     modalOpened: {
       type: Boolean,
-      required: true,
+      required: true
     },
     contentId: {
       type: String,
-      default: undefined,
+      default: undefined
     },
     closeOnClick: {
       type: Function,
-      required: true,
-    },
+      required: true
+    }
   },
   template: `
     <div id="cacheClear" class="customModal" v-show="modalOpened">
@@ -23,4 +23,4 @@ Vue.component("custom-modal", {
         <slot />
       </div><span class="taille">
     </div>`,
-});
+})

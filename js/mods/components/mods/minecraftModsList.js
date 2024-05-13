@@ -1,28 +1,26 @@
 /* global Vue */
 /* eslint no-multi-str: 0 */
 
-Vue.component("minecraft-mod-list", {
+Vue.component('minecraft-mod-list', {
   template: `
     <ul class="mod-ul">
       <minecraft-mod v-for="(mod, index) in mods" :key="index" :mod="mod" />
     </ul>
   `,
   props: {
-    mods: Object,
+    mods: Object
   },
   data() {
     return {
-      thumbnailCache: [],
-    };
+      thumbnailCache: []
+    }
   },
   methods: {
     searchCache(modName) {
-      return this.thumbnailCache.filter((mod) => modName === mod.modName)[0];
+      return this.thumbnailCache.filter((mod) => modName === mod.modName)[0]
     },
     modToRepoName(mod) {
-      return mod.resource_pack.git_repository
-        ? mod.resource_pack.git_repository.split("/").pop()
-        : null;
-    },
+      return mod.resource_pack.git_repository ? mod.resource_pack.git_repository.split('/').pop() : null
+    }
   },
-});
+})

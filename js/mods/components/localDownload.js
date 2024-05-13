@@ -2,12 +2,12 @@
 /* eslint no-multi-str: 0 */
 
 try {
-  let NAME; // eslint-disable-line
+  let NAME // eslint-disable-line
 } catch (_e) {}
-NAME = "Faithful Mods"; // eslint-disable-line
+NAME = 'Faithful Mods' // eslint-disable-line
 
-Vue.component("local-download", {
-  props: ["canpack", "versions"],
+Vue.component('local-download', {
+  props: ['canpack', 'versions'],
   template: `
     <div>
       <custom-modal
@@ -72,34 +72,34 @@ Vue.component("local-download", {
         </div>
       </custom-modal>
     </div>`,
-  data() {
+  data () {
     return {
-      dbName: "mods",
+      dbName: 'mods',
       dbVersion: 4,
       database: null,
       isDownloading: false,
       stores: [
         {
-          name: "files",
-          options: { autoIncrement: true },
-        },
+          name: 'files',
+          options: { autoIncrement: true }
+        }
       ],
       steps: [
         {
-          name: "Downloading mods",
-          content: "Downloading ",
+          name: 'Downloading mods',
+          content: 'Downloading '
         },
         {
-          name: "Unzipping mods",
-          content: "Extracting ",
+          name: 'Unzipping mods',
+          content: 'Extracting '
         },
         {
-          name: "Creating archive",
-          content: "Zipping time left: ",
-        },
+          name: 'Creating archive',
+          content: 'Zipping time left: '
+        }
       ],
       currentStep: 0,
-      currentMod: "",
+      currentMod: '',
       modalOpened: false,
       confirmOpened: false,
       modSelection: undefined,
@@ -108,129 +108,128 @@ Vue.component("local-download", {
       startTime: new moment(), // eslint-disable-line new-cap
       currentTime: new moment(), // eslint-disable-line new-cap
       currentWorker: undefined,
-      finalZip: undefined,
-    };
+      finalZip: undefined
+    }
   },
   methods: {
     closeModal() {
-      this.modalOpened = false;
+      this.modalOpened = false
 
       if (this.navigatorSupportsWorkers && this.currentWorker !== undefined) {
-        this.currentWorker.terminate();
+        this.currentWorker.terminate()
       }
     },
     downloadLocally(forceDownload = false) {
       // hide confirm modal
-      this.confirmOpened = false;
-      this.logs = [];
-      this.generatedPercent = -1;
+      this.confirmOpened = false
+      this.logs = []
+      this.generatedPercent = -1
 
-      this.finalZip = undefined;
+      this.finalZip = undefined
 
-      this.isDownloading = true;
-      this.modalOpened = true;
+      this.isDownloading = true
+      this.modalOpened = true
 
-      this.currentStep = 0;
+      this.currentStep = 0
 
       if (this.navigatorSupportsWorkers) {
-        this.downloadWithWorker(this.modSelection, forceDownload, this.logHandler);
+        this.downloadWithWorker(this.modSelection, forceDownload, this.logHandler)
 
-        return;
+        return
       }
 
-      ResourcePackCreator.openDatabase(this.dbName, this.dbVersion, this.stores[0].name);
-      ResourcePackCreator.packVersions = this.$root.versions;
-      ResourcePackCreator.zipOptions = this.$root.$refs.zipOptions.zipOptions;
-      ResourcePackCreator.downloadLocally(this.modSelection, forceDownload, this.logHandler).catch(
-        (err) => {
-          this.logHandler({
-            step: 0,
-            message: err,
-          });
-        },
-      );
+      ResourcePackCreator.openDatabase(this.dbName, this.dbVersion, this.stores[0].name)
+      ResourcePackCreator.packVersions = this.$root.versions
+      ResourcePackCreator.zipOptions = this.$root.$refs.zipOptions.zipOptions
+      ResourcePackCreator.downloadLocally(this.modSelection, forceDownload, this.logHandler)
+      .catch((err) => {
+        this.logHandler({
+          step: 0,
+          message: err
+        })
+      })
     },
     downloadWithWorker(modSelection, forceDownload, logListener) {
       // terminate (or re-terminate old worker)
-      if (this.currentWorker) this.currentWorker.terminate();
+      if (this.currentWorker) this.currentWorker.terminate()
 
-      this.currentWorker = new Worker("/js/mods/worker/downloadWorker.js");
+      this.currentWorker = new Worker('/js/mods/worker/downloadWorker.js')
 
       // listen to logs
       this.currentWorker.onmessage = function (e) {
-        if (e.data && e.data.type === "log") logListener(e.data.content);
-      };
+        if (e.data && e.data.type === 'log') logListener(e.data.content)
+      }
 
       // open database
       this.currentWorker.postMessage({
-        channel: "openDatabase",
+        channel: 'openDatabase',
         data: {
           dbName: this.dbName,
           dbVersion: this.dbVersion,
-          storeName: this.stores[0].name,
-        },
-      });
+          storeName: this.stores[0].name
+        }
+      })
 
       // set zip options
       this.currentWorker.postMessage({
-        channel: "fillZipOptions",
-        data: this.$root.$refs.zipOptions.zipOptions,
-      });
+        channel: 'fillZipOptions',
+        data: this.$root.$refs.zipOptions.zipOptions
+      })
 
       // open database
       this.currentWorker.postMessage({
-        channel: "fillPackVersions",
-        data: this.$root.versions || this.$props.versions,
-      });
+        channel: 'fillPackVersions',
+        data: this.$root.versions || this.$props.versions
+      })
 
       // finally create pack
       this.currentWorker.postMessage({
-        channel: "createPack",
+        channel: 'createPack',
         data: {
           modSelection: modSelection,
-          forceDownload: forceDownload,
-        },
-      });
+          forceDownload: forceDownload
+        }
+      })
     },
     logHandler(log) {
       if (log.step < 3) {
-        this.currentStep = log.step;
+        this.currentStep = log.step
 
         if (log.step !== 2) {
-          this.addLog(log.message);
+          this.addLog(log.message)
         } else {
           if (!isNaN(parseFloat(log.message))) {
-            this.generatedPercent = log.message;
+            this.generatedPercent = log.message
 
-            this.currentTime = new moment(); // eslint-disable-line
-          } else if (typeof log.message === "string") this.addLog(log.message);
+            this.currentTime = new moment() // eslint-disable-line
+          } else if (typeof log.message === 'string') this.addLog(log.message)
         }
       } else {
-        this.finalZip = log.message;
+        this.finalZip = log.message
 
-        this.downloadZip();
+        this.downloadZip()
 
-        this.isDownloading = false;
+        this.isDownloading = false
       }
     },
     addLog(value, isError = false) {
       this.logs.push({
-        type: isError ? "error" : "log",
-        value: "" + value,
-      });
+        type: isError ? 'error' : 'log',
+        value: '' + value
+      })
     },
     modToDisplayName(mod) {
-      return mod.name.displayName;
+      return mod.name.displayName
     },
     modToRepoName(mod) {
-      if (mod.extRepo) return mod.extRepo.split("/").pop();
-      else return mod.orgRepo;
+      if (mod.extRepo) return mod.extRepo.split('/').pop()
+      else return mod.orgRepo
     },
     modToRepoURL(mod) {
       if (mod.orgRepo) {
-        return "https://github.com/Faithful-Mods/" + this.modToRepoName(mod);
+        return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
       } else {
-        return mod.extRepo;
+        return mod.extRepo
       }
     },
     modToSelection(mod, version = undefined) {
@@ -238,86 +237,86 @@ Vue.component("local-download", {
         name: this.modToRepoName(mod),
         displayName: this.modToDisplayName(mod),
         repositoryURL: this.modToRepoURL(mod, version),
-        version: mod.versionSelected || version,
-      };
+        version: mod.versionSelected || version
+      }
     },
     openConfirmModal(modSelection = undefined) {
-      this.modSelection = !modSelection ? this.$root.modSelection : modSelection;
+      this.modSelection = (!modSelection) ? this.$root.modSelection : modSelection
 
-      this.confirmOpened = true;
+      this.confirmOpened = true
     },
     downloadZip() {
       if (this.finalZip !== undefined) {
-        const customName = this.$root.$refs.zipOptions.customArchiveName;
-        const archiveName = customName || NAME + " Resource Pack " + new Date().getTime();
-        saveAs(this.finalZip, archiveName + ".zip"); // 2) trigger the download
+        const customName = this.$root.$refs.zipOptions.customArchiveName
+        const archiveName = customName || NAME + ' Resource Pack ' + ((new Date()).getTime())
+        saveAs(this.finalZip, archiveName + '.zip') // 2) trigger the download
       }
-    },
+    }
   },
   watch: {
     logs: {
       currentStep(newValue, oldValue) {
         if (oldValue === 1 && newValue === 2) {
-          this.startTime.set(new Date());
+          this.startTime.set(new Date())
         }
       },
       handler() {
         // scroll to bottom
         Vue.nextTick(() => {
-          const objDiv = this.$refs.log;
-          objDiv.scrollTop = objDiv.scrollHeight + 100;
-        });
+          const objDiv = this.$refs.log
+          objDiv.scrollTop = objDiv.scrollHeight + 100
+        })
       },
-      deep: true,
-    },
+      deep: true
+    }
   },
   computed: {
     canCloseModal() {
-      return this.navigatorSupportsWorkers || (this.modalOpened && !this.isDownloading);
+      return this.navigatorSupportsWorkers || (this.modalOpened && !this.isDownloading)
     },
     canDownloadLocally() {
-      return !this.$props.canpack;
+      return !this.$props.canpack
     },
     isGenerating() {
-      return this.generatedPercent > 0;
+      return this.generatedPercent > 0
     },
     latestLog() {
-      return this.logs.length > 0 ? this.logs[this.logs.length - 1].value || "" : "";
+      return (this.logs.length > 0) ? this.logs[this.logs.length - 1].value || '' : ''
     },
     navigatorSupportsWorkers() {
-      return typeof Worker === "function";
+      return typeof (Worker) === 'function'
     },
     reasonCantDownload() {
-      return "This selection cannot be packed (Pack versions not compatible)";
+      return 'This selection cannot be packed (Pack versions not compatible)'
     },
     timeLeft() {
       // we need to multiply duration by percent
 
       /*
-       *  durationInMs = diff from start to now as ms
-       *
-       *  durationInMs | percent
-       *  totalDurInMs | 100
-       *
-       *  timeLeftInMs = totalDurInMs - durationMs
-       */
+      *  durationInMs = diff from start to now as ms
+      *
+      *  durationInMs | percent
+      *  totalDurInMs | 100
+      *
+      *  timeLeftInMs = totalDurInMs - durationMs
+      */
 
-      const durationInMs = moment.duration(this.currentTime.diff(this.startTime)).asMilliseconds();
-      const totalDurInMs = (durationInMs * 100) / this.generatedPercent;
-      const timeLeftInMs = totalDurInMs - durationInMs;
+      const durationInMs = moment.duration(this.currentTime.diff(this.startTime)).asMilliseconds()
+      const totalDurInMs = durationInMs * 100 / this.generatedPercent
+      const timeLeftInMs = totalDurInMs - durationInMs
 
-      const durLeft = moment.duration(timeLeftInMs);
+      const durLeft = moment.duration(timeLeftInMs)
 
-      const h = durLeft.hours();
-      const m = durLeft.minutes();
-      const s = durLeft.seconds();
+      const h = durLeft.hours()
+      const m = durLeft.minutes()
+      const s = durLeft.seconds()
 
-      return (h > 0 ? h + "h " : "") + (m > 0 ? m + "min " : "") + s + "s";
+      return (h > 0 ? h + 'h ' : '') + (m > 0 ? m + 'min ' : '') + s + 's'
     },
     cancelTitle() {
       return this.navigatorSupportsWorkers
-        ? "Your browser supports Web Workers :). You can cancel this script immediatly."
-        : "Your navigator doesn't supports Web Workers :(. You can't cancel this script.";
-    },
-  },
-});
+        ? 'Your browser supports Web Workers :). You can cancel this script immediatly.'
+        : "Your navigator doesn't supports Web Workers :(. You can't cancel this script."
+    }
+  }
+})

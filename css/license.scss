@@ -2,26 +2,26 @@
 ---
 
 .flag {
-  display: flex;
-  text-align: center;
+	display: flex;
+	text-align: center;
 
-  > div {
-    width: 40px;
+	> div {
+		width: 40px;
 
-    > img {
-      height: 16px;
-      vertical-align: text-top;
-    }
-  }
+		> img {
+			height: 16px;
+			vertical-align: text-top;
+		}
+	}
 }
 
 .dropdown-menu-right {
-  right: 0;
-  left: auto;
+	right: 0;
+	left: auto;
 }
 
 ol {
-  list-style-position: outside;
+	list-style-position: outside;
 }
 
 .license-download {

@@ -1,7 +1,7 @@
 /* global Vuetify */
 
 export default {
-  name: "addon-modal",
+  name: 'addon-modal',
   template: `
     <v-dialog
       v-model="modalOpened"
@@ -14,21 +14,21 @@ export default {
   props: {
     value: {
       type: Boolean,
-      required: true,
+      required: true
     },
     close: {
       type: Function,
-      required: true,
+      required: true
     },
     image: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       modalOpened: false,
-    };
+    }
   },
   watch: {
     value(n) {
@@ -36,6 +36,6 @@ export default {
     },
     modalOpened(n) {
       this.$emit("input", n);
-    },
-  },
-};
+    }
+  }
+}

@@ -1,9 +1,8 @@
 /* eslint new-cap: 0 */
 /* global MinecraftUtils, axios, idb, JSZip, axiosRetry, fetch */
 
-const PATH_PACK_PNG =
-  "https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png";
-const MCMETA_DESCRIPTION = "Faithful Mods";
+const PATH_PACK_PNG = 'https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png'
+const MCMETA_DESCRIPTION = 'Faithful Mods'
 
 /**
  * Resolves after delay
@@ -14,8 +13,8 @@ const MCMETA_DESCRIPTION = "Faithful Mods";
  */
 Promise.sleep = (delay, value = undefined) =>
   new Promise((resolve) => {
-    setTimeout(() => resolve(value), delay);
-  });
+    setTimeout(() => resolve(value), delay)
+  })
 
 /**
  * @callback PromiseCallback
@@ -30,8 +29,9 @@ Promise.sleep = (delay, value = undefined) =>
  * @param {any[]} results Promise results
  * @returns {Promise<any[]>} all results if successful
  */
-Promise.throttle = function (arr, throttle, delay, results = []) {
-  if (arr.length === 0) return results;
+Promise.throttle = function(arr, throttle, delay, results = []) {
+  if (arr.length === 0)
+    return results;
 
   const start = new Date().getTime();
   const one = arr.shift();
@@ -40,13 +40,13 @@ Promise.throttle = function (arr, throttle, delay, results = []) {
     .then((res) => {
       let end = new Date().getTime();
       let duration = end - start;
-      return Promise.sleep(duration < throttle ? Math.min(throttle - duration, delay) : delay, res);
+      return Promise.sleep(duration < throttle ? Math.min(throttle - duration, delay) : delay, res)
     })
     .then((res) => {
-      results.push(res);
-      return Promise.throttle(arr, throttle, delay, results);
-    });
-};
+      results.push(res)
+      return Promise.throttle(arr, throttle, delay, results)
+    })
+}
 
 /**
  * This callback is displayed as part of the Requester class.
@@ -78,8 +78,7 @@ Promise.throttle = function (arr, throttle, delay, results = []) {
  * @property {string} version mod minecraft version
  */
 
-const ResourcePackCreator = {
-  // eslint-disable-line no-unused-vars
+const ResourcePackCreator = { // eslint-disable-line no-unused-vars
   packVersions: Array[String],
   database: undefined,
   databasePromise: undefined,
@@ -97,29 +96,25 @@ const ResourcePackCreator = {
     // (list of package number must not change)
 
     // we need mods and versions to be loaded
-    if (modSelection.length === 0) {
-      return undefined;
-    }
+    if (modSelection.length === 0) { return undefined }
 
-    let currentPackageVersion;
-    let versionChanged = false;
+    let currentPackageVersion
+    let versionChanged = false
 
-    let i = 0;
+    let i = 0
     while (i < modSelection.length && !versionChanged) {
-      const tmpPackageVersion = this.packageVersion(modSelection[i].version);
+      const tmpPackageVersion = this.packageVersion(modSelection[i].version)
 
       if (currentPackageVersion === undefined) {
-        currentPackageVersion = tmpPackageVersion;
+        currentPackageVersion = tmpPackageVersion
       } else {
-        if (currentPackageVersion !== tmpPackageVersion) {
-          versionChanged = true;
-        }
+        if (currentPackageVersion !== tmpPackageVersion) { versionChanged = true }
       }
 
-      ++i;
+      ++i
     }
 
-    return versionChanged ? undefined : currentPackageVersion;
+    return versionChanged ? undefined : currentPackageVersion
   },
 
   /**
@@ -128,60 +123,49 @@ const ResourcePackCreator = {
    * @returns {number} mod package version
    */
   packageVersion(modVersion) {
-    const numbers = MinecraftUtils.minecraftVersionToNumberArray(modVersion);
+    const numbers = MinecraftUtils.minecraftVersionToNumberArray(modVersion)
 
-    const packageVersionKeys = Object.keys(this.packVersions);
+    const packageVersionKeys = Object.keys(this.packVersions)
 
-    let i = 0;
-    let result = -1;
+    let i = 0
+    let result = -1
     while (i < packageVersionKeys.length && result === -1) {
-      const otherNumbersMin = MinecraftUtils.minecraftVersionToNumberArray(
-        this.packVersions[packageVersionKeys[i]].min,
-      );
-      const otherNumbersMax = MinecraftUtils.minecraftVersionToNumberArray(
-        this.packVersions[packageVersionKeys[i]].max,
-      );
+      const otherNumbersMin = MinecraftUtils.minecraftVersionToNumberArray(this.packVersions[packageVersionKeys[i]].min)
+      const otherNumbersMax = MinecraftUtils.minecraftVersionToNumberArray(this.packVersions[packageVersionKeys[i]].max)
 
       // we compute the corresponding numbers
-      const correspondingNumbers = MinecraftUtils.minecraftVersionsToNumbers([
-        numbers,
-        otherNumbersMin,
-        otherNumbersMax,
-      ]);
+      const correspondingNumbers = MinecraftUtils.minecraftVersionsToNumbers([numbers, otherNumbersMin, otherNumbersMax])
 
-      if (
-        correspondingNumbers[0] >= correspondingNumbers[1] &&
-        correspondingNumbers[0] <= correspondingNumbers[2]
-      ) {
-        result = packageVersionKeys[i];
+      if (correspondingNumbers[0] >= correspondingNumbers[1] && correspondingNumbers[0] <= correspondingNumbers[2]) {
+        result = packageVersionKeys[i]
       }
 
-      ++i;
+      ++i
     }
 
     if (result === -1) {
-      throw new Error("No package versions file");
+      throw new Error('No package versions file')
     }
 
-    this.fullPackageVersion = result;
+    this.fullPackageVersion = result
 
-    return result;
+    return result
   },
 
   modToDisplayName(mod) {
-    return mod.name.displayName;
+    return mod.name.displayName
   },
 
   modToRepoName(mod) {
-    if (mod.name.extRepo) return mod.name.extRepo.split("/").pop();
-    else return mod.name.orgRepo;
+    if (mod.name.extRepo) return mod.name.extRepo.split('/').pop()
+    else return mod.name.orgRepo
   },
 
   modToRepoURL(mod) {
     if (mod.orgRepo) {
-      return "https://github.com/Faithful-Mods/" + this.modToRepoName(mod);
+      return 'https://github.com/Faithful-Mods/' + this.modToRepoName(mod)
     } else {
-      return mod.extRepo;
+      return mod.extRepo
     }
   },
 
@@ -190,8 +174,8 @@ const ResourcePackCreator = {
       name: this.modToRepoName(mod),
       displayName: this.modToDisplayName(mod),
       repositoryURL: this.modToRepoURL(mod, version),
-      version: mod.versionSelected || version,
-    };
+      version: mod.versionSelected || version
+    }
   },
 
   /**
@@ -202,10 +186,10 @@ const ResourcePackCreator = {
    */
   canPackMods(modSelection, modPackageVersion = undefined) {
     if (modSelection) {
-      return this.modPackageVersion(modSelection) !== undefined;
+      return this.modPackageVersion(modSelection) !== undefined
     }
 
-    return modPackageVersion !== undefined;
+    return modPackageVersion !== undefined
   },
 
   /**
@@ -216,26 +200,23 @@ const ResourcePackCreator = {
   requestDownloadMod(mod) {
     return axios({
       url:
-        "https://api.allorigins.win/raw?url=" +
-        mod.repositoryURL +
-        "/archive/" +
-        mod.version +
-        ".zip",
-      method: "GET",
-      responseType: "blob", // important
-    }).then((res) => {
-      const fileKey = this.fileKey(mod);
+        'https://api.allorigins.win/raw?url=' + mod.repositoryURL + '/archive/' + mod.version + '.zip',
+      method: 'GET',
+      responseType: 'blob' // important
+    })
+      .then((res) => {
+        const fileKey = this.fileKey(mod)
 
-      this.database.delete(this.storeName, fileKey).then(() => {
-        this.database.put(this.storeName, res.data, fileKey);
-      });
+        this.database.delete(this.storeName, fileKey).then(() => {
+          this.database.put(this.storeName, res.data, fileKey)
+        })
 
-      return res;
-    });
+        return res
+      })
   },
 
   fileKey(mod) {
-    return mod.name + "-" + mod.version;
+    return mod.name + '-' + mod.version
   },
 
   /**
@@ -246,34 +227,29 @@ const ResourcePackCreator = {
    * @returns {Promise<ModResponse>} Mod downloaded or loaded
    */
   getMod(mod, forceDownload = false, logListener = function () {}) {
-    if (forceDownload) {
-      return this.requestDownloadMod(mod);
-    }
+    if (forceDownload) { return this.requestDownloadMod(mod) }
 
     // only proceed if database loaded
-    if (typeof this.database === "object" && "get" in this.database) {
-      const fileKey = this.fileKey(mod);
+    if (typeof this.database === 'object' && 'get' in this.database) {
+      const fileKey = this.fileKey(mod)
 
-      return this.database
-        .get(this.storeName, fileKey)
-        .then((res) => {
-          logListener({
-            step: 0,
-            message: "Already downloaded " + mod.displayName + " v" + mod.version + " in cache",
-          });
-
-          if (res) {
-            return Promise.resolve({ data: res });
-          }
-
-          // fallback on catch
-          return Promise.reject("Download required");
+      return this.database.get(this.storeName, fileKey).then((res) => {
+        logListener({
+          step: 0,
+          message: 'Already downloaded ' + mod.displayName + ' v' + mod.version + ' in cache'
         })
-        .catch(() => {
-          return this.requestDownloadMod(mod);
-        });
+
+        if (res) {
+          return Promise.resolve({ data: res })
+        }
+
+        // fallback on catch
+        return Promise.reject('Download required')
+      }).catch(() => {
+        return this.requestDownloadMod(mod)
+      })
     } else {
-      return this.requestDownloadMod(mod);
+      return this.requestDownloadMod(mod)
     }
   },
 
@@ -288,156 +264,144 @@ const ResourcePackCreator = {
     // database not loaded yet
     if (!this.database) {
       return this.databasePromise.then(() => {
-        return this.downloadLocally(modSelection, forceDownload, logListener);
-      });
+        return this.downloadLocally(modSelection, forceDownload, logListener)
+      })
     }
 
-    if (!this.storeName || !this.zipOptions) return Promise.reject("Elements missing");
-    if (modSelection.length === 0) return Promise.resolve(); // successfully finished doing nothing
+    if (!this.storeName || !this.zipOptions) return Promise.reject('Elements missing')
+    if (modSelection.length === 0) return Promise.resolve() // successfully finished doing nothing
 
     // create final zip
-    const finalZip = new JSZip();
+    const finalZip = new JSZip()
 
-    const promises = [];
+    const promises = []
 
     modSelection.forEach((mod) => {
+
       promises.push(() => {
         logListener({
           step: 0,
-          message: "Downloading " + mod.displayName + " v" + mod.version + "...",
-        });
-        return this.getMod(mod, forceDownload, logListener);
-      });
-    });
+          message: 'Downloading ' + mod.displayName + ' v' + mod.version + '...'
+        })
+        return this.getMod(mod, forceDownload, logListener)
+      })
+    })
 
-    let success = 0;
-    return Promise.throttle(promises, 3000, 20)
-      .then((values) => {
-        return new Promise((resolve, reject) => {
-          this.currentStep = 1;
-          values.forEach((res, index) => {
-            logListener({
-              step: 1,
-              message: "Extracting " + modSelection[index].displayName + " into final zip",
-            });
-            if (res.data.type === "text/xml") {
-              console.warn(modSelection[index]);
-            }
+    let success = 0
+    return Promise.throttle(promises, 3000, 20).then((values) => {
+      return new Promise((resolve, reject) => {
+        this.currentStep = 1
+        values.forEach((res, index) => {
+          logListener({
+            step: 1,
+            message: 'Extracting ' + modSelection[index].displayName + ' into final zip'
+          })
+          if (res.data.type === 'text/xml') {
+            console.warn(modSelection[index])
+          }
 
-            const fileKey = this.fileKey(modSelection[index]);
+          const fileKey = this.fileKey(modSelection[index])
 
-            // load this pack
-            const zip = new JSZip();
+          // load this pack
+          const zip = new JSZip()
 
-            zip
-              .loadAsync(res.data)
-              .then((zip) => {
-                const keys = Object.keys(zip.files);
+          zip.loadAsync(res.data)
+            .then((zip) => {
+              const keys = Object.keys(zip.files)
 
-                let newName;
-                for (let i = 0; i < keys.length; ++i) {
-                  newName = keys[i].replace(fileKey + "/", "");
+              let newName
+              for (let i = 0; i < keys.length; ++i) {
+                newName = keys[i].replace(fileKey + '/', '')
 
-                  if (newName.trim() !== "") {
-                    finalZip.files[newName] = zip.files[keys[i]];
-                    finalZip.files[newName].name = newName;
-                  }
+                if (newName.trim() !== '') {
+                  finalZip.files[newName] = zip.files[keys[i]]
+                  finalZip.files[newName].name = newName
                 }
+              }
 
-                ++success;
-                // if all archives have been successfully added
-                if (success === modSelection.length) {
+              ++success
+              // if all archives have been successfully added
+              if (success === modSelection.length) {
+                logListener({
+                  step: 2,
+                  message: 'Inserting pack.png and pack.mcmeta into final zip'
+                })
+
+                fetch(PATH_PACK_PNG).then((packImage) => {
+                  return packImage.blob()
+                }).then((packImageBlob) => {
+                  finalZip.file('pack.png', packImageBlob, { blob: true })
+                  finalZip.file('pack.mcmeta', `{"pack": {"pack_format": ${this.fullPackageVersion}, "description": "${MCMETA_DESCRIPTION}"}}`)
+
                   logListener({
                     step: 2,
-                    message: "Inserting pack.png and pack.mcmeta into final zip",
-                  });
+                    message: 'Zipping...'
+                  })
 
-                  fetch(PATH_PACK_PNG)
-                    .then((packImage) => {
-                      return packImage.blob();
+                  finalZip.generateAsync(this.zipOptions, (metadata) => {
+                    logListener({
+                      step: 2,
+                      message: metadata.percent.toFixed(2)
                     })
-                    .then((packImageBlob) => {
-                      finalZip.file("pack.png", packImageBlob, { blob: true });
-                      finalZip.file(
-                        "pack.mcmeta",
-                        `{"pack": {"pack_format": ${this.fullPackageVersion}, "description": "${MCMETA_DESCRIPTION}"}}`,
-                      );
-
-                      logListener({
-                        step: 2,
-                        message: "Zipping...",
-                      });
-
-                      finalZip
-                        .generateAsync(this.zipOptions, (metadata) => {
-                          logListener({
-                            step: 2,
-                            message: metadata.percent.toFixed(2),
-                          });
-                        })
-                        .then((blob) => {
-                          logListener({
-                            step: 3,
-                            message: blob,
-                          });
-
-                          resolve(); // * SUCCESS
-                        })
-                        .catch((err) => {
-                          console.error(err);
-                          reject(err);
-                        });
+                  }).then((blob) => {
+                    logListener({
+                      step: 3,
+                      message: blob
                     })
-                    .catch(reject);
-                  return;
-                }
-              })
-              .catch(reject);
-          });
-        });
+
+                    resolve() // * SUCCESS
+                  }).catch((err) => {
+                    console.error(err)
+                    reject(err)
+                  })
+                })
+                .catch(reject)
+                return
+              }
+            }).catch(reject)
+        })
       })
-      .catch((...args) => {
-        console.error(...args);
-        const error = args[0];
-        if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-          // http.ClientRequest in node.js
-          console.log(error.request);
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          console.log("Error", error.message);
-        }
-        console.log(error.config);
-        return Promise.reject(...args);
-      });
+    }).catch((...args) => {
+      console.error(...args)
+      const error = args[0]
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        // The request was made but no response was received
+        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        // http.ClientRequest in node.js
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+      return Promise.reject(...args)
+    })
   },
 
   openDatabase(dataBaseName, databaseVersion, storeName) {
-    this.storeName = storeName;
+    this.storeName = storeName
 
     this.databasePromise = new Promise((resolve, reject) => {
-      idb
-        .openDB(dataBaseName, databaseVersion, {
-          upgrade(db, _oldVersion, _newVersion, _transaction) {
-            db.createObjectStore(storeName);
-          },
-        })
+      idb.openDB(dataBaseName, databaseVersion, {
+        upgrade(db, _oldVersion, _newVersion, _transaction) {
+          db.createObjectStore(storeName)
+        }
+      })
         .then((db) => {
-          this.database = db;
-          resolve();
+          this.database = db
+          resolve()
         })
         .catch((err) => {
-          this.database = 1;
-          console.error(err);
-          reject(new Error(err));
-        });
-    });
-  },
-};
+          this.database = 1
+          console.error(err)
+          reject(new Error(err))
+        })
+    })
+  }
+}

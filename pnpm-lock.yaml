@@ -23,14 +23,8 @@ dependencies:
   jsdom:
     specifier: ^24.0.0
     version: 24.0.0
-  prettier:
-    specifier: ^3.2.5
-    version: 3.2.5
 
 devDependencies:
-  '@shopify/prettier-plugin-liquid':
-    specifier: ^1.5.0
-    version: 1.5.0(prettier@3.2.5)
   concurrently:
     specifier: ^8.2.2
     version: 8.2.2
@@ -45,23 +39,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
-    dev: true
-
-  /@shopify/liquid-html-parser@2.0.3:
-    resolution: {integrity: sha512-aIkZ5TJWG7/ztd1sZm5XNpBNTG3B+Q0gv3WN/QahmNQzm2wmKYSHiRLOA8JALAnOGTmH0uqOJ7jzdqoATcZSxw==}
-    dependencies:
-      line-column: 1.0.2
-      ohm-js: 16.6.0
-    dev: true
-
-  /@shopify/prettier-plugin-liquid@1.5.0(prettier@3.2.5):
-    resolution: {integrity: sha512-CuWjUnBCvq/RTmubEa5RfwW2oP2gYfTXaJ39t4apAYm//1v5Ftvv1bbhEnoEZwCjPshaAJLhSzP9dvCel4cebw==}
-    peerDependencies:
-      prettier: ^2.0.0 || ^3.0.0
-    dependencies:
-      '@shopify/liquid-html-parser': 2.0.3
-      html-styles: 1.0.0
-      prettier: 3.2.5
     dev: true
 
   /abbrev@1.1.1:
@@ -544,10 +521,6 @@ packages:
       whatwg-encoding: 3.1.1
     dev: false
 
-  /html-styles@1.0.0:
-    resolution: {integrity: sha512-cDl5dcj73oI4Hy0DSUNh54CAwslNLJRCCoO+RNkVo+sBrjA/0+7E/xzvj3zH/GxbbBLGJhE0hBe1eg+0FINC6w==}
-    dev: true
-
   /http-errors@2.0.0:
     resolution: {integrity: sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==}
     engines: {node: '>= 0.8'}
@@ -639,17 +612,6 @@ packages:
     resolution: {integrity: sha512-bCYeRA2rVibKZd+s2625gGnGF/t7DSqDs4dP7CrLA1m7jKWz6pps0LpYLJN8Q64HtmPKJ1hrN3nzPNKFEKOUiQ==}
     dev: false
 
-  /isarray@1.0.0:
-    resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
-    dev: true
-
-  /isobject@2.1.0:
-    resolution: {integrity: sha512-+OUdGJlgjOBZDfxnDjYYG6zp487z0JGNQq3cYQYg5f5hKR+syHMsaztzGeml/4kGG55CSpKSpWTY+jYGgsHLgA==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      isarray: 1.0.0
-    dev: true
-
   /js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
@@ -692,13 +654,6 @@ packages:
       - supports-color
       - utf-8-validate
     dev: false
-
-  /line-column@1.0.2:
-    resolution: {integrity: sha512-Ktrjk5noGYlHsVnYWh62FLVs4hTb8A3e+vucNZMgPeAOITdshMSgv4cCZQeRDjm7+goqmo6+liZwTXo+U3sVww==}
-    dependencies:
-      isarray: 1.0.0
-      isobject: 2.1.0
-    dev: true
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
@@ -807,11 +762,6 @@ packages:
     resolution: {integrity: sha512-5qoj1RUiKOMsCCNLV1CBiPYE10sziTsnmNxkAI/rZhiD63CF7IqdFGC/XzjWjpSgLf0LxXX3bDFIh0E18f6UhQ==}
     dev: false
 
-  /ohm-js@16.6.0:
-    resolution: {integrity: sha512-X9P4koSGa7swgVQ0gt71UCYtkAQGOjciJPJAz74kDxWt8nXbH5HrDOQG6qBDH7SR40ktNv4x61BwpTDE9q4lRA==}
-    engines: {node: '>=0.12.1'}
-    dev: true
-
   /on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
@@ -838,11 +788,6 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
     dev: true
-
-  /prettier@3.2.5:
-    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
-    engines: {node: '>=14'}
-    hasBin: true
 
   /proxy-addr@2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
