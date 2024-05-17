@@ -1,10 +1,12 @@
 /* global location, Vue, axios, getHTML */
 
 let cache = {}
-const DownloadTable = () => import('./download-table.js')
 
 document.addEventListener("DOMContentLoaded", () => {
   Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+
+  const DownloadTable = () => import('./download-table.js')
+
   const v = new Vue({
     el: '#app',
     components: {
