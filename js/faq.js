@@ -24,13 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
           @keyup="startSearch"
           @click:clear="() => { search=null }"
         />
-        <template v-if="faqs.length">
-          <template v-for="(faq, i) in filteredFaqs" :key="i">
-            <h2 class="faq-question" v-text="faq.question"></h2>
-            <p v-html="parseMd(faq.answer)" class="faq-answer"></p>
-          </template>
+        <p class="pt-2 pb-0 px-0">
+          <i>{{ faqs.length }} {{ results }} found</i>
+        </p>
+        <template v-for="(faq, i) in faqs" :key="i">
+          <h2 class="faq-question" v-text="faq.question"></h2>
+          <p v-html="parseMd(faq.answer)" class="faq-answer"></p>
         </template>
-        <i v-else class="faq-answer py-5">No results found</i>
       </div>
     `,
     methods: {
@@ -67,14 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     computed: {
-      filteredFaqs() {
-        return this.faqs.filter((v) => !v.discord)
-      },
       isDarkMode() {
         return (
           theme.currentTheme === 'dark' ||
           (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)
         )
+      },
+      results() {
+        return this.faqs.length === 1 ? "result" : "results";
       }
     },
     created() {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "https://raw.githubusercontent.com/Faithful-Resource-Pack/CompliBot/main/json/faq.json",
         )
         .then((res) => {
-          this.allFaqs = res.data
+          this.allFaqs = res.data.filter((v) => !v.discord)
           this.startSearch()
         })
     },
