@@ -47,8 +47,23 @@ document.addEventListener("DOMContentLoaded", () => {
           this.faqs = this.allFaqs
           return
         }
-        // partial searches count
-        this.faqs = this.allFaqs.filter((faq) => faq.question.toLowerCase().includes(this.search.toLowerCase()))
+
+        // partial keyword search
+        const faqs = this.allFaqs.filter((faq) =>
+          faq.keywords.some((keyword) =>
+            keyword.toLowerCase().includes(this.search.toLowerCase())
+          )
+        )
+
+        if (faqs.length) {
+          this.faqs = faqs
+          return
+        }
+
+        // no results with keywords found, search titles instead
+        this.faqs = this.allFaqs.filter((faq) =>
+          faq.question.toLowerCase().includes(this.search.toLowerCase())
+        )
       }
     },
     computed: {
@@ -59,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return (
           theme.currentTheme === 'dark' ||
           (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)
-        );
+        )
       }
     },
     created() {
