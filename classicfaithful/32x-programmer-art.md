@@ -21,19 +21,19 @@ downloads:
     1.19.4 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.4.zip
     1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.3.zip
     1.19.0 - 1.19.2 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.19.2.zip
-    1.18.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.18.2.zip
-    1.17.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.17.1.zip
-    1.16.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.16.5.zip
-    1.15.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.15.2.zip
-    1.14.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.14.4.zip
-    1.13.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.13.2.zip
-    1.12.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.12.2.zip
-    1.11.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.11.2.zip
-    1.10.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.10.2.zip
-    1.9.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.9.4.zip
-    1.8.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.8.9.zip
-    1.7.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.7.10.zip
-    1.6.X for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.6.4.zip
+    1.18.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.18.2.zip
+    1.17.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.17.1.zip
+    1.16.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.16.5.zip
+    1.15.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.15.2.zip
+    1.14.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.14.4.zip
+    1.13.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.13.2.zip
+    1.12.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.12.2.zip
+    1.11.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.11.2.zip
+    1.10.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.10.2.zip
+    1.9.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.9.4.zip
+    1.8.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.8.9.zip
+    1.7.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.7.10.zip
+    1.6.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.6.4.zip
 
 - Alternate Listings:
     GitHub for Java Edition: https://github.com/classicfaithful/32x-programmer-art
