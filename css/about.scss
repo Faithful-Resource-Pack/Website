@@ -15,6 +15,10 @@
 	justify-content: center;
 	gap: 40px;
 
+	h1 {
+		text-transform: uppercase;
+	}
+
 	p {
 		// add a bit of padding between the button and text
 		padding-bottom: 1.5rem;
@@ -31,13 +35,15 @@
 	h1 {
 		margin-top: 0;
 		text-align: center;
+		text-transform: uppercase;
 	}
 }
 
 .about-button {
 	padding: 12px 22px;
-  // prevent weird button wrapping issues
-  white-space: nowrap;
+	// prevent weird button wrapping issues
+	white-space: nowrap;
+	text-transform: uppercase;
 	line-height: 1;
 	border-radius: $border-radius-0x;
 	transition: all 0.2s ease;
@@ -47,7 +53,7 @@
 }
 
 .green {
-  // both light/dark mode use white text
+	// both light/dark mode use white text
 	p {
 		color: #fff;
 	}
@@ -81,7 +87,7 @@
 }
 
 @media (max-width: 1080px) {
-  // center content and display vertically on mobile
+	// center content and display vertically on mobile
 	.content-container {
 		display: flex;
 		flex-direction: column;
@@ -92,7 +98,7 @@
 }
 
 @media (max-width: 1200px) {
-  // override container class to fix margins
+	// override container class to fix margins
 	.container {
 		max-width: 95% !important;
 	}
