@@ -165,7 +165,6 @@ export default {
         }
       }
 
-      console.log("I made it here!");
       this.resultCount = Object.keys(this.searchedAddons).length;
       this.$forceUpdate() // force update (because it can be a bit long to process)
     },
