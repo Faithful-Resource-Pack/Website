@@ -140,29 +140,33 @@ export default {
       )
         this.searchedAddons = this.addons
       else {
-        this.searchedAddons = {}
+        this.searchedAddons = this.addons
+          .filter((addon) => {
+            if (
+              !addon.name.toLowerCase().includes(this.search.toLowerCase()) &&
+              this.search !== ''
+            )
+              return false
 
-        for (const addonID in this.addons) {
-          if (!this.addons[addonID].name.toLowerCase().includes(this.search.toLowerCase()) && this.search !== '') continue
-          const localRes = []
-          const localEditions = []
+            // split types of an addon (res + edition : res & edition)
+            const { localRes, localEditions } = addon.options.tags.reduce(
+              (acc, tag) => {
+                if (this.res.includes(tag)) acc.localRes.push(tag)
+                if (this.editions.includes(tag)) acc.localEditions.push(tag)
+                return acc;
+              },
+              { localRes: [], localEditions: [] }
+            )
 
-          // split types of an addon (res + edition : res & edition)
-          const tags = this.addons[addonID].options.tags
-          for (let tagIndex = 0; tagIndex < tags.length; tagIndex++) {
-            if (this.editions.includes(tags[tagIndex])) localEditions.push(tags[tagIndex])
-            if (this.res.includes(tags[tagIndex])) localRes.push(tags[tagIndex])
-          }
-
-          // search if edition then check if res
-          for (let i = 0; localEditions[i]; i++) {
-            if (this.selectedEditions.includes(localEditions[i])) {
-              for (let j = 0; localRes[j]; j++) {
-                if (this.selectedRes.includes(localRes[j])) this.searchedAddons[addonID] = this.addons[addonID]
-              }
-            }
-          }
-        }
+            // search if edition then check if res
+            if (!localEditions.some((edition) => this.selectedEditions.includes(edition))) return false
+            if (!localRes.some((res) => this.selectedRes.includes(res))) return false
+            return true
+          })
+          .reduce((acc, cur) => {
+            acc[cur.id] = cur
+            return acc
+          }, {})
       }
 
       this.resultCount = Object.keys(this.searchedAddons).length;
@@ -197,7 +201,8 @@ export default {
         this.loading = false
         this.resultCount = data.length;
 
-        for (const addonID in this.addons) this.addons[addonID].id = addonID // fix missing ID (property value)
+        for (const addonID of Object.keys(this.addons))
+          this.addons[addonID].id = addonID // fix missing ID (property value)
 
         this.searchedAddons = this.addons
       })
