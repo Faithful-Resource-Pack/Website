@@ -12,9 +12,9 @@
 ---
 
 ## Requirements
-- NodeJS 16+ https://nodejs.org
+- NodeJS 18+ https://nodejs.org
 - pnpm (`corepack enable` + `corepack prepare pnpm@latest --activate`)
-- Ruby https://www.ruby-lang.org/en/downloads/ (https://mac.install.guide/ruby/12.html for MacOS)
+- Ruby 3.1 or below https://www.ruby-lang.org/en/downloads/ (https://mac.install.guide/ruby/12.html for MacOS)
 - Jekyll & Webrick (`gem install bundler jekyll` + `gem install webrick`)
 
 ## Running
