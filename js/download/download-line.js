@@ -27,7 +27,7 @@ export default {
         <p>
           <span class="name">{{ item.file }}</span>
           <span class="version">{{ version === "github" ? "Repository" : version }}</span>
-          <span :class="labelColor">{{ labelText }}</span>
+          <span :class="labelColor[item.file_type] || 'green'">{{ labelText }}</span>
           <span class="latest" v-if="version != 'download' && item.latest">Latest</span>
         </p>
         <p class="mobile" v-show="date">
@@ -51,27 +51,13 @@ export default {
             :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
             :href="origin"
           >
-            <template v-if="originMobileKey === 'curse'">
-              <i class="fas"></i><span class="link-text">Curse</span>
-            </template>
-            <template v-if="originMobileKey === 'download'">
-              <i class="fas"></i><span class="link-text">Download</span>
-            </template>
-            <template v-if="originKey === 'github'">
-              <i class="fab"></i><span class="link-text">GitHub</span>
-            </template>
+            <i class="fas">{{ downloadFormat[originMobile]?.icon || "" }}</i>
+            <span class="link-text">{{ downloadFormat[originKey]?.text || originKey }}</span>
           </a>
         </template>
         <a v-else class="btn btn-dark btn-dl" :href="origin">
-          <template v-if="originKey === 'curse'">
-            <i class="fas"></i><span class="link-text">Curse</span>
-          </template>
-          <template v-if="originKey === 'download'">
-            <i class="fas"></i><span class="link-text">Download</span>
-          </template>
-          <template v-if="originKey === 'github'">
-            <i class="fab"></i><span class="link-text">GitHub</span>
-          </template>
+          <i class="fas">{{ downloadFormat[originKey]?.icon || "" }}</i>
+          <span class="link-text">{{ downloadFormat[originKey]?.text || originKey }}</span>
         </a>
       </td>
     </tr>
@@ -79,6 +65,20 @@ export default {
   data() {
     return {
       showIcon: "➕",
+      downloadFormat: {
+        download: { icon: "", text: "Download" },
+        curse: { icon: "", text: "Curse" },
+        github: { icon: "", text: "GitHub" },
+        modrinth: { icon: "", text: "Modrinth" },
+        mcpedl: { icon: "", text: "MCPEDL" },
+      },
+      labelColor: {
+        Download: "github",
+        R: "green",
+        B: "blue",
+        A: "yellow",
+        Snapshot: "black",
+      }
     }
   },
   methods: {
@@ -95,19 +95,9 @@ export default {
       // change icon then pass back to download-table to unhide child
       this.showIcon = this.showIcon === "➕" ? "➖" : "➕"
       this.$emit('click')
-    }
+    },
   },
   computed: {
-    labelColor() {
-      switch (this.item.file_type) {
-        case "Download": return "github"
-        case "R": return "green"
-        case "B": return "blue"
-        case "A": return "yellow"
-        case "Snapshot": return "black"
-        default: return "green"
-      }
-    },
     labelText() {
       if (this.item.file_type == "Download") return 'Download'
       if (!this.item.file_version) return this.item.file_type
