@@ -51,7 +51,7 @@ export default {
             :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
             :href="origin"
           >
-            <i class="fas">{{ downloadFormat[originMobile]?.icon || "" }}</i>
+            <i class="fas">{{ downloadFormat[originKey]?.icon || "" }}</i>
             <span class="link-text">{{ downloadFormat[originKey]?.text || originKey }}</span>
           </a>
         </template>
