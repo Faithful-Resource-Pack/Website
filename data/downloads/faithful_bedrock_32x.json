@@ -8,6 +8,18 @@
       }
     }
   ],
+  "1.21.x": [
+    {
+      "file": "Faithful 32x",
+      "file_type": "R",
+      "file_version": 12,
+      "date": "2024-07-05",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/July%202024/Faithful%2032x%20-%201.21.mcpack",
+        "curse": "https://legacy.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/5505979"
+      }
+    }
+  ],
   "1.20.x": [
     {
       "file": "Faithful 32x",
