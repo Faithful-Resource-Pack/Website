@@ -42,25 +42,31 @@ window.theme = {
   get nextTheme() {
     return THEME_VALUES[(this.currentThemeIndex + 1) % THEME_VALUES.length].value
   },
-  set nextTheme(_v) {}
+  set nextTheme(_v) {},
+
+  get isDark() {
+    return (
+      theme.currentTheme === 'dark' ||
+      (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)
+    )
+  },
+
+  get isLight() {
+    return !this.isDark;
+  }
 }
 
 // update btn
 btn.innerHTML = theme.currentThemeHTML
 
-window.changeMod = (change) => {
-  // true if the btn calls the method, false otherwise
-  if (change) {
-    window.theme.currentTheme = theme.nextTheme
-    btn.innerHTML = theme.currentThemeHTML
-  }
-
-  // update theme
-  const isDark = (
-    theme.currentTheme === 'dark' ||
-    (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)
-  )
-  css.href = isDark ? '/css/dark.css' : '/css/light.css'
+window.cycleTheme = () => {
+  window.theme.currentTheme = theme.nextTheme
+  btn.innerHTML = theme.currentThemeHTML
+  updateTheme()
 }
 
-changeMod(false)
+window.updateTheme = () => {
+  css.href = theme.isDark ? '/css/dark.css' : '/css/light.css'
+}
+
+updateTheme()
