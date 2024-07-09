@@ -1,6 +1,7 @@
 ---
 layout: pack
 no_container: true
+title: Classic Faithful 32x Programmer Art
 permalink: /classicfaithful/32x-programmer-art
 banner: /image/banner/cf32pa.jpg
 wordmark: /image/home/cf32pa.png

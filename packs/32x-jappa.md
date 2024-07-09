@@ -1,6 +1,7 @@
 ---
 layout: pack
 no_container: true
+title: Classic Faithful 32x Jappa
 permalink: /classicfaithful/32x-jappa
 banner: /image/banner/cf32.jpg
 wordmark: /image/home/cf32j.png
