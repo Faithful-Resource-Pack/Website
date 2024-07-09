@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div>
         <h1 class="display-3 my-5 text-center">Downloads</h1>
         <template v-for="(editions, pack) in alive" :key="pack">
-          <h2 class="text-center display-4 mb-0">{{ pack }}</h2>
+          <h2 :id="pack" class="text-center display-4 mb-0">{{ pack }}</h2>
           <template v-for="(data, edition) in editions" :key="edition">
             <h2 class="text-center my-3">{{ edition }} Edition</h2>
             <download-table

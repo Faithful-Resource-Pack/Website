@@ -6,6 +6,11 @@ export default {
       required: false,
       default: false,
     },
+    single: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     item: {
       type: Object,
       required: true,
@@ -20,9 +25,11 @@ export default {
     },
   },
   template: `
-    <tr class="content" @click="handleOpen">
-      <td class="before-empty toggle" v-if="nested"></td>
-      <td class="before-empty toggle" v-else>{{ showIcon }}</td>
+    <tr class="content" :class="nested ? 'darker' : null" @click="handleOpen">
+      <td class="before-empty toggle darker" v-if="nested || single"></td>
+      <td class="before-empty toggle darker" v-else>
+        <p>{{ showIcon }}</p>
+      </td>
       <td class="large details">
         <p>
           <span class="name">{{ item.file }}</span>
@@ -39,38 +46,27 @@ export default {
       <td class="size"><p>{{ size }}</p></td>
 
       <td
-        v-for="(origin, originKey, originIndex) in item.links"
-        :key="version + '-' + origin"
-        :class="['small', 'downloads', { 'desktop': originIndex > 0 }]"
+        v-for="(link, linkType) in item.links"
+        :key="version + '-' + link"
+        :class="['small', 'downloads']"
         :colspan="Object.keys(item.links).length > 1 ? 1 : 2"
       >
-        <template v-if="originIndex == 0">
-          <a
-            v-for="(originMobile, originMobileKey, originMobileIndex) in item.links"
-            :key="'mobile-' + version + '-' + origin"
-            :class="['btn', 'btn-dark', 'btn-dl', { 'mobile': originMobileIndex > 0 }]"
-            :href="origin"
-          >
-            <i class="fas">{{ downloadFormat[originKey]?.icon || "" }}</i>
-            <span class="link-text">{{ downloadFormat[originKey]?.text || originKey }}</span>
-          </a>
-        </template>
-        <a v-else class="btn btn-dark btn-dl" :href="origin">
-          <i class="fas">{{ downloadFormat[originKey]?.icon || "" }}</i>
-          <span class="link-text">{{ downloadFormat[originKey]?.text || originKey }}</span>
+        <a class="btn btn-dark btn-dl" :href="link">
+          <i :class="buttonData[linkType]?.type || 'fas'">{{ buttonData[linkType]?.icon || "" }}</i>
+          <span class="link-text">{{ buttonData[linkType]?.text || linkType }}</span>
         </a>
       </td>
     </tr>
   `,
   data() {
     return {
-      showIcon: "➕",
-      downloadFormat: {
-        download: { icon: "", text: "Download" },
-        curse: { icon: "", text: "Curse" },
-        github: { icon: "", text: "GitHub" },
-        modrinth: { icon: "", text: "Modrinth" },
-        mcpedl: { icon: "", text: "MCPEDL" },
+      showIcon: "+",
+      buttonData: {
+        download: { icon: "", text: "Download", type: "fas" },
+        curse: { icon: "", text: "Curse", type: "fas" },
+        github: { icon: "", text: "GitHub", type: "fab" },
+        modrinth: { icon: "", text: "Modrinth", type: "fas" },
+        mcpedl: { icon: "", text: "MCPEDL", type: "fas" },
       },
       labelColor: {
         Download: "github",
@@ -93,7 +89,7 @@ export default {
     },
     handleOpen() {
       // change icon then pass back to download-table to unhide child
-      this.showIcon = this.showIcon === "➕" ? "➖" : "➕"
+      this.showIcon = this.showIcon === "+" ? "-" : "+"
       this.$emit('click')
     },
   },

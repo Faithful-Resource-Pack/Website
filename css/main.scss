@@ -2171,9 +2171,15 @@ input[type=radio] {
 
 .button-2 {
   display: flex;
+  flex-direction: row;
   gap: 5px;
 
   & > * {
     flex-grow: 1;
+  }
+
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
   }
 }

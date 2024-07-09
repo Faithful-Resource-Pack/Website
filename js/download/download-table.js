@@ -32,7 +32,7 @@ export default {
             :key="version"
           >
             <download-line
-              :nested="items.length <= 1"
+              :single="items.length <= 1"
               :item="items[0]"
               :curse="getCurseFile(items[0])"
               :version="version"
@@ -44,6 +44,7 @@ export default {
             >
               <download-line
                 nested
+                single
                 :item="subItem"
                 :curse="getCurseFile(subItem)"
                 :version="version"

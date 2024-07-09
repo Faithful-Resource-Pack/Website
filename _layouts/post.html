@@ -6,36 +6,10 @@ layout: default
 	<h2 class="red banner">This project has been discontinued.</h2>
 {%- endif -%}
 
-<h2 class="display-3 my-5 text-center">
-	{%- if page.title -%}
+{%- if page.title -%}
+	<h2 class="display-3 my-5 text-center">
 		{{ page.title }}
-	{%- else -%}
-		Unknown Title
-	{%- endif -%}
-</h2>
-
-{%- if page.authors -%}
-	<h3 class="display my-5 text-center">
-		By&nbsp;
-		{%- assign author_nb = page.authors.size -%}
-		{% for author in page.authors %}
-			{%- assign author_nb = author_nb | minus: 1 -%}
-
-			{% if author.first %}
-				{%- if author_nb != 0 -%}
-					<a href="{{ author.first | shift }}">{{ author.first | pop }}</a>,
-				{%- else -%}
-					<a href="{{ author.first | shift }}">{{ author.first | pop }}</a>
-				{%- endif -%}
-			{% else %}
-				{%- if author_nb != 0 -%}
-					{{ author }},
-				{%- else -%}
-					{{ author }}
-				{%- endif -%}
-			{% endif %}
-		{% endfor %}
-	</h3>
+	</h2>
 {%- endif -%}
 
 {%- if page.header-img -%}
@@ -43,7 +17,7 @@ layout: default
 	<br>
 {%- endif -%}
 
-	<br>
+<br>
 
 {%- if page.carousel-img -%}
 	<!-- {{ page.carousel-img }} -->
@@ -134,7 +108,10 @@ layout: default
 		<h2 class="display-4 my-5 text-center">Download</h2>
 	{%- endif -%}
 	{%- for item in page.download -%}
-		<a href="{{ item.first | shift | join: '</li><li>' }}" class="btn block btn-lg btn-primary fancy-card-2x my-3">
+		<a
+			href="{{ item.first | shift | join: '</li><li>' }}"
+			class="btn block btn-lg btn-primary fancy-card-2x my-3"
+		>
 			<i style="margin-right: 5px" class="fas"></i>{{ item.first | pop }}
 		</a>
 	{%- endfor -%}
