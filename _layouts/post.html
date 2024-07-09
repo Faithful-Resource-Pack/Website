@@ -6,11 +6,13 @@ layout: default
 	<h2 class="red banner">This project has been discontinued.</h2>
 {%- endif -%}
 
-{%- if page.title -%}
-	<h2 class="display-3 my-5 text-center">{{ page.title }}</h2>
-{%- else -%}
-	<h2 class="display-3 my-5 text-center">Unknown Title</h2>
-{%- endif -%}
+<h2 class="display-3 my-5 text-center">
+	{%- if page.title -%}
+		{{ page.title }}
+	{%- else -%}
+		Unknown Title
+	{%- endif -%}
+</h2>
 
 {%- if page.authors -%}
 	<h3 class="display my-5 text-center">
@@ -68,7 +70,7 @@ layout: default
 	</div>
 
 	<script>
-		function ShowFullscreen(img_path) {
+		function ShowFullscreen(imgPath) {
 			const modal = document.getElementById('SF')
 			modal.style.display = 'block'
 
@@ -84,7 +86,7 @@ layout: default
 
 			// set img in modal:
 			const img = document.getElementById('SF-Img')
-			img.src = img_path
+			img.src = imgPath
 		}
 	</script>
 {%- endif -%}
@@ -142,16 +144,16 @@ layout: default
 	<script>
 		const path = "{{ page.main_changelog }}".split('.').shift();
 
-		function formatHTML(obj, lvl=3) {
+		function formatHTML(obj, lvl = 3) {
 			let result
 			if (Array.isArray(obj)) {
-				result = `<ul>${obj.map((e) => formatHTML(e, lvl+1)).join('')}</ul>`;
+				result = `<ul>${obj.map((e) => formatHTML(e, lvl + 1)).join('')}</ul>`;
 			} else if (typeof(obj) === 'string') {
 				result = `<li>${obj}</li>`;
 			} else {
 				result = Object.entries(obj)
 					.map(([key, val]) =>
-						`<h${lvl} class="card-title text-left">${key}:</h${lvl}>${formatHTML(val, lvl+1)}`)
+						`<h${lvl} class="card-title text-left">${key}:</h${lvl}>${formatHTML(val, lvl + 1)}`)
 					.join('');
 			}
 			console.log(obj, result);
@@ -161,11 +163,11 @@ layout: default
 		fetch(`{{ site.baseurl }}/${path}.json`)
 		  .then((response) => response.json())
 		  .then((body) => {
-			const beta_alpha_regex = /(Alpha|Beta)\s+\d+/;
-			const match = "{{ page.title }}".match(beta_alpha_regex);
+			const betaAlphaRegex = /(Alpha|Beta)\s+\d+/;
+			const match = "{{ page.title }}".match(betaAlphaRegex);
 			if (match) {
-				const my_release = body[match[0]];
-				document.querySelector('#changelog').innerHTML = formatHTML(my_release);
+				const myRelease = body[match[0]];
+				document.querySelector('#changelog').innerHTML = formatHTML(myRelease);
 			}
 		  });
 	</script>

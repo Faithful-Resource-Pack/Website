@@ -2167,3 +2167,13 @@ input[type=radio] {
 .faq-answer {
   padding-left: 20px;
 }
+
+
+.button-2 {
+  display: flex;
+  gap: 5px;
+
+  & > * {
+    flex-grow: 1;
+  }
+}
