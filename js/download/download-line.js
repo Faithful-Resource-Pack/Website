@@ -28,7 +28,7 @@ export default {
     <tr class="content" :class="nested ? 'darker' : null" @click="handleOpen">
       <td class="before-empty toggle darker" v-if="nested || single"></td>
       <td class="before-empty toggle darker" v-else>
-        <p>{{ showIcon }}</p>
+        <p class="clickable">{{ showIcon }}</p>
       </td>
       <td class="large details">
         <p>
