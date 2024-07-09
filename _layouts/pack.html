@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+{%- if page.banner -%}
+<div class="hero">
+	<div class="container">
+		<img class="wordmark" src="{{ page.wordmark }}">
+	</div>
+</div>
+{%- endif -%}
+
+<div class="container">
+	{%- if page.text -%}
+		<div class="card card-body">
+			<p class="h4 m-0">
+				{{ page.text }}
+			</p>
+			{%- if page.buttons -%}
+				<div class="button-2">
+				{%- for button in page.buttons -%}
+					<a class="btn btn-dark" href="{{ button.href }}">{{ button.text }}</a>
+				{%- endfor -%}
+				</div>
+			{%- endif -%}
+		</div>
+
+		<hr>
+	{%- endif -%}
+
+	<!-- TODO: move packs that require this feature to the real downloads page -->
+
+	{%- if page.downloads -%}
+		<h2 class="display-4 my-5 text-center">Downloads</h2>
+		{%- for item in page.downloads -%}
+			<h1 class="my-3" align="center">{{ item.first[0] }}</h1>
+			{%- for subitem in item.first[1] -%}
+				<p align="center">
+					<a href="{{ subitem[1] }}" class="btn block btn-lg btn-primary">
+						{%- if subitem[0] contains "GitHub" -%}
+							<i style="margin-right: 10px" class="fab"></i>
+						{%- elsif subitem[0] contains "CurseForge" -%}
+							<i style="margin-right: 10px" class="fas"></i>
+						{%- elsif subitem[0] contains "PlanetMinecraft" or subitem[0] contains "PMC" or subitem[0] contains "Planet Minecraft"-%}
+							<i style="margin-right: 10px" class="fas"></i>
+						{%- elsif subitem[0] contains "MCPEDL" -%}
+							<i style="margin-right: 10px" class="fas"></i>
+						{%- elsif subitem[0] contains "Modrinth" -%}
+							<i style="margin-right: 10px" class="fas"></i>
+						{%- endif -%}
+						{{ subitem[0] }}
+					</a>
+				</p>
+			{%- endfor -%}
+			<br>
+		{%- endfor -%}
+	{%- endif -%}
+</div>
+
+<style>
+	.hero {
+		display: block;
+		background-image: url("{{ page.banner }}");
+		background-size: cover;
+		background-position: center;
+		padding: 0 2rem 1px;
+		align-items: center;
+		filter: drop-shadow(0 5px 10px #000000aa);
+	}
+
+	.wordmark {
+		margin-top: 50px;
+		margin-bottom: 25px;
+		filter: drop-shadow(0 0 10px #000);
+		max-width: 50%;
+	}
+</style>

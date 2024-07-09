@@ -1,10 +1,12 @@
 ---
-layout: post
-title: Classic Faithful 64x Jappa
+layout: pack
+no_container: true
+title: Classic Faithful 64x
 permalink: /classicfaithful/64x-jappa
-header-img: https://database.faithfulpack.net/images/website/posts/cf64x/cf64_banner.jpg
+banner: /image/banner/cf64.jpg
+wordmark: /image/home/cf64.png
 
-long_text: |
+text: |
   The 64x part in the Classic Faithful lineup, Classic Faithful 64x aims to be a spiritual successor to HiTeeN's original Faithful 64x, as well as many other discontinued 64x projects. Its goal is to bring back the classic “painted” look of Vattic's textures that many players have grown to love over the years, all the while remaking vanilla art in quadruple the resolution.
   <br><br>
   Being based on the latest Minecraft textures, this pack is perfect for all enjoyers of the classic Faithful style who want a clean and updated experience.

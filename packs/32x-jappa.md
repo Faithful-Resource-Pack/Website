@@ -1,10 +1,11 @@
 ---
-layout: post
-title: Classic Faithful 32x Jappa
+layout: pack
+no_container: true
 permalink: /classicfaithful/32x-jappa
-header-img: https://database.faithfulpack.net/images/website/posts/cf32x/cf32_banner.jpg
+banner: /image/banner/cf32.jpg
+wordmark: /image/home/cf32j.png
 
-long_text: |
+text: |
   Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.
   <br><br>
   The Jappa version of Classic Faithful 32x is based on the new, updated Minecraft textures that were introduced in release 1.14, re-interpreted as if Vattic was there to make them himself. Great care has been taken to emulate Vattic's art style as closely as possible.
