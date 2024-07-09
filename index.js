@@ -250,6 +250,11 @@ app.get("/addon/", (req, res, next) => {
 	next();
 });
 
+app.get("/gallery*", (req, res) => {
+	// redirect everything after the slash (so ?show urls still work)
+	res.redirect(`https://webapp.faithfulpack.net${req.originalUrl}`);
+})
+
 app.get("/addons/", (req, res, next) => {
 	if (req.url == "/addons/") {
 		req.url = "/addons";
