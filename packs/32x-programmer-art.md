@@ -38,11 +38,4 @@ downloads:
     1.7.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.7.10.zip
     1.6.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.6.4.zip
 
-- Alternate Listings:
-    GitHub for Java Edition: https://github.com/classicfaithful/32x-programmer-art
-    GitHub for Bedrock Edition: https://github.com/classicfaithful/32x-programmer-art-bedrock
-    GitHub for Add-ons: https://github.com/classicfaithful/32x-programmer-art-add-ons
-    CurseForge: https://www.curseforge.com/minecraft/texture-packs/classic-faithful-32x-pa
-    Planet Minecraft: https://www.planetminecraft.com/texture-pack/classic-faithful-32x-pa
-
 ---

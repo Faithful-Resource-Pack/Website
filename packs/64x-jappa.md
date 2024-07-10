@@ -26,10 +26,4 @@ downloads:
     1.19.3 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.3.zip
     1.19.0 - 1.19.2 for Java Edition (CurseForge): https://www.curseforge.com/minecraft/texture-packs/classic-faithful-64x/download/4064436
 
-- Alternate Listings:
-    GitHub for Java Edition: https://github.com/classicfaithful/64x-jappa
-    GitHub for Bedrock Edition: https://github.com/classicfaithful/64x-jappa-bedrock
-    CurseForge: https://www.curseforge.com/minecraft/texture-packs/classic-faithful-64x
-    Planet Minecraft: https://www.planetminecraft.com/texture-pack/classic-faithful-64x/
-
 ---
