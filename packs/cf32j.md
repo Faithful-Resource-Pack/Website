@@ -3,7 +3,7 @@ layout: pack
 no_container: true
 title: Classic Faithful 32x Jappa
 permalink: /classicfaithful/32x-jappa
-banner: /image/banner/cf32.jpg
+banner: /image/banner/cf32j.jpg
 wordmark: /image/home/cf32j.png
 
 text: |
