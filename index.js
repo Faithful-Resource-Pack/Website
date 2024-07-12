@@ -53,8 +53,6 @@ app.get(["/coffee", "/teapot"], async (req, res) => {
 const EXTRACT = [
 	["title", true],
 	["permalink", true],
-	["comments", true],
-	["comments-id", true],
 	["header-img", true],
 	["discontinued", true],
 	["long_text", false],
