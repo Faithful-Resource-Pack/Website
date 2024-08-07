@@ -13,7 +13,7 @@ long_text: |
 downloads:
 - Latest Version:
     1.21 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%20java-latest.zip
-    Experimental Bedrock Edition (Use at your own risk!): https://database.faithfulpack.net/packs/Classic-64x-Bedrock/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.19.mcpack
+    Experimental Bedrock Edition (Use at your own risk!): https://database.faithfulpack.net/packs/Classic-64x-Bedrock/Jappa/Classic%20Faithful%2064x%20Jappa%20-%20Latest.mcpack
 
 - Legacy Versions:
     1.20.6 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%201.20.6.zip
