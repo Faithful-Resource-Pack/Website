@@ -1,9 +1,9 @@
 /* global Element, Event */
 
-Element.prototype.siblingElements = function () {
+function siblingElements() {
   if (this.parentNode === null) return []
 
-  return [...this.parentNode.children].filter((el) => el !== this)
+  return Array.from(this.parentNode.children).filter((el) => el !== this)
 }
 
 const DROPDOWN_SHOW_CLASS = 'show'
@@ -17,13 +17,15 @@ document.querySelectorAll('[data-toggle="dropdown"]').forEach((item) => {
 })
 
 // function made to toggle my item and untoggle all others
-function toggleDropdown (item) {
+function toggleDropdown(item) {
   const itemExpanded = item.parentNode.classList.contains(DROPDOWN_SHOW_CLASS)
 
-  if (!itemExpanded) { // if I am not expanded, go untoggle all other siblings
-    item.parentNode.siblingElements().filter((el) => el.classList.contains(DROPDOWN_SHOW_CLASS)).forEach((otherParent) => {
-      otherParent.classList.remove(DROPDOWN_SHOW_CLASS)
-    })
+  if (!itemExpanded) { // if not expanded, go untoggle all other siblings
+    siblingElements(item.parentNode)
+      .filter((el) => el.classList.contains(DROPDOWN_SHOW_CLASS))
+      .forEach((otherParent) => {
+        otherParent.classList.remove(DROPDOWN_SHOW_CLASS)
+      })
   }
 
   // then toggle me
@@ -37,7 +39,7 @@ document.querySelectorAll('[data-toggle="collapse"]').forEach((item) => {
   })
 })
 
-function toggleMenu (item) {
+function toggleMenu(item) {
   let expandNow = true
   if (item.dataset.expanded === 'true') expandNow = false
 
@@ -46,7 +48,7 @@ function toggleMenu (item) {
   item.dataset.expanded = expandNow
 }
 
-function getNextElement (element, selector) {
+function getNextElement(element, selector) {
   let next = element.nextElementSibling
   while (next) {
     if (next.matches(selector)) return next
@@ -72,7 +74,7 @@ document.querySelectorAll('[data-ride="carousel"]').forEach((item) => {
     else goToSlide(item, currentItem + 1)
   })
 
-  setTimeout(function loop () {
+  setTimeout(function loop() {
     if (currentItem === itemCount - 1) goToSlide(item, 0)
     else goToSlide(item, currentItem + 1)
     setTimeout(loop, 5000)
@@ -84,7 +86,7 @@ document.querySelectorAll('[data-ride="carousel"]').forEach((item) => {
     })
   }
 
-  function goToSlide (carousel, index) {
+  function goToSlide(carousel, index) {
     if (!blocking && index !== currentItem) {
       blocking = true
 
@@ -132,11 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isScrolling = window.scrollY > (topNavbar.offsetTop + topNavbarHeight)
     topNavbar.classList.toggle('fixed', isScrolling)
 
-    if (isScrolling) {
-      topNavbarParent.style.paddingTop = topNavbarHeight + 'px'
-    } else {
-      topNavbarParent.style.paddingTop = '0px'
-    }
+    topNavbarParent.style.paddingTop = isScrolling ? topNavbarHeight + 'px' : '0px'
   }
 
   changeTopNavbar() // Fix when reloading page already scrolled down, for example home page

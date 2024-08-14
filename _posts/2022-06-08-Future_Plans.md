@@ -18,7 +18,9 @@ long_text: |
   <br><br><br>
   <strong>After release</strong>
   <br><br>
-  Moving on towards the future, after Java's full release we intend to restore a regular update schedule and release updates every month.<br>All fully complete packs (i.e. the ones that have all textures from their respective version) will be called Releases and be put out in a single website post.
+  Moving on towards the future, after Java's full release we intend to restore a regular update schedule and release updates every month.
+  <br>
+  All fully complete packs (i.e. the ones that have all textures from their respective version) will be called Releases and be put out in a single website post.
   <br>
   Packs that still have some missing textures will be grouped into a separate post, will be called Pre-releases and branded accordingly. This isn't just limited to Bedrock for the time being, but also legacy Java versions with special textures that are unable to be backported from newer versions – for example the boat entity in release 1.8 and below. Pre-releases will also release at the same time as regular Releases.
   <br>

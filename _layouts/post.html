@@ -27,7 +27,12 @@ layout: default
 			{%- for image in site.static_files -%}
 				{%- if image.path contains page.carousel-img -%}
 					<div class="item">
-						<img onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')" id="{{ image.basename | replace: " ", "_" }}" src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+						<img
+							onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')"
+							id="{{ image.basename | replace: " ", "_" }}"
+							src="{{ site.baseurl }}{{ image.path }}"
+							alt="{{ image.basename }}"
+						>
 						{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
 					</div>
 				{%- endif -%}
@@ -138,19 +143,25 @@ layout: default
 		}
 
 		fetch(`{{ site.baseurl }}/${path}.json`)
-		  .then((response) => response.json())
-		  .then((body) => {
-			const betaAlphaRegex = /(Alpha|Beta)\s+\d+/;
-			const match = "{{ page.title }}".match(betaAlphaRegex);
-			if (match) {
-				const myRelease = body[match[0]];
-				document.querySelector('#changelog').innerHTML = formatHTML(myRelease);
-			}
-		  });
+			.then((response) => response.json())
+			.then((body) => {
+				const betaAlphaRegex = /(Alpha|Beta)\s+\d+/;
+				const match = "{{ page.title }}".match(betaAlphaRegex);
+				if (match) {
+					const myRelease = body[match[0]]
+					if (myRelease)
+						document.querySelector('#changelog').innerHTML = formatHTML(myRelease)
+					else
+						document.querySelector("#changelog-container").innerHTML = "";
+				}
+			})
+			.catch((err) => console.error(err));
 	</script>
-	<h2 class="display-4 my-5 text-center">Changelog</h2>
-	<div class="card card-body">
-		<div id='changelog'></div>
+	<div id="changelog-container">
+		<h2 class="display-4 my-5 text-center">Changelog</h2>
+		<div class="card card-body">
+			<div id='changelog'></div>
+		</div>
 	</div>
 {%- endif -%}
 
