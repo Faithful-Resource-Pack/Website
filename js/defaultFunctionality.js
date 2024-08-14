@@ -1,9 +1,9 @@
 /* global Element, Event */
 
-function siblingElements() {
-  if (this.parentNode === null) return []
+function siblingElements(element) {
+  if (element.parentNode === null) return []
 
-  return Array.from(this.parentNode.children).filter((el) => el !== this)
+  return Array.from(element.parentNode.children).filter((el) => el !== element)
 }
 
 const DROPDOWN_SHOW_CLASS = 'show'
