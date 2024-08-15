@@ -1,10 +1,12 @@
 ---
-layout: post
-title: Classic Faithful 32x PA
+layout: pack
+no_container: true
+title: Classic Faithful 32x Programmer Art
 permalink: /classicfaithful/32x-programmer-art
-header-img: https://database.faithfulpack.net/images/website/posts/cf32x/cf32pa_banner.jpg
+banner: /image/banner/cf32pa.jpg
+wordmark: /image/home/cf32pa.png
 
-long_text: |
+text: |
   Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.
   <br><br>
   Classic Faithful 32x Programmer Art goes all out on nostalgia! This pack features all the classic textures by Vattic himself. When applicable, textures from after his era have been made consistent with his art as well, oftentimes using complicated reverse-engineering processes to ensure the pack is as accurate as possible. Install this pack for a true blast from the past!
@@ -35,12 +37,5 @@ downloads:
     1.8.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.8.9.zip
     1.7.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.7.10.zip
     1.6.x for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%201.6.4.zip
-
-- Alternate Listings:
-    GitHub for Java Edition: https://github.com/classicfaithful/32x-programmer-art
-    GitHub for Bedrock Edition: https://github.com/classicfaithful/32x-programmer-art-bedrock
-    GitHub for Add-ons: https://github.com/classicfaithful/32x-programmer-art-add-ons
-    CurseForge: https://www.curseforge.com/minecraft/texture-packs/classic-faithful-32x-pa
-    Planet Minecraft: https://www.planetminecraft.com/texture-pack/classic-faithful-32x-pa
 
 ---
