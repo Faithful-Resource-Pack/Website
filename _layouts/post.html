@@ -20,156 +20,102 @@ layout: default
 <br>
 
 {%- if page.carousel-img -%}
-	<!-- {{ page.carousel-img }} -->
-	<div class="card card-body">
-		<div id="carousel-img">
+<!-- {{ page.carousel-img }} -->
+<div class="card card-body">
+	<div id="carousel-img">
 
-			{%- for image in site.static_files -%}
-				{%- if image.path contains page.carousel-img -%}
-					<div class="item">
-						<img
-							onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')"
-							id="{{ image.basename | replace: " ", "_" }}"
-							src="{{ site.baseurl }}{{ image.path }}"
-							alt="{{ image.basename }}"
-						>
-						{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
-					</div>
-				{%- endif -%}
-			{%- endfor -%}
+		{%- for image in site.static_files -%}
+			{%- if image.path contains page.carousel-img -%}
+				<div class="item">
+					<img
+						onclick="ShowFullscreen('{{ site.baseurl }}{{ image.path }}')"
+						id="{{ image.basename | replace: " ", "_" }}"
+						src="{{ site.baseurl }}{{ image.path }}"
+						alt="{{ image.basename }}"
+					>
+					{%- if page.show_carousel_name == true -%}<h4>{{ image.basename }}</h4>{%- endif -%}
+				</div>
+			{%- endif -%}
+		{%- endfor -%}
 
-		</div>
 	</div>
+</div>
 
-	<hr>
+<hr>
 
-	<div id="SF" class="modal">
-		<span id="SF-Span" class="close">&times;</span>
-		<img id="SF-Img"  class="modal-content">
-	</div>
+<div id="SF" class="modal">
+	<span id="SF-Span" class="close">&times;</span>
+	<img id="SF-Img" class="modal-content">
+</div>
 
-	<script>
-		function ShowFullscreen(imgPath) {
-			const modal = document.getElementById('SF')
-			modal.style.display = 'block'
+<script>
+	function ShowFullscreen(imgPath) {
+		const modal = document.getElementById('SF')
+		modal.style.display = 'block'
 
-			// close modal:
-			const span = document.getElementById('SF-Span')
-			span.onclick = () => {
-				modal.style.display = 'none';
-			}
-			// when pressing escape key:
-			document.addEventListener('keydown', (event) => {
-				if (event.keyCode == 27) modal.style.display = 'none'
-			})
-
-			// set img in modal:
-			const img = document.getElementById('SF-Img')
-			img.src = imgPath
+		// close modal:
+		const span = document.getElementById('SF-Span')
+		span.onclick = () => {
+			modal.style.display = 'none';
 		}
-	</script>
+		// when pressing escape key:
+		document.addEventListener('keydown', (event) => {
+			if (event.keyCode == 27) modal.style.display = 'none'
+		})
+
+		// set img in modal:
+		const img = document.getElementById('SF-Img')
+		img.src = imgPath
+	}
+</script>
 {%- endif -%}
 
-{%- if page.long_text -%}
-	<div class="card card-body">
-		<p class="h4 m-0">
-			{{ page.long_text }}
-		</p>
-	</div>
+{%- if page.description -%}
+<div class="card card-body">
+	<p class="h4 m-0">
+		{{ page.description }}
+	</p>
+</div>
 
-	<hr>
+<hr>
 {%- endif -%}
 
 {%- if page.downloads -%}
-	<h2 class="display-4 my-5 text-center">Downloads</h2>
-	{%- for item in page.downloads -%}
-		<h1 class="my-3" align="center">{{ item.first[0] }}</h1>
-		{%- for subitem in item.first[1] -%}
-			<p align="center">
-				<a href="{{ subitem[1] }}" class="btn block btn-lg btn-primary">
-					{%- if subitem[0] contains "GitHub" -%}
-						<i style="margin-right: 10px" class="fab"></i>
-					{%- elsif subitem[0] contains "CurseForge" -%}
-						<i style="margin-right: 10px" class="fas"></i>
-					{%- elsif subitem[0] contains "PlanetMinecraft" or subitem[0] contains "PMC" or subitem[0] contains "Planet Minecraft"-%}
-						<i style="margin-right: 10px" class="fas"></i>
-					{%- elsif subitem[0] contains "MCPEDL" -%}
-						<i style="margin-right: 10px" class="fas"></i>
-					{%- elsif subitem[0] contains "Modrinth" -%}
-						<i style="margin-right: 10px" class="fas"></i>
-					{%- endif -%}
-					{{ subitem[0] }}
-				</a>
-			</p>
-		{%- endfor -%}
-		<br>
-	{%- endfor -%}
-{%- endif -%}
-
-{%- if page.download -%}
-	{%- if page.download.size > 1 -%}
-		<h2 class="display-4 my-5 text-center">Downloads</h2>
-	{%- else -%}
-		<h2 class="display-4 my-5 text-center">Download</h2>
-	{%- endif -%}
-	{%- for item in page.download -%}
-		<a
-			href="{{ item.first | shift | join: '</li><li>' }}"
-			class="btn block btn-lg btn-primary fancy-card-2x my-3"
-		>
-			<i style="margin-right: 5px" class="fas"></i>{{ item.first | pop }}
-		</a>
-	{%- endfor -%}
-{%- endif -%}
-
-{%- if page.main_changelog -%}
-	<script>
-		const path = "{{ page.main_changelog }}".split('.').shift();
-
-		function formatHTML(obj, lvl = 3) {
-			let result
-			if (Array.isArray(obj)) {
-				result = `<ul>${obj.map((e) => formatHTML(e, lvl + 1)).join('')}</ul>`;
-			} else if (typeof(obj) === 'string') {
-				result = `<li>${obj}</li>`;
-			} else {
-				result = Object.entries(obj)
-					.map(([key, val]) =>
-						`<h${lvl} class="card-title text-left">${key}:</h${lvl}>${formatHTML(val, lvl + 1)}`)
-					.join('');
-			}
-			console.log(obj, result);
-			return result;
-		}
-
-		fetch(`{{ site.baseurl }}/${path}.json`)
-			.then((response) => response.json())
-			.then((body) => {
-				const betaAlphaRegex = /(Alpha|Beta)\s+\d+/;
-				const match = "{{ page.title }}".match(betaAlphaRegex);
-				if (match) {
-					const myRelease = body[match[0]]
-					if (myRelease)
-						document.querySelector('#changelog').innerHTML = formatHTML(myRelease)
-					else
-						document.querySelector("#changelog-container").innerHTML = "";
-				}
-			})
-			.catch((err) => console.error(err));
-	</script>
-	<div id="changelog-container">
-		<h2 class="display-4 my-5 text-center">Changelog</h2>
-		<div class="card card-body">
-			<div id='changelog'></div>
-		</div>
-	</div>
+{%- include article_download.html downloads=page.downloads -%}
 {%- endif -%}
 
 {%- if page.changelog -%}
-	{%- include changelog.html -%}
+<div id="changelog-container">
+	<br>
+	<h2 class="display-4 my-5 text-center">Changelog</h2>
+	<div class="card card-body">
+		<div id='changelog'></div>
+	</div>
+</div>
+<script>
+	function formatChangelog (obj, lvl = 3) {
+		if (typeof obj === "string") return `<li class="card-title">${obj}</li>`;
+		if (Array.isArray(obj))
+			return `<ul>${obj.map((e) => formatChangelog(e, lvl + 1)).join('')}</ul>`;
+		return Object.entries(obj)
+			.map(([key, val]) =>
+				`<h${lvl} class="card-title text-left">${key}:</h${lvl}>${formatChangelog(val, lvl + 1)}`)
+			.join('');
+	}
+
+	let changelogObj;
+	try {
+		// jekyll doesn't escape json so we have to do it ourselves (mfw)
+		changelogObj = JSON.parse(`{{ page.changelog | jsonify | replace: '"', '\"' }}`);
+		document.getElementById('changelog').innerHTML = formatChangelog(changelogObj);
+	} catch (err) {
+		console.error(err);
+		document.getElementById("changelog-container").innerHTML = "";
+	}
+</script>
 {%- endif -%}
 
-<br><br>
+<br>
 
 <a href="https://discord.gg/sN9YRQbBv7">
 	<p class="blurple banner">

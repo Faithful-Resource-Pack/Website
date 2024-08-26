@@ -24,13 +24,12 @@
   "homepage": "https://github.com/Faithful-Resource-Pack/Website#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "dompurify": "^3.1.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "js-yaml": "^4.1.0",
-    "jsdom": "^24.1.1"
+    "gray-matter": "^4.0.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.4"
   }

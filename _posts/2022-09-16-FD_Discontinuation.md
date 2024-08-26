@@ -4,7 +4,7 @@ title: The Fate of Faithful Dungeons
 permalink: /faithful32xDungeons/The%20Fate%20of%20Faithful%20Dungeons
 header-img: https://database.faithfulpack.net/images/website/posts/32xDungeons/discontinue.jpg
 
-long_text: |
+description: |
   Minecraft: Dungeons used to be a promising dungeon crawler, with lots of exciting adventures and new mechanics to explore. Faithful, of course, couldn't fall behind – the pack was among the first ones to actively use the Dokucraft team's modding tool to get custom textures working.
   <br>
   Unfortunately, as we all know, Dungeons is well past its heyday. With all the DLCs having come out and no new content in sight, all that remains in the game is a repetitive series of levels that gets boring quickly. The activity levels for both the game, as well as Faithful: Dungeons, have dwindled accordingly. As such, it is with a heavy heart that we're forced to announce the formal discontinuation of the Faithful: Dungeons project, meaning official maintenance and support will stop.

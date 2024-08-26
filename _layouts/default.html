@@ -8,13 +8,13 @@ layout: compress
 
 	<!-- HTML Meta Tags -->
 	<title>{{ page.title }} - Faithful</title>
-	<meta name="description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
+	<meta name="description" content="{% if page.description %}{{ page.description | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
 
 	<!-- Open Graph Meta Tags -->
 	<meta property="og:url" content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="{{page.title}}" />
-	<meta property="og:description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
+	<meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
 	<meta property="og:image" content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ site.baseurl }}{{ page.header-img }}{% else %}https://database.faithfulpack.net/images/branding/site/banners/universal_banner.png{% endif %}{% endif %}" />
 	<meta property="og:site_name" content="Faithful Resource Pack" />
 
@@ -22,7 +22,7 @@ layout: compress
 	<meta name="twitter:card" content="summary_large_image">
 	<meta property="twitter:domain" content="{{ site.url }}">
 	<meta property="twitter:url" content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}">
-	<meta name="twitter:description" content="{% if page.long_text %}{{ page.long_text | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
+	<meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
 	<meta property="twitter:image" content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ site.baseurl }}/image/{{ page.header-img }}{% else %}https://database.faithfulpack.net/images/branding/site/banners/universal_banner.png{% endif %}{% endif %}" />
 
 	<meta name="keywords" content="Minecraft, Java, Bedrock, Resource, Pack, Resource-Pack, Resourcepack, Compliance, Mods, Faithful, 32x, x32, 32x32, 64x, x64, 64x64, Classic Faithful, Classicfaithful, Emulated Vattic, Emulatedvattic">

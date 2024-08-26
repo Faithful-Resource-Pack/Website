@@ -14,11 +14,10 @@ text: |
   If you've been using Faithful since the old days but prefer the modern look of the new Minecraft textures, you're going to like this pack!
 
 downloads:
-- Latest Versions:
+  Latest Versions:
     1.21 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%20java-latest.zip
     Latest Release for Bedrock Edition: https://database.faithfulpack.net/packs/Classic-32x-Bedrock/Jappa/Classic%20Faithful%2032x%20Jappa%20-%20Latest.mcpack
-
-- Legacy Versions:
+  Legacy Versions:
     1.20.6 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.6.zip
     1.20.4 for Java Edition:  https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.4.zip
     1.20.2 for Java Edition:  https://database.faithfulpack.net/packs/Classic-32x-Java/Jappa/Classic%20Faithful%2032x%20Jappa%20-%201.20.2.zip

@@ -29,31 +29,8 @@ layout: default
 	{%- endif -%}
 
 	<!-- TODO: move packs that require this feature to the real downloads page -->
-
 	{%- if page.downloads -%}
-		<h2 class="display-4 my-5 text-center">Downloads</h2>
-		{%- for item in page.downloads -%}
-			<h1 class="my-3" align="center">{{ item.first[0] }}</h1>
-			{%- for subitem in item.first[1] -%}
-				<p align="center">
-					<a href="{{ subitem[1] }}" class="btn block btn-lg btn-primary">
-						{%- if subitem[0] contains "GitHub" -%}
-							<i style="margin-right: 10px" class="fab"></i>
-						{%- elsif subitem[0] contains "CurseForge" -%}
-							<i style="margin-right: 10px" class="fas"></i>
-						{%- elsif subitem[0] contains "PlanetMinecraft" or subitem[0] contains "PMC" or subitem[0] contains "Planet Minecraft"-%}
-							<i style="margin-right: 10px" class="fas"></i>
-						{%- elsif subitem[0] contains "MCPEDL" -%}
-							<i style="margin-right: 10px" class="fas"></i>
-						{%- elsif subitem[0] contains "Modrinth" -%}
-							<i style="margin-right: 10px" class="fas"></i>
-						{%- endif -%}
-						{{ subitem[0] }}
-					</a>
-				</p>
-			{%- endfor -%}
-			<br>
-		{%- endfor -%}
+	{%- include article_download.html downloads=page.downloads -%}
 	{%- endif -%}
 </div>
 

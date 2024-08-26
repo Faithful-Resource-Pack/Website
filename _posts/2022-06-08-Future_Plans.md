@@ -3,7 +3,7 @@ layout: post
 title: Our Plans Moving Forward
 permalink: /Our%20Plans%20Moving%20Forward
 
-long_text: |
+description: |
   If you're in <a href="https://discord.gg/sN9YRQbBv7">our Discord server</a>, you've most likely already heard the big news – <strong>Faithful 32x now has <u>all</u> textures for Java Edition 1.18 <i>and</i> 1.19!</strong> That means Faithful 32x for these versions is now fully complete. There's still a few things to do before release though, and we thought we would take the time to outline them in this post, as well as share our plans following the full release of the pack.
   <br><br><br>
   <strong>On release</strong>

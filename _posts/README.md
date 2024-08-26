@@ -19,29 +19,24 @@ carousel-img: https://database.faithfulpack.net/images/website/posts/fridge/
 show_carousel_name: false
 
 # can be removed
-long_text: |
+description: |
   We're proud to announce that Faithful is extending its support to smart fridges worldwide.
   <br>
   This description can span multiple lines and can have <b>markup</b>
 
 changelog:
-  # you can technically have more than one changelog per article
-  # this is usually not necessary however
-  - Beta 3:
-    - Added:
-      - Blocks: # can be everything you want
-        - Stone <strong>@Juknum</strong> # use html tags to underline/bold text
-    - Changed:
-      - Items:
-        - "[Bedrock] Square and curly brackets need quoting to prevent YAML conflicts"
+  # you can use any combination of objects, strings, and arrays if it's valid YAML
+  Added:
+    Blocks:
+      - Stone <strong>@Juknum</strong> # use html tags to underline/bold text
+  Changed:
+    Items:
+      - "[Bedrock] Square and curly brackets at the start of items need quoting to prevent YAML conflicts"
 
 # can be removed:
-download:
-  - Planet Minecraft:
-    - https://www.planetminecraft.com/texture-pack/
-  - CurseForge:
-    - https://www.curseforge.com/minecraft/texture-packs/
-
+downloads:
+  Planet Minecraft: https://www.planetminecraft.com/texture-pack/
+  CurseForge: https://www.curseforge.com/minecraft/texture-packs/
 ---
 ```
 

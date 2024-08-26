@@ -1,0 +1,59 @@
+---
+---
+<!-- this is reused in both the post and pack layouts -->
+<h2 class="display-4 my-5 text-center" id="download-title">Downloads</h2>
+<div id="download"></div>
+<script>
+	function handleIcon(downloadName) {
+		const name = downloadName.toLowerCase().trim();
+		if (name.includes("github")) return ["fab", ""];
+		if (name.includes("curseforge")) return ["fas", ""];
+		if (
+			["planetminecraft", "pmc", "planet minecraft"].some((search) => name.includes(search))
+		)
+			return ["fas", ""];
+		if (name.includes("mcpedl")) return ["fas", ""];
+		if (name.includes("modrinth")) return ["fas", ""];
+		// default download icon
+		return ["fas", ""];
+	}
+
+	function formatDownloads(downloadObj) {
+		isLegacy = false;
+		// liquid iteration sucks so I switched it to plain JS
+		const items = Object.entries(downloadObj).map(([category, items]) => {
+			// legacy changelog support
+			if (Array.isArray(items) && items.length === 1) items = items[0];
+			if (typeof items === "string") {
+				isLegacy = true;
+				const [className, icon] = handleIcon(items);
+				return `
+					<a href="${items}" class="btn block btn-lg btn-primary fancy-card-2x my-3">
+						<i style="margin-right: 5px" class="${className}">${icon}</i>${category}
+					</a>`;
+			}
+
+			const downloadList = Object.entries(items).map(([name, link]) => {
+				const [className, icon] = handleIcon(name);
+				return `
+					<p align="center">
+						<a href="${link}" class="btn block btn-lg btn-primary">
+							<i style="margin-right: 10px" class="${className}">${icon}</i>
+							${name}
+						</a>
+					</p>
+				`
+			});
+			return `
+				<h1 class="my-3" align="center">${category}</h1>
+				${downloadList.join("")}
+			`
+		});
+		if (items.length === 1) document.getElementById("download-title").innerHTML = "Download";
+		return items.join(isLegacy ? "" : "<br>");
+	}
+
+	// jekyll doesn't escape json so we have to do it ourselves (mfw)
+	const downloadObj = JSON.parse(`{{ include.downloads | jsonify | replace: '"', '\"' }}`);
+	document.getElementById("download").innerHTML = formatDownloads(downloadObj);
+</script>

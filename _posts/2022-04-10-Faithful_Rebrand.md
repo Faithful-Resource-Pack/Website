@@ -3,7 +3,7 @@ layout: post
 title: Compliance is Rebranding to Faithful
 permalink: /Faithful%20Rebrand
 
-long_text: |
+description: |
   Greetings! We're making this announcement to discuss the future of our community, which includes Compliance and Classic Faithful. You might have noticed that several Compliance social media, such as our Discord servers and Twitter account, have been referred to as "Faithful / Compliance". This was because we wanted to casually let our user base know that we are starting to transition away from Compliance and towards the Faithful brand name. We are proud to officially announce our rebrand as we take the mantle that Vattic started in 2010.
   <br><br>
   Let us reiterate – The project that used to be called Compliance, along with all its subsidiaries, is, effective immediately, officially being renamed to Faithful, ushering in a new era for the resource pack – one of legitimate administration and community involvement, that hasn’t been seen in years.
