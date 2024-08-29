@@ -22,6 +22,7 @@ jobs:
           cd /var/www/html/faithfulpack.net
           git stash
           git pull
+          bundle install
           pnpm install
           pnpm run ji
           pnpm run jb

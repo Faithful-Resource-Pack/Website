@@ -2060,6 +2060,7 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
     text-align: center;
     margin: 0;
     padding: 0.25rem 0;
+    margin-bottom: 1rem;
 
     .v-input__slot {
       display: inline;
@@ -2074,8 +2075,6 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
       color: white !important;
       font-size: inherit;
     }
-
-    margin-bottom: 1rem;
   }
 
   & > div > div > div > label {
