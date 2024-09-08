@@ -1,5 +1,3 @@
----
----
 <!-- this is reused in both the post and pack layouts -->
 <h2 class="display-4 my-5 text-center" id="download-title">Downloads</h2>
 <div id="download"></div>
@@ -23,7 +21,6 @@
 		// liquid iteration sucks so I switched it to plain JS
 		const items = Object.entries(downloadObj).map(([category, items]) => {
 			// legacy changelog support
-			if (Array.isArray(items) && items.length === 1) items = items[0];
 			if (typeof items === "string") {
 				isLegacy = true;
 				const [className, icon] = handleIcon(items);
