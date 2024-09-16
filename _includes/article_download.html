@@ -1,5 +1,5 @@
 <!-- this is reused in both the post and pack layouts -->
-<h2 class="display-4 my-5 text-center" id="download-title">Downloads</h2>
+<h2 class="display-4 my-5 text-center">Downloads</h2>
 <div id="download"></div>
 <script>
 	function handleIcon(downloadName) {
@@ -46,7 +46,7 @@
 				${downloadList.join("")}
 			`
 		});
-		if (items.length === 1) document.getElementById("download-title").innerHTML = "Download";
+
 		return items.join(isLegacy ? "" : "<br>");
 	}
 
