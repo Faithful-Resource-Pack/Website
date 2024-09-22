@@ -181,6 +181,7 @@ export default {
       MEDIAS_TO_ICONS: {
         "CurseForge":  { src: '/image/addons/curseforge.svg' },
         "GitHub": { fab: '' },
+        "Modrinth": { fas: '' },
         "Patreon": { fab: '' },
         "Paypal": { fab: '' },
         "Planet Minecraft": { fas: '' },
