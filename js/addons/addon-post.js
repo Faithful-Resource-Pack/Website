@@ -118,14 +118,16 @@ export default {
               <template v-if="addon.options.optifine">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="optifine" alt="requires optifine" loading="lazy">
-                  <p class="addon-flags-big-text">This add-on requires <a href="https://optifine.net/downloads">OptiFine</a></p>
+                  <p class="addon-flags-big-text">
+                    Requires <a href="https://optifine.net/downloads">OptiFine</a> or an <a href="https://optifine.alternatives.lambdaurora.dev/">equivalent mod</a>
+                  </p>
                 </div>
                 <br>
               </template>
               <template v-if="addon.options.tags && addon.options.tags.includes('Java')">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="java" alt="java support" loading="lazy">
-                  <p class="addon-flags-big-text">This add-on supports Java Edition.</p>
+                  <p class="addon-flags-big-text">Supports Java Edition</p>
                 </div>
                 <br>
               </template>
@@ -133,7 +135,7 @@ export default {
               <template v-if="addon.options.tags && addon.options.tags.includes('Bedrock')">
                 <div class="card card-body card-widget">
                   <img class="addon-flags-big" :src="bedrock" alt="bedrock support" loading="lazy">
-                  <p class="addon-flags-big-text">This add-on supports Bedrock Edition.</p>
+                  <p class="addon-flags-big-text">Supports Bedrock Edition</p>
                 </div>
                 <br>
               </template>
