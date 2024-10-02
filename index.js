@@ -126,7 +126,8 @@ app.get("*", async (req, res, next) => {
 
 	let data = await readFile(POST_PAGE, { encoding: "utf8" });
 	POST_REPLACE_FIELDS.forEach((token) => {
-		data = data.replaceAll(replaceTemplateToken(token), post[token]);
+		// need to replace br elements with newlines to prevent embeds looking weird
+		data = data.replaceAll(replaceTemplateToken(token), post[token].replaceAll("<br>", "\n"));
 	});
 	// send stringified contents
 	data = data.replaceAll("%postData%", cleanPostData(post));
