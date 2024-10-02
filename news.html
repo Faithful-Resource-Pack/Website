@@ -5,23 +5,41 @@ title: Home
 
 <h1 class="display-3 my-5 text-center">Faithful News</h1>
 
-<div class="res-grid-3">
-  {%- for post in site.posts -%}
-    <a
-      class="card img-card"
-      rel="noopener"
-      href="{{ site.baseurl }}{{ post.permalink }}"
+<div class="res-grid-3" id="news">
+  <a
+    v-for="post in posts"
+    class="card img-card"
+    rel="noopener"
+    :href="'{{ site.baseurl }}' + post.permalink"
+  >
+    <img v-if="post.header_img" :src="post.header_img" loading="lazy">
+    <img
+      v-else
+      src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg"
+      loading="lazy"
     >
-      {%- if post.header-img -%}
-      <img src="{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
-      {%- else -%}
-      <img
-        src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg"
-        loading="lazy"
-        alt="{{ post.title }}"
-      >
-      {%- endif -%}
-      <h3>{{ post.title }}</h3>
-    </a>
-  {%- endfor -%}
+    <!-- need to use v-text because jekyll parses the braces otherwise -->
+    <h3 v-text="post.title"></h3>
+  </a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const v = new Vue({
+      el: "#news",
+      data() {
+        return {
+          posts: [],
+        };
+      },
+      created() {
+        fetch('{{ site.baseurl }}/posts.json')
+          .then((res) => res.json())
+          .then((res) => {
+            this.posts = Object.values(res).sort((a, b) => new Date(b.date) - new Date(a.date));
+          })
+          .catch((err) => console.error(err));
+      }
+    });
+  })
+</script>

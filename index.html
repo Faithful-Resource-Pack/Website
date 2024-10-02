@@ -140,16 +140,18 @@ no_container: true
   <br>
   <h1 class="display-3" align="center">News</h1>
   <div class="res-grid-3">
-    {%- for post in site.posts limit:6 -%}
-      <a class="card img-card" rel="noopener" href="{{ site.baseurl }}{{ post.permalink }}">
-        {%- if post.header-img -%}
-        <img src="{{ post.header-img }}" loading="lazy" alt="{{ image.basename }}">
-        {%- else -%}
-        <img src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy" alt="{{ post.title }}">
-        {%- endif -%}
-        <h3>{{ post.title }}</h3>
-      </a>
-    {%- endfor -%}
+
+    <a
+      v-for="post in topPosts"
+      class="card img-card"
+      rel="noopener"
+      :href="'{{ site.baseurl }}' + post.permalink"
+    >
+      <img v-if="post.header_img" :src="post.header_img" loading="lazy">
+      <img v-else src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy">
+      <!-- need to use v-text because jekyll parses the braces otherwise -->
+      <h3 v-text="post.title"></h3>
+    </a>
   </div>
   <br>
   <a class="btn btn-dark col-6 center" href="{{ site.baseurl }}/news">See more</a>
@@ -164,8 +166,14 @@ no_container: true
           addons: [],
           NB_ITEMS: 3,
           LOADING_ID: "loading",
-
+          posts: [],
         };
+      },
+      computed: {
+        topPosts() {
+          if (!this.posts.length) return [];
+          return this.posts.slice(0, 6);
+        }
       },
       created() {
         fetch('https://api.faithfulpack.net/v2/addons/approved')
@@ -186,6 +194,13 @@ no_container: true
             console.error(err)
             this.addons = []
           });
+
+        fetch('{{ site.baseurl }}/posts.json')
+          .then((res) => res.json())
+          .then((res) => {
+            this.posts = Object.values(res).sort((a, b) => new Date(b.date) - new Date(a.date));
+          })
+          .catch((err) => console.error(err));
       }
     });
   })

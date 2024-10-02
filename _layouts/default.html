@@ -11,7 +11,9 @@ layout: compress
 	<meta name="description" content="{% if page.description %}{{ page.description | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
 
 	<!-- Open Graph Meta Tags -->
-	<meta property="og:url" content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}" />
+	<meta property="og:url" content="
+		{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}
+	" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="{{page.title}}" />
 	<meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
