@@ -10,7 +10,7 @@ title: Home
     v-for="post in posts"
     class="card img-card"
     rel="noopener"
-    :href="'{{ site.baseurl }}' + post.permalink"
+    :href="'' + post.permalink"
   >
     <img v-if="post.header_img" :src="post.header_img" loading="lazy">
     <img
@@ -33,7 +33,7 @@ title: Home
         };
       },
       created() {
-        fetch('{{ site.baseurl }}/posts.json')
+        fetch('/posts.json')
           .then((res) => res.json())
           .then((res) => {
             this.posts = Object.values(res).sort((a, b) => new Date(b.date) - new Date(a.date));

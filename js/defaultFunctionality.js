@@ -2,7 +2,6 @@
 
 function siblingElements(element) {
   if (element.parentNode === null) return []
-
   return Array.from(element.parentNode.children).filter((el) => el !== element)
 }
 
@@ -16,7 +15,7 @@ document.querySelectorAll('[data-toggle="dropdown"]').forEach((item) => {
   })
 })
 
-// function made to toggle my item and untoggle all others
+// toggle my item and untoggle all others
 function toggleDropdown(item) {
   const itemExpanded = item.parentNode.classList.contains(DROPDOWN_SHOW_CLASS)
 

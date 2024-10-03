@@ -83,8 +83,9 @@ Vue.component('modpack-modal', {
     },
     getName(id) {
       if (this.mods[id]) this.modsNames[id] = this.mods[id].name;
-      return axios.get(`${this.$root.apiURL}/v2/mods/${id}/curseforge/name`)
-        .then((res) => { this.modsNames[id] = res.data })
+      return fetch(`${this.$root.apiURL}/v2/mods/${id}/curseforge/name`)
+        .then((res) => res.json())
+        .then((res) => { this.modsNames[id] = res })
         .catch(() => { this.modsNames[id] = 'Not Found on CurseForge API: ' + id });
     },
 

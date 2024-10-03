@@ -1,4 +1,4 @@
-/* global Vue, axios */
+/* global Vue */
 /* eslint no-multi-str: 0 */
 
 const _MOD_NOT_FOUND_MESSAGE = 'Found no thumbnail for this mod'

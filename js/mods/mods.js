@@ -286,13 +286,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // we need this part for breakpoints
       this.windowSize = window.innerWidth
       window.addEventListener('resize', () => { this.windowSize = window.innerWidth })
-
-      document.addEventListener('DOMContentLoaded', () => {
-        retryAxios.attach(axios, {
-          retries: 5,
-          retryDelay: () => 3000
-        })
-      })
     }
   })
 })
