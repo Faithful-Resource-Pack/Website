@@ -13,7 +13,7 @@ defaults:
 exclude:
   - node_modules
   - /package*.json
-  - /index.js
+  - /backend
   - /.github
   - /README.md
   - posts.json
