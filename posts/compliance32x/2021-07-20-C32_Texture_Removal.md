@@ -19,7 +19,7 @@ description: |
   If you are interested in the specific textures that we have decided are no longer fit for Compliance, as well as reasons why they're not, please read below.
 
 changelog:
-  - Blocks:
+  Blocks:
     - acacia_leaves (rule 4, isn't shaded properly)
     - bee_nest_bottom (not shaded properly, initial faithful texture)
     - bee_nest_front_honey (not shaded properly, initial faithful texture)
@@ -93,7 +93,7 @@ changelog:
     - water_flow (too many colours, not consistent with vanilla, too blurry, initial faithful texture)
     - water_overlay (identical to vanilla)
     - water_still (too many colours, not consistent with vanilla, too blurry, initial faithful texture)
-  - Entities:
+  Entities:
     - all axolotls (shaded improperly, stairing pixels, bit of colour banding)
     - all banner patterns and shield banner patterns (initial textures, weird antialiasing)
     - beacon_beam (weird dithering)
@@ -126,7 +126,7 @@ changelog:
     - all wolves except collar (shaded improperly)
     - zombie (shaded improperly, colour banding, initial texture)
     - all zombie villagers except their profession level and the farmer profession (shaded improperly, colour banding)
-  - Items:
+  Items:
     - black_dye (shaded improperly)
     - broken_elytra (shaded improperly, weird shape)
     - cauldron (shaded improperly, strange shape)
@@ -147,12 +147,12 @@ changelog:
     - prismarine_crystals (shaded improperly, weird dithering, bad shape)
     - red_dye (bad shape)
     - spruce_sign (shading inconsistent with vanilla)
-  - Misc:
+  Misc:
     - unknown_server (identical to vanilla)
-  - Status Effects:
+  Status Effects:
     - hunger (shaded improperly, colour banding, stairing pixels, initial texture)
     - saturation (same as hunger)
-  - Armour:
+  Armour:
     - all armour except chainmail and netherite and turtle (not shaded properly)
 
 ---

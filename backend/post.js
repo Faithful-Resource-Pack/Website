@@ -14,7 +14,7 @@ const POST_IMPORT_PATH = join(process.cwd(), "posts");
 const POST_EXPORT_FILE = join(process.cwd(), "posts.json");
 
 const POST_PAGE = join(BASE_JEKYLL_PATH, "post.html");
-const POST_REPLACE_FIELDS = ["permalink", "title", "description", "header_img"];
+const POST_REPLACE_FIELDS = ["permalink", "title", "description"];
 
 const corsOptions = {
 	origin: "*",
@@ -78,11 +78,21 @@ async function getPostJSON() {
 	return json;
 }
 
-router.get("/posts.json", cors(corsOptions), async (_, res) => {
-	const posts = await getPostJSON();
-	if (!posts) return res.status(400).send({ message: "Could not load posts!" }).end();
-	return res.send(JSON.stringify(posts)).end();
-});
+async function loadPostPage(post) {
+	let data = await readFile(POST_PAGE, { encoding: "utf8" });
+	POST_REPLACE_FIELDS.forEach((token) => {
+		// need to replace br elements with newlines to prevent embeds looking weird
+		data = data.replaceAll(replaceTemplateToken(token), post[token].replaceAll("<br>", "\n"));
+	});
+	data = data
+		.replaceAll(
+			"%header-img%",
+			post.header_img ||
+				"https://database.faithfulpack.net/images/website/posts/placeholder.jpg",
+		)
+		.replaceAll("%postData%", cleanPostData(post));
+	return data;
+}
 
 // force new generation on startup (prevents new routes not being added)
 const posts = await generatePostJSON();
@@ -91,16 +101,31 @@ const posts = await generatePostJSON();
 router.get(Object.keys(posts), async (req, res) => {
 	// we know the url points to a valid post now
 	const post = posts[req.url];
-
-	let data = await readFile(POST_PAGE, { encoding: "utf8" });
-	POST_REPLACE_FIELDS.forEach((token) => {
-		// need to replace br elements with newlines to prevent embeds looking weird
-		data = data.replaceAll(replaceTemplateToken(token), post[token].replaceAll("<br>", "\n"));
-	});
-	// send stringified contents
-	data = data.replaceAll("%postData%", cleanPostData(post));
+	const data = await loadPostPage(post);
 	res.send(data);
 	res.end();
+});
+
+router.get("/:project/latest", async (req, res, next) => {
+	console.log(req.params.project);
+	const project = req.params.project;
+	const posts = await getPostJSON();
+	const candidates = Object.values(posts).filter(({ permalink }) =>
+		permalink.startsWith(`/${project}`),
+	);
+	if (!candidates) return next();
+	// get most recent post
+	const post = candidates.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+	const data = await loadPostPage(post);
+	res.send(data);
+	res.end();
+});
+
+// export json as endpoint for use on clientside
+router.get("/posts.json", cors(corsOptions), async (_, res) => {
+	const posts = await getPostJSON();
+	if (!posts) return res.status(400).send({ message: "Could not load posts!" }).end();
+	return res.send(JSON.stringify(posts)).end();
 });
 
 export default router;
