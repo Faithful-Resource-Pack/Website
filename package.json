@@ -10,7 +10,7 @@
     "start": "pnpm run ji && pnpm run jb && pm2 start \"node index.js\" --name \"WEBSITE\"",
     "dev": "concurrently \"npm:dev-*\"",
     "dev-watch-site": "bundle exec jekyll build --watch",
-    "dev-watch-app": "nodemon backend/index.js --watch backend/ --ignore '_site/**'"
+    "dev-watch-app": "nodemon --watch backend --watch posts --ignore _site -e js,md,ts backend/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,12 +26,12 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.20.0",
+    "express": "^4.21.0",
     "gray-matter": "^4.0.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "concurrently": "^8.2.2",
-    "nodemon": "^3.1.4"
+    "concurrently": "^9.0.1",
+    "nodemon": "^3.1.7"
   }
 }
