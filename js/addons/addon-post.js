@@ -20,16 +20,15 @@ export default {
       style="max-width: 1140px"
       v-else-if="addon.approval.status == 'approved'"
     >
-
       <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem">{{ addon.name }}</h2>
-      <img :src="getHeader()" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
+      <img :src="header" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
       <template>
         <addon-modal v-model="modal" :close="closeModal" :image="modalImage" />
-        <div class="card card-body" v-if="getCarousel().length">
+        <div class="card card-body" v-if="carousel.length">
           <h3 class="text-center">Screenshots</h3>
           <div class="res-grid-3">
-            <div v-if="files.length" v-for="(image, index) in getCarousel()">
+            <div v-if="files.length" v-for="(image, index) in carousel">
               <div class="card img-card">
                 <img :src="image" @click="openModal(image)">
               </div>
@@ -108,7 +107,7 @@ export default {
             <v-col>
               <h3 class="text-center">Downloads</h3>
               <div class="card card-body">
-                <template v-for="file in getDownloads()">
+                <template v-for="file in downloads">
                   <a :href="file.source" class="btn btn-dark" style="color: white; width: 100%; margin: 5px 0">{{ file.name }}</a>
                 </template>
               </div>
@@ -213,16 +212,7 @@ export default {
     formatUrl(url) {
       return !/^https?:\/\//i.test(url) ? `http://${url}` : url
     },
-    getHeader() {
-      return this.files.filter((el) => el.use === 'header')[0].source
-    },
-    getCarousel() {
-      return this.files.filter((el) => el.use === 'carousel' || el.use === 'screenshot').map((el) => el.source)
-    },
-    getDownloads() {
-      return this.files.filter((el) => el.use === 'download')
-    },
-    search_authors() {
+    searchAuthors() {
       this.addon.authors.forEach((authorID) => {
         fetch(`https://api.faithfulpack.net/v2/users/${authorID}`)
           .then((response) => response.json())
@@ -232,13 +222,24 @@ export default {
       })
     }
   },
+  computed: {
+    header() {
+      return this.files.find((el) => el.use === 'header').source
+    },
+    carousel() {
+      return this.files.filter((el) => el.use === 'carousel' || el.use === 'screenshot').map((el) => el.source)
+    },
+    downloads() {
+      return this.files.filter((el) => el.use === 'download')
+    }
+  },
   beforeMount() {
     if (!window.slug && this.$route) {
       fetch(`https://api.faithfulpack.net/v2/addons/${window.slug}`)
       .then((response) => response.json())
       .then((data) => this.addon = data[0])
       .then(() => {
-        this.search_authors()
+        this.searchAuthors()
       })
       .then(() => {
         fetch(`https://api.faithfulpack.net/v2/addons/${this.addon.id}`)
@@ -257,7 +258,7 @@ export default {
       })
     } else {
       this.addon = window.addon
-      this.search_authors()
+      this.searchAuthors()
       this.files = window.files
 
       this.loading = false

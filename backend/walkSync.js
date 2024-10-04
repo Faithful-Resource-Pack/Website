@@ -11,4 +11,4 @@ export default function walkSync(dir, filelist = []) {
 		else filelist.push(dir + file);
 	}
 	return filelist;
-};
+}
