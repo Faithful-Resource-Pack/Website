@@ -99,6 +99,7 @@ const posts = await generatePostJSON();
 
 // match all post routes
 router.get(Object.keys(posts), async (req, res) => {
+	if (req.url.endsWith("/")) req.url = req.url.slice(0, -1);
 	// we know the url points to a valid post now
 	const post = posts[req.url];
 	const data = await loadPostPage(post);
@@ -107,7 +108,6 @@ router.get(Object.keys(posts), async (req, res) => {
 });
 
 router.get("/:project/latest", async (req, res, next) => {
-	console.log(req.params.project);
 	const project = req.params.project;
 	const posts = await getPostJSON();
 	const candidates = Object.values(posts).filter(({ permalink }) =>
