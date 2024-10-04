@@ -124,9 +124,9 @@ no_container: true
         <div class="img-card-shadow"></div>
         <h3 v-text="addon.name"></h3>
         <div class="addon-flags" style="margin-bottom: 5px">
-          <img v-show="addon.options.tags.includes('Java')" style="margin-bottom: 5px" src="image/icon/java.png" alt="available for Java Edition" loading="lazy">
-          <img v-show="addon.options.tags.includes('Bedrock')" style="margin-bottom: 5px" src="image/icon/bedrock.png" alt="available for Bedrock Edition" loading="lazy">
-          <img v-show="addon.options.optifine" style="margin-bottom: 5px" class="optifine" src="image/icon/optifine.png" alt="requires optifine" loading="lazy">
+          <img v-show="addon.options.tags.includes('Java')" style="margin-bottom: 5px" src="/image/icon/java.png" alt="available for Java Edition" loading="lazy">
+          <img v-show="addon.options.tags.includes('Bedrock')" style="margin-bottom: 5px" src="/image/icon/bedrock.png" alt="available for Bedrock Edition" loading="lazy">
+          <img v-show="addon.options.optifine" style="margin-bottom: 5px" class="optifine" src="/image/icon/optifine.png" alt="requires optifine" loading="lazy">
         </div>
       </a>
     </template>
@@ -145,7 +145,7 @@ no_container: true
       v-for="post in topPosts"
       class="card img-card"
       rel="noopener"
-      :href="'' + post.permalink"
+      :href="post.permalink"
     >
       <img v-if="post.header_img" :src="post.header_img" loading="lazy">
       <img v-else src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy">

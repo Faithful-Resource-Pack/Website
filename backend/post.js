@@ -26,7 +26,7 @@ const corsOptions = {
 
 let postCache;
 
-function generatePostJSON() {
+export function generatePostJSON() {
 	// use raw promise for better error handling in reduce callback
 	return new Promise((resolve, reject) => {
 		const paths = walkSync(POST_IMPORT_PATH).filter(
@@ -71,7 +71,7 @@ async function getPostJSON() {
 
 	// then try reading file
 	const file = await readFile(POST_EXPORT_FILE, { encoding: "utf8" }).catch(() => null);
-	if (file) return file;
+	if (file) return JSON.parse(file);
 
 	// then generate a new copy if it doesn't exist
 	const json = await generatePostJSON();
@@ -84,17 +84,13 @@ router.get("/posts.json", cors(corsOptions), async (_, res) => {
 	return res.send(JSON.stringify(posts)).end();
 });
 
-// match all routes and continue if no matching post is found
-router.get("*", async (req, res, next) => {
-	const posts = await getPostJSON();
-	// posts couldn't be fetched, go to 404 page
-	if (!posts) next();
+// force new generation on startup (prevents new routes not being added)
+const posts = await generatePostJSON();
 
-	// remove last character (permalinks don't end with a slash)
-	if (req.url.endsWith("/")) req.url = req.url.slice(0, -1);
+// match all post routes
+router.get(Object.keys(posts), async (req, res) => {
+	// we know the url points to a valid post now
 	const post = posts[req.url];
-	// post doesn't exist under path, probably another page
-	if (!post) return next();
 
 	let data = await readFile(POST_PAGE, { encoding: "utf8" });
 	POST_REPLACE_FIELDS.forEach((token) => {
@@ -106,10 +102,5 @@ router.get("*", async (req, res, next) => {
 	res.send(data);
 	res.end();
 });
-
-// when the file is loaded generate the post json
-generatePostJSON()
-	.then(() => console.log("Post JSON loaded!"))
-	.catch((err) => console.error("Failed to load post JSON:\n", err));
 
 export default router;
