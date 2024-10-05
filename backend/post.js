@@ -114,7 +114,7 @@ router.get("/:project/latest", async (req, res, next) => {
 	const candidates = Object.values(posts).filter(({ permalink }) =>
 		permalink.startsWith(`/${project}`),
 	);
-	if (!candidates) return next();
+	if (!candidates.length) return next();
 	// get most recent post
 	const post = candidates.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
 	const data = await loadPostPage(post);
