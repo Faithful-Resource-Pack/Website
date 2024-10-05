@@ -1,22 +1,15 @@
-/* global Vue, VueRouter, Vuetify */
+/* global Vue, Vuetify */
 
 document.addEventListener("DOMContentLoaded", () => {
   Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
 
   const AddonPage = () => import('./addon-page.js')
 
-  const routes = [
-    { path: '/', component: AddonPage, name: 'addon-page' },
-    { path: '*', redirect: '/' }
-  ]
-
-  const router = new VueRouter({
-    routes,
-  })
-
   const v = new Vue({
-    router,
     el: "#app",
+    components: {
+      AddonPage,
+    },
     vuetify: new Vuetify({
       theme: {
         themes: {

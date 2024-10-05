@@ -1,4 +1,4 @@
-/* global Vue, VueRouter, Vuetify */
+/* global Vue, Vuetify */
 
 document.addEventListener("DOMContentLoaded", () => {
   Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'

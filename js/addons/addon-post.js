@@ -20,15 +20,20 @@ export default {
       style="max-width: 1140px"
       v-else-if="addon.approval.status == 'approved'"
     >
-      <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem">{{ addon.name }}</h2>
+      <h2
+        class="text-center"
+        style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem"
+      >
+        {{ addon.name }}
+      </h2>
       <img :src="header" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
       <template>
         <addon-modal v-model="modal" :close="closeModal" :image="modalImage" />
         <div class="card card-body" v-if="carousel.length">
           <h3 class="text-center">Screenshots</h3>
-          <div class="res-grid-3">
-            <div v-if="files.length" v-for="(image, index) in carousel">
+          <div class="res-grid-3" v-if="files.length">
+            <div v-for="(image, index) in carousel">
               <div class="card img-card">
                 <img :src="image" @click="openModal(image)">
               </div>
@@ -44,16 +49,31 @@ export default {
         }"
       >
         <v-col class="col-2" :sm="$vuetify.breakpoint.mdAndUp ? 3 : 2" style="max-width: 100%">
-
-          <!-- Only 1 authors -->
+          <!-- Only 1 author -->
           <template v-if="Object.keys(authors).length == 1">
             <h3 class="text-center">Author</h3>
-            <img v-if="authors[Object.keys(authors)[0]].uuid" alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" :src="($vuetify.breakpoint.mdAndUp ? 'https://visage.surgeplay.com/full/256/' : 'https://visage.surgeplay.com/head/128/') + authors[Object.keys(authors)[0]].uuid" />
-            <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" src="https://visage.surgeplay.com/head/128/X-Steve" />
+            <img
+              v-if="authors[Object.keys(authors)[0]].uuid"
+              alt="avatar"
+              style="display: block; margin-left: auto; margin-right: auto; max-height: 250px"
+              :src="avatar"
+            />
+            <img
+              v-else
+              alt="avatar"
+              style="display: block; margin-left: auto; margin-right: auto; max-height: 250px"
+              src="https://visage.surgeplay.com/head/128/X-Steve"
+            />
             <div class="card card-title text-center author-widget">
               <h4>{{ authors[Object.keys(authors)[0]].username }}</h4>
               <div class="author-socials">
-                <a v-for="m in authors[Object.keys(authors)[0]].media" :key="m.type + '-' + m.link" :href="formatUrl(m.link)" target="_blank" rel="noreferrer" >
+                <a
+                  v-for="m in authors[Object.keys(authors)[0]].media"
+                  :key="m.type + '-' + m.link"
+                  :href="formatUrl(m.link)"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img v-if="MEDIAS_TO_ICONS[m.type].src" width="24" height="24" :src="MEDIAS_TO_ICONS[m.type].src" :alt="m.type" />
                   <i v-else-if="MEDIAS_TO_ICONS[m.type].fas" class="fas">{{ MEDIAS_TO_ICONS[m.type].fas }}</i>
                   <i v-else-if="MEDIAS_TO_ICONS[m.type].fab" class="fab">{{ MEDIAS_TO_ICONS[m.type].fab }}</i>
@@ -73,8 +93,18 @@ export default {
             >
               <v-row v-for="(author, index) in authors">
                 <v-col style="margin: 0 5px" :key="index">
-                  <img v-if="author.uuid" alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" :src="'https://visage.surgeplay.com/head/128/' + author.uuid" />
-                  <img v-else alt="avatar" style="display: block; margin-left: auto; margin-right: auto; max-height: 250px" src="https://visage.surgeplay.com/head/128/X-Steve" />
+                  <img
+                    v-if="author.uuid"
+                    alt="avatar"
+                    style="display: block; margin-left: auto; margin-right: auto; max-height: 250px"
+                    :src="'https://visage.surgeplay.com/head/128/' + author.uuid"
+                  />
+                  <img
+                    v-else
+                    alt="avatar"
+                    style="display: block; margin-left: auto; margin-right: auto; max-height: 250px"
+                    src="https://visage.surgeplay.com/head/128/X-Steve"
+                  />
                   <div class="card card-title text-center author-widget">
                     <h4>{{ author.username }}</h4>
                     <div class="author-socials">
@@ -151,7 +181,6 @@ export default {
                   </div>
                 </v-col>
               </v-row>
-
             </v-col>
           </v-row>
         </v-col>
@@ -164,7 +193,6 @@ export default {
         Start a discussion in our Discord!
       </p>
     </a>
-
     `,
   data() {
     return {
@@ -231,31 +259,37 @@ export default {
     },
     downloads() {
       return this.files.filter((el) => el.use === 'download')
+    },
+    avatar() {
+      const baseURL = this.$vuetify.breakpoint.mdAndUp
+        ? 'https://visage.surgeplay.com/full/256/'
+        : 'https://visage.surgeplay.com/head/128/';
+      return baseURL + authors[Object.keys(authors)[0]].uuid
     }
   },
   beforeMount() {
     if (!window.slug && this.$route) {
       fetch(`https://api.faithfulpack.net/v2/addons/${window.slug}`)
-      .then((response) => response.json())
-      .then((data) => this.addon = data[0])
-      .then(() => {
-        this.searchAuthors()
-      })
-      .then(() => {
-        fetch(`https://api.faithfulpack.net/v2/addons/${this.addon.id}`)
-          .then((response) => response.json())
-          .then((data) => this.files = data)
-      })
-      .finally(() => {
-        this.loading = false
-        window.scrollTo(0, 0)
-      })
-      .catch((err) => {
-        console.error(err)
-        this.addon = {}
-        this.loading = false
-        window.scrollTo(0, 0)
-      })
+        .then((response) => response.json())
+        .then((data) => this.addon = data[0])
+        .then(() => {
+          this.searchAuthors()
+        })
+        .then(() => {
+          fetch(`https://api.faithfulpack.net/v2/addons/${this.addon.id}`)
+            .then((response) => response.json())
+            .then((data) => this.files = data)
+        })
+        .finally(() => {
+          this.loading = false
+          window.scrollTo(0, 0)
+        })
+        .catch((err) => {
+          console.error(err)
+          this.addon = {}
+          this.loading = false
+          window.scrollTo(0, 0)
+        })
     } else {
       this.addon = window.addon
       this.searchAuthors()
