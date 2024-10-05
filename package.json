@@ -7,7 +7,7 @@
   "scripts": {
     "ji": "bundle install",
     "jb": "bundle exec jekyll build",
-    "start": "pnpm run ji && pnpm run jb && pm2 start \"node index.js\" --name \"WEBSITE\"",
+    "start": "pnpm run ji && pnpm run jb && pm2 start \"node backend/index.js\" --name \"WEBSITE\"",
     "dev": "concurrently \"npm:dev-*\"",
     "dev-watch-site": "bundle exec jekyll build --watch",
     "dev-watch-app": "nodemon --watch backend --watch posts --ignore _site -e js,md,ts backend/index.js"
