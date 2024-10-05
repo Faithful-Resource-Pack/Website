@@ -1,4 +1,4 @@
-/* global Vue, axios, MinecraftUtils, location */
+/* global Vue, MinecraftUtils, location */
 
 const _MODPACK_NOT_FOUND_MESSAGE = 'Found no thumbnail for this modpack'
 const _NO_LINK = null
@@ -126,13 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     created() {
-      document.addEventListener('DOMContentLoaded', () => {
-        retryAxios.attach(axios, {
-          retries: 5,
-          retryDelay: () => 3000
-        })
-      })
-
       this.getDataFromDB()
     }
   })

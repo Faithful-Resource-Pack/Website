@@ -74,16 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
         )
       },
       results() {
-        return this.faqs.length === 1 ? "result" : "results";
+        return this.faqs.length === 1 ? "result" : "results"
       }
     },
     created() {
-      axios
-        .get(
-          "https://raw.githubusercontent.com/Faithful-Resource-Pack/CompliBot/main/json/faq.json",
-        )
+      fetch("https://raw.githubusercontent.com/Faithful-Resource-Pack/CompliBot/main/json/faq.json")
+        .then((res) => res.json())
         .then((res) => {
-          this.allFaqs = res.data.filter((v) => !v.discord)
+          this.allFaqs = res.filter((v) => !v.discord)
           this.startSearch()
         })
     },

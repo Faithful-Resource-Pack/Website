@@ -6,7 +6,7 @@ permalink: /license
 
 <link
   rel="stylesheet"
-  href="{{ site.baseurl }}/css/license.css"
+  href="/css/license.css"
 />
 
 <!--
@@ -119,7 +119,7 @@ permalink: /license
   Load("en"); // load english by default
 
   async function Load(file) {
-    const res = await fetch(`{{ site.baseurl }}/translated/license/${file}.md`);
+    const res = await fetch(`/translated/license/${file}.md`);
     const text = await res.text();
     const [frontMatter, markdown] = text.split(/---/g);
     const body = await marked.parse(markdown);

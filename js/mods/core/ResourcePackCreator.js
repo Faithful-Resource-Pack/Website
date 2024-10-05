@@ -1,5 +1,5 @@
 /* eslint new-cap: 0 */
-/* global MinecraftUtils, axios, idb, JSZip, axiosRetry, fetch */
+/* global MinecraftUtils, idb, JSZip, fetch */
 
 const PATH_PACK_PNG = 'https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png'
 const MCMETA_DESCRIPTION = 'Faithful Mods'
@@ -198,12 +198,8 @@ const ResourcePackCreator = { // eslint-disable-line no-unused-vars
    * @returns {Promise<ModResponse>}
    */
   requestDownloadMod(mod) {
-    return axios({
-      url:
-        'https://api.allorigins.win/raw?url=' + mod.repositoryURL + '/archive/' + mod.version + '.zip',
-      method: 'GET',
-      responseType: 'blob' // important
-    })
+    return fetch('https://api.allorigins.win/raw?url=' + mod.repositoryURL + '/archive/' + mod.version + '.zip')
+      .then((res) => res.blob())
       .then((res) => {
         const fileKey = this.fileKey(mod)
 

@@ -1,4 +1,4 @@
-/* global location, Vue, axios, getHTML */
+/* global location, Vue, getHTML */
 
 let cache = {}
 
