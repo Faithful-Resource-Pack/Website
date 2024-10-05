@@ -98,10 +98,11 @@ async function loadPostPage(post) {
 const posts = await generatePostJSON();
 
 // match all post routes
-router.get(Object.keys(posts), async (req, res) => {
+router.get(Object.keys(posts), async (req, res, next) => {
 	if (req.url.endsWith("/")) req.url = req.url.slice(0, -1);
 	// we know the url points to a valid post now
 	const post = posts[req.url];
+	if (!post) return next();
 	const data = await loadPostPage(post);
 	res.send(data);
 	res.end();
