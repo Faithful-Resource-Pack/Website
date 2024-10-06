@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Compliance is Rebranding to Faithful
 permalink: /Faithful%20Rebrand
 

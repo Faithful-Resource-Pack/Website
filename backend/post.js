@@ -41,17 +41,11 @@ export function generatePostJSON() {
 				reject(err);
 			}
 
-			// clean up jekyll holdovers
-			delete obj.layout;
-			const headerImg = obj["header-img"];
-			obj.header_img = headerImg;
-			delete obj["header-img"];
-
 			// take date from filename
 			const [y, m, d] = filename.split("-");
 			obj.date = [y, m, d].join("-");
 			const key = obj.permalink;
-			if (key in acc) reject(new Error(`Duplicate post key ${key}`));
+			if (key in acc) reject(new Error(`Duplicate post route ${key}`));
 			acc[key] = obj;
 			return acc;
 		}, {});
@@ -99,8 +93,8 @@ const posts = await generatePostJSON();
 
 // match all post routes
 router.get(Object.keys(posts), async (req, res, next) => {
+	// permalinks don't match a trailing slash
 	if (req.url.endsWith("/")) req.url = req.url.slice(0, -1);
-	// we know the url points to a valid post now
 	const post = posts[req.url];
 	if (!post) return next();
 	const data = await loadPostPage(post);

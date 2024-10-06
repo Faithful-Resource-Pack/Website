@@ -1,22 +1,16 @@
 # How to add an article to the Faithful Website:
 
-Adding an article to the website is as simple as adding a markdown file in this folder (`_posts`). You can use this file as an example for your post.
+Adding an article to the website is as simple as adding a markdown file in this folder (`posts`). You can use this file as an example for your post.
 
-> **The title, layout, and permalink are necessary, but everything else can be safely removed.**
+> **The title and permalink are necessary, but everything else can be safely removed.**
 
 ```md
 ---
-layout: post
 title: Faithful Smart Fridge Alpha 1
 permalink: /faithfulsmartfridge/A1
 
 # can be removed
-header-img: https://database.faithfulpack.net/images/website/posts/fridge/A1.jpg
-
-# deprecated
-carousel-img: https://database.faithfulpack.net/images/website/posts/fridge/
-# if true, show image basename as caption title
-show_carousel_name: false
+header_img: https://database.faithfulpack.net/images/website/posts/fridge/A1.jpg
 
 # can be removed
 description: |
@@ -28,15 +22,18 @@ changelog:
   # you can use any combination of objects, strings, and arrays if it's valid YAML
   Added:
     Blocks:
-      - Stone <strong>@Juknum</strong> # use html tags to underline/bold text
+      - Stone <strong>@Juknum</strong> # use HTML tags to underline/bold text
   Changed:
     Items:
       - "[Bedrock] Square and curly brackets at the start of items need quoting to prevent YAML conflicts"
 
-# can be removed:
+# you can use a mix of groups and single links
 downloads:
   Planet Minecraft: https://www.planetminecraft.com/texture-pack/
-  CurseForge: https://www.curseforge.com/minecraft/texture-packs/
+  This is a download group:
+    CurseForge: https://www.curseforge.com/minecraft/texture-packs/
+    Modrinth: https://modrinth.com/resourcepacks
+
 ---
 ```
 

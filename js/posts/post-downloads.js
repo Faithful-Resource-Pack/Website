@@ -6,7 +6,7 @@ export default {
 			<template v-for="[category, items] in Object.entries(downloads)">
 				<a
 					v-if="isLegacy(items)"
-					:href="handleLegacyItem(items)"
+					:href="items"
 					class="btn block btn-lg btn-primary fancy-card-2x my-3"
 				>
 					<i style="margin-right: 10px" :class="getIcon(items).cls">
@@ -29,20 +29,16 @@ export default {
 	`,
 	props: {
 		downloads: {
-			type: [Object, Array],
+			type: Object,
 			required: true,
 		},
 	},
 	methods: {
-		isLegacy(items) {
-			return typeof items === "string" || (Array.isArray(items) && items.length === 1);
-		},
-		handleLegacyItem(item) {
-			if (Array.isArray(item) && item.length === 1) return item[0];
-			return item;
+		isLegacy(item) {
+			return typeof item === "string";
 		},
 		getIcon(item) {
-			const name = this.handleLegacyItem(item).toLowerCase().trim();
+			const name = item.toLowerCase().trim();
 			if (name.includes("github")) return { cls: "fab", icon: "" };
 			if (name.includes("curseforge")) return { cls: "fas", icon: "" };
 			if (

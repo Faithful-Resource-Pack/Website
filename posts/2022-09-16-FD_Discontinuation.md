@@ -1,8 +1,7 @@
 ---
-layout: post
 title: The Fate of Faithful Dungeons
 permalink: /faithful32xDungeons/The%20Fate%20of%20Faithful%20Dungeons
-header-img: https://database.faithfulpack.net/images/website/posts/32xDungeons/discontinue.jpg
+header_img: https://database.faithfulpack.net/images/website/posts/32xDungeons/discontinue.jpg
 
 description: |
   Minecraft: Dungeons used to be a promising dungeon crawler, with lots of exciting adventures and new mechanics to explore. Faithful, of course, couldn't fall behind – the pack was among the first ones to actively use the Dokucraft team's modding tool to get custom textures working.

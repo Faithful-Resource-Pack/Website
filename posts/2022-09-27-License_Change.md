@@ -1,8 +1,7 @@
 ---
-layout: post
 title: An Update To Our License
 permalink: /License%20Update
-header-img: https://database.faithfulpack.net/images/website/posts/other/steve_license.jpg
+header_img: https://database.faithfulpack.net/images/website/posts/other/steve_license.jpg
 
 description: |
   Faithful is a project built on transparency and community involvement. For the longest time, however, our license has required everybody to get written permission should they want to use Faithful assets for most projects. Predictably, we've been getting requests to lift this requirement since the very beginning. Well, today's a good day for those that suggested it, because we're now changing our license so that only crediting is necessary!

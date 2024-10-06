@@ -1,8 +1,7 @@
 ---
-layout: post
 title: Introducing the Faithful Minecraft Server
 permalink: /FaithfulMCServer
-header-img: https://database.faithfulpack.net/images/website/posts/other/server.jpg
+header_img: https://database.faithfulpack.net/images/website/posts/other/server.jpg
 
 description: |
   Today we're delighted to announce the Faithful community is expanding beyond Discord and into the game the packs are all about – Minecraft! The Faithful Minecraft Server is a place to meet fellow users of the pack, play the game and have fun. With a freebuild creative world available now and a survival world coming soon, the server has something for everyone. Oh, and have I mentioned that you can join with both Java and Bedrock? Thanks to Geyser you can play on the server with any device that supports Minecraft, be it your phone or the smart fridge you somehow managed to install Linux and WINE on.

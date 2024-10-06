@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Our Plans Moving Forward
 permalink: /Our%20Plans%20Moving%20Forward
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Announcement Regarding Placeholder Textures
 permalink: /compliance32x/Announcement%20Regarding%20Placeholder%20Textures
 

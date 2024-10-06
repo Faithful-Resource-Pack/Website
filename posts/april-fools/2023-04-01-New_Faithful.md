@@ -1,8 +1,7 @@
 ---
-layout: post
 title: "[APRIL FOOLS] Introducing the New Faithful"
 permalink: /newfaithful/release
-header-img: https://database.faithfulpack.net/images/website/posts/other/new_faithful.jpg
+header_img: https://database.faithfulpack.net/images/website/posts/other/new_faithful.jpg
 
 description: |
   For as long as Faithful has existed, we've been getting requests for higher resolutions. 128x, 256x, 512x… While we would have loved to extend Faithful's repertoire, it was clear that we'd never be able to support resolutions higher than 64x.
@@ -25,6 +24,5 @@ changelog:
 
 
 downloads:
-  Java 1.19.4 (810 MB):
-    - https://database.faithfulpack.net/packs/New-Faithful/New%20Faithful.zip
+  Java 1.19.4 (810 MB): https://database.faithfulpack.net/packs/New-Faithful/New%20Faithful.zip
 ---
