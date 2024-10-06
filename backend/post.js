@@ -125,8 +125,8 @@ router.get("/:project/latest", async (req, res, next) => {
 // export json as endpoint for use on clientside
 router.get("/posts.json", cors(corsOptions), async (_, res) => {
 	const posts = await getPostJSON();
-	if (!posts) return res.status(400).send({ message: "Could not load posts!" }).end();
-	return res.send(JSON.stringify(posts)).end();
+	if (!posts) return res.status(400).json({ message: "Could not load posts!" }).end();
+	return res.json(posts).end();
 });
 
 export default router;
