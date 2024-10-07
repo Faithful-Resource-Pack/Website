@@ -32,23 +32,23 @@ export function generatePostJSON() {
 		const paths = walkSync(POST_IMPORT_PATH).filter(
 			(d) => d.endsWith(".md") && !d.endsWith("README.md"),
 		);
-		const result = paths.reduce((acc, cur) => {
-			const filename = basename(cur);
-			let obj;
-			try {
-				obj = matter.read(cur).data;
-			} catch (err) {
-				reject(err);
-			}
+		const result = paths
+			.map((path) => {
+				const filename = basename(path);
+				let post;
+				try {
+					post = matter.read(path).data;
+				} catch (err) {
+					reject(err);
+				}
 
-			// take date from filename
-			const [y, m, d] = filename.split("-");
-			obj.date = [y, m, d].join("-");
-			const key = obj.permalink;
-			if (key in acc) reject(new Error(`Duplicate post route ${key}`));
-			acc[key] = obj;
-			return acc;
-		}, {});
+				// take date from filename
+				const [y, m, d] = filename.split("-");
+				post.date = [y, m, d].join("-");
+				post.published = true;
+				return post;
+			})
+			.sort((a, b) => new Date(a.date) - new Date(b.date));
 
 		postCache = result;
 
@@ -92,22 +92,23 @@ async function loadPostPage(post) {
 const posts = await generatePostJSON();
 
 // match all post routes
-router.get(Object.keys(posts), async (req, res, next) => {
-	// permalinks don't match a trailing slash
-	if (req.url.endsWith("/")) req.url = req.url.slice(0, -1);
-	const post = posts[req.url];
-	if (!post) return next();
-	const data = await loadPostPage(post);
-	res.send(data);
-	res.end();
-});
+router.get(
+	posts.map(({ permalink }) => permalink),
+	async (req, res, next) => {
+		// permalinks don't match a trailing slash
+		if (req.url.endsWith("/")) req.url = req.url.slice(0, -1);
+		const post = posts.find(({ permalink }) => permalink === req.url);
+		if (!post) return next();
+		const data = await loadPostPage(post);
+		res.send(data);
+		res.end();
+	},
+);
 
 router.get("/:project/latest", async (req, res, next) => {
 	const project = req.params.project;
 	const posts = await getPostJSON();
-	const candidates = Object.values(posts).filter(({ permalink }) =>
-		permalink.startsWith(`/${project}`),
-	);
+	const candidates = posts.filter(({ permalink }) => permalink.startsWith(`/${project}`));
 	if (!candidates.length) return next();
 	// get most recent post
 	const post = candidates.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
@@ -120,7 +121,7 @@ router.get("/:project/latest", async (req, res, next) => {
 router.get("/posts.json", cors(corsOptions), async (_, res) => {
 	const posts = await getPostJSON();
 	if (!posts) return res.status(400).json({ message: "Could not load posts!" }).end();
-	return res.json(posts).end();
+	return res.json(Object.assign({}, posts)).end();
 });
 
 export default router;
