@@ -80,7 +80,7 @@ async function loadPostPage(post) {
 	});
 	data = data
 		.replaceAll(
-			"%header-img%",
+			"%header_img%",
 			post.header_img ||
 				"https://database.faithfulpack.net/images/website/posts/placeholder.jpg",
 		)
