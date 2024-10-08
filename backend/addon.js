@@ -3,10 +3,15 @@ import { Router } from "express";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-import { BASE_JEKYLL_PATH, NOT_FOUND_PAGE, replaceTemplateToken } from "./util.js";
+import {
+	BASE_JEKYLL_PATH,
+	embedDescription,
+	NOT_FOUND_PAGE,
+	replaceTemplateToken,
+} from "./util.js";
 
 const ADDON_PAGE = join(BASE_JEKYLL_PATH, "addon.html");
-const ADDON_REPLACE_FIELDS = ["url", "name", "description", "authors", "header_img"];
+const ADDON_REPLACE_FIELDS = ["url", "name", "authors", "header_img"];
 
 const router = Router({ mergeParams: true });
 
@@ -40,6 +45,8 @@ async function loadAddonPage(addon) {
 	ADDON_REPLACE_FIELDS.forEach((token) => {
 		data = data.replaceAll(replaceTemplateToken(token), replacedData[token]);
 	});
+
+	data = data.replaceAll("%description%", embedDescription(addon.description));
 
 	// replace script value
 	//! please use Node v15+ for support of replaceAll

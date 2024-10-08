@@ -6,7 +6,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { basename, join } from "node:path";
 
 import walkSync from "./walkSync.js";
-import { BASE_JEKYLL_PATH, replaceTemplateToken } from "./util.js";
+import { BASE_JEKYLL_PATH, embedDescription, replaceTemplateToken } from "./util.js";
 
 const router = Router({ mergeParams: true });
 
@@ -14,7 +14,7 @@ const POST_IMPORT_PATH = join(process.cwd(), "posts");
 const POST_EXPORT_FILE = join(process.cwd(), "posts.json");
 
 const POST_PAGE = join(BASE_JEKYLL_PATH, "post.html");
-const POST_REPLACE_FIELDS = ["permalink", "title", "description"];
+const POST_REPLACE_FIELDS = ["permalink", "title"];
 
 const corsOptions = {
 	origin: "*",
@@ -75,9 +75,10 @@ async function getPostJSON() {
 async function loadPostPage(post) {
 	let data = await readFile(POST_PAGE, { encoding: "utf8" });
 	POST_REPLACE_FIELDS.forEach((token) => {
-		// need to replace br elements with newlines to prevent embeds looking weird
-		data = data.replaceAll(replaceTemplateToken(token), post[token].replaceAll("<br>", "\n"));
+		data = data.replaceAll(replaceTemplateToken(token), post[token]);
 	});
+	if (post.description)
+		data = data.replaceAll("%description%", embedDescription(post.description));
 	data = data
 		.replaceAll(
 			"%header_img%",
