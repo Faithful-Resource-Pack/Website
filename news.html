@@ -33,7 +33,7 @@ title: Home
         };
       },
       created() {
-        fetch('/posts.json')
+        fetch('https://api.faithfulpack.net/v2/posts/approved')
           .then((res) => res.json())
           .then((res) => {
             this.posts = Object.values(res).sort((a, b) => new Date(b.date) - new Date(a.date));

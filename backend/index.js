@@ -15,8 +15,8 @@ app.use(
 );
 
 // server rendered dynamic routes (preserves SEO and embed support)
-app.use("/", addonBackend);
 app.use("/", postBackend);
+app.use("/", addonBackend);
 app.use("/", coffeeBackend);
 
 app.get("/gallery*", (req, res) => {

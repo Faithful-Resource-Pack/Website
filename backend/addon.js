@@ -70,8 +70,7 @@ router.get("/addons/:name/?", async (req, res) => {
 
 	addon.url = req.originalUrl;
 	const data = await loadAddonPage(addon);
-	res.send(data);
-	res.end();
+	res.send(data).end();
 });
 
 export default router;
