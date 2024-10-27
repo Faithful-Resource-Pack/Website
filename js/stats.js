@@ -7,6 +7,7 @@ Vue.config.devtools = location.hostname === 'localhost' || location.hostname ===
     data() {
       return {
         addons: {},
+        posts: {},
         keys: ['numberOfMinecraftVersions', 'totalNumberOfResourcePacksStored', 'numberOfModsSupported'],
         messages: {
           loading: 'Loading',
@@ -52,6 +53,18 @@ Vue.config.devtools = location.hostname === 'localhost' || location.hostname ===
         })
 
         return result;
+      },
+      postStats() {
+        return Object.values(this.posts)
+          .map((post) => post.permalink)
+          .reduce(
+            (acc, cur) => {
+              if (cur.startsWith("/compliance32x") || cur.startsWith("/faithful32x")) ++acc.f32;
+              if (cur.startsWith("/compliance64x") || cur.startsWith("/faithful64x")) ++acc.f64;
+              return acc;
+            },
+            { f32: 0, f64: 0 }
+          )
       }
     },
     created() {
@@ -91,6 +104,15 @@ Vue.config.devtools = location.hostname === 'localhost' || location.hostname ===
         })
         .catch(() => {
           this.addons = undefined
+        })
+
+      fetch('https://api.faithfulpack.net/v2/posts/approved')
+        .then((res) => res.json())
+        .then((data) => {
+          this.posts = data;
+        })
+        .catch(() => {
+          this.posts = undefined;
         })
     }
   })
