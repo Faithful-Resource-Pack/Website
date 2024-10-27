@@ -10,9 +10,7 @@ const DROPDOWN_SHOW_CLASS = 'show'
 // at initialization
 document.querySelectorAll('[data-toggle="dropdown"]').forEach((item) => {
   // add click listener to toggle dropdowns
-  item.addEventListener('click', () => {
-    toggleDropdown(item)
-  })
+  item.addEventListener('click', () => toggleDropdown(item))
 })
 
 // toggle my item and untoggle all others
@@ -22,9 +20,7 @@ function toggleDropdown(item) {
   if (!itemExpanded) { // if not expanded, go untoggle all other siblings
     siblingElements(item.parentNode)
       .filter((el) => el.classList.contains(DROPDOWN_SHOW_CLASS))
-      .forEach((otherParent) => {
-        otherParent.classList.remove(DROPDOWN_SHOW_CLASS)
-      })
+      .forEach((otherParent) => otherParent.classList.remove(DROPDOWN_SHOW_CLASS))
   }
 
   // then toggle me
@@ -33,9 +29,7 @@ function toggleDropdown(item) {
 
 document.querySelectorAll('[data-toggle="collapse"]').forEach((item) => {
   item.dataset.expanded = false
-  item.addEventListener('click', () => {
-    toggleMenu(item)
-  })
+  item.addEventListener('click', () => toggleMenu(item))
 })
 
 function toggleMenu(item) {
@@ -89,11 +83,11 @@ document.querySelectorAll('[data-ride="carousel"]').forEach((item) => {
     if (!blocking && index !== currentItem) {
       blocking = true
 
-      const carouselIIndicators = carousel.querySelector('.carousel-indicators').children
+      const carouselIndicators = carousel.querySelector('.carousel-indicators').children
       const carouselItems = carousel.querySelector('.carousel-inner').children
 
-      carouselIIndicators.item(currentItem).classList.remove('active')
-      carouselIIndicators.item(index).classList.add('active')
+      carouselIndicators.item(currentItem).classList.remove('active')
+      carouselIndicators.item(index).classList.add('active')
 
       let itemKeyLeftRight = ''
       let itemKeyPrevNext = ''
@@ -109,8 +103,8 @@ document.querySelectorAll('[data-ride="carousel"]').forEach((item) => {
       carouselItems.item(currentItem).classList.add(itemKeyLeftRight)
       setTimeout(() => {
         carouselItems.item(index).classList.remove(itemKeyPrevNext)
-        carouselItems.item(currentItem).classList.remove(itemKeyLeftRight)
         carouselItems.item(index).classList.add('active')
+        carouselItems.item(currentItem).classList.remove(itemKeyLeftRight)
         carouselItems.item(currentItem).classList.remove('active')
         currentItem = index
 
@@ -138,5 +132,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   changeTopNavbar() // Fix when reloading page already scrolled down, for example home page
 
-  window.addEventListener('scroll', () => changeTopNavbar(), true)
+  window.addEventListener('scroll', changeTopNavbar, true)
 })
