@@ -1,7 +1,11 @@
 /* global Vue */
 /* eslint no-multi-str: 0 */
 
-Vue.component('minecraft-mod-list', {
+export default {
+  name: 'minecraft-mod-list',
+  components: {
+    "minecraft-mod": () => import("./minecraftMod.js"),
+  },
   template: `
     <ul class="mod-ul">
       <minecraft-mod v-for="(mod, index) in mods" :key="index" :mod="mod" />
@@ -23,4 +27,4 @@ Vue.component('minecraft-mod-list', {
       return mod.resource_pack.git_repository ? mod.resource_pack.git_repository.split('/').pop() : null
     }
   },
-})
+}

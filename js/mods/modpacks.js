@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
   const v = new Vue({ // eslint-disable-line no-unused-vars
     el: '#modpacks',
+    components: {
+      "broken-page": () => import("./components/brokenPage.js"),
+      "modpack-modal": () => import("./components/modpackModal.js"),
+      "modpack-card": () => import("./components/modpackCard.js"),
+      "local-download": () => import("./components/localDownload.js"),
+      "zip-options": () => import("./components/zipOptions.js"),
+    },
     data() {
       return {
         modpackModalOpened: false,

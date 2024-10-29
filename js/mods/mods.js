@@ -3,12 +3,22 @@
 Object.filter = (obj, predicate) =>
   Object.keys(obj)
     .filter((key) => predicate(obj[key]))
-    .reduce((res, key) => (res[key] = obj[key], res), {});
+    .reduce((acc, cur) => {
+      acc[cur] = obj[cur];
+      return acc;
+    }, {});
 
 document.addEventListener("DOMContentLoaded", () => {
   Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
   const v = new Vue({ // eslint-disable-line no-unused-vars
     el: '#app',
+    components: {
+      "broken-page": () => import("./components/brokenPage.js"),
+      "minecraft-mod-list": () => import("./components/mods/minecraftModsList.js"),
+      "download-minecraft-version": () => import("./components/mods/downloadMinecraftVersion.js"),
+      "local-download": () => import("./components/localDownload.js"),
+      "zip-options": () => import("./components/zipOptions.js"),
+    },
     data() {
       return {
         form: {
@@ -18,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         isMounted: false,
         isLoadingDownload: false,
         loading: true,
-        loadingVersions: true,
         mods: [],
         sentences: {
           searchAdvice: 'You can search by name or by version',
@@ -29,7 +38,44 @@ document.addEventListener("DOMContentLoaded", () => {
           noResultsVersion: 'No results found for version',
           typeAnotherVersion: 'Try to type another version than'
         },
-        versions: {},
+        versions: {
+          1: {
+            min: "1.6.1",
+            max: "1.8.9",
+          },
+          2: {
+            min: "1.9",
+            max: "1.10.2",
+          },
+          3: {
+            min: "1.11",
+            max: "1.12.2",
+          },
+          4: {
+            min: "1.13",
+            max: "1.14.4",
+          },
+          5: {
+            min: "1.15",
+            max: "1.16.1",
+          },
+          6: {
+            min: "1.16.2",
+            max: "1.16.5",
+          },
+          7: {
+            min: "1.17.0",
+            max: "1.17.1",
+          },
+          8: {
+            min: "1.18.0",
+            max: "1.18.2",
+          },
+          9: {
+            min: "1.19",
+            max: "1.100",
+          },
+        },
         breakpointLimits: {
           xs: 575,
           sm: 785,
@@ -113,8 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return this.mods
       },
       exactVersionMode() {
-        if (this.loadingVersions) { return false }
-
         return this.modSelection.findIndex((mod) => {
           const correspondingNumbers = MinecraftUtils.minecraftVersionsToNumbers([this.versions['1'].min, mod.version])
 
@@ -155,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // (list of package number must not change)
 
         // we need mods and versions to be loaded
-        if (this.loading || this.loadingVersions || this.modSelection.length === 0) { return undefined }
+        if (this.loading || this.modSelection.length === 0) { return undefined }
 
         let result
         let versionChanged = false
@@ -272,14 +316,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
           this.mods = sorted
           this.loading = false
-        })
-        .catch(console.error)
-
-      fetch(`${this.apiURL}/v2/mods/pack_versions`)
-        .then((res) => res.json())
-        .then((json) => {
-          this.loadingVersions = false
-          this.versions = json
         })
         .catch(console.error)
 

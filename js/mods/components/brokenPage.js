@@ -1,7 +1,8 @@
 /* global Vue, saveAs, ResourcePackCreator, moment, Worker, NAME */
 /* eslint no-multi-str: 0 */
 
-Vue.component("broken-page", {
+export default {
+  name: "broken-page",
   props: {
     disabled: {
       type: Boolean,
@@ -10,7 +11,7 @@ Vue.component("broken-page", {
     },
   },
   template: `
-    <div v-if="!disabled">
+    <div v-if="!disabled" class="broken-page">
       <h1>This page is currently broken!</h1>
       <div class="card card-body">
         <p class="h4 m-0">
@@ -22,4 +23,4 @@ Vue.component("broken-page", {
       <img id="gone-fishin" src="/image/icon/gone-fishin.png">
     </div>
   `,
-});
+};

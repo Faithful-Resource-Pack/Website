@@ -6,7 +6,8 @@ const _NO_LINK = null
 const _NO_ICON = 'https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png'
 const _NO_ATTACHMENTS = -1
 
-Vue.component('minecraft-mod', {
+export default {
+  name: 'minecraft-mod',
   props: {
     mod: Object
   },
@@ -21,9 +22,9 @@ Vue.component('minecraft-mod', {
       <div class="mod-bar-item">
         <input :id="modId" type="checkbox" v-model="mod.selected" class="mod-checkbox">
         <div class="mod-title" v-html="title"></div>
-        <div :class="{ modNotChosen: !mod.selected }" class="mod-radio-group"
-          ><template v-for="(version, vindex) in minecraftVersions":key="modIds[vindex]"
-            ><input
+        <div :class="{ modNotChosen: !mod.selected }" class="mod-radio-group">
+          <template v-for="(version, vindex) in minecraftVersions":key="modIds[vindex]">
+            <input
               :disabled="!mod.selected"
               type="radio"
               :id="modIds[vindex] + '-' + version"
@@ -31,8 +32,9 @@ Vue.component('minecraft-mod', {
               v-model="mod.versionSelected"
               :value="version"
               class="mod-radio"
-            ><label :for="modIds[vindex] + '-' + version">{{ version }}</label
-            ></template>
+            >
+              <label :for="modIds[vindex] + '-' + version">{{ version }}</label>
+            </template>
         </div>
       </div>
     </li>
@@ -47,7 +49,9 @@ Vue.component('minecraft-mod', {
   computed: {
     /** @returns {String} of joined aliases in <span>*/
     aliases() {
-      return this.$props.mod.aliases.length > 0 ? '<span class="dash">&nbsp;&dash;&nbsp;</span><h5 class="advice">' + this.$props.mod.aliases.join(', ') + '</h5>' : ''
+      return this.$props.mod.aliases.length > 0
+        ? '<span class="dash">&nbsp;&dash;&nbsp;</span><h5 class="advice">' + this.$props.mod.aliases.join(', ') + '</h5>'
+        : ''
     },
     /** @returns {String} complete curseforge mod url*/
     curseURL() {
@@ -87,4 +91,4 @@ Vue.component('minecraft-mod', {
       return `<div><h4>${this.name}</h4>${this.aliases}</div>${this.info}`
     }
   },
-})
+}

@@ -6,6 +6,7 @@ title: Statistics
 <div id="stats" class="text-center">
 	<h1 class="display-3 my-5">Faithful Statistics</h1>
 
+	<!-- no mustaches to fix jekyll conflicts (pain) -->
 	<h2 class="display-4 my-5">Main Packs</h2>
 	<div class="res-grid-2">
 		<h3>32x Releases</h3>
@@ -20,7 +21,6 @@ title: Statistics
 		<template v-for="res in Object.keys(addonsStats)" :key="res">
 			<div v-for="edi, e_i in Object.keys(addonsStats[res])" :key="edi">
 				<h3>
-					<!-- no mustaches to fix jekyll conflicts (pain) -->
 					<span v-text="res + ' ' + edi + ' Add-ons'"></span>
 					<div class="badge-container">
 						<span class="badge badge-primary h1" v-text="addonsStats[res][edi]"></span>

@@ -1,7 +1,8 @@
 /* global Vue */
 /* eslint no-multi-str: 0 */
 
-Vue.component('custom-modal', {
+export default {
+  name: 'custom-modal',
   props: {
     modalOpened: {
       type: Boolean,
@@ -23,4 +24,4 @@ Vue.component('custom-modal', {
         <slot />
       </div><span class="taille">
     </div>`,
-})
+}

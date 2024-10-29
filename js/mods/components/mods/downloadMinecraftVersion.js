@@ -1,7 +1,8 @@
 /* global Vue */
 /* eslint no-multi-str: 0 */
 
-Vue.component('download-minecraft-version', {
+export default {
+  name: 'download-minecraft-version',
   props: {
     value: {
       version: String,
@@ -31,4 +32,4 @@ Vue.component('download-minecraft-version', {
       }
     }
   }
-})
+}

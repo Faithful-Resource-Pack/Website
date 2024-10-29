@@ -6,7 +6,11 @@ try {
 } catch (_e) {}
 NAME = 'Faithful Mods' // eslint-disable-line
 
-Vue.component('local-download', {
+export default {
+  name: 'local-download',
+  components: {
+    "custom-modal": () => import("./customModal.js"),
+  },
   props: ['canpack', 'versions'],
   template: `
     <div>
@@ -319,4 +323,4 @@ Vue.component('local-download', {
         : "Your navigator doesn't supports Web Workers :(. You can't cancel this script."
     }
   }
-})
+}

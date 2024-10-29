@@ -6,7 +6,11 @@ try {
 } catch (_e) {}
 NAME = 'Faithful Mods' // eslint-disable-line
 
-Vue.component('zip-options', {
+export default {
+  name: 'zip-options',
+  components: {
+    "clear-database": () => import("./clearDatabase.js"),
+  },
   template: `
     <div id="zipOptions">
       <h4 class="my-3">
@@ -116,4 +120,4 @@ Vue.component('zip-options', {
   mounted() {
     this.$root.$refs.zipOptions = this
   }
-})
+}

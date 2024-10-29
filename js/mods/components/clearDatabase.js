@@ -1,7 +1,8 @@
 /* global Vue, indexedDB */
 /* eslint no-multi-str: 0 */
 
-Vue.component('clear-database', {
+export default {
+  name: 'clear-database',
   template: `
     <div>
       <label for="clearDatabase" class="block pb-1">Database</label>
@@ -35,4 +36,4 @@ Vue.component('clear-database', {
       }
     }
   }
-})
+}

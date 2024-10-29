@@ -6,10 +6,11 @@ title: Modpacks
 <link rel="stylesheet" href="/css/mods.css">
 
 <div id="modpacks">
-  <broken-page />
-  <zip-options />
+  <!-- !!! HTML cannot use self-closing tags -->
+  <broken-page></broken-page>
+  <zip-options></zip-options>
 
-  <local-download ref="localDownload" canPack="true" />
+  <local-download ref="localDownload" :canPack="true"></local-download>
 
   <modpack-modal
     id="modpackModal"
@@ -17,7 +18,8 @@ title: Modpacks
     :modpackmodalopened="modpackModalOpened"
     :onclose="() => { modpackModalOpened = false }"
     :mods="mods"
-  />
+  >
+  </modpack-modal>
     <div class="card mb-4">
       <div class="search-bar-container">
         <input
@@ -38,7 +40,8 @@ title: Modpacks
         :key="mindex"
         :modpack="m"
         :onbuttonclick="() => { openModpackModal(mindex) }"
-      />
+      >
+      </modpack-card>
     </div>
 
     <h3 v-if='filteredModpacks.length == 0' id="noresults" class="text-center"></h3>
@@ -46,15 +49,8 @@ title: Modpacks
 </div>
 
 <script defer src="/js/mods/core/MinecraftUtils.js"></script>
-<script defer src="/js/mods/components/customModal.js"></script>
-<script defer src="/js/mods/components/modpackModal.js"></script>
-<script defer src="/js/mods/components/modpackCard.js"></script>
-<script defer src="/js/mods/components/brokenPage.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/idb@6.1.5/build/iife/index-min.js"></script>
-<script defer src="/js/mods/components/clearDatabase.js"></script>
-<script defer src="/js/mods/components/zipOptions.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
 <script defer src="/js/mods/core/ResourcePackCreator.js"></script>
 <script defer src="/js/mods/FileSaver.min.js"></script>
-<script defer src="/js/mods/components/localDownload.js"></script>
 <script defer src="/js/mods/modpacks.js"></script>
