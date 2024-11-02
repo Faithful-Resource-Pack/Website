@@ -6,7 +6,13 @@ title: News
 <h1 class="display-3 my-5 text-center">Faithful News</h1>
 
 <div id="news">
-  <div class="grid-2-wide pb-5" v-if="posts.length">
+  <h3 v-if="loading" class="text-center">Loading…</h3>
+  <h3
+    v-else-if="!posts.length"
+    class="text-center"
+    v-text="error ? `Error: ${error}` : 'No posts found'"
+  ></h3>
+  <div v-else class="grid-2-wide pb-5">
     <a :href="firstPost.permalink">
       <img
         class="card hovering-effect"
@@ -48,6 +54,8 @@ title: News
       data() {
         return {
           posts: [],
+          loading: true,
+          error: null,
         };
       },
       computed: {
@@ -65,7 +73,14 @@ title: News
           .then((res) => {
             this.posts = Object.values(res).sort((a, b) => new Date(b.date) - new Date(a.date));
           })
-          .catch((err) => console.error(err));
+          .catch((err) => {
+            this.error = err;
+            this.posts = [];
+            console.error(err)
+          })
+          .finally(() => {
+            this.loading = false;
+          });
       }
     });
     app.mount("#news");
