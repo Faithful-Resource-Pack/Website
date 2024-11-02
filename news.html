@@ -5,31 +5,59 @@ title: News
 
 <h1 class="display-3 my-5 text-center">Faithful News</h1>
 
-<div class="res-grid-3" id="news">
-  <a
-    v-for="post in posts"
-    class="card img-card"
-    rel="noopener"
-    :href="'' + post.permalink"
-  >
-    <img v-if="post.header_img" :src="post.header_img" loading="lazy">
-    <img
-      v-else
-      src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg"
-      loading="lazy"
+<div id="news">
+  <div class="grid-2-wide pb-5" v-if="posts.length">
+    <a :href="firstPost.permalink">
+      <img
+        class="card hovering-effect"
+        :src="firstPost.header_img || 'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'"
+        loading="lazy"
+      >
+    </a>
+    <div class="flex-down">
+      <a :href="firstPost.permalink" class="underline-hover">
+        <h1 v-text="firstPost.title"></h1>
+      </a>
+      <p class="text-truncate" v-text="firstPost.description"></p>
+      <a class="btn block btn-dark" :href="firstPost.permalink">Read More</a>
+    </div>
+  </div>
+  <div class="res-grid-3">
+    <a
+      v-for="post in restPosts"
+      class="card img-card"
+      rel="noopener"
+      :href="'' + post.permalink"
     >
-    <!-- need to use v-text because jekyll parses the braces otherwise -->
-    <h3 v-text="post.title"></h3>
-  </a>
+      <img v-if="post.header_img" :src="post.header_img" loading="lazy">
+      <img
+        v-else
+        src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg"
+        loading="lazy"
+      >
+      <!-- need to use v-text because jekyll parses the braces otherwise -->
+      <h3 v-text="post.title"></h3>
+    </a>
+  </div>
 </div>
 
 <script>
+  const MAX_DESCRIPTION_LENGTH = 270;
   document.addEventListener("DOMContentLoaded", () => {
     const app = Vue.createApp({
       data() {
         return {
           posts: [],
         };
+      },
+      computed: {
+        firstPost() {
+          return this.posts[0];
+        },
+        restPosts() {
+          if (!this.posts) return [];
+          return this.posts.slice(1);
+        },
       },
       created() {
         fetch('https://api.faithfulpack.net/v2/posts/approved')

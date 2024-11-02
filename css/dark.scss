@@ -34,7 +34,12 @@
 	background-color: #141414 !important
 }
 ul, ol, li, h1, h2, h3, h4, h5, h6, p {
-	color: rgba(255, 255, 255, .7)
+	color: rgba(255, 255, 255, .7);
+	text-decoration-color: currentColor;
+}
+
+.underline-hover:hover {
+	text-decoration-color: rgba(255, 255, 255, .7) !important;
 }
 
 .btn-flag {

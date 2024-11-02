@@ -1514,7 +1514,7 @@ img:not(.img-gallery) {
 .disabled {
 	pointer-events: none
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 760px) {
 	.display-3 {
 		font-size: 2.75rem
 	}
@@ -1611,7 +1611,9 @@ img:not(.img-gallery) {
 	font-weight: 400;
 }
 .placeholder {
-	background-image: url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png), url(/image/background/bg_light_foreground.png);
+	background-image:
+    url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png),
+    url(/image/background/bg_light_foreground.png);
 	background-repeat: no-repeat, repeat;
 	background-position: center, center;
 	background-size: auto 75%, auto;
@@ -1673,7 +1675,7 @@ a > .banner:hover {
   max-width: 100%;
   flex: 1;
 }
-.res-grid-6, .res-grid-4, .res-grid-3, .res-grid-2 {
+.res-grid-6, .res-grid-4, .res-grid-3, .res-grid-2, .grid-2-wide {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(1, 1fr);
@@ -1863,7 +1865,7 @@ body.error #topNavbar {
     grid-template-columns: repeat(2, 2fr);
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 760px) {
   .container {
     max-width: 720px
   }
@@ -1872,6 +1874,9 @@ body.error #topNavbar {
   }
   .res-grid-6 {
     grid-template-columns: repeat(4, 4fr);
+  }
+  .grid-2-wide {
+    grid-template-columns: repeat(2, 2fr);
   }
 }
 @media (min-width: 992px) {
@@ -2181,4 +2186,43 @@ input[type=radio] {
   @media screen and (max-width: 900px) {
     flex-direction: column;
   }
+}
+
+/* must use regular css variable (media queries break scss) */
+:root {
+  --news-display-height: 5;
+  @media screen and (max-width: 1200px) {
+    --news-display-height: 3;
+  }
+  @media screen and (max-width: 992px) {
+    --news-display-height: 0px;
+  }
+  @media screen and (max-width: 760px) {
+    --news-display-height: 4;
+  }
+}
+
+/* https://css-tricks.com/line-clampin/ */
+.text-truncate {
+  display: -webkit-box;
+  height: calc(1.5 * var(--news-display-height));
+  overflow: hidden;
+  line-clamp: var(--news-display-height);
+  -webkit-line-clamp: var(--news-display-height);
+  -webkit-box-orient: vertical;
+}
+
+.underline-hover {
+  color: unset;
+  &:hover {
+    color: unset;
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+  }
+}
+
+.flex-down {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
 }
