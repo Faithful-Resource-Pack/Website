@@ -4,7 +4,7 @@
 export default {
   name: 'minecraft-mod-list',
   components: {
-    "minecraft-mod": () => import("./minecraftMod.js"),
+    "minecraft-mod": Vue.defineAsyncComponent(() => import("./minecraftMod.js")),
   },
   template: `
     <ul class="mod-ul">

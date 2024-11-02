@@ -114,3 +114,8 @@ label, input {
 		color: #fc53a5 !important;
 	}
 }
+
+// vuetify 3 theming is a bit broken and this fixes most of the issues
+.v-input__control {
+	color: #fff !important;
+}

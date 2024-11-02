@@ -25,9 +25,8 @@ title: Utilities - modlist.html generator
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const v = new Vue({
-      el: '#modlistGenerator',
-      data () {
+    const app = Vue.createApp({
+      data() {
         return {
           firstFile : undefined,
           progress: 0,
@@ -129,6 +128,7 @@ title: Utilities - modlist.html generator
         }
       }
     })
+    app.mount('#modlistGenerator')
   });
 </script>
 <script defer src="/js/mods/FileSaver.min.js"></script>

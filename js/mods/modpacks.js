@@ -6,15 +6,13 @@ const _NO_ICON = 'https://database.faithfulpack.net/images/branding/logos/transp
 const _NO_ATTACHMENTS = -1
 
 document.addEventListener("DOMContentLoaded", () => {
-  Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-  const v = new Vue({ // eslint-disable-line no-unused-vars
-    el: '#modpacks',
+  const app = Vue.createApp({ // eslint-disable-line no-unused-vars
     components: {
-      "broken-page": () => import("./components/brokenPage.js"),
-      "modpack-modal": () => import("./components/modpackModal.js"),
-      "modpack-card": () => import("./components/modpackCard.js"),
-      "local-download": () => import("./components/localDownload.js"),
-      "zip-options": () => import("./components/zipOptions.js"),
+      "broken-page": Vue.defineAsyncComponent(() => import("./components/brokenPage.js")),
+      "modpack-modal": Vue.defineAsyncComponent(() => import("./components/modpackModal.js")),
+      "modpack-card": Vue.defineAsyncComponent(() => import("./components/modpackCard.js")),
+      "local-download": Vue.defineAsyncComponent(() => import("./components/localDownload.js")),
+      "zip-options": Vue.defineAsyncComponent(() => import("./components/zipOptions.js")),
     },
     data() {
       return {
@@ -136,4 +134,5 @@ document.addEventListener("DOMContentLoaded", () => {
       this.getDataFromDB()
     }
   })
+  app.mount('#modpacks')
 })

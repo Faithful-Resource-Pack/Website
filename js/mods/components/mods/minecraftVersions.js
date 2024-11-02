@@ -20,21 +20,18 @@ Vue.component('minecraft-versions', {
       </div>
     </div>
   `,
-  data () {
-    return {}
-  },
   computed: {
     orderedVersions() {
-      return this.$props.versions.sort(function (a, b) {
+      return this.versions.sort(function (a, b) {
         const numbers = MinecraftUtils.minecraftVersionsToNumbers([a.version, b.version])
 
         return (numbers[0] > numbers[1] ? -1 : 1)
       })
     },
     elementsPerLine() {
-      if (!!this.$props.breakpoints.lg && !this.$props.breakpoints.md) return this.$props.versions.length
-      if (!!this.$props.breakpoints.md && !this.$props.breakpoints.sm) return 6
-      if (!!this.$props.breakpoints.sm && !this.$props.breakpoints.xs) return 3
+      if (this.breakpoints.lg && !this.breakpoints.md) return this.versions.length
+      if (this.breakpoints.md && !this.breakpoints.sm) return 6
+      if (this.breakpoints.sm && !this.breakpoints.xs) return 3
 
       return 1
     },

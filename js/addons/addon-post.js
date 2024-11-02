@@ -1,6 +1,6 @@
 /* global fetch, marked */
 
-const addonModal = () => import('./addon-post-modal.js')
+const addonModal = Vue.defineAsyncComponent(() => import('./addon-post-modal.js'))
 
 export default {
   name: 'addon-page',
@@ -8,47 +8,44 @@ export default {
     addonModal
   },
   template: `
-    <v-container
+    <div
       v-if="loading"
       style="max-width: 1140px"
     >
       <div class="card card-body">
         <p align="center">The add-on is loading, please wait...</p>
       </div>
-    </v-container>
-    <v-container
-      style="max-width: 1140px"
-      v-else-if="addon.approval.status == 'approved'"
-    >
-      <h2
-        class="text-center"
-        style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin-bottom: 3rem; margin-top: 3rem"
+    </div>
+    <div v-else-if="addon.approval.status == 'approved'">
+
+      <!-- vuetify overrides the bootstrap margin styles so we manually add them -->
+      <h1
+        class="display-3 text-center"
+        style="margin-top: 3rem !important; margin-bottom: 3rem !important"
       >
         {{ addon.name }}
-      </h2>
+      </h1>
       <img :src="header" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
-      <template>
-        <addon-modal v-model="modal" :close="closeModal" :image="modalImage" />
-        <div class="card card-body" v-if="carousel.length">
-          <h3 class="text-center">Screenshots</h3>
-          <div class="res-grid-3" v-if="files.length">
-            <div v-for="(image, index) in carousel">
-              <div class="card img-card">
-                <img :src="image" @click="openModal(image)">
-              </div>
+      <addon-modal v-model="modal" :close="closeModal" :image="modalImage" />
+      <div class="card card-body" v-if="carousel.length">
+        <h3 class="text-center">Screenshots</h3>
+        <div class="res-grid-3" v-if="files.length">
+          <div v-for="(image, index) in carousel">
+            <div class="card img-card">
+              <img :src="image" @click="openModal(image)">
             </div>
           </div>
         </div>
+      </div>
 
-        <br>
-      </template>
+      <br>
 
       <v-row :style="{
-          'display': $vuetify.breakpoint.mdAndUp ? 'flex' : 'block'
+          'display': $vuetify.display.mdAndUp ? 'flex' : 'block'
         }"
       >
-        <v-col class="col-2" :sm="$vuetify.breakpoint.mdAndUp ? 3 : 2" style="max-width: 100%">
+        <v-col class="col-2" :sm="$vuetify.display.mdAndUp ? 3 : 2" style="max-width: 100%">
           <!-- Only 1 author -->
           <template v-if="Object.keys(authors).length == 1">
             <h3 class="text-center">Author</h3>
@@ -87,7 +84,7 @@ export default {
             <h3 class="text-center">Authors</h3>
 
             <div :style="{
-              'display': $vuetify.breakpoint.mdAndUp ? 'block' : 'flex',
+              'display': $vuetify.display.mdAndUp ? 'block' : 'flex',
               'align-items': 'baseline'
               }"
             >
@@ -122,7 +119,7 @@ export default {
           </template>
         </v-col>
 
-        <v-col class="col-10" :sm="$vuetify.breakpoint.mdAndUp ? 9 : 10" style="max-width: 100%">
+        <v-col class="col-10" :sm="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
           <div class="card card-body">
             <p v-html="compiledMarkdown(addon.description)"></p>
           </div>
@@ -131,7 +128,7 @@ export default {
 
           <v-row
             :style="{
-              'flex-direction': $vuetify.breakpoint.mdAndUp ? 'row' : 'column'
+              'flex-direction': $vuetify.display.mdAndUp ? 'row' : 'column'
             }"
           >
             <v-col>
@@ -185,14 +182,13 @@ export default {
           </v-row>
         </v-col>
       </v-row>
-
       <br><br>
-
-    <a href="https://discord.gg/sN9YRQbBv7">
-      <p class="blurple banner">
-        Start a discussion in our Discord!
-      </p>
-    </a>
+      <a href="https://discord.gg/sN9YRQbBv7">
+        <p class="blurple banner">
+          Start a discussion in our Discord!
+        </p>
+      </a>
+    </div>
     `,
   data() {
     return {
@@ -226,8 +222,8 @@ export default {
     }
   },
   methods: {
-    openModal(base64) {
-      this.modalImage = base64
+    openModal(url) {
+      this.modalImage = url
       this.modal = true
     },
     closeModal() {
@@ -255,13 +251,15 @@ export default {
       return this.files.find((el) => el.use === 'header').source
     },
     carousel() {
-      return this.files.filter((el) => el.use === 'carousel' || el.use === 'screenshot').map((el) => el.source)
+      return this.files
+        .filter((el) => el.use === 'carousel' || el.use === 'screenshot')
+        .map((el) => el.source)
     },
     downloads() {
       return this.files.filter((el) => el.use === 'download')
     },
     avatar() {
-      const baseURL = this.$vuetify.breakpoint.mdAndUp
+      const baseURL = this.$vuetify.display.mdAndUp
         ? 'https://visage.surgeplay.com/full/256/'
         : 'https://visage.surgeplay.com/head/128/';
       return baseURL + authors[Object.keys(authors)[0]].uuid

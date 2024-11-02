@@ -3,12 +3,9 @@
 let cache = {}
 
 document.addEventListener("DOMContentLoaded", () => {
-  Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+  const DownloadTable = Vue.defineAsyncComponent(() => import('./download-table.js'))
 
-  const DownloadTable = () => import('./download-table.js')
-
-  const v = new Vue({
-    el: '#app',
+  const app = Vue.createApp({
     components: {
       DownloadTable,
     },
@@ -121,4 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ])
     }
   })
+
+  app.mount('#app')
 })

@@ -1,11 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-	const PostDownloads = () => import("./post-downloads.js");
-	const PostChangelog = () => import("./post-changelog.js");
-	const v = new Vue({
-		el: "#app",
+	const app = Vue.createApp({
 		components: {
-			PostDownloads,
-			PostChangelog,
+			PostDownloads: Vue.defineAsyncComponent(() => import("./post-downloads.js")),
+			PostChangelog: Vue.defineAsyncComponent(() => import("./post-changelog.js")),
 		},
 		template: `
 			<div>
@@ -39,4 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			};
 		},
 	});
+
+	app.mount("#app");
 });

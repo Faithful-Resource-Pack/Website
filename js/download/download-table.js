@@ -1,4 +1,4 @@
-const DownloadLine = () => import("./download-line.js")
+const DownloadLine = Vue.defineAsyncComponent(() => import("./download-line.js"))
 
 export default {
 	name: "download-table",
@@ -38,11 +38,9 @@ export default {
               :version="version"
               @click="handleOpen(version)"
             />
-            <template
-              v-if="openStates[version]"
-              v-for="subItem in items.slice(1)"
-            >
+            <template v-if="openStates[version]">
               <download-line
+                v-for="subItem in items.slice(1)"
                 nested
                 single
                 :item="subItem"

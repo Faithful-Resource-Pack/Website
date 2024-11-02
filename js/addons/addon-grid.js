@@ -7,11 +7,17 @@ export default {
           v-for="(addon, index) in sortedAddons"
           :key="index"
           class="hovering-effect"
-          style="margin-bottom: calc(-28px)"
-          v-if="addon.approval.status === 'approved'"
+          style="margin-bottom: -50px"
         >
-          <a class="card img-card" :href="'/addons/' + addon.slug">
-            <img :src="'https://database.faithfulpack.net/images/addons/' + addon.slug + '/header'" loading="lazy">
+          <a
+            class="card img-card"
+            :href="'/addons/' + addon.slug"
+            v-if="addon.approval.status === 'approved'"
+          >
+            <img
+              :src="'https://database.faithfulpack.net/images/addons/' + addon.slug + '/header'"
+              loading="lazy"
+            />
             <div class="img-card-shadow"></div>
             <h3>{{ addon.name }}</h3>
             <div class="addon-flags" style="margin-bottom: 5px">
@@ -43,14 +49,13 @@ export default {
             </div>
           </a>
           <v-btn
+            :icon="icon"
+            :color="btnColor(addon)"
+            variant="plain"
+            style="position: relative; top: calc(-100% + 40px); left: -7px"
+            class="pa-0"
             @click="action(addon)"
-            small
-            :color="Object.keys(addons) === Object.keys(addonsFav) ? iconColor : (addonsFav[addon.id] ? iconColor : 'rgba(0, 0, 0, .5)')"
-            icon
-            style="position: relative; top: calc(-100% + 2px + 28px); left: 2px"
-          >
-            <v-icon>{{ icon }}</v-icon>
-          </v-btn>
+          />
         </div>
       </div>
     </div>
@@ -87,6 +92,13 @@ export default {
       optifine: '/image/icon/optifine.png',
       bedrock: '/image/icon/bedrock.png',
       java: '/image/icon/java.png',
+    }
+  },
+  methods: {
+    btnColor(addon) {
+      if (Object.keys(this.addons) === Object.keys(this.addonsFav)) return this.iconColor
+      if (this.addonsFav[addon.id]) return this.iconColor
+      return 'rgba(0, 0, 0, .5)'
     }
   },
   computed: {

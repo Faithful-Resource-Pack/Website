@@ -1,9 +1,7 @@
 /* global Vue */
 
 document.addEventListener("DOMContentLoaded", () => {
-  Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-  const v = new Vue({ // eslint-disable-line no-unused-vars
-    el: '#stats',
+  const app = Vue.createApp({
     data() {
       return {
         addons: {},
@@ -116,4 +114,5 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
   })
+  app.mount('#stats');
 })

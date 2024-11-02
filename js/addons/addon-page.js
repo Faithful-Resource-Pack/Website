@@ -1,6 +1,6 @@
 /* global fetch */
 
-const AddonGrid = () => import('./addon-grid.js')
+const AddonGrid = Vue.defineAsyncComponent(() => import('./addon-grid.js'))
 
 export default {
   name: 'addon-page',
@@ -8,8 +8,14 @@ export default {
     AddonGrid
   },
   template: `
-    <v-container style="max-width: 1140px; padding: 44px 0 80px;">
-      <h2 class="text-center" style="font-size: 4.8rem; font-weight: 300; line-height: 1.2; margin: 2rem 0">Add-ons</h2>
+    <div>
+      <!-- vuetify overrides the bootstrap margin styles so we manually add them -->
+      <h1
+        class="display-3 text-center"
+        style="margin-top: 3rem !important; margin-bottom: 3rem !important"
+      >
+        Add-ons
+      </h1>
 
       <template v-if="Object.keys(fav).length">
         <h3 class="text-center">Favorites</h3>
@@ -32,35 +38,33 @@ export default {
             <v-col
               cols="6"
               md="3"
-              v-for="type in editions"
-              :key="type"
+              v-for="edition in editions"
+              :key="edition"
             >
               <v-checkbox
                 v-model="selectedEditions"
-                :label="type"
-                :disabled="selectedEditions.length === 1 && selectedEditions[0] === type"
-                :value="type"
-                color="primary"
-                dark
+                :label="edition"
+                :disabled="selectedEditions.length === 1 && selectedEditions[0] === edition"
+                :value="edition"
+                color="white"
                 hide-details
-                @change="startSearch"
+                @update:modelValue="startSearch"
               />
             </v-col>
             <v-col
               cols="6"
               md="3"
-              v-for="type in res"
-              :key="type"
+              v-for="resolution in res"
+              :key="resolution"
             >
               <v-checkbox
                 v-model="selectedRes"
-                :label="type"
-                :disabled="selectedRes.length === 1 && selectedRes[0] === type"
-                :value="type"
-                color="primary"
-                dark
+                :label="resolution"
+                :disabled="selectedRes.length === 1 && selectedRes[0] === resolution"
+                :value="resolution"
+                color="white"
                 hide-details
-                @change="startSearch"
+                @update:modelValue="startSearch"
               />
             </v-col>
           </v-row>
@@ -71,7 +75,6 @@ export default {
           filled
           clear-icon="mdi-close"
           clearable
-          dark
           hide-details
           placeholder="Search add-on name"
           type="text"
@@ -84,14 +87,10 @@ export default {
           <p>{{ resultCount }} {{ results }} found</p>
           <br>
           <v-select
-            base-color="primary"
-            dark
             hide-details
-            dense
+            density="compact"
             v-model="currentSort"
             :items="sortMethods"
-            item-text="label"
-            item-value="value"
           />
         </div>
       </div>
@@ -105,18 +104,18 @@ export default {
         iconColor="#ffc83d"
         :addonsFav="fav"
       />
-    </v-container>
+    </div>
   `,
   data() {
     const sortMethods = [
-      { label: "Date (Newest to Oldest)", value: "dd" },
-      { label: "Date (Oldest to Newest)", value: "da" },
-      { label: "Name (A-Z)", value: "na" },
-      { label: "Name (Z-A)", value: "nd" }
+      { title: "Date (Newest to Oldest)", value: "dd" },
+      { title: "Date (Oldest to Newest)", value: "da" },
+      { title: "Name (A-Z)", value: "na" },
+      { title: "Name (Z-A)", value: "nd" }
     ];
     return {
-      addons: {},
-      searchedAddons: {},
+      addons: [],
+      searchedAddons: [],
       search: '',
       loading: true,
       optifine: '/image/icon/optifine.png',

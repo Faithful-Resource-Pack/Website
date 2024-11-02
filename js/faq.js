@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const v = new Vue({
-    el: "#app",
-    vuetify: new Vuetify(),
+  const app = Vue.createApp({
     data() {
       return {
         allFaqs: [],
@@ -17,12 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
           filled
           clear-icon="mdi-close"
           hide-details
-          :dark="isDarkMode"
-          :light="!isDarkMode"
           placeholder="Search FAQs"
           clearable
           @keyup="startSearch"
-          @click:clear="() => { search=null }"
+          @click:clear="() => { search = null; startSearch(); }"
         />
         <p class="pt-2 pb-0 px-0">
           <i>{{ faqs.length }} {{ results }} found</i>
@@ -67,12 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     computed: {
-      isDarkMode() {
-        return (
-          theme.currentTheme === 'dark' ||
-          (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)
-        )
-      },
       results() {
         return this.faqs.length === 1 ? "result" : "results"
       }
@@ -86,4 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     },
   })
+  app.use(Vuetify.createVuetify());
+  app.mount("#app")
 })

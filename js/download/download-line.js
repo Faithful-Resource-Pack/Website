@@ -31,7 +31,7 @@ export default {
         <p class="clickable">{{ showIcon }}</p>
       </td>
       <td class="large details">
-        <p>
+        <p class="download-badges">
           <span class="name">{{ item.file }}</span>
           <span class="version">{{ version === "github" ? "Repository" : version }}</span>
           <span :class="labelColor[item.file_type] || 'green'">{{ labelText }}</span>

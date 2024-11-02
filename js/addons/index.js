@@ -1,26 +1,11 @@
 /* global Vue, Vuetify */
 
 document.addEventListener("DOMContentLoaded", () => {
-  Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-
-  const AddonPage = () => import('./addon-page.js')
-
-  const v = new Vue({
-    el: "#app",
+  const app = Vue.createApp({
     components: {
-      AddonPage,
+      AddonPage: Vue.defineAsyncComponent(() => import('./addon-page.js')),
     },
-    vuetify: new Vuetify({
-      theme: {
-        themes: {
-          light: {
-            primary: '#FFFFFF',
-          },
-          dark: {
-            primary: '#FFFFFF',
-          }
-        }
-      }
-    })
   })
+  app.use(Vuetify.createVuetify())
+  app.mount("#app")
 })

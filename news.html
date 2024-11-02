@@ -25,8 +25,7 @@ title: News
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const v = new Vue({
-      el: "#news",
+    const app = Vue.createApp({
       data() {
         return {
           posts: [],
@@ -41,5 +40,6 @@ title: News
           .catch((err) => console.error(err));
       }
     });
+    app.mount("#news");
   })
 </script>

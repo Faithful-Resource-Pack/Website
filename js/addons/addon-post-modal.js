@@ -12,7 +12,7 @@ export default {
     </v-dialog>
   `,
   props: {
-    value: {
+    modelValue: {
       type: Boolean,
       required: true
     },
@@ -31,11 +31,11 @@ export default {
     }
   },
   watch: {
-    value(n) {
+    modelValue(n) {
       this.modalOpened = n;
     },
     modalOpened(n) {
-      this.$emit("input", n);
+      this.$emit("update:modelValue", n);
     }
   }
 }

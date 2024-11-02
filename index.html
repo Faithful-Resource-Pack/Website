@@ -140,7 +140,6 @@ no_container: true
   <br>
   <h1 class="display-3" align="center">News</h1>
   <div class="res-grid-3">
-
     <a
       v-for="post in topPosts"
       class="card img-card"
@@ -154,13 +153,12 @@ no_container: true
     </a>
   </div>
   <br>
-  <a class="btn btn-dark col-6 center" href="/news">See more</a>
+  <a class="btn btn-dark col-6 center" href="/news">See More</a>
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const v = new Vue({
-      el: "#app",
+    const app = Vue.createApp({
       data() {
         return {
           addons: [],
@@ -203,5 +201,6 @@ no_container: true
           .catch((err) => console.error(err));
       }
     });
+    app.mount("#app");
   })
 </script>

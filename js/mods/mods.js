@@ -9,15 +9,13 @@ Object.filter = (obj, predicate) =>
     }, {});
 
 document.addEventListener("DOMContentLoaded", () => {
-  Vue.config.devtools = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-  const v = new Vue({ // eslint-disable-line no-unused-vars
-    el: '#app',
+  const app = Vue.createApp({
     components: {
-      "broken-page": () => import("./components/brokenPage.js"),
-      "minecraft-mod-list": () => import("./components/mods/minecraftModsList.js"),
-      "download-minecraft-version": () => import("./components/mods/downloadMinecraftVersion.js"),
-      "local-download": () => import("./components/localDownload.js"),
-      "zip-options": () => import("./components/zipOptions.js"),
+      "broken-page": Vue.defineAsyncComponent(() => import("./components/brokenPage.js")),
+      "minecraft-mod-list": Vue.defineAsyncComponent(() => import("./components/mods/minecraftModsList.js")),
+      "download-minecraft-version": Vue.defineAsyncComponent(() => import("./components/mods/downloadMinecraftVersion.js")),
+      "local-download": Vue.defineAsyncComponent(() => import("./components/localDownload.js")),
+      "zip-options": Vue.defineAsyncComponent(() => import("./components/zipOptions.js")),
     },
     data() {
       return {
@@ -324,4 +322,5 @@ document.addEventListener("DOMContentLoaded", () => {
       window.addEventListener('resize', () => { this.windowSize = window.innerWidth })
     }
   })
+  app.mount('#app')
 })
