@@ -90,7 +90,7 @@ export default {
     handleOpen() {
       // change icon then pass back to download-table to unhide child
       this.showIcon = this.showIcon === "+" ? "-" : "+"
-      this.$emit('click')
+      this.$emit('toggle')
     },
   },
   computed: {

@@ -36,7 +36,7 @@ export default {
               :item="items[0]"
               :curse="getCurseFile(items[0])"
               :version="version"
-              @click="handleOpen(version)"
+              @toggle="handleOpen(version)"
             />
             <template v-if="openStates[version]">
               <download-line
