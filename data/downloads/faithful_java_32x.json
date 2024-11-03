@@ -20,20 +20,20 @@
         "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/5506005"
       }
     }
-    ],
-    "1.20.6": [
-        {
-          "file": "Faithful 32x",
-          "file_type": "R",
-          "file_version": 12,
-          "latest": true,
-          "date": "2024-07-05",
-          "links": {
-            "download": "https://database.faithfulpack.net/packs/32x-Java/July%202024/Faithful%2032x%20-%201.20.6.zip",
-            "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/5505962"
-          }
-        }
-      ],
+  ],
+  "1.20.6": [
+    {
+      "file": "Faithful 32x",
+      "file_type": "R",
+      "file_version": 12,
+      "latest": true,
+      "date": "2024-07-05",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/July%202024/Faithful%2032x%20-%201.20.6.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/5505962"
+      }
+    }
+  ],
   "1.20.4": [
     {
       "file": "Faithful 32x",
@@ -46,16 +46,16 @@
         "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/5505960"
       }
     },
-  {
-    "file": "Faithful 32x",
-    "file_type": "R",
-    "file_version": 11,
-    "date": "2024-03-06",
-    "links": {
-      "download": "https://database.faithfulpack.net/packs/32x-Java/March%202024/Faithful%2032x%20-%201.20.4.zip",
-      "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/5162868"
-    }
-  },
+    {
+      "file": "Faithful 32x",
+      "file_type": "R",
+      "file_version": 11,
+      "date": "2024-03-06",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/March%202024/Faithful%2032x%20-%201.20.4.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/5162868"
+      }
+    },
     {
       "file": "Faithful 32x",
       "file_type": "R",
@@ -1240,7 +1240,6 @@
       "file": "Faithful 32x",
       "file_type": "R",
       "file_version": 7,
-
       "date": "2023-05-27",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/May%202023/Faithful%2032x%20-%201.14.4.zip",
