@@ -73,6 +73,7 @@ export default {
       labelColor: {
         GitHub: "github",
         Release: "green",
+        "Pre-release": "blue",
         Beta: "yellow",
         Alpha: "red",
         Snapshot: "black",
