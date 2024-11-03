@@ -1,7 +1,6 @@
 {
   "github": [
     {
-      "file": "Faithful 32x",
       "file_type": "GitHub",
       "links": {
         "github": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/"
@@ -10,8 +9,7 @@
   ],
   "1.21": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -23,8 +21,7 @@
   ],
   "1.20.6": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -36,8 +33,7 @@
   ],
   "1.20.4": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -47,8 +43,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -57,8 +52,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -69,8 +63,7 @@
   ],
   "1.20.2": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -80,8 +73,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -90,8 +82,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -100,8 +91,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -110,8 +100,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -122,8 +111,7 @@
   ],
   "1.20.1": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -133,8 +121,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -143,8 +130,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -153,8 +139,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -163,8 +148,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -175,8 +159,7 @@
   ],
   "1.19.4": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -186,8 +169,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -196,8 +178,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -206,8 +187,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -216,8 +196,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -226,8 +205,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -236,8 +214,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -248,8 +225,7 @@
   ],
   "1.19.3": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -259,8 +235,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -269,8 +244,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -279,8 +253,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -289,8 +262,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -299,8 +271,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -309,8 +280,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -319,8 +289,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -329,8 +298,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -341,8 +309,7 @@
   ],
   "1.19.2": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -352,8 +319,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -362,8 +328,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -372,8 +337,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -382,8 +346,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -392,8 +355,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -402,8 +364,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -412,8 +373,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -422,8 +382,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -432,8 +391,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -444,8 +402,7 @@
   ],
   "1.18.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -455,8 +412,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -465,8 +421,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -475,8 +430,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -485,8 +439,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -495,8 +448,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -505,8 +457,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -515,8 +466,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -525,8 +475,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -535,8 +484,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -545,8 +493,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -555,8 +502,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -565,8 +511,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 20,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-20/Compliance-32x-Java-Beta-20.zip",
@@ -574,8 +519,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 19,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-19/Compliance-32x-Java-Beta-19.zip",
@@ -583,8 +527,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 18,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-18/Compliance-32x-Java-Beta-18.zip",
@@ -592,8 +535,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 17,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-17/Compliance-32x-Java-Beta-17.zip",
@@ -603,8 +545,7 @@
   ],
   "1.17.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -614,8 +555,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -624,8 +564,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -634,8 +573,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -644,8 +582,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -654,8 +591,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -664,8 +600,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -674,8 +609,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -684,8 +618,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -694,8 +627,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -704,8 +636,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -714,8 +645,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -724,8 +654,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 16,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-16/Compliance-32x-Java-Beta-16.zip",
@@ -733,8 +662,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 15,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-15/Compliance-32x-Java-Beta-15.zip",
@@ -742,8 +670,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 14,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-14/Compliance-32x-Java-Beta-14.zip",
@@ -751,8 +678,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 13,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-13/Compliance-32x-Java-Beta-13.zip",
@@ -760,8 +686,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 12,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-12/Compliance-32x-Java-Beta-12.zip",
@@ -769,8 +694,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 11,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-11/Compliance-32x-Java-Beta-11.zip",
@@ -780,8 +704,7 @@
   ],
   "1.16.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -791,8 +714,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -801,8 +723,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -811,8 +732,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -821,8 +741,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -831,8 +750,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -841,8 +759,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -851,8 +768,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -861,8 +777,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -871,8 +786,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -881,8 +795,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -891,8 +804,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -901,8 +813,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 10,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-10/Compliance-32x-Java-Beta-10.zip",
@@ -910,8 +821,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 9,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-9/Compliance-32x-Java-Beta-9.zip",
@@ -919,8 +829,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 8,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-8/Compliance-32x-Java-Beta-8.zip",
@@ -928,8 +837,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 7,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-7/Compliance-32x-Java-Beta-7.zip",
@@ -937,8 +845,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 6,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-6/Compliance-32x-Java-Beta-6.zip",
@@ -946,8 +853,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 5,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-5/Compliance-32x-Java-Beta-5.zip",
@@ -955,8 +861,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 4,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-4/Compliance-32x-Java-Beta-4.zip",
@@ -964,8 +869,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 3,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-3/Compliance-32x-Java-Beta-3.zip",
@@ -973,8 +877,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 2,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-2/Compliance-32x-Java-Beta-2.zip",
@@ -982,8 +885,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 1,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-32x/releases/download/beta-1/Compliance-32x-Java-Beta-1.zip",
@@ -991,8 +893,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 7,
       "date": "2021-01-22",
       "size": "13.9 MB",
@@ -1001,8 +902,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 6,
       "date": "2021-01-09",
       "size": "13.8 MB",
@@ -1011,8 +911,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 5,
       "date": "2021-01-01",
       "size": "13.8 MB",
@@ -1021,8 +920,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 4,
       "date": "2020-12-18",
       "size": "4.23 MB",
@@ -1031,8 +929,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 3,
       "date": "2020-12-11",
       "size": "4.23 MB",
@@ -1041,8 +938,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 2,
       "date": "2020-12-04",
       "size": "3.99 MB",
@@ -1051,8 +947,7 @@
       }
     },
     {
-      "file": "Compliance 32x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 1,
       "date": "2020-11-24",
       "size": "3.56 MB",
@@ -1063,8 +958,7 @@
   ],
   "1.15.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -1074,8 +968,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -1084,8 +977,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -1094,8 +986,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -1104,8 +995,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -1114,8 +1004,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -1124,8 +1013,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -1134,8 +1022,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -1144,8 +1031,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -1154,8 +1040,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -1164,8 +1049,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -1174,8 +1058,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -1186,8 +1069,7 @@
   ],
   "1.14.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -1197,8 +1079,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -1207,8 +1088,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -1217,8 +1097,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -1227,8 +1106,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -1237,8 +1115,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -1247,8 +1124,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -1257,8 +1133,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -1267,8 +1142,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -1277,8 +1151,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -1287,8 +1160,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -1297,8 +1169,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -1309,8 +1180,7 @@
   ],
   "1.13.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -1320,8 +1190,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -1330,8 +1199,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -1340,8 +1208,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -1350,8 +1217,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -1360,8 +1226,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -1370,8 +1235,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -1380,8 +1244,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -1390,8 +1253,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -1400,8 +1262,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -1410,8 +1271,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -1420,8 +1280,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -1432,8 +1291,7 @@
   ],
   "1.12.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -1443,8 +1301,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -1453,8 +1310,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -1463,8 +1319,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -1473,8 +1328,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -1483,8 +1337,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -1493,8 +1346,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -1503,8 +1355,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -1513,8 +1364,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -1523,8 +1373,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -1533,8 +1382,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -1543,8 +1391,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -1555,8 +1402,7 @@
   ],
   "1.11.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -1566,8 +1412,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -1576,8 +1421,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -1586,8 +1430,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -1596,8 +1439,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -1606,8 +1448,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -1616,8 +1457,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -1626,8 +1466,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -1636,8 +1475,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -1646,8 +1484,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -1656,8 +1493,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -1666,8 +1502,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -1678,8 +1513,7 @@
   ],
   "1.10.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -1689,8 +1523,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -1699,8 +1532,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -1709,8 +1541,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -1719,8 +1550,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -1729,8 +1559,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -1739,8 +1568,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -1749,8 +1577,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -1759,8 +1586,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -1769,8 +1595,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -1779,8 +1604,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -1789,8 +1613,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -1801,8 +1624,7 @@
   ],
   "1.9.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -1812,8 +1634,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -1822,8 +1643,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -1832,8 +1652,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -1842,8 +1661,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -1852,8 +1670,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -1862,8 +1679,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -1872,8 +1688,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -1882,8 +1697,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -1892,8 +1706,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -1902,8 +1715,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -1912,8 +1724,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -1924,8 +1735,7 @@
   ],
   "1.8.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -1935,8 +1745,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -1945,8 +1754,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -1955,8 +1763,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -1965,8 +1772,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -1975,8 +1781,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -1985,8 +1790,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -1995,8 +1799,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -2005,8 +1808,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -2015,8 +1817,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -2025,8 +1826,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -2035,8 +1835,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -2047,8 +1846,7 @@
   ],
   "1.7.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -2058,8 +1856,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -2068,8 +1865,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -2078,8 +1874,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -2088,8 +1883,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -2098,8 +1892,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -2108,8 +1901,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -2118,8 +1910,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -2128,8 +1919,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -2138,8 +1928,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -2148,8 +1937,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -2158,8 +1946,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -2170,8 +1957,7 @@
   ],
   "1.6.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -2181,8 +1967,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -2191,8 +1976,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -2201,8 +1985,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -2211,8 +1994,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -2221,8 +2003,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -2231,8 +2012,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -2241,8 +2021,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -2251,8 +2030,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -2261,8 +2039,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -2271,8 +2048,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -2281,8 +2057,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -2293,8 +2068,7 @@
   ],
   "1.4.x": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -2304,8 +2078,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -2314,8 +2087,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -2324,8 +2096,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -2334,8 +2105,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -2344,8 +2114,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -2354,8 +2123,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -2364,8 +2132,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -2374,8 +2141,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -2384,8 +2150,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -2394,8 +2159,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -2404,8 +2168,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
@@ -2416,8 +2179,7 @@
   ],
   "Beta 1.7.3": [
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
@@ -2427,8 +2189,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -2437,8 +2198,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -2447,8 +2207,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -2457,8 +2216,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -2467,8 +2225,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -2477,8 +2234,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -2487,8 +2243,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -2497,8 +2252,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -2507,8 +2261,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -2517,8 +2270,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -2527,8 +2279,7 @@
       }
     },
     {
-      "file": "Faithful 32x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {

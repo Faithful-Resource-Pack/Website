@@ -1,7 +1,6 @@
 {
   "github": [
     {
-      "file": "Faithful 64x",
       "file_type": "GitHub",
       "links": {
         "github": "https://github.com/Faithful-Resource-Pack/Faithful-Java-64x/"
@@ -10,8 +9,7 @@
   ],
   "1.21.0": [
     {
-      "file": "Faithful 64x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "latest": true,
       "links": {
@@ -22,8 +20,7 @@
   ],
   "1.20.4": [
     {
-      "file": "Faithful 64x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/5207728"
@@ -32,8 +29,7 @@
   ],
   "1.20.2": [
     {
-      "file": "Faithful 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 9,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4626083"
@@ -42,8 +38,7 @@
   ],
   "1.19.3": [
     {
-      "file": "Faithful 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 7,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4174223"
@@ -52,24 +47,21 @@
   ],
   "1.18.x": [
     {
-      "file": "Faithful 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 4,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3751500"
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 3,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3652893"
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 2,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3578938"
@@ -78,24 +70,21 @@
   ],
   "1.17.x": [
     {
-      "file": "Compliance 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 1,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3506544"
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 8,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3419568"
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 7,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3377543"
@@ -104,8 +93,7 @@
   ],
   "1.16.x": [
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 6,
       "links": {
         "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-64x/releases/download/alpha-6/Compliance_64x_-_Parity_Update.zip",
@@ -113,8 +101,7 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 5,
       "github_version": 2,
       "links": {
@@ -123,32 +110,28 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 4,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3249771"
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 3,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3217031"
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 2,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3193908"
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 1,
       "github_version": 1,
       "links": {

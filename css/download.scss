@@ -34,9 +34,12 @@ h2 {
 	margin-bottom: 2rem;
 }
 
+th > p {
+	padding: .2rem;
+}
+
 th > p, td > p {
 	color: #ccc;
-	padding: .2rem;
 	margin-bottom: 0;
 	vertical-align: middle;
 }
@@ -122,12 +125,12 @@ main span {
 }
 
 .latest {
-	background-color: rgb(255, 255, 255);
+	background-color: #fff;
 	color: #111;
 }
 
-.blue {
-	background-color: rgb(60, 111, 221);
+.version {
+	background-color: #3b4249;
 	color: #fff;
 }
 
@@ -146,8 +149,8 @@ main span {
 	color: #fff;
 }
 
-.version {
-	background-color: rgb(192, 37, 68);
+.red {
+	background-color: rgb(223, 28, 67);
 	color: #fff;
 }
 
@@ -155,6 +158,14 @@ main span {
 	.outline {
 		margin: 0;
 		padding: 0;
+	}
+
+	.force-row {
+		padding-left: 0px !important;
+		display: flex !important;
+		span {
+			margin-right: 0.3rem;
+		}
 	}
 
 	br + br {
@@ -270,5 +281,20 @@ main span {
 }
 
 .download-badges > * {
-	margin-right: 0.25rem;
+	margin-right: 0.3rem;
+}
+
+.dot {
+	aspect-ratio: 1 !important;
+	border-radius: 50%;
+}
+
+.force-row {
+	display: inline-flex;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	padding-left: 0.5rem;
+	margin: 0px;
+	/* fix for dots not respecting aspect ratio */
+	align-items: center;
 }

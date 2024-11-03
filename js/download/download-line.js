@@ -32,10 +32,12 @@ export default {
       </td>
       <td class="large details">
         <p class="download-badges">
-          <span class="name">{{ item.file }}</span>
+          <span class="force-row">
+            <span :class="['dot', labelColor[item.file_type] || 'green']" />
+            <span class="name">{{ item.file_type }} {{ item.file_version }}</span>
+          </span>
           <span class="version">{{ version === "github" ? "Repository" : version }}</span>
-          <span :class="labelColor[item.file_type] || 'green'">{{ labelText }}</span>
-          <span class="latest" v-if="version != 'download' && item.latest">Latest</span>
+          <span class="latest" v-if="version !== 'download' && item.latest">Latest</span>
         </p>
         <p class="mobile" v-show="date">
           {{ date + ' - ' + size }}
@@ -69,10 +71,10 @@ export default {
         mcpedl: { icon: "", text: "MCPEDL", type: "fas" },
       },
       labelColor: {
-        Download: "github",
-        R: "green",
-        B: "blue",
-        A: "yellow",
+        GitHub: "github",
+        Release: "green",
+        Beta: "yellow",
+        Alpha: "red",
         Snapshot: "black",
       }
     }

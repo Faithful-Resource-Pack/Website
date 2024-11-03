@@ -1,7 +1,6 @@
 {
   "github": [
     {
-      "file": "Faithful 64x",
       "file_type": "GitHub",
       "links": {
         "github": "https://github.com/Faithful-Resource-Pack/Faithful-Bedrock-64x/"
@@ -10,8 +9,7 @@
   ],
   "1.21.x": [
     {
-      "file": "Faithful 64x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 5,
       "latest": true,
       "links": {
@@ -21,32 +19,28 @@
   ],
   "1.20.x": [
     {
-      "file": "Faithful 64x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 3,
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5207808"
       }
     },
     {
-      "file": "Faithful 64x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 2,
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4932602"
       }
     },
     {
-      "file": "Faithful 64x",
-      "file_type": "R",
+      "file_type": "Release",
       "file_version": 1,
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4781972"
       }
     },
     {
-      "file": "Faithful 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 9,
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/files/4626080"
@@ -55,32 +49,28 @@
   ],
   "1.19.x": [
     {
-      "file": "Faithful 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 8,
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4499616"
       }
     },
     {
-      "file": "Faithful 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 7,
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4174222"
       }
     },
     {
-      "file": "Faithful 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 6,
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/files/4055196"
       }
     },
     {
-      "file": "Faithful 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 5,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/mc-addons/faithful-64x-bedrock/files/3865490"
@@ -89,8 +79,7 @@
   ],
   "1.18.x": [
     {
-      "file": "Faithful 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 4,
       "size": "6.88 MB",
       "date": "2022-04-14",
@@ -99,8 +88,7 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 3,
       "size": "6.76 MB",
       "date": "2022-02-19",
@@ -109,8 +97,7 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 2,
       "size": "6.52 MB",
       "date": "2021-12-24",
@@ -121,8 +108,7 @@
   ],
   "1.17.x": [
     {
-      "file": "Compliance 64x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 1,
       "size": "6.13 MB",
       "date": "2021-10-27",
@@ -131,8 +117,7 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 8,
       "size": "7.61 MB",
       "date": "2021-08-08",
@@ -141,8 +126,7 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 7,
       "size": "7.17 MB",
       "date": "2021-05-07",
@@ -153,8 +137,7 @@
   ],
   "1.16.x": [
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 6,
       "size": "7.40 MB",
       "date": "2021-05-23",
@@ -163,8 +146,7 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 5,
       "size": "7.53 MB",
       "date": "2021-04-15",
@@ -173,8 +155,7 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 4,
       "size": "6.86 MB",
       "date": "2021-03-24",
@@ -183,8 +164,7 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 3,
       "size": "6.57 MB",
       "date": "2021-02-25",
@@ -193,8 +173,7 @@
       }
     },
     {
-      "file": "Compliance 64x",
-      "file_type": "A",
+      "file_type": "Alpha",
       "file_version": 2,
       "size": "6.81 MB",
       "date": "2021-02-07",

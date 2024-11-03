@@ -1,7 +1,6 @@
 {
   "github": [
     {
-      "file": "Faithful Dungeons 32x",
       "file_type": "GitHub",
       "links": {
         "github": "https://github.com/Faithful-Resource-Pack/Faithful-Dungeons-32x"
@@ -10,8 +9,7 @@
   ],
   "Latest": [
     {
-      "file": "Compliance Dungeons 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 2,
       "date": "2021-11-10",
       "size": "24.2 MB",
@@ -20,8 +18,7 @@
       }
     },
     {
-      "file": "Compliance Dungeons 32x",
-      "file_type": "B",
+      "file_type": "Beta",
       "file_version": 1,
       "date": "2021-01-19",
       "size": "26.6 MB",
