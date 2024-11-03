@@ -52,7 +52,7 @@ export default {
         :colspan="Object.keys(item.links).length > 1 ? 1 : 2"
       >
         <a class="btn btn-dark btn-dl" :href="link">
-          <i :class="buttonData[linkType]?.type || 'fas'">{{ buttonData[linkType]?.icon || "" }}</i>
+          <i :class="buttonData[linkType]?.type || 'fas'">{{ buttonData[linkType]?.icon || "" }}</i>
           <span class="link-text">{{ buttonData[linkType]?.text || linkType }}</span>
         </a>
       </td>
@@ -62,7 +62,7 @@ export default {
     return {
       showIcon: "+",
       buttonData: {
-        download: { icon: "", text: "Download", type: "fas" },
+        download: { icon: "", text: "Download", type: "fas" },
         curse: { icon: "", text: "Curse", type: "fas" },
         github: { icon: "", text: "GitHub", type: "fab" },
         modrinth: { icon: "", text: "Modrinth", type: "fas" },
