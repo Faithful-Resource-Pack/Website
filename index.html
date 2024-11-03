@@ -64,107 +64,81 @@ load_css:
 <div class="container" id="app">
   <h2 class="display-3 mb-4" align="center">Projects</h2>
   <div class="res-grid-2">
-    <div class="card discover">
-      <div class="poster">
-        <img class="card-image" src="/image/home/poster_32.jpg" alt="Faithful 32x">
-        <img class="card-image wordmark" src="/image/home/f32.png" alt="Faithful 32x wordmark">
-      </div>
-      <div class="card-body">
-        <div class="card-text auto-flex">
-          <span class="my-2 text-center" style="min-height: 65px">
-            The original Minecraft texture feel, with double the resolution and double the fun!
-          </span><br>
-        </div>
+    <project-card
+      name="Faithful 32x"
+      background="/image/home/poster_32.jpg"
+      wordmark="/image/home/f32.png"
+      description="The original Minecraft texture feel, with double the resolution and double the fun!"
+    >
+      <template #btns>
         <a class="btn block btn-dark" href="/faithful32x">See More</a>
-      </div>
-    </div>
-    <div class="card discover">
-      <div class="poster">
-        <img class="card-image" src="/image/home/poster_64.jpg" alt="Faithful 64x">
-        <img class="card-image wordmark" src="/image/home/f64.png" alt="Faithful 64x wordmark">
-      </div>
-      <div class="card-body">
-        <div class="card-text auto-flex">
-          <span class="my-2 text-center" style="min-height: 65px">
-            An even more detailed experience with quadruple-resolution textures!
-          </span><br>
-        </div>
+      </template>
+    </project-card>
+    <project-card
+      name="Faithful 64x"
+      background="/image/home/poster_64.jpg"
+      wordmark="/image/home/f64.png"
+      description="An even more detailed experience with quadruple-resolution textures!"
+    >
+      <template #btns>
         <a class="btn block btn-dark" href="/faithful64x">See More</a>
-      </div>
-    </div>
+      </template>
+    </project-card>
   </div>
 
   <br>
 
   <div class="res-grid-2">
-    <div class="card discover">
-      <div class="poster">
-        <img class="card-image" src="/image/home/poster_cf32.jpg" alt="Classic Faithful 32x">
-        <img class="card-image wordmark" src="/image/home/cf32.png" alt="Classic Faithful 32x Wordmark">
-      </div>
-      <div class="card-body">
-        <div class="card-text auto-flex">
-          <span class="my-2 text-center" style="min-height: 65px">
-            The older yet refreshed look of Faithful, for when you need that nostalgic hit!
-          </span><br>
-        </div>
+    <project-card
+      name="Classic Faithful 32x"
+      background="/image/home/poster_cf32.jpg"
+      wordmark="/image/home/cf32.png"
+      description="The older yet refreshed look of Faithful, for when you need that nostalgic hit!"
+    >
+      <template #btns>
         <div class="button-2">
           <a class="btn btn-dark" href="/classicfaithful/32x-jappa">New Textures [Jappa]</a>
           <a class="btn btn-dark" href="/classicfaithful/32x-programmer-art">Old Textures [PA]</a>
         </div>
-      </div>
-    </div>
-    <div class="card discover">
-      <div class="poster">
-        <img class="card-image" src="/image/home/poster_cf64.jpg" alt="Classic Faithful 64x">
-        <img class="card-image wordmark" src="/image/home/cf64.png" alt="Classic Faithful 64x Wordmark">
-      </div>
-      <div class="card-body">
-        <div class="card-text auto-flex">
-          <span class="my-2 text-center" style="min-height: 65px">
-            The traditional Faithful style with fully refreshed and ultra high-resolution textures!
-          </span><br>
-        </div>
+      </template>
+    </project-card>
+    <project-card
+      name="Classic Faithful 64x"
+      background="/image/home/poster_cf64.jpg"
+      wordmark="/image/home/cf64.png"
+      description="The traditional Faithful style with fully refreshed and ultra high-resolution textures!"
+    >
+      <template #btns>
         <a class="btn block btn-dark" href="/classicfaithful/64x-jappa">See More</a>
-      </div>
-    </div>
+      </template>
+    </project-card>
   </div>
-
-  <!--
+<!--
   <br>
   <div class="res-grid-2" id="last-grid">
-    <div class="card discover">
-      <div class="poster">
-        <img class="card-image" src="/image/home/poster_addons.jpg" alt="Faithful Add-ons">
-        <img class="card-image wordmark" src="/image/home/addons.png" alt="Faithful Add-ons wordmark">
-      </div>
-      <div class="card-body">
-        <div class="card-text auto-flex">
-          <span class="my-2 text-center" style="min-height: 65px">
-            A plethora of modifications to all our base packs, ranging from redstone utilities to a rainbow XP bar!
-          </span><br>
-        </div>
+    <project-card
+      name="Faithful Add-ons"
+      background="/image/home/poster_addons.jpg"
+      wordmark="/image/home/addons.png"
+      description="A plethora of modifications to all our base packs, ranging from redstone utilities to a rainbow XP bar!"
+    >
+      <template #btns>
         <a class="btn block btn-dark" href="/addons">Discover Add-ons</a>
-      </div>
-    </div>
-    <div class="card discover">
-      <div class="poster">
-        <img class="card-image" src="/image/home/poster_mods.jpg" alt="Faithful Dungeons">
-        <img class="card-image wordmark" src="/image/home/mods.png" alt="Faithful Mods wordmark">
-      </div>
-      <div class="card-body">
-        <div class="card-text auto-flex">
-          <span class="my-2 text-center" style="min-height: 65px">
-            A massive catalog of mods and modpack support for retaining the Faithful feel however you choose to play!
-          </span><br>
-        </div>
-        <p class="btn block btn-dark disabled">Coming Soon...</p>
+      </template>
+    </project-card>
+    <project-card
+      name="Faithful Mods"
+      background="/image/home/poster_mods.jpg"
+      wordmark="/image/home/mods.png"
+      description="A massive catalog of mods and modpack support for retaining the Faithful feel however you choose to play!"
+    >
+      <template #btns>
         <div class="btn-group">
           <a class="btn btn-dark col-6" href="/mods">Mods</a>
           <a class="btn btn-dark col-6" href="/modpacks">Modpacks</a>
         </div>
-      </div>
-    </div>
+      </template>
+    </project-card>
   </div>
   -->
 
@@ -173,7 +147,7 @@ load_css:
   <h2 class="display-3" align="center">Add-ons</h2>
   <div class="res-grid-4">
     <template v-for="(addon, i) in addons">
-      <a class="card img-card addon-card" :href="addon.slug === LOADING_ID ? '' : `/addons/${addon.slug}`">
+      <a class="card img-card addon-card hovering-effect" :href="addon.slug === LOADING_ID ? '' : `/addons/${addon.slug}`">
         <img
           :src="addon.slug === LOADING_ID
             ? '/image/home/see_more.png'
@@ -209,7 +183,7 @@ load_css:
         </div>
       </a>
     </template>
-    <a class="card img-card addon-card" rel="noopener" href="/addons">
+    <a class="card img-card addon-card hovering-effect" rel="noopener" href="/addons">
       <img
         src="/image/home/see_more.png"
         loading="lazy"
@@ -243,6 +217,9 @@ load_css:
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const app = Vue.createApp({
+      components: {
+        "project-card": Vue.defineAsyncComponent(() => import("/js/home/project-card.js")),
+      },
       data() {
         return {
           addons: [],
