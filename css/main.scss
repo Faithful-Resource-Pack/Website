@@ -5,7 +5,8 @@
 
 @font-face {
   font-family: Faithful;
-  src: url("../data/font/Faithful.ttf") format("truetype");
+  src: local('Faithful'), url("../data/font/Faithful.ttf") format("truetype");
+  font-display: swap;
 }
 
 /* Basic layout */
