@@ -2224,8 +2224,4 @@ input[type=radio] {
 .flex-down {
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-between;
-  @media screen and (max-width: 760px) {
-    justify-content: flex-start;
-  }
 }
