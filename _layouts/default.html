@@ -21,12 +21,12 @@ layout: compress
 	<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/brands.min.css" as="style">
 	{%- if page.preload_assets -%}
 		{% for asset in page.preload_assets %}
-	<link rel="preload" href="{{ asset.url }}" as="{{ asset.as }}" type="{{ asset.type }}">
+			<link rel="preload" href="{{ asset.url }}" as="{{ asset.as }}" type="{{ asset.type }}">
 		{% endfor %}
 	{%- endif -%}
 	{%- if page.load_css -%}
 		{% for css in page.load_css %}
-	<link rel="stylesheet" href="{{ css.url }}">
+			<link rel="stylesheet" href="{{ css.url }}">
 		{% endfor %}
 	{%- endif -%}
 
