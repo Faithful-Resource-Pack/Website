@@ -19,8 +19,7 @@ router.get(["/coffee", "/teapot"], async (req, res) => {
 		data = data.replace(/<title>.+<\/title>/, `<title>${titleSplit.join(" - ")}</title>`);
 	}
 
-	res.status(418).send(data);
-	res.end();
+	res.status(418).send(data).end();
 });
 
 export default router;
