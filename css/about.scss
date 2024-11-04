@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "./variables";
+@use "./variables" as *;
 
 .about-image {
 	max-height: 384px;

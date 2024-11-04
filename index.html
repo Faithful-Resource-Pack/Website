@@ -2,56 +2,14 @@
 layout: default
 title: Home
 no_container: true
-preload_assets:
-  - url: /image/banner/hero.jpg
-    as: image
-    type: image/jpeg
-  - url: /image/home/wordmark.png
-    as: image
-    type: image/png
-  - url: /css/index.css
-    as: style
-    type: text/css
-  - url: https://api.faithfulpack.net/v2/posts/approved
-    as: fetch
-    type: application/json
-  - url: https://api.faithfulpack.net/v2/addons/approved
-    as: fetch
-    type: application/json
-  - url: /image/home/poster_32.jpg
-    as: image
-    type: image/jpg
-  - url: /image/home/f32.png
-    as: image
-    type: image/png
-  - url: /image/home/poster_64.jpg
-    as: image
-    type: image/jpg
-  - url: /image/home/f64.png
-    as: image
-    type: image/png
-  - url: /image/home/poster_cf32.jpg
-    as: image
-    type: image/jpg
-  - url: /image/home/cf32.png
-    as: image
-    type: image/png
-  - url: /image/home/poster_cf64.jpg
-    as: image
-    type: image/jpg
-  - url: /image/home/cf64.png
-    as: image
-    type: image/png
-load_css:
-  - url: /css/index.css
 ---
+
+<link rel="stylesheet" href="/css/index.css">
 
 <!-- outside of container, goes to edge of screen -->
 <div class="highlight-section text-center">
   <div id="upspace"></div>
-  <h1 id="highlight-logo">
-    <img height="auto" width="auto" class="highlight-wordmark" src="/image/home/wordmark.png" alt="Faithful Wordmark" />
-  </h1>
+  <img class="highlight-wordmark" src="/image/home/wordmark.png" alt="Faithful Wordmark">
   <h2>Providing a higher-resolution experience since 2010.</h2>
   <div class="container py-3">
     <a href="https://discord.gg/sN9YRQbBv7">

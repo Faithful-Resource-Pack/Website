@@ -1,12 +1,11 @@
 ---
 ---
 
-@import "./variables";
+@use "./variables" as *;
 
 @font-face {
   font-family: Faithful;
-  src: local('Faithful'), url("../data/font/Faithful.ttf") format("truetype");
-  font-display: swap;
+  src: url("../data/font/Faithful.ttf") format("truetype");
 }
 
 /* Basic layout */

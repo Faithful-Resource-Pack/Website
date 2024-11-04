@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "./variables";
+@use "./variables" as *;
 
 .card-column {
   float: left;
@@ -113,10 +113,6 @@
     color: #fff;
     text-shadow: rgba(0, 0, 0, 0.75) 0px 4px 10px;
   }
-}
-
-#highlight-logo {
-  margin: 0;
 }
 
 .discover .poster img:not(.wordmark) {

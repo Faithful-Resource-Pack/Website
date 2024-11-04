@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "./variables";
+@use "./variables" as *;
 
 .background {
 	background: #EEEDE5 url(../image/background/bg_light_background.png) repeat

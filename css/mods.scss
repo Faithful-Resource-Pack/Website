@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "./variables";
+@use "./variables" as *;
 
 /* Versions btn for small screen */
 @media (max-width: 777px) {

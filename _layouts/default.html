@@ -9,27 +9,6 @@ layout: compress
 	<link rel="preconnect" href="https://cdn.jsdelivr.net" />
 	<link rel="preconnect" href="https://api.faithfulpack.net" />
 
-	<link rel="preload" href="/css/light.css" as="style">
-	<link rel="preload" href="/css/dark.css" as="style">
-	<link rel="preload" href="/js/theme.js" as="script">
-	<link rel="preload" href="/css/main.css" as="style">
-	<link rel="preload" href="/data/font/Faithful.ttf" as="font" type="font/ttf">
-	<link rel="preload" href="/js/defaultFunctionality.js" as="script">
-	<link rel="preload" href="/image/background/bg_dark_background.png" as="image" type="image/png">
-	<link rel="preload" href="/image/background/bg_dark_foreground.png" as="image" type="image/png">
-	<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/solid.min.css" as="style">
-	<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/brands.min.css" as="style">
-	{%- if page.preload_assets -%}
-		{% for asset in page.preload_assets %}
-			<link rel="preload" href="{{ asset.url }}" as="{{ asset.as }}" type="{{ asset.type }}">
-		{% endfor %}
-	{%- endif -%}
-	{%- if page.load_css -%}
-		{% for css in page.load_css %}
-			<link rel="stylesheet" href="{{ css.url }}">
-		{% endfor %}
-	{%- endif -%}
-
 	<!-- HTML Meta Tags -->
 	<title>{{ page.title }} - Faithful</title>
 	<meta name="description" content="{% if page.description %}{{ page.description | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
@@ -101,7 +80,7 @@ layout: compress
 		<nav class="custom-navbar navbar navbar-expand-sm navbar-dark" id="topNavbar">
 
 			<a class="nav-icon-mobile" href="/" title="Faithful">
-				<img src="/image/home/navbar-wordmark.png" height="32" width="172.733" style="height: 32px" alt="Faithful 32x">
+				<img src="/image/home/navbar-wordmark.png" style="height: 32px" alt="Faithful 32x">
 			</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="Menu">

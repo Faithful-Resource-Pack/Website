@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "./variables";
+@use "./variables" as *;
 
 .background {
 	background: #131313 url(../image/background/bg_dark_background.png) repeat

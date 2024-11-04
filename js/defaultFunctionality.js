@@ -134,3 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', changeTopNavbar, true)
 })
+
+// load snow script only in december
+if (new Date().getMonth() === 11 && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const script = document.createElement('script');
+  script.type = 'module';
+  script.src = '/js/snow.js';
+  document.head.appendChild(script);
+}
