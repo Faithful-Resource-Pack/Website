@@ -5,6 +5,7 @@ title: Mods
 
 <link rel="stylesheet" href="/css/mods.css">
 
+{% raw %}
 <div id="app">
   <!-- !!! HTML cannot use self-closing tags -->
   <broken-page></broken-page>
@@ -58,7 +59,7 @@ title: Mods
   <div class="card">
     <div class="search-bar-container">
       <input id="SearchBar" class="fancy-card-1x" type="text" placeholder="Search for mods or Minecraft version..." title="Type something" v-model="form.search">
-      <div class="advice" v-text="searchAdvice"></div>
+      <div class="advice">{{ searchAdvice }}</div>
     </div>
 
     <h3 v-if='filteredMods.length == 0' id="noresults" class="text-center" v-html="emptyTable"></h3>
@@ -66,6 +67,7 @@ title: Mods
     <minecraft-mod-list :mods="filteredMods"></minecraft-mod-list>
   </div>
 </div>
+{% endraw %}
 
 <script defer src="/js/mods/polyfill.js"></script>
 <script defer src="/js/mods/extensionjs.js"></script>

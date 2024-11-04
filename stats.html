@@ -3,16 +3,15 @@ layout: default
 title: Statistics
 ---
 
+{% raw %}
 <div id="stats" class="text-center">
 	<h1 class="display-3 my-5">Faithful Statistics</h1>
-
-	<!-- no mustaches to fix jekyll conflicts (pain) -->
 	<h2 class="display-4 my-5">Main Packs</h2>
 	<div class="res-grid-2">
 		<h3>32x Releases</h3>
-		<h3><span class="badge badge-primary h1" v-text="postStats.f32"></span></h3>
+		<h3><span class="badge badge-primary h1">{{ postStats.f32 }}</span></h3>
 		<h3>64x Releases</h3>
-		<h3><span class="badge badge-primary h1" v-text="postStats.f64"></span></h3>
+		<h3><span class="badge badge-primary h1">{{ postStats.f64 }}</span></h3>
 	</div>
 
 	<h2 class="display-4 my-5">Add-ons</h2>
@@ -21,9 +20,9 @@ title: Statistics
 		<template v-for="res in Object.keys(addonsStats)" :key="res">
 			<div v-for="edi, e_i in Object.keys(addonsStats[res])" :key="edi">
 				<h3>
-					<span v-text="res + ' ' + edi + ' Add-ons'"></span>
+					<span>{{ `${res} ${edi} Add-ons` }}</span>
 					<div class="badge-container">
-						<span class="badge badge-primary h1" v-text="addonsStats[res][edi]"></span>
+						<span class="badge badge-primary h1">{{ addonsStats[res][edi] }}</span>
 					</div>
 				</h3>
 			</div>
@@ -35,11 +34,11 @@ title: Statistics
 
 	<div class="res-grid-3">
 		<div v-for="(mKey, index) in keys" :key="index">
-			<h3 v-text="messages[mKey]"></h3>
-			<h3><span class="badge badge-primary h1" v-text="$data[mKey]"></span></h3>
+			<h3>{{ messages[mKey] }}</h3>
+			<h3><span class="badge badge-primary h1">{{ $data[mKey] }}</span></h3>
 		</div>
 	</div>
-
 </div>
+{% endraw %}
 
 <script defer src="/js/stats.js"></script>

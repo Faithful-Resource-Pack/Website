@@ -102,6 +102,7 @@ no_container: true
 
   <hr>
   <br>
+  {% raw %}
   <h2 class="display-3" align="center">Add-ons</h2>
   <div class="res-grid-4">
     <template v-for="(addon, i) in addons">
@@ -114,7 +115,7 @@ no_container: true
           loading="lazy"
         >
         <div class="img-card-shadow"></div>
-        <h3 v-text="addon.name"></h3>
+        <h3>{{ addon.name }}</h3>
         <div class="addon-flags" style="margin-bottom: 5px">
           <img
             v-show="addon.options.tags.includes('Java')"
@@ -164,12 +165,12 @@ no_container: true
     >
       <img v-if="post.header_img" :src="post.header_img" :alt="post.title" loading="lazy">
       <img v-else src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg" loading="lazy">
-      <!-- need to use v-text because jekyll parses the braces otherwise -->
-      <h3 v-text="post.title"></h3>
+      <h3>{{ post.title }}</h3>
     </a>
   </div>
   <br>
   <a class="btn btn-dark col-6 center" href="/news">See More</a>
+  {% endraw %}
 </div>
 
 <script>

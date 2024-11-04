@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <i>{{ faqs.length }} {{ results }} found</i>
         </p>
         <template v-for="(faq, i) in faqs" :key="i">
-          <h2 class="faq-question" v-text="faq.question"></h2>
+          <h2 class="faq-question">{{ faq.question }}</h2>
           <p v-html="parseMd(faq.answer)" class="faq-answer"></p>
         </template>
       </div>

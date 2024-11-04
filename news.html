@@ -5,13 +5,15 @@ title: News
 
 <h1 class="display-3 my-5 text-center">Faithful News</h1>
 
+{% raw %}
 <div id="news">
   <h3 v-if="loading" class="text-center">Loading…</h3>
   <h3
     v-else-if="!posts.length"
     class="text-center"
-    v-text="error ? `Error: ${error}` : 'No posts found'"
-  ></h3>
+  >
+    {{ error ? `Error: ${error}` : "No posts found" }}
+  </h3>
   <div v-else class="grid-2-wide pb-5">
     <a :href="firstPost.permalink">
       <img
@@ -22,9 +24,9 @@ title: News
     </a>
     <div class="flex-down">
       <a :href="firstPost.permalink" class="underline-hover">
-        <h1 v-text="firstPost.title"></h1>
+        <h1>{{ firstPost.title }}</h1>
       </a>
-      <p class="text-truncate" v-text="firstPost.description"></p>
+      <p class="text-truncate">{{ firstPost.description }}</p>
       <a class="btn block btn-dark" :href="firstPost.permalink">Read More</a>
     </div>
   </div>
@@ -42,11 +44,11 @@ title: News
         src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg"
         loading="lazy"
       >
-      <!-- need to use v-text because jekyll parses the braces otherwise -->
-      <h3 v-text="post.title"></h3>
+      <h3>{{ post.title }}</h3>
     </a>
   </div>
 </div>
+{% endraw %}
 
 <script>
   const MAX_DESCRIPTION_LENGTH = 270;
