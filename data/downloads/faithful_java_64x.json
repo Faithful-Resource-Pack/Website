@@ -1,12 +1,4 @@
 {
-  "github": [
-    {
-      "file_type": "GitHub",
-      "links": {
-        "github": "https://github.com/Faithful-Resource-Pack/Faithful-Java-64x/"
-      }
-    }
-  ],
   "1.21.0": [
     {
       "file_type": "Release",

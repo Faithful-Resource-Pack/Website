@@ -36,7 +36,7 @@ export default {
             <span :class="['dot', labelColor[item.file_type] || 'green']" />
             <span class="name">{{ item.file_type }} {{ item.file_version }}</span>
           </span>
-          <span class="version">{{ version === "github" ? "Repository" : version }}</span>
+          <span class="version">{{ version }}</span>
           <span class="latest" v-if="version !== 'download' && item.latest">Latest</span>
         </p>
         <p class="mobile" v-show="date">
@@ -98,12 +98,10 @@ export default {
   },
   computed: {
     labelText() {
-      if (this.item.file_type == "Download") return 'Download'
       if (!this.item.file_version) return this.item.file_type
       return this.item.file_type + this.item.file_version
     },
     date() {
-      if (this.item.file_type === "GitHub") return
       if (this.item.date)
         return this.getLocalizedDate(new Date(this.item.date));
 
@@ -112,7 +110,6 @@ export default {
       return this.getLocalizedDate(new Date(this.curse.uploaded_at.split("T")[0]));
     },
     size() {
-      if (this.item.file_type === "GitHub") return
       // some very old downloads have manual sizes
       if (this.item.size) return this.item.size
       if (!this.curse || !this.curse.filesize) return "Unknown"
