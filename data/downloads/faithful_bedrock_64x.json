@@ -12,6 +12,13 @@
   "1.20.x": [
     {
       "file_type": "Release",
+      "file_version": 4,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5373388"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 3,
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5207808"

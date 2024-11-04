@@ -1,5 +1,5 @@
 {
-  "1.21.0": [
+  "1.21": [
     {
       "file_type": "Release",
       "file_version": 5,
@@ -10,6 +10,15 @@
       }
     }
   ],
+  "1.20.6": [
+    {
+      "file_type": "Release",
+      "file_version": 4,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/5373387"
+      }
+    }
+  ],
   "1.20.4": [
     {
       "file_type": "Release",
@@ -17,14 +26,37 @@
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/5207728"
       }
+    },
+    {
+      "file_type": "Release",
+      "file_version": 2,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4932567"
+      }
     }
   ],
   "1.20.2": [
+    {
+      "file_type": "Release",
+      "file_version": 1,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4781970"
+      }
+    },
     {
       "file_type": "Beta",
       "file_version": 9,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4626083"
+      }
+    }
+  ],
+  "1.19.4": [
+    {
+      "file_type": "Beta",
+      "file_version": 8,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4499295"
       }
     }
   ],
@@ -34,6 +66,22 @@
       "file_version": 7,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4174223"
+      }
+    },
+    {
+      "file_type": "Beta",
+      "file_version": 6,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/4053426"
+      }
+    }
+  ],
+  "1.19.2": [
+    {
+      "file_type": "Beta",
+      "file_version": 5,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3865491"
       }
     }
   ],

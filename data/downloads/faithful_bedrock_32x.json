@@ -3,6 +3,7 @@
     {
       "file_type": "Release",
       "file_version": 12,
+      "latest": true,
       "date": "2024-07-05",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Bedrock/July%202024/Faithful%2032x%20-%201.21.mcpack",
@@ -14,7 +15,6 @@
     {
       "file_type": "Release",
       "file_version": 11,
-      "latest": true,
       "date": "2024-03-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Bedrock/March%202024/Faithful%2032x%20-%201.20.mcpack",
