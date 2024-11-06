@@ -2,6 +2,16 @@
   "1.21.x": [
     {
       "file_type": "Release",
+      "file_version": 13,
+      "latest": true,
+      "date": "2024-11-05",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/November%202024/Faithful%2032x%20-%201.21.mcpack",
+        "curse": "https://legacy.curseforge.com/minecraft-bedrock/addons/faithful-32x-bedrock/download/5878815"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 12,
       "latest": true,
       "date": "2024-07-05",
