@@ -26,7 +26,7 @@ title: News
       <a :href="firstPost.permalink" class="underline-hover">
         <h1>{{ firstPost.title }}</h1>
       </a>
-      <p class="text-truncate">{{ firstPost.description }}</p>
+      <p class="text-truncate" v-html="firstPost.description"></p>
       <a class="btn block btn-dark" :href="firstPost.permalink">Read More</a>
     </div>
   </div>
