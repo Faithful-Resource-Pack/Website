@@ -298,3 +298,22 @@ main span {
 	/* fix for dots not respecting aspect ratio */
 	align-items: center;
 }
+
+.download-title {
+	/* compensate for the # and space */
+	margin-left: -1.5ch;
+	&:hover {
+		.download-hashtag {
+			opacity: 1;
+			cursor: pointer;
+		}
+	}
+}
+
+.download-hashtag {
+	opacity: 0;
+	color: $primary;
+	&:hover {
+		color: $primary-dark;
+	}
+}

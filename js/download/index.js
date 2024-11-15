@@ -45,7 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <div>
         <h1 class="display-3 my-5 text-center">Downloads</h1>
         <template v-for="(editions, pack) in alive" :key="pack">
-          <h2 :id="pack" class="text-center display-4 mb-0">{{ pack }}</h2>
+          <h2 :id="pack" class="text-center display-4 mb-0 download-title" @click="copyText(pack)">
+            <span title="Copy URL to clipboard" class="download-hashtag">#</span>{{ pack }}
+          </h2>
           <template v-for="(data, edition) in editions" :key="edition">
             <h2 class="text-center my-3">{{ edition }} Edition</h2>
             <download-table
@@ -82,6 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
           })
           .catch(console.error)
       },
+      copyText(id) {
+        location.hash = `#${encodeURIComponent(id)}`;
+        // write it before copying the whole URL (don't have to worry about multiple packs stacking)
+        navigator.clipboard.writeText(location.href);
+      }
     },
     created() {
       Promise.all([
