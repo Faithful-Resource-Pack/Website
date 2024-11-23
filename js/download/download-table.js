@@ -14,11 +14,11 @@ export default {
     }
   },
 	template: `
-    <div class="outline">
+    <div class="download-table-padding">
       <table class="download-table">
         <thead>
-          <tr>
-            <th colspan="2" class="large"><p>File</p></th>
+          <tr class="download-heading">
+            <th colspan="2" class="file-heading"><p>Name</p></th>
             <th><p>Date</p></th>
             <th><p>Size</p></th>
             <th colspan="2"><p>Downloads</p></th>
@@ -34,7 +34,7 @@ export default {
               :item="items[0]"
               :curse="getCurseFile(items[0])"
               :version="version"
-              @toggle="handleOpen(version)"
+              @toggle="toggleChildren(version)"
             />
             <template v-if="openStates[version]">
               <download-line
@@ -57,10 +57,9 @@ export default {
     }
   },
   methods: {
-    handleOpen(version) {
+    toggleChildren(version) {
       this.openStates[version] = !this.openStates[version]
       // doesn't trigger rerender of subelements
-      this.$forceUpdate()
     },
     getCurseFile(item) {
       if (item.links.curse) {
