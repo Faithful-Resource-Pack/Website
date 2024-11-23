@@ -1,0 +1,63 @@
+---
+---
+
+@import "./variables";
+
+.hero-container {
+  display: block;
+  background-image: url(/image/banner/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 0 2rem 1px;
+}
+
+#upspace {
+  height: 80px;
+}
+
+.hero-tagline {
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.75) 0px 4px 10px;
+}
+
+.hero-wordmark {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 10px #000);
+  max-width: 100%;
+}
+
+.project-card {
+  min-height: 420px;
+}
+
+.project-image {
+  position: relative;
+  display: inline;
+}
+
+// place wordmark on top of image
+.project-wordmark {
+  position: absolute;
+  top: 8%;
+  right: 0;
+  padding: 30px;
+}
+
+.project-background {
+  width: 100%;
+  // cap max height so it doesn't push all the way down
+  max-height: 260px;
+}
+
+.img-card > h3 {
+  margin: 0;
+  padding: 8px;
+  background: linear-gradient(0deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,0) 100%);
+  width: 100%;
+}
+
+.img-card {
+  max-width: 960px;
+  max-height: 540px;
+}

@@ -20,7 +20,7 @@
 			const downloadList = Object.entries(items).map(([name, link]) => {
 				const [className, icon] = handleIcon(name);
 				return `
-					<p align="center">
+					<p class="text-center">
 						<a href="${link}" class="btn block btn-lg btn-primary">
 							<i style="margin-right: 10px" class="${className}">${icon}</i>
 							${name}
@@ -29,7 +29,7 @@
 				`;
 			});
 			return `
-				<h1 class="my-3" align="center">${category}</h1>
+				<h1 class="my-3 text-center">${category}</h1>
 				${downloadList.join("")}
 			`;
 		});

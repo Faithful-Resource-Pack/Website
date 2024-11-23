@@ -7,23 +7,20 @@ h2 {
 	margin-top: 0.5rem;
 }
 
-.collapsible, .content {
+.collapsible, .download-item {
 	padding: .2rem;
 	border-radius: $border-radius-0x;
 	padding-left: .7rem;
 	padding-right: .7rem;
 }
 
-.collapsible:hover, .content:hover {
+.collapsible:hover, .download-item:hover {
 	background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-.content {
+.download-item {
 	overflow: hidden;
 	transition: 5 0.2s ease-out;
-}
-.content.active {
-	display: table-row;
 }
 
 .outline {
@@ -203,10 +200,6 @@ main span {
 
 			&:last-child {
 				border-bottom: 0px none;
-			}
-
-			&.content.active {
-				display: flex;
 			}
 		}
 

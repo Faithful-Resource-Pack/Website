@@ -4,13 +4,14 @@ title: Home
 no_container: true
 ---
 
-<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/home.css">
 
 <!-- outside of container, goes to edge of screen -->
-<div class="highlight-section text-center">
+<div class="hero-container text-center">
   <div id="upspace"></div>
-  <img class="highlight-wordmark" src="/image/home/wordmark.png" alt="Faithful Wordmark">
-  <h2>Providing a higher-resolution experience since 2010.</h2>
+  <img class="hero-wordmark" src="/image/home/wordmark.png" alt="Faithful Wordmark">
+  <h2 class="hero-tagline">Providing a higher-resolution experience since 2010.</h2>
+  <!-- hack to get the button the same width as the container -->
   <div class="container py-3">
     <a href="https://discord.gg/sN9YRQbBv7">
       <p class="blurple banner">
@@ -20,7 +21,7 @@ no_container: true
   </div>
 </div>
 <div class="container" id="app">
-  <h2 class="display-3 mb-4" align="center">Projects</h2>
+  <h2 class="display-3 mb-4 text-center">Projects</h2>
   <div class="res-grid-2">
     <project-card
       name="Faithful 32x"
@@ -76,7 +77,7 @@ no_container: true
   </div>
 <!--
   <br>
-  <div class="res-grid-2" id="last-grid">
+  <div class="res-grid-2">
     <project-card
       name="Faithful Add-ons"
       background="/image/home/poster_addons.jpg"
@@ -95,8 +96,8 @@ no_container: true
     >
       <template #btns>
         <div class="btn-group">
-          <a class="btn btn-dark col-6" href="/mods">Mods</a>
-          <a class="btn btn-dark col-6" href="/modpacks">Modpacks</a>
+          <a class="btn block btn-dark" href="/mods">Mods</a>
+          <a class="btn block btn-dark" href="/modpacks">Modpacks</a>
         </div>
       </template>
     </project-card>
@@ -106,7 +107,7 @@ no_container: true
   <hr>
   <br>
   {% raw %}
-  <h2 class="display-3" align="center">Add-ons</h2>
+  <h2 class="display-3 text-center">Add-ons</h2>
   <div class="res-grid-4">
     <template v-for="(addon, i) in addons">
       <a class="card img-card addon-card hovering-effect" :href="addon.slug === LOADING_ID ? '' : `/addons/${addon.slug}`">
@@ -158,7 +159,7 @@ no_container: true
 
   <hr>
   <br>
-  <h2 class="display-3" align="center">News</h2>
+  <h2 class="display-3 text-center">News</h2>
   <div class="res-grid-3">
     <a
       v-for="post in topPosts"

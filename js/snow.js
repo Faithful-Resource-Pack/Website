@@ -21,9 +21,9 @@ const numberOfSnowflakes = 40
 // Flag to reset the position of the snowflakes
 let resetPosition = false
 
-//
-// Constructor for our Snowflake object
-//
+/**
+ * Constructor for our Snowflake object
+ */
 class Snowflake {
   constructor(element, speed, xPos, yPos) {
     // set initial snowflake properties
@@ -50,23 +50,21 @@ class Snowflake {
     // setting our snowflake's position
     setTransform(Math.round(this.xPos), Math.round(this.yPos), this.scale, this.element)
     // if snowflake goes below the browser window, move it back to the top
-    if (this.yPos > browserHeight) {
-      this.yPos = -50
-    }
+    if (this.yPos > browserHeight) this.yPos = -50
   }
 }
 
-//
-// A performant way to set your snowflake's position and size
-//
-function setTransform (xPos, yPos, scale, el) {
+/**
+ * A performant way to set your snowflake's position and size
+ */
+function setTransform(xPos, yPos, scale, el) {
   el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`
 }
 
-//
-// The function responsible for creating the snowflake
-//
-function generateSnowflakes () {
+/**
+ * The function responsible for creating the snowflake
+ */
+function generateSnowflakes() {
   // get our snowflake element from the DOM and store it
 
   const originalSnowflake0 = document.querySelector('.snowflake0')
@@ -124,9 +122,9 @@ function generateSnowflakes () {
   moveSnowflakes()
 }
 
-//
-// Responsible for moving each snowflake by calling its update function
-//
+/**
+ * Responsible for moving each snowflake by calling its update function
+ */
 function moveSnowflakes() {
   snowflakes.forEach((item) => {
     item.update()
@@ -148,16 +146,16 @@ function moveSnowflakes() {
   requestAnimationFrame(moveSnowflakes)
 }
 
-//
-// This function returns a number between (maximum - offset) and (maximum + offset)
-//
+/**
+ * Returns a number between (maximum - offset) and (maximum + offset)
+ */
 function getPosition(offset, size) {
   return Math.round(-1 * offset + Math.random() * (size + 2 * offset))
 }
 
-//
-// Trigger a reset of all the snowflakes' positions
-//
+/**
+ * Trigger a reset of all the snowflakes' positions
+ */
 function setResetFlag() {
   resetPosition = true
 }

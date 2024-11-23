@@ -11,7 +11,7 @@ export default {
       style="max-width: 1140px"
     >
       <div class="card card-body">
-        <p align="center">The add-on is loading, please wait...</p>
+        <p class="text-center">The add-on is loading, please wait...</p>
       </div>
     </div>
     <div v-else-if="addon.approval.status == 'approved'">
@@ -25,7 +25,7 @@ export default {
       </h1>
       <img :src="header" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
-      <addon-modal v-model="modal" :close="closeModal" :image="modalImage" />
+      <addon-modal v-model="modal" :image="modalImage" />
       <div class="card card-body" v-if="carousel.length">
         <h3 class="text-center">Screenshots</h3>
         <div class="res-grid-3" v-if="files.length">
@@ -223,10 +223,6 @@ export default {
     openModal(url) {
       this.modalImage = url
       this.modal = true
-    },
-    closeModal() {
-      this.modalImage = ''
-      this.modal = false
     },
     compiledMarkdown(markdown) {
       return marked(markdown, { sanitize: true })

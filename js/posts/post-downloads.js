@@ -14,8 +14,8 @@ export default {
 					</i>{{ category }}
 				</a>
 				<template v-else>
-					<h1 class="my-3" align="center">{{ category }}</h1>
-					<p v-for="[name, link] in Object.entries(items)" align="center">
+					<h1 class="my-3 text-center">{{ category }}</h1>
+					<p v-for="[name, link] in Object.entries(items)" class="text-center">
 						<a :href="link" class="btn block btn-lg btn-primary">
 							<i style="margin-right: 10px" :class="getIcon(name).cls">
 								{{ getIcon(name).icon }}

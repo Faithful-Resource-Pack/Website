@@ -16,10 +16,6 @@ export default {
       type: Boolean,
       required: true
     },
-    close: {
-      type: Function,
-      required: true
-    },
     image: {
       type: String,
       required: true

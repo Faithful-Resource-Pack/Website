@@ -25,7 +25,7 @@ export default {
     },
   },
   template: `
-    <tr class="content" :class="nested ? 'darker' : null" @click="handleOpen">
+    <tr class="download-item" :class="nested ? 'darker' : null" @click="handleOpen">
       <td class="before-empty toggle darker" v-if="nested || single"></td>
       <td class="before-empty toggle darker" v-else>
         <p class="clickable">{{ showIcon }}</p>
