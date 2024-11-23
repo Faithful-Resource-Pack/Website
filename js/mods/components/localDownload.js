@@ -9,7 +9,7 @@ NAME = 'Faithful Mods' // eslint-disable-line
 export default {
   name: 'local-download',
   components: {
-    "custom-modal": Vue.defineAsyncComponent(() => import("./customModal.js")),
+    CustomModal: Vue.defineAsyncComponent(() => import("./customModal.js")),
   },
   props: ['canpack', 'versions'],
   template: `

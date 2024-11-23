@@ -11,11 +11,11 @@ Object.filter = (obj, predicate) =>
 document.addEventListener("DOMContentLoaded", () => {
   const app = Vue.createApp({
     components: {
-      "broken-page": Vue.defineAsyncComponent(() => import("./components/brokenPage.js")),
-      "minecraft-mod-list": Vue.defineAsyncComponent(() => import("./components/mods/minecraftModsList.js")),
-      "download-minecraft-version": Vue.defineAsyncComponent(() => import("./components/mods/downloadMinecraftVersion.js")),
-      "local-download": Vue.defineAsyncComponent(() => import("./components/localDownload.js")),
-      "zip-options": Vue.defineAsyncComponent(() => import("./components/zipOptions.js")),
+      BrokenPage: Vue.defineAsyncComponent(() => import("./components/brokenPage.js")),
+      MinecraftModList: Vue.defineAsyncComponent(() => import("./components/mods/minecraftModsList.js")),
+      DownloadMinecraftVersion: Vue.defineAsyncComponent(() => import("./components/mods/downloadMinecraftVersion.js")),
+      LocalDownload: Vue.defineAsyncComponent(() => import("./components/localDownload.js")),
+      ZipOptions: Vue.defineAsyncComponent(() => import("./components/zipOptions.js")),
     },
     data() {
       return {

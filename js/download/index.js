@@ -1,13 +1,9 @@
 /* global location, Vue, getHTML */
 
-let cache = {}
-
 document.addEventListener("DOMContentLoaded", () => {
-  const DownloadTable = Vue.defineAsyncComponent(() => import('./download-table.js'))
-
   const app = Vue.createApp({
     components: {
-      DownloadTable,
+      DownloadTable: Vue.defineAsyncComponent(() => import('./download-table.js')),
     },
     data() {
       return {

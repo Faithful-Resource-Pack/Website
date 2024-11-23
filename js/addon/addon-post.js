@@ -1,11 +1,9 @@
 /* global fetch, marked */
 
-const addonModal = Vue.defineAsyncComponent(() => import('./addon-post-modal.js'))
-
 export default {
-  name: 'addon-page',
+  name: 'addon-post',
   components: {
-    addonModal
+    AddonModal: Vue.defineAsyncComponent(() => import('./addon-post-modal.js'))
   },
   template: `
     <div

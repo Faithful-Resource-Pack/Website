@@ -54,7 +54,7 @@ export default {
             variant="plain"
             style="position: relative; top: calc(-100% + 40px); left: -7px"
             class="pa-0"
-            @click="action(addon)"
+            @click="$emit('clickFav', addon)"
           />
         </div>
       </div>

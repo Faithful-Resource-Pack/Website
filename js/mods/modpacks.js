@@ -8,11 +8,11 @@ const _NO_ATTACHMENTS = -1
 document.addEventListener("DOMContentLoaded", () => {
   const app = Vue.createApp({ // eslint-disable-line no-unused-vars
     components: {
-      "broken-page": Vue.defineAsyncComponent(() => import("./components/brokenPage.js")),
-      "modpack-modal": Vue.defineAsyncComponent(() => import("./components/modpackModal.js")),
-      "modpack-card": Vue.defineAsyncComponent(() => import("./components/modpackCard.js")),
-      "local-download": Vue.defineAsyncComponent(() => import("./components/localDownload.js")),
-      "zip-options": Vue.defineAsyncComponent(() => import("./components/zipOptions.js")),
+      BrokenPage: Vue.defineAsyncComponent(() => import("./components/brokenPage.js")),
+      ModpackModal: Vue.defineAsyncComponent(() => import("./components/modpackModal.js")),
+      ModpackCard: Vue.defineAsyncComponent(() => import("./components/modpackCard.js")),
+      LocalDownload: Vue.defineAsyncComponent(() => import("./components/localDownload.js")),
+      ZipOptions: Vue.defineAsyncComponent(() => import("./components/zipOptions.js")),
     },
     data() {
       return {

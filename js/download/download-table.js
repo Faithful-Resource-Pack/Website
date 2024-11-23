@@ -1,9 +1,7 @@
-const DownloadLine = Vue.defineAsyncComponent(() => import("./download-line.js"))
-
 export default {
 	name: "download-table",
   components: {
-    DownloadLine,
+    DownloadLine: Vue.defineAsyncComponent(() => import("./download-line.js"))
   },
   props: {
     downloads: {

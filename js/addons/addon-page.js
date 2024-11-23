@@ -1,11 +1,9 @@
 /* global fetch */
 
-const AddonGrid = Vue.defineAsyncComponent(() => import('./addon-grid.js'))
-
 export default {
   name: 'addon-page',
   components: {
-    AddonGrid
+    AddonGrid: Vue.defineAsyncComponent(() => import('./addon-grid.js'))
   },
   template: `
     <div>
@@ -22,10 +20,10 @@ export default {
         <addon-grid
           :key="Object.keys(fav).length"
           :addons="fav"
-          :action="checkFav"
           icon="mdi-close"
           iconColor="#ff3333"
           :addonsFav="fav"
+          @clickFav="toggleFav"
         />
         <br>
         <h3 class="text-center">All</h3>
@@ -98,11 +96,11 @@ export default {
       <addon-grid
         :key="Object.keys(fav).length"
         :addons="searchedAddons"
-        :action="checkFav"
         :sort="currentSort"
         icon="mdi-star"
         iconColor="#ffc83d"
         :addonsFav="fav"
+        @clickFav="toggleFav"
       />
     </div>
   `,
@@ -175,7 +173,7 @@ export default {
       this.search = ''
       this.startSearch()
     },
-    checkFav(addon) {
+    toggleFav(addon) {
       if (!this.fav[addon.id]) {
         this.fav[addon.id] = addon
         window.localStorage.setItem('favAddons', JSON.stringify(this.fav))

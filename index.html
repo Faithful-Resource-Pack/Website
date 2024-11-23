@@ -180,7 +180,7 @@ no_container: true
   document.addEventListener("DOMContentLoaded", () => {
     const app = Vue.createApp({
       components: {
-        "project-card": Vue.defineAsyncComponent(() => import("/js/home/project-card.js")),
+        ProjectCard: Vue.defineAsyncComponent(() => import("/js/home/project-card.js")),
       },
       data() {
         return {
