@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		components: {
 			PostDownloads: Vue.defineAsyncComponent(() => import("./post-downloads.js")),
 			PostChangelog: Vue.defineAsyncComponent(() => import("./post-changelog.js")),
+			DiscordButton: Vue.defineAsyncComponent(() => import("../components/discord-button.js")),
 		},
 		template: `
 			<div>
@@ -25,9 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					</div>
 				</template>
 				<br />
-				<a href="https://discord.gg/sN9YRQbBv7">
-					<p class="blurple banner">Start a discussion in our Discord!</p>
-				</a>
+				<discord-button />
 			</div>
 		`,
 		data() {
