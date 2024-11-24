@@ -23,6 +23,8 @@ title: Utilities - modlist.html generator
     <div  :class="{ 'progress-bar': true, 'progress-bar-striped': parseInt(generatedPercent) < 100, 'progress-bar-animated': parseInt(generatedPercent) < 100 }"  :style="{ width: generatedPercent + '%' }" role="progressbar" :aria-valuenow="generatedPercent" aria-valuemin="0" aria-valuemax="100" v-html="generatedPercent + '%'"></div>
   </div>
 </div>
+
+<script defer src="/js/mods/FileSaver.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const app = Vue.createApp({
@@ -56,7 +58,7 @@ title: Utilities - modlist.html generator
         }
       },
       methods: {
-        changeFirstFile (event) {
+        changeFirstFile(event) {
           if (!event.target || !event.target.files || !event.target.files.length)
             return
 
@@ -65,8 +67,7 @@ title: Utilities - modlist.html generator
           console.log(this)
         },
         async generateModlist() {
-          if (!this.firstFile)
-            return
+          if (!this.firstFile) return
 
           this.progress = 0
 
@@ -77,8 +78,7 @@ title: Utilities - modlist.html generator
             manifest = JSON.parse(await this.firstFile.text())
 
             //verify structure
-            if (!manifest.files || !Array.isArray(manifest.files))
-              return
+            if (!manifest.files || !Array.isArray(manifest.files)) return
 
             this.totalMods = manifest.files.length
             this.progress = 0
@@ -131,4 +131,3 @@ title: Utilities - modlist.html generator
     app.mount('#modlistGenerator')
   });
 </script>
-<script defer src="/js/mods/FileSaver.min.js"></script>

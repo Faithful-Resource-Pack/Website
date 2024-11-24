@@ -1,72 +1,72 @@
 /* global localStorage */
 
-const css = document.getElementById('theme')
-const btn = document.getElementById('ThemeBtn')
+const css = document.getElementById("theme");
+const btn = document.getElementById("ThemeBtn");
 
 const THEME_VALUES = [
-  {
-    value: 'auto',
-    html: '<i style="margin-right: 5px" class="fas"></i> Auto Theme'
-  },
-  {
-    value: 'dark',
-    html: '<i style="margin-right: 5px" class="fas"></i> Dark Theme'
-  },
-  {
-    value: 'light',
-    html: '<i style="margin-right: 5px" class="fas"></i> Light Theme'
-  }
-]
+	{
+		value: "auto",
+		html: '<i style="margin-right: 5px" class="fas"></i> Auto Theme',
+	},
+	{
+		value: "dark",
+		html: '<i style="margin-right: 5px" class="fas"></i> Dark Theme',
+	},
+	{
+		value: "light",
+		html: '<i style="margin-right: 5px" class="fas"></i> Light Theme',
+	},
+];
 
-const THEME_DEFAULT_VALUE = THEME_VALUES[0].value
-const THEME_LOCALSTORAGE_KEY = 'theme'
+const THEME_DEFAULT_VALUE = THEME_VALUES[0].value;
+const THEME_LOCALSTORAGE_KEY = "theme";
 
 window.theme = {
-  get currentTheme() {
-    return localStorage.getItem(THEME_LOCALSTORAGE_KEY) || THEME_DEFAULT_VALUE
-  },
-  set currentTheme(value) {
-    localStorage.setItem(THEME_LOCALSTORAGE_KEY, value)
-  },
+	get currentTheme() {
+		return localStorage.getItem(THEME_LOCALSTORAGE_KEY) || THEME_DEFAULT_VALUE;
+	},
+	set currentTheme(value) {
+		localStorage.setItem(THEME_LOCALSTORAGE_KEY, value);
+	},
 
-  get currentThemeIndex() {
-    return THEME_VALUES.findIndex((el) => el.value === this.currentTheme)
-  },
-  set currentThemeIndex(_v) {},
+	get currentThemeIndex() {
+		return THEME_VALUES.findIndex((el) => el.value === this.currentTheme);
+	},
+	set currentThemeIndex(_v) {},
 
-  get currentThemeHTML() {
-    return THEME_VALUES[this.currentThemeIndex].html
-  },
-  set currentThemeHTML(_v) {},
+	get currentThemeHTML() {
+		return THEME_VALUES[this.currentThemeIndex].html;
+	},
+	set currentThemeHTML(_v) {},
 
-  get nextTheme() {
-    return THEME_VALUES[(this.currentThemeIndex + 1) % THEME_VALUES.length].value
-  },
-  set nextTheme(_v) {},
+	get nextTheme() {
+		return THEME_VALUES[(this.currentThemeIndex + 1) % THEME_VALUES.length].value;
+	},
+	set nextTheme(_v) {},
 
-  get isDark() {
-    return (
-      theme.currentTheme === 'dark' ||
-      (theme.currentTheme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)
-    )
-  },
+	get isDark() {
+		return (
+			theme.currentTheme === "dark" ||
+			(theme.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches)
+		);
+	},
 
-  get isLight() {
-    return !this.isDark;
-  }
-}
+	get isLight() {
+		return !this.isDark;
+	},
+};
 
 // update btn
-btn.innerHTML = theme.currentThemeHTML
+btn.innerHTML = theme.currentThemeHTML;
 
 window.cycleTheme = () => {
-  window.theme.currentTheme = theme.nextTheme
-  btn.innerHTML = theme.currentThemeHTML
-  updateTheme()
-}
+	window.theme.currentTheme = theme.nextTheme;
+	btn.innerHTML = theme.currentThemeHTML;
+	updateTheme();
+};
 
 window.updateTheme = () => {
-  css.href = theme.isDark ? '/css/dark.css' : '/css/light.css'
-}
+	css.href = theme.isDark ? "/css/dark.css" : "/css/light.css";
+};
 
-updateTheme()
+updateTheme();

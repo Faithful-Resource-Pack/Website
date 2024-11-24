@@ -54,7 +54,7 @@
 - [x] **Sweedish** (_@znop_)
 - [x] **Turkish** (_@egeesin_)
 
-## Translation: "Licence"
+## Translation: "License"
 
 - [x] **Afrikaans** (_@ShaunRoselt_)
 - [ ] **Arabic**
