@@ -16,7 +16,7 @@ layout: compress
 	<!-- Open Graph Meta Tags -->
 	<meta property="og:url" content="{% if page.addon_url %}{{ site.url | append: page.addon_url }}{% else %}{{ site.url | append: page.url }}{% endif %}" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{{page.title}}" />
+	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | replace: '"', "'" | truncate: 160 }}{% else %}Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.{% endif %}" />
 	<meta property="og:image" content="{%if page.addon-img %}{{ page.addon-img }}{% else %}{% if page.header-img %}{{ page.header-img }}{% else %}https://database.faithfulpack.net/images/branding/site/banners/universal_banner.png{% endif %}{% endif %}" />
 	<meta property="og:site_name" content="Faithful Resource Pack" />
@@ -112,7 +112,11 @@ layout: compress
 					</li>
 
 					<a href="/" title="Faithful">
-						<img class="icon-hover" src="/image/icon/f32_logo.svg" style="width: 48px; height: 48px" alt="Faithful 32x">
+						<img
+							class="icon-hover"
+							src="https://database.faithfulpack.net/images/branding/logos/transparent/128/plain_logo.png"
+							alt="Faithful Logo"
+						>
 					</a>
 
 					<!-- <li class="nav-item">

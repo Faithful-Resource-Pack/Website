@@ -7,26 +7,26 @@
 @media (max-width: 777px) {
 	.btn-group {
 		flex-direction: column;
-		justify-content: center
+		justify-content: center;
 	}
 
 	#bottomButtons .btn {
 		display: block;
-		width: 100%
+		width: 100%;
 	}
 
 	#bottomButtons {
 		margin-right: 0;
-		margin-bottom: 8px
+		margin-bottom: 8px;
 	}
 }
 
 input[type=checkbox], input[type=radio], label {
-	cursor: pointer
+	cursor: pointer;
 }
 
 .fa-info-circle {
-	margin-left: -5px
+	margin-left: -5px;
 }
 
 .mod-radio-group input {
@@ -54,40 +54,40 @@ input[type=radio] + label {
 }
 
 input[type=radio] + label::before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  position: relative;
+	content: "";
+	width: 16px;
+	height: 16px;
+	position: relative;
 	margin: 5px;
 	filter: invert(100%);
 }
 
 input[type=radio] + label::before {
-  background: url('../image/icon/circle.svg') no-repeat center;
+	background: url("../image/icon/circle.svg") no-repeat center;
 }
 input[type=radio]:checked + label::before {
-  background: url('../image/icon/check-circle-fill.svg') no-repeat center;
+	background: url("../image/icon/check-circle-fill.svg") no-repeat center;
 }
 input[type=radio]:checked + label {
 	border-color: $primary;
-  background: $primary;
+	background: $primary;
 }
 
 #zipOptions ::-webkit-input-placeholder {
-	font-style: italic
+	font-style: italic;
 }
 #zipOptions :-moz-placeholder {
-	font-style: italic
+	font-style: italic;
 }
 #zipOptions ::-moz-placeholder {
-	font-style: italic
+	font-style: italic;
 }
 #zipOptions :-ms-input-placeholder {
-	font-style: italic
+	font-style: italic;
 }
 
 #zipOptions #archiveName.empty {
-	background: #ccc
+	background: #ccc;
 }
 
 .customModalBackground {
@@ -96,7 +96,7 @@ input[type=radio]:checked + label {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background: rgba(0,0,0,0.5)
+	background: rgba(0, 0, 0, 0.5);
 }
 
 .customModal {
@@ -107,69 +107,70 @@ input[type=radio]:checked + label {
 	bottom: 0;
 	padding: 10px;
 	z-index: 3000;
-	text-align: center
+	text-align: center;
 }
 
 .customModal > * {
 	display: inline-block;
-	vertical-align: middle
+	vertical-align: middle;
 }
 
 .customModal > span.taille {
-	height: 100%
+	height: 100%;
 }
 
 .customModal .customModalContent {
 	background: #232323;
-	color: rgba(255, 255, 255, .9);
+	color: rgba(255, 255, 255, 0.9);
 	border-radius: $border-radius-0x;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	width: 600px;
 	max-width: 100%;
 	max-height: 100%;
 	overflow: auto;
 	text-align: left;
-	position: relative
+	position: relative;
 }
 
 .customModal p {
-  color: rgba(255, 255, 255, .7)
+	color: rgba(255, 255, 255, 0.7);
 }
 
 #downloadModalContent #steps {
-  display: flex;
-	align-items: center
+	display: flex;
+	align-items: center;
 }
 
 #downloadModalContent #steps .btn-dark {
 	height: 2.2rem;
 	width: 2.2rem;
 	padding-top: 0;
-	padding-bottom: 0
+	padding-bottom: 0;
 }
 
 #downloadModalContent #steps .line {
 	height: 1px;
 	background-color: lightgray;
-  flex: 1
+	flex: 1;
 }
 
 #downloadModalContent #logs {
 	background: #171717;
 	height: 300px;
 	overflow-x: auto;
-	overflow-y: scroll
+	overflow-y: scroll;
 }
 
 .progress {
-	background-color: #232323
+	background-color: #232323;
 }
-.progress-bar,
-#downloadModalContent #zipProgressBar > * {
-	background-color: $primary
+
+.progress-bar, #downloadModalContent #zipProgressBar > * {
+	background-color: $primary;
 }
+
 #downloadModalContent #zipProgressBar > * {
-	transition: unset
+	transition: unset;
 }
 
 #logs .log {
@@ -178,22 +179,22 @@ input[type=radio]:checked + label {
 	line-height: 24px;
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis
+	text-overflow: ellipsis;
 }
 
 #logs .log:nth-child(even) {
-	background-color: rgba(0,0,0,0.2)
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 #logs .log.error {
-	background-color: rgba(255,25,25, 0.5)
+	background-color: rgba(255, 25, 25, 0.5);
 }
 
 .modal-header {
-	border-bottom: 1px solid #2D2E32
+	border-bottom: 1px solid #2d2e32;
 }
 .modal-footer {
-	border-top: 1px solid #2D2E32
+	border-top: 1px solid #2d2e32;
 }
 
 #SearchBar {
@@ -203,12 +204,12 @@ input[type=radio]:checked + label {
 	width: 100%;
 	font-size: 16px;
 	padding: 12px 20px 12px 40px;
-	border: 0
+	border: 0;
 }
 
 #SearchBar + .advice {
 	line-height: 20px;
-	min-height: 20px
+	min-height: 20px;
 }
 
 .advice {
@@ -218,37 +219,37 @@ input[type=radio]:checked + label {
 }
 
 .modNotChosen {
-	opacity: 0.7
+	opacity: 0.7;
 }
 
 .version > * {
 	display: inline-block;
-	vertical-align: middle
+	vertical-align: middle;
 }
 
 /* Mod bar */
 .search-bar-container {
-	padding: 1.25rem 1.25rem .625rem
+	padding: 1.25rem 1.25rem 0.625rem;
 }
 #noresults {
-	padding: 0 1.25rem
+	padding: 0 1.25rem;
 }
 .mod-ul {
-	padding: 0
+	padding: 0;
 }
 .mod-bar {
 	position: relative;
 	display: flex;
-	padding: .625rem 1.25rem
+	padding: 0.625rem 1.25rem;
 }
 .mod-bar:hover {
-	background: rgba(127, 127, 127, .08)
+	background: rgba(127, 127, 127, 0.08);
 }
 .selected-mod {
-	background: rgba(127, 127, 127, .16)
+	background: rgba(127, 127, 127, 0.16);
 }
 .selected-mod:hover {
-	background: rgba(127, 127, 127, .24)
+	background: rgba(127, 127, 127, 0.24);
 }
 .mod-label {
 	position: absolute;
@@ -259,7 +260,7 @@ input[type=radio]:checked + label {
 	bottom: 0;
 	right: 0;
 	z-index: 1;
-	font-size: 0
+	font-size: 0;
 }
 .mod-bar-item {
 	width: 100%;
@@ -275,7 +276,7 @@ input[type=radio]:checked + label {
 		display: flex;
 		flex-direction: row;
 		padding: 5px;
-    align-items: flex-end;
+		align-items: flex-end;
 
 		h4, h5 {
 			margin: 0;
@@ -318,13 +319,13 @@ input[type=radio]:checked + label {
 	width: 100%;
 	height: 100%;
 	border-radius: $border-radius-1x;
-	background: rgba(0, 123, 255, 0.64) center/75% url('../image/css/checked.svg') no-repeat
+	background: rgba(0, 123, 255, 0.64) center/75% url("../image/css/checked.svg") no-repeat;
 }
 .mod-checkbox {
 	display: none;
 }
 label.mod-radio {
-	margin-right: .25rem;
+	margin-right: 0.25rem;
 }
 .mod-radio {
 	vertical-align: middle;
@@ -333,7 +334,7 @@ label.mod-radio {
 
 .mod-info, .selected-mod .mod-radio-group {
 	position: relative;
-	z-index: 2
+	z-index: 2;
 }
 .badge {
 	border-radius: $border-radius-0x !important;
@@ -342,7 +343,7 @@ label.mod-radio {
 	font-size: 100%;
 }
 .advice-important {
-	color:#f14b4b;
+	color: #f14b4b;
 }
 
 /** MODPACKS **\
@@ -351,29 +352,29 @@ label.mod-radio {
 #modpacks .card .card-image {
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-position: center center
+	background-position: center center;
 }
 
 #modpacks .card .card-title {
-	min-height: 80px
+	min-height: 80px;
 }
 
 #modpacks #modpackModal {
-	z-index: 1200
+	z-index: 1200;
 }
 
 #modpacks #modpackModal #modList {
 	max-height: 400px;
 	overflow: auto;
-	background: rgba(0,0,0,.35)
+	background: rgba(0, 0, 0, 0.35);
 }
 
 #modpacks #modpackModal #modList ul {
-	font-size: .8em;
+	font-size: 0.8em;
 	list-style-type: none;
 	padding-left: 0;
 	padding-right: 0;
-	margin-bottom: 0
+	margin-bottom: 0;
 }
 
 @media (max-width: 760px) {
@@ -408,10 +409,10 @@ label.mod-radio {
 }
 
 #gone-fishin {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 }
 
 h1 {

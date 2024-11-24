@@ -26,10 +26,10 @@ export default {
       <img :src="header" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
 
       <addon-modal v-model="modal" :image="modalImage" />
-      <div class="card card-body" v-if="carousel.length">
+      <div class="card card-body" v-if="screenshots.length">
         <h3 class="text-center">Screenshots</h3>
         <div class="res-grid-3" v-if="files.length">
-          <div v-for="(image, index) in carousel">
+          <div v-for="(image, index) in screenshots">
             <div class="card img-card">
               <img :src="image" @click="openModal(image)">
             </div>
@@ -244,7 +244,7 @@ export default {
     header() {
       return this.files.find((el) => el.use === 'header').source
     },
-    carousel() {
+    screenshots() {
       return this.files
         .filter((el) => el.use === 'carousel' || el.use === 'screenshot')
         .map((el) => el.source)

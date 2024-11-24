@@ -25,7 +25,7 @@
 .download-table-padding {
 	background: #131313 url(../image/background/bg_light_background.png) repeat;
 	border-radius: $border-radius-0x;
-	padding: .7rem;
+	padding: 0.7rem;
 	overflow-x: auto;
 	margin-bottom: 2rem;
 }
@@ -39,9 +39,9 @@
 }
 
 .download-heading {
-	padding: .2rem .7rem;
-	margin-bottom: .7rem;
-	background-color: #343A40;
+	padding: 0.2rem 0.7rem;
+	margin-bottom: 0.7rem;
+	background-color: #343a40;
 	border-radius: $border-radius-1x;
 	width: 100%;
 	th {
@@ -49,7 +49,7 @@
 		width: calc(40% / 3);
 		p {
 			font-size: 20px;
-			padding: .2rem;
+			padding: 0.2rem;
 		}
 	}
 }
@@ -57,7 +57,7 @@
 // default middle text alignment looks really stupid
 .file-heading {
 	text-align: left !important;
-	padding-left: .7rem;
+	padding-left: 0.7rem;
 	width: 50%;
 }
 
@@ -73,8 +73,8 @@
  */
 .download-item {
 	border-radius: $border-radius-0x;
-	padding-left: .7rem;
-	padding-right: .7rem;
+	padding-left: 0.7rem;
+	padding-right: 0.7rem;
 	&:hover {
 		background-color: rgba(255, 255, 255, 0.1);
 	}
@@ -93,7 +93,6 @@
 	align-items: center;
 }
 
-
 .subitem {
 	opacity: 75%;
 }
@@ -106,7 +105,7 @@ td {
 
 .download-details {
 	text-align: left;
-	width: 45%
+	width: 45%;
 }
 
 .links {
@@ -179,12 +178,12 @@ td {
 	// fix margins
 	.show-icon-container {
 		flex: 0 0 24px;
-		padding: .2rem 0;
+		padding: 0.2rem 0;
 	}
 
 	.download-details {
 		flex: 1 1 auto;
-		padding: .2rem .4rem;
+		padding: 0.2rem 0.4rem;
 	}
 
 	.links {
