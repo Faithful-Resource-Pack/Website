@@ -8,26 +8,24 @@ document.addEventListener("DOMContentLoaded", () => {
 			};
 		},
 		template: `
-			<div>
-				<h1 class="display-3 my-5 text-center">Frequently Asked Questions</h1>
-				<v-text-field
-					v-model="search"
-					filled
-					clear-icon="mdi-close"
-					hide-details
-					placeholder="Search FAQs"
-					clearable
-					@keyup="startSearch"
-					@click:clear="() => { search = null; startSearch(); }"
-				/>
-				<p class="pt-2 pb-0 px-0">
-					<i>{{ faqs.length }} {{ results }} found</i>
-				</p>
-				<template v-for="(faq, i) in faqs" :key="i">
-					<h2 class="faq-question">{{ faq.question }}</h2>
-					<p v-html="parseMd(faq.answer)" class="faq-answer"></p>
-				</template>
-			</div>
+			<h1 class="display-3 my-5 text-center">Frequently Asked Questions</h1>
+			<v-text-field
+				v-model="search"
+				filled
+				clear-icon="mdi-close"
+				hide-details
+				placeholder="Search FAQs"
+				clearable
+				@keyup="startSearch"
+				@click:clear="() => { search = null; startSearch(); }"
+			/>
+			<p class="pt-2 pb-0 px-0">
+				<i>{{ faqs.length }} {{ results }} found</i>
+			</p>
+			<template v-for="(faq, i) in faqs" :key="i">
+				<h2 class="faq-question">{{ faq.question }}</h2>
+				<p v-html="parseMd(faq.answer)" class="faq-answer"></p>
+			</template>
 		`,
 		methods: {
 			parseMd(text) {

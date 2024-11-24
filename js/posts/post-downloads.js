@@ -1,31 +1,29 @@
 export default {
 	name: "post-downloads",
 	template: `
-		<div>
-			<h2 class="display-4 my-5 text-center">Downloads</h2>
-			<template v-for="[category, items] in Object.entries(downloads)">
-				<a
-					v-if="isLegacy(items)"
-					:href="items"
-					class="btn block btn-lg btn-primary fancy-card-2x my-3"
-				>
-					<i style="margin-right: 10px" :class="getIcon(items).cls">
-						{{ getIcon(items).icon }}
-					</i>{{ category }}
-				</a>
-				<template v-else>
-					<h1 class="my-3 text-center">{{ category }}</h1>
-					<p v-for="[name, link] in Object.entries(items)" class="text-center">
-						<a :href="link" class="btn block btn-lg btn-primary">
-							<i style="margin-right: 10px" :class="getIcon(name).cls">
-								{{ getIcon(name).icon }}
-							</i>{{ name }}
-						</a>
-					</p>
-					<br />
-				</template>
+		<h2 class="display-4 my-5 text-center">Downloads</h2>
+		<template v-for="[category, items] in Object.entries(downloads)">
+			<a
+				v-if="isLegacy(items)"
+				:href="items"
+				class="btn block btn-lg btn-primary fancy-card-2x my-3"
+			>
+				<i style="margin-right: 10px" :class="getIcon(items).cls">
+					{{ getIcon(items).icon }}
+				</i>{{ category }}
+			</a>
+			<template v-else>
+				<h1 class="my-3 text-center">{{ category }}</h1>
+				<p v-for="[name, link] in Object.entries(items)" class="text-center">
+					<a :href="link" class="btn block btn-lg btn-primary">
+						<i style="margin-right: 10px" :class="getIcon(name).cls">
+							{{ getIcon(name).icon }}
+						</i>{{ name }}
+					</a>
+				</p>
+				<br />
 			</template>
-		</div>
+		</template>
 	`,
 	props: {
 		downloads: {

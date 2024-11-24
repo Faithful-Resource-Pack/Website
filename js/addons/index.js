@@ -8,103 +8,101 @@ document.addEventListener("DOMContentLoaded", () => {
 			AddonGrid: Vue.defineAsyncComponent(() => import("./addon-grid.js")),
 		},
 		template: `
-			<div>
-				<!-- vuetify overrides the bootstrap margin styles so we manually add them -->
-				<h1
-					class="display-3 text-center"
-					style="margin-top: 3rem !important; margin-bottom: 3rem !important"
-				>
-					Add-ons
-				</h1>
+			<!-- vuetify overrides the bootstrap margin styles so we manually add them -->
+			<h1
+				class="display-3 text-center"
+				style="margin-top: 3rem !important; margin-bottom: 3rem !important"
+			>
+				Add-ons
+			</h1>
 
-				<template v-if="Object.keys(fav).length">
-					<h3 class="text-center">Favorites</h3>
-					<addon-grid
-						:key="Object.keys(fav).length"
-						:addons="fav"
-						icon="mdi-close"
-						iconColor="#ff3333"
-						:addonsFav="fav"
-						@clickFav="toggleFav"
-					/>
-					<br />
-					<h3 class="text-center">All</h3>
-				</template>
-
-				<div class="card card-body">
-					<h4 class="text-center">Search</h4>
-					<div class="checkbox-container">
-						<v-row no-gutters>
-							<v-col
-								cols="6"
-								md="3"
-								v-for="edition in editions"
-								:key="edition"
-							>
-								<v-checkbox
-									v-model="selectedEditions"
-									:label="edition"
-									:disabled="selectedEditions.length === 1 && selectedEditions[0] === edition"
-									:value="edition"
-									color="white"
-									hide-details
-									@update:modelValue="startSearch"
-								/>
-							</v-col>
-							<v-col
-								cols="6"
-								md="3"
-								v-for="resolution in res"
-								:key="resolution"
-							>
-								<v-checkbox
-									v-model="selectedRes"
-									:label="resolution"
-									:disabled="selectedRes.length === 1 && selectedRes[0] === resolution"
-									:value="resolution"
-									color="white"
-									hide-details
-									@update:modelValue="startSearch"
-								/>
-							</v-col>
-						</v-row>
-					</div>
-					<v-text-field
-						v-model="search"
-						:append-icon="search ? 'mdi-send' : undefined"
-						filled
-						clear-icon="mdi-close"
-						clearable
-						hide-details
-						placeholder="Search add-on name"
-						type="text"
-						@keyup.enter="startSearch"
-						@click:append="startSearch"
-						@click:clear="clearSearch"
-					/>
-					<br />
-					<div class="addon-info-subtitle">
-						<p>{{ resultCount }} {{ results }} found</p>
-						<br>
-						<v-select
-							hide-details
-							density="compact"
-							v-model="currentSort"
-							:items="sortMethods"
-						/>
-					</div>
-				</div>
-				<br />
+			<template v-if="Object.keys(fav).length">
+				<h3 class="text-center">Favorites</h3>
 				<addon-grid
 					:key="Object.keys(fav).length"
-					:addons="searchedAddons"
-					:sort="currentSort"
-					icon="mdi-star"
-					iconColor="#ffc83d"
+					:addons="fav"
+					icon="mdi-close"
+					iconColor="#ff3333"
 					:addonsFav="fav"
 					@clickFav="toggleFav"
 				/>
+				<br />
+				<h3 class="text-center">All</h3>
+			</template>
+
+			<div class="card card-body">
+				<h4 class="text-center">Search</h4>
+				<div class="checkbox-container">
+					<v-row no-gutters>
+						<v-col
+							cols="6"
+							md="3"
+							v-for="edition in editions"
+							:key="edition"
+						>
+							<v-checkbox
+								v-model="selectedEditions"
+								:label="edition"
+								:disabled="selectedEditions.length === 1 && selectedEditions[0] === edition"
+								:value="edition"
+								color="white"
+								hide-details
+								@update:modelValue="startSearch"
+							/>
+						</v-col>
+						<v-col
+							cols="6"
+							md="3"
+							v-for="resolution in res"
+							:key="resolution"
+						>
+							<v-checkbox
+								v-model="selectedRes"
+								:label="resolution"
+								:disabled="selectedRes.length === 1 && selectedRes[0] === resolution"
+								:value="resolution"
+								color="white"
+								hide-details
+								@update:modelValue="startSearch"
+							/>
+						</v-col>
+					</v-row>
+				</div>
+				<v-text-field
+					v-model="search"
+					:append-icon="search ? 'mdi-send' : undefined"
+					filled
+					clear-icon="mdi-close"
+					clearable
+					hide-details
+					placeholder="Search add-on name"
+					type="text"
+					@keyup.enter="startSearch"
+					@click:append="startSearch"
+					@click:clear="clearSearch"
+				/>
+				<br />
+				<div class="addon-info-subtitle">
+					<p>{{ resultCount }} {{ results }} found</p>
+					<br>
+					<v-select
+						hide-details
+						density="compact"
+						v-model="currentSort"
+						:items="sortMethods"
+					/>
+				</div>
 			</div>
+			<br />
+			<addon-grid
+				:key="Object.keys(fav).length"
+				:addons="searchedAddons"
+				:sort="currentSort"
+				icon="mdi-star"
+				iconColor="#ffc83d"
+				:addonsFav="fav"
+				@clickFav="toggleFav"
+			/>
 		`,
 		data() {
 			const sortMethods = [

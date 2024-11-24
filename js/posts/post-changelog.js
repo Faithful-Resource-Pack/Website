@@ -2,28 +2,26 @@ export default {
 	name: "post-changelog",
 	// recursive component (best way I could find to do this)
 	template: `
-		<div>
-			<li
-				v-if="typeof item === 'string'"
-				class="card-title"
-			>
-				{{ item }}
-			</li>
-			<ul v-else-if="Array.isArray(item)">
-				<post-changelog v-for="el in item" :item="el" :level="level + 1" />
-			</ul>
-			<template v-else>
-				<template v-for="[key, val] in Object.entries(item)">
-					<component
-						:is="title"
-						class="card-title text-left"
-					>
-						{{ key }}
-					</component>
-					<post-changelog :item="val" :level="level + 1" />
-				</template>
+		<li
+			v-if="typeof item === 'string'"
+			class="card-title"
+		>
+			{{ item }}
+		</li>
+		<ul v-else-if="Array.isArray(item)">
+			<post-changelog v-for="el in item" :item="el" :level="level + 1" />
+		</ul>
+		<template v-else>
+			<template v-for="[key, val] in Object.entries(item)">
+				<component
+					:is="title"
+					class="card-title text-left"
+				>
+					{{ key }}
+				</component>
+				<post-changelog :item="val" :level="level + 1" />
 			</template>
-		</div>
+		</template>
 	`,
 	props: {
 		item: {

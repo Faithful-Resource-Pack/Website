@@ -15,21 +15,19 @@ export default {
 		},
 	},
 	template: `
-		<div>
-			<img
-				:src="avatar"
-				:alt="altText"
-				style="display: block; margin-left: auto; margin-right: auto; max-height: 250px"
-			/>
-			<div class="card card-title text-center author-widget">
-				<h4>{{ author.username }}</h4>
-				<div class="author-socials">
-					<author-media
-						v-for="m in author.media"
-						:key="m.type"
-						:media="m"
-					/>
-				</div>
+		<img
+			:src="avatar"
+			:alt="altText"
+			style="display: block; margin-left: auto; margin-right: auto; max-height: 250px"
+		/>
+		<div class="card card-title text-center author-widget">
+			<h4>{{ author.username }}</h4>
+			<div class="author-socials">
+				<author-media
+					v-for="m in author.media"
+					:key="m.type"
+					:media="m"
+				/>
 			</div>
 		</div>
 	`,
