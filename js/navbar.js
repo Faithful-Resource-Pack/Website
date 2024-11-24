@@ -1,20 +1,15 @@
-/* global Element, Event */
-
 const DROPDOWN_SHOW_CLASS = "show";
 
-// at initialization
-document.querySelectorAll('[data-toggle="dropdown"]').forEach((item) => {
-	// add click listener to toggle dropdowns
-	item.addEventListener("click", () => toggleDropdown(item));
-});
-
-// toggle my item and untoggle all others
+/**
+ * Toggle my item and untoggle all others
+ * @param {HTMLElement} item
+ */
 function toggleDropdown(item) {
 	const itemExpanded = item.parentNode.classList.contains(DROPDOWN_SHOW_CLASS);
 	if (!itemExpanded) {
 		// if not expanded, go untoggle all other siblings
-		Array.from(item.parentNode.children).filter((el) => el !== item)
-			.filter((el) => el.classList.contains(DROPDOWN_SHOW_CLASS))
+		Array.from(item.parentNode.children)
+			.filter((el) => el !== item && el.classList.contains(DROPDOWN_SHOW_CLASS))
 			.forEach((otherParent) => otherParent.classList.remove(DROPDOWN_SHOW_CLASS));
 	}
 
@@ -22,20 +17,10 @@ function toggleDropdown(item) {
 	item.parentNode.classList.toggle(DROPDOWN_SHOW_CLASS);
 }
 
-document.querySelectorAll('[data-toggle="collapse"]').forEach((item) => {
-	item.dataset.expanded = false;
-	item.addEventListener("click", () => toggleMenu(item));
-});
-
-function toggleMenu(item) {
-	let expandNow = true;
-	if (item.dataset.expanded === "true") expandNow = false;
-
-	item.classList.toggle("collapsed", expandNow);
-	getNextElement(item, item.dataset.target).classList.toggle("show", expandNow);
-	item.dataset.expanded = expandNow;
-}
-
+/**
+ * @param {HTMLElement} element
+ * @param {string} selector
+ */
 function getNextElement(element, selector) {
 	let next = element.nextElementSibling;
 	while (next) {
@@ -44,8 +29,28 @@ function getNextElement(element, selector) {
 	}
 }
 
-// fix non centered icons
+/**
+ * @param {HTMLElement} item
+ */
+function toggleMenu(item) {
+	const expandNow = item.dataset.expanded !== "true";
+	item.classList.toggle("collapsed", expandNow);
+	getNextElement(item, item.dataset.target).classList.toggle("show", expandNow);
+	item.dataset.expanded = expandNow;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll('[data-toggle="dropdown"]').forEach((item) => {
+		// add click listener to toggle dropdowns
+		item.addEventListener("click", () => toggleDropdown(item));
+	});
+
+	document.querySelectorAll('[data-toggle="collapse"]').forEach((item) => {
+		item.dataset.expanded = false;
+		item.addEventListener("click", () => toggleMenu(item));
+	});
+
+	// fix non centered icons
 	window.dispatchEvent(new Event("resize"));
 
 	// set sticky menu
@@ -64,14 +69,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	window.addEventListener("scroll", changeTopNavbar, true);
 });
-
-// load snow script only in december
-if (
-	new Date().getMonth() === 11 &&
-	window.matchMedia("(prefers-reduced-motion: no-preference)").matches
-) {
-	const script = document.createElement("script");
-	script.type = "module";
-	script.src = "/js/snow.js";
-	document.head.appendChild(script);
-}

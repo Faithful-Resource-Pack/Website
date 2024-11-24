@@ -1,6 +1,6 @@
 /* global ResourcePackCreator, self, postMessage, importScripts */
 
-var window = self;
+const window = self;
 
 importScripts(
 	"../core/MinecraftUtils.js",

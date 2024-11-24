@@ -1,5 +1,3 @@
-/* global localStorage */
-
 const css = document.getElementById("theme");
 const btn = document.getElementById("ThemeBtn");
 
@@ -21,7 +19,7 @@ const THEME_VALUES = [
 const THEME_DEFAULT_VALUE = THEME_VALUES[0].value;
 const THEME_LOCALSTORAGE_KEY = "theme";
 
-window.theme = {
+globalThis.theme = {
 	get currentTheme() {
 		return localStorage.getItem(THEME_LOCALSTORAGE_KEY) || THEME_DEFAULT_VALUE;
 	},
@@ -59,13 +57,13 @@ window.theme = {
 // update btn
 btn.innerHTML = theme.currentThemeHTML;
 
-window.cycleTheme = () => {
-	window.theme.currentTheme = theme.nextTheme;
+globalThis.cycleTheme = () => {
+	theme.currentTheme = theme.nextTheme;
 	btn.innerHTML = theme.currentThemeHTML;
 	updateTheme();
 };
 
-window.updateTheme = () => {
+globalThis.updateTheme = () => {
 	css.href = theme.isDark ? "/css/dark.css" : "/css/light.css";
 };
 
