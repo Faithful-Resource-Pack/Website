@@ -1,5 +1,7 @@
 /* global Vue, Vuetify */
 
+const FAVORITE_ADDONS_KEY = "favAddons";
+
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
 		components: {
@@ -183,10 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			toggleFav(addon) {
 				if (!this.fav[addon.id]) {
 					this.fav[addon.id] = addon;
-					window.localStorage.setItem("favAddons", JSON.stringify(this.fav));
+					window.localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(this.fav));
 				} else {
 					delete this.fav[addon.id];
-					window.localStorage.setItem("favAddons", JSON.stringify(this.fav));
+					window.localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(this.fav));
 				}
 
 				this.$forceUpdate();
@@ -212,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					this.searchedAddons = this.addons;
 				});
 
-			this.fav = JSON.parse(window.localStorage.getItem("favAddons") || "{}");
+			this.fav = JSON.parse(window.localStorage.getItem(FAVORITE_ADDONS_KEY) || "{}");
 		},
 	});
 	app.use(Vuetify.createVuetify());

@@ -122,10 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
 										<addon-flag
 											v-if="addon.options.tags && addon.options.tags.includes('32x')"
 											type="32x"
+											square
 										/>
 										<addon-flag
 											v-if="addon.options.tags && addon.options.tags.includes('64x')"
 											type="64x"
+											square
 										/>
 									</v-col>
 								</v-row>

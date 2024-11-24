@@ -5,14 +5,20 @@ export default {
 			type: String,
 			required: true,
 		},
+		square: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
 	},
 	template: `
-		<div class="card card-body card-widget">
+		<div :class="flagClasses" :style="square ? 'margin-right: 24px' : ''">
 			<img class="addon-flags-big" :src="images[type]" :alt="'Supports ' + type" loading="lazy" />
-			<p v-if="$slots.default" class="addon-flags-big-text">
+			<p v-if="!square && $slots.default" class="addon-flags-big-text">
 				<slot />
 			</p>
 		</div>
+		<br />
 	`,
 	data() {
 		return {
@@ -24,5 +30,10 @@ export default {
 				"64x": "/image/icon/64.png",
 			},
 		};
+	},
+	computed: {
+		flagClasses() {
+			return ["card", "card-body", this.square ? "card-widget-square" : "card-widget"];
+		},
 	},
 };
