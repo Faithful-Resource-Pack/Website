@@ -88,12 +88,18 @@ label, input {
 	color: rgba(255, 255, 255, .9);
 }
 
+// vuetify 3 theming is a bit broken and this fixes most of the issues
+.v-input__control {
+	color: #fff !important;
+}
+
+// about page stuff
 .about-button {
 	background: white;
 	color: black;
 }
 
-.green {
+.green-background {
 	background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
 	background-blend-mode: screen;
 
@@ -102,7 +108,7 @@ label, input {
 	}
 }
 
-.blue {
+.blue-background {
 	background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
 	background-blend-mode: screen;
 
@@ -111,16 +117,11 @@ label, input {
 	}
 }
 
-.pink {
+.pink-background {
 	background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
 	background-blend-mode: screen;
 
 	h1 {
 		color: #fc53a5 !important;
 	}
-}
-
-// vuetify 3 theming is a bit broken and this fixes most of the issues
-.v-input__control {
-	color: #fff !important;
 }

@@ -69,15 +69,17 @@ label, input {
 	color: $primary;
 }
 
+// about page stuff
 .about-button {
 	background: black;
 	color: white;
 	&:hover {
+		// dark preserves blue hover effect, override it here
 		color: white !important;
 	}
 }
 
-.green {
+.green-background {
 	background: #22a831 url("/image/background/bg_light_foreground.png") repeat;
 	background-blend-mode: multiply;
 
@@ -86,7 +88,7 @@ label, input {
 	}
 }
 
-.blue {
+.blue-background {
 	background: #3498db url("/image/background/bg_light_foreground.png") repeat;
 	background-blend-mode: multiply;
 
@@ -95,7 +97,7 @@ label, input {
 	}
 }
 
-.pink {
+.pink-background {
 	background: #ac1e63 url("/image/background/bg_light_foreground.png") repeat;
 	background-blend-mode: multiply;
 
