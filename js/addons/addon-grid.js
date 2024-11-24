@@ -79,10 +79,6 @@ export default {
 			type: Object,
 			required: true,
 		},
-		action: {
-			type: Function,
-			required: true,
-		},
 		icon: {
 			type: String,
 			required: true,
