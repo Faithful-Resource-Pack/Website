@@ -53,14 +53,13 @@ layout: compress
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/brands.min.css">
 
 	<link rel="stylesheet" href="" id="theme">
-	<!-- Slimmed down version of actual theme script to speed up theme loading -->
-	<script>const css=document.getElementById('theme');const btn=document.getElementById('ThemeBtn');const THEME_VALUES=[{value:'auto'},{value:'dark'},{value:'light'}];const THEME_DEFAULT_VALUE=THEME_VALUES[0].value;const THEME_LOCALSTORAGE_KEY='theme';window.theme={get currentTheme(){return localStorage.getItem(THEME_LOCALSTORAGE_KEY)||THEME_DEFAULT_VALUE}};if(theme.currentTheme==='dark'||(theme.currentTheme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches)){css.href='/css/dark.css'}else{css.href='/css/light.css'}</script>
+	<!-- Load theme file as soon as possible, rest of script is only needed later -->
+	<script type="module">const currentTheme=localStorage.getItem("theme")||"auto";document.getElementById("theme").href=currentTheme==='dark'||(currentTheme==='auto'&&matchMedia("(prefers-color-scheme: dark)").matches)?"/css/dark.css":"/css/light.css";</script>
 	<!-- Load snow script only in December -->
 	<script>if(new Date().getMonth()===11&&window.matchMedia("(prefers-reduced-motion: no-preference)").matches){const script=document.createElement("script");script.type="module";script.src="/js/snow.js";document.head.appendChild(script);}</script>
 
 	<script defer src="/js/navbar.js" type="module"></script>
 	<script defer src="/js/theme.js" type="module"></script>
-
 	<link rel="stylesheet" href="/css/main.css">
 </head>
 
@@ -270,7 +269,7 @@ layout: compress
 
 					<li class="nav-item theme-switch-wrapper">
 						<btn id="ThemeBtn" onclick="cycleTheme()" class="nav-link">
-							<i class="fas"></i> Auto Theme
+							<i style="margin-right: 5px" class="fas"></i> Auto Theme
 						</btn>
 					</li>
 
