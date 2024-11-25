@@ -1,7 +1,7 @@
 export default {
 	name: "download-table",
 	components: {
-		DownloadLine: Vue.defineAsyncComponent(() => import("./download-line.js")),
+		DownloadVersion: Vue.defineAsyncComponent(() => import("./download-version.js")),
 	},
 	props: {
 		downloads: {
@@ -25,47 +25,15 @@ export default {
 					</tr>
 				</thead>
 				<tbody>
-					<template
+					<download-version
 						v-for="(items, version) in downloads"
 						:key="version"
-					>
-						<download-line
-							:single="items.length <= 1"
-							:item="items[0]"
-							:curse="getCurseFile(items[0])"
-							:version="version"
-							@toggle="toggleChildren(version)"
-						/>
-						<template v-if="openStates[version]">
-							<download-line
-								v-for="subItem in items.slice(1)"
-								nested
-								single
-								:item="subItem"
-								:curse="getCurseFile(subItem)"
-								:version="version"
-							/>
-						</template>
-					</template>
+						:items="items"
+						:files="files"
+						:version="version"
+					/>
 				</tbody>
 			</table>
 		</div>
 	`,
-	data() {
-		return {
-			openStates: {},
-		};
-	},
-	methods: {
-		toggleChildren(version) {
-			// this could probably be encapsulated into an in-between component that handles children but oh well
-			this.openStates[version] = !this.openStates[version];
-		},
-		getCurseFile(item) {
-			if (item.links.curse) {
-				const id = parseInt(item.links.curse.split("/").pop());
-				return this.files.find((el) => el.id === id);
-			}
-		},
-	},
 };

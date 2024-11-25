@@ -1,5 +1,3 @@
-/* global Vuetify */
-
 export default {
 	name: "addon-modal",
 	template: `

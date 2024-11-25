@@ -1,5 +1,4 @@
-/* global matchMedia, requestAnimationFrame */
-// source : https://www.kirupa.com/html5/the_falling_snow_effect.htm
+// source: https://www.kirupa.com/html5/the_falling_snow_effect.htm
 
 // Custom CSS
 const snowCSS = document.createElement("link");

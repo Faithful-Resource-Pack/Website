@@ -1,5 +1,3 @@
-/* global Vue */
-
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
 		data() {

@@ -4,7 +4,7 @@ export default {
 		<h2 class="display-4 my-5 text-center">Downloads</h2>
 		<template v-for="[category, items] in Object.entries(downloads)">
 			<a
-				v-if="isLegacy(items)"
+				v-if="isSingleDownload(items)"
 				:href="items"
 				class="btn block btn-lg btn-primary fancy-card-2x my-3"
 			>
@@ -32,7 +32,7 @@ export default {
 		},
 	},
 	methods: {
-		isLegacy(item) {
+		isSingleDownload(item) {
 			return typeof item === "string";
 		},
 		getIcon(item) {

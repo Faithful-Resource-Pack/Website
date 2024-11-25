@@ -1,5 +1,3 @@
-/* global Vue, Vuetify */
-
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
 		components: {

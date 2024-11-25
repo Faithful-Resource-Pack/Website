@@ -1,5 +1,3 @@
-/* global location, Vue, getHTML */
-
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
 		components: {

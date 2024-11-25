@@ -1512,7 +1512,7 @@ img:not(.img-gallery) {
 	box-shadow: $card-shadow
 }
 .banner a {
-	color: #fff !important; /* vue moment */
+	color: #fff !important; // vue moment
 	font-weight: 500;
 }
 a > .banner:hover {
@@ -2039,7 +2039,7 @@ input[type=radio] {
 	}
 }
 
-/* must use regular css variable (media queries break scss) */
+// must use regular css variable (media queries break scss)
 :root {
 	--news-display-height: 5;
 	@media screen and (max-width: 1200px) {
@@ -2053,7 +2053,7 @@ input[type=radio] {
 	}
 }
 
-/* https://css-tricks.com/line-clampin/ */
+// https://css-tricks.com/line-clampin/
 .text-truncate {
 	display: -webkit-box;
 	height: calc(1.5 * var(--news-display-height));

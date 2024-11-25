@@ -1,5 +1,3 @@
-/* global Vue, Vuetify */
-
 const FAVORITE_ADDONS_KEY = "favAddons";
 
 document.addEventListener("DOMContentLoaded", () => {
