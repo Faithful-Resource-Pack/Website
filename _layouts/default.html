@@ -84,13 +84,17 @@ layout: compress
 				<img src="/image/home/navbar-wordmark.png" style="height: 32px" alt="Faithful 32x">
 			</a>
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="Menu">
+			<button
+				class="navbar-toggler"
+				type="button"
+				onclick="document.querySelector('#collapsibleNavbar').classList.toggle('show')"
+				aria-label="Menu"
+			>
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
 				<ul class="navbar-nav">
-
 					<li class="nav-item">
 						<a class="nav-link" href="/">
 							<i class="fas"></i>

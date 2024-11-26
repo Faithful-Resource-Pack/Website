@@ -17,39 +17,11 @@ function toggleDropdown(item) {
 	item.parentNode.classList.toggle(DROPDOWN_SHOW_CLASS);
 }
 
-/**
- * @param {HTMLElement} element
- * @param {string} selector
- */
-function getNextElement(element, selector) {
-	let next = element.nextElementSibling;
-	while (next) {
-		if (next.matches(selector)) return next;
-		next = next.nextElementSibling;
-	}
-}
-
-/**
- * @param {HTMLElement} item
- */
-function toggleMenu(item) {
-	const expandNow = item.dataset.expanded !== "true";
-	item.classList.toggle("collapsed", expandNow);
-	getNextElement(item, item.dataset.target).classList.toggle("show", expandNow);
-	item.dataset.expanded = expandNow;
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-	document.querySelectorAll('[data-toggle="dropdown"]').forEach((item) => {
-		// add click listener to toggle dropdowns
-		item.addEventListener("click", () => toggleDropdown(item));
-	});
-
-	document.querySelectorAll('[data-toggle="collapse"]').forEach((item) => {
-		item.dataset.expanded = false;
-		item.addEventListener("click", () => toggleMenu(item));
-	});
-
-	// fix non centered icons
-	window.dispatchEvent(new Event("resize"));
+	document
+		.querySelectorAll('[data-toggle="dropdown"]')
+		.forEach((/** @type {HTMLElement} */ item) => {
+			// add click listener to toggle dropdowns
+			item.addEventListener("click", () => toggleDropdown(item));
+		});
 });
