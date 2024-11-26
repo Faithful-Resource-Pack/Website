@@ -1,58 +1,55 @@
-const css = document.getElementById("theme");
-const btn = document.getElementById("ThemeBtn");
-
 const THEME_VALUES = [
 	{
-		value: "auto",
-		html: '<i style="margin-right: 5px" class="fas"></i> Auto Theme',
+		id: "auto",
+		icon: "",
+		name: "Auto Theme",
 	},
 	{
-		value: "dark",
-		html: '<i style="margin-right: 5px" class="fas"></i> Dark Theme',
+		id: "dark",
+		icon: "",
+		name: "Dark Theme",
 	},
 	{
-		value: "light",
-		html: '<i style="margin-right: 5px" class="fas"></i> Light Theme',
+		id: "light",
+		icon: "",
+		name: "Light Theme",
 	},
 ];
 
-const THEME_DEFAULT_VALUE = THEME_VALUES[0].value;
+const THEME_DEFAULT_VALUE = THEME_VALUES[0].id;
 const THEME_LOCALSTORAGE_KEY = "theme";
 
 globalThis.theme = {
+	// get theme id
 	get currentTheme() {
 		return localStorage.getItem(THEME_LOCALSTORAGE_KEY) || THEME_DEFAULT_VALUE;
 	},
-	set currentTheme(value) {
-		localStorage.setItem(THEME_LOCALSTORAGE_KEY, value);
+	set currentTheme(id) {
+		localStorage.setItem(THEME_LOCALSTORAGE_KEY, id);
 	},
-
 	get currentThemeIndex() {
-		return THEME_VALUES.findIndex((el) => el.value === this.currentTheme);
+		return THEME_VALUES.findIndex((el) => el.id === this.currentTheme);
 	},
-	set currentThemeIndex(_v) {},
-
 	get currentThemeHTML() {
-		return THEME_VALUES[this.currentThemeIndex].html;
+		const { icon, name } = THEME_VALUES[this.currentThemeIndex];
+		return `<i style="margin-right: 5px" class="fas">${icon}</i> ${name}`;
 	},
-	set currentThemeHTML(_v) {},
-
 	get nextTheme() {
-		return THEME_VALUES[(this.currentThemeIndex + 1) % THEME_VALUES.length].value;
+		return THEME_VALUES[(this.currentThemeIndex + 1) % THEME_VALUES.length].id;
 	},
-	set nextTheme(_v) {},
-
 	get isDark() {
 		return (
 			theme.currentTheme === "dark" ||
 			(theme.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches)
 		);
 	},
-
 	get isLight() {
 		return !this.isDark;
 	},
 };
+
+const css = document.getElementById("theme");
+const btn = document.getElementById("theme-btn");
 
 // update btn
 btn.innerHTML = theme.currentThemeHTML;
