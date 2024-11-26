@@ -52,20 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// fix non centered icons
 	window.dispatchEvent(new Event("resize"));
-
-	// set sticky menu
-	const topNavbar = document.getElementById("topNavbar");
-	const topNavbarParent = topNavbar.parentElement;
-
-	function changeTopNavbar() {
-		const topNavbarHeight = topNavbar.offsetHeight;
-		const isScrolling = window.scrollY > topNavbar.offsetTop + topNavbarHeight;
-		topNavbar.classList.toggle("fixed", isScrolling);
-
-		topNavbarParent.style.paddingTop = isScrolling ? topNavbarHeight + "px" : "0px";
-	}
-
-	changeTopNavbar(); // Fix when reloading page already scrolled down, for example home page
-
-	window.addEventListener("scroll", changeTopNavbar, true);
 });

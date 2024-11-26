@@ -14,16 +14,12 @@
 		url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png),
 		url(../image/background/bg_dark_foreground.png);
 }
-.card {
-	background: #0c0c0c url(../image/background/bg_dark_background.png) repeat;
-}
-#topNavbar, #topNavbar.fixed {
+.card, .download-table-padding {
 	background: #0c0c0c url(../image/background/bg_dark_background.png) repeat !important;
 }
-.outline {
-	background: #0c0c0c url(../image/background/bg_dark_background.png) !important;
+header {
+	background: #0c0c0c url(../image/background/bg_dark_background.png) repeat !important;
 }
-
 .dropdown-menu {
 	background-color: #1c1c1c;
 }

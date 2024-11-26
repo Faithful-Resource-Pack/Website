@@ -286,14 +286,12 @@ hr+br+h1 {
 	padding: 0.5rem 1rem;
 }
 .navbar {
-	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0.5rem 0.5rem;
 }
-
 @media (max-width: 760px) {
 	header {
 		padding-bottom: 0;
@@ -1565,21 +1563,11 @@ a > .banner:hover {
 	left: auto
 }
 /** NAVBAR **/
-#topNavbar {
-	position: relative;
-	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
-}
-body.error #topNavbar {
-		box-shadow: none;
-		background: none !important;
-}
-#topNavbar.fixed {
-	z-index: 1000;
-	position: fixed;
+header {
+	position: sticky;
+	z-index: 999;
 	top: 0;
-	left: 0;
-	right: 0;
-	background: url(../image/background/bg_light_background.png) repeat;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
 #bottomNavbar {
 	display: inline-block;
