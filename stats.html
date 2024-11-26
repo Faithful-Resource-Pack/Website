@@ -15,14 +15,16 @@ title: Statistics
 	</div>
 
 	<h2 class="display-4 my-5">Add-ons</h2>
-	<div v-if="Object.keys(addonsStats).length === 0 && addons !== undefined" v-html="loadingMessage"></div>
-	<div id="stats-addons" class="res-grid-2">
-		<template v-for="res in Object.keys(addonsStats)" :key="res">
-			<div v-for="edi, e_i in Object.keys(addonsStats[res])" :key="edi">
+	<div v-if="Object.keys(addonStats).length === 0 && addons !== null">
+		<i class="fas spin"></i> Loading
+	</div>
+	<div v-else id="stats-addons" class="res-grid-2">
+		<template v-for="res in Object.keys(addonStats)" :key="res">
+			<div v-for="edi, e_i in Object.keys(addonStats[res])" :key="edi">
 				<h3>
 					<span>{{ `${res} ${edi} Add-ons` }}</span>
 					<div class="badge-container">
-						<span class="badge badge-primary h1">{{ addonsStats[res][edi] }}</span>
+						<span class="badge badge-primary h1">{{ addonStats[res][edi] }}</span>
 					</div>
 				</h3>
 			</div>
@@ -30,12 +32,13 @@ title: Statistics
 	</div>
 
 	<h2 class="display-4 my-5">Mods</h2>
-	<div v-if="loading" v-html="loadingMessage"></div>
-
-	<div class="res-grid-3">
-		<div v-for="(mKey, index) in keys" :key="index">
+	<div v-if="Object.keys(modStats).length === 0 && mods !== null">
+		<i class="fas spin"></i> Loading
+	</div>
+	<div v-else class="res-grid-3">
+		<div v-for="(mKey, index) in Object.keys(messages)" :key="mKey">
 			<h3>{{ messages[mKey] }}</h3>
-			<h3><span class="badge badge-primary h1">{{ $data[mKey] }}</span></h3>
+			<h3><span class="badge badge-primary h1">{{ modStats[mKey] }}</span></h3>
 		</div>
 	</div>
 </div>

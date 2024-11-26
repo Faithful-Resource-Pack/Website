@@ -4,28 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			return {
 				addons: {},
 				posts: {},
-				keys: [
-					"numberOfMinecraftVersions",
-					"totalNumberOfResourcePacksStored",
-					"numberOfModsSupported",
-				],
+				mods: {},
 				messages: {
-					loading: "Loading",
-					numberOfMinecraftVersions: "Minecraft Versions Supported",
-					numberOfModsSupported: "Mods Supported",
-					totalNumberOfResourcePacksStored: "Mod Resource Packs Stored",
+					versions: "Minecraft Versions Supported",
+					supportedMods: "Mods Supported",
+					storedPacks: "Mod Resource Packs Stored",
 				},
-				loading: true,
-				numberOfMinecraftVersions: undefined,
-				numberOfModsSupported: undefined,
-				totalNumberOfResourcePacksStored: undefined,
 			};
 		},
 		computed: {
-			loadingMessage() {
-				return '<i class="fas spin"></i> ' + this.messages.loading;
-			},
-			addonsStats() {
+			addonStats() {
 				// super duper dynamic addons stats
 				const allEditions = [];
 				const result = Object.values(this.addons)
@@ -68,45 +56,45 @@ document.addEventListener("DOMContentLoaded", () => {
 						{ f32: 0, f64: 0 },
 					);
 			},
+			modStats() {
+				const allMods = Object.values(this.mods);
+				const supportedMods = allMods.length;
+				const { storedPacks, versions } = allMods
+					.map((mod) => mod.resource_pack.versions)
+					.reduce(
+						(acc, versions) => {
+							versions.forEach((v) => {
+								acc.versions.add(v);
+								++acc.storedPacks;
+							});
+							return acc;
+						},
+						{ versions: new Set(), storedPacks: 0, },
+					);
+				return {
+					versions: versions.size,
+					storedPacks,
+					supportedMods,
+				}
+			},
 		},
 		created() {
 			fetch("https://api.faithfulpack.net/v2/mods/raw")
 				.then((res) => res.json())
 				.then((json) => {
-					const mods = json;
-					const versionList = [];
-					let resourcePacks = 0;
-					let modAmount = 0;
-
-					Object.values(mods)
-						.map((e) => e.resource_pack.versions)
-						.forEach((versions) => {
-							versions.forEach((version) => {
-								// version sum
-								if (!versionList.includes(version)) versionList.push(version);
-
-								// resource pack sum
-								++resourcePacks;
-							});
-							// mod sum
-							++modAmount;
-						});
-
-					this.numberOfMinecraftVersions = versionList.length;
-					this.numberOfModsSupported = modAmount;
-					this.totalNumberOfResourcePacksStored = resourcePacks;
-
-					this.loading = false;
+					this.mods = json;
 				})
-				.catch(console.error);
+				.catch(() => {
+					this.mods = null;
+				});
 
 			fetch("https://api.faithfulpack.net/v2/addons/approved")
-				.then((response) => response.json())
+				.then((res) => res.json())
 				.then((data) => {
 					this.addons = data;
 				})
 				.catch(() => {
-					this.addons = undefined;
+					this.addons = null;
 				});
 
 			fetch("https://api.faithfulpack.net/v2/posts/approved")
@@ -115,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					this.posts = data;
 				})
 				.catch(() => {
-					this.posts = undefined;
+					this.posts = null;
 				});
 		},
 	});
