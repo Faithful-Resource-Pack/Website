@@ -1,0 +1,43 @@
+---
+---
+
+#teacup {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+}
+
+#bucket {
+	height: 128px;
+	width: 128px;
+	image-rendering: pixelated;
+	position: relative;
+	z-index: 3;
+}
+
+#handle, #handle div::after {
+	border-radius: 50% 0 0 50%;
+	border: 2px solid #343434;
+}
+
+#handle {
+	width: 50px;
+	height: 50px;
+	margin-right: -42px;
+}
+
+#handle > div, #handle div::after {
+	width: 100%;
+	height: 100%;
+}
+
+#handle div::after {
+	content: "";
+	display: block;
+}
+
+#handle > div {
+	border-radius: 50% 0 0 50%;
+	border: 10px solid #d7d7d7;
+}
