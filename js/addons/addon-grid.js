@@ -17,11 +17,10 @@ export default {
 						full
 					/>
 					<v-btn
-						:icon="icon"
-						:color="btnColor(addon)"
+						class="fav-button pa-0"
+						:icon="icon(addon.id)"
+						:color="color(addon.id)"
 						variant="plain"
-						style="position: relative; top: calc(-100% + 40px); left: -7px"
-						class="pa-0"
 						@click="$emit('clickFav', addon)"
 					/>
 				</div>
@@ -37,13 +36,10 @@ export default {
 			type: Object,
 			required: true,
 		},
-		icon: {
-			type: String,
-			required: true,
-		},
-		iconColor: {
-			type: String,
-			required: true,
+		favorites: {
+			type: Boolean,
+			required: false,
+			default: false,
 		},
 		sort: {
 			type: String,
@@ -52,10 +48,15 @@ export default {
 		},
 	},
 	methods: {
-		btnColor(addon) {
-			if (Object.keys(this.addons) === Object.keys(this.addonsFav)) return this.iconColor;
-			if (this.addonsFav[addon.id]) return this.iconColor;
-			return "rgba(0, 0, 0, .5)";
+		color(id) {
+			if (this.favorites) return "#ff3333";
+			if (this.addonsFav[id]) return "#faa619";
+			return "#ffffffaa";
+		},
+		icon(id) {
+			if (this.favorites) return "mdi-close";
+			if (this.addonsFav[id]) return "mdi-star";
+			return "mdi-star-outline";
 		},
 	},
 	computed: {

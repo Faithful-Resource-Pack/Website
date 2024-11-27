@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				<addon-grid
 					:key="Object.keys(fav).length"
 					:addons="fav"
-					icon="mdi-close"
-					iconColor="#ff3333"
+					favorites
 					:addonsFav="fav"
 					@clickFav="toggleFav"
 				/>
@@ -96,8 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				:key="Object.keys(fav).length"
 				:addons="searchedAddons"
 				:sort="currentSort"
-				icon="mdi-star"
-				iconColor="#ffc83d"
 				:addonsFav="fav"
 				@clickFav="toggleFav"
 			/>

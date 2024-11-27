@@ -1717,11 +1717,11 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 }
 
 .fav-button {
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	height: 32px;
-	width: 32px;
+	position: relative;
+	top: calc(-100% + 40px);
+	left: -7px;
+	opacity: 1 !important;
+	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
 .addon-flags {
