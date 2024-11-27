@@ -1193,22 +1193,7 @@ a.btn.disabled {
 	border-top-left-radius: calc(0.25rem - 1px);
 	border-top-right-radius: calc(0.25rem - 1px);
 }
-.card-deck .card {
-	margin-bottom: 15px;
-}
 @media (min-width: 576px) {
-	.card-deck {
-		display: flex;
-		flex-flow: row wrap;
-		margin-right: -15px;
-		margin-left: -15px;
-	}
-	.card-deck .card {
-		flex: 1 0 0%;
-		margin-right: 15px;
-		margin-bottom: 0;
-		margin-left: 15px;
-	}
 	#stats-addons{
 		.badge-container {
 			display: inline;
@@ -1233,35 +1218,6 @@ a.btn.disabled {
 .card-img-bottom {
 	border-bottom-right-radius: calc(0.25rem - 1px);
 	border-bottom-left-radius: calc(0.25rem - 1px);
-}
-.card-deck .card {
-	margin-bottom: 15px;
-}
-
-.card-deck .card .card-img {
-	background-size: auto 100%;
-	background-size: cover;
-	background-position: center;
-	overflow: hidden;
-}
-
-.card-deck .card .card-img img {
-	width: 100%;
-	opacity: 0;
-}
-@media (min-width: 576px) {
-	.card-deck {
-		display: flex;
-		flex-flow: row wrap;
-		margin-right: -15px;
-		margin-left: -15px;
-	}
-	.card-deck .card {
-		flex: 1 0 0%;
-		margin-right: 15px;
-		margin-bottom: 0;
-		margin-left: 15px;
-	}
 }
 @media (max-width: 760px) {
 	.addon-grid {
@@ -1448,7 +1404,7 @@ img:not(.img-gallery) {
 .img-card {
 	position: relative;
 	height: 0;
-	padding-top: 56.25%
+	padding-top: 56.25%;
 }
 .img-card > img:first-of-type, .placeholder {
 	position: absolute;
@@ -1457,22 +1413,16 @@ img:not(.img-gallery) {
 	width: 100%;
 	height: 100%;
 	transition: all .5s;
-	background: #000
 }
- .img-card > img:first-of-type:hover {
+.img-card:hover > img:first-of-type {
 	transform: scale(1.1);
-	filter: brightness(110%)
-}
-.img-card > img:first-of-type:focus, .img-card > img:first-of-type:active {
-	transform: scale(1);
-	filter: brightness(100%)
+	filter: brightness(110%);
 }
 .img-card > h3 {
 	position: absolute;
 	bottom: 0;
 	margin: 8px;
 	color: rgba(255, 255, 255, .9);
-	text-shadow: $card-shadow;
 	font-size: 1.5rem;
 	font-weight: 500;
 }
@@ -1807,16 +1757,7 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	-webkit-box-shadow: inset 5px 5px 50px 25px rgba(0,0,0,0.5);
-	box-shadow: inset 5px 5px 50px 25px rgba(0,0,0,0.5);
-}
-
-.hovering-effect {
-	transition: transform .2s;
-}
-
-.hovering-effect:hover {
-	transform: scale(1.025);
+	background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.5));
 }
 
 .addon-flags-big {

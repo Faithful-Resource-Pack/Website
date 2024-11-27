@@ -15,9 +15,8 @@ title: News
     {{ error ? `Error: ${error}` : "No posts found" }}
   </h3>
   <div v-else class="grid-2-wide pb-5">
-    <a :href="firstPost.permalink">
+    <a class="card img-card" :href="firstPost.permalink">
       <img
-        class="card hovering-effect"
         :src="firstPost.header_img || 'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'"
         loading="lazy"
       >
@@ -32,20 +31,13 @@ title: News
   </div>
   <hr>
   <div class="res-grid-3">
-    <a
+    <article-card
       v-for="post in restPosts"
-      class="card img-card"
-      rel="noopener"
-      :href="'' + post.permalink"
-    >
-      <img v-if="post.header_img" :src="post.header_img" loading="lazy">
-      <img
-        v-else
-        src="https://database.faithfulpack.net/images/website/posts/placeholder.jpg"
-        loading="lazy"
-      >
-      <h3>{{ post.title }}</h3>
-    </a>
+      :key="post.id"
+      :href="post.permalink"
+      :image="post.header_img"
+      :title="post.title"
+    ></article-card>
   </div>
 </div>
 {% endraw %}
@@ -54,6 +46,9 @@ title: News
   const MAX_DESCRIPTION_LENGTH = 270;
   document.addEventListener("DOMContentLoaded", () => {
     const app = Vue.createApp({
+      components: {
+        ArticleCard: Vue.defineAsyncComponent(() => import("/js/components/article-card.js")),
+      },
       data() {
         return {
           posts: [],

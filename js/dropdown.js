@@ -22,6 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		.querySelectorAll('[data-toggle="dropdown"]')
 		.forEach((/** @type {HTMLElement} */ item) => {
 			// add click listener to toggle dropdowns
-			item.addEventListener("click", () => toggleDropdown(item));
+			item.addEventListener("click", () => void toggleDropdown(item));
 		});
 });

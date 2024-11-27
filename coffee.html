@@ -3,14 +3,18 @@ layout: default
 title: Coffee
 ---
 
+<link rel="stylesheet" href="/css/coffee.css">
 <div id="stats" class="text-center">
 	<h1 class="display-3 my-5">I'm a teapot</h1>
     <div id="teacup" class="hidden">
         <div id="handle"><div></div></div>
-        <img src="https://api.faithfulpack.net/v2/textures/1743/url/faithful_64x/latest" alt="teacup" id="bucket">
+        <img
+            src="https://api.faithfulpack.net/v2/textures/1743/url/faithful_64x/latest"
+            alt="teacup"
+            id="bucket"
+        >
     </div>
 </div>
-<link rel="stylesheet" href="/css/coffee.css">
 <script>
     const buckets = [
         { id: 1743, low: 0, high: 0.49 }, // water (higher weighting than rest)
