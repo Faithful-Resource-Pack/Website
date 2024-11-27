@@ -43,7 +43,7 @@ export default {
 					loading="lazy"
 				/>
 			</div>
-			<div class="addon-tags">
+			<div class="addon-tags" v-if="full">
 				<p
 					style="margin-bottom: 5px; margin-right: 5px"
 					v-if="addon.options.tags.includes('32x')"
