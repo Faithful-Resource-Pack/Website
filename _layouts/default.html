@@ -60,6 +60,9 @@ layout: compress
 
 	<script defer src="/js/dropdown.js" type="module"></script>
 	<script defer src="/js/theme.js" type="module"></script>
+	<link rel="stylesheet" href="/css/buttons.css">
+	<link rel="stylesheet" href="/css/padding.css">
+	<!-- must load main css file last (uses styles from other files) -->
 	<link rel="stylesheet" href="/css/main.css">
 </head>
 
@@ -93,7 +96,7 @@ layout: compress
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+			<div class="navbar-collapse" style="justify-content:center;" id="collapsibleNavbar">
 				<ul class="navbar-nav">
 					<li class="nav-item">
 						<a class="nav-link" href="/">
@@ -116,7 +119,7 @@ layout: compress
 						</a>
 					</li>
 
-					<a href="/" title="Faithful">
+					<a href="/" title="Faithful" id="navbar-logo">
 						<img
 							class="icon-hover"
 							src="https://database.faithfulpack.net/images/branding/logos/transparent/128/plain_logo.png"
@@ -225,7 +228,6 @@ layout: compress
 			</div>
 			<div>
 				<ul class="navbar-nav">
-
 					<li class="nav-item dropup">
 						<span class="nav-link dropdown-toggle" data-toggle="dropdown">
 							<i class="fab"></i>

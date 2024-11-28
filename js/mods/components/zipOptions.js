@@ -11,12 +11,21 @@ export default {
 	template: `
 		<div id="zipOptions">
 			<h4 class="my-3">
-				<label for="aoe">Advanced options </label> <input id="aoe" type="checkbox" v-model="advancedOptionsEnabled" />
+				<label for="aoe">Advanced options</label>
+				<input id="aoe" type="checkbox" v-model="advancedOptionsEnabled" />
 			</h4>
-			<div v-show="advancedOptionsEnabled" id="advancedOptions" class="card card-body auto-flex mb-4">
+			<div
+				v-show="advancedOptionsEnabled"
+				id="advancedOptions"
+				class="card card-body auto-flex mb-4"
+			>
 				<div class="mx-1">
 					<label for="compressionSelect" class="block pb-1">Compression level</label>
-					<select id="compressionSelect" class="form-control custom-select fancy-card-1x" v-model="compressionChosen">
+					<select
+						id="compressionSelect"
+						class="form-control custom-select fancy-card-1x"
+						v-model="compressionChosen"
+					>
 						<template v-for="(ct, ctindex) in compressionTypes">
 							<optgroup :label="ct" :key="ct">
 								<option
@@ -65,9 +74,6 @@ export default {
 		};
 	},
 	computed: {
-		chevron() {
-			return "fa-caret-" + (this.advancedOptionsEnabled ? "up" : "down");
-		},
 		compressionLevels() {
 			const result = [];
 			for (let i = 0; i < this.compressionLevelsAvailable; ++i) {
@@ -96,7 +102,7 @@ export default {
 			};
 
 			if (this.compressionTypeChosen === this.compressionTypes[1]) {
-				// if DEFlATE compression chosen
+				// if DEFLATE compression chosen
 				result.compressionOptions = {
 					level: this.compressionLevelChosen,
 				};

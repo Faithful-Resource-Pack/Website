@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			MinecraftModList: Vue.defineAsyncComponent(() =>
 				import("./components/mods/minecraftModsList.js"),
 			),
+			MinecraftVersions: Vue.defineAsyncComponent(() =>
+				import("./components/mods/minecraftVersions.js"),
+			),
 			DownloadMinecraftVersion: Vue.defineAsyncComponent(() =>
 				import("./components/mods/downloadMinecraftVersion.js"),
 			),

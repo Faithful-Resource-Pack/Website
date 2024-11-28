@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
 		components: {
 			AddonModal: Vue.defineAsyncComponent(() => import("./addon-post-modal.js")),
-			AuthorCard: Vue.defineAsyncComponent(() => import("./author-card.js")),
+			AuthorWidget: Vue.defineAsyncComponent(() => import("./author-widget.js")),
 			AddonFlag: Vue.defineAsyncComponent(() => import("./addon-flag.js")),
 			DiscordButton: Vue.defineAsyncComponent(() => import("../components/discord-button.js")),
 		},
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						<!-- Only 1 author -->
 						<template v-if="Object.keys(authors).length === 1">
 							<h3 class="text-center">Author</h3>
-							<author-card :author="Object.values(authors)[0]" />
+							<author-widget :author="Object.values(authors)[0]" />
 						</template>
 
 						<template v-else>
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							>
 								<v-row v-for="(author, index) in authors">
 									<v-col style="margin: 0 5px" :key="author.id">
-										<author-card :author multiple />
+										<author-widget :author multiple />
 									</v-col>
 								</v-row>
 							</div>

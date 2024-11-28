@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				<img class="fancy-card-1x" style="width: 100%" :src="data.header_img" alt="">
 				<br />
 			</template>
+
 			<hr />
+
 			<div v-if="data.description" class="card card-body">
 				<p class="h4 m-0" v-html="data.description"></p>
 			</div>

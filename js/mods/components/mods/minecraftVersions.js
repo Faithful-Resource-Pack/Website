@@ -1,7 +1,11 @@
 /* global Vue, MinecraftUtils */
 /* eslint no-multi-str: 0 */
 
-Vue.component("minecraft-versions", {
+export default {
+	name: "minecraft-versions",
+	components: {
+		DownloadMinecraftVersion: Vue.defineAsyncComponent(() => import("./downloadMinecraftVersion.js")),
+	},
 	props: {
 		versions: Array,
 		breakpoints: Object,
@@ -9,7 +13,11 @@ Vue.component("minecraft-versions", {
 	template: `
 		<div id="minecraftVersions">
 			<div>
-				<div v-for="(line, index) in versionsOrganized" :key="index" class="auto-flex mt-0 mx-0 btn-group-custom">
+				<div
+					v-for="(line, index) in versionsOrganized"
+					:key="index"
+					class="auto-flex mt-0 mx-0 btn-group-custom"
+				>
 					<download-minecraft-version
 						v-for="version in line"
 						:key="version.version"
@@ -58,4 +66,4 @@ Vue.component("minecraft-versions", {
 			}
 		},
 	},
-});
+};

@@ -22,40 +22,27 @@ export default {
 		>
 			<div class="addon-flags">
 				<img
-					style="margin-bottom: 5px"
 					v-if="addon.options.tags.includes('Java')"
 					:src="java"
 					alt="available for Java Edition"
 					loading="lazy"
 				/>
 				<img
-					style="margin-bottom: 5px"
 					v-if="addon.options.tags.includes('Bedrock')"
 					:src="bedrock"
 					alt="available for Bedrock Edition"
 					loading="lazy"
 				/>
 				<img
-					style="margin-bottom: 5px"
 					v-if="addon.options.optifine"
 					:src="optifine"
 					alt="requires optifine"
 					loading="lazy"
 				/>
 			</div>
-			<div class="addon-tags" v-if="full">
-				<p
-					style="margin-bottom: 5px; margin-right: 5px"
-					v-if="addon.options.tags.includes('32x')"
-				>
-					32x
-				</p>
-				<p
-					style="margin-bottom: 5px"
-					v-if="addon.options.tags.includes('64x')"
-				>
-					64x
-				</p>
+			<div class="addon-res" v-if="full">
+				<p v-if="addon.options.tags.includes('32x')">32x</p>
+				<p v-if="addon.options.tags.includes('64x')">64x</p>
 			</div>
 		</article-card>
 	`,

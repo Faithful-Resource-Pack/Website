@@ -162,7 +162,51 @@ input[type=radio]:checked + label {
 }
 
 .progress {
+	display: flex;
+	height: 1rem;
+	overflow: hidden;
+	line-height: 0;
+	font-size: 0.75rem;
+	background-color: #e9ecef;
+	border-radius: 0.25rem;
 	background-color: #232323;
+}
+.progress-bar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	background-color: $primary;
+	transition: width 0.6s ease;
+}
+.progress-bar-striped {
+	background-image:
+		linear-gradient(
+			45deg,
+			rgba(255, 255, 255, 0.15) 25%,
+			transparent 25%,
+			transparent 50%,
+			rgba(255, 255, 255, 0.15) 50%,
+			rgba(255, 255, 255, 0.15) 75%,
+			transparent 75%,
+			transparent
+		);
+	background-size: 1rem 1rem;
+}
+@keyframes progress-bar-stripes {
+	from {
+		background-position: 1rem 0;
+	}
+	to {
+		background-position: 0 0;
+	}
+}
+.progress-bar-animated {
+	-webkit-animation: progress-bar-stripes 1s linear infinite;
+	animation: progress-bar-stripes 1s linear infinite;
 }
 
 .progress-bar, #downloadModalContent #zipProgressBar > * {
@@ -188,13 +232,6 @@ input[type=radio]:checked + label {
 
 #logs .log.error {
 	background-color: rgba(255, 25, 25, 0.5);
-}
-
-.modal-header {
-	border-bottom: 1px solid #2d2e32;
-}
-.modal-footer {
-	border-top: 1px solid #2d2e32;
 }
 
 #SearchBar {
@@ -422,4 +459,76 @@ h1 {
 
 h2 {
 	text-align: center;
+}
+
+// these were from the main css file but are only used here
+.embed-responsive {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 0;
+	overflow: hidden;
+}
+
+.embed-responsive-1by1::before {
+	padding-top: 100%;
+}
+
+.embed-responsive::before {
+	display: block;
+	content: "";
+}
+
+input[type="date"].form-control,
+input[type="time"].form-control,
+input[type="datetime-local"].form-control,
+input[type="month"].form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: calc(1.5em + 0.75rem + 2px);
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
+	color: #495057;
+	background-color: #fff;
+	border-color: #80bdff;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.form-control::placeholder {
+	color: #6c757d;
+	opacity: 1;
+}
+.form-control:disabled, .form-control[readonly] {
+	background-color: #e9ecef;
+	opacity: 1;
+}
+
+.arrow-up-right {
+	background-image: url('../image/icon/arrow-up-right-square-fill.svg');
+}
+
+.text-success {
+	color: #28a745 !important;
+}
+.text-warning {
+	color: #ffc107 !important;
+}
+.text-danger {
+	color: #dc3545 !important;
 }

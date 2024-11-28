@@ -5,14 +5,15 @@ export default {
 	name: "download-minecraft-version",
 	props: {
 		value: {
-			version: String,
-			count: Number,
+			type: Object,
 		},
-		block: Boolean,
+		block: {
+			type: Boolean,
+		},
 	},
 	template: `
 		<button type="button" class="btn btn-dark minecraftVersion mb-1 mr-1" :value="value.version" @click="dv">
-			<span :style="{display: block ? \'block\' : \'initial\' }">
+			<span :style="{display: block ? 'block' : 'initial' }">
 				{{ value.version }}
 			</span>
 			<span class="badge badge-light" style="color: black">

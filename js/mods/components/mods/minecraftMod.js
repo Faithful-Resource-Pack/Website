@@ -48,7 +48,7 @@ export default {
 		};
 	},
 	computed: {
-		/** @returns {String} of joined aliases in <span>*/
+		/** @returns {string} of joined aliases in <span>*/
 		aliases() {
 			return this.$props.mod.aliases.length > 0
 				? '<span class="dash">&nbsp;&dash;&nbsp;</span><h5 class="advice">' +
@@ -56,28 +56,22 @@ export default {
 						"</h5>"
 				: "";
 		},
-		/** @returns {String} complete curseforge mod url*/
+		/** @returns {string} complete curseforge mod url*/
 		curseURL() {
 			return this.$props.mod.curseURL || _NO_LINK;
 		},
-		/** @returns {String} info link to curseforge's mod page*/
+		/** @returns {string} info link to curseforge's mod page*/
 		info() {
 			const link = this.$props.mod.curse_url || _NO_LINK;
 
 			if (link === _NO_LINK) return "";
-			return (
-				'<a href="' +
-				link +
-				'" target="_blank" rel="noopener" title="' +
-				link +
-				'" class="mod-info icon arrow-up-right"></a>'
-			);
+			return `<a href="${link}" target="_blank" rel="noopener" title="${link}" class="mod-info icon arrow-up-right"></a>`;
 		},
-		/** @returns {String} main mod name s*/
+		/** @returns {string} main mod name s*/
 		name() {
 			return this.$props.mod.name;
 		},
-		/** @returns {String} background-img OR set opacity to 1*/
+		/** @returns {string} background-img OR set opacity to 1*/
 		imageStyle() {
 			if (this.imageSource !== _NO_ICON) return "";
 			return "opacity: 1";
@@ -86,7 +80,7 @@ export default {
 		minecraftVersions() {
 			return this.$props.mod.resource_pack.versions;
 		},
-		/** @return {String} git repository full url */
+		/** @return {string} git repository full url */
 		repoURL() {
 			return this.$props.mod.resource_pack.git_repository;
 		},

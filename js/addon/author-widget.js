@@ -1,5 +1,5 @@
 export default {
-	name: "author-card",
+	name: "author-widget",
 	components: {
 		AuthorMedia: Vue.defineAsyncComponent(() => import("./author-media.js")),
 	},

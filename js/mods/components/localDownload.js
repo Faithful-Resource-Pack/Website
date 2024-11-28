@@ -40,8 +40,17 @@ export default {
 				<div id="zipProgressBar" v-if="isGenerating" class="progress my-3">
 					<div
 						role="progressbar"
-						:class="{ \'progress-bar\': true, \'progress-bar-striped\': parseInt(generatedPercent) < 100, \'progress-bar-animated\': parseInt(generatedPercent) < 100 }"
-						:style="{ width: generatedPercent + \'%\' }" :aria-valuenow="generatedPercent" aria-valuemin="0" aria-valuemax="100">{{ generatedPercent + "%" }}
+						:class="{
+							'progress-bar': true,
+							'progress-bar-striped': parseInt(generatedPercent) < 100,
+							'progress-bar-animated': parseInt(generatedPercent) < 100
+						}"
+						:style="{ width: generatedPercent + '%' }"
+						:aria-valuenow="generatedPercent"
+						aria-valuemin="0"
+						aria-valuemax="100"
+					>
+						{{ generatedPercent + "%" }}
 					</div>
 				</div>
 				<div id="logs" ref="log">
@@ -135,7 +144,6 @@ export default {
 
 			if (this.navigatorSupportsWorkers) {
 				this.downloadWithWorker(this.modSelection, forceDownload, this.logHandler);
-
 				return;
 			}
 

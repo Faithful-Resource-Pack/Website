@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					@click:clear="clearSearch"
 				/>
 				<br />
-				<div class="addon-info-subtitle">
+				<div class="addon-search-subtitle">
 					<p>{{ resultCount }} {{ results }} found</p>
 					<br>
 					<v-select
