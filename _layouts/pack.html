@@ -17,7 +17,7 @@ layout: default
 				{{ page.text }}
 			</p>
 			{%- if page.buttons -%}
-				<div class="button-2">
+				<div class="button-row">
 				{%- for button in page.buttons -%}
 					<a class="btn btn-dark" href="{{ button.href }}">{{ button.text }}</a>
 				{%- endfor -%}

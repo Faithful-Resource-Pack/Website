@@ -55,7 +55,7 @@ no_container: true
       description="The older yet refreshed look of Faithful, for when you need that nostalgic hit!"
     >
       <template #btns>
-        <div class="button-2">
+        <div class="button-row">
           <a class="btn btn-dark" href="/classicfaithful/32x-jappa">New Textures (Jappa)</a>
           <a class="btn btn-dark" href="/classicfaithful/32x-programmer-art">Old Textures (PA)</a>
         </div>
@@ -68,7 +68,7 @@ no_container: true
       description="The traditional Faithful style with fully refreshed and ultra high-resolution textures!"
     >
       <template #btns>
-        <div class="button-2">
+        <div class="button-row">
           <a class="btn block btn-dark" href="/classicfaithful/64x-jappa">New Textures (Jappa)</a>
           <a class="btn block btn-dark disabled" href="/classicfaithful/64x-programmer-art">Coming Soon...</a>
       </div>
@@ -106,7 +106,6 @@ no_container: true
 
   <hr>
   <br>
-  {% raw %}
   <h2 class="display-3 text-center">Add-ons</h2>
   <div class="res-grid-4">
     <addon-card v-for="(addon, i) in addons" :key="addon.id" :addon></addon-card>
@@ -129,7 +128,6 @@ no_container: true
   </div>
   <br>
   <a class="btn btn-dark news-button center" href="/news">See More</a>
-  {% endraw %}
 </div>
 
 <script>

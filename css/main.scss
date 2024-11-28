@@ -1954,16 +1954,17 @@ input[type=radio] {
 	padding-left: 20px;
 }
 
-.button-2 {
+.button-row {
 	display: flex;
 	flex-direction: row;
 	gap: 5px;
 
-	& > * {
+	// stretch buttons to fill row
+	> * {
 		flex-grow: 1;
 	}
 
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 992px) {
 		flex-direction: column;
 	}
 }
