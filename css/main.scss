@@ -124,6 +124,10 @@ button:not(:disabled),
 [type="submit"]:not(:disabled) {
 	cursor: pointer;
 }
+// Fix icons being displayed in italic
+.fab, .fas {
+	font-style: normal;
+}
 .display-3 {
 	font-size: 4.8rem;
 	font-weight: 300;
@@ -458,7 +462,7 @@ hr {
 	color: #212529;
 	background-color: #f8f9fa;
 }
-/* Having-to-take-a-closer-look Bootstrap (Cards) */
+/** Bootstrap Cards */
 .card {
 	position: relative;
 	display: flex;
@@ -476,7 +480,7 @@ hr {
 	margin-bottom: 0.75rem;
 }
 @media screen and (min-width: 576px) {
-	#stats-addons{
+	#stats-addons {
 		.badge-container {
 			display: inline;
 		}
@@ -574,7 +578,7 @@ img:not(.img-gallery) {
 		}
 	}
 }
-/** MAIN STUFF **/
+/** MAIN STUFF */
 .container {
 	width: 100%;
 	padding-right: 15px;
@@ -610,7 +614,7 @@ img:not(.img-gallery) {
 .disabled {
 	pointer-events: none;
 }
-/** FANCY CARDS **/
+/** FANCY CARDS */
 .btn, .dropdown-menu, .fancy-card-1x, *.card, .fancy-card-2x {
 	overflow: hidden;
 	box-shadow: $card-shadow;
@@ -630,7 +634,7 @@ img:not(.img-gallery) {
 .card > h2 > a:hover {
 	color: rgba(255, 255, 255, .9)
 }
-/* carousel cards */
+// carousel cards
 .item > .card {
 	margin: 3px 6px 9px;
 }
@@ -668,6 +672,16 @@ img:not(.img-gallery) {
 	font-size: 1.3rem;
 	font-weight: 400;
 }
+.img-card-shadow {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.5));
+}
+.img-card > img:hover {
+	cursor: pointer;
+}
 .placeholder {
 	background-image:
 		url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png),
@@ -676,7 +690,7 @@ img:not(.img-gallery) {
 	background-position: center, center;
 	background-size: auto 75%, auto;
 }
-/** Custom Bootstrap-like **/
+/** Custom Bootstrap-like */
 .block {
 	display: block;
 	width: 100%;
@@ -737,7 +751,7 @@ a > .banner:hover {
 .res-grid-6 {
 	grid-template-columns: repeat(2, 2fr);
 }
-/** NAVBAR **/
+/** NAVBAR */
 header {
 	position: sticky;
 	z-index: 999;
@@ -800,32 +814,12 @@ header {
 .nav-link:hover {
 	cursor: pointer
 }
-/** CUSTOM SCROLLBAR **/
+/** CUSTOM SCROLLBAR */
 ::-webkit-scrollbar{
 	width: 8px;
 }
 ::-webkit-scrollbar-button{
 	height: 8px
-}
-@keyframes zoom {
-	from {transform:scale(0)}
-	to {transform:scale(1)}
-}
-/* The Close Button */
-.close {
-	position: absolute;
-	top: 15px;
-	right: 35px;
-	color: #f1f1f1;
-	font-size: 40px;
-	font-weight: 500;
-	transition: 0.3s;
-}
-.close:hover,
-.close:focus {
-	color: #bbb;
-	text-decoration: none;
-	cursor: pointer
 }
 /* container size management */
 @media screen and (min-width: 576px) {
@@ -866,193 +860,6 @@ header {
 		max-width: 1140px
 	}
 }
-/* addons */
-.addon-search-subtitle {
-	display: flex;
-	justify-content: space-between;
-	& > * {
-		margin-bottom: 0 !important;
-		margin-top: 0 !important;
-	}
-	& > .v-select {
-		max-width: 15rem;
-	}
-}
-
-.v-select__selection {
-	color: rgba(255, 255, 255, .7);
-}
-
-.fav-button {
-	position: relative;
-	top: calc(-100% + 40px);
-	left: -7px;
-	opacity: 1 !important;
-	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-}
-
-.addon-flags {
-	position: absolute;
-	bottom: 5px;
-	right: 5px;
-	display: flex;
-	flex-direction: column;
-
-	& > img {
-		height: 32px;
-		width: 32px;
-		border-radius: $border-radius-0x;
-		margin-bottom: 5px;
-	}
-}
-
-.addon-res {
-	position: absolute;
-	bottom: 25px;
-	left: 8px;
-	display: flex;
-	flex-direction: row;
-
-	& > p {
-		margin-bottom: 5px;
-		margin-right: 5px;
-	}
-}
-
-.img-card-shadow {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.5));
-}
-
-.addon-flags-big {
-	max-height: 56px;
-	max-width: 56px;
-	margin: 5px !important;
-	border-radius: $border-radius-0x;
-}
-
-.addon-flags-big-text {
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-top: auto;
-	margin-bottom: auto !important;
-}
-
-.card-widget {
-	padding: 0;
-	flex-direction: row;
-	align-items: center;
-}
-
-.card-widget-square {
-	height: 66px;
-	max-width: 66px;
-	padding: 0;
-	flex-direction: row;
-	align-items: center;
-}
-
-.author-widget {
-	display: block;
-	margin-top: 15px;
-	max-width: max-content;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-.author-widget h4 {
-	margin-bottom: 0;
-}
-
-.author-widget .author-socials:not(:empty) {
-	margin: 4px 0;
-}
-
-.author-widget a {
-	color: white;
-	opacity: 0.7;
-	margin: 0 5px;
-	transition: all 0.1s ease-out;
-	&:hover {
-		opacity: 1;
-	}
-}
-
-.img-card > img:hover {
-	cursor: pointer;
-}
-
-.v-application {
-	background-color: #0000 !important;
-	font-family: Faithful !important;
-}
-
-.v-application .display-3, .v-application .display-4 {
-	font-family: Faithful !important;
-}
-
-.checkbox-container {
-	.v-input {
-		text-align: center;
-		margin: 0;
-		padding: 0.25rem 0;
-
-		.v-input__slot {
-			display: inline;
-
-			> * {
-				display: inline-block;
-				vertical-align: middle;
-			}
-		}
-
-		.v-label {
-			color: white !important;
-			font-size: inherit;
-		}
-
-		margin-bottom: 1rem;
-	}
-
-	& > div > div > div > label {
-		color: rgba(255,255,255,.8) !important;
-		font-size: 20px;
-	}
-
-	& > div > div > div > div > i {
-		color: rgba(255,255,255,.5) !important;
-	}
-}
-
-.icon {
-	display: inline-block;
-	width: 2rem;
-	height: 2rem;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-input[type=radio] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	-ms-appearance: none;
-	-o-appearance: none;
-	appearance: none;
-}
-
-// Fix icons being displayed in italic
-.fab, .fas {
-	font-style: normal;
-}
-
-.spin {
-	animation: spin 2s infinite linear;
-}
 
 @keyframes spin {
 	0% {
@@ -1063,7 +870,13 @@ input[type=radio] {
 	}
 }
 
+.spin {
+	animation: infinite linear infinite spin;
+}
+
 // so few styles for these pages it's not worth making separate files
+
+/** faq page */
 .faq-question {
 	padding-top: 50px;
 }
@@ -1072,8 +885,9 @@ input[type=radio] {
 	padding-left: 20px;
 }
 
-// must use regular css variable (media queries break scss)
+/** news page */
 :root {
+	// must use regular css variable (scss inlines variables when compiled)
 	--news-display-height: 5;
 	@media screen and (max-width: 1200px) {
 		--news-display-height: 3;

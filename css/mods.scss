@@ -519,8 +519,23 @@ input[type="month"].form-control {
 	opacity: 1;
 }
 
+.icon {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
 .arrow-up-right {
 	background-image: url('../image/icon/arrow-up-right-square-fill.svg');
+}
+
+input[type=radio] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
 }
 
 .text-success {

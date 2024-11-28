@@ -8,7 +8,7 @@ export default {
 			type: Object,
 			required: true,
 		},
-		full: {
+		minimal: {
 			type: Boolean,
 			required: false,
 			default: false,
@@ -20,7 +20,7 @@ export default {
 			:image="'https://database.faithfulpack.net/images/addons/' + addon.slug + '/header'"
 			:title="addon.name"
 		>
-			<div class="addon-flags">
+			<div class="addon-flags" v-if="!minimal">
 				<img
 					v-if="addon.options.tags.includes('Java')"
 					:src="java"
@@ -40,7 +40,7 @@ export default {
 					loading="lazy"
 				/>
 			</div>
-			<div class="addon-res" v-if="full">
+			<div class="addon-res" v-if="!minimal">
 				<p v-if="addon.options.tags.includes('32x')">32x</p>
 				<p v-if="addon.options.tags.includes('64x')">64x</p>
 			</div>

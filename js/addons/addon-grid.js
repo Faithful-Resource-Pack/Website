@@ -11,11 +11,7 @@ export default {
 					:key="addon.id"
 					style="margin-bottom: -50px"
 				>
-					<addon-card
-						v-if="addon.approval.status === 'approved'"
-						:addon
-						full
-					/>
+					<addon-card v-if="addon.approval.status === 'approved'" :addon />
 					<v-btn
 						class="fav-button pa-0"
 						:icon="icon(addon.id)"
