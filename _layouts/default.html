@@ -60,8 +60,10 @@ layout: compress
 
 	<script defer src="/js/dropdown.js" type="module"></script>
 	<script defer src="/js/theme.js" type="module"></script>
-	<link rel="stylesheet" href="/css/buttons.css">
-	<link rel="stylesheet" href="/css/padding.css">
+
+	<link rel="stylesheet" href="/css/lib/buttons.css">
+	<link rel="stylesheet" href="/css/lib/padding.css">
+	<link rel="stylesheet" href="/css/lib/navbar.css">
 	<!-- must load main css file last (uses styles from other files) -->
 	<link rel="stylesheet" href="/css/main.css">
 </head>
@@ -73,17 +75,14 @@ layout: compress
 		<span class="snowflake2"></span>
 		<span class="snowflake3"></span>
 	</div>
+	<noscript>
+		<p class="red banner m-3">Please enable JavaScript for the site to work properly.</p>
+	</noscript>
 
 	<header>
-		<noscript>
-			<p class="red banner m-3">
-				Please enable JavaScript for the site to work properly.
-			</p>
-		</noscript>
-
 		<!-- navigation bar -->
-		<nav class="navbar navbar-expand-sm navbar-dark" id="topNavbar">
-			<a class="nav-icon-mobile" href="/" title="Faithful">
+		<nav class="navbar navbar-expand-sm">
+			<a class="nav-mobile-wordmark" href="/" title="Faithful">
 				<img src="/image/home/navbar-wordmark.png" style="height: 32px" alt="Faithful 32x">
 			</a>
 
@@ -97,7 +96,7 @@ layout: compress
 			</button>
 
 			<div class="navbar-collapse" style="justify-content:center;" id="collapsibleNavbar">
-				<ul class="navbar-nav">
+				<ul class="navbar-item-container">
 					<li class="nav-item">
 						<a class="nav-link" href="/">
 							<i class="fas"></i>
@@ -121,7 +120,7 @@ layout: compress
 
 					<a href="/" title="Faithful" id="navbar-logo">
 						<img
-							class="icon-hover"
+							class="navbar-logo-img"
 							src="https://database.faithfulpack.net/images/branding/logos/transparent/128/plain_logo.png"
 							alt="Faithful Logo"
 						>
@@ -158,14 +157,12 @@ layout: compress
 							About
 						</a>
 					</li>
-
 				</ul>
 			</div>
 		</nav>
 	</header>
 
 	<main class="foreground">
-
 		<!-- Page content, centered -->
 		{%- if page.no_container -%}
 		{{ content }}
@@ -174,118 +171,110 @@ layout: compress
 			{{ content }}
 		</div>
 		{%- endif -%}
-
 	</main>
 
 	<footer>
 		<div id="shadow"></div>
 		<!-- navigation bar -->
-		<nav class="navbar navbar-expand-sm navbar-dark mb-2" id="bottomNavbar">
-			<div>
-				<ul class="navbar-nav">
+		<nav class="navbar navbar-expand-sm mb-2" id="bottomNavbar">
+			<ul class="navbar-item-container">
+				<li class="nav-item">
+					<a class="nav-link" href="/license">
+						<i class="fas"></i>
+						License
+					</a>
+				</li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="/license">
-							<i class="fas"></i>
-							License
-						</a>
-					</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/privacy">
+						<i class="fas"></i>
+						Privacy
+					</a>
+				</li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="/privacy">
-							<i class="fas"></i>
-							Privacy
-						</a>
-					</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://docs.faithfulpack.net">
+						<i class="fas"></i>
+						Docs
+					</a>
+				</li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="https://docs.faithfulpack.net">
-							<i class="fas"></i>
-							Docs
-						</a>
-					</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/stats">
+						<i class="fas"></i>
+						Statistics
+					</a>
+				</li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="/stats">
-							<i class="fas"></i>
-							Statistics
-						</a>
-					</li>
-
-					<li class="nav-item">
+				<li class="nav-item">
+					<a
+						class="nav-link"
+						href="https://translate.faithfulpack.net/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<i style="margin-left: 5px" class="fas"></i>
+						Translate
+					</a>
+				</li>
+			</ul>
+			<ul class="navbar-item-container">
+				<li class="nav-item dropup">
+					<span class="nav-link dropdown-toggle" data-toggle="dropdown">
+						<i class="fab"></i>
+						GitHub
+					</span>
+					<div class="dropdown-menu dropdown-menu-center">
 						<a
-							class="nav-link"
-							href="https://translate.faithfulpack.net/"
+							class="dropdown-item"
+							href="https://github.com/Faithful-Resource-Pack"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<i style="margin-left: 5px" class="fas"></i>
-							Translate
+							Faithful
 						</a>
-					</li>
+						<a
+							class="dropdown-item"
+							href="https://github.com/ClassicFaithful"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Classic Faithful
+						</a>
+					</div>
+				</li>
 
-				</ul>
-			</div>
-			<div>
-				<ul class="navbar-nav">
-					<li class="nav-item dropup">
-						<span class="nav-link dropdown-toggle" data-toggle="dropdown">
-							<i class="fab"></i>
-							GitHub
-						</span>
-						<div class="dropdown-menu dropdown-menu-center">
-							<a
-								class="dropdown-item"
-								href="https://github.com/Faithful-Resource-Pack"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Faithful
-							</a>
-							<a
-								class="dropdown-item"
-								href="https://github.com/ClassicFaithful"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Classic Faithful
-							</a>
-						</div>
-					</li>
+				<li class="nav-item dropup">
+					<span class="nav-link dropdown-toggle" data-toggle="dropdown">
+						<i class="fab"></i>
+						Discord
+					</span>
+					<div class="dropdown-menu dropdown-menu-center">
+						<a
+							class="dropdown-item"
+							href="https://discord.gg/sN9YRQbBv7"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Faithful
+						</a>
+						<a
+							class="dropdown-item"
+							href="https://discord.gg/KSEhCVtg4J"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Classic Faithful
+						</a>
+					</div>
+				</li>
 
-					<li class="nav-item dropup">
-						<span class="nav-link dropdown-toggle" data-toggle="dropdown">
-							<i class="fab"></i>
-							Discord
-						</span>
-						<div class="dropdown-menu dropdown-menu-center">
-							<a
-								class="dropdown-item"
-								href="https://discord.gg/sN9YRQbBv7"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Faithful
-							</a>
-							<a
-								class="dropdown-item"
-								href="https://discord.gg/KSEhCVtg4J"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Classic Faithful
-							</a>
-						</div>
-					</li>
-
-					<li class="nav-item theme-switch-wrapper">
-						<span id="theme-btn" onclick="cycleTheme()" class="nav-link">
-							<i style="margin-right: 5px" class="fas"></i> Auto Theme
-						</span>
-					</li>
-
-				</ul>
-			</div>
+				<li class="nav-item theme-switch-wrapper">
+					<span id="theme-btn" onclick="cycleTheme()" class="nav-link">
+						<i style="margin-right: 5px" class="fas"></i> Auto Theme
+					</span>
+				</li>
+			</ul>
 		</nav>
 		<p>
 			<a href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>

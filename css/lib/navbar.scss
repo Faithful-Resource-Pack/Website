@@ -1,0 +1,232 @@
+---
+---
+
+// entire header must be sticky (otherwise the text moves without the background)
+header {
+	position: sticky;
+	z-index: 999;
+	top: 0;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
+}
+.navbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 0.5rem;
+}
+.navbar-item-container {
+	display: flex;
+	flex-direction: column;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	justify-content: center;
+	align-items: center;
+}
+.nav-item {
+	width: 125px;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+
+	&.unsized {
+		width: auto;
+	}
+
+	> .nav-link > i {
+		margin-right: 10px;
+	}
+
+	> .nav-link {
+		display: flex;
+		align-items: center;
+	}
+}
+.nav-link {
+	display: block;
+	padding: 0.5rem 1rem;
+	transition: all 0.1s ease-out;
+	padding-right: 0;
+	padding-left: 0;
+	color: rgba(255, 255, 255, 0.5);
+	&:hover, &:focus {
+		color: rgba(255, 255, 255, 0.75);
+		cursor: pointer;
+	}
+}
+.navbar-collapse:not(.show) {
+	display: none;
+}
+.navbar-item-container .dropdown-menu {
+	position: static;
+	float: none;
+}
+.navbar-collapse {
+	flex-basis: 100%;
+	flex-grow: 1;
+	align-items: center;
+}
+.navbar-logo-img {
+	width: 48px;
+	height: 48px;
+	// pixelated looks really bad on smallish screens, I tried it
+	image-rendering: crisp-edges;
+	transition: all 0.5s ease;
+	&:hover {
+		scale: 110%;
+	}
+}
+
+.navbar-toggler {
+	padding: 0.25rem 0.75rem;
+	font-size: 1.25rem;
+	line-height: 1;
+	background-color: transparent;
+	border: none;
+	color: rgba(255, 255, 255, 0.5);
+}
+.navbar-toggler-icon {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	vertical-align: middle;
+	content: "";
+	background: no-repeat center center;
+	background-size: 100% 100%;
+	background-image:
+		url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.nav-mobile-wordmark {
+	display: none;
+}
+
+.navbar-item-container .show > .nav-link,
+.navbar-item-container .active > .nav-link,
+.navbar-item-container .nav-link.show,
+.navbar-item-container .nav-link.active {
+	color: #fff;
+}
+
+#bottomNavbar {
+	display: inline-block;
+	width: auto;
+	margin: auto;
+}
+
+@media screen and (max-width: 760px) {
+	// mobile nav
+	.navbar-item-container {
+		text-align: initial;
+		margin-top: 0.5rem;
+	}
+	.navbar {
+		padding: 0.5rem 1rem;
+	}
+	.nav-item {
+		width: 100%;
+		display: block;
+	}
+	.nav-link {
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+	}
+	.nav-link > i {
+		width: 26px;
+		height: 26px;
+		line-height: 26px;
+		text-align: center;
+	}
+	#navbar-logo {
+		display: none;
+	}
+	.nav-mobile-wordmark {
+		display: block;
+	}
+	header {
+		padding-bottom: 0;
+	}
+	// set footer to column display
+	#bottomNavbar {
+		padding: 0;
+		margin: 0;
+
+		.navbar-item-container {
+			margin-top: 0;
+			display: inline;
+			text-align: center;
+		}
+
+		.nav-item {
+			width: 100%;
+		}
+
+		.nav-link {
+			display: block;
+
+			i {
+				margin-left: 0 !important;
+			}
+		}
+	}
+	footer {
+		padding: 0.5rem 1rem;
+
+		.navbar .dropdown-toggle::after {
+			transform: rotate(180deg);
+		}
+		.navbar .show .dropdown-toggle::after {
+			transform: rotate(0deg);
+		}
+
+		.navbar .show > .dropdown-menu {
+			background: rgba(0,0,0,0.4);
+			padding: 0 1rem;
+
+			> .dropdown-item {
+				padding-right: 0;
+				margin-left: 0;
+				text-align: center;
+			}
+		}
+
+		p {
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+
+@media screen and (min-width: 760px) {
+	.nav {
+		text-align: center;
+		display: inline-flex;
+	}
+	.nav-link:hover {
+		transform: scale(0.95);
+	}
+	.navbar-expand-sm {
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+	}
+	.navbar-expand-sm .navbar-item-container {
+		flex-direction: row;
+	}
+	.navbar-expand-sm .navbar-item-container .dropdown-menu {
+		position: absolute;
+	}
+	.navbar-expand-sm .navbar-item-container .nav-link {
+		padding-right: 0.5rem;
+		padding-left: 0.5rem;
+	}
+	.navbar-expand-sm > .container {
+		flex-wrap: nowrap;
+	}
+	.navbar-expand-sm .navbar-collapse {
+		display: flex !important;
+		flex-basis: auto;
+	}
+	.navbar-expand-sm .navbar-toggler {
+		display: none;
+	}
+}
