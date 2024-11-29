@@ -45,7 +45,7 @@ header {
 }
 .nav-link {
 	display: block;
-	padding: 0.5rem 1rem;
+	padding: 0.25rem 1rem;
 	transition: all 0.1s ease-out;
 	padding-right: 0;
 	padding-left: 0;
@@ -72,9 +72,9 @@ header {
 	height: 48px;
 	// pixelated looks really bad on smallish screens, I tried it
 	image-rendering: crisp-edges;
-	transition: all 0.5s ease;
+	transition: all 0.5s;
 	&:hover {
-		scale: 110%;
+		transform: scale(1.1);
 	}
 }
 
@@ -109,12 +109,6 @@ header {
 	color: #fff;
 }
 
-#bottomNavbar {
-	display: inline-block;
-	width: auto;
-	margin: auto;
-}
-
 @media screen and (max-width: 760px) {
 	// mobile nav
 	.navbar-item-container {
@@ -127,10 +121,6 @@ header {
 	.nav-item {
 		width: 100%;
 		display: block;
-	}
-	.nav-link {
-		padding-top: 0.25rem;
-		padding-bottom: 0.25rem;
 	}
 	.nav-link > i {
 		width: 26px;
@@ -146,54 +136,6 @@ header {
 	}
 	header {
 		padding-bottom: 0;
-	}
-	// set footer to column display
-	#bottomNavbar {
-		padding: 0;
-		margin: 0;
-
-		.navbar-item-container {
-			margin-top: 0;
-			display: inline;
-			text-align: center;
-		}
-
-		.nav-item {
-			width: 100%;
-		}
-
-		.nav-link {
-			display: block;
-
-			i {
-				margin-left: 0 !important;
-			}
-		}
-	}
-	footer {
-		padding: 0.5rem 1rem;
-
-		.navbar .dropdown-toggle::after {
-			transform: rotate(180deg);
-		}
-		.navbar .show .dropdown-toggle::after {
-			transform: rotate(0deg);
-		}
-
-		.navbar .show > .dropdown-menu {
-			background: rgba(0,0,0,0.4);
-			padding: 0 1rem;
-
-			> .dropdown-item {
-				padding-right: 0;
-				margin-left: 0;
-				text-align: center;
-			}
-		}
-
-		p {
-			margin-bottom: 0.5rem;
-		}
 	}
 }
 

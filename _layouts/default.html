@@ -64,6 +64,7 @@ layout: compress
 	<link rel="stylesheet" href="/css/lib/buttons.css">
 	<link rel="stylesheet" href="/css/lib/padding.css">
 	<link rel="stylesheet" href="/css/lib/navbar.css">
+	<link rel="stylesheet" href="/css/lib/footer.css">
 	<!-- must load main css file last (uses styles from other files) -->
 	<link rel="stylesheet" href="/css/main.css">
 </head>
@@ -175,113 +176,174 @@ layout: compress
 
 	<footer>
 		<div id="shadow"></div>
-		<!-- navigation bar -->
-		<nav class="navbar navbar-expand-sm mb-2" id="bottomNavbar">
-			<ul class="navbar-item-container">
-				<li class="nav-item">
-					<a class="nav-link" href="/license">
-						<i class="fas"></i>
-						License
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="/privacy">
-						<i class="fas"></i>
-						Privacy
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="https://docs.faithfulpack.net">
-						<i class="fas"></i>
-						Docs
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="/stats">
-						<i class="fas"></i>
-						Statistics
-					</a>
-				</li>
-
-				<li class="nav-item">
+		<div class="container footer-wrapper">
+			<div class="footer-column footer-main">
+				<a href="/">
+					<img class="footer-wordmark" src="/image/home/navbar-wordmark.png" loading="lazy">
+				</a>
+				<span id="theme-btn" onclick="cycleTheme()" class="nav-link">
+					<i style="margin-right: 5px" class="fas"></i> Auto Theme
+				</span>
+				<a href="mailto:contact@faithfulpack.net">
+					contact@faithfulpack.net
+				</a>
+				<p class="footer-info-text">
+					&copy; {{ site.time | date: '%Y' }} Faithful Resource Pack
+				</p>
+			</div>
+			<div class="footer-container">
+				<div class="footer-column">
+					<h3 class="footer-title"><i class="fas"></i> Info</h3>
 					<a
 						class="nav-link"
-						href="https://translate.faithfulpack.net/"
-						target="_blank"
-						rel="noopener noreferrer"
+						href="/license"
 					>
-						<i style="margin-left: 5px" class="fas"></i>
+						License
+					</a>
+					<a
+						class="nav-link"
+						href="/privacy"
+					>
+						Privacy Policy
+					</a>
+					<a
+						class="nav-link"
+						href="/stats"
+					>
+						Statistics
+					</a>
+					<a
+						class="nav-link"
+						href="https://translate.faithfulpack.net"
+						target="_blank"
+					>
 						Translate
 					</a>
-				</li>
-			</ul>
-			<ul class="navbar-item-container">
-				<li class="nav-item dropup">
-					<span class="nav-link dropdown-toggle" data-toggle="dropdown">
-						<i class="fab"></i>
+					<a
+						class="nav-link"
+						href="https://docs.faithfulpack.net/pages/manuals/branding-guidelines"
+						target="_blank"
+					>
+						Branding
+					</a>
+				</div>
+				<div class="footer-column">
+					<h3 class="footer-title"><i class="fas"></i> Listings</h3>
+					<a
+						class="nav-link"
+						href="https://www.curseforge.com/members/faithful_resource_pack/projects"
+						target="_blank"
+					>
+						CurseForge
+					</a>
+					<a
+						class="nav-link"
+						href="https://modrinth.com/user/Faithful-Resource-Pack"
+						target="_blank"
+					>
+						Modrinth
+					</a>
+					<a
+						class="nav-link"
+						href="https://www.planetminecraft.com/member/faithful_resource_pack"
+						target="_blank"
+					>
+						Planet Minecraft
+					</a>
+					<a
+						class="nav-link"
+						href="https://mcpedl.com/user/faithful-resource-pack"
+						target="_blank"
+					>
+						MCPEDL
+					</a>
+					<a
+						class="nav-link"
+						href="https://github.com/Faithful-Resource-Pack"
+						target="_blank"
+					>
 						GitHub
-					</span>
-					<div class="dropdown-menu dropdown-menu-center">
-						<a
-							class="dropdown-item"
-							href="https://github.com/Faithful-Resource-Pack"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Faithful
-						</a>
-						<a
-							class="dropdown-item"
-							href="https://github.com/ClassicFaithful"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Classic Faithful
-						</a>
-					</div>
-				</li>
-
-				<li class="nav-item dropup">
-					<span class="nav-link dropdown-toggle" data-toggle="dropdown">
-						<i class="fab"></i>
+					</a>
+				</div>
+				<div class="footer-column">
+					<h3 class="footer-title"><i class="fas"></i> Media</h3>
+					<a
+						class="nav-link"
+						href="https://twitter.com/faithfulpack"
+						target="_blank"
+					>
+						Twitter
+					</a>
+					<a
+						class="nav-link"
+						href="https://bsky.app/profile/faithfulpack.bsky.social"
+						target="_blank"
+					>
+						Bluesky
+					</a>
+					<a
+						class="nav-link"
+						href="https://reddit.com/r/faithfulpack"
+						target="_blank"
+					>
+						Reddit
+					</a>
+					<a
+						class="nav-link"
+						href="https://discord.gg/sN9YRQbBv7"
+						target="_blank"
+					>
 						Discord
-					</span>
-					<div class="dropdown-menu dropdown-menu-center">
-						<a
-							class="dropdown-item"
-							href="https://discord.gg/sN9YRQbBv7"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Faithful
-						</a>
-						<a
-							class="dropdown-item"
-							href="https://discord.gg/KSEhCVtg4J"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Classic Faithful
-						</a>
-					</div>
-				</li>
-
-				<li class="nav-item theme-switch-wrapper">
-					<span id="theme-btn" onclick="cycleTheme()" class="nav-link">
-						<i style="margin-right: 5px" class="fas"></i> Auto Theme
-					</span>
-				</li>
-			</ul>
-		</nav>
-		<p>
-			<a href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>
-		</p>
-		<small>&copy; {{ site.time | date: '%Y' }} Faithful Resource Pack</small>
-		<br>
-		<small>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT</small>
+					</a>
+					<a
+						class="nav-link"
+						href="https://discord.gg/KSEhCVtg4J"
+						target="_blank"
+					>
+						CF Discord
+					</a>
+				</div>
+				<div class="footer-column">
+					<h3 class="footer-title"><i class="fas"></i> Resources</h3>
+					<a
+						class="nav-link"
+						href="/faq"
+					>
+						FAQ
+					</a>
+					<a
+						class="nav-link"
+						href="https://docs.faithfulpack.net"
+						target="_blank"
+					>
+						Docs
+					</a>
+					<a
+						class="nav-link"
+						href="https://status.faithfulpack.net"
+						target="_blank"
+					>
+						Status
+					</a>
+					<a
+						class="nav-link"
+						href="/gallery"
+					>
+						Gallery
+					</a>
+					<a
+						class="nav-link"
+						href="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
+						target="_blank"
+					>
+						Contributing
+					</a>
+				</div>
+			</div>
+		</div>
+		<small class="footer-info-text">
+			NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT
+		</small>
 	</footer>
 </body>
 </html>

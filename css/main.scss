@@ -543,13 +543,10 @@ a > .banner:hover {
 		flex-direction: column;
 	}
 }
-.res-grid-6, .res-grid-4, .res-grid-3, .res-grid-2, .grid-2-wide {
+.res-grid-4, .res-grid-3, .res-grid-2, .grid-2-wide {
 	display: grid;
 	grid-gap: 1.5rem;
 	grid-template-columns: repeat(1, 1fr);
-}
-.res-grid-6 {
-	grid-template-columns: repeat(2, 2fr);
 }
 /** CUSTOM SCROLLBAR */
 ::-webkit-scrollbar{
@@ -569,13 +566,10 @@ a > .banner:hover {
 }
 @media screen and (min-width: 760px) {
 	.container {
-		max-width: 720px
+		max-width: 720px;
 	}
 	.res-grid-4, .res-grid-3 {
 		grid-template-columns: repeat(3, 3fr);
-	}
-	.res-grid-6 {
-		grid-template-columns: repeat(4, 4fr);
 	}
 	.grid-2-wide {
 		grid-template-columns: repeat(2, 2fr);
@@ -587,9 +581,6 @@ a > .banner:hover {
 	}
 	.res-grid-4 {
 		grid-template-columns: repeat(4, 4fr);
-	}
-	.res-grid-6 {
-		grid-template-columns: repeat(6, 6fr);
 	}
 }
 @media screen and (min-width: 1200px) {
