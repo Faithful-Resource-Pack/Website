@@ -1,5 +1,4 @@
 _site/
-.idea/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
@@ -8,7 +7,3 @@ debug.log
 .DS_Store
 node_modules/
 .env
-.svelte-kit
-/posts.json
-/build
-/static

@@ -10,7 +10,7 @@
     "start": "pnpm run ji && pnpm run jb && pm2 start \"node backend/index.js\" --name \"WEBSITE\"",
     "dev": "concurrently \"npm:dev-*\"",
     "dev-watch-site": "bundle exec jekyll build --watch",
-    "dev-watch-app": "nodemon --watch backend --watch posts --ignore _site -e js,md,ts backend/index.js"
+    "dev-watch-app": "nodemon --watch backend --ignore _site -e js,md,ts backend/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,13 +24,10 @@
   },
   "homepage": "https://github.com/Faithful-Resource-Pack/Website#readme",
   "dependencies": {
-    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "gray-matter": "^4.0.3"
+    "express": "^4.21.1"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.17",
     "concurrently": "^9.1.0",
     "nodemon": "^3.1.7"
   }
