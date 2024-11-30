@@ -82,7 +82,7 @@ layout: compress
 
 	<header>
 		<!-- navigation bar -->
-		<nav class="navbar navbar-expand-sm">
+		<nav class="navbar-wrapper">
 			<a class="nav-mobile-wordmark" href="/" title="Faithful">
 				<img src="/image/home/navbar-wordmark.png" style="height: 32px" alt="Faithful 32x">
 			</a>
@@ -90,76 +90,63 @@ layout: compress
 			<button
 				class="navbar-toggler"
 				type="button"
-				onclick="document.getElementById('collapsibleNavbar').classList.toggle('show')"
+				onclick="document.getElementById('collapsable-navbar').classList.toggle('show')"
 				aria-label="Menu"
 			>
-				<span class="navbar-toggler-icon"></span>
+				<i class="fas navbar-toggler-icon"></i>
 			</button>
 
-			<div class="navbar-collapse" style="justify-content:center;" id="collapsibleNavbar">
-				<ul class="navbar-item-container">
-					<li class="nav-item">
-						<a class="nav-link" href="/">
-							<i class="fas"></i>
-							Home
-						</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="/downloads">
-							<i class="fas"></i>
-							Downloads
-						</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="/addons">
-							<i class="fas"></i>
-							Add-ons
-						</a>
-					</li>
-
-					<a href="/" title="Faithful" id="navbar-logo">
-						<img
-							class="navbar-logo-img"
-							src="https://database.faithfulpack.net/images/branding/logos/transparent/128/plain_logo.png"
-							alt="Faithful Logo"
-						>
+			<ul class="navbar-container" id="collapsable-navbar">
+				<li class="nav-item">
+					<a class="nav-link" href="/">
+						<i class="fas"></i>
+						Home
 					</a>
+				</li>
 
-					<!-- <li class="nav-item">
-						<span class="nav-link dropdown-toggle" data-toggle="dropdown">
-							<i class="fas"></i>
-							Modding
-						</span>
-						<div class="dropdown-menu dropdown-menu-center">
-							<a class="dropdown-item" href="/mods">Mods</a>
-							<a class="dropdown-item" href="/modpacks">Modpacks</a>
-						</div>
-					</li> -->
+				<li class="nav-item">
+					<a class="nav-link" href="/downloads">
+						<i class="fas"></i>
+						Downloads
+					</a>
+				</li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="/news">
-							<i class="fas"></i>
-							News
-						</a>
-					</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/addons">
+						<i class="fas"></i>
+						Add-ons
+					</a>
+				</li>
 
-					<li class="nav-item">
-						<a class="nav-link" href="https://webapp.faithfulpack.net/" target="_blank" rel="noopener noreferrer">
-							<i class="fas"></i>
-							Web App
-						</a>
-					</li>
+				<a href="/" title="Faithful">
+					<img
+						class="navbar-logo-img"
+						src="https://database.faithfulpack.net/images/branding/logos/transparent/128/plain_logo.png"
+						alt="Faithful Logo"
+					>
+				</a>
 
-					<li class="nav-item">
-						<a class="nav-link" href="/about">
-							<i class="fas"></i>
-							About
-						</a>
-					</li>
-				</ul>
-			</div>
+				<li class="nav-item">
+					<a class="nav-link" href="/news">
+						<i class="fas"></i>
+						News
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="https://webapp.faithfulpack.net/" target="_blank" rel="noopener noreferrer">
+						<i class="fas"></i>
+						Web App
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="/about">
+						<i class="fas"></i>
+						About
+					</a>
+				</li>
+			</ul>
 		</nav>
 	</header>
 
@@ -182,7 +169,7 @@ layout: compress
 					<img class="footer-wordmark" src="/image/home/navbar-wordmark.png" loading="lazy">
 				</a>
 				<span id="theme-btn" onclick="cycleTheme()" class="nav-link">
-					<i style="margin-right: 5px" class="fas"></i> Auto Theme
+					<i class="fas"></i> Auto Theme
 				</span>
 				<a href="mailto:contact@faithfulpack.net">
 					contact@faithfulpack.net

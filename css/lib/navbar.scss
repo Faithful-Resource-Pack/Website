@@ -4,47 +4,39 @@
 // entire header must be sticky (otherwise the text moves without the background)
 header {
 	position: sticky;
-	z-index: 999;
 	top: 0;
+	z-index: 999;
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
-.navbar {
+// wraps both the mobile dropdown bar and the regular navbar
+.navbar-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-between;
-	padding: 0.5rem 0.5rem;
+	justify-content: center;
+	padding: 0.5rem;
 }
-.navbar-item-container {
+// just the items bit
+.navbar-container {
 	display: flex;
-	flex-direction: column;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	flex-basis: 100%;
 	padding-left: 0;
 	margin-bottom: 0;
 	list-style: none;
-	justify-content: center;
-	align-items: center;
 }
 .nav-item {
-	width: 125px;
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
-
-	&.unsized {
-		width: auto;
-	}
-
-	> .nav-link > i {
-		margin-right: 10px;
-	}
-
-	> .nav-link {
-		display: flex;
-		align-items: center;
-	}
+	width: 125px;
 }
+// this is used by the footer as well, change with caution
 .nav-link {
-	display: block;
+	display: flex;
+	align-items: center;
 	padding: 0.25rem 1rem;
 	transition: all 0.1s ease-out;
 	padding-right: 0;
@@ -52,20 +44,12 @@ header {
 	color: rgba(255, 255, 255, 0.5);
 	&:hover, &:focus {
 		color: rgba(255, 255, 255, 0.75);
+		transform: scale(0.95);
 		cursor: pointer;
 	}
-}
-.navbar-collapse:not(.show) {
-	display: none;
-}
-.navbar-item-container .dropdown-menu {
-	position: static;
-	float: none;
-}
-.navbar-collapse {
-	flex-basis: 100%;
-	flex-grow: 1;
-	align-items: center;
+	i {
+		margin-right: 10px;
+	}
 }
 .navbar-logo-img {
 	width: 48px;
@@ -77,98 +61,62 @@ header {
 		transform: scale(1.1);
 	}
 }
-
 .navbar-toggler {
-	padding: 0.25rem 0.75rem;
-	font-size: 1.25rem;
+	padding: 0.5rem 1rem;
 	line-height: 1;
 	background-color: transparent;
 	border: none;
 	color: rgba(255, 255, 255, 0.5);
 }
 .navbar-toggler-icon {
-	display: inline-block;
-	width: 1.5em;
-	height: 1.5em;
 	vertical-align: middle;
-	content: "";
-	background: no-repeat center center;
-	background-size: 100% 100%;
-	background-image:
-		url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+	font-size: 24px;
+	// prevents vuetify retheming it randomly (???)
+	color: rgba(255, 255, 255, 0.5);
 }
 
-.nav-mobile-wordmark {
+// don't display on desktop layout
+.nav-mobile-wordmark, .navbar-toggler {
 	display: none;
 }
 
-.navbar-item-container .show > .nav-link,
-.navbar-item-container .active > .nav-link,
-.navbar-item-container .nav-link.show,
-.navbar-item-container .nav-link.active {
-	color: #fff;
-}
-
+// mobile styles
 @media screen and (max-width: 760px) {
-	// mobile nav
-	.navbar-item-container {
-		text-align: initial;
-		margin-top: 0.5rem;
-	}
-	.navbar {
+	// set wrapper to show wordmark/toggler button on each side
+	.navbar-wrapper {
 		padding: 0.5rem 1rem;
+		justify-content: space-between;
+	}
+	// set items container to left-aligned columns
+	.navbar-container {
+		flex-direction: column;
+		justify-content: flex-start;
+		margin-top: 0.5rem;
+		// handle toggle class
+		&:not(.show) {
+			display: none;
+		}
 	}
 	.nav-item {
+		// ensure content ends up on the start rather than centered
 		width: 100%;
 		display: block;
 	}
+	.nav-link:hover {
+		// disable scaling effect (looks bad on mobile)
+		transform: none;
+	}
+	// uniform width icons to prevent text not lining up
 	.nav-link > i {
 		width: 26px;
-		height: 26px;
 		line-height: 26px;
 		text-align: center;
 	}
-	#navbar-logo {
+	.navbar-logo-img {
 		display: none;
 	}
-	.nav-mobile-wordmark {
+	// show toggler and wordmark
+	.nav-mobile-wordmark, .navbar-toggler {
 		display: block;
-	}
-	header {
-		padding-bottom: 0;
-	}
-}
-
-@media screen and (min-width: 760px) {
-	.nav {
-		text-align: center;
-		display: inline-flex;
-	}
-	.nav-link:hover {
-		transform: scale(0.95);
-	}
-	.navbar-expand-sm {
-		flex-flow: row nowrap;
-		justify-content: flex-start;
-	}
-	.navbar-expand-sm .navbar-item-container {
-		flex-direction: row;
-	}
-	.navbar-expand-sm .navbar-item-container .dropdown-menu {
-		position: absolute;
-	}
-	.navbar-expand-sm .navbar-item-container .nav-link {
-		padding-right: 0.5rem;
-		padding-left: 0.5rem;
-	}
-	.navbar-expand-sm > .container {
-		flex-wrap: nowrap;
-	}
-	.navbar-expand-sm .navbar-collapse {
-		display: flex !important;
-		flex-basis: auto;
-	}
-	.navbar-expand-sm .navbar-toggler {
-		display: none;
 	}
 }

@@ -32,7 +32,7 @@ globalThis.theme = {
 	},
 	get currentThemeHTML() {
 		const { icon, name } = THEME_VALUES[this.currentThemeIndex];
-		return `<i style="margin-right: 5px" class="fas">${icon}</i> ${name}`;
+		return `<i class="fas">${icon}</i> ${name}`;
 	},
 	get nextTheme() {
 		return THEME_VALUES[(this.currentThemeIndex + 1) % THEME_VALUES.length].id;

@@ -28,9 +28,7 @@
 	flex-flow: column nowrap;
 	flex-grow: 1;
 	align-items: flex-start;
-	li {
-		list-style-type: none;
-	}
+	list-style: none;
 }
 
 .footer-main {
@@ -39,7 +37,8 @@
 
 #theme-btn {
 	padding: 1.5rem 0px;
-	font-size: 20px;
+	font-size: 24px;
+	// align-self: center;
 }
 
 .footer-wordmark {
