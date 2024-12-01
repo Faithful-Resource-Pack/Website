@@ -25,7 +25,7 @@ Promise.sleep = (delay, value = undefined) =>
 /**
  * Executes promises one after the others
  * @param {Array<PromiseCallback>} arr Promise array
- * @param {number} throttle Throttle  in ms
+ * @param {number} throttle Throttle in ms
  * @param {number} delay Delay in ms
  * @param {any[]} results Promise results
  * @returns {Promise<any[]>} all results if successful

@@ -7,72 +7,72 @@ permalink: /mods
 
 {% raw %}
 <div id="app">
-  <!-- !!! HTML cannot use self-closing tags -->
-  <broken-page></broken-page>
-  <zip-options ref="zipOptions"></zip-options>
+	<!-- !!! HTML cannot use self-closing tags -->
+	<broken-page></broken-page>
+	<zip-options ref="zipOptions"></zip-options>
 
-  <hr>
+	<hr>
 
-  <h2 class="display-4 my-5 text-center">Download All Textures for Version</h2>
+	<h2 class="display-4 my-5 text-center">Download All Textures for Version</h2>
 
-  <div class="card">
-    <div class="card-body">
-      <minecraft-versions
-        :versions="minecraftVersions"
-        :breakpoints="breakpoints"
-      >
-      </minecraft-versions>
-    </div>
-  </div>
+	<div class="card">
+		<div class="card-body">
+			<minecraft-versions
+				:versions="minecraftVersions"
+				:breakpoints="breakpoints"
+			>
+			</minecraft-versions>
+		</div>
+	</div>
 
-  <hr>
+	<hr>
 
-  <h2 class="display-4 my-5 text-center">Put Together Your Own Pack</h2>
+	<h2 class="display-4 my-5 text-center">Put Together Your Own Pack</h2>
 
-  <local-download ref="localDownload" :canpack="canPackMods"></local-download>
+	<local-download ref="localDownload" :canpack="canPackMods"></local-download>
 
-  <template v-if="isMounted">
-    <button
-      id="DownloadLocally"
-      :disabled="!canPackMods"
-      class="btn block btn-lg btn-primary fancy-card-2x"
-      @click="$refs.localDownload.openConfirmModal(undefined)"
-    >
-      Download Resource Pack
-    </button>
-    <div
-      v-if="modSelection.length != 0 && !canPackMods"
-      class="advice advice-subtitle advice-important text-center"
-    >
-      The versions you have selected are not compatible
-    </div>
+	<template v-if="isMounted">
+		<button
+			id="DownloadLocally"
+			:disabled="!canPackMods"
+			class="btn block btn-lg btn-primary fancy-card-2x"
+			@click="$refs.localDownload.openConfirmModal(undefined)"
+		>
+			Download Resource Pack
+		</button>
 		<div
-      v-if="modSelection.length == 0"
-      class="advice advice-subtitle text-center"
-    >
-      Please select the packs you want with a matching pack version first
-    </div>
-  </template>
+			v-if="modSelection.length != 0 && !canPackMods"
+			class="advice advice-subtitle advice-important text-center"
+		>
+			The versions you have selected are not compatible
+		</div>
+		<div
+			v-if="modSelection.length == 0"
+			class="advice advice-subtitle text-center"
+		>
+			Please select the packs you want with a matching pack version first
+		</div>
+	</template>
 
-  <br>
+	<br>
 
-  <div class="card">
-    <div class="search-bar-container">
-      <input
-        id="SearchBar"
-        class="fancy-card-1x"
-        type="text"
-        placeholder="Search for mods or Minecraft version..."
-        title="Type something"
-        v-model="form.search"
-      >
-      <div class="advice">{{ searchAdvice }}</div>
-    </div>
+	<div class="card">
+		<div class="search-bar-container">
+			<input
+				id="SearchBar"
+				class="fancy-card-1x"
+				type="text"
+				placeholder="Search for mods or Minecraft version..."
+				title="Type something"
+				v-model="form.search"
+			>
+			<div class="advice">{{ searchAdvice }}</div>
+		</div>
 
-    <h3 v-if='filteredMods.length == 0' id="noresults" class="text-center" v-html="emptyTable"></h3>
+		<h3 v-if='filteredMods.length == 0' id="noresults" class="text-center" v-html="emptyTable"></h3>
 
-    <minecraft-mod-list :mods="filteredMods"></minecraft-mod-list>
-  </div>
+		<minecraft-mod-list :mods="filteredMods"></minecraft-mod-list>
+	</div>
 </div>
 {% endraw %}
 

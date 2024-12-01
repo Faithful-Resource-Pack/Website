@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 									v-if="addon.options.optifine"
 								>
 									Requires <a href="https://optifine.net/downloads" target="_blank">OptiFine</a> or
-									an <a href="https://optifine.alternatives.lambdaurora.dev/"  target="_blank">equivalent mod</a>
+									an <a href="https://optifine.alternatives.lambdaurora.dev/" target="_blank">equivalent mod</a>
 								</addon-flag>
 								<addon-flag
 									type="java"

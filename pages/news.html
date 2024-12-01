@@ -7,82 +7,82 @@ permalink: /news
 
 {% raw %}
 <div id="news">
-  <h3 v-if="loading" class="text-center">Loading…</h3>
-  <h3
-    v-else-if="!posts.length"
-    class="text-center"
-  >
-    {{ error ? `Error: ${error}` : "No posts found" }}
-  </h3>
-  <div v-else class="grid-2-wide pb-5">
-    <a class="card img-card" :href="firstPost.permalink">
-      <img
-        :src="firstPost.header_img || 'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'"
-        loading="lazy"
-      >
-    </a>
-    <div class="flex-down">
-      <a :href="firstPost.permalink" class="underline-hover">
-        <h1>{{ firstPost.title }}</h1>
-      </a>
-      <p class="text-truncate" v-html="firstPost.description"></p>
-      <a class="btn block btn-dark" :href="firstPost.permalink">Read More</a>
-    </div>
-  </div>
+	<h3 v-if="loading" class="text-center">Loading…</h3>
+	<h3
+		v-else-if="!posts.length"
+		class="text-center"
+	>
+		{{ error ? `Error: ${error}` : "No posts found" }}
+	</h3>
+	<div v-else class="grid-2-wide pb-5">
+		<a class="card img-card" :href="firstPost.permalink">
+			<img
+				:src="firstPost.header_img || 'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'"
+				loading="lazy"
+			>
+		</a>
+		<div class="flex-down">
+			<a :href="firstPost.permalink" class="underline-hover">
+				<h1>{{ firstPost.title }}</h1>
+			</a>
+			<p class="text-truncate" v-html="firstPost.description"></p>
+			<a class="btn block btn-dark" :href="firstPost.permalink">Read More</a>
+		</div>
+	</div>
 
-  <hr>
+	<hr>
 
-  <div class="res-grid-3">
-    <article-card
-      v-for="post in restPosts"
-      :key="post.id"
-      :href="post.permalink"
-      :image="post.header_img"
-      :title="post.title"
-    ></article-card>
-  </div>
+	<div class="res-grid-3">
+		<article-card
+			v-for="post in restPosts"
+			:key="post.id"
+			:href="post.permalink"
+			:image="post.header_img"
+			:title="post.title"
+		></article-card>
+	</div>
 </div>
 {% endraw %}
 
 <script>
-  const MAX_DESCRIPTION_LENGTH = 270;
-  document.addEventListener("DOMContentLoaded", () => {
-    const app = Vue.createApp({
-      components: {
-        ArticleCard: Vue.defineAsyncComponent(() => import("/js/components/article-card.js")),
-      },
-      data() {
-        return {
-          posts: [],
-          loading: true,
-          error: null,
-        };
-      },
-      computed: {
-        firstPost() {
-          return this.posts[0];
-        },
-        restPosts() {
-          if (!this.posts) return [];
-          return this.posts.slice(1);
-        },
-      },
-      created() {
-        fetch('https://api.faithfulpack.net/v2/posts/approved')
-          .then((res) => res.json())
-          .then((res) => {
-            this.posts = Object.values(res).sort((a, b) => new Date(b.date) - new Date(a.date));
-          })
-          .catch((err) => {
-            this.error = err;
-            this.posts = [];
-            console.error(err)
-          })
-          .finally(() => {
-            this.loading = false;
-          });
-      }
-    });
-    app.mount("#news");
-  })
+	const MAX_DESCRIPTION_LENGTH = 270;
+	document.addEventListener("DOMContentLoaded", () => {
+		const app = Vue.createApp({
+			components: {
+				ArticleCard: Vue.defineAsyncComponent(() => import("/js/components/article-card.js")),
+			},
+			data() {
+				return {
+					posts: [],
+					loading: true,
+					error: null,
+				};
+			},
+			computed: {
+				firstPost() {
+					return this.posts[0];
+				},
+				restPosts() {
+					if (!this.posts) return [];
+					return this.posts.slice(1);
+				},
+			},
+			created() {
+				fetch('https://api.faithfulpack.net/v2/posts/approved')
+					.then((res) => res.json())
+					.then((res) => {
+						this.posts = Object.values(res).sort((a, b) => new Date(b.date) - new Date(a.date));
+					})
+					.catch((err) => {
+						this.error = err;
+						this.posts = [];
+						console.error(err)
+					})
+					.finally(() => {
+						this.loading = false;
+					});
+			}
+		});
+		app.mount("#news");
+	})
 </script>

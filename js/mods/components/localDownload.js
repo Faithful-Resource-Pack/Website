@@ -305,12 +305,12 @@ export default {
 			// we need to multiply duration by percent
 
 			/*
-			 *  durationInMs = diff from start to now as ms
+			 * durationInMs = diff from start to now as ms
 			 *
-			 *  durationInMs | percent
-			 *  totalDurInMs | 100
+			 * durationInMs | percent
+			 * totalDurInMs | 100
 			 *
-			 *  timeLeftInMs = totalDurInMs - durationMs
+			 * timeLeftInMs = totalDurInMs - durationMs
 			 */
 
 			const durationInMs = moment
