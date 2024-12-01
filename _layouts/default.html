@@ -52,9 +52,9 @@ layout: compress
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/solid.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/brands.min.css">
 
-	<link rel="stylesheet" href="" id="theme">
+	<link rel="stylesheet" href="" id="theme-css">
 	<!-- Load theme file as soon as possible, rest of script is only needed later -->
-	<script type="module">const currentTheme=localStorage.getItem("theme")||"auto";document.getElementById("theme").href=currentTheme==='dark'||(currentTheme==='auto'&&matchMedia("(prefers-color-scheme: dark)").matches)?"/css/dark.css":"/css/light.css";</script>
+	<script type="module">const currentTheme=localStorage.getItem("theme")||"auto";document.getElementById("theme-css").href=currentTheme==='dark'||(currentTheme==='auto'&&matchMedia("(prefers-color-scheme: dark)").matches)?"/css/dark.css":"/css/light.css";</script>
 	<!-- Load snow script only in December -->
 	<script>if(new Date().getMonth()===11&&window.matchMedia("(prefers-reduced-motion: no-preference)").matches){const script=document.createElement("script");script.type="module";script.src="/js/snow.js";document.head.appendChild(script);}</script>
 
@@ -62,8 +62,6 @@ layout: compress
 
 	<link rel="stylesheet" href="/css/lib/buttons.css">
 	<link rel="stylesheet" href="/css/lib/padding.css">
-	<link rel="stylesheet" href="/css/lib/navbar.css">
-	<link rel="stylesheet" href="/css/lib/footer.css">
 	<!-- must load main css file last (uses styles from other files) -->
 	<link rel="stylesheet" href="/css/main.css">
 </head>
@@ -79,75 +77,7 @@ layout: compress
 		<p class="red banner m-3">Please enable JavaScript for the site to work properly.</p>
 	</noscript>
 
-	<header>
-		<!-- navigation bar -->
-		<nav class="navbar-wrapper">
-			<a class="nav-mobile-wordmark" href="/" title="Faithful">
-				<img src="/image/home/navbar-wordmark.png" style="height: 32px" alt="Faithful 32x">
-			</a>
-
-			<button
-				class="navbar-toggler"
-				type="button"
-				onclick="document.getElementById('collapsable-navbar').classList.toggle('show')"
-				aria-label="Menu"
-			>
-				<i class="fas navbar-toggler-icon"></i>
-			</button>
-
-			<ul class="navbar-container" id="collapsable-navbar">
-				<li class="nav-item">
-					<a class="nav-link" href="/">
-						<i class="fas"></i>
-						Home
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="/downloads">
-						<i class="fas"></i>
-						Downloads
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="/addons">
-						<i class="fas"></i>
-						Add-ons
-					</a>
-				</li>
-
-				<a href="/" title="Faithful">
-					<img
-						class="navbar-logo-img"
-						src="https://database.faithfulpack.net/images/branding/logos/transparent/128/plain_logo.png"
-						alt="Faithful Logo"
-					>
-				</a>
-
-				<li class="nav-item">
-					<a class="nav-link" href="/news">
-						<i class="fas"></i>
-						News
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="https://webapp.faithfulpack.net/" target="_blank" rel="noopener noreferrer">
-						<i class="fas"></i>
-						Web App
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="/about">
-						<i class="fas"></i>
-						About
-					</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
+	{%- include navbar.html -%}
 
 	<main class="foreground">
 		<!-- Page content, centered -->
@@ -160,176 +90,6 @@ layout: compress
 		{%- endif -%}
 	</main>
 
-	<footer>
-		<div id="shadow"></div>
-		<div class="container footer-wrapper">
-			<div class="footer-column footer-main">
-				<a href="/">
-					<img class="footer-wordmark" src="/image/home/navbar-wordmark.png" loading="lazy">
-				</a>
-				<span id="theme-btn" onclick="cycleTheme()" class="nav-link">
-					<i class="fas"></i> Auto Theme
-				</span>
-				<a href="mailto:contact@faithfulpack.net">
-					contact@faithfulpack.net
-				</a>
-				<p class="footer-info-text">
-					&copy; {{ site.time | date: '%Y' }} Faithful Resource Pack
-				</p>
-			</div>
-			<div class="footer-container">
-				<div class="footer-column">
-					<h3 class="footer-title"><i class="fas"></i> Info</h3>
-					<a
-						class="nav-link"
-						href="/license"
-					>
-						License
-					</a>
-					<a
-						class="nav-link"
-						href="/privacy"
-					>
-						Privacy Policy
-					</a>
-					<a
-						class="nav-link"
-						href="/stats"
-					>
-						Statistics
-					</a>
-					<a
-						class="nav-link"
-						href="https://translate.faithfulpack.net"
-						target="_blank"
-					>
-						Translate
-					</a>
-					<a
-						class="nav-link"
-						href="https://docs.faithfulpack.net/pages/manuals/branding-guidelines"
-						target="_blank"
-					>
-						Branding
-					</a>
-				</div>
-				<div class="footer-column">
-					<h3 class="footer-title"><i class="fas"></i> Listings</h3>
-					<a
-						class="nav-link"
-						href="https://www.curseforge.com/members/faithful_resource_pack/projects"
-						target="_blank"
-					>
-						CurseForge
-					</a>
-					<a
-						class="nav-link"
-						href="https://modrinth.com/user/Faithful-Resource-Pack"
-						target="_blank"
-					>
-						Modrinth
-					</a>
-					<a
-						class="nav-link"
-						href="https://www.planetminecraft.com/member/faithful_resource_pack"
-						target="_blank"
-					>
-						Planet Minecraft
-					</a>
-					<a
-						class="nav-link"
-						href="https://mcpedl.com/user/faithful-resource-pack"
-						target="_blank"
-					>
-						MCPEDL
-					</a>
-					<a
-						class="nav-link"
-						href="https://github.com/Faithful-Resource-Pack"
-						target="_blank"
-					>
-						GitHub
-					</a>
-				</div>
-				<div class="footer-column">
-					<h3 class="footer-title"><i class="fas"></i> Media</h3>
-					<a
-						class="nav-link"
-						href="https://twitter.com/faithfulpack"
-						target="_blank"
-					>
-						Twitter
-					</a>
-					<a
-						class="nav-link"
-						href="https://bsky.app/profile/faithfulpack.net"
-						target="_blank"
-					>
-						Bluesky
-					</a>
-					<a
-						class="nav-link"
-						href="https://reddit.com/r/faithfulpack"
-						target="_blank"
-					>
-						Reddit
-					</a>
-					<a
-						class="nav-link"
-						href="https://discord.gg/sN9YRQbBv7"
-						target="_blank"
-					>
-						Discord
-					</a>
-					<a
-						class="nav-link"
-						href="https://discord.gg/KSEhCVtg4J"
-						target="_blank"
-					>
-						CF Discord
-					</a>
-				</div>
-				<div class="footer-column">
-					<h3 class="footer-title"><i class="fas"></i> Resources</h3>
-					<a
-						class="nav-link"
-						href="/faq"
-					>
-						FAQ
-					</a>
-					<a
-						class="nav-link"
-						href="https://docs.faithfulpack.net"
-						target="_blank"
-					>
-						Docs
-					</a>
-					<a
-						class="nav-link"
-						href="https://status.faithfulpack.net"
-						target="_blank"
-					>
-						Status
-					</a>
-					<a
-						class="nav-link"
-						href="/gallery"
-					>
-						Gallery
-					</a>
-					<a
-						class="nav-link"
-						href="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
-						target="_blank"
-					>
-						Contributing
-					</a>
-				</div>
-			</div>
-		</div>
-		<small class="footer-info-text">
-			NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT
-		</small>
-	</footer>
+	{%- include footer.html -%}
 </body>
 </html>

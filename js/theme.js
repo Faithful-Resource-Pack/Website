@@ -48,7 +48,7 @@ globalThis.theme = {
 	},
 };
 
-const css = document.getElementById("theme");
+const css = document.getElementById("theme-css");
 const btn = document.getElementById("theme-btn");
 
 // update btn
