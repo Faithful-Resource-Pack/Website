@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			AddonModal: Vue.defineAsyncComponent(() => import("./addon-post-modal.js")),
 			AuthorWidget: Vue.defineAsyncComponent(() => import("./author-widget.js")),
 			AddonFlag: Vue.defineAsyncComponent(() => import("./addon-flag.js")),
-			DiscordButton: Vue.defineAsyncComponent(() => import("../components/discord-button.js")),
+			DiscordButton: Vue.defineAsyncComponent(() =>
+				import("../components/discord-button.js"),
+			),
 		},
 		template: `
 			<div
@@ -158,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				this.modal = true;
 			},
 			compiledMarkdown(markdown) {
-				return marked(markdown, { sanitize: true });
+				return DOMPurify.sanitize(marked.parse(markdown));
 			},
 			searchAuthors() {
 				return Promise.all(

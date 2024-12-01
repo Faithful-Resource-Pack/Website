@@ -24,17 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			</p>
 			<template v-for="(faq, i) in faqs" :key="i">
 				<h2 class="faq-question">{{ faq.question }}</h2>
-				<p v-html="parseMd(faq.answer)" class="faq-answer"></p>
+				<p v-html="compiledMarkdown(faq.answer)" class="faq-answer"></p>
 			</template>
 		`,
 		methods: {
-			parseMd(text) {
-				return marked.parse(
-					text
-						.replace(/in <#[^]+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)") // removes channel links
-						.replace(/<[^]+>/, "") // removes pings
-						.replace("()", ""), // removes stray parentheses left by removing pings)
-				);
+			compiledMarkdown(text) {
+				const cleanedText = text
+					.replace(/in <#[^]+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)") // removes channel links
+					.replace(/<[^]+>/, "") // removes pings
+					.replace("()", ""); // removes stray parentheses left by removing pings)
+				return DOMPurify.sanitize(marked.parse(cleanedText));
 			},
 			startSearch() {
 				if (!this.search || this.search.length < 3) {
