@@ -28,7 +28,7 @@ function downloadFile(url) {
 				);
 			} else {
 				const el = document.getElementById("target");
-				el.href = window.URL.createObjectURL(blob);
+				el.href = URL.createObjectURL(blob);
 				el.download = fileName;
 				el.click();
 			}
