@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			</h1>
 
 			<template v-if="Object.keys(fav).length">
-				<h3 class="text-center">Favorites</h3>
+				<h2 class="text-center">Favorites</h2>
 				<addon-grid favorites :addons="Object.values(fav)" @clickFav="toggleFav" />
 				<br />
-				<h3 class="text-center">All</h3>
+				<h2 class="text-center">All</h2>
 			</template>
 
 			<div class="card card-body">
-				<h4 class="text-center">Search</h4>
+				<h2 class="text-center h4">Search</h2>
 				<div class="checkbox-container">
 					<v-row no-gutters>
 						<v-col
