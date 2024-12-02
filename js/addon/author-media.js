@@ -9,44 +9,37 @@ export default {
 	template: `
 		<a :href="formattedURL" target="_blank" rel="noreferrer">
 			<img
-				v-if="MEDIAS_TO_ICONS[media.type].src"
+				v-if="MEDIAS_TO_ICONS[media.type].type === 'image'"
 				width="24"
 				height="24"
-				:src="MEDIAS_TO_ICONS[media.type].src"
+				:src="MEDIAS_TO_ICONS[media.type].data"
 				:alt="media.type"
 			/>
 			<i
-				v-else-if="MEDIAS_TO_ICONS[media.type].fas"
-				class="fas"
+				v-else
+				:class="MEDIAS_TO_ICONS[media.type || 'Other'].type || 'fas'"
 			>
-				{{ MEDIAS_TO_ICONS[media.type].fas }}
+				{{ MEDIAS_TO_ICONS[media.type || "Other"].data || MEDIAS_TO_ICONS["Other"] }}
 			</i>
-			<i
-				v-else-if="MEDIAS_TO_ICONS[media.type].fab"
-				class="fab"
-			>
-				{{ MEDIAS_TO_ICONS[media.type].fab }}
-			</i>
-			<i v-else class="fab">{{ MEDIAS_TO_ICONS["Other"].fab }}</i>
 		</a>
 	`,
 	data() {
 		return {
 			MEDIAS_TO_ICONS: {
-				CurseForge: { src: "/image/addons/curseforge.svg" },
-				GitHub: { fab: "" },
-				Modrinth: { fas: "" },
-				Patreon: { fab: "" },
-				Paypal: { fab: "" },
-				"Planet Minecraft": { fas: "" },
-				PSN: { fab: "" },
-				Reddit: { fab: "" },
-				Steam: { fab: "" },
-				Twitter: { fab: "" },
-				Website: { fas: "" },
-				Xbox: { fab: "" },
-				YouTube: { fab: "" },
-				Other: { fas: "" },
+				CurseForge: { type: "image", data: "/image/addons/curseforge.svg" },
+				GitHub: { type: "fab", data: "" },
+				Modrinth: { type: "fas", data: "" },
+				Patreon: { type: "fab", data: "" },
+				Paypal: { type: "fab", data: "" },
+				"Planet Minecraft": { type: "fas", data: "" },
+				PSN: { type: "fab", data: "" },
+				Reddit: { type: "fab", data: "" },
+				Steam: { type: "fab", data: "" },
+				Twitter: { type: "fab", data: "" },
+				Website: { type: "fas", data: "" },
+				Xbox: { type: "fab", data: "" },
+				YouTube: { type: "fab", data: "" },
+				Other: { type: "fas", data: "" },
 			},
 		};
 	},

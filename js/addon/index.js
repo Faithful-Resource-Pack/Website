@@ -55,8 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 							<div
 								:style="{
-									'display': $vuetify.display.mdAndUp ? 'block' : 'flex',
-									'align-items': 'baseline'
+									display: $vuetify.display.mdAndUp ? 'block' : 'flex',
+									flexFlow: 'row wrap',
+									alignItems: 'baseline'
 								}"
 							>
 								<v-row v-for="(author, index) in authors">

@@ -8,6 +8,7 @@ import {
 	embedDescription,
 	NOT_FOUND_PAGE,
 	replaceTemplateToken,
+	listify,
 } from "./util.js";
 
 const ADDON_PAGE = join(BASE_JEKYLL_PATH, "addon.html");
@@ -27,10 +28,11 @@ async function loadAddonPage(addon) {
 
 	// single author returns object, multiple returns array of objects
 	const authors = Array.isArray(users) ? users : [users];
-	replacedData.authors = authors
-		.map((user) => user.username)
-		.filter((e) => e)
-		.join(", ");
+
+	// only include authors with usernames
+	replacedData.authors = listify(
+		authors.map((user) => user.username).filter((username) => username),
+	);
 
 	const headerURL =
 		addon.files.find((el) => el.use === "header")?.source || "/image/home/og_logo.png";
@@ -52,7 +54,10 @@ async function loadAddonPage(addon) {
 	//! please use Node v15+ for support of replaceAll
 	data = data
 		.replaceAll("'" + replaceTemplateToken("data.addon") + "'", JSON.stringify(addon))
-		.replaceAll("'" + replaceTemplateToken("data.authors") + "'", JSON.stringify(authors))
+		.replaceAll(
+			"'" + replaceTemplateToken("data.authors") + "'",
+			JSON.stringify(authors || "Anonymous"),
+		)
 		.replaceAll("'" + replaceTemplateToken("data.slug") + "'", JSON.stringify(addon.slug))
 		.replaceAll("'" + replaceTemplateToken("data.files") + "'", JSON.stringify(addon.files));
 
