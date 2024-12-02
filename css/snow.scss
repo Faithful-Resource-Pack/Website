@@ -8,25 +8,15 @@
 	display: none;
 }
 
-.card {
+.card-body {
 	background:
 		url(../image/background/snow_overlay.png), url(../image/background/bg_light_background.png) top center repeat-x;
 	background-position: top center;
 	background-color: #131313, #131313;
 	background-repeat: repeat-x, repeat;
-
-}
-
-.author-widget, .card-widget {
-	padding-top: 20px;
-}
-
-.card-body {
-	margin-top: 15px;
-}
-
-.card.author-widget {
-	padding-top: 1.25rem;
+	> :first-child:not(img) {
+		margin-top: 30px !important;
+	}
 }
 
 .btn {
