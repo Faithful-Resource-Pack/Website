@@ -11,26 +11,29 @@ export default {
 					:key="addon.id"
 					style="margin-bottom: -50px"
 				>
-					<addon-card v-if="addon.approval.status === 'approved'" :addon />
-					<v-btn
-						class="fav-button pa-0"
-						:icon="icon(addon.id)"
-						:color="color(addon.id)"
-						variant="plain"
-						@click="$emit('clickFav', addon)"
-					/>
+					<template v-if="addon.approval.status === 'approved'">
+						<addon-card :addon />
+						<v-btn
+							class="fav-button pa-0"
+							:icon="icon(addon.id)"
+							:color="color(addon.id)"
+							variant="plain"
+							@click="$emit('clickFav', addon)"
+						/>
+					</template>
 				</div>
 			</div>
 		</div>
 	`,
 	props: {
 		addons: {
-			type: Object,
+			type: Array,
 			required: true,
 		},
+		// only used for the main grid
 		addonsFav: {
 			type: Object,
-			required: true,
+			required: false,
 		},
 		favorites: {
 			type: Boolean,
@@ -57,7 +60,7 @@ export default {
 	},
 	computed: {
 		sortedAddons() {
-			const sorted = Object.values(this.addons).sort((a, b) => {
+			return this.addons.sort((a, b) => {
 				const an = a.name.trim().toLowerCase();
 				const bn = b.name.trim().toLowerCase();
 				const ad = a.last_updated || 0;
@@ -74,7 +77,6 @@ export default {
 						return ad === bd ? 0 : ad < bd ? 1 : -1;
 				}
 			});
-			return sorted;
 		},
 	},
 };

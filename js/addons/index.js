@@ -16,13 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			<template v-if="Object.keys(fav).length">
 				<h3 class="text-center">Favorites</h3>
-				<addon-grid
-					:key="Object.keys(fav).length"
-					:addons="fav"
-					favorites
-					:addonsFav="fav"
-					@clickFav="toggleFav"
-				/>
+				<addon-grid favorites :addons="Object.values(fav)" @clickFav="toggleFav" />
 				<br />
 				<h3 class="text-center">All</h3>
 			</template>
@@ -81,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				<br />
 				<div class="addon-search-subtitle">
 					<p>{{ resultCount }} {{ results }} found</p>
-					<br>
+					<br />
 					<v-select
 						hide-details
 						density="compact"
@@ -91,8 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
 				</div>
 			</div>
 			<br />
+			<div v-if="loading" class="card card-body">
+				Loading...
+			</div>
 			<addon-grid
-				:key="Object.keys(fav).length"
+				v-else-if="Object.keys(searchedAddons).length"
 				:addons="searchedAddons"
 				:sort="currentSort"
 				:addonsFav="fav"
@@ -109,17 +106,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			return {
 				addons: [],
 				searchedAddons: [],
+				// store as object for faster lookup (sorting not needed)
+				fav: {},
 				search: "",
 				loading: true,
-				optifine: "/image/icon/optifine.png",
-				bedrock: "/image/icon/bedrock.png",
-				java: "/image/icon/java.png",
 				editions: ["Java", "Bedrock"],
 				res: ["32x", "64x"],
 				selectedEditions: ["Java", "Bedrock"],
 				selectedRes: ["32x", "64x"],
-				fav: {},
-				resultCount: 0,
 				sortMethods,
 				currentSort: sortMethods[0].value,
 			};
@@ -133,63 +127,51 @@ document.addEventListener("DOMContentLoaded", () => {
 				)
 					this.searchedAddons = this.addons;
 				else {
-					this.searchedAddons = this.addons
-						.filter((addon) => {
-							if (
-								!addon.name.toLowerCase().includes(this.search.toLowerCase()) &&
-								this.search !== ""
-							)
-								return false;
+					this.searchedAddons = this.addons.filter((addon) => {
+						if (
+							!addon.name.toLowerCase().includes(this.search.toLowerCase()) &&
+							this.search !== ""
+						)
+							return false;
 
-							// split types of an addon (res + edition : res & edition)
-							const { localRes, localEditions } = addon.options.tags.reduce(
-								(acc, tag) => {
-									if (this.res.includes(tag)) acc.localRes.push(tag);
-									if (this.editions.includes(tag)) acc.localEditions.push(tag);
-									return acc;
-								},
-								{ localRes: [], localEditions: [] },
-							);
+						// split types of an addon (res + edition : res & edition)
+						const { localRes, localEditions } = addon.options.tags.reduce(
+							(acc, tag) => {
+								if (this.res.includes(tag)) acc.localRes.push(tag);
+								if (this.editions.includes(tag)) acc.localEditions.push(tag);
+								return acc;
+							},
+							{ localRes: [], localEditions: [] },
+						);
 
-							// search if edition then check if res
-							if (
-								!localEditions.some((edition) =>
-									this.selectedEditions.includes(edition),
-								)
+						// search if edition then check if res
+						if (
+							!localEditions.some((edition) =>
+								this.selectedEditions.includes(edition),
 							)
-								return false;
-							if (!localRes.some((res) => this.selectedRes.includes(res)))
-								return false;
-							return true;
-						})
-						.reduce((acc, cur) => {
-							acc[cur.id] = cur;
-							return acc;
-						}, {});
+						)
+							return false;
+						if (!localRes.some((res) => this.selectedRes.includes(res))) return false;
+						return true;
+					});
 				}
-
-				this.resultCount = Object.keys(this.searchedAddons).length;
-				this.$forceUpdate(); // force update (because it can be a bit long to process)
 			},
 			clearSearch() {
 				this.search = "";
 				this.startSearch();
 			},
 			toggleFav(addon) {
-				if (!this.fav[addon.id]) {
-					this.fav[addon.id] = addon;
-					window.localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(this.fav));
-				} else {
-					delete this.fav[addon.id];
-					window.localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(this.fav));
-				}
-
-				this.$forceUpdate();
+				if (this.fav[addon.id]) delete this.fav[addon.id];
+				else this.fav[addon.id] = addon;
+				localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(this.fav));
 			},
 		},
 		computed: {
 			results() {
 				return this.resultCount === 1 ? "result" : "results";
+			},
+			resultCount() {
+				return this.searchedAddons.length;
 			},
 		},
 		created() {
@@ -198,16 +180,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				.then((data) => {
 					this.addons = data;
 					this.loading = false;
-					this.resultCount = data.length;
-
-					// fix missing ID (property value)
-					for (const addonID of Object.keys(this.addons))
-						this.addons[addonID].id = addonID;
-
 					this.searchedAddons = this.addons;
 				});
 
-			this.fav = JSON.parse(window.localStorage.getItem(FAVORITE_ADDONS_KEY) || "{}");
+			this.fav = JSON.parse(localStorage.getItem(FAVORITE_ADDONS_KEY) || "{}");
 		},
 	});
 	app.use(Vuetify.createVuetify());
