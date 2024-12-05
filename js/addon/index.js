@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 					<v-col :sm="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
 						<div class="card card-body">
-							<p v-html="compiledMarkdown(addon.description)"></p>
+							<p class="h5" v-html="compiledMarkdown(addon.description)"></p>
 						</div>
 
 						<br />

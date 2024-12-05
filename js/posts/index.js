@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			<hr />
 
 			<div v-if="data.description" class="card card-body">
-				<p class="h4 m-0" v-html="data.description"></p>
+				<p class="h5" v-html="data.description"></p>
 			</div>
 			<post-downloads v-if="data.downloads" :downloads="data.downloads" />
 			<template v-if="data.changelog">
