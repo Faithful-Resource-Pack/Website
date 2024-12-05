@@ -45,6 +45,8 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
 	margin-bottom: 0.5rem;
 	line-height: 1.2;
+	// faithful font really doesn't like bold
+	font-weight: normal !important;
 }
 h1, .h1 {
 	font-size: 2.5rem;

@@ -78,7 +78,7 @@ label, input {
 }
 
 .green-background {
-	background: #22a831 url("/image/background/bg_light_foreground.png") repeat;
+	background: $about-green-dark url("/image/background/bg_light_foreground.png") repeat;
 	background-blend-mode: multiply;
 
 	h1 {
@@ -87,7 +87,7 @@ label, input {
 }
 
 .blue-background {
-	background: #3498db url("/image/background/bg_light_foreground.png") repeat;
+	background: $about-blue-dark url("/image/background/bg_light_foreground.png") repeat;
 	background-blend-mode: multiply;
 
 	h1 {
@@ -96,7 +96,7 @@ label, input {
 }
 
 .pink-background {
-	background: #ac1e63 url("/image/background/bg_light_foreground.png") repeat;
+	background: $about-pink-dark url("/image/background/bg_light_foreground.png") repeat;
 	background-blend-mode: multiply;
 
 	h1 {

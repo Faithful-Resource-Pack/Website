@@ -10,3 +10,11 @@ $border-radius-1x: 12px;
 $border-radius-2x: 24px;
 
 $card-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+
+// declared here because they're used in the dark/light stylesheets as well
+$about-green-dark: #22a831;
+$about-green-light: #76c944;
+$about-blue-dark: #3498db;
+$about-blue-light: #5ebbf9;
+$about-pink-dark: #ac1e63;
+$about-pink-light: #fc53a5;

@@ -101,7 +101,7 @@ label, input {
 	background-blend-mode: screen;
 
 	h1 {
-		color: #76c944 !important;
+		color: $about-green-light !important;
 	}
 }
 
@@ -110,7 +110,7 @@ label, input {
 	background-blend-mode: screen;
 
 	h1 {
-		color: #5ebbf9 !important;
+		color: $about-blue-light !important;
 	}
 }
 
@@ -119,6 +119,6 @@ label, input {
 	background-blend-mode: screen;
 
 	h1 {
-		color: #fc53a5 !important;
+		color: $about-pink-light !important;
 	}
 }
