@@ -23,17 +23,25 @@
 }
 html {
 	font-family: Faithful !important;
-	/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif; */
+	text-rendering: optimizeLegibility;
+	/**
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+	*/
 	line-height: 1.5;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	// improve font rendering
+	-webkit-font-smoothing: subpixel-antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
 }
 body {
 	margin: 0;
 	font-size: 1.1rem;
 	color: #212529;
 }
-h1, h2, h3, h4, h5, h6, h7 {
+h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
 	margin-bottom: 0.5rem;
 	line-height: 1.2;
@@ -132,12 +140,10 @@ button:not(:disabled),
 }
 .display-3 {
 	font-size: 4.8rem;
-	font-weight: 300;
 	line-height: 1.2;
 }
 .display-4 {
 	font-size: 3.5rem;
-	font-weight: 300;
 	line-height: 1.2;
 }
 hr {
@@ -234,7 +240,6 @@ hr {
 	width: 100%;
 	padding: 0.25rem 1.5rem;
 	clear: both;
-	font-weight: 400;
 	text-align: inherit;
 	white-space: nowrap;
 	background-color: transparent;
@@ -274,7 +279,6 @@ hr {
 	display: inline-block;
 	padding: 0.25em 0.4em;
 	font-size: 75%;
-	font-weight: 700;
 	line-height: 1;
 	text-align: center;
 	white-space: nowrap;
@@ -375,9 +379,6 @@ footer #shadow::after {
 footer, footer p {
 	color: rgba(255, 255, 255, .7);
 }
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-	font-weight: 300;
-}
 /** MAIN STUFF */
 .container {
 	width: 100%;
@@ -461,7 +462,6 @@ footer, footer p {
 	margin: 8px;
 	color: rgba(255, 255, 255, .9);
 	font-size: 1.5rem;
-	font-weight: 500;
 }
 .img-card > p {
 	position: absolute;
@@ -470,7 +470,6 @@ footer, footer p {
 	color: rgba(255,255,255,.9);
 	text-shadow: $card-shadow;
 	font-size: 1.3rem;
-	font-weight: 400;
 }
 .img-card-shadow {
 	position: absolute;
@@ -496,8 +495,7 @@ footer, footer p {
 	width: 100%;
 }
 .display {
-	font-weight: 300;
-	line-height: 1.2
+	line-height: 1.2;
 }
 .banner {
 	padding: 16px;
@@ -508,7 +506,6 @@ footer, footer p {
 }
 .banner a {
 	color: #fff !important; // vue moment
-	font-weight: 500;
 }
 a > .banner:hover {
 	text-decoration: underline;
