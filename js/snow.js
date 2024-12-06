@@ -1,11 +1,35 @@
 // source: https://www.kirupa.com/html5/the_falling_snow_effect.htm
 
-// Custom CSS
-const snowCSS = document.createElement("link");
-snowCSS.rel = "stylesheet";
-snowCSS.href = "/css/snow.css";
-snowCSS.type = "text/css";
-document.getElementsByTagName("head")[0].appendChild(snowCSS);
+const SNOW_KEY = "snow";
+
+// add css + disable snow button
+document.addEventListener("DOMContentLoaded", () => {
+	const snowCSS = document.createElement("link");
+	snowCSS.rel = "stylesheet";
+	snowCSS.href = "/css/snow.css";
+	snowCSS.type = "text/css";
+
+
+	let enabled = (localStorage.getItem(SNOW_KEY) || "true") === "true";
+
+	function toggleCSS(state) {
+		localStorage.setItem(SNOW_KEY, String(state));
+		if (state) document.head.appendChild(snowCSS);
+		else snowCSS.remove();
+	}
+	// disable button
+	const disableButton = document.createElement("button");
+	disableButton.addEventListener("click", () => {
+		enabled = !enabled;
+		toggleCSS(enabled);
+	});
+	disableButton.className = "btn btn-primary disable-snow-button";
+	disableButton.prepend("Toggle Snow");
+	document.querySelector("main").append(disableButton);
+
+	// append
+	toggleCSS(enabled);
+});
 
 /** @type {Snowflake[]} Array to store our Snowflake objects */
 const snowflakes = [];
