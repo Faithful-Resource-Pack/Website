@@ -7,7 +7,7 @@ export default {
 		},
 	},
 	template: `
-		<a :href="formattedURL" target="_blank" rel="noreferrer">
+		<a class="author-media" :href="formattedURL" target="_blank" rel="noreferrer">
 			<img
 				v-if="MEDIAS_TO_ICONS[media.type].type === 'image'"
 				width="24"

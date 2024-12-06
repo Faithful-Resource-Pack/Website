@@ -40,98 +40,80 @@ document.addEventListener("DOMContentLoaded", () => {
 					</div>
 				</div>
 
+
 				<br>
 
 				<v-row :style="{ 'display': $vuetify.display.mdAndUp ? 'flex' : 'block' }">
-					<v-col :sm="$vuetify.display.mdAndUp ? 3 : 2" style="max-width: 100%">
-						<!-- Only 1 author -->
-						<template v-if="Object.keys(authors).length === 1">
-							<h3 class="text-center">Author</h3>
-							<author-widget :author="Object.values(authors)[0]" />
-						</template>
-
-						<template v-else>
-							<h3 class="text-center">Authors</h3>
-
-							<div
-								:style="{
-									display: $vuetify.display.mdAndUp ? 'block' : 'flex',
-									flexFlow: 'row wrap',
-									alignItems: 'baseline'
-								}"
-							>
-								<v-row v-for="(author, index) in authors">
-									<v-col style="margin: 0 5px" :key="author.id">
-										<author-widget :author multiple />
-									</v-col>
-								</v-row>
-							</div>
-						</template>
-					</v-col>
-
-					<v-col :sm="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
+					<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
+						<h3 class="text-center">Description</h3>
 						<div class="card card-body">
 							<p class="h5" v-html="compiledMarkdown(addon.description)"></p>
 						</div>
+					</v-col>
+					<v-col class="order-first" :md="$vuetify.display.mdAndUp ? 3 : 2" style="max-width: 100%">
+						<h3 class="text-center">
+							{{ Object.keys(authors).length === 1 ? "Author" : "Authors" }}
+						</h3>
 
-						<br />
-
-						<v-row
-							:style="{ 'flex-direction': $vuetify.display.mdAndUp ? 'row' : 'column' }"
+						<div class="card card-body author-widget-container">
+							<author-widget v-for="author in authors" :key="author.id" :author />
+						</div>
+					</v-col>
+				</v-row>
+				<v-row
+					:style="{ 'flex-direction': $vuetify.display.mdAndUp ? 'row' : 'column' }"
+				>
+					<v-col>
+						<h3 class="text-center">Downloads</h3>
+						<div class="card card-body">
+							<a
+								v-for="file in downloads"
+								:key="file.source"
+								:href="file.source"
+								class="btn btn-dark"
+								style="color: white; width: 100%; margin: 5px 0"
+							>
+								{{ file.name }}
+							</a>
+						</div>
+					</v-col>
+					<v-col>
+						<h3 class="text-center">Information</h3>
+						<addon-flag
+							type="optifine"
+							v-if="addon.options.optifine"
 						>
-							<v-col>
-								<h3 class="text-center">Downloads</h3>
-								<div class="card card-body">
-									<a
-										v-for="file in downloads"
-										:key="file.source"
-										:href="file.source"
-										class="btn btn-dark"
-										style="color: white; width: 100%; margin: 5px 0"
-									>
-										{{ file.name }}
-									</a>
-								</div>
-							</v-col>
-							<v-col>
-								<h3 class="text-center">Information</h3>
-								<addon-flag
-									type="optifine"
-									v-if="addon.options.optifine"
-								>
-									Requires <a href="https://optifine.net/downloads" target="_blank">OptiFine</a> or
-									an <a href="https://optifine.alternatives.lambdaurora.dev/" target="_blank">equivalent mod</a>
-								</addon-flag>
-								<addon-flag
-									type="java"
-									v-if="addon.options.tags && addon.options.tags.includes('Java')"
-								>
-									Supports Java Edition
-								</addon-flag>
+							Requires <a href="https://optifine.net/downloads" target="_blank">OptiFine</a> or
+							an <a href="https://optifine.alternatives.lambdaurora.dev/" target="_blank">equivalent mod</a>
+						</addon-flag>
+						<addon-flag
+							type="java"
+							v-if="addon.options.tags && addon.options.tags.includes('Java')"
+						>
+							Supports Java Edition
+						</addon-flag>
 
-								<addon-flag
-									type="bedrock"
-									v-if="addon.options.tags && addon.options.tags.includes('Bedrock')"
-								>
-									Supports Bedrock Edition
-								</addon-flag>
+						<addon-flag
+							type="bedrock"
+							v-if="addon.options.tags && addon.options.tags.includes('Bedrock')"
+						>
+							Supports Bedrock Edition
+						</addon-flag>
 
-								<v-row>
-									<v-col
-										style="display: flex; align-content: stretch; justify-content: flex-start"
-									>
-										<addon-flag
-											v-if="addon.options.tags && addon.options.tags.includes('32x')"
-											type="32x"
-											square
-										/>
-										<addon-flag
-											v-if="addon.options.tags && addon.options.tags.includes('64x')"
-											type="64x"
-											square
-										/>
-									</v-col>
-								</v-row>
+						<v-row>
+							<v-col
+								style="display: flex; align-content: stretch; justify-content: flex-start"
+							>
+								<addon-flag
+									v-if="addon.options.tags && addon.options.tags.includes('32x')"
+									type="32x"
+									square
+								/>
+								<addon-flag
+									v-if="addon.options.tags && addon.options.tags.includes('64x')"
+									type="64x"
+									square
+								/>
 							</v-col>
 						</v-row>
 					</v-col>
@@ -166,13 +148,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			searchAuthors() {
 				return Promise.all(
 					this.addon.authors.map((authorID) =>
-						fetch(`https://api.faithfulpack.net/v2/users/${authorID}`)
-							.then((res) => res.json())
-							.then((author) => {
-								this.authors.push(author);
-							}),
+						fetch(`https://api.faithfulpack.net/v2/users/${authorID}`).then((res) =>
+							res.json(),
+						),
 					),
-				);
+				).then((res) => {
+					this.authors = res.sort((a, b) => a.username.localeCompare(b.username));
+				});
 			},
 		},
 		computed: {
@@ -188,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				return this.files.filter((el) => el.use === "download");
 			},
 		},
-		beforeMount() {
+		created() {
 			if (!window.slug && this.$route) {
 				fetch(`https://api.faithfulpack.net/v2/addons/${window.slug}`)
 					.then((res) => res.json())
@@ -200,7 +182,9 @@ document.addEventListener("DOMContentLoaded", () => {
 							this.searchAuthors(),
 							fetch(`https://api.faithfulpack.net/v2/addons/${this.addon.id}`)
 								.then((res) => res.json())
-								.then((data) => (this.files = data)),
+								.then((data) => {
+									this.files = data;
+								}),
 						]),
 					)
 					.catch((err) => {
