@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				>
 					{{ addon.name }}
 				</h1>
-				<img :src="header" class="fancy-card-2x" style="width: 100%; margin-bottom: 17px">
+				<img :src="header" class="fancy-card-2x" style="width: 100%">
+				<br />
 
 				<addon-modal v-model="modal" :image="modalImage" />
 				<div class="card card-body" v-if="screenshots.length">
@@ -40,8 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					</div>
 				</div>
 
-
-				<br>
+				<br />
 
 				<v-row :style="{ 'display': $vuetify.display.mdAndUp ? 'flex' : 'block' }">
 					<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">

@@ -422,10 +422,7 @@ footer, footer p {
 	overflow: hidden;
 	box-shadow: $card-shadow;
 }
-.btn, .dropdown-menu, *.card *.card, .fancy-card-1x {
-	border-radius: $border-radius-0x;
-}
-*.card, .fancy-card-2x {
+.btn, .dropdown-menu, *.card *.card, .fancy-card-1x, *.card, .fancy-card-2x {
 	border-radius: $border-radius-0x;
 }
 .card-body > :first-child {

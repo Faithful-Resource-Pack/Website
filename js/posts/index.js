@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			DiscordButton: Vue.defineAsyncComponent(() => import("../components/discord-button.js")),
 		},
 		template: `
-			<h2 v-if="data.discontinued" class="red banner">This project has been discontinued.</h2>
-			<h2 v-if="data.title" class="display-3 my-5 text-center">{{ data.title }}</h2>
+			<p v-if="data.discontinued" class="red banner h2">This project has been discontinued.</p>
+			<h1 v-if="data.title" class="display-3 my-5 text-center">{{ data.title }}</h1>
 			<template v-if="data.header_img">
-				<img class="fancy-card-1x" style="width: 100%" :src="data.header_img" alt="">
+				<img :src="data.header_img" class="fancy-card-2x" style="width: 100%">
 				<br />
 			</template>
 
