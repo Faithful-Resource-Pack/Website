@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				<br />
 				<h2 class="display-4 my-5 text-center">Changelog</h2>
 				<div class="card card-body">
-					<post-changelog :item="data.changelog" :level="3" />
+					<post-changelog :item="data.changelog" />
 				</div>
 			</template>
 			<br />
