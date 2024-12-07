@@ -1,13 +1,5 @@
 /* global location, Vue, MinecraftUtils */
 
-Object.filter = (obj, predicate) =>
-	Object.keys(obj)
-		.filter((key) => predicate(obj[key]))
-		.reduce((acc, cur) => {
-			acc[cur] = obj[cur];
-			return acc;
-		}, {});
-
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
 		components: {

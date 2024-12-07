@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
 		components: {
-			AddonModal: Vue.defineAsyncComponent(() => import("./addon-post-modal.js")),
+			ScreenshotModal: Vue.defineAsyncComponent(() => import("./screenshot-modal.js")),
 			AuthorWidget: Vue.defineAsyncComponent(() => import("./author-widget.js")),
 			AddonFlag: Vue.defineAsyncComponent(() => import("./addon-flag.js")),
 			DiscordButton: Vue.defineAsyncComponent(() =>
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				<img :src="header" class="fancy-card-2x" style="width: 100%">
 				<br />
 
-				<addon-modal v-model="modal" :image="modalImage" />
+				<screenshot-modal v-model="modal" :image="modalImage" />
 				<div class="card card-body" v-if="screenshots.length">
 					<h3 class="text-center">Screenshots</h3>
 					<div class="res-grid-3" v-if="files.length">
@@ -127,11 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				addon: {},
 				files: [],
 				authors: [],
-				optifine: "/image/icon/optifine.png",
-				bedrock: "/image/icon/bedrock.png",
-				java: "/image/icon/java.png",
-				img32: "/image/icon/32.png",
-				img64: "/image/icon/64.png",
 				modal: false,
 				modalImage: "",
 				loading: true,
@@ -145,16 +140,15 @@ document.addEventListener("DOMContentLoaded", () => {
 			compiledMarkdown(markdown) {
 				return DOMPurify.sanitize(marked.parse(markdown));
 			},
-			searchAuthors() {
-				return Promise.all(
+			async searchAuthors() {
+				const authorData = await Promise.all(
 					this.addon.authors.map((authorID) =>
 						fetch(`https://api.faithfulpack.net/v2/users/${authorID}`).then((res) =>
 							res.json(),
 						),
 					),
-				).then((res) => {
-					this.authors = res.sort((a, b) => a.username.localeCompare(b.username));
-				});
+				);
+				this.authors = authorData.sort((a, b) => a.username.localeCompare(b.username));
 			},
 		},
 		computed: {
