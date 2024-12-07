@@ -1,7 +1,7 @@
 export default {
 	name: "post-downloads",
 	template: `
-		<h2 class="display-4 my-5 text-center">Downloads</h2>
+		<h2 class="subtitle my-5 text-center">Downloads</h2>
 		<template v-for="[category, items] in Object.entries(downloads)">
 			<a
 				v-if="isSingleDownload(items)"

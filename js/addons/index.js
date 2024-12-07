@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		template: `
 			<!-- vuetify overrides the bootstrap margin styles so we manually add them -->
 			<h1
-				class="display-3 text-center"
+				class="title text-center"
 				style="margin-top: 3rem !important; margin-bottom: 3rem !important"
 			>
 				Add-ons

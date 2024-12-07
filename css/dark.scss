@@ -20,16 +20,6 @@
 header {
 	background: #0c0c0c url(../image/background/bg_dark_background.png) repeat;
 }
-.dropdown-menu {
-	background-color: #1c1c1c;
-}
-.dropdown-item {
-	color: rgba(255, 255, 255, 0.7);
-}
-.dropdown-item:focus, .dropdown-item:hover {
-	color: rgba(255, 255, 255, 0.7) !important;
-	background-color: #141414 !important;
-}
 ul, ol, li, h1, h2, h3, h4, h5, h6, p {
 	color: rgba(255, 255, 255, 0.7);
 	text-decoration-color: currentColor;

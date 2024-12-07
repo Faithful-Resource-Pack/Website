@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			};
 		},
 		template: `
-			<h1 class="display-3 my-5 text-center">Frequently Asked Questions</h1>
+			<h1 class="title my-5 text-center">Frequently Asked Questions</h1>
 			<v-text-field
 				v-model="search"
 				filled

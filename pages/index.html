@@ -21,7 +21,7 @@ permalink: /
 	</div>
 </div>
 <div class="container" id="app">
-	<h2 class="display-3 mb-4 text-center">Projects</h2>
+	<h2 class="title mb-4 text-center">Projects</h2>
 	<div class="res-grid-2">
 		<project-card
 			name="Faithful 32x"
@@ -106,7 +106,7 @@ permalink: /
 
 	<hr>
 
-	<h2 class="display-3 text-center">Add-ons</h2>
+	<h2 class="title text-center">Add-ons</h2>
 	<div class="res-grid-4">
 		<addon-card v-for="(addon, i) in addons" :key="addon.id" :addon minimal></addon-card>
 		<article-card href="/addons" image="/image/home/see_more.png" title="See More"></article-card>
@@ -114,7 +114,7 @@ permalink: /
 
 	<hr>
 
-	<h2 class="display-3 text-center">News</h2>
+	<h2 class="title text-center">News</h2>
 	<div class="res-grid-3">
 		<!-- no self-closing tags in html -->
 		<article-card

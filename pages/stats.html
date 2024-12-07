@@ -5,8 +5,8 @@ permalink: /stats
 
 {% raw %}
 <div id="stats" class="text-center">
-	<h1 class="display-3 my-5">Faithful Statistics</h1>
-	<h2 class="display-4 my-5">Main Packs</h2>
+	<h1 class="title my-5">Faithful Statistics</h1>
+	<h2 class="subtitle my-5">Main Packs</h2>
 	<div class="res-grid-2">
 		<h3>32x Releases</h3>
 		<h3><span class="badge badge-primary h1">{{ postStats.f32 }}</span></h3>
@@ -14,7 +14,7 @@ permalink: /stats
 		<h3><span class="badge badge-primary h1">{{ postStats.f64 }}</span></h3>
 	</div>
 
-	<h2 class="display-4 my-5">Add-ons</h2>
+	<h2 class="subtitle my-5">Add-ons</h2>
 	<div v-if="Object.keys(addonStats).length === 0 && addons !== null">
 		<i class="fas spin"></i> Loading
 	</div>
@@ -31,7 +31,7 @@ permalink: /stats
 		</template>
 	</div>
 
-	<h2 class="display-4 my-5">Mods</h2>
+	<h2 class="subtitle my-5">Mods</h2>
 	<div v-if="Object.keys(modStats).length === 0 && mods !== null">
 		<i class="fas spin"></i> Loading
 	</div>
