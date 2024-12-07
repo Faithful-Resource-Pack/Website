@@ -39,7 +39,7 @@ export default {
 	data() {
 		return {
 			isOpen: false,
-		}
+		};
 	},
 	methods: {
 		toggleChildren() {
@@ -52,4 +52,4 @@ export default {
 			}
 		},
 	},
-}
+};

@@ -6,7 +6,7 @@ const NAME = "Faithful Mods"; // eslint-disable-line
 export default {
 	name: "zip-options",
 	components: {
-		ClearDatabase: Vue.defineAsyncComponent(() => import("./clearDatabase.js")),
+		ClearDatabase: Vue.defineAsyncComponent(() => import("./clear-database.js")),
 	},
 	template: `
 		<div id="zipOptions">

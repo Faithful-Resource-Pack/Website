@@ -4,7 +4,7 @@
 export default {
 	name: "local-download",
 	components: {
-		CustomModal: Vue.defineAsyncComponent(() => import("./customModal.js")),
+		CustomModal: Vue.defineAsyncComponent(() => import("./custom-modal.js")),
 	},
 	props: ["canpack", "versions"],
 	template: `

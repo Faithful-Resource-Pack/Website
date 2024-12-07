@@ -4,7 +4,7 @@
 export default {
 	name: "minecraft-versions",
 	components: {
-		DownloadMinecraftVersion: Vue.defineAsyncComponent(() => import("./downloadMinecraftVersion.js")),
+		DownloadMinecraftVersion: Vue.defineAsyncComponent(() => import("./download-minecraft-version.js")),
 	},
 	props: {
 		versions: Array,

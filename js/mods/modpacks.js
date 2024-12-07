@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
 		// eslint-disable-line no-unused-vars
 		components: {
-			BrokenPage: Vue.defineAsyncComponent(() => import("./components/brokenPage.js")),
-			ModpackModal: Vue.defineAsyncComponent(() => import("./components/modpackModal.js")),
-			ModpackCard: Vue.defineAsyncComponent(() => import("./components/modpackCard.js")),
-			LocalDownload: Vue.defineAsyncComponent(() => import("./components/localDownload.js")),
-			ZipOptions: Vue.defineAsyncComponent(() => import("./components/zipOptions.js")),
+			BrokenPage: Vue.defineAsyncComponent(() => import("../components/broken-page.js")),
+			ModpackModal: Vue.defineAsyncComponent(() => import("./components/modpack-modal.js")),
+			ModpackCard: Vue.defineAsyncComponent(() => import("./components/modpack-card.js")),
+			LocalDownload: Vue.defineAsyncComponent(() => import("./components/local-download.js")),
+			ZipOptions: Vue.defineAsyncComponent(() => import("./components/zip-options.js")),
 		},
 		data() {
 			return {

@@ -4,10 +4,14 @@
 export default {
 	name: "clear-database",
 	template: `
-		<div>
-			<label for="clearDatabase" class="block pb-1">Database</label>
-			<button class="btn block btn-dark" @click="clearDB">Clear database</button>
-		</div>
+		<label for="clearDatabase" class="block pb-1">Database</label>
+		<button
+			id="clearDatabase"
+			class="btn block btn-dark"
+			@click="clearDB"
+		>
+			Clear database
+		</button>
 	`,
 	methods: {
 		clearDB() {
