@@ -56,7 +56,7 @@ layout: compress
 	<!-- Load theme file as soon as possible, rest of script is only needed later -->
 	<script type="module">const currentTheme=localStorage.getItem("theme")||"auto";document.getElementById("theme-css").href=currentTheme==='dark'||(currentTheme==='auto'&&matchMedia("(prefers-color-scheme: dark)").matches)?"/css/dark.css":"/css/light.css";</script>
 	<!-- Load snow script only in December -->
-	<script>if(new Date().getMonth()===11&&window.matchMedia("(prefers-reduced-motion: no-preference)").matches){const script=document.createElement("script");script.async=true;script.src="/js/snow.js";script.type="module";document.head.append(script);}</script>
+	<script type="module">if(new Date().getMonth()===11&&window.matchMedia("(prefers-reduced-motion: no-preference)").matches){const script=document.createElement("script");script.async=true;script.src="/js/snow.js";script.type="module";document.head.append(script);}</script>
 
 	<script defer src="/js/theme.js" type="module"></script>
 
