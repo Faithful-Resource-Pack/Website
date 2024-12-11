@@ -23,7 +23,7 @@ export default {
 					<label for="compressionSelect" class="block pb-1">Compression level</label>
 					<select
 						id="compressionSelect"
-						class="form-control custom-select fancy-card-1x"
+						class="form-control custom-select fancy-card"
 						v-model="compressionChosen"
 					>
 						<template v-for="(ct, ctindex) in compressionTypes">
@@ -47,7 +47,7 @@ export default {
 						autocomplete="false"
 						name="archiveName"
 						:class="{ empty: !archiveName.trim() }"
-						class="form-control fancy-card-1x"
+						class="form-control fancy-card"
 						v-model="archiveName"
 						id="archiveName"
 						placeholder="Leave empty to generate a unique name"

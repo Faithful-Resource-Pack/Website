@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			<p v-if="data.discontinued" class="red banner h2">This project has been discontinued.</p>
 			<h1 v-if="data.title" class="title my-5 text-center">{{ data.title }}</h1>
 			<template v-if="data.header_img">
-				<img :src="data.header_img" class="fancy-card-2x" style="width: 100%">
+				<img :src="data.header_img" class="header-img" style="width: 100%">
 				<br />
 			</template>
 
