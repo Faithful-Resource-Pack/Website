@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						<div class="card card-body addon-info">
 							<h2 class="text-center">Details</h2>
 							<p class="mb-0">Add-on ID: {{ addon.id }}</p>
-							<p class="mb-0">Last Updated: {{ date }}</p>
+							<p v-if="addon.last_updated" class="mb-0">Last Updated: {{ date }}</p>
 						</div>
 					</v-col>
 				</v-row>
