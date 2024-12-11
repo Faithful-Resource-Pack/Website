@@ -300,12 +300,9 @@ footer, footer p {
 .disabled {
 	pointer-events: none;
 }
-/** FANCY CARDS */
-.btn, .fancy-card-1x, *.card, .fancy-card-2x {
+.btn, *.card, .header-img {
 	overflow: hidden;
 	box-shadow: $card-shadow;
-}
-.btn, *.card *.card, .fancy-card-1x, *.card, .fancy-card-2x {
 	border-radius: $border-radius-0x;
 }
 .card-body > :first-child {

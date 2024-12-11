@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				>
 					{{ addon.name }}
 				</h1>
-				<img :src="header" class="fancy-card-2x" style="width: 100%">
+				<img :src="header" class="header-img" style="width: 100%">
 				<br />
 
 				<screenshot-modal v-model="modal" :image="modalImage" />

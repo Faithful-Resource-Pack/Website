@@ -6,7 +6,7 @@ export default {
 			<a
 				v-if="isSingleDownload(items)"
 				:href="items"
-				class="btn block btn-lg btn-primary fancy-card-2x my-3"
+				class="btn block btn-lg btn-primary my-3"
 			>
 				<i style="margin-right: 10px" :class="getIcon(items).cls">
 					{{ getIcon(items).icon }}
