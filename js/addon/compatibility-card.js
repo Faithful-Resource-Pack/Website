@@ -40,7 +40,7 @@ export default {
 				<v-chip
 					v-if="options.tags.includes('64x')"
 					density="compact"
-					color="#ff0092"
+					color="#ff62bc"
 				>
 					Faithful 64x
 				</v-chip>

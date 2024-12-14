@@ -121,6 +121,11 @@
 	overflow-wrap: anywhere;
 }
 
+.author-username {
+	// reduce spacing between socials and username
+	margin-bottom: 0px;
+}
+
 .author-avatar, .optifine-img {
 	height: 48px;
 }

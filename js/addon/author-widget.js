@@ -14,7 +14,7 @@ export default {
 			<img class="author-avatar" :src="avatar" :alt="altText" />
 			<!-- need div to treat as one unit -->
 			<div>
-				<h5>{{ author.username }}</h5>
+				<h5 class="author-username">{{ author.username }}</h5>
 				<author-media
 					v-for="m in author.media"
 					:key="m.type"
