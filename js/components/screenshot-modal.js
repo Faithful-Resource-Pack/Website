@@ -1,5 +1,5 @@
 export default {
-	name: "addon-modal",
+	name: "screenshot-modal",
 	template: `
 		<v-dialog
 			v-model="modalOpened"
