@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		components: {
 			ScreenshotModal: Vue.defineAsyncComponent(() => import("./screenshot-modal.js")),
 			AuthorWidget: Vue.defineAsyncComponent(() => import("./author-widget.js")),
-			AddonFlag: Vue.defineAsyncComponent(() => import("./addon-flag.js")),
+			CompatibilityCard: Vue.defineAsyncComponent(() => import("./compatibility-card.js")),
 			DiscordButton: Vue.defineAsyncComponent(() =>
 				import("../components/discord-button.js"),
 			),
@@ -45,79 +45,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
 				<v-row :style="{ 'display': $vuetify.display.mdAndUp ? 'flex' : 'block' }">
 					<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
-						<h3 class="text-center">Description</h3>
 						<div class="card card-body">
 							<p class="h5" v-html="compiledMarkdown(addon.description)"></p>
 						</div>
 					</v-col>
 					<v-col class="order-first" :md="$vuetify.display.mdAndUp ? 3 : 2" style="max-width: 100%">
-						<h3 class="text-center">
-							{{ Object.keys(authors).length === 1 ? "Author" : "Authors" }}
-						</h3>
-
-						<div class="card card-body author-widget-container">
+						<compatibility-card :options="addon.options" />
+						<div class="card card-body addon-info">
+							<h2 class="text-center">
+								{{ Object.keys(authors).length === 1 ? "Author" : "Authors" }}
+							</h2>
 							<author-widget v-for="author in authors" :key="author.id" :author />
 						</div>
-					</v-col>
-				</v-row>
-				<v-row
-					:style="{ 'flex-direction': $vuetify.display.mdAndUp ? 'row' : 'column' }"
-				>
-					<v-col>
-						<h3 class="text-center">Downloads</h3>
-						<div class="card card-body">
-							<a
-								v-for="file in downloads"
-								:key="file.source"
-								:href="file.source"
-								class="btn btn-dark"
-								style="color: white; width: 100%; margin: 5px 0"
-							>
-								{{ file.name }}
-							</a>
+						<div class="card card-body addon-info">
+							<h2 class="text-center">Details</h2>
+							<p class="mb-0">Add-on ID: {{ addon.id }}</p>
+							<p v-if="addon.last_updated" class="mb-0">Last Updated: {{ date }}</p>
 						</div>
 					</v-col>
-					<v-col>
-						<h3 class="text-center">Information</h3>
-						<addon-flag
-							type="optifine"
-							v-if="addon.options.optifine"
-						>
-							Requires <a href="https://optifine.net/downloads" target="_blank">OptiFine</a> or
-							an <a href="https://optifine.alternatives.lambdaurora.dev/" target="_blank">equivalent mod</a>
-						</addon-flag>
-						<addon-flag
-							type="java"
-							v-if="addon.options.tags && addon.options.tags.includes('Java')"
-						>
-							Supports Java Edition
-						</addon-flag>
-
-						<addon-flag
-							type="bedrock"
-							v-if="addon.options.tags && addon.options.tags.includes('Bedrock')"
-						>
-							Supports Bedrock Edition
-						</addon-flag>
-
-						<v-row>
-							<v-col
-								style="display: flex; align-content: stretch; justify-content: flex-start"
-							>
-								<addon-flag
-									v-if="addon.options.tags && addon.options.tags.includes('32x')"
-									type="32x"
-									square
-								/>
-								<addon-flag
-									v-if="addon.options.tags && addon.options.tags.includes('64x')"
-									type="64x"
-									square
-								/>
-							</v-col>
-						</v-row>
-					</v-col>
 				</v-row>
+
+				<h2 id="downloads" class="subtitle text-center" style="margin-bottom:3rem;margin-top:2rem;">
+					Downloads
+				</h2>
+				<p v-for="file in downloads" :key="file.source" class="text-center">
+					<a class="btn block btn-lg btn-primary" :href="file.source">{{ file.name }}</a>
+				</p>
 				<br /><br />
 				<discord-button />
 			</div>
@@ -163,40 +116,25 @@ document.addEventListener("DOMContentLoaded", () => {
 			downloads() {
 				return this.files.filter((el) => el.use === "download");
 			},
+			date() {
+				const dateObj = new Date(this.addon.last_updated);
+				const year = dateObj.getFullYear();
+				const month = dateObj.getMonth() + 1; // 0 indexed
+				const day = dateObj.getDate();
+				// mdy for us (expand array if someone else does too)
+				if (["en-US"].includes(navigator.language)) return `${month}/${day}/${year}`;
+				// dmy for everyone else
+				return `${day}/${month}/${year}`;
+			},
 		},
 		created() {
-			if (!window.slug && this.$route) {
-				fetch(`https://api.faithfulpack.net/v2/addons/${window.slug}`)
-					.then((res) => res.json())
-					.then((data) => {
-						this.addon = data[0];
-					})
-					.then(() =>
-						Promise.all([
-							this.searchAuthors(),
-							fetch(`https://api.faithfulpack.net/v2/addons/${this.addon.id}`)
-								.then((res) => res.json())
-								.then((data) => {
-									this.files = data;
-								}),
-						]),
-					)
-					.catch((err) => {
-						console.error(err);
-						this.addon = {};
-					})
-					.finally(() => {
-						this.loading = false;
-						window.scrollTo(0, 0);
-					});
-			} else {
-				this.addon = window.addon;
-				this.searchAuthors();
-				this.files = window.files;
+			if (!window.addon) return;
+			this.addon = window.addon;
+			this.searchAuthors();
+			this.files = window.files;
 
-				this.loading = false;
-				window.scrollTo(0, 0);
-			}
+			this.loading = false;
+			window.scrollTo(0, 0);
 		},
 	});
 	app.use(Vuetify.createVuetify());

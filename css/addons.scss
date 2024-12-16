@@ -97,9 +97,18 @@
 	margin-bottom: auto !important;
 }
 
-// author section
-.author-widget-container {
-	padding: 0.5rem;
+// info section
+.addon-info {
+	padding: 1rem;
+	// 12 * 2
+	margin-bottom: 24px;
+}
+
+.addon-chips {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 1ch;
+	padding-bottom: 10px;
 }
 
 .author-widget {
@@ -112,7 +121,12 @@
 	overflow-wrap: anywhere;
 }
 
-.author-avatar {
+.author-username {
+	// reduce spacing between socials and username
+	margin-bottom: 0px;
+}
+
+.author-avatar, .optifine-img {
 	height: 48px;
 }
 
