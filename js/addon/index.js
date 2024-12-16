@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					</v-col>
 				</v-row>
 
-				<h2 class="subtitle text-center" style="margin-bottom:3rem;margin-top:3rem;">
+				<h2 id="downloads" class="subtitle text-center" style="margin-bottom:3rem;margin-top:2rem;">
 					Downloads
 				</h2>
 				<p v-for="file in downloads" :key="file.source" class="text-center">
