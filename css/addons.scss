@@ -33,17 +33,17 @@
 
 // search page cards
 .fav-button {
-	position: relative;
-	top: calc(-100% + 40px);
-	left: -7px;
+	position: absolute;
+	top: calc(#{$card-padding} - 16px);
+	left: calc(#{$card-padding} - 16px);
 	opacity: 1 !important;
 	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
 .addon-flags {
 	position: absolute;
-	bottom: 5px;
-	right: 5px;
+	bottom: $card-padding;
+	right: $card-padding;
 	display: flex;
 	flex-direction: column;
 
@@ -51,20 +51,21 @@
 		height: 32px;
 		width: 32px;
 		border-radius: $border-radius-0x;
-		margin-bottom: 5px;
+		margin-top: 5px;
 	}
 }
 
 .addon-res {
 	position: absolute;
-	bottom: 25px;
-	left: 8px;
+	bottom: calc(#{$card-padding} + 14px);
+	left: $card-padding;
 	display: flex;
 	flex-direction: row;
 
 	& > p {
-		margin-bottom: 5px;
-		margin-right: 5px;
+		margin-bottom: 0;
+		margin-right: 1ch;
+		color: rgba(255, 255, 255, 0.8);
 	}
 }
 

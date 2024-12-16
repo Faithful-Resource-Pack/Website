@@ -28,13 +28,11 @@ export default {
 	template: `
 		<div class="card card-body addon-grid">
 			<div class="res-grid-3">
-				<div
+				<template
 					v-for="addon in sortedAddons"
 					:key="addon.id"
-					style="margin-bottom: -50px"
 				>
-					<template v-if="addon.approval.status === 'approved'">
-						<addon-card :addon />
+					<addon-card v-if="addon.approval.status === 'approved'" :addon>
 						<v-btn
 							class="fav-button pa-0"
 							:icon="icon(addon.id)"
@@ -42,8 +40,8 @@ export default {
 							variant="plain"
 							@click="$emit('clickFav', addon)"
 						/>
-					</template>
-				</div>
+					</addon-card>
+				</template>
 			</div>
 		</div>
 	`,

@@ -20,6 +20,9 @@ export default {
 			:image="'https://database.faithfulpack.net/images/addons/' + addon.slug + '/header'"
 			:title="addon.name"
 		>
+			<template #nolink>
+				<slot />
+			</template>
 			<div class="addon-flags" v-if="!minimal">
 				<img
 					v-if="addon.options.tags.includes('Java')"

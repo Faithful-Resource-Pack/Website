@@ -16,11 +16,14 @@ export default {
 		},
 	},
 	template: `
-		<a class="card img-card" :href>
-			<img :src="image" :alt="title" loading="lazy" />
-			<div class="img-card-shadow" />
-			<h3 v-if="title">{{ title }}</h3>
-			<slot />
-		</a>
+		<div class="card">
+			<a class="img-card" :href>
+				<img :src="image" :alt="title" loading="lazy" />
+				<div class="img-card-shadow" />
+				<h3 v-if="title">{{ title }}</h3>
+				<slot />
+			</a>
+			<slot name="nolink" />
+		</div>
 	`,
 };

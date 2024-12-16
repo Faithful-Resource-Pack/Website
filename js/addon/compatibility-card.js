@@ -34,6 +34,7 @@ export default {
 					v-if="options.tags.includes('32x')"
 					density="compact"
 					color="#00b0ff"
+					href="/faithful32x"
 				>
 					Faithful 32x
 				</v-chip>
@@ -41,6 +42,7 @@ export default {
 					v-if="options.tags.includes('64x')"
 					density="compact"
 					color="#ff62bc"
+					href="/faithful64x"
 				>
 					Faithful 64x
 				</v-chip>

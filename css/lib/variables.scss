@@ -3,13 +3,14 @@ $primary-dark: #0056b3;
 $primary-hover: #0069d9;
 $primary-hover-border: #0062cc;
 
-$blurple: #5865F2;
+$blurple: #5865f2;
 
 $border-radius-0x: 6px;
 $border-radius-1x: 12px;
 $border-radius-2x: 24px;
 
-$card-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+$card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$card-padding: 12px;
 
 // declared here because they're used in the dark/light stylesheets as well
 $about-green-dark: #22a831;

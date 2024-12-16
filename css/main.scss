@@ -338,15 +338,18 @@ footer, footer p {
 .img-card > h3 {
 	position: absolute;
 	bottom: 0;
-	margin: 8px;
-	color: rgba(255, 255, 255, .9);
+	// https://sass-lang.com/documentation/interpolation/
+	// remove 6px from the bottom to compensate for the intrinsic font padding
+	margin: calc(#{$card-padding} - 6px) $card-padding;
+	color: #fff;
 	font-size: 1.5rem;
+	line-height: 1;
 }
 .img-card > p {
 	position: absolute;
 	bottom: 16px;
 	margin: 8px;
-	color: rgba(255,255,255,.9);
+	color: #fff;
 	text-shadow: $card-shadow;
 	font-size: 1.3rem;
 }
