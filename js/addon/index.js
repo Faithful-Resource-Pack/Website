@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
 		components: {
-			ScreenshotModal: Vue.defineAsyncComponent(() => import("../components/screenshot-modal.js")),
+			ScreenshotModal: Vue.defineAsyncComponent(() =>
+				import("../components/screenshot-modal.js"),
+			),
 			AuthorWidget: Vue.defineAsyncComponent(() => import("./author-widget.js")),
 			CompatibilityCard: Vue.defineAsyncComponent(() => import("./compatibility-card.js")),
 			DiscordButton: Vue.defineAsyncComponent(() =>

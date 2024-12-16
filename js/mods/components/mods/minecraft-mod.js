@@ -1,16 +1,15 @@
 /* global Vue */
-/* eslint no-multi-str: 0 */
 
-const _MOD_NOT_FOUND_MESSAGE = "Found no thumbnail for this mod";
 const _NO_LINK = null;
 const _NO_ICON =
 	"https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png";
-const _NO_ATTACHMENTS = -1;
 
 export default {
 	name: "minecraft-mod",
 	props: {
-		mod: Object,
+		mod: {
+			type: Object,
+		},
 	},
 	template: `
 		<li class="mod-bar" :class="{ 'selected-mod': mod.selected }" v-if="!mod.blacklisted && mod.resource_pack.versions.length > 0">

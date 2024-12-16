@@ -1,12 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
-		data() {
-			return {
-				allFaqs: [],
-				faqs: [],
-				search: null,
-			};
-		},
 		template: `
 			<h1 class="title my-5 text-center">Frequently Asked Questions</h1>
 			<v-text-field
@@ -27,6 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
 				<p v-html="compiledMarkdown(faq.answer)" class="faq-answer"></p>
 			</template>
 		`,
+		data() {
+			return {
+				allFaqs: [],
+				faqs: [],
+				search: null,
+			};
+		},
 		methods: {
 			compiledMarkdown(text) {
 				const cleanedText = text

@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		components: {
 			PostDownloads: Vue.defineAsyncComponent(() => import("./post-downloads.js")),
 			PostChangelog: Vue.defineAsyncComponent(() => import("./post-changelog.js")),
-			DiscordButton: Vue.defineAsyncComponent(() => import("../components/discord-button.js")),
+			DiscordButton: Vue.defineAsyncComponent(() =>
+				import("../components/discord-button.js"),
+			),
 		},
 		template: `
 			<p v-if="data.discontinued" class="red banner h2">This project has been discontinued.</p>

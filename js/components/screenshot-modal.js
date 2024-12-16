@@ -1,14 +1,5 @@
 export default {
 	name: "screenshot-modal",
-	template: `
-		<v-dialog
-			v-model="modalOpened"
-			max-width="1080"
-			style="z-index: 999"
-		>
-			<img :src="image" />
-		</v-dialog>
-	`,
 	props: {
 		modelValue: {
 			type: Boolean,
@@ -19,6 +10,16 @@ export default {
 			required: true,
 		},
 	},
+	emits: ["update:modelValue"],
+	template: `
+		<v-dialog
+			v-model="modalOpened"
+			max-width="1080"
+			style="z-index: 999"
+		>
+			<img :src="image" />
+		</v-dialog>
+	`,
 	data() {
 		return {
 			modalOpened: false,

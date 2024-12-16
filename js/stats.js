@@ -1,5 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
+		template: `
+			<h1 class="title my-5">Faithful Statistics</h1>
+			<h2 class="subtitle my-5">Main Packs</h2>
+			<div class="res-grid-2">
+				<h3>32x Releases</h3>
+				<h3><span class="badge badge-primary h1">{{ postStats.f32 }}</span></h3>
+				<h3>64x Releases</h3>
+				<h3><span class="badge badge-primary h1">{{ postStats.f64 }}</span></h3>
+			</div>
+
+			<h2 class="subtitle my-5">Add-ons</h2>
+			<div v-if="Object.keys(addonStats).length === 0 && addons !== null">
+				<i class="fas spin"></i> Loading
+			</div>
+			<div v-else id="stats-addons" class="res-grid-2">
+				<template v-for="res in Object.keys(addonStats)" :key="res">
+					<div v-for="edi in Object.keys(addonStats[res])" :key="edi">
+						<h3>
+							<span>{{ res + " " + edi + " Add-ons" }}</span>
+							<div class="badge-container">
+								<span class="badge badge-primary h1 m-2">{{ addonStats[res][edi] }}</span>
+							</div>
+						</h3>
+					</div>
+				</template>
+			</div>
+
+			<h2 class="subtitle my-5">Mods</h2>
+			<div v-if="Object.keys(modStats).length === 0 && mods !== null">
+				<i class="fas spin"></i> Loading
+			</div>
+			<div v-else class="res-grid-3">
+				<div v-for="(mKey, index) in Object.keys(messages)" :key="mKey">
+					<h3>{{ messages[mKey] }}</h3>
+					<h3><span class="badge badge-primary h1">{{ modStats[mKey] }}</span></h3>
+				</div>
+			</div>
+		`,
 		data() {
 			return {
 				addons: {},
@@ -69,13 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
 							});
 							return acc;
 						},
-						{ versions: new Set(), storedPacks: 0, },
+						{ versions: new Set(), storedPacks: 0 },
 					);
 				return {
 					versions: versions.size,
 					storedPacks,
 					supportedMods,
-				}
+				};
 			},
 		},
 		created() {

@@ -1,5 +1,22 @@
 export default {
 	name: "post-changelog",
+	props: {
+		item: {
+			type: [String, Object, Array],
+			required: true,
+		},
+		level: {
+			type: Number,
+			required: false,
+			default: 2,
+		},
+		// used when headings should be a list element (nested category)
+		list: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
+	},
 	// recursive component (best way I could find to do this)
 	template: `
 		<li
@@ -21,23 +38,6 @@ export default {
 			</template>
 		</template>
 	`,
-	props: {
-		item: {
-			type: [String, Object, Array],
-			required: true,
-		},
-		level: {
-			type: Number,
-			required: false,
-			default: 2,
-		},
-		// used when headings should be a list element (nested category)
-		list: {
-			type: Boolean,
-			required: false,
-			default: false,
-		}
-	},
 	computed: {
 		title() {
 			return `h${this.level}`;

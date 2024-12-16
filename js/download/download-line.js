@@ -24,6 +24,7 @@ export default {
 			required: true,
 		},
 	},
+	emits: ["toggle"],
 	template: `
 		<tr class="download-item" :class="nested ? 'subitem' : ''" @click="toggleChildren">
 			<td class="show-icon-container" v-if="nested || single"></td>

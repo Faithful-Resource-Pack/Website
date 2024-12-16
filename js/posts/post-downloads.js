@@ -1,5 +1,11 @@
 export default {
 	name: "post-downloads",
+	props: {
+		downloads: {
+			type: Object,
+			required: true,
+		},
+	},
 	template: `
 		<h2 class="subtitle my-5 text-center">Downloads</h2>
 		<template v-for="[category, items] in Object.entries(downloads)">
@@ -25,12 +31,6 @@ export default {
 			</template>
 		</template>
 	`,
-	props: {
-		downloads: {
-			type: Object,
-			required: true,
-		},
-	},
 	methods: {
 		isSingleDownload(item) {
 			return typeof item === "string";

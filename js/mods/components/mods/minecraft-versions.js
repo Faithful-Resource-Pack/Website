@@ -1,14 +1,19 @@
 /* global Vue, MinecraftUtils */
-/* eslint no-multi-str: 0 */
 
 export default {
 	name: "minecraft-versions",
 	components: {
-		DownloadMinecraftVersion: Vue.defineAsyncComponent(() => import("./download-minecraft-version.js")),
+		DownloadMinecraftVersion: Vue.defineAsyncComponent(() =>
+			import("./download-minecraft-version.js"),
+		),
 	},
 	props: {
-		versions: Array,
-		breakpoints: Object,
+		versions: {
+			type: Array,
+		},
+		breakpoints: {
+			type: Object,
+		},
 	},
 	template: `
 		<div id="minecraftVersions">

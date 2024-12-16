@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	snowCSS.href = "/css/snow.css";
 	snowCSS.type = "text/css";
 
-
 	let enabled = (localStorage.getItem(SNOW_KEY) || "true") === "true";
 
 	function toggleCSS(state) {

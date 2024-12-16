@@ -3,6 +3,28 @@ export default {
 	components: {
 		AddonCard: Vue.defineAsyncComponent(() => import("./addon-card.js")),
 	},
+	props: {
+		addons: {
+			type: Array,
+			required: true,
+		},
+		// only used for the main grid
+		addonsFav: {
+			type: Object,
+			required: false,
+		},
+		favorites: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
+		sort: {
+			type: String,
+			required: false,
+			default: "none",
+		},
+	},
+	emits: ["clickFav"],
 	template: `
 		<div class="card card-body addon-grid">
 			<div class="res-grid-3">
@@ -25,27 +47,6 @@ export default {
 			</div>
 		</div>
 	`,
-	props: {
-		addons: {
-			type: Array,
-			required: true,
-		},
-		// only used for the main grid
-		addonsFav: {
-			type: Object,
-			required: false,
-		},
-		favorites: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		sort: {
-			type: String,
-			required: false,
-			default: "none",
-		},
-	},
 	methods: {
 		color(id) {
 			if (this.favorites) return "#ff3333";

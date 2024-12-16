@@ -1,6 +1,6 @@
 /* global XMLHttpRequest, Blob */
 
-const NAME = "Faithful Mods"
+const NAME = "Faithful Mods";
 
 function downloadFile(url) {
 	return new Promise((resolve, reject) => {

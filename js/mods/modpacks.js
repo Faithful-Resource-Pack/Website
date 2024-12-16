@@ -1,10 +1,4 @@
-/* global Vue, MinecraftUtils, location */
-
-const _MODPACK_NOT_FOUND_MESSAGE = "Found no thumbnail for this modpack";
-const _NO_LINK = null;
-const _NO_ICON =
-	"https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png";
-const _NO_ATTACHMENTS = -1;
+/* global Vue, MinecraftUtils */
 
 document.addEventListener("DOMContentLoaded", () => {
 	const app = Vue.createApp({
@@ -72,18 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
 					.then((res) => res.json())
 					.then((json) => {
 						// sort by modpack name value
-						const sortable = [];
-						for (const mod in json) {
-							sortable.push([mod, json[mod]]);
-						}
-						sortable.sort((a, b) => {
+						const sortable = Object.entries(json).sort((a, b) => {
 							if (a[1].name.toLowerCase() < b[1].name.toLowerCase()) return -1;
 							if (a[1].name.toLowerCase() > b[1].name.toLowerCase()) return 1;
 							return 0;
 						});
 
-						const sorted = [];
-						sortable.forEach((item) => sorted.push({ ...item[1], id: item[0] }));
+						const sorted = sortable.map((item) => ({ ...item[1], id: item[0] }));
 
 						sorted.forEach((modpack) => {
 							Object.keys(modpack.versions).forEach((version) => {
@@ -112,9 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					: undefined;
 			},
 			filteredModpacks() {
-				if (this.modpacks.length === 0) {
-					return [];
-				}
+				if (this.modpacks.length === 0) return [];
 
 				if (this.form.search.length >= 1 && !isNaN(parseInt(this.form.search.charAt(0)))) {
 					return this.modpacks.filter((mp) => {
@@ -142,14 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
 					!isNaN(parseInt(this.form.search.charAt(0))) &&
 					this.filteredModpacks.length === 0
 				)
-					return this.sentences.typeAnotherVersion + " " + this.form.search;
+					return `${this.sentences.typeAnotherVersion} ${this.form.search}`;
 				if (this.form.search.length < this.form.minSearchLetters)
-					return String(
-						this.form.minSearchLetters -
-							this.form.search.length +
-							" " +
-							this.sentences.lettersLeft,
-					);
+					return `${this.form.minSearchLetters - this.form.search.length} ${
+						this.sentences.lettersLeft
+					}`;
 				return "";
 			},
 		},
