@@ -146,7 +146,7 @@
       "file_type": "Alpha",
       "file_version": 6,
       "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-64x/releases/download/alpha-6/Compliance_64x_-_Parity_Update.zip",
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Java/releases/download/alpha-6/Compliance_64x_-_Parity_Update.zip",
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3291993"
       }
     },
@@ -155,7 +155,7 @@
       "file_version": 5,
       "github_version": 2,
       "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-64x/releases/download/A5/Faithful-Java-64x-Jappa-Alpha-5.zip",
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Java/releases/download/A5/Faithful-Java-64x-Jappa-Alpha-5.zip",
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3278089"
       }
     },
@@ -186,7 +186,7 @@
       "github_version": 1,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/3164029",
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-Java-64x/releases/download/A1/Compliance.64x.-.1.16.5.-.A1.zip"
+        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Java/releases/download/A1/Compliance.64x.-.1.16.5.-.A1.zip"
       }
     }
   ]
