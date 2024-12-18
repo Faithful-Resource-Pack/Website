@@ -69,35 +69,6 @@
 	}
 }
 
-// information section
-.card-widget {
-	padding: 0;
-	flex-direction: row;
-	align-items: center;
-}
-
-.card-widget-square {
-	height: 66px;
-	max-width: 66px;
-	padding: 0;
-	flex-direction: row;
-	align-items: center;
-}
-
-.addon-flags-big {
-	max-height: 56px;
-	max-width: 56px;
-	margin: 5px !important;
-	border-radius: $border-radius-0x;
-}
-
-.addon-flags-big-text {
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-top: auto;
-	margin-bottom: auto !important;
-}
-
 // info section
 .addon-info {
 	padding: 1rem;
@@ -118,7 +89,7 @@
 	align-items: center;
 	justify-content: flex-start;
 	gap: 1ch;
-	margin: 1ch;
+	margin-top: 1ch;
 	overflow-wrap: anywhere;
 }
 
