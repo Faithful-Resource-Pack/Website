@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					<p class="text-center">The add-on is loading, please wait...</p>
 				</div>
 			</div>
-			<div v-else-if="addon.approval.status === 'approved'">
+			<div v-else-if="addon?.approval.status === 'approved'">
 
 				<!-- vuetify overrides the bootstrap margin styles so we manually add them -->
 				<h1
