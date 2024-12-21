@@ -8,7 +8,7 @@ permalink: /
 
 <!-- outside of container, goes to edge of screen -->
 <div class="hero-container text-center">
-	<div id="upspace"></div>
+	<div class="hero-upspace"></div>
 	<img class="hero-wordmark" src="/image/home/wordmark.png" alt="Faithful Wordmark">
 	<h2 class="hero-tagline">Providing a higher-resolution experience since 2010.</h2>
 	<!-- hack to get the button the same width as the container -->
@@ -131,6 +131,7 @@ permalink: /
 </div>
 
 <script>
+	const MAX_ADDONS_SHOWN = 3;
 	document.addEventListener("DOMContentLoaded", () => {
 		const app = Vue.createApp({
 			components: {
@@ -141,8 +142,6 @@ permalink: /
 			data() {
 				return {
 					addons: [],
-					NB_ITEMS: 3,
-					LOADING_ID: "loading",
 					posts: [],
 				};
 			},
@@ -150,18 +149,18 @@ permalink: /
 				topPosts() {
 					if (!this.posts.length) return [];
 					return this.posts.slice(0, 6);
-				}
+				},
 			},
 			created() {
-				fetch('https://api.faithfulpack.net/v2/addons/approved')
+				fetch("https://api.faithfulpack.net/v2/addons/approved")
 					.then((res) => res.json())
 					.then((val) => {
 						const res = [];
 
 						let items = val;
-						for (let i = 0; i < this.NB_ITEMS; i++) {
-							// splice removes element from list and returns the retrieved elements
+						for (let i = 0; i < MAX_ADDONS_SHOWN; ++i) {
 							// removes duplicate suggested add-ons
+							// | 0 is a faster version of Math.floor
 							const element = items.splice((Math.random() * items.length) | 0, 1)[0];
 							res.push(element);
 						}
@@ -172,14 +171,14 @@ permalink: /
 						this.addons = [];
 					});
 
-				fetch('https://api.faithfulpack.net/v2/posts/approved')
+				fetch("https://api.faithfulpack.net/v2/posts/approved")
 					.then((res) => res.json())
 					.then((res) => {
-						this.posts = Object.values(res).sort((a, b) => new Date(b.date) - new Date(a.date));
+						this.posts = res.sort((a, b) => new Date(b.date) - new Date(a.date));
 					})
 					.catch((err) => console.error(err));
-			}
+			},
 		});
 		app.mount("#app");
-	})
+	});
 </script>

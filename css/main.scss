@@ -34,7 +34,8 @@ html {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	// improve font rendering
 	-webkit-font-smoothing: subpixel-antialiased !important;
-    -moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
 }
 body {
 	margin: 0;
@@ -214,28 +215,9 @@ hr {
 		}
 	}
 }
-@media screen and (max-width: 760px) {
-	.addon-grid {
-		background: transparent !important;
-		padding: 0 !important;
-		box-shadow: none !important;
-
-		& + br {
-			display: none;
-
-			& + h3 {
-				margin-top: 0.5rem;
-			}
-		}
-	}
-}
-
 /*!
  * Bootstrap end
  */
-html {
-	overflow-x: hidden;
-}
 footer {
 	padding: 2rem 1rem;
 	text-align: center;
@@ -422,7 +404,7 @@ a > .banner:hover {
 		flex-direction: column;
 	}
 }
-.res-grid-4, .res-grid-3, .res-grid-2, .grid-2-wide {
+.res-grid-4, .res-grid-3, .res-grid-2, .news-grid {
 	display: grid;
 	grid-gap: 1.5rem;
 	grid-template-columns: repeat(1, 1fr);
@@ -437,7 +419,7 @@ a > .banner:hover {
 /* container size management */
 @media screen and (min-width: 576px) {
 	.container {
-		max-width: 540px
+		max-width: 540px;
 	}
 	.res-grid-4, .res-grid-3, .res-grid-2 {
 		grid-template-columns: repeat(2, 2fr);
@@ -450,7 +432,7 @@ a > .banner:hover {
 	.res-grid-4, .res-grid-3 {
 		grid-template-columns: repeat(3, 3fr);
 	}
-	.grid-2-wide {
+	.news-grid {
 		grid-template-columns: repeat(2, 2fr);
 	}
 }

@@ -14,7 +14,7 @@ permalink: /news
 	>
 		{{ error ? `Error: ${error}` : "No posts found" }}
 	</h3>
-	<div v-else class="grid-2-wide pb-5">
+	<div v-else class="news-grid pb-5">
 		<a class="card img-card" :href="firstPost.permalink">
 			<img
 				:src="firstPost.header_img || 'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'"
