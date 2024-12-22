@@ -14,16 +14,20 @@ export default {
 			type: String,
 			required: false,
 		},
+		alt: {
+			type: String,
+			required: false,
+		}
 	},
 	template: `
 		<div class="card">
 			<a class="img-card" :href>
-				<img :src="image" :alt="title" loading="lazy" />
+				<img :src="image" :alt="alt || title" loading="lazy" />
 				<div class="img-card-shadow" />
 				<h3 v-if="title">{{ title }}</h3>
-				<slot />
+				<slot name="linked" />
 			</a>
-			<slot name="nolink" />
+			<slot name="unlinked" />
 		</div>
 	`,
 };

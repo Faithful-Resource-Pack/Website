@@ -9,7 +9,8 @@
 }
 
 // override container class for flex content
-.content-container {
+.about-container {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -25,7 +26,7 @@
 	}
 }
 
-.faq {
+.faq-section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -45,7 +46,6 @@
 	white-space: nowrap;
 	text-transform: uppercase;
 	line-height: 1;
-	border-radius: $border-radius-0x;
 	transition: all 0.2s ease;
 	&:hover {
 		opacity: 0.66;
@@ -88,7 +88,7 @@
 
 @media (max-width: 1080px) {
 	// center content and display vertically on mobile
-	.content-container {
+	.about-container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;

@@ -14,11 +14,8 @@
 		url(https://database.faithfulpack.net/images/branding/logos/transparent/512/f32_logo.png),
 		url(../image/background/bg_light_foreground.png);
 }
-.card, .download-table-padding {
+.card, .download-table-padding, header {
 	background: #eeede5 url(../image/background/bg_light_background.png) repeat;
-}
-header {
-	background: #eeede5 url(../image/background/bg_light_background.png);
 }
 
 hr {
@@ -58,29 +55,21 @@ label, input {
 	}
 }
 
-.green-background {
-	background: $about-green-dark url("/image/background/bg_light_foreground.png") repeat;
+.green-background, .blue-background, .pink-background {
 	background-blend-mode: multiply;
-
 	h1 {
 		color: #fff;
 	}
+}
+
+.green-background {
+	background: $about-green-dark url("/image/background/bg_light_foreground.png") repeat;
 }
 
 .blue-background {
 	background: $about-blue-dark url("/image/background/bg_light_foreground.png") repeat;
-	background-blend-mode: multiply;
-
-	h1 {
-		color: #fff;
-	}
 }
 
 .pink-background {
 	background: $about-pink-dark url("/image/background/bg_light_foreground.png") repeat;
-	background-blend-mode: multiply;
-
-	h1 {
-		color: #fff;
-	}
 }
