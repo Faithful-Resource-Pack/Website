@@ -50,9 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 						<br />
 
-						<div class="card card-body">
-							<p class="h5" v-html="compiledMarkdown(addon.description)"></p>
-						</div>
+						<div
+							class="card card-body card-text"
+							v-html="compiledMarkdown(addon.description)"
+						/>
 					</v-col>
 					<v-col class="order-first" :md="$vuetify.display.mdAndUp ? 3 : 2" style="max-width: 100%">
 						<compatibility-card :options="addon.options" />
