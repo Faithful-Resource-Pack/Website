@@ -28,25 +28,28 @@ document.addEventListener("DOMContentLoaded", () => {
 				>
 					{{ addon.name }}
 				</h1>
-				<img :src="header" class="header-img" style="width: 100%">
-				<br />
-
-				<screenshot-modal v-model="modal" :image="modalImage" />
-				<div class="card card-body" v-if="screenshots.length">
-					<h3 class="text-center">Screenshots</h3>
-					<div class="res-grid-3" v-if="files.length">
-						<div v-for="(image, index) in screenshots">
-							<div class="card img-card">
-								<img :src="image" @click="openModal(image)">
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<br />
 
 				<v-row :style="{ 'display': $vuetify.display.mdAndUp ? 'flex' : 'block' }">
 					<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
+						<img :src="header" class="header-img" style="width: 100%">
+						<br />
+
+						<screenshot-modal v-model="modal" :image="modalImage" />
+
+						<div class="card card-body" v-if="screenshots.length">
+							<h3 class="text-center">Screenshots</h3>
+							<div class="res-grid-3">
+								<div v-for="(image, index) in screenshots">
+									<div class="card img-card">
+										<img :src="image" @click="openModal(image)">
+									</div>
+								</div>
+							</div>
+							<br />
+						</div>
+
+						<br />
+
 						<div class="card card-body">
 							<p class="h5" v-html="compiledMarkdown(addon.description)"></p>
 						</div>
