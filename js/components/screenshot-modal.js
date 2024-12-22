@@ -17,7 +17,7 @@ export default {
 			max-width="1080"
 			style="z-index: 999"
 		>
-			<img :src="image" />
+			<img class="card" :src="image" />
 		</v-dialog>
 	`,
 	data() {

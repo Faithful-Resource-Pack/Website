@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				</div>
 			</div>
 			<div v-else-if="addon?.approval.status === 'approved'">
+				<screenshot-modal v-model="modal" :image="modalImage" />
 
 				<!-- vuetify overrides the bootstrap margin styles so we manually add them -->
 				<h1
@@ -31,10 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 				<v-row :style="{ 'display': $vuetify.display.mdAndUp ? 'flex' : 'block' }">
 					<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
-						<img :src="header" class="header-img" style="width: 100%">
-						<br />
+						<img :src="header" class="header-img" style="width: 100%" />
 
-						<screenshot-modal v-model="modal" :image="modalImage" />
+						<!-- you need two <br>s for some reason, no idea why -->
+						<br /><br />
 
 						<div class="card card-body" v-if="screenshots.length">
 							<h3 class="text-center">Screenshots</h3>
@@ -45,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 									</div>
 								</div>
 							</div>
-							<br />
 						</div>
 
 						<br />

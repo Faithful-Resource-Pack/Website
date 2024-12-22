@@ -20,7 +20,7 @@ export default {
 					You can also still try to download mod or modpack support from this page, but remember that the site may not work, and we probably cannot and will not help you in troubleshooting.
 				</p>
 			</div>
-			<img id="gone-fishin" src="/image/icon/gone-fishin.png" />
+			<img id="gone-fishin" src="/image/banners/gone_fishin.png" />
 		</div>
 	`,
 };

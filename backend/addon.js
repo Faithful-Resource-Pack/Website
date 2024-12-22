@@ -34,7 +34,8 @@ async function loadAddonPage(addon) {
 		listify(authors.map((user) => user.username).filter((username) => username)) || "Anonymous";
 
 	const headerURL =
-		addon.files.find((el) => el.use === "header")?.source || "/image/home/og_logo.png";
+		addon.files.find((el) => el.use === "header")?.source ||
+		"https://database.faithfulpack.net/images/website/posts/placeholder.jpg";
 
 	// replace header if existing
 	if (headerURL) replacedData.header_img = headerURL;

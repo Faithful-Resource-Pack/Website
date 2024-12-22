@@ -18,4 +18,4 @@ The following files are licensed as follows:
 
 The following files are owned by their respective copyright holders and must be used within each of their Brand Guidelines:
 
-- image/icon/optifine.png
+- image/addons/optifine.png

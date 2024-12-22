@@ -9,7 +9,7 @@ permalink: /
 <!-- outside of container, goes to edge of screen -->
 <div class="hero-container text-center">
 	<div class="hero-upspace"></div>
-	<img class="hero-wordmark" src="/image/home/wordmark.png" alt="Faithful Wordmark">
+	<img class="hero-wordmark" src="/image/wordmarks/faithful.png" alt="Faithful Wordmark">
 	<h2 class="hero-tagline">Providing a higher-resolution experience since 2010.</h2>
 	<!-- hack to get the button the same width as the container -->
 	<div class="container py-3">
@@ -25,8 +25,8 @@ permalink: /
 	<div class="res-grid-2">
 		<project-card
 			name="Faithful 32x"
-			background="/image/home/poster_32.jpg"
-			wordmark="/image/home/f32.png"
+			background="/image/posters/f32.jpg"
+			wordmark="/image/wordmarks/f32.png"
 			description="The original Minecraft texture feel, with double the resolution and double the fun!"
 		>
 			<template #btns>
@@ -35,8 +35,8 @@ permalink: /
 		</project-card>
 		<project-card
 			name="Faithful 64x"
-			background="/image/home/poster_64.jpg"
-			wordmark="/image/home/f64.png"
+			background="/image/posters/f64.jpg"
+			wordmark="/image/wordmarks/f64.png"
 			description="An even more detailed experience with quadruple-resolution textures!"
 		>
 			<template #btns>
@@ -50,8 +50,8 @@ permalink: /
 	<div class="res-grid-2">
 		<project-card
 			name="Classic Faithful 32x"
-			background="/image/home/poster_cf32.jpg"
-			wordmark="/image/home/cf32.png"
+			background="/image/posters/cf32.jpg"
+			wordmark="/image/wordmarks/cf32.png"
 			description="The older yet refreshed look of Faithful, for when you need that nostalgic hit!"
 		>
 			<template #btns>
@@ -63,8 +63,8 @@ permalink: /
 		</project-card>
 		<project-card
 			name="Classic Faithful 64x"
-			background="/image/home/poster_cf64.jpg"
-			wordmark="/image/home/cf64.png"
+			background="/image/posters/cf64.jpg"
+			wordmark="/image/wordmarks/cf64.png"
 			description="The traditional Faithful style with fully refreshed and ultra high-resolution textures!"
 		>
 			<template #btns>
@@ -80,8 +80,8 @@ permalink: /
 	<div class="res-grid-2">
 		<project-card
 			name="Faithful Add-ons"
-			background="/image/home/poster_addons.jpg"
-			wordmark="/image/home/addons.png"
+			background="/image/posters/addons.jpg"
+			wordmark="/image/wordmarks/addons.png"
 			description="A plethora of modifications to all our base packs, ranging from redstone utilities to a rainbow XP bar!"
 		>
 			<template #btns>
@@ -90,8 +90,8 @@ permalink: /
 		</project-card>
 		<project-card
 			name="Faithful Mods"
-			background="/image/home/poster_mods.jpg"
-			wordmark="/image/home/mods.png"
+			background="/image/posters/mods.jpg"
+			wordmark="/image/wordmarks/mods.png"
 			description="A massive catalog of mods and modpack support for retaining the Faithful feel however you choose to play!"
 		>
 			<template #btns>
@@ -109,7 +109,7 @@ permalink: /
 	<h2 class="title text-center">Add-ons</h2>
 	<div class="res-grid-4">
 		<addon-card v-for="(addon, i) in addons" :key="addon.id" :addon minimal></addon-card>
-		<article-card href="/addons" image="/image/home/see_more.png" title="See More"></article-card>
+		<article-card href="/addons" image="/image/addons/see_more.png" title="See More"></article-card>
 	</div>
 
 	<hr>

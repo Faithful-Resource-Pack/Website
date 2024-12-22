@@ -26,7 +26,7 @@ export default {
 	data() {
 		return {
 			MEDIAS_TO_ICONS: {
-				CurseForge: { type: "image", data: "/image/addons/curseforge.svg" },
+				CurseForge: { type: "image", data: "/image/icons/curseforge.svg" },
 				GitHub: { type: "fab", data: "" },
 				Modrinth: { type: "fas", data: "" },
 				Patreon: { type: "fab", data: "" },

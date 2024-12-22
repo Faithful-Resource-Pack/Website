@@ -50,7 +50,7 @@ export default {
 			<template v-if="options.optifine">
 				<h5>Dependencies</h5>
 				<div class="author-widget">
-					<img src="/image/icon/optifine.png" class="optifine-img">
+					<img src="/image/addons/optifine.png" class="optifine-img">
 					<p>
 						Requires <a href="https://optifine.net/downloads" target="_blank">OptiFine</a> or an <a href="https://optifine.alternatives.lambdaurora.dev/" target="_blank">equivalent mod</a>
 					</p>

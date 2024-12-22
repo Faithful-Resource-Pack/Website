@@ -3,8 +3,8 @@ layout: pack
 no_container: true
 title: Classic Faithful 32x Programmer Art
 permalink: /classicfaithful/32x-programmer-art
-banner: /image/banner/cf32pa.jpg
-wordmark: /image/home/cf32pa.png
+banner: /image/banners/cf32pa.jpg
+wordmark: /image/wordmarks/cf32pa.png
 
 text: |
   Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.

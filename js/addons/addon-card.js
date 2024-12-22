@@ -54,9 +54,9 @@ export default {
 	`,
 	data() {
 		return {
-			optifine: "/image/icon/optifine.png",
-			bedrock: "/image/icon/bedrock.png",
-			java: "/image/icon/java.png",
+			optifine: "/image/addons/optifine.png",
+			bedrock: "/image/addons/bedrock.png",
+			java: "/image/addons/java.png",
 		};
 	},
 	computed: {

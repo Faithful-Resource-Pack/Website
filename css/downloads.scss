@@ -27,15 +27,12 @@
 }
 
 .download-table {
-	border-collapse: collapse;
 	width: 100%;
 }
 
 .download-heading {
-	padding: 0.2rem 0.7rem;
-	margin-bottom: 0.7rem;
 	background-color: #343a40;
-	border-radius: $border-radius-1x;
+	border-radius: $border-radius-0x;
 	width: 100%;
 	th {
 		text-align: center;
