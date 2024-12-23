@@ -16,7 +16,7 @@ export default {
 			<span :style="{display: block ? 'block' : 'initial' }">
 				{{ value.version }}
 			</span>
-			<span class="badge badge-light" style="color: black">
+			<span class="badge badge-light" style="color: black; margin-left: 5px">
 				{{ value.count }}
 			</span>
 		</button>

@@ -74,9 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
 				<h2 id="downloads" class="subtitle text-center" style="margin-bottom:3rem;margin-top:2rem;">
 					Downloads
 				</h2>
-				<p v-for="file in downloads" :key="file.source" class="text-center">
-					<a class="btn block btn-lg btn-primary" :href="file.source">{{ file.name }}</a>
-				</p>
+				<a
+					v-for="file in downloads"
+					:key="file.source"
+					:href="file.source"
+					class="btn block btn-lg btn-primary"
+				>
+					{{ file.name }}
+				</a>
 				<br /><br />
 				<discord-button />
 			</div>

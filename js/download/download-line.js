@@ -1,5 +1,8 @@
 export default {
 	name: "download-line",
+	components: {
+		MediaIcon: Vue.defineAsyncComponent(() => import("../components/media-icon.js")),
+	},
 	props: {
 		nested: {
 			type: Boolean,
@@ -53,8 +56,8 @@ export default {
 				:colspan="Object.keys(item.links).length > 1 ? 1 : 2"
 			>
 				<a class="btn btn-dark btn-dl" :href="link">
-					<i :class="buttonData[linkType]?.type || 'fas'">{{ buttonData[linkType]?.icon || "" }}</i>
-					<span class="link-text">{{ buttonData[linkType]?.text || linkType }}</span>
+					<media-icon class="dl-icon" :icon="linkType" />
+					<span class="link-text">{{ textFormat[linkType] || linkType }}</span>
 				</a>
 			</td>
 		</tr>
@@ -62,12 +65,12 @@ export default {
 	data() {
 		return {
 			isOpen: false,
-			buttonData: {
-				download: { icon: "", text: "Download", type: "fas" },
-				curse: { icon: "", text: "Curse", type: "fas" },
-				github: { icon: "", text: "GitHub", type: "fab" },
-				modrinth: { icon: "", text: "Modrinth", type: "fas" },
-				mcpedl: { icon: "", text: "MCPEDL", type: "fas" },
+			textFormat: {
+				download: "Download",
+				curse: "Curse",
+				github: "GitHub",
+				modrinth: "Modrinth",
+				mcpedl: "MCPEDL",
 			},
 			labelColors: {
 				GitHub: "github",

@@ -2,32 +2,17 @@
 <div id="download"></div>
 <script>
 	// todo: merge this with the vue post download component
-	function handleIcon(downloadName) {
-		const name = downloadName.toLowerCase().trim();
-		if (name.includes("github")) return ["fab", ""];
-		if (name.includes("curseforge")) return ["fas", ""];
-		if (["planetminecraft", "pmc", "planet minecraft"].some((search) => name.includes(search)))
-			return ["fas", ""];
-		if (name.includes("mcpedl")) return ["fas", ""];
-		if (name.includes("modrinth")) return ["fas", ""];
-		// default download icon
-		return ["fas", ""];
-	}
-
 	function formatDownloads(downloadObj) {
 		// liquid iteration sucks so I switched it to plain JS
 		const items = Object.entries(downloadObj).map(([category, items]) => {
-			const downloadList = Object.entries(items).map(([name, link]) => {
-				const [className, icon] = handleIcon(name);
-				return `
-					<p class="text-center">
-						<a href="${link}" class="btn block btn-lg btn-primary">
-							<i style="margin-right: 10px" class="${className}">${icon}</i>
-							${name}
-						</a>
-					</p>
-				`;
-			});
+			const downloadList = Object.entries(items).map(
+				([name, link]) =>
+					`<a href="${link}" class="btn block btn-lg btn-primary">
+						<i class="fas"></i>
+						<span style="margin-left: 8px">${name}</span>
+					</a>
+					`,
+			);
 			return `
 				<h1 class="my-3 text-center">${category}</h1>
 				${downloadList.join("")}

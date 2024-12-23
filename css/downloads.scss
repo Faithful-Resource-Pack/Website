@@ -101,6 +101,7 @@ td {
 
 .link-text {
 	padding: 0;
+	margin-left: 8px;
 }
 
 .mobile-details {
@@ -121,9 +122,8 @@ td {
 	width: 110px;
 }
 
-.btn-dl > i {
+i.dl-icon {
 	font-size: small;
-	margin-right: 8px;
 }
 
 // mobile layout
@@ -188,13 +188,9 @@ td {
 		line-height: 30px;
 		text-align: center;
 		padding: 0;
-
-		i {
-			display: block;
-			height: 30px;
-			line-height: 30px;
-			margin-right: 0 !important;
-		}
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.link-text {
