@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			<div v-if="data.description" class="card card-body card-text">
 				<p v-html="data.description" />
 			</div>
-			<post-downloads v-if="data.downloads" :downloads="data.downloads" />
-			<template v-if="data.changelog">
+			<post-downloads v-if="Object.keys(data.downloads).length" :downloads="data.downloads" />
+			<template v-if="Object.keys(data.changelog).length">
 				<br />
 				<h2 class="subtitle my-5 text-center">Changelog</h2>
 				<div class="card card-body">
