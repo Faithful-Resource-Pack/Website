@@ -17,7 +17,7 @@ export default {
 				:href="items"
 				class="btn block btn-lg btn-primary my-3"
 			>
-				<media-icon :icon="items" />
+				<media-icon :icon="items" fallback="download" />
 				<span style="margin-left: 8px">{{ category }}</span>
 			</a>
 			<template v-else>
@@ -28,7 +28,7 @@ export default {
 					:href="link"
 					class="btn block btn-lg btn-primary"
 				>
-					<media-icon :icon="name" />
+					<media-icon :icon="name" fallback="download" />
 					<span style="margin-left: 8px">{{ name }}</span>
 				</a>
 				<br />

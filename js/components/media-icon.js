@@ -50,7 +50,8 @@ export default {
 				case "planetminecraft":
 					return "pmc";
 			}
-			return cleaned || this.fallback;
+			if (Object.keys(this.icons).includes(cleaned)) return cleaned;
+			return this.fallback;
 		},
 		iconType() {
 			return this.icons[this.cleanedIcon]?.type;

@@ -56,7 +56,7 @@ export default {
 				:colspan="Object.keys(item.links).length > 1 ? 1 : 2"
 			>
 				<a class="btn btn-dark btn-dl" :href="link">
-					<media-icon class="dl-icon" :icon="linkType" />
+					<media-icon class="dl-icon" :icon="linkType" fallback="download" />
 					<span class="link-text">{{ textFormat[linkType] || linkType }}</span>
 				</a>
 			</td>
