@@ -12,10 +12,8 @@ layout: default
 
 <div class="container">
 	{%- if page.text -%}
-		<div class="card card-body">
-			<p class="h4 m-0">
-				{{ page.text }}
-			</p>
+		<div class="card card-body card-text">
+			<p>{{ page.text }}</p>
 			{%- if page.buttons -%}
 				<div class="button-row">
 				{%- for button in page.buttons -%}

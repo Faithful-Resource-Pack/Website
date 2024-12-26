@@ -7,13 +7,13 @@ permalink: /news
 
 {% raw %}
 <div id="news">
-	<h3 v-if="loading" class="text-center">Loading…</h3>
-	<h3
+	<h2 v-if="loading" class="text-center">Loading…</h2>
+	<h2
 		v-else-if="!posts.length"
 		class="text-center"
 	>
 		{{ error ? `Error: ${error}` : "No posts found" }}
-	</h3>
+	</h2>
 	<div v-else class="news-grid pb-5">
 		<a class="card img-card" :href="firstPost.permalink">
 			<img
@@ -23,7 +23,7 @@ permalink: /news
 		</a>
 		<div class="flex-down">
 			<a :href="firstPost.permalink" class="underline-hover">
-				<h1>{{ firstPost.title }}</h1>
+				<h2 class="h1">{{ firstPost.title }}</h2>
 			</a>
 			<p class="text-truncate" v-html="firstPost.description"></p>
 			<a class="btn block btn-dark" :href="firstPost.permalink">Read More</a>

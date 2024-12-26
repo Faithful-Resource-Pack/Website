@@ -57,7 +57,8 @@ label, input {
 
 .green-background, .blue-background, .pink-background {
 	background-blend-mode: multiply;
-	h1 {
+	// only use white with a colored background, else use normal text color
+	.about-title {
 		color: #fff;
 	}
 }

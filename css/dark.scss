@@ -81,14 +81,14 @@ label, input {
 	background-blend-mode: screen;
 }
 
-.green-background h1 {
+.green-background .about-title {
 	color: $about-green-light !important;
 }
 
-.blue-background h1 {
+.blue-background .about-title {
 	color: $about-blue-light !important;
 }
 
-.pink-background h1 {
+.pink-background .about-title {
 	color: $about-pink-light !important;
 }

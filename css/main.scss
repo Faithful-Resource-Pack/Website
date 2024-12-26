@@ -493,7 +493,7 @@ a > .banner:hover {
 		--news-display-height: 3;
 	}
 	@media screen and (max-width: 960px) {
-		--news-display-height: 0px;
+		--news-display-height: 0;
 	}
 	@media screen and (max-width: 760px) {
 		--news-display-height: 4;

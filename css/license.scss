@@ -1,19 +1,6 @@
 ---
 ---
 
-.flag {
-	display: flex;
-	text-align: center;
-
-	> div {
-		width: 40px;
-		> img {
-			height: 16px;
-			vertical-align: text-top;
-		}
-	}
-}
-
 ol {
 	list-style-position: outside;
 }
