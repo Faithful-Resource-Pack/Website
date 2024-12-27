@@ -1,7 +1,7 @@
 {
   "1.21.x": [
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 13,
       "latest": true,
       "date": "2024-11-05",
@@ -11,7 +11,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 12,
       "date": "2024-07-05",
       "links": {
@@ -22,7 +22,7 @@
   ],
   "1.20.x": [
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 11,
       "date": "2024-03-06",
       "links": {
@@ -31,7 +31,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 10,
       "date": "2023-12-25",
       "links": {
@@ -40,7 +40,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 9,
       "date": "2023-10-14",
       "links": {
@@ -49,7 +49,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 8,
       "date": "2023-08-27",
       "links": {
@@ -60,7 +60,7 @@
   ],
   "1.19.x": [
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 7,
       "date": "2023-05-27",
       "links": {
@@ -69,7 +69,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 6,
       "date": "2023-04-06",
       "links": {
@@ -78,7 +78,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 5,
       "date": "2023-02-25",
       "links": {
@@ -87,7 +87,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 4,
       "date": "2022-12-8",
       "links": {
@@ -96,7 +96,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 3,
       "date": "2022-10-24",
       "links": {
@@ -105,7 +105,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 2,
       "date": "2022-08-06",
       "links": {
@@ -114,7 +114,7 @@
       }
     },
     {
-      "file_type": "Release",
+      "file_type": "Pre-release",
       "file_version": 1,
       "date": "2022-07-01",
       "links": {
