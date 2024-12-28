@@ -85,31 +85,31 @@ document.addEventListener("DOMContentLoaded", () => {
 		created() {
 			Promise.all([
 				this.fetchData({
-					json: "faithful_java_32x",
+					json: "faithful_32x_java",
 					curse: "436482",
 					name: "Faithful 32x",
 					edition: "Java",
 				}),
 				this.fetchData({
-					json: "faithful_java_64x",
-					curse: "419139",
-					name: "Faithful 64x",
-					edition: "Java",
-				}),
-				this.fetchData({
-					json: "faithful_bedrock_32x",
+					json: "faithful_32x_bedrock",
 					curse: "507188",
 					name: "Faithful 32x",
 					edition: "Bedrock",
 				}),
 				this.fetchData({
-					json: "faithful_bedrock_64x",
+					json: "faithful_64x_java",
+					curse: "419139",
+					name: "Faithful 64x",
+					edition: "Java",
+				}),
+				this.fetchData({
+					json: "faithful_64x_bedrock",
 					curse: "694024",
 					name: "Faithful 64x",
 					edition: "Bedrock",
 				}),
 				this.fetchData({
-					json: "faithful_dungeons_32x",
+					json: "faithful_32x_dungeons",
 					curse: "501546",
 					name: "Faithful 32x for Minecraft Dungeons",
 					discontinued: true,
