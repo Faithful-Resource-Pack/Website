@@ -2,7 +2,7 @@
 /* global MinecraftUtils, idb, JSZip, fetch */
 
 const PATH_PACK_PNG =
-	"https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png";
+	"https://database.faithfulpack.net/images/branding/logos/transparent/hd/mods_logo.png";
 const MCMETA_DESCRIPTION = "Faithful Mods";
 
 /**

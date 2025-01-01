@@ -1,4 +1,10 @@
-<a href="https://faithfulpack.net/" target="_blank"><img src="https://github.com/Faithful-Resource-Pack/Branding/blob/main/logos/transparent/256/plain_logo.png?raw=true" alt="Faithful Logo" align="right"></a>
+<a href="https://faithfulpack.net/" target="_blank">
+  <img
+    src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=256"
+    alt="Faithful Logo"
+    align="right"
+  >
+</a>
 <div align="center">
   <h1>Faithful Website</h1>
   <h3>The official website for the Faithful Project.</h3>

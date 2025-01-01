@@ -2,7 +2,7 @@
 
 const _NO_LINK = null;
 const _NO_ICON =
-	"https://database.faithfulpack.net/images/branding/logos/transparent/512/mods_logo.png";
+	"https://database.faithfulpack.net/images/branding/logos/transparent/hd/mods_logo.png";
 
 export default {
 	name: "minecraft-mod",
