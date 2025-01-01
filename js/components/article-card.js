@@ -8,7 +8,7 @@ export default {
 		image: {
 			type: String,
 			required: false,
-			default: "https://database.faithfulpack.net/images/website/posts/placeholder.jpg",
+			default: "https://database.faithfulpack.net/images/branding/backgrounds/main_background.png?w=360",
 		},
 		title: {
 			type: String,
