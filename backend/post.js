@@ -24,7 +24,7 @@ async function loadPostPage(post) {
 		.replaceAll(
 			"%header_img%",
 			post.header_img ||
-				"https://database.faithfulpack.net/images/branding/backgrounds/main_background.png",
+				"https://database.faithfulpack.net/images/website/posts/placeholder.jpg",
 		)
 		.replaceAll("%postData%", cleanPostData(post));
 	return data;

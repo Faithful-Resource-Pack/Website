@@ -35,7 +35,7 @@ async function loadAddonPage(addon) {
 
 	const headerURL =
 		addon.files.find((el) => el.use === "header")?.source ||
-		"https://database.faithfulpack.net/images/branding/backgrounds/main_background.png";
+		"https://database.faithfulpack.net/images/website/posts/placeholder.jpg";
 
 	// replace header if existing
 	if (headerURL) replacedData.header_img = headerURL;
