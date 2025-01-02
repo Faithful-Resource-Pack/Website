@@ -19,7 +19,7 @@
 			<a :href="firstPost.permalink" class="underline-hover">
 				<h2 class="h1">{{ firstPost.title }}</h2>
 			</a>
-			<p class="text-truncate" v-html="firstPost.description" />
+			<p class="text-truncate" v-html="sanitize(firstPost.description)" />
 			<a class="btn block btn-dark" :href="firstPost.permalink">Read More</a>
 		</div>
 	</div>
@@ -39,6 +39,7 @@
 
 <script>
 import ArticleCard from "~/components/lib/article-card.vue";
+import DOMPurify from "dompurify";
 
 export default {
 	components: {
@@ -50,6 +51,11 @@ export default {
 			loading: true,
 			error: null,
 		};
+	},
+	methods: {
+		sanitize(html) {
+			return DOMPurify.sanitize(html);
+		},
 	},
 	computed: {
 		firstPost() {
