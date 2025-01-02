@@ -66,7 +66,7 @@ export default {
 			return this.posts.slice(1);
 		},
 	},
-	created() {
+	beforeMount() {
 		fetch("https://api.faithfulpack.net/v2/posts/approved")
 			.then((res) => res.json())
 			.then((res) => {

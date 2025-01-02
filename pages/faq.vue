@@ -71,7 +71,7 @@ export default {
 			return this.faqs.length === 1 ? "result" : "results";
 		},
 	},
-	created() {
+	beforeMount() {
 		fetch("https://raw.githubusercontent.com/Faithful-Resource-Pack/CompliBot/main/json/faq.json")
 			.then((res) => res.json())
 			.then((res) => {

@@ -152,7 +152,7 @@ export default {
 			return this.posts.slice(0, 6);
 		},
 	},
-	created() {
+	beforeMount() {
 		fetch("https://api.faithfulpack.net/v2/addons/approved")
 			.then((res) => res.json())
 			.then((val) => {

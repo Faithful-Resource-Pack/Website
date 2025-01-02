@@ -123,7 +123,7 @@ export default {
 			};
 		},
 	},
-	created() {
+	beforeMount() {
 		fetch("https://api.faithfulpack.net/v2/mods/raw")
 			.then((res) => res.json())
 			.then((json) => {

@@ -57,7 +57,7 @@ export default {
 	},
 	methods: {
 		fetchData({ json, curse, name, edition, discontinued }) {
-			fetch(`data/downloads/${json}.json`)
+			fetch(`/data/downloads/${json}.json`)
 				.then((res) => res.json())
 				.then((downloads) => {
 					if (discontinued) this.discontinued[name].downloads = downloads;
@@ -78,7 +78,7 @@ export default {
 			navigator.clipboard.writeText(location.href);
 		},
 	},
-	created() {
+	beforeMount() {
 		Promise.all([
 			this.fetchData({
 				json: "faithful_32x_java",

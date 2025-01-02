@@ -147,7 +147,7 @@ export default {
 			return this.searchedAddons.length;
 		},
 	},
-	mounted() {
+	beforeMount() {
 		fetch("https://api.faithfulpack.net/v2/addons/approved")
 			.then((res) => res.json())
 			.then((data) => {
