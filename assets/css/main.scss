@@ -1,0 +1,529 @@
+@use "./lib/variables" as *;
+
+@font-face {
+	font-family: Faithful;
+	src: url("/data/font/Faithful.ttf") format("truetype");
+}
+
+/* Basic layout */
+
+/*!
+ * Bootstrap v4.5.3 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+/* Important Bootstrap */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+html {
+	font-family: Faithful !important;
+	text-rendering: optimizeLegibility;
+	/**
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+	*/
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	// improve font rendering
+	-webkit-font-smoothing: subpixel-antialiased !important;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+body {
+	margin: 0;
+	font-size: 1.1rem;
+	color: #212529;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	line-height: 1.2;
+	// faithful font really doesn't like bold
+	font-weight: normal !important;
+}
+h1, .h1 {
+	font-size: 2.5rem;
+}
+h2, .h2 {
+	font-size: 2rem;
+}
+h3, .h3 {
+	font-size: 1.75rem;
+}
+h4, .h4 {
+	font-size: 1.5rem;
+}
+h5, .h5 {
+	font-size: 1.25rem;
+}
+h6, .h6 {
+	font-size: 1rem;
+}
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+ol, ul, dl {
+	margin-top: 0;
+	margin-bottom: 1rem;
+	list-style-position: inside;
+}
+a {
+	color: $primary;
+	text-decoration: none;
+	background-color: transparent;
+}
+a:hover {
+	color: $primary-dark;
+}
+a:not([href]):not([class]) {
+	color: inherit;
+	text-decoration: none;
+}
+a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none;
+}
+img {
+	vertical-align: middle;
+	border-style: none;
+	object-fit: cover;
+	max-width: 100%;
+	height: auto;
+}
+/* make images not draggable */
+img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+}
+table {
+	border-collapse: collapse;
+}
+button {
+	border-radius: 0;
+}
+button:focus {
+	outline: 1px dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+}
+input, button, select, optgroup, textarea {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+button, input {
+	overflow: visible;
+}
+button, select {
+	text-transform: none;
+}
+select {
+	overflow-wrap: normal;
+}
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+	cursor: pointer;
+}
+// Fix icons being displayed in italic
+.fab, .fas {
+	font-style: normal;
+}
+.custom-icon {
+	width: 1.25em;
+	height: 1.25em;
+}
+.title {
+	font-size: 4.8rem;
+	line-height: 1.2;
+}
+.subtitle {
+	font-size: 3.5rem;
+	line-height: 1.2;
+}
+hr {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 0;
+	height: 1px;
+}
+.text-center {
+	text-align: center !important;
+}
+.text-right {
+	text-align: right !important;
+}
+.badge {
+	display: inline-block;
+	padding: 0.25em 0.4em;
+	font-size: 75%;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: $border-radius-1x;
+	transition: all 0.15s ease-in-out;
+}
+.badge-primary {
+	color: #fff;
+	background-color: $primary;
+}
+.badge-success {
+	color: #fff;
+	background-color: #28a745;
+}
+.badge-warning {
+	color: #212529;
+	background-color: #ffc107;
+}
+.badge-light {
+	color: #212529;
+	background-color: #f8f9fa;
+}
+/** Bootstrap Cards */
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	overflow-wrap: break-word;
+	background-clip: border-box;
+}
+.card-body {
+	flex: 1 1 auto;
+	min-height: 1px;
+	padding: 1.25rem;
+}
+.card-title {
+	margin-bottom: 0.75rem;
+}
+@media screen and (min-width: 576px) {
+	#stats-addons {
+		.badge-container {
+			display: inline;
+		}
+		.badge {
+			margin: 20px;
+		}
+	}
+}
+/*!
+ * Bootstrap end
+ */
+footer {
+	padding: 2rem 1rem;
+	text-align: center;
+	position: relative;
+}
+footer #shadow {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+	height: 5px;
+	overflow: hidden;
+}
+.error footer #shadow {
+	display: none;
+}
+footer #shadow::after {
+	content: "";
+	display: block;
+	position: absolute;
+	box-shadow: 0 5px 5px 5px rgba(0,0,0,1);
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+footer, footer p {
+	color: rgba(255, 255, 255, .7);
+}
+/** MAIN STUFF */
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+@media screen and (max-width: 760px) {
+	.container {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	.title {
+		font-size: 2.75rem;
+	}
+	.subtitle {
+		font-size: 2.5rem;
+	}
+	.h2 {
+		font-size: 1.25rem !important;
+	}
+}
+.center {
+	display: block;
+	margin: auto !important;
+}
+.clickable:hover {
+	cursor: pointer;
+}
+.disabled {
+	pointer-events: none;
+}
+.btn, *.card, .header-img, .about-button {
+	overflow: hidden;
+	box-shadow: $card-shadow;
+	border-radius: $border-radius-0x;
+}
+.card-body > :first-child {
+	margin-top: 0
+}
+.card-body > :last-child {
+	margin-bottom: 0;
+}
+// h5
+.card-text p {
+	font-size: 1.25rem;
+}
+.card, .card p, .card > h2 > a {
+	color: rgba(255, 255, 255, .7)
+}
+.card > h2 > a:hover {
+	color: rgba(255, 255, 255, .9)
+}
+// carousel cards
+.item > .card {
+	margin: 3px 6px 9px;
+}
+.img-card {
+	position: relative;
+	height: 0;
+	padding-top: 56.25%;
+}
+.img-card > img:first-of-type, .placeholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s;
+}
+.img-card:hover > img:first-of-type {
+	transform: scale(1.1);
+	filter: brightness(110%);
+}
+.img-card > h3 {
+	position: absolute;
+	bottom: 0;
+	// https://sass-lang.com/documentation/interpolation/
+	// remove 6px from the bottom to compensate for the intrinsic font padding
+	margin: calc(#{$card-padding} - 6px) $card-padding;
+	color: #fff;
+	font-size: 1.5rem;
+	line-height: 1;
+}
+.img-card > p {
+	position: absolute;
+	bottom: 16px;
+	margin: 8px;
+	color: #fff;
+	text-shadow: $card-shadow;
+	font-size: 1.3rem;
+}
+.img-card-shadow {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.5));
+}
+.img-card > img:hover {
+	cursor: pointer;
+}
+.placeholder {
+	background-image:
+		url(https://database.faithfulpack.net/images/branding/logos/transparent/512/plain_logo.png),
+		url(/image/background/bg_light_foreground.png);
+	background-repeat: no-repeat, repeat;
+	background-position: center, center;
+	background-size: auto 75%, auto;
+}
+/** Custom Bootstrap-like */
+.block {
+	display: block;
+	width: 100%;
+}
+.display {
+	line-height: 1.2;
+}
+.banner {
+	padding: 16px;
+	color: #fff;
+	text-align: center;
+	border-radius: $border-radius-0x;
+	box-shadow: $card-shadow
+}
+.banner a {
+	color: #fff !important; // vue moment
+}
+a > .banner:hover {
+	text-decoration: underline;
+}
+.red.banner {
+	background: #f44336;
+}
+.blurple.banner {
+	background: $blurple;
+	font-size: 25px;
+}
+.auto-flex {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.auto-flex > * {
+	max-width: 100%;
+	flex: 1;
+}
+.button-row {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+
+	// stretch buttons to fill row
+	> * {
+		flex-grow: 1;
+	}
+
+	@media screen and (max-width: 960px) {
+		flex-direction: column;
+	}
+}
+.res-grid-4, .res-grid-3, .res-grid-2, .news-grid {
+	display: grid;
+	grid-gap: 1.5rem;
+	grid-template-columns: repeat(1, 1fr);
+}
+/** CUSTOM SCROLLBAR */
+::-webkit-scrollbar{
+	width: 8px;
+}
+::-webkit-scrollbar-button{
+	height: 8px
+}
+/* container size management */
+@media screen and (min-width: 576px) {
+	.container {
+		max-width: 540px;
+	}
+	.res-grid-4, .res-grid-3, .res-grid-2 {
+		grid-template-columns: repeat(2, 2fr);
+	}
+}
+@media screen and (min-width: 760px) {
+	.container {
+		max-width: 720px;
+	}
+	.res-grid-4, .res-grid-3 {
+		grid-template-columns: repeat(3, 3fr);
+	}
+	.news-grid {
+		grid-template-columns: repeat(2, 2fr);
+	}
+}
+@media screen and (min-width: 960px) {
+	.container {
+		max-width: 960px
+	}
+	.res-grid-4 {
+		grid-template-columns: repeat(4, 4fr);
+	}
+}
+@media screen and (min-width: 1200px) {
+	.container {
+		max-width: 1140px
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.spin {
+	animation: infinite linear infinite spin;
+}
+
+// so few styles for these pages it's not worth making separate files
+
+/** faq page */
+.faq-question {
+	padding-top: 50px;
+}
+
+.faq-answer {
+	padding-left: 20px;
+}
+
+/** news page */
+:root {
+	// must use regular css variable (scss inlines variables when compiled)
+	--news-display-height: 5;
+	@media screen and (max-width: 1200px) {
+		--news-display-height: 3;
+	}
+	@media screen and (max-width: 960px) {
+		--news-display-height: 0;
+	}
+	@media screen and (max-width: 760px) {
+		--news-display-height: 4;
+	}
+}
+
+// https://css-tricks.com/line-clampin/
+.text-truncate {
+	display: -webkit-box;
+	height: calc(1.5 * var(--news-display-height));
+	overflow: hidden;
+	line-clamp: var(--news-display-height);
+	-webkit-line-clamp: var(--news-display-height);
+	-webkit-box-orient: vertical;
+}
+
+.underline-hover {
+	color: unset;
+	&:hover {
+		color: unset;
+		text-decoration: underline;
+		text-decoration-color: currentColor;
+	}
+}
+
+.flex-down {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.disable-snow-button {
+	position: fixed;
+	bottom: 1rem;
+	left: 1rem;
+	z-index: 999;
+}

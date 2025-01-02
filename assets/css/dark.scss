@@ -1,0 +1,91 @@
+@use "./lib/variables" as *;
+
+.background {
+	background: #131313 url(/image/background/bg_dark_background.png) repeat;
+}
+.foreground {
+	background: #0c0c0c url(/image/background/bg_dark_foreground.png) repeat;
+}
+.placeholder {
+	background-image:
+		url(https://database.faithfulpack.net/images/branding/logos/transparent/512/plain_logo.png),
+		url(/image/background/bg_dark_foreground.png);
+}
+.card, .download-table-padding, header {
+	background: #0c0c0c url(/image/background/bg_dark_background.png) repeat;
+}
+
+ul, ol, li, h1, h2, h3, h4, h5, h6, p {
+	color: rgba(255, 255, 255, 0.7);
+	text-decoration-color: currentColor;
+}
+
+.underline-hover:hover {
+	text-decoration-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.btn-flag {
+	color: rgba(255, 255, 255, 0.7) !important;
+}
+
+hr {
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+label, input {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/** CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+	background: #0e0e0e;
+}
+::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb {
+	background: #3e3e3e;
+	border: 1px solid #0e0e0e;
+}
+::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover {
+	background: #575757;
+}
+::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active {
+	background: #878787;
+}
+
+.v-menu__content > * {
+	background-color: #0c0c0c !important;
+	& > * {
+		color: rgba(255, 255, 255, 0.7) !important;
+	}
+}
+
+.about-container h1 {
+	color: rgba(255, 255, 255, 0.9);
+}
+
+// vuetify 3 theming is a bit broken and this fixes most of the issues
+.v-input__control {
+	color: #fff !important;
+}
+
+// about page stuff
+.about-button {
+	background: white !important;
+	color: black;
+}
+
+.green-background, .blue-background, .pink-background {
+	background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
+	background-blend-mode: screen;
+}
+
+.green-background .about-title {
+	color: $about-green-light !important;
+}
+
+.blue-background .about-title {
+	color: $about-blue-light !important;
+}
+
+.pink-background .about-title {
+	color: $about-pink-light !important;
+}

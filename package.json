@@ -1,35 +1,26 @@
 {
 	"name": "faithful-website",
-	"version": "1.0.0",
-	"description": "The official website for the Faithful Project.",
-	"main": "backend/index.js",
+	"version": "3.0.0",
+	"private": true,
 	"type": "module",
 	"scripts": {
-		"ji": "bundle install",
-		"jb": "bundle exec jekyll build",
-		"start": "pnpm run ji && pnpm run jb && pm2 start \"node backend/index.js\" --name \"WEBSITE\"",
-		"dev": "concurrently \"npm:dev-*\"",
-		"dev-watch-site": "bundle exec jekyll build --watch",
-		"dev-watch-app": "nodemon --watch backend --ignore _site -e js,md,ts backend/index.js"
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare",
+		"prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --config .prettierrc --write"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Faithful-Resource-Pack/Website.git"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "Faithful Resource Pack License",
-	"bugs": {
-		"url": "https://github.com/Faithful-Resource-Pack/Website/issues"
-	},
-	"homepage": "https://github.com/Faithful-Resource-Pack/Website#readme",
 	"dependencies": {
-		"dotenv": "^16.4.7",
-		"express": "^4.21.2",
-		"remove-markdown": "^0.6.0"
+		"@pinia/nuxt": "0.9.0",
+		"nuxt": "^3.15.0",
+		"pinia": "^2.3.0",
+		"vue": "latest",
+		"vue-router": "latest",
+		"vuetify-nuxt-module": "^0.18.3"
 	},
 	"devDependencies": {
-		"concurrently": "^9.1.0",
-		"nodemon": "^3.1.9"
+		"prettier": "^3.4.2",
+		"sass": "^1.83.0"
 	}
 }
