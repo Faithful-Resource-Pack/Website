@@ -15,8 +15,15 @@
 			</button>
 
 			<ul class="navbar-container" :class="{ show: isOpen }">
-				<li class="nav-item" v-for="item in left" :key="item.name">
-					<navbar-link v-bind="item" />
+				<li class="nav-item" v-for="{ name, to, icon } in left" :key="name">
+					<nuxt-link
+						:to
+						class="nav-link"
+						:target="to.startsWith('http') ? '_blank' : ''"
+						:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
+					>
+						<v-icon size="small" :icon class="mr-2" /> {{ name }}
+					</nuxt-link>
 				</li>
 
 				<li>
@@ -30,8 +37,15 @@
 					</a>
 				</li>
 
-				<li class="nav-item" v-for="item in right" :key="item.name">
-					<navbar-link v-bind="item" />
+				<li class="nav-item" v-for="{ name, to, icon } in right" :key="name">
+					<nuxt-link
+						:to
+						class="nav-link"
+						:target="to.startsWith('http') ? '_blank' : ''"
+						:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
+					>
+						<v-icon size="small" :icon class="mr-2" /> {{ name }}
+					</nuxt-link>
 				</li>
 			</ul>
 		</nav>
@@ -57,7 +71,7 @@ export default {
 				},
 				{
 					name: "Add-ons",
-					to: "addons",
+					to: "/addons",
 					icon: "mdi-plus",
 				},
 			],
@@ -83,6 +97,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "~/assets/css/components/navbar.scss" as *;
 </style>

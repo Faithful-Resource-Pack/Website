@@ -39,3 +39,24 @@ export default {
 	},
 };
 </script>
+
+<style scoped lang="scss">
+.project-image {
+	position: relative;
+	display: inline;
+}
+
+// place wordmark on top of image
+.project-wordmark {
+	position: absolute;
+	top: 8%;
+	right: 0;
+	padding: 30px;
+}
+
+.project-background {
+	width: 100%;
+	// cap max height so it doesn't push all the way down
+	max-height: 260px;
+}
+</style>

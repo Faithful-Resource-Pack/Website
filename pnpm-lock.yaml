@@ -11,6 +11,12 @@ importers:
       '@pinia/nuxt':
         specifier: 0.9.0
         version: 0.9.0(magicast@0.3.5)(pinia@2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))(rollup@4.29.1)
+      dompurify:
+        specifier: ^3.2.3
+        version: 3.2.3
+      marked:
+        specifier: ^15.0.5
+        version: 15.0.5
       nuxt:
         specifier: ^3.15.0
         version: 3.15.0(@parcel/watcher@2.5.0)(@types/node@22.10.3)(db0@0.2.1)(ioredis@5.4.2)(magicast@0.3.5)(rollup@4.29.1)(sass@1.83.0)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(vite@6.0.6(@types/node@22.10.3)(jiti@2.4.2)(sass@1.83.0)(terser@5.37.0)(tsx@4.19.2)(yaml@2.7.0))(yaml@2.7.0)
@@ -1023,6 +1029,9 @@ packages:
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
 
+  '@types/trusted-types@2.0.7':
+    resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+
   '@unhead/dom@1.11.14':
     resolution: {integrity: sha512-FaHCWo9JR4h7PCpSRaXuMC6ifXOuBzlI0PD1MmUcxND2ayDl1d6DauIbN8TUf9TDRxNkrK1Ehb0OCXjC1ZJtrg==}
 
@@ -1564,6 +1573,9 @@ packages:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
 
+  dompurify@3.2.3:
+    resolution: {integrity: sha512-U1U5Hzc2MO0oW3DF+G9qYN0aT7atAou4AgI0XjWz061nyBPbdxkfdhfy5uMgGn6+oLFCfn44ZGbdDqCzVmlOWA==}
+
   domutils@3.2.1:
     resolution: {integrity: sha512-xWXmuRnN9OMP6ptPd2+H0cCbcYBULa5YDTbMm/2lvkWvNA3O4wcW+GvzooqBuNM8yy6pl3VIAeJTUUWUbfI5Fw==}
 
@@ -2091,6 +2103,11 @@ packages:
 
   magicast@0.3.5:
     resolution: {integrity: sha512-L0WhttDl+2BOsybvEOLK7fW3UA0OQ0IQ2d6Zl2x/a6vVRs3bAY0ECOSHHeL5jD+SbOpOCUEi0y1DgHEn9Qn1AQ==}
+
+  marked@15.0.5:
+    resolution: {integrity: sha512-xN+kSuqHjxWg+Q47yhhZMUP+kO1qHobvXkkm6FX+7N6lDvanLDd8H7AQ0jWDDyq+fDt/cSrJaBGyWYHXy0KQWA==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   mdn-data@2.0.28:
     resolution: {integrity: sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==}
@@ -4312,6 +4329,9 @@ snapshots:
 
   '@types/resolve@1.20.2': {}
 
+  '@types/trusted-types@2.0.7':
+    optional: true
+
   '@unhead/dom@1.11.14':
     dependencies:
       '@unhead/schema': 1.11.14
@@ -4912,6 +4932,10 @@ snapshots:
     dependencies:
       domelementtype: 2.3.0
 
+  dompurify@3.2.3:
+    optionalDependencies:
+      '@types/trusted-types': 2.0.7
+
   domutils@3.2.1:
     dependencies:
       dom-serializer: 2.0.0
@@ -5500,6 +5524,8 @@ snapshots:
       '@babel/parser': 7.26.3
       '@babel/types': 7.26.3
       source-map-js: 1.2.1
+
+  marked@15.0.5: {}
 
   mdn-data@2.0.28: {}
 

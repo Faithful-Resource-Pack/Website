@@ -69,3 +69,36 @@ export default {
 	},
 };
 </script>
+
+<style scoped lang="scss">
+@use "~/assets/css/lib/variables" as *;
+
+.addon-flags {
+	position: absolute;
+	bottom: $card-padding;
+	right: $card-padding;
+	display: flex;
+	flex-direction: column;
+
+	& > img {
+		height: 32px;
+		width: 32px;
+		border-radius: $border-radius-0x;
+		margin-top: 5px;
+	}
+}
+
+.addon-res {
+	position: absolute;
+	bottom: calc(#{$card-padding} + 14px);
+	left: $card-padding;
+	display: flex;
+	flex-direction: row;
+
+	& > p {
+		margin-bottom: 0;
+		margin-right: 1ch;
+		color: rgba(255, 255, 255, 0.8);
+	}
+}
+</style>

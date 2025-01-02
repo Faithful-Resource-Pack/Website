@@ -12,7 +12,7 @@
 					/>
 				</a>
 				<span id="theme-btn" @click="cycleTheme()" class="nav-link">
-					<v-icon icon="theme-light-dark" />
+					<v-icon icon="mdi-theme-light-dark" />
 					Auto Theme
 				</span>
 				<a href="mailto:contact@faithfulpack.net"> contact@faithfulpack.net </a>
@@ -156,7 +156,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "~/assets/css/components/navbar.scss" as *;
 // container for left column and the others for better wrapping
 .footer-wrapper {
