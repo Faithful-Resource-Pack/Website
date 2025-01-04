@@ -1,6 +1,7 @@
 @use "./lib/variables" as *;
 
-.light-theme {
+// force lower specificity so page-specific styles don't break
+:where(.light-theme) {
 	&.background {
 		background: #eeede5 url(/image/background/bg_light_background.png) repeat;
 	}
