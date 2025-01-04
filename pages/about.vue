@@ -1,3 +1,9 @@
+<script setup>
+definePageMeta({
+	layout: "no-container",
+});
+</script>
+
 <template>
 	<div class="green-background">
 		<div class="container about-container">
@@ -104,12 +110,6 @@
 		</a>
 	</div>
 </template>
-
-<script>
-definePageMeta({
-	layout: "no-container",
-});
-</script>
 
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;

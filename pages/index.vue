@@ -1,3 +1,10 @@
+<script setup>
+definePageMeta({
+	name: "Home",
+	layout: "no-container",
+});
+</script>
+
 <template>
 	<div class="hero-container text-center">
 		<div class="hero-upspace"></div>
@@ -131,10 +138,6 @@ import DiscordButton from "~/components/lib/discord-button.vue";
 
 const MAX_ADDONS_SHOWN = 3;
 
-definePageMeta({
-	name: "Home",
-	layout: "no-container",
-});
 export default {
 	components: {
 		ProjectCard,

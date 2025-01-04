@@ -4,8 +4,8 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	modules: ["vuetify-nuxt-module", "@pinia/nuxt"],
 	css: [
-		"~/assets/css/main.scss",
 		"~/assets/css/lib/buttons.scss",
+		"~/assets/css/main.scss",
 		// load both at once and switch based on root-level class
 		"~/assets/css/light.scss",
 		"~/assets/css/dark.scss",

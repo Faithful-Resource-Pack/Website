@@ -1,5 +1,5 @@
 <template>
-	<body class="background" :class="themeClass">
+	<div class="background" :class="themeClass" data-allow-mismatch="class">
 		<navbar />
 		<main class="foreground">
 			<slot v-if="noContainer" />
@@ -7,8 +7,8 @@
 				<slot />
 			</div>
 		</main>
-		<column-footer :theme="THEMES[currentTheme]" @changeTheme="cycleTheme" />
-	</body>
+		<column-footer :theme="availableThemes[currentTheme]" @changeTheme="cycleTheme" />
+	</div>
 </template>
 
 <script>
@@ -47,23 +47,25 @@ export default {
 	data() {
 		return {
 			currentTheme: "auto",
-			THEMES,
+			availableThemes: THEMES,
 		};
 	},
 	methods: {
 		cycleTheme() {
-			const keys = Object.keys(THEMES);
+			const keys = Object.keys(this.availableThemes);
 			const currentIndex = keys.indexOf(this.currentTheme);
 			const nextIndex = (currentIndex + 1) % keys.length;
 			this.currentTheme = keys[nextIndex];
 		},
 	},
-	beforeMount() {
+	beforeCreate() {
+		if (import.meta.server) return;
+		// set theme before client render
 		this.currentTheme = localStorage.getItem(THEME_KEY) || "auto";
 	},
 	watch: {
 		currentTheme(newValue) {
-			if (!Object.keys(THEMES).includes(newValue)) return;
+			if (!Object.keys(this.availableThemes).includes(newValue)) return;
 			localStorage.setItem(THEME_KEY, newValue);
 		},
 	},
