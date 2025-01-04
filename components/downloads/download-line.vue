@@ -27,7 +27,7 @@
 
 		<td
 			v-for="(link, linkType) in item.links"
-			:key="version + '-' + link"
+			:key="`${version}-${link}`"
 			class="links"
 			:colspan="Object.keys(item.links).length > 1 ? 1 : 2"
 		>

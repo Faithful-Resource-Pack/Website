@@ -11,9 +11,9 @@
 						alt="Faithful Wordmark"
 					/>
 				</a>
-				<span id="theme-btn" @click="cycleTheme()" class="nav-link">
-					<v-icon icon="mdi-theme-light-dark" />
-					Auto Theme
+				<span id="theme-btn" @click="$emit('changeTheme')" class="nav-link">
+					<v-icon :icon="theme.icon" />
+					{{ theme.name }}
 				</span>
 				<a href="mailto:contact@faithfulpack.net"> contact@faithfulpack.net </a>
 				<p class="footer-info-text">&copy; {{ new Date().getFullYear() }} Faithful Resource Pack</p>
@@ -43,6 +43,13 @@
 <script>
 export default {
 	name: "column-footer",
+	props: {
+		theme: {
+			type: Object,
+			required: true,
+		},
+	},
+	emits: ["changeTheme"],
 	data() {
 		return {
 			categories: [

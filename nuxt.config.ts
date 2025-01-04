@@ -6,8 +6,9 @@ export default defineNuxtConfig({
 	css: [
 		"~/assets/css/main.scss",
 		"~/assets/css/lib/buttons.scss",
-		// REMOVE THIS ONCE THEMES WORK
+		// load both at once and switch based on root-level class
 		"~/assets/css/light.scss",
+		"~/assets/css/dark.scss",
 	],
 	components: [
 		{
@@ -15,10 +16,4 @@ export default defineNuxtConfig({
 			pathPrefix: false,
 		},
 	],
-	router: {
-		// fix nuxt complaining about the gallery redirect
-		options: {
-			strict: false,
-		},
-	},
 });

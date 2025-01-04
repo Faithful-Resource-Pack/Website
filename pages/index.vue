@@ -5,9 +5,9 @@
 		<h2 class="hero-tagline">Providing a higher-resolution experience since 2010.</h2>
 		<!-- hack to get the button the same width as the container -->
 		<div class="container py-3">
-			<a href="https://discord.gg/sN9YRQbBv7">
-				<p class="blurple banner">Join our Discord now and contribute to the project!</p>
-			</a>
+			<discord-button>
+				Join our Discord now and contribute to the project!
+			</discord-button>
 		</div>
 	</div>
 	<div class="container" id="app">
@@ -127,6 +127,7 @@
 import ProjectCard from "~/components/home/project-card.vue";
 import ArticleCard from "~/components/lib/article-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
+import DiscordButton from "~/components/lib/discord-button.vue";
 
 const MAX_ADDONS_SHOWN = 3;
 
@@ -139,6 +140,7 @@ export default {
 		ProjectCard,
 		ArticleCard,
 		AddonCard,
+		DiscordButton,
 	},
 	data() {
 		return {
