@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import DownloadLine from './download-line.vue';
+import DownloadLine from "./download-line.vue";
 
 export default {
 	name: "download-version",
@@ -56,5 +56,5 @@ export default {
 			}
 		},
 	},
-}
+};
 </script>

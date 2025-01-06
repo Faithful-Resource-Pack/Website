@@ -1,5 +1,6 @@
+<!-- don't use this as an actual layout, it's a base for the real ones -->
 <template>
-	<div class="background" :class="themeClass" data-allow-mismatch="class">
+	<div ref="app" class="background" :class="themeClass" data-allow-mismatch="class">
 		<navbar />
 		<main class="foreground">
 			<slot v-if="noContainer" />
@@ -7,7 +8,7 @@
 				<slot />
 			</div>
 		</main>
-		<column-footer :theme="availableThemes[currentTheme]" @changeTheme="cycleTheme" />
+		<column-footer :theme="availableThemes[currentTheme || 'auto']" @changeTheme="cycleTheme" />
 	</div>
 </template>
 
@@ -46,7 +47,9 @@ export default {
 	},
 	data() {
 		return {
-			currentTheme: "auto",
+			// must be null at first to force rerender when loaded
+			currentTheme: null,
+			themeClass: null,
 			availableThemes: THEMES,
 		};
 	},
@@ -58,24 +61,23 @@ export default {
 			this.currentTheme = keys[nextIndex];
 		},
 	},
-	beforeCreate() {
-		if (import.meta.server) return;
+	beforeMount() {
 		// set theme before client render
 		this.currentTheme = localStorage.getItem(THEME_KEY) || "auto";
 	},
 	watch: {
-		currentTheme(newValue) {
-			if (!Object.keys(this.availableThemes).includes(newValue)) return;
-			localStorage.setItem(THEME_KEY, newValue);
-		},
-	},
-	computed: {
-		themeClass() {
-			if (import.meta.server) return "light-theme";
-			const isDark =
-				this.currentTheme === "dark" ||
-				(this.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
-			return isDark ? "dark-theme" : "light-theme";
+		currentTheme: {
+			handler(newValue) {
+				if (!Object.keys(this.availableThemes).includes(newValue)) return;
+				localStorage.setItem(THEME_KEY, newValue);
+				const isDark =
+					this.currentTheme === "dark" ||
+					(this.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
+
+				// otherwise it doesn't update before mount (I hate this too)
+				this.themeClass = isDark ? "dark-theme" : "light-theme";
+			},
+			immediate: true,
 		},
 	},
 };

@@ -12,9 +12,7 @@ definePageMeta({
 		<h2 class="hero-tagline">Providing a higher-resolution experience since 2010.</h2>
 		<!-- hack to get the button the same width as the container -->
 		<div class="container py-3">
-			<discord-button>
-				Join our Discord now and contribute to the project!
-			</discord-button>
+			<discord-button>Join our Discord now and contribute to the project!</discord-button>
 		</div>
 	</div>
 	<div class="container" id="app">

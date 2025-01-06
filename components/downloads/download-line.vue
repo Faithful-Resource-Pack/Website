@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import MediaIcon from '../lib/media-icon.vue';
+import MediaIcon from "../lib/media-icon.vue";
 
 export default {
 	name: "download-line",

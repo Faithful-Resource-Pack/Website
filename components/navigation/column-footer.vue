@@ -12,10 +12,14 @@
 					/>
 				</a>
 				<span id="theme-btn" @click="$emit('changeTheme')" class="nav-link">
-					<v-icon :icon="theme.icon" />
-					{{ theme.name }}
+					<!-- prevents hydration mismatch (themes are loaded before mount but after ssr) -->
+					<client-only>
+						<template #fallback>Loading Themes…</template>
+						<v-icon :icon="theme.icon" />
+						{{ theme.name }}
+					</client-only>
 				</span>
-				<a href="mailto:contact@faithfulpack.net"> contact@faithfulpack.net </a>
+				<a href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>
 				<p class="footer-info-text">&copy; {{ new Date().getFullYear() }} Faithful Resource Pack</p>
 			</div>
 			<div class="footer-container">

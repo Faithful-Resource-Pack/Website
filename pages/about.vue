@@ -10,9 +10,9 @@ definePageMeta({
 			<div class="about-text">
 				<h1 class="about-title">Upscaling the Look of Minecraft</h1>
 				<p>
-					Faithful recreates Minecraft's original textures in higher resolutions while staying
-					true to their original look and feel.
-					<br><br>
+					Faithful recreates Minecraft's original textures in higher resolutions while staying true
+					to their original look and feel.
+					<br /><br />
 					With multiple resolutions and styles, everyone can find a pack they like!
 				</p>
 				<a
@@ -32,11 +32,11 @@ definePageMeta({
 		<div class="about-text">
 			<h1 class="about-title">Free and Open-Source</h1>
 			<p>
-				The project is made possible entirely by talented volunteer artists and developers working in
-				their free time.
-				<br><br>
-				All of our textures, as well as the code of all our related projects, are available on GitHub. Take
-				a look and see how the magic happens!
+				The project is made possible entirely by talented volunteer artists and developers working
+				in their free time.
+				<br /><br />
+				All of our textures, as well as the code of all our related projects, are available on
+				GitHub. Take a look and see how the magic happens!
 			</p>
 			<a
 				class="about-button"
@@ -55,9 +55,9 @@ definePageMeta({
 				<p>
 					Faithful is available for both the most popular Java Edition versions as well as Bedrock
 					Edition.
-					<br><br>
-					This means it can be used on all devices that support manual installation of resource packs, from
-					phones to even certain consoles.
+					<br /><br />
+					This means it can be used on all devices that support manual installation of resource
+					packs, from phones to even certain consoles.
 				</p>
 				<a class="about-button" href="/downloads">
 					View Downloads <v-icon icon="mdi-chevron-right" />
@@ -73,15 +73,16 @@ definePageMeta({
 			<p>
 				All Faithful textures are voted on by the public before being added, and anyone can submit a
 				texture to any project with no strings attached.
-				<br><br>
-				Simply read our contribution handbook and follow the steps—it's that easy to make your mark on
-				Faithful forever!
+				<br /><br />
+				Simply read our contribution handbook and follow the steps—it's that easy to make your mark
+				on Faithful forever!
 			</p>
 			<a
 				class="about-button"
 				href="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
 				target="_blank"
-				rel="noreferrer">How to Contribute <v-icon icon="mdi-chevron-right" />
+				rel="noreferrer"
+				>How to Contribute <v-icon icon="mdi-chevron-right" />
 			</a>
 		</div>
 	</div>
@@ -92,9 +93,9 @@ definePageMeta({
 				<p>
 					We've got over a decade of experience making quality textures for Minecraft, with a rich
 					history spanning from the first releases up to today.
-					<br><br>
-					As one of the first ever texture packs to be developed, having started all the way back in 2010,
-					Faithful has secured its place among the most well-known Minecraft projects.
+					<br /><br />
+					As one of the first ever texture packs to be developed, having started all the way back in
+					2010, Faithful has secured its place among the most well-known Minecraft projects.
 				</p>
 				<a class="about-button" href="/stats">
 					See our Stats <v-icon icon="mdi-chevron-right" />
