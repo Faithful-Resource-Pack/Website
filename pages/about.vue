@@ -21,7 +21,7 @@ definePageMeta({
 					target="_blank"
 					rel="noreferrer"
 				>
-					Join our Discord <v-icon icon="mdi-chevron-right" />
+					Join our Discord <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
 				</a>
 			</div>
 			<img class="about-image" src="/image/about/faithful.gif" alt="gif of creeper textures" />
@@ -44,7 +44,7 @@ definePageMeta({
 				target="_blank"
 				rel="noreferrer"
 			>
-				Visit our GitHub <v-icon icon="mdi-chevron-right" />
+				Visit our GitHub <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
 			</a>
 		</div>
 	</div>
@@ -60,7 +60,7 @@ definePageMeta({
 					packs, from phones to even certain consoles.
 				</p>
 				<a class="about-button" href="/downloads">
-					View Downloads <v-icon icon="mdi-chevron-right" />
+					View Downloads <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
 				</a>
 			</div>
 			<img class="about-image" src="/image/about/platforms.png" alt="supported platforms" />
@@ -82,7 +82,7 @@ definePageMeta({
 				href="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
 				target="_blank"
 				rel="noreferrer"
-				>How to Contribute <v-icon icon="mdi-chevron-right" />
+				>How to Contribute <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
 			</a>
 		</div>
 	</div>
@@ -98,7 +98,7 @@ definePageMeta({
 					2010, Faithful has secured its place among the most well-known Minecraft projects.
 				</p>
 				<a class="about-button" href="/stats">
-					See our Stats <v-icon icon="mdi-chevron-right" />
+					See our Stats <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
 				</a>
 			</div>
 			<img class="about-image" src="/image/about/history.png" alt="our history" />
@@ -107,13 +107,19 @@ definePageMeta({
 	<div class="container faq-section">
 		<h1 class="mb-4">Any More Questions?</h1>
 		<a class="about-button" href="/faq">
-			View our FAQ <v-icon icon="mdi-chevron-right" class="ma-0" />
+			View our FAQ <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
 		</a>
 	</div>
 </template>
 
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
+
+.about-chevron {
+	// compensate for intrinsic padding
+	margin-right: -0.5rem;
+	bottom: 1px;
+}
 
 .about-image {
 	max-height: 384px;
