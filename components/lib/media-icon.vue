@@ -1,6 +1,6 @@
 <template>
-	<img v-if="isImage" class="custom-icon" :src="iconData" :alt="cleanedIcon" />
-	<v-icon v-else :icon="iconData" />
+	<img v-if="isImage" class="custom-icon" :src="iconData" :alt="cleanedIcon" v-bind="$attrs" />
+	<v-icon v-else :icon="iconData" v-bind="$attrs" />
 </template>
 
 <script>
@@ -23,20 +23,20 @@ export default {
 				// expand this list as needed
 				download: { data: "download", type: "mdi" },
 				curseforge: { data: "/image/icons/curseforge.svg", type: "image" },
+				modrinth: { data: "/image/icons/modrinth.svg", type: "image" },
 				github: { data: "github", type: "mdi" },
-				modrinth: { data: "wrench", type: "mdi" },
 				mcpedl: { data: "cube", type: "mdi" },
-				patreon: { type: "mdi", data: "patreon" },
-				paypal: { type: "mdi", data: "paypal" },
-				pmc: { type: "mdi", data: "earth" },
-				psn: { type: "mdi", data: "sony-playstation" },
-				reddit: { type: "mdi", data: "reddit" },
-				steam: { type: "mdi", data: "steam" },
-				twitter: { type: "mdi", data: "twitter" },
-				website: { type: "mdi", data: "web" },
-				xbox: { type: "mdi", data: "microsoft-xbox" },
-				youtube: { type: "mdi", data: "youtube" },
-				other: { type: "mdi", data: "link-variant" },
+				patreon: { data: "patreon", type: "mdi" },
+				paypal: { data: "paypal", type: "mdi" },
+				pmc: { data: "earth", type: "mdi" },
+				psn: { data: "sony-playstation", type: "mdi" },
+				reddit: { data: "reddit", type: "mdi" },
+				steam: { data: "steam", type: "mdi" },
+				twitter: { data: "twitter", type: "mdi" },
+				website: { data: "web", type: "mdi" },
+				xbox: { data: "microsoft-xbox", type: "mdi" },
+				youtube: { data: "youtube", type: "mdi" },
+				other: { data: "link-variant", type: "mdi" },
 			},
 		};
 	},

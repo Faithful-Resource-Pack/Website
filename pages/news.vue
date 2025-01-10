@@ -39,7 +39,7 @@
 
 <script>
 import ArticleCard from "~/components/lib/article-card.vue";
-import DOMPurify from "dompurify";
+import DOMPurify from "isomorphic-dompurify";
 
 export default {
 	components: {

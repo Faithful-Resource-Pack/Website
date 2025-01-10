@@ -474,6 +474,20 @@ a > .banner:hover {
 	animation: infinite linear infinite spin;
 }
 
+.profile-card {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1ch;
+	margin-top: 1ch;
+	overflow-wrap: anywhere;
+}
+
+.profile-avatar {
+	height: 48px;
+}
+
 // so few styles for these pages it's not worth making separate files
 
 /** faq page */

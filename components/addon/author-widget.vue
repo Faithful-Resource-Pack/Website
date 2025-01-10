@@ -1,0 +1,57 @@
+<template>
+	<div class="profile-card">
+		<img
+			class="profile-avatar"
+			:src="`https://visage.surgeplay.com/face/128/${this.author.uuid || 'X-Steve'}`"
+			:alt="`${this.author.username}'s Avatar`"
+		/>
+		<!-- need div to treat as one unit -->
+		<div>
+			<h5 class="author-username">{{ author.username }}</h5>
+			<a
+				v-for="m in author.media"
+				:key="m.type"
+				:href="m.link"
+				class="author-media"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<media-icon size="small" :icon="m.type" />
+			</a>
+		</div>
+	</div>
+</template>
+
+<script>
+import MediaIcon from "../lib/media-icon.vue";
+
+export default {
+	name: "author-widget",
+	components: {
+		MediaIcon,
+	},
+	props: {
+		author: {
+			type: Object,
+			required: true,
+		},
+	},
+};
+</script>
+
+<style scoped lang="scss">
+.author-username {
+	// reduce spacing between socials and username
+	margin-bottom: 0px;
+}
+
+.author-media {
+	color: white !important;
+	opacity: 0.7;
+	margin: 0 5px;
+	transition: all 0.1s ease-out;
+	&:hover {
+		opacity: 1;
+	}
+}
+</style>
