@@ -19,7 +19,8 @@
 		"pinia": "^2.3.0",
 		"vue": "latest",
 		"vue-router": "latest",
-		"vuetify-nuxt-module": "^0.18.3"
+		"vuetify-nuxt-module": "^0.18.3",
+		"yaml": "^2.7.0"
 	},
 	"devDependencies": {
 		"prettier": "^3.4.2",

@@ -52,3 +52,20 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+.hero {
+	display: block;
+	background-image: v-bind(banner);
+	background-size: cover;
+	background-position: center;
+	padding: 0 2rem 1px;
+	text-align: center;
+}
+
+.wordmark {
+	padding: 5vw;
+	filter: drop-shadow(0 0 10px #000);
+	width: 800px;
+}
+</style>
