@@ -17,7 +17,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "project-card",
 	props: {
 		name: {
@@ -37,7 +37,7 @@ export default {
 			required: true,
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

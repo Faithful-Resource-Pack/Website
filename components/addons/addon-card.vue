@@ -35,7 +35,7 @@
 <script>
 import ArticleCard from "../lib/article-card.vue";
 
-export default {
+export default defineNuxtComponent({
 	name: "addon-card",
 	components: {
 		ArticleCard,
@@ -67,7 +67,7 @@ export default {
 			return this.addon.title;
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

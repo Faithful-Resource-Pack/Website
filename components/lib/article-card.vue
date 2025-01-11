@@ -10,7 +10,7 @@
 	</div>
 </template>
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "article-card",
 	props: {
 		href: {
@@ -31,5 +31,5 @@ export default {
 			required: false,
 		},
 	},
-};
+});
 </script>

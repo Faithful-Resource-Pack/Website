@@ -5,7 +5,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "screenshot-modal",
 	props: {
 		modelValue: {
@@ -31,5 +31,5 @@ export default {
 			this.$emit("update:modelValue", n);
 		},
 	},
-};
+});
 </script>

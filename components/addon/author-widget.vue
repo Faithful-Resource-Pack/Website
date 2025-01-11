@@ -25,7 +25,7 @@
 <script>
 import MediaIcon from "../lib/media-icon.vue";
 
-export default {
+export default defineNuxtComponent({
 	name: "author-widget",
 	components: {
 		MediaIcon,
@@ -36,7 +36,7 @@ export default {
 			required: true,
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

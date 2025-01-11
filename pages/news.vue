@@ -41,7 +41,7 @@
 import ArticleCard from "~/components/lib/article-card.vue";
 import DOMPurify from "isomorphic-dompurify";
 
-export default {
+export default defineNuxtComponent({
 	components: {
 		ArticleCard,
 	},
@@ -81,5 +81,5 @@ export default {
 				this.loading = false;
 			});
 	},
-};
+});
 </script>

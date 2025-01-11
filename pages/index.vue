@@ -136,7 +136,7 @@ import DiscordButton from "~/components/lib/discord-button.vue";
 
 const MAX_ADDONS_SHOWN = 3;
 
-export default {
+export default defineNuxtComponent({
 	components: {
 		ProjectCard,
 		ArticleCard,
@@ -182,7 +182,7 @@ export default {
 			})
 			.catch((err) => console.error(err));
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

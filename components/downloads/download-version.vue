@@ -21,7 +21,7 @@
 <script>
 import DownloadLine from "./download-line.vue";
 
-export default {
+export default defineNuxtComponent({
 	name: "download-version",
 	components: {
 		DownloadLine,
@@ -56,5 +56,5 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>

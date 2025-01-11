@@ -121,7 +121,6 @@
 <style scoped lang="scss">
 ol {
 	list-style-position: outside;
-	margin-left: 2.5rem;
 }
 
 .license-download {

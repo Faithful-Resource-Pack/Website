@@ -51,7 +51,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "compatibility-card",
 	props: {
 		options: {
@@ -59,7 +59,7 @@ export default {
 			required: true,
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

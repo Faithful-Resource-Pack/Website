@@ -19,7 +19,7 @@
 
 <script>
 import DownloadTable from "~/components/downloads/download-table.vue";
-export default {
+export default defineNuxtComponent({
 	components: {
 		DownloadTable,
 	},
@@ -112,7 +112,7 @@ export default {
 			}),
 		]);
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

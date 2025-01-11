@@ -46,7 +46,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	data() {
 		return {
 			addons: {},
@@ -151,5 +151,5 @@ export default {
 				this.posts = null;
 			});
 	},
-};
+});
 </script>

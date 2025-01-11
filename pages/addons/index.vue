@@ -72,7 +72,7 @@ import AddonGrid from "~/components/addons/addon-grid.vue";
 
 const FAVORITE_ADDONS_KEY = "favAddons";
 
-export default {
+export default defineNuxtComponent({
 	components: {
 		AddonGrid,
 	},
@@ -158,7 +158,7 @@ export default {
 
 		this.fav = JSON.parse(localStorage.getItem(FAVORITE_ADDONS_KEY) || "{}");
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

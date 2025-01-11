@@ -53,7 +53,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "navbar",
 	data() {
 		return {
@@ -94,7 +94,7 @@ export default {
 			],
 		};
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

@@ -48,7 +48,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "column-footer",
 	props: {
 		theme: {
@@ -167,7 +167,7 @@ export default {
 			],
 		};
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

@@ -4,7 +4,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "media-icon",
 	props: {
 		icon: {
@@ -67,5 +67,5 @@ export default {
 			return this.iconType === "image";
 		},
 	},
-};
+});
 </script>

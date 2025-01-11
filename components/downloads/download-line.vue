@@ -42,7 +42,7 @@
 <script>
 import MediaIcon from "../lib/media-icon.vue";
 
-export default {
+export default defineNuxtComponent({
 	name: "download-line",
 	components: {
 		MediaIcon,
@@ -136,5 +136,5 @@ export default {
 			return `${this.date} • ${this.size}`;
 		},
 	},
-};
+});
 </script>

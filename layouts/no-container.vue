@@ -6,9 +6,9 @@
 
 <script>
 import MainLayout from "~/layouts/main-layout.vue";
-export default {
+export default defineNuxtComponent({
 	components: {
 		MainLayout,
 	},
-};
+});
 </script>

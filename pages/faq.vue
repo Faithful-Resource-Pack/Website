@@ -28,7 +28,7 @@
 import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
 
-export default {
+export default defineNuxtComponent({
 	data() {
 		return {
 			allFaqs: [],
@@ -79,5 +79,5 @@ export default {
 				this.startSearch();
 			});
 	},
-};
+});
 </script>

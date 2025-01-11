@@ -19,7 +19,7 @@
 <script>
 import AddonCard from "./addon-card.vue";
 
-export default {
+export default defineNuxtComponent({
 	name: "addon-grid",
 	components: {
 		AddonCard,
@@ -79,7 +79,7 @@ export default {
 			});
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

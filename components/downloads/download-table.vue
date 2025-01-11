@@ -25,7 +25,7 @@
 <script>
 import DownloadVersion from "./download-version.vue";
 
-export default {
+export default defineNuxtComponent({
 	name: "download-table",
 	components: {
 		DownloadVersion,
@@ -40,7 +40,7 @@ export default {
 			required: true,
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss">

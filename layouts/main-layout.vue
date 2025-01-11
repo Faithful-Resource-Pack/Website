@@ -33,7 +33,7 @@ const THEMES = {
 	},
 };
 
-export default {
+export default defineNuxtComponent({
 	name: "main-layout",
 	components: {
 		Navbar,
@@ -80,5 +80,5 @@ export default {
 			immediate: true,
 		},
 	},
-};
+});
 </script>
