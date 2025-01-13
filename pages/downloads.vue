@@ -110,7 +110,7 @@ export default defineNuxtComponent({
 	methods: {
 		hashify(id) {
 			// vue router really hates spaces in HTML ids
-			return encodeURIComponent(id.split(/ /g).join("-"));
+			return encodeURIComponent(id.replace(/ /g, "-"));
 		},
 	},
 });
