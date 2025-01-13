@@ -1,12 +1,11 @@
 <template>
 	<h1 class="title my-5 text-center">Faithful News</h1>
 
-	<h2 v-if="loading" class="text-center">Loading…</h2>
-	<h2 v-else-if="!posts.length" class="text-center">
+	<h2 v-if="!posts.length" class="text-center">
 		{{ error ? `Error: ${error}` : "No posts found" }}
 	</h2>
 	<div v-else class="news-grid pb-5">
-		<a class="card img-card" :href="firstPost.permalink">
+		<nuxt-link class="card img-card" :to="firstPost.permalink">
 			<img
 				:src="
 					firstPost.header_img ||
@@ -14,13 +13,13 @@
 				"
 				loading="lazy"
 			/>
-		</a>
+		</nuxt-link>
 		<div class="flex-down">
-			<a :href="firstPost.permalink" class="underline-hover">
+			<nuxt-link :to="firstPost.permalink" class="underline-hover">
 				<h2 class="h1">{{ firstPost.title }}</h2>
-			</a>
-			<p class="text-truncate" v-html="sanitize(firstPost.description)" />
-			<a class="btn block btn-dark" :href="firstPost.permalink">Read More</a>
+			</nuxt-link>
+			<span class="text-truncate" v-html="compiledMarkdown(firstPost.description)" />
+			<nuxt-link class="btn block btn-dark" :to="firstPost.permalink">Read More</nuxt-link>
 		</div>
 	</div>
 
@@ -30,7 +29,7 @@
 		<article-card
 			v-for="post in restPosts"
 			:key="post.id"
-			:href="post.permalink"
+			:to="post.permalink"
 			:image="post.header_img"
 			:title="post.title"
 		/>
@@ -40,21 +39,29 @@
 <script>
 import ArticleCard from "~/components/lib/article-card.vue";
 import DOMPurify from "isomorphic-dompurify";
+import { marked } from "marked";
 
 export default defineNuxtComponent({
 	components: {
 		ArticleCard,
 	},
-	data() {
-		return {
-			posts: [],
-			loading: true,
-			error: null,
-		};
+	async asyncData() {
+		try {
+			const posts = await $fetch("https://api.faithfulpack.net/v2/posts/approved");
+			return {
+				posts: posts.sort((a, b) => new Date(b.date) - new Date(a.date)),
+				error: null,
+			};
+		} catch (error) {
+			return {
+				posts: [],
+				error,
+			};
+		}
 	},
 	methods: {
-		sanitize(html) {
-			return DOMPurify.sanitize(html);
+		compiledMarkdown(text) {
+			return DOMPurify.sanitize(marked.parse(text));
 		},
 	},
 	computed: {
@@ -65,21 +72,6 @@ export default defineNuxtComponent({
 			if (!this.posts) return [];
 			return this.posts.slice(1);
 		},
-	},
-	beforeMount() {
-		fetch("https://api.faithfulpack.net/v2/posts/approved")
-			.then((res) => res.json())
-			.then((res) => {
-				this.posts = Object.values(res).sort((a, b) => new Date(b.date) - new Date(a.date));
-			})
-			.catch((err) => {
-				this.error = err;
-				this.posts = [];
-				console.error(err);
-			})
-			.finally(() => {
-				this.loading = false;
-			});
 	},
 });
 </script>

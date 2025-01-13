@@ -8,8 +8,8 @@ interface Pack {
 	permalink: string;
 	banner: string;
 	wordmark: string;
-	text: string;
-	buttons?: { href: string; text: string }[];
+	description: string;
+	buttons?: { to: string; text: string }[];
 	downloads?: Record<string, Record<string, string>>;
 }
 
@@ -42,11 +42,25 @@ export default defineNuxtConfig({
 	// extend pages with generated pack page routes at build time
 	hooks: {
 		"pages:extend"(pages) {
+			/**
+			 * okay so this is probably the stupidest workaround on the planet
+			 * nuxt has a weird bug where manually added pages don't generate metadata
+			 * and completely breaks the layout (I have no idea why)
+			 * so instead we copy the metadata/hidden fields of the generated pack page
+			 * then duplicate it for each pack url
+			 * then finally remove the template pack page once done
+			 * also for some reason you have to edit `pages` as a reference in-place
+			 * which is why I'm splicing and pushing stuff instead of just filtering it
+			 */
+			const packPageI = pages.findIndex((el) => el.name === "pack-page");
+			const packPage = pages[packPageI];
+			pages.splice(packPageI, 1);
 			pages.push(
 				...parsed.map((pack) => ({
-					path: pack.permalink,
-					file: "~/layouts/pack-page.vue",
+					...packPage,
+					name: pack.title,
 					props: pack,
+					path: pack.permalink,
 				})),
 			);
 		},

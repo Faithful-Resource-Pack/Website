@@ -2,7 +2,9 @@
 	<h1 class="title my-5 text-center">Downloads</h1>
 	<template v-for="(editions, pack) in alive" :key="pack">
 		<h2 :id="pack" class="text-center subtitle mb-0 download-title" @click="copyText(pack)">
-			<a class="download-hashtag" title="Copy URL to clipboard" :href="'#' + pack">#</a>{{ pack }}
+			<nuxt-link class="download-hashtag" title="Copy URL to clipboard" :to="'#' + pack">
+				#</nuxt-link
+			>{{ pack }}
 		</h2>
 		<template v-for="(data, edition) in editions" :key="edition">
 			<h3 class="text-center my-3">{{ edition }} Edition</h3>
@@ -74,8 +76,6 @@ export default defineNuxtComponent({
 		},
 		copyText(id) {
 			location.hash = `#${encodeURIComponent(id)}`;
-			// write it before copying the whole URL (don't have to worry about multiple packs stacking)
-			navigator.clipboard.writeText(location.href);
 		},
 	},
 	beforeMount() {

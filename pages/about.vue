@@ -15,14 +15,14 @@ definePageMeta({
 					<br /><br />
 					With multiple resolutions and styles, everyone can find a pack they like!
 				</p>
-				<a
+				<nuxt-link
 					class="about-button"
-					href="https://discord.gg/sN9YRQbBv7"
+					to="https://discord.gg/sN9YRQbBv7"
 					target="_blank"
 					rel="noreferrer"
 				>
 					Join our Discord <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-				</a>
+				</nuxt-link>
 			</div>
 			<img class="about-image" src="/image/about/faithful.gif" alt="gif of creeper textures" />
 		</div>
@@ -38,14 +38,14 @@ definePageMeta({
 				All of our textures, as well as the code of all our related projects, are available on
 				GitHub. Take a look and see how the magic happens!
 			</p>
-			<a
+			<nuxt-link
 				class="about-button"
-				href="https://github.com/Faithful-Resource-Pack"
+				to="https://github.com/Faithful-Resource-Pack"
 				target="_blank"
 				rel="noreferrer"
 			>
 				Visit our GitHub <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-			</a>
+			</nuxt-link>
 		</div>
 	</div>
 	<div class="blue-background">
@@ -59,9 +59,9 @@ definePageMeta({
 					This means it can be used on all devices that support manual installation of resource
 					packs, from phones to even certain consoles.
 				</p>
-				<a class="about-button" href="/downloads">
+				<nuxt-link class="about-button" to="/downloads">
 					View Downloads <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-				</a>
+				</nuxt-link>
 			</div>
 			<img class="about-image" src="/image/about/platforms.png" alt="supported platforms" />
 		</div>
@@ -77,13 +77,13 @@ definePageMeta({
 				Simply read our contribution handbook and follow the steps—it's that easy to make your mark
 				on Faithful forever!
 			</p>
-			<a
+			<nuxt-link
 				class="about-button"
-				href="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
+				to="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
 				target="_blank"
 				rel="noreferrer"
 				>How to Contribute <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-			</a>
+			</nuxt-link>
 		</div>
 	</div>
 	<div class="pink-background">
@@ -97,18 +97,18 @@ definePageMeta({
 					As one of the first ever texture packs to be developed, having started all the way back in
 					2010, Faithful has secured its place among the most well-known Minecraft projects.
 				</p>
-				<a class="about-button" href="/stats">
+				<nuxt-link class="about-button" to="/stats">
 					See our Stats <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-				</a>
+				</nuxt-link>
 			</div>
 			<img class="about-image" src="/image/about/history.png" alt="our history" />
 		</div>
 	</div>
 	<div class="container faq-section">
 		<h1 class="mb-4">Any More Questions?</h1>
-		<a class="about-button" href="/faq">
+		<nuxt-link class="about-button" to="/faq">
 			View our FAQ <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-		</a>
+		</nuxt-link>
 	</div>
 </template>
 

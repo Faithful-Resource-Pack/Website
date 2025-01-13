@@ -1,14 +1,14 @@
 <template>
 	<header>
 		<nav class="navbar-wrapper">
-			<a class="nav-mobile-wordmark" href="/" title="Faithful">
+			<nuxt-link class="nav-mobile-wordmark" to="/" title="Faithful">
 				<img
 					src="/image/wordmarks/navbar.png"
 					style="height: 32px"
 					alt="Faithful Wordmark"
 					loading="lazy"
 				/>
-			</a>
+			</nuxt-link>
 
 			<button class="navbar-toggler" type="button" @click="isOpen = !isOpen" aria-label="Menu">
 				<v-icon size="large" icon="mdi-menu" />
@@ -27,14 +27,14 @@
 				</li>
 
 				<li>
-					<a href="/" title="Faithful">
+					<nuxt-link to="/" title="Faithful">
 						<img
 							class="navbar-logo-img"
 							src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=128"
 							alt="Faithful Logo"
 							loading="lazy"
 						/>
-					</a>
+					</nuxt-link>
 				</li>
 
 				<li class="nav-item" v-for="{ name, to, icon } in right" :key="name">

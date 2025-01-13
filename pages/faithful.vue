@@ -17,9 +17,9 @@
 			Discord server as soon as possible for the same reason. Faithful is now being run by what was
 			Compliance and Emulated Vattic, now Faithful and Classic Faithful respectively. The only
 			official website where you can find Faithful is
-			<a href="https://faithfulpack.net">this website</a>, with Discord servers being found at the
+			<nuxt-link to="https://faithfulpack.net">this website</nuxt-link>, with Discord servers being found at the
 			bottom of this page. <br /><br />
-			<a href="/">Return to main page</a>
+			<nuxt-link to="/">Return to main page</nuxt-link>
 		</p>
 	</div>
 </template>

@@ -31,10 +31,10 @@
 			class="links"
 			:colspan="Object.keys(item.links).length > 1 ? 1 : 2"
 		>
-			<a class="btn btn-dark btn-dl" :href="link">
+			<nuxt-link class="btn btn-dark btn-dl" :to="link">
 				<media-icon class="dl-icon" :icon="linkType" fallback="download" />
 				<span class="link-text">{{ textFormat[linkType] || linkType }}</span>
-			</a>
+			</nuxt-link>
 		</td>
 	</tr>
 </template>

@@ -8,16 +8,16 @@
 		<!-- need div to treat as one unit -->
 		<div>
 			<h5 class="author-username">{{ author.username }}</h5>
-			<a
+			<nuxt-link
 				v-for="m in author.media"
 				:key="m.type"
-				:href="m.link"
+				:to="m.link"
 				class="author-media"
 				target="_blank"
 				rel="noreferrer"
 			>
 				<media-icon size="small" :icon="m.type" />
-			</a>
+			</nuxt-link>
 		</div>
 	</div>
 </template>

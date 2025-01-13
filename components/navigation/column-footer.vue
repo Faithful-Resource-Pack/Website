@@ -3,14 +3,14 @@
 		<div id="shadow"></div>
 		<div class="container footer-wrapper">
 			<div class="footer-column footer-main">
-				<a href="/">
+				<nuxt-link to="/">
 					<img
 						class="footer-wordmark"
 						src="/image/wordmarks/faithful.png"
 						loading="lazy"
 						alt="Faithful Wordmark"
 					/>
-				</a>
+				</nuxt-link>
 				<span id="theme-btn" @click="$emit('changeTheme')" class="nav-link">
 					<!-- prevents hydration mismatch (themes are loaded before mount but after ssr) -->
 					<client-only>
@@ -19,13 +19,13 @@
 						{{ theme.name }}
 					</client-only>
 				</span>
-				<a href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>
+				<nuxt-link to="mailto:contact@faithfulpack.net">contact@faithfulpack.net</nuxt-link>
 				<p class="footer-info-text">&copy; {{ new Date().getFullYear() }} Faithful Resource Pack</p>
 			</div>
 			<div class="footer-container">
 				<div class="footer-column" v-for="category in categories" :key="category.title">
 					<h3 class="footer-title">
-						<v-icon :icon="category.icon" />
+						<v-icon size="x-small" :icon="category.icon" />
 						{{ category.title }}
 					</h3>
 					<nuxt-link
@@ -49,6 +49,7 @@
 
 <script>
 export default defineNuxtComponent({
+	// can't be called footer since that's already an element
 	name: "column-footer",
 	props: {
 		theme: {
@@ -235,9 +236,8 @@ export default defineNuxtComponent({
 }
 
 .footer-title > i {
-	// scale down icons a bit
+	// fix padding
 	margin-right: 1rem;
-	font-size: 24px;
 	text-align: center;
 }
 

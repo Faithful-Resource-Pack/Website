@@ -21,20 +21,10 @@
 	</div>
 	<h5>Supported Packs</h5>
 	<div class="addon-chips">
-		<v-chip
-			v-if="options.tags.includes('32x')"
-			density="compact"
-			color="#00b0ff"
-			href="/faithful32x"
-		>
+		<v-chip v-if="options.tags.includes('32x')" density="compact" color="#00b0ff" to="/faithful32x">
 			Faithful 32x
 		</v-chip>
-		<v-chip
-			v-if="options.tags.includes('64x')"
-			density="compact"
-			color="#ff62bc"
-			href="/faithful64x"
-		>
+		<v-chip v-if="options.tags.includes('64x')" density="compact" color="#ff62bc" to="/faithful64x">
 			Faithful 64x
 		</v-chip>
 	</div>
@@ -43,8 +33,11 @@
 		<div class="profile-card">
 			<img src="/image/addons/optifine.png" class="profile-avatar" />
 			<p>
-				Requires <a href="https://optifine.net/downloads" target="_blank">OptiFine</a> or an
-				<a href="https://optifine.alternatives.lambdaurora.dev/" target="_blank">equivalent mod</a>
+				Requires
+				<nuxt-link to="https://optifine.net/downloads" target="_blank">OptiFine</nuxt-link> or an
+				<nuxt-link to="https://optifine.alternatives.lambdaurora.dev/" target="_blank">
+					equivalent mod
+				</nuxt-link>
 			</p>
 		</div>
 	</template>

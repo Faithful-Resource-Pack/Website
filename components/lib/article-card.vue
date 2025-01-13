@@ -1,11 +1,11 @@
 <template>
 	<div class="card">
-		<a class="img-card" :href>
+		<nuxt-link class="img-card" :to>
 			<img :src="image" :alt="alt || title" loading="lazy" />
 			<div class="img-card-shadow" />
 			<h3 v-if="title">{{ title }}</h3>
 			<slot name="linked" />
-		</a>
+		</nuxt-link>
 		<slot name="unlinked" />
 	</div>
 </template>
@@ -13,7 +13,7 @@
 export default defineNuxtComponent({
 	name: "article-card",
 	props: {
-		href: {
+		to: {
 			type: String,
 			required: true,
 		},

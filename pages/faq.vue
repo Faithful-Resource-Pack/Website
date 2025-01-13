@@ -2,39 +2,57 @@
 	<h1 class="title my-5 text-center">Frequently Asked Questions</h1>
 	<v-text-field
 		v-model="search"
+		class="pb-3"
 		filled
 		clear-icon="mdi-close"
 		hide-details
 		placeholder="Search FAQs"
 		clearable
-		@keyup="startSearch"
 		@click:clear="
 			() => {
 				search = null;
-				startSearch();
 			}
 		"
 	/>
-	<p class="pt-2 pb-0 px-0">
-		<i>{{ faqs.length }} {{ results }} found</i>
-	</p>
-	<template v-for="(faq, i) in faqs" :key="i">
-		<h2 class="faq-question">{{ faq.question }}</h2>
-		<p v-html="compiledMarkdown(faq.answer)" class="faq-answer"></p>
+	<h2 v-if="!allFaqs.length" class="text-center">
+		{{ error ? `Error: ${error}` : "No FAQs found" }}
+	</h2>
+	<template v-else>
+		<p class="pa-0">
+			<i>{{ faqs.length }} {{ results }} found</i>
+		</p>
+		<template v-for="faq in faqs" :key="faq.question">
+			<h2 class="faq-question">{{ faq.question }}</h2>
+			<div class="faq-answer" v-html="compiledMarkdown(faq.answer)" />
+		</template>
 	</template>
 </template>
 
 <script>
-import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
+import { marked } from "marked";
 
 export default defineNuxtComponent({
 	data() {
 		return {
-			allFaqs: [],
-			faqs: [],
 			search: null,
 		};
+	},
+	async asyncData() {
+		try {
+			const allFaqs = await $fetch(
+				"https://raw.githubusercontent.com/Faithful-Resource-Pack/CompliBot/main/json/faq.json",
+			);
+			return {
+				allFaqs: JSON.parse(allFaqs).filter((faq) => !faq.discord),
+				error: null,
+			};
+		} catch (error) {
+			return {
+				allFaqs: [],
+				error,
+			};
+		}
 	},
 	methods: {
 		compiledMarkdown(text) {
@@ -44,40 +62,26 @@ export default defineNuxtComponent({
 				.replace("()", ""); // removes stray parentheses left by removing pings)
 			return DOMPurify.sanitize(marked.parse(cleanedText));
 		},
-		startSearch() {
-			if (!this.search || this.search.length < 3) {
-				this.faqs = this.allFaqs;
-				return;
-			}
-
-			// partial keyword search
-			const faqs = this.allFaqs.filter((faq) =>
-				faq.keywords.some((keyword) => keyword.toLowerCase().includes(this.search.toLowerCase())),
-			);
-
-			if (faqs.length) {
-				this.faqs = faqs;
-				return;
-			}
-
-			// no results with keywords found, search titles instead
-			this.faqs = this.allFaqs.filter((faq) =>
-				faq.question.toLowerCase().includes(this.search.toLowerCase()),
-			);
-		},
 	},
 	computed: {
 		results() {
 			return this.faqs.length === 1 ? "result" : "results";
 		},
-	},
-	beforeMount() {
-		fetch("https://raw.githubusercontent.com/Faithful-Resource-Pack/CompliBot/main/json/faq.json")
-			.then((res) => res.json())
-			.then((res) => {
-				this.allFaqs = res.filter((v) => !v.discord);
-				this.startSearch();
-			});
+		faqs() {
+			if (!this.search || this.search.length < 3) return this.allFaqs;
+
+			// partial keyword search
+			const foundFaqs = this.allFaqs.filter((faq) =>
+				faq.keywords.some((keyword) => keyword.toLowerCase().includes(this.search.toLowerCase())),
+			);
+
+			if (foundFaqs.length) return foundFaqs;
+
+			// no results with keywords found, search titles instead
+			return this.allFaqs.filter((faq) =>
+				faq.question.toLowerCase().includes(this.search.toLowerCase()),
+			);
+		},
 	},
 });
 </script>

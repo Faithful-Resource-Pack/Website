@@ -4,7 +4,7 @@
 
 	<p>
 		This privacy policy describes how your personal information is collected, used and shared when
-		you visit <a href="https://faithfulpack.net">https://faithfulpack.net</a>.
+		you visit <nuxt-link to="https://faithfulpack.net">https://faithfulpack.net</nuxt-link>.
 	</p>
 
 	<h2>Personal information we collect:</h2>
@@ -14,9 +14,9 @@
 	<p>
 		We use Cloudflare to make this website run. Please refer to their privacy policy for more
 		information:
-		<a href="https://www.cloudflare.com/en-gb/gdpr/introduction"
-			>https://www.cloudflare.com/en-gb/gdpr/introduction</a
-		>.
+		<nuxt-link to="https://www.cloudflare.com/en-gb/gdpr/introduction">
+			https://www.cloudflare.com/en-gb/gdpr/introduction
+		</nuxt-link>.
 	</p>
 
 	<h2>Cookies:</h2>

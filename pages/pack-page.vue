@@ -12,11 +12,11 @@ definePageMeta({
 	</div>
 	<div class="container">
 		<div class="card card-body card-text">
-			<template v-html="compiledMarkdown(text)"></template>
+			<div v-html="sanitizedDescription"></div>
 			<div class="button-row" v-if="buttons">
-				<a class="btn btn-dark" v-for="{ href, text } in buttons" :key="href" :href>
+				<nuxt-link class="btn btn-dark" v-for="{ to, text } in buttons" :key="to" :to>
 					{{ text }}
-				</a>
+				</nuxt-link>
 			</div>
 		</div>
 		<hr />
@@ -25,6 +25,7 @@ definePageMeta({
 </template>
 
 <script>
+import NoContainer from "~/layouts/no-container.vue";
 import PostDownloads from "~/components/posts/post-downloads.vue";
 import DOMPurify from "isomorphic-dompurify";
 import { marked } from "marked";
@@ -33,6 +34,7 @@ import { marked } from "marked";
 export default defineNuxtComponent({
 	name: "pack-page",
 	components: {
+		NoContainer,
 		PostDownloads,
 	},
 	props: {
@@ -48,7 +50,7 @@ export default defineNuxtComponent({
 			type: String,
 			required: true,
 		},
-		text: {
+		description: {
 			type: String,
 			required: true,
 		},
@@ -66,16 +68,14 @@ export default defineNuxtComponent({
 			required: true,
 		},
 	},
-	methods: {
-		compiledMarkdown(text) {
-			return DOMPurify.sanitize(marked.parse(text));
-		},
-	},
 	computed: {
 		bannerStyle() {
 			return {
 				backgroundImage: `url(${this.banner})`,
 			};
+		},
+		sanitizedDescription() {
+			return DOMPurify.sanitize(marked.parse(this.description));
 		},
 	},
 });

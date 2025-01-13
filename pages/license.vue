@@ -6,9 +6,12 @@
 		Copyright © Faithful Resource Pack
 	</h3>
 	<div class="license-download">
-		<a class="btn block btn-dark mb-5" href="https://database.faithfulpack.net/packs/LICENSE.txt">
+		<nuxt-link
+			class="btn block btn-dark mb-5"
+			to="https://database.faithfulpack.net/packs/LICENSE.txt"
+		>
 			Download License
-		</a>
+		</nuxt-link>
 	</div>
 	<h2>You may do the following:</h2>
 	<ol>
@@ -42,7 +45,7 @@
 		<li>
 			<p>
 				Link back to our website, which you can find here:
-				<a href="https://faithfulpack.net/">https://faithfulpack.net/</a>
+				<nuxt-link to="https://faithfulpack.net/">https://faithfulpack.net/</nuxt-link>
 			</p>
 		</li>
 		<li>
@@ -70,8 +73,8 @@
 		</li>
 		<li>
 			<p>
-				<a href="https://database.faithfulpack.net/packs/LICENSE.txt">This file</a>, unmodified,
-				must be included in any content which contains any of our work.
+				<nuxt-link to="https://database.faithfulpack.net/packs/LICENSE.txt">This file</nuxt-link>,
+				unmodified, must be included in any content which contains any of our work.
 			</p>
 		</li>
 	</ol>
@@ -98,10 +101,11 @@
 				licensed under Vattic's original Faithful 32x32 license, which has different requirements
 				compared with this license. If you're interested, you can find the original license here
 				under "Usage Guidelines":
-				<a
-					href="https://web.archive.org/web/20150607220656/http://www.minecraftforum.net:80/forums/mapping-and-modding/resource-packs/1223254-faithful-32x32-pack-update-red-cat-clay-1-8"
-					>https://web.archive.org/web/20150607220656/http://www.minecraftforum.net:80/forums/mapping-and-modding/resource-packs/1223254-faithful-32x32-pack-update-red-cat-clay-1-8</a
+				<nuxt-link
+					to="https://web.archive.org/web/20150607220656/http://www.minecraftforum.net:80/forums/mapping-and-modding/resource-packs/1223254-faithful-32x32-pack-update-red-cat-clay-1-8"
 				>
+					https://web.archive.org/web/20150607220656/http://www.minecraftforum.net:80/forums/mapping-and-modding/resource-packs/1223254-faithful-32x32-pack-update-red-cat-clay-1-8
+				</nuxt-link>
 			</p>
 		</li>
 	</ol>

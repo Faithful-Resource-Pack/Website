@@ -1,6 +1,6 @@
 <template>
 	<article-card
-		:href="`/addons/${addon.slug}`"
+		:to="`/addons/${addon.slug}`"
 		:image="`https://database.faithfulpack.net/images/addons/${addon.slug}/header`"
 		:title="addon.name"
 		:alt

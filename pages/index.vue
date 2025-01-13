@@ -25,7 +25,7 @@ definePageMeta({
 				description="The original Minecraft texture feel, with double the resolution and double the fun!"
 			>
 				<template #btns>
-					<a class="btn block btn-dark" href="/faithful32x">See More</a>
+					<nuxt-link class="btn block btn-dark" to="/faithful32x">See More</nuxt-link>
 				</template>
 			</project-card>
 			<project-card
@@ -35,7 +35,7 @@ definePageMeta({
 				description="An even more detailed experience with quadruple-resolution textures!"
 			>
 				<template #btns>
-					<a class="btn block btn-dark" href="/faithful64x">See More</a>
+					<nuxt-link class="btn block btn-dark" to="/faithful64x">See More</nuxt-link>
 				</template>
 			</project-card>
 		</div>
@@ -51,8 +51,12 @@ definePageMeta({
 			>
 				<template #btns>
 					<div class="button-row">
-						<a class="btn btn-dark" href="/classicfaithful/32x-programmer-art">Original Textures</a>
-						<a class="btn btn-dark" href="/classicfaithful/32x-jappa">Modern Textures (Jappa)</a>
+						<nuxt-link class="btn btn-dark" to="/classicfaithful/32x-programmer-art">
+							Original Textures
+						</nuxt-link>
+						<nuxt-link class="btn btn-dark" to="/classicfaithful/32x-jappa">
+							Modern Textures (Jappa)
+						</nuxt-link>
 					</div>
 				</template>
 			</project-card>
@@ -64,12 +68,12 @@ definePageMeta({
 			>
 				<template #btns>
 					<div class="button-row">
-						<a class="btn block btn-dark disabled" href="/classicfaithful/64x-programmer-art"
-							>Coming Soon...</a
-						>
-						<a class="btn block btn-dark" href="/classicfaithful/64x-jappa"
-							>Modern Textures (Jappa)</a
-						>
+						<nuxt-link class="btn block btn-dark disabled" to="/classicfaithful/64x-programmer-art">
+							Coming Soon...
+						</nuxt-link>
+						<nuxt-link class="btn block btn-dark" to="/classicfaithful/64x-jappa">
+							Modern Textures (Jappa)
+						</nuxt-link>
 					</div>
 				</template>
 			</project-card>
@@ -84,7 +88,7 @@ definePageMeta({
 				description="A plethora of modifications to all our base packs, ranging from redstone utilities to a rainbow XP bar!"
 			>
 				<template #btns>
-					<a class="btn block btn-dark" href="/addons">Discover Add-ons</a>
+					<nuxt-link class="btn block btn-dark" to="/addons">Discover Add-ons</nuxt-link>
 				</template>
 			</project-card>
 			<project-card
@@ -95,8 +99,8 @@ definePageMeta({
 			>
 				<template #btns>
 					<div class="btn-group">
-						<a class="btn block btn-dark" href="/mods">Mods</a>
-						<a class="btn block btn-dark" href="/modpacks">Modpacks</a>
+						<nuxt-link class="btn block btn-dark" to="/mods">Mods</nuxt-link>
+						<nuxt-link class="btn block btn-dark" to="/modpacks">Modpacks</nuxt-link>
 					</div>
 				</template>
 			</project-card>
@@ -108,7 +112,7 @@ definePageMeta({
 		<h2 class="title text-center">Add-ons</h2>
 		<div class="res-grid-4">
 			<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
-			<article-card href="/addons" image="/image/addons/see_more.png" title="See More" />
+			<article-card to="/addons" image="/image/addons/see_more.png" title="See More" />
 		</div>
 
 		<hr />
@@ -118,13 +122,13 @@ definePageMeta({
 			<article-card
 				v-for="post in topPosts"
 				:key="post.id"
-				:href="post.permalink"
+				:to="post.permalink"
 				:image="post.header_img"
 				:title="post.title"
 			/>
 		</div>
 		<br />
-		<a class="btn btn-dark news-button center" href="/news"> See More </a>
+		<nuxt-link class="btn btn-dark news-button center" to="/news"> See More </nuxt-link>
 	</div>
 </template>
 
@@ -151,7 +155,7 @@ export default defineNuxtComponent({
 	},
 	computed: {
 		topPosts() {
-			if (!this.posts.length) return [];
+			if (!this.posts || !this.posts.length) return [];
 			return this.posts.slice(0, 6);
 		},
 	},
