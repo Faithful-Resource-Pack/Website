@@ -35,7 +35,7 @@
 			<i class="fas spin"></i> Loading
 		</div>
 		<div v-else class="res-grid-3">
-			<div v-for="(mKey, index) in Object.keys(messages)" :key="mKey">
+			<div v-for="mKey in Object.keys(messages)" :key="mKey">
 				<h3>{{ messages[mKey] }}</h3>
 				<h3>
 					<span class="badge badge-primary h1">{{ modStats[mKey] }}</span>
@@ -57,6 +57,18 @@ export default defineNuxtComponent({
 				supportedMods: "Mods Supported",
 				storedPacks: "Mod Resource Packs Stored",
 			},
+		};
+	},
+	async asyncData() {
+		const [mods, addons, posts] = await Promise.all([
+			$fetch("https://api.faithfulpack.net/v2/mods/raw"),
+			$fetch("https://api.faithfulpack.net/v2/addons/approved"),
+			$fetch("https://api.faithfulpack.net/v2/posts/approved"),
+		]);
+		return {
+			mods,
+			addons,
+			posts,
 		};
 	},
 	computed: {
@@ -122,34 +134,6 @@ export default defineNuxtComponent({
 				supportedMods,
 			};
 		},
-	},
-	beforeMount() {
-		fetch("https://api.faithfulpack.net/v2/mods/raw")
-			.then((res) => res.json())
-			.then((json) => {
-				this.mods = json;
-			})
-			.catch(() => {
-				this.mods = null;
-			});
-
-		fetch("https://api.faithfulpack.net/v2/addons/approved")
-			.then((res) => res.json())
-			.then((data) => {
-				this.addons = data;
-			})
-			.catch(() => {
-				this.addons = null;
-			});
-
-		fetch("https://api.faithfulpack.net/v2/posts/approved")
-			.then((res) => res.json())
-			.then((data) => {
-				this.posts = data;
-			})
-			.catch(() => {
-				this.posts = null;
-			});
 	},
 });
 </script>

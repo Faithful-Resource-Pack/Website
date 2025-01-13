@@ -15,8 +15,8 @@
 		We use Cloudflare to make this website run. Please refer to their privacy policy for more
 		information:
 		<nuxt-link to="https://www.cloudflare.com/en-gb/gdpr/introduction">
-			https://www.cloudflare.com/en-gb/gdpr/introduction
-		</nuxt-link>.
+			https://www.cloudflare.com/en-gb/gdpr/introduction.
+		</nuxt-link>
 	</p>
 
 	<h2>Cookies:</h2>

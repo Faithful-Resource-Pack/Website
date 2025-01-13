@@ -32,7 +32,6 @@ import PostDownloads from "~/components/posts/post-downloads.vue";
 import DOMPurify from "isomorphic-dompurify";
 import { marked } from "marked";
 
-
 export default defineNuxtComponent({
 	name: "post-layout",
 	components: {
