@@ -1,71 +1,22 @@
 <template>
-	<p v-if="post.discontinued" class="red banner h2">This project has been discontinued.</p>
-	<h1 v-if="post.title" class="title my-5 text-center">{{ post.title }}</h1>
-	<template v-if="post.header_img">
-		<img :src="post.header_img" class="header-img" style="width: 100%" />
-		<br />
-	</template>
-
-	<hr />
-
-	<div
-		v-if="post.description"
-		class="card card-body card-text"
-		v-html="compiledMarkdown(post.description)"
-	/>
-	<post-downloads v-if="Object.keys(post.downloads).length" :downloads="post.downloads" />
-	<template v-if="Object.keys(post.changelog).length">
-		<br />
-		<h2 class="subtitle my-5 text-center">Changelog</h2>
-		<div class="card card-body">
-			<post-changelog :item="post.changelog" />
-		</div>
-	</template>
-	<br />
-	<discord-button />
+	<!-- shared by /:project/latest as well -->
+	<post-layout :post />
 </template>
 
 <script>
-import DiscordButton from "~/components/lib/discord-button.vue";
-import PostChangelog from "~/components/posts/post-changelog.vue";
-import PostDownloads from "~/components/posts/post-downloads.vue";
-import DOMPurify from "isomorphic-dompurify";
-import { marked } from "marked";
+import PostLayout from "~/components/posts/post-layout.vue";
 
 export default defineNuxtComponent({
 	components: {
-		DiscordButton,
-		PostDownloads,
-		PostChangelog,
+		PostLayout,
 	},
 	async asyncData() {
 		const route = useRoute();
+		// need to double encode (the tsoa experience)
 		const post = await $fetch(
 			`https://api.faithfulpack.net/v2/posts/${encodeURIComponent(encodeURIComponent(route.path))}`,
 		);
 		return { post };
 	},
-	methods: {
-		compiledMarkdown(text) {
-			return DOMPurify.sanitize(marked.parse(text));
-		},
-	},
 });
 </script>
-
-<style scoped lang="scss">
-.hero {
-	display: block;
-	background-image: v-bind(banner);
-	background-size: cover;
-	background-position: center;
-	padding: 0 2rem 1px;
-	text-align: center;
-}
-
-.wordmark {
-	padding: 5vw;
-	filter: drop-shadow(0 0 10px #000);
-	width: 800px;
-}
-</style>
