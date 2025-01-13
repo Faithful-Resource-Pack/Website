@@ -1,8 +1,8 @@
 <template>
 	<h1 class="title my-5 text-center">Downloads</h1>
 	<template v-for="(editions, pack) in alive" :key="pack">
-		<h2 :id="pack" class="text-center subtitle mb-0 download-title" @click="copyText(pack)">
-			<nuxt-link class="download-hashtag" title="Copy URL to clipboard" :to="'#' + pack">
+		<h2 :id="hashify(pack)" class="text-center subtitle mb-0 download-title">
+			<nuxt-link class="download-hashtag" title="Copy URL to clipboard" :to="`#${hashify(pack)}`">
 				#</nuxt-link
 			>{{ pack }}
 		</h2>
@@ -21,96 +21,97 @@
 
 <script>
 import DownloadTable from "~/components/downloads/download-table.vue";
+
+// expand this with new packs as necessary
+const PACK_ORDER = ["Faithful 32x", "Faithful 64x"];
+const DOWNLOAD_DATA = [
+	{
+		// json filename
+		json: "faithful_32x_java",
+		// curseforge project id
+		curse: "436482",
+		// display name
+		name: "Faithful 32x",
+		// display edition
+		edition: "Java",
+		// whether to display at bottom
+		discontinued: false,
+	},
+	{
+		json: "faithful_32x_bedrock",
+		curse: "507188",
+		name: "Faithful 32x",
+		edition: "Bedrock",
+	},
+	{
+		json: "faithful_64x_java",
+		curse: "419139",
+		name: "Faithful 64x",
+		edition: "Java",
+	},
+	{
+		json: "faithful_64x_bedrock",
+		curse: "694024",
+		name: "Faithful 64x",
+		edition: "Bedrock",
+	},
+	{
+		json: "faithful_32x_dungeons",
+		curse: "501546",
+		name: "Faithful 32x for Minecraft Dungeons",
+		discontinued: true,
+	},
+];
+
 export default defineNuxtComponent({
 	components: {
 		DownloadTable,
 	},
-	data() {
-		return {
-			alive: {
-				"Faithful 32x": {
-					Java: {
-						downloads: [],
-						files: [],
-					},
-					Bedrock: {
-						downloads: [],
-						files: [],
-					},
-				},
-				"Faithful 64x": {
-					Java: {
-						downloads: [],
-						files: [],
-					},
-					Bedrock: {
-						downloads: [],
-						files: [],
-					},
-				},
-			},
-			discontinued: {
-				"Faithful 32x for Minecraft Dungeons": {
-					downloads: [],
-					files: [],
-				},
-			},
+	async asyncData() {
+		const downloadData = {
+			discontinued: DOWNLOAD_DATA.filter((d) => d.discontinued).reduce((acc, cur) => {
+				acc[cur.name] = {};
+				return acc;
+			}, {}),
+			alive: DOWNLOAD_DATA.filter((d) => !d.discontinued).reduce((acc, cur) => {
+				acc[cur.name] ||= {};
+				acc[cur.name][cur.edition] = {};
+				return acc;
+			}, {}),
 		};
+
+		// stupid workaround for bug where relative urls don't work on the server
+		// https://github.com/nuxt/nuxt/issues/13857
+		const baseURL = useRequestURL()
+			.toString()
+			.replace(/(?<=(?:.*?\/){3}).+/g, "");
+
+		await Promise.all(
+			DOWNLOAD_DATA.map(async ({ discontinued, name, edition, json, curse }) => {
+				const [downloads, { files }] = await Promise.all([
+					$fetch(`${baseURL}data/downloads/${json}.json`).catch((err) => {
+						console.error(err);
+						return [];
+					}),
+					$fetch(`https://api.cfwidget.com/${curse}`).catch((err) => {
+						console.error(err);
+						return [];
+					}),
+				]);
+				// nested fields already set up
+				if (discontinued) downloadData.discontinued[name] = { downloads, files };
+				else downloadData.alive[name][edition] = { downloads, files };
+			}),
+		);
+
+		// after the promise.all everything has finished fetching into downloadData
+		return downloadData;
 	},
 	methods: {
-		fetchData({ json, curse, name, edition, discontinued }) {
-			fetch(`/data/downloads/${json}.json`)
-				.then((res) => res.json())
-				.then((downloads) => {
-					if (discontinued) this.discontinued[name].downloads = downloads;
-					else this.alive[name][edition].downloads = downloads;
-				})
-				.catch(console.error);
-			fetch(`https://api.cfwidget.com/${curse}`)
-				.then((res) => res.json())
-				.then(({ files }) => {
-					if (discontinued) this.discontinued[name].files = files;
-					else this.alive[name][edition].files = files;
-				})
-				.catch(console.error);
+		hashify(id) {
+			// vue router really hates spaces in HTML ids
+			return encodeURIComponent(id.split(/ /g).join("-"));
 		},
-		copyText(id) {
-			location.hash = `#${encodeURIComponent(id)}`;
-		},
-	},
-	beforeMount() {
-		Promise.all([
-			this.fetchData({
-				json: "faithful_32x_java",
-				curse: "436482",
-				name: "Faithful 32x",
-				edition: "Java",
-			}),
-			this.fetchData({
-				json: "faithful_32x_bedrock",
-				curse: "507188",
-				name: "Faithful 32x",
-				edition: "Bedrock",
-			}),
-			this.fetchData({
-				json: "faithful_64x_java",
-				curse: "419139",
-				name: "Faithful 64x",
-				edition: "Java",
-			}),
-			this.fetchData({
-				json: "faithful_64x_bedrock",
-				curse: "694024",
-				name: "Faithful 64x",
-				edition: "Bedrock",
-			}),
-			this.fetchData({
-				json: "faithful_32x_dungeons",
-				curse: "501546",
-				name: "Faithful 32x for Minecraft Dungeons",
-				discontinued: true,
-			}),
-		]);
 	},
 });
 </script>

@@ -10,5 +10,5 @@ description: |
   <br><br>
 
 buttons:
-  - { to: /downloads#Faithful%2064x, text: Downloads }
+  - { to: /downloads#Faithful-64x, text: Downloads }
   - { to: /faithful64x/latest, text: View Latest Post }

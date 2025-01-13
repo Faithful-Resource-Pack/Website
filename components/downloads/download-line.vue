@@ -15,11 +15,12 @@
 					>Latest</span
 				>
 			</p>
-			<p class="mobile-details" v-if="date">{{ mobileDetails }}</p>
+			<!-- avoid SSR warning with date localization -->
+			<p class="mobile-details" v-if="date" data-allow-mismatch="children">{{ mobileDetails }}</p>
 		</td>
 
 		<td class="date">
-			<p>{{ date }}</p>
+			<p data-allow-mismatch="children">{{ date }}</p>
 		</td>
 		<td class="size">
 			<p>{{ size }}</p>
@@ -98,8 +99,8 @@ export default defineNuxtComponent({
 			const month = dateObj.getMonth() + 1; // 0 indexed
 			const day = dateObj.getDate();
 			// mdy for us (expand array if someone else does too)
-			if (["en-US"].includes(navigator.language)) return `${month}/${day}/${year}`;
-			// dmy for everyone else
+			if (navigator && ["en-US"].includes(navigator.language)) return `${month}/${day}/${year}`;
+			// dmy for everyone else (and on server since no client is available)
 			return `${day}/${month}/${year}`;
 		},
 		toggleChildren() {
