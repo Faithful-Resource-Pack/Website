@@ -85,3 +85,12 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+.faq-question {
+	padding-top: 50px;
+}
+.faq-answer {
+	padding-left: 20px;
+}
+</style>

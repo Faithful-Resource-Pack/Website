@@ -289,6 +289,38 @@ footer, footer p {
 .disabled {
 	pointer-events: none;
 }
+// generic class for both navbar and footer
+.navigation-link {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	padding: 0.25rem 1rem;
+	transition: all 0.1s ease-out;
+	padding-right: 0;
+	padding-left: 0;
+	color: rgba(255, 255, 255, 0.5);
+	&:hover, &:focus {
+		color: rgba(255, 255, 255, 0.75);
+		transform: scale(0.95);
+		cursor: pointer;
+	}
+	i {
+		margin-right: 10px;
+	}
+}
+@media screen and (max-width: 760px) {
+	.navigation-link:hover {
+		// disable scaling effect (looks bad on mobile)
+		transform: none;
+	}
+	// uniform width icons to prevent text not lining up
+	.navigation-link > i {
+		width: 26px;
+		line-height: 26px;
+		text-align: center;
+	}
+}
 .btn, *.card, .header-img, .about-button {
 	overflow: hidden;
 	box-shadow: $card-shadow;
@@ -428,7 +460,7 @@ a > .banner:hover {
 	width: 8px;
 }
 ::-webkit-scrollbar-button{
-	height: 8px
+	height: 8px;
 }
 /* container size management */
 @media screen and (min-width: 576px) {
@@ -489,56 +521,6 @@ a > .banner:hover {
 
 .profile-avatar {
 	height: 48px;
-}
-
-// so few styles for these pages it's not worth making separate files
-
-/** faq page */
-.faq-question {
-	padding-top: 50px;
-}
-
-.faq-answer {
-	padding-left: 20px;
-}
-
-/** news page */
-:root {
-	// must use regular css variable (scss inlines variables when compiled)
-	--news-display-height: 5;
-	@media screen and (max-width: 1200px) {
-		--news-display-height: 3;
-	}
-	@media screen and (max-width: 960px) {
-		--news-display-height: 0;
-	}
-	@media screen and (max-width: 760px) {
-		--news-display-height: 4;
-	}
-}
-
-// https://css-tricks.com/line-clampin/
-.text-truncate {
-	display: -webkit-box;
-	height: calc(1.5 * var(--news-display-height));
-	overflow: hidden;
-	line-clamp: var(--news-display-height);
-	-webkit-line-clamp: var(--news-display-height);
-	-webkit-box-orient: vertical;
-}
-
-.underline-hover {
-	color: unset;
-	&:hover {
-		color: unset;
-		text-decoration: underline;
-		text-decoration-color: currentColor;
-	}
-}
-
-.flex-down {
-	display: flex;
-	flex-flow: column wrap;
 }
 
 .disable-snow-button {

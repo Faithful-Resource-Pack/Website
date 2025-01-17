@@ -11,7 +11,7 @@
 						alt="Faithful Wordmark"
 					/>
 				</nuxt-link>
-				<span id="theme-btn" @click="$emit('changeTheme')" class="nav-link">
+				<span id="theme-btn" @click="$emit('changeTheme')" class="navigation-link">
 					<!-- prevents hydration mismatch (themes are loaded before mount but after ssr) -->
 					<client-only>
 						<template #fallback>Loading Themes…</template>
@@ -29,7 +29,7 @@
 						{{ category.title }}
 					</h3>
 					<nuxt-link
-						class="nav-link"
+						class="navigation-link"
 						v-for="item in category.items"
 						:key="item.name"
 						:to="item.to"
@@ -172,7 +172,6 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/components/navbar.scss" as *;
 // container for left column and the others for better wrapping
 .footer-wrapper {
 	display: flex;

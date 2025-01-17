@@ -14,40 +14,38 @@
 				<v-icon size="large" icon="mdi-menu" />
 			</button>
 
-			<ul class="navbar-container" :class="{ show: isOpen }">
-				<li class="nav-item" v-for="{ name, to, icon } in left" :key="name">
-					<nuxt-link
-						:to
-						class="nav-link"
-						:target="to.startsWith('http') ? '_blank' : ''"
-						:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
-					>
-						<v-icon size="small" :icon class="mr-2" /> {{ name }}
-					</nuxt-link>
-				</li>
+			<div class="navbar-container" :class="{ show: isOpen }">
+				<nuxt-link
+					v-for="{ name, to, icon } in left"
+					:key="name"
+					:to
+					class="navigation-link navbar-link"
+					:target="to.startsWith('http') ? '_blank' : ''"
+					:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
+				>
+					<v-icon size="small" :icon class="mr-2" /> {{ name }}
+				</nuxt-link>
 
-				<li>
-					<nuxt-link to="/" title="Faithful">
-						<img
-							class="navbar-logo-img"
-							src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=128"
-							alt="Faithful Logo"
-							loading="lazy"
-						/>
-					</nuxt-link>
-				</li>
+				<nuxt-link to="/" title="Faithful">
+					<img
+						class="navbar-logo-img"
+						src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=128"
+						alt="Faithful Logo"
+						loading="lazy"
+					/>
+				</nuxt-link>
 
-				<li class="nav-item" v-for="{ name, to, icon } in right" :key="name">
-					<nuxt-link
-						:to
-						class="nav-link"
-						:target="to.startsWith('http') ? '_blank' : ''"
-						:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
-					>
-						<v-icon size="small" :icon class="mr-2" /> {{ name }}
-					</nuxt-link>
-				</li>
-			</ul>
+				<nuxt-link
+					v-for="{ name, to, icon } in right"
+					:key="name"
+					:to
+					class="navigation-link navbar-link"
+					:target="to.startsWith('http') ? '_blank' : ''"
+					:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
+				>
+					<v-icon size="small" :icon class="mr-2" /> {{ name }}
+				</nuxt-link>
+			</div>
 		</nav>
 	</header>
 </template>
@@ -98,5 +96,93 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/components/navbar.scss" as *;
+// entire header must be sticky (otherwise the text moves without the background)
+header {
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
+}
+// wraps both the mobile dropdown bar and the regular navbar
+.navbar-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem;
+}
+// just the items bit
+.navbar-container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	flex-basis: 100%;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+// make sure each item in the bar takes up the same length
+.navbar-link {
+	width: 125px;
+}
+.navbar-logo-img {
+	width: 48px;
+	height: 48px;
+	// pixelated looks really bad on smallish screens, I tried it
+	image-rendering: crisp-edges;
+	transition: all 0.5s;
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+.navbar-toggler {
+	padding: 0.5rem 1rem;
+	line-height: 1;
+	background-color: transparent;
+	border: none;
+	color: rgba(255, 255, 255, 0.5);
+}
+.navbar-toggler-icon {
+	vertical-align: middle;
+	font-size: 24px;
+	// prevents vuetify retheming it randomly (???)
+	color: rgba(255, 255, 255, 0.5);
+}
+
+// don't display on desktop layout
+.nav-mobile-wordmark, .navbar-toggler {
+	display: none;
+}
+
+// mobile styles
+@media screen and (max-width: 760px) {
+	// set wrapper to show wordmark/toggler button on each side
+	.navbar-wrapper {
+		padding: 0.5rem 1rem;
+		justify-content: space-between;
+	}
+	// set items container to left-aligned columns
+	.navbar-container {
+		flex-direction: column;
+		justify-content: flex-start;
+		margin-top: 0.5rem;
+		// handle toggle class
+		&:not(.show) {
+			display: none;
+		}
+	}
+	.navbar-link {
+		justify-content: start;
+		width: 100%;
+	}
+	.navbar-logo-img {
+		display: none;
+	}
+	// show toggler and wordmark
+	.nav-mobile-wordmark,
+	.navbar-toggler {
+		display: block;
+	}
+}
 </style>

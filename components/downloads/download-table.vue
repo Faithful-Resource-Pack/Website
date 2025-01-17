@@ -45,7 +45,6 @@ export default defineNuxtComponent({
 
 <style lang="scss">
 @use "~/assets/css/lib/variables" as *;
-@use "~/assets/css/components/download-badges" as *;
 
 .download-table-padding {
 	border-radius: $border-radius-0x;
@@ -115,6 +114,10 @@ td {
 	width: calc(50% / 3);
 }
 
+.download-badges > * {
+	margin-right: 0.3rem;
+}
+
 .download-details {
 	text-align: left;
 	width: 45%;
@@ -143,8 +146,9 @@ td {
 }
 
 .btn-dl {
-	padding: 0.1rem 0.4rem;
-	width: 110px;
+	padding: 0.1rem 0.2rem;
+	margin: 0.1rem 0.1rem;
+	width: 115px;
 }
 
 i.dl-icon {

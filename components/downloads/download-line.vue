@@ -7,13 +7,15 @@
 		<td class="download-details">
 			<p class="download-badges">
 				<span class="download-name">
-					<span :class="['download-type', labelColor]" />
-					<span class="download-badge">{{ item.file_type }} {{ item.file_version }}</span>
+					<download-badge dot :badge="labelColor" />
+					<span class="mx-2 my-1">{{ item.file_type }} {{ item.file_version }}</span>
 				</span>
-				<span class="download-badge version">{{ version }}</span>
-				<span class="download-badge latest" v-if="version !== 'download' && item.latest"
-					>Latest</span
-				>
+				<download-badge badge="version">
+					{{ version }}
+				</download-badge>
+				<download-badge badge="latest" v-if="version !== 'download' && item.latest">
+					Latest
+				</download-badge>
 			</p>
 			<!-- avoid SSR warning with date localization -->
 			<p class="mobile-details" v-if="date" data-allow-mismatch="children">{{ mobileDetails }}</p>
@@ -42,11 +44,13 @@
 
 <script>
 import MediaIcon from "../lib/media-icon.vue";
+import DownloadBadge from "./download-badge.vue";
 
 export default defineNuxtComponent({
 	name: "download-line",
 	components: {
 		MediaIcon,
+		DownloadBadge,
 	},
 	props: {
 		nested: {

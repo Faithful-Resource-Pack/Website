@@ -18,8 +18,8 @@
 			<nuxt-link :to="firstPost.permalink" class="underline-hover">
 				<h2 class="h1">{{ firstPost.title }}</h2>
 			</nuxt-link>
-			<span class="text-truncate" v-html="compiledMarkdown(firstPost.description)" />
-			<nuxt-link class="btn block btn-dark" :to="firstPost.permalink">Read More</nuxt-link>
+			<span class="news-preview" v-html="compiledMarkdown(firstPost.description)" />
+			<nuxt-link class="btn block btn-dark mt-5" :to="firstPost.permalink">Read More</nuxt-link>
 		</div>
 	</div>
 
@@ -39,7 +39,7 @@
 <script>
 import ArticleCard from "~/components/lib/article-card.vue";
 import DOMPurify from "isomorphic-dompurify";
-import { marked } from "marked";
+import removeMd from "remove-markdown";
 
 export default defineNuxtComponent({
 	components: {
@@ -61,7 +61,7 @@ export default defineNuxtComponent({
 	},
 	methods: {
 		compiledMarkdown(text) {
-			return DOMPurify.sanitize(marked.parse(text));
+			return DOMPurify.sanitize(removeMd(text));
 		},
 	},
 	computed: {
@@ -75,3 +75,39 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style lang="scss">
+:root {
+	// must use regular css variable (scss inlines variables when compiled)
+	--news-display-height: 5;
+	@media screen and (max-width: 1200px) {
+		--news-display-height: 3;
+	}
+	@media screen and (max-width: 960px) {
+		--news-display-height: 0;
+	}
+	@media screen and (max-width: 760px) {
+		--news-display-height: 4;
+	}
+}
+
+// https://css-tricks.com/line-clampin/
+.news-preview {
+	display: -webkit-box;
+	height: calc(1.5 * var(--news-display-height));
+	overflow: hidden;
+	line-clamp: var(--news-display-height);
+	-webkit-line-clamp: var(--news-display-height);
+	-webkit-box-orient: vertical;
+}
+
+.underline-hover {
+	color: unset;
+	&:hover {
+		color: unset;
+		text-decoration: underline;
+		text-decoration-color: currentColor;
+	}
+}
+
+</style>
