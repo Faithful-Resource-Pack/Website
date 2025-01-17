@@ -18,7 +18,9 @@
 			<nuxt-link :to="firstPost.permalink" class="underline-hover">
 				<h2 class="h1">{{ firstPost.title }}</h2>
 			</nuxt-link>
-			<span class="news-preview" v-html="compiledMarkdown(firstPost.description)" />
+			<p class="news-preview">
+				{{ compiledMarkdown(firstPost.description) }}
+			</p>
 			<nuxt-link class="btn block btn-dark mt-5" :to="firstPost.permalink">Read More</nuxt-link>
 		</div>
 	</div>
@@ -76,15 +78,15 @@ export default defineNuxtComponent({
 });
 </script>
 
-<style lang="scss">
-:root {
+<style scoped lang="scss">
+* {
 	// must use regular css variable (scss inlines variables when compiled)
 	--news-display-height: 5;
-	@media screen and (max-width: 1200px) {
+	@media screen and (max-width: 1280px) {
 		--news-display-height: 3;
 	}
 	@media screen and (max-width: 960px) {
-		--news-display-height: 0;
+		--news-display-height: 1;
 	}
 	@media screen and (max-width: 760px) {
 		--news-display-height: 4;
@@ -109,5 +111,4 @@ export default defineNuxtComponent({
 		text-decoration-color: currentColor;
 	}
 }
-
 </style>

@@ -204,6 +204,7 @@ definePageMeta({
 	}
 }
 
+// isn't a standard breakpoint but it's the max size images render nicely at
 @media (max-width: 1080px) {
 	// center content and display vertically on mobile
 	.about-container {
@@ -215,7 +216,7 @@ definePageMeta({
 	}
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
 	// override container class to fix margins
 	.container {
 		max-width: 95% !important;

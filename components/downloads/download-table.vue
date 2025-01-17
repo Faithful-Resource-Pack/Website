@@ -43,7 +43,7 @@ export default defineNuxtComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "~/assets/css/lib/variables" as *;
 
 .download-table-padding {
@@ -67,6 +67,9 @@ export default defineNuxtComponent({
 		p {
 			font-size: 1.25rem;
 			padding: 0.2rem;
+			color: #ccc;
+			margin-bottom: 0;
+			vertical-align: middle;
 		}
 	}
 }
@@ -78,84 +81,7 @@ export default defineNuxtComponent({
 	width: 50%;
 }
 
-// all p elements inside the download table use this style
-.download-table p {
-	color: #ccc;
-	margin-bottom: 0;
-	vertical-align: middle;
-}
-
-.download-item {
-	border-radius: $border-radius-0x;
-	padding-left: 0.7rem;
-	padding-right: 0.7rem;
-	&:hover {
-		background-color: rgba(255, 255, 255, 0.1);
-	}
-}
-
-.download-name {
-	display: inline-flex;
-	padding-top: 0px !important;
-	padding-bottom: 0px !important;
-	padding-left: 0.5rem;
-	margin: 0px;
-	// fix for dots not respecting aspect ratio
-	align-items: center;
-}
-
-.subitem {
-	opacity: 75%;
-}
-
-td {
-	text-align: center;
-	vertical-align: middle;
-	width: calc(50% / 3);
-}
-
-.download-badges > * {
-	margin-right: 0.3rem;
-}
-
-.download-details {
-	text-align: left;
-	width: 45%;
-}
-
-.links {
-	width: calc(50% / 6);
-}
-
-.link-text {
-	padding: 0;
-	margin-left: 8px;
-}
-
-.mobile-details {
-	display: none;
-}
-
-.show-icon-container {
-	user-select: none;
-	width: 5%;
-}
-
-.show-icon {
-	opacity: 50%;
-}
-
-.btn-dl {
-	padding: 0.1rem 0.2rem;
-	margin: 0.1rem 0.1rem;
-	width: 115px;
-}
-
-i.dl-icon {
-	font-size: 20px;
-}
-
-// mobile layout
+// remove padding and table headers on mobile
 @media (max-width: 760px) {
 	.download-table-padding {
 		margin: 0;
@@ -163,67 +89,6 @@ i.dl-icon {
 	}
 
 	thead {
-		display: none;
-	}
-
-	.download-name {
-		padding-left: 0px !important;
-		// remove inline so it wraps the badges underneath
-		display: flex;
-	}
-
-	// hide desktop details and show mobile details
-	.size,
-	.date {
-		display: none;
-	}
-	.mobile-details {
-		display: block;
-	}
-
-	.download-item {
-		display: flex;
-		align-items: stretch;
-		padding: 0.25rem 0.5rem;
-
-		// remove hover effect (looks bad on mobile)
-		&:hover {
-			background-color: transparent;
-		}
-	}
-
-	// fix margins
-	.show-icon-container {
-		flex: 0 0 24px;
-		padding: 0.2rem 0;
-	}
-
-	.download-details {
-		flex: 1 1 auto;
-		padding: 0.2rem 0.4rem;
-	}
-
-	.links {
-		flex: 0 0 30px;
-		width: auto;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-	}
-
-	// square buttons with centered icon and remove text
-	.btn-dl {
-		width: 30px;
-		height: 30px;
-		line-height: 30px;
-		text-align: center;
-		padding: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.link-text {
 		display: none;
 	}
 }
