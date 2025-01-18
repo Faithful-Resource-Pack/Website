@@ -1,30 +1,31 @@
 <template>
-	<div ref="error" class="error-theme">
+	<!-- theme class must be outside the layout so it encapsulates the navbar/footer -->
+	<div class="error-theme">
 		<nuxt-layout name="default">
 			<div class="text-center">
 				<h1>Are you lost in The End?</h1>
-				<p style="margin-bottom: 0">
+				<p>
 					Unfortunately, the page you requested doesn't exist!
 					<br />
-					Try checking your spelling or going to the <strong><a href="/">main page</a></strong> to
-					find what you were looking for.
+					Try checking your spelling or going to the <nuxt-link to="/">main page</nuxt-link> to find
+					what you were looking for.
 				</p>
-				<div class="animation-container">
-					<img id="tnt" v-show="tntVisible" :src="tntSrc" alt="Block of TNT" @click="boom()" />
-					<img
-						id="diamond"
-						v-show="diamondVisible"
-						src="https://api.faithfulpack.net/v2/textures/1484/url/faithful_32x/latest"
-						alt="Diamond"
-						@mouseover="reset"
-					/>
-					<img
-						id="explosion"
-						v-show="explosionVisible"
-						:src="explosionSrc"
-						alt="TNT Explosion Particles"
-					/>
-				</div>
+			</div>
+			<div class="animation-container">
+				<img id="tnt" v-show="tntVisible" :src="tntSrc" alt="Block of TNT" @click="boom" />
+				<img
+					id="diamond"
+					v-show="diamondVisible"
+					src="https://api.faithfulpack.net/v2/textures/1484/url/faithful_32x/latest"
+					alt="Diamond"
+					@mouseover="reset"
+				/>
+				<img
+					id="explosion"
+					v-show="explosionVisible"
+					:src="explosionSrc"
+					alt="TNT Explosion Particles"
+				/>
 			</div>
 		</nuxt-layout>
 	</div>
@@ -56,11 +57,12 @@ export default {
 		async boom() {
 			if (this.exploded) return this.reset();
 
+			// set it first to prevent spamming the tnt breaking things
+			this.exploded = true;
 			await this.primeTNT();
 			await this.handleParticles();
 
 			this.diamondVisible = true;
-			this.exploded = true;
 		},
 		async primeTNT() {
 			for (let i = 0; i < 8; ++i) {
@@ -68,7 +70,6 @@ export default {
 				if (i % 2 === 0) this.tntSrc = "/image/404/tnt_side_on.png";
 				else this.tntSrc = "/image/404/tnt_side.png";
 			}
-
 			this.tntVisible = false;
 		},
 		async handleParticles() {
@@ -88,7 +89,7 @@ export default {
 	position: relative;
 	height: 64px;
 	width: 128px;
-	margin: 100px auto 50px;
+	margin: 100px auto;
 }
 #tnt {
 	position: absolute;

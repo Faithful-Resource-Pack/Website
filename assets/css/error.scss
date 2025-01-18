@@ -1,9 +1,5 @@
-:where(.error-theme) {
-	footer #shadow {
-		display: none;
-	}
-	h1,
-	p {
+.error-theme {
+	h1, p {
 		color: #ccc;
 	}
 	.foreground {
@@ -15,5 +11,12 @@
 	header {
 		box-shadow: none !important;
 		background: none !important;
+	}
+	footer #shadow {
+		display: none;
+	}
+	// fix for tnt showing too high
+	.container {
+		padding-bottom: 0px;
 	}
 }
