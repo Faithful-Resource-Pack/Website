@@ -13,10 +13,14 @@ export default defineNuxtComponent({
 	async asyncData() {
 		const route = useRoute();
 		// need to double encode (the tsoa experience)
-		const post = await $fetch(
-			`https://api.faithfulpack.net/v2/posts/${encodeURIComponent(encodeURIComponent(route.path))}`,
-		);
-		return { post };
+		try {
+			const post = await $fetch(
+				`https://api.faithfulpack.net/v2/posts/${encodeURIComponent(encodeURIComponent(route.path))}`,
+			);
+			return { post };
+		} catch (err) {
+			throw createError({ statusCode: 404, statusMessage: "Post not found", fatal: true });
+		}
 	},
 });
 </script>

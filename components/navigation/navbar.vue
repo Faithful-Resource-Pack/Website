@@ -151,7 +151,8 @@ header {
 }
 
 // don't display on desktop layout
-.nav-mobile-wordmark, .navbar-toggler {
+.nav-mobile-wordmark,
+.navbar-toggler {
 	display: none;
 }
 

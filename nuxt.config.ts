@@ -29,9 +29,10 @@ export default defineNuxtConfig({
 	css: [
 		"~/assets/css/lib/buttons.scss",
 		"~/assets/css/main.scss",
-		// load both at once and switch based on root-level class
+		// load all at once and switch based on root-level class
 		"~/assets/css/light.scss",
 		"~/assets/css/dark.scss",
+		"~/assets/css/error.scss",
 	],
 	components: [
 		{

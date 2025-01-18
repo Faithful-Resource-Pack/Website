@@ -238,9 +238,6 @@ footer #shadow {
 	height: 5px;
 	overflow: hidden;
 }
-.error footer #shadow {
-	display: none;
-}
 footer #shadow::after {
 	content: "";
 	display: block;
@@ -351,7 +348,7 @@ footer, footer p {
 	height: 0;
 	padding-top: 56.25%;
 }
-.img-card > img:first-of-type, .placeholder {
+.img-card > img:first-of-type {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -390,14 +387,6 @@ footer, footer p {
 }
 .img-card > img:hover {
 	cursor: pointer;
-}
-.placeholder {
-	background-image:
-		url(https://database.faithfulpack.net/images/branding/logos/transparent/512/plain_logo.png),
-		url(/image/background/bg_light_foreground.png);
-	background-repeat: no-repeat, repeat;
-	background-position: center, center;
-	background-size: auto 75%, auto;
 }
 /** Custom Bootstrap-like */
 .block {

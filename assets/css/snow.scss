@@ -7,7 +7,7 @@
 
 .card-body {
 	background:
-		url(/image/background/snow_overlay.png), url(/image/background/bg_light_background.png) top center repeat-x;
+		url("/image/background/snow_overlay.png), url(/image/background/bg_light_background.png") top center repeat-x;
 	background-position: top center;
 	background-color: #131313, #131313;
 	background-repeat: repeat-x, repeat;
@@ -19,7 +19,7 @@
 .btn {
 	border: 0 !important;
 	padding-top: 15px;
-	background-image: url(/image/background/snow_overlay_small.png);
+	background-image: url("/image/background/snow_overlay_small.png");
 	background-position: top center;
 	background-repeat: repeat-x;
 }
@@ -40,21 +40,21 @@
 }
 
 .snowflake0 {
-	background: url(/image/background/snow0.png) no-repeat center;
+	background: url("/image/background/snow0.png") no-repeat center;
 	background-size: contain;
 }
 
 .snowflake1 {
-	background: url(/image/background/snow1.png) no-repeat center;
+	background: url("/image/background/snow1.png") no-repeat center;
 	background-size: contain;
 }
 
 .snowflake2 {
-	background: url(/image/background/snow2.png) no-repeat center;
+	background: url("/image/background/snow2.png") no-repeat center;
 	background-size: contain;
 }
 
 .snowflake3 {
-	background: url(/image/background/snow3.png) no-repeat center;
+	background: url("/image/background/snow3.png") no-repeat center;
 	background-size: contain;
 }

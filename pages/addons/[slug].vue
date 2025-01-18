@@ -93,11 +93,15 @@ export default defineNuxtComponent({
 	},
 	async asyncData() {
 		const route = useRoute();
-		const addon = await $fetch(`https://api.faithfulpack.net/v2/addons/${route.params.slug}/all`);
-		return {
-			addon,
-			files: addon.files,
-		};
+		try {
+			const addon = await $fetch(`https://api.faithfulpack.net/v2/addons/${route.params.slug}/all`);
+			return {
+				addon,
+				files: addon.files,
+			};
+		} catch {
+			throw createError({ statusCode: 404, statusMessage: "Add-on not found", fatal: true });
+		}
 	},
 	methods: {
 		openModal(url) {

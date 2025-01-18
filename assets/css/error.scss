@@ -1,0 +1,19 @@
+:where(.error-theme) {
+	footer #shadow {
+		display: none;
+	}
+	h1,
+	p {
+		color: #ccc;
+	}
+	.foreground {
+		background: transparent;
+	}
+	.background {
+		background: #120e19 url("/image/background/the_end.jpg") no-repeat center;
+	}
+	header {
+		box-shadow: none !important;
+		background: none !important;
+	}
+}

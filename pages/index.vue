@@ -194,7 +194,7 @@ export default defineNuxtComponent({
 
 .hero-container {
 	display: block;
-	background-image: url(/image/banners/hero.jpg);
+	background-image: url("/image/banners/hero.jpg");
 	background-size: cover;
 	background-position: center;
 	padding: 0 2rem 1px;

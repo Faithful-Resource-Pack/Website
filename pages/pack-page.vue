@@ -71,7 +71,7 @@ export default defineNuxtComponent({
 	computed: {
 		bannerStyle() {
 			return {
-				backgroundImage: `url(${this.banner})`,
+				backgroundImage: `url("${this.banner}")`,
 			};
 		},
 		sanitizedDescription() {
