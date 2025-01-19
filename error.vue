@@ -73,6 +73,7 @@ export default defineNuxtComponent({
 				await sleep(FRAME_TIME * 25);
 				if (i % 2 === 0) this.tntSrc = "/image/404/tnt_side_on.png";
 				else this.tntSrc = "/image/404/tnt_side.png";
+				this.$forceUpdate();
 			}
 			this.tntVisible = false;
 		},
@@ -81,6 +82,8 @@ export default defineNuxtComponent({
 			for (let i = 0; i < 16; ++i) {
 				await sleep(Math.round(FRAME_TIME * 1.3));
 				this.explosionSrc = `/image/404/explosion_${i}.png`;
+				// by default nuxt batches the updates together which ruins the animation
+				this.$forceUpdate();
 			}
 			this.explosionVisible = false;
 		},
