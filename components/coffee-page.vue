@@ -1,18 +1,10 @@
 <template>
+	<!-- needs to be a component since both /coffee and /teapot show the same content -->
 	<div id="stats" class="text-center">
 		<h1 class="title my-5">I'm a teapot</h1>
-		<div id="teacup" v-show="isLoaded">
-			<div id="handle"><div></div></div>
-			<img
-				:src="bucketImg"
-				alt="teacup"
-				id="bucket"
-				@load="
-					() => {
-						isLoaded = true;
-					}
-				"
-			/>
+		<div id="teacup">
+			<div id="handle" v-show="isLoaded"><div></div></div>
+			<img id="bucket" ref="bucket" data-allow-mismatch="attribute" :src="bucketImg" alt="teacup" />
 		</div>
 	</div>
 </template>
@@ -20,25 +12,32 @@
 <script>
 export default defineNuxtComponent({
 	name: "coffee-page",
-	data() {
+	// technically not async but this hook is guaranteed to only run once
+	asyncData() {
+		const buckets = [
+			{ id: 1743, low: 0, high: 0.49 }, // water (higher weighting than rest)
+			{ id: 1579, low: 0.5, high: 0.59 }, // lava
+			{ id: 1621, low: 0.6, high: 0.69 }, // milk
+			{ id: 1674, low: 0.7, high: 0.79 }, // powder snow
+			{ id: 1308, low: 0.8, high: 0.89 }, // axolotl
+			{ id: 4982, low: 0.9, high: 0.99 }, // tadpole
+		];
+
+		const rand = Math.random();
+		const { id } = buckets.find(({ low, high }) => low < rand && rand < high) || buckets[0];
 		return {
-			buckets: [
-				{ id: 1743, low: 0, high: 0.49 }, // water (higher weighting than rest)
-				{ id: 1579, low: 0.5, high: 0.59 }, // lava
-				{ id: 1621, low: 0.6, high: 0.69 }, // milk
-				{ id: 1674, low: 0.7, high: 0.79 }, // powder snow
-				{ id: 1308, low: 0.8, high: 0.89 }, // axolotl
-				{ id: 4982, low: 0.9, high: 0.99 }, // tadpole
-			],
-			bucketImg: null,
+			bucketImg: `https://api.faithfulpack.net/v2/textures/${id}/url/faithful_64x/latest`,
 			isLoaded: false,
 		};
 	},
+	// makes sure the handle and bucket load at the same time (just having a handle looks stupid)
 	mounted() {
-		const rand = Math.random();
-		const { id } =
-			this.buckets.find(({ low, high }) => low < rand && rand < high) || this.buckets[0];
-		this.bucketImg = `https://api.faithfulpack.net/v2/textures/${id}/url/faithful_64x/latest`;
+		if (this.$refs.bucket.complete) this.isLoaded = true;
+		else {
+			this.$refs.bucket.onload = () => {
+				this.isLoaded = true;
+			};
+		}
 	},
 });
 </script>
