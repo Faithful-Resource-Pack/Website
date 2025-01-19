@@ -14,7 +14,7 @@
 			}
 		"
 	/>
-	<h2 v-if="!allFaqs.length" class="text-center">
+	<h2 v-if="error || !allFaqs.length" class="text-center">
 		{{ error ? `Error: ${error}` : "No FAQs found" }}
 	</h2>
 	<template v-else>
@@ -37,6 +37,12 @@ export default defineNuxtComponent({
 		return {
 			search: null,
 		};
+	},
+	// for some reason <script setup> doesn't work with asyncData (???)
+	setup() {
+		definePageMeta({
+			name: "FAQ",
+		});
 	},
 	async asyncData() {
 		try {

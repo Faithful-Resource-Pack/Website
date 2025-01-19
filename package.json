@@ -12,19 +12,15 @@
 		"prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --config .prettierrc --write"
 	},
 	"dependencies": {
-		"@pinia/nuxt": "0.9.0",
 		"isomorphic-dompurify": "^2.20.0",
 		"marked": "^15.0.6",
-		"nuxt": "^3.15.1",
-		"pinia": "^2.3.0",
+		"nuxt": "^3.15.2",
 		"remove-markdown": "^0.6.0",
-		"vue": "latest",
-		"vue-router": "latest",
+		"sass": "^1.83.4",
 		"vuetify-nuxt-module": "^0.18.3",
 		"yaml": "^2.7.0"
 	},
 	"devDependencies": {
-		"prettier": "^3.4.2",
-		"sass": "^1.83.3"
+		"prettier": "^3.4.2"
 	}
 }

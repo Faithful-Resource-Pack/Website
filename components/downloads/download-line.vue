@@ -99,13 +99,7 @@ export default defineNuxtComponent({
 	},
 	methods: {
 		getLocalizedDate(dateObj) {
-			const year = dateObj.getFullYear();
-			const month = dateObj.getMonth() + 1; // 0 indexed
-			const day = dateObj.getDate();
-			// mdy for us (expand array if someone else does too)
-			if (navigator && ["en-US"].includes(navigator.language)) return `${month}/${day}/${year}`;
-			// dmy for everyone else (and on server since no client is available)
-			return `${day}/${month}/${year}`;
+			return localDate(dateObj);
 		},
 		toggleChildren() {
 			// handle icon change then pass back to download-table to unhide children

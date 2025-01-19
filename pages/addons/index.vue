@@ -1,3 +1,9 @@
+<script setup>
+definePageMeta({
+	name: "Add-ons",
+});
+</script>
+
 <template>
 	<h1 class="title text-center my-3">Add-ons</h1>
 

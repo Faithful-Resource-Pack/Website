@@ -11,9 +11,9 @@ definePageMeta({
 <script>
 import CoffeePage from "~/components/coffee-page.vue";
 
-export default {
+export default defineNuxtComponent({
 	components: {
 		CoffeePage,
 	},
-};
+});
 </script>

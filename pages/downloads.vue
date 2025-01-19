@@ -23,7 +23,6 @@
 import DownloadTable from "~/components/downloads/download-table.vue";
 
 // expand this with new packs as necessary
-const PACK_ORDER = ["Faithful 32x", "Faithful 64x"];
 const DOWNLOAD_DATA = [
 	{
 		// json filename
@@ -68,14 +67,15 @@ export default defineNuxtComponent({
 		DownloadTable,
 	},
 	async asyncData() {
+		// set object order by which ones come first
 		const downloadData = {
-			discontinued: DOWNLOAD_DATA.filter((d) => d.discontinued).reduce((acc, cur) => {
-				acc[cur.name] = {};
-				return acc;
-			}, {}),
 			alive: DOWNLOAD_DATA.filter((d) => !d.discontinued).reduce((acc, cur) => {
 				acc[cur.name] ||= {};
 				acc[cur.name][cur.edition] = {};
+				return acc;
+			}, {}),
+			discontinued: DOWNLOAD_DATA.filter((d) => d.discontinued).reduce((acc, cur) => {
+				acc[cur.name] = {};
 				return acc;
 			}, {}),
 		};

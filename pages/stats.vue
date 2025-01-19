@@ -59,6 +59,12 @@ export default defineNuxtComponent({
 			},
 		};
 	},
+	// for some reason <script setup> doesn't work with asyncData (???)
+	setup() {
+		definePageMeta({
+			name: "Statistics",
+		});
+	},
 	async asyncData() {
 		const [mods, addons, posts] = await Promise.all([
 			$fetch("https://api.faithfulpack.net/v2/mods/raw"),

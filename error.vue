@@ -18,7 +18,6 @@
 					v-show="diamondVisible"
 					src="https://api.faithfulpack.net/v2/textures/1484/url/faithful_32x/latest"
 					alt="Diamond"
-					@mouseover="reset"
 				/>
 				<img
 					id="explosion"
@@ -33,9 +32,8 @@
 
 <script>
 const FRAME_TIME = 12;
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export default {
+export default defineNuxtComponent({
 	data() {
 		return {
 			exploded: false,
@@ -44,6 +42,11 @@ export default {
 			explosionVisible: false,
 			tntSrc: "/image/404/tnt_side.png",
 			explosionSrc: "/image/404/explosion_0.png",
+		};
+	},
+	head() {
+		return {
+			title: "404 - Faithful",
 		};
 	},
 	methods: {
@@ -55,7 +58,7 @@ export default {
 		},
 		// main entry point
 		async boom() {
-			if (this.exploded) return this.reset();
+			if (this.exploded) return;
 
 			// set it first to prevent spamming the tnt breaking things
 			this.exploded = true;
@@ -63,6 +66,7 @@ export default {
 			await this.handleParticles();
 
 			this.diamondVisible = true;
+			sleep(FRAME_TIME * 100).then(() => this.reset());
 		},
 		async primeTNT() {
 			for (let i = 0; i < 8; ++i) {
@@ -81,7 +85,7 @@ export default {
 			this.explosionVisible = false;
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

@@ -86,21 +86,38 @@ export default defineNuxtComponent({
 	},
 	data() {
 		return {
-			authors: [],
 			modal: false,
 			modalImage: "",
 		};
+	},
+	setup() {
+		definePageMeta({
+			disableDefaultMeta: true,
+		});
 	},
 	async asyncData() {
 		const route = useRoute();
 		try {
 			const addon = await $fetch(`https://api.faithfulpack.net/v2/addons/${route.params.slug}/all`);
+			const authorData = await $fetch(
+				`https://api.faithfulpack.net/v2/users/${addon.authors.join(",")}`,
+			);
+
+			const authors = Array.isArray(authorData) ? authorData : [authorData];
+			const title = `Add-on: ${addon.name} by ${listify(authors.map((u) => u.username).filter((u) => u)) || "Anonymous"}`;
+			const image =
+				addon.files.find((el) => el.use === "header")?.source ||
+				"https://database.faithfulpack.net/images/website/posts/placeholder.jpg";
+
+			useSeoMeta(generateMetaTags({ title, description: addon.description, image }));
+
 			return {
 				addon,
+				authors,
 				files: addon.files,
 			};
-		} catch {
-			throw createError({ statusCode: 404, statusMessage: "Add-on not found", fatal: true });
+		} catch (err) {
+			throw createError({ statusCode: 404, statusMessage: String(err), fatal: true });
 		}
 	},
 	methods: {
@@ -110,14 +127,6 @@ export default defineNuxtComponent({
 		},
 		compiledMarkdown(markdown) {
 			return DOMPurify.sanitize(marked.parse(markdown));
-		},
-		async searchAuthors() {
-			const authorData = await Promise.all(
-				this.addon.authors.map((authorID) =>
-					fetch(`https://api.faithfulpack.net/v2/users/${authorID}`).then((res) => res.json()),
-				),
-			);
-			this.authors = authorData.sort((a, b) => a.username.localeCompare(b.username));
 		},
 	},
 	computed: {
@@ -133,19 +142,11 @@ export default defineNuxtComponent({
 			return this.files.filter((el) => el.use === "download");
 		},
 		date() {
-			const dateObj = new Date(this.addon.last_updated);
-			const year = dateObj.getFullYear();
-			const month = dateObj.getMonth() + 1; // 0 indexed
-			const day = dateObj.getDate();
-			// mdy for us (expand array if someone else does too)
-			if (navigator && ["en-US"].includes(navigator.language)) return `${month}/${day}/${year}`;
-			// dmy for everyone else (and on server since no client is available)
-			return `${day}/${month}/${year}`;
+			return localDate(this.addon.last_updated);
 		},
 	},
 	beforeMount() {
 		window.scrollTo(0, 0);
-		this.searchAuthors();
 	},
 });
 </script>

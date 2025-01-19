@@ -62,7 +62,7 @@ export default defineNuxtComponent({
 		},
 	},
 	beforeMount() {
-		// set theme before client render
+		// set theme before client render (can't set on server because localStorage doesn't yet exist)
 		this.currentTheme = localStorage.getItem(THEME_KEY) || "auto";
 	},
 	watch: {
@@ -74,7 +74,7 @@ export default defineNuxtComponent({
 					this.currentTheme === "dark" ||
 					(this.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
 
-				// otherwise it doesn't update before mount (I hate this too)
+				// must be here otherwise it doesn't update before mount (I hate this too)
 				this.themeClass = isDark ? "dark-theme" : "light-theme";
 			},
 			immediate: true,

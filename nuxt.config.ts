@@ -25,7 +25,32 @@ const parsed: Pack[] = files.map((content) => parse(content));
 export default defineNuxtConfig({
 	compatibilityDate: "2024-11-01",
 	devtools: { enabled: true },
-	modules: ["vuetify-nuxt-module", "@pinia/nuxt"],
+	app: {
+		head: {
+			// all pages use these basic tags
+			meta: [
+				{ property: "og:type", content: "website" },
+				{ property: "og:site_name", content: "Faithful Resource Pack" },
+				{ name: "twitter:card", content: "summary_large_image" },
+				{
+					name: "keywords",
+					content:
+						"Minecraft, Java, Bedrock, Resource, Pack, Resource-Pack, Resourcepack, Compliance, Mods, Faithful, 32x, x32, 32x32, 64x, x64, 64x64, Classic Faithful, Classicfaithful, Emulated Vattic, Emulatedvattic",
+				},
+				{ name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#00552B" },
+				{ name: "theme-color", media: "(prefers-color-scheme: light)", content: "#76C945" },
+				{ name: "apple-mobile-web-app-capable", content: "no" },
+				{ name: "apple-mobile-web-app-title", content: "Faithful" },
+			],
+			noscript: [
+				{
+					innerHTML:
+						'<p class="red banner ma-3">Please enable JavaScript for the site to work properly.</p>',
+				},
+			],
+		},
+	},
+	modules: ["vuetify-nuxt-module"],
 	css: [
 		"~/assets/css/lib/buttons.scss",
 		"~/assets/css/main.scss",
@@ -40,7 +65,6 @@ export default defineNuxtConfig({
 			pathPrefix: false,
 		},
 	],
-	// extend pages with generated pack page routes at build time
 	hooks: {
 		"pages:extend"(pages) {
 			/**

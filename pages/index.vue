@@ -1,5 +1,6 @@
 <script setup>
 definePageMeta({
+	// index by default
 	name: "Home",
 	layout: "no-container",
 });

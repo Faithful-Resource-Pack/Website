@@ -18,7 +18,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "coffee-page",
 	data() {
 		return {
@@ -40,7 +40,7 @@ export default {
 			this.buckets.find(({ low, high }) => low < rand && rand < high) || this.buckets[0];
 		this.bucketImg = `https://api.faithfulpack.net/v2/textures/${id}/url/faithful_64x/latest`;
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

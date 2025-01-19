@@ -13,8 +13,8 @@
 		class="card card-body card-text"
 		v-html="compiledMarkdown(post.description)"
 	/>
-	<post-downloads v-if="Object.keys(post.downloads).length" :downloads="post.downloads" />
-	<template v-if="Object.keys(post.changelog).length">
+	<post-downloads v-if="Object.keys(post.downloads || {}).length" :downloads="post.downloads" />
+	<template v-if="Object.keys(post.changelog || {}).length">
 		<br />
 		<h2 class="subtitle my-5 text-center">Changelog</h2>
 		<div class="card card-body">

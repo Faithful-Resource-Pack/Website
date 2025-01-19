@@ -7,7 +7,7 @@
 <script>
 // this doesn't technically need to be a component
 // but it encapsulates the styles quite nicely
-export default {
+export default defineNuxtComponent({
 	name: "download-badge",
 	props: {
 		badge: {
@@ -28,7 +28,7 @@ export default {
 			return cls;
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

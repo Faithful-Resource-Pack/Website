@@ -1,7 +1,14 @@
 <script setup>
 definePageMeta({
 	layout: "no-container",
+	disableDefaultMeta: true,
 });
+
+// the given banner URL doesn't have the wordmark so we chop up the url to create a new one with the wordmark
+const { title, description, banner } = defineProps();
+const packID = banner.split("/").at(-1).split(".")[0];
+const image = `https://database.faithfulpack.net/images/branding/social_media/banners/github/${packID}_banner.png`;
+useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }));
 </script>
 
 <template>
@@ -29,6 +36,7 @@ import NoContainer from "~/layouts/no-container.vue";
 import PostDownloads from "~/components/posts/post-downloads.vue";
 import DOMPurify from "isomorphic-dompurify";
 import { marked } from "marked";
+import removeMd from "remove-markdown";
 
 // routed through the main nuxt config file (since they're statically generated)
 export default defineNuxtComponent({
