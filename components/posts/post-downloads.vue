@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import MediaIcon from "../lib/media-icon.vue";
+import MediaIcon from "~/components/lib/media-icon.vue";
 
 export default defineNuxtComponent({
 	name: "post-downloads",

@@ -2,7 +2,7 @@
 
 // force lower specificity so page-specific styles don't break
 :where(.light-theme) {
-	&.background {
+	.background {
 		background: #303030 url("/image/background/bg_light_background.png") repeat;
 	}
 	.foreground {

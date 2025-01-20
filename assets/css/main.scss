@@ -181,8 +181,16 @@ hr {
 	min-height: 1px;
 	padding: 1.25rem;
 }
-.background {
+// hack to force the site to take up the entire screen
+.site-container {
+	display: flex;
 	min-height: 100vh;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+.foreground {
+	// grow the foreground to fill remaining space (footer and navbar stay the same size always)
+	flex-grow: 1;
 }
 /*!
  * Bootstrap end

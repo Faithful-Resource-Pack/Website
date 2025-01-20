@@ -1,6 +1,6 @@
 <!-- don't use this as an actual layout, it's a base for the real ones -->
 <template>
-	<div class="background" :class="themeClass" data-allow-mismatch="class">
+	<div class="site-container" :class="themeClass" data-allow-mismatch="class">
 		<navbar />
 		<main class="foreground">
 			<slot v-if="noContainer" />

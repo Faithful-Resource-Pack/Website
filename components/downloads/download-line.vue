@@ -9,28 +9,20 @@
 				<download-badge dot :badge="labelColor" />
 				<span class="mx-1 my-1">{{ item.file_type }} {{ item.file_version }}</span>
 			</span>
-			<download-badge badge="version">
-				{{ version }}
-			</download-badge>
-			<download-badge badge="latest" v-if="version !== 'download' && item.latest">
-				Latest
-			</download-badge>
+			<download-badge badge="version">{{ version }}</download-badge>
+			<download-badge badge="latest" v-if="item.latest">Latest</download-badge>
 			<!-- avoid SSR warning with date localization -->
 			<span class="mobile-details" v-if="date" data-allow-mismatch="children">
 				{{ mobileDetails }}
 			</span>
 		</td>
 
-		<td class="date">
-			<p data-allow-mismatch="children">{{ date }}</p>
-		</td>
-		<td class="size">
-			<p>{{ size }}</p>
-		</td>
+		<td class="date" data-allow-mismatch="children">{{ date }}</td>
+		<td class="size">{{ size }}</td>
 
 		<td
 			v-for="(link, linkType) in item.links"
-			:key="`${version}-${link}`"
+			:key="link"
 			class="links"
 			:colspan="Object.keys(item.links).length > 1 ? 1 : 2"
 		>
@@ -43,7 +35,7 @@
 </template>
 
 <script>
-import MediaIcon from "../lib/media-icon.vue";
+import MediaIcon from "~/components/lib/media-icon.vue";
 import DownloadBadge from "./download-badge.vue";
 
 export default defineNuxtComponent({
@@ -129,7 +121,8 @@ export default defineNuxtComponent({
 			// some very old downloads have manual sizes
 			if (this.item.size) return this.item.size;
 			if (!this.curse || !this.curse.filesize) return "Unknown";
-			return `${(this.curse.filesize / 1000000).toFixed(2)} MB`;
+			// use nbsp to prevent weird wrapping
+			return `${(this.curse.filesize / 1000000).toFixed(2)} MB`;
 		},
 		mobileDetails() {
 			return `${this.date} • ${this.size}`;
@@ -148,6 +141,7 @@ td {
 }
 
 // all text except for links use this
+td,
 td * {
 	color: #ccc;
 	margin-bottom: 0;
@@ -268,8 +262,8 @@ i.dl-icon {
 
 	// square buttons with centered icon and remove text
 	.btn-dl {
-		width: 30px;
-		height: 30px;
+		width: 2rem;
+		height: 2rem;
 		line-height: 30px;
 		text-align: center;
 		padding: 0;

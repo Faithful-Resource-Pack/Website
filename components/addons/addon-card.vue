@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import ArticleCard from "../lib/article-card.vue";
+import ArticleCard from "~/components/lib/article-card.vue";
 
 export default defineNuxtComponent({
 	name: "addon-card",
