@@ -43,7 +43,7 @@ export default defineNuxtComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
 
 .download-table-padding {

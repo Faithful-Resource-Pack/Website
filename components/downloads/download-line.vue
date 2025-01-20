@@ -102,7 +102,7 @@ export default defineNuxtComponent({
 			return localDate(dateObj);
 		},
 		toggleChildren() {
-			// handle icon change then pass back to download-table to unhide children
+			// handle icon change then pass back to download-version to unhide children
 			this.isOpen = !this.isOpen;
 			this.$emit("toggle");
 		},
@@ -138,7 +138,7 @@ export default defineNuxtComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
 
 td {

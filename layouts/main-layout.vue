@@ -17,7 +17,6 @@ import Navbar from "~/components/navigation/navbar.vue";
 import ColumnFooter from "~/components/navigation/column-footer.vue";
 
 const THEME_KEY = "theme";
-
 const THEMES = {
 	auto: {
 		icon: "mdi-theme-light-dark",

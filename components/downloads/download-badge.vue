@@ -31,7 +31,7 @@ export default defineNuxtComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .download-badge,
 .download-dot {
 	padding: 0.2rem 0.4rem;
