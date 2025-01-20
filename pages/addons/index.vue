@@ -29,7 +29,7 @@ definePageMeta({
 						@update:modelValue="startSearch"
 					/>
 				</v-col>
-				<v-col cols="6" md="3" v-for="resolution in res" :key="resolution">
+				<v-col cols="6" md="3" v-for="resolution in resolutions" :key="resolution">
 					<v-checkbox
 						v-model="selectedRes"
 						:label="resolution"
@@ -97,7 +97,7 @@ export default defineNuxtComponent({
 			search: "",
 			loading: true,
 			editions: ["Java", "Bedrock"],
-			res: ["32x", "64x"],
+			resolutions: ["32x", "64x"],
 			selectedEditions: ["Java", "Bedrock"],
 			selectedRes: ["32x", "64x"],
 			sortMethods,
@@ -108,7 +108,7 @@ export default defineNuxtComponent({
 		startSearch() {
 			if (
 				this.search === "" &&
-				this.editions.length + this.res.length ===
+				this.editions.length + this.resolutions.length ===
 					this.selectedEditions.length + this.selectedRes.length
 			)
 				this.searchedAddons = this.addons;
@@ -120,7 +120,7 @@ export default defineNuxtComponent({
 					// split types of an addon (res + edition : res & edition)
 					const { localRes, localEditions } = addon.options.tags.reduce(
 						(acc, tag) => {
-							if (this.res.includes(tag)) acc.localRes.push(tag);
+							if (this.resolutions.includes(tag)) acc.localRes.push(tag);
 							if (this.editions.includes(tag)) acc.localEditions.push(tag);
 							return acc;
 						},
@@ -153,14 +153,13 @@ export default defineNuxtComponent({
 			return this.searchedAddons.length;
 		},
 	},
+	// need nonblocking fetch (SSR not needed)
 	beforeMount() {
-		fetch("https://api.faithfulpack.net/v2/addons/approved")
-			.then((res) => res.json())
-			.then((data) => {
-				this.addons = data;
-				this.loading = false;
-				this.searchedAddons = this.addons;
-			});
+		$fetch("https://api.faithfulpack.net/v2/addons/approved").then((data) => {
+			this.addons = data;
+			this.loading = false;
+			this.searchedAddons = data;
+		});
 
 		this.fav = JSON.parse(localStorage.getItem(FAVORITE_ADDONS_KEY) || "{}");
 	},

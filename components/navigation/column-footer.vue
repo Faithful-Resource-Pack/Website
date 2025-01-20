@@ -14,7 +14,7 @@
 				<span id="theme-btn" @click="$emit('changeTheme')" class="navigation-link">
 					<!-- prevents hydration mismatch (themes are loaded before mount but after ssr) -->
 					<client-only>
-						<template #fallback>Loading Themes…</template>
+						<template #fallback>Loading Themes...</template>
 						<v-icon :icon="theme.icon" />
 						{{ theme.name }}
 					</client-only>
@@ -141,7 +141,7 @@ export default defineNuxtComponent({
 				},
 				{
 					title: "Resources",
-					icon: "mdi-book-open-variant",
+					icon: "mdi-shape",
 					items: [
 						{
 							name: "FAQ",

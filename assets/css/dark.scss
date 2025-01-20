@@ -29,21 +29,6 @@
 		color: rgba(255, 255, 255, 0.7);
 	}
 
-	/** CUSTOM SCROLLBAR */
-	::-webkit-scrollbar {
-		background: #0e0e0e;
-	}
-	::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb {
-		background: #3e3e3e;
-		border: 1px solid #0e0e0e;
-	}
-	::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover {
-		background: #575757;
-	}
-	::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active {
-		background: #878787;
-	}
-
 	.v-menu__content > * {
 		background-color: #0c0c0c !important;
 		& > * {

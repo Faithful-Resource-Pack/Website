@@ -1,5 +1,5 @@
 <template>
-	<li v-if="typeof item === 'string'" class="card-title">
+	<li v-if="typeof item === 'string'" class="changelog-item">
 		{{ item }}
 	</li>
 	<ul v-else-if="Array.isArray(item)">
@@ -7,8 +7,8 @@
 	</ul>
 	<template v-else>
 		<template v-for="[key, val] in Object.entries(item)">
-			<li v-if="list" class="card-title">{{ key }}:</li>
-			<component v-else :is="title" class="card-title text-left"> {{ key }}: </component>
+			<li v-if="list" class="changelog-item">{{ key }}:</li>
+			<component v-else :is="title" class="changelog-item"> {{ key }}: </component>
 			<post-changelog :item="val" :level="level + 1" />
 		</template>
 	</template>
@@ -41,3 +41,10 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+// stops everything from looking really stupid
+.changelog-item {
+	margin-bottom: 0.75rem;
+}
+</style>

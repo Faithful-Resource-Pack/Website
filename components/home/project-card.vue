@@ -5,12 +5,9 @@
 			<img class="project-wordmark" :src="wordmark" :alt="`${name} wordmark`" />
 		</div>
 		<div class="card-body">
-			<div class="card-text auto-flex">
-				<span class="my-2 text-center" style="min-height: 65px">
-					{{ description }}
-				</span>
-				<br />
-			</div>
+			<p class="text-center my-2" style="min-height: 65px">
+				{{ description }}
+			</p>
 			<slot name="btns" />
 		</div>
 	</div>

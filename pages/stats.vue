@@ -2,44 +2,37 @@
 	<div class="text-center">
 		<h1 class="title my-5">Faithful Statistics</h1>
 		<h2 class="subtitle my-5">Main Packs</h2>
-		<div class="res-grid-2">
-			<h3>32x Releases</h3>
-			<h3>
-				<span class="badge badge-primary h1">{{ postStats.f32 }}</span>
-			</h3>
-			<h3>64x Releases</h3>
-			<h3>
-				<span class="badge badge-primary h1">{{ postStats.f64 }}</span>
-			</h3>
+		<div class="stats-container">
+			<h3>Faithful 32x Releases</h3>
+			<v-chip v-bind="badgeProps">{{ postStats.f32 }}</v-chip>
+		</div>
+		<br />
+		<div class="stats-container">
+			<h3>Faithful 64x Releases</h3>
+			<v-chip v-bind="badgeProps">{{ postStats.f64 }}</v-chip>
 		</div>
 
 		<h2 class="subtitle my-5">Add-ons</h2>
 		<div v-if="Object.keys(addonStats).length === 0 && addons !== null">
-			<i class="fas spin"></i> Loading
+			<v-progress-circular size="24" indeterminate /> Loading...
 		</div>
-		<div v-else id="stats-addons" class="res-grid-2">
+		<div v-else class="res-grid-2">
 			<template v-for="res in Object.keys(addonStats)" :key="res">
-				<div v-for="edi in Object.keys(addonStats[res])" :key="edi">
-					<h3>
-						<span>{{ res + " " + edi + " Add-ons" }}</span>
-						<div class="badge-container">
-							<span class="badge badge-primary h1 m-2">{{ addonStats[res][edi] }}</span>
-						</div>
-					</h3>
+				<div v-for="edi in Object.keys(addonStats[res])" :key="edi" class="stats-container">
+					<h3>{{ `${res} ${edi} Add-ons` }}</h3>
+					<v-chip v-bind="badgeProps">{{ addonStats[res][edi] }}</v-chip>
 				</div>
 			</template>
 		</div>
 
 		<h2 class="subtitle my-5">Mods</h2>
 		<div v-if="Object.keys(modStats).length === 0 && mods !== null">
-			<i class="fas spin"></i> Loading
+			<v-progress-circular size="24" indeterminate /> Loading...
 		</div>
 		<div v-else class="res-grid-3">
-			<div v-for="mKey in Object.keys(messages)" :key="mKey">
+			<div v-for="mKey in Object.keys(messages)" :key="mKey" class="stats-container">
 				<h3>{{ messages[mKey] }}</h3>
-				<h3>
-					<span class="badge badge-primary h1">{{ modStats[mKey] }}</span>
-				</h3>
+				<v-chip v-bind="badgeProps">{{ modStats[mKey] }}</v-chip>
 			</div>
 		</div>
 	</div>
@@ -49,13 +42,17 @@
 export default defineNuxtComponent({
 	data() {
 		return {
-			addons: {},
-			posts: {},
-			mods: {},
 			messages: {
-				versions: "Minecraft Versions Supported",
+				versions: "Versions Supported",
 				supportedMods: "Mods Supported",
-				storedPacks: "Mod Resource Packs Stored",
+				storedPacks: "Total Mod Downloads",
+			},
+			// huge pain to copy/paste everywhere
+			badgeProps: {
+				color: "#007bff",
+				variant: "flat",
+				size: "large",
+				density: "compact",
 			},
 		};
 	},
@@ -143,3 +140,17 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+.stats-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+}
+// hack for bypassing scoped styling
+.v-chip * {
+	font-size: 1.25rem;
+}
+</style>

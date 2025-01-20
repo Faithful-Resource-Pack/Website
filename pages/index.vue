@@ -1,11 +1,3 @@
-<script setup>
-definePageMeta({
-	// index by default
-	name: "Home",
-	layout: "no-container",
-});
-</script>
-
 <template>
 	<div class="hero-container text-center">
 		<div class="hero-upspace"></div>
@@ -16,7 +8,7 @@ definePageMeta({
 			<discord-button>Join our Discord now and contribute to the project!</discord-button>
 		</div>
 	</div>
-	<div class="container" id="app">
+	<div class="container">
 		<h2 class="title mb-4 text-center">Projects</h2>
 		<div class="res-grid-2">
 			<project-card
@@ -121,15 +113,15 @@ definePageMeta({
 		<h2 class="title text-center">News</h2>
 		<div class="res-grid-3">
 			<article-card
-				v-for="post in topPosts"
-				:key="post.id"
-				:to="post.permalink"
-				:image="post.header_img"
-				:title="post.title"
+				v-for="{ id, permalink, header_img, title } in topPosts"
+				:key="id"
+				:to="permalink"
+				:image="header_img"
+				:title
 			/>
 		</div>
 		<br />
-		<nuxt-link class="btn btn-dark news-button center" to="/news"> See More </nuxt-link>
+		<nuxt-link class="btn btn-dark news-button center" to="/news">See More</nuxt-link>
 	</div>
 </template>
 
@@ -139,7 +131,7 @@ import ArticleCard from "~/components/lib/article-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
 
-const MAX_ADDONS_SHOWN = 3;
+const ADDON_REEL_LENGTH = 4;
 
 export default defineNuxtComponent({
 	components: {
@@ -148,44 +140,41 @@ export default defineNuxtComponent({
 		AddonCard,
 		DiscordButton,
 	},
-	data() {
-		return {
-			addons: [],
-			posts: [],
-		};
+	// for some reason <script setup> doesn't work with asyncData (???)
+	setup() {
+		definePageMeta({
+			// index by default
+			name: "Home",
+			layout: "no-container",
+		});
+	},
+	async asyncData() {
+		try {
+			const [allAddons, allPosts] = await Promise.all([
+				$fetch("https://api.faithfulpack.net/v2/addons/approved"),
+				$fetch("https://api.faithfulpack.net/v2/posts/approved"),
+			]);
+
+			return {
+				addons: Array.from(
+					// subtract one for "see more" card
+					{ length: ADDON_REEL_LENGTH - 1 },
+					() => allAddons.splice((Math.random() * allAddons.length) | 0, 1)[0],
+				),
+				posts: allPosts.sort((a, b) => new Date(b.date) - new Date(a.date)),
+			};
+		} catch (err) {
+			return {
+				addons: [],
+				posts: [],
+			};
+		}
 	},
 	computed: {
 		topPosts() {
 			if (!this.posts || !this.posts.length) return [];
 			return this.posts.slice(0, 6);
 		},
-	},
-	beforeMount() {
-		fetch("https://api.faithfulpack.net/v2/addons/approved")
-			.then((res) => res.json())
-			.then((val) => {
-				const res = [];
-
-				let items = val;
-				for (let i = 0; i < MAX_ADDONS_SHOWN; ++i) {
-					// removes duplicate suggested add-ons
-					// | 0 is a faster version of Math.floor
-					const element = items.splice((Math.random() * items.length) | 0, 1)[0];
-					res.push(element);
-				}
-				this.addons = res;
-			})
-			.catch((err) => {
-				console.error(err);
-				this.addons = [];
-			});
-
-		fetch("https://api.faithfulpack.net/v2/posts/approved")
-			.then((res) => res.json())
-			.then((res) => {
-				this.posts = res.sort((a, b) => new Date(b.date) - new Date(a.date));
-			})
-			.catch((err) => console.error(err));
 	},
 });
 </script>

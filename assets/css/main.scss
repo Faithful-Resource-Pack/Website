@@ -1,4 +1,6 @@
+// more efficient bundling (compiled in same css file)
 @use "./lib/variables" as *;
+@use "./lib/buttons" as *;
 
 @font-face {
 	font-family: Faithful;
@@ -165,33 +167,6 @@ hr {
 .text-right {
 	text-align: right !important;
 }
-.badge {
-	display: inline-block;
-	padding: 0.25em 0.4em;
-	font-size: 75%;
-	line-height: 1;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: baseline;
-	border-radius: $border-radius-1x;
-	transition: all 0.15s ease-in-out;
-}
-.badge-primary {
-	color: #fff;
-	background-color: $primary;
-}
-.badge-success {
-	color: #fff;
-	background-color: #28a745;
-}
-.badge-warning {
-	color: #212529;
-	background-color: #ffc107;
-}
-.badge-light {
-	color: #212529;
-	background-color: #f8f9fa;
-}
 /** Bootstrap Cards */
 .card {
 	position: relative;
@@ -205,19 +180,6 @@ hr {
 	flex: 1 1 auto;
 	min-height: 1px;
 	padding: 1.25rem;
-}
-.card-title {
-	margin-bottom: 0.75rem;
-}
-@media screen and (min-width: 576px) {
-	#stats-addons {
-		.badge-container {
-			display: inline;
-		}
-		.badge {
-			margin: 20px;
-		}
-	}
 }
 .background {
 	min-height: 100vh;
@@ -281,7 +243,7 @@ footer, footer p {
 	margin: auto !important;
 }
 .clickable:hover {
-	cursor: pointer;
+	cursor: pointer !important;
 }
 .disabled {
 	pointer-events: none;
@@ -303,7 +265,7 @@ footer, footer p {
 		cursor: pointer;
 	}
 	i {
-		margin-right: 10px;
+		margin-right: 1ch;
 	}
 }
 @media screen and (max-width: 760px) {
@@ -416,15 +378,6 @@ a > .banner:hover {
 	background: $blurple;
 	font-size: 25px;
 }
-.auto-flex {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-}
-.auto-flex > * {
-	max-width: 100%;
-	flex: 1;
-}
 .button-row {
 	display: flex;
 	flex-direction: row;
@@ -443,13 +396,6 @@ a > .banner:hover {
 	display: grid;
 	grid-gap: 1.5rem;
 	grid-template-columns: repeat(1, 1fr);
-}
-/** CUSTOM SCROLLBAR */
-::-webkit-scrollbar{
-	width: 8px;
-}
-::-webkit-scrollbar-button{
-	height: 8px;
 }
 /* container size management */
 @media screen and (min-width: 576px) {
@@ -485,19 +431,6 @@ a > .banner:hover {
 	}
 }
 
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-.spin {
-	animation: infinite linear infinite spin;
-}
-
 .profile-card {
 	display: flex;
 	flex-flow: row nowrap;
@@ -510,11 +443,4 @@ a > .banner:hover {
 
 .profile-avatar {
 	height: 48px;
-}
-
-.disable-snow-button {
-	position: fixed;
-	bottom: 1rem;
-	left: 1rem;
-	z-index: 999;
 }

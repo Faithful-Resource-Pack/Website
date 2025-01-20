@@ -145,9 +145,6 @@ export default defineNuxtComponent({
 			return localDate(this.addon.last_updated);
 		},
 	},
-	beforeMount() {
-		window.scrollTo(0, 0);
-	},
 });
 </script>
 

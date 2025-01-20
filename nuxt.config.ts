@@ -1,25 +1,6 @@
-import { readFile, readdir } from "node:fs/promises";
-import { join } from "node:path";
-import { parse } from "yaml";
+import generatePackPages from "./packs/generatePackPages.ts";
 
-// pack page stuff
-interface Pack {
-	title: string;
-	permalink: string;
-	banner: string;
-	wordmark: string;
-	description: string;
-	buttons?: { to: string; text: string }[];
-	downloads?: Record<string, Record<string, string>>;
-}
-
-const basePath = join(process.cwd(), "packs");
-
-const paths = await readdir(basePath).then((res) => res.filter((path) => path.endsWith(".yaml")));
-const files = await Promise.all(
-	paths.map((path) => readFile(join(basePath, path), { encoding: "utf8" })),
-);
-const parsed: Pack[] = files.map((content) => parse(content));
+const parsed = await generatePackPages();
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -52,7 +33,6 @@ export default defineNuxtConfig({
 	},
 	modules: ["vuetify-nuxt-module"],
 	css: [
-		"~/assets/css/lib/buttons.scss",
 		"~/assets/css/main.scss",
 		// load all at once and switch based on root-level class
 		"~/assets/css/light.scss",

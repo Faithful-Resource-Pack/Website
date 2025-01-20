@@ -16,21 +16,6 @@
 		color: #212529;
 	}
 
-	/** CUSTOM SCROLLBAR */
-	::-webkit-scrollbar {
-		background: #f1f1f1;
-	}
-	::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb {
-		background: #c1c1c1;
-		border: 1px solid #f1f1f1;
-	}
-	::-webkit-scrollbar-button:hover, ::-webkit-scrollbar-thumb:hover {
-		background: #a8a8a8;
-	}
-	::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active {
-		background: #787878;
-	}
-
 	.v-list-item--highlighted > .v-list-item__content > .v-list-item__title {
 		color: $primary;
 	}
