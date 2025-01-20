@@ -12,13 +12,10 @@
 
 		<v-row :style="{ display: $vuetify.display.mdAndUp ? 'flex' : 'block' }">
 			<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
-				<img :src="header" class="header-img" style="width: 100%" />
+				<img :src="header" class="header-img" style="width: 100%; margin-bottom: 24px" />
 
-				<!-- you need two <br>s for some reason, no idea why -->
-				<br /><br />
-
-				<div class="card card-body" v-if="screenshots.length">
-					<h3 class="text-center">Gallery</h3>
+				<div v-if="screenshots.length" class="card card-body" style="margin-bottom: 24px">
+					<h2 class="text-center">Gallery</h2>
 					<div class="res-grid-3">
 						<div v-for="image in screenshots" :key="image">
 							<div class="card img-card">
@@ -27,8 +24,6 @@
 						</div>
 					</div>
 				</div>
-
-				<br />
 
 				<div class="card card-body card-text" v-html="compiledMarkdown(addon.description)" />
 			</v-col>
@@ -53,18 +48,19 @@
 			</v-col>
 		</v-row>
 
-		<h2 id="downloads" class="subtitle text-center" style="margin-bottom: 3rem; margin-top: 2rem">
-			Downloads
+		<h2 class="subtitle my-5 text-center">
+			{{ downloads.length === 1 ? "Download" : "Downloads" }}
 		</h2>
 		<nuxt-link
-			v-for="file in downloads"
-			:key="file.source"
-			:to="file.source"
+			v-for="{ name, source } in downloads"
+			:key="source"
+			:to="source"
 			class="btn block btn-lg btn-primary"
 		>
-			{{ file.name }}
+			<media-icon size="small" :icon="name" fallback="download" />
+			<span style="margin-left: 8px">{{ name }}</span>
 		</nuxt-link>
-		<br /><br />
+		<br />
 		<discord-button />
 	</div>
 </template>
@@ -72,6 +68,7 @@
 <script>
 import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
+import MediaIcon from "~/components/lib/media-icon.vue";
 import ScreenshotModal from "~/components/lib/screenshot-modal.vue";
 import AuthorWidget from "~/components/addon/author-widget.vue";
 import CompatibilityCard from "~/components/addon/compatibility-card.vue";
@@ -79,6 +76,7 @@ import DiscordButton from "~/components/lib/discord-button.vue";
 
 export default defineNuxtComponent({
 	components: {
+		MediaIcon,
 		ScreenshotModal,
 		AuthorWidget,
 		CompatibilityCard,
