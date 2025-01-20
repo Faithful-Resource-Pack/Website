@@ -8,11 +8,7 @@
 		hide-details
 		placeholder="Search FAQs"
 		clearable
-		@click:clear="
-			() => {
-				search = null;
-			}
-		"
+		@click:clear="search = null"
 	/>
 	<h2 v-if="error || !allFaqs.length" class="text-center">
 		{{ error ? `Error: ${error}` : "No FAQs found" }}

@@ -14,6 +14,7 @@
 				<v-icon size="large" icon="mdi-menu" />
 			</button>
 
+			<!-- use a css class so that we can ignore it on desktop (always visible) -->
 			<div class="navbar-container" :class="{ show: isOpen }">
 				<nuxt-link
 					v-for="{ name, to, icon } in left"
@@ -22,6 +23,7 @@
 					class="navigation-link navbar-link"
 					:target="to.startsWith('http') ? '_blank' : ''"
 					:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
+					@click="isOpen = false"
 				>
 					<v-icon size="small" :icon class="mr-2" /> {{ name }}
 				</nuxt-link>
@@ -42,6 +44,7 @@
 					class="navigation-link navbar-link"
 					:target="to.startsWith('http') ? '_blank' : ''"
 					:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
+					@click="isOpen = false"
 				>
 					<v-icon size="small" :icon class="mr-2" /> {{ name }}
 				</nuxt-link>
