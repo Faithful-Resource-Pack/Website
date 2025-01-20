@@ -21,10 +21,10 @@
 		<p class="pa-0">
 			<i>{{ faqs.length }} {{ results }} found</i>
 		</p>
-		<template v-for="faq in faqs" :key="faq.question">
-			<h2 class="faq-question">{{ faq.question }}</h2>
-			<div class="faq-answer" v-html="compiledMarkdown(faq.answer)" />
-		</template>
+		<div v-for="faq in faqs" :key="faq.question" class="faq-item">
+			<h2>{{ faq.question }}</h2>
+			<div class="pl-5" v-html="compiledMarkdown(faq.answer)" />
+		</div>
 	</template>
 </template>
 
@@ -93,10 +93,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-.faq-question {
-	padding-top: 50px;
-}
-.faq-answer {
-	padding-left: 20px;
+.faq-item {
+	padding-top: 3rem;
 }
 </style>
