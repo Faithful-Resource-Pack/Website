@@ -51,15 +51,17 @@
 		<h2 class="subtitle my-5 text-center">
 			{{ downloads.length === 1 ? "Download" : "Downloads" }}
 		</h2>
-		<nuxt-link
-			v-for="{ name, source } in downloads"
-			:key="source"
-			:to="source"
-			class="btn block btn-lg btn-primary"
-		>
-			<media-icon size="small" :icon="name" fallback="download" />
-			<span style="margin-left: 8px">{{ name }}</span>
-		</nuxt-link>
+		<div class="btn-container">
+			<nuxt-link
+				v-for="{ name, source } in downloads"
+				:key="source"
+				:to="source"
+				class="btn btn-lg btn-primary"
+			>
+				<media-icon size="small" :icon="name" fallback="download" />
+				<span style="margin-left: 8px">{{ name }}</span>
+			</nuxt-link>
+		</div>
 		<br />
 		<discord-button />
 	</div>

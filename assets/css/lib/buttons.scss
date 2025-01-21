@@ -1,5 +1,13 @@
 @use "./variables" as *;
 
+.btn-container {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	// replacement for block
+	align-items: stretch;
+}
+
 /** Bootstrap button styles */
 // a lot of this is probably unused
 .btn {
