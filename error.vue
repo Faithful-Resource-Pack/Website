@@ -33,6 +33,13 @@
 <script>
 const FRAME_TIME = 12;
 
+// need to preload these because nothing loads on time otherwise
+const PRELOADED = [
+	"/image/404/tnt_side.png",
+	"/image/404/tnt_side_on.png",
+	...Array.from({ length: 16 }, (_, i) => `/image/404/explosion_${i}.png`),
+];
+
 export default defineNuxtComponent({
 	data() {
 		return {
@@ -47,6 +54,11 @@ export default defineNuxtComponent({
 	head() {
 		return {
 			title: "404 - Faithful",
+			link: PRELOADED.map((href) => ({
+				rel: "preload",
+				type: "image/png",
+				href,
+			})),
 		};
 	},
 	methods: {
