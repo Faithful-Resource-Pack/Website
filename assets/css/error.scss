@@ -2,11 +2,11 @@
 	h1, p {
 		color: #ccc;
 	}
-	.foreground {
-		background: transparent;
-	}
-	.background {
+	.site-container {
 		background: #120e19 url("/image/background/the_end.jpg") no-repeat center;
+	}
+	.background, .foreground {
+		background: transparent;
 	}
 	header {
 		box-shadow: none !important;
