@@ -140,7 +140,7 @@ definePageMeta({
 
 	p {
 		// add a bit of padding between the button and text
-		padding-bottom: 1.5rem;
+		padding-bottom: 1.25rem;
 	}
 }
 
@@ -159,7 +159,10 @@ definePageMeta({
 }
 
 .about-button {
-	padding: 12px 22px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 22px;
 	// prevent weird button wrapping issues
 	white-space: nowrap;
 	text-transform: uppercase;
