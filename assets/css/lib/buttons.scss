@@ -3,7 +3,10 @@
 /** Bootstrap button styles */
 // a lot of this is probably unused
 .btn {
-	display: inline-block;
+	display: inline-flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
 	font-weight: normal;
 	color: #212529;
 	text-align: center;
