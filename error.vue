@@ -57,6 +57,7 @@ export default defineNuxtComponent({
 			link: PRELOADED.map((href) => ({
 				rel: "preload",
 				type: "image/png",
+				as: "image",
 				href,
 			})),
 		};
