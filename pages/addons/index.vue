@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-	<h1 class="title text-center my-3">Add-ons</h1>
+	<h1 class="title text-center my-5">Add-ons</h1>
 
 	<template v-if="Object.keys(fav).length">
 		<h2 class="text-center">Favorites</h2>

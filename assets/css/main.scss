@@ -200,26 +200,6 @@ footer {
 	text-align: center;
 	position: relative;
 }
-footer #shadow {
-	position: absolute;
-	bottom: 100%;
-	left: 0;
-	right: 0;
-	height: 5px;
-	overflow: hidden;
-}
-footer #shadow::after {
-	content: "";
-	display: block;
-	position: absolute;
-	box-shadow: 0 5px 5px 5px rgba(0,0,0,1);
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-footer, footer p {
-	color: rgba(255, 255, 255, .7);
-}
 /** MAIN STUFF */
 .container {
 	width: 100%;
@@ -293,6 +273,9 @@ footer, footer p {
 	box-shadow: $card-shadow;
 	border-radius: $border-radius-0x;
 }
+.header-img {
+	width: 100%;
+}
 .card-body > :first-child {
 	margin-top: 0
 }
@@ -308,10 +291,6 @@ footer, footer p {
 }
 .card > h2 > a:hover {
 	color: rgba(255, 255, 255, .9)
-}
-// carousel cards
-.item > .card {
-	margin: 3px 6px 9px;
 }
 .img-card {
 	position: relative;
@@ -360,11 +339,7 @@ footer, footer p {
 }
 /** Custom Bootstrap-like */
 .block {
-	display: block;
 	width: 100%;
-}
-.display {
-	line-height: 1.2;
 }
 .banner {
 	padding: 16px;

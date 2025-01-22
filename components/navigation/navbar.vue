@@ -99,12 +99,14 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/lib/variables" as *;
+
 // entire header must be sticky (otherwise the text moves without the background)
 header {
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
+	box-shadow: $card-shadow;
 }
 // wraps both the mobile dropdown bar and the regular navbar
 .navbar-wrapper {

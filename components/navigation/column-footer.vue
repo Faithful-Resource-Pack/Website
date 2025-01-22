@@ -1,6 +1,5 @@
 <template>
 	<footer class="background">
-		<div id="shadow"></div>
 		<div class="container footer-wrapper">
 			<div class="footer-column footer-main">
 				<nuxt-link to="/">

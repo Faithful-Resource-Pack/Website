@@ -2,7 +2,7 @@
 	<p v-if="post.discontinued" class="red banner h2">This project has been discontinued.</p>
 	<h1 v-if="post.title" class="title my-5 text-center">{{ post.title }}</h1>
 	<template v-if="post.header_img">
-		<img :src="post.header_img" class="header-img" style="width: 100%" />
+		<img :src="post.header_img" class="header-img" />
 		<br />
 	</template>
 

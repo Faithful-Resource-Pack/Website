@@ -7,7 +7,7 @@
 		/>
 		<!-- need div to treat as one unit -->
 		<div>
-			<h5 class="author-username">{{ author.username }}</h5>
+			<h5 class="mb-0">{{ author.username }}</h5>
 			<nuxt-link
 				v-for="m in author.media"
 				:key="m.type"
@@ -40,11 +40,6 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-.author-username {
-	// reduce spacing between socials and username
-	margin-bottom: 0px;
-}
-
 .author-media {
 	color: white !important;
 	opacity: 0.7;

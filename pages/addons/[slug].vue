@@ -2,19 +2,13 @@
 	<div v-if="addon && addon.approval?.status === 'approved'">
 		<screenshot-modal v-model="modal" :image="modalImage" />
 
-		<!-- vuetify overrides the bootstrap margin styles so we manually add them -->
-		<h1
-			class="title text-center"
-			style="margin-top: 3rem !important; margin-bottom: 3rem !important"
-		>
-			{{ addon.name }}
-		</h1>
+		<h1 class="title text-center my-5">{{ addon.name }}</h1>
 
 		<v-row :style="{ display: $vuetify.display.mdAndUp ? 'flex' : 'block' }">
 			<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
-				<img :src="header" class="header-img" style="width: 100%; margin-bottom: 24px" />
+				<img :src="header" class="header-img mb-6" />
 
-				<div v-if="screenshots.length" class="card card-body" style="margin-bottom: 24px">
+				<div v-if="screenshots.length" class="card card-body mb-6">
 					<h2 class="text-center">Gallery</h2>
 					<div class="res-grid-3">
 						<div v-for="image in screenshots" :key="image">
@@ -51,17 +45,15 @@
 		<h2 class="subtitle my-5 text-center">
 			{{ downloads.length === 1 ? "Download" : "Downloads" }}
 		</h2>
-		<div class="btn-container">
-			<nuxt-link
-				v-for="{ name, source } in downloads"
-				:key="source"
-				:to="source"
-				class="btn btn-lg btn-primary"
-			>
-				<media-icon size="small" :icon="name" fallback="download" />
-				<span style="margin-left: 8px">{{ name }}</span>
-			</nuxt-link>
-		</div>
+		<nuxt-link
+			v-for="{ name, source } in downloads"
+			:key="source"
+			:to="source"
+			class="btn block btn-lg btn-primary"
+		>
+			<media-icon size="small" :icon="name" fallback="download" />
+			<span class="ml-2">{{ name }}</span>
+		</nuxt-link>
 		<br />
 		<discord-button />
 	</div>

@@ -28,7 +28,7 @@
 		>
 			<nuxt-link class="btn btn-dark btn-dl" :to="link">
 				<media-icon class="dl-icon" :icon="linkType" fallback="download" />
-				<span class="link-text">{{ textFormat[linkType] || linkType }}</span>
+				<span class="link-text ml-2">{{ textFormat[linkType] || linkType }}</span>
 			</nuxt-link>
 		</td>
 	</tr>
@@ -181,11 +181,6 @@ td * {
 
 .links {
 	width: calc(50% / 6);
-}
-
-.link-text {
-	padding: 0;
-	margin-left: 8px;
 }
 
 .mobile-details {

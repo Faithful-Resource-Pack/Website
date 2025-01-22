@@ -17,9 +17,10 @@
 		<p class="pa-0">
 			<i>{{ faqs.length }} {{ results }} found</i>
 		</p>
-		<div v-for="faq in faqs" :key="faq.question" class="faq-item">
+		<div v-for="faq in faqs" :key="faq.question" class="my-6">
 			<h2>{{ faq.question }}</h2>
-			<div class="pl-5" v-html="compiledMarkdown(faq.answer)" />
+			<div class="ml-5" v-html="compiledMarkdown(faq.answer)" />
+			<hr />
 		</div>
 	</template>
 </template>
@@ -87,9 +88,3 @@ export default defineNuxtComponent({
 	},
 });
 </script>
-
-<style scoped lang="scss">
-.faq-item {
-	padding-top: 3rem;
-}
-</style>

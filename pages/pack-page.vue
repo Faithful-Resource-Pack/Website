@@ -90,12 +90,14 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/lib/variables" as *;
 .hero {
 	display: block;
 	background-size: cover;
 	background-position: center;
 	padding: 0 2rem 1px;
 	text-align: center;
+	box-shadow: $card-shadow;
 }
 
 .wordmark {

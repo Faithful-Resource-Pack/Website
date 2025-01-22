@@ -1,6 +1,7 @@
 <template>
 	<div class="hero-container text-center">
-		<div class="hero-upspace"></div>
+		<!-- this was the least stupid way to add some padding at the top -->
+		<div class="hero-upspace" />
 		<img class="hero-wordmark" src="/image/wordmarks/faithful.png" alt="Faithful Wordmark" />
 		<h2 class="hero-tagline">Providing a higher-resolution experience since 2010.</h2>
 		<!-- hack to get the button the same width as the container -->
@@ -187,7 +188,7 @@ export default defineNuxtComponent({
 	background-image: url("/image/banners/hero.jpg");
 	background-size: cover;
 	background-position: center;
-	padding: 0 2rem 1px;
+	box-shadow: $card-shadow;
 }
 
 .hero-upspace {
