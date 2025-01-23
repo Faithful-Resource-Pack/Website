@@ -171,6 +171,12 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+footer {
+	padding: 2rem 1rem;
+	text-align: center;
+	position: relative;
+}
+
 // container for left column and the others for better wrapping
 .footer-wrapper {
 	display: flex;

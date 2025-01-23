@@ -110,13 +110,6 @@ img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
 table {
 	border-collapse: collapse;
 }
-button {
-	border-radius: 0;
-}
-button:focus {
-	outline: 1px dotted;
-	outline: 5px auto -webkit-focus-ring-color;
-}
 input, button, select, optgroup, textarea {
 	margin: 0;
 	font-family: inherit;
@@ -131,16 +124,6 @@ button, select {
 }
 select {
 	overflow-wrap: normal;
-}
-button:not(:disabled),
-[type="button"]:not(:disabled),
-[type="reset"]:not(:disabled),
-[type="submit"]:not(:disabled) {
-	cursor: pointer;
-}
-// Fix icons being displayed in italic
-.fab, .fas {
-	font-style: normal;
 }
 .custom-icon {
 	width: 1.25em;
@@ -164,9 +147,6 @@ hr {
 .text-center {
 	text-align: center !important;
 }
-.text-right {
-	text-align: right !important;
-}
 /** Bootstrap Cards */
 .card {
 	position: relative;
@@ -181,6 +161,7 @@ hr {
 	min-height: 1px;
 	padding: 1.25rem;
 }
+/** MAIN STUFF */
 // hack to force the site to take up the entire screen
 .site-container {
 	display: flex;
@@ -192,15 +173,6 @@ hr {
 	// grow the foreground to fill remaining space (footer and navbar stay the same size always)
 	flex-grow: 1;
 }
-/*!
- * Bootstrap end
- */
-footer {
-	padding: 2rem 1rem;
-	text-align: center;
-	position: relative;
-}
-/** MAIN STUFF */
 .container {
 	width: 100%;
 	padding-right: 15px;
