@@ -8,7 +8,7 @@
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
-		"start": "node --env-file .env .output/server/index.mjs",
+		"start": "node .output/server/index.mjs",
 		"postinstall": "nuxt prepare",
 		"prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --config .prettierrc --write"
 	},
