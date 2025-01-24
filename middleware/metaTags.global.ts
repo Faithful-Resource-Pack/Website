@@ -1,3 +1,5 @@
+import type { UseSeoMetaInput } from "@unhead/vue";
+
 // must be middleware to run on every route change properly
 export default defineNuxtRouteMiddleware((route) => {
 	const title = computed(
@@ -13,11 +15,13 @@ export default defineNuxtRouteMiddleware((route) => {
 	const image =
 		"https://database.faithfulpack.net/images/branding/social_media/banners/universal_banner.png";
 
-	// must be declared outside getter to prevent nuxt context being lost
-	const url = useRequestURL().toString();
+	// useRequestURL breaks on production for some reason
+	const headers = useRequestHeaders();
+	const protocol = headers["x-forwarded-proto"] || "http";
+	const url = useRequestURL();
 
-	const metaTags = {
-		ogUrl: () => url,
+	const metaTags: UseSeoMetaInput = {
+		ogUrl: () => (headers.host ? `${protocol}://${headers.host}${route.fullPath}` : url.toString()),
 	};
 
 	// add generic meta tags if the page hasn't been specified its own
