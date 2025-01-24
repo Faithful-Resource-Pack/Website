@@ -63,10 +63,11 @@ export default defineNuxtComponent({
 		});
 	},
 	async asyncData() {
+		const { apiURL } = useRuntimeConfig().public;
 		const [mods, addons, posts] = await Promise.all([
-			$fetch("https://api.faithfulpack.net/v2/mods/raw"),
-			$fetch("https://api.faithfulpack.net/v2/addons/approved"),
-			$fetch("https://api.faithfulpack.net/v2/posts/approved"),
+			$fetch(`${apiURL}/mods/raw`),
+			$fetch(`${apiURL}/addons/approved`),
+			$fetch(`${apiURL}/posts/approved`),
 		]);
 		return {
 			mods,

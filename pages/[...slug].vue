@@ -17,10 +17,11 @@ export default defineNuxtComponent({
 	},
 	async asyncData() {
 		const route = useRoute();
+		const { apiURL } = useRuntimeConfig().public;
 		try {
 			// need to double encode (the tsoa experience)
 			const post = await $fetch(
-				`https://api.faithfulpack.net/v2/posts/${encodeURIComponent(encodeURIComponent(route.path))}`,
+				`${apiURL}/posts/${encodeURIComponent(encodeURIComponent(route.path))}`,
 			);
 
 			const { title, description, header_img } = post;

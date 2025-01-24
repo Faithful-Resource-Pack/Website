@@ -24,6 +24,7 @@ jobs:
           git pull
           pnpm install
           pnpm run build
-          pm2 restart website-nuxt
+          pm2 delete "website-nuxt"
+          pm2 start "pnpm start" --name "website-nuxt"
     - name: Purge Cloudflare cache
       run: "curl https://api.faithfulpack.net/v2/cloudflare/purge -H 'cloudflare: ${{ secrets.PURGE_PASSWORD }}'"

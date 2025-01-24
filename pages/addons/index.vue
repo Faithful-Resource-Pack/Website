@@ -155,7 +155,8 @@ export default defineNuxtComponent({
 	},
 	// need nonblocking fetch (SSR not needed)
 	beforeMount() {
-		$fetch("https://api.faithfulpack.net/v2/addons/approved").then((data) => {
+		const { apiURL } = useRuntimeConfig().public;
+		$fetch(`${apiURL}/addons/approved`).then((data) => {
 			this.addons = data;
 			this.loading = false;
 			this.searchedAddons = data;

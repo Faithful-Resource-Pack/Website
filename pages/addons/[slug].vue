@@ -89,11 +89,10 @@ export default defineNuxtComponent({
 	},
 	async asyncData() {
 		const route = useRoute();
+		const { apiURL } = useRuntimeConfig().public;
 		try {
-			const addon = await $fetch(`https://api.faithfulpack.net/v2/addons/${route.params.slug}/all`);
-			const authorData = await $fetch(
-				`https://api.faithfulpack.net/v2/users/${addon.authors.join(",")}`,
-			);
+			const addon = await $fetch(`${apiURL}/addons/${route.params.slug}/all`);
+			const authorData = await $fetch(`${apiURL}/users/${addon.authors.join(",")}`);
 
 			const authors = Array.isArray(authorData) ? authorData : [authorData];
 			const title = `Add-on: ${addon.name} by ${listify(authors.map((u) => u.username).filter((u) => u)) || "Anonymous"}`;

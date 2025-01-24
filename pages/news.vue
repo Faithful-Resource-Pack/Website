@@ -48,8 +48,9 @@ export default defineNuxtComponent({
 		ArticleCard,
 	},
 	async asyncData() {
+		const { apiURL } = useRuntimeConfig().public;
 		try {
-			const posts = await $fetch("https://api.faithfulpack.net/v2/posts/approved");
+			const posts = await $fetch(`${apiURL}/posts/approved`);
 			return {
 				posts: posts.sort((a, b) => new Date(b.date) - new Date(a.date)),
 				error: null,

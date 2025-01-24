@@ -1,3 +1,4 @@
+import "dotenv/config.js";
 import generatePackPages from "./packs/generatePackPages.ts";
 
 const parsed = await generatePackPages();
@@ -45,6 +46,12 @@ export default defineNuxtConfig({
 			pathPrefix: false,
 		},
 	],
+	runtimeConfig: {
+		public: {
+			apiURL: process.env.API_URL,
+			siteURL: process.env.SITE_URL,
+		},
+	},
 	hooks: {
 		"pages:extend"(pages) {
 			/**

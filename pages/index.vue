@@ -150,10 +150,11 @@ export default defineNuxtComponent({
 		});
 	},
 	async asyncData() {
+		const { apiURL } = useRuntimeConfig().public;
 		try {
 			const [allAddons, allPosts] = await Promise.all([
-				$fetch("https://api.faithfulpack.net/v2/addons/approved"),
-				$fetch("https://api.faithfulpack.net/v2/posts/approved"),
+				$fetch(`${apiURL}/addons/approved`),
+				$fetch(`${apiURL}/posts/approved`),
 			]);
 
 			return {
