@@ -9,14 +9,14 @@
 		<div>
 			<h5 class="mb-0">{{ author.username }}</h5>
 			<nuxt-link
-				v-for="m in author.media"
-				:key="m.type"
-				:to="m.link"
+				v-for="{ type, link } in author.media"
+				:key="type"
+				:to="link"
 				class="author-media"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<media-icon size="small" :icon="m.type" />
+				<media-icon size="small" :icon="type" />
 			</nuxt-link>
 		</div>
 	</div>

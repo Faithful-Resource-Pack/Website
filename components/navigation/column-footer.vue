@@ -22,20 +22,20 @@
 				<p class="footer-info-text">&copy; {{ new Date().getFullYear() }} Faithful Resource Pack</p>
 			</div>
 			<div class="footer-container">
-				<div class="footer-column" v-for="category in categories" :key="category.title">
+				<div class="footer-column" v-for="{ title, icon, items } in categories" :key="title">
 					<h3 class="footer-title">
-						<v-icon size="x-small" :icon="category.icon" />
-						{{ category.title }}
+						<v-icon size="x-small" :icon />
+						{{ title }}
 					</h3>
 					<nuxt-link
 						class="navigation-link"
-						v-for="item in category.items"
-						:key="item.name"
-						:to="item.to"
-						:target="item.to.startsWith('http') ? '_blank' : ''"
-						:rel="item.to.startsWith('http') ? 'noopener noreferrer' : ''"
+						v-for="{ name, to } in items"
+						:key="name"
+						:to
+						:target="to.startsWith('http') ? '_blank' : ''"
+						:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
 					>
-						{{ item.name }}
+						{{ name }}
 					</nuxt-link>
 				</div>
 			</div>

@@ -17,9 +17,9 @@
 		<p class="pa-0">
 			<i>{{ faqs.length }} {{ results }} found</i>
 		</p>
-		<div v-for="faq in faqs" :key="faq.question" class="my-6">
-			<h2>{{ faq.question }}</h2>
-			<div class="ml-5" v-html="compiledMarkdown(faq.answer)" />
+		<div v-for="{ question, answer } in faqs" :key="question" class="my-6">
+			<h2>{{ question }}</h2>
+			<div class="ml-5" v-html="compiledMarkdown(answer)" />
 			<hr />
 		</div>
 	</template>

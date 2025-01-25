@@ -29,11 +29,11 @@
 
 	<div class="res-grid-3">
 		<article-card
-			v-for="post in restPosts"
-			:key="post.id"
-			:to="post.permalink"
-			:image="post.header_img"
-			:title="post.title"
+			v-for="{ id, permalink, header_img, title } in restPosts"
+			:key="id"
+			:to="permalink"
+			:image="header_img"
+			:title
 		/>
 	</div>
 </template>
