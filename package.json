@@ -16,7 +16,7 @@
 		"dotenv": "^16.4.7",
 		"isomorphic-dompurify": "^2.20.0",
 		"marked": "^15.0.6",
-		"nuxt": "^3.15.2",
+		"nuxt": "^3.15.3",
 		"remove-markdown": "^0.6.0",
 		"sass": "^1.83.4",
 		"vuetify-nuxt-module": "^0.18.3",

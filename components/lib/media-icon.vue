@@ -1,6 +1,11 @@
 <template>
-	<img v-if="isImage" class="custom-icon" :src="iconData" :alt="cleanedIcon" v-bind="$attrs" />
-	<v-icon v-else :icon="iconData" v-bind="$attrs" />
+	<span
+		v-if="isImage"
+		class="custom-icon"
+		:style="{ maskImage: `url(${iconData})`, backgroundColor: color }"
+		v-bind="$attrs"
+	/>
+	<v-icon v-else :icon="iconData" :color v-bind="$attrs" />
 </template>
 
 <script>
@@ -16,12 +21,18 @@ export default defineNuxtComponent({
 			required: false,
 			default: "other",
 		},
+		color: {
+			type: String,
+			required: false,
+			default: "white",
+		},
 	},
 	data() {
 		return {
 			icons: {
 				// expand this list as needed
 				download: { data: "download", type: "mdi" },
+				faithful: { data: "/image/icons/faithful_logo.svg", type: "image" },
 				curseforge: { data: "/image/icons/curseforge.svg", type: "image" },
 				modrinth: { data: "/image/icons/modrinth.svg", type: "image" },
 				github: { data: "github", type: "mdi" },
@@ -69,3 +80,14 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+// https://dev.to/hasantezcan/how-to-colorize-svg-image-1kc8
+.custom-icon {
+	mask-size: 100%;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	width: 1.25em;
+	height: 1.25em;
+}
+</style>
