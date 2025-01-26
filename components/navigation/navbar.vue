@@ -134,8 +134,6 @@ header {
 .navbar-logo-img {
 	width: 48px;
 	height: 48px;
-	// pixelated looks really bad on smallish screens, I tried it
-	image-rendering: crisp-edges;
 	transition: all 0.5s;
 	&:hover {
 		transform: scale(1.1);
