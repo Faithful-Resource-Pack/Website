@@ -125,7 +125,6 @@ header {
 	flex-basis: 100%;
 	padding-left: 0;
 	margin-bottom: 0;
-	list-style: none;
 }
 // make sure each item in the bar takes up the same length
 .navbar-link {
@@ -171,7 +170,7 @@ header {
 		flex-direction: column;
 		justify-content: flex-start;
 		margin-top: 0.5rem;
-		// handle toggle class
+		// only toggle the display on mobile, on desktop the navbar is always visible
 		&:not(.show) {
 			display: none;
 		}
