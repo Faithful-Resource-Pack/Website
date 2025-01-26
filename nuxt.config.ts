@@ -1,3 +1,4 @@
+import "dotenv/config.js";
 import generatePackPages from "./packs/generatePackPages.ts";
 
 const parsed = await generatePackPages();
@@ -47,10 +48,8 @@ export default defineNuxtConfig({
 	],
 	runtimeConfig: {
 		public: {
-			// make sure to not include a trailing slash
-			apiURL: "https://api.faithfulpack.net/v2",
-			// used on production for some SEO stuff
-			siteURL: "https://faithfulpack.net",
+			apiURL: process.env.API_URL,
+			siteURL: process.env.SITE_URL,
 		},
 	},
 	hooks: {

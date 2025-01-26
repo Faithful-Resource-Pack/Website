@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
       isomorphic-dompurify:
         specifier: ^2.20.0
         version: 2.20.0
