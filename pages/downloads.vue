@@ -89,7 +89,7 @@ export default defineNuxtComponent({
 		await Promise.all(
 			DOWNLOAD_DATA.map(async ({ discontinued, name, edition, json, curse }) => {
 				const [downloads, { files }] = await Promise.all([
-					$fetch(`${baseURL}data/downloads/${json}.json`).catch((err) => {
+					$fetch(`${baseURL}downloads/${json}.json`).catch((err) => {
 						console.error(err);
 						return [];
 					}),
