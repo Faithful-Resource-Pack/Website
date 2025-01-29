@@ -1,4 +1,3 @@
-import "dotenv/config.js";
 import generatePackPages from "./packs/generatePackPages.ts";
 
 const parsed = await generatePackPages();
