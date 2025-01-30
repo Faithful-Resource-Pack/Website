@@ -20,16 +20,10 @@
 ## Requirements
 - NodeJS 18+ https://nodejs.org
 - pnpm (`corepack enable` + `corepack prepare pnpm@latest --activate`)
-- Ruby 3.1 or below https://www.ruby-lang.org/en/downloads/ (https://mac.install.guide/ruby/12.html for MacOS)
-- Jekyll & Webrick (`gem install bundler jekyll` + `gem install webrick`)
 
 ## Running
 
 Create a file called `.env` in the root folder, using [`.env.example`](.env.example) as a template.
-
-```bash
-bundle install
-```
 
 ```bash
 pnpm install
@@ -38,3 +32,11 @@ pnpm install
 ```bash
 pnpm dev
 ```
+
+## Building
+
+```bash
+pnpm build
+```
+
+You can preview the production build with `pnpm preview`.

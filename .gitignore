@@ -1,9 +1,8 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+.nuxt/
+.output/
 .vscode/
-debug.log
 .DS_Store
 node_modules/
 .env
+# for the unauthorized page, remove this later
+error/

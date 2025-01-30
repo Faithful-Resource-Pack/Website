@@ -17,14 +17,13 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSH }}
-        # install bundle, build jekyll, relaunch website
+        # reload dependencies, build nuxt files, start server
         script: |
           cd /var/www/html/faithfulpack.net
           git stash
           git pull
           pnpm install
-          pnpm run ji
-          pnpm run jb
-          pm2 restart "WEBSITE"
+          pnpm run build
+          pm2 restart "website"
     - name: Purge Cloudflare cache
       run: "curl https://api.faithfulpack.net/v2/cloudflare/purge -H 'cloudflare: ${{ secrets.PURGE_PASSWORD }}'"

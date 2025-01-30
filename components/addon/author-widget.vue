@@ -1,0 +1,52 @@
+<template>
+	<div class="profile-card">
+		<img
+			class="profile-avatar"
+			:src="`https://visage.surgeplay.com/face/128/${author.uuid || 'X-Steve'}`"
+			:alt="`${author.username}'s Avatar`"
+		/>
+		<!-- need div to treat as one unit -->
+		<div>
+			<h5 class="mb-0">{{ author.username }}</h5>
+			<nuxt-link
+				v-for="{ type, link } in author.media"
+				:key="type"
+				:to="link"
+				class="author-media"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<media-icon size="small" :icon="type" />
+			</nuxt-link>
+		</div>
+	</div>
+</template>
+
+<script>
+import MediaIcon from "~/components/lib/media-icon.vue";
+
+export default defineNuxtComponent({
+	name: "author-widget",
+	components: {
+		MediaIcon,
+	},
+	props: {
+		author: {
+			type: Object,
+			required: true,
+		},
+	},
+});
+</script>
+
+<style scoped lang="scss">
+.author-media {
+	color: white !important;
+	opacity: 0.7;
+	margin: 0 5px;
+	transition: all 0.1s ease-out;
+	&:hover {
+		opacity: 1;
+	}
+}
+</style>
