@@ -2,7 +2,7 @@ name: Deploy Website
 
 on:
   push:
-    branches: [ nuxt-rewrite ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -19,11 +19,11 @@ jobs:
         KEY: ${{ secrets.SSH }}
         # reload dependencies, build nuxt files, start server
         script: |
-          cd /var/www/html/beta.faithfulpack.net
+          cd /var/www/html/faithfulpack.net
           git stash
           git pull
           pnpm install
           pnpm run build
-          pm2 restart "website-nuxt"
+          pm2 restart "website"
     - name: Purge Cloudflare cache
       run: "curl https://api.faithfulpack.net/v2/cloudflare/purge -H 'cloudflare: ${{ secrets.PURGE_PASSWORD }}'"
