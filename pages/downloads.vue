@@ -80,19 +80,16 @@ export default defineNuxtComponent({
 			}, {}),
 		};
 
-		// stupid workaround for bug where relative urls don't work on the server
-		// https://github.com/nuxt/nuxt/issues/13857
-		const baseURL = useRequestURL()
-			.toString()
-			.replace(/(?<=(?:.*?\/){3}).+/g, "");
-
 		await Promise.all(
 			DOWNLOAD_DATA.map(async ({ discontinued, name, edition, json, curse }) => {
 				const [downloads, { files }] = await Promise.all([
-					$fetch(`${baseURL}downloads/${json}.json`).catch((err) => {
-						console.error(err);
-						return [];
-					}),
+					// vite limitation, can't do regular $fetch here
+					import(`~/public/downloads/${json}.json`)
+						.then((res) => res.default)
+						.catch((err) => {
+							console.error(err);
+							return {};
+						}),
 					$fetch(`https://api.cfwidget.com/${curse}`).catch((err) => {
 						console.error(err);
 						return [];
