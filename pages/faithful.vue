@@ -2,7 +2,7 @@
 	<img
 		class="center"
 		src="/image/about/faithful_logos.png"
-		style="height: 192px"
+		style="max-height: 192px"
 		alt="Faithful Logos"
 	/>
 
