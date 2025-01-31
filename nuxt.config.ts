@@ -5,7 +5,7 @@ const parsed = await generatePackPages();
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: "2024-11-01",
-	//devtools: { enabled: true },
+	devtools: { enabled: true },
 	app: {
 		head: {
 			// all pages use these basic tags
@@ -23,6 +23,7 @@ export default defineNuxtConfig({
 				{ name: "apple-mobile-web-app-capable", content: "no" },
 				{ name: "apple-mobile-web-app-title", content: "Faithful" },
 			],
+			link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 			noscript: [
 				{
 					innerHTML:
