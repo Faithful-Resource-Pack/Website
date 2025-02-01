@@ -13,9 +13,9 @@
 				<download-version
 					v-for="(items, version) in downloads"
 					:key="version"
-					:items="items"
-					:files="files"
-					:version="version"
+					:items
+					:files
+					:version
 				/>
 			</tbody>
 		</table>

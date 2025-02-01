@@ -152,9 +152,9 @@ export default defineNuxtComponent({
 	async asyncData() {
 		const { apiURL } = useRuntimeConfig().public;
 		try {
-			const [allAddons, allPosts] = await Promise.all([
+			const [allAddons, topPosts] = await Promise.all([
 				$fetch(`${apiURL}/addons/approved`),
-				$fetch(`${apiURL}/posts/approved`),
+				$fetch(`${apiURL}/posts/top?count=6`),
 			]);
 
 			return {
@@ -163,20 +163,14 @@ export default defineNuxtComponent({
 					{ length: ADDON_REEL_LENGTH - 1 },
 					() => allAddons.splice((Math.random() * allAddons.length) | 0, 1)[0],
 				),
-				posts: allPosts.sort((a, b) => new Date(b.date) - new Date(a.date)),
+				topPosts,
 			};
 		} catch (err) {
 			return {
 				addons: [],
-				posts: [],
+				topPosts: [],
 			};
 		}
-	},
-	computed: {
-		topPosts() {
-			if (!this.posts || !this.posts.length) return [];
-			return this.posts.slice(0, 6);
-		},
 	},
 });
 </script>
