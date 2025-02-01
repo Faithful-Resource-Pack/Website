@@ -84,6 +84,8 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 // https://dev.to/hasantezcan/how-to-colorize-svg-image-1kc8
 .custom-icon {
+	display: inline-block;
+	vertical-align: middle;
 	mask-size: 100%;
 	mask-repeat: no-repeat;
 	mask-position: center;

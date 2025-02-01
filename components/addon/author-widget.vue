@@ -43,7 +43,7 @@ export default defineNuxtComponent({
 .author-media {
 	color: white !important;
 	opacity: 0.7;
-	margin: 0 5px;
+	margin-right: 0.5rem;
 	transition: all 0.1s ease-out;
 	&:hover {
 		opacity: 1;
