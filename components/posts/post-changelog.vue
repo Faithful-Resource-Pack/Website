@@ -1,5 +1,5 @@
 <template>
-	<li v-if="typeof item === 'string'" class="mb-3">
+	<li v-if="typeof item === 'string'" class="mb-2">
 		{{ item }}
 	</li>
 	<ul v-else-if="Array.isArray(item)">
@@ -7,8 +7,8 @@
 	</ul>
 	<template v-else>
 		<template v-for="[key, val] in Object.entries(item)">
-			<li v-if="list" class="mb-3">{{ key }}:</li>
-			<component v-else :is="title" class="mb-3"> {{ key }}: </component>
+			<li v-if="list" class="mb-2">{{ key }}:</li>
+			<component v-else :is="title" class="mb-2"> {{ key }}: </component>
 			<post-changelog :item="val" :level="level + 1" />
 		</template>
 	</template>
