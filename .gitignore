@@ -4,5 +4,3 @@
 .DS_Store
 node_modules/
 .env
-# for the unauthorized page, remove this later
-error/
