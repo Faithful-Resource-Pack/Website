@@ -19,7 +19,7 @@
 					</div>
 				</div>
 
-				<div class="card card-body card-text" v-html="compiledMarkdown(addon.description)" />
+				<div class="card card-body card-text" v-html="compileMarkdown(addon.description)" />
 			</v-col>
 			<v-col class="order-first" :md="$vuetify.display.mdAndUp ? 3 : 2" style="max-width: 100%">
 				<div class="card card-body addon-info">
@@ -60,8 +60,6 @@
 </template>
 
 <script>
-import { marked } from "marked";
-import DOMPurify from "isomorphic-dompurify";
 import MediaIcon from "~/components/lib/media-icon.vue";
 import ScreenshotModal from "~/components/lib/screenshot-modal.vue";
 import AuthorWidget from "~/components/addon/author-widget.vue";
@@ -115,9 +113,6 @@ export default defineNuxtComponent({
 		openModal(url) {
 			this.modalImage = url;
 			this.modal = true;
-		},
-		compiledMarkdown(markdown) {
-			return DOMPurify.sanitize(marked.parse(markdown));
 		},
 	},
 	computed: {

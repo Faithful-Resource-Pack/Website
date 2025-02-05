@@ -19,7 +19,7 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 	</div>
 	<div class="container">
 		<div class="card card-body card-text">
-			<div v-html="sanitizedDescription"></div>
+			<div v-html="compileMarkdown(description)"></div>
 			<div class="button-row" v-if="buttons">
 				<nuxt-link class="btn btn-dark" v-for="{ to, text } in buttons" :key="to" :to>
 					{{ text }}
@@ -81,9 +81,6 @@ export default defineNuxtComponent({
 			return {
 				backgroundImage: `url("${this.banner}")`,
 			};
-		},
-		sanitizedDescription() {
-			return DOMPurify.sanitize(marked.parse(this.description));
 		},
 	},
 });

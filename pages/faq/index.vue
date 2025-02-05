@@ -19,7 +19,7 @@
 		</p>
 		<div v-for="{ question, answer } in faqs" :key="question" class="my-6">
 			<h2>{{ question }}</h2>
-			<div class="ml-5" v-html="compiledMarkdown(answer)" />
+			<div class="ml-5" v-html="discordMarkdown(answer)" />
 			<hr />
 		</div>
 	</template>
@@ -58,12 +58,13 @@ export default defineNuxtComponent({
 		}
 	},
 	methods: {
-		compiledMarkdown(text) {
+		// wraps compileMarkdown to handle some discord markdown weirdness
+		discordMarkdown(text) {
 			const cleanedText = text
 				.replace(/in <#[^]+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)") // removes channel links
 				.replace(/<[^]+>/, "") // removes pings
-				.replace("()", ""); // removes stray parentheses left by removing pings)
-			return DOMPurify.sanitize(marked.parse(cleanedText));
+				.replace("()", ""); // removes stray parentheses left by removing pings
+			return compileMarkdown(cleanedText);
 		},
 	},
 	computed: {

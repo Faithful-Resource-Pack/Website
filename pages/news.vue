@@ -19,7 +19,7 @@
 				<h2 class="h1">{{ firstPost.title }}</h2>
 			</nuxt-link>
 			<p class="news-preview">
-				{{ compiledMarkdown(firstPost.description) }}
+				{{ compileMarkdown(firstPost.description, true) }}
 			</p>
 			<nuxt-link class="btn block btn-dark mt-5" :to="firstPost.permalink">Read More</nuxt-link>
 		</div>
@@ -40,8 +40,6 @@
 
 <script>
 import ArticleCard from "~/components/lib/article-card.vue";
-import DOMPurify from "isomorphic-dompurify";
-import removeMd from "remove-markdown";
 
 export default defineNuxtComponent({
 	components: {
@@ -61,11 +59,6 @@ export default defineNuxtComponent({
 				error,
 			};
 		}
-	},
-	methods: {
-		compiledMarkdown(text) {
-			return DOMPurify.sanitize(removeMd(text));
-		},
 	},
 	computed: {
 		firstPost() {

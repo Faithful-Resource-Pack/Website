@@ -11,7 +11,7 @@
 	<div
 		v-if="post.description"
 		class="card card-body card-text"
-		v-html="compiledMarkdown(post.description)"
+		v-html="compileMarkdown(post.description)"
 	/>
 	<post-downloads v-if="Object.keys(post.downloads || {}).length" :downloads="post.downloads" />
 	<template v-if="Object.keys(post.changelog || {}).length">
@@ -29,8 +29,6 @@
 import DiscordButton from "~/components/lib/discord-button.vue";
 import PostChangelog from "~/components/posts/post-changelog.vue";
 import PostDownloads from "~/components/posts/post-downloads.vue";
-import DOMPurify from "isomorphic-dompurify";
-import { marked } from "marked";
 
 export default defineNuxtComponent({
 	name: "post-layout",
@@ -43,11 +41,6 @@ export default defineNuxtComponent({
 		post: {
 			type: Object,
 			required: true,
-		},
-	},
-	methods: {
-		compiledMarkdown(text) {
-			return DOMPurify.sanitize(marked.parse(text));
 		},
 	},
 });
