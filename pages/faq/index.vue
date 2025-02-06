@@ -26,9 +26,6 @@
 </template>
 
 <script>
-import DOMPurify from "isomorphic-dompurify";
-import { marked } from "marked";
-
 export default defineNuxtComponent({
 	data() {
 		return {
