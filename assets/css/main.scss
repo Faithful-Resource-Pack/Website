@@ -305,10 +305,11 @@ hr {
 .img-card > img:hover {
 	cursor: pointer;
 }
-/** Custom Bootstrap-like */
+// doesn't actually do display: block because icons mess up otherwise
 .block {
 	width: 100%;
 }
+/** Custom Bootstrap-like */
 .banner {
 	padding: 16px;
 	color: #fff;

@@ -12,6 +12,7 @@
 	<div class="container">
 		<h2 class="title mb-4 text-center">Projects</h2>
 		<div class="res-grid-2">
+			<!-- TODO: refactor buttons, use v-for with data -->
 			<project-card
 				name="Faithful 32x"
 				background="/image/posters/f32.jpg"
@@ -19,7 +20,9 @@
 				description="The original Minecraft texture feel, with double the resolution and double the fun!"
 			>
 				<template #btns>
-					<nuxt-link class="btn block btn-dark" to="/faithful32x">See More</nuxt-link>
+					<nuxt-link class="btn block btn-dark" to="/faithful32x">
+						See More <v-icon size="small" icon="mdi-chevron-right" />
+					</nuxt-link>
 				</template>
 			</project-card>
 			<project-card
@@ -29,7 +32,9 @@
 				description="An even more detailed experience with quadruple-resolution textures!"
 			>
 				<template #btns>
-					<nuxt-link class="btn block btn-dark" to="/faithful64x">See More</nuxt-link>
+					<nuxt-link class="btn block btn-dark" to="/faithful64x">
+						See More <v-icon size="small" icon="mdi-chevron-right" />
+					</nuxt-link>
 				</template>
 			</project-card>
 		</div>
@@ -46,10 +51,10 @@
 				<template #btns>
 					<div class="button-row">
 						<nuxt-link class="btn btn-dark" to="/classicfaithful/32x-programmer-art">
-							Original Textures
+							Original Textures <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
 						<nuxt-link class="btn btn-dark" to="/classicfaithful/32x-jappa">
-							Modern Textures (Jappa)
+							Modern Textures (Jappa) <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
 					</div>
 				</template>
@@ -66,7 +71,7 @@
 							Coming Soon...
 						</nuxt-link>
 						<nuxt-link class="btn block btn-dark" to="/classicfaithful/64x-jappa">
-							Modern Textures (Jappa)
+							Modern Textures (Jappa) <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
 					</div>
 				</template>

@@ -62,7 +62,16 @@ export default defineNuxtComponent({
 				case "planetminecraft":
 					return "pmc";
 			}
-			if (Object.keys(this.icons).includes(cleaned)) return cleaned;
+
+			// find direct result
+			const availableIcons = Object.keys(this.icons);
+			if (availableIcons.includes(cleaned)) return cleaned;
+
+			// no direct result, search partial
+			const partialResult = availableIcons.find((icon) => cleaned.includes(icon));
+			if (partialResult && cleaned.length > 3) return partialResult;
+
+			// no results found
 			return this.fallback;
 		},
 		iconType() {
