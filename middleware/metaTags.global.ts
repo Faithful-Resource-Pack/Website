@@ -11,7 +11,7 @@ export default defineNuxtRouteMiddleware((route) => {
 	);
 
 	const description =
-		"Providing a higher-resolution Minecraft experience since 2010. Available in 32x and 64x for Java and Bedrock.";
+		"Providing a higher-resolution Minecraft experience since 2010.";
 	const image =
 		"https://database.faithfulpack.net/images/branding/social_media/banners/universal_banner.png";
 

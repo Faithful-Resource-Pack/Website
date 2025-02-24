@@ -3,7 +3,7 @@
 		<!-- this was the least stupid way to add some padding at the top -->
 		<div class="hero-upspace" />
 		<img class="hero-wordmark" src="/image/wordmarks/faithful.png" alt="Faithful Wordmark" />
-		<h2 class="hero-tagline">Providing a higher-resolution experience since 2010.</h2>
+		<h2 class="hero-tagline">Providing a higher-resolution Minecraft experience since 2010.</h2>
 		<!-- hack to get the button the same width as the container -->
 		<div class="container py-3">
 			<discord-button>Join our Discord now and contribute to the project!</discord-button>
