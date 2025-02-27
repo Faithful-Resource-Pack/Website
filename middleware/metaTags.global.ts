@@ -10,8 +10,7 @@ export default defineNuxtRouteMiddleware((route) => {
 			toTitleCase(route.name),
 	);
 
-	const description =
-		"Providing a higher-resolution Minecraft experience since 2010.";
+	const description = "Providing a higher-resolution Minecraft experience since 2010.";
 	const image =
 		"https://database.faithfulpack.net/images/branding/social_media/banners/universal_banner.png";
 
