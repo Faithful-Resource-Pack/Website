@@ -23,5 +23,11 @@
 	},
 	"devDependencies": {
 		"prettier": "^3.5.2"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@parcel/watcher",
+			"esbuild"
+		]
 	}
 }

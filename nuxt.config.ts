@@ -1,4 +1,10 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+
 import generatePackPages from "./packs/generatePackPages.ts";
+
+// have to check ourselves because nuxt silently breaks otherwise
+if (!existsSync(join(process.cwd(), ".env"))) throw new Error("No .env file found");
 
 const parsed = await generatePackPages();
 
