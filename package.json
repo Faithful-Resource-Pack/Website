@@ -13,6 +13,7 @@
 		"prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --config .prettierrc --write"
 	},
 	"dependencies": {
+		"@img-comparison-slider/vue": "^8.0.0",
 		"isomorphic-dompurify": "^2.22.0",
 		"marked": "^15.0.7",
 		"nuxt": "^3.15.4",

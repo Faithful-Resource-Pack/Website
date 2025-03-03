@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@img-comparison-slider/vue':
+        specifier: ^8.0.0
+        version: 8.0.0
       isomorphic-dompurify:
         specifier: ^2.22.0
         version: 2.22.0
@@ -661,6 +664,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@img-comparison-slider/vue@8.0.0':
+    resolution: {integrity: sha512-1gir2JlS8ZQLK2lzk4gIp6fuNvOR8UFXaPiHnBrF6fEwIXdMiI5veobi479FV6Tekj8CIhK+pLUPs+NvcOHd5g==}
 
   '@ioredis/commands@1.2.0':
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
@@ -2000,6 +2006,9 @@ packages:
 
   image-meta@0.2.1:
     resolution: {integrity: sha512-K6acvFaelNxx8wc2VjbIzXKDVB0Khs0QT35U6NkGfTdCmjLNcO2945m7RFNR9/RPVFm48hq7QPzK8uGH18HCGw==}
+
+  img-comparison-slider@8.0.6:
+    resolution: {integrity: sha512-ej4de7mWyjcXZvDgHq8K2a/dG8Vv+qYTdUjZa3cVILf316rLtDrHyGbh9fPvixmAFgbs30zTLfmaRDa7abjtzw==}
 
   immutable@5.0.3:
     resolution: {integrity: sha512-P8IdPQHq3lA1xVeBRi5VPqUm5HDgKnx0Ru51wZz5mjxHr5n3RWhjIpOFU7ybkUxfB+5IToy+OLaHYDBIWsv+uw==}
@@ -4045,6 +4054,10 @@ snapshots:
   '@esbuild/win32-x64@0.25.0':
     optional: true
 
+  '@img-comparison-slider/vue@8.0.0':
+    dependencies:
+      img-comparison-slider: 8.0.6
+
   '@ioredis/commands@1.2.0': {}
 
   '@isaacs/cliui@8.0.2':
@@ -5643,6 +5656,8 @@ snapshots:
   ignore@7.0.3: {}
 
   image-meta@0.2.1: {}
+
+  img-comparison-slider@8.0.6: {}
 
   immutable@5.0.3: {}
 
