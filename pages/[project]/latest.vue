@@ -9,6 +9,11 @@ export default defineNuxtComponent({
 	components: {
 		PostLayout,
 	},
+	setup() {
+		definePageMeta({
+			disableDefaultMeta: true,
+		});
+	},
 	async asyncData() {
 		const { project } = useRoute().params;
 		const { apiURL } = useRuntimeConfig().public;
