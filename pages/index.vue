@@ -50,10 +50,10 @@
 			>
 				<template #btns>
 					<div class="button-row">
-						<nuxt-link class="btn btn-dark" to="/classicfaithful/32x-programmer-art">
+						<nuxt-link class="btn btn-dark" to="/classic32x">
 							Original Textures <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
-						<nuxt-link class="btn btn-dark" to="/classicfaithful/32x-jappa">
+						<nuxt-link class="btn btn-dark" to="/classic32x-jappa">
 							Modern Textures (Jappa) <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
 					</div>
@@ -67,10 +67,10 @@
 			>
 				<template #btns>
 					<div class="button-row">
-						<nuxt-link class="btn block btn-dark disabled" to="/classicfaithful/64x-programmer-art">
+						<nuxt-link class="btn block btn-dark disabled" to="/classic64x">
 							Coming Soon...
 						</nuxt-link>
-						<nuxt-link class="btn block btn-dark" to="/classicfaithful/64x-jappa">
+						<nuxt-link class="btn block btn-dark" to="/classic64x-jappa">
 							Modern Textures (Jappa) <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
 					</div>
