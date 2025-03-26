@@ -1,10 +1,15 @@
 import type { UseSeoMetaInput } from "@unhead/vue";
 import removeMd from "remove-markdown";
 
-interface MetaParams {
+export interface MetaParams {
 	description: string;
 	image: string;
 	title: MaybeRef<string>;
+}
+
+function handleTitle(title: string) {
+	if (title) return `${title} - Faithful`;
+	return "Faithful Resource Pack";
 }
 
 /**
@@ -22,15 +27,15 @@ export function generateMetaTags({ title, description, image }: MetaParams): Use
 	if (isRef(title)) {
 		return {
 			...base,
-			title: () => (title.value ? `${title.value} - Faithful` : "Faithful Resource Pack"),
-			ogTitle: () => title.value,
-			twitterTitle: () => title.value,
+			title: () => handleTitle(title.value),
+			ogTitle: () => handleTitle(title.value),
+			twitterTitle: () => handleTitle(title.value),
 		};
 	}
 	return {
 		...base,
-		title: () => (title ? `${title} - Faithful` : "Faithful Resource Pack"),
-		ogTitle: () => title,
-		twitterTitle: () => title,
+		title: () => handleTitle(title),
+		ogTitle: () => handleTitle(title),
+		twitterTitle: () => handleTitle(title),
 	};
 }
