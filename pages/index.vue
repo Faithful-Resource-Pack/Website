@@ -67,8 +67,8 @@
 			>
 				<template #btns>
 					<div class="button-row">
-						<nuxt-link class="btn block btn-dark disabled" to="/classic64x">
-							Coming Soon...
+						<nuxt-link class="btn block btn-dark" to="/classic64x">
+							Original Textures <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
 						<nuxt-link class="btn block btn-dark" to="/classic64x-jappa">
 							Modern Textures (Jappa) <v-icon size="small" icon="mdi-chevron-right" />
