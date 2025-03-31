@@ -77,34 +77,6 @@
 				</template>
 			</project-card>
 		</div>
-		<!--
-		<br>
-		<div class="res-grid-2">
-			<project-card
-				name="Faithful Add-ons"
-				background="/image/posters/addons.jpg"
-				wordmark="/image/wordmarks/addons.png"
-				description="A plethora of modifications to all our base packs, ranging from redstone utilities to a rainbow XP bar!"
-			>
-				<template #btns>
-					<nuxt-link class="btn block btn-dark" to="/addons">Discover Add-ons</nuxt-link>
-				</template>
-			</project-card>
-			<project-card
-				name="Faithful Mods"
-				background="/image/posters/mods.jpg"
-				wordmark="/image/wordmarks/mods.png"
-				description="A massive catalog of mods and modpack support for retaining the Faithful feel however you choose to play!"
-			>
-				<template #btns>
-					<div class="btn-group">
-						<nuxt-link class="btn block btn-dark" to="/mods">Mods</nuxt-link>
-						<nuxt-link class="btn block btn-dark" to="/modpacks">Modpacks</nuxt-link>
-					</div>
-				</template>
-			</project-card>
-		</div>
-		-->
 
 		<hr />
 
