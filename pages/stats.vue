@@ -11,9 +11,22 @@
 			<h3>Faithful 64x Releases</h3>
 			<v-chip v-bind="badgeProps">{{ postStats.f64 }}</v-chip>
 		</div>
+		<br />
+		<div class="stats-container">
+			<h3>Classic Faithful 32x Releases</h3>
+			<v-chip v-bind="badgeProps">{{ postStats.cf32 }}</v-chip>
+		</div>
+		<!-- uncomment this when cf64 releases are added
+		<br />
+		<div class="stats-container">
+			<h3>Classic Faithful 64x Releases</h3>
+			<v-chip v-bind="badgeProps">{{ postStats.cf64 }}</v-chip>
+		</div>
+		-->
+		<br />
 
 		<h2 class="subtitle my-5">Add-ons</h2>
-		<div v-if="Object.keys(addonStats).length === 0 && addons !== null">
+		<div v-if="!Object.keys(addonStats).length && addons !== null">
 			<v-progress-circular size="24" indeterminate /> Loading...
 		</div>
 		<div v-else class="res-grid-2">
@@ -24,17 +37,6 @@
 				</div>
 			</template>
 		</div>
-
-		<h2 class="subtitle my-5">Mods</h2>
-		<div v-if="Object.keys(modStats).length === 0 && mods !== null">
-			<v-progress-circular size="24" indeterminate /> Loading...
-		</div>
-		<div v-else class="res-grid-3">
-			<div v-for="mKey in Object.keys(messages)" :key="mKey" class="stats-container">
-				<h3>{{ messages[mKey] }}</h3>
-				<v-chip v-bind="badgeProps">{{ modStats[mKey] }}</v-chip>
-			</div>
-		</div>
 	</div>
 </template>
 
@@ -42,11 +44,6 @@
 export default defineNuxtComponent({
 	data() {
 		return {
-			messages: {
-				versions: "Versions Supported",
-				supportedMods: "Mods Supported",
-				storedPacks: "Total Mod Downloads",
-			},
 			// huge pain to copy/paste everywhere
 			badgeProps: {
 				color: "#007bff",
@@ -64,18 +61,30 @@ export default defineNuxtComponent({
 	},
 	async asyncData() {
 		const { apiURL } = useRuntimeConfig().public;
-		const [mods, addons, posts] = await Promise.all([
-			$fetch(`${apiURL}/mods/raw`),
-			$fetch(`${apiURL}/addons/approved`),
+		const [posts, addons] = await Promise.all([
 			$fetch(`${apiURL}/posts/approved`),
+			$fetch(`${apiURL}/addons/approved`),
 		]);
 		return {
-			mods,
-			addons,
 			posts,
+			addons,
 		};
 	},
 	computed: {
+		postStats() {
+			return Object.values(this.posts)
+				.map((post) => post.permalink)
+				.reduce(
+					(acc, cur) => {
+						if (cur.startsWith("/compliance32x") || cur.startsWith("/faithful32x")) ++acc.f32;
+						if (cur.startsWith("/compliance64x") || cur.startsWith("/faithful64x")) ++acc.f64;
+						if (cur.startsWith("/classic32x")) ++acc.cf32;
+						if (cur.startsWith("/classic64x")) ++acc.cf32;
+						return acc;
+					},
+					{ f32: 0, f64: 0, cf32: 0, cf64: 0 },
+				);
+		},
 		addonStats() {
 			// super duper dynamic addons stats
 			const allEditions = [];
@@ -105,39 +114,6 @@ export default defineNuxtComponent({
 
 			return result;
 		},
-		postStats() {
-			return Object.values(this.posts)
-				.map((post) => post.permalink)
-				.reduce(
-					(acc, cur) => {
-						if (cur.startsWith("/compliance32x") || cur.startsWith("/faithful32x")) ++acc.f32;
-						if (cur.startsWith("/compliance64x") || cur.startsWith("/faithful64x")) ++acc.f64;
-						return acc;
-					},
-					{ f32: 0, f64: 0 },
-				);
-		},
-		modStats() {
-			const allMods = Object.values(this.mods);
-			const supportedMods = allMods.length;
-			const { storedPacks, versions } = allMods
-				.map((mod) => mod.resource_pack.versions)
-				.reduce(
-					(acc, versions) => {
-						versions.forEach((v) => {
-							acc.versions.add(v);
-							++acc.storedPacks;
-						});
-						return acc;
-					},
-					{ versions: new Set(), storedPacks: 0 },
-				);
-			return {
-				versions: versions.size,
-				storedPacks,
-				supportedMods,
-			};
-		},
 	},
 });
 </script>
@@ -147,7 +123,7 @@ export default defineNuxtComponent({
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	gap: 1.5rem;
 }
 // hack for bypassing scoped styling

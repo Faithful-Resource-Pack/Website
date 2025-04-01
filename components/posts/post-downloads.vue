@@ -6,7 +6,7 @@
 			:to="items"
 			class="btn block btn-lg btn-primary my-3"
 		>
-			<media-icon size="small" :icon="items" fallback="download" />
+			<media-icon size="small" :icon="category" fallback="download" />
 			<span class="ml-2">{{ category }}</span>
 		</nuxt-link>
 		<template v-else>

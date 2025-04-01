@@ -9,7 +9,15 @@
 		background: #0c0c0c url("/image/background/bg_dark_foreground.png") repeat;
 	}
 	.card, .download-table-padding, header {
-		background: #0c0c0c url("/image/background/bg_dark_background.png") repeat;
+		background: #131313 url("/image/background/bg_dark_background.png") repeat;
+	}
+
+	label, input {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.v-chip--variant-elevated {
+		background: #131313 url("/image/background/bg_dark_background.png") repeat !important;
 	}
 
 	ul, ol, li, h1, h2, h3, h4, h5, h6, p {
@@ -23,10 +31,6 @@
 
 	.btn-flag {
 		color: rgba(255, 255, 255, 0.7) !important;
-	}
-
-	label, input {
-		color: rgba(255, 255, 255, 0.7);
 	}
 
 	.v-menu__content > * {

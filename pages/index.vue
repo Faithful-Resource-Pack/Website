@@ -50,10 +50,10 @@
 			>
 				<template #btns>
 					<div class="button-row">
-						<nuxt-link class="btn btn-dark" to="/classicfaithful/32x-programmer-art">
+						<nuxt-link class="btn btn-dark" to="/classic32x">
 							Original Textures <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
-						<nuxt-link class="btn btn-dark" to="/classicfaithful/32x-jappa">
+						<nuxt-link class="btn btn-dark" to="/classic32x-jappa">
 							Modern Textures (Jappa) <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
 					</div>
@@ -67,44 +67,16 @@
 			>
 				<template #btns>
 					<div class="button-row">
-						<nuxt-link class="btn block btn-dark disabled" to="/classicfaithful/64x-programmer-art">
-							Coming Soon...
+						<nuxt-link class="btn block btn-dark" to="/classic64x">
+							Original Textures <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
-						<nuxt-link class="btn block btn-dark" to="/classicfaithful/64x-jappa">
+						<nuxt-link class="btn block btn-dark" to="/classic64x-jappa">
 							Modern Textures (Jappa) <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
 					</div>
 				</template>
 			</project-card>
 		</div>
-		<!--
-		<br>
-		<div class="res-grid-2">
-			<project-card
-				name="Faithful Add-ons"
-				background="/image/posters/addons.jpg"
-				wordmark="/image/wordmarks/addons.png"
-				description="A plethora of modifications to all our base packs, ranging from redstone utilities to a rainbow XP bar!"
-			>
-				<template #btns>
-					<nuxt-link class="btn block btn-dark" to="/addons">Discover Add-ons</nuxt-link>
-				</template>
-			</project-card>
-			<project-card
-				name="Faithful Mods"
-				background="/image/posters/mods.jpg"
-				wordmark="/image/wordmarks/mods.png"
-				description="A massive catalog of mods and modpack support for retaining the Faithful feel however you choose to play!"
-			>
-				<template #btns>
-					<div class="btn-group">
-						<nuxt-link class="btn block btn-dark" to="/mods">Mods</nuxt-link>
-						<nuxt-link class="btn block btn-dark" to="/modpacks">Modpacks</nuxt-link>
-					</div>
-				</template>
-			</project-card>
-		</div>
-		-->
 
 		<hr />
 
@@ -181,30 +153,12 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
-
-.hero-container {
-	display: block;
-	background-image: url("/image/banners/hero.jpg");
-	background-size: cover;
-	background-position: center;
-	box-shadow: $card-shadow;
-}
-
 .hero-upspace {
 	height: 80px;
 }
 
-.hero-tagline {
-	color: #fff;
-	text-shadow: rgba(0, 0, 0, 0.75) 0px 4px 10px;
-}
-
-.hero-wordmark {
-	margin-top: 50px;
-	margin-bottom: 25px;
-	filter: drop-shadow(0 0 10px #000);
-	max-width: 100%;
+.hero-container {
+	background-image: url("/image/banners/hero.jpg");
 }
 
 .news-button {
