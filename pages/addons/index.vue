@@ -139,7 +139,7 @@ export default defineNuxtComponent({
 		startSearch() {
 			// set query params for sharing
 			if (this.$route.query.search !== this.search)
-				this.$router.push({ query: { search: this.search } });
+				this.$router.push({ query: this.search ? { search: this.search } : null });
 
 			if (this.isSearchEmpty) {
 				this.searchedAddons = this.addons;
