@@ -20,6 +20,10 @@
 		color: $primary;
 	}
 
+	.v-chip--variant-elevated {
+		background: #303030 url("/image/background/bg_light_background.png") repeat !important;
+	}
+
 	// about page stuff
 	.about-button {
 		background: black;

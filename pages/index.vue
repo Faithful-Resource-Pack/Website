@@ -153,30 +153,12 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
-
-.hero-container {
-	display: block;
-	background-image: url("/image/banners/hero.jpg");
-	background-size: cover;
-	background-position: center;
-	box-shadow: $card-shadow;
-}
-
 .hero-upspace {
 	height: 80px;
 }
 
-.hero-tagline {
-	color: #fff;
-	text-shadow: rgba(0, 0, 0, 0.75) 0px 4px 10px;
-}
-
-.hero-wordmark {
-	margin-top: 50px;
-	margin-bottom: 25px;
-	filter: drop-shadow(0 0 10px #000);
-	max-width: 100%;
+.hero-container {
+	background-image: url("/image/banners/hero.jpg");
 }
 
 .news-button {

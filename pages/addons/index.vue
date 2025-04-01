@@ -1,86 +1,108 @@
 <script setup>
 definePageMeta({
 	name: "Add-ons",
+	layout: "no-container",
 });
 </script>
 
 <template>
-	<h1 class="title text-center my-5">Add-ons</h1>
-
-	<template v-if="Object.keys(fav).length">
-		<h2 class="text-center">Favorites</h2>
-		<addon-grid favorites :addons="Object.values(fav)" @clickFav="toggleFav" />
-		<br />
-		<h2 class="text-center">All</h2>
-	</template>
-
-	<div class="card card-body">
-		<h2 class="text-center h4">Search</h2>
-		<div class="checkbox-container">
-			<v-row no-gutters>
-				<v-col cols="6" md="3" v-for="edition in editions" :key="edition">
-					<v-checkbox
-						v-model="selectedEditions"
-						:label="edition"
-						:disabled="selectedEditions.length === 1 && selectedEditions[0] === edition"
-						:value="edition"
-						color="white"
-						hide-details
-						@update:modelValue="startSearch"
-					/>
-				</v-col>
-				<v-col cols="6" md="3" v-for="resolution in resolutions" :key="resolution">
-					<v-checkbox
-						v-model="selectedRes"
-						:label="resolution"
-						:disabled="selectedRes.length === 1 && selectedRes[0] === resolution"
-						:value="resolution"
-						color="white"
-						hide-details
-						@update:modelValue="startSearch"
-					/>
-				</v-col>
-			</v-row>
-		</div>
-		<v-text-field
-			v-model="search"
-			:append-icon="search ? 'mdi-send' : undefined"
-			filled
-			clear-icon="mdi-close"
-			clearable
-			hide-details
-			placeholder="Search add-on name"
-			type="text"
-			@keyup.enter="startSearch"
-			@click:append="startSearch"
-			@click:clear="clearSearch"
-		/>
-		<br />
-		<div class="addon-search-subtitle">
-			<p>{{ resultCount }} {{ results }} found</p>
+	<div class="hero-container text-center">
+		<div class="hero-upspace" />
+		<img class="hero-wordmark" src="/image/wordmarks/addons.png" alt="Faithful Wordmark" />
+		<h2 class="hero-tagline">Personalize and customize every aspect of your gameplay.</h2>
+		<div class="container pt-2 pb-0">
+			<v-text-field
+				v-model="search"
+				:append-inner-icon="search ? 'mdi-send' : undefined"
+				variant="solo"
+				clear-icon="mdi-close"
+				clearable
+				hide-details
+				placeholder="Search add-on name"
+				@keyup.enter="startSearch"
+				@click:appendInner="startSearch"
+				@click:clear="clearSearch"
+			/>
 			<br />
-			<v-select hide-details density="compact" v-model="currentSort" :items="sortMethods" />
 		</div>
 	</div>
-	<br />
-	<div v-if="loading" class="card card-body">Loading...</div>
-	<addon-grid
-		v-else-if="Object.keys(searchedAddons).length"
-		:addons="searchedAddons"
-		:sort="currentSort"
-		:addonsFav="fav"
-		@clickFav="toggleFav"
-	/>
+	<div class="container pt-3">
+		<v-chip-group
+			class="d-flex flex-row align-center px-2"
+			v-model="rawSelectedEditions"
+			multiple
+			variant="elevated"
+			@update:modelValue="startSearch"
+		>
+			<h5 class="mb-0">Editions</h5>
+			<div class="px-2" />
+			<v-chip
+				filter
+				v-for="({ color, icon, text }, k) in editions"
+				:key="k"
+				:value="k"
+				:style="{ color }"
+				:prepend-icon="icon"
+			>
+				{{ text }}
+			</v-chip>
+		</v-chip-group>
+		<v-chip-group
+			class="d-flex flex-row align-center px-2"
+			v-model="rawSelectedRes"
+			multiple
+			variant="elevated"
+			@update:modelValue="startSearch"
+		>
+			<h5 class="mb-0">Packs</h5>
+			<div class="px-2" />
+			<v-chip
+				filter
+				v-for="({ color, icon, text }, k) in resolutions"
+				:key="k"
+				:value="k"
+				:style="{ color }"
+			>
+				<media-icon #prepend :icon class="mr-1 ml-n1" :color />
+				<span>{{ text }}</span>
+			</v-chip>
+		</v-chip-group>
+		<v-row no-gutters align="end" class="py-3">
+			<v-col cols="12" sm="6">
+				<p class="ma-2">{{ resultCount }} {{ results }} found</p>
+			</v-col>
+			<v-spacer />
+			<v-col cols="12" :sm="$vuetify.display.mdAndUp ? 3 : 5">
+				<v-select hide-details density="compact" v-model="currentSort" :items="sortMethods" />
+			</v-col>
+		</v-row>
+		<template v-if="Object.keys(fav).length">
+			<h2 class="text-center">Favorites</h2>
+			<addon-grid favorites :addons="Object.values(fav)" @clickFav="toggleFav" />
+			<br />
+			<h2 class="text-center">All</h2>
+		</template>
+		<div v-if="loading" class="card card-body">Loading...</div>
+		<addon-grid
+			v-else-if="Object.keys(searchedAddons).length"
+			:addons="searchedAddons"
+			:sort="currentSort"
+			:addonsFav="fav"
+			@clickFav="toggleFav"
+		/>
+	</div>
 </template>
 
 <script>
 import AddonGrid from "~/components/addons/addon-grid.vue";
+import MediaIcon from "~/components/lib/media-icon.vue";
 
 const FAVORITE_ADDONS_KEY = "favAddons";
 
 export default defineNuxtComponent({
 	components: {
 		AddonGrid,
+		MediaIcon,
 	},
 	data() {
 		const sortMethods = [
@@ -96,44 +118,45 @@ export default defineNuxtComponent({
 			fav: {},
 			search: "",
 			loading: true,
-			editions: ["Java", "Bedrock"],
-			resolutions: ["32x", "64x"],
-			selectedEditions: ["Java", "Bedrock"],
-			selectedRes: ["32x", "64x"],
+			editions: {
+				Java: { color: "#1dd96a", icon: "mdi-minecraft", text: "Java Edition" },
+				Bedrock: { color: "#eee", icon: "mdi-cube", text: "Bedrock Edition" },
+			},
+			resolutions: {
+				"32x": { color: "#00b0ff", icon: "faithful", text: "Faithful 32x" },
+				"64x": { color: "#ff62bc", icon: "faithful", text: "Faithful 64x" },
+			},
+			rawSelectedEditions: [],
+			rawSelectedRes: [],
 			sortMethods,
 			currentSort: sortMethods[0].value,
 		};
 	},
 	methods: {
 		startSearch() {
-			if (
-				this.search === "" &&
-				this.editions.length + this.resolutions.length ===
-					this.selectedEditions.length + this.selectedRes.length
-			)
+			if (this.isSearchEmpty) {
 				this.searchedAddons = this.addons;
-			else {
-				this.searchedAddons = this.addons.filter((addon) => {
-					if (!addon.name.toLowerCase().includes(this.search.toLowerCase()) && this.search !== "")
-						return false;
-
-					// split types of an addon (res + edition : res & edition)
-					const { localRes, localEditions } = addon.options.tags.reduce(
-						(acc, tag) => {
-							if (this.resolutions.includes(tag)) acc.localRes.push(tag);
-							if (this.editions.includes(tag)) acc.localEditions.push(tag);
-							return acc;
-						},
-						{ localRes: [], localEditions: [] },
-					);
-
-					// search if edition then check if res
-					if (!localEditions.some((edition) => this.selectedEditions.includes(edition)))
-						return false;
-					if (!localRes.some((res) => this.selectedRes.includes(res))) return false;
-					return true;
-				});
+				return;
 			}
+			this.searchedAddons = this.addons.filter((addon) => {
+				if (!addon.name.toLowerCase().includes(this.search.toLowerCase()) && this.search !== "")
+					return false;
+
+				// split types of an addon (res + edition : res & edition)
+				const { localRes, localEditions } = addon.options.tags.reduce(
+					(acc, tag) => {
+						if (Object.keys(this.resolutions).includes(tag)) acc.localRes.push(tag);
+						if (Object.keys(this.editions).includes(tag)) acc.localEditions.push(tag);
+						return acc;
+					},
+					{ localRes: [], localEditions: [] },
+				);
+
+				// search if edition then check if res
+				if (!localEditions.some((edition) => this.selectedEditions.includes(edition))) return false;
+				if (!localRes.some((res) => this.selectedRes.includes(res))) return false;
+				return true;
+			});
 		},
 		clearSearch() {
 			this.search = "";
@@ -152,6 +175,24 @@ export default defineNuxtComponent({
 		resultCount() {
 			return this.searchedAddons.length;
 		},
+		selectedRes() {
+			// zero length means all are selected
+			if (this.rawSelectedRes.length === 0) return Object.keys(this.resolutions);
+			return this.rawSelectedRes;
+		},
+		selectedEditions() {
+			if (this.rawSelectedEditions.length === 0) return Object.keys(this.editions);
+			return this.rawSelectedEditions;
+		},
+		isSearchEmpty() {
+			if (this.search !== "") return false;
+			if (
+				Object.keys(this.editions).length + Object.keys(this.resolutions).length !==
+				this.selectedEditions.length + this.selectedRes.length
+			)
+				return false;
+			return true;
+		},
 	},
 	// need nonblocking fetch (SSR not needed)
 	beforeMount() {
@@ -168,31 +209,10 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-// search
-.checkbox-container {
-	.v-input {
-		text-align: center;
-		margin: 0;
-		padding: 0.25rem 0;
-		margin-bottom: 1rem;
-		.v-label {
-			color: white !important;
-		}
-	}
+.hero-container {
+	background-image: url("/image/banners/add_ons.jpg");
 }
-
-.addon-search-subtitle {
-	display: flex;
-	justify-content: space-between;
-	> * {
-		margin-bottom: 0 !important;
-		margin-top: 0 !important;
-	}
-	.v-select {
-		max-width: 15rem;
-	}
-	.v-select__selection {
-		color: rgba(255, 255, 255, 0.7);
-	}
+.hero-upspace {
+	height: 50px;
 }
 </style>
