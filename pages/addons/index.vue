@@ -1,10 +1,3 @@
-<script setup>
-definePageMeta({
-	name: "Add-ons",
-	layout: "no-container",
-});
-</script>
-
 <template>
 	<div class="hero-container text-center">
 		<div class="hero-upspace" />
@@ -76,15 +69,14 @@ definePageMeta({
 				<v-select hide-details density="compact" v-model="currentSort" :items="sortMethods" />
 			</v-col>
 		</v-row>
-		<template v-if="Object.keys(fav).length">
+		<template v-if="Object.keys(fav).length" data-allow-mismatch="children">
 			<h2 class="text-center">Favorites</h2>
 			<addon-grid favorites :addons="Object.values(fav)" @clickFav="toggleFav" />
 			<br />
 			<h2 class="text-center">All</h2>
 		</template>
-		<div v-if="loading" class="card card-body">Loading...</div>
 		<addon-grid
-			v-else-if="Object.keys(searchedAddons).length"
+			v-if="Object.keys(searchedAddons).length"
 			:addons="searchedAddons"
 			:sort="currentSort"
 			:addonsFav="fav"
@@ -104,6 +96,20 @@ export default defineNuxtComponent({
 		AddonGrid,
 		MediaIcon,
 	},
+	setup() {
+		definePageMeta({
+			name: "Add-ons",
+			layout: "no-container",
+		});
+	},
+	async asyncData() {
+		const { apiURL } = useRuntimeConfig().public;
+		const data = await $fetch(`${apiURL}/addons/approved`);
+		return {
+			addons: data,
+			searchedAddons: data,
+		};
+	},
 	data() {
 		const sortMethods = [
 			{ title: "Date (Newest to Oldest)", value: "dd" },
@@ -112,12 +118,9 @@ export default defineNuxtComponent({
 			{ title: "Name (Z-A)", value: "nd" },
 		];
 		return {
-			addons: [],
-			searchedAddons: [],
 			// store as object for faster lookup (sorting not needed)
 			fav: {},
 			search: "",
-			loading: true,
 			editions: {
 				Java: { color: "#1dd96a", icon: "mdi-minecraft", text: "Java Edition" },
 				Bedrock: { color: "#eee", icon: "mdi-cube", text: "Bedrock Edition" },
@@ -134,6 +137,10 @@ export default defineNuxtComponent({
 	},
 	methods: {
 		startSearch() {
+			// set query params for sharing
+			if (this.$route.query.search !== this.search)
+				this.$router.push({ query: { search: this.search } });
+
 			if (this.isSearchEmpty) {
 				this.searchedAddons = this.addons;
 				return;
@@ -194,15 +201,14 @@ export default defineNuxtComponent({
 			return true;
 		},
 	},
-	// need nonblocking fetch (SSR not needed)
-	beforeMount() {
-		const { apiURL } = useRuntimeConfig().public;
-		$fetch(`${apiURL}/addons/approved`).then((data) => {
-			this.addons = data;
-			this.loading = false;
-			this.searchedAddons = data;
-		});
-
+	created() {
+		// take query params from route and start search with that if possible
+		if (!this.$route.query.search) return;
+		this.search = this.$route.query.search;
+		this.startSearch();
+	},
+	mounted() {
+		// need localstorage access so this must be done after mounting
 		this.fav = JSON.parse(localStorage.getItem(FAVORITE_ADDONS_KEY) || "{}");
 	},
 });
