@@ -29,6 +29,26 @@ definePageMeta({
 	<div class="container pt-3">
 		<v-chip-group
 			class="d-flex flex-row align-center px-2"
+			v-model="rawSelectedPacks"
+			multiple
+			variant="elevated"
+			@update:modelValue="startSearch"
+		>
+			<h5 class="mb-0">Packs</h5>
+			<div class="px-2" />
+			<v-chip
+				filter
+				v-for="({ color, icon, text }, k) in packs"
+				:key="k"
+				:value="k"
+				:style="{ color }"
+			>
+				<media-icon #prepend :icon class="mr-1 ml-n1" :color />
+				<span>{{ text }}</span>
+			</v-chip>
+		</v-chip-group>
+		<v-chip-group
+			class="d-flex flex-row align-center px-2"
 			v-model="rawSelectedEditions"
 			multiple
 			variant="elevated"
@@ -45,26 +65,6 @@ definePageMeta({
 				:prepend-icon="icon"
 			>
 				{{ text }}
-			</v-chip>
-		</v-chip-group>
-		<v-chip-group
-			class="d-flex flex-row align-center px-2"
-			v-model="rawSelectedRes"
-			multiple
-			variant="elevated"
-			@update:modelValue="startSearch"
-		>
-			<h5 class="mb-0">Packs</h5>
-			<div class="px-2" />
-			<v-chip
-				filter
-				v-for="({ color, icon, text }, k) in resolutions"
-				:key="k"
-				:value="k"
-				:style="{ color }"
-			>
-				<media-icon #prepend :icon class="mr-1 ml-n1" :color />
-				<span>{{ text }}</span>
 			</v-chip>
 		</v-chip-group>
 		<v-row no-gutters align="end" class="py-3">
@@ -122,12 +122,12 @@ export default defineNuxtComponent({
 				Java: { color: "#1dd96a", icon: "mdi-minecraft", text: "Java Edition" },
 				Bedrock: { color: "#eee", icon: "mdi-cube", text: "Bedrock Edition" },
 			},
-			resolutions: {
+			packs: {
 				"32x": { color: "#00b0ff", icon: "faithful", text: "Faithful 32x" },
 				"64x": { color: "#ff62bc", icon: "faithful", text: "Faithful 64x" },
 			},
 			rawSelectedEditions: [],
-			rawSelectedRes: [],
+			rawSelectedPacks: [],
 			sortMethods,
 			currentSort: sortMethods[0].value,
 		};
@@ -142,19 +142,19 @@ export default defineNuxtComponent({
 				if (!addon.name.toLowerCase().includes(this.search.toLowerCase()) && this.search !== "")
 					return false;
 
-				// split types of an addon (res + edition : res & edition)
-				const { localRes, localEditions } = addon.options.tags.reduce(
+				// split types of an addon (pack + edition : pack & edition)
+				const { localPacks, localEditions } = addon.options.tags.reduce(
 					(acc, tag) => {
-						if (Object.keys(this.resolutions).includes(tag)) acc.localRes.push(tag);
+						if (Object.keys(this.packs).includes(tag)) acc.localPacks.push(tag);
 						if (Object.keys(this.editions).includes(tag)) acc.localEditions.push(tag);
 						return acc;
 					},
-					{ localRes: [], localEditions: [] },
+					{ localPacks: [], localEditions: [] },
 				);
 
-				// search if edition then check if res
+				// search if edition then check if pack
 				if (!localEditions.some((edition) => this.selectedEditions.includes(edition))) return false;
-				if (!localRes.some((res) => this.selectedRes.includes(res))) return false;
+				if (!localPacks.some((pack) => this.selectedPacks.includes(pack))) return false;
 				return true;
 			});
 		},
@@ -175,10 +175,10 @@ export default defineNuxtComponent({
 		resultCount() {
 			return this.searchedAddons.length;
 		},
-		selectedRes() {
+		selectedPacks() {
 			// zero length means all are selected
-			if (this.rawSelectedRes.length === 0) return Object.keys(this.resolutions);
-			return this.rawSelectedRes;
+			if (this.rawSelectedPacks.length === 0) return Object.keys(this.packs);
+			return this.rawSelectedPacks;
 		},
 		selectedEditions() {
 			if (this.rawSelectedEditions.length === 0) return Object.keys(this.editions);
@@ -187,8 +187,8 @@ export default defineNuxtComponent({
 		isSearchEmpty() {
 			if (this.search !== "") return false;
 			if (
-				Object.keys(this.editions).length + Object.keys(this.resolutions).length !==
-				this.selectedEditions.length + this.selectedRes.length
+				Object.keys(this.editions).length + Object.keys(this.packs).length !==
+				this.selectedEditions.length + this.selectedPacks.length
 			)
 				return false;
 			return true;

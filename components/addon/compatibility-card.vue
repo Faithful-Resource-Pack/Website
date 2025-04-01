@@ -1,5 +1,12 @@
 <template>
 	<h2 class="text-center">Compatibility</h2>
+	<h5>Supported Packs</h5>
+	<div class="addon-chips">
+		<v-chip v-for="{ color, icon, text, to } in packs" :key="text" density="compact" :color :to>
+			<media-icon #prepend :icon class="mr-1 ml-n1" :color />
+			{{ text }}
+		</v-chip>
+	</div>
 	<h5>Supported Editions</h5>
 	<div class="addon-chips">
 		<v-chip
@@ -9,13 +16,6 @@
 			density="compact"
 			:color
 		>
-			{{ text }}
-		</v-chip>
-	</div>
-	<h5>Supported Packs</h5>
-	<div class="addon-chips">
-		<v-chip v-for="{ color, icon, text, to } in packs" :key="text" density="compact" :color :to>
-			<media-icon #prepend :icon class="mr-1 ml-n1" :color />
 			{{ text }}
 		</v-chip>
 	</div>
