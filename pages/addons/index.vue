@@ -70,10 +70,10 @@
 			</v-col>
 		</v-row>
 		<template v-if="Object.keys(fav).length" data-allow-mismatch="children">
-			<h2 class="text-center">Favorites</h2>
+			<h1 class="text-center">Favorites</h1>
 			<addon-grid favorites :addons="Object.values(fav)" @clickFav="toggleFav" />
-			<br />
-			<h2 class="text-center">All</h2>
+			<hr />
+			<h1 class="text-center">All</h1>
 		</template>
 		<addon-grid
 			v-if="Object.keys(searchedAddons).length"

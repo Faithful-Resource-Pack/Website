@@ -4,7 +4,7 @@
 	<h2 v-if="!posts.length" class="text-center">
 		{{ error ? `Error: ${error}` : "No posts found" }}
 	</h2>
-	<div v-else class="news-grid pb-5">
+	<div v-else class="top-news pb-5">
 		<nuxt-link class="card img-card" :to="firstPost.permalink">
 			<img
 				:src="

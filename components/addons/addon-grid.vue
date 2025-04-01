@@ -1,18 +1,16 @@
 <template>
-	<div class="card card-body addon-grid">
-		<div class="res-grid-3">
-			<template v-for="addon in sortedAddons" :key="addon.id">
-				<addon-card v-if="addon.approval.status === 'approved'" :addon>
-					<v-btn
-						class="fav-button pa-0"
-						:icon="icon(addon.id)"
-						:color="color(addon.id)"
-						variant="plain"
-						@click="$emit('clickFav', addon)"
-					/>
-				</addon-card>
-			</template>
-		</div>
+	<div class="res-grid-3">
+		<template v-for="addon in sortedAddons" :key="addon.id">
+			<addon-card v-if="addon.approval.status === 'approved'" :addon>
+				<v-btn
+					class="fav-button pa-0"
+					:icon="icon(addon.id)"
+					:color="color(addon.id)"
+					variant="plain"
+					@click="$emit('clickFav', addon)"
+				/>
+			</addon-card>
+		</template>
 	</div>
 </template>
 
