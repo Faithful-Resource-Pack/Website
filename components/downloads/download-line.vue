@@ -2,7 +2,13 @@
 	<tr class="download-item" :class="nested ? 'subitem' : ''" @click="toggleChildren">
 		<td class="show-icon-container">
 			<!-- empty slot rendered if there's only a single download -->
-			<p v-if="!nested && !single" class="show-icon clickable">{{ showIcon }}</p>
+			<v-icon
+				v-if="!nested && !single"
+				:icon="showIcon"
+				size="x-small"
+				opacity="0.5"
+				class="clickable"
+			/>
 		</td>
 		<td class="download-details">
 			<span class="download-name">
@@ -90,9 +96,6 @@ export default defineNuxtComponent({
 		};
 	},
 	methods: {
-		getLocalizedDate(dateObj) {
-			return localDate(dateObj);
-		},
 		toggleChildren() {
 			// handle icon change then pass back to download-version to unhide children
 			this.isOpen = !this.isOpen;
@@ -101,7 +104,7 @@ export default defineNuxtComponent({
 	},
 	computed: {
 		showIcon() {
-			return this.isOpen ? "-" : "+";
+			return this.isOpen ? "mdi-minus" : "mdi-plus";
 		},
 		labelText() {
 			if (!this.item.file_version) return this.item.file_type;
@@ -111,11 +114,11 @@ export default defineNuxtComponent({
 			return this.labelColors[this.item.file_type] || "green";
 		},
 		date() {
-			if (this.item.date) return this.getLocalizedDate(new Date(this.item.date));
+			if (this.item.date) return localDate(new Date(this.item.date));
 
 			// no other way to get dates
 			if (!this.curse || !this.curse.uploaded_at) return "Unknown";
-			return this.getLocalizedDate(new Date(this.curse.uploaded_at.split("T")[0]));
+			return localDate(new Date(this.curse.uploaded_at.split("T")[0]));
 		},
 		size() {
 			// some very old downloads have manual sizes
@@ -190,10 +193,6 @@ td * {
 .show-icon-container {
 	user-select: none;
 	width: 5%;
-}
-
-.show-icon {
-	opacity: 50%;
 }
 
 .btn-dl {
