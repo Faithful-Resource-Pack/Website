@@ -34,9 +34,8 @@
 				<div class="card card-body addon-info">
 					<h2 class="text-center">Details</h2>
 					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
-					<!-- avoid SSR warning with date localization -->
-					<p v-if="addon.last_updated" class="mb-0" data-allow-mismatch="children">
-						Last Updated: {{ date }}
+					<p v-if="addon.last_updated" class="mb-0" :title="preciseDate">
+						Last updated {{ relativeDate }}
 					</p>
 				</div>
 			</v-col>
@@ -65,6 +64,8 @@ import ScreenshotModal from "~/components/lib/screenshot-modal.vue";
 import AuthorWidget from "~/components/addon/author-widget.vue";
 import CompatibilityCard from "~/components/addon/compatibility-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
+
+import { DateTime } from "luxon";
 
 export default defineNuxtComponent({
 	components: {
@@ -127,8 +128,11 @@ export default defineNuxtComponent({
 		downloads() {
 			return this.files.filter((el) => el.use === "download");
 		},
-		date() {
-			return localDate(this.addon.last_updated);
+		relativeDate() {
+			return DateTime.fromMillis(this.addon.last_updated).toRelative();
+		},
+		preciseDate() {
+			return DateTime.fromMillis(this.addon.last_updated).toLocaleString(DateTime.DATETIME_MED);
 		},
 	},
 });
