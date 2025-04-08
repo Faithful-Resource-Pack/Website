@@ -1,6 +1,6 @@
 <template>
 	<div v-if="addon && addon.approval?.status === 'approved'">
-		<screenshot-modal v-model="modal" :image="modalImage" />
+		<screenshot-modal v-model="modal" :src="modalImage" />
 
 		<h1 class="title text-center my-5">{{ addon.name }}</h1>
 

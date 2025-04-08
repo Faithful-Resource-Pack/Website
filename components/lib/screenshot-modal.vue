@@ -1,6 +1,6 @@
 <template>
 	<v-dialog v-model="modalOpened" max-width="1080" style="z-index: 999">
-		<img class="card" :src="image" />
+		<img class="card" :src />
 	</v-dialog>
 </template>
 
@@ -12,7 +12,7 @@ export default defineNuxtComponent({
 			type: Boolean,
 			required: true,
 		},
-		image: {
+		src: {
 			type: String,
 			required: true,
 		},
