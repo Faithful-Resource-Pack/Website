@@ -129,7 +129,10 @@ export default defineNuxtComponent({
 			return this.files.filter((el) => el.use === "download");
 		},
 		relativeDate() {
-			return DateTime.fromMillis(this.addon.last_updated).toRelative();
+			return DateTime.fromMillis(this.addon.last_updated).toRelative({
+				// fixes one half of the sentence being translated
+				locale: "en",
+			});
 		},
 		preciseDate() {
 			return DateTime.fromMillis(this.addon.last_updated).toLocaleString(DateTime.DATETIME_MED);
