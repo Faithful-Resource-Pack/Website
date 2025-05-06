@@ -83,22 +83,6 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
 
-@media screen and (max-width: 760px) {
-	.addon-grid {
-		background: transparent !important;
-		padding: 0 !important;
-		box-shadow: none !important;
-
-		& + br {
-			display: none;
-
-			& + h3 {
-				margin-top: 0.5rem;
-			}
-		}
-	}
-}
-
 // search page cards
 .fav-button {
 	position: absolute;
