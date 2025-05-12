@@ -16,9 +16,9 @@
 		"isomorphic-dompurify": "^2.24.0",
 		"luxon": "^3.6.1",
 		"marked": "^15.0.11",
-		"nuxt": "^3.17.1",
-		"remove-markdown": "^0.6.0",
-		"sass": "^1.87.0",
+		"nuxt": "^3.17.3",
+		"remove-markdown": "^0.6.2",
+		"sass": "^1.88.0",
 		"vuetify-nuxt-module": "^0.18.6",
 		"yaml": "^2.7.1"
 	},

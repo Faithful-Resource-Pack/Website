@@ -79,7 +79,7 @@ export default defineNuxtComponent({
 						if (cur.startsWith("/compliance32x") || cur.startsWith("/faithful32x")) ++acc.f32;
 						if (cur.startsWith("/compliance64x") || cur.startsWith("/faithful64x")) ++acc.f64;
 						if (cur.startsWith("/classic32x")) ++acc.cf32;
-						if (cur.startsWith("/classic64x")) ++acc.cf32;
+						if (cur.startsWith("/classic64x")) ++acc.cf64;
 						return acc;
 					},
 					{ f32: 0, f64: 0, cf32: 0, cf64: 0 },
