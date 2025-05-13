@@ -6,7 +6,14 @@
 		:alt
 	>
 		<template #unlinked>
-			<slot />
+			<v-btn
+				v-if="!minimal"
+				class="fav-button pa-0"
+				:icon="favIcon"
+				:color="favColor"
+				variant="plain"
+				@click="$emit('toggleFav', addon)"
+			/>
 		</template>
 		<template #linked>
 			<div class="addon-flags" v-if="!minimal">
@@ -45,12 +52,19 @@ export default defineNuxtComponent({
 			type: Object,
 			required: true,
 		},
+		favorite: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
+		// for reel on main page (hides extra info since the cards are smaller)
 		minimal: {
 			type: Boolean,
 			required: false,
 			default: false,
 		},
 	},
+	emits: ["toggleFav"],
 	data() {
 		return {
 			optifine: "/image/addons/optifine.png",
@@ -66,12 +80,27 @@ export default defineNuxtComponent({
 			if (this.addon.description.length < 150) return this.addon.description;
 			return this.addon.title;
 		},
+		favColor() {
+			return this.favorite ? "#faa619" : "#ffffffaa";
+		},
+		favIcon() {
+			return this.favorite ? "mdi-star" : "mdi-star-outline";
+		},
 	},
 });
 </script>
 
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
+
+// search page cards
+.fav-button {
+	position: absolute;
+	top: calc(#{$card-padding} - 16px);
+	left: calc(#{$card-padding} - 16px);
+	opacity: 1 !important;
+	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
 
 .addon-flags {
 	position: absolute;

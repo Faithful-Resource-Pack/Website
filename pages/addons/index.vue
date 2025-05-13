@@ -6,14 +6,11 @@
 		<div class="container pt-2 pb-0">
 			<v-text-field
 				v-model="search"
-				:append-inner-icon="search ? 'mdi-send' : undefined"
 				variant="solo"
 				clear-icon="mdi-close"
 				clearable
 				hide-details
 				placeholder="Search add-on name"
-				@keyup.enter="startSearch"
-				@click:appendInner="startSearch"
 				@click:clear="clearSearch"
 			/>
 			<br />
@@ -25,7 +22,6 @@
 			v-model="rawSelectedPacks"
 			multiple
 			variant="elevated"
-			@update:modelValue="startSearch"
 		>
 			<h5 class="mb-0">Packs</h5>
 			<div class="px-2" />
@@ -45,7 +41,6 @@
 			v-model="rawSelectedEditions"
 			multiple
 			variant="elevated"
-			@update:modelValue="startSearch"
 		>
 			<h5 class="mb-0">Editions</h5>
 			<div class="px-2" />
@@ -62,38 +57,38 @@
 		</v-chip-group>
 		<v-row no-gutters align="end" class="py-3">
 			<v-col cols="12" sm="6">
-				<p class="ma-2">{{ resultCount }} {{ results }} found</p>
+				<p class="ma-2">{{ searchedAddons.length }} {{ results }} found</p>
 			</v-col>
 			<v-spacer />
 			<v-col cols="12" :sm="$vuetify.display.mdAndUp ? 3 : 5">
 				<v-select hide-details density="compact" v-model="currentSort" :items="sortMethods" />
 			</v-col>
 		</v-row>
-		<template v-if="Object.keys(fav).length" data-allow-mismatch="children">
-			<h1 class="text-center">Favorites</h1>
-			<addon-grid favorites :addons="Object.values(fav)" @clickFav="toggleFav" />
-			<hr />
-			<h1 class="text-center">All</h1>
-		</template>
-		<addon-grid
-			v-if="Object.keys(searchedAddons).length"
-			:addons="searchedAddons"
-			:sort="currentSort"
-			:addonsFav="fav"
-			@clickFav="toggleFav"
-		/>
+		<div class="res-grid-3">
+			<!-- favoriting doesn't work serverside since it depends on localstorage -->
+			<client-only>
+				<addon-card
+					v-for="addon in favAddons"
+					:key="addon.id"
+					:addon
+					favorite
+					@toggleFav="toggleFav"
+				/>
+			</client-only>
+			<addon-card v-for="addon in searchedAddons" :key="addon.id" :addon @toggleFav="toggleFav" />
+		</div>
 	</div>
 </template>
 
 <script>
-import AddonGrid from "~/components/addons/addon-grid.vue";
+import AddonCard from "~/components/addons/addon-card.vue";
 import MediaIcon from "~/components/lib/media-icon.vue";
 
 const FAVORITE_ADDONS_KEY = "favAddons";
 
 export default defineNuxtComponent({
 	components: {
-		AddonGrid,
+		AddonCard,
 		MediaIcon,
 	},
 	setup() {
@@ -107,7 +102,6 @@ export default defineNuxtComponent({
 		const data = await $fetch(`${apiURL}/addons/approved`);
 		return {
 			addons: data,
-			searchedAddons: data,
 		};
 	},
 	data() {
@@ -136,38 +130,56 @@ export default defineNuxtComponent({
 		};
 	},
 	methods: {
-		startSearch() {
-			// set query params for sharing
+		setQuery() {
 			if (this.$route.query.search !== this.search)
 				this.$router.push({ query: this.search ? { search: this.search } : null });
+		},
+		// used for both search and favorites
+		filterAddons(addons, sortMethod) {
+			if (this.isSearchEmpty) return addons;
+			return addons
+				.filter((addon) => {
+					if (!addon.name.toLowerCase().includes(this.search.toLowerCase())) return false;
 
-			if (this.isSearchEmpty) {
-				this.searchedAddons = this.addons;
-				return;
-			}
-			this.searchedAddons = this.addons.filter((addon) => {
-				if (!addon.name.toLowerCase().includes(this.search.toLowerCase()) && this.search !== "")
-					return false;
+					// split types of an addon (pack + edition : pack & edition)
+					// they should really be split but oh well
+					const { localPacks, localEditions } = addon.options.tags.reduce(
+						(acc, tag) => {
+							if (Object.keys(this.packs).includes(tag)) acc.localPacks.push(tag);
+							if (Object.keys(this.editions).includes(tag)) acc.localEditions.push(tag);
+							return acc;
+						},
+						{ localPacks: [], localEditions: [] },
+					);
 
-				// split types of an addon (pack + edition : pack & edition)
-				const { localPacks, localEditions } = addon.options.tags.reduce(
-					(acc, tag) => {
-						if (Object.keys(this.packs).includes(tag)) acc.localPacks.push(tag);
-						if (Object.keys(this.editions).includes(tag)) acc.localEditions.push(tag);
-						return acc;
-					},
-					{ localPacks: [], localEditions: [] },
-				);
-
-				// search if edition then check if pack
-				if (!localEditions.some((edition) => this.selectedEditions.includes(edition))) return false;
-				if (!localPacks.some((pack) => this.selectedPacks.includes(pack))) return false;
-				return true;
-			});
+					const hasEdition = localEditions.some((edition) =>
+						this.selectedEditions.includes(edition),
+					);
+					const hasPack = localPacks.some((pack) => this.selectedPacks.includes(pack));
+					// must fulfill both criteria
+					return hasEdition && hasPack;
+				})
+				.sort((a, b) => {
+					const an = a.name.trim().toLowerCase();
+					const bn = b.name.trim().toLowerCase();
+					const ad = a.last_updated || 0;
+					const bd = b.last_updated || 0;
+					switch (sortMethod) {
+						case "na": // name ascending
+							return an === bn ? 0 : an > bn ? 1 : -1;
+						case "nd": // name descending
+							return an === bn ? 0 : an > bn ? -1 : 1;
+						case "da": // date ascending
+							return ad === bd ? 0 : ad > bd ? 1 : -1;
+						case "dd": // date descending (default)
+						default:
+							return ad === bd ? 0 : ad < bd ? 1 : -1;
+					}
+				});
 		},
 		clearSearch() {
+			// watcher handles query params
 			this.search = "";
-			this.startSearch();
 		},
 		toggleFav(addon) {
 			if (this.fav[addon.id]) delete this.fav[addon.id];
@@ -176,11 +188,17 @@ export default defineNuxtComponent({
 		},
 	},
 	computed: {
-		results() {
-			return this.resultCount === 1 ? "result" : "results";
+		favAddons() {
+			// always sorted by name ascending
+			return this.filterAddons(Object.values(this.fav), "na");
 		},
-		resultCount() {
-			return this.searchedAddons.length;
+		searchedAddons() {
+			return this.filterAddons(this.addons, this.currentSort).filter(
+				(addon) => !this.fav[addon.id],
+			);
+		},
+		results() {
+			return this.searchedAddons.length === 1 ? "result" : "results";
 		},
 		selectedPacks() {
 			// zero length means all are selected
@@ -201,11 +219,14 @@ export default defineNuxtComponent({
 			return true;
 		},
 	},
+	watch: {
+		search() {
+			this.setQuery();
+		},
+	},
 	created() {
 		// take query params from route and start search with that if possible
-		if (!this.$route.query.search) return;
-		this.search = this.$route.query.search;
-		this.startSearch();
+		if (this.$route.query.search) this.search = this.$route.query.search;
 	},
 	mounted() {
 		// need localstorage access so this must be done after mounting
