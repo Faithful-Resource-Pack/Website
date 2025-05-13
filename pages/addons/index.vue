@@ -194,7 +194,7 @@ export default defineNuxtComponent({
 			);
 		},
 		resultCount() {
-			return this.searchedAddons.length + Object.keys(this.fav).length;
+			return this.searchedAddons.length + this.favAddons.length;
 		},
 		results() {
 			return this.resultCount === 1 ? "result" : "results";
