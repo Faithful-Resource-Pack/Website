@@ -57,7 +57,7 @@
 		</v-chip-group>
 		<v-row no-gutters align="end" class="py-3">
 			<v-col cols="12" sm="6">
-				<p class="ma-2">{{ searchedAddons.length }} {{ results }} found</p>
+				<p class="ma-2">{{ resultCount }} {{ results }} found</p>
 			</v-col>
 			<v-spacer />
 			<v-col cols="12" :sm="$vuetify.display.mdAndUp ? 3 : 5">
@@ -130,10 +130,6 @@ export default defineNuxtComponent({
 		};
 	},
 	methods: {
-		setQuery() {
-			if (this.$route.query.search !== this.search)
-				this.$router.push({ query: this.search ? { search: this.search } : null });
-		},
 		// used for both search and favorites
 		filterAddons(addons, sortMethod) {
 			if (this.isSearchEmpty) return addons;
@@ -197,8 +193,11 @@ export default defineNuxtComponent({
 				(addon) => !this.fav[addon.id],
 			);
 		},
+		resultCount() {
+			return this.searchedAddons.length + Object.keys(this.fav).length;
+		},
 		results() {
-			return this.searchedAddons.length === 1 ? "result" : "results";
+			return this.resultCount === 1 ? "result" : "results";
 		},
 		selectedPacks() {
 			// zero length means all are selected
@@ -220,8 +219,9 @@ export default defineNuxtComponent({
 		},
 	},
 	watch: {
-		search() {
-			this.setQuery();
+		search(value) {
+			if (this.$route.query.search !== value)
+				this.$router.push({ query: value ? { search: value } : null });
 		},
 	},
 	created() {
