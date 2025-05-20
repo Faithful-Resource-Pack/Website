@@ -54,45 +54,49 @@
 </template>
 
 <script>
+
+// if more/fewer items are added this can be changed (make sure it's divisible though)
+const ITEMS_PER_SIDE = 3;
+const NAVBAR_ITEMS = [
+	{
+		name: "Home",
+		to: "/",
+		icon: "mdi-home",
+	},
+	{
+		name: "Downloads",
+		to: "/downloads",
+		icon: "mdi-download",
+	},
+	{
+		name: "Add-ons",
+		to: "/addons",
+		icon: "mdi-plus",
+	},
+	{
+		name: "News",
+		to: "/news",
+		icon: "mdi-newspaper-variant",
+	},
+	{
+		name: "Web App",
+		to: "https://webapp.faithfulpack.net",
+		icon: "mdi-account",
+	},
+	{
+		name: "About",
+		to: "/about",
+		icon: "mdi-help-circle",
+	},
+];
+
 export default defineNuxtComponent({
 	name: "navbar",
 	data() {
 		return {
 			isOpen: false,
-			left: [
-				{
-					name: "Home",
-					to: "/",
-					icon: "mdi-home",
-				},
-				{
-					name: "Downloads",
-					to: "/downloads",
-					icon: "mdi-download",
-				},
-				{
-					name: "Add-ons",
-					to: "/addons",
-					icon: "mdi-plus",
-				},
-			],
-			right: [
-				{
-					name: "News",
-					to: "/news",
-					icon: "mdi-newspaper-variant",
-				},
-				{
-					name: "Web App",
-					to: "https://webapp.faithfulpack.net",
-					icon: "mdi-account",
-				},
-				{
-					name: "About",
-					to: "/about",
-					icon: "mdi-help-circle",
-				},
-			],
+			left: NAVBAR_ITEMS.slice(0, ITEMS_PER_SIDE),
+			right: NAVBAR_ITEMS.slice(ITEMS_PER_SIDE),
 		};
 	},
 });

@@ -47,6 +47,115 @@
 </template>
 
 <script>
+
+// change this as necessary
+const FOOTER_CATEGORIES = [
+	{
+		title: "Info",
+		icon: "mdi-information",
+		items: [
+			{
+				name: "License",
+				to: "/license",
+			},
+			{
+				name: "Privacy Policy",
+				to: "/privacy",
+			},
+			{
+				name: "Statistics",
+				to: "/stats",
+			},
+			{
+				name: "Translate",
+				to: "https://translate.faithfulpack.net",
+			},
+			{
+				name: "Branding",
+				to: "https://docs.faithfulpack.net/pages/manuals/branding-guidelines",
+			},
+		],
+	},
+	{
+		title: "Listings",
+		icon: "mdi-post",
+		items: [
+			{
+				name: "CurseForge",
+				to: "https://www.curseforge.com/members/faithful_resource_pack/projects",
+			},
+			{
+				name: "Modrinth",
+				to: "https://modrinth.com/user/Faithful-Resource-Pack",
+			},
+			{
+				name: "Planet Minecraft",
+				to: "https://www.planetminecraft.com/member/faithful_resource_pack",
+			},
+			{
+				name: "MCPEDL",
+				to: "https://mcpedl.com/user/faithful-resource-pack",
+			},
+			{
+				name: "GitHub",
+				to: "https://github.com/Faithful-Resource-Pack",
+			},
+		],
+	},
+	{
+		title: "Media",
+		icon: "mdi-chat",
+		items: [
+			{
+				name: "Twitter",
+				to: "https://twitter.com/faithfulpack",
+			},
+			{
+				name: "Bluesky",
+				to: "https://bsky.app/profile/faithfulpack.net",
+			},
+			{
+				name: "Reddit",
+				to: "https://www.reddit.com/r/faithfulpack",
+			},
+			{
+				name: "Discord",
+				to: "https://discord.gg/sN9YRQbBv7",
+			},
+			{
+				name: "CF Discord",
+				to: "https://discord.gg/KSEhCVtg4J",
+			},
+		],
+	},
+	{
+		title: "Resources",
+		icon: "mdi-shape",
+		items: [
+			{
+				name: "FAQ",
+				to: "/faq",
+			},
+			{
+				name: "Docs",
+				to: "https://docs.faithfulpack.net",
+			},
+			{
+				name: "Status",
+				to: "https://status.faithfulpack.net",
+			},
+			{
+				name: "Gallery",
+				to: "/gallery",
+			},
+			{
+				name: "Contributing",
+				to: "https://docs.faithfulpack.net/pages/manuals/contributor-handbook",
+			},
+		],
+	},
+];
+
 export default defineNuxtComponent({
 	// can't be called footer since that's already an element
 	name: "column-footer",
@@ -59,112 +168,7 @@ export default defineNuxtComponent({
 	emits: ["changeTheme"],
 	data() {
 		return {
-			categories: [
-				{
-					title: "Info",
-					icon: "mdi-information",
-					items: [
-						{
-							name: "License",
-							to: "/license",
-						},
-						{
-							name: "Privacy Policy",
-							to: "/privacy",
-						},
-						{
-							name: "Statistics",
-							to: "/stats",
-						},
-						{
-							name: "Translate",
-							to: "https://translate.faithfulpack.net",
-						},
-						{
-							name: "Branding",
-							to: "https://docs.faithfulpack.net/pages/manuals/branding-guidelines",
-						},
-					],
-				},
-				{
-					title: "Listings",
-					icon: "mdi-post",
-					items: [
-						{
-							name: "CurseForge",
-							to: "https://www.curseforge.com/members/faithful_resource_pack/projects",
-						},
-						{
-							name: "Modrinth",
-							to: "https://modrinth.com/user/Faithful-Resource-Pack",
-						},
-						{
-							name: "Planet Minecraft",
-							to: "https://www.planetminecraft.com/member/faithful_resource_pack",
-						},
-						{
-							name: "MCPEDL",
-							to: "https://mcpedl.com/user/faithful-resource-pack",
-						},
-						{
-							name: "GitHub",
-							to: "https://github.com/Faithful-Resource-Pack",
-						},
-					],
-				},
-				{
-					title: "Media",
-					icon: "mdi-chat",
-					items: [
-						{
-							name: "Twitter",
-							to: "https://twitter.com/faithfulpack",
-						},
-						{
-							name: "Bluesky",
-							to: "https://bsky.app/profile/faithfulpack.net",
-						},
-						{
-							name: "Reddit",
-							to: "https://www.reddit.com/r/faithfulpack",
-						},
-						{
-							name: "Discord",
-							to: "https://discord.gg/sN9YRQbBv7",
-						},
-						{
-							name: "CF Discord",
-							to: "https://discord.gg/KSEhCVtg4J",
-						},
-					],
-				},
-				{
-					title: "Resources",
-					icon: "mdi-shape",
-					items: [
-						{
-							name: "FAQ",
-							to: "/faq",
-						},
-						{
-							name: "Docs",
-							to: "https://docs.faithfulpack.net",
-						},
-						{
-							name: "Status",
-							to: "https://status.faithfulpack.net",
-						},
-						{
-							name: "Gallery",
-							to: "/gallery",
-						},
-						{
-							name: "Contributing",
-							to: "https://docs.faithfulpack.net/pages/manuals/contributor-handbook",
-						},
-					],
-				},
-			],
+			categories: FOOTER_CATEGORIES,
 		};
 	},
 });
