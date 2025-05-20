@@ -12,66 +12,17 @@
 	<div class="container">
 		<h2 class="title mb-4 text-center">Projects</h2>
 		<div class="res-grid-2">
-			<!-- TODO: refactor buttons, use v-for with data -->
-			<project-card
-				name="Faithful 32x"
-				background="/image/posters/f32.jpg"
-				wordmark="/image/wordmarks/f32.png"
-				description="The original Minecraft texture feel, with double the resolution and double the fun!"
-			>
-				<template #btns>
-					<nuxt-link class="btn block btn-dark" to="/faithful32x">
-						See More <v-icon size="small" icon="mdi-chevron-right" />
-					</nuxt-link>
-				</template>
-			</project-card>
-			<project-card
-				name="Faithful 64x"
-				background="/image/posters/f64.jpg"
-				wordmark="/image/wordmarks/f64.png"
-				description="An even more detailed experience with quadruple-resolution textures!"
-			>
-				<template #btns>
-					<nuxt-link class="btn block btn-dark" to="/faithful64x">
-						See More <v-icon size="small" icon="mdi-chevron-right" />
-					</nuxt-link>
-				</template>
-			</project-card>
-		</div>
-
-		<br />
-
-		<div class="res-grid-2">
-			<project-card
-				name="Classic Faithful 32x"
-				background="/image/posters/cf32.jpg"
-				wordmark="/image/wordmarks/cf32.png"
-				description="The older yet refreshed look of Faithful, for when you need that nostalgic hit!"
-			>
+			<!-- project data and props have the same key names so we can assign to v-bind directly -->
+			<project-card v-for="project in projects" :key="project.name" v-bind="project">
 				<template #btns>
 					<div class="button-row">
-						<nuxt-link class="btn btn-dark" to="/classic32x">
-							Original Textures <v-icon size="small" icon="mdi-chevron-right" />
-						</nuxt-link>
-						<nuxt-link class="btn btn-dark" to="/classic32x-jappa">
-							Modern Textures (Jappa) <v-icon size="small" icon="mdi-chevron-right" />
-						</nuxt-link>
-					</div>
-				</template>
-			</project-card>
-			<project-card
-				name="Classic Faithful 64x"
-				background="/image/posters/cf64.jpg"
-				wordmark="/image/wordmarks/cf64.png"
-				description="The traditional Faithful style with fully refreshed and ultra high-resolution textures!"
-			>
-				<template #btns>
-					<div class="button-row">
-						<nuxt-link class="btn block btn-dark" to="/classic64x">
-							Original Textures <v-icon size="small" icon="mdi-chevron-right" />
-						</nuxt-link>
-						<nuxt-link class="btn block btn-dark" to="/classic64x-jappa">
-							Modern Textures (Jappa) <v-icon size="small" icon="mdi-chevron-right" />
+						<nuxt-link
+							v-for="{ text, to } in project.buttons"
+							:key="text"
+							class="btn block btn-dark"
+							:to
+						>
+							{{ text }} <v-icon size="small" icon="mdi-chevron-right" />
 						</nuxt-link>
 					</div>
 				</template>
@@ -109,6 +60,66 @@ import ArticleCard from "~/components/lib/article-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
 
+const PROJECTS = [
+	{
+		name: "Faithful 32x",
+		background: "/image/posters/f32.jpg",
+		wordmark: "/image/wordmarks/f32.png",
+		description:
+			"The original Minecraft texture feel, with double the resolution and double the fun!",
+		buttons: [
+			{
+				text: "See More",
+				to: "/faithful32x",
+			},
+		],
+	},
+	{
+		name: "Faithful 64x",
+		background: "/image/posters/f64.jpg",
+		wordmark: "/image/wordmarks/f64.png",
+		description: "An even more detailed experience with quadruple-resolution textures!",
+		buttons: [
+			{
+				text: "See More",
+				to: "/faithful64x",
+			},
+		],
+	},
+	{
+		name: "Classic Faithful 32x",
+		background: "/image/posters/cf32.jpg",
+		wordmark: "/image/wordmarks/cf32.png",
+		description: "The older yet refreshed look of Faithful, for when you need that nostalgic hit!",
+		buttons: [
+			{
+				text: "Original Textures",
+				to: "/classic32x",
+			},
+			{
+				text: "Modern Textures (Jappa)",
+				to: "/classic32x-jappa",
+			},
+		],
+	},
+	{
+		name: "Classic Faithful 64x",
+		background: "/image/posters/cf64.jpg",
+		wordmark: "/image/wordmarks/cf64.png",
+		description:
+			"The traditional Faithful style with fully refreshed and ultra high-resolution textures!",
+		buttons: [
+			{
+				text: "Original Textures",
+				to: "/classic64x",
+			},
+			{
+				text: "Modern Textures (Jappa)",
+				to: "/classic64x-jappa",
+			},
+		],
+	},
+];
 const ADDON_REEL_LENGTH = 4;
 
 export default defineNuxtComponent({
@@ -148,6 +159,11 @@ export default defineNuxtComponent({
 				topPosts: [],
 			};
 		}
+	},
+	data() {
+		return {
+			projects: PROJECTS,
+		};
 	},
 });
 </script>

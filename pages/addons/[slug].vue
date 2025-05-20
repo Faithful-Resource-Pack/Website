@@ -11,10 +11,8 @@
 				<div v-if="screenshots.length" class="card card-body mb-6">
 					<h2 class="text-center">Gallery</h2>
 					<div class="res-grid-3">
-						<div v-for="image in screenshots" :key="image">
-							<div class="card img-card">
-								<img :src="image" @click="openModal(image)" />
-							</div>
+						<div v-for="image in screenshots" :key="image" class="card img-card">
+							<img :src="image" @click="openModal(image)" />
 						</div>
 					</div>
 				</div>
