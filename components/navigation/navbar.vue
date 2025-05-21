@@ -54,9 +54,7 @@
 </template>
 
 <script>
-
-// if more/fewer items are added this can be changed (make sure it's divisible though)
-const ITEMS_PER_SIDE = 3;
+// automatically gets split into two sides
 const NAVBAR_ITEMS = [
 	{
 		name: "Home",
@@ -93,10 +91,12 @@ const NAVBAR_ITEMS = [
 export default defineNuxtComponent({
 	name: "navbar",
 	data() {
+		// split down middle
+		const sideLength = Math.round(NAVBAR_ITEMS.length / 2);
 		return {
 			isOpen: false,
-			left: NAVBAR_ITEMS.slice(0, ITEMS_PER_SIDE),
-			right: NAVBAR_ITEMS.slice(ITEMS_PER_SIDE),
+			left: NAVBAR_ITEMS.slice(0, sideLength),
+			right: NAVBAR_ITEMS.slice(sideLength),
 		};
 	},
 });
