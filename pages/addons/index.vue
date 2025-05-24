@@ -75,8 +75,9 @@
 					@toggleFav="toggleFav"
 				/>
 			</client-only>
-			<addon-card v-for="addon in searchedAddons" :key="addon.id" :addon @toggleFav="toggleFav" />
+			<addon-card v-for="addon in displayedAddons" :key="addon.id" :addon @toggleFav="toggleFav" />
 		</div>
+		<div ref="bottomElement" />
 	</div>
 </template>
 
@@ -85,6 +86,9 @@ import AddonCard from "~/components/addons/addon-card.vue";
 import MediaIcon from "~/components/lib/media-icon.vue";
 
 const FAVORITE_ADDONS_KEY = "favAddons";
+
+// this might break on really tall monitors, should probably be dynamic
+const DISPLAYED_ADDONS_COUNT = 24;
 
 export default defineNuxtComponent({
 	components: {
@@ -123,6 +127,7 @@ export default defineNuxtComponent({
 				"32x": { color: "#00b0ff", icon: "faithful", text: "Faithful 32x" },
 				"64x": { color: "#ff62bc", icon: "faithful", text: "Faithful 64x" },
 			},
+			shownResults: DISPLAYED_ADDONS_COUNT,
 			rawSelectedEditions: [],
 			rawSelectedPacks: [],
 			sortMethods,
@@ -193,6 +198,9 @@ export default defineNuxtComponent({
 				(addon) => !this.fav[addon.id],
 			);
 		},
+		displayedAddons() {
+			return this.searchedAddons.slice(0, this.shownResults - this.favAddons.length);
+		},
 		resultCount() {
 			return this.searchedAddons.length + this.favAddons.length;
 		},
@@ -220,17 +228,31 @@ export default defineNuxtComponent({
 	},
 	watch: {
 		search(value) {
-			if (this.$route.query.search !== value)
+			if (this.$route.query.search !== value) {
 				this.$router.push({ query: value ? { search: value } : null });
+				this.shownResults = DISPLAYED_ADDONS_COUNT; // reset results
+			}
 		},
 	},
 	created() {
-		// take query params from route and start search with that if possible
+		// take query params from route and start search with that if possible (can be done with ssr)
 		if (this.$route.query.search) this.search = this.$route.query.search;
 	},
 	mounted() {
 		// need localstorage access so this must be done after mounting
 		this.fav = JSON.parse(localStorage.getItem(FAVORITE_ADDONS_KEY) || "{}");
+
+		document.addEventListener("scroll", () => {
+			// https://stackoverflow.com/a/5354536/20327257
+			const bottomElement = this.$refs.bottomElement.getBoundingClientRect();
+			const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+			if (
+				this.shownResults < this.resultCount &&
+				bottomElement.bottom >= 0 &&
+				bottomElement.top - viewHeight < 0
+			)
+				this.shownResults += DISPLAYED_ADDONS_COUNT;
+		});
 	},
 });
 </script>

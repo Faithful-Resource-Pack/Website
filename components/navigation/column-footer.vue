@@ -47,7 +47,6 @@
 </template>
 
 <script>
-
 // change this as necessary
 const FOOTER_CATEGORIES = [
 	{
