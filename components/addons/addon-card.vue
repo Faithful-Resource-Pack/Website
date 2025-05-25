@@ -9,9 +9,10 @@
 			<v-btn
 				v-if="!minimal"
 				class="fav-button pa-0"
+				variant="plain"
 				:icon="favIcon"
 				:color="favColor"
-				variant="plain"
+				:aria-label="favAlt"
 				@click="$emit('toggleFav', addon)"
 			/>
 		</template>
@@ -85,6 +86,10 @@ export default defineNuxtComponent({
 		},
 		favIcon() {
 			return this.favorite ? "mdi-star" : "mdi-star-outline";
+		},
+		favAlt() {
+			// icon buttons don't have accessible names
+			return this.favorite ? "Remove from Favorites" : "Add to Favorites";
 		},
 	},
 });

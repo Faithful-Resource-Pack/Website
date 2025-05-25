@@ -36,6 +36,9 @@ export default defineNuxtConfig({
 						'<p class="red banner ma-3">Please enable JavaScript for the site to work properly.</p>',
 				},
 			],
+			htmlAttrs: {
+				lang: "en",
+			},
 		},
 	},
 	modules: ["vuetify-nuxt-module"],
