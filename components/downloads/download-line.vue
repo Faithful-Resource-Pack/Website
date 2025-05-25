@@ -108,7 +108,7 @@ export default defineNuxtComponent({
 		},
 		labelText() {
 			if (!this.item.file_version) return this.item.file_type;
-			return this.item.file_type + this.item.file_version;
+			return `${this.item.file_type} ${this.item.file_version}`;
 		},
 		labelColor() {
 			return this.labelColors[this.item.file_type] || "green";
