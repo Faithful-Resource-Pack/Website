@@ -4,7 +4,7 @@
 			<nuxt-link class="nav-mobile-wordmark" to="/" title="Faithful">
 				<img
 					src="/image/wordmarks/navbar.png"
-					style="height: 32px"
+					height="32"
 					alt="Faithful Wordmark"
 					loading="lazy"
 				/>
