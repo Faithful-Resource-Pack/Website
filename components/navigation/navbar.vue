@@ -1,7 +1,7 @@
 <template>
 	<header class="background">
 		<nav class="navbar-wrapper">
-			<nuxt-link class="nav-mobile-wordmark" to="/" title="Faithful">
+			<nuxt-link class="navbar-mobile-wordmark" to="/" title="Faithful">
 				<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" loading="lazy" />
 			</nuxt-link>
 
@@ -152,7 +152,7 @@ header {
 }
 
 // don't display on desktop layout
-.nav-mobile-wordmark,
+.navbar-mobile-wordmark,
 .navbar-toggler {
 	display: none;
 }
@@ -182,7 +182,7 @@ header {
 		display: none;
 	}
 	// show toggler and wordmark
-	.nav-mobile-wordmark,
+	.navbar-mobile-wordmark,
 	.navbar-toggler {
 		display: block;
 	}
