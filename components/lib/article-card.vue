@@ -3,7 +3,9 @@
 		<nuxt-link class="img-card" :to>
 			<img :src="image" :alt="alt || title" loading="lazy" />
 			<div class="img-card-shadow" />
-			<h3 v-if="title">{{ title }}</h3>
+			<h3>
+				<slot name="title">{{ title }}</slot>
+			</h3>
 			<slot name="linked" />
 		</nuxt-link>
 		<slot name="unlinked" />
@@ -22,6 +24,7 @@ export default defineNuxtComponent({
 			required: false,
 			default: "https://database.faithfulpack.net/images/website/posts/placeholder.jpg",
 		},
+		// can use either prop or slot
 		title: {
 			type: String,
 			required: false,

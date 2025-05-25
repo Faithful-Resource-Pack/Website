@@ -2,12 +2,7 @@
 	<header class="background">
 		<nav class="navbar-wrapper">
 			<nuxt-link class="nav-mobile-wordmark" to="/" title="Faithful">
-				<img
-					src="/image/wordmarks/navbar.png"
-					height="32"
-					alt="Faithful Wordmark"
-					loading="lazy"
-				/>
+				<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" loading="lazy" />
 			</nuxt-link>
 
 			<button class="navbar-toggler" type="button" @click="isOpen = !isOpen" aria-label="Menu">

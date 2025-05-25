@@ -16,7 +16,7 @@
 		</nuxt-link>
 		<div class="flex-down">
 			<nuxt-link :to="firstPost.permalink" class="underline-hover">
-				<h2 class="h1">{{ firstPost.title }}</h2>
+				<h3 class="h1">{{ firstPost.title }}</h3>
 			</nuxt-link>
 			<p class="news-preview">
 				{{ compileMarkdown(firstPost.description, true) }}

@@ -16,14 +16,13 @@
 			<project-card v-for="project in projects" :key="project.name" v-bind="project">
 				<template #btns>
 					<div class="button-row">
-						<nuxt-link
+						<chevron-link
 							v-for="{ text, to } in project.buttons"
 							:key="text"
-							class="btn block btn-dark"
 							:to
-						>
-							{{ text }} <v-icon size="small" icon="mdi-chevron-right" />
-						</nuxt-link>
+							:text
+							class="btn block btn-dark"
+						/>
 					</div>
 				</template>
 			</project-card>
@@ -34,7 +33,11 @@
 		<h2 class="title text-center">Add-ons</h2>
 		<div class="res-grid-4">
 			<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
-			<article-card to="/addons" image="/image/addons/see_more.png" title="See More" />
+			<article-card to="/addons" image="/image/addons/see_more.png">
+				<template #title>
+					<chevron-link>See More</chevron-link>
+				</template>
+			</article-card>
 		</div>
 
 		<hr />
@@ -59,6 +62,7 @@ import ProjectCard from "~/components/home/project-card.vue";
 import ArticleCard from "~/components/lib/article-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
+import ChevronLink from "~/components/lib/chevron-link.vue";
 
 const PROJECTS = [
 	{
@@ -128,6 +132,7 @@ export default defineNuxtComponent({
 		ArticleCard,
 		AddonCard,
 		DiscordButton,
+		ChevronLink,
 	},
 	// for some reason <script setup> doesn't work with asyncData (???)
 	setup() {

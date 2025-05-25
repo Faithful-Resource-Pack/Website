@@ -23,7 +23,7 @@
 			multiple
 			variant="elevated"
 		>
-			<h5 class="mb-0">Packs</h5>
+			<h3 class="h5 mb-0">Packs</h3>
 			<div class="px-2" />
 			<v-chip
 				filter
@@ -42,7 +42,7 @@
 			multiple
 			variant="elevated"
 		>
-			<h5 class="mb-0">Editions</h5>
+			<h3 class="h5 mb-0">Editions</h3>
 			<div class="px-2" />
 			<v-chip
 				filter
@@ -187,6 +187,17 @@ export default defineNuxtComponent({
 			else this.fav[addon.id] = addon;
 			localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(this.fav));
 		},
+		checkShownItems() {
+			// https://stackoverflow.com/a/5354536/20327257
+			const bottomElement = this.$refs.bottomElement.getBoundingClientRect();
+			const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+			if (
+				this.shownResults < this.resultCount &&
+				bottomElement.bottom >= 0 &&
+				bottomElement.top - viewHeight < 0
+			)
+				this.shownResults += DISPLAYED_ADDONS_COUNT;
+		},
 	},
 	computed: {
 		favAddons() {
@@ -242,17 +253,10 @@ export default defineNuxtComponent({
 		// need localstorage access so this must be done after mounting
 		this.fav = JSON.parse(localStorage.getItem(FAVORITE_ADDONS_KEY) || "{}");
 
-		document.addEventListener("scroll", () => {
-			// https://stackoverflow.com/a/5354536/20327257
-			const bottomElement = this.$refs.bottomElement.getBoundingClientRect();
-			const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-			if (
-				this.shownResults < this.resultCount &&
-				bottomElement.bottom >= 0 &&
-				bottomElement.top - viewHeight < 0
-			)
-				this.shownResults += DISPLAYED_ADDONS_COUNT;
-		});
+		document.addEventListener("scroll", this.checkShownItems);
+	},
+	beforeUnmount() {
+		document.removeEventListener("scroll", this.checkShownItems);
 	},
 });
 </script>

@@ -15,14 +15,14 @@ definePageMeta({
 					<br /><br />
 					With multiple resolutions and styles, everyone can find a pack they like!
 				</p>
-				<nuxt-link
+				<chevron-link
 					class="about-button"
 					to="https://discord.gg/sN9YRQbBv7"
 					target="_blank"
 					rel="noreferrer"
 				>
-					Join our Discord <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-				</nuxt-link>
+					Join our Discord
+				</chevron-link>
 			</div>
 			<img class="about-image" src="/image/about/faithful.gif" alt="gif of creeper textures" />
 		</div>
@@ -38,14 +38,14 @@ definePageMeta({
 				All of our textures, as well as the code of all our related projects, are available on
 				GitHub. Take a look and see how the magic happens!
 			</p>
-			<nuxt-link
+			<chevron-link
 				class="about-button"
 				to="https://github.com/Faithful-Resource-Pack"
 				target="_blank"
 				rel="noreferrer"
 			>
-				Visit our GitHub <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-			</nuxt-link>
+				Visit our GitHub
+			</chevron-link>
 		</div>
 	</div>
 	<div class="blue-background">
@@ -59,9 +59,7 @@ definePageMeta({
 					This means it can be used on all devices that support manual installation of resource
 					packs, from phones to even certain consoles.
 				</p>
-				<nuxt-link class="about-button" to="/downloads">
-					View Downloads <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-				</nuxt-link>
+				<chevron-link class="about-button" to="/downloads">View Downloads</chevron-link>
 			</div>
 			<img class="about-image" src="/image/about/platforms.png" alt="supported platforms" />
 		</div>
@@ -77,13 +75,14 @@ definePageMeta({
 				Simply read our contribution handbook and follow the steps—it's that easy to make your mark
 				on Faithful forever!
 			</p>
-			<nuxt-link
+			<chevron-link
 				class="about-button"
 				to="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
 				target="_blank"
 				rel="noreferrer"
-				>How to Contribute <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-			</nuxt-link>
+			>
+				How to Contribute
+			</chevron-link>
 		</div>
 	</div>
 	<div class="pink-background">
@@ -97,29 +96,29 @@ definePageMeta({
 					As one of the first ever texture packs to be developed, having started all the way back in
 					2010, Faithful has secured its place among the most well-known Minecraft projects.
 				</p>
-				<nuxt-link class="about-button" to="/stats">
-					See our Stats <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-				</nuxt-link>
+				<chevron-link class="about-button" to="/stats">See our Stats</chevron-link>
 			</div>
 			<img class="about-image" src="/image/about/history.png" alt="our history" />
 		</div>
 	</div>
 	<div class="container faq-section">
 		<h1 class="mb-4">Any More Questions?</h1>
-		<nuxt-link class="about-button" to="/faq">
-			View our FAQ <v-icon class="about-chevron" size="small" icon="mdi-chevron-right" />
-		</nuxt-link>
+		<chevron-link class="about-button" to="/faq">View our FAQ</chevron-link>
 	</div>
 </template>
 
+<script>
+import ChevronLink from "~/components/lib/chevron-link.vue";
+
+export default defineNuxtComponent({
+	components: {
+		ChevronLink,
+	},
+});
+</script>
+
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
-
-.about-chevron {
-	// compensate for intrinsic padding
-	margin-right: -0.5rem;
-	bottom: 1px;
-}
 
 .about-image {
 	max-height: 384px;
@@ -162,7 +161,7 @@ definePageMeta({
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: 10px 22px;
+	padding: 12px 22px;
 	// prevent weird button wrapping issues
 	white-space: nowrap;
 	text-transform: uppercase;
