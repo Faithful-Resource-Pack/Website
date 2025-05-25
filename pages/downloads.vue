@@ -6,16 +6,16 @@
 				#</nuxt-link
 			>{{ pack }}
 		</h2>
-		<template v-for="(data, edition) in editions" :key="edition">
+		<template v-for="({ downloads, files }, edition) in editions" :key="edition">
 			<h3 class="text-center my-3">{{ edition }} Edition</h3>
-			<download-table :downloads="data.downloads" :files="data.files" />
+			<download-table :downloads :files />
 		</template>
 		<br /><br />
 	</template>
 	<h2 class="text-center subtitle mb-0">Discontinued</h2>
-	<template v-for="(data, name) in discontinued" :key="name">
+	<template v-for="({ downloads, files }, name) in discontinued" :key="name">
 		<h3 class="text-center my-3">{{ name }}</h3>
-		<download-table :downloads="data.downloads" :files="data.files" />
+		<download-table :downloads :files />
 	</template>
 </template>
 

@@ -36,8 +36,9 @@ export default defineNuxtComponent({
 			required: true,
 		},
 		files: {
-			type: Object,
-			required: true,
+			type: Array,
+			required: false,
+			default: () => [],
 		},
 	},
 });

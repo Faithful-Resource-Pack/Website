@@ -13,7 +13,7 @@
 		<td class="download-details">
 			<span class="download-name">
 				<download-badge dot :badge="labelColor" />
-				<span class="mx-1 my-1">{{ item.file_type }} {{ item.file_version }}</span>
+				<span class="mx-1 my-1">{{ labelText }}</span>
 			</span>
 			<download-badge badge="version">{{ version }}</download-badge>
 			<download-badge badge="latest" v-if="item.latest">Latest</download-badge>
