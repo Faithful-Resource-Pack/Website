@@ -27,15 +27,19 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 			</div>
 		</div>
 		<hr />
-		<post-downloads v-if="downloads" :downloads />
+		<template v-if="tableDownloads">
+			<h2 class="text-center subtitle mb-0">Downloads</h2>
+			<template v-for="(downloads, edition) in tableDownloads" :key="edition">
+				<h3 class="text-center my-3">{{ edition }} Edition</h3>
+				<download-table :downloads />
+			</template>
+		</template>
 	</div>
 </template>
 
 <script>
 import NoContainer from "~/layouts/no-container.vue";
-import PostDownloads from "~/components/posts/post-downloads.vue";
-import DOMPurify from "isomorphic-dompurify";
-import { marked } from "marked";
+import DownloadTable from "~/components/downloads/download-table.vue";
 import removeMd from "remove-markdown";
 
 // routed through the main nuxt config file (since they're statically generated)
@@ -43,7 +47,7 @@ export default defineNuxtComponent({
 	name: "pack-page",
 	components: {
 		NoContainer,
-		PostDownloads,
+		DownloadTable,
 	},
 	props: {
 		title: {
@@ -81,6 +85,24 @@ export default defineNuxtComponent({
 			return {
 				backgroundImage: `url("${this.banner}")`,
 			};
+		},
+		tableDownloads() {
+			if (!this.downloads) return null;
+			const acc = {};
+			for (const [edition, data] of Object.entries(this.downloads)) {
+				acc[edition] ||= {};
+				for (const [version, item] of Object.entries(data)) {
+					acc[edition][version] = [
+						{
+							file_type: "Rolling Release",
+							links: {
+								download: item,
+							},
+						},
+					];
+				}
+			}
+			return acc;
 		},
 	},
 });
