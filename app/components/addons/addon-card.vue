@@ -17,7 +17,7 @@
 			/>
 		</template>
 		<template #linked>
-			<div class="addon-flags" v-if="!minimal">
+			<div v-if="!minimal" class="addon-flags">
 				<img
 					v-if="addon.options.tags.includes('Java')"
 					:src="java"
@@ -32,7 +32,7 @@
 				/>
 				<img v-if="addon.options.optifine" :src="optifine" alt="requires optifine" loading="lazy" />
 			</div>
-			<div class="addon-res" v-if="!minimal">
+			<div v-if="!minimal" class="addon-res">
 				<p v-if="addon.options.tags.includes('32x')">32x</p>
 				<p v-if="addon.options.tags.includes('64x')">64x</p>
 			</div>

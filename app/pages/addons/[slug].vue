@@ -17,6 +17,7 @@
 					</div>
 				</div>
 
+				<!-- eslint-disable-next-line vue/no-v-html -->
 				<div class="card card-body card-text" v-html="compileMarkdown(addon.description)" />
 			</v-col>
 			<v-col class="order-first" :md="$vuetify.display.mdAndUp ? 3 : 2" style="max-width: 100%">

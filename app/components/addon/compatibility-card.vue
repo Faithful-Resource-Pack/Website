@@ -3,7 +3,9 @@
 	<h5>Supported Packs</h5>
 	<div class="addon-chips">
 		<v-chip v-for="{ color, icon, text, to } in packs" :key="text" density="compact" :color :to>
-			<media-icon #prepend :icon class="mr-1 ml-n1" :color />
+			<template #prepend>
+				<media-icon :icon class="mr-1 ml-n1" :color />
+			</template>
 			{{ text }}
 		</v-chip>
 	</div>

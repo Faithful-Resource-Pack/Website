@@ -19,6 +19,7 @@
 		</p>
 		<div v-for="{ question, answer } in faqs" :key="question" class="my-6">
 			<h2>{{ question }}</h2>
+			<!-- eslint-disable-next-line vue/no-v-html -->
 			<div class="ml-5" v-html="discordMarkdown(answer)" />
 			<hr />
 		</div>

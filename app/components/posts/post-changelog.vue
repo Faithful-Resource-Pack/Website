@@ -3,12 +3,12 @@
 		{{ item }}
 	</li>
 	<ul v-else-if="Array.isArray(item)">
-		<post-changelog v-for="el in item" :item="el" :level="level + 1" list />
+		<post-changelog v-for="el in item" :key="el" :item="el" :level="level + 1" list />
 	</ul>
 	<template v-else>
-		<template v-for="[key, val] in Object.entries(item)">
+		<template v-for="[key, val] in Object.entries(item)" :key>
 			<li v-if="list" class="mb-2">{{ key }}:</li>
-			<component v-else :is="title" class="mb-2"> {{ key }}: </component>
+			<component :is="title" v-else class="mb-2"> {{ key }}: </component>
 			<post-changelog :item="val" :level="level + 1" />
 		</template>
 	</template>

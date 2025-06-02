@@ -10,7 +10,7 @@
 						alt="Faithful Wordmark"
 					/>
 				</nuxt-link>
-				<span id="theme-btn" @click="$emit('changeTheme')" class="navigation-link">
+				<span id="theme-btn" class="navigation-link" @click="$emit('changeTheme')">
 					<!-- prevents hydration mismatch (themes are loaded before mount but after ssr) -->
 					<client-only>
 						<template #fallback>Loading Themes...</template>
@@ -22,15 +22,15 @@
 				<p class="footer-info-text">&copy; {{ new Date().getFullYear() }} Faithful Resource Pack</p>
 			</div>
 			<div class="footer-container">
-				<div class="footer-column" v-for="{ title, icon, items } in categories" :key="title">
+				<div v-for="{ title, icon, items } in categories" :key="title" class="footer-column">
 					<h3 class="footer-title">
 						<v-icon size="x-small" :icon />
 						{{ title }}
 					</h3>
 					<nuxt-link
-						class="navigation-link"
 						v-for="{ name, to } in items"
 						:key="name"
+						class="navigation-link"
 						:to
 						:target="to.startsWith('http') ? '_blank' : ''"
 						:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"

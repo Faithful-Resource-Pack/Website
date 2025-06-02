@@ -12,16 +12,16 @@
 				</p>
 			</div>
 			<div class="animation-container">
-				<img id="tnt" v-show="tntVisible" :src="tntSrc" alt="Block of TNT" @click="boom" />
+				<img v-show="tntVisible" id="tnt" :src="tntSrc" alt="Block of TNT" @click="boom" />
 				<img
-					id="diamond"
 					v-show="diamondVisible"
+					id="diamond"
 					src="https://api.faithfulpack.net/v2/textures/1484/url/faithful_32x/latest"
 					alt="Diamond"
 				/>
 				<img
-					id="explosion"
 					v-show="explosionVisible"
+					id="explosion"
 					:src="explosionSrc"
 					alt="TNT Explosion Particles"
 				/>

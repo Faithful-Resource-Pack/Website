@@ -1,6 +1,6 @@
 <template>
 	<h2 class="subtitle my-5 text-center">Downloads</h2>
-	<template v-for="[category, items] in Object.entries(downloads)">
+	<template v-for="[category, items] in Object.entries(downloads)" :key="category">
 		<nuxt-link
 			v-if="typeof items === 'string'"
 			:to="items"

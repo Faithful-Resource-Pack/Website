@@ -28,10 +28,12 @@ export default defineNuxtComponent({
 		title: {
 			type: String,
 			required: false,
+			default: "",
 		},
 		alt: {
 			type: String,
 			required: false,
+			default: "",
 		},
 	},
 });

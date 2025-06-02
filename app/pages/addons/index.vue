@@ -18,36 +18,38 @@
 	</div>
 	<div class="container pt-3">
 		<v-chip-group
-			class="d-flex flex-row align-center px-2"
 			v-model="rawSelectedPacks"
+			class="d-flex flex-row align-center px-2"
 			multiple
 			variant="elevated"
 		>
 			<h3 class="h5 mb-0">Packs</h3>
 			<div class="px-2" />
 			<v-chip
-				filter
 				v-for="({ color, icon, text }, k) in packs"
 				:key="k"
+				filter
 				:value="k"
 				:style="{ color }"
 			>
-				<media-icon #prepend :icon class="mr-1 ml-n1" :color />
+				<template #prepend>
+					<media-icon :icon class="mr-1 ml-n1" :color />
+				</template>
 				<span>{{ text }}</span>
 			</v-chip>
 		</v-chip-group>
 		<v-chip-group
-			class="d-flex flex-row align-center px-2"
 			v-model="rawSelectedEditions"
+			class="d-flex flex-row align-center px-2"
 			multiple
 			variant="elevated"
 		>
 			<h3 class="h5 mb-0">Editions</h3>
 			<div class="px-2" />
 			<v-chip
-				filter
 				v-for="({ color, icon, text }, k) in editions"
 				:key="k"
+				filter
 				:value="k"
 				:style="{ color }"
 				:prepend-icon="icon"
@@ -61,7 +63,7 @@
 			</v-col>
 			<v-spacer />
 			<v-col cols="12" :sm="$vuetify.display.mdAndUp ? 3 : 5">
-				<v-select hide-details density="compact" v-model="currentSort" :items="sortMethods" />
+				<v-select v-model="currentSort" hide-details density="compact" :items="sortMethods" />
 			</v-col>
 		</v-row>
 		<div class="res-grid-3">

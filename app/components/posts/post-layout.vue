@@ -8,11 +8,13 @@
 
 	<hr />
 
+	<!-- eslint-disable vue/no-v-html -->
 	<div
 		v-if="post.description"
 		class="card card-body card-text"
 		v-html="compileMarkdown(post.description)"
 	/>
+	<!-- eslint-enable vue/no-v-html -->
 	<post-downloads v-if="Object.keys(post.downloads || {}).length" :downloads="post.downloads" />
 	<template v-if="Object.keys(post.changelog || {}).length">
 		<br />

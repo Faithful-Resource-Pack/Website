@@ -3,7 +3,7 @@
 	<div id="stats" class="text-center">
 		<h1 class="title my-5">I'm a teapot</h1>
 		<div id="teacup">
-			<div id="handle" v-show="isLoaded"><div></div></div>
+			<div v-show="isLoaded" id="handle"><div></div></div>
 			<img id="bucket" ref="bucket" data-allow-mismatch="attribute" :src="bucketImg" alt="teacup" />
 		</div>
 	</div>

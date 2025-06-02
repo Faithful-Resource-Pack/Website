@@ -4,8 +4,10 @@ definePageMeta({
 	disableDefaultMeta: true,
 });
 
-// the given banner URL doesn't have the wordmark so we chop up the url to create a new one with the wordmark
+// eslint-disable-next-line vue/valid-define-props
 const { title, description, banner } = defineProps();
+
+// the given banner URL doesn't have the wordmark so we chop up the url to create a new one with the wordmark
 const packID = banner.split("/").at(-1).split(".")[0];
 const image = `https://database.faithfulpack.net/images/branding/social_media/banners/github/${packID}_banner.png`;
 useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }));
@@ -19,9 +21,10 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 	</div>
 	<div class="container">
 		<div class="card card-body card-text">
+			<!-- eslint-disable-next-line vue/no-v-html -->
 			<div v-html="compileMarkdown(description)"></div>
-			<div class="button-row" v-if="buttons">
-				<nuxt-link class="btn btn-dark" v-for="{ to, text } in buttons" :key="to" :to>
+			<div v-if="buttons" class="button-row">
+				<nuxt-link v-for="{ to, text } in buttons" :key="to" class="btn btn-dark" :to>
 					{{ text }}
 				</nuxt-link>
 			</div>
@@ -32,17 +35,13 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 </template>
 
 <script>
-import NoContainer from "~/layouts/no-container.vue";
 import PostDownloads from "~/components/posts/post-downloads.vue";
-import DOMPurify from "isomorphic-dompurify";
-import { marked } from "marked";
 import removeMd from "remove-markdown";
 
 // routed through the main nuxt config file (since they're statically generated)
 export default defineNuxtComponent({
 	name: "pack-page",
 	components: {
-		NoContainer,
 		PostDownloads,
 	},
 	props: {
@@ -65,10 +64,12 @@ export default defineNuxtComponent({
 		buttons: {
 			type: Array,
 			required: false,
+			default: null,
 		},
 		downloads: {
 			type: Object,
 			required: false,
+			default: null,
 		},
 		// not used but nuxt complains about extra props otherwise
 		permalink: {

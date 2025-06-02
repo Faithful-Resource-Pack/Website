@@ -158,7 +158,7 @@ export default defineNuxtComponent({
 				),
 				topPosts,
 			};
-		} catch (err) {
+		} catch {
 			return {
 				addons: [],
 				topPosts: [],

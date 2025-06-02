@@ -14,6 +14,7 @@ export default defineNuxtComponent({
 		text: {
 			type: String,
 			required: false,
+			default: "",
 		},
 		// used to check whether to render as a link or just text
 		to: {

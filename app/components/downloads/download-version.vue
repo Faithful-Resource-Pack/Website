@@ -9,6 +9,7 @@
 	<template v-if="isOpen">
 		<download-line
 			v-for="subItem in items.slice(1)"
+			:key="subItem.file_version"
 			nested
 			single
 			:item="subItem"

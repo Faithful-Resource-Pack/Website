@@ -46,7 +46,7 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-	modules: ["vuetify-nuxt-module"],
+	modules: ["vuetify-nuxt-module", "@nuxt/eslint"],
 	css: [
 		"~/assets/css/main.scss",
 		// load all at once and switch based on root-level class

@@ -5,7 +5,7 @@
 				<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" loading="lazy" />
 			</nuxt-link>
 
-			<button class="navbar-toggler" type="button" @click="isOpen = !isOpen" aria-label="Menu">
+			<button class="navbar-toggler" type="button" aria-label="Menu" @click="isOpen = !isOpen">
 				<v-icon size="large" icon="mdi-menu" />
 			</button>
 

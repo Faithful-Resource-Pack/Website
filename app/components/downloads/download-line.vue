@@ -16,9 +16,9 @@
 				<span class="mx-1 my-1">{{ labelText }}</span>
 			</span>
 			<download-badge badge="version">{{ version }}</download-badge>
-			<download-badge badge="latest" v-if="item.latest">Latest</download-badge>
+			<download-badge v-if="item.latest" badge="latest">Latest</download-badge>
 			<!-- avoid SSR warning with date localization -->
-			<span class="mobile-details" v-if="date" data-allow-mismatch="children">
+			<span v-if="date" class="mobile-details" data-allow-mismatch="children">
 				{{ mobileDetails }}
 			</span>
 		</td>
@@ -68,6 +68,7 @@ export default defineNuxtComponent({
 		curse: {
 			type: Object,
 			required: false,
+			default: null,
 		},
 		version: {
 			type: String,
@@ -125,6 +126,7 @@ export default defineNuxtComponent({
 			if (this.item.size) return this.item.size;
 			if (!this.curse || !this.curse.filesize) return "Unknown";
 			// use nbsp to prevent weird wrapping
+			// eslint-disable-next-line no-irregular-whitespace
 			return `${(this.curse.filesize / 1000000).toFixed(2)} MB`;
 		},
 		mobileDetails() {
