@@ -3,8 +3,10 @@ import { join } from "node:path";
 
 import generatePackPages from "./packs/generatePackPages.ts";
 
-// have to check ourselves because nuxt silently breaks otherwise
-if (!existsSync(join(process.cwd(), ".env"))) throw new Error("No .env file found");
+// have to check ourselves because nuxt silently breaks otherwise (typical)
+// skip check if installing modules to prevent deploy shenanigans
+if (!existsSync(join(process.cwd(), ".env")) && process.argv?.[2] !== "prepare")
+	throw new Error("No .env file found");
 
 const parsed = await generatePackPages();
 
