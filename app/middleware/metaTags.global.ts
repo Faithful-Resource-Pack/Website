@@ -5,7 +5,7 @@ export default defineNuxtRouteMiddleware((route) => {
 	const title = computed(
 		() =>
 			// overridden name, use that
-			route.meta?.name ||
+			route.meta.name ||
 			// take route name and convert it to title case
 			toTitleCase(route.name),
 	);

@@ -84,7 +84,7 @@ export default defineNuxtComponent({
 			DOWNLOAD_DATA.map(async ({ discontinued, name, edition, json, curse }) => {
 				const [downloads, { files }] = await Promise.all([
 					// vite limitation, can't do regular $fetch here
-					import(`~/public/downloads/${json}.json`)
+					import(`public/downloads/${json}.json`)
 						.then((res) => res.default)
 						.catch((err) => {
 							console.error(err);

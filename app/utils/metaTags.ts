@@ -4,7 +4,7 @@ import removeMd from "remove-markdown";
 export interface MetaParams {
 	description: string;
 	image: string;
-	title: MaybeRef<string>;
+	title: MaybeRef<string> | ComputedRef<string>;
 }
 
 function handleTitle(title: string) {
