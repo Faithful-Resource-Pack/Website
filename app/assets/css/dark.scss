@@ -3,24 +3,28 @@
 // force lower specificity so page-specific styles don't break
 :where(.dark-theme) {
 	.background {
-		background: #131313 url("/image/background/bg_dark_background.png") repeat;
+		background: #0c0c0c url("/image/background/bg_dark_background.png") repeat;
 	}
 	.foreground {
-		background: #0c0c0c url("/image/background/bg_dark_foreground.png") repeat;
+		background: #131313 url("/image/background/bg_dark_foreground.png") repeat;
 	}
 	.card, .download-table-padding, header {
-		background: #131313 url("/image/background/bg_dark_background.png") repeat;
+		background: #0c0c0c url("/image/background/bg_dark_background.png") repeat;
 	}
 
 	label, input {
 		color: rgba(255, 255, 255, 0.7);
 	}
 
-	.v-chip--variant-elevated {
-		background: #131313 url("/image/background/bg_dark_background.png") repeat !important;
+	.v-chip--variant-elevated, .v-card--variant-elevated {
+		background: #0c0c0c url("/image/background/bg_dark_background.png") repeat !important;
 	}
 
-	ul, ol, li, h1, h2, h3, h4, h5, h6, p {
+	.v-expansion-panels--variant-accordion * {
+		background-color: #0c0c0c !important;
+	}
+
+	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
 		color: rgba(255, 255, 255, 0.7);
 		text-decoration-color: currentColor;
 	}
@@ -55,20 +59,28 @@
 		color: black;
 	}
 
-	.green-background, .blue-background, .pink-background {
+	.green-background, .blue-background, .pink-background, .orange-background, .yellow-background {
 		background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
 		background-blend-mode: screen;
 	}
 
-	.green-background .about-title {
-		color: $about-green-light !important;
+	.green-background .colored-title {
+		color: $fg-green !important;
 	}
 
-	.blue-background .about-title {
-		color: $about-blue-light !important;
+	.blue-background .colored-title {
+		color: $fg-blue !important;
 	}
 
-	.pink-background .about-title {
-		color: $about-pink-light !important;
+	.pink-background .colored-title {
+		color: $fg-pink !important;
+	}
+
+	.yellow-background .colored-title {
+		color: $fg-yellow !important;
+	}
+
+	.orange-background .colored-title {
+		color: $fg-orange !important;
 	}
 }

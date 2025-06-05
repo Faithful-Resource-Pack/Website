@@ -10,10 +10,6 @@ export default defineNuxtRouteMiddleware((route) => {
 			toTitleCase(route.name),
 	);
 
-	const description = "Providing a higher-resolution Minecraft experience since 2010.";
-	const image =
-		"https://database.faithfulpack.net/images/branding/social_media/banners/universal_banner.png";
-
 	// get full site url from env
 	const url = `${useRuntimeConfig().public.siteURL}${route.fullPath}`;
 
@@ -22,8 +18,7 @@ export default defineNuxtRouteMiddleware((route) => {
 	};
 
 	// add generic meta tags if the page hasn't been specified its own
-	if (route.meta.disableDefaultMeta !== true)
-		Object.assign(metaTags, generateMetaTags({ title, description, image }));
+	if (route.meta.disableDefaultMeta !== true) Object.assign(metaTags, generateMetaTags({ title }));
 
 	useSeoMeta(metaTags);
 });

@@ -8,7 +8,7 @@ definePageMeta({
 	<div class="green-background">
 		<div class="container about-container">
 			<div class="about-text">
-				<h1 class="about-title">Upscaling the Look of Minecraft</h1>
+				<h1 class="colored-title">Upscaling the Look of Minecraft</h1>
 				<p>
 					Faithful recreates Minecraft's original textures in higher resolutions while staying true
 					to their original look and feel.
@@ -30,7 +30,7 @@ definePageMeta({
 	<div class="container about-container">
 		<img class="about-image" src="/image/about/foss.png" alt="github screenshot" />
 		<div class="about-text">
-			<h1 class="about-title">Free and Open-Source</h1>
+			<h1 class="colored-title">Free and Open-Source</h1>
 			<p>
 				The project is made possible entirely by talented volunteer artists and developers working
 				in their free time.
@@ -51,7 +51,7 @@ definePageMeta({
 	<div class="blue-background">
 		<div class="container about-container">
 			<div class="about-text">
-				<h1 class="about-title">Cross-platform</h1>
+				<h1 class="colored-title">Cross-platform</h1>
 				<p>
 					Faithful is available for both the most popular Java Edition versions as well as Bedrock
 					Edition.
@@ -67,7 +67,7 @@ definePageMeta({
 	<div class="container about-container">
 		<img class="about-image" src="/image/about/community.png" alt="the faithful community" />
 		<div class="about-text">
-			<h1 class="about-title">Made by the Community</h1>
+			<h1 class="colored-title">Made by the Community</h1>
 			<p>
 				All Faithful textures are voted on by the public before being added, and anyone can submit a
 				texture to any project with no strings attached.
@@ -88,7 +88,7 @@ definePageMeta({
 	<div class="pink-background">
 		<div class="container about-container">
 			<div class="about-text">
-				<h1 class="about-title">A History of Expertise</h1>
+				<h1 class="colored-title">A History of Expertise</h1>
 				<p>
 					We've got over a decade of experience making quality textures for Minecraft, with a rich
 					history spanning from the first releases up to today.
@@ -180,7 +180,7 @@ export default defineNuxtComponent({
 
 	.about-button {
 		background: white !important;
-		color: $about-green-dark !important;
+		color: $bg-green !important;
 	}
 }
 
@@ -191,7 +191,7 @@ export default defineNuxtComponent({
 
 	.about-button {
 		background: white !important;
-		color: $about-blue-dark !important;
+		color: $bg-blue !important;
 	}
 }
 
@@ -202,7 +202,7 @@ export default defineNuxtComponent({
 
 	.about-button {
 		background: white !important;
-		color: $about-pink-dark !important;
+		color: $bg-pink !important;
 	}
 }
 

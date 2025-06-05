@@ -34,23 +34,31 @@
 		}
 	}
 
-	.green-background, .blue-background, .pink-background {
+	.green-background, .blue-background, .pink-background, .yellow-background, .orange-background {
 		background-blend-mode: multiply;
 		// only use white with a colored background, else use normal text color
-		.about-title {
+		.colored-title {
 			color: #fff;
 		}
 	}
 
 	.green-background {
-		background: $about-green-dark url("/image/background/bg_light_foreground.png") repeat;
+		background: $bg-green url("/image/background/bg_light_foreground.png") repeat !important;
 	}
 
 	.blue-background {
-		background: $about-blue-dark url("/image/background/bg_light_foreground.png") repeat;
+		background: $bg-blue url("/image/background/bg_light_foreground.png") repeat !important;
 	}
 
 	.pink-background {
-		background: $about-pink-dark url("/image/background/bg_light_foreground.png") repeat;
+		background: $bg-pink url("/image/background/bg_light_foreground.png") repeat !important;
+	}
+
+	.yellow-background {
+		background: $bg-yellow url("/image/background/bg_light_foreground.png") repeat !important;
+	}
+
+	.orange-background {
+		background: $bg-orange url("/image/background/bg_light_foreground.png") repeat !important;
 	}
 }

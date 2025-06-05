@@ -11,10 +11,14 @@ $border-radius-1x: 12px;
 $card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 $card-padding: 12px;
 
-// declared here because they're used in the dark/light stylesheets as well
-$about-green-dark: #22a831;
-$about-green-light: #76c944;
-$about-blue-dark: #3498db;
-$about-blue-light: #5ebbf9;
-$about-pink-dark: #ac1e63;
-$about-pink-light: #fc53a5;
+// bg uses less saturated colors than fg
+$bg-green: #22a831;
+$fg-green: #76c944;
+$bg-blue: #3498db;
+$fg-blue: #5ebbf9;
+$bg-pink: #ac1e63;
+$fg-pink: #fc53a5;
+$bg-yellow: #ffd000;
+$fg-yellow: #fff700;
+$bg-orange: #ff6900;
+$fg-orange: #ff8340;

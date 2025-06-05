@@ -1,41 +1,73 @@
 <template>
-	<h1 class="title my-5 text-center">Frequently Asked Questions</h1>
-	<v-text-field
-		v-model="search"
-		class="pb-3"
-		filled
-		clear-icon="mdi-close"
-		hide-details
-		placeholder="Search FAQs"
-		clearable
-		@click:clear="search = null"
-	/>
-	<h2 v-if="error || !allFaqs.length" class="text-center">
-		{{ error ? `Error: ${error}` : "No FAQs found" }}
-	</h2>
-	<template v-else>
-		<p class="pa-0">
-			<i>{{ faqs.length }} {{ results }} found</i>
-		</p>
-		<div v-for="{ question, answer } in faqs" :key="question" class="my-6">
-			<h2>{{ question }}</h2>
-			<!-- eslint-disable-next-line vue/no-v-html -->
-			<div class="ml-5" v-html="discordMarkdown(answer)" />
-			<hr />
+	<div class="hero-container text-center">
+		<div class="hero-upspace" />
+		<h1 class="hero-tagline title text-center mt-5">Frequently Asked Questions</h1>
+		<div class="hero-upspace" />
+		<div class="container py-0">
+			<v-autocomplete
+				v-model="search"
+				:items="faqs.map((faq) => faq.question)"
+				variant="solo"
+				clear-icon="mdi-close"
+				clearable
+				hide-details
+				placeholder="Search FAQs"
+				@update:menu="goToFaq"
+			/>
+			<br />
 		</div>
-	</template>
+	</div>
+	<div class="container">
+		<div class="card-row" style="padding-bottom: 50px">
+			<nuxt-link
+				v-for="{ icon, title, to, color } in categories"
+				:key="title"
+				class="card card-body faq-card"
+				:class="`${color}-background`"
+				:to
+			>
+				<v-icon :icon class="faq-card-text faq-icon colored-title" />
+				<h2 class="text-center faq-card-text colored-title">
+					<chevron-link>{{ title }}</chevron-link>
+				</h2>
+			</nuxt-link>
+		</div>
+		<discord-button>Still have questions? Ask us on our Discord!</discord-button>
+	</div>
 </template>
 
 <script>
+import DiscordButton from "~/components/lib/discord-button.vue";
+import ChevronLink from "~/components/lib/chevron-link.vue";
+
 export default defineNuxtComponent({
+	components: {
+		DiscordButton,
+		ChevronLink,
+	},
 	data() {
 		return {
 			search: null,
+			icons: {
+				history: "mdi-book-open-blank-variant",
+				installation: "mdi-download",
+				packs: "mdi-package-variant-closed",
+				issues: "mdi-alert-circle-outline",
+				contribution: "mdi-palette-outline",
+			},
+			colors: {
+				history: "pink",
+				installation: "blue",
+				packs: "green",
+				issues: "orange",
+				contribution: "yellow",
+			},
 		};
 	},
 	// for some reason <script setup> doesn't work with asyncData (???)
 	setup() {
 		definePageMeta({
+			layout: "no-container",
 			name: "FAQ",
 		});
 	},
@@ -56,13 +88,14 @@ export default defineNuxtComponent({
 		}
 	},
 	methods: {
-		// wraps compileMarkdown to handle some discord markdown weirdness
-		discordMarkdown(text) {
-			const cleanedText = text
-				.replace(/in <#[^]+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)") // removes channel links
-				.replace(/<[^]+>/, "") // removes pings
-				.replace("()", ""); // removes stray parentheses left by removing pings
-			return compileMarkdown(cleanedText);
+		goToFaq() {
+			const item = this.faqs.find((faq) => faq.question === this.search);
+			if (item) {
+				this.$router.push({
+					path: `/faq/${item.categories[0]}`,
+					hash: `#${item.question}`,
+				});
+			}
 		},
 	},
 	computed: {
@@ -84,6 +117,67 @@ export default defineNuxtComponent({
 				faq.question.toLowerCase().includes(this.search.toLowerCase()),
 			);
 		},
+		categories() {
+			return Array.from(new Set(this.allFaqs.flatMap((f) => f.categories))).map((category) => ({
+				title: toTitleCase(category),
+				icon: this.icons[category],
+				color: this.colors[category],
+				to: `/faq/${category}`,
+			}));
+		},
 	},
 });
 </script>
+
+<style scoped lang="scss">
+@use "~/assets/css/lib/variables" as *;
+
+.hero-container {
+	background-image: url("/image/banners/faq.jpg");
+}
+.hero-upspace {
+	height: 100px;
+}
+
+.card-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+}
+
+.faq-card {
+	min-width: 250px;
+	min-height: 350px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 0;
+	gap: 1rem;
+	&,
+	* {
+		transition: all 0.2s;
+	}
+}
+
+.faq-card-text {
+	opacity: 1;
+	color: white;
+	text-shadow: $card-shadow;
+}
+
+.faq-card:hover {
+	filter: drop-shadow(0 10px 10px #00000077);
+	transform: scale(1.05);
+}
+
+.faq-icon {
+	font-size: 10rem;
+	* {
+		opacity: 1 !important;
+		color: white !important;
+	}
+}
+</style>

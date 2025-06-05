@@ -2,9 +2,9 @@ import type { UseSeoMetaInput } from "@unhead/vue";
 import removeMd from "remove-markdown";
 
 export interface MetaParams {
-	description: string;
-	image: string;
 	title: MaybeRef<string> | ComputedRef<string>;
+	description?: string;
+	image?: string;
 }
 
 function handleTitle(title: string) {
@@ -12,10 +12,16 @@ function handleTitle(title: string) {
 	return "Faithful Resource Pack";
 }
 
+export const SEO_DESCRIPTION = "Providing a higher-resolution Minecraft experience since 2010.";
+export const SEO_IMAGE =
+	"https://database.faithfulpack.net/images/branding/social_media/banners/universal_banner.png";
+
 /**
  * Generate full unhead meta tags from a title, description, and image
  */
 export function generateMetaTags({ title, description, image }: MetaParams): UseSeoMetaInput {
+	description ||= SEO_DESCRIPTION;
+	image ||= SEO_IMAGE;
 	const sanitized = removeMd(description);
 	const base = {
 		description: sanitized,
