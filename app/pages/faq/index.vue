@@ -53,14 +53,14 @@ export default defineNuxtComponent({
 				installation: "mdi-download",
 				packs: "mdi-package-variant-closed",
 				issues: "mdi-alert-circle-outline",
-				contribution: "mdi-palette-outline",
+				creating: "mdi-palette-outline",
 			},
 			colors: {
 				history: "pink",
 				installation: "blue",
 				packs: "green",
 				issues: "orange",
-				contribution: "yellow",
+				creating: "yellow",
 			},
 		};
 	},
@@ -120,8 +120,8 @@ export default defineNuxtComponent({
 		categories() {
 			return Array.from(new Set(this.allFaqs.flatMap((f) => f.categories))).map((category) => ({
 				title: toTitleCase(category),
-				icon: this.icons[category],
-				color: this.colors[category],
+				icon: this.icons[category] || "mdi-help-circle-outline",
+				color: this.colors[category] || "green",
 				to: `/faq/${category}`,
 			}));
 		},
