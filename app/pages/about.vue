@@ -94,7 +94,7 @@ definePageMeta({
 					history spanning from the first releases up to today.
 					<br /><br />
 					As one of the first ever texture packs to be developed, having started all the way back in
-					2010, Faithful has secured its place among the most well-known Minecraft projects.
+					2010, Faithful has become a cult classic of the Minecraft community.
 				</p>
 				<chevron-link class="about-button" to="/stats">See our Stats</chevron-link>
 			</div>
