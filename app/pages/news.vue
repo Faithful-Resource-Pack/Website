@@ -5,8 +5,9 @@
 		{{ error ? `Error: ${error}` : "No posts found" }}
 	</h2>
 	<div v-else class="top-news pb-5">
-		<nuxt-link class="card img-card" :to="firstPost.permalink">
+		<nuxt-link class="card img-card zoom-hitbox" :to="firstPost.permalink">
 			<img
+				class="zoom-affected"
 				:src="
 					firstPost.header_img ||
 					'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'
