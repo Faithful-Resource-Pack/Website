@@ -41,6 +41,7 @@ export default defineNuxtComponent({
 	props: {
 		noContainer: {
 			type: Boolean,
+			required: false,
 			default: false,
 		},
 	},
