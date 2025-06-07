@@ -33,18 +33,18 @@
 		<h2 class="title text-center">Add-ons</h2>
 		<div class="res-grid-4">
 			<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
-			<article-card to="/addons" image="/image/addons/see_more.png">
+			<post-card to="/addons" image="/image/addons/see_more.png">
 				<template #title>
 					<chevron-link>See More</chevron-link>
 				</template>
-			</article-card>
+			</post-card>
 		</div>
 
 		<hr />
 
 		<h2 class="title text-center">News</h2>
 		<div class="res-grid-3">
-			<article-card
+			<post-card
 				v-for="{ id, permalink, header_img, title } in topPosts"
 				:key="id"
 				:to="permalink"
@@ -59,7 +59,7 @@
 
 <script>
 import ProjectCard from "~/components/home/project-card.vue";
-import ArticleCard from "~/components/lib/article-card.vue";
+import PostCard from "~/components/lib/post-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
 import ChevronLink from "~/components/lib/chevron-link.vue";
@@ -129,7 +129,7 @@ const ADDON_REEL_LENGTH = 4;
 export default defineNuxtComponent({
 	components: {
 		ProjectCard,
-		ArticleCard,
+		PostCard,
 		AddonCard,
 		DiscordButton,
 		ChevronLink,

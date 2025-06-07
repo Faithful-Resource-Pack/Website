@@ -1,5 +1,5 @@
 <template>
-	<article-card
+	<post-card
 		:to="`/addons/${addon.slug}`"
 		:image="`https://database.faithfulpack.net/images/addons/${addon.slug}/header`"
 		:title="addon.name"
@@ -37,16 +37,16 @@
 				<p v-if="addon.options.tags.includes('64x')">64x</p>
 			</div>
 		</template>
-	</article-card>
+	</post-card>
 </template>
 
 <script>
-import ArticleCard from "~/components/lib/article-card.vue";
+import PostCard from "~/components/lib/post-card.vue";
 
 export default defineNuxtComponent({
 	name: "addon-card",
 	components: {
-		ArticleCard,
+		PostCard,
 	},
 	props: {
 		addon: {

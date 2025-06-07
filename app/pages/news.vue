@@ -5,7 +5,7 @@
 		{{ error ? `Error: ${error}` : "No posts found" }}
 	</h2>
 	<div v-else class="top-news pb-5">
-		<nuxt-link class="card img-card zoom-hitbox" :to="firstPost.permalink">
+		<nuxt-link class="card zoom-hitbox" :to="firstPost.permalink">
 			<img
 				class="zoom-affected"
 				:src="
@@ -29,7 +29,7 @@
 	<hr />
 
 	<div class="res-grid-3">
-		<article-card
+		<post-card
 			v-for="{ id, permalink, header_img, title } in restPosts"
 			:key="id"
 			:to="permalink"
@@ -40,11 +40,11 @@
 </template>
 
 <script>
-import ArticleCard from "~/components/lib/article-card.vue";
+import PostCard from "~/components/lib/post-card.vue";
 
 export default defineNuxtComponent({
 	components: {
-		ArticleCard,
+		PostCard,
 	},
 	async asyncData() {
 		const { apiURL } = useRuntimeConfig().public;

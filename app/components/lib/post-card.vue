@@ -1,9 +1,9 @@
 <template>
 	<div class="card">
-		<nuxt-link class="img-card zoom-hitbox" :to>
-			<img class="img-card-image zoom-affected" :src="image" :alt="alt || title" loading="lazy" />
-			<div class="img-card-shadow" />
-			<h3 class="img-card-title">
+		<nuxt-link class="post-card zoom-hitbox" :to>
+			<img class="post-card-image zoom-affected" :src="image" :alt="alt || title" loading="lazy" />
+			<div class="post-card-shadow" />
+			<h3 class="post-card-title">
 				<slot name="title">{{ title }}</slot>
 			</h3>
 			<slot name="linked" />
@@ -13,7 +13,7 @@
 </template>
 <script>
 export default defineNuxtComponent({
-	name: "article-card",
+	name: "post-card",
 	props: {
 		to: {
 			type: String,
@@ -42,7 +42,7 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
 
-.img-card {
+.post-card {
 	position: relative;
 	height: 0;
 	padding-top: 56.25%; // (9 / 16) * 100
@@ -50,7 +50,7 @@ export default defineNuxtComponent({
 		cursor: pointer;
 	}
 }
-.img-card-title {
+.post-card-title {
 	position: absolute;
 	bottom: 0;
 	// https://sass-lang.com/documentation/interpolation/
@@ -62,15 +62,15 @@ export default defineNuxtComponent({
 }
 
 // this is such a stupid css class name when you think about it
-.img-card-image,
-.img-card-shadow {
+.post-card-image,
+.post-card-shadow {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 }
-.img-card-shadow {
+.post-card-shadow {
 	background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.5));
 }
 </style>
