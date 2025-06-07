@@ -340,7 +340,12 @@ a > .banner:hover {
 		flex-direction: column;
 	}
 }
-.res-grid-4, .res-grid-3, .res-grid-2, .top-news {
+.res-grid-4 {
+	display: grid;
+	grid-gap: 1.5rem;
+	grid-template-columns: repeat(2, 2fr);
+}
+.res-grid-3, .res-grid-2, .top-news {
 	display: grid;
 	grid-gap: 1.5rem;
 	grid-template-columns: repeat(1, 1fr);
@@ -350,7 +355,7 @@ a > .banner:hover {
 	.container {
 		max-width: 540px;
 	}
-	.res-grid-4, .res-grid-3, .res-grid-2 {
+	.res-grid-4 {
 		grid-template-columns: repeat(2, 2fr);
 	}
 }
@@ -358,16 +363,16 @@ a > .banner:hover {
 	.container {
 		max-width: 720px;
 	}
-	.res-grid-4, .res-grid-3 {
-		grid-template-columns: repeat(3, 3fr);
-	}
-	.top-news {
+	.res-grid-4, .res-grid-3, .res-grid-2, .top-news {
 		grid-template-columns: repeat(2, 2fr);
 	}
 }
 @media screen and (min-width: 960px) {
 	.container {
 		max-width: 960px
+	}
+	.res-grid-3 {
+		grid-template-columns: repeat(3, 3fr);
 	}
 	.res-grid-4 {
 		grid-template-columns: repeat(4, 4fr);
