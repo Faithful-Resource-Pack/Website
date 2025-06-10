@@ -28,24 +28,17 @@ definePageMeta({
 		</div>
 	</div>
 	<div class="container about-container">
-		<img class="about-image" src="/image/about/foss.png" alt="github screenshot" />
+		<img class="about-image" src="/image/about/history.png" alt="our history" />
 		<div class="about-text">
-			<h1 class="colored-title">Free and Open-Source</h1>
+			<h1 class="colored-title">A History of Expertise</h1>
 			<p>
-				The project is made possible entirely by talented volunteer artists and developers working
-				in their free time.
+				We've got over a decade of experience making quality textures for Minecraft, with a rich
+				history spanning from the first releases up to today.
 				<br /><br />
-				All of our textures, as well as the code of all our related projects, are available on
-				GitHub. Take a look and see how the magic happens!
+				As one of the first ever texture packs to be developed, having started all the way back in
+				2010, Faithful has become a cult classic of the Minecraft community.
 			</p>
-			<chevron-link
-				class="about-button"
-				to="https://github.com/Faithful-Resource-Pack"
-				target="_blank"
-				rel="noreferrer"
-			>
-				Visit our GitHub
-			</chevron-link>
+			<chevron-link class="about-button" to="/stats">See our Stats</chevron-link>
 		</div>
 	</div>
 	<div class="blue-background">
@@ -87,18 +80,25 @@ definePageMeta({
 	</div>
 	<div class="pink-background">
 		<div class="container about-container">
+			<img class="about-image" src="/image/about/foss.png" alt="github screenshot" />
 			<div class="about-text">
-				<h1 class="colored-title">A History of Expertise</h1>
+				<h1 class="colored-title">Free and Open-Source</h1>
 				<p>
-					We've got over a decade of experience making quality textures for Minecraft, with a rich
-					history spanning from the first releases up to today.
+					The project is made possible entirely by talented volunteer artists and developers working
+					in their free time.
 					<br /><br />
-					As one of the first ever texture packs to be developed, having started all the way back in
-					2010, Faithful has become a cult classic of the Minecraft community.
+					All of our textures, as well as the code of all our related projects, are available on
+					GitHub. Take a look and see how the magic happens!
 				</p>
-				<chevron-link class="about-button" to="/stats">See our Stats</chevron-link>
+				<chevron-link
+					class="about-button"
+					to="https://github.com/Faithful-Resource-Pack"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Visit our GitHub
+				</chevron-link>
 			</div>
-			<img class="about-image" src="/image/about/history.png" alt="our history" />
 		</div>
 	</div>
 	<div class="container faq-section">
