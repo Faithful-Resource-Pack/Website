@@ -3,8 +3,8 @@
 	<div id="stats" class="text-center">
 		<h1 class="title my-5">I'm a teapot</h1>
 		<div id="teacup">
-			<div v-show="isLoaded" id="handle"><div></div></div>
-			<img id="bucket" ref="bucket" data-allow-mismatch="attribute" :src="bucketImg" alt="teacup" />
+			<div id="handle"><div></div></div>
+			<img id="bucket" data-allow-mismatch="attribute" :src="bucketImg" alt="teacup" />
 		</div>
 	</div>
 </template>
@@ -27,17 +27,7 @@ export default defineNuxtComponent({
 		const { id } = buckets.find(({ low, high }) => low < rand && rand < high) || buckets[0];
 		return {
 			bucketImg: `https://api.faithfulpack.net/v2/textures/${id}/url/faithful_64x/latest`,
-			isLoaded: false,
 		};
-	},
-	// makes sure the handle and bucket load at the same time (just having a handle looks stupid)
-	mounted() {
-		if (this.$refs.bucket.complete) this.isLoaded = true;
-		else {
-			this.$refs.bucket.onload = () => {
-				this.isLoaded = true;
-			};
-		}
 	},
 });
 </script>
