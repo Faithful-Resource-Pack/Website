@@ -2,7 +2,7 @@
 	<div class="profile-card">
 		<img
 			class="profile-avatar"
-			:src="`https://visage.surgeplay.com/face/128/${author.uuid || 'X-Steve'}`"
+			:src="`https://vzge.me/face/128/${author.uuid || 'X-Steve'}`"
 			:alt="`${author.username}'s Avatar`"
 		/>
 		<!-- need div to treat as one unit -->
