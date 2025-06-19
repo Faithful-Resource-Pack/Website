@@ -22,6 +22,7 @@
 							:to
 							:text
 							class="btn block btn-dark"
+							:aria-label="text === 'See More' ? project.name : text"
 						/>
 					</div>
 				</template>
@@ -35,7 +36,7 @@
 			<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
 			<post-card to="/addons" image="/image/addons/see_more.png">
 				<template #title>
-					<chevron-link>See More</chevron-link>
+					<chevron-link aria-label="Go to add-on page">See More</chevron-link>
 				</template>
 			</post-card>
 		</div>
@@ -53,7 +54,9 @@
 			/>
 		</div>
 		<br />
-		<nuxt-link class="btn btn-dark news-button center" to="/news">See More</nuxt-link>
+		<nuxt-link class="btn btn-dark news-button center" to="/news" aria-label="Go to news page">
+			See More
+		</nuxt-link>
 	</div>
 </template>
 
