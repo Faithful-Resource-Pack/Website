@@ -32,7 +32,12 @@
 			class="links"
 			:colspan="Object.keys(item.links).length > 1 ? 1 : 2"
 		>
-			<nuxt-link class="btn btn-dark btn-dl" :to="link">
+			<!-- icon buttons aren't accessible on mobile -->
+			<nuxt-link
+				class="btn btn-dark btn-dl"
+				:to="link"
+				:aria-label="`${textFormat[linkType]} download for ${labelText} (${version})`"
+			>
 				<media-icon class="dl-icon" :icon="linkType" fallback="download" />
 				<span class="link-text ml-2">{{ textFormat[linkType] || linkType }}</span>
 			</nuxt-link>
