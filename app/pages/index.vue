@@ -1,14 +1,17 @@
 <template>
-	<div class="hero-container text-center">
-		<!-- this was the least stupid way to add some padding at the top -->
-		<div class="hero-upspace" />
-		<img class="hero-wordmark" src="/image/wordmarks/faithful.png" alt="Faithful Wordmark" />
-		<h2 class="hero-tagline">Providing a higher-resolution Minecraft experience since 2010.</h2>
-		<!-- hack to get the button the same width as the container -->
-		<div class="container py-3">
-			<discord-button>Join our Discord now and contribute to the project!</discord-button>
-		</div>
-	</div>
+	<hero-section
+		background="/image/banners/hero.jpg"
+		wordmark="/image/wordmarks/faithful.png"
+		wordmark-alt="Faithful Wordmark"
+	>
+		<template #tagline>Providing a higher-resolution Minecraft experience since 2010.</template>
+		<template #actions>
+			<!-- hack to get the button the same width as the container -->
+			<div class="container py-3">
+				<discord-button>Join our Discord now and contribute to the project!</discord-button>
+			</div>
+		</template>
+	</hero-section>
 	<div class="container">
 		<h2 class="title mb-4 text-center">Projects</h2>
 		<div class="res-grid-2">
@@ -66,6 +69,7 @@ import PostCard from "~/components/lib/post-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
 import ChevronLink from "~/components/lib/chevron-link.vue";
+import HeroSection from "~/components/lib/hero-section.vue";
 
 const PROJECTS = [
 	{
@@ -131,6 +135,7 @@ const ADDON_REEL_LENGTH = 4;
 
 export default defineNuxtComponent({
 	components: {
+		HeroSection,
 		ProjectCard,
 		PostCard,
 		AddonCard,
@@ -177,14 +182,6 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-.hero-upspace {
-	height: 80px;
-}
-
-.hero-container {
-	background-image: url("/image/banners/hero.jpg");
-}
-
 .news-button {
 	width: 50%;
 }

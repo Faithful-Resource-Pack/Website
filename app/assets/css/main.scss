@@ -348,27 +348,6 @@ a > .banner:hover {
 	}
 }
 
-.hero-container {
-	display: block;
-	background-size: cover;
-	background-position: center;
-	box-shadow: $card-shadow;
-}
-
-.hero-tagline {
-	color: #fff;
-	text-shadow: rgba(0, 0, 0, 0.75) 0px 4px 10px;
-}
-
-.hero-wordmark {
-	margin-top: 50px;
-	margin-bottom: 25px;
-	filter: drop-shadow(0 0 10px #000);
-	width: 475px;
-	max-width: 100%;
-}
-
-
 .profile-card {
 	display: flex;
 	flex-flow: row nowrap;

@@ -2,7 +2,7 @@
 	<span
 		v-if="isImage"
 		class="custom-icon"
-		:style="{ maskImage: `url(${iconData})`, backgroundColor: color }"
+		:style="{ maskImage, backgroundColor: color }"
 		v-bind="$attrs"
 	/>
 	<v-icon v-else :icon="iconData" :color v-bind="$attrs" />
@@ -85,6 +85,9 @@ export default defineNuxtComponent({
 		},
 		isImage() {
 			return this.iconType === "image";
+		},
+		maskImage() {
+			return `url("${this.iconData}")`;
 		},
 	},
 });

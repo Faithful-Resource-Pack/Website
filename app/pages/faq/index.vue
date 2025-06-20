@@ -1,22 +1,23 @@
 <template>
-	<div class="hero-container text-center">
-		<div class="hero-upspace" />
-		<h1 class="hero-tagline title text-center mt-5">Frequently Asked Questions</h1>
-		<div class="hero-upspace" />
-		<div class="container py-0">
-			<v-autocomplete
-				v-model="search"
-				:items="faqs.map((faq) => faq.question)"
-				variant="solo"
-				clear-icon="mdi-close"
-				clearable
-				hide-details
-				placeholder="Search FAQs"
-				@update:menu="goToFaq"
-			/>
-			<br />
-		</div>
-	</div>
+	<hero-section background="/image/banners/faq.jpg" upspace="100px">
+		<template #title>Frequently Asked Questions</template>
+		<template #actions>
+			<div style="height: 100px" />
+			<div class="container py-0">
+				<v-autocomplete
+					v-model="search"
+					:items="faqs.map((faq) => faq.question)"
+					variant="solo"
+					clear-icon="mdi-close"
+					clearable
+					hide-details
+					placeholder="Search FAQs"
+					@update:menu="goToFaq"
+				/>
+				<br />
+			</div>
+		</template>
+	</hero-section>
 	<div class="container">
 		<div class="card-row" style="padding-bottom: 50px">
 			<nuxt-link
@@ -39,9 +40,11 @@
 <script>
 import DiscordButton from "~/components/lib/discord-button.vue";
 import ChevronLink from "~/components/lib/chevron-link.vue";
+import HeroSection from "~/components/lib/hero-section.vue";
 
 export default defineNuxtComponent({
 	components: {
+		HeroSection,
 		DiscordButton,
 		ChevronLink,
 	},
@@ -131,13 +134,6 @@ export default defineNuxtComponent({
 
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
-
-.hero-container {
-	background-image: url("/image/banners/faq.jpg");
-}
-.hero-upspace {
-	height: 100px;
-}
 
 .card-row {
 	display: flex;

@@ -1,21 +1,26 @@
 <template>
-	<div class="hero-container text-center">
-		<div class="hero-upspace" />
-		<img class="hero-wordmark" src="/image/wordmarks/addons.png" alt="Faithful Wordmark" />
-		<h2 class="hero-tagline">Personalize and customize every aspect of your gameplay.</h2>
-		<div class="container pt-2 pb-0">
-			<v-text-field
-				v-model="search"
-				variant="solo"
-				clear-icon="mdi-close"
-				clearable
-				hide-details
-				placeholder="Search add-on name"
-				@click:clear="clearSearch"
-			/>
-			<br />
-		</div>
-	</div>
+	<hero-section
+		background="/image/banners/add_ons.jpg"
+		wordmark="/image/wordmarks/addons.png"
+		wordmark-alt="Faithful Add-ons Wordmark"
+		upspace="50px"
+	>
+		<template #tagline>Personalize and customize every aspect of your gameplay.</template>
+		<template #actions>
+			<div class="container pt-2 pb-0">
+				<v-text-field
+					v-model="search"
+					variant="solo"
+					clear-icon="mdi-close"
+					clearable
+					hide-details
+					placeholder="Search add-on name"
+					@click:clear="clearSearch"
+				/>
+				<br />
+			</div>
+		</template>
+	</hero-section>
 	<div class="container pt-3">
 		<v-chip-group
 			v-model="rawSelectedPacks"
@@ -85,6 +90,7 @@
 
 <script>
 import AddonCard from "~/components/addons/addon-card.vue";
+import HeroSection from "~/components/lib/hero-section.vue";
 import MediaIcon from "~/components/lib/media-icon.vue";
 
 const FAVORITE_ADDONS_KEY = "favAddons";
@@ -94,6 +100,7 @@ const DISPLAYED_ADDONS_COUNT = 24;
 
 export default defineNuxtComponent({
 	components: {
+		HeroSection,
 		AddonCard,
 		MediaIcon,
 	},
@@ -262,12 +269,3 @@ export default defineNuxtComponent({
 	},
 });
 </script>
-
-<style scoped lang="scss">
-.hero-container {
-	background-image: url("/image/banners/add_ons.jpg");
-}
-.hero-upspace {
-	height: 50px;
-}
-</style>
