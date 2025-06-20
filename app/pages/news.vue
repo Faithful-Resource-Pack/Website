@@ -1,34 +1,42 @@
 <template>
 	<h1 class="title my-5 text-center">Faithful News</h1>
 
-	<h2 v-if="!posts.length" class="text-center">
+	<p v-if="!posts.length" class="red banner">
 		{{ error ? `Error: ${error}` : "No posts found" }}
-	</h2>
+	</p>
 	<div v-else class="top-news pb-5">
-		<nuxt-link class="card zoom-hitbox" :to="firstPost.permalink">
+		<nuxt-link class="card zoom-hitbox" :to="firstPost.permalink" aria-label="Latest post">
 			<img
 				class="zoom-affected"
 				:src="
 					firstPost.header_img ||
 					'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'
 				"
+				alt="Latest post's header image"
 				loading="lazy"
 			/>
 		</nuxt-link>
 		<div class="flex-down">
 			<nuxt-link :to="firstPost.permalink" class="underline-hover">
-				<h3 class="h1">{{ firstPost.title }}</h3>
+				<h2 class="h1">{{ firstPost.title }}</h2>
 			</nuxt-link>
 			<p class="news-preview">
 				{{ compileMarkdown(firstPost.description, true) }}
 			</p>
-			<nuxt-link class="btn block btn-dark mt-5" :to="firstPost.permalink">Read More</nuxt-link>
+			<nuxt-link
+				class="btn block btn-dark mt-5"
+				:to="firstPost.permalink"
+				aria-label="Go to full post"
+			>
+				Read More
+			</nuxt-link>
 		</div>
 	</div>
 
 	<hr />
 
 	<div class="res-grid-3">
+		<!-- no need for alt text as the images are decorative (the title is enough) -->
 		<post-card
 			v-for="{ id, permalink, header_img, title } in restPosts"
 			:key="id"

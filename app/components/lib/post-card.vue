@@ -1,7 +1,7 @@
 <template>
 	<div class="card">
 		<nuxt-link class="post-card zoom-hitbox" :to>
-			<img class="post-card-image zoom-affected" :src="image" :alt="alt || title" loading="lazy" />
+			<img class="post-card-image zoom-affected" :src="image" :alt="alt" loading="lazy" />
 			<div class="post-card-shadow" />
 			<h3 class="post-card-title">
 				<slot name="title">{{ title }}</slot>

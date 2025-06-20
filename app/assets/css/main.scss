@@ -271,6 +271,7 @@ hr {
 }
 /** Custom Bootstrap-like */
 .banner {
+	font-size: 25px;
 	padding: 16px;
 	color: #fff;
 	text-align: center;
@@ -288,7 +289,6 @@ a > .banner:hover {
 }
 .blurple.banner {
 	background: $blurple;
-	font-size: 25px;
 }
 .button-row {
 	display: flex;
