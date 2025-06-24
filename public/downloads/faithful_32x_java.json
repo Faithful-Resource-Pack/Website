@@ -2,7 +2,7 @@
   "1.21.6": [
     {
       "file_type": "Pre-release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -25,7 +25,7 @@
   "1.21.4": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -46,7 +46,7 @@
   "1.21.3": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -105,7 +105,7 @@
   "1.20.6": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -144,7 +144,7 @@
   "1.20.4": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -202,7 +202,7 @@
   "1.20.2": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -277,7 +277,7 @@
   "1.20.1": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -352,7 +352,7 @@
   "1.19.4": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -445,7 +445,7 @@
   "1.19.3": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -556,7 +556,7 @@
   "1.19.2": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -676,7 +676,7 @@
   "1.18.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -846,7 +846,7 @@
   "1.17.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -1032,7 +1032,7 @@
   "1.16.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -1313,7 +1313,7 @@
   "1.15.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -1451,7 +1451,7 @@
   "1.14.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -1589,7 +1589,7 @@
   "1.13.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -1727,7 +1727,7 @@
   "1.12.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -1865,7 +1865,7 @@
   "1.11.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -2003,7 +2003,7 @@
   "1.10.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -2141,7 +2141,7 @@
   "1.9.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -2279,7 +2279,7 @@
   "1.8.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -2417,7 +2417,7 @@
   "1.7.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -2555,7 +2555,7 @@
   "1.6.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -2693,7 +2693,7 @@
   "1.4.x": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -2831,7 +2831,7 @@
   "Beta 1.7.3": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 15,
       "latest": true,
       "date": "2025-06-24",
       "links": {
