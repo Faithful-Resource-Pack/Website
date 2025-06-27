@@ -133,8 +133,8 @@ export default defineNuxtComponent({
 				Bedrock: { color: "#eee", icon: "mdi-cube", text: "Bedrock Edition" },
 			},
 			packs: {
-				"32x": { color: "#00b0ff", icon: "faithful", text: "Faithful 32x" },
-				"64x": { color: "#ff62bc", icon: "faithful", text: "Faithful 64x" },
+				"32x": { color: "#00a2ff", icon: "faithful", text: "Faithful 32x" },
+				"64x": { color: "#ff0092", icon: "faithful", text: "Faithful 64x" },
 			},
 			shownResults: DISPLAYED_ADDONS_COUNT,
 			rawSelectedEditions: [],
