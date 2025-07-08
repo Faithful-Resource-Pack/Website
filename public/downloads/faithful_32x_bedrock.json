@@ -3,6 +3,7 @@
     {
       "file_type": "Pre-release",
       "file_version": 16,
+      "file_name": "July 2025",
       "latest": true,
       "date": "2025-06-24",
       "links": {
@@ -13,7 +14,6 @@
     {
       "file_type": "Pre-release",
       "file_version": 15,
-      "latest": true,
       "date": "2025-06-24",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Bedrock/June%202025/Faithful%2032x%20-%201.21.6.mcpack",
