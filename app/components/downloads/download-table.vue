@@ -5,7 +5,6 @@
 				<tr class="download-heading">
 					<th colspan="2" class="file-heading"><p>Name</p></th>
 					<th><p>Date</p></th>
-					<th><p>Size</p></th>
 					<th colspan="2"><p>Downloads</p></th>
 				</tr>
 			</thead>
