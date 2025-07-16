@@ -15,9 +15,9 @@
 	},
 	"dependencies": {
 		"isomorphic-dompurify": "^2.26.0",
-		"luxon": "^3.6.1",
+		"luxon": "^3.7.1",
 		"marked": "^16.0.0",
-		"nuxt": "^3.17.6",
+		"nuxt": "^4.0.0",
 		"remove-markdown": "^0.6.2",
 		"sass": "^1.89.2",
 		"vuetify-nuxt-module": "^0.18.7",
@@ -26,7 +26,7 @@
 	"devDependencies": {
 		"@nuxt/eslint": "1.5.2",
 		"@types/luxon": "^3.6.2",
-		"eslint": "^9.30.1",
+		"eslint": "^9.31.0",
 		"prettier": "^3.6.2"
 	},
 	"pnpm": {
