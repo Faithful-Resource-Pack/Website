@@ -12,7 +12,7 @@ The following files are licensed as follows:
 
 > SIL Open Font License https://opensource.org/license/ofl-1-1/
 
-- public/data/font/Faithful.ttf
+- public/font/Faithful.ttf
 
 ## External logos
 
