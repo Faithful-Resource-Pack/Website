@@ -61,10 +61,11 @@ export default defineNuxtComponent({
 	methods: {
 		// wraps compileMarkdown to handle some discord markdown weirdness
 		discordMarkdown(text) {
-			const cleanedText = text
-				.replace(/in <#[^]+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)") // removes channel links
-				.replace(/<[^]+>/, "") // removes pings
-				.replace("()", ""); // removes stray parentheses left by removing pings
+			// removes channel links
+			const cleanedText = text.replace(
+				/in <#\d+>/,
+				"on our [Discord](https://discord.gg/sN9YRQbBv7)",
+			);
 			return compileMarkdown(cleanedText);
 		},
 		scrollToFaq(faq) {

@@ -16,17 +16,18 @@
 	"dependencies": {
 		"isomorphic-dompurify": "^2.26.0",
 		"luxon": "^3.7.1",
-		"marked": "^16.0.0",
-		"nuxt": "^4.0.0",
+		"marked": "^16.1.1",
+		"nuxt": "^4.0.1",
 		"remove-markdown": "^0.6.2",
 		"sass": "^1.89.2",
+		"vue": "^3.5.18",
 		"vuetify-nuxt-module": "^0.18.7",
 		"yaml": "^2.8.0"
 	},
 	"devDependencies": {
-		"@nuxt/eslint": "1.5.2",
+		"@nuxt/eslint": "1.7.1",
 		"@types/luxon": "^3.6.2",
-		"eslint": "^9.31.0",
+		"eslint": "^9.32.0",
 		"prettier": "^3.6.2"
 	},
 	"pnpm": {
