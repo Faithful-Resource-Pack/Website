@@ -152,11 +152,13 @@ td * {
 	margin-bottom: 0;
 }
 
-.download-item {
-	padding: 0.7rem;
-	&:hover {
-		background-color: rgba(255, 255, 255, 0.05);
-	}
+// for some reason you can't pad <tr> tags directly, so we style the children instead
+.download-item > * {
+	padding: 0.2rem 0px;
+}
+
+.download-item:hover {
+	background-color: rgba(255, 255, 255, 0.05);
 }
 
 .download-name {
@@ -227,6 +229,7 @@ i.dl-icon {
 	.download-item {
 		display: flex;
 		align-items: stretch;
+		// padding works on tr since it's now flex
 		padding: 0.25rem 0.5rem;
 
 		// remove hover effect (looks bad on mobile)
