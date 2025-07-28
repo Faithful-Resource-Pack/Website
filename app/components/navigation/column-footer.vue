@@ -41,7 +41,7 @@
 			</div>
 		</div>
 		<small class="footer-info-text">
-			NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT
+			NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
 		</small>
 	</footer>
 </template>
@@ -175,9 +175,8 @@ export default defineNuxtComponent({
 
 <style scoped lang="scss">
 footer {
-	padding: 2rem 1rem;
+	padding: 1rem;
 	text-align: center;
-	position: relative;
 }
 
 // container for left column and the others for better wrapping
