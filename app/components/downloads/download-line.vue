@@ -7,7 +7,7 @@
 				:icon="showIcon"
 				size="x-small"
 				opacity="0.5"
-				class="clickable"
+				class="cursor-pointer"
 			/>
 		</td>
 		<td class="download-details">

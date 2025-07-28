@@ -11,7 +11,7 @@
 				<div v-if="screenshots.length" class="card card-body mb-6">
 					<h2 class="text-center">Gallery</h2>
 					<div class="res-grid-3">
-						<div v-for="image in screenshots" :key="image" class="card clickable zoom-hitbox">
+						<div v-for="image in screenshots" :key="image" class="card cursor-pointer zoom-hitbox">
 							<img class="zoom-affected" :src="image" @click="openModal(image)" />
 						</div>
 					</div>
