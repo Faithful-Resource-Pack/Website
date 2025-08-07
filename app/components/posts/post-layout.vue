@@ -1,6 +1,9 @@
 <template>
 	<p v-if="post.discontinued" class="red banner">This project has been discontinued.</p>
-	<h1 v-if="post.title" class="title my-5 text-center">{{ post.title }}</h1>
+	<div v-if="post.title" class="text-center my-5">
+		<h1 v-if="mainTitle" class="title mb-2">{{ mainTitle }}</h1>
+		<h2 v-if="subTitle" class="subtitle">{{ subTitle }}</h2>
+	</div>
 	<template v-if="post.header_img">
 		<img :src="post.header_img" class="header-img" />
 		<br />
@@ -43,6 +46,18 @@ export default defineNuxtComponent({
 		post: {
 			type: Object,
 			required: true,
+		},
+	},
+	computed: {
+		mainTitle() {
+			// if there's only one part then it just returns itself
+			return this.post.title?.split(": ", 2)[0];
+		},
+		subTitle() {
+			const split = this.post.title.split(": ");
+			// single-part title, ignore
+			if (split.length === 1) return "";
+			return split.slice(1).join(": ");
 		},
 	},
 });
