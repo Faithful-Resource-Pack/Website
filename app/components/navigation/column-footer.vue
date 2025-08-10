@@ -85,7 +85,7 @@ const FOOTER_CATEGORIES = [
 			},
 			{
 				name: "Modrinth",
-				to: "https://modrinth.com/user/Faithful-Resource-Pack",
+				to: "https://modrinth.com/organization/Faithful-Resource-Pack",
 			},
 			{
 				name: "Planet Minecraft",
