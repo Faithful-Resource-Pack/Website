@@ -302,15 +302,13 @@ a > .banner:hover {
 		flex-direction: column;
 	}
 }
-.res-grid-4 {
-	display: grid;
-	grid-gap: 1.5rem;
-	grid-template-columns: repeat(2, 2fr);
-}
-.res-grid-3, .res-grid-2, .top-news {
+.res-grid-4, .res-grid-3, .res-grid-2, .top-news {
 	display: grid;
 	grid-gap: 1.5rem;
 	grid-template-columns: repeat(1, 1fr);
+}
+.addon-reel {
+	grid-template-columns: repeat(2, 1fr);
 }
 /* container size management */
 @media screen and (min-width: 576px) {
@@ -339,10 +337,16 @@ a > .banner:hover {
 	.res-grid-4 {
 		grid-template-columns: repeat(4, 4fr);
 	}
+	.project-reel {
+		grid-template-columns: repeat(2, 2fr);
+	}
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1140px) {
 	.container {
-		max-width: 1140px
+		max-width: 1140px;
+	}
+	.project-reel {
+		grid-template-columns: repeat(4, 4fr);
 	}
 }
 

@@ -14,20 +14,18 @@
 	</hero-section>
 	<div class="container">
 		<h2 class="title mb-4 text-center">Projects</h2>
-		<div class="res-grid-2">
+		<div class="res-grid-4 project-reel">
 			<!-- project data and props have the same key names so we can assign to v-bind directly -->
 			<project-card v-for="project in projects" :key="project.name" v-bind="project">
 				<template #btns>
-					<div class="button-row">
-						<chevron-link
-							v-for="{ text, to } in project.buttons"
-							:key="text"
-							:to
-							:text
-							class="btn block btn-dark"
-							:aria-label="text === 'See More' ? project.name : text"
-						/>
-					</div>
+					<chevron-link
+						v-for="{ text, to } in project.buttons"
+						:key="text"
+						:to
+						:text
+						class="btn block btn-dark my-1"
+						:aria-label="text === 'See More' ? project.name : text"
+					/>
 				</template>
 			</project-card>
 		</div>
@@ -35,7 +33,7 @@
 		<hr />
 
 		<h2 class="title text-center">Add-ons</h2>
-		<div class="res-grid-4">
+		<div class="res-grid-4 addon-reel">
 			<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
 			<post-card to="/addons" image="/image/addons/see_more.png">
 				<template #title>
@@ -75,60 +73,30 @@ const PROJECTS = [
 	{
 		name: "Faithful 32x",
 		background: "/image/posters/f32.jpg",
-		wordmark: "/image/wordmarks/f32.png",
-		description:
-			"The original Minecraft texture feel, with double the resolution and double the fun!",
-		buttons: [
-			{
-				text: "See More",
-				to: "/faithful32x",
-			},
-		],
+		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f32_logo.png",
+		description: "Double the resolution and double the fun!",
+		to: "/faithful32x",
 	},
 	{
 		name: "Faithful 64x",
 		background: "/image/posters/f64.jpg",
-		wordmark: "/image/wordmarks/f64.png",
-		description: "An even more detailed experience with quadruple-resolution textures!",
-		buttons: [
-			{
-				text: "See More",
-				to: "/faithful64x",
-			},
-		],
+		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f64_logo.png",
+		description: "An even more detailed experience!",
+		to: "/faithful64x",
 	},
 	{
 		name: "Classic Faithful 32x",
 		background: "/image/posters/cf32.jpg",
-		wordmark: "/image/wordmarks/cf32.png",
-		description: "The older yet refreshed look of Faithful, for when you need that nostalgic hit!",
-		buttons: [
-			{
-				text: "Original Textures",
-				to: "/classic32x",
-			},
-			{
-				text: "Modern Textures (Jappa)",
-				to: "/classic32x-jappa",
-			},
-		],
+		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf32_logo.png",
+		description: "For when you need that nostalgic hit!",
+		to: "/classic32x",
 	},
 	{
 		name: "Classic Faithful 64x",
 		background: "/image/posters/cf64.jpg",
-		wordmark: "/image/wordmarks/cf64.png",
-		description:
-			"The traditional Faithful style with fully refreshed and ultra high-resolution textures!",
-		buttons: [
-			{
-				text: "Original Textures",
-				to: "/classic64x",
-			},
-			{
-				text: "Modern Textures (Jappa)",
-				to: "/classic64x-jappa",
-			},
-		],
+		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf64_logo.png",
+		description: "Both nostalgia and detail in equal amounts!",
+		to: "/classic64x",
 	},
 ];
 const ADDON_REEL_LENGTH = 4;
