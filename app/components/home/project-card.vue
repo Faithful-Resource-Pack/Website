@@ -1,16 +1,15 @@
 <template>
-	<div class="card project-card">
+	<nuxt-link :to class="card zoom-hitbox">
 		<div class="project-image">
 			<img class="project-background" :src="background" :alt="name" />
-			<img class="project-wordmark" :src="wordmark" :alt="`${name} wordmark`" />
+			<div class="project-shadow" />
+			<img class="project-logo zoom-affected" :src="logo" :alt="`${name} logo`" />
 		</div>
 		<div class="card-body">
-			<p class="text-center my-2" style="min-height: 65px">
-				{{ description }}
-			</p>
-			<slot name="btns" />
+			<h2 class="h4 text-white">{{ name }}</h2>
+			<p>{{ description }}</p>
 		</div>
-	</div>
+	</nuxt-link>
 </template>
 
 <script>
@@ -25,11 +24,15 @@ export default defineNuxtComponent({
 			type: String,
 			required: true,
 		},
-		wordmark: {
+		logo: {
 			type: String,
 			required: true,
 		},
 		description: {
+			type: String,
+			required: true,
+		},
+		to: {
 			type: String,
 			required: true,
 		},
@@ -43,17 +46,28 @@ export default defineNuxtComponent({
 	display: inline;
 }
 
-// place wordmark on top of image
-.project-wordmark {
+// place logo on top of image
+.project-logo {
 	position: absolute;
-	top: 8%;
 	right: 0;
-	padding: 30px;
 }
 
 .project-background {
 	width: 100%;
-	// cap max height so it doesn't push all the way down
-	max-height: 260px;
+	aspect-ratio: 1;
+}
+
+.project-shadow {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+	transition: 0.5s all ease;
+}
+
+// turns out you can't override a background in css yet so this is the next best thing
+.zoom-hitbox:hover .project-shadow {
+	opacity: 0.3;
 }
 </style>
