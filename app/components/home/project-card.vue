@@ -1,5 +1,5 @@
 <template>
-	<nuxt-link :to class="card project-card zoom-hitbox">
+	<nuxt-link :to class="card zoom-hitbox">
 		<div class="project-image">
 			<img class="project-background" :src="background" :alt="name" />
 			<div class="project-shadow" />
@@ -8,7 +8,6 @@
 		<div class="card-body">
 			<h2 class="h4 text-white">{{ name }}</h2>
 			<p>{{ description }}</p>
-			<slot name="btns" />
 		</div>
 	</nuxt-link>
 </template>
