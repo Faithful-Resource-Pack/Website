@@ -1,13 +1,5 @@
 @use "./variables" as *;
 
-.btn-container {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
-	// replacement for block
-	align-items: stretch;
-}
-
 /** Bootstrap button styles */
 // a lot of this is probably unused
 .btn {
@@ -75,130 +67,6 @@ a.btn.disabled {
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus {
 	box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-}
-.btn-secondary {
-	color: #fff;
-	background-color: #6c757d;
-	border-color: #6c757d;
-}
-.btn-secondary:hover {
-	color: #fff;
-	background-color: #5a6268;
-	border-color: #545b62;
-}
-.btn-secondary:focus, .btn-secondary.focus {
-	color: #fff;
-	background-color: #5a6268;
-	border-color: #545b62;
-	box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
-}
-.btn-secondary.disabled, .btn-secondary:disabled {
-	color: #fff;
-	background-color: #6c757d;
-	border-color: #6c757d;
-}
-.btn-secondary:not(:disabled):not(.disabled):active,
-.btn-secondary:not(:disabled):not(.disabled).active {
-	color: #fff;
-	background-color: #545b62;
-	border-color: #4e555b;
-}
-.btn-secondary:not(:disabled):not(.disabled):active:focus,
-.btn-secondary:not(:disabled):not(.disabled).active:focus {
-	box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
-}
-.btn-success {
-	color: #fff;
-	background-color: #28a745;
-	border-color: #28a745;
-}
-.btn-success:hover {
-	color: #fff;
-	background-color: #218838;
-	border-color: #1e7e34;
-}
-.btn-success:focus, .btn-success.focus {
-	color: #fff;
-	background-color: #218838;
-	border-color: #1e7e34;
-	box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
-}
-.btn-success.disabled, .btn-success:disabled {
-	color: #fff;
-	background-color: #28a745;
-	border-color: #28a745;
-}
-.btn-success:not(:disabled):not(.disabled):active,
-.btn-success:not(:disabled):not(.disabled).active {
-	color: #fff;
-	background-color: #1e7e34;
-	border-color: #1c7430;
-}
-.btn-success:not(:disabled):not(.disabled):active:focus,
-.btn-success:not(:disabled):not(.disabled).active:focus {
-	box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
-}
-.btn-info {
-	color: #fff;
-	background-color: #17a2b8;
-	border-color: #17a2b8;
-}
-.btn-info:hover {
-	color: #fff;
-	background-color: #138496;
-	border-color: #117a8b;
-}
-.btn-info:focus, .btn-info.focus {
-	color: #fff;
-	background-color: #138496;
-	border-color: #117a8b;
-	box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
-}
-.btn-info.disabled, .btn-info:disabled {
-	color: #fff;
-	background-color: #17a2b8;
-	border-color: #17a2b8;
-}
-.btn-info:not(:disabled):not(.disabled):active,
-.btn-info:not(:disabled):not(.disabled).active {
-	color: #fff;
-	background-color: #117a8b;
-	border-color: #10707f;
-}
-.btn-info:not(:disabled):not(.disabled):active:focus,
-.btn-info:not(:disabled):not(.disabled).active:focus {
-	box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
-}
-.btn-warning {
-	color: #212529;
-	background-color: #ffc107;
-	border-color: #ffc107;
-}
-.btn-warning:hover {
-	color: #212529;
-	background-color: #e0a800;
-	border-color: #d39e00;
-}
-.btn-warning:focus, .btn-warning.focus {
-	color: #212529;
-	background-color: #e0a800;
-	border-color: #d39e00;
-	box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);
-}
-.btn-warning.disabled, .btn-warning:disabled {
-	color: #212529;
-	background-color: #ffc107;
-	border-color: #ffc107;
-}
-.btn-warning:not(:disabled):not(.disabled):active,
-.btn-warning:not(:disabled):not(.disabled).active {
-	color: #212529;
-	background-color: #d39e00;
-	border-color: #c69500;
-}
-.btn-warning:not(:disabled):not(.disabled):active:focus,
-.btn-warning:not(:disabled):not(.disabled).active:focus {
-	box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);
 }
 .btn-light {
 	color: #212529;
@@ -268,14 +136,4 @@ a.btn.disabled {
 	line-height: 1.5;
 	border-radius: 0.3rem;
 	margin-bottom: 1rem;
-}
-
-.btn-lang {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	> i {
-		margin-right: 10px;
-	}
 }

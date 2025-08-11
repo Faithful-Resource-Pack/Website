@@ -12,10 +12,6 @@
 		background: #0c0c0c url("/image/background/bg_dark_background.png") repeat;
 	}
 
-	label, input {
-		color: rgba(255, 255, 255, 0.7);
-	}
-
 	.v-chip--variant-elevated, .v-card--variant-elevated {
 		background: #0c0c0c url("/image/background/bg_dark_background.png") repeat !important;
 	}
@@ -33,22 +29,7 @@
 		text-decoration-color: rgba(255, 255, 255, 0.7) !important;
 	}
 
-	.btn-flag {
-		color: rgba(255, 255, 255, 0.7) !important;
-	}
-
-	.v-menu__content > * {
-		background-color: #0c0c0c !important;
-		& > * {
-			color: rgba(255, 255, 255, 0.7) !important;
-		}
-	}
-
-	.about-container h1 {
-		color: rgba(255, 255, 255, 0.9);
-	}
-
-	// vuetify 3 theming is a bit broken and this fixes most of the issues
+	// fixes dropdown select color (it's always light mode otherwise)
 	.v-input__control {
 		color: #fff !important;
 	}
@@ -59,9 +40,18 @@
 		color: black;
 	}
 
-	.green-background, .blue-background, .pink-background, .orange-background, .yellow-background {
+	.green-background,
+	.blue-background,
+	.pink-background,
+	.orange-background,
+	.yellow-background {
 		background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
 		background-blend-mode: screen;
+	}
+
+	// no background
+	.colored-title {
+		color: rgba(255, 255, 255, 0.9);
 	}
 
 	.green-background .colored-title {

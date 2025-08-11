@@ -12,14 +12,6 @@
 		background: #303030 url("/image/background/bg_light_background.png") repeat;
 	}
 
-	label, input {
-		color: #212529;
-	}
-
-	.v-list-item--highlighted > .v-list-item__content > .v-list-item__title {
-		color: $primary;
-	}
-
 	.v-chip--variant-elevated {
 		background: #303030 url("/image/background/bg_light_background.png") repeat !important;
 	}
@@ -34,7 +26,11 @@
 		}
 	}
 
-	.green-background, .blue-background, .pink-background, .yellow-background, .orange-background {
+	.green-background,
+	.blue-background,
+	.pink-background,
+	.yellow-background,
+	.orange-background {
 		background-blend-mode: multiply;
 		// only use white with a colored background, else use normal text color
 		.colored-title {
