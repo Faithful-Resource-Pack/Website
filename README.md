@@ -7,7 +7,7 @@
 </a>
 <div align="center">
   <h1>Faithful Website</h1>
-  <h3>The official website for the Faithful Resource Packs.</h3>
+  <h3>The official website for the Faithful resource packs.</h3>
 
   ![RepoSize](https://img.shields.io/github/repo-size/Faithful-Resource-Pack/Website?style=flat-square)
   ![Issues](https://img.shields.io/github/issues/Faithful-Resource-Pack/Website?style=flat-square)
@@ -18,7 +18,7 @@
 ---
 
 ## Requirements
-- NodeJS 20+ https://nodejs.org
+- NodeJS v20+ https://nodejs.org
 - pnpm (`corepack enable` + `corepack prepare pnpm@latest --activate`)
 
 ## Running
