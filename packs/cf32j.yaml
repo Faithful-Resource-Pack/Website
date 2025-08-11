@@ -10,6 +10,9 @@ description: |
   <br><br>
   If you've been using Faithful since the old days but prefer the modern look of the new Minecraft textures, you're going to like this pack!
 
+buttons:
+  - { to: /classic32x, text: Check out the original version of this project! }
+
 # todo: move this to downloads page
 downloads:
   Latest Versions:

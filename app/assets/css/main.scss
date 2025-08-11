@@ -290,6 +290,7 @@ a > .banner:hover {
 .button-row {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	gap: 5px;
 
 	// stretch buttons to fill row
@@ -330,7 +331,7 @@ a > .banner:hover {
 }
 @media screen and (min-width: 960px) {
 	.container {
-		max-width: 960px
+		max-width: 960px;
 	}
 	.res-grid-3 {
 		grid-template-columns: repeat(3, 3fr);

@@ -24,7 +24,13 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 			<!-- eslint-disable-next-line vue/no-v-html -->
 			<div v-html="compileMarkdown(description)"></div>
 			<div v-if="buttons" class="button-row">
-				<nuxt-link v-for="{ to, text } in buttons" :key="to" class="btn btn-dark" :to>
+				<nuxt-link
+					v-for="{ to, text } in buttons"
+					:key="to"
+					class="btn btn-dark"
+					:to
+					:style="buttons.length === 1 ? 'width: 50%; flex-grow: 0' : ''"
+				>
 					{{ text }}
 				</nuxt-link>
 			</div>

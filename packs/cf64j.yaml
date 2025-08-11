@@ -12,6 +12,9 @@ description: |
   <br><br>
   [NOTE: Missing textures will be present, as the pack is not complete. In addition, Bedrock edition is in early development and is likely to be broken!]
 
+buttons:
+  - { to: /classic64x, text: Check out the original version of this project! }
+
 # todo: move this to downloads page
 downloads:
   Latest Version:

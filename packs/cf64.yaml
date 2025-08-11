@@ -12,6 +12,9 @@ description: |
   <br><br>
   [NOTE: Missing textures will be present, as the pack is not complete. In addition, Bedrock edition is currently non-existent and will become available at a later date.]
 
+buttons:
+  - { to: /classic64x-jappa, text: Check out the Jappa version of this project! }
+
 # todo: move this to downloads page
 downloads:
   Latest Version:
