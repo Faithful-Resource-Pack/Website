@@ -10,7 +10,7 @@
 						alt="Faithful Wordmark"
 					/>
 				</nuxt-link>
-				<span id="theme-btn" class="navigation-link" @click="$emit('changeTheme')">
+				<span class="theme-btn navigation-link" @click="$emit('changeTheme')">
 					<!-- prevents hydration mismatch (themes are loaded before mount but after ssr) -->
 					<client-only>
 						<template #fallback>Loading Themes...</template>
@@ -213,7 +213,7 @@ footer {
 	justify-content: space-between;
 }
 
-#theme-btn {
+.theme-btn {
 	padding: 1.5rem 0px;
 	font-size: 1.5rem;
 	// align-self: center;

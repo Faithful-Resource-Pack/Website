@@ -10,7 +10,8 @@
 			class="btn block btn-dark mb-5"
 			to="https://database.faithfulpack.net/packs/LICENSE.txt"
 		>
-			Download License
+			<v-icon size="small" icon="mdi-download" />
+			<span class="ml-2">Download License</span>
 		</nuxt-link>
 	</div>
 	<h2>You may do the following:</h2>
