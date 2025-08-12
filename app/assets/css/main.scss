@@ -361,6 +361,7 @@ a > .banner:hover {
 }
 
 .profile-avatar {
+	image-rendering: pixelated;
 	height: 48px;
 	box-shadow: $card-shadow;
 }

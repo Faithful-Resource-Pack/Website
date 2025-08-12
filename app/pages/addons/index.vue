@@ -78,11 +78,18 @@
 					v-for="addon in favAddons"
 					:key="addon.id"
 					:addon
+					:users
 					favorite
 					@toggleFav="toggleFav"
 				/>
 			</client-only>
-			<addon-card v-for="addon in displayedAddons" :key="addon.id" :addon @toggleFav="toggleFav" />
+			<addon-card
+				v-for="addon in displayedAddons"
+				:key="currentSort + addon.id"
+				:addon
+				:users
+				@toggleFav="toggleFav"
+			/>
 		</div>
 		<div ref="bottomElement" />
 	</div>
@@ -112,9 +119,16 @@ export default defineNuxtComponent({
 	},
 	async asyncData() {
 		const { apiURL } = useRuntimeConfig().public;
-		const data = await $fetch(`${apiURL}/addons/approved`);
+		const [addons, users] = await Promise.all([
+			$fetch(`${apiURL}/addons/approved`),
+			$fetch(`${apiURL}/users/names`),
+		]);
 		return {
-			addons: data,
+			addons,
+			users: users.reduce((acc, cur) => {
+				acc[cur.id] = cur;
+				return acc;
+			}, {}),
 		};
 	},
 	data() {

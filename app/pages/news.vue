@@ -38,11 +38,12 @@
 	<div class="res-grid-3">
 		<!-- no need for alt text as the images are decorative (the title is enough) -->
 		<post-card
-			v-for="{ id, permalink, header_img, title } in restPosts"
+			v-for="{ id, permalink, header_img, title, date } in restPosts"
 			:key="id"
 			:to="permalink"
 			:image="header_img"
 			:title
+			:date
 		/>
 	</div>
 </template>

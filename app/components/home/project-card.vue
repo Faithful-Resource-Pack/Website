@@ -1,9 +1,9 @@
 <template>
-	<nuxt-link :to class="card zoom-hitbox">
+	<nuxt-link :to class="card zoom-hitbox zoom-affected">
 		<div class="project-image">
 			<img class="project-background" :src="background" :alt="name" />
 			<div class="project-shadow" />
-			<img class="project-logo zoom-affected" :src="logo" :alt="`${name} logo`" />
+			<img class="project-logo" :src="logo" :alt="`${name} logo`" />
 		</div>
 		<div class="card-body">
 			<h2 class="h4 text-white">{{ name }}</h2>

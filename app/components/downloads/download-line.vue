@@ -122,12 +122,12 @@ export default defineNuxtComponent({
 			return this.labelColors[this.item.file_type] || "green";
 		},
 		date() {
-			if (this.item.date === "rolling") return localDate(Date.now());
+			if (this.item.date === "rolling") return shortDate(Date.now());
 
-			if (this.item.date) return localDate(this.item.date);
+			if (this.item.date) return shortDate(this.item.date);
 
 			if (this.curse && this.curse.uploaded_at)
-				return localDate(this.curse.uploaded_at.split("T")[0]);
+				return shortDate(this.curse.uploaded_at.split("T")[0]);
 
 			// no other way to get dates
 			return "Unknown";

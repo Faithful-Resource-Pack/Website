@@ -13,7 +13,7 @@
 		</template>
 	</hero-section>
 	<div class="container">
-		<h2 class="title mb-4 text-center">Projects</h2>
+		<h2 class="title mb-4 text-center">Our Projects</h2>
 		<div class="res-grid-4 project-reel">
 			<!-- project data and props have the same key names so we can assign to v-bind directly -->
 			<project-card v-for="project in projects" :key="project.name" v-bind="project">
@@ -35,11 +35,11 @@
 		<h2 class="title text-center">Add-ons</h2>
 		<div class="res-grid-4 addon-reel">
 			<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
-			<post-card to="/addons" image="/image/addons/see_more.png">
+			<base-card to="/addons" image="/image/addons/see_more.png">
 				<template #title>
 					<chevron-link aria-label="Go to add-on page">See More</chevron-link>
 				</template>
-			</post-card>
+			</base-card>
 		</div>
 
 		<hr />
@@ -47,11 +47,12 @@
 		<h2 class="title text-center">News</h2>
 		<div class="res-grid-3">
 			<post-card
-				v-for="{ id, permalink, header_img, title } in topPosts"
+				v-for="{ id, permalink, header_img, title, date } in topPosts"
 				:key="id"
 				:to="permalink"
 				:image="header_img"
 				:title
+				:date
 			/>
 		</div>
 		<br />
@@ -68,6 +69,7 @@ import AddonCard from "~/components/addons/addon-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
 import ChevronLink from "~/components/lib/chevron-link.vue";
 import HeroSection from "~/components/lib/hero-section.vue";
+import BaseCard from "~/components/lib/base-card.vue";
 
 const PROJECTS = [
 	{
@@ -105,6 +107,7 @@ export default defineNuxtComponent({
 	components: {
 		HeroSection,
 		ProjectCard,
+		BaseCard,
 		PostCard,
 		AddonCard,
 		DiscordButton,

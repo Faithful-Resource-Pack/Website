@@ -1,76 +1,50 @@
 <template>
-	<div class="card">
-		<nuxt-link class="post-card zoom-hitbox" :to>
-			<img class="post-card-image zoom-affected" :src="image" :alt="alt" loading="lazy" />
-			<div class="post-card-shadow" />
-			<h3 class="post-card-title">
-				<slot name="title">{{ title }}</slot>
-			</h3>
-			<slot name="linked" />
-		</nuxt-link>
-		<slot name="unlinked" />
-	</div>
+	<base-card v-bind="$attrs">
+		<template #title>
+			{{ mainTitle }}
+		</template>
+		<template #body>
+			<p class="mb-2">{{ subtitle }}</p>
+		</template>
+	</base-card>
 </template>
 <script>
+import BaseCard from "./base-card.vue";
+
 export default defineNuxtComponent({
 	name: "post-card",
+	components: {
+		BaseCard,
+	},
 	props: {
-		to: {
-			type: String,
-			required: true,
-		},
-		image: {
-			type: String,
-			required: false,
-			default: "https://database.faithfulpack.net/images/website/posts/placeholder.jpg",
-		},
 		// can use either prop or slot
 		title: {
 			type: String,
-			required: false,
-			default: "",
+			required: true,
 		},
-		alt: {
-			type: String,
-			required: false,
-			default: "",
+		date: {
+			type: [String, Number, Date],
+			required: true,
+		},
+	},
+	computed: {
+		mainTitle() {
+			const split = this.title.split(": ");
+			// single-part title, take whole thing
+			if (split.length === 1) return this.title;
+			return split.slice(1).join(": ");
+		},
+		tags() {
+			// if there's only one part then it just returns itself
+			const split = this.title.split(": ");
+			if (split.length === 1) return "";
+			return split[0];
+		},
+		subtitle() {
+			const date = preciseDate(this.date);
+			if (this.tags) return `${this.tags} • ${date}`;
+			return date;
 		},
 	},
 });
 </script>
-
-<style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
-
-.post-card {
-	position: relative;
-	height: 0;
-	padding-top: 56.25%; // (9 / 16) * 100
-	&:hover {
-		cursor: pointer;
-	}
-}
-.post-card-title {
-	position: absolute;
-	bottom: 0;
-	// https://sass-lang.com/documentation/interpolation/
-	// remove 6px from the bottom to compensate for the intrinsic font padding
-	margin: calc(#{$card-padding} - 6px) $card-padding;
-	color: #fff;
-	font-size: 1.5rem;
-	line-height: 1;
-}
-
-// this is such a stupid css class name when you think about it
-.post-card-image,
-.post-card-shadow {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.post-card-shadow {
-	background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.5));
-}
-</style>

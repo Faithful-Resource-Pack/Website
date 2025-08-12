@@ -1,23 +1,20 @@
 <template>
-	<post-card
+	<base-card
 		:to="`/addons/${addon.slug}`"
 		:image="`https://database.faithfulpack.net/images/addons/${addon.slug}/header`"
-		:title="addon.name"
 		:alt
+		:title-styles
 	>
-		<template #unlinked>
-			<v-btn
-				v-if="!minimal"
-				class="fav-button pa-0"
-				variant="plain"
-				:icon="favIcon"
-				:color="favColor"
-				:aria-label="favAlt"
-				@click="$emit('toggleFav', addon)"
-			/>
+		<template #title>
+			<span class="short-title">{{ addon.name }}</span>
 		</template>
-		<template #linked>
-			<div v-if="!minimal" class="addon-flags">
+		<template v-if="!minimal" #body>
+			<p class="addon-subtitle mb-2">{{ subtitle }}</p>
+			<div class="author-heads">
+				<img v-for="icon in userIcons" :key="icon" :src="icon" data-allow-mismatch="attribute" />
+				<p v-if="firstUsername" class="mb-0 ml-2">By {{ firstUsername }}</p>
+			</div>
+			<div class="addon-flags">
 				<img
 					v-if="addon.options.tags.includes('Java')"
 					:src="java"
@@ -32,26 +29,32 @@
 				/>
 				<img v-if="addon.options.optifine" :src="optifine" alt="requires optifine" loading="lazy" />
 			</div>
-			<div v-if="!minimal" class="addon-res">
-				<p v-if="addon.options.tags.includes('32x')">32x</p>
-				<p v-if="addon.options.tags.includes('64x')">64x</p>
-			</div>
 		</template>
-	</post-card>
+		<template #unlinked>
+			<fav-button v-if="!minimal" :favorite @toggleFav="$emit('toggleFav', addon)" />
+		</template>
+	</base-card>
 </template>
 
 <script>
-import PostCard from "~/components/lib/post-card.vue";
+import BaseCard from "~/components/lib/base-card.vue";
+import FavButton from "./fav-button.vue";
 
 export default defineNuxtComponent({
 	name: "addon-card",
 	components: {
-		PostCard,
+		BaseCard,
+		FavButton,
 	},
 	props: {
 		addon: {
 			type: Object,
 			required: true,
+		},
+		users: {
+			type: Object,
+			required: false,
+			default: () => ({}),
 		},
 		favorite: {
 			type: Boolean,
@@ -73,6 +76,26 @@ export default defineNuxtComponent({
 			java: "/image/addons/java.png",
 		};
 	},
+	methods: {
+		randomHead(seed) {
+			// ten options for ten digits
+			const options = [
+				"X-Alex",
+				"X-Ari",
+				"X-Efe",
+				"X-Kai",
+				"X-Makena",
+				"X-Noor",
+				"X-Steve",
+				"X-Steve",
+				"X-Sunny",
+				"X-Zuri",
+			];
+
+			// guaranteed to have the same head for the same user always (last digit is most random)
+			return options[seed.toString().at(-1)];
+		},
+	},
 	computed: {
 		alt() {
 			// take embed description if exists
@@ -81,15 +104,39 @@ export default defineNuxtComponent({
 			if (this.addon.description.length < 150) return this.addon.description;
 			return this.addon.title;
 		},
-		favColor() {
-			return this.favorite ? "#faa619" : "#ffffffaa";
+		packs() {
+			return ["32x", "64x"].filter((p) => this.addon.options.tags.includes(p));
 		},
-		favIcon() {
-			return this.favorite ? "mdi-star" : "mdi-star-outline";
+		subtitle() {
+			const formattedPacks = this.packs.map((res) => `Faithful ${res}`).join(", ");
+			if (!this.addon.last_updated) return formattedPacks;
+			const date = preciseDate(this.addon.last_updated);
+			if (this.packs.length > 1) return `${formattedPacks}\n${date}`;
+			return `${formattedPacks} • ${date}`;
 		},
-		favAlt() {
-			// icon buttons don't have accessible names
-			return this.favorite ? "Remove from Favorites" : "Add to Favorites";
+		titleStyles() {
+			// https://stackoverflow.com/questions/34294054/how-to-implement-single-line-ellipsis-with-css
+			const styles = {
+				whiteSpace: "nowrap",
+				overflow: "hidden",
+				textOverflow: "ellipsis",
+			};
+			if (this.minimal) styles.marginBottom = 0;
+			return styles;
+		},
+		authors() {
+			return this.addon.authors.map((author) => this.users[author]);
+		},
+		userIcons() {
+			return this.authors.map(
+				(author) => `https://vzge.me/face/64/${author?.uuid || this.randomHead(author.id)}`,
+			);
+		},
+		firstUsername() {
+			const filtered = this.authors.filter((a) => typeof a?.username === "string");
+			// only return if one possible choice (avoid favoritism)
+			if (filtered.length === 1) return filtered[0].username;
+			return "";
 		},
 	},
 });
@@ -98,41 +145,35 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
 
-// search page cards
-.fav-button {
-	position: absolute;
-	top: calc(#{$card-padding} - 16px);
-	left: calc(#{$card-padding} - 16px);
-	opacity: 1 !important;
-	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+.addon-subtitle {
+	white-space: pre-wrap;
+	line-height: 1.2;
+}
+
+.author-heads {
+	flex-grow: 1;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	gap: 6px;
+	img {
+		height: 32px;
+		image-rendering: pixelated;
+	}
 }
 
 .addon-flags {
+	display: flex;
+	flex-direction: column;
 	position: absolute;
 	bottom: $card-padding;
 	right: $card-padding;
-	display: flex;
-	flex-direction: column;
 
 	& > img {
 		height: 32px;
 		width: 32px;
 		border-radius: $border-radius-0x;
 		margin-top: 5px;
-	}
-}
-
-.addon-res {
-	position: absolute;
-	bottom: calc(#{$card-padding} + 14px);
-	left: $card-padding;
-	display: flex;
-	flex-direction: row;
-
-	& > p {
-		margin-bottom: 0;
-		margin-right: 1ch;
-		color: rgba(255, 255, 255, 0.8);
 	}
 }
 </style>

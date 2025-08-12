@@ -9,7 +9,7 @@
 				<img :src="header" class="header-img mb-6" />
 
 				<div v-if="screenshots.length" class="card card-body mb-6">
-					<h2 class="text-center">Gallery</h2>
+					<h2 class="text-center text-white">Gallery</h2>
 					<div class="res-grid-3">
 						<div v-for="image in screenshots" :key="image" class="card cursor-pointer zoom-hitbox">
 							<img class="zoom-affected" :src="image" @click="openModal(image)" />
@@ -25,16 +25,20 @@
 					<compatibility-card :options="addon.options" />
 				</div>
 				<div class="card card-body addon-info">
-					<h2 class="text-center">
+					<h2 class="text-center text-white">
 						{{ Object.keys(authors).length === 1 ? "Author" : "Authors" }}
 					</h2>
 					<author-widget v-for="author in authors" :key="author.id" :author />
 				</div>
 				<div class="card card-body addon-info">
-					<h2 class="text-center">Details</h2>
+					<h2 class="text-center text-white">Details</h2>
 					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
-					<p v-if="addon.last_updated" class="mb-0" :title="preciseDate">
-						Last updated {{ relativeDate }}
+					<p
+						v-if="addon.last_updated"
+						class="mb-0"
+						:title="preciseDate(addon.last_updated, DATETIME_MED)"
+					>
+						Last updated {{ relativeDate(addon.last_updated) }}
 					</p>
 				</div>
 			</v-col>
@@ -64,7 +68,9 @@ import AuthorWidget from "~/components/addon/author-widget.vue";
 import CompatibilityCard from "~/components/addon/compatibility-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
 
+// I hate how ESM can't double destructure like cjs
 import { DateTime } from "luxon";
+const { DATETIME_MED } = DateTime;
 
 export default defineNuxtComponent({
 	components: {
@@ -78,6 +84,7 @@ export default defineNuxtComponent({
 		return {
 			modal: false,
 			modalImage: "",
+			DATETIME_MED,
 		};
 	},
 	setup() {
@@ -126,15 +133,6 @@ export default defineNuxtComponent({
 		},
 		downloads() {
 			return this.files.filter((el) => el.use === "download");
-		},
-		relativeDate() {
-			return DateTime.fromMillis(this.addon.last_updated).toRelative({
-				// fixes one half of the sentence being translated
-				locale: "en",
-			});
-		},
-		preciseDate() {
-			return DateTime.fromMillis(this.addon.last_updated).toLocaleString(DateTime.DATETIME_MED);
 		},
 	},
 });
