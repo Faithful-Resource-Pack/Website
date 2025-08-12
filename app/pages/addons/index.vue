@@ -146,46 +146,47 @@ export default defineNuxtComponent({
 	methods: {
 		// used for both search and favorites
 		filterAddons(addons, sortMethod) {
-			if (this.isSearchEmpty) return addons;
-			return addons
-				.filter((addon) => {
-					if (!addon.name.toLowerCase().includes(this.search.toLowerCase())) return false;
+			if (this.isSearchEmpty) return this.sortAddons(addons, sortMethod);
+			const filtered = addons.filter((addon) => {
+				if (!addon.name.toLowerCase().includes(this.search.toLowerCase())) return false;
 
-					// split types of an addon (pack + edition : pack & edition)
-					// they should really be split but oh well
-					const { localPacks, localEditions } = addon.options.tags.reduce(
-						(acc, tag) => {
-							if (Object.keys(this.packs).includes(tag)) acc.localPacks.push(tag);
-							if (Object.keys(this.editions).includes(tag)) acc.localEditions.push(tag);
-							return acc;
-						},
-						{ localPacks: [], localEditions: [] },
-					);
+				// split types of an addon (pack + edition : pack & edition)
+				// they should really be split but oh well
+				const { localPacks, localEditions } = addon.options.tags.reduce(
+					(acc, tag) => {
+						if (Object.keys(this.packs).includes(tag)) acc.localPacks.push(tag);
+						if (Object.keys(this.editions).includes(tag)) acc.localEditions.push(tag);
+						return acc;
+					},
+					{ localPacks: [], localEditions: [] },
+				);
 
-					const hasEdition = localEditions.some((edition) =>
-						this.selectedEditions.includes(edition),
-					);
-					const hasPack = localPacks.some((pack) => this.selectedPacks.includes(pack));
-					// must fulfill both criteria
-					return hasEdition && hasPack;
-				})
-				.sort((a, b) => {
-					const an = a.name.trim().toLowerCase();
-					const bn = b.name.trim().toLowerCase();
-					const ad = a.last_updated || 0;
-					const bd = b.last_updated || 0;
-					switch (sortMethod) {
-						case "na": // name ascending
-							return an === bn ? 0 : an > bn ? 1 : -1;
-						case "nd": // name descending
-							return an === bn ? 0 : an > bn ? -1 : 1;
-						case "da": // date ascending
-							return ad === bd ? 0 : ad > bd ? 1 : -1;
-						case "dd": // date descending (default)
-						default:
-							return ad === bd ? 0 : ad < bd ? 1 : -1;
-					}
-				});
+				const hasEdition = localEditions.some((edition) => this.selectedEditions.includes(edition));
+				const hasPack = localPacks.some((pack) => this.selectedPacks.includes(pack));
+				// must fulfill both criteria
+				return hasEdition && hasPack;
+			});
+
+			return this.sortAddons(filtered, sortMethod);
+		},
+		sortAddons(addons, sortMethod) {
+			return Array.from(addons).sort((a, b) => {
+				const an = a.name.trim().toLowerCase();
+				const bn = b.name.trim().toLowerCase();
+				const ad = a.last_updated || 0;
+				const bd = b.last_updated || 0;
+				switch (sortMethod) {
+					case "na": // name ascending
+						return an === bn ? 0 : an > bn ? 1 : -1;
+					case "nd": // name descending
+						return an === bn ? 0 : an > bn ? -1 : 1;
+					case "da": // date ascending
+						return ad === bd ? 0 : ad > bd ? 1 : -1;
+					case "dd": // date descending (default)
+					default:
+						return ad === bd ? 0 : ad < bd ? 1 : -1;
+				}
+			});
 		},
 		clearSearch() {
 			// watcher handles query params
