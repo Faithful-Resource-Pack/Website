@@ -259,7 +259,7 @@ hr {
 // more flexible with custom container location (can choose same if needed)
 .zoom-hitbox:hover .zoom-affected,
 .zoom-hitbox:hover.zoom-affected {
-	transform: scale(1.1);
+	transform: scale(1.05);
 	filter: brightness(110%);
 }
 // doesn't actually do display: block because icons mess up otherwise
