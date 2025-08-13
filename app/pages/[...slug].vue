@@ -18,22 +18,22 @@ export default defineNuxtComponent({
 	async asyncData() {
 		const route = useRoute();
 		const { apiURL } = useRuntimeConfig().public;
-		try {
-			// need to double encode (the tsoa experience)
-			const post = await $fetch(
-				`${apiURL}/posts/${encodeURIComponent(encodeURIComponent(route.path))}`,
-			);
+		const availablePosts = await $fetch(`${apiURL}/posts/available`);
+		if (!new Set(availablePosts).has(route.path))
+			throw createError({ statusCode: 404, statusMessage: "Post not found!" });
 
-			const { title, description, header_img } = post;
-			const image =
-				header_img || "https://database.faithfulpack.net/images/website/posts/placeholder.jpg";
+		// need to double encode (the tsoa experience)
+		const post = await $fetch(
+			`${apiURL}/posts/${encodeURIComponent(encodeURIComponent(route.path))}`,
+		);
 
-			useSeoMeta(generateMetaTags({ title, description, image }));
+		const { title, description, header_img } = post;
+		const image =
+			header_img || "https://database.faithfulpack.net/images/website/posts/placeholder.jpg";
 
-			return { post };
-		} catch (err) {
-			throw createError({ statusCode: 404, statusMessage: String(err), fatal: true });
-		}
+		useSeoMeta(generateMetaTags({ title, description, image }));
+
+		return { post };
 	},
 });
 </script>

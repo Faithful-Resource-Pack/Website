@@ -113,7 +113,7 @@ export default defineNuxtComponent({
 				files: addon.files,
 			};
 		} catch (err) {
-			throw createError({ statusCode: 404, statusMessage: String(err), fatal: true });
+			throw createError({ statusCode: 404, statusMessage: String(err) });
 		}
 	},
 	methods: {
