@@ -11,23 +11,29 @@
 		<template v-if="!minimal" #body>
 			<p class="addon-subtitle mb-2">{{ subtitle }}</p>
 			<div class="author-heads">
-				<img v-for="icon in userIcons" :key="icon" :src="icon" data-allow-mismatch="attribute" />
+				<img
+					v-for="{ id, src, username } in authorInfo"
+					:key="id"
+					:src
+					:alt="`${username}'s Avatar`"
+					loading="lazy"
+				/>
 				<p v-if="firstUsername" class="mb-0 ml-2">By {{ firstUsername }}</p>
 			</div>
 			<div class="addon-flags">
 				<img
 					v-if="addon.options.tags.includes('Java')"
 					:src="java"
-					alt="available for Java Edition"
+					alt="Available for Java Edition"
 					loading="lazy"
 				/>
 				<img
 					v-if="addon.options.tags.includes('Bedrock')"
 					:src="bedrock"
-					alt="available for Bedrock Edition"
+					alt="Available for Bedrock Edition"
 					loading="lazy"
 				/>
-				<img v-if="addon.options.optifine" :src="optifine" alt="requires optifine" loading="lazy" />
+				<img v-if="addon.options.optifine" :src="optifine" alt="Requires OptiFine" loading="lazy" />
 			</div>
 		</template>
 		<template #unlinked>
@@ -127,10 +133,13 @@ export default defineNuxtComponent({
 		authors() {
 			return this.addon.authors.map((author) => this.users[author]);
 		},
-		userIcons() {
-			return this.authors.map(
-				(author) => `https://vzge.me/face/64/${author?.uuid || this.randomHead(author.id)}`,
-			);
+		authorInfo() {
+			return this.authors.map((author) => ({
+				id: author.id,
+				// since the randomness is deterministic it's SSR-safe (wahoo)
+				src: `https://vzge.me/face/64/${author?.uuid || this.randomHead(author.id)}`,
+				username: author?.username || "Anonymous author",
+			}));
 		},
 		firstUsername() {
 			const filtered = this.authors.filter((a) => typeof a?.username === "string");
