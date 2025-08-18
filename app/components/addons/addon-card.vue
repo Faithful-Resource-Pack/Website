@@ -10,31 +10,8 @@
 		</template>
 		<template v-if="!minimal" #body>
 			<p class="addon-subtitle mb-2">{{ subtitle }}</p>
-			<div class="author-heads">
-				<img
-					v-for="{ id, src, username } in authorInfo"
-					:key="id"
-					:src
-					:alt="`${username}'s Avatar`"
-					loading="lazy"
-				/>
-				<p v-if="firstUsername" class="mb-0 ml-2">By {{ firstUsername }}</p>
-			</div>
-			<div class="addon-flags">
-				<img
-					v-if="addon.options.tags.includes('Java')"
-					:src="java"
-					alt="Available for Java Edition"
-					loading="lazy"
-				/>
-				<img
-					v-if="addon.options.tags.includes('Bedrock')"
-					:src="bedrock"
-					alt="Available for Bedrock Edition"
-					loading="lazy"
-				/>
-				<img v-if="addon.options.optifine" :src="optifine" alt="Requires OptiFine" loading="lazy" />
-			</div>
+			<author-heads :authors />
+			<addon-flags :options="addon.options" />
 		</template>
 		<template #unlinked>
 			<fav-button v-if="!minimal" :favorite @toggleFav="$emit('toggleFav', addon)" />
@@ -45,12 +22,16 @@
 <script>
 import BaseCard from "~/components/lib/base-card.vue";
 import FavButton from "./fav-button.vue";
+import AuthorHeads from "./author-heads.vue";
+import AddonFlags from "./addon-flags.vue";
 
 export default defineNuxtComponent({
 	name: "addon-card",
 	components: {
 		BaseCard,
 		FavButton,
+		AuthorHeads,
+		AddonFlags,
 	},
 	props: {
 		addon: {
@@ -75,34 +56,14 @@ export default defineNuxtComponent({
 		},
 	},
 	emits: ["toggleFav"],
-	data() {
-		return {
-			optifine: "/image/addons/optifine.png",
-			bedrock: "/image/addons/bedrock.png",
-			java: "/image/addons/java.png",
-		};
-	},
-	methods: {
-		randomHead(seed) {
-			// ten options for ten digits
-			const options = [
-				"X-Alex",
-				"X-Ari",
-				"X-Efe",
-				"X-Kai",
-				"X-Makena",
-				"X-Noor",
-				"X-Steve",
-				"X-Steve",
-				"X-Sunny",
-				"X-Zuri",
-			];
-
-			// guaranteed to have the same head for the same user always (last digit is most random)
-			return options[seed.toString().at(-1)];
-		},
-	},
 	computed: {
+		subtitle() {
+			const formattedPacks = this.packs.map((res) => `Faithful ${res}`).join(", ");
+			if (!this.addon.last_updated) return formattedPacks;
+			const date = preciseDate(this.addon.last_updated);
+			if (this.packs.length > 1) return `${formattedPacks}\n${date}`;
+			return `${formattedPacks} • ${date}`;
+		},
 		alt() {
 			// take embed description if exists
 			if (this.addon.embed_description) return this.addon.embed_description;
@@ -112,13 +73,6 @@ export default defineNuxtComponent({
 		},
 		packs() {
 			return ["32x", "64x"].filter((p) => this.addon.options.tags.includes(p));
-		},
-		subtitle() {
-			const formattedPacks = this.packs.map((res) => `Faithful ${res}`).join(", ");
-			if (!this.addon.last_updated) return formattedPacks;
-			const date = preciseDate(this.addon.last_updated);
-			if (this.packs.length > 1) return `${formattedPacks}\n${date}`;
-			return `${formattedPacks} • ${date}`;
 		},
 		titleStyles() {
 			// https://stackoverflow.com/questions/34294054/how-to-implement-single-line-ellipsis-with-css
@@ -133,56 +87,13 @@ export default defineNuxtComponent({
 		authors() {
 			return this.addon.authors.map((author) => this.users[author]);
 		},
-		authorInfo() {
-			return this.authors.map((author) => ({
-				id: author.id,
-				// since the randomness is deterministic it's SSR-safe (wahoo)
-				src: `https://vzge.me/face/64/${author?.uuid || this.randomHead(author.id)}`,
-				username: author?.username || "Anonymous author",
-			}));
-		},
-		firstUsername() {
-			const filtered = this.authors.filter((a) => typeof a?.username === "string");
-			// only return if one possible choice (avoid favoritism)
-			if (filtered.length === 1) return filtered[0].username;
-			return "";
-		},
 	},
 });
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
-
 .addon-subtitle {
 	white-space: pre-wrap;
 	line-height: 1.2;
-}
-
-.author-heads {
-	flex-grow: 1;
-	display: flex;
-	flex-flow: row wrap;
-	align-items: center;
-	gap: 6px;
-	img {
-		height: 32px;
-		image-rendering: pixelated;
-	}
-}
-
-.addon-flags {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	bottom: $card-padding;
-	right: $card-padding;
-
-	& > img {
-		height: 32px;
-		width: 32px;
-		border-radius: $border-radius-0x;
-		margin-top: 5px;
-	}
 }
 </style>

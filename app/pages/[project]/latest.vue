@@ -21,8 +21,7 @@ export default defineNuxtComponent({
 		const candidates = posts.filter(({ permalink }) => permalink.startsWith(`/${project}`));
 
 		const post = candidates.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-		if (!post)
-			throw createError({ statusCode: 404, statusMessage: "Post not found!" });
+		if (!post) throw createError({ statusCode: 404, statusMessage: "Post not found!" });
 
 		const { title, description, header_img } = post;
 		const image =

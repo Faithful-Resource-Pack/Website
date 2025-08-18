@@ -16,7 +16,7 @@
 	"dependencies": {
 		"isomorphic-dompurify": "^2.26.0",
 		"luxon": "^3.7.1",
-		"marked": "^16.1.2",
+		"marked": "^16.2.0",
 		"nuxt": "^4.0.3",
 		"remove-markdown": "^0.6.2",
 		"sass": "^1.90.0",
