@@ -1,9 +1,9 @@
 <template>
 	<div class="card zoom-hitbox zoom-affected">
-		<nuxt-link class="post-card" :to>
-			<img class="post-card-image" :src="image" :alt loading="lazy" />
-			<div class="post-card-body">
-				<h3 v-if="$slots.title" class="post-card-title" :style="titleStyles">
+		<nuxt-link class="base-card" :to>
+			<img class="base-card-image" :src="image" :alt loading="lazy" />
+			<div class="base-card-body">
+				<h3 v-if="$slots.title" class="base-card-title" :style="titleStyles">
 					<slot name="title" />
 				</h3>
 				<slot name="body" />
@@ -42,7 +42,7 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
 
-.post-card {
+.base-card {
 	display: flex;
 	flex-flow: column nowrap;
 
@@ -52,7 +52,7 @@ export default defineNuxtComponent({
 		cursor: pointer;
 	}
 }
-.post-card-body {
+.base-card-body {
 	flex-grow: 1;
 	height: auto;
 	display: flex;
@@ -61,14 +61,14 @@ export default defineNuxtComponent({
 	line-height: 1;
 }
 
-.post-card-image {
+.base-card-image {
 	position: relative;
 	width: 100%;
 	height: auto;
 	aspect-ratio: 16 / 9;
 }
 
-.post-card-title {
+.base-card-title {
 	color: white;
 	font-size: 1.5rem;
 	// makes gap between subtitle and title smaller

@@ -2,7 +2,7 @@
 	<header class="background">
 		<nav class="navbar-wrapper">
 			<nuxt-link class="navbar-mobile-wordmark" to="/" title="Faithful">
-				<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" loading="lazy" />
+				<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" />
 			</nuxt-link>
 
 			<button
@@ -33,7 +33,6 @@
 						class="navbar-logo-img"
 						src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=128"
 						alt="Faithful Logo"
-						loading="lazy"
 					/>
 				</nuxt-link>
 

@@ -20,14 +20,14 @@
 		"nuxt": "^4.0.3",
 		"remove-markdown": "^0.6.2",
 		"sass": "^1.90.0",
-		"vue": "^3.5.18",
+		"vue": "^3.5.19",
 		"vuetify-nuxt-module": "^0.18.7",
 		"yaml": "^2.8.1"
 	},
 	"devDependencies": {
-		"@nuxt/eslint": "1.8.0",
+		"@nuxt/eslint": "1.9.0",
 		"@types/luxon": "^3.7.1",
-		"eslint": "^9.33.0",
+		"eslint": "^9.34.0",
 		"prettier": "^3.6.2"
 	},
 	"pnpm": {
