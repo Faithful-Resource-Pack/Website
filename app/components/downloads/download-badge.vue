@@ -32,6 +32,8 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/lib/variables" as *;
+
 .download-badge,
 .download-dot {
 	padding: 0.2rem 0.4rem;
@@ -47,42 +49,42 @@ export default defineNuxtComponent({
 }
 
 .github {
-	background-color: rgb(255, 255, 255);
-	color: #111;
+	background: $white;
+	color: $badge-text;
 }
 
 .latest {
-	background-color: #fff;
-	color: #111;
+	background: $white;
+	color: $badge-text;
 }
 
 .version {
-	background-color: #343a40;
-	color: #fff;
+	background: $bg-download;
+	color: $white;
 }
 
 .green {
-	background-color: rgb(80, 202, 24);
-	color: #111;
+	background: $badge-green;
+	color: $badge-text;
 }
 
 .yellow {
-	background-color: rgb(214, 160, 23);
-	color: #111;
+	background: $badge-yellow;
+	color: $badge-text;
 }
 
 .black {
-	background-color: #000;
-	color: #fff;
+	background: $black;
+	color: $white;
 }
 
 .red {
-	background-color: rgb(223, 28, 67);
-	color: #fff;
+	background: $badge-red;
+	color: $white;
 }
 
 .blue {
-	background-color: rgb(44, 139, 222);
-	color: #fff;
+	background: $badge-blue;
+	color: $white;
 }
 </style>

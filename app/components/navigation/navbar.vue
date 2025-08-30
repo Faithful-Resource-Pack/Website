@@ -109,7 +109,7 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	box-shadow: $card-shadow;
+	box-shadow: $primary-shadow;
 }
 // wraps both the mobile dropdown bar and the regular navbar
 .navbar-wrapper {
@@ -136,7 +136,7 @@ header {
 .navbar-logo-img {
 	width: 48px;
 	height: 48px;
-	transition: all 0.5s;
+	transition: $slow;
 	&:hover {
 		transform: scale(1.1);
 	}
@@ -144,15 +144,14 @@ header {
 .navbar-toggler {
 	padding: 0.5rem 1rem;
 	line-height: 1;
-	background-color: transparent;
+	background: transparent;
 	border: none;
-	color: rgba(255, 255, 255, 0.5);
+	color: $translucent-white-medium;
 }
 .navbar-toggler-icon {
 	vertical-align: middle;
 	font-size: 24px;
-	// prevents vuetify retheming it randomly (???)
-	color: rgba(255, 255, 255, 0.5);
+	color: $translucent-white-medium; // prevents vuetify retheming it randomly (???)
 }
 
 // don't display on desktop layout

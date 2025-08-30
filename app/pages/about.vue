@@ -122,7 +122,7 @@ export default defineNuxtComponent({
 
 .about-image {
 	max-height: 384px;
-	filter: drop-shadow(0 10px 10px #00000077);
+	filter: drop-shadow($secondary-shadow);
 }
 
 // override container class for flex content
@@ -166,7 +166,7 @@ export default defineNuxtComponent({
 	white-space: nowrap;
 	text-transform: uppercase;
 	line-height: 1;
-	transition: all 0.2s ease;
+	transition: $medium;
 	&:hover {
 		opacity: 0.66;
 	}
@@ -175,34 +175,34 @@ export default defineNuxtComponent({
 .green-background {
 	// both light/dark mode use white text
 	p {
-		color: #fff;
+		color: $white;
 	}
 
 	.about-button {
-		background: white !important;
-		color: $bg-green !important;
+		background: $white !important;
+		color: $faithful-green-light !important;
 	}
 }
 
 .blue-background {
 	p {
-		color: #fff;
+		color: $white;
 	}
 
 	.about-button {
-		background: white !important;
-		color: $bg-blue !important;
+		background: $white !important;
+		color: $faithful-blue-light !important;
 	}
 }
 
 .pink-background {
 	p {
-		color: #fff;
+		color: $white;
 	}
 
 	.about-button {
-		background: white !important;
-		color: $bg-pink !important;
+		background: $white !important;
+		color: $faithful-pink-light !important;
 	}
 }
 

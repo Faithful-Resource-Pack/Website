@@ -22,7 +22,7 @@ export default {
 	emits: ["toggleFav"],
 	computed: {
 		favColor() {
-			return this.favorite ? "#faa619" : "#ffffffaa";
+			return this.favorite ? "#FAA619" : "#FFFFFFAA";
 		},
 		favIcon() {
 			return this.favorite ? "mdi-star" : "mdi-star-outline";
@@ -40,9 +40,9 @@ export default {
 
 .fav-button {
 	position: absolute;
-	top: calc(#{$card-padding} - 16px);
-	left: calc(#{$card-padding} - 16px);
+	top: calc(#{$primary-padding} - 16px);
+	left: calc(#{$primary-padding} - 16px);
 	opacity: 1 !important;
-	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+	filter: drop-shadow($favorite-shadow);
 }
 </style>

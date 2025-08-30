@@ -3,26 +3,26 @@
 // force lower specificity so page-specific styles don't break
 :where(.light-theme) {
 	.background {
-		background: #303030 url("/image/background/bg_light_background.png") repeat;
+		background: $bg-light url("/image/background/bg_light_background.png") repeat;
 	}
 	.foreground {
-		background: #e5e5e5 url("/image/background/bg_light_foreground.png") repeat;
+		background: $fg-light url("/image/background/bg_light_foreground.png") repeat;
 	}
 	.card, .download-table-padding, header {
-		background: #303030 url("/image/background/bg_light_background.png") repeat;
+		background: $bg-light url("/image/background/bg_light_background.png") repeat;
 	}
 
 	.v-chip--variant-elevated {
-		background: #303030 url("/image/background/bg_light_background.png") repeat !important;
+		background: $bg-light url("/image/background/bg_light_background.png") repeat !important;
 	}
 
 	// about page stuff
 	.about-button {
-		background: black;
-		color: white;
+		background: $black;
+		color: $white;
 		&:hover {
 			// dark preserves blue hover effect, override it here
-			color: white !important;
+			color: $white !important;
 		}
 	}
 
@@ -34,27 +34,27 @@
 		background-blend-mode: multiply;
 		// only use white with a colored background, else use normal text color
 		.colored-title {
-			color: #fff;
+			color: $white;
 		}
 	}
 
 	.green-background {
-		background: $bg-green url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $faithful-green-light url("/image/background/bg_light_foreground.png") repeat !important;
 	}
 
 	.blue-background {
-		background: $bg-blue url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $faithful-blue-light url("/image/background/bg_light_foreground.png") repeat !important;
 	}
 
 	.pink-background {
-		background: $bg-pink url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $faithful-pink-light url("/image/background/bg_light_foreground.png") repeat !important;
 	}
 
 	.yellow-background {
-		background: $bg-yellow url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $faithful-yellow-light url("/image/background/bg_light_foreground.png") repeat !important;
 	}
 
 	.orange-background {
-		background: $bg-orange url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $faithful-orange-light url("/image/background/bg_light_foreground.png") repeat !important;
 	}
 }

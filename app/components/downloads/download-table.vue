@@ -47,7 +47,7 @@ export default defineNuxtComponent({
 @use "~/assets/css/lib/variables" as *;
 
 .download-table-padding {
-	border-radius: $border-radius-0x;
+	border-radius: $border-radius;
 	padding: 0.7rem;
 	overflow-x: auto;
 	margin-bottom: 2rem;
@@ -58,8 +58,8 @@ export default defineNuxtComponent({
 }
 
 .download-heading {
-	background-color: #343a40;
-	border-radius: $border-radius-0x;
+	background: $bg-download;
+	border-radius: $border-radius;
 	width: 100%;
 	th {
 		text-align: center;
@@ -67,7 +67,7 @@ export default defineNuxtComponent({
 		p {
 			font-size: 1.25rem;
 			padding: 0.2rem;
-			color: #ccc;
+			color: $grey;
 			margin-bottom: 0;
 			vertical-align: middle;
 		}

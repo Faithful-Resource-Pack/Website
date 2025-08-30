@@ -1,24 +1,78 @@
-$primary: #007bff;
-$primary-dark: #0056b3;
-$primary-hover: #0069d9;
-$primary-hover-border: #0062cc;
+//// Dark \\\\
+// Primary colors
+$bg-primary-dark: #0C0C0C;
+$fg-primary-dark: #131313;
 
-$blurple: #5865f2;
+// Secondary colors
+$bg-secondary-dark: #0D0D0D;
 
-$border-radius-0x: 6px;
-$border-radius-1x: 12px;
+//// Light \\\\
+$bg-light: #303030;
+$fg-light: #E5E5E5;
 
-$card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-$card-padding: 12px;
+//// Miscellaneous \\\\
+// Standard colors
+$white: #FFFFFF;
+$grey: #CCCCCC;
+$black: #000000;
 
-// bg uses less saturated colors than fg
-$bg-green: #22a331;
-$fg-green: #76c944;
-$bg-blue: #258ed4;
-$fg-blue: #5ebbf9;
-$bg-pink: #cd2d7a;
-$fg-pink: #fc53a5;
-$bg-yellow: #ffd000;
-$fg-yellow: #fff700;
-$bg-orange: #e66000;
-$fg-orange: #ff8340;
+// Page-specific colors
+$bg-coffee: #343434;
+$fg-coffee: #D7D7D7;
+$bg-download: #343A40;
+
+// Banner colors
+$blurple-banner: #5865F2;
+$red-banner: #F44336;
+
+// Badge colors
+$badge-text: #111111;
+$badge-green: #50CA18;
+$badge-yellow: #D6A017;
+$badge-red: #DF1C43;
+$badge-blue: #2C8BDE;
+
+// Translucent colors
+$translucent-white-low: rgba(255, 255, 255, 0.05);
+$translucent-white-medium: rgba(255, 255, 255, 0.5);
+$translucent-white-high: rgba(255, 255, 255, 0.7);
+$translucent-white-higher: rgba(255, 255, 255, 0.75);
+$translucent-white-highest: rgba(255, 255, 255, 0.9);
+$translucent-black: rgba(0, 0, 0, 0.5);
+
+// Faithful colors
+$faithful-text: #212529;
+$faithful-green-light: #22A331;
+$faithful-green-dark: #76C944;
+$faithful-blue-light: #258ED4;
+$faithful-blue-dark: #5EBBF9;
+$faithful-pink-light: #CD2D7A;
+$faithful-pink-dark: #FC53A5;
+$faithful-yellow-light: #FFD000;
+$faithful-yellow-dark: #FFF700;
+$faithful-orange-light: #E66000;
+$faithful-orange-dark: #FF8340;
+
+// Custom colors
+$end: #120E19;
+$link: #007BFF;
+$link-hover: #0056B3;
+$button-hover: #0069D9;
+$button-hover-border: #0062CC;
+
+//// Properties \\\\
+// Shadows
+$primary-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$secondary-shadow: 0 10px 10px rgba(0, 0, 0, 0.465);
+$wordmark-shadow: 0 0 10px #000000;
+$favorite-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+$tag-shadow: rgba(0, 0, 0, 0.75) 0px 4px 10px;
+
+// Transitions
+$fast: all 0.1s ease-out;
+$medium: all 0.2s ease;
+$slow: all 0.5s;
+
+// Values
+$primary-padding: 12px;
+$border-radius: 6px;

@@ -3,41 +3,41 @@
 // force lower specificity so page-specific styles don't break
 :where(.dark-theme) {
 	.background {
-		background: #0c0c0c url("/image/background/bg_dark_background.png") repeat;
+		background: $bg-primary-dark url("/image/background/bg_dark_background.png") repeat;
 	}
 	.foreground {
-		background: #131313 url("/image/background/bg_dark_foreground.png") repeat;
+		background: $fg-primary-dark url("/image/background/bg_dark_foreground.png") repeat;
 	}
 	.card, .download-table-padding, header {
-		background: #0c0c0c url("/image/background/bg_dark_background.png") repeat;
+		background: $bg-primary-dark url("/image/background/bg_dark_background.png") repeat;
 	}
 
 	.v-chip--variant-elevated, .v-card--variant-elevated {
-		background: #0c0c0c url("/image/background/bg_dark_background.png") repeat !important;
+		background: $bg-primary-dark url("/image/background/bg_dark_background.png") repeat !important;
 	}
 
 	.v-expansion-panels--variant-accordion * {
-		background-color: #0c0c0c !important;
+		background: $bg-primary-dark !important;
 	}
 
 	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
-		color: rgba(255, 255, 255, 0.7);
+		color: $translucent-white-high;
 		text-decoration-color: currentColor;
 	}
 
 	.underline-hover:hover {
-		text-decoration-color: rgba(255, 255, 255, 0.7) !important;
+		text-decoration-color: $translucent-white-high !important;
 	}
 
 	// fixes dropdown select color (it's always light mode otherwise)
 	.v-input__control {
-		color: #fff !important;
+		color: $white !important;
 	}
 
 	// about page stuff
 	.about-button {
-		background: white !important;
-		color: black;
+		background: $white !important;
+		color: $black;
 	}
 
 	.green-background,
@@ -45,32 +45,32 @@
 	.pink-background,
 	.orange-background,
 	.yellow-background {
-		background: #0d0d0d url("/image/background/bg_light_background.png") repeat;
+		background: $bg-secondary-dark url("/image/background/bg_light_background.png") repeat;
 		background-blend-mode: screen;
 	}
 
 	// no background
 	.colored-title {
-		color: rgba(255, 255, 255, 0.9);
+		color: $translucent-white-highest;
 	}
 
 	.green-background .colored-title {
-		color: $fg-green !important;
+		color: $faithful-green-dark !important;
 	}
 
 	.blue-background .colored-title {
-		color: $fg-blue !important;
+		color: $faithful-blue-dark !important;
 	}
 
 	.pink-background .colored-title {
-		color: $fg-pink !important;
+		color: $faithful-pink-dark !important;
 	}
 
 	.yellow-background .colored-title {
-		color: $fg-yellow !important;
+		color: $faithful-yellow-dark !important;
 	}
 
 	.orange-background .colored-title {
-		color: $fg-orange !important;
+		color: $faithful-orange-dark !important;
 	}
 }

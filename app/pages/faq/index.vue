@@ -154,18 +154,18 @@ export default defineNuxtComponent({
 	gap: 1rem;
 	&,
 	* {
-		transition: all 0.2s;
+		transition: $medium;
 	}
 }
 
 .faq-card-text {
 	opacity: 1;
-	color: white;
-	text-shadow: $card-shadow;
+	color: $white;
+	text-shadow: $primary-shadow;
 }
 
 .faq-card:hover {
-	filter: drop-shadow(0 10px 10px #00000077);
+	filter: drop-shadow($secondary-shadow);
 	transform: scale(1.05);
 }
 
@@ -173,7 +173,7 @@ export default defineNuxtComponent({
 	font-size: 10rem;
 	* {
 		opacity: 1 !important;
-		color: white !important;
+		color: $white !important;
 	}
 }
 </style>

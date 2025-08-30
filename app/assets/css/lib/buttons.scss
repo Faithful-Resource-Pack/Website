@@ -39,13 +39,13 @@ a.btn.disabled {
 }
 .btn-primary {
 	color: #fff;
-	background-color: $primary;
-	border-color: $primary;
+	background-color: $link;
+	border-color: $link;
 }
 .btn-primary:hover {
 	color: #fff;
-	background-color: $primary-hover;
-	border-color: $primary-hover-border;
+	background-color: $button-hover;
+	border-color: $button-hover-border;
 }
 .btn-primary:focus, .btn-primary.focus {
 	color: #fff;
@@ -55,8 +55,8 @@ a.btn.disabled {
 }
 .btn-primary.disabled, .btn-primary:disabled {
 	color: #fff;
-	background-color: $primary;
-	border-color: $primary;
+	background-color: $link;
+	border-color: $link;
 }
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active {

@@ -41,6 +41,8 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/lib/variables" as *;
+
 .project-image {
 	position: relative;
 	display: inline;
@@ -62,7 +64,7 @@ export default defineNuxtComponent({
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+	background: linear-gradient(transparent, $translucent-black);
 	transition: 0.5s all ease;
 }
 

@@ -57,7 +57,7 @@ export default defineNuxtComponent({
 	height: auto;
 	display: flex;
 	flex-flow: column nowrap;
-	margin: $card-padding;
+	margin: $primary-padding;
 	line-height: 1;
 }
 
@@ -69,9 +69,8 @@ export default defineNuxtComponent({
 }
 
 .base-card-title {
-	color: white;
+	color: $white;
 	font-size: 1.5rem;
-	// makes gap between subtitle and title smaller
-	margin-bottom: 0.25rem;
+	margin-bottom: 0.25rem; // makes gap between subtitle and title smaller
 }
 </style>

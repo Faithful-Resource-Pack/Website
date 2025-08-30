@@ -174,6 +174,8 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/lib/variables" as *;
+
 footer {
 	padding: 1rem;
 	text-align: center;
@@ -222,20 +224,20 @@ footer {
 .footer-wordmark {
 	padding: 5px;
 	// same scaling time/amount as navbar logo
-	transition: all 0.5s;
+	transition: $slow;
 	&:hover {
 		transform: scale(1.1);
 	}
 }
 
 .footer-info-text {
-	color: rgba(255, 255, 255, 0.5);
+	color: $translucent-white-medium;
 	padding: 0.25rem 0;
 	margin: 0;
 }
 
 .footer-title {
-	color: rgba(255, 255, 255, 0.7);
+	color: $translucent-white-high;
 	// fix for icons being too big
 	display: flex;
 	align-items: center;
