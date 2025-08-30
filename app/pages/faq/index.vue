@@ -154,7 +154,7 @@ export default defineNuxtComponent({
 	gap: 1rem;
 	&,
 	* {
-		transition: all 0.2s;
+		transition: all 0.5s ease-in-out;
 	}
 }
 

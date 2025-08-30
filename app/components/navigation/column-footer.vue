@@ -222,7 +222,7 @@ footer {
 .footer-wordmark {
 	padding: 5px;
 	// same scaling time/amount as navbar logo
-	transition: all 0.5s;
+	transition: all 0.5s ease-in-out;
 	&:hover {
 		transform: scale(1.1);
 	}

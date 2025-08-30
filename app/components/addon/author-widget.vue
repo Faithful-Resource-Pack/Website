@@ -44,7 +44,7 @@ export default defineNuxtComponent({
 	color: white !important;
 	opacity: 0.7;
 	margin-right: 0.5rem;
-	transition: all 0.1s ease-out;
+	transition: all 0.1s ease;
 	&:hover {
 		opacity: 1;
 	}

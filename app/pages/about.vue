@@ -166,7 +166,7 @@ export default defineNuxtComponent({
 	white-space: nowrap;
 	text-transform: uppercase;
 	line-height: 1;
-	transition: all 0.2s ease;
+	transition: all 0.15s ease-in-out;
 	&:hover {
 		opacity: 0.66;
 	}
