@@ -33,7 +33,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *; // TODO
+@use "~/assets/css/lib/variables" as *;
 
 #teacup {
 	display: flex;
