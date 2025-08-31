@@ -58,7 +58,7 @@ export default defineNuxtComponent({
 }
 
 .download-heading {
-	background: $bg-download;
+	background: $primary-button;
 	border-radius: $border-radius;
 	width: 100%;
 	th {

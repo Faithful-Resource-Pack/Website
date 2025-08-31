@@ -59,7 +59,7 @@ export default defineNuxtComponent({
 }
 
 .version {
-	background: $bg-download;
+	background: $primary-button;
 	color: white;
 }
 

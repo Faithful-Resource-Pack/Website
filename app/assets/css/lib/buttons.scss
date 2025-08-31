@@ -8,7 +8,7 @@
 	align-items: center;
 	justify-content: center;
 	font-weight: normal;
-	color: #212529;
+	color: $primary-text;
 	text-align: center;
 	vertical-align: middle;
 	user-select: none;
@@ -21,7 +21,7 @@
 	transition: all 0.15s ease-in-out;
 }
 .btn:hover {
-	color: #212529;
+	color: $primary-text;
 	text-decoration: none;
 }
 .btn:focus, .btn.focus {
@@ -69,29 +69,29 @@ a.btn.disabled {
 	box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 .btn-light {
-	color: #212529;
+	color: $primary-text;
 	background-color: #F8F9FA;
 	border-color: #F8F9FA;
 }
 .btn-light:hover {
-	color: #212529;
+	color: $primary-text;
 	background-color: #E2E6EA;
 	border-color: #DAE0E5;
 }
 .btn-light:focus, .btn-light.focus {
-	color: #212529;
+	color: $primary-text;
 	background-color: #E2E6EA;
 	border-color: #DAE0E5;
 	box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
 }
 .btn-light.disabled, .btn-light:disabled {
-	color: #212529;
+	color: $primary-text;
 	background-color: #F8F9FA;
 	border-color: #F8F9FA;
 }
 .btn-light:not(:disabled):not(.disabled):active,
 .btn-light:not(:disabled):not(.disabled).active {
-	color: #212529;
+	color: $primary-text;
 	background-color: #DAE0E5;
 	border-color: #D3D9DF;
 }
@@ -101,8 +101,8 @@ a.btn.disabled {
 }
 .btn-dark {
 	color: white;
-	background-color: #343A40;
-	border-color: #343A40;
+	background-color: $primary-button;
+	border-color: $primary-button;
 }
 .btn-dark:hover {
 	color: white;
@@ -117,8 +117,8 @@ a.btn.disabled {
 }
 .btn-dark.disabled, .btn-dark:disabled {
 	color: white;
-	background-color: #343A40;
-	border-color: #343A40;
+	background-color: $primary-button;
+	border-color: $primary-button;
 }
 .btn-dark:not(:disabled):not(.disabled):active,
 .btn-dark:not(:disabled):not(.disabled).active {

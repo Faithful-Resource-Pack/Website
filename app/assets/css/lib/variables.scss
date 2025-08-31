@@ -1,25 +1,28 @@
 //// Dark \\\\
-// Primary colors
 $bg-dark: #0C0C0C;
 $fg-dark: #131313;
+$fg-green: #76C945;
+$fg-blue: #5EBBF9;
+$fg-pink: #FC53A5;
+$fg-yellow: #FFF700;
+$fg-orange: #FF8340;
 
 //// Light \\\\
 $bg-light: #303030;
 $fg-light: #E5E5E5;
+$bg-green: #22A331;
+$bg-blue: #258ED4;
+$bg-pink: #CD2D7A;
+$bg-yellow: #FFD000;
+$bg-orange: #E66000;
 
 //// Miscellaneous \\\\
 // Standard colors
 $grey: #CCCCCC;
 
-// Page-specific colors
-$bg-download: #343A40;
-
-// Badge colors
-$badge-text: #111111;
-$badge-green: #50CA18;
-$badge-yellow: #D6A017;
-$badge-red: #DF1C43;
-$badge-blue: #2C8BDE;
+// Primary colors
+$primary-button: #343A40;
+$primary-text: #212529;
 
 // Translucent colors
 $translucent-white-low: rgba(255, 255, 255, 0.05);
@@ -29,24 +32,20 @@ $translucent-white-higher: rgba(255, 255, 255, 0.75);
 $translucent-white-highest: rgba(255, 255, 255, 0.9);
 $translucent-black: rgba(0, 0, 0, 0.5);
 
-// Faithful colors
-$primary-text: #212529;
-$bg-green: #22A331;
-$fg-green: #76C945;
-$bg-blue: #258ED4;
-$fg-blue: #5EBBF9;
-$bg-pink: #CD2D7A;
-$fg-pink: #FC53A5;
-$bg-yellow: #FFD000;
-$fg-yellow: #FFF700;
-$bg-orange: #E66000;
-$fg-orange: #FF8340;
+// Link colors
+$link: #007BFF;
+$link-hover: #0056B3;
+
+// Badge colors
+$badge-text: #111111;
+$badge-green: #50CA18;
+$badge-yellow: #D6A017;
+$badge-red: #DF1C43;
+$badge-blue: #2C8BDE;
 
 // Custom colors
 $blurple: #5865F2;
 $red: #F44336;
-$link: #007BFF;
-$link-hover: #0056B3;
 
 //// Properties \\\\
 // Shadows

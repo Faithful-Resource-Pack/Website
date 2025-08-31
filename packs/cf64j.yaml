@@ -15,7 +15,7 @@ description: |
 buttons:
   - { to: /classic64x, text: Check out the original version of this project! }
 
-# todo: move this to downloads page
+# TODO: move this to downloads page
 downloads:
   Latest Version:
     1.21.5 for Java Edition: https://database.faithfulpack.net/packs/Classic-64x-Java/Jappa/Classic%20Faithful%2064x%20Jappa%20-%20java-latest.zip
