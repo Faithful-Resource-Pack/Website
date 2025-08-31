@@ -180,7 +180,7 @@ export default defineNuxtComponent({
 
 	.about-button {
 		background: white !important;
-		color: $faithful-green-light !important;
+		color: $bg-green !important;
 	}
 }
 
@@ -191,7 +191,7 @@ export default defineNuxtComponent({
 
 	.about-button {
 		background: white !important;
-		color: $faithful-blue-light !important;
+		color: $bg-blue !important;
 	}
 }
 
@@ -202,7 +202,7 @@ export default defineNuxtComponent({
 
 	.about-button {
 		background: white !important;
-		color: $faithful-pink-light !important;
+		color: $bg-pink !important;
 	}
 }
 
