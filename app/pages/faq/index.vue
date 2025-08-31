@@ -154,7 +154,7 @@ export default defineNuxtComponent({
 	gap: 1rem;
 	&,
 	* {
-		transition: $medium;
+		transition: $transition-medium;
 	}
 }
 

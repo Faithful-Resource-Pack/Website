@@ -46,7 +46,7 @@ export default defineNuxtComponent({
 	color: white !important;
 	opacity: 0.7;
 	margin-right: 0.5rem;
-	transition: $fast;
+	transition: $transition-fast;
 	&:hover {
 		opacity: 1;
 	}

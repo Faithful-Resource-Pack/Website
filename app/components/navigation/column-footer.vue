@@ -223,7 +223,7 @@ footer {
 
 .footer-wordmark {
 	padding: 5px;
-	transition: $slow; // same scaling time as navbar logo
+	transition: $transition-slow; // same scaling time as navbar logo
 	&:hover {
 		transform: scale(1.1);
 	}

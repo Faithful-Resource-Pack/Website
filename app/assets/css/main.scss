@@ -203,7 +203,7 @@ hr {
 	flex-direction: row;
 	align-items: center;
 	padding: 0.25rem 1rem;
-	transition: $fast;
+	transition: $transition-fast;
 	padding-right: 0;
 	padding-left: 0;
 	color: $translucent-white-medium;
@@ -253,7 +253,7 @@ hr {
 	color: $translucent-white-highest;
 }
 .zoom-affected {
-	transition: $slow;
+	transition: $transition-slow;
 }
 // more flexible with custom container location (can choose same if needed)
 .zoom-hitbox:hover .zoom-affected,

@@ -166,7 +166,7 @@ export default defineNuxtComponent({
 	white-space: nowrap;
 	text-transform: uppercase;
 	line-height: 1;
-	transition: $medium;
+	transition: $transition-medium;
 	&:hover {
 		opacity: 0.66;
 	}

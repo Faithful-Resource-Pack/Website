@@ -60,9 +60,9 @@ $secondary-shadow: 0 10px 10px rgba(0, 0, 0, 0.465);
 $wordmark-shadow: 0 0 10px #000000;
 
 // Transitions
-$fast: all 0.1s ease;
-$medium: all 0.15s ease-in-out;
-$slow: all 0.5s ease-in-out;
+$transition-fast: all 0.1s ease;
+$transition-medium: all 0.15s ease-in-out;
+$transition-slow: all 0.5s ease-in-out;
 
 // Values
 $primary-padding: 12px;

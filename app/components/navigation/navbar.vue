@@ -136,7 +136,7 @@ header {
 .navbar-logo-img {
 	width: 48px;
 	height: 48px;
-	transition: $slow;
+	transition: $transition-slow;
 	&:hover {
 		transform: scale(1.1);
 	}
