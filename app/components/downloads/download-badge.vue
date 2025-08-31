@@ -49,18 +49,18 @@ export default defineNuxtComponent({
 }
 
 .github {
-	background: $white;
+	background: white;
 	color: $badge-text;
 }
 
 .latest {
-	background: $white;
+	background: white;
 	color: $badge-text;
 }
 
 .version {
 	background: $bg-download;
-	color: $white;
+	color: white;
 }
 
 .green {
@@ -74,17 +74,17 @@ export default defineNuxtComponent({
 }
 
 .black {
-	background: $black;
-	color: $white;
+	background: black;
+	color: white;
 }
 
 .red {
 	background: $badge-red;
-	color: $white;
+	color: white;
 }
 
 .blue {
 	background: $badge-blue;
-	color: $white;
+	color: white;
 }
 </style>

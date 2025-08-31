@@ -269,13 +269,13 @@ hr {
 .banner {
 	font-size: 25px;
 	padding: 16px;
-	color: $white;
+	color: white;
 	text-align: center;
 	border-radius: $border-radius;
 	box-shadow: $primary-shadow;
 }
 .banner a {
-	color: $white !important; // vue moment
+	color: white !important; // vue moment
 }
 a > .banner:hover {
 	text-decoration: underline;

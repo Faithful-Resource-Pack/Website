@@ -43,7 +43,7 @@ export default defineNuxtComponent({
 @use "~/assets/css/lib/variables" as *;
 
 .author-media {
-	color: $white !important;
+	color: white !important;
 	opacity: 0.7;
 	margin-right: 0.5rem;
 	transition: $fast;

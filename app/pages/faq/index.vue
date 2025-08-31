@@ -160,7 +160,7 @@ export default defineNuxtComponent({
 
 .faq-card-text {
 	opacity: 1;
-	color: $white;
+	color: white;
 	text-shadow: $primary-shadow;
 }
 
@@ -173,7 +173,7 @@ export default defineNuxtComponent({
 	font-size: 10rem;
 	* {
 		opacity: 1 !important;
-		color: $white !important;
+		color: white !important;
 	}
 }
 </style>

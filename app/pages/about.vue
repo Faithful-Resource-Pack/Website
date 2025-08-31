@@ -175,33 +175,33 @@ export default defineNuxtComponent({
 .green-background {
 	// both light/dark mode use white text
 	p {
-		color: $white;
+		color: white;
 	}
 
 	.about-button {
-		background: $white !important;
+		background: white !important;
 		color: $faithful-green-light !important;
 	}
 }
 
 .blue-background {
 	p {
-		color: $white;
+		color: white;
 	}
 
 	.about-button {
-		background: $white !important;
+		background: white !important;
 		color: $faithful-blue-light !important;
 	}
 }
 
 .pink-background {
 	p {
-		color: $white;
+		color: white;
 	}
 
 	.about-button {
-		background: $white !important;
+		background: white !important;
 		color: $faithful-pink-light !important;
 	}
 }

@@ -59,7 +59,7 @@ export default defineNuxtComponent({
 }
 
 .hero-tagline {
-	color: $white;
+	color: white;
 	text-shadow: $tag-shadow;
 }
 

@@ -18,11 +18,11 @@
 
 	// about page stuff
 	.about-button {
-		background: $black;
-		color: $white;
+		background: black;
+		color: white;
 		&:hover {
 			// dark preserves blue hover effect, override it here
-			color: $white !important;
+			color: white !important;
 		}
 	}
 
@@ -34,7 +34,7 @@
 		background-blend-mode: multiply;
 		// only use white with a colored background, else use normal text color
 		.colored-title {
-			color: $white;
+			color: white;
 		}
 	}
 
