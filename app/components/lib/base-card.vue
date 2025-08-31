@@ -71,6 +71,7 @@ export default defineNuxtComponent({
 .base-card-title {
 	color: white;
 	font-size: 1.5rem;
-	margin-bottom: 0.25rem; // makes gap between subtitle and title smaller
+	// makes gap between subtitle and title smaller
+	margin-bottom: 0.25rem;
 }
 </style>

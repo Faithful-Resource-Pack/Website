@@ -74,7 +74,8 @@ ol, ul, dl {
 	margin-top: 0;
 	margin-bottom: 1rem;
 	list-style-position: inside;
-	padding-left: 40px !important; // vuetify fix
+	// vuetify fix
+	padding-left: 40px !important;
 }
 a {
 	color: $link;
