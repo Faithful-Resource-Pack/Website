@@ -3,21 +3,21 @@
 // force lower specificity so page-specific styles don't break
 :where(.dark-theme) {
 	.background {
-		background: $bg-primary-dark url("/image/background/bg_dark_background.png") repeat;
+		background: $bg-dark url("/image/background/bg_dark_background.png") repeat;
 	}
 	.foreground {
-		background: $fg-primary-dark url("/image/background/bg_dark_foreground.png") repeat;
+		background: $fg-dark url("/image/background/bg_dark_foreground.png") repeat;
 	}
 	.card, .download-table-padding, header {
-		background: $bg-primary-dark url("/image/background/bg_dark_background.png") repeat;
+		background: $bg-dark url("/image/background/bg_dark_background.png") repeat;
 	}
 
 	.v-chip--variant-elevated, .v-card--variant-elevated {
-		background: $bg-primary-dark url("/image/background/bg_dark_background.png") repeat !important;
+		background: $bg-dark url("/image/background/bg_dark_background.png") repeat !important;
 	}
 
 	.v-expansion-panels--variant-accordion * {
-		background: $bg-primary-dark !important;
+		background: $bg-dark !important;
 	}
 
 	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
