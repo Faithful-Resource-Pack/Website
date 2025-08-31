@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 						"Minecraft, Java, Bedrock, Resource, Pack, Resource-Pack, Resourcepack, Compliance, Mods, Faithful, 32x, x32, 32x32, 64x, x64, 64x64, Classic Faithful, Classicfaithful, Emulated Vattic, Emulatedvattic",
 				},
 				{ name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#00552B" },
-				{ name: "theme-color", media: "(prefers-color-scheme: light)", content: "#76C944" },
+				{ name: "theme-color", media: "(prefers-color-scheme: light)", content: "#76C945" },
 				{ name: "apple-mobile-web-app-capable", content: "no" },
 				{ name: "apple-mobile-web-app-title", content: "Faithful" },
 			],

@@ -43,7 +43,7 @@ $translucent-black: rgba(0, 0, 0, 0.5);
 // Faithful colors
 $faithful-text: #212529;
 $faithful-green-light: #22A331;
-$faithful-green-dark: #76C944;
+$faithful-green-dark: #76C945;
 $faithful-blue-light: #258ED4;
 $faithful-blue-dark: #5EBBF9;
 $faithful-pink-light: #CD2D7A;
@@ -69,9 +69,9 @@ $favorite-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 $tag-shadow: rgba(0, 0, 0, 0.75) 0px 4px 10px;
 
 // Transitions
-$fast: all 0.1s ease-out;
-$medium: all 0.2s ease;
-$slow: all 0.5s;
+$fast: all 0.1s ease;
+$medium: all 0.15s ease-in-out;
+$slow: all 0.5s ease-in-out;
 
 // Values
 $primary-padding: 12px;
