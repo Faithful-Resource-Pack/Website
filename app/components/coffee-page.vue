@@ -52,7 +52,7 @@ export default defineNuxtComponent({
 #handle,
 #handle div::after {
 	border-radius: 50% 0 0 50%;
-	border: 2px solid $bg-coffee;
+	border: 2px solid #343434;
 }
 
 #handle {
@@ -74,6 +74,6 @@ export default defineNuxtComponent({
 
 #handle > div {
 	border-radius: 50%;
-	border: 10px solid $fg-coffee;
+	border: 10px solid #D7D7D7;
 }
 </style>
