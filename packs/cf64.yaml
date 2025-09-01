@@ -15,7 +15,7 @@ description: |
 buttons:
   - { to: /classic64x-jappa, text: Check out the Jappa version of this project! }
 
-# todo: move this to downloads page
+# TODO: move this to downloads page
 downloads:
   Latest Version:
     1.21.5 for Java Edition (PMC): https://www.planetminecraft.com/texture-pack/classic-faithful-64x-programmer-art/download/file/18681992/

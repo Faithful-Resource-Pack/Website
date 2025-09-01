@@ -143,12 +143,12 @@ export default defineNuxtComponent({
 			fav: {},
 			search: "",
 			editions: {
-				Java: { color: "#1dd96a", icon: "mdi-minecraft", text: "Java Edition" },
-				Bedrock: { color: "#eee", icon: "mdi-cube", text: "Bedrock Edition" },
+				Java: { color: "#1DD96A", icon: "mdi-minecraft", text: "Java Edition" },
+				Bedrock: { color: "#EEEEEE", icon: "mdi-cube", text: "Bedrock Edition" },
 			},
 			packs: {
-				"32x": { color: "#00a2ff", icon: "faithful", text: "Faithful 32x" },
-				"64x": { color: "#ff0092", icon: "faithful", text: "Faithful 64x" },
+				"32x": { color: "#00A2FF", icon: "faithful", text: "Faithful 32x" },
+				"64x": { color: "#FF0092", icon: "faithful", text: "Faithful 64x" },
 			},
 			shownResults: DISPLAYED_ADDONS_COUNT,
 			rawSelectedEditions: [],

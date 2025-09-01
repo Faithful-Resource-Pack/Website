@@ -33,6 +33,8 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/lib/variables" as *;
+
 #teacup {
 	display: flex;
 	align-items: center;
@@ -72,6 +74,6 @@ export default defineNuxtComponent({
 
 #handle > div {
 	border-radius: 50%;
-	border: 10px solid #d7d7d7;
+	border: 10px solid #D7D7D7;
 }
 </style>

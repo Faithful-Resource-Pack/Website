@@ -42,13 +42,13 @@ export default {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	bottom: $card-padding;
-	right: $card-padding;
+	bottom: $primary-padding;
+	right: $primary-padding;
 
 	& > img {
 		height: 32px;
 		width: 32px;
-		border-radius: $border-radius-0x;
+		border-radius: $border-radius;
 		margin-top: 5px;
 	}
 }

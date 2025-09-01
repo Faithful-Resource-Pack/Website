@@ -46,7 +46,7 @@ export default defineNuxtComponent({
 		return {
 			// huge pain to copy/paste everywhere
 			badgeProps: {
-				color: "#007bff",
+				color: "#007BFF",
 				variant: "flat",
 				size: "large",
 				density: "compact",
