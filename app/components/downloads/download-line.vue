@@ -158,7 +158,7 @@ td * {
 }
 
 .download-item:hover {
-	background: $translucent-white-low;
+	background: rgba(255, 255, 255, 0.05);
 }
 
 .download-name {

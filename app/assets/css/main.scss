@@ -209,7 +209,7 @@ hr {
 	padding-left: 0;
 	color: $translucent-white-medium;
 	&:hover, &:focus {
-		color: $translucent-white-higher;
+		color: rgba(255, 255, 255, 0.75);
 		transform: scale(0.95);
 		cursor: pointer;
 	}
