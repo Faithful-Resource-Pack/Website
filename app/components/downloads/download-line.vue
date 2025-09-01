@@ -148,7 +148,7 @@ td {
 // all text except for links use this
 td,
 td * {
-	color: $grey;
+	color: $secondary-text;
 	margin-bottom: 0;
 }
 
