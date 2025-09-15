@@ -231,13 +231,13 @@ footer {
 }
 
 .footer-info-text {
-	color: $translucent-white-medium;
+	color: $navigation-text;
 	padding: 0.25rem 0;
 	margin: 0;
 }
 
 .footer-title {
-	color: $translucent-white-high;
+	color: $secondary-text;
 	// fix for icons being too big
 	display: flex;
 	align-items: center;

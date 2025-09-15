@@ -146,13 +146,13 @@ header {
 	line-height: 1;
 	background: transparent;
 	border: none;
-	color: $translucent-white-medium;
+	color: $navigation-text;
 }
 .navbar-toggler-icon {
 	vertical-align: middle;
 	font-size: 24px;
 	// prevents vuetify retheming it randomly (???)
-	color: $translucent-white-medium;
+	color: $navigation-text;
 }
 
 // don't display on desktop layout

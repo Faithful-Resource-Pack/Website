@@ -21,12 +21,12 @@
 	}
 
 	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
-		color: $translucent-white-high;
+		color: $secondary-text;
 		text-decoration-color: currentColor;
 	}
 
 	.underline-hover:hover {
-		text-decoration-color: $translucent-white-high !important;
+		text-decoration-color: $secondary-text !important;
 	}
 
 	// fixes dropdown select color (it's always light mode otherwise)
@@ -51,7 +51,7 @@
 
 	// no background
 	.colored-title {
-		color: $translucent-white-highest;
+		color: white;
 	}
 
 	.green-background .colored-title {

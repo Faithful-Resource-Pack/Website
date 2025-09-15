@@ -8,6 +8,7 @@ $fg-yellow: #FFF700;
 $fg-orange: #FF8340;
 
 /** LIGHT */
+$text-light: #212529;
 $bg-light: #303030;
 $fg-light: #E5E5E5;
 $bg-green: #22A331;
@@ -20,30 +21,18 @@ $bg-orange: #E66000;
  * MISCELLANEOUS
  * Primary colors
  */
+$primary-text: #CCCCCC;
 $primary-button: #343A40;
-$primary-text: #212529;
 
 /** Secondary colors */
-$secondary-text: #CCCCCC;
+$secondary-text: rgba(255, 255, 255, 0.7);
 
-/** Translucent colors */
-$translucent-white-medium: rgba(255, 255, 255, 0.5);
-$translucent-white-high: rgba(255, 255, 255, 0.7);
-$translucent-white-highest: rgba(255, 255, 255, 0.9);
+/** Navigation colors */
+$navigation-text: rgba(255, 255, 255, 0.5);
 
 /** Link colors */
 $link: #007BFF;
 $link-hover: #0056B3;
-
-/** Badge colors */
-$badge-green: #50CA18;
-$badge-yellow: #D6A017;
-$badge-red: #DF1C43;
-$badge-blue: #2C8BDE;
-
-/** Custom colors */
-$blurple: #5865F2;
-$red: #F44336;
 
 /**
  * PROPERTIES
@@ -52,6 +41,7 @@ $red: #F44336;
 $primary-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 $secondary-shadow: 0 10px 10px rgba(0, 0, 0, 0.465);
 $wordmark-shadow: 0 0 10px #000000;
+$shadow-color: rgba(0, 0, 0, 0.5);
 
 /** Transitions */
 $transition-fast: all 0.1s ease;

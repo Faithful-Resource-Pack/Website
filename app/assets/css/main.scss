@@ -7,6 +7,9 @@
 	src: url("/font/Faithful.ttf") format("truetype");
 }
 
+$discord: #5865F2;
+$warning: #F44336;
+
 /* Basic layout */
 
 /*!
@@ -39,7 +42,7 @@ html {
 body {
 	margin: 0;
 	font-size: 1.1rem;
-	color: $primary-text;
+	color: $text-light;
 }
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
@@ -207,9 +210,9 @@ hr {
 	transition: $transition-fast;
 	padding-right: 0;
 	padding-left: 0;
-	color: $translucent-white-medium;
+	color: $navigation-text;
 	&:hover, &:focus {
-		color: rgba(255, 255, 255, 0.75);
+		color: $secondary-text;
 		transform: scale(0.95);
 		cursor: pointer;
 	}
@@ -248,10 +251,10 @@ hr {
 	font-size: 1.25rem;
 }
 .card, .card p, .card > h2 > a, .card-text {
-	color: $translucent-white-high;
+	color: $secondary-text;
 }
 .card > h2 > a:hover {
-	color: $translucent-white-highest;
+	color: white;
 }
 .zoom-affected {
 	transition: $transition-slow;
@@ -281,11 +284,11 @@ hr {
 a > .banner:hover {
 	text-decoration: underline;
 }
-.red.banner {
-	background: $red;
+.warning.banner {
+	background: $warning;
 }
-.blurple.banner {
-	background: $blurple;
+.discord.banner {
+	background: $discord;
 }
 .button-row {
 	display: flex;

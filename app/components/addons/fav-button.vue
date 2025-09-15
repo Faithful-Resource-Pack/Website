@@ -43,6 +43,6 @@ export default {
 	top: calc(#{$primary-padding} - 16px);
 	left: calc(#{$primary-padding} - 16px);
 	opacity: 1 !important;
-	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+	filter: drop-shadow(0 0 5px $shadow-color);
 }
 </style>

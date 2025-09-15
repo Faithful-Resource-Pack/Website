@@ -1,7 +1,7 @@
 <template>
 	<h1 class="title my-5 text-center">Faithful News</h1>
 
-	<p v-if="!posts.length" class="red banner">
+	<p v-if="!posts.length" class="warning banner">
 		{{ error ? `Error: ${error}` : "No posts found" }}
 	</p>
 	<div v-else class="top-news pb-5">

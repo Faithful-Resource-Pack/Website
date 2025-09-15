@@ -34,6 +34,12 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
 
+$badge-text: #111111;
+$badge-green: #50CA18;
+$badge-yellow: #D6A017;
+$badge-red: #DF1C43;
+$badge-blue: #2C8BDE;
+
 .download-badge,
 .download-dot {
 	padding: 0.2rem 0.4rem;
@@ -50,12 +56,12 @@ export default defineNuxtComponent({
 
 .github {
 	background: white;
-	color: #111111;
+	color: $badge-text;
 }
 
 .latest {
 	background: white;
-	color: #111111;
+	color: $badge-text;
 }
 
 .version {
@@ -65,12 +71,12 @@ export default defineNuxtComponent({
 
 .green {
 	background: $badge-green;
-	color: #111111;
+	color: $badge-text;
 }
 
 .yellow {
 	background: $badge-yellow;
-	color: #111111;
+	color: $badge-text;
 }
 
 .black {

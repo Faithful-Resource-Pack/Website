@@ -35,6 +35,9 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
 
+$handle: #D7D7D7;
+$handle-border: #343434;
+
 #teacup {
 	display: flex;
 	align-items: center;
@@ -52,7 +55,7 @@ export default defineNuxtComponent({
 #handle,
 #handle div::after {
 	border-radius: 50% 0 0 50%;
-	border: 2px solid #343434;
+	border: 2px solid $handle-border;
 }
 
 #handle {
@@ -74,6 +77,6 @@ export default defineNuxtComponent({
 
 #handle > div {
 	border-radius: 50%;
-	border: 10px solid #D7D7D7;
+	border: 10px solid $handle;
 }
 </style>

@@ -67,7 +67,7 @@ export default defineNuxtComponent({
 		p {
 			font-size: 1.25rem;
 			padding: 0.2rem;
-			color: $secondary-text;
+			color: $primary-text;
 			margin-bottom: 0;
 			vertical-align: middle;
 		}
