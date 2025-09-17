@@ -1,6 +1,8 @@
 <template>
 	<div class="text-center">
-		<h1 class="title my-5">Faithful Statistics</h1>
+		<h1 class="title mt-5">Faithful Statistics</h1>
+		<h2 class="text-center pb-5">Under Construction!</h2>
+
 		<h2 class="subtitle my-5">Main Packs</h2>
 		<div class="stats-container">
 			<h3>Faithful 32x Releases</h3>
