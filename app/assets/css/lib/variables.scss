@@ -1,24 +1,53 @@
-$primary: #007bff;
-$primary-dark: #0056b3;
-$primary-hover: #0069d9;
-$primary-hover-border: #0062cc;
+/** DARK */
+$bg-dark: #0C0C0C;
+$fg-dark: #131313;
+$fg-green: #76C945;
+$fg-blue: #5EBBF9;
+$fg-pink: #FC53A5;
+$fg-yellow: #FFF700;
+$fg-orange: #FF8340;
 
-$blurple: #5865f2;
+/** LIGHT */
+$text-light: #212529;
+$bg-light: #303030;
+$fg-light: #E5E5E5;
+$bg-green: #22A331;
+$bg-blue: #258ED4;
+$bg-pink: #CD2D7A;
+$bg-yellow: #FFD000;
+$bg-orange: #E66000;
 
-$border-radius-0x: 6px;
-$border-radius-1x: 12px;
+/**
+ * MISCELLANEOUS
+ * Primary colors
+ */
+$primary-text: #CCCCCC;
+$primary-button: #343A40;
 
-$card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-$card-padding: 12px;
+/** Secondary colors */
+$secondary-text: rgba(255, 255, 255, 0.7);
 
-// bg uses less saturated colors than fg
-$bg-green: #22a331;
-$fg-green: #76c945;
-$bg-blue: #258ed4;
-$fg-blue: #5ebbf9;
-$bg-pink: #cd2d7a;
-$fg-pink: #fc53a5;
-$bg-yellow: #ffd000;
-$fg-yellow: #fff700;
-$bg-orange: #e66000;
-$fg-orange: #ff8340;
+/** Navigation colors */
+$navigation-text: rgba(255, 255, 255, 0.5);
+
+/** Link colors */
+$link: #007BFF;
+$link-hover: #0056B3;
+
+/**
+ * PROPERTIES
+ * Shadows
+ */
+$primary-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$secondary-shadow: 0 10px 10px rgba(0, 0, 0, 0.465);
+$wordmark-shadow: 0 0 10px #000000;
+$shadow-color: rgba(0, 0, 0, 0.5);
+
+/** Transitions */
+$transition-fast: all 0.1s ease;
+$transition-medium: all 0.15s ease-in-out;
+$transition-slow: all 0.5s ease-in-out;
+
+/** Values */
+$primary-padding: 12px;
+$border-radius: 6px;
