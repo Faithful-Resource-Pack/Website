@@ -40,7 +40,7 @@ export default defineNuxtConfig({
 			noscript: [
 				{
 					innerHTML:
-						'<p class="red banner ma-3">Please enable JavaScript for the site to work properly.</p>',
+						'<p class="warning banner ma-3">Please enable JavaScript for the site to work properly.</p>',
 				},
 			],
 			htmlAttrs: {
