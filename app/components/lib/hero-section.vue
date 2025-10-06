@@ -55,18 +55,18 @@ export default defineNuxtComponent({
 	display: block;
 	background-size: cover;
 	background-position: center;
-	box-shadow: $primary-shadow;
+	box-shadow: $shadow-sheet;
 }
 
 .hero-tagline {
 	color: white;
-	text-shadow: $secondary-text 0px 4px 10px;
+	text-shadow: rgba(0, 0, 0, 0.75) 0px 4px 10px;
 }
 
 .hero-wordmark {
 	margin-top: 50px;
 	margin-bottom: 25px;
-	filter: drop-shadow($wordmark-shadow);
+	filter: drop-shadow($shadow-wordmark);
 	width: 475px;
 	max-width: 100%;
 }

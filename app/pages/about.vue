@@ -122,7 +122,7 @@ export default defineNuxtComponent({
 
 .about-image {
 	max-height: 384px;
-	filter: drop-shadow($secondary-shadow);
+	filter: drop-shadow($shadow-image);
 }
 
 // override container class for flex content
@@ -166,7 +166,7 @@ export default defineNuxtComponent({
 	white-space: nowrap;
 	text-transform: uppercase;
 	line-height: 1;
-	transition: $transition-medium;
+	transition: $transition-button;
 	&:hover {
 		opacity: 0.66;
 	}

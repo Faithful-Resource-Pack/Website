@@ -64,7 +64,7 @@ export default defineNuxtComponent({
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(transparent, $shadow-color);
+	background: linear-gradient(transparent, rgba(black, 0.5));
 	transition: 0.5s all ease;
 }
 

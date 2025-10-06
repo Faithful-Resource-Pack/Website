@@ -46,7 +46,8 @@ export default defineNuxtComponent({
 	color: white !important;
 	opacity: 0.7;
 	margin-right: 0.5rem;
-	transition: $transition-fast;
+	// technically counts as navigation if you think about it
+	transition: $transition-navigation;
 	&:hover {
 		opacity: 1;
 	}

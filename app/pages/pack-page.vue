@@ -102,12 +102,12 @@ export default defineNuxtComponent({
 	background-position: center;
 	padding: 0 2rem 1px;
 	text-align: center;
-	box-shadow: $primary-shadow;
+	box-shadow: $shadow-sheet;
 }
 
 .wordmark {
 	padding: 5vw;
-	filter: drop-shadow($wordmark-shadow);
+	filter: drop-shadow($shadow-wordmark);
 	width: 800px;
 }
 </style>

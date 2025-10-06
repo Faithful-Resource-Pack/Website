@@ -35,10 +35,10 @@ export default defineNuxtComponent({
 @use "~/assets/css/lib/variables" as *;
 
 $badge-text: #111111;
-$badge-green: #50CA18;
-$badge-yellow: #D6A017;
-$badge-red: #DF1C43;
-$badge-blue: #2C8BDE;
+$badge-green: #50ca18;
+$badge-yellow: #d6a017;
+$badge-red: #df1c43;
+$badge-blue: #2c8bde;
 
 .download-badge,
 .download-dot {
@@ -65,7 +65,7 @@ $badge-blue: #2C8BDE;
 }
 
 .version {
-	background: $primary-button;
+	background: $button-secondary;
 	color: white;
 }
 

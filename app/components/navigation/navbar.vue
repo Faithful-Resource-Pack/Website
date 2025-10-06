@@ -30,7 +30,7 @@
 
 				<nuxt-link to="/" title="Faithful">
 					<img
-						class="navbar-logo-img"
+						class="navbar-logo-img zoom-hitbox zoom-affected"
 						src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=128"
 						alt="Faithful Logo"
 					/>
@@ -109,7 +109,7 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	box-shadow: $primary-shadow;
+	box-shadow: $shadow-sheet;
 }
 // wraps both the mobile dropdown bar and the regular navbar
 .navbar-wrapper {
@@ -136,23 +136,19 @@ header {
 .navbar-logo-img {
 	width: 48px;
 	height: 48px;
-	transition: $transition-slow;
-	&:hover {
-		transform: scale(1.1);
-	}
 }
 .navbar-toggler {
 	padding: 0.5rem 1rem;
 	line-height: 1;
 	background: transparent;
 	border: none;
-	color: $navigation-text;
+	color: $text-navigation;
 }
 .navbar-toggler-icon {
 	vertical-align: middle;
 	font-size: 24px;
 	// prevents vuetify retheming it randomly (???)
-	color: $navigation-text;
+	color: $text-navigation;
 }
 
 // don't display on desktop layout

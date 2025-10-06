@@ -81,12 +81,12 @@ ol, ul, dl {
 	padding-left: 40px !important;
 }
 a {
-	color: $link;
+	color: $button-primary;
 	text-decoration: none;
 	background: transparent;
 }
 a:hover {
-	color: $link-hover;
+	color: $button-primary-hover;
 }
 a:not([href]):not([class]) {
 	color: inherit;
@@ -207,12 +207,12 @@ hr {
 	flex-direction: row;
 	align-items: center;
 	padding: 0.25rem 1rem;
-	transition: $transition-fast;
+	transition: $transition-navigation;
 	padding-right: 0;
 	padding-left: 0;
-	color: $navigation-text;
+	color: $text-navigation;
 	&:hover, &:focus {
-		color: $secondary-text;
+		color: $text-card;
 		transform: scale(0.95);
 		cursor: pointer;
 	}
@@ -234,7 +234,7 @@ hr {
 }
 .btn, *.card, .header-img, .about-button {
 	overflow: hidden;
-	box-shadow: $primary-shadow;
+	box-shadow: $shadow-sheet;
 	border-radius: $border-radius;
 }
 .header-img {
@@ -250,14 +250,16 @@ hr {
 .card-text p {
 	font-size: 1.25rem;
 }
-.card, .card p, .card > h2 > a, .card-text {
-	color: $secondary-text;
+.card, .card p,
+.card > h2 > a,
+.card-text {
+	color: $text-card;
 }
 .card > h2 > a:hover {
 	color: white;
 }
 .zoom-affected {
-	transition: $transition-slow;
+	transition: $transition-zoom;
 }
 // more flexible with custom container location (can choose same if needed)
 .zoom-hitbox:hover .zoom-affected,
@@ -276,7 +278,7 @@ hr {
 	color: white;
 	text-align: center;
 	border-radius: $border-radius;
-	box-shadow: $primary-shadow;
+	box-shadow: $shadow-sheet;
 }
 .banner a {
 	color: white !important; // vue moment
@@ -366,7 +368,7 @@ a > .banner:hover {
 .profile-avatar {
 	image-rendering: pixelated;
 	height: 48px;
-	box-shadow: $primary-shadow;
+	box-shadow: $shadow-sheet;
 }
 
 .v-slide-group__content {

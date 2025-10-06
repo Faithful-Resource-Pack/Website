@@ -4,7 +4,7 @@
 			<div class="footer-column footer-main">
 				<nuxt-link to="/">
 					<img
-						class="footer-wordmark"
+						class="footer-wordmark zoom-hitbox zoom-affected"
 						src="/image/wordmarks/faithful.png"
 						loading="lazy"
 						alt="Faithful Wordmark"
@@ -223,21 +223,16 @@ footer {
 
 .footer-wordmark {
 	padding: 5px;
-	// same scaling time as navbar logo
-	transition: $transition-slow;
-	&:hover {
-		transform: scale(1.1);
-	}
 }
 
 .footer-info-text {
-	color: $navigation-text;
+	color: $text-navigation;
 	padding: 0.25rem 0;
 	margin: 0;
 }
 
 .footer-title {
-	color: $secondary-text;
+	color: $text-card;
 	// fix for icons being too big
 	display: flex;
 	align-items: center;

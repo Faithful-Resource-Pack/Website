@@ -21,12 +21,12 @@
 	}
 
 	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
-		color: $secondary-text;
+		color: $text-dark;
 		text-decoration-color: currentColor;
 	}
 
 	.underline-hover:hover {
-		text-decoration-color: $secondary-text !important;
+		text-decoration-color: $text-dark !important;
 	}
 
 	// fixes dropdown select color (it's always light mode otherwise)

@@ -23,7 +23,7 @@
 			<nuxt-link
 				v-for="{ icon, title, to, color } in categories"
 				:key="title"
-				class="card card-body faq-card"
+				class="card card-body faq-card zoom-hitbox zoom-affected"
 				:class="`${color}-background`"
 				:to
 			>
@@ -152,21 +152,16 @@ export default defineNuxtComponent({
 	justify-content: center;
 	flex-grow: 0;
 	gap: 1rem;
-	&,
-	* {
-		transition: $transition-medium;
-	}
 }
 
 .faq-card-text {
 	opacity: 1;
 	color: white;
-	text-shadow: $primary-shadow;
+	text-shadow: $shadow-sheet;
 }
 
 .faq-card:hover {
-	filter: drop-shadow($secondary-shadow);
-	transform: scale(1.05);
+	filter: drop-shadow($shadow-sheet);
 }
 
 .faq-icon {
