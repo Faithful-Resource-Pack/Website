@@ -19,6 +19,7 @@ $bg-yellow: #FFD000;
 $bg-orange: #E66000;
 
 /** other text colors */
+$text-card-title: white;
 $text-card: $text-dark; // easier to change later if it's aliased
 $text-navigation: rgba(255, 255, 255, 0.5);
 
@@ -42,6 +43,8 @@ $transition-zoom: all 0.5s ease;
 $transition-button: all 0.15s ease; // bootstrap + about page
 $transition-navigation: all 0.1s ease;
 
-/** miscellaneous */
+/** global settings */
 $primary-padding: 12px;
 $border-radius: 6px;
+$blurple: #5865F2;
+$warning: #F44336;

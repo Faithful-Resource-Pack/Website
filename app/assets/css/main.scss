@@ -7,9 +7,6 @@
 	src: url("/font/Faithful.ttf") format("truetype");
 }
 
-$discord: #5865F2;
-$warning: #F44336;
-
 /* Basic layout */
 
 /*!
@@ -255,6 +252,9 @@ hr {
 .card-text {
 	color: $text-card;
 }
+.card-title {
+	color: $text-card-title;
+}
 .card > h2 > a:hover {
 	color: white;
 }
@@ -290,7 +290,7 @@ a > .banner:hover {
 	background: $warning;
 }
 .discord.banner {
-	background: $discord;
+	background: $blurple;
 }
 .button-row {
 	display: flex;
