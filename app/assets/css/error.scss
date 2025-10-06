@@ -1,9 +1,13 @@
+@use "./lib/variables" as *;
+
+$bg-end: #120E19;
+
 .error-theme {
 	h1, p {
-		color: #ccc;
+		color: $text-dark;
 	}
 	.site-container {
-		background: #120e19 url("/image/background/the_end.jpg") no-repeat center;
+		background: $bg-end url("/image/background/the_end.jpg") no-repeat center;
 	}
 	.background, .foreground {
 		background: transparent;

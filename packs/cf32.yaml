@@ -11,7 +11,7 @@ description: |
 buttons:
   - { to: /classic32x-jappa, text: Check out the Jappa version of this project! }
 
-# todo: move this to downloads page
+# TODO: move this to downloads page
 downloads:
   Latest Versions:
     1.21.7 for Java Edition: https://database.faithfulpack.net/packs/Classic-32x-Java/Programmer%20Art/Classic%20Faithful%2032x%20Programmer%20Art%20-%20java-snapshot.zip

@@ -1,24 +1,50 @@
-$primary: #007bff;
-$primary-dark: #0056b3;
-$primary-hover: #0069d9;
-$primary-hover-border: #0062cc;
+/** dark theme */
+$text-dark: rgba(255, 255, 255, 0.7);
+$bg-dark: #0C0C0C;
+$fg-dark: #131313;
+$fg-green: #76C945;
+$fg-blue: #5EBBF9;
+$fg-pink: #FC53A5;
+$fg-yellow: #FFF700;
+$fg-orange: #FF8340;
 
-$blurple: #5865f2;
+/** light theme */
+$text-light: #212529;
+$bg-light: #303030;
+$fg-light: #E5E5E5;
+$bg-green: #22A331;
+$bg-blue: #258ED4;
+$bg-pink: #CD2D7A;
+$bg-yellow: #FFD000;
+$bg-orange: #E66000;
 
-$border-radius-0x: 6px;
-$border-radius-1x: 12px;
+/** other text colors */
+$text-card-title: white;
+$text-card: $text-dark; // easier to change later if it's aliased
+$text-navigation: rgba(255, 255, 255, 0.5);
 
-$card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-$card-padding: 12px;
+/** button colors */
+$button-primary: #007bff;
+$button-primary-hover: #0069d9;
+$button-primary-hover-border: #0062cc;
+$button-secondary: #343A40;
+$button-secondary-hover: #23272B;
+$button-secondary-hover-border: #1D2124;
 
-// bg uses less saturated colors than fg
-$bg-green: #22a331;
-$fg-green: #76c945;
-$bg-blue: #258ed4;
-$fg-blue: #5ebbf9;
-$bg-pink: #cd2d7a;
-$fg-pink: #fc53a5;
-$bg-yellow: #ffd000;
-$fg-yellow: #fff700;
-$bg-orange: #e66000;
-$fg-orange: #ff8340;
+/** shadows */
+$shadow-image: 0 10px 10px rgba(0, 0, 0, 0.465);
+// any overlay, e.g. banners, cards, etc
+$shadow-sheet: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$shadow-wordmark: 0 0 10px #000000;
+$shadow-color: rgba(0, 0, 0, 0.5);
+
+/** transitions */
+$transition-zoom: all 0.5s ease;
+$transition-button: all 0.15s ease; // bootstrap + about page
+$transition-navigation: all 0.1s ease;
+
+/** global settings */
+$primary-padding: 12px;
+$border-radius: 6px;
+$blurple: #5865F2;
+$warning: #F44336;

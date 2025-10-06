@@ -30,7 +30,7 @@ html {
 	*/
 	line-height: 1.5;
 	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
 	// improve font rendering
 	-webkit-font-smoothing: subpixel-antialiased !important;
 	-moz-osx-font-smoothing: grayscale;
@@ -39,7 +39,7 @@ html {
 body {
 	margin: 0;
 	font-size: 1.1rem;
-	color: #212529;
+	color: $text-light;
 }
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
@@ -78,12 +78,12 @@ ol, ul, dl {
 	padding-left: 40px !important;
 }
 a {
-	color: $primary;
+	color: $button-primary;
 	text-decoration: none;
-	background-color: transparent;
+	background: transparent;
 }
 a:hover {
-	color: $primary-dark;
+	color: $button-primary-hover;
 }
 a:not([href]):not([class]) {
 	color: inherit;
@@ -166,7 +166,7 @@ hr {
 	justify-content: space-between;
 }
 .foreground {
-	// grow the foreground to fill remaining space (footer and navbar stay the same size always)
+	// grow the foreground to fill remaining space (footer and navbar always stay the same size)
 	flex-grow: 1;
 }
 .container {
@@ -204,12 +204,12 @@ hr {
 	flex-direction: row;
 	align-items: center;
 	padding: 0.25rem 1rem;
-	transition: all 0.1s ease;
+	transition: $transition-navigation;
 	padding-right: 0;
 	padding-left: 0;
-	color: rgba(255, 255, 255, 0.5);
+	color: $text-navigation;
 	&:hover, &:focus {
-		color: rgba(255, 255, 255, 0.75);
+		color: $text-card;
 		transform: scale(0.95);
 		cursor: pointer;
 	}
@@ -231,8 +231,8 @@ hr {
 }
 .btn, *.card, .header-img, .about-button {
 	overflow: hidden;
-	box-shadow: $card-shadow;
-	border-radius: $border-radius-0x;
+	box-shadow: $shadow-sheet;
+	border-radius: $border-radius;
 }
 .header-img {
 	width: 100%;
@@ -247,14 +247,19 @@ hr {
 .card-text p {
 	font-size: 1.25rem;
 }
-.card, .card p, .card > h2 > a, .card-text {
-	color: rgba(255, 255, 255, .7)
+.card, .card p,
+.card > h2 > a,
+.card-text {
+	color: $text-card;
+}
+.card-title {
+	color: $text-card-title;
 }
 .card > h2 > a:hover {
-	color: rgba(255, 255, 255, .9)
+	color: white;
 }
 .zoom-affected {
-	transition: all 0.5s;
+	transition: $transition-zoom;
 }
 // more flexible with custom container location (can choose same if needed)
 .zoom-hitbox:hover .zoom-affected,
@@ -270,21 +275,21 @@ hr {
 .banner {
 	font-size: 25px;
 	padding: 16px;
-	color: #fff;
+	color: white;
 	text-align: center;
-	border-radius: $border-radius-0x;
-	box-shadow: $card-shadow
+	border-radius: $border-radius;
+	box-shadow: $shadow-sheet;
 }
 .banner a {
-	color: #fff !important; // vue moment
+	color: white !important; // vue moment
 }
 a > .banner:hover {
 	text-decoration: underline;
 }
-.red.banner {
-	background: #f44336;
+.warning.banner {
+	background: $warning;
 }
-.blurple.banner {
+.discord.banner {
 	background: $blurple;
 }
 .button-row {
@@ -363,7 +368,7 @@ a > .banner:hover {
 .profile-avatar {
 	image-rendering: pixelated;
 	height: 48px;
-	box-shadow: $card-shadow;
+	box-shadow: $shadow-sheet;
 }
 
 .v-slide-group__content {

@@ -18,7 +18,7 @@
 	font-size: 1rem;
 	line-height: 1.5;
 	border-radius: 0.25rem;
-	transition: all 0.15s ease-in-out;
+	transition: $transition-button;
 }
 .btn:hover {
 	color: #212529;
@@ -38,93 +38,62 @@ a.btn.disabled {
 	pointer-events: none;
 }
 .btn-primary {
-	color: #fff;
-	background-color: $primary;
-	border-color: $primary;
+	color: white;
+	background-color: $button-primary;
+	border-color: $button-primary;
 }
 .btn-primary:hover {
-	color: #fff;
-	background-color: $primary-hover;
-	border-color: $primary-hover-border;
+	color: white;
+	background-color: $button-primary-hover;
+	border-color: $button-primary-hover-border;
 }
 .btn-primary:focus, .btn-primary.focus {
-	color: #fff;
-	background-color: #0069d9;
-	border-color: #0062cc;
+	color: white;
+	background-color: $button-primary-hover;
+	border-color: $button-primary-hover-border;
 	box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 .btn-primary.disabled, .btn-primary:disabled {
-	color: #fff;
-	background-color: $primary;
-	border-color: $primary;
+	color: white;
+	background-color: $button-primary;
+	border-color: $button-primary;
 }
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active {
-	color: #fff;
-	background-color: #0062cc;
-	border-color: #005cbf;
+	color: white;
+	background-color: $button-primary-hover-border;
+	border-color: #005CBF;
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus {
 	box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
-.btn-light {
-	color: #212529;
-	background-color: #f8f9fa;
-	border-color: #f8f9fa;
-}
-.btn-light:hover {
-	color: #212529;
-	background-color: #e2e6ea;
-	border-color: #dae0e5;
-}
-.btn-light:focus, .btn-light.focus {
-	color: #212529;
-	background-color: #e2e6ea;
-	border-color: #dae0e5;
-	box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
-}
-.btn-light.disabled, .btn-light:disabled {
-	color: #212529;
-	background-color: #f8f9fa;
-	border-color: #f8f9fa;
-}
-.btn-light:not(:disabled):not(.disabled):active,
-.btn-light:not(:disabled):not(.disabled).active {
-	color: #212529;
-	background-color: #dae0e5;
-	border-color: #d3d9df;
-}
-.btn-light:not(:disabled):not(.disabled):active:focus,
-.btn-light:not(:disabled):not(.disabled).active:focus {
-	box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
-}
 .btn-dark {
-	color: #fff;
-	background-color: #343a40;
-	border-color: #343a40;
+	color: white;
+	background-color: $button-secondary;
+	border-color: $button-secondary;
 }
 .btn-dark:hover {
-	color: #fff;
-	background-color: #23272b;
-	border-color: #1d2124;
+	color: white;
+	background-color: $button-secondary-hover;
+	border-color: $button-secondary-hover-border;
 }
 .btn-dark:focus, .btn-dark.focus {
-	color: #fff;
-	background-color: #23272b;
-	border-color: #1d2124;
+	color: white;
+	background-color: $button-secondary-hover;
+	border-color: $button-secondary-hover-border;
 	box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 .btn-dark.disabled, .btn-dark:disabled {
-	color: #fff;
-	background-color: #343a40;
-	border-color: #343a40;
+	color: white;
+	background-color: $button-secondary;
+	border-color: $button-secondary;
 }
 .btn-dark:not(:disabled):not(.disabled):active,
 .btn-dark:not(:disabled):not(.disabled).active {
-	color: #fff;
-	background-color: #1d2124;
-	border-color: #171a1d;
+	color: white;
+	background-color: $button-secondary-hover-border;
+	border-color: #171A1D;
 }
 .btn-dark:not(:disabled):not(.disabled):active:focus,
 .btn-dark:not(:disabled):not(.disabled).active:focus {

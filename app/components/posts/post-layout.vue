@@ -1,5 +1,5 @@
 <template>
-	<p v-if="post.discontinued" class="red banner">This project has been discontinued.</p>
+	<p v-if="post.discontinued" class="warning banner">This project has been discontinued.</p>
 	<div v-if="post.title" class="text-center my-5">
 		<h1 v-if="mainTitle" class="title mb-2">{{ mainTitle }}</h1>
 		<h2 v-if="subtitle" class="subtitle">{{ subtitle }}</h2>

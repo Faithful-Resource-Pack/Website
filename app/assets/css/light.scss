@@ -3,17 +3,17 @@
 // force lower specificity so page-specific styles don't break
 :where(.light-theme) {
 	.background {
-		background: #303030 url("/image/background/bg_light_background.png") repeat;
+		background: $bg-light url("/image/background/bg_light_background.png") repeat;
 	}
 	.foreground {
-		background: #e5e5e5 url("/image/background/bg_light_foreground.png") repeat;
+		background: $fg-light url("/image/background/bg_light_foreground.png") repeat;
 	}
 	.card, .download-table-padding, header {
-		background: #303030 url("/image/background/bg_light_background.png") repeat;
+		background: $bg-light url("/image/background/bg_light_background.png") repeat;
 	}
 
 	.v-chip--variant-elevated {
-		background: #303030 url("/image/background/bg_light_background.png") repeat !important;
+		background: $bg-light url("/image/background/bg_light_background.png") repeat !important;
 	}
 
 	// about page stuff
@@ -34,7 +34,7 @@
 		background-blend-mode: multiply;
 		// only use white with a colored background, else use normal text color
 		.colored-title {
-			color: #fff;
+			color: white;
 		}
 	}
 

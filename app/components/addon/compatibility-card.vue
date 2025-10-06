@@ -1,5 +1,5 @@
 <template>
-	<h2 class="text-center text-white">Compatibility</h2>
+	<h2 class="text-center card-title">Compatibility</h2>
 	<h5>Supported Packs</h5>
 	<div class="addon-chips">
 		<v-chip v-for="{ color, icon, text, to } in packs" :key="text" density="compact" :color :to>
@@ -53,10 +53,10 @@ export default defineNuxtComponent({
 	data() {
 		return {
 			data: {
-				Java: { color: "#1dd96a", icon: "mdi-minecraft", text: "Java Edition" },
-				Bedrock: { color: "#eee", icon: "mdi-cube", text: "Bedrock Edition" },
-				"32x": { color: "#00a2ff", icon: "faithful", text: "Faithful 32x", to: "/faithful32x" },
-				"64x": { color: "#ff0092", icon: "faithful", text: "Faithful 64x", to: "/faithful64x" },
+				Java: { color: "#1DD96A", icon: "mdi-minecraft", text: "Java Edition" },
+				Bedrock: { color: "#EEEEEE", icon: "mdi-cube", text: "Bedrock Edition" },
+				"32x": { color: "#00A2FF", icon: "faithful", text: "Faithful 32x", to: "/faithful32x" },
+				"64x": { color: "#FF0092", icon: "faithful", text: "Faithful 64x", to: "/faithful64x" },
 			},
 		};
 	},

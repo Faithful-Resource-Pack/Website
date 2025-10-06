@@ -8,7 +8,7 @@
 	<template v-else>
 		<template v-for="[key, val] in Object.entries(item)" :key>
 			<li v-if="list" class="mb-2">{{ key }}:</li>
-			<component :is="title" v-else class="mb-2"> {{ key }}: </component>
+			<component :is="title" v-else class="mb-2">{{ key }}:</component>
 			<post-changelog :item="val" :level="level + 1" />
 		</template>
 	</template>

@@ -95,18 +95,19 @@ export default defineNuxtComponent({
 
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
+
 .hero {
 	display: block;
 	background-size: cover;
 	background-position: center;
 	padding: 0 2rem 1px;
 	text-align: center;
-	box-shadow: $card-shadow;
+	box-shadow: $shadow-sheet;
 }
 
 .wordmark {
 	padding: 5vw;
-	filter: drop-shadow(0 0 10px #000);
+	filter: drop-shadow($shadow-wordmark);
 	width: 800px;
 }
 </style>

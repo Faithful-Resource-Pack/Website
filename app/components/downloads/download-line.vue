@@ -139,6 +139,8 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/lib/variables" as *;
 
+$item-highlight: rgba(255, 255, 255, 0.05);
+
 td {
 	text-align: center;
 	vertical-align: middle;
@@ -148,7 +150,7 @@ td {
 // all text except for links use this
 td,
 td * {
-	color: #ccc;
+	color: $text-card;
 	margin-bottom: 0;
 }
 
@@ -158,7 +160,7 @@ td * {
 }
 
 .download-item:hover {
-	background-color: rgba(255, 255, 255, 0.05);
+	background: $item-highlight;
 }
 
 .download-name {
@@ -202,7 +204,7 @@ td * {
 	margin: 0.1rem 0.1rem;
 	width: 115px;
 	* {
-		color: #fff;
+		color: white;
 	}
 }
 
@@ -234,7 +236,7 @@ i.dl-icon {
 
 		// remove hover effect (looks bad on mobile)
 		&:hover {
-			background-color: transparent;
+			background: transparent;
 		}
 	}
 

@@ -40,11 +40,14 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/lib/variables" as *;
+
 .author-media {
 	color: white !important;
 	opacity: 0.7;
 	margin-right: 0.5rem;
-	transition: all 0.1s ease;
+	// technically counts as navigation if you think about it
+	transition: $transition-navigation;
 	&:hover {
 		opacity: 1;
 	}
