@@ -57,7 +57,7 @@ export default defineNuxtComponent({
 	height: auto;
 	display: flex;
 	flex-flow: column nowrap;
-	margin: $primary-padding;
+	margin: $padding-card;
 	line-height: 1;
 }
 

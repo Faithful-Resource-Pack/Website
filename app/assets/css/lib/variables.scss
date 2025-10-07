@@ -2,42 +2,43 @@
 $text-dark: rgba(255, 255, 255, 0.7);
 $bg-dark: #0C0C0C;
 $fg-dark: #131313;
-$fg-green: #76C945;
-$fg-blue: #5EBBF9;
-$fg-pink: #FC53A5;
-$fg-yellow: #FFF700;
-$fg-orange: #FF8340;
 
 /** light theme */
 $text-light: #212529;
 $bg-light: #303030;
 $fg-light: #E5E5E5;
-$bg-green: #22A331;
-$bg-blue: #258ED4;
-$bg-pink: #CD2D7A;
-$bg-yellow: #FFD000;
-$bg-orange: #E66000;
 
 /** other text colors */
 $text-card-title: white;
 $text-card: $text-dark; // easier to change later if it's aliased
 $text-navigation: rgba(255, 255, 255, 0.5);
 
-/** button colors */
-$button-primary: #007BFF;
-$button-primary-hover: #0069D9;
-$button-primary-hover-border: #0062CC;
+/** accent colors (fg is lighter than bg) */
+$fg-green: #76C945;
+$fg-blue: #5EBBF9;
+$fg-pink: #FC53A5;
+$fg-yellow: #FFF700;
+$fg-orange: #FF8340;
+$bg-green: #22A331;
+$bg-blue: #258ED4;
+$bg-pink: #CD2D7A;
+$bg-yellow: #FFD000;
+$bg-orange: #E66000;
 
-$button-secondary: #343A40;
-$button-secondary-hover: #23272B;
-$button-secondary-hover-border: #1D2124;
+/** button colors */
+$btn-primary: #007BFF;
+$btn-primary-hover: #0069D9;
+$btn-primary-hover-border: #0062CC;
+
+$btn-secondary: #343A40;
+$btn-secondary-hover: #23272B;
+$btn-secondary-hover-border: #1D2124;
 
 /** shadows */
 $shadow-image: 0 10px 10px rgba(0, 0, 0, 0.465);
 // any overlay, e.g. banners, cards, etc
 $shadow-sheet: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 $shadow-wordmark: 0 0 10px #000000;
-$shadow-color: rgba(0, 0, 0, 0.5);
 
 /** transitions */
 $transition-zoom: all 0.5s ease;
@@ -45,7 +46,7 @@ $transition-button: all 0.15s ease; // bootstrap + about page
 $transition-navigation: all 0.1s ease;
 
 /** global settings */
-$primary-padding: 12px;
+$padding-card: 12px;
 $border-radius: 6px;
 $blurple: #5865F2;
 $warning: #F44336;

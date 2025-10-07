@@ -65,7 +65,7 @@ $badge-blue: #2c8bde;
 }
 
 .version {
-	background: $button-secondary;
+	background: $btn-secondary;
 	color: white;
 }
 

@@ -78,12 +78,12 @@ ol, ul, dl {
 	padding-left: 40px !important;
 }
 a {
-	color: $button-primary;
+	color: $btn-primary;
 	text-decoration: none;
 	background: transparent;
 }
 a:hover {
-	color: $button-primary-hover;
+	color: $btn-primary-hover;
 }
 a:not([href]):not([class]) {
 	color: inherit;
@@ -289,7 +289,7 @@ a > .banner:hover {
 .warning.banner {
 	background: $warning;
 }
-.discord.banner {
+.blurple.banner {
 	background: $blurple;
 }
 .button-row {

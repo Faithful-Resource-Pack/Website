@@ -92,12 +92,12 @@ const FOOTER_CATEGORIES = [
 				to: "https://www.planetminecraft.com/member/faithful_resource_pack",
 			},
 			{
-				name: "MCPEDL",
-				to: "https://mcpedl.com/user/faithful-resource-pack",
-			},
-			{
 				name: "GitHub",
 				to: "https://github.com/Faithful-Resource-Pack",
+			},
+			{
+				name: "Classic GitHub",
+				to: "https://github.com/ClassicFaithful",
 			},
 		],
 	},
@@ -122,7 +122,7 @@ const FOOTER_CATEGORIES = [
 				to: "https://discord.gg/sN9YRQbBv7",
 			},
 			{
-				name: "CF Discord",
+				name: "Classic Discord",
 				to: "https://discord.gg/KSEhCVtg4J",
 			},
 		],
