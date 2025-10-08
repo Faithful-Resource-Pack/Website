@@ -5,6 +5,7 @@
 			:key="id"
 			:src
 			:alt="`${username}'s Avatar`"
+			:title="username"
 			loading="lazy"
 		/>
 		<p v-if="firstUsername" class="mb-0 ml-2">By {{ firstUsername }}</p>
