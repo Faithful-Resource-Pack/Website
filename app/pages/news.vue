@@ -24,7 +24,7 @@
 				{{ compileMarkdown(firstPost.description, true) }}
 			</p>
 			<nuxt-link
-				class="btn block btn-dark mt-5"
+				class="btn block btn-secondary mt-5"
 				:to="firstPost.permalink"
 				aria-label="Go to full post"
 			>

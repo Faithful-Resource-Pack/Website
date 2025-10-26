@@ -7,7 +7,7 @@
 	</h3>
 	<div class="license-download">
 		<nuxt-link
-			class="btn block btn-dark mb-5"
+			class="btn block btn-secondary mb-5"
 			to="https://database.faithfulpack.net/packs/LICENSE.txt"
 		>
 			<v-icon size="small" icon="mdi-download" />

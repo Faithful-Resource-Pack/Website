@@ -3,17 +3,17 @@
 // force lower specificity so page-specific styles don't break
 :where(.light-theme) {
 	.background {
-		background: $bg-light url("/image/background/bg_light_background.png") repeat;
+		background: $bg-light-accent-textured;
 	}
 	.foreground {
-		background: $fg-light url("/image/background/bg_light_foreground.png") repeat;
+		background: $bg-light-textured;
 	}
 	.card, .download-table-padding, header {
-		background: $bg-light url("/image/background/bg_light_background.png") repeat;
+		background: $bg-light-accent-textured;
 	}
 
 	.v-chip--variant-elevated {
-		background: $bg-light url("/image/background/bg_light_background.png") repeat !important;
+		background: $bg-light-accent-textured !important;
 	}
 
 	// about page stuff
@@ -39,22 +39,22 @@
 	}
 
 	.green-background {
-		background: $bg-green url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $bg-green $bg-light-url repeat !important;
 	}
 
 	.blue-background {
-		background: $bg-blue url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $bg-blue $bg-light-url repeat !important;
 	}
 
 	.pink-background {
-		background: $bg-pink url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $bg-pink $bg-light-url repeat !important;
 	}
 
 	.yellow-background {
-		background: $bg-yellow url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $bg-yellow $bg-light-url repeat !important;
 	}
 
 	.orange-background {
-		background: $bg-orange url("/image/background/bg_light_foreground.png") repeat !important;
+		background: $bg-orange $bg-light-url repeat !important;
 	}
 }

@@ -1,29 +1,43 @@
 /** dark theme */
 $text-dark: rgba(255, 255, 255, 0.7);
-$bg-dark: #0C0C0C;
-$fg-dark: #131313;
+
+$bg-dark: #131313;
+// sometimes we need the url independently (especially with blending modes)
+$bg-dark-url: url("/image/background/dark.png");
+$bg-dark-textured: $bg-dark $bg-dark-url repeat;
+
+$bg-dark-accent: #0C0C0C;
+$bg-dark-accent-url: url("/image/background/dark_accent.png");
+$bg-dark-accent-textured: $bg-dark-accent $bg-dark-accent-url repeat;
 
 /** light theme */
 $text-light: #212529;
-$bg-light: #303030;
-$fg-light: #E5E5E5;
+
+$bg-light: #E5E5E5;
+$bg-light-url: url("/image/background/light.png");
+$bg-light-textured: $bg-light $bg-light-url repeat;
+
+$bg-light-accent: #292929;
+$bg-light-accent-url: url("/image/background/light_accent.png");
+$bg-light-accent-textured: $bg-light-accent $bg-light-accent-url repeat;
 
 /** other text colors */
 $text-card-title: white;
 $text-card: $text-dark; // easier to change later if it's aliased
 $text-navigation: rgba(255, 255, 255, 0.5);
 
-/** accent colors (fg is lighter than bg) */
-$fg-green: #76C945;
-$fg-blue: #5EBBF9;
-$fg-pink: #FC53A5;
-$fg-yellow: #FFF700;
-$fg-orange: #FF8340;
+/** accent colors (text is lighter than bg) */
 $bg-green: #22A331;
 $bg-blue: #258ED4;
 $bg-pink: #CD2D7A;
 $bg-yellow: #FFD000;
 $bg-orange: #E66000;
+
+$text-green: #76C945;
+$text-blue: #5EBBF9;
+$text-pink: #FC53A5;
+$text-yellow: #FFF700;
+$text-orange: #FF8340;
 
 /** button colors */
 $btn-primary: #007BFF;

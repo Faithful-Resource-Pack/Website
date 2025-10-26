@@ -27,7 +27,7 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 				<nuxt-link
 					v-for="{ to, text } in buttons"
 					:key="to"
-					class="btn btn-dark"
+					class="btn btn-secondary"
 					:to
 					:style="buttons.length === 1 ? 'width: 50%; flex-grow: 0' : ''"
 				>

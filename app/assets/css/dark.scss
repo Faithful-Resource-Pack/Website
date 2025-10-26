@@ -3,21 +3,21 @@
 // force lower specificity so page-specific styles don't break
 :where(.dark-theme) {
 	.background {
-		background: $bg-dark url("/image/background/bg_dark_background.png") repeat;
+		background: $bg-dark-accent-textured;
 	}
 	.foreground {
-		background: $fg-dark url("/image/background/bg_dark_foreground.png") repeat;
+		background: $bg-dark-textured;
 	}
 	.card, .download-table-padding, header {
-		background: $bg-dark url("/image/background/bg_dark_background.png") repeat;
+		background: $bg-dark-accent-textured;
 	}
 
 	.v-chip--variant-elevated, .v-card--variant-elevated {
-		background: $bg-dark url("/image/background/bg_dark_background.png") repeat !important;
+		background: $bg-dark-accent-textured !important;
 	}
 
 	.v-expansion-panels--variant-accordion * {
-		background: $bg-dark !important;
+		background: $bg-dark-accent !important;
 	}
 
 	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
@@ -45,7 +45,8 @@
 	.pink-background,
 	.orange-background,
 	.yellow-background {
-		background: $bg-dark url("/image/background/bg_light_background.png") repeat;
+		// this is a bit strange but looks the best of all the combinations
+		background: $bg-dark-accent $bg-light-accent-url repeat;
 		background-blend-mode: screen;
 	}
 
@@ -55,22 +56,22 @@
 	}
 
 	.green-background .colored-title {
-		color: $fg-green !important;
+		color: $text-green !important;
 	}
 
 	.blue-background .colored-title {
-		color: $fg-blue !important;
+		color: $text-blue !important;
 	}
 
 	.pink-background .colored-title {
-		color: $fg-pink !important;
+		color: $text-pink !important;
 	}
 
 	.yellow-background .colored-title {
-		color: $fg-yellow !important;
+		color: $text-yellow !important;
 	}
 
 	.orange-background .colored-title {
-		color: $fg-orange !important;
+		color: $text-orange !important;
 	}
 }

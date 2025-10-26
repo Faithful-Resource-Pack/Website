@@ -23,7 +23,7 @@
 						:key="text"
 						:to
 						:text
-						class="btn block btn-dark my-1"
+						class="btn block btn-secondary my-1"
 						:aria-label="text === 'See More' ? project.name : text"
 					/>
 				</template>
@@ -56,7 +56,7 @@
 			/>
 		</div>
 		<br />
-		<nuxt-link class="btn btn-dark news-button center" to="/news" aria-label="Go to news page">
+		<nuxt-link class="btn btn-secondary news-button center" to="/news" aria-label="Go to news page">
 			See More
 		</nuxt-link>
 	</div>

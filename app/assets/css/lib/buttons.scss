@@ -68,35 +68,35 @@ a.btn.disabled {
 .btn-primary:not(:disabled):not(.disabled).active:focus {
 	box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
-.btn-dark {
+.btn-secondary {
 	color: white;
 	background-color: $btn-secondary;
 	border-color: $btn-secondary;
 }
-.btn-dark:hover {
+.btn-secondary:hover {
 	color: white;
 	background-color: $btn-secondary-hover;
 	border-color: $btn-secondary-hover-border;
 }
-.btn-dark:focus, .btn-dark.focus {
+.btn-secondary:focus, .btn-secondary.focus {
 	color: white;
 	background-color: $btn-secondary-hover;
 	border-color: $btn-secondary-hover-border;
 	box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
-.btn-dark.disabled, .btn-dark:disabled {
+.btn-secondary.disabled, .btn-secondary:disabled {
 	color: white;
 	background-color: $btn-secondary;
 	border-color: $btn-secondary;
 }
-.btn-dark:not(:disabled):not(.disabled):active,
-.btn-dark:not(:disabled):not(.disabled).active {
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active {
 	color: white;
 	background-color: $btn-secondary-hover-border;
 	border-color: #171A1D;
 }
-.btn-dark:not(:disabled):not(.disabled):active:focus,
-.btn-dark:not(:disabled):not(.disabled).active:focus {
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.btn-secondary:not(:disabled):not(.disabled).active:focus {
 	box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 .btn-lg, .btn-group-lg > .btn {

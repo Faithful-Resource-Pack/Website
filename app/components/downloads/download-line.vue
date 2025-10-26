@@ -33,7 +33,7 @@
 		>
 			<!-- icon buttons aren't accessible on mobile -->
 			<nuxt-link
-				class="btn btn-dark btn-dl"
+				class="btn btn-secondary btn-dl"
 				:to="link"
 				:aria-label="`${textFormat[linkType]} download for ${labelText} (${version})`"
 			>
