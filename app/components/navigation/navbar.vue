@@ -68,7 +68,7 @@ const NAVBAR_ITEMS = [
 	{
 		name: "Add-ons",
 		to: "/addons",
-		icon: "mdi-plus",
+		icon: "mdi-plus-thick",
 	},
 	{
 		name: "News",
