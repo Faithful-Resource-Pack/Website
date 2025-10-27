@@ -2,7 +2,8 @@
 <template>
 	<div class="site-container" :class="themeClass" data-allow-mismatch="class">
 		<navbar />
-		<main class="foreground">
+		<!-- grow the content to fill remaining space (footer and navbar always stay the same size) -->
+		<main class="textured flex-grow-1">
 			<slot v-if="noContainer" />
 			<div v-else class="container">
 				<slot />

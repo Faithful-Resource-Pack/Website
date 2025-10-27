@@ -1,5 +1,5 @@
 <template>
-	<footer class="background">
+	<footer class="accent-textured">
 		<div class="container footer-wrapper">
 			<div class="footer-column footer-main">
 				<nuxt-link to="/">

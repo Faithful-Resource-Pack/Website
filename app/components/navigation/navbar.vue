@@ -1,5 +1,5 @@
 <template>
-	<header class="background">
+	<header class="accent-textured">
 		<nav class="navbar-wrapper">
 			<nuxt-link class="navbar-mobile-wordmark" to="/" title="Faithful">
 				<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" />

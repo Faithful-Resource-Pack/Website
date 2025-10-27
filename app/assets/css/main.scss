@@ -165,10 +165,6 @@ hr {
 	flex-flow: column nowrap;
 	justify-content: space-between;
 }
-.foreground {
-	// grow the foreground to fill remaining space (footer and navbar always stay the same size)
-	flex-grow: 1;
-}
 .container {
 	width: 100%;
 	padding-right: 15px;

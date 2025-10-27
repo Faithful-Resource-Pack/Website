@@ -3,20 +3,22 @@
 $bg-end: #120E19;
 
 .error-theme {
-	h1, p {
+	h1 {
+		color: white;
+	}
+	p {
 		color: $text-dark;
 	}
 	.site-container {
 		background: $bg-end url("/image/background/the_end.jpg") no-repeat center;
 	}
-	.background, .foreground {
+	.textured, .accent-textured {
 		background: transparent;
 	}
 	header {
 		box-shadow: none !important;
-		background: none !important;
 	}
-	// fix for tnt showing too high
+	// make page a bit shorter (no need for bottom padding)
 	.container {
 		padding-bottom: 0px;
 	}

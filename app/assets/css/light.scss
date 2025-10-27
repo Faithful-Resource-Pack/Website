@@ -2,13 +2,11 @@
 
 // force lower specificity so page-specific styles don't break
 :where(.light-theme) {
-	.background {
-		background: $bg-light-accent-textured;
-	}
-	.foreground {
+	.textured {
 		background: $bg-light-textured;
 	}
-	.card, .download-table-padding, header {
+
+	.accent-textured, .card {
 		background: $bg-light-accent-textured;
 	}
 
