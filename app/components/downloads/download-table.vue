@@ -1,5 +1,5 @@
 <template>
-	<div class="download-table-padding">
+	<div class="download-table-padding accent-textured">
 		<table class="download-table">
 			<thead>
 				<tr class="download-heading">
