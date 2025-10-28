@@ -21,11 +21,6 @@ $bg-light-accent: #292929;
 $bg-light-accent-url: url("/image/background/light_accent.png");
 $bg-light-accent-textured: $bg-light-accent $bg-light-accent-url repeat;
 
-/** other text colors */
-$text-card-title: white;
-$text-card: $text-dark; // easier to change later if it's aliased
-$text-navigation: rgba(255, 255, 255, 0.5);
-
 /** accent colors (text is lighter than bg) */
 $bg-green: #22A331;
 $bg-blue: #258ED4;
@@ -47,6 +42,13 @@ $btn-primary-hover-border: #0062CC;
 $btn-secondary: #343A40;
 $btn-secondary-hover: #23272B;
 $btn-secondary-hover-border: #1D2124;
+
+/** other text colors */
+$text-card-title: white;
+$text-card: $text-dark; // easier to change later if it's aliased
+$text-navigation: rgba(255, 255, 255, 0.5);
+$text-link: $btn-primary;
+$text-link-hover: $btn-primary-hover;
 
 /** shadows */
 $shadow-image: 0 10px 10px rgba(0, 0, 0, 0.465);

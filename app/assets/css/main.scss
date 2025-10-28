@@ -78,12 +78,12 @@ ol, ul, dl {
 	padding-left: 40px !important;
 }
 a {
-	color: $btn-primary;
+	color: $text-link;
 	text-decoration: none;
 	background: transparent;
 }
 a:hover {
-	color: $btn-primary-hover;
+	color: $text-link-hover;
 }
 a:not([href]):not([class]) {
 	color: inherit;
