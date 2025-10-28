@@ -33,7 +33,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 $handle: #d7d7d7;
 $handle-border: #343434;

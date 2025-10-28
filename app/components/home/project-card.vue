@@ -41,7 +41,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 .project-image {
 	position: relative;

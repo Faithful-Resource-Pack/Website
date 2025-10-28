@@ -102,7 +102,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 // entire header must be sticky (otherwise the text moves without the background)
 header {
@@ -158,7 +158,7 @@ header {
 }
 
 // mobile styles
-@media screen and (max-width: 760px) {
+@media screen and (max-width: $breakpoint-sm) {
 	// set wrapper to show wordmark/toggler button on each side
 	.navbar-wrapper {
 		padding: 0.5rem 1rem;

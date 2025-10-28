@@ -14,7 +14,7 @@
 	</hero-section>
 	<div class="container">
 		<h2 class="title mb-4 text-center">Our Projects</h2>
-		<div class="res-grid-4 project-reel">
+		<div class="basic-grid project-reel">
 			<!-- project data and props have the same key names so we can assign to v-bind directly -->
 			<project-card v-for="project in projects" :key="project.name" v-bind="project">
 				<template #btns>
@@ -33,7 +33,7 @@
 		<hr />
 
 		<h2 class="title text-center">Add-ons</h2>
-		<div class="res-grid-4 addon-reel">
+		<div class="basic-grid addon-reel">
 			<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
 			<base-card to="/addons" image="/image/addons/see_more.png">
 				<template #title>
@@ -153,6 +153,18 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/variables" as *;
+
+.addon-reel {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: $breakpoint-md) {
+	.addon-reel {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
 .news-button {
 	width: 50%;
 }

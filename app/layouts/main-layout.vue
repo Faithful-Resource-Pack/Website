@@ -83,3 +83,13 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+// hack to force the site to take up the entire screen
+.site-container {
+	display: flex;
+	min-height: 100vh;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+</style>

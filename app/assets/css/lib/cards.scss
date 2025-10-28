@@ -1,0 +1,38 @@
+@use "../variables" as *;
+
+/** Bootstrap Cards */
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	overflow-wrap: break-word;
+	background-clip: border-box;
+}
+.card-body {
+	flex: 1 1 auto;
+	min-height: 1px;
+	padding: 1.25rem;
+}
+// don't stack margin and padding inside cards (text has margin by default)
+.card-body > :first-child {
+	margin-top: 0;
+}
+.card-body > :last-child {
+	margin-bottom: 0;
+}
+.card-title {
+	color: $text-card-title;
+}
+// h5
+.card-text p {
+	font-size: 1.25rem;
+}
+.card, .card p,
+.card > h2 > a,
+.card-text {
+	color: $text-card;
+}
+.card > h2 > a:hover {
+	color: $text-card-title;
+}

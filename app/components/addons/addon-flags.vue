@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 .addon-flags {
 	display: flex;

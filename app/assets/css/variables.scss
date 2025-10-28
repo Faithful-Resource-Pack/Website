@@ -11,7 +11,7 @@ $bg-dark-accent-url: url("/image/background/dark_accent.png");
 $bg-dark-accent-textured: $bg-dark-accent $bg-dark-accent-url repeat;
 
 /** light theme */
-$text-light: #212529;
+$text-light: #212529; // I don't know why this is blue either
 
 $bg-light: #E5E5E5;
 $bg-light-url: url("/image/background/light.png");
@@ -51,15 +51,22 @@ $text-link: $btn-primary;
 $text-link-hover: $btn-primary-hover;
 
 /** shadows */
-$shadow-image: 0 10px 10px rgba(0, 0, 0, 0.465);
 // any overlay, e.g. banners, cards, etc
 $shadow-sheet: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$shadow-image: 0 10px 10px rgba(0, 0, 0, 0.465);
 $shadow-wordmark: 0 0 10px #000000;
 
 /** transitions */
 $transition-zoom: all 0.5s ease;
 $transition-button: all 0.15s ease; // bootstrap + about page
 $transition-navigation: all 0.1s ease;
+
+/** breakpoints (I have no idea where they came from) */
+$breakpoint-xs: 576px;
+$breakpoint-sm: 760px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1140px;
+$breakpoint-xl: 1280px;
 
 /** global settings */
 $padding-card: 12px;

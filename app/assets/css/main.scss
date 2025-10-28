@@ -1,6 +1,9 @@
 // more efficient bundling (compiled in same css file)
-@use "./lib/variables" as *;
+@use "./variables" as *;
 @use "./lib/buttons" as *;
+@use "./lib/banners" as *;
+@use "./lib/cards" as *;
+@use "./lib/grids" as *;
 
 @font-face {
 	font-family: Faithful;
@@ -23,14 +26,6 @@
 html {
 	font-family: Faithful !important;
 	text-rendering: optimizeLegibility;
-	/**
-	font-family:
-		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-	*/
-	line-height: 1.5;
-	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: transparent;
 	// improve font rendering
 	-webkit-font-smoothing: subpixel-antialiased !important;
 	-moz-osx-font-smoothing: grayscale;
@@ -39,6 +34,7 @@ html {
 body {
 	margin: 0;
 	font-size: 1.1rem;
+	// on old browsers if the themes don't load the text still looks decent
 	color: $text-light;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -85,13 +81,21 @@ a {
 a:hover {
 	color: $text-link-hover;
 }
-a:not([href]):not([class]) {
-	color: inherit;
-	text-decoration: none;
-}
+a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
 	color: inherit;
 	text-decoration: none;
+}
+code {
+	// looks better inline with the faithful font
+	font-size: 80%;
+}
+hr {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 0;
+	color: transparent;
+	height: 1px;
 }
 img {
 	vertical-align: middle;
@@ -99,13 +103,6 @@ img {
 	object-fit: cover;
 	max-width: 100%;
 	height: auto;
-}
-/* make images not draggable */
-img[src$=".png"], img[src$=".gif"], img[src$=".jpg"] {
-	-webkit-user-drag: none;
-	-khtml-user-drag: none;
-	-moz-user-drag: none;
-	-o-user-drag: none;
 }
 table {
 	border-collapse: collapse;
@@ -125,46 +122,17 @@ button, select {
 select {
 	overflow-wrap: normal;
 }
-.title {
-	font-size: 4.8rem;
-	line-height: 1.2;
+// make images not draggable
+img[src$=".png"],
+img[src$=".gif"],
+img[src$=".jpg"] {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
 }
-.subtitle {
-	font-size: 3.5rem;
-	line-height: 1.2;
-}
-hr {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	border: 0;
-	color: transparent;
-	height: 1px;
-}
-.text-center {
-	text-align: center !important;
-}
-/** Bootstrap Cards */
-.card {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	min-width: 0;
-	overflow-wrap: break-word;
-	background-clip: border-box;
-}
-.card-body {
-	flex: 1 1 auto;
-	min-height: 1px;
-	padding: 1.25rem;
-}
+
 /** MAIN STUFF */
-// hack to force the site to take up the entire screen
-.site-container {
-	display: flex;
-	min-height: 100vh;
-	flex-flow: column nowrap;
-	justify-content: space-between;
-}
 .container {
 	width: 100%;
 	padding-right: 15px;
@@ -173,9 +141,31 @@ hr {
 	margin-left: auto;
 	padding-top: 50px;
 	padding-bottom: 50px;
+	// this is a bit ugly but it's far fewer braces
+	@media screen and (min-width: $breakpoint-xs) {
+		max-width: calc(#{$breakpoint-xs} - 16px);
+	}
+	@media screen and (min-width: $breakpoint-sm) {
+		max-width: calc(#{$breakpoint-sm} - 20px);
+	}
+	@media screen and (min-width: $breakpoint-md) {
+		max-width: $breakpoint-md;
+	}
+	@media screen and (min-width: $breakpoint-lg) {
+		max-width: $breakpoint-lg;
+	}
 }
 
-@media screen and (max-width: 760px) {
+.title {
+	font-size: 4.8rem;
+	line-height: 1.2;
+}
+.subtitle {
+	font-size: 3.5rem;
+	line-height: 1.2;
+}
+
+@media screen and (max-width: $breakpoint-sm) {
 	.title {
 		font-size: 2.75rem;
 	}
@@ -186,6 +176,10 @@ hr {
 		font-size: 1.25rem !important;
 	}
 }
+
+.text-center {
+	text-align: center !important;
+}
 .center {
 	display: block;
 	margin: auto !important;
@@ -193,6 +187,33 @@ hr {
 .disabled {
 	pointer-events: none;
 }
+// doesn't actually do display: block because icons mess up otherwise
+.block {
+	width: 100%;
+}
+
+.header-img {
+	width: 100%;
+}
+
+.btn, *.card, .banner, .header-img, .about-button {
+	overflow: hidden;
+	box-shadow: $shadow-sheet;
+	border-radius: $border-radius;
+}
+
+.zoom-affected {
+	transition: $transition-zoom;
+}
+// more flexible with custom container location (can choose same if needed)
+.zoom-hitbox:hover .zoom-affected,
+.zoom-hitbox:hover.zoom-affected {
+	transform: scale(1.05);
+	filter: brightness(110%);
+}
+
+/** relatively specific stuff that's used in multiple places */
+
 // generic class for both navbar and footer
 .navigation-link {
 	display: flex;
@@ -213,7 +234,8 @@ hr {
 		margin-right: 1ch;
 	}
 }
-@media screen and (max-width: 760px) {
+
+@media screen and (max-width: $breakpoint-sm) {
 	.navigation-link:hover {
 		// disable scaling effect (looks bad on mobile)
 		transform: none;
@@ -223,131 +245,6 @@ hr {
 		width: 26px;
 		line-height: 26px;
 		text-align: center;
-	}
-}
-.btn, *.card, .header-img, .about-button {
-	overflow: hidden;
-	box-shadow: $shadow-sheet;
-	border-radius: $border-radius;
-}
-.header-img {
-	width: 100%;
-}
-.card-body > :first-child {
-	margin-top: 0
-}
-.card-body > :last-child {
-	margin-bottom: 0;
-}
-// h5
-.card-text p {
-	font-size: 1.25rem;
-}
-.card, .card p,
-.card > h2 > a,
-.card-text {
-	color: $text-card;
-}
-.card-title {
-	color: $text-card-title;
-}
-.card > h2 > a:hover {
-	color: white;
-}
-.zoom-affected {
-	transition: $transition-zoom;
-}
-// more flexible with custom container location (can choose same if needed)
-.zoom-hitbox:hover .zoom-affected,
-.zoom-hitbox:hover.zoom-affected {
-	transform: scale(1.05);
-	filter: brightness(110%);
-}
-// doesn't actually do display: block because icons mess up otherwise
-.block {
-	width: 100%;
-}
-/** Custom Bootstrap-like */
-.banner {
-	font-size: 25px;
-	padding: 16px;
-	color: white;
-	text-align: center;
-	border-radius: $border-radius;
-	box-shadow: $shadow-sheet;
-}
-.banner a {
-	color: white !important; // vue moment
-}
-a > .banner:hover {
-	text-decoration: underline;
-}
-.warning.banner {
-	background: $warning;
-}
-.blurple.banner {
-	background: $blurple;
-}
-.button-row {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	gap: 5px;
-
-	// stretch buttons to fill row
-	> * {
-		flex-grow: 1;
-	}
-
-	@media screen and (max-width: 960px) {
-		flex-direction: column;
-	}
-}
-.res-grid-4, .res-grid-3, .res-grid-2, .top-news {
-	display: grid;
-	grid-gap: 1.5rem;
-	grid-template-columns: repeat(1, 1fr);
-}
-.addon-reel {
-	grid-template-columns: repeat(2, 1fr);
-}
-/* container size management */
-@media screen and (min-width: 576px) {
-	.container {
-		max-width: 540px;
-	}
-	.res-grid-4 {
-		grid-template-columns: repeat(2, 2fr);
-	}
-}
-@media screen and (min-width: 760px) {
-	.container {
-		max-width: 720px;
-	}
-	.res-grid-4, .res-grid-3, .res-grid-2, .top-news {
-		grid-template-columns: repeat(2, 2fr);
-	}
-}
-@media screen and (min-width: 960px) {
-	.container {
-		max-width: 960px;
-	}
-	.res-grid-3 {
-		grid-template-columns: repeat(3, 3fr);
-	}
-	.res-grid-4 {
-		grid-template-columns: repeat(4, 4fr);
-	}
-	.project-reel {
-		grid-template-columns: repeat(2, 2fr);
-	}
-}
-@media screen and (min-width: 1140px) {
-	.container {
-		max-width: 1140px;
-	}
-	.project-reel {
-		grid-template-columns: repeat(4, 4fr);
 	}
 }
 

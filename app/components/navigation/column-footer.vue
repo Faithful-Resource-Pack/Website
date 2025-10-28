@@ -174,7 +174,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 footer {
 	padding: 1rem;
@@ -244,7 +244,7 @@ footer {
 	text-align: center;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $breakpoint-xs) {
 	// set everything to centered columns on mobile
 	.footer-wrapper,
 	.footer-container {

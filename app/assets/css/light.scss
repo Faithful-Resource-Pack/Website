@@ -1,4 +1,4 @@
-@use "./lib/variables" as *;
+@use "./variables" as *;
 
 // force lower specificity so page-specific styles don't break
 :where(.light-theme) {

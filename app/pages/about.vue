@@ -118,7 +118,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 .about-image {
 	max-height: 384px;
@@ -207,7 +207,7 @@ export default defineNuxtComponent({
 }
 
 // isn't a standard breakpoint but it's the max size images render nicely at
-@media (max-width: 1080px) {
+@media screen and (max-width: 1080px) {
 	// center content and display vertically on mobile
 	.about-container {
 		display: flex;
@@ -218,7 +218,7 @@ export default defineNuxtComponent({
 	}
 }
 
-@media (max-width: 1280px) {
+@media screen and (max-width: $breakpoint-xl) {
 	// override container class to fix margins
 	.container {
 		max-width: 95% !important;

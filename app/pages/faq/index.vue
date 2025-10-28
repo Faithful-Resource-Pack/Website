@@ -9,6 +9,7 @@
 					:items="faqs.map((faq) => faq.question)"
 					variant="solo"
 					clear-icon="mdi-close"
+					:autofocus="!$vuetify.display.mobile"
 					clearable
 					hide-details
 					placeholder="Search FAQs"
@@ -133,7 +134,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 .card-row {
 	display: flex;

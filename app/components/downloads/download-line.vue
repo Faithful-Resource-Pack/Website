@@ -137,7 +137,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 $item-highlight: rgba(255, 255, 255, 0.05);
 
@@ -212,7 +212,7 @@ i.dl-icon {
 	font-size: 20px;
 }
 
-@media (max-width: 760px) {
+@media screen and (max-width: $breakpoint-sm) {
 	.download-name {
 		padding-left: 0px !important;
 		// remove inline so it wraps the badges underneath

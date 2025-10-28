@@ -12,6 +12,7 @@
 					v-model="search"
 					variant="solo"
 					clear-icon="mdi-close"
+					:autofocus="!$vuetify.display.mobile"
 					clearable
 					hide-details
 					placeholder="Search add-on name"

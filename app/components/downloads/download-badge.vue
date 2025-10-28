@@ -32,7 +32,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 $badge-text: #111111;
 $badge-green: #50ca18;

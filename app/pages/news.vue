@@ -4,7 +4,7 @@
 	<p v-if="!posts.length" class="warning banner">
 		{{ error ? `Error: ${error}` : "No posts found" }}
 	</p>
-	<div v-else class="top-news pb-5">
+	<div v-else class="basic-grid top-news pb-5">
 		<nuxt-link class="card zoom-hitbox" :to="firstPost.permalink" aria-label="Latest post">
 			<img
 				class="zoom-affected"
@@ -83,16 +83,28 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/variables" as *;
+
+.top-news {
+	grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+	.top-news {
+		grid-template-columns: repeat(2, 2fr);
+	}
+}
+
 * {
 	// must use regular css variable (scss inlines variables when compiled)
 	--news-display-height: 5;
-	@media screen and (max-width: 1280px) {
+	@media screen and (max-width: $breakpoint-xl) {
 		--news-display-height: 3;
 	}
-	@media screen and (max-width: 960px) {
+	@media screen and (max-width: $breakpoint-md) {
 		--news-display-height: 1;
 	}
-	@media screen and (max-width: 760px) {
+	@media screen and (max-width: $breakpoint-sm) {
 		--news-display-height: 4;
 	}
 }

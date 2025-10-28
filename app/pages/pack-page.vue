@@ -94,7 +94,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 .hero {
 	display: block;
@@ -109,5 +109,21 @@ export default defineNuxtComponent({
 	padding: 5vw;
 	filter: drop-shadow($shadow-wordmark);
 	width: 800px;
+}
+
+.button-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 5px;
+
+	// stretch buttons to fill row
+	> * {
+		flex-grow: 1;
+	}
+
+	@media screen and (max-width: $breakpoint-md) {
+		flex-direction: column;
+	}
 }
 </style>

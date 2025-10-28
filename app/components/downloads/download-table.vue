@@ -44,7 +44,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 .download-table-padding {
 	border-radius: $border-radius;
@@ -82,7 +82,7 @@ export default defineNuxtComponent({
 }
 
 // remove padding and table headers on mobile
-@media (max-width: 760px) {
+@media screen and (max-width: $breakpoint-sm) {
 	.download-table-padding {
 		margin: 0;
 		padding: 0;
