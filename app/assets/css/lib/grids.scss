@@ -15,7 +15,7 @@
 	}
 }
 @media screen and (min-width: $breakpoint-sm) {
-	.res-grid-4, .res-grid-3, .res-grid-2s {
+	.res-grid-4, .res-grid-3, .res-grid-2 {
 		grid-template-columns: repeat(2, 2fr);
 	}
 }
@@ -24,14 +24,6 @@
 		grid-template-columns: repeat(3, 3fr);
 	}
 	.res-grid-4 {
-		grid-template-columns: repeat(4, 4fr);
-	}
-	.project-reel {
-		grid-template-columns: repeat(2, 2fr);
-	}
-}
-@media screen and (min-width: $breakpoint-lg) {
-	.project-reel {
 		grid-template-columns: repeat(4, 4fr);
 	}
 }

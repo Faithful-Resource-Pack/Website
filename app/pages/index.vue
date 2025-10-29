@@ -155,13 +155,26 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
 
+.project-reel,
 .addon-reel {
 	grid-template-columns: repeat(4, 1fr);
 }
 
+@media screen and (max-width: $breakpoint-lg) {
+	.project-reel {
+		grid-template-columns: repeat(2, 2fr);
+	}
+}
+
 @media screen and (max-width: $breakpoint-md) {
 	.addon-reel {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 2fr);
+	}
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+	.project-reel {
+		grid-template-columns: 1fr;
 	}
 }
 
