@@ -82,15 +82,17 @@ export default defineNuxtConfig({
 			 */
 			const packPageI = pages.findIndex((el) => el.name === "pack-page");
 			const packPage = pages[packPageI];
+
+			// remove "template" page
 			pages.splice(packPageI, 1);
-			pages.push(
-				...parsed.map((pack) => ({
-					...packPage,
-					name: pack.title,
-					props: pack,
-					path: pack.permalink,
-				})),
-			);
+			const generatedPages = parsed.map((pack) => ({
+				...packPage,
+				name: pack.title,
+				props: pack,
+				path: pack.permalink,
+			}));
+
+			pages.push(...generatedPages);
 		},
 	},
 });

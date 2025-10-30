@@ -248,22 +248,6 @@ img[src$=".jpg"] {
 	}
 }
 
-.profile-card {
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: center;
-	justify-content: flex-start;
-	gap: 1ch;
-	margin-top: 1ch;
-	overflow-wrap: anywhere;
-}
-
-.profile-avatar {
-	image-rendering: pixelated;
-	height: 48px;
-	box-shadow: $shadow-sheet;
-}
-
 .v-slide-group__content {
 	align-items: center;
 }

@@ -1,34 +1,31 @@
 <template>
-	<div class="profile-card">
-		<img
-			class="profile-avatar"
-			:src="`https://vzge.me/face/128/${author.uuid || 'X-Steve'}`"
-			:alt="`${author.username}'s Avatar`"
-		/>
-		<!-- need div to treat as one unit -->
-		<div>
-			<h5 class="mb-0">{{ author.username }}</h5>
-			<nuxt-link
-				v-for="{ type, link } in author.media"
-				:key="type"
-				:to="link"
-				class="author-media"
-				target="_blank"
-				rel="noreferrer"
-			>
-				<media-icon size="small" :icon="type" />
-			</nuxt-link>
-		</div>
-	</div>
+	<profile-card
+		:src="`https://vzge.me/face/128/${author.uuid || 'X-Steve'}`"
+		:alt="`${author.username}'s Avatar`"
+	>
+		<h5 class="mb-0">{{ author.username }}</h5>
+		<nuxt-link
+			v-for="{ type, link } in author.media"
+			:key="type"
+			:to="link"
+			class="author-media"
+			target="_blank"
+			rel="noreferrer"
+		>
+			<media-icon size="small" :icon="type" />
+		</nuxt-link>
+	</profile-card>
 </template>
 
 <script>
 import MediaIcon from "~/components/lib/media-icon.vue";
+import ProfileCard from "~/components/lib/profile-card.vue";
 
 export default defineNuxtComponent({
 	name: "author-widget",
 	components: {
 		MediaIcon,
+		ProfileCard,
 	},
 	props: {
 		author: {

@@ -23,26 +23,25 @@
 	</div>
 	<template v-if="options.optifine">
 		<h5>Dependencies</h5>
-		<div class="profile-card">
-			<img src="/image/addons/optifine.png" class="profile-avatar" />
-			<p>
-				Requires
-				<nuxt-link to="https://optifine.net/downloads" target="_blank">OptiFine</nuxt-link> or an
-				<nuxt-link to="https://optifine.alternatives.lambdaurora.dev/" target="_blank">
-					equivalent mod
-				</nuxt-link>
-			</p>
-		</div>
+		<profile-card src="/image/addons/optifine.png">
+			Requires
+			<nuxt-link to="https://optifine.net/downloads" target="_blank">OptiFine</nuxt-link> or an
+			<nuxt-link to="https://optifine.alternatives.lambdaurora.dev/" target="_blank">
+				equivalent mod
+			</nuxt-link>
+		</profile-card>
 	</template>
 </template>
 
 <script>
 import MediaIcon from "~/components/lib/media-icon.vue";
+import ProfileCard from "~/components/lib/profile-card.vue";
 
 export default defineNuxtComponent({
 	name: "compatibility-card",
 	components: {
 		MediaIcon,
+		ProfileCard,
 	},
 	props: {
 		options: {
