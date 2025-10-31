@@ -10,7 +10,7 @@
 			:to="link"
 			class="author-media"
 			target="_blank"
-			rel="noreferrer"
+			rel="noopener noreferrer"
 		>
 			<media-icon size="small" :icon="type" />
 		</nuxt-link>

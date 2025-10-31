@@ -13,13 +13,13 @@ definePageMeta({
 					Faithful recreates Minecraft's original textures in higher resolutions while staying true
 					to their original look and feel.
 					<br /><br />
-					With multiple resolutions and styles, everyone can find a pack they like!
+					With a variety of resolutions and styles, there's something for everyone!
 				</p>
 				<chevron-link
 					class="about-button"
 					to="https://discord.gg/sN9YRQbBv7"
 					target="_blank"
-					rel="noreferrer"
+					rel="noopener noreferrer"
 				>
 					Join our Discord
 				</chevron-link>
@@ -72,7 +72,7 @@ definePageMeta({
 				class="about-button"
 				to="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
 				target="_blank"
-				rel="noreferrer"
+				rel="noopener noreferrer"
 			>
 				How to Contribute
 			</chevron-link>
@@ -94,7 +94,7 @@ definePageMeta({
 					class="about-button"
 					to="https://github.com/Faithful-Resource-Pack"
 					target="_blank"
-					rel="noreferrer"
+					rel="noopener noreferrer"
 				>
 					Visit our GitHub
 				</chevron-link>
