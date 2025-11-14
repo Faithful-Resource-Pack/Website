@@ -36,7 +36,7 @@
 					<p
 						v-if="addon.last_updated"
 						class="mb-0"
-						:title="preciseDate(addon.last_updated, DATETIME_MED)"
+						:title="exactDate(addon.last_updated, DATETIME_MED)"
 					>
 						Last updated {{ relativeDate(addon.last_updated) }}
 					</p>

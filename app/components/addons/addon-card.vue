@@ -60,7 +60,7 @@ export default defineNuxtComponent({
 		subtitle() {
 			const formattedPacks = this.packs.map((res) => `Faithful ${res}`).join(", ");
 			if (!this.addon.last_updated) return formattedPacks;
-			const date = preciseDate(this.addon.last_updated);
+			const date = exactDate(this.addon.last_updated);
 			if (this.packs.length > 1) return `${formattedPacks}\n${date}`;
 			return `${formattedPacks} • ${date}`;
 		},

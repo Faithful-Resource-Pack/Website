@@ -98,6 +98,8 @@ export default defineNuxtComponent({
 				Alpha: "red",
 				Snapshot: "gray",
 			},
+			// prevents potential hydration mismatch when used in computed
+			dateNow: Date.now(),
 		};
 	},
 	methods: {
@@ -122,7 +124,7 @@ export default defineNuxtComponent({
 			return this.labelColors[this.item.file_type] || "green";
 		},
 		date() {
-			if (this.item.date === "rolling") return shortDate(Date.now());
+			if (this.item.date === "rolling") return shortDate(this.dateNow);
 
 			if (this.item.date) return shortDate(this.item.date);
 

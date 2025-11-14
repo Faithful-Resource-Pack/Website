@@ -41,7 +41,7 @@ export default defineNuxtComponent({
 			return split[0];
 		},
 		subtitle() {
-			const date = preciseDate(this.date);
+			const date = exactDate(this.date);
 			if (this.tags) return `${this.tags} • ${date}`;
 			return date;
 		},

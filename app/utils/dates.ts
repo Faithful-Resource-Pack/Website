@@ -1,11 +1,13 @@
 import { DateTime } from "luxon";
 
+export type DateLike = number | string | Date;
+
 /**
  * Create a short absolute date based on the user's browser language
  * @param dateObj - Date-like object to convert
  * @returns Formatted date string
  */
-export function shortDate(dateObj: number | string | Date) {
+export function shortDate(dateObj: DateLike) {
 	const date = new Date(dateObj);
 	const year = date.getFullYear();
 	const month = date.getMonth() + 1; // 0 indexed
@@ -16,14 +18,25 @@ export function shortDate(dateObj: number | string | Date) {
 	return `${day}/${month}/${year}`;
 }
 
-export function preciseDate(dateObj: number | string | Date, style = DateTime.DATE_MED) {
+/**
+ * Convert a date-like object into a formatted exact date
+ * @param dateObj - Date-like object to convert
+ * @param style - Luxon formatting style to use
+ * @returns Precise date string
+ */
+export function exactDate(dateObj: DateLike, style = DateTime.DATE_MED) {
 	const date = new Date(dateObj);
 	return DateTime.fromJSDate(date).toLocaleString(style, {
 		locale: "en",
 	});
 }
 
-export function relativeDate(dateObj: number | string | Date) {
+/**
+ * Convert a date-like object into an English relative date
+ * @param dateObj - Date-like object to convert
+ * @returns Relative date string
+ */
+export function relativeDate(dateObj: DateLike) {
 	const date = new Date(dateObj);
 	return DateTime.fromJSDate(date).toRelative({
 		// fixes one half of the sentence being translated
