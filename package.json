@@ -14,20 +14,20 @@
 		"prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --config .prettierrc --write"
 	},
 	"dependencies": {
-		"isomorphic-dompurify": "^2.30.1",
+		"isomorphic-dompurify": "^2.32.0",
 		"luxon": "^3.7.2",
-		"marked": "^16.4.1",
-		"nuxt": "^4.2.0",
+		"marked": "^17.0.0",
+		"nuxt": "^4.2.1",
 		"remove-markdown": "^0.6.2",
-		"sass": "^1.93.2",
-		"vue": "^3.5.22",
+		"sass": "^1.94.0",
+		"vue": "^3.5.24",
 		"vuetify-nuxt-module": "^0.18.8",
 		"yaml": "^2.8.1"
 	},
 	"devDependencies": {
 		"@nuxt/eslint": "1.10.0",
 		"@types/luxon": "^3.7.1",
-		"eslint": "^9.38.0",
+		"eslint": "^9.39.1",
 		"prettier": "^3.6.2"
 	},
 	"pnpm": {
