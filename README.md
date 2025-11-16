@@ -2,6 +2,7 @@
   <img
     src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=256"
     alt="Faithful Logo"
+    height="256"
     align="right"
   >
 </a>
