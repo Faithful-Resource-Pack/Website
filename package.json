@@ -16,10 +16,10 @@
 	"dependencies": {
 		"isomorphic-dompurify": "^2.32.0",
 		"luxon": "^3.7.2",
-		"marked": "^17.0.0",
+		"marked": "^17.0.1",
 		"nuxt": "^4.2.1",
 		"remove-markdown": "^0.6.2",
-		"sass": "^1.94.0",
+		"sass": "^1.94.2",
 		"vue": "^3.5.24",
 		"vuetify-nuxt-module": "^0.18.8",
 		"yaml": "^2.8.1"
