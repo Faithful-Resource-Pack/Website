@@ -14,7 +14,7 @@
 		"prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --config .prettierrc --write"
 	},
 	"dependencies": {
-		"isomorphic-dompurify": "^2.32.0",
+		"isomorphic-dompurify": "^2.33.0",
 		"luxon": "^3.7.2",
 		"marked": "^17.0.1",
 		"nuxt": "^4.2.1",
