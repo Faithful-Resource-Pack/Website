@@ -1,7 +1,7 @@
 <template>
 	<footer class="accent-textured">
-		<div class="container footer-wrapper">
-			<div class="footer-column footer-main">
+		<div class="container footer-container">
+			<div class="footer-column footer-information">
 				<nuxt-link to="/">
 					<img
 						class="footer-wordmark zoom-hitbox zoom-affected"
@@ -21,7 +21,7 @@
 				<nuxt-link to="mailto:contact@faithfulpack.net">contact@faithfulpack.net</nuxt-link>
 				<p class="footer-info-text">&copy; {{ new Date().getFullYear() }} Faithful Resource Pack</p>
 			</div>
-			<div class="footer-container">
+			<div class="footer-item-container">
 				<div v-for="{ title, icon, items } in categories" :key="title" class="footer-column">
 					<h3 class="footer-title">
 						<v-icon size="x-small" :icon />
@@ -181,8 +181,8 @@ footer {
 	text-align: center;
 }
 
-// container for left column and the others for better wrapping
-.footer-wrapper {
+// container for left column as well as the others for better wrapping
+.footer-container {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -192,12 +192,12 @@ footer {
 	padding-top: 1rem !important;
 }
 
-// container for each column of links
-.footer-container {
+// container for just the link columns
+.footer-item-container {
 	flex-grow: 1;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
+	flex-flow: row nowrap;
+	justify-content: center;
 	align-items: stretch;
 	gap: 2rem;
 }
@@ -206,12 +206,11 @@ footer {
 	max-width: 240px;
 	display: flex;
 	flex-flow: column nowrap;
-	flex-grow: 1;
 	align-items: flex-start;
-	list-style: none;
+	flex-grow: 1;
 }
 
-.footer-main {
+.footer-information {
 	justify-content: space-between;
 }
 
@@ -244,14 +243,33 @@ footer {
 	text-align: center;
 }
 
-@media screen and (max-width: $breakpoint-xs) {
-	// set everything to centered columns on mobile
-	.footer-wrapper,
+@media screen and (max-width: $breakpoint-md) {
+	// drop link columns below information
 	.footer-container {
 		flex-flow: column wrap;
 		align-items: center;
 	}
+	// center align text for just the information on the top
+	.footer-information {
+		align-items: center;
+	}
+}
 
+@media screen and (max-width: $breakpoint-sm) {
+	// two columns of footer information
+	.footer-item-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+	// back to flex but now as columns
+	.footer-item-container {
+		display: flex;
+		flex-flow: column wrap;
+	}
+	// center align text for all columns, not just info
 	.footer-column {
 		align-items: center;
 	}
