@@ -226,7 +226,7 @@ export default defineNuxtComponent({
 	},
 	computed: {
 		favAddons() {
-			// always sorted by name ascending
+			// can't sort by insertion order since js orders the keys numerically, next best thing
 			return this.filterAddons(Object.values(this.fav), "na");
 		},
 		searchedAddons() {

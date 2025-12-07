@@ -1,21 +1,23 @@
 <template>
 	<header class="accent-textured">
-		<nav class="navbar-wrapper">
-			<nuxt-link class="navbar-mobile-wordmark" to="/" title="Faithful">
-				<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" />
-			</nuxt-link>
+		<nav class="navbar-container">
+			<div class="navbar-mobile-container">
+				<nuxt-link class="navbar-mobile-wordmark" to="/" title="Faithful">
+					<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" />
+				</nuxt-link>
 
-			<button
-				class="navbar-toggler"
-				type="button"
-				:title="isOpen ? 'Close Menu' : 'Open Menu'"
-				@click="isOpen = !isOpen"
-			>
-				<v-icon size="large" icon="mdi-menu" />
-			</button>
+				<button
+					class="navbar-toggler"
+					type="button"
+					:title="isOpen ? 'Close Menu' : 'Open Menu'"
+					@click="toggleNavbar"
+				>
+					<v-icon size="large" icon="mdi-menu" />
+				</button>
+			</div>
 
-			<!-- use a css class so that we can ignore it on desktop (always visible) -->
-			<div class="navbar-container" :class="{ show: isOpen }">
+			<!-- use .hide class instead of v-show to override on desktop more easily -->
+			<div class="navbar-item-container" :class="{ 'navbar-hidden': !isOpen }">
 				<nuxt-link
 					v-for="{ name, to, icon } in left"
 					:key="name"
@@ -23,14 +25,14 @@
 					class="navigation-link navbar-link"
 					:target="to.startsWith('http') ? '_blank' : ''"
 					:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
-					@click="isOpen = false"
+					@click="hideNavbar"
 				>
 					<v-icon size="small" :icon class="mr-2" /> {{ name }}
 				</nuxt-link>
 
 				<nuxt-link to="/" title="Faithful">
 					<img
-						class="navbar-logo-img zoom-hitbox zoom-affected"
+						class="navbar-desktop-logo zoom-hitbox zoom-affected"
 						src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=128"
 						alt="Faithful Logo"
 					/>
@@ -43,7 +45,7 @@
 					class="navigation-link navbar-link"
 					:target="to.startsWith('http') ? '_blank' : ''"
 					:rel="to.startsWith('http') ? 'noopener noreferrer' : ''"
-					@click="isOpen = false"
+					@click="hideNavbar"
 				>
 					<v-icon size="small" :icon class="mr-2" /> {{ name }}
 				</nuxt-link>
@@ -98,6 +100,14 @@ export default defineNuxtComponent({
 			right: NAVBAR_ITEMS.slice(sideLength),
 		};
 	},
+	methods: {
+		toggleNavbar() {
+			this.isOpen = !this.isOpen;
+		},
+		hideNavbar() {
+			this.isOpen = false;
+		},
+	},
 });
 </script>
 
@@ -111,16 +121,16 @@ header {
 	z-index: 999;
 	box-shadow: $shadow-sheet;
 }
-// wraps both the mobile dropdown bar and the regular navbar
-.navbar-wrapper {
+// wraps both the items and the mobile navbar if present
+.navbar-container {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	padding: 0.5rem;
+	padding: 0.5rem 1rem;
 }
-// just the items bit
-.navbar-container {
+// wraps the actual item content (becomes columns on mobile)
+.navbar-item-container {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
@@ -129,62 +139,53 @@ header {
 	padding-left: 0;
 	margin-bottom: 0;
 }
+// wraps just the wordmark and toggler
+.navbar-mobile-container {
+	display: none;
+}
 // make sure each item in the bar takes up the same length
 .navbar-link {
 	width: 125px;
 }
-.navbar-logo-img {
+// they're both the same size (helpful reference)
+.navbar-desktop-logo,
+.navbar-toggler {
 	width: 48px;
 	height: 48px;
 }
+
 .navbar-toggler {
-	padding: 0.5rem 1rem;
 	line-height: 1;
 	background: transparent;
 	border: none;
 	color: $text-navigation;
 }
-.navbar-toggler-icon {
-	vertical-align: middle;
-	font-size: 24px;
-	// prevents vuetify retheming it randomly (???)
-	color: $text-navigation;
-}
-
-// don't display on desktop layout
-.navbar-mobile-wordmark,
-.navbar-toggler {
-	display: none;
-}
 
 // mobile styles
 @media screen and (max-width: $breakpoint-sm) {
-	// set wrapper to show wordmark/toggler button on each side
-	.navbar-wrapper {
-		padding: 0.5rem 1rem;
-		justify-content: space-between;
-	}
 	// set items container to left-aligned columns
-	.navbar-container {
+	.navbar-item-container {
 		flex-direction: column;
 		justify-content: flex-start;
 		margin-top: 0.5rem;
-		// only toggle the display on mobile, on desktop the navbar is always visible
-		&:not(.show) {
-			display: none;
-		}
+	}
+	// only toggle the display on mobile, on desktop the navbar is always visible
+	.navbar-hidden {
+		display: none;
+	}
+	// show wordmark/toggler button on each side
+	.navbar-mobile-container {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 	.navbar-link {
 		justify-content: start;
 		width: 100%;
 	}
-	.navbar-logo-img {
+	.navbar-desktop-logo {
 		display: none;
-	}
-	// show toggler and wordmark
-	.navbar-mobile-wordmark,
-	.navbar-toggler {
-		display: block;
 	}
 }
 </style>
