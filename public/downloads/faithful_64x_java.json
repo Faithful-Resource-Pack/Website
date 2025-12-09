@@ -1,4 +1,15 @@
 {
+  "1.21.11": [
+    {
+      "file_type": "Release",
+      "file_version": 12,
+      "latest": true,
+      "links": {
+        "modrinth": "https://cdn.modrinth.com/data/r4GILswZ/versions/vyty9ijM/Faithful%2064x%20-%20December%202025%20Release.zip",
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/7312069"
+      }
+    }
+  ],
   "1.21.9": [
     {
       "file_type": "Release",
