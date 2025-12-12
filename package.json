@@ -14,21 +14,21 @@
 		"prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --config .prettierrc --write"
 	},
 	"dependencies": {
-		"isomorphic-dompurify": "^2.33.0",
+		"isomorphic-dompurify": "^2.34.0",
 		"luxon": "^3.7.2",
 		"marked": "^17.0.1",
-		"nuxt": "^4.2.1",
+		"nuxt": "^4.2.2",
 		"remove-markdown": "^0.6.2",
-		"sass": "^1.94.2",
-		"vue": "^3.5.24",
+		"sass": "^1.96.0",
+		"vue": "^3.5.25",
 		"vuetify-nuxt-module": "^0.18.8",
-		"yaml": "^2.8.1"
+		"yaml": "^2.8.2"
 	},
 	"devDependencies": {
-		"@nuxt/eslint": "1.10.0",
+		"@nuxt/eslint": "1.12.1",
 		"@types/luxon": "^3.7.1",
 		"eslint": "^9.39.1",
-		"prettier": "^3.6.2"
+		"prettier": "^3.7.4"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
