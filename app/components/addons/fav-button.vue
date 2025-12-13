@@ -43,7 +43,13 @@ export default {
 	// compensate for intrinsic padding
 	top: calc(#{$padding-card} - 16px);
 	left: calc(#{$padding-card} - 16px);
+	// plain styling adds opacity for some reason
 	opacity: 1 !important;
 	filter: drop-shadow(0 0 5px rgba(black, 0.5));
+	transition: $transition-button;
+}
+
+.fav-button:hover {
+	color: #faa619 !important;
 }
 </style>
