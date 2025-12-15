@@ -8,15 +8,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSH }}
+        host: ${{ secrets.VPS_HOST_IP }}
+        PORT: ${{ secrets.VPS_PORT }}
+        USERNAME: ${{ secrets.VPS_USERNAME }}
+        KEY: ${{ secrets.VPS_SSH_KEY }}
         # reload dependencies, build nuxt files, start server
         script: |
           cd /var/www/html/faithfulpack.net
