@@ -13,8 +13,8 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.VPS_HOST_IP }}
-        PORT: ${{ secrets.VPS_PORT }}
         USERNAME: ${{ secrets.VPS_USERNAME }}
+        PORT: ${{ secrets.VPS_SSH_PORT }}
         KEY: ${{ secrets.VPS_SSH_KEY }}
         # reload dependencies, build nuxt files, start server
         script: |
@@ -25,4 +25,5 @@ jobs:
           pnpm run build
           pm2 restart "website"
     - name: Purge Cloudflare cache
-      run: "curl https://api.faithfulpack.net/v2/cloudflare/purge -H 'cloudflare: ${{ secrets.PURGE_PASSWORD }}'"
+      run: |
+        curl https://api.faithfulpack.net/v2/cloudflare/purge -H 'cloudflare: ${{ secrets.PURGE_PASSWORD }}'
