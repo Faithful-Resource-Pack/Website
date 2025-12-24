@@ -1,12 +1,16 @@
 <template>
 	<v-btn
 		class="fav-button pa-0"
-		variant="plain"
-		:icon="favIcon"
+		:class="{ 'fav-button-favorited': favorite }"
+		icon
+		position="absolute"
+		variant="text"
 		:color="favColor"
 		:aria-label="favAlt"
-		@click="$emit('toggleFav')"
-	/>
+		@click="$emit('click')"
+	>
+		<v-icon :icon="favIcon" size="large" />
+	</v-btn>
 </template>
 
 <script>
@@ -19,10 +23,11 @@ export default {
 			default: false,
 		},
 	},
-	emits: ["toggleFav"],
+	emits: ["click"],
 	computed: {
 		favColor() {
-			return this.favorite ? "#FAA619" : "#FFFFFFAA";
+			// CC is 80% opacity in hex
+			return this.favorite ? "#FAA619" : "#FFFFFFCC";
 		},
 		favIcon() {
 			return this.favorite ? "mdi-star" : "mdi-star-outline";
@@ -40,16 +45,18 @@ export default {
 
 .fav-button {
 	position: absolute;
-	// compensate for intrinsic padding
-	top: calc(#{$padding-card} - 16px);
-	left: calc(#{$padding-card} - 16px);
-	// plain styling adds opacity for some reason
-	opacity: 1 !important;
-	filter: drop-shadow(0 0 5px rgba(black, 0.5));
+	top: 0;
+	left: 0;
+	filter: drop-shadow(0 0 2px rgba(black, 80%));
 	transition: $transition-button;
 }
 
 .fav-button:hover {
 	color: #faa619 !important;
+	opacity: 100%;
+}
+
+.fav-button-favorited {
+	filter: unset;
 }
 </style>

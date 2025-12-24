@@ -14,7 +14,7 @@
 			<addon-flags :options="addon.options" />
 		</template>
 		<template #unlinked>
-			<fav-button v-if="!minimal" :favorite @toggleFav="$emit('toggleFav', addon)" />
+			<fav-button v-if="!minimal" :favorite @click="$emit('toggleFav', addon)" />
 		</template>
 	</base-card>
 </template>
