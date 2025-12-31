@@ -1,10 +1,46 @@
 {
-  "1.21.7": [
+      "1.21.11": [
+    {
+      "file_type": "Release",
+      "file_version": 17,
+      "file_name": "Dec 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.11.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398320"
+      }
+    }
+  ],
+    "1.21.10": [
+    {
+      "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.10.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398317"
+      }
+    }
+  ],
+  "1.21.8": [
+    {
+      "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.8.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398303"
+      }
+    },
     {
       "file_type": "Pre-release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/July%202025/Faithful%2032x%20-%201.21.7.zip",
@@ -23,10 +59,20 @@
   ],
   "1.21.5": [
     {
+      "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.5.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398296"
+      }
+    },
+    {
       "file_type": "Pre-release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.21.5%20Experimental.zip"
@@ -45,9 +91,19 @@
   "1.21.4": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.4.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398294"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.21.4%20Experimental.zip"
@@ -75,9 +131,19 @@
   "1.21.3": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.3.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398293"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.21.3%20Experimental.zip"
@@ -114,9 +180,19 @@
   "1.21.1": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.1.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398288"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.21.1%20Experimental.zip"
@@ -153,9 +229,19 @@
   "1.20.6": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.20.6.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398287"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.20.6%20Experimental.zip"
@@ -201,9 +287,19 @@
   "1.20.4": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.20.4.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398285"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.20.4%20Experimental.zip"
@@ -230,7 +326,6 @@
     {
       "file_type": "Release",
       "file_version": 13,
-      "latest": true,
       "date": "2024-11-05",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/November%202024/Faithful%2032x%20-%201.20.4.zip",
@@ -268,9 +363,19 @@
   "1.20.2": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.20.2.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398277"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.20.2%20Experimental.zip"
@@ -352,9 +457,19 @@
   "1.20.1": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.20.1.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398277"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.20.1%20Experimental.zip"
@@ -436,9 +551,19 @@
   "1.19.4": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.19.4.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398276"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.19.4%20Experimental.zip"
@@ -538,9 +663,19 @@
   "1.19.3": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.19.3.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398275"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.19.3%20Experimental.zip"
@@ -658,9 +793,19 @@
   "1.19.2": [
     {
       "file_type": "Release",
+      "file_version": 17,
+      "file_name": "December 2025",
+      "latest": true,
+      "date": "2025-12-30",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.19.2.zip",
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/7398273"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 16,
       "file_name": "July 2025",
-      "latest": true,
       "date": "2025-07-06",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.19.2%20Experimental.zip"
@@ -788,9 +933,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.18.2%20Experimental.zip"
       }
@@ -967,9 +1112,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.17.1%20Experimental.zip"
       }
@@ -1163,9 +1308,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.16.5%20Experimental.zip"
       }
@@ -1453,9 +1598,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.15.2%20Experimental.zip"
       }
@@ -1600,9 +1745,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.14.4%20Experimental.zip"
       }
@@ -1747,9 +1892,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.13.2%20Experimental.zip"
       }
@@ -1894,9 +2039,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.12.2%20Experimental.zip"
       }
@@ -2041,9 +2186,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.11.2%20Experimental.zip"
       }
@@ -2188,9 +2333,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.10.2%20Experimental.zip"
       }
@@ -2335,9 +2480,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.9.4%20Experimental.zip"
       }
@@ -2482,9 +2627,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.8.9%20Experimental.zip"
       }
@@ -2629,9 +2774,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.7.10%20Experimental.zip"
       }
@@ -2776,9 +2921,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.6.4%20Experimental.zip"
       }
@@ -2923,9 +3068,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%201.4.6%20Experimental.zip"
       }
@@ -3070,9 +3215,9 @@
     {
       "file_type": "Release",
       "file_version": 16,
-      "file_name": "July 2025",
+      "file_name": "December 2025",
       "latest": true,
-      "date": "2025-07-06",
+      "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/Experimental/Faithful%2032x%20-%20b1.7.3%20Experimental.zip"
       }
