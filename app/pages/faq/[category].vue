@@ -20,6 +20,10 @@
 			</v-expansion-panel>
 		</v-expansion-panels>
 	</template>
+	<hr />
+	<nuxt-link class="btn block btn-lg btn-secondary" href="/faq">
+		Return to Main FAQ Page
+	</nuxt-link>
 </template>
 
 <script>
