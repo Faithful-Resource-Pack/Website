@@ -1,6 +1,6 @@
 <template>
 	<profile-card
-		:src="`https://vzge.me/face/128/${author.uuid || 'X-Steve'}`"
+		:src="`https://vzge.me/face/128/${getVisageSlug(author)}`"
 		:alt="`${author.username}'s Avatar`"
 	>
 		<h5 class="mb-0">{{ author.username }}</h5>

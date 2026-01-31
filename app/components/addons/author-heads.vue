@@ -21,32 +21,12 @@ export default {
 			required: true,
 		},
 	},
-	methods: {
-		randomHead(seed) {
-			// ten options for ten digits
-			const options = [
-				"X-Alex",
-				"X-Ari",
-				"X-Efe",
-				"X-Kai",
-				"X-Makena",
-				"X-Noor",
-				"X-Steve",
-				"X-Steve",
-				"X-Sunny",
-				"X-Zuri",
-			];
-
-			// guaranteed to have the same head for the same user always (last digit is most random)
-			return options[seed.toString().at(-1)];
-		},
-	},
 	computed: {
 		authorInfo() {
 			return this.authors.map((author) => ({
 				id: author.id,
 				// since the randomness is deterministic it's SSR-safe (wahoo)
-				src: `https://vzge.me/face/64/${author?.uuid || this.randomHead(author.id)}`,
+				src: `https://vzge.me/face/64/${getVisageSlug(author)}`,
 				username: author?.username || "Anonymous author",
 			}));
 		},
