@@ -1,13 +1,8 @@
 <template>
 	<div class="author-heads">
-		<img
-			v-for="{ id, src, username } in authorInfo"
-			:key="id"
-			:src
-			:alt="`${username}'s Avatar`"
-			:title="username"
-			loading="lazy"
-		/>
+		<nuxt-link v-for="{ id, src, username } in authorInfo" :key="id" :to="`/user/${id}`">
+			<img :src :alt="`${username}'s Avatar`" :title="username" loading="lazy" />
+		</nuxt-link>
 		<p v-if="firstUsername" class="mb-0 ml-2">By {{ firstUsername }}</p>
 	</div>
 </template>
