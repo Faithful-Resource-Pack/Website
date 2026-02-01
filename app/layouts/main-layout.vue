@@ -46,6 +46,11 @@ export default defineNuxtComponent({
 			default: false,
 		},
 	},
+	provide() {
+		return {
+			theme: computed(() => this.themeClass?.replace("-theme", "")),
+		};
+	},
 	data() {
 		return {
 			// must be null at first to force rerender when loaded
