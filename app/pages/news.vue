@@ -6,9 +6,9 @@
 		<p class="h5">Loading Posts...</p>
 	</div>
 	<div v-else class="basic-grid top-news pb-5">
-		<nuxt-link class="card zoom-hitbox" :to="firstPost.permalink" aria-label="Latest post">
+		<nuxt-link :to="firstPost.permalink" aria-label="Latest post">
 			<img
-				class="zoom-affected"
+				class="card zoom-hitbox zoom-affected"
 				:src="
 					firstPost.header_img ||
 					'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'
@@ -17,7 +17,7 @@
 				loading="lazy"
 			/>
 		</nuxt-link>
-		<div class="flex-down">
+		<div>
 			<nuxt-link :to="firstPost.permalink" class="underline-hover">
 				<h2 class="h1">{{ firstPost.title }}</h2>
 			</nuxt-link>
@@ -25,7 +25,7 @@
 				{{ compileMarkdown(firstPost.description, true) }}
 			</p>
 			<nuxt-link
-				class="btn block btn-secondary mt-5"
+				class="btn block btn-secondary"
 				:to="firstPost.permalink"
 				aria-label="Go to full post"
 			>

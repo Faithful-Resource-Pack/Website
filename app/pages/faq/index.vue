@@ -161,10 +161,6 @@ export default defineNuxtComponent({
 	text-shadow: $shadow-sheet;
 }
 
-.faq-card:hover {
-	filter: drop-shadow($shadow-sheet);
-}
-
 .faq-icon {
 	font-size: 10rem;
 	* {
