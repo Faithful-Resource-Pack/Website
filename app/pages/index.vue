@@ -35,7 +35,7 @@
 		<h2 class="title text-center">Add-ons</h2>
 		<div class="basic-grid addon-reel">
 			<template v-if="!addons.length">
-				<div class="card" v-for="i in ADDON_REEL_LENGTH - 1" :key="i">
+				<div v-for="i in ADDON_REEL_LENGTH - 1" :key="i" class="card">
 					<v-skeleton-loader type="image, subtitle" theme="dark" />
 				</div>
 			</template>
@@ -54,7 +54,7 @@
 		<h2 class="title text-center">News</h2>
 		<div class="res-grid-3">
 			<template v-if="!topPosts.length">
-				<div class="card pb-3" v-for="i in 6" :key="i">
+				<div v-for="i in 6" :key="i" class="card pb-3">
 					<v-skeleton-loader type="image, subtitle, text" theme="dark" />
 				</div>
 			</template>

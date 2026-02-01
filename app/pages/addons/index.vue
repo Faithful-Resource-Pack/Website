@@ -79,7 +79,7 @@
 			</v-col>
 		</v-row>
 		<div v-if="loading" class="res-grid-3">
-			<div class="card addon-skeleton-card" v-for="i in 5" :key="i">
+			<div v-for="i in 5" :key="i" class="card addon-skeleton-card">
 				<v-skeleton-loader type="image, subtitle, text, list-item-avatar" theme="dark" />
 			</div>
 		</div>
