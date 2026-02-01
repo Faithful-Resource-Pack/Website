@@ -13,13 +13,11 @@
 </template>
 
 <script>
-import MediaIcon from "~/components/lib/media-icon.vue";
 import ProfileCard from "~/components/lib/profile-card.vue";
 
 export default defineNuxtComponent({
 	name: "author-widget",
 	components: {
-		MediaIcon,
 		ProfileCard,
 	},
 	props: {
