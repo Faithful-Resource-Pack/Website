@@ -65,19 +65,21 @@
 		</v-chip-group>
 		<v-row no-gutters align="end" class="py-3">
 			<v-col cols="12" sm="6">
-				<p class="ma-2">{{ resultCount }} {{ results }} found</p>
+				<p v-if="loading" class="d-flex flex-row align-center ga-2 ma-2">
+					Loading Results...
+					<v-progress-circular :size="20" :width="3" indeterminate />
+				</p>
+				<p v-else class="ma-2">{{ resultCount }} {{ results }} found</p>
 			</v-col>
 			<v-spacer />
 			<v-col cols="12" :sm="$vuetify.display.mdAndUp ? 3 : 5">
 				<v-select v-model="currentSort" hide-details density="compact" :items="sortMethods" />
 			</v-col>
 		</v-row>
-		<div
-			v-if="!addons.length || !Object.keys(users).length"
-			class="d-flex flex-column align-center justify-center"
-		>
-			<v-progress-circular indeterminate :size="150" :width="7" />
-			<p class="h5">Loading Add-ons...</p>
+		<div v-if="loading" class="res-grid-3">
+			<div class="card addon-skeleton-card" v-for="i in 5" :key="i">
+				<v-skeleton-loader type="image, subtitle, text, list-item-avatar" theme="dark" />
+			</div>
 		</div>
 		<div v-else class="res-grid-3">
 			<addon-card
@@ -264,6 +266,9 @@ export default defineNuxtComponent({
 			)
 				return false;
 			return true;
+		},
+		loading() {
+			return !Object.keys(this.users).length;
 		},
 	},
 	watch: {

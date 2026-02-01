@@ -16,6 +16,10 @@
 		background: $bg-light-accent-textured !important;
 	}
 
+	.v-skeleton-loader__image {
+		background: $bg-light !important;
+	}
+
 	// about page stuff
 	.about-button {
 		background: black;

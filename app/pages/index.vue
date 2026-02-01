@@ -34,7 +34,14 @@
 
 		<h2 class="title text-center">Add-ons</h2>
 		<div class="basic-grid addon-reel">
-			<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
+			<template v-if="!addons.length">
+				<div class="card" v-for="i in ADDON_REEL_LENGTH - 1" :key="i">
+					<v-skeleton-loader type="image, subtitle" theme="dark" />
+				</div>
+			</template>
+			<template v-else>
+				<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
+			</template>
 			<base-card to="/addons" image="/image/addons/see_more.png">
 				<template #title>
 					<chevron-link aria-label="Go to add-on page">See More</chevron-link>
@@ -46,14 +53,21 @@
 
 		<h2 class="title text-center">News</h2>
 		<div class="res-grid-3">
-			<post-card
-				v-for="{ id, permalink, header_img, title, date } in topPosts"
-				:key="id"
-				:to="permalink"
-				:image="header_img"
-				:title
-				:date
-			/>
+			<template v-if="!topPosts.length">
+				<div class="card pb-3" v-for="i in 6" :key="i">
+					<v-skeleton-loader type="image, subtitle, text" theme="dark" />
+				</div>
+			</template>
+			<template v-else>
+				<post-card
+					v-for="{ id, permalink, header_img, title, date } in topPosts"
+					:key="id"
+					:to="permalink"
+					:image="header_img"
+					:title
+					:date
+				/>
+			</template>
 		</div>
 		<br />
 		<nuxt-link class="btn btn-secondary news-button center" to="/news" aria-label="Go to news page">
@@ -124,6 +138,7 @@ export default defineNuxtComponent({
 	data() {
 		return {
 			projects: PROJECTS,
+			ADDON_REEL_LENGTH,
 			addons: [],
 			topPosts: [],
 		};

@@ -1,9 +1,11 @@
 <template>
 	<h1 class="title my-5 text-center">Faithful News</h1>
 
-	<div v-if="!posts.length" class="d-flex flex-column align-center justify-center">
-		<v-progress-circular indeterminate :size="150" :width="7" />
-		<p class="h5">Loading Posts...</p>
+	<div v-if="!posts.length" class="basic-grid top-news pb-5">
+		<v-skeleton-loader type="image" theme="dark" />
+		<div>
+			<v-skeleton-loader type="article" :theme />
+		</div>
 	</div>
 	<div v-else class="basic-grid top-news pb-5">
 		<nuxt-link :to="firstPost.permalink" aria-label="Latest post">
@@ -36,7 +38,12 @@
 
 	<hr />
 
-	<div class="res-grid-3">
+	<div v-if="!posts.length" class="res-grid-3">
+		<div class="card" v-for="i in 5" :key="i">
+			<v-skeleton-loader type="image, subtitle, text" theme="dark" class="pb-3" />
+		</div>
+	</div>
+	<div v-else class="res-grid-3">
 		<!-- no need for alt text as the images are decorative (the title is enough) -->
 		<post-card
 			v-for="{ id, permalink, header_img, title, date } in restPosts"
@@ -56,6 +63,7 @@ export default defineNuxtComponent({
 	components: {
 		PostCard,
 	},
+	inject: ["theme"],
 	data() {
 		return { posts: [] };
 	},

@@ -3417,8 +3417,8 @@ packages:
   ohash@2.0.11:
     resolution: {integrity: sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ==}
 
-  on-change@6.0.1:
-    resolution: {integrity: sha512-P7o0hkMahOhjb1niG28vLNAXsJrRcfpJvYWcTmPt/Tf4xedcF2PA1E9++N1tufY8/vIsaiJgHhjQp53hJCe+zw==}
+  on-change@6.0.2:
+    resolution: {integrity: sha512-08+12qcOVEA0fS9g/VxKS27HaT94nRutUT77J2dr8zv/unzXopvhBuF8tNLWsoLQ5IgrQ6eptGeGqUYat82U1w==}
     engines: {node: '>=20'}
 
   on-finished@2.4.1:
@@ -8224,7 +8224,7 @@ snapshots:
       nypm: 0.6.4
       ofetch: 1.5.1
       ohash: 2.0.11
-      on-change: 6.0.1
+      on-change: 6.0.2
       oxc-minify: 0.110.0
       oxc-parser: 0.110.0
       oxc-transform: 0.110.0
@@ -8332,7 +8332,7 @@ snapshots:
 
   ohash@2.0.11: {}
 
-  on-change@6.0.1: {}
+  on-change@6.0.2: {}
 
   on-finished@2.4.1:
     dependencies:

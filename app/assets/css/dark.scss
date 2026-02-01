@@ -16,6 +16,10 @@
 		background: $bg-dark-accent-textured !important;
 	}
 
+	.v-skeleton-loader__image {
+		background: $bg-dark !important;
+	}
+
 	.v-expansion-panels--variant-accordion * {
 		background: $bg-dark-accent !important;
 	}
