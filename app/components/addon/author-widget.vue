@@ -8,7 +8,7 @@
 			v-for="{ type, link } in author.media"
 			:key="type"
 			:to="link"
-			class="author-media"
+			class="user-media-icon mr-2"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -35,18 +35,3 @@ export default defineNuxtComponent({
 	},
 });
 </script>
-
-<style scoped lang="scss">
-@use "~/assets/css/variables" as *;
-
-.author-media {
-	color: white !important;
-	opacity: 0.7;
-	margin-right: 0.5rem;
-	// technically counts as navigation if you think about it
-	transition: $transition-navigation;
-	&:hover {
-		opacity: 1;
-	}
-}
-</style>

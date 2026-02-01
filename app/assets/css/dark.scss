@@ -10,7 +10,9 @@
 		background: $bg-dark-accent-textured;
 	}
 
-	.v-chip--variant-elevated, .v-card--variant-elevated {
+	.v-chip--variant-elevated,
+	.v-card--variant-elevated,
+	.v-btn--variant-elevated {
 		background: $bg-dark-accent-textured !important;
 	}
 

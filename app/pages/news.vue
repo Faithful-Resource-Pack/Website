@@ -117,13 +117,4 @@ export default defineNuxtComponent({
 	-webkit-line-clamp: var(--news-display-height);
 	-webkit-box-orient: vertical;
 }
-
-.underline-hover {
-	color: unset;
-	&:hover {
-		color: unset;
-		text-decoration: underline;
-		text-decoration-color: currentColor;
-	}
-}
 </style>
