@@ -1,7 +1,7 @@
 /** dark theme */
 $text-dark: rgba(255, 255, 255, 0.7);
 
-$bg-dark: #131313;
+$bg-dark: #2b2b2b;
 // sometimes we need the url independently (especially with blending modes)
 $bg-dark-url: url("/image/background/dark.png");
 $bg-dark-textured: $bg-dark $bg-dark-url repeat;
