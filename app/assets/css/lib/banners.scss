@@ -8,8 +8,8 @@
 	color: white;
 	text-align: center;
 }
-.banner a {
-	color: white !important; // vue moment
+.banner > * {
+	color: white; // vue moment
 }
 a > .banner:hover {
 	text-decoration: underline;
