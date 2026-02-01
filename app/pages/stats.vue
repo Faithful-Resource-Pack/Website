@@ -4,31 +4,34 @@
 		<h2 class="text-center pb-5">Under Construction!</h2>
 
 		<h2 class="subtitle my-5">Main Packs</h2>
-		<div class="stats-container">
-			<h3>Faithful 32x Releases</h3>
-			<v-chip v-bind="badgeProps">{{ postStats.f32 }}</v-chip>
+		<div v-if="!Object.keys(addonStats).length">
+			<v-progress-circular size="24" indeterminate /> Loading...
 		</div>
-		<br />
-		<div class="stats-container">
-			<h3>Faithful 64x Releases</h3>
-			<v-chip v-bind="badgeProps">{{ postStats.f64 }}</v-chip>
+		<div v-else>
+			<div class="stats-container">
+				<h3>Faithful 32x Releases</h3>
+				<v-chip v-bind="badgeProps">{{ postStats.f32 }}</v-chip>
+			</div>
+			<br />
+			<div class="stats-container">
+				<h3>Faithful 64x Releases</h3>
+				<v-chip v-bind="badgeProps">{{ postStats.f64 }}</v-chip>
+			</div>
+			<br />
+			<div class="stats-container">
+				<h3>Classic Faithful 32x Releases</h3>
+				<v-chip v-bind="badgeProps">{{ postStats.cf32 }}</v-chip>
+			</div>
+			<br />
+			<div class="stats-container">
+				<h3>Classic Faithful 64x Releases</h3>
+				<v-chip v-bind="badgeProps">{{ postStats.cf64 }}</v-chip>
+			</div>
 		</div>
-		<br />
-		<div class="stats-container">
-			<h3>Classic Faithful 32x Releases</h3>
-			<v-chip v-bind="badgeProps">{{ postStats.cf32 }}</v-chip>
-		</div>
-		<!-- uncomment this when cf64 releases are added
-		<br />
-		<div class="stats-container">
-			<h3>Classic Faithful 64x Releases</h3>
-			<v-chip v-bind="badgeProps">{{ postStats.cf64 }}</v-chip>
-		</div>
-		-->
 		<br />
 
 		<h2 class="subtitle my-5">Add-ons</h2>
-		<div v-if="!Object.keys(addonStats).length && addons !== null">
+		<div v-if="!Object.keys(addonStats).length">
 			<v-progress-circular size="24" indeterminate /> Loading...
 		</div>
 		<div v-else class="res-grid-2">
@@ -53,6 +56,8 @@ export default defineNuxtComponent({
 				size: "large",
 				density: "compact",
 			},
+			posts: [],
+			addons: [],
 		};
 	},
 	// for some reason <script setup> doesn't work with asyncData (???)
@@ -61,16 +66,15 @@ export default defineNuxtComponent({
 			name: "Statistics",
 		});
 	},
-	async asyncData() {
-		const { apiURL } = useRuntimeConfig().public;
-		const [posts, addons] = await Promise.all([
-			$fetch(`${apiURL}/posts/approved`),
-			$fetch(`${apiURL}/addons/approved`),
-		]);
-		return {
-			posts,
-			addons,
-		};
+	methods: {
+		async loadAddons() {
+			const { apiURL } = useRuntimeConfig().public;
+			this.addons = await $fetch(`${apiURL}/addons/approved`);
+		},
+		async loadPosts() {
+			const { apiURL } = useRuntimeConfig().public;
+			this.posts = await $fetch(`${apiURL}/posts/approved`);
+		},
 	},
 	computed: {
 		postStats() {
@@ -116,6 +120,10 @@ export default defineNuxtComponent({
 
 			return result;
 		},
+	},
+	created() {
+		this.loadAddons();
+		this.loadPosts();
 	},
 });
 </script>

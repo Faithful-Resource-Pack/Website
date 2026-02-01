@@ -121,33 +121,31 @@ export default defineNuxtComponent({
 			layout: "no-container",
 		});
 	},
-	async asyncData() {
-		const { apiURL } = useRuntimeConfig().public;
-		try {
-			const [allAddons, topPosts] = await Promise.all([
-				$fetch(`${apiURL}/addons/approved`),
-				$fetch(`${apiURL}/posts/top?count=6`),
-			]);
-
-			return {
-				addons: Array.from(
-					// subtract one for "see more" card
-					{ length: ADDON_REEL_LENGTH - 1 },
-					() => allAddons.splice((Math.random() * allAddons.length) | 0, 1)[0],
-				),
-				topPosts,
-			};
-		} catch {
-			return {
-				addons: [],
-				topPosts: [],
-			};
-		}
-	},
 	data() {
 		return {
 			projects: PROJECTS,
+			addons: [],
+			topPosts: [],
 		};
+	},
+	methods: {
+		async loadAddons() {
+			const { apiURL } = useRuntimeConfig().public;
+			const allAddons = await $fetch(`${apiURL}/addons/approved`);
+			this.addons = Array.from(
+				// subtract one for "see more" card
+				{ length: ADDON_REEL_LENGTH - 1 },
+				() => allAddons.splice((Math.random() * allAddons.length) | 0, 1)[0],
+			);
+		},
+		async loadPosts() {
+			const { apiURL } = useRuntimeConfig().public;
+			this.topPosts = await $fetch(`${apiURL}/posts/top`);
+		},
+	},
+	created() {
+		this.loadAddons();
+		this.loadPosts();
 	},
 });
 </script>

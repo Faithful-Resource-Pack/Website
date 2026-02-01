@@ -72,18 +72,22 @@
 				<v-select v-model="currentSort" hide-details density="compact" :items="sortMethods" />
 			</v-col>
 		</v-row>
-		<div class="res-grid-3">
-			<!-- favoriting doesn't work serverside since it depends on localstorage -->
-			<client-only>
-				<addon-card
-					v-for="addon in favAddons"
-					:key="addon.id"
-					:addon
-					:users
-					favorite
-					@toggleFav="toggleFav"
-				/>
-			</client-only>
+		<div
+			v-if="!addons.length || !Object.keys(users).length"
+			class="d-flex flex-column align-center justify-center"
+		>
+			<v-progress-circular indeterminate :size="150" :width="7" />
+			<p class="h5">Loading Add-ons...</p>
+		</div>
+		<div v-else class="res-grid-3">
+			<addon-card
+				v-for="addon in favAddons"
+				:key="addon.id"
+				:addon
+				:users
+				favorite
+				@toggleFav="toggleFav"
+			/>
 			<addon-card
 				v-for="addon in displayedAddons"
 				:key="currentSort + addon.id"
@@ -118,20 +122,6 @@ export default defineNuxtComponent({
 			layout: "no-container",
 		});
 	},
-	async asyncData() {
-		const { apiURL } = useRuntimeConfig().public;
-		const [addons, users] = await Promise.all([
-			$fetch(`${apiURL}/addons/approved`),
-			$fetch(`${apiURL}/users/names`),
-		]);
-		return {
-			addons,
-			users: users.reduce((acc, cur) => {
-				acc[cur.id] = cur;
-				return acc;
-			}, {}),
-		};
-	},
 	data() {
 		const sortMethods = [
 			{ title: "Date (Newest to Oldest)", value: "dd" },
@@ -140,6 +130,8 @@ export default defineNuxtComponent({
 			{ title: "Name (Z-A)", value: "nd" },
 		];
 		return {
+			addons: [],
+			users: {},
 			// store as object for faster lookup (sorting not needed)
 			fav: {},
 			search: "",
@@ -223,6 +215,18 @@ export default defineNuxtComponent({
 			)
 				this.shownResults += DISPLAYED_ADDONS_COUNT;
 		},
+		async loadAddons() {
+			const { apiURL } = useRuntimeConfig().public;
+			this.addons = await $fetch(`${apiURL}/addons/approved`);
+		},
+		async loadUsers() {
+			const { apiURL } = useRuntimeConfig().public;
+			const users = await $fetch(`${apiURL}/users/names`);
+			this.users = users.reduce((acc, cur) => {
+				acc[cur.id] = cur;
+				return acc;
+			}, {});
+		},
 	},
 	computed: {
 		favAddons() {
@@ -273,6 +277,8 @@ export default defineNuxtComponent({
 	created() {
 		// take query params from route and start search with that if possible (can be done with ssr)
 		if (this.$route.query.search) this.search = this.$route.query.search;
+		this.loadAddons();
+		this.loadUsers();
 	},
 	mounted() {
 		// need localstorage access so this must be done after mounting

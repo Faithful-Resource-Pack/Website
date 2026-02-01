@@ -1,9 +1,10 @@
 <template>
 	<h1 class="title my-5 text-center">Faithful News</h1>
 
-	<p v-if="!posts.length" class="warning banner">
-		{{ error ? `Error: ${error}` : "No posts found" }}
-	</p>
+	<div v-if="!posts.length" class="d-flex flex-column align-center justify-center">
+		<v-progress-circular indeterminate :size="150" :width="7" />
+		<p class="h5">Loading Posts...</p>
+	</div>
 	<div v-else class="basic-grid top-news pb-5">
 		<nuxt-link class="card zoom-hitbox" :to="firstPost.permalink" aria-label="Latest post">
 			<img
@@ -55,20 +56,15 @@ export default defineNuxtComponent({
 	components: {
 		PostCard,
 	},
-	async asyncData() {
-		const { apiURL } = useRuntimeConfig().public;
-		try {
+	data() {
+		return { posts: [] };
+	},
+	methods: {
+		async loadPosts() {
+			const { apiURL } = useRuntimeConfig().public;
 			const posts = await $fetch(`${apiURL}/posts/approved`);
-			return {
-				posts: posts.sort((a, b) => new Date(b.date) - new Date(a.date)),
-				error: null,
-			};
-		} catch (error) {
-			return {
-				posts: [],
-				error,
-			};
-		}
+			this.posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+		},
 	},
 	computed: {
 		firstPost() {
@@ -78,6 +74,9 @@ export default defineNuxtComponent({
 			if (!this.posts) return [];
 			return this.posts.slice(1);
 		},
+	},
+	created() {
+		this.loadPosts();
 	},
 });
 </script>
