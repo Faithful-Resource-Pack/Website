@@ -32,7 +32,6 @@ export default defineNuxtComponent({
 	align-items: center;
 	justify-content: flex-start;
 	gap: 1ch;
-	margin-top: 1ch;
 	overflow-wrap: anywhere;
 }
 

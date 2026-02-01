@@ -1,21 +1,14 @@
 <template>
-	<nuxt-link class="underline-hover" :to="`/user/${author.id}`">
-		<profile-card
-			:src="`https://vzge.me/face/128/${getVisageSlug(author)}`"
-			:alt="`${author.username}'s Avatar`"
-		>
-			<h5 class="mb-0">{{ author.username }}</h5>
-			<nuxt-link
-				v-for="{ type, link } in author.media"
-				:key="type"
-				:to="link"
-				class="user-media-icon mr-2"
-				target="_blank"
-				rel="noopener noreferrer"
+	<!-- remove padding and re-add it so the highlight has a really nice margin -->
+	<nuxt-link class="author-widget underline-hover mx-n2" :to="`/user/${author.id}`">
+		<div class="ma-2">
+			<profile-card
+				:src="`https://vzge.me/face/128/${getVisageSlug(author)}`"
+				:alt="`${author.username}'s Avatar`"
 			>
-				<media-icon size="small" :icon="type" />
-			</nuxt-link>
-		</profile-card>
+				<h5 class="mb-0">{{ author.username }}</h5>
+			</profile-card>
+		</div>
 	</nuxt-link>
 </template>
 
@@ -37,3 +30,18 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+@use "~/assets/css/variables" as *;
+$item-highlight: rgba(255, 255, 255, 0.1);
+
+.author-widget {
+	border-radius: $border-radius;
+	transition: $transition-button;
+}
+
+.author-widget:hover {
+	background: $item-highlight;
+	text-decoration: underline;
+}
+</style>

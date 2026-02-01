@@ -56,10 +56,22 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/variables" as *;
+
 .user-media-container {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	gap: 0.5rem;
+}
+
+.user-media-icon {
+	color: white !important;
+	opacity: 0.7 !important;
+	// technically counts as navigation if you think about it
+	transition: $transition-navigation;
+	&:hover {
+		opacity: 1 !important;
+	}
 }
 </style>

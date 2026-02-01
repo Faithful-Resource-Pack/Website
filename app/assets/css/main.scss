@@ -223,15 +223,6 @@ img[src$=".jpg"] {
 
 /** relatively specific stuff that's used in multiple places */
 
-.user-media-icon {
-	color: white !important;
-	opacity: 0.7 !important;
-	// technically counts as navigation if you think about it
-	transition: $transition-navigation;
-	&:hover {
-		opacity: 1 !important;
-	}
-}
 // generic class for both navbar and footer
 .navigation-link {
 	display: flex;
