@@ -34,6 +34,7 @@
 			<v-chip
 				v-for="({ color, icon, text }, k) in packs"
 				:key="k"
+				class="accent-textured"
 				filter
 				:value="k"
 				:style="{ color }"
@@ -55,6 +56,7 @@
 			<v-chip
 				v-for="({ color, icon, text }, k) in editions"
 				:key="k"
+				class="accent-textured"
 				filter
 				:value="k"
 				:style="{ color }"
