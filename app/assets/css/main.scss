@@ -224,9 +224,9 @@ img[src$=".jpg"] {
 	transition: $transition-navigation;
 	padding-right: 0;
 	padding-left: 0;
-	color: $text-navigation;
+	color: $text-navigation !important;
 	&:hover, &:focus {
-		color: $text-card;
+		color: $text-card !important;
 		transform: scale(0.95);
 		cursor: pointer;
 	}
@@ -256,3 +256,6 @@ img[src$=".jpg"] {
 	display: none;
 }
 
+.v-chip {
+	border-radius: $border-radius !important;
+}
