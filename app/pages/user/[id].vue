@@ -73,7 +73,8 @@ export default defineNuxtComponent({
 				// need to check if user slug exists before getting addons
 				user = await $fetch(`${apiURL}/users/${id.slice(1)}`);
 				// try for exact match
-				if (Array.isArray(user)) user = user.find((u) => u.username.toLowerCase() === id.slice(1));
+				if (Array.isArray(user))
+					user = user.find((u) => u.username.toLowerCase() === id.slice(1).toLowerCase());
 				if (!user) throw new Error("No user with same username found");
 				addons = await $fetch(`${apiURL}/users/${user.id}/addons/approved`);
 			} else {
