@@ -1,0 +1,29 @@
+@use "../variables" as *;
+
+/** Bootstrap grids */
+// todo: move to vuetify grids
+.basic-grid, .res-grid-4, .res-grid-3, .res-grid-2 {
+	display: grid;
+	grid-gap: 1.5rem;
+	grid-template-columns: 1fr;
+}
+
+/* container size management */
+@media screen and (min-width: $breakpoint-xs) {
+	.res-grid-4 {
+		grid-template-columns: repeat(2, 2fr);
+	}
+}
+@media screen and (min-width: $breakpoint-sm) {
+	.res-grid-4, .res-grid-3, .res-grid-2 {
+		grid-template-columns: repeat(2, 2fr);
+	}
+}
+@media screen and (min-width: $breakpoint-md) {
+	.res-grid-3 {
+		grid-template-columns: repeat(3, 3fr);
+	}
+	.res-grid-4 {
+		grid-template-columns: repeat(4, 4fr);
+	}
+}

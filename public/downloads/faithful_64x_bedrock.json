@@ -1,9 +1,36 @@
 {
+  "1.21.130": [
+    {
+      "file_type": "Release",
+      "file_version": 12,
+      "latest": true,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/7312071"
+      }
+    }
+  ],
+  "1.21.111": [
+    {
+      "file_type": "Release",
+      "file_version": 11,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/7049180"
+      }
+    }
+  ],
+  "1.21.90/100": [
+    {
+      "file_type": "Release",
+      "file_version": 10,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/6743963"
+      }
+    }
+  ],
   "1.21.70": [
     {
       "file_type": "Release",
       "file_version": 9,
-      "latest": true,
       "links": {
         "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/6311941"
       }

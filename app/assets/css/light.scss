@@ -1,0 +1,67 @@
+@use "./variables" as *;
+
+// force lower specificity so page-specific styles don't break
+:where(.light-theme) {
+	.textured {
+		background: $bg-light-textured;
+	}
+
+	.accent-textured, .card {
+		background: $bg-light-accent-textured;
+	}
+
+	.accent-textured .v-chip--variant-elevated,
+	.accent-textured .v-card--variant-elevated,
+	.accent-textured .v-btn--variant-elevated,
+	.accent-textured.v-chip--variant-elevated,
+	.accent-textured.v-card--variant-elevated,
+	.accent-textured.v-btn--variant-elevated {
+		background: $bg-light-accent-textured !important;
+	}
+
+	.v-skeleton-loader__image {
+		background: $bg-light !important;
+	}
+
+	// about page stuff
+	.about-button {
+		background: black;
+		color: white;
+		&:hover {
+			// dark preserves blue hover effect, override it here
+			color: white !important;
+		}
+	}
+
+	.green-background,
+	.blue-background,
+	.pink-background,
+	.yellow-background,
+	.orange-background {
+		background-blend-mode: multiply;
+		// only use white with a colored background, else use normal text color
+		.colored-title {
+			color: white;
+		}
+	}
+
+	.green-background {
+		background: $bg-green $bg-light-url repeat !important;
+	}
+
+	.blue-background {
+		background: $bg-blue $bg-light-url repeat !important;
+	}
+
+	.pink-background {
+		background: $bg-pink $bg-light-url repeat !important;
+	}
+
+	.yellow-background {
+		background: $bg-yellow $bg-light-url repeat !important;
+	}
+
+	.orange-background {
+		background: $bg-orange $bg-light-url repeat !important;
+	}
+}

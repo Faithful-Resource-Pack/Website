@@ -1,0 +1,75 @@
+/** dark theme */
+$text-dark: rgba(255, 255, 255, 0.7);
+
+$bg-dark: #2b2b2b;
+// sometimes we need the url independently (especially with blending modes)
+$bg-dark-url: url("/image/background/dark.png");
+$bg-dark-textured: $bg-dark $bg-dark-url repeat;
+
+$bg-dark-accent: #0C0C0C;
+$bg-dark-accent-url: url("/image/background/dark_accent.png");
+$bg-dark-accent-textured: $bg-dark-accent $bg-dark-accent-url repeat;
+
+/** light theme */
+$text-light: #212529; // I don't know why this is blue either
+
+$bg-light: #E5E5E5;
+$bg-light-url: url("/image/background/light.png");
+$bg-light-textured: $bg-light $bg-light-url repeat;
+
+$bg-light-accent: #292929;
+$bg-light-accent-url: url("/image/background/light_accent.png");
+$bg-light-accent-textured: $bg-light-accent $bg-light-accent-url repeat;
+
+/** accent colors (text is lighter than bg) */
+$bg-green: #22A331;
+$bg-blue: #258ED4;
+$bg-pink: #CD2D7A;
+$bg-yellow: #FFD000;
+$bg-orange: #E66000;
+
+$text-green: #76C945;
+$text-blue: #5EBBF9;
+$text-pink: #FC53A5;
+$text-yellow: #FFF700;
+$text-orange: #FF8340;
+
+/** button colors */
+$btn-primary: #007BFF;
+$btn-primary-hover: #0069D9;
+$btn-primary-active: #0062CC;
+
+$btn-secondary: #343A40;
+$btn-secondary-hover: #23272B;
+$btn-secondary-active: #1D2124;
+
+/** other text colors */
+$text-card-title: white;
+$text-card: $text-dark; // easier to change later if it's aliased
+$text-navigation: rgba(255, 255, 255, 0.5);
+$text-link: $btn-primary;
+$text-link-hover: $btn-primary-hover;
+
+/** shadows */
+// any overlay, e.g. banners, cards, etc
+$shadow-sheet: 0 3px 6px rgba(0, 0, 0, 0.4);
+$shadow-image: 0 10px 10px rgba(0, 0, 0, 0.465);
+$shadow-wordmark: 0 0 10px #000000;
+
+/** transitions */
+$transition-zoom: all 0.5s ease;
+$transition-button: all 0.15s ease; // bootstrap + about page
+$transition-navigation: all 0.1s ease;
+
+/** breakpoints (I have no idea where they came from) */
+$breakpoint-xs: 576px;
+$breakpoint-sm: 760px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1140px;
+$breakpoint-xl: 1280px;
+
+/** global settings */
+$padding-card: 12px;
+$border-radius: 6px;
+$blurple: #5865F2;
+$warning: #F44336;

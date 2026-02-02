@@ -1,0 +1,3 @@
+User-agent: *
+# don't crawl images (doesn't make sense for SEO)
+Disallow: /image/

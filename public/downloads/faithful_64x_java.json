@@ -1,9 +1,39 @@
 {
+  "1.21.11": [
+    {
+      "file_type": "Release",
+      "file_version": 12,
+      "latest": true,
+      "links": {
+        "modrinth": "https://cdn.modrinth.com/data/r4GILswZ/versions/vyty9ijM/Faithful%2064x%20-%20December%202025%20Release.zip",
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/7312069"
+      }
+    }
+  ],
+  "1.21.9": [
+    {
+      "file_type": "Release",
+      "file_version": 11,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/7049187",
+        "modrinth": "https://cdn.modrinth.com/data/r4GILswZ/versions/YVr5XH0b/Faithful%2064x%20-%20September%202025%20Release.zip"
+      }
+    }
+  ],
+  "1.21.7": [
+    {
+      "file_type": "Release",
+      "file_version": 10,
+      "links": {
+        "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/6733079",
+        "modrinth": "https://cdn.modrinth.com/data/r4GILswZ/versions/5T6GekBK/Faithful%2064x%20-%20Release%2010.zip"
+      }
+    }
+  ],
   "1.21.5": [
     {
       "file_type": "Release",
       "file_version": 9,
-      "latest": true,
       "links": {
         "curse": "https://www.curseforge.com/minecraft/texture-packs/faithful-64x/download/6311938",
         "modrinth": "https://cdn.modrinth.com/data/r4GILswZ/versions/5cOeToG5/Faithful%2064x%20-%20March%202025%20Release.zip"
