@@ -1,0 +1,23 @@
+@use "../variables" as *;
+
+/** Bootstrap-like banners */
+// these aren't used terribly much so they could probably be phased out
+.banner {
+	font-size: 25px;
+	padding: 16px;
+	color: white;
+	text-align: center;
+}
+.banner > * {
+	color: white; // vue moment
+}
+a > .banner:hover {
+	text-decoration: underline;
+}
+
+.warning.banner {
+	background: $warning;
+}
+.blurple.banner {
+	background: $blurple;
+}

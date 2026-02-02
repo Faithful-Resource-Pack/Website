@@ -1,0 +1,70 @@
+@use "../variables" as *;
+
+/** Bootstrap Cards */
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	overflow-wrap: break-word;
+	background-clip: border-box;
+}
+.card-body {
+	flex: 1 1 auto;
+	min-height: 1px;
+	padding: 1.25rem;
+}
+// don't stack margin and padding inside cards (text has margin by default)
+.card-body > :first-child {
+	margin-top: 0;
+}
+.card-body > :last-child {
+	margin-bottom: 0;
+}
+.card-title {
+	color: $text-card-title;
+}
+// h5
+.card-text p {
+	font-size: 1.25rem;
+}
+.card, .card p,
+.card > h2 > a,
+.card-text {
+	color: $text-card;
+}
+.card > h2 > a:hover {
+	color: $text-card-title;
+}
+
+.card {
+	// background uses opacity by default so the stone background bleeds through
+	.v-skeleton-loader__image {
+		background: #444 !important;
+	}
+	// margins are way too big by default
+	.v-skeleton-loader__text {
+		margin-top: 0.25rem !important;
+		margin-bottom: 0.25rem !important;
+	}
+	// make subtitles brighter than text
+	.v-skeleton-loader__subtitle > .v-skeleton-loader__text {
+		background: rgba(white, 0.5) !important;
+		margin-bottom: 0.75rem !important;
+		margin-top: 0.75rem !important;
+	}
+}
+.addon-skeleton-card {
+	// square avatar for addon pages
+	.v-skeleton-loader__avatar {
+		min-width: 32px !important;
+		min-height: 32px !important;
+		width: 32px !important;
+		height: 32px !important;
+		border-radius: 0 !important;
+	}
+	// author text
+	.v-skeleton-loader__list-item-avatar > .v-skeleton-loader__text {
+		max-width: 50% !important;
+	}
+}

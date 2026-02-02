@@ -1,0 +1,25 @@
+@use "./variables" as *;
+
+$bg-end: #120E19;
+
+.error-theme {
+	h1 {
+		color: white;
+	}
+	p {
+		color: $text-dark;
+	}
+	.site-container {
+		background: $bg-end url("/image/background/the_end.jpg") no-repeat center;
+	}
+	.textured, .accent-textured {
+		background: transparent;
+	}
+	header {
+		box-shadow: none !important;
+	}
+	// make page a bit shorter (no need for bottom padding)
+	.container {
+		padding-bottom: 0px;
+	}
+}

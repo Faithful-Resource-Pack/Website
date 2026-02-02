@@ -12,7 +12,12 @@ description: |
   <br><br>
   [NOTE: Missing textures will be present, as the pack is not complete. In addition, Bedrock edition is currently non-existent and will become available at a later date.]
 
-# todo: move this to downloads page
+buttons:
+  - { to: /classic64x-jappa, text: Check out the Jappa version of this project! }
+
+# TODO: move this to downloads page
 downloads:
   Latest Version:
-    1.21.5 for Java Edition: https://www.planetminecraft.com/texture-pack/classic-faithful-64x-programmer-art/download/file/18681992/
+    1.21.5 for Java Edition (PMC): https://www.planetminecraft.com/texture-pack/classic-faithful-64x-programmer-art/download/file/18681992/
+    1.21.5 for Java Edition (Curseforge): https://www.curseforge.com/minecraft/texture-packs/classic-faithful-64x/files/6357901
+    1.21.5 for Java Edition (Modrinth): https://modrinth.com/resourcepack/classic-faithful-64x/version/2025q1
