@@ -38,7 +38,7 @@
 			</v-chip>
 		</div>
 		<div class="res-grid-3">
-			<addon-card v-for="addon in addons" :key="addon.id" :addon minimal />
+			<addon-card v-for="addon in addons" :key="addon.id" :addon disable-favorites />
 		</div>
 	</template>
 </template>
