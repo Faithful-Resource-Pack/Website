@@ -31,15 +31,15 @@ export default defineNuxtComponent({
 
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
-$item-highlight: rgba(255, 255, 255, 0.1);
-
 .author-widget {
 	border-radius: $border-radius;
 	transition: $transition-button;
-}
-
-.author-widget:hover {
-	background: $item-highlight;
-	text-decoration: underline;
+	&:hover {
+		background: rgba(white, 0.1);
+		text-decoration: underline;
+	}
+	&:active {
+		transform: scale(0.95);
+	}
 }
 </style>
