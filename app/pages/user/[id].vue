@@ -32,7 +32,7 @@
 
 	<template v-if="addons.length">
 		<div class="d-flex flex-row align-center justify-center ga-5 my-5">
-			<h1 class="subtitle mb-0">Add-ons</h1>
+			<h2 class="subtitle mb-0">Add-ons</h2>
 			<v-chip color="#343A40" variant="flat" size="large">
 				<span class="h3">{{ addons.length }}</span>
 			</v-chip>

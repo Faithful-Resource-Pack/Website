@@ -8,6 +8,7 @@
 			:href="link"
 			target="_blank"
 			rel="noopener noreferrer"
+			:title="type"
 		>
 			<media-icon :icon="type" class="user-media-icon" />
 		</v-btn>
@@ -18,6 +19,7 @@
 			:href="discordURL"
 			target="_blank"
 			rel="noopener noreferrer"
+			title="Discord"
 		>
 			<media-icon icon="mdi-discord" class="user-media-icon" />
 		</v-btn>
