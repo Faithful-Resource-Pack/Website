@@ -6,7 +6,7 @@
 			<img class="project-logo" :src="logo" :alt="`${name} logo`" />
 		</div>
 		<div class="card-body">
-			<h2 class="h4 card-title">{{ name }}</h2>
+			<h2 class="h4">{{ name }}</h2>
 			<p>{{ description }}</p>
 		</div>
 	</nuxt-link>

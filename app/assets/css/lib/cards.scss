@@ -21,7 +21,7 @@
 .card-body > :last-child {
 	margin-bottom: 0;
 }
-.card-title {
+.card h1, .card h2 {
 	color: $text-card-title;
 }
 // h5
