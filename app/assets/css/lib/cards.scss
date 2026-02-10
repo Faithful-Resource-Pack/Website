@@ -28,6 +28,11 @@
 .card-text p {
 	font-size: 1.25rem;
 }
+// the first layer of lists get indented less than subsequent ones
+.card-text > ul, .card-text > ol {
+	padding-left: 1rem !important;
+}
+
 .card, .card p,
 .card > h2 > a,
 .card-text {
