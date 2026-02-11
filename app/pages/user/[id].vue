@@ -132,6 +132,7 @@ export default defineNuxtComponent({
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: space-between;
+	gap: 0.5rem;
 }
 
 .user-header-image {
