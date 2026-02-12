@@ -1,5 +1,11 @@
 <template>
-	<nuxt-link :to class="card zoom-hitbox zoom-affected">
+	<!-- https://github.com/nuxt/nuxt/issues/13659 -->
+	<component
+		:is="to ? defineNuxtLink({}) : 'span'"
+		:to
+		class="card"
+		:class="to && 'zoom-hitbox zoom-affected'"
+	>
 		<div class="project-image">
 			<img class="project-background" :src="background" :alt="name" />
 			<div class="project-shadow" />
@@ -7,9 +13,10 @@
 		</div>
 		<div class="card-body">
 			<h2 class="h4">{{ name }}</h2>
-			<p>{{ description }}</p>
+			<p v-if="description">{{ description }}</p>
+			<slot />
 		</div>
-	</nuxt-link>
+	</component>
 </template>
 
 <script>
@@ -30,11 +37,13 @@ export default defineNuxtComponent({
 		},
 		description: {
 			type: String,
-			required: true,
+			required: false,
+			default: undefined,
 		},
 		to: {
 			type: String,
-			required: true,
+			required: false,
+			default: undefined,
 		},
 	},
 });
