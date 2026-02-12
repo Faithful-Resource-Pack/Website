@@ -16,7 +16,7 @@
 	padding: 0.375rem 0.75rem;
 	font-size: 1rem;
 	line-height: 1.5;
-	border-radius: 0.25rem;
+	border-radius: $border-radius;
 	transition: $transition-button;
 }
 .btn:hover {
@@ -92,6 +92,6 @@ a.btn.disabled {
 	padding: 0.5rem 1rem;
 	font-size: 1.25rem;
 	line-height: 1.5;
-	border-radius: 0.3rem;
+	border-radius: $border-radius;
 	margin-bottom: 1rem;
 }
