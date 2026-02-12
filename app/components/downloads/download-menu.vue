@@ -1,11 +1,11 @@
 <template>
 	<div class="card card-body overflow-y-auto d-block">
-		<div v-for="(downloads, edition) in data" :key="edition">
+		<div v-for="edition in editions" :key="edition">
 			<h2 class="h3 mb-3">{{ edition }} Edition</h2>
-			<div>
-				<div v-for="(download, version, i) in extractDownloads(downloads)" :key="version">
-					<div class="d-flex flex-row align-center justify-space-between">
-						<p class="mb-0">
+			<div :class="expanded && !$vuetify.display.xs && 'res-grid-4 ga-0 gc-10'">
+				<div v-for="(download, version, i) in extractDownloads(data[edition])" :key="version">
+					<div class="d-flex flex-row align-center justify-space-between my-2">
+						<p class="mb-0 mr-5">
 							{{ version }}
 							<template v-if="i === 0">(Latest)</template>
 						</p>
@@ -13,7 +13,7 @@
 							<v-icon icon="mdi-download" />
 						</a>
 					</div>
-					<v-divider class="my-2" />
+					<v-divider v-if="!expanded || $vuetify.display.xs" class="my-2" />
 				</div>
 			</div>
 		</div>
@@ -36,6 +36,11 @@ export default defineNuxtComponent({
 			type: Object,
 			required: true,
 		},
+		detectedEdition: {
+			type: String,
+			required: false,
+			default: "java",
+		},
 	},
 	data() {
 		return {
@@ -51,7 +56,6 @@ export default defineNuxtComponent({
 			return Object.entries(downloads)
 				.filter(([version], i) => {
 					if (i < TOP_VERSIONS) return true;
-					console.log(version);
 					if (IMPORTANT_VERSIONS.includes(version)) return true;
 					return false;
 				})
@@ -62,6 +66,13 @@ export default defineNuxtComponent({
 		},
 		getLinkFromDownload(download) {
 			return Object.values(download[0].links)[0];
+		},
+	},
+	computed: {
+		editions() {
+			return Object.keys(this.data).sort((a, b) =>
+				b === this.detectedEdition ? 1 : a.localeCompare(b),
+			);
 		},
 	},
 });

@@ -12,7 +12,7 @@
 					attach=".site-container"
 					:close-on-content-click="false"
 				>
-					<download-menu :data />
+					<download-menu :data :detectedEdition />
 				</v-menu>
 			</button>
 		</div>
