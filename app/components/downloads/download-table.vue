@@ -51,6 +51,7 @@ export default defineNuxtComponent({
 	padding: 0.7rem;
 	overflow-x: auto;
 	margin-bottom: 2rem;
+	box-shadow: $shadow-sheet;
 }
 
 .download-table {
