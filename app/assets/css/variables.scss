@@ -11,7 +11,7 @@ $bg-dark-accent-url: url("/image/background/dark_accent.png");
 $bg-dark-accent-textured: $bg-dark-accent $bg-dark-accent-url repeat;
 
 /** light theme */
-$text-light: #212529; // I don't know why this is blue either
+$text-light: rgba(0, 0, 0, 0.8);
 
 $bg-light: #E5E5E5;
 $bg-light-url: url("/image/background/light.png");
