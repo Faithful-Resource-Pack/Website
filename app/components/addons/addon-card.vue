@@ -10,11 +10,15 @@
 		</template>
 		<template v-if="!minimal" #body>
 			<p class="addon-subtitle mb-2">{{ subtitle }}</p>
-			<author-heads :authors />
+			<author-heads v-if="Object.keys(users).length" :authors />
 			<addon-flags :options="addon.options" />
 		</template>
 		<template #unlinked>
-			<fav-button v-if="!minimal" :favorite @click="$emit('toggleFav', addon)" />
+			<fav-button
+				v-if="!minimal && !disableFavorites"
+				:favorite
+				@click="$emit('toggleFav', addon)"
+			/>
 		</template>
 	</base-card>
 </template>
@@ -44,6 +48,11 @@ export default defineNuxtComponent({
 			default: () => ({}),
 		},
 		favorite: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
+		disableFavorites: {
 			type: Boolean,
 			required: false,
 			default: false,

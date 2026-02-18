@@ -1,5 +1,5 @@
 <template>
-	<h2 class="text-center card-title">Compatibility</h2>
+	<h2 class="text-center">Compatibility</h2>
 	<h5>Supported Packs</h5>
 	<div class="addon-chips">
 		<v-chip v-for="{ color, icon, text, to } in packs" :key="text" density="compact" :color :to>

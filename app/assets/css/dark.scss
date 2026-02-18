@@ -53,9 +53,7 @@
 	.pink-background,
 	.orange-background,
 	.yellow-background {
-		// this is a bit strange but looks the best of all the combinations
-		background: $bg-dark-accent $bg-light-accent-url repeat;
-		background-blend-mode: screen;
+		background: $bg-dark-accent-textured repeat;
 	}
 
 	// no background

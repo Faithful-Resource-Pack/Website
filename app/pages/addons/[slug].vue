@@ -9,7 +9,7 @@
 				<img :src="header" class="header-img mb-6" />
 
 				<div v-if="screenshots.length" class="card card-body mb-6">
-					<h2 class="text-center card-title">Gallery</h2>
+					<h2 class="text-center">Gallery</h2>
 					<div class="res-grid-3">
 						<div v-for="image in screenshots" :key="image" class="card cursor-pointer zoom-hitbox">
 							<img class="zoom-affected" :src="image" @click="openModal(image)" />
@@ -25,13 +25,13 @@
 					<compatibility-card :options="addon.options" />
 				</div>
 				<div class="card card-body addon-info">
-					<h2 class="text-center card-title">
+					<h2 class="text-center">
 						{{ Object.keys(authors).length === 1 ? "Author" : "Authors" }}
 					</h2>
 					<author-widget v-for="author in authors" :key="author.id" :author />
 				</div>
 				<div class="card card-body addon-info">
-					<h2 class="text-center card-title">Details</h2>
+					<h2 class="text-center">Details</h2>
 					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
 					<p
 						v-if="addon.last_updated"
