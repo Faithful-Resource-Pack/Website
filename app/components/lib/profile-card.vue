@@ -38,6 +38,6 @@ export default defineNuxtComponent({
 .profile-avatar {
 	image-rendering: pixelated;
 	height: 48px;
-	box-shadow: $shadow-sheet;
+	filter: drop-shadow($shadow-sheet);
 }
 </style>

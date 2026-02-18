@@ -79,8 +79,7 @@
 	.pink-background,
 	.orange-background,
 	.yellow-background {
-		background: $bg-dark $bg-dark-url repeat;
-		background-blend-mode: screen;
+		background: $bg-dark-accent-textured repeat;
 	}
 
 	// no background
