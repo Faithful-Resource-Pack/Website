@@ -35,7 +35,6 @@ export default defineNuxtComponent({
 	border-radius: $border-radius;
 	transition: $transition-button;
 	&:hover {
-		background: rgba(white, 0.1);
 		text-decoration: underline;
 	}
 	&:active {

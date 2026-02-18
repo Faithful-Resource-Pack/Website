@@ -28,18 +28,44 @@
 		background: $bg-dark-accent !important;
 	}
 
-	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
+	td, ul, ol, li, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
 		color: $text-dark;
 		text-decoration-color: currentColor;
+	}
+
+	h1, h2 {
+		color: $title-dark;
+	}
+
+	.navigation-link, .footer-info-text, .user-media-icon {
+		color: $text-dark;
+	}
+
+	.navigation-link:hover, .navigation-link:focus, .user-media-icon:hover, .user-media-icon:focus {
+		color: $title-dark;
 	}
 
 	.underline-hover:hover {
 		text-decoration-color: $text-dark !important;
 	}
 
+	.card, .card p,
+	.card > h2 > a,
+	.card-text {
+		color: $text-dark;
+	}
+	.card > h2 > a:hover,
+	.card h1, .card h2 {
+		color: $title-dark;
+	}
+
 	// fixes dropdown select color (it's always light mode otherwise)
 	.v-input__control {
 		color: white !important;
+	}
+
+	.author-widget:hover {
+		background: rgba($title-dark, 0.1);
 	}
 
 	// about page stuff
@@ -53,8 +79,7 @@
 	.pink-background,
 	.orange-background,
 	.yellow-background {
-		// this is a bit strange but looks the best of all the combinations
-		background: $bg-dark-accent $bg-light-accent-url repeat;
+		background: $bg-dark $bg-dark-url repeat;
 		background-blend-mode: screen;
 	}
 

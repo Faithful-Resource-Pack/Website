@@ -23,6 +23,24 @@
 		background: $bg-light !important;
 	}
 
+	.card, .card p,
+	.card > h2 > a,
+	.card-text {
+		color: $text-light;
+	}
+	.card > h2 > a:hover,
+	.card h1, .card h2 {
+		color: $title-light;
+	}
+
+	h1, h2 {
+		color: $title-light;
+	}
+
+	.author-widget:hover {
+		background: rgba($title-light, 0.1);
+	}
+
 	// about page stuff
 	.about-button {
 		background: black;

@@ -67,13 +67,16 @@ export default defineNuxtComponent({
 	gap: 0.5rem;
 }
 
+// technically counts as navigation if you think about it
 .user-media-icon {
-	color: white !important;
-	opacity: 0.7 !important;
-	// technically counts as navigation if you think about it
+	color: $text-light;
+	opacity: 0.7;
 	transition: $transition-navigation;
-	&:hover {
-		opacity: 1 !important;
+	&:hover, &:focus {
+		color: $title-light;
+	}
+	:deep(.custom-icon) {
+		background-color: $text-light;
 	}
 }
 </style>

@@ -152,7 +152,6 @@ td {
 // all text except for links use this
 td,
 td * {
-	color: $text-card;
 	margin-bottom: 0;
 }
 

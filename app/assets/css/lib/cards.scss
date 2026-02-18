@@ -21,9 +21,6 @@
 .card-body > :last-child {
 	margin-bottom: 0;
 }
-.card h1, .card h2 {
-	color: $text-card-title;
-}
 // h5
 .card-text p {
 	font-size: 1.25rem;
@@ -31,15 +28,6 @@
 // the first layer of lists get indented less than subsequent ones
 .card-text > ul, .card-text > ol {
 	padding-left: 1rem !important;
-}
-
-.card, .card p,
-.card > h2 > a,
-.card-text {
-	color: $text-card;
-}
-.card > h2 > a:hover {
-	color: $text-card-title;
 }
 
 .card {

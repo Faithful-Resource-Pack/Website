@@ -141,7 +141,7 @@ export default defineNuxtComponent({
 			search: "",
 			editions: {
 				Java: { color: "#1DD96A", icon: "mdi-minecraft", text: "Java Edition" },
-				Bedrock: { color: "#EEEEEE", icon: "mdi-cube", text: "Bedrock Edition" },
+				Bedrock: { color: "#A1A1A1", icon: "mdi-cube", text: "Bedrock Edition" },
 			},
 			packs: {
 				"32x": { color: "#00A2FF", icon: "faithful", text: "Faithful 32x" },

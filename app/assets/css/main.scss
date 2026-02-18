@@ -196,7 +196,7 @@ img[src$=".jpg"] {
 	width: 100%;
 }
 
-.btn, *.card, .banner, .header-img, .about-button {
+.btn, .card, .banner, .header-img, .about-button {
 	overflow: hidden;
 	box-shadow: $shadow-sheet;
 	border-radius: $border-radius;
@@ -233,9 +233,10 @@ img[src$=".jpg"] {
 	transition: $transition-navigation;
 	padding-right: 0;
 	padding-left: 0;
-	color: $text-navigation !important;
+	color: $text-light;
+	opacity: 0.7;
 	&:hover, &:focus {
-		color: $text-card !important;
+		color: $title-light;
 		transform: scale(0.95);
 		cursor: pointer;
 	}
