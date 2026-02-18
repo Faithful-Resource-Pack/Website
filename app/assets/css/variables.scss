@@ -1,24 +1,24 @@
 /** dark theme */
 $text-dark: rgba(255, 255, 255, 0.7);
 
-$bg-dark: #2b2b2b;
+$bg-dark: #191919;
 // sometimes we need the url independently (especially with blending modes)
 $bg-dark-url: url("/image/background/dark.png");
 $bg-dark-textured: $bg-dark $bg-dark-url repeat;
 
-$bg-dark-accent: #0C0C0C;
-$bg-dark-accent-url: url("/image/background/dark_accent.png");
+$bg-dark-accent: #272727;
+$bg-dark-accent-url: url("/image/background/accent.png");
 $bg-dark-accent-textured: $bg-dark-accent $bg-dark-accent-url repeat;
 
 /** light theme */
-$text-light: #212529; // I don't know why this is blue either
+$text-light: rgba(0, 0, 0, 0.8);
 
-$bg-light: #E5E5E5;
+$bg-light: #FAFAFA;
 $bg-light-url: url("/image/background/light.png");
 $bg-light-textured: $bg-light $bg-light-url repeat;
 
-$bg-light-accent: #292929;
-$bg-light-accent-url: url("/image/background/light_accent.png");
+$bg-light-accent: #272727;
+$bg-light-accent-url: url("/image/background/accent.png");
 $bg-light-accent-textured: $bg-light-accent $bg-light-accent-url repeat;
 
 /** accent colors (text is lighter than bg) */
@@ -52,7 +52,7 @@ $text-link-hover: $btn-primary-hover;
 
 /** shadows */
 // any overlay, e.g. banners, cards, etc
-$shadow-sheet: 0 3px 6px rgba(0, 0, 0, 0.4);
+$shadow-sheet: 0 3px 6px rgba(0, 0, 0, 0.3);
 $shadow-image: 0 10px 10px rgba(0, 0, 0, 0.465);
 $shadow-wordmark: 0 0 10px #000000;
 
