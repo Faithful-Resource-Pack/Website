@@ -10,7 +10,7 @@
 			rel="noopener noreferrer"
 			:title="type"
 		>
-			<media-icon :icon="type" class="user-media-icon" />
+			<media-icon :icon="type" class="user-media-icon" size="large" />
 		</v-btn>
 		<v-btn
 			v-if="!isReservedAccount"
@@ -21,7 +21,7 @@
 			rel="noopener noreferrer"
 			title="Discord"
 		>
-			<media-icon icon="mdi-discord" class="user-media-icon" />
+			<media-icon icon="mdi-discord" class="user-media-icon" size="large" />
 		</v-btn>
 	</div>
 </template>
