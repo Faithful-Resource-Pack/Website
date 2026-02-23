@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"@nuxt/eslint": "1.13.0",
 		"@types/luxon": "^3.7.1",
-		"eslint": "^9.39.2",
+		"eslint": "^9.39.3",
 		"prettier": "^3.8.1"
 	},
 	"pnpm": {
