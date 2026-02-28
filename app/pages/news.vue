@@ -43,16 +43,21 @@
 			<v-skeleton-loader type="image, subtitle, text" theme="dark" class="pb-3" />
 		</div>
 	</div>
-	<div v-else class="res-grid-3">
-		<!-- no need for alt text as the images are decorative (the title is enough) -->
-		<post-card
-			v-for="{ id, permalink, header_img, title, date } in restPosts"
-			:key="id"
-			:to="permalink"
-			:image="header_img"
-			:title
-			:date
-		/>
+	<div v-else>
+		<div v-for="([year, yearPosts], i) in restPosts" :key="year">
+			<h2 v-if="i !== 0" class="subtitle mb-2">{{ year }}</h2>
+			<div class="res-grid-3 mb-7">
+				<!-- no need for alt text as the images are decorative (the title is enough) -->
+				<post-card
+					v-for="{ id, permalink, header_img, title, date } in yearPosts"
+					:key="id"
+					:to="permalink"
+					:image="header_img"
+					:title
+					:date
+				/>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -80,7 +85,14 @@ export default defineNuxtComponent({
 		},
 		restPosts() {
 			if (!this.posts) return [];
-			return this.posts.slice(1);
+			return Object.entries(
+				this.posts.slice(1).reduce((acc, cur) => {
+					const year = new Date(cur.date).getFullYear();
+					acc[year] ||= [];
+					acc[year].push(cur);
+					return acc;
+				}, {}),
+			).sort((a, b) => b[0] - a[0]);
 		},
 	},
 	created() {

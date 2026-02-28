@@ -31,19 +31,7 @@
 		>
 			<h3 class="h5 mb-0">Packs</h3>
 			<div class="px-2" />
-			<v-chip
-				v-for="({ color, icon, text }, k) in packs"
-				:key="k"
-				class="accent-textured"
-				filter
-				:value="k"
-				:style="{ color }"
-			>
-				<template #prepend>
-					<media-icon :icon class="mr-1 ml-n1" :color />
-				</template>
-				<span>{{ text }}</span>
-			</v-chip>
+			<custom-chip v-for="pack in packs" :key="pack" :type="pack" filter :value="pack" />
 		</v-chip-group>
 		<v-chip-group
 			v-model="rawSelectedEditions"
@@ -53,20 +41,16 @@
 		>
 			<h3 class="h5 mb-0">Editions</h3>
 			<div class="px-2" />
-			<v-chip
-				v-for="({ color, icon, text }, k) in editions"
-				:key="k"
-				class="accent-textured"
+			<custom-chip
+				v-for="edition in editions"
+				:key="edition"
+				:type="edition"
 				filter
-				:value="k"
-				:style="{ color }"
-				:prepend-icon="icon"
-			>
-				{{ text }}
-			</v-chip>
+				:value="edition"
+			/>
 		</v-chip-group>
 		<v-row no-gutters align="end" class="py-3">
-			<v-col cols="12" sm="6">
+			<v-col cols="12" sm="6" data-allow-mismatch="children">
 				<p v-if="loading" class="d-flex flex-row align-center ga-2 ma-2">
 					Loading Results...
 					<v-progress-circular :size="20" :width="3" indeterminate />
@@ -107,7 +91,7 @@
 <script>
 import AddonCard from "~/components/addons/addon-card.vue";
 import HeroSection from "~/components/lib/hero-section.vue";
-import MediaIcon from "~/components/lib/media-icon.vue";
+import CustomChip from "~/components/lib/custom-chip.vue";
 
 const FAVORITE_ADDONS_KEY = "favAddons";
 
@@ -118,7 +102,7 @@ export default defineNuxtComponent({
 	components: {
 		HeroSection,
 		AddonCard,
-		MediaIcon,
+		CustomChip,
 	},
 	setup() {
 		definePageMeta({
@@ -139,14 +123,8 @@ export default defineNuxtComponent({
 			// store as object for faster lookup (sorting not needed)
 			fav: {},
 			search: "",
-			editions: {
-				Java: { color: "#1DD96A", icon: "mdi-minecraft", text: "Java Edition" },
-				Bedrock: { color: "#EEEEEE", icon: "mdi-cube", text: "Bedrock Edition" },
-			},
-			packs: {
-				"32x": { color: "#00A2FF", icon: "faithful", text: "Faithful 32x" },
-				"64x": { color: "#FF0092", icon: "faithful", text: "Faithful 64x" },
-			},
+			editions: ["Java", "Bedrock"],
+			packs: ["32x", "64x"],
 			shownResults: DISPLAYED_ADDONS_COUNT,
 			rawSelectedEditions: [],
 			rawSelectedPacks: [],
@@ -165,8 +143,8 @@ export default defineNuxtComponent({
 				// they should really be split but oh well
 				const { localPacks, localEditions } = addon.options.tags.reduce(
 					(acc, tag) => {
-						if (Object.keys(this.packs).includes(tag)) acc.localPacks.push(tag);
-						if (Object.keys(this.editions).includes(tag)) acc.localEditions.push(tag);
+						if (this.packs.includes(tag)) acc.localPacks.push(tag);
+						if (this.editions.includes(tag)) acc.localEditions.push(tag);
 						return acc;
 					},
 					{ localPacks: [], localEditions: [] },
@@ -253,17 +231,17 @@ export default defineNuxtComponent({
 		},
 		selectedPacks() {
 			// zero length means all are selected
-			if (this.rawSelectedPacks.length === 0) return Object.keys(this.packs);
+			if (this.rawSelectedPacks.length === 0) return this.packs;
 			return this.rawSelectedPacks;
 		},
 		selectedEditions() {
-			if (this.rawSelectedEditions.length === 0) return Object.keys(this.editions);
+			if (this.rawSelectedEditions.length === 0) return this.editions;
 			return this.rawSelectedEditions;
 		},
 		isSearchEmpty() {
 			if (this.search !== "") return false;
 			if (
-				Object.keys(this.editions).length + Object.keys(this.packs).length !==
+				this.editions.length + this.packs.length !==
 				this.selectedEditions.length + this.selectedPacks.length
 			)
 				return false;
