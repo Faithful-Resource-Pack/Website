@@ -83,7 +83,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/lib/variables" as *;
+@use "~/assets/css/variables" as *;
 
 .image-reel {
 	display: flex;
@@ -107,8 +107,8 @@ export default defineNuxtComponent({
 
 .selection-container {
 	overflow: hidden;
-	border-radius: $border-radius-0x;
-	box-shadow: $card-shadow;
+	border-radius: $border-radius;
+	box-shadow: $shadow-sheet;
 }
 
 .selected-image {
