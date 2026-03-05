@@ -15,8 +15,8 @@ importers:
         specifier: ^3.7.2
         version: 3.7.2
       marked:
-        specifier: ^17.0.3
-        version: 17.0.3
+        specifier: ^17.0.4
+        version: 17.0.4
       nuxt:
         specifier: ^4.3.1
         version: 4.3.1(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.6)(@types/node@24.3.0)(@vue/compiler-sfc@3.5.29)(cac@6.7.14)(db0@0.3.4)(eslint@9.39.3(jiti@2.6.1))(ioredis@5.9.3)(magicast@0.5.2)(optionator@0.9.4)(rollup@4.59.0)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.2)(vite@7.3.1(@types/node@24.3.0)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(yaml@2.8.2)
@@ -3227,8 +3227,8 @@ packages:
   magicast@0.5.2:
     resolution: {integrity: sha512-E3ZJh4J3S9KfwdjZhe2afj6R9lGIN5Pher1pF39UGrXRqq/VDaGVIGN13BjHd2u8B61hArAGOnso7nBOouW3TQ==}
 
-  marked@17.0.3:
-    resolution: {integrity: sha512-jt1v2ObpyOKR8p4XaUJVk3YWRJ5n+i4+rjQopxvV32rSndTJXvIzuUdWWIy/1pFQMkQmvTXawzDNqOH/CUmx6A==}
+  marked@17.0.4:
+    resolution: {integrity: sha512-NOmVMM+KAokHMvjWmC5N/ZOvgmSWuqJB8FoYI019j4ogb/PeRMKoKIjReZ2w3376kkA8dSJIP8uD993Kxc0iRQ==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -7977,7 +7977,7 @@ snapshots:
       '@babel/types': 7.29.0
       source-map-js: 1.2.1
 
-  marked@17.0.3: {}
+  marked@17.0.4: {}
 
   math-intrinsics@1.1.0:
     optional: true
