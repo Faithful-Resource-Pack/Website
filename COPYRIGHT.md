@@ -19,5 +19,5 @@ The following files are licensed as follows:
 The following files are owned by their respective copyright holders and must be used within each of their Brand Guidelines:
 
 - public/image/addons/optifine.png
-- public/image/icons/curseforge.svg
-- public/image/icons/modrinth.svg
+- public/icons/curseforge.svg
+- public/icons/modrinth.svg

@@ -32,10 +32,10 @@ export default defineNuxtComponent({
 			icons: {
 				// expand this list as needed
 				download: { data: "download", type: "mdi" },
-				faithful: { data: "/image/icons/faithful_logo.svg", type: "image" },
-				curseforge: { data: "/image/icons/curseforge.svg", type: "image" },
-				modrinth: { data: "/image/icons/modrinth.svg", type: "image" },
-				discord: { data: "/image/icons/discord.svg", type: "image" },
+				faithful: { data: "/icons/faithful_logo.svg", type: "image" },
+				curseforge: { data: "/icons/curseforge.svg", type: "image" },
+				modrinth: { data: "/icons/modrinth.svg", type: "image" },
+				discord: { data: "/icons/discord.svg", type: "image" },
 				github: { data: "github", type: "mdi" },
 				mcpedl: { data: "cube", type: "mdi" },
 				patreon: { data: "patreon", type: "mdi" },
