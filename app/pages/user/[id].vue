@@ -1,10 +1,17 @@
 <template>
 	<div class="user-header">
-		<img
-			class="user-header-image"
-			:src="`https://vzge.me/face/128/${getVisageSlug(user)}`"
-			:title="user.uuid"
-		/>
+		<component
+			:is="namemcComponent"
+			:to="`https://namemc.com/profile/${user.uuid}`"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<img
+				class="user-header-image"
+				:src="`https://vzge.me/face/128/${getVisageSlug(user)}`"
+				:title="user.uuid"
+			/>
+		</component>
 		<div class="flex-grow-1">
 			<div class="user-header-top">
 				<h1 class="user-header-username mb-0 subtitle cursor-pointer" @click="copyURL">
@@ -112,6 +119,9 @@ export default defineNuxtComponent({
 		},
 		isReservedAccount() {
 			return this.user.id < 1000;
+		},
+		namemcComponent() {
+			return this.user?.uuid ? resolveComponent("nuxt-link") : "span";
 		},
 	},
 });
