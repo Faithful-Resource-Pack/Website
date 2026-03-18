@@ -39,7 +39,7 @@ export default defineNuxtComponent({
 				github: { data: "github", type: "mdi" },
 				mcpedl: { data: "cube", type: "mdi" },
 				patreon: { data: "patreon", type: "mdi" },
-				paypal: { data: "paypal", type: "mdi" },
+				twitch: { data: "twitch", type: "mdi" },
 				pmc: { data: "earth", type: "mdi" },
 				psn: { data: "sony-playstation", type: "mdi" },
 				reddit: { data: "reddit", type: "mdi" },
