@@ -1,11 +1,11 @@
 @use "../variables" as *;
 
 /** Bootstrap-like banners */
-// these aren't used terribly much so they could probably be phased out
+// todo: phase these out since they're like barely used anyways
 .banner {
 	font-size: 25px;
 	padding: 16px;
-	color: white;
+	color: white !important;
 	text-align: center;
 }
 .banner > * {
