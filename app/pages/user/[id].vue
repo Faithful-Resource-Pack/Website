@@ -25,8 +25,8 @@
 	<hr />
 	<template v-if="isReservedAccount">
 		<div class="warning banner">
-			<h1>This user account is special!</h1>
-			<p class="text-left mb-0" style="opacity: 0.8">
+			<h1 class="text-white">This user account is special!</h1>
+			<p class="text-left mb-0">
 				This user account does not correspond to a real Discord account. Possible reasons include
 				placeholder accounts for old contributions or organization accounts.
 			</p>

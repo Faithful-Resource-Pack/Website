@@ -22,7 +22,7 @@
 	margin-bottom: 0;
 }
 .card h1, .card h2 {
-	color: $text-card-title;
+	color: $text-card-title !important;
 }
 // h5
 .card-text p {
