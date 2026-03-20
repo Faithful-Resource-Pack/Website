@@ -24,13 +24,10 @@
 	</div>
 	<hr />
 	<template v-if="isReservedAccount">
-		<div class="warning banner">
-			<h1 class="text-white">This user account is special!</h1>
-			<p class="text-left mb-0">
-				This user account does not correspond to a real Discord account. Possible reasons include
-				placeholder accounts for old contributions or organization accounts.
-			</p>
-		</div>
+		<v-alert type="warning" title="This user account is special!">
+			This user account does not correspond to a real Discord account. Possible reasons include
+			placeholder accounts for old contributions or organization accounts.
+		</v-alert>
 		<hr />
 	</template>
 	<!-- eslint-disable vue/no-v-html -->

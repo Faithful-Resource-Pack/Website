@@ -1,7 +1,6 @@
 // more efficient bundling (compiled in same css file)
 @use "./variables" as *;
 @use "./lib/buttons" as *;
-@use "./lib/banners" as *;
 @use "./lib/cards" as *;
 @use "./lib/grids" as *;
 
@@ -263,6 +262,20 @@ img[src$=".jpg"] {
 
 .v-progress-circular__underlay {
 	display: none;
+}
+
+// looks way too close to regular text with faithful font
+.v-alert-title {
+	font-size: 1.75rem !important;
+	margin-bottom: 0.5rem;
+}
+
+// make text a bit more transparent than title (why is this so hard to do)
+.v-alert--variant-flat .v-alert__content {
+	color: rgba(white, 0.8);
+}
+.v-alert--variant-flat .v-alert-title {
+	color: white;
 }
 
 // make sure stone background shows up

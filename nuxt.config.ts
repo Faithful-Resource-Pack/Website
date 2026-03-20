@@ -39,8 +39,28 @@ export default defineNuxtConfig({
 			link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 			noscript: [
 				{
-					innerHTML:
-						'<p class="warning banner ma-3">Please enable JavaScript for the site to work properly.</p>',
+					// no vuetify so we just do the entire alert from scratch
+					innerHTML: `
+						<div
+							class="v-alert bg-error v-alert--density-default v-alert--variant-flat"
+							role="alert"
+						>
+							<div class="v-alert__prepend">
+								<i
+									class="mdi-close-circle mdi v-icon notranslate v-icon--size-default"
+									aria-hidden="true"
+									density="default"
+								></i>
+							</div>
+							<div class="v-alert__content">
+								<div class="v-alert-title">Please enable JavaScript for the website to work properly!</div>
+								You can view the <a
+									href="https://github.com/faithful-resource-pack/website"
+									class="text-white text-decoration-underline"
+								>website source</a> to see how it's used.
+							</div>
+						</div>
+					`,
 				},
 			],
 			htmlAttrs: {
