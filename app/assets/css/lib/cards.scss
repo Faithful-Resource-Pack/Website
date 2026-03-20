@@ -22,6 +22,10 @@
 	margin-bottom: 0;
 }
 .card h1, .card h2 {
+	color: $text-card-title;
+}
+// need to override here
+.card-text h1, .card-text h2 {
 	color: $text-card-title !important;
 }
 // h5
