@@ -11,13 +11,7 @@
 .banner > * {
 	color: white; // vue moment
 }
-a > .banner:hover {
-	text-decoration: underline;
-}
 
 .warning.banner {
 	background: $warning;
-}
-.blurple.banner {
-	background: $blurple;
 }

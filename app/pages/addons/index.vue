@@ -3,7 +3,7 @@
 		background="/image/banners/add_ons.jpg"
 		wordmark="/image/wordmarks/addons.png"
 		wordmark-alt="Faithful Add-ons Wordmark"
-		upspace="50px"
+		upspace="24px"
 	>
 		<template #tagline>Personalize and customize every aspect of your gameplay.</template>
 		<template #actions>

@@ -22,7 +22,7 @@ export default defineNuxtComponent({
 		upspace: {
 			type: String,
 			required: false,
-			default: "80px",
+			default: "60px",
 		},
 		background: {
 			type: String,
@@ -60,14 +60,15 @@ export default defineNuxtComponent({
 
 .hero-tagline {
 	color: white;
-	text-shadow: rgba(0, 0, 0, 0.75) 0px 4px 10px;
+	text-shadow: 2px 2px 5px rgba(black, 0.8);
 }
 
 .hero-wordmark {
 	margin-top: 50px;
 	margin-bottom: 25px;
 	filter: drop-shadow($shadow-wordmark);
-	width: 475px;
+	// halfway between sm and md breakpoints
+	width: 668px;
 	max-width: 100%;
 }
 </style>
