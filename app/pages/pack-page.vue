@@ -14,11 +14,11 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 </script>
 
 <template>
-	<div class="hero" :style="bannerStyle">
-		<div class="container">
-			<img class="wordmark" :src="wordmark" />
-		</div>
-	</div>
+	<hero-section :background="banner" :wordmark :wordmark-alt="title">
+		<template #actions>
+			<div style="height: 100px" />
+		</template>
+	</hero-section>
 	<div class="container">
 		<div class="card card-body card-text">
 			<!-- eslint-disable-next-line vue/no-v-html -->
@@ -41,6 +41,7 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 </template>
 
 <script>
+import HeroSection from "~/components/lib/hero-section.vue";
 import PostDownloads from "~/components/posts/post-downloads.vue";
 import removeMd from "remove-markdown";
 
@@ -48,6 +49,7 @@ import removeMd from "remove-markdown";
 export default defineNuxtComponent({
 	name: "pack-page",
 	components: {
+		HeroSection,
 		PostDownloads,
 	},
 	props: {
@@ -83,33 +85,11 @@ export default defineNuxtComponent({
 			required: true,
 		},
 	},
-	computed: {
-		bannerStyle() {
-			return {
-				backgroundImage: `url("${this.banner}")`,
-			};
-		},
-	},
 });
 </script>
 
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
-
-.hero {
-	display: block;
-	background-size: cover;
-	background-position: center;
-	padding: 0 2rem 1px;
-	text-align: center;
-	box-shadow: $shadow-sheet;
-}
-
-.wordmark {
-	padding: 5vw;
-	filter: drop-shadow($shadow-wordmark);
-	width: 800px;
-}
 
 .button-row {
 	display: flex;
