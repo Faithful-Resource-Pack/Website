@@ -21,7 +21,7 @@
 			rel="noopener noreferrer"
 			title="Discord"
 		>
-			<media-icon icon="mdi-discord" class="user-media-icon" size="large" />
+			<media-icon icon="discord" class="user-media-icon" size="large" />
 		</v-btn>
 	</div>
 </template>
