@@ -80,7 +80,6 @@ definePageMeta({
 	</div>
 	<div class="pink-background">
 		<div class="container about-container">
-			<img class="about-image" src="/image/about/foss.png" alt="github screenshot" />
 			<div class="about-text">
 				<h1 class="colored-title">Free and Open-Source</h1>
 				<p>
@@ -99,6 +98,7 @@ definePageMeta({
 					Visit our GitHub
 				</chevron-link>
 			</div>
+			<img class="about-image" src="/image/about/foss.png" alt="github screenshot" />
 		</div>
 	</div>
 	<div class="container faq-section">
