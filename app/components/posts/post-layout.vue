@@ -1,5 +1,5 @@
 <template>
-	<v-alert title="This project has been discontinued!" type="error">
+	<v-alert v-if="post.discontinued" title="This project has been discontinued!" type="error">
 		This project has been deprecated and is no longer being actively worked on. Please contact a
 		staff member on Discord if you're interested in maintaining it!
 	</v-alert>
