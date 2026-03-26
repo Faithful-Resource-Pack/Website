@@ -1,11 +1,12 @@
 <template>
 	<div class="download-table-padding accent-textured">
-		<table class="download-table">
-			<thead>
-				<tr class="download-heading">
-					<th colspan="2" class="file-heading"><p>Name</p></th>
-					<th><p>Date</p></th>
-					<th colspan="2"><p>Downloads</p></th>
+		<table>
+			<thead class="download-heading">
+				<tr>
+					<th />
+					<th class="file-heading">Name</th>
+					<th>Date</th>
+					<th colspan="2">Downloads</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -48,38 +49,23 @@ export default defineNuxtComponent({
 
 .download-table-padding {
 	border-radius: $border-radius;
-	padding: 0.7rem;
+	padding: $padding-card;
 	overflow-x: auto;
 	margin-bottom: 2rem;
 	box-shadow: $shadow-sheet;
 }
 
-.download-table {
-	width: 100%;
-}
-
 .download-heading {
-	background: $btn-secondary;
-	border-radius: $border-radius;
-	width: 100%;
-	th {
-		text-align: center;
-		width: calc(40% / 3);
-		p {
-			font-size: 1.25rem;
-			padding: 0.2rem;
-			color: $text-card;
-			margin-bottom: 0;
-			vertical-align: middle;
-		}
-	}
+	font-size: 1.25rem;
+	color: $text-card-title;
 }
 
 // default middle text alignment looks really stupid
 .file-heading {
 	text-align: left !important;
-	padding-left: 0.7rem;
-	width: 50%;
+	p {
+		margin-bottom: 200px !important;
+	}
 }
 
 // remove padding and table headers on mobile
