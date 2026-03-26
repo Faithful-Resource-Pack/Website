@@ -33,13 +33,14 @@
 				<div class="card card-body addon-info">
 					<h2 class="text-center">Details</h2>
 					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
-					<p
-						v-if="addon.last_updated"
-						class="cursor-help mb-0"
-						:title="exactDate(addon.last_updated, DATETIME_MED)"
-					>
-						Last updated {{ relativeDate(addon.last_updated) }}
-					</p>
+					<v-tooltip v-if="addon.last_updated" location="bottom">
+						<template #activator="{ props }">
+							<p class="cursor-help mb-0" v-bind="props">
+								Last updated {{ relativeDate(addon.last_updated) }}
+							</p>
+						</template>
+						{{ exactDate(addon.last_updated, DATETIME_MED) }}
+					</v-tooltip>
 				</div>
 			</v-col>
 		</v-row>

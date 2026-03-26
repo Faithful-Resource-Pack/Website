@@ -23,7 +23,14 @@
 			</span>
 		</td>
 
-		<td class="date cursor-help" :title="exact">{{ relative }}</td>
+		<td class="date cursor-help">
+			<v-tooltip location="top">
+				<template #activator="{ props }">
+					<span v-bind="props">{{ relative }}</span>
+				</template>
+				{{ exact }}
+			</v-tooltip>
+		</td>
 
 		<td
 			v-for="(link, linkType) in item.links"
@@ -139,7 +146,7 @@ export default defineNuxtComponent({
 		relative() {
 			if (this.date === null) return "Unknown";
 			return relativeDate(this.date);
-		}
+		},
 	},
 });
 </script>

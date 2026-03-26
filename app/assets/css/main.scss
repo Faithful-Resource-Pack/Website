@@ -264,6 +264,11 @@ img[src$=".jpg"] {
 	display: none;
 }
 
+// I think always-dark tooltips look way cleaner, kinda subjective though
+.v-tooltip > .v-overlay__content {
+	background: $bg-dark !important;
+}
+
 // looks way too close to regular text with faithful font
 .v-alert-title {
 	font-size: 1.75rem !important;
