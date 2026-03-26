@@ -119,7 +119,7 @@ const PROJECTS = [
 		background: "/image/posters/cf64.jpg",
 		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf64_logo.png",
 		description: "Both nostalgia and detail in equal amounts!",
-		to: "/classic64x",
+		to: "/classic64x-jappa",
 	},
 ];
 const ADDON_REEL_LENGTH = 4;

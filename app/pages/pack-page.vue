@@ -20,6 +20,9 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 		</template>
 	</hero-section>
 	<div class="container">
+		<v-alert v-if="warning" :title="warning.split('\n')[0]" type="error" class="mb-3">
+			{{ warning.split("\n")?.[1] || "" }}
+		</v-alert>
 		<div class="card card-body card-text">
 			<!-- eslint-disable-next-line vue/no-v-html -->
 			<div v-html="compileMarkdown(description)"></div>
@@ -76,6 +79,11 @@ export default defineNuxtComponent({
 		},
 		downloads: {
 			type: Object,
+			required: false,
+			default: null,
+		},
+		warning: {
+			type: String,
 			required: false,
 			default: null,
 		},
