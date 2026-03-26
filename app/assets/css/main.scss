@@ -270,6 +270,12 @@ img[src$=".jpg"] {
 	margin-bottom: 0.5rem;
 }
 
+.v-alert--variant-flat {
+	background-image: $bg-light-url !important;
+	background-repeat: repeat !important;
+	background-blend-mode: multiply;
+}
+
 // make text a bit more transparent than title (why is this so hard to do)
 .v-alert--variant-flat .v-alert__content {
 	color: rgba(white, 0.8);
