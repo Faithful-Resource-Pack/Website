@@ -35,7 +35,7 @@
 					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
 					<p
 						v-if="addon.last_updated"
-						class="mb-0"
+						class="cursor-help mb-0"
 						:title="exactDate(addon.last_updated, DATETIME_MED)"
 					>
 						Last updated {{ relativeDate(addon.last_updated) }}

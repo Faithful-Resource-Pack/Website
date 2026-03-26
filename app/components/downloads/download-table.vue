@@ -1,6 +1,6 @@
 <template>
 	<div class="download-table-padding accent-textured">
-		<table>
+		<table class="download-table">
 			<thead class="download-heading">
 				<tr>
 					<th />
@@ -53,6 +53,11 @@ export default defineNuxtComponent({
 	overflow-x: auto;
 	margin-bottom: 2rem;
 	box-shadow: $shadow-sheet;
+}
+
+// for mobile
+.download-table {
+	width: 100%;
 }
 
 .download-heading {

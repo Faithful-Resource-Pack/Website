@@ -18,12 +18,12 @@
 			<download-badge badge="version">{{ version }}</download-badge>
 			<download-badge v-if="item.latest" badge="latest">Latest</download-badge>
 			<!-- avoid SSR warning with date localization -->
-			<span v-if="date" class="mobile-details" data-allow-mismatch="children">
-				{{ date }}
+			<span class="mobile-details" :title="exact">
+				{{ relative }}
 			</span>
 		</td>
 
-		<td class="date" data-allow-mismatch="children">{{ date }}</td>
+		<td class="date cursor-help" :title="exact">{{ relative }}</td>
 
 		<td
 			v-for="(link, linkType) in item.links"
@@ -124,16 +124,22 @@ export default defineNuxtComponent({
 			return this.labelColors[this.item.file_type] || "green";
 		},
 		date() {
-			if (this.item.date === "rolling") return shortDate(this.dateNow);
+			if (this.item.date === "rolling") return this.dateNow;
+			if (this.item.date) return this.item.date;
 
-			if (this.item.date) return shortDate(this.item.date);
-
-			if (this.curse && this.curse.uploaded_at)
-				return shortDate(this.curse.uploaded_at.split("T")[0]);
+			if (this.curse && this.curse.uploaded_at) return this.curse.uploaded_at.split("T")[0];
 
 			// no other way to get dates
-			return "Unknown";
+			return null;
 		},
+		exact() {
+			if (this.date === null) return "Unknown";
+			return exactDate(this.date);
+		},
+		relative() {
+			if (this.date === null) return "Unknown";
+			return relativeDate(this.date);
+		}
 	},
 });
 </script>
