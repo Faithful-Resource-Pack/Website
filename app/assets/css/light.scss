@@ -1,7 +1,6 @@
 @use "./variables" as *;
 
-// force lower specificity so page-specific styles don't break
-:where(.light-theme) {
+.light-theme {
 	.textured {
 		background: $bg-light-textured;
 	}
@@ -10,17 +9,19 @@
 		background: $bg-light-accent-textured;
 	}
 
+	// there's got to be a better way to do this
 	.accent-textured .v-chip--variant-elevated,
 	.accent-textured .v-card--variant-elevated,
 	.accent-textured .v-btn--variant-elevated,
 	.accent-textured.v-chip--variant-elevated,
 	.accent-textured.v-card--variant-elevated,
 	.accent-textured.v-btn--variant-elevated {
-		background: $bg-light-accent-textured !important;
+		background: $bg-light-accent-textured;
 	}
 
+	// card color
 	.v-skeleton-loader__image {
-		background: $bg-light !important;
+		background: $bg-light-accent;
 	}
 
 	// about page stuff
@@ -46,22 +47,22 @@
 	}
 
 	.green-background {
-		background: $bg-green $bg-light-url repeat !important;
+		background: $bg-green $bg-light-url repeat;
 	}
 
 	.blue-background {
-		background: $bg-blue $bg-light-url repeat !important;
+		background: $bg-blue $bg-light-url repeat;
 	}
 
 	.pink-background {
-		background: $bg-pink $bg-light-url repeat !important;
+		background: $bg-pink $bg-light-url repeat;
 	}
 
 	.yellow-background {
-		background: $bg-yellow $bg-light-url repeat !important;
+		background: $bg-yellow $bg-light-url repeat;
 	}
 
 	.orange-background {
-		background: $bg-orange $bg-light-url repeat !important;
+		background: $bg-orange $bg-light-url repeat;
 	}
 }

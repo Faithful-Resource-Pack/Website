@@ -14,12 +14,15 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 </script>
 
 <template>
-	<div class="hero" :style="bannerStyle">
-		<div class="container">
-			<img class="wordmark" :src="wordmark" />
-		</div>
-	</div>
+	<hero-section :background="banner" :wordmark :wordmark-alt="title">
+		<template #actions>
+			<div style="height: 100px" />
+		</template>
+	</hero-section>
 	<div class="container">
+		<v-alert v-if="warning" :title="warning.split('\n')[0]" type="error" class="mb-3">
+			{{ warning.split("\n")?.[1] || "" }}
+		</v-alert>
 		<div class="card card-body card-text">
 			<!-- eslint-disable-next-line vue/no-v-html -->
 			<div v-html="compileMarkdown(description)"></div>
@@ -41,6 +44,7 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 </template>
 
 <script>
+import HeroSection from "~/components/lib/hero-section.vue";
 import PostDownloads from "~/components/posts/post-downloads.vue";
 import removeMd from "remove-markdown";
 
@@ -48,6 +52,7 @@ import removeMd from "remove-markdown";
 export default defineNuxtComponent({
 	name: "pack-page",
 	components: {
+		HeroSection,
 		PostDownloads,
 	},
 	props: {
@@ -77,17 +82,15 @@ export default defineNuxtComponent({
 			required: false,
 			default: null,
 		},
+		warning: {
+			type: String,
+			required: false,
+			default: null,
+		},
 		// not used but nuxt complains about extra props otherwise
 		permalink: {
 			type: String,
 			required: true,
-		},
-	},
-	computed: {
-		bannerStyle() {
-			return {
-				backgroundImage: `url("${this.banner}")`,
-			};
 		},
 	},
 });
@@ -95,21 +98,6 @@ export default defineNuxtComponent({
 
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
-
-.hero {
-	display: block;
-	background-size: cover;
-	background-position: center;
-	padding: 0 2rem 1px;
-	text-align: center;
-	box-shadow: $shadow-sheet;
-}
-
-.wordmark {
-	padding: 5vw;
-	filter: drop-shadow($shadow-wordmark);
-	width: 800px;
-}
 
 .button-row {
 	display: flex;

@@ -1,5 +1,8 @@
 <template>
-	<p v-if="post.discontinued" class="warning banner">This project has been discontinued.</p>
+	<v-alert v-if="post.discontinued" title="This project has been discontinued!" type="error">
+		This project has been deprecated and is no longer being actively worked on. Please contact a
+		staff member on Discord if you're interested in maintaining it!
+	</v-alert>
 	<div v-if="post.title" class="text-center my-5">
 		<h1 v-if="mainTitle" class="title mb-2">{{ mainTitle }}</h1>
 		<h2 v-if="subtitle" class="subtitle">{{ subtitle }}</h2>

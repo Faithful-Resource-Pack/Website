@@ -3,16 +3,16 @@
 		<img
 			v-if="options.tags.includes('Java')"
 			:src="java"
-			alt="Available for Java Edition"
+			title="Available for Java Edition"
 			loading="lazy"
 		/>
 		<img
 			v-if="options.tags.includes('Bedrock')"
 			:src="bedrock"
-			alt="Available for Bedrock Edition"
+			title="Available for Bedrock Edition"
 			loading="lazy"
 		/>
-		<img v-if="options.optifine" :src="optifine" alt="Requires OptiFine" loading="lazy" />
+		<img v-if="options.optifine" :src="optifine" title="Requires OptiFine" loading="lazy" />
 	</div>
 </template>
 

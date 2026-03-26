@@ -7,8 +7,15 @@
 		<template #tagline>Providing a higher-resolution Minecraft experience since 2010.</template>
 		<template #actions>
 			<!-- hack to get the button the same width as the container -->
-			<div class="container py-3">
-				<discord-button>Join our Discord now and contribute to the project!</discord-button>
+			<div class="container py-5 hero-button-container">
+				<nuxt-link to="/downloads" class="btn btn-primary btn-xl hero-button">
+					<media-icon icon="mdi-download" style="font-size: 1.5rem" />
+					<span class="ml-3">Downloads</span>
+				</nuxt-link>
+				<nuxt-link to="https://discord.gg/sN9YRQbBv7" class="btn btn-secondary btn-xl hero-button">
+					<media-icon icon="discord" style="font-size: 1rem" />
+					<span class="ml-3">Get involved!</span>
+				</nuxt-link>
 			</div>
 		</template>
 	</hero-section>
@@ -80,7 +87,7 @@
 import ProjectCard from "~/components/home/project-card.vue";
 import PostCard from "~/components/lib/post-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
-import DiscordButton from "~/components/lib/discord-button.vue";
+import MediaIcon from "~/components/lib/media-icon.vue";
 import ChevronLink from "~/components/lib/chevron-link.vue";
 import HeroSection from "~/components/lib/hero-section.vue";
 import BaseCard from "~/components/lib/base-card.vue";
@@ -112,7 +119,7 @@ const PROJECTS = [
 		background: "/image/posters/cf64.jpg",
 		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf64_logo.png",
 		description: "Both nostalgia and detail in equal amounts!",
-		to: "/classic64x",
+		to: "/classic64x-jappa",
 	},
 ];
 const ADDON_REEL_LENGTH = 4;
@@ -124,7 +131,7 @@ export default defineNuxtComponent({
 		BaseCard,
 		PostCard,
 		AddonCard,
-		DiscordButton,
+		MediaIcon,
 		ChevronLink,
 	},
 	// for some reason <script setup> doesn't work with asyncData (???)
@@ -168,6 +175,19 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
 
+.hero-button-container {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero-button {
+	width: 256px;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
 .project-reel,
 .addon-reel {
 	grid-template-columns: repeat(4, 1fr);
@@ -182,6 +202,16 @@ export default defineNuxtComponent({
 @media screen and (max-width: $breakpoint-md) {
 	.addon-reel {
 		grid-template-columns: repeat(2, 2fr);
+	}
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+	.hero-button-container {
+		flex-flow: column nowrap;
+		align-items: stretch;
+	}
+	.hero-button {
+		width: auto;
 	}
 }
 

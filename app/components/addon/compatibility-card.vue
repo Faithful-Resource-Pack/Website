@@ -2,24 +2,11 @@
 	<h2 class="text-center">Compatibility</h2>
 	<h5>Supported Packs</h5>
 	<div class="addon-chips">
-		<v-chip v-for="{ color, icon, text, to } in packs" :key="text" density="compact" :color :to>
-			<template #prepend>
-				<media-icon :icon class="mr-1 ml-n1" :color />
-			</template>
-			{{ text }}
-		</v-chip>
+		<custom-chip v-for="pack in packs" :key="pack" :type="pack" link />
 	</div>
 	<h5>Supported Editions</h5>
 	<div class="addon-chips">
-		<v-chip
-			v-for="{ color, icon, text } in editions"
-			:key="text"
-			:prepend-icon="icon"
-			density="compact"
-			:color
-		>
-			{{ text }}
-		</v-chip>
+		<custom-chip v-for="edition in editions" :key="edition" :type="edition" link />
 	</div>
 	<template v-if="options.optifine">
 		<h5>Dependencies</h5>
@@ -34,13 +21,13 @@
 </template>
 
 <script>
-import MediaIcon from "~/components/lib/media-icon.vue";
 import ProfileCard from "~/components/lib/profile-card.vue";
+import CustomChip from "~/components/lib/custom-chip.vue";
 
 export default defineNuxtComponent({
 	name: "compatibility-card",
 	components: {
-		MediaIcon,
+		CustomChip,
 		ProfileCard,
 	},
 	props: {
@@ -49,24 +36,12 @@ export default defineNuxtComponent({
 			required: true,
 		},
 	},
-	data() {
-		return {
-			data: {
-				Java: { color: "#1DD96A", icon: "mdi-minecraft", text: "Java Edition" },
-				Bedrock: { color: "#EEEEEE", icon: "mdi-cube", text: "Bedrock Edition" },
-				"32x": { color: "#00A2FF", icon: "faithful", text: "Faithful 32x", to: "/faithful32x" },
-				"64x": { color: "#FF0092", icon: "faithful", text: "Faithful 64x", to: "/faithful64x" },
-			},
-		};
-	},
 	computed: {
 		editions() {
-			return this.options.tags
-				.filter((e) => ["Java", "Bedrock"].includes(e))
-				.map((k) => this.data[k]);
+			return this.options.tags.filter((e) => ["Java", "Bedrock"].includes(e));
 		},
 		packs() {
-			return this.options.tags.filter((p) => ["32x", "64x"].includes(p)).map((k) => this.data[k]);
+			return this.options.tags.filter((p) => ["32x", "64x"].includes(p));
 		},
 	},
 });

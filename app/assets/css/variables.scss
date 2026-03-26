@@ -35,13 +35,13 @@ $text-yellow: #FFF700;
 $text-orange: #FF8340;
 
 /** button colors */
-$btn-primary: #007BFF;
-$btn-primary-hover: #0069D9;
-$btn-primary-active: #0062CC;
+$btn-primary: #4EA229;
+$btn-primary-hover: #76C945;
+$btn-primary-active: #99D676;
 
-$btn-secondary: #343A40;
-$btn-secondary-hover: #23272B;
-$btn-secondary-active: #1D2124;
+$btn-secondary: #424242;
+$btn-secondary-hover: #515151;
+$btn-secondary-active: #6F6F6F;
 
 /** other text colors */
 $text-card-title: white;
@@ -57,7 +57,7 @@ $shadow-image: 0 10px 10px rgba(0, 0, 0, 0.465);
 $shadow-wordmark: 0 0 10px #000000;
 
 /** transitions */
-$transition-zoom: all 0.5s ease;
+$transition-zoom: all 0.35s ease;
 $transition-button: all 0.15s ease; // bootstrap + about page
 $transition-navigation: all 0.1s ease;
 
@@ -70,6 +70,4 @@ $breakpoint-xl: 1280px;
 
 /** global settings */
 $padding-card: 12px;
-$border-radius: 6px;
-$blurple: #5865F2;
-$warning: #F44336;
+$border-radius: 4px;

@@ -1,10 +1,17 @@
 <template>
 	<div class="user-header">
-		<img
-			class="user-header-image"
-			:src="`https://vzge.me/face/128/${getVisageSlug(user)}`"
-			:title="user.uuid"
-		/>
+		<component
+			:is="namemcComponent"
+			:to="`https://namemc.com/profile/${user.uuid}`"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<img
+				class="user-header-image"
+				:src="`https://vzge.me/face/128/${getVisageSlug(user)}`"
+				:title="user.uuid"
+			/>
+		</component>
 		<div class="flex-grow-1">
 			<div class="user-header-top">
 				<h1 class="user-header-username mb-0 subtitle cursor-pointer" @click="copyURL">
@@ -17,13 +24,10 @@
 	</div>
 	<hr />
 	<template v-if="isReservedAccount">
-		<div class="warning banner">
-			<h1>This user account is special!</h1>
-			<p class="text-left mb-0" style="opacity: 0.8">
-				This user account does not correspond to a real Discord account. Possible reasons include
-				placeholder accounts for old contributions or organization accounts.
-			</p>
-		</div>
+		<v-alert type="warning" title="This user account is special!">
+			This user account does not correspond to a real Discord account. Possible reasons include
+			placeholder accounts for old contributions or organization accounts.
+		</v-alert>
 		<hr />
 	</template>
 	<!-- eslint-disable vue/no-v-html -->
@@ -112,6 +116,9 @@ export default defineNuxtComponent({
 		},
 		isReservedAccount() {
 			return this.user.id < 1000;
+		},
+		namemcComponent() {
+			return this.user?.uuid ? resolveComponent("nuxt-link") : "span";
 		},
 	},
 });

@@ -1,7 +1,6 @@
 // more efficient bundling (compiled in same css file)
 @use "./variables" as *;
 @use "./lib/buttons" as *;
-@use "./lib/banners" as *;
 @use "./lib/cards" as *;
 @use "./lib/grids" as *;
 
@@ -167,7 +166,7 @@ img[src$=".jpg"] {
 
 @media screen and (max-width: $breakpoint-sm) {
 	.title {
-		font-size: 2.75rem;
+		font-size: 3.25rem;
 	}
 	.subtitle {
 		font-size: 2.5rem;
@@ -196,7 +195,7 @@ img[src$=".jpg"] {
 	width: 100%;
 }
 
-.btn, *.card, .banner, .header-img, .about-button {
+.btn, .card, .header-img, .about-button {
 	overflow: hidden;
 	box-shadow: $shadow-sheet;
 	border-radius: $border-radius;
@@ -263,6 +262,31 @@ img[src$=".jpg"] {
 
 .v-progress-circular__underlay {
 	display: none;
+}
+
+// I think always-dark tooltips look way cleaner, kinda subjective though
+.v-tooltip > .v-overlay__content {
+	background: $bg-dark !important;
+}
+
+// looks way too close to regular text with faithful font
+.v-alert-title {
+	font-size: 1.75rem !important;
+	margin-bottom: 0.5rem;
+}
+
+.v-alert--variant-flat {
+	background-image: $bg-light-url !important;
+	background-repeat: repeat !important;
+	background-blend-mode: multiply;
+}
+
+// make text a bit more transparent than title (why is this so hard to do)
+.v-alert--variant-flat .v-alert__content {
+	color: rgba(white, 0.8);
+}
+.v-alert--variant-flat .v-alert-title {
+	color: white;
 }
 
 // make sure stone background shows up

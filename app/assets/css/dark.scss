@@ -1,7 +1,6 @@
 @use "./variables" as *;
 
-// force lower specificity so page-specific styles don't break
-:where(.dark-theme) {
+.dark-theme {
 	.textured {
 		background: $bg-dark-textured;
 	}
@@ -17,15 +16,21 @@
 	.accent-textured.v-chip--variant-elevated,
 	.accent-textured.v-card--variant-elevated,
 	.accent-textured.v-btn--variant-elevated {
-		background: $bg-dark-accent-textured !important;
+		background: $bg-dark-accent-textured;
 	}
 
+	// card color
 	.v-skeleton-loader__image {
-		background: $bg-dark !important;
+		background: $bg-dark-accent !important;
 	}
 
+	// vuetify theming inconsistency fixes (doesn't use website theme implementation)
+	// todo: probably switch to vuetify themes for everything
+	.v-input__control {
+		color: white;
+	}
 	.v-expansion-panels--variant-accordion * {
-		background: $bg-dark-accent !important;
+		background: $bg-dark-accent;
 	}
 
 	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
@@ -33,18 +38,14 @@
 		text-decoration-color: currentColor;
 	}
 
+	// very strange things happen without this line (I have no idea why)
 	.underline-hover:hover {
-		text-decoration-color: $text-dark !important;
-	}
-
-	// fixes dropdown select color (it's always light mode otherwise)
-	.v-input__control {
-		color: white !important;
+		text-decoration-color: $text-dark;
 	}
 
 	// about page stuff
 	.about-button {
-		background: white !important;
+		background: white;
 		color: black;
 	}
 
@@ -62,22 +63,22 @@
 	}
 
 	.green-background .colored-title {
-		color: $text-green !important;
+		color: $text-green;
 	}
 
 	.blue-background .colored-title {
-		color: $text-blue !important;
+		color: $text-blue;
 	}
 
 	.pink-background .colored-title {
-		color: $text-pink !important;
+		color: $text-pink;
 	}
 
 	.yellow-background .colored-title {
-		color: $text-yellow !important;
+		color: $text-yellow;
 	}
 
 	.orange-background .colored-title {
-		color: $text-orange !important;
+		color: $text-orange;
 	}
 }
