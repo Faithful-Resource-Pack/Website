@@ -102,7 +102,7 @@ export default defineNuxtComponent({
 				Release: "green",
 				"Pre-release": "blue",
 				Beta: "yellow",
-				Alpha: "red",
+				Alpha: "orange",
 				Snapshot: "gray",
 			},
 			// prevents potential hydration mismatch when used in computed
