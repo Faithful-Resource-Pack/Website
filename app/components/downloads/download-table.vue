@@ -3,10 +3,11 @@
 		<table class="download-table">
 			<thead class="download-heading">
 				<tr>
+					<!-- these must be in divs, I have no idea why -->
 					<th />
-					<th class="file-heading">Name</th>
-					<th>Date</th>
-					<th colspan="2">Downloads</th>
+					<th class="file-heading"><div>Name</div></th>
+					<th><div>Date</div></th>
+					<th colspan="2"><div>Downloads</div></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -60,17 +61,15 @@ export default defineNuxtComponent({
 	width: 100%;
 }
 
-.download-heading {
+.download-heading div {
 	font-size: 1.25rem;
 	color: $text-card-title;
+	padding-bottom: $padding-card;
 }
 
 // default middle text alignment looks really stupid
 .file-heading {
 	text-align: left !important;
-	p {
-		margin-bottom: 200px !important;
-	}
 }
 
 // remove padding and table headers on mobile
