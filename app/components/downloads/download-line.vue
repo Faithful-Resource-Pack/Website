@@ -2,13 +2,7 @@
 	<tr class="download-item" :class="nested ? 'subitem' : ''" @click="toggleChildren">
 		<td class="show-icon-container">
 			<!-- empty slot rendered if there's only a single download -->
-			<v-icon
-				v-if="!nested && !single"
-				:icon="showIcon"
-				size="x-small"
-				opacity="0.5"
-				class="cursor-pointer"
-			/>
+			<v-icon v-if="!nested && !single" :icon="showIcon" size="x-small" class="show-icon" />
 		</td>
 		<td class="download-details">
 			<span class="download-name">
@@ -32,21 +26,20 @@
 			</v-tooltip>
 		</td>
 
-		<td
-			v-for="(link, linkType) in item.links"
-			:key="link"
-			class="links"
-			:colspan="Object.keys(item.links).length > 1 ? 1 : 2"
-		>
-			<!-- icon buttons aren't accessible on mobile -->
-			<nuxt-link
-				class="btn btn-secondary btn-dl"
-				:to="link"
-				:aria-label="`${textFormat[linkType]} download for ${labelText} (${version})`"
-			>
-				<media-icon class="dl-icon" :icon="linkType" fallback="download" />
-				<span class="link-text ml-2">{{ textFormat[linkType] || linkType }}</span>
-			</nuxt-link>
+		<!-- for some reason styling td causes problems -->
+		<td>
+			<div class="links">
+				<nuxt-link
+					v-for="(link, linkType) in item.links"
+					:key="link"
+					class="btn btn-secondary btn-dl"
+					:to="link"
+					:aria-label="`${textFormat[linkType]} download for ${labelText} (${version})`"
+				>
+					<media-icon class="dl-icon" :icon="linkType" fallback="download" />
+					<span class="link-text ml-2">{{ textFormat[linkType] || linkType }}</span>
+				</nuxt-link>
+			</div>
 		</td>
 	</tr>
 </template>
@@ -157,85 +150,109 @@ export default defineNuxtComponent({
 $item-highlight: rgba(255, 255, 255, 0.05);
 
 td {
-	text-align: center;
-	vertical-align: middle;
-	width: calc(50% / 3);
-}
-
-// all text except for links use this
-td,
-td * {
 	color: $text-card;
-	margin-bottom: 0;
-}
-
-// for some reason you can't pad <tr> tags directly, so we style the children instead
-.download-item > * {
+	text-align: center;
+	// for some reason you can't pad <tr> tags directly, so we style the children instead
 	padding: 0.2rem 0px;
+
+	// https://dev.to/temmietope/rounded-edges-on-table-rows-1d0n
+	&:first-child {
+		border-radius: $border-radius 0 0 $border-radius;
+		padding-left: calc($padding-card / 2);
+	}
+	&:last-child {
+		border-radius: 0 $border-radius $border-radius 0;
+		padding-right: calc($padding-card / 2);
+	}
 }
 
 .download-item:hover {
 	background: $item-highlight;
 }
 
-.download-name {
-	display: inline-flex;
-	padding-top: 0px !important;
-	padding-bottom: 0px !important;
-	padding-left: 0.5rem;
-	margin: 0px;
-	// fix for dots not respecting aspect ratio
-	align-items: center;
-}
-
 .subitem {
 	// kinda lazy way of showing old downloads as less significant
+	// todo: do this better lol
 	opacity: 75%;
+}
+
+// match intrinsic card padding on left side (looks more proportional)
+.show-icon-container {
+	padding-right: $padding-card;
+}
+
+.show-icon {
+	// less opaque
+	color: $text-navigation;
+	cursor: pointer;
 }
 
 .download-details {
 	text-align: left;
-	width: 45%;
+	width: 100%;
 	* {
 		margin-right: 0.3rem;
 	}
 }
 
-.links {
-	width: calc(50% / 6);
+// fix for stretched dots
+.download-name {
+	display: inline-flex;
+	align-items: center;
 }
 
+.date {
+	white-space: pre;
+	padding: 0 2rem;
+}
 .mobile-details {
 	display: none;
 }
 
-.show-icon-container {
-	user-select: none;
-	width: 5%;
+.links {
+	// for some reason flex doesn't fill the whole td by default
+	width: 100%;
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
 }
 
+// small buttons, uniform width for nicer table layout
 .btn-dl {
-	padding: 0.1rem 0.2rem;
-	margin: 0.1rem 0.1rem;
-	width: 115px;
-	* {
-		color: white;
-	}
+	padding: 0.1rem;
+	width: 120px;
 }
 
 i.dl-icon {
 	font-size: 20px;
 }
 
+@media screen and (max-width: $breakpoint-md) {
+	// reduce gap, align to right since centering icon buttons looks bad
+	.links {
+		gap: 0.5rem;
+		justify-content: end;
+	}
+
+	// square icon buttons
+	.btn-dl {
+		width: 2rem;
+		height: 2rem;
+	}
+	.link-text {
+		display: none;
+	}
+}
+
 @media screen and (max-width: $breakpoint-sm) {
+	// remove inline so it wraps the badges underneath (really stupid hack)
 	.download-name {
-		padding-left: 0px !important;
-		// remove inline so it wraps the badges underneath
 		display: flex;
 	}
 
 	// hide desktop details and show mobile details
-	.size,
 	.date {
 		display: none;
 	}
@@ -243,51 +260,14 @@ i.dl-icon {
 		display: block;
 	}
 
-	.download-item {
-		display: flex;
-		align-items: stretch;
-		// padding works on tr since it's now flex
-		padding: 0.25rem 0.5rem;
-
-		// remove hover effect (looks bad on mobile)
-		&:hover {
-			background: transparent;
-		}
+	// remove hover effect (looks bad on mobile)
+	.download-item:hover {
+		background: transparent;
 	}
 
-	// fix margins
+	// align icon to download name (looks better than in the middle)
 	.show-icon-container {
-		flex: 0 0 24px;
-		padding: 0.2rem 0;
-	}
-
-	.download-details {
-		flex: 1 1 auto;
-		padding: 0.2rem 0.4rem;
-	}
-
-	.links {
-		flex: 0 0 30px;
-		width: auto;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-	}
-
-	// square buttons with centered icon and remove text
-	.btn-dl {
-		width: 2rem;
-		height: 2rem;
-		line-height: 30px;
-		text-align: center;
-		padding: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.link-text {
-		display: none;
+		vertical-align: top;
 	}
 }
 </style>

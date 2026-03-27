@@ -5,9 +5,9 @@
 				<tr>
 					<!-- these must be in divs, I have no idea why -->
 					<th />
-					<th class="file-heading"><div>Name</div></th>
+					<th class="text-left"><div>Name</div></th>
 					<th><div>Date</div></th>
-					<th colspan="2"><div>Downloads</div></th>
+					<th><div>Downloads</div></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -50,9 +50,9 @@ export default defineNuxtComponent({
 
 .download-table-padding {
 	border-radius: $border-radius;
-	padding: $padding-card;
+	// half of the horizontal padding goes here and half in the highlight
+	padding: $padding-card calc($padding-card / 2);
 	overflow-x: auto;
-	margin-bottom: 2rem;
 	box-shadow: $shadow-sheet;
 }
 
@@ -67,18 +67,8 @@ export default defineNuxtComponent({
 	padding-bottom: $padding-card;
 }
 
-// default middle text alignment looks really stupid
-.file-heading {
-	text-align: left !important;
-}
-
-// remove padding and table headers on mobile
+// remove table headers on mobile
 @media screen and (max-width: $breakpoint-sm) {
-	.download-table-padding {
-		margin: 0;
-		padding: 0;
-	}
-
 	thead {
 		display: none;
 	}

@@ -8,7 +8,7 @@
 		</h2>
 		<template v-for="({ downloads, files }, edition) in editions" :key="edition">
 			<h3 class="text-center my-3">{{ edition }} Edition</h3>
-			<download-table :downloads :files />
+			<download-table :downloads :files class="mb-5" />
 		</template>
 		<br /><br />
 	</template>
