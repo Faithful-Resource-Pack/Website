@@ -54,6 +54,10 @@ const FOOTER_CATEGORIES = [
 		icon: "mdi-information",
 		items: [
 			{
+				name: "FAQ",
+				to: "/faq",
+			},
+			{
 				name: "License",
 				to: "/license",
 			},
@@ -62,16 +66,12 @@ const FOOTER_CATEGORIES = [
 				to: "/privacy",
 			},
 			{
-				name: "Statistics",
-				to: "/stats",
-			},
-			{
-				name: "Translate",
-				to: "https://translate.faithfulpack.net",
-			},
-			{
-				name: "Branding",
+				name: "Brand",
 				to: "https://docs.faithfulpack.net/pages/manuals/branding-guidelines",
+			},
+			{
+				name: "Status",
+				to: "https://status.faithfulpack.net",
 			},
 		],
 	},
@@ -102,7 +102,7 @@ const FOOTER_CATEGORIES = [
 		],
 	},
 	{
-		title: "Media",
+		title: "Community",
 		icon: "mdi-chat",
 		items: [
 			{
@@ -132,24 +132,24 @@ const FOOTER_CATEGORIES = [
 		icon: "mdi-shape",
 		items: [
 			{
-				name: "FAQ",
-				to: "/faq",
-			},
-			{
-				name: "Docs",
-				to: "https://docs.faithfulpack.net",
-			},
-			{
-				name: "Status",
-				to: "https://status.faithfulpack.net",
-			},
-			{
-				name: "Gallery",
-				to: "/gallery",
+				name: "Texture Gallery",
+				to: "https://webapp.faithfulpack.net/gallery",
 			},
 			{
 				name: "Contributing",
 				to: "https://docs.faithfulpack.net/pages/manuals/contributor-handbook",
+			},
+			{
+				name: "Translations",
+				to: "https://translate.faithfulpack.net",
+			},
+			{
+				name: "Faithful Docs",
+				to: "https://docs.faithfulpack.net",
+			},
+			{
+				name: "API Reference",
+				to: "https://api.faithfulpack.net/docs",
 			},
 		],
 	},

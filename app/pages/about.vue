@@ -15,14 +15,7 @@ definePageMeta({
 					<br /><br />
 					With a variety of resolutions and styles, there's something for everyone!
 				</p>
-				<chevron-link
-					class="about-button"
-					to="https://discord.gg/sN9YRQbBv7"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Join our Discord
-				</chevron-link>
+				<chevron-link class="about-button" to="/news">Get Started</chevron-link>
 			</div>
 			<img class="about-image" src="/image/about/faithful.gif" alt="gif of creeper textures" />
 		</div>
@@ -38,21 +31,28 @@ definePageMeta({
 				As one of the first ever texture packs to be developed, having started all the way back in
 				2010, Faithful has become a cult classic of the Minecraft community.
 			</p>
-			<chevron-link class="about-button" to="/stats">See our Stats</chevron-link>
+			<chevron-link
+				class="about-button"
+				to="https://discord.gg/sN9YRQbBv7"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Join our Discord
+			</chevron-link>
 		</div>
 	</div>
 	<div class="blue-background">
 		<div class="container about-container">
 			<div class="about-text">
-				<h1 class="colored-title">Cross-platform</h1>
+				<h1 class="colored-title">Play How You Want</h1>
 				<p>
-					Faithful is available for both the most popular Java Edition versions as well as Bedrock
-					Edition.
+					Faithful supports both Java and Bedrock Edition, and can be installed on computers,
+					phones, and even certain consoles.
 					<br /><br />
-					This means it can be used on all devices that support manual installation of resource
-					packs, from phones to even certain consoles.
+					Our community made add-ons also support a wide variety of editions and versions, so you
+					can make Faithful truly yours no matter how you like to play.
 				</p>
-				<chevron-link class="about-button" to="/downloads">View Downloads</chevron-link>
+				<chevron-link class="about-button" to="/addons">View Add-ons</chevron-link>
 			</div>
 			<img class="about-image" src="/image/about/platforms.png" alt="supported platforms" />
 		</div>
