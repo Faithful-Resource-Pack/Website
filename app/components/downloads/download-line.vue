@@ -6,7 +6,7 @@
 		</td>
 		<td class="download-details">
 			<span class="download-name">
-				<download-badge dot :badge="labelColor" />
+				<download-badge dot :badge="labelColor" :title="item.file_type" />
 				<span class="mx-1 my-1">{{ labelText }}</span>
 			</span>
 			<download-badge badge="version">{{ version }}</download-badge>
@@ -32,7 +32,7 @@
 				<nuxt-link
 					v-for="(link, linkType) in item.links"
 					:key="link"
-					class="btn btn-secondary btn-dl"
+					class="btn btn-secondary btn-download"
 					:to="link"
 					:aria-label="`${textFormat[linkType]} download for ${labelText} (${version})`"
 				>
@@ -223,7 +223,7 @@ td {
 }
 
 // small buttons, uniform width for nicer table layout
-.btn-dl {
+.btn-download {
 	padding: 0.1rem;
 	width: 120px;
 }
@@ -240,7 +240,7 @@ i.dl-icon {
 	}
 
 	// square icon buttons
-	.btn-dl {
+	.btn-download {
 		width: 2rem;
 		height: 2rem;
 	}

@@ -15,7 +15,7 @@ definePageMeta({
 					<br /><br />
 					With a variety of resolutions and styles, there's something for everyone!
 				</p>
-				<chevron-link class="about-button" to="/news">Get Started</chevron-link>
+				<chevron-link class="btn btn-lg btn-about" to="/downloads">Get Started</chevron-link>
 			</div>
 			<img class="about-image" src="/image/about/faithful.gif" alt="gif of creeper textures" />
 		</div>
@@ -32,7 +32,7 @@ definePageMeta({
 				2010, Faithful has become a cult classic of the Minecraft community.
 			</p>
 			<chevron-link
-				class="about-button"
+				class="btn btn-lg btn-about"
 				to="https://discord.gg/sN9YRQbBv7"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -52,7 +52,7 @@ definePageMeta({
 					Our community made add-ons also support a wide variety of editions and versions, so you
 					can make Faithful truly yours no matter how you like to play.
 				</p>
-				<chevron-link class="about-button" to="/addons">View Add-ons</chevron-link>
+				<chevron-link class="btn btn-lg btn-about" to="/addons">View Add-ons</chevron-link>
 			</div>
 			<img class="about-image" src="/image/about/platforms.png" alt="supported platforms" />
 		</div>
@@ -69,7 +69,7 @@ definePageMeta({
 				on Faithful forever!
 			</p>
 			<chevron-link
-				class="about-button"
+				class="btn btn-lg btn-about"
 				to="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -90,7 +90,7 @@ definePageMeta({
 					GitHub. Take a look and see how the magic happens!
 				</p>
 				<chevron-link
-					class="about-button"
+					class="btn btn-lg btn-about"
 					to="https://github.com/Faithful-Resource-Pack"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -102,8 +102,8 @@ definePageMeta({
 		</div>
 	</div>
 	<div class="container faq-section">
-		<h1 class="mb-4">Any More Questions?</h1>
-		<chevron-link class="about-button" to="/faq">View our FAQ</chevron-link>
+		<h1 class="colored-title mb-4">Any More Questions?</h1>
+		<chevron-link class="btn btn-lg btn-about" to="/faq">Check the FAQ</chevron-link>
 	</div>
 </template>
 
@@ -157,15 +157,10 @@ export default defineNuxtComponent({
 	}
 }
 
-.about-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 12px 22px;
-	// prevent weird button wrapping issues
-	white-space: nowrap;
-	text-transform: uppercase;
-	line-height: 1;
+.btn-about {
+	// need to override btn-lg style
+	// todo: refactor button code to Not require this
+	margin-bottom: 0 !important;
 	transition: $transition-button;
 	&:hover {
 		opacity: 0.66;
@@ -178,7 +173,7 @@ export default defineNuxtComponent({
 		color: white;
 	}
 
-	.about-button {
+	.btn-about {
 		background: white !important;
 		color: $bg-green !important;
 	}
@@ -189,7 +184,7 @@ export default defineNuxtComponent({
 		color: white;
 	}
 
-	.about-button {
+	.btn-about {
 		background: white !important;
 		color: $bg-blue !important;
 	}
@@ -200,7 +195,7 @@ export default defineNuxtComponent({
 		color: white;
 	}
 
-	.about-button {
+	.btn-about {
 		background: white !important;
 		color: $bg-pink !important;
 	}
