@@ -166,8 +166,11 @@ td {
 	}
 }
 
-.download-item:hover {
-	background: $item-highlight;
+.download-item {
+	transition: $transition-button;
+	&:hover {
+		background: $item-highlight;
+	}
 }
 
 .subitem {
