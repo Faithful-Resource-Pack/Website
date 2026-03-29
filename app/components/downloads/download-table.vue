@@ -6,7 +6,7 @@
 					<!-- these must be in divs, I have no idea why -->
 					<th />
 					<th class="text-left"><div>Name</div></th>
-					<th><div>Date</div></th>
+					<th><div>Published</div></th>
 					<th><div>Downloads</div></th>
 				</tr>
 			</thead>
