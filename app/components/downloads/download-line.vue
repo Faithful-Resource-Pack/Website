@@ -7,7 +7,7 @@
 		<td class="download-details">
 			<span class="download-name">
 				<download-badge dot :badge="labelColor" :title="item.file_type" />
-				<span class="mx-1 my-1">{{ labelText }}</span>
+				<span class="ma-1">{{ labelText }}</span>
 			</span>
 			<download-badge badge="version">{{ version }}</download-badge>
 			<download-badge v-if="item.latest" badge="latest">Latest</download-badge>
@@ -271,6 +271,7 @@ i.dl-icon {
 	// align icon to download name (looks better than in the middle)
 	.show-icon-container {
 		vertical-align: top;
+		padding-top: 0.5rem;
 	}
 }
 </style>
