@@ -9,7 +9,7 @@
 						class="download-choice d-flex align-center justify-space-between ga-2 cursor-pointer"
 						:class="id === selectedPack && 'selected-choice'"
 						@mouseover="hover(id)"
-						@mouseleave="unhover"
+						@mouseleave="resetHover"
 						@click="select(id)"
 					>
 						<div class="d-flex align-center ga-3">
@@ -31,7 +31,7 @@
 							class="btn btn-secondary btn-link"
 							:style="{ opacity: id === hoverPack ? '1' : '0' }"
 						>
-							<v-icon icon="mdi-open-in-new" />
+							<v-icon icon="mdi-information-outline" />
 						</a>
 					</div>
 				</template>
@@ -187,11 +187,11 @@ export default defineNuxtComponent({
 			if (this.hoverTimeout) clearTimeout(this.hoverTimeout);
 			this.hoverPack = pack;
 		},
-		unhover() {
-			// it looks weird to select a pack that isn't being previewed so reset after 1s
+		resetHover() {
+			// it looks weird to preview a pack that isn't selected
 			this.hoverTimeout = setTimeout(() => {
 				this.hoverPack = this.selectedPack;
-			}, 1000);
+			}, 500);
 		},
 	},
 	computed: {
@@ -227,6 +227,8 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables.scss" as *;
 
+$border-thickness: 2px;
+
 .download-selector {
 	display: flex;
 	flex-flow: column nowrap;
@@ -235,7 +237,7 @@ export default defineNuxtComponent({
 }
 
 .download-choice {
-	border: 2px solid rgba(white, 0.2);
+	border: $border-thickness solid rgba(white, 0.2);
 	.download-info-icon {
 		color: rgba(white, 0.2);
 	}
@@ -247,19 +249,20 @@ export default defineNuxtComponent({
 
 .download-choice:not(.selected-choice):hover {
 	// half white half green, should unhardcode at some point
-	border: 2px solid rgba(#bae3a1, 0.5);
+	border: $border-thickness solid rgba(#bae3a1, 0.5);
 	.download-radio-icon {
-		color: rgba(#bae3a1, 0.8);
+		color: rgba(#bae3a1, 0.9);
 	}
 }
 
 .pack-name {
 	color: $text-card-title;
-	font-size: 1.25rem;
+	font-size: 1.35rem;
 }
 
 .selected-choice {
-	border: 2px solid $text-green;
+	border: $border-thickness solid $text-green;
+	background: rgba($text-green, 0.15);
 	.download-radio-icon {
 		color: $text-green;
 	}
@@ -286,6 +289,7 @@ export default defineNuxtComponent({
 	right: 0;
 	height: 100%;
 	transition: $transition-zoom;
+	filter: brightness(0.6) saturate(1.1);
 }
 
 .download-preview.show {
@@ -295,7 +299,7 @@ export default defineNuxtComponent({
 .download-logo {
 	height: 75%;
 	margin: auto;
-	filter: drop-shadow($shadow-wordmark);
+	filter: drop-shadow($shadow-image);
 	transition: $transition-button;
 }
 </style>
