@@ -1,5 +1,5 @@
 {
-      "1.21.11": [
+  "1.21.11": [
     {
       "file_type": "Release",
       "file_version": 17,
@@ -12,7 +12,7 @@
       }
     }
   ],
-    "1.21.10": [
+  "1.21.10": [
     {
       "file_type": "Release",
       "file_version": 17,
@@ -118,7 +118,7 @@
         "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/6461715"
       }
     },
-	{
+    {
       "file_type": "Pre-release",
       "file_version": 14,
       "date": "2025-04-09",
