@@ -1,16 +1,17 @@
 <template>
-	<div class="download-selector my-5">
+	<div class="download-selector my-5" role="radiogroup">
 		<template v-for="{ id, label, description, to } in packs" :key="id">
-			<div
+			<button
 				class="download-choice d-flex align-center justify-space-between ga-2 cursor-pointer"
 				:class="id === selectedPack && 'selected-choice'"
-				@mouseover="hoverPack(id)"
+				@mouseenter="hoverPack(id)"
 				@mouseleave="resetHover"
 				@click="selectPack(id)"
 			>
 				<div class="d-flex align-start ga-3">
 					<v-icon
-						class="download-radio-icon my-2"
+						role="radio"
+						class="download-radio-icon my-1"
 						:icon="id === selectedPack ? 'mdi-radiobox-marked' : 'mdi-radiobox-blank'"
 					/>
 					<div class="d-flex flex-column align-start">
@@ -20,17 +21,19 @@
 				</div>
 
 				<!-- use opacity instead of v-show so content doesn't shift -->
-				<a
-					:href="id === hoveredPack ? to : undefined"
+				<component
+					:is="id === hoveredPack ? 'a' : 'span'"
+					:href="to"
+					:aria-hidden="id !== hoveredPack"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="btn btn-secondary btn-link"
 					:title="`See more about ${label}`"
+					class="btn btn-secondary btn-link"
 					:style="{ opacity: id === hoveredPack ? '1' : '0' }"
 				>
 					<v-icon icon="mdi-information-outline" />
-				</a>
-			</div>
+				</component>
+			</button>
 		</template>
 	</div>
 </template>
@@ -118,6 +121,7 @@ $border-thickness: 2px;
 	}
 	padding: $padding-card;
 	border-radius: $border-radius;
+	text-align: left;
 
 	transition: $transition-button;
 }
