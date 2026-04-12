@@ -2,68 +2,47 @@
 	<h1 class="title my-5 text-center">Download Faithful</h1>
 	<div class="card d-flex flex-row">
 		<div class="card-body card-text">
-			<h2>Choose Pack</h2>
-			<div class="download-selector my-5">
-				<template v-for="{ id, label, description, to } in packs" :key="id">
-					<div
-						class="download-choice d-flex align-center justify-space-between ga-2 cursor-pointer"
-						:class="id === selectedPack && 'selected-choice'"
-						@mouseover="hover(id)"
-						@mouseleave="resetHover"
-						@click="select(id)"
-					>
-						<div class="d-flex align-center ga-3">
-							<v-icon
-								class="download-radio-icon"
-								:icon="id === selectedPack ? 'mdi-radiobox-marked' : 'mdi-radiobox-blank'"
-							/>
-							<div class="d-flex flex-column align-start">
-								<span class="pack-name">{{ label }}</span>
-								<span>{{ description }}</span>
-							</div>
-						</div>
-
-						<!-- use opacity so enough space is reserved-->
-						<a
-							:href="id === hoverPack && to"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="btn btn-secondary btn-link"
-							:style="{ opacity: id === hoverPack ? '1' : '0' }"
-						>
-							<v-icon icon="mdi-information-outline" />
-						</a>
-					</div>
-				</template>
+			<h2>Select Pack</h2>
+			<pack-selector v-model:select="selectedPack" v-model:hover="hoverPack" :packs />
+			<div class="d-flex flex-column ga-3">
+				<download-button
+					v-for="(data, edition) in defaultDownloads"
+					:key="edition"
+					:edition
+					:data
+					:panel-open="versionSelectorOpen && edition === selectedEdition"
+					@toggle="toggleVersionSelector"
+				/>
 			</div>
-			<h2 class="my-5">Choose Edition</h2>
-			<v-row>
-				<v-col v-for="[edition, href] in downloads">
-					<a class="btn btn-primary block btn-lg mb-0" :href>
-						<v-icon size="small" icon="mdi-download" />
-						<span class="ml-2">{{ edition }}</span>
-					</a>
-				</v-col>
-			</v-row>
 		</div>
-		<div v-if="$vuetify.display.mdAndUp" class="download-preview-container">
-			<img
-				v-for="{ id } in packs"
-				class="download-preview"
-				:class="id === hoverPack && 'show'"
-				:src="`/image/banners/${id}.jpg`"
-			/>
-
-			<img
-				v-for="{ id } in packs"
-				class="download-preview download-logo"
-				:class="id === hoverPack && 'show'"
-				:src="`https://database.faithfulpack.net/images/branding/logos/transparent/hd/${id}_logo.png`"
+		<div v-if="$vuetify.display.mdAndUp" class="right-panel-container">
+			<pack-preview :packs :hover-pack :disabled="versionSelectorOpen" />
+			<!-- reuses form component but it's a modal on mobile and fills the preview on desktop -->
+			<version-selector
+				v-if="versionSelectorOpen"
+				:edition="selectedEdition"
+				:versions="versions"
+				@close="closeVersionSelector"
 			/>
 		</div>
 	</div>
 
-	<div class="text-center mt-10">
+	<!-- attach to site container so themes work -->
+	<v-dialog
+		v-if="versionSelectorOpen && !$vuetify.display.mdAndUp"
+		v-model="versionSelectorOpen"
+		attach=".site-container"
+	>
+		<div class="card">
+			<version-selector
+				:edition="selectedEdition"
+				:versions="versions"
+				@close="closeVersionSelector"
+			/>
+		</div>
+	</v-dialog>
+
+	<div class="text-center mt-7">
 		<p class="h5">
 			Looking for a specific release or discontinued project?
 			<nuxt-link to="/archive">Search the Faithful archive</nuxt-link>
@@ -72,6 +51,11 @@
 </template>
 
 <script>
+import DownloadButton from "~/components/downloads-new/download-button.vue";
+import PackPreview from "~/components/downloads-new/pack-preview.vue";
+import PackSelector from "~/components/downloads-new/pack-selector.vue";
+import VersionSelector from "~/components/downloads-new/version-selector.vue";
+
 const DOWNLOAD_DATA = [
 	{
 		id: "f32",
@@ -93,29 +77,15 @@ const DOWNLOAD_DATA = [
 		json: "faithful_64x_bedrock",
 		edition: "Bedrock",
 	},
-	/* {
-		id: "cf32",
-		json: "classic_faithful_32x_java",
-		edition: "Java",
-	},
-	{
-		id: "cf32",
-		json: "classic_faithful_32x_bedrock",
-		edition: "Bedrock",
-	},
-	{
-		id: "cf64",
-		json: "classic_faithful_64x_java",
-		edition: "Java",
-	},
-	{
-		id: "cf64",
-		json: "classic_faithful_64x_bedrock",
-		edition: "Bedrock",
-	}, */
 ];
 
 export default defineNuxtComponent({
+	components: {
+		PackSelector,
+		PackPreview,
+		DownloadButton,
+		VersionSelector,
+	},
 	async asyncData() {
 		// set object order by which ones come first
 		const downloadData = DOWNLOAD_DATA.reduce((acc, cur) => {
@@ -125,7 +95,12 @@ export default defineNuxtComponent({
 		}, {});
 
 		await Promise.all(
-			DOWNLOAD_DATA.map(async ({ id, json, edition }) => {
+			DOWNLOAD_DATA.map(async ({ id, json, to, edition }) => {
+				if (to) {
+					downloadData[id][edition] = to;
+					return;
+				}
+
 				// vite limitation, can't do regular $fetch here
 				const downloads = await import(`../../public/downloads/${json}.json`)
 					.then((res) => res.default)
@@ -155,7 +130,7 @@ export default defineNuxtComponent({
 					id: "f64",
 					label: "Faithful 64x",
 					hash: "#Faithful-64x",
-					description: "For when just 32x isn't enough.",
+					description: "For when 32x isn't enough.",
 					to: "/faithful64x",
 				},
 				{
@@ -175,34 +150,48 @@ export default defineNuxtComponent({
 			],
 			selectedPack: "f32",
 			hoverPack: "f32",
-			hoverTimeout: undefined,
+			selectedEdition: null,
 		};
 	},
 	methods: {
-		select(pack) {
-			this.selectedPack = pack;
+		openVersionSelector(edition) {
+			this.selectedEdition = edition;
 		},
-		hover(pack) {
-			// user is hovering over multiple at once, clear the reset
-			if (this.hoverTimeout) clearTimeout(this.hoverTimeout);
-			this.hoverPack = pack;
+		closeVersionSelector() {
+			this.selectedEdition = null;
 		},
-		resetHover() {
-			// it looks weird to preview a pack that isn't selected
-			this.hoverTimeout = setTimeout(() => {
-				this.hoverPack = this.selectedPack;
-			}, 500);
+		toggleVersionSelector(edition, open) {
+			return open ? this.closeVersionSelector() : this.openVersionSelector(edition);
 		},
 	},
 	computed: {
 		downloads() {
-			const downloads = this.downloadData[this.selectedPack];
-			return Object.entries(downloads).map(([edition, versions]) => {
-				const [versionName, latestVersion] = Object.entries(versions)[0];
-				const firstVersion = latestVersion[0];
-				const firstDownload = Object.values(firstVersion.links)[0];
-				return [`${edition} (${versionName})`, firstDownload];
-			});
+			const out = {};
+			for (const [edition, versions] of Object.entries(this.downloadData[this.selectedPack])) {
+				out[edition] ||= {};
+				for (const [i, [version, [data]]] of Object.entries(versions).entries()) {
+					out[edition][version] = {
+						...data,
+						to: Object.values(data.links)[0],
+						version,
+						latest: i === 0,
+					};
+				}
+			}
+			return out;
+		},
+		defaultDownloads() {
+			return Object.entries(this.downloads).reduce((acc, [edition, versions]) => {
+				acc[edition] = Object.values(versions)[0];
+				return acc;
+			}, {});
+		},
+		versions() {
+			if (!this.selectedEdition) return {};
+			return this.downloads[this.selectedEdition];
+		},
+		versionSelectorOpen() {
+			return this.selectedEdition === null;
 		},
 	},
 	watch: {
@@ -227,79 +216,11 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables.scss" as *;
 
-$border-thickness: 2px;
-
-.download-selector {
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: stretch;
-	gap: 8px;
-}
-
-.download-choice {
-	border: $border-thickness solid rgba(white, 0.2);
-	.download-info-icon {
-		color: rgba(white, 0.2);
-	}
-	padding: $padding-card;
-	border-radius: $border-radius;
-
-	transition: $transition-button;
-}
-
-.download-choice:not(.selected-choice):hover {
-	// half white half green, should unhardcode at some point
-	border: $border-thickness solid rgba(#bae3a1, 0.5);
-	.download-radio-icon {
-		color: rgba(#bae3a1, 0.9);
-	}
-}
-
-.pack-name {
-	color: $text-card-title;
-	font-size: 1.35rem;
-}
-
-.selected-choice {
-	border: $border-thickness solid $text-green;
-	background: rgba($text-green, 0.15);
-	.download-radio-icon {
-		color: $text-green;
-	}
-}
-
-.btn-link {
-	width: 2.5rem;
-	height: 2.5rem;
-}
-
-// use absolute to stack the images on top of each other
-.download-preview-container {
+.right-panel-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
 	width: 50%;
-}
-
-.download-preview {
-	opacity: 0;
-	position: absolute;
-	left: 0;
-	right: 0;
-	height: 100%;
-	transition: $transition-zoom;
-	filter: brightness(0.6) saturate(1.1);
-}
-
-.download-preview.show {
-	opacity: 1;
-}
-
-.download-logo {
-	height: 75%;
-	margin: auto;
-	filter: drop-shadow($shadow-image);
-	transition: $transition-button;
 }
 </style>
