@@ -27,11 +27,6 @@ jobs:
         with:
           version: 10
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-
       - name: Build Docker Image
         run: pnpm docker:build
 
