@@ -101,6 +101,10 @@ export default defineNuxtComponent({
 			}),
 		);
 
+		definePageMeta({
+			name: "Download Archive",
+		});
+
 		// after the promise.all everything has finished fetching into downloadData
 		return downloadData;
 	},
