@@ -45,7 +45,7 @@
 			</v-col>
 		</v-row>
 
-		<h2 class="subtitle my-5 text-center">
+		<h2 id="downloads" class="subtitle my-5 text-center">
 			{{ downloads.length === 1 ? "Download" : "Downloads" }}
 		</h2>
 		<nuxt-link
