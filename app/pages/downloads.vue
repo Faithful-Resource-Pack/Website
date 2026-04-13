@@ -150,14 +150,14 @@ export default defineNuxtComponent({
 					id: "f64",
 					label: "Faithful 64x",
 					hash: "#Faithful-64x",
-					description: "For when 32x isn't enough.",
+					description: "For when 32x isn't quite enough.",
 					to: "/faithful64x",
 				},
 				{
 					id: "cf32",
 					label: "Classic Faithful 32x",
 					hash: "#Classic-Faithful-32x",
-					description: "Return to 2015 Minecraft in style.",
+					description: "Authentically return to 2015 in style.",
 					to: "/classic32x",
 				},
 				{
