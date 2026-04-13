@@ -77,6 +77,26 @@ const DOWNLOAD_DATA = [
 		json: "faithful_64x_bedrock",
 		edition: "Bedrock",
 	},
+	{
+		id: "cf32",
+		json: "classic_32x_java",
+		edition: "Java",
+	},
+	{
+		id: "cf32",
+		json: "classic_32x_bedrock",
+		edition: "Bedrock",
+	},
+	{
+		id: "cf64",
+		json: "classic_64x_jappa_java",
+		edition: "Java",
+	},
+	{
+		id: "cf64",
+		json: "classic_64x_jappa_bedrock",
+		edition: "Bedrock",
+	},
 ];
 
 export default defineNuxtComponent({
@@ -183,6 +203,7 @@ export default defineNuxtComponent({
 		defaultDownloads() {
 			return Object.entries(this.downloads).reduce((acc, [edition, versions]) => {
 				acc[edition] = Object.values(versions)[0];
+				acc[edition].count = Object.keys(versions).length;
 				return acc;
 			}, {});
 		},

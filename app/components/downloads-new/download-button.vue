@@ -6,6 +6,7 @@
 		</a>
 		<button
 			class="btn btn-primary btn-lg px-2 mb-0"
+			:class="data.count <= 1 && 'disabled'"
 			:title="alt"
 			@click="$emit('toggle', edition, panelOpen)"
 		>

@@ -26,11 +26,12 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 		<div class="card card-body card-text">
 			<!-- eslint-disable-next-line vue/no-v-html -->
 			<div v-html="compileMarkdown(description)"></div>
-			<div v-if="buttons" class="button-row">
+			<div v-if="buttons" class="button-row ga-4">
 				<nuxt-link
-					v-for="{ to, text } in buttons"
+					v-for="({ to, text }, i) in buttons"
 					:key="to"
-					class="btn btn-secondary"
+					class="btn"
+					:class="i === 0 ? 'btn-primary' : 'btn-secondary'"
 					:to
 					:style="buttons.length === 1 ? 'width: 50%; flex-grow: 0' : ''"
 				>
@@ -38,14 +39,15 @@ useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }
 				</nuxt-link>
 			</div>
 		</div>
-		<hr />
-		<post-downloads v-if="downloads" :downloads />
+
+		<nuxt-link v-if="action" :to="action.to" class="btn btn-secondary btn-lg block my-5">
+			{{ action.text }}
+		</nuxt-link>
 	</div>
 </template>
 
 <script>
 import HeroSection from "~/components/lib/hero-section.vue";
-import PostDownloads from "~/components/posts/post-downloads.vue";
 import removeMd from "remove-markdown";
 
 // routed through the main nuxt config file (since they're statically generated)
@@ -53,7 +55,6 @@ export default defineNuxtComponent({
 	name: "pack-page",
 	components: {
 		HeroSection,
-		PostDownloads,
 	},
 	props: {
 		title: {
@@ -87,6 +88,11 @@ export default defineNuxtComponent({
 			required: false,
 			default: null,
 		},
+		action: {
+			type: Object,
+			required: false,
+			default: null,
+		},
 		// not used but nuxt complains about extra props otherwise
 		permalink: {
 			type: String,
@@ -103,7 +109,6 @@ export default defineNuxtComponent({
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	gap: 5px;
 
 	// stretch buttons to fill row
 	> * {

@@ -15,7 +15,7 @@
 	<h2 class="text-center subtitle mb-0">Discontinued</h2>
 	<template v-for="({ downloads, files }, name) in discontinued" :key="name">
 		<h3 class="text-center my-3">{{ name }}</h3>
-		<download-table :downloads :files />
+		<download-table :downloads :files class="mb-5" />
 	</template>
 </template>
 
@@ -55,9 +55,51 @@ const DOWNLOAD_DATA = [
 		edition: "Bedrock",
 	},
 	{
+		json: "classic_32x_java",
+		curse: "667237",
+		name: "Classic Faithful 32x",
+		edition: "Java",
+	},
+	{
+		json: "classic_32x_bedrock",
+		curse: "667237",
+		name: "Classic Faithful 32x",
+		edition: "Bedrock",
+	},
+	{
+		json: "classic_32x_jappa_java",
+		curse: "561185",
+		name: "Classic Faithful 32x Jappa",
+		edition: "Java",
+	},
+	{
+		json: "classic_32x_jappa_bedrock",
+		curse: "561185",
+		name: "Classic Faithful 32x Jappa",
+		edition: "Bedrock",
+	},
+	{
+		json: "classic_64x_jappa_java",
+		curse: "414275",
+		name: "Classic Faithful 64x Jappa",
+		edition: "Java",
+	},
+	{
+		json: "classic_64x_jappa_bedrock",
+		curse: "414275",
+		name: "Classic Faithful 64x Jappa",
+		edition: "Bedrock",
+	},
+	{
 		json: "faithful_32x_dungeons",
 		curse: "501546",
 		name: "Faithful 32x for Minecraft Dungeons",
+		discontinued: true,
+	},
+	{
+		json: "classic_64x_java",
+		curse: "1230339",
+		name: "Classic Faithful 64x for Java Edition",
 		discontinued: true,
 	},
 ];
