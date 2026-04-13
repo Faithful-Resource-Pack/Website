@@ -51,10 +51,10 @@
 </template>
 
 <script>
-import DownloadButton from "~/components/downloads-new/download-button.vue";
-import PackPreview from "~/components/downloads-new/pack-preview.vue";
-import PackSelector from "~/components/downloads-new/pack-selector.vue";
-import VersionSelector from "~/components/downloads-new/version-selector.vue";
+import DownloadButton from "~/components/downloads/download-button.vue";
+import PackPreview from "~/components/downloads/pack-preview.vue";
+import PackSelector from "~/components/downloads/pack-selector.vue";
+import VersionSelector from "~/components/downloads/version-selector.vue";
 
 const DOWNLOAD_DATA = [
 	{

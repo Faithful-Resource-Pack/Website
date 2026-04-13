@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import DownloadTable from "~/components/downloads/download-table.vue";
+import DownloadTable from "~/components/downloads/archive/download-table.vue";
 
 // expand this with new packs as necessary
 const DOWNLOAD_DATA = [

@@ -1,9 +1,12 @@
 <template>
 	<div class="download-selector my-5" role="radiogroup">
 		<template v-for="{ id, label, description, to } in packs" :key="id">
+			<!-- focus/blur for keyboard navigation, mouseenter/leave for mouse navigation -->
 			<button
 				class="download-choice d-flex align-center justify-space-between ga-2 cursor-pointer"
 				:class="id === selectedPack && 'selected-choice'"
+				@focus="hoverPack(id)"
+				@blur="resetHover"
 				@mouseenter="hoverPack(id)"
 				@mouseleave="resetHover"
 				@click="selectPack(id)"
@@ -126,7 +129,8 @@ $border-thickness: 2px;
 	transition: $transition-button;
 }
 
-.download-choice:not(.selected-choice):hover {
+.download-choice:not(.selected-choice):hover,
+.download-choice:not(.selected-choice):focus {
 	// half white half green, should unhardcode at some point
 	border: $border-thickness solid rgba(#bae3a1, 0.5);
 	.download-radio-icon {
@@ -147,6 +151,7 @@ $border-thickness: 2px;
 	}
 }
 
+// same size as archive page download buttons
 .btn-link {
 	width: 2.5rem;
 	height: 2.5rem;

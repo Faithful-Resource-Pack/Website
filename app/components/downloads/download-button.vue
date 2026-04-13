@@ -4,9 +4,11 @@
 			<v-icon size="small" icon="mdi-download" />
 			<span class="ml-2">{{ edition }} ({{ data.version }})</span>
 		</a>
+		<!-- if there's only one version disable the button since it's useless (e.g. cf bedrock )-->
 		<button
 			class="btn btn-primary btn-lg px-2 mb-0"
 			:class="data.count <= 1 && 'disabled'"
+			:tabindex="data.count <= 1 ? '-1' : undefined"
 			:title="alt"
 			@click="$emit('toggle', edition, panelOpen)"
 		>
