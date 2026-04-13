@@ -7,8 +7,7 @@
 		<!-- if there's only one version disable the button since it's useless (e.g. cf bedrock )-->
 		<button
 			class="btn btn-primary btn-lg px-2 mb-0"
-			:class="data.count <= 1 && 'disabled'"
-			:tabindex="data.count <= 1 ? '-1' : undefined"
+			:disabled="data.count <= 1"
 			:title="alt"
 			@click="$emit('toggle', edition, panelOpen)"
 		>
