@@ -24,10 +24,6 @@
 }
 html {
 	font-family: Faithful !important;
-	text-rendering: optimizeLegibility;
-	// improve font rendering
-	-webkit-font-smoothing: subpixel-antialiased !important;
-	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 }
 body {
