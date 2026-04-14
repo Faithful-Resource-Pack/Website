@@ -11,7 +11,10 @@
 		"start": "node .output/server/index.mjs",
 		"postinstall": "nuxt prepare",
 		"lint": "eslint .",
-		"prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --write"
+		"prettier": "prettier \"{,!(node_modules)/**/}*.{js,vue,html,ts}\" --write",
+		"docker:build": "docker build --tag faithful-website .",
+		"docker:start": "docker run -d -p 3000:3000 faithful-website",
+		"docker:alive": "curl -s -o /dev/null -w \"%{http_code} %{content_type}\" http://localhost:3000 | grep -q \"^200 text/html\""
 	},
 	"dependencies": {
 		"isomorphic-dompurify": "^3.8.0",
