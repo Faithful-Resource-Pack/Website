@@ -1,30 +1,21 @@
 <template>
-	<h1 class="title my-5 text-center">Download Faithful</h1>
-	<div class="card d-flex flex-row">
-		<div class="card-body card-text">
-			<h2>Select Pack</h2>
-			<pack-selector v-model:select="selectedPack" v-model:hover="hoverPack" :packs />
-			<div class="d-flex flex-column ga-3">
-				<download-button
-					v-for="(data, edition) in defaultDownloads"
-					:key="edition"
-					:edition
-					:data
-					:panel-open="versionSelectorOpen && edition === selectedEdition"
-					@toggle="toggleVersionSelector"
-				/>
-			</div>
-		</div>
-		<div v-if="$vuetify.display.mdAndUp" class="right-panel-container">
-			<pack-preview :packs :hover-pack :disabled="versionSelectorOpen" />
-			<!-- reuses form component but it's a modal on mobile and fills the preview on desktop -->
-			<version-selector
-				v-if="versionSelectorOpen"
-				:edition="selectedEdition"
-				:versions="versions"
-				@close="closeVersionSelector"
-			/>
-		</div>
+	<h1 class="title m-0 text-center">Download Faithful</h1>
+	<h2 class="mt-0 mb-5 text-center">Select pack</h2>
+
+	<banner-preview :packs :hover-pack :selected-pack />
+	<pack-selector v-model:select="selectedPack" v-model:hover="hoverPack" :packs />
+
+	<h2 class="my-5 text-center">Select version</h2>
+
+	<div class="d-flex flex-row justify-center">
+		<download-button
+			v-for="(data, edition) in defaultDownloads"
+			:key="edition"
+			:edition
+			:data
+			:panel-open="versionSelectorOpen && edition === selectedEdition"
+			@toggle="toggleVersionSelector"
+		/>
 	</div>
 
 	<!-- attach to site container so themes work -->
@@ -52,7 +43,7 @@
 
 <script>
 import DownloadButton from "~/components/downloads/download-button.vue";
-import PackPreview from "~/components/downloads/pack-preview.vue";
+import BannerPreview from "~/components/downloads/banner-preview.vue";
 import PackSelector from "~/components/downloads/pack-selector.vue";
 import VersionSelector from "~/components/downloads/version-selector.vue";
 
@@ -102,8 +93,8 @@ const DOWNLOAD_DATA = [
 export default defineNuxtComponent({
 	components: {
 		PackSelector,
-		PackPreview,
 		DownloadButton,
+		BannerPreview,
 		VersionSelector,
 	},
 	async asyncData() {
@@ -141,6 +132,7 @@ export default defineNuxtComponent({
 			packs: [
 				{
 					id: "f32",
+					color: "#00A2FF",
 					label: "Faithful 32x",
 					hash: "#Faithful-32x",
 					description: "Tried and true for over a decade.",
@@ -148,6 +140,7 @@ export default defineNuxtComponent({
 				},
 				{
 					id: "f64",
+					color: "#FF0092",
 					label: "Faithful 64x",
 					hash: "#Faithful-64x",
 					description: "For when 32x isn't quite enough.",
@@ -155,6 +148,7 @@ export default defineNuxtComponent({
 				},
 				{
 					id: "cf32",
+					color: "#5ED900",
 					label: "Classic Faithful 32x",
 					hash: "#Classic-Faithful-32x",
 					description: "Authentically return to 2015 in style.",
@@ -162,6 +156,7 @@ export default defineNuxtComponent({
 				},
 				{
 					id: "cf64",
+					color: "#BE42FF",
 					label: "Classic Faithful 64x",
 					hash: "#Classic-Faithful-64x",
 					description: "Nostalgia and ultra-detailed graphics, all in one.",
@@ -171,6 +166,7 @@ export default defineNuxtComponent({
 			selectedPack: "f32",
 			hoverPack: "f32",
 			selectedEdition: null,
+			mainContainer: null,
 		};
 	},
 	methods: {
@@ -234,8 +230,20 @@ export default defineNuxtComponent({
 });
 </script>
 
+<style>
+main {
+	position: relative;
+	overflow: hidden;
+}
+</style>
 <style scoped lang="scss">
 @use "~/assets/css/variables.scss" as *;
+
+h1,
+h2 {
+	position: relative;
+	z-index: 2;
+}
 
 .right-panel-container {
 	display: flex;

@@ -1,42 +1,49 @@
 <template>
-	<div class="download-selector my-5" role="radiogroup">
-		<template v-for="{ id, label, description, to } in packs" :key="id">
+	<div class="download-selector my-5 d-flex text-center justify-space-between" role="radiogroup">
+		<template v-for="{ id, color, label, description, to } in packs" :key="id">
 			<!-- focus/blur for keyboard navigation, mouseenter/leave for mouse navigation -->
-			<button
-				class="download-choice d-flex align-center justify-space-between ga-2 cursor-pointer"
-				:class="id === selectedPack && 'selected-choice'"
-				@focus="hoverPack(id)"
-				@blur="resetHover"
-				@mouseenter="hoverPack(id)"
-				@mouseleave="resetHover"
-				@click="selectPack(id)"
+			<label
+				class="card download-choice text-center cursor-pointer"
+				:class="getClass(id)"
+				:for="id"
+				:style="getStyle(color)"
+				@mouseenter="$emit('update:hover', id)"
+				@mouseleave="$emit('update:hover', undefined)"
 			>
-				<div class="d-flex align-start ga-3">
-					<v-icon
-						role="radio"
-						class="download-radio-icon my-1"
-						:icon="id === selectedPack ? 'mdi-radiobox-marked' : 'mdi-radiobox-blank'"
-					/>
-					<div class="d-flex flex-column align-start">
-						<span class="pack-name">{{ label }}</span>
-						<span>{{ description }}</span>
-					</div>
-				</div>
-
-				<!-- use opacity instead of v-show so content doesn't shift -->
-				<component
-					:is="id === hoveredPack ? 'a' : 'span'"
-					:href="to"
-					:aria-hidden="id !== hoveredPack"
-					target="_blank"
-					rel="noopener noreferrer"
-					:title="`See more about ${label}`"
-					class="btn btn-secondary btn-link"
-					:style="{ opacity: id === hoveredPack ? '1' : '0' }"
-				>
-					<v-icon icon="mdi-information-outline" />
-				</component>
-			</button>
+				<v-icon
+					:icon="id === select ? 'mdi-radiobox-marked' : 'mdi-radiobox-blank'"
+					class="select-icon"
+				/>
+				<img
+					class="download-preview download-logo mx-auto"
+					:src="`https://database.faithfulpack.net/images/branding/logos/transparent/hd/${id}_logo.png`"
+					:alt="`${label} Logo`"
+				/>
+				<p class="pack-name">
+					<component
+						:is="id === hover ? 'a' : 'span'"
+						:href="to"
+						:aria-hidden="id !== hover"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="label"
+						:title="`See more about ${label}`"
+						>{{ label }}
+					</component>
+				</p>
+				<hr class="mx-auto my-2" />
+				<p class="mb-2">
+					{{ description }}
+				</p>
+				<input
+					:id="id"
+					name="packChoice"
+					type="radio"
+					:value="id"
+					:checked="id === select"
+					@input="$emit('update:select', id)"
+				/>
+			</label>
 		</template>
 	</div>
 </template>
@@ -55,51 +62,23 @@ export default defineNuxtComponent({
 		},
 		hover: {
 			type: String,
-			required: true,
+			default: undefined,
 		},
 	},
 	emits: ["update:select", "update:hover"],
-	data() {
-		return {
-			selectedPack: undefined,
-			hoveredPack: undefined,
-			hoverTimeout: undefined,
-		};
-	},
 	methods: {
-		selectPack(pack) {
-			this.selectedPack = pack;
+		getClass(id) {
+			const classes = [];
+			if (id === this.select) {
+				classes.push("selected");
+			} else if (id === this.hover) {
+				classes.push("hover");
+			}
+			return classes;
 		},
-		hoverPack(pack) {
-			// user is hovering over multiple at once, clear the reset
-			if (this.hoverTimeout) clearTimeout(this.hoverTimeout);
-			this.hoveredPack = pack;
-		},
-		resetHover() {
-			// it looks weird to preview a pack that isn't selected
-			this.hoverTimeout = setTimeout(() => {
-				this.hoveredPack = this.selectedPack;
-			}, 500);
-		},
-	},
-	watch: {
-		select: {
-			handler(n) {
-				this.selectedPack = n;
-			},
-			immediate: true,
-		},
-		selectedPack(n) {
-			this.$emit("update:select", n);
-		},
-		hover: {
-			handler(n) {
-				this.hoveredPack = n;
-			},
-			immediate: true,
-		},
-		hoveredPack(n) {
-			this.$emit("update:hover", n);
+		getStyle(color) {
+			// Some browsers still don't support custom properties
+			return `--pack-color: ${color}; --pack-color-select: ${color}E5; --pack-color-hover: ${color}7F`;
 		},
 	},
 });
@@ -108,52 +87,70 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables.scss" as *;
 
-$border-thickness: 2px;
+$border-thickness: 4px;
+$logo_size: 96px;
 
 .download-selector {
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: row nowrap;
 	align-items: stretch;
 	gap: 8px;
+	z-index: 1;
+	position: relative;
 }
 
 .download-choice {
-	border: $border-thickness solid rgba(white, 0.2);
-	.download-info-icon {
-		color: rgba(white, 0.2);
-	}
-	padding: $padding-card;
+	flex: 1 1 0;
+	user-select: none;
+
 	border-radius: $border-radius;
-	text-align: left;
-
+	border: $border-thickness solid transparent;
+	&.selected {
+		border-color: var(--pack-color-select) !important;
+	}
+	&:hover {
+		border-color: var(--pack-color-hover);
+	}
 	transition: $transition-button;
-}
 
-.download-choice:not(.selected-choice):hover,
-.download-choice:not(.selected-choice):focus {
-	// half white half green, should unhardcode at some point
-	border: $border-thickness solid rgba(#bae3a1, 0.5);
-	.download-radio-icon {
-		color: rgba(#bae3a1, 0.9);
+	overflow: visible;
+	position: relative;
+	.select-icon {
+		position: absolute;
+		/* top: -$border-radius;
+		left: -$border-radius;
+		transform: translate(-33%, -33%); */
+	}
+	&.selected .select-icon {
+		color: var(--pack-color-select);
+	}
+
+	padding: $padding-card;
+
+	img {
+		width: $logo_size;
+		height: $logo_size;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.label {
+		border-bottom: 2px solid var(--pack-color);
+	}
+
+	a {
+		color: inherit;
+	}
+
+	input {
+		display: none;
 	}
 }
 
 .pack-name {
 	color: $text-card-title;
 	font-size: 1.35rem;
-}
-
-.selected-choice {
-	border: $border-thickness solid $text-green;
-	background: rgba($text-green, 0.15);
-	.download-radio-icon {
-		color: $text-green;
-	}
-}
-
-// same size as archive page download buttons
-.btn-link {
-	width: 2.5rem;
-	height: 2.5rem;
 }
 </style>
