@@ -5,16 +5,16 @@ definePageMeta({
 });
 
 // eslint-disable-next-line vue/valid-define-props
-const { title, description, banner } = defineProps();
+const { name, description, banner } = defineProps();
 
 // the given banner URL doesn't have the wordmark so we chop up the url to create a new one with the wordmark
 const packID = banner.split("/").at(-1).split(".")[0];
 const image = `https://database.faithfulpack.net/images/branding/social_media/banners/github/${packID}_banner.png`;
-useSeoMeta(generateMetaTags({ title, description: removeMd(description), image }));
+useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), image }));
 </script>
 
 <template>
-	<hero-section :background="banner" :wordmark :wordmark-alt="title">
+	<hero-section :background="banner" :wordmark :wordmark-alt="name">
 		<template #actions>
 			<div class="container pt-0 pb-4 flex-row ga-4">
 				<nuxt-link :to="download" class="btn btn-xl block btn-secondary">
@@ -86,7 +86,6 @@ import HeroSection from "~/components/lib/hero-section.vue";
 import removeMd from "remove-markdown";
 import PostCard from "~/components/lib/post-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
-import DiscordButton from "~/components/lib/discord-button.vue";
 
 const SHOWN_POSTS = 3;
 const SHOWN_ADDONS = 3;
@@ -104,10 +103,13 @@ export default defineNuxtComponent({
 		HeroSection,
 		PostCard,
 		AddonCard,
-		DiscordButton,
 	},
 	props: {
-		title: {
+		name: {
+			type: String,
+			required: true,
+		},
+		slug: {
 			type: String,
 			required: true,
 		},
@@ -119,16 +121,11 @@ export default defineNuxtComponent({
 			type: String,
 			required: true,
 		},
-		description: {
+		download: {
 			type: String,
 			required: true,
 		},
-		color: {
-			type: String,
-			required: false,
-			default: "#76c945",
-		},
-		download: {
+		description: {
 			type: String,
 			required: true,
 		},
@@ -137,20 +134,10 @@ export default defineNuxtComponent({
 			required: false,
 			default: null,
 		},
-		post_base: {
-			type: String,
-			required: false,
-			default: null,
-		},
 		action: {
 			type: Object,
 			required: false,
 			default: null,
-		},
-		// not used but nuxt complains about extra props otherwise
-		permalink: {
-			type: String,
-			required: true,
 		},
 	},
 	data() {
@@ -167,23 +154,27 @@ export default defineNuxtComponent({
 			const { apiURL } = useRuntimeConfig().public;
 			const posts = await $fetch(`${apiURL}/posts/approved`);
 			this.posts = posts
-				.filter((p) => p.permalink.startsWith(this.post_base))
+				.filter((p) => p.permalink.startsWith(this.slug))
 				.sort((a, b) => new Date(b.date) - new Date(a.date))
 				.slice(0, SHOWN_POSTS);
+
+			if (!this.posts.length) this.usePosts = false;
 		},
 		async loadAddons() {
 			this.useAddons = true;
 			const { apiURL } = useRuntimeConfig().public;
 			const addons = await $fetch(`${apiURL}/addons/approved`);
 			this.addons = addons
-				.filter((a) => a.options.tags.includes(NAME_TO_RES[this.title]))
+				.filter((a) => a.options.tags.includes(NAME_TO_RES[this.name]))
 				.sort((a, b) => new Date(b.last_updated || 0) - new Date(a.last_updated || 0))
 				.slice(0, SHOWN_ADDONS);
+
+			if (!this.addons.length) this.usePosts = false;
 		},
 	},
 	created() {
-		if (this.post_base) this.loadPosts();
-		if (NAME_TO_RES[this.title]) this.loadAddons();
+		if (this.slug) this.loadPosts();
+		if (NAME_TO_RES[this.name]) this.loadAddons();
 	},
 });
 </script>

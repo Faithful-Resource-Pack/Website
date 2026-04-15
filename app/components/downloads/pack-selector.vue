@@ -32,7 +32,7 @@
 					rel="noopener noreferrer"
 					:title="`See more about ${label}`"
 					class="btn btn-secondary btn-link"
-					:style="{ opacity: id === hoveredPack ? '1' : '0' }"
+					:style="{ opacity: id === hoveredPack || id === selectedPack ? '1' : '0' }"
 				>
 					<v-icon icon="mdi-information-outline" />
 				</component>

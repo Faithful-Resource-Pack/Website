@@ -107,9 +107,9 @@ export default defineNuxtConfig({
 			pages.splice(packPageI, 1);
 			const generatedPages = parsed.map((pack) => ({
 				...packPage,
-				name: pack.title,
+				name: pack.name,
 				props: pack,
-				path: pack.permalink,
+				path: pack.slug,
 			}));
 
 			pages.push(...generatedPages);

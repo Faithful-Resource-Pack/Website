@@ -1,7 +1,8 @@
-title: Classic Faithful 32x Jappa
-permalink: /classic32x-jappa/
+name: Classic Faithful 32x Jappa
+slug: /classic32x-jappa
 banner: /image/banners/cf32j.jpg
 wordmark: /image/wordmarks/cf32j.png
+download: /archive#Classic-Faithful-32x-Jappa
 
 description: |
   Created as a response to Faithful's changing art style, Classic Faithful 32x aims to preserve and restore Vattic's original “painted” art in its full glory. Most importantly, it also keeps the pack updated, remaking new textures to match the classic style as well.
@@ -10,6 +11,4 @@ description: |
   <br><br>
   If you've been using Faithful since the old days but prefer the modern look of the new Minecraft textures, you're going to like this pack!
 
-download: /archive#Classic-Faithful-32x-Jappa
-post_base: /classic32x
 action: { to: /classic32x, text: "Check out the original version of this project!" }

@@ -4,13 +4,14 @@ import { parse } from "yaml";
 
 // pack page route generation is done at build time using the pages:extend hook here
 export interface Pack {
-	title: string;
-	permalink: string;
+	name: string;
+	slug: string;
 	banner: string;
 	wordmark: string;
+	download: string;
 	description: string;
-	buttons?: { to: string; text: string }[];
-	downloads?: Record<string, Record<string, string>>;
+	warning?: string;
+	action?: { text: string; to: string };
 }
 
 export default async function generatePackData(): Promise<Pack[]> {

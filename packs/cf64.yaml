@@ -1,7 +1,8 @@
-title: Classic Faithful 64x
-permalink: /classic64x/
+name: Classic Faithful 64x
+slug: /classic64x
 banner: /image/banners/cf64.jpg
 wordmark: /image/wordmarks/cf64.png
+download: /archive#Classic-Faithful-64x
 
 description: |
   The 64x part in the Classic Faithful lineup, Classic Faithful 64x aims to be a spiritual successor to HiTeeN’s 64x pack, as well as many other discontinued 64x projects. Its goal is to bring back the classic “painted” look of Vattic's textures that many players have grown to love over the years, all the while remaking vanilla art in quadruple the resolution.
@@ -14,6 +15,4 @@ warning: |
   This project has been discontinued!
   Due to a significant amount of core textures from this pack that have been withdrawn, combined with the lack of labor that this project would require to actively maintain properly, we have decided to indefinitely shelf this project until further notice.
 
-download: /archive#Classic-Faithful-64x
-post_base: /classic64x
 action: { to: /classic64x-jappa, text: "Check out the Jappa version of this project!" }
