@@ -154,7 +154,7 @@ export default defineNuxtComponent({
 			const { apiURL } = useRuntimeConfig().public;
 			const posts = await $fetch(`${apiURL}/posts/approved`);
 			this.posts = posts
-				.filter((p) => p.permalink.startsWith(this.slug))
+				.filter((p) => p.permalink.startsWith(this.slug.split("-")[0]))
 				.sort((a, b) => new Date(b.date) - new Date(a.date))
 				.slice(0, SHOWN_POSTS);
 
