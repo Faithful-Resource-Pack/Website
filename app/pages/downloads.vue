@@ -1,21 +1,28 @@
 <template>
 	<h1 class="title m-0 text-center">Download Faithful</h1>
-	<h2 class="mt-0 mb-5 text-center">Select pack</h2>
 
-	<banner-preview :packs :hover-pack :selected-pack />
-	<pack-selector v-model:select="selectedPack" v-model:hover="hoverPack" :packs />
-
-	<h2 class="my-5 text-center">Select version</h2>
-
-	<div class="d-flex flex-row justify-center">
-		<download-button
-			v-for="(data, edition) in defaultDownloads"
-			:key="edition"
-			:edition
-			:data
-			:panel-open="versionSelectorOpen && edition === selectedEdition"
-			@toggle="toggleVersionSelector"
-		/>
+	<div id="download-container" class="card">
+		<banner-preview :packs :hover-pack :selected-pack />
+		<div id="download-content" class="d-flex">
+			<div class="pane d-flex flex-column">
+				<div id="pack-container" class="card">
+					<pack-selector v-model:select="selectedPack" v-model:hover="hoverPack" :packs />
+				</div>
+				<div id="download-button-group" class="d-flex flex-column">
+					<div v-for="(data, edition) in defaultDownloads" :key="edition" class="card">
+						<download-button
+							:edition
+							:data
+							:panel-open="versionSelectorOpen && edition === selectedEdition"
+							@toggle="toggleVersionSelector"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="pane">
+				<logo-preview :packs :hover-pack :selected-pack />
+			</div>
+		</div>
 	</div>
 
 	<!-- attach to site container so themes work -->
@@ -34,7 +41,7 @@
 	</v-dialog>
 
 	<div class="text-center mt-7">
-		<p class="h5">
+		<p class="h5 ma-0">
 			Looking for a specific release or discontinued project?
 			<nuxt-link to="/archive">Search the Faithful archive</nuxt-link>
 		</p>
@@ -46,6 +53,7 @@ import DownloadButton from "~/components/downloads/download-button.vue";
 import BannerPreview from "~/components/downloads/banner-preview.vue";
 import PackSelector from "~/components/downloads/pack-selector.vue";
 import VersionSelector from "~/components/downloads/version-selector.vue";
+import LogoPreview from "~/components/downloads/logo-preview.vue";
 
 const DOWNLOAD_DATA = [
 	{
@@ -96,6 +104,7 @@ export default defineNuxtComponent({
 		DownloadButton,
 		BannerPreview,
 		VersionSelector,
+		LogoPreview,
 	},
 	async asyncData() {
 		// set object order by which ones come first
@@ -210,6 +219,10 @@ export default defineNuxtComponent({
 		versionSelectorOpen() {
 			return this.selectedEdition !== null;
 		},
+		selectedLabel() {
+			if (!this.selectedPack) return "";
+			return this.downloadData[this.selectedPack].label;
+		},
 	},
 	watch: {
 		selectedPack: {
@@ -231,25 +244,53 @@ export default defineNuxtComponent({
 </script>
 
 <style>
-main {
-	position: relative;
-	overflow: hidden;
+main > .container {
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 </style>
+
 <style scoped lang="scss">
 @use "~/assets/css/variables.scss" as *;
 
-h1,
-h2 {
+$main-radius: 2.5rem;
+$main-padding: 1.25rem;
+$content-radius: $main-radius - $main-padding;
+
+#download-container {
 	position: relative;
-	z-index: 2;
+	overflow: hidden;
+	border-radius: $main-radius;
+
+	& > #download-content > .pane:first-child {
+		padding: $main-padding;
+	}
 }
 
-.right-panel-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.title {
+	font-size: 3.2rem;
+	margin-bottom: 25px;
+}
+
+#pack-container {
+	border-radius: $content-radius;
+}
+
+.pane {
+	flex: 1 1 0;
 	position: relative;
-	width: 50%;
+	z-index: 2;
+
+	&.flex-column {
+		gap: $main-padding;
+	}
+}
+
+#download-button-group {
+	gap: calc($main-padding / 2);
+
+	& > .card {
+		border-radius: $content-radius;
+	}
 }
 </style>

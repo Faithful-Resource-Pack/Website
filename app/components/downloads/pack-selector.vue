@@ -1,48 +1,47 @@
 <template>
-	<div class="download-selector my-5 d-flex text-center justify-space-between" role="radiogroup">
+	<div class="download-selector d-flex flex-column justify-space-between" role="radiogroup">
+		<h2>Select pack</h2>
 		<template v-for="{ id, color, label, description, to } in packs" :key="id">
 			<!-- focus/blur for keyboard navigation, mouseenter/leave for mouse navigation -->
 			<label
-				class="card download-choice text-center cursor-pointer"
+				class="download-choice d-flex align-center cursor-pointer"
 				:class="getClass(id)"
 				:for="id"
 				:style="getStyle(color)"
 				@mouseenter="$emit('update:hover', id)"
+				@mousemove="$emit('update:hover', id)"
 				@mouseleave="$emit('update:hover', undefined)"
 			>
 				<v-icon
 					:icon="id === select ? 'mdi-radiobox-marked' : 'mdi-radiobox-blank'"
 					class="select-icon"
 				/>
-				<img
-					class="download-preview download-logo mx-auto"
-					:src="`https://database.faithfulpack.net/images/branding/logos/transparent/hd/${id}_logo.png`"
-					:alt="`${label} Logo`"
-				/>
-				<p class="pack-name">
-					<component
-						:is="id === hover ? 'a' : 'span'"
-						:href="to"
-						:aria-hidden="id !== hover"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="label"
-						:title="`See more about ${label}`"
+				<div class="pack-name flex-grow-1">
+					<span
 						>{{ label }}
-					</component>
-				</p>
-				<hr class="mx-auto my-2" />
-				<p class="mb-2">
-					{{ description }}
-				</p>
-				<input
-					:id="id"
-					name="packChoice"
-					type="radio"
-					:value="id"
-					:checked="id === select"
-					@input="$emit('update:select', id)"
-				/>
+						<input
+							:id="id"
+							name="packChoice"
+							type="radio"
+							:value="id"
+							:checked="id === select"
+							@input="$emit('update:select', id)"
+						/>
+					</span>
+					<p>
+						{{ description }}
+					</p>
+				</div>
+
+				<a
+					:href="to"
+					target="_blank"
+					rel="noopener noreferrer"
+					:title="`See more about ${label}`"
+					class="open-link"
+				>
+					<v-icon icon="mdi-arrow-top-right" />
+				</a>
 			</label>
 		</template>
 	</div>
@@ -65,6 +64,11 @@ export default defineNuxtComponent({
 			default: undefined,
 		},
 	},
+	data() {
+		return {
+			hoverTimeout: undefined,
+		};
+	},
 	emits: ["update:select", "update:hover"],
 	methods: {
 		getClass(id) {
@@ -78,7 +82,20 @@ export default defineNuxtComponent({
 		},
 		getStyle(color) {
 			// Some browsers still don't support custom properties
-			return `--pack-color: ${color}; --pack-color-select: ${color}E5; --pack-color-hover: ${color}7F`;
+			// 0x3F = 25% of 255
+			// 0x26 = 15% of 255
+			return `--pack-color: ${color}; --pack-color-select: ${color}3F; --pack-color-hover: ${color}26`;
+		},
+	},
+	watch: {
+		hover(n) {
+			clearTimeout(this.hoverTimeout);
+			if (n !== undefined) {
+				// it looks weird to preview a pack that isn't selected
+				setTimeout(() => {
+					this.$emit("update:hover", undefined);
+				}, 1000);
+			}
 		},
 	},
 });
@@ -90,7 +107,13 @@ export default defineNuxtComponent({
 $border-thickness: 4px;
 $logo_size: 96px;
 
+h2,
+.open-link {
+	color: white;
+}
+
 .download-selector {
+	padding: 1.25rem;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: stretch;
@@ -100,32 +123,25 @@ $logo_size: 96px;
 }
 
 .download-choice {
-	flex: 1 1 0;
 	user-select: none;
 
-	border-radius: $border-radius;
-	border: $border-thickness solid transparent;
+	padding: $padding-card;
+	gap: $padding-card;
+
+	border-radius: 2px;
+	border: 2px solid transparent;
 	&.selected {
-		border-color: var(--pack-color-select) !important;
+		background: var(--pack-color-select) !important;
+		border-color: var(--pack-color);
 	}
 	&:hover {
-		border-color: var(--pack-color-hover);
+		background: var(--pack-color-hover);
 	}
 	transition: $transition-button;
 
-	overflow: visible;
-	position: relative;
-	.select-icon {
-		position: absolute;
-		/* top: -$border-radius;
-		left: -$border-radius;
-		transform: translate(-33%, -33%); */
-	}
 	&.selected .select-icon {
-		color: var(--pack-color-select);
+		color: var(--pack-color);
 	}
-
-	padding: $padding-card;
 
 	img {
 		width: $logo_size;
@@ -135,22 +151,40 @@ $logo_size: 96px;
 	p {
 		margin: 0;
 	}
+}
 
-	.label {
-		border-bottom: 2px solid var(--pack-color);
-	}
+a,
+span {
+	color: white;
+}
 
-	a {
-		color: inherit;
-	}
-
-	input {
-		display: none;
-	}
+/* Input must not be display none to keep arrows working */
+input {
+	width: 0;
+	opacity: 0;
+	overflow: hidden;
 }
 
 .pack-name {
+	line-height: 1;
+}
+
+.pack-name .label {
 	color: $text-card-title;
 	font-size: 1.35rem;
+}
+
+.open-link {
+	opacity: 0;
+	border-radius: 3px;
+	transition: $transition-button;
+
+	&:hover {
+		background: rgba(white, 0.2);
+	}
+}
+.download-choice:hover .open-link,
+.download-choice.selected .open-link {
+	opacity: 1;
 }
 </style>

@@ -1,18 +1,18 @@
 <template>
 	<div class="download-btn-group">
-		<a class="btn btn-primary btn-lg flex-grow-1 mb-0" :href="data.to">
+		<a class="btn btn-primary btn-lg mb-0" :href="data.to">
 			<v-icon size="small" icon="mdi-download" />
-			<span class="ml-2">{{ edition }} ({{ data.version }})</span>
-		</a>
-		<!-- if there's only one version disable the button since it's useless (e.g. cf bedrock )-->
-		<button
+			<span class="ml-2">{{ edition }} ({{ data.version }})</span> </a
+		><button
 			class="btn btn-primary btn-lg px-2 mb-0"
+			:style="getStyle(data.count)"
 			:disabled="data.count <= 1"
 			:title="alt"
 			@click="$emit('toggle', edition, panelOpen)"
 		>
 			<v-icon :icon />
 		</button>
+		<!-- if there's only one version disable the button since it's useless (e.g. cf bedrock )-->
 	</div>
 </template>
 
@@ -43,6 +43,11 @@ export default defineNuxtComponent({
 			return this.panelOpen ? "mdi-chevron-left" : "mdi-chevron-right";
 		},
 	},
+	methods: {
+		getStyle(count) {
+			return count === 0 ? "opacity: 0.7" : "";
+		},
+	},
 });
 </script>
 
@@ -50,20 +55,18 @@ export default defineNuxtComponent({
 @use "~/assets/css/variables.scss" as *;
 
 .download-btn-group {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	gap: 0.3rem;
+	position: relative;
 	> * {
+		display: block;
 		border-radius: 0;
+		box-shadow: none;
 	}
 }
-.download-btn-group > :first-child {
-	border-top-left-radius: $border-radius;
-	border-bottom-left-radius: $border-radius;
-}
 .download-btn-group > :last-child {
-	border-top-right-radius: $border-radius;
-	border-bottom-right-radius: $border-radius;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: transparent;
+	border-left: 2px solid rgba(black, 0.2);
 }
 </style>
