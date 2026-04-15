@@ -14,7 +14,11 @@
 	</template>
 	<h2 class="text-center subtitle mb-0">Discontinued</h2>
 	<template v-for="({ downloads, files }, name) in discontinued" :key="name">
-		<h3 class="text-center my-3">{{ name }}</h3>
+		<h3 :id="hashify(name)" class="text-center my-3 download-title">
+			<nuxt-link class="download-hashtag" title="Copy URL to clipboard" :to="`#${hashify(name)}`">
+				#</nuxt-link
+			>{{ name }}
+		</h3>
 		<download-table :downloads :files class="mb-5" />
 	</template>
 </template>
@@ -99,7 +103,7 @@ const DOWNLOAD_DATA = [
 	{
 		json: "classic_64x_java",
 		curse: "1230339",
-		name: "Classic Faithful 64x for Java Edition",
+		name: "Classic Faithful 64x",
 		discontinued: true,
 	},
 ];

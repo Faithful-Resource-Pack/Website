@@ -8,8 +8,6 @@ description: |
   <br><br>
   Classic Faithful 32x goes all out on nostalgia! This pack features all the classic textures by Vattic himself. When applicable, textures from after his era have been made consistent with his art as well, oftentimes using complicated reverse-engineering processes to ensure the pack is as accurate as possible. Install this pack for a true blast from the past!
 
-buttons:
-  - { to: /downloads#Classic-Faithful-32x, text: Downloads }
-  - { to: /classic32x/latest, text: View Latest Post }
-
+download: /downloads#Classic-Faithful-32x
+post_base: /classic32x
 action: { to: /classic32x-jappa, text: "Check out the Jappa version of this project!" }
