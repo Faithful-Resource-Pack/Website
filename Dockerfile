@@ -19,11 +19,9 @@ WORKDIR /app
 RUN corepack enable
 RUN corepack prepare pnpm@latest --activate
 
-# Patch dependencies
-RUN pnpm audit --fix
-
 # Install dependencies
 RUN pnpm i
+RUN pnpm audit --fix
 RUN pnpm cache delete
 
 # Exposing the web & debug ports for the application
