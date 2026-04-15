@@ -36,6 +36,20 @@
 a.btn.disabled {
 	pointer-events: none;
 }
+
+.btn-more {
+	width: 50%;
+	display: block;
+	margin: auto !important;
+
+	@media screen and (max-width: $breakpoint-md) {
+		width: 75%;
+	}
+	@media screen and (max-width: $breakpoint-sm) {
+		width: 100%;
+	}
+}
+
 .btn-primary {
 	color: white;
 	background-color: $btn-primary;

@@ -77,7 +77,7 @@
 			</template>
 		</div>
 		<br />
-		<nuxt-link class="btn btn-secondary news-button center" to="/news" aria-label="Go to news page">
+		<nuxt-link class="btn btn-secondary btn-more center" to="/news" aria-label="Go to news page">
 			See More
 		</nuxt-link>
 	</div>
@@ -219,9 +219,5 @@ export default defineNuxtComponent({
 	.project-reel {
 		grid-template-columns: 1fr;
 	}
-}
-
-.news-button {
-	width: 50%;
 }
 </style>
