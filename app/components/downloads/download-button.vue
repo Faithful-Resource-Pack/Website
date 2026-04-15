@@ -53,8 +53,12 @@ export default defineNuxtComponent({
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
-	gap: 0.3rem;
+	gap: 2px;
+	border-radius: $border-radius;
+	box-shadow: $shadow-sheet;
+
 	> * {
+		box-shadow: none;
 		border-radius: 0;
 	}
 }

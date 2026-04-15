@@ -25,7 +25,6 @@
 }
 .btn:focus, .btn.focus {
 	outline: 0;
-	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .btn.disabled, .btn:disabled {
 	opacity: 0.65;
@@ -61,7 +60,6 @@ a.btn.disabled {
 .btn-primary:focus, .btn-primary.focus {
 	color: white;
 	background-color: $btn-primary-hover;
-	box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 .btn-primary.disabled, .btn-primary:disabled {
 	color: white;
@@ -71,10 +69,6 @@ a.btn.disabled {
 .btn-primary:not(:disabled):not(.disabled).active {
 	color: white;
 	background-color: $btn-primary-active;
-}
-.btn-primary:not(:disabled):not(.disabled):active:focus,
-.btn-primary:not(:disabled):not(.disabled).active:focus {
-	box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 .btn-secondary {
 	color: white;
@@ -87,7 +81,6 @@ a.btn.disabled {
 .btn-secondary:focus, .btn-secondary.focus {
 	color: white;
 	background-color: $btn-secondary-hover;
-	box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 .btn-secondary.disabled, .btn-secondary:disabled {
 	color: white;
@@ -97,10 +90,6 @@ a.btn.disabled {
 .btn-secondary:not(:disabled):not(.disabled).active {
 	color: white;
 	background-color: $btn-secondary-active;
-}
-.btn-secondary:not(:disabled):not(.disabled):active:focus,
-.btn-secondary:not(:disabled):not(.disabled).active:focus {
-	box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 .btn-lg, .btn-group-lg > .btn {
 	padding: 0.5rem 1rem;
