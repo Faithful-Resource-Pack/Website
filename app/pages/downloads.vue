@@ -212,7 +212,7 @@ export default defineNuxtComponent({
 			return this.downloads[this.selectedEdition];
 		},
 		versionSelectorOpen() {
-			return this.selectedEdition !== null;
+			return this.selectedEdition !== null && Object.keys(this.versions).length > 1;
 		},
 	},
 	watch: {
