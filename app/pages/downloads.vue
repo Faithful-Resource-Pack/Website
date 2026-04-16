@@ -142,28 +142,24 @@ export default defineNuxtComponent({
 				{
 					id: "f32",
 					label: "Faithful 32x",
-					hash: "#Faithful-32x",
 					description: "Tried and true for over a decade.",
 					to: "/faithful32x",
 				},
 				{
 					id: "f64",
 					label: "Faithful 64x",
-					hash: "#Faithful-64x",
-					description: "For when 32x isn't quite enough.",
+					description: "An even more detailed experience.",
 					to: "/faithful64x",
 				},
 				{
 					id: "cf32",
 					label: "Classic Faithful 32x",
-					hash: "#Classic-Faithful-32x",
-					description: "Authentically return to 2015 in style.",
+					description: "Bring back the old-school feel in style.",
 					to: "/classic32x",
 				},
 				{
 					id: "cf64",
 					label: "Classic Faithful 64x",
-					hash: "#Classic-Faithful-64x",
 					description: "Nostalgia and ultra-detailed graphics, all in one.",
 					to: "/classic64x-jappa",
 				},
@@ -182,6 +178,10 @@ export default defineNuxtComponent({
 		},
 		toggleVersionSelector(edition, open) {
 			return open ? this.closeVersionSelector() : this.openVersionSelector(edition);
+		},
+		hashify(id) {
+			// vue router really hates spaces in HTML ids
+			return `#${id.replace(/ /g, "-")}`;
 		},
 	},
 	computed: {
@@ -219,14 +219,14 @@ export default defineNuxtComponent({
 		selectedPack: {
 			handler(newValue) {
 				const pack = this.packs.find((p) => p.id === newValue);
-				if (!pack || pack.hash === this.$route.hash) return;
-				this.$router.replace({ hash: pack.hash });
+				if (!pack || this.hashify(pack.label) === this.$route.hash) return;
+				this.$router.replace({ hash: this.hashify(pack.label) });
 			},
 		},
 	},
 	mounted() {
 		if (this.$route.hash) {
-			const result = this.packs.find((p) => p.hash === this.$route.hash);
+			const result = this.packs.find((p) => this.hashify(p.label) === this.$route.hash);
 			if (result && result.id) this.selectedPack = result.id;
 			this.hoverPack = this.selectedPack;
 		}

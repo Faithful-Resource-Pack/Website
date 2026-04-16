@@ -104,14 +104,14 @@ const PROJECTS = [
 		name: "Faithful 64x",
 		background: "/image/posters/f64.jpg",
 		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f64_logo.png",
-		description: "For when 32x isn't quite enough.",
+		description: "An even more detailed experience.",
 		to: "/faithful64x",
 	},
 	{
 		name: "Classic Faithful 32x",
 		background: "/image/posters/cf32.jpg",
 		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf32_logo.png",
-		description: "Authentically return to 2015 in style.",
+		description: "Bring back the old-school feel in style.",
 		to: "/classic32x",
 	},
 	{
