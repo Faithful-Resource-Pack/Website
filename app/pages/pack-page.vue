@@ -43,13 +43,13 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 			<h2 id="posts" class="subtitle text-center my-5">Latest News</h2>
 			<div class="res-grid-3">
 				<template v-if="!posts.length">
-					<div v-for="i in 3" :key="i" class="card pb-3">
+					<div v-for="i in limit" :key="i" class="card pb-3">
 						<v-skeleton-loader type="image, subtitle, text" theme="dark" />
 					</div>
 				</template>
 				<template v-else>
 					<post-card
-						v-for="{ id, permalink, header_img, title, date } in posts"
+						v-for="{ id, permalink, header_img, title, date } in posts.slice(0, limit)"
 						:key="id"
 						:to="permalink"
 						:image="header_img"
@@ -67,12 +67,17 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 			<h2 id="posts" class="subtitle text-center my-5">Latest Add-ons</h2>
 			<div class="res-grid-3">
 				<template v-if="!posts.length">
-					<div v-for="i in 3" :key="i" class="card pb-3">
+					<div v-for="i in limit" :key="i" class="card pb-3">
 						<v-skeleton-loader type="image, subtitle, text" theme="dark" />
 					</div>
 				</template>
 				<template v-else>
-					<addon-card v-for="addon in addons" :key="addon.id" :addon disable-favorites />
+					<addon-card
+						v-for="addon in addons.slice(0, limit)"
+						:key="addon.id"
+						:addon
+						disable-favorites
+					/>
 				</template>
 			</div>
 			<br />
@@ -86,9 +91,6 @@ import HeroSection from "~/components/lib/hero-section.vue";
 import removeMd from "remove-markdown";
 import PostCard from "~/components/lib/post-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
-
-const SHOWN_POSTS = 3;
-const SHOWN_ADDONS = 3;
 
 // todo: remove this when addons support all packs
 const NAME_TO_RES = {
@@ -155,8 +157,7 @@ export default defineNuxtComponent({
 			const posts = await $fetch(`${apiURL}/posts/approved`);
 			this.posts = posts
 				.filter((p) => p.permalink.startsWith(this.slug.split("-")[0]))
-				.sort((a, b) => new Date(b.date) - new Date(a.date))
-				.slice(0, SHOWN_POSTS);
+				.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 			if (!this.posts.length) this.usePosts = false;
 		},
@@ -166,10 +167,14 @@ export default defineNuxtComponent({
 			const addons = await $fetch(`${apiURL}/addons/approved`);
 			this.addons = addons
 				.filter((a) => a.options.tags.includes(NAME_TO_RES[this.name]))
-				.sort((a, b) => new Date(b.last_updated || 0) - new Date(a.last_updated || 0))
-				.slice(0, SHOWN_ADDONS);
+				.sort((a, b) => new Date(b.last_updated || 0) - new Date(a.last_updated || 0));
 
 			if (!this.addons.length) this.usePosts = false;
+		},
+	},
+	computed: {
+		limit() {
+			return this.$vuetify.display.mdAndUp ? 3 : 2;
 		},
 	},
 	created() {
@@ -181,19 +186,4 @@ export default defineNuxtComponent({
 
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
-
-.button-row {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-
-	// stretch buttons to fill row
-	> * {
-		flex-grow: 1;
-	}
-
-	@media screen and (max-width: $breakpoint-md) {
-		flex-direction: column;
-	}
-}
 </style>
