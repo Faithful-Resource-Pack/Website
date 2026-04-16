@@ -78,7 +78,7 @@
 		</div>
 		<br />
 		<nuxt-link class="btn btn-secondary btn-more center" to="/news" aria-label="Go to news page">
-			See More
+			See all news
 		</nuxt-link>
 	</div>
 </template>
