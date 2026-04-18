@@ -46,6 +46,10 @@
 		text-decoration-color: $text-dark;
 	}
 
+	.highlight-hover:hover {
+		background: rgba(white, 0.1);
+	}
+
 	// card color
 	.v-skeleton-loader__image {
 		background: $bg-dark-accent !important;
@@ -61,10 +65,6 @@
 
 	.download-choice {
 		border: $border-thickness solid rgba(white, 0.2);
-	}
-
-	.author-widget:hover {
-		background: rgba(white, 0.1);
 	}
 
 	.btn-about {

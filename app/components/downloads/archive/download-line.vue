@@ -1,5 +1,5 @@
 <template>
-	<tr class="download-item" :class="nested ? 'subitem' : ''" @click="toggleChildren">
+	<tr class="highlight-hover" :class="nested ? 'subitem' : ''" @click="toggleChildren">
 		<td class="show-icon-container">
 			<!-- empty slot rendered if there's only a single download -->
 			<v-icon v-if="!nested && !single" :icon="showIcon" size="x-small" class="show-icon" />
@@ -167,9 +167,6 @@ td {
 
 .download-item {
 	transition: $transition-button;
-	&:hover {
-		background: $item-highlight;
-	}
 }
 
 .subitem {

@@ -1,6 +1,6 @@
 <template>
 	<!-- remove padding and re-add it so the highlight has a really nice margin -->
-	<nuxt-link class="author-widget underline-hover mx-n2" :to="`/user/${author.id}`">
+	<nuxt-link class="author-widget highlight-hover underline-hover mx-n2" :to="`/user/${author.id}`">
 		<div class="ma-2">
 			<profile-card
 				:src="`https://vzge.me/face/128/${getVisageSlug(author)}`"
@@ -32,8 +32,6 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
 .author-widget {
-	border-radius: $border-radius;
-	transition: $transition-button;
 	&:active {
 		transform: scale(0.95);
 	}

@@ -212,6 +212,11 @@ img[src$=".jpg"] {
 	text-decoration: underline;
 }
 
+.highlight-hover {
+	border-radius: $border-radius;
+	transition: $transition-button;
+}
+
 /** relatively specific stuff that's used in multiple places */
 
 // generic class for both navbar and footer
