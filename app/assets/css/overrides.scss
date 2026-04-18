@@ -1,0 +1,99 @@
+@use "./variables" as *;
+
+/**
+ * HTML overrides
+ */
+
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none;
+}
+img {
+	vertical-align: middle;
+	border-style: none;
+	object-fit: cover;
+	max-width: 100%;
+	height: auto;
+}
+table {
+	border-collapse: collapse;
+}
+input, button, select, optgroup, textarea {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+button, input {
+	overflow: visible;
+}
+button, select {
+	text-transform: none;
+}
+select {
+	overflow-wrap: normal;
+}
+// make images not draggable
+img[src$=".png"],
+img[src$=".gif"],
+img[src$=".jpg"] {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+}
+
+/**
+ * vuetify overrides
+ */
+
+// make inline addon badges not suck
+.v-slide-group__content {
+	align-items: center;
+}
+
+// make progress spinners less ugly
+.v-progress-circular__underlay {
+	display: none;
+}
+
+// I think always-dark tooltips look way cleaner, kinda subjective though
+.v-tooltip > .v-overlay__content {
+	background: $bg-dark !important;
+}
+
+// looks way too close to regular text with faithful font
+.v-alert-title {
+	font-size: 1.75rem !important;
+	margin-bottom: 0.5rem;
+}
+
+// set textured background
+.v-alert--variant-flat {
+	background-image: $bg-light-url !important;
+	background-repeat: repeat !important;
+	background-blend-mode: multiply;
+}
+
+// make text a bit more transparent than title (why is this so hard to do)
+.v-alert--variant-flat .v-alert__content {
+	color: $text-colored-banner;
+}
+.v-alert--variant-flat .v-alert-title {
+	color: white;
+}
+
+// make sure stone background shows up
+.v-skeleton-loader {
+	background: transparent !important;
+}
+
+.v-skeleton-loader__image {
+	height: auto !important;
+	aspect-ratio: 16 / 9 !important;
+}
+
+.v-chip {
+	border-radius: $border-radius !important;
+}

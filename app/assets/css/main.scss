@@ -1,5 +1,6 @@
 // more efficient bundling (compiled in same css file)
 @use "./variables" as *;
+@use "./overrides" as *;
 @use "./lib/buttons" as *;
 @use "./lib/cards" as *;
 @use "./lib/grids" as *;
@@ -77,11 +78,6 @@ a {
 a:hover {
 	color: $text-link-hover;
 }
-a:not([href]):not([class]),
-a:not([href]):not([class]):hover {
-	color: inherit;
-	text-decoration: none;
-}
 code {
 	// looks better inline with the faithful font
 	font-size: 80%;
@@ -92,40 +88,6 @@ hr {
 	border: 0;
 	color: transparent;
 	height: 1px;
-}
-img {
-	vertical-align: middle;
-	border-style: none;
-	object-fit: cover;
-	max-width: 100%;
-	height: auto;
-}
-table {
-	border-collapse: collapse;
-}
-input, button, select, optgroup, textarea {
-	margin: 0;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-}
-button, input {
-	overflow: visible;
-}
-button, select {
-	text-transform: none;
-}
-select {
-	overflow-wrap: normal;
-}
-// make images not draggable
-img[src$=".png"],
-img[src$=".gif"],
-img[src$=".jpg"] {
-	-webkit-user-drag: none;
-	-khtml-user-drag: none;
-	-moz-user-drag: none;
-	-o-user-drag: none;
 }
 
 /** MAIN STUFF */
@@ -249,51 +211,4 @@ img[src$=".jpg"] {
 		line-height: 26px;
 		text-align: center;
 	}
-}
-
-.v-slide-group__content {
-	align-items: center;
-}
-
-.v-progress-circular__underlay {
-	display: none;
-}
-
-// I think always-dark tooltips look way cleaner, kinda subjective though
-.v-tooltip > .v-overlay__content {
-	background: $bg-dark !important;
-}
-
-// looks way too close to regular text with faithful font
-.v-alert-title {
-	font-size: 1.75rem !important;
-	margin-bottom: 0.5rem;
-}
-
-.v-alert--variant-flat {
-	background-image: $bg-light-url !important;
-	background-repeat: repeat !important;
-	background-blend-mode: multiply;
-}
-
-// make text a bit more transparent than title (why is this so hard to do)
-.v-alert--variant-flat .v-alert__content {
-	color: $text-colored-banner;
-}
-.v-alert--variant-flat .v-alert-title {
-	color: white;
-}
-
-// make sure stone background shows up
-.v-skeleton-loader {
-	background: transparent !important;
-}
-
-.v-skeleton-loader__image {
-	height: auto !important;
-	aspect-ratio: 16 / 9 !important;
-}
-
-.v-chip {
-	border-radius: $border-radius !important;
 }
