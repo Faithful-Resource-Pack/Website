@@ -27,7 +27,10 @@
 	}
 
 	// fix hovercards
-	a .card-body, a .base-card-body, .faq-answer {
+	a .card-body,
+	a .base-card-body,
+	a .profile-card,
+	.faq-answer {
 		color: $text-dark;
 	}
 

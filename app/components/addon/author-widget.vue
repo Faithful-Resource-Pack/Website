@@ -36,7 +36,6 @@ export default defineNuxtComponent({
 	transition: $transition-button;
 	&:hover {
 		background: rgba(white, 0.1);
-		text-decoration: underline;
 	}
 	&:active {
 		transform: scale(0.95);
