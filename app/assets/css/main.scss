@@ -279,7 +279,7 @@ img[src$=".jpg"] {
 
 // make text a bit more transparent than title (why is this so hard to do)
 .v-alert--variant-flat .v-alert__content {
-	color: rgba(white, 0.8);
+	color: $text-colored-banner;
 }
 .v-alert--variant-flat .v-alert-title {
 	color: white;

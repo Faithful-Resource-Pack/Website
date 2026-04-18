@@ -167,10 +167,10 @@ export default defineNuxtComponent({
 	}
 }
 
+// universal styles across both themes
 .green-background {
-	// both light/dark mode use white text
 	p {
-		color: white;
+		color: $text-colored-banner;
 	}
 
 	.btn-about {
@@ -178,10 +178,9 @@ export default defineNuxtComponent({
 		color: $bg-green !important;
 	}
 }
-
 .blue-background {
 	p {
-		color: white;
+		color: $text-colored-banner;
 	}
 
 	.btn-about {
@@ -189,10 +188,9 @@ export default defineNuxtComponent({
 		color: $bg-blue !important;
 	}
 }
-
 .pink-background {
 	p {
-		color: white;
+		color: $text-colored-banner;
 	}
 
 	.btn-about {
