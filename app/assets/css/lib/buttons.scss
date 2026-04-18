@@ -35,7 +35,6 @@
 a.btn.disabled {
 	pointer-events: none;
 }
-
 .btn-more {
 	width: 50%;
 	display: block;
@@ -48,7 +47,11 @@ a.btn.disabled {
 		width: 100%;
 	}
 }
-
+.btn-icon {
+	width: 2.5rem;
+	height: 2.5rem;
+	aspect-ratio: 1;
+}
 .btn-primary {
 	color: white;
 	background-color: $btn-primary;

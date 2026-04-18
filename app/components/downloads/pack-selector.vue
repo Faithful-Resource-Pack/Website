@@ -31,7 +31,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					:title="`See more about ${label}`"
-					class="btn btn-secondary btn-link"
+					class="btn btn-secondary btn-icon"
 					:style="{ opacity: id === hoveredPack || id === selectedPack ? '1' : '0' }"
 				>
 					<v-icon icon="mdi-information-outline" />

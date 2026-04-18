@@ -1,28 +1,26 @@
 <template>
 	<div class="user-media-container">
-		<v-btn
+		<a
 			v-for="{ type, link } in media"
 			:key="link"
-			class="accent-textured"
-			icon
-			:href="link"
+			class="btn btn-secondary btn-icon"
 			target="_blank"
 			rel="noopener noreferrer"
+			:href="link"
 			:title="type"
 		>
-			<media-icon :icon="type" class="user-media-icon" size="large" />
-		</v-btn>
-		<v-btn
+			<media-icon :icon="type" />
+		</a>
+		<a
 			v-if="!isReservedAccount"
-			class="accent-textured"
-			icon
+			class="btn btn-secondary btn-icon"
 			:href="discordURL"
 			target="_blank"
 			rel="noopener noreferrer"
 			title="Discord"
 		>
-			<media-icon icon="discord" class="user-media-icon" size="large" />
-		</v-btn>
+			<media-icon icon="discord" />
+		</a>
 	</div>
 </template>
 
@@ -65,15 +63,5 @@ export default defineNuxtComponent({
 	flex-flow: row wrap;
 	justify-content: center;
 	gap: 0.5rem;
-}
-
-.user-media-icon {
-	color: white !important;
-	opacity: 0.7 !important;
-	// technically counts as navigation if you think about it
-	transition: $transition-navigation;
-	&:hover {
-		opacity: 1 !important;
-	}
 }
 </style>
