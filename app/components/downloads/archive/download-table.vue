@@ -62,7 +62,6 @@ export default defineNuxtComponent({
 }
 
 .download-heading h4 {
-	color: $text-card-title;
 	font-size: 1.25rem;
 	margin-bottom: 0;
 	padding-bottom: $padding-card;
