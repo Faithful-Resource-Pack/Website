@@ -1,18 +1,41 @@
 <template>
 	<div v-if="addon && addon.approval?.status === 'approved'">
-		<screenshot-modal v-model="modal" :src="modalImage" />
+		<screenshot-modal v-model="modalOpened" :src="currentImage" />
 
 		<h1 class="title text-center my-5">{{ addon.name }}</h1>
 
 		<v-row :style="{ display: $vuetify.display.mdAndUp ? 'flex' : 'block' }">
 			<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
-				<img :src="header" class="header-img mb-6" />
-
-				<div v-if="screenshots.length" class="card card-body mb-6">
-					<h2 class="text-center">Gallery</h2>
-					<div class="res-grid-3">
-						<div v-for="image in screenshots" :key="image" class="card cursor-pointer zoom-hitbox">
-							<img class="zoom-affected" :src="image" @click="openModal(image)" />
+				<div class="card mb-6">
+					<div class="carousel-container">
+						<v-carousel
+							v-model="currentImageIndex"
+							:show-arrows="screenshots.length ? 'hover' : false"
+							hide-delimiters
+							theme="dark"
+							height="auto"
+						>
+							<v-carousel-item
+								v-for="src in reel"
+								:key="src"
+								:src
+								class="cursor-pointer"
+								@click="openModal"
+							/>
+						</v-carousel>
+						<button class="btn btn-secondary btn-icon btn-modal" @click="openModal">
+							<v-icon icon="mdi-fullscreen" />
+						</button>
+					</div>
+					<div v-if="screenshots.length" class="reel-container">
+						<div v-for="(src, i) in reel" :key="src" class="flex-0-0">
+							<img
+								:ref="`reel-${i}`"
+								:src
+								class="reel-image zoom-hitbox zoom-affected"
+								:class="i === currentImageIndex ? 'selected' : 'deselected'"
+								@click="selectImage(src)"
+							/>
 						</div>
 					</div>
 				</div>
@@ -83,8 +106,8 @@ export default defineNuxtComponent({
 	},
 	data() {
 		return {
-			modal: false,
-			modalImage: "",
+			currentImageIndex: 0,
+			modalOpened: false,
 			DATETIME_MED,
 		};
 	},
@@ -102,9 +125,7 @@ export default defineNuxtComponent({
 
 			const authors = Array.isArray(authorData) ? authorData : [authorData];
 			const title = `Add-on: ${addon.name} by ${listify(authors.map((u) => u.username).filter((u) => u)) || "Anonymous"}`;
-			const image =
-				addon.files.find((el) => el.use === "header")?.source ||
-				"https://database.faithfulpack.net/images/website/posts/placeholder.jpg";
+			const image = addon.files.find((el) => el.use === "header").source;
 
 			useSeoMeta(generateMetaTags({ title, description: addon.description, image }));
 
@@ -118,9 +139,12 @@ export default defineNuxtComponent({
 		}
 	},
 	methods: {
-		openModal(url) {
-			this.modalImage = url;
-			this.modal = true;
+		selectImage(url) {
+			const id = this.reel.findIndex((r) => r === url);
+			this.currentImageIndex = id;
+		},
+		openModal() {
+			this.modalOpened = true;
 		},
 	},
 	computed: {
@@ -132,17 +156,65 @@ export default defineNuxtComponent({
 				.filter((el) => el.use === "carousel" || el.use === "screenshot")
 				.map((el) => el.source);
 		},
+		reel() {
+			return [this.header, ...this.screenshots];
+		},
+		currentImage() {
+			return this.reel[this.currentImageIndex];
+		},
 		downloads() {
 			return this.files.filter((el) => el.use === "download");
+		},
+	},
+	watch: {
+		currentImageIndex(newValue) {
+			const img = this.$refs[`reel-${newValue}`][0];
+			img.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
 		},
 	},
 });
 </script>
 
 <style scoped lang="scss">
+@use "~/assets/css/variables.scss" as *;
+
 .addon-info {
 	padding: 1rem;
 	// 12 * 2
 	margin-bottom: 24px;
+}
+
+.carousel-container {
+	position: relative;
+}
+
+.btn-modal {
+	position: absolute;
+	top: $padding-card;
+	right: $padding-card;
+}
+
+.reel-container {
+	display: flex;
+	flex-flow: row nowrap;
+	overflow-x: auto;
+	scrollbar-width: none;
+	margin: $padding-card;
+	gap: $padding-card;
+}
+
+.reel-image {
+	border-radius: $border-radius;
+	height: 64px;
+	filter: brightness(0.3);
+	transition: $transition-zoom;
+}
+
+.reel-image.selected {
+	filter: none;
+}
+
+.reel-image.deselected:hover {
+	filter: brightness(1.1);
 }
 </style>

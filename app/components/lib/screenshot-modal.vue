@@ -1,6 +1,9 @@
 <template>
-	<v-dialog v-model="modalOpened" max-width="1080" style="z-index: 999">
+	<v-dialog v-model="modalOpened" content-class="screenshot-modal" max-width="80vw">
 		<img class="card" :src />
+		<button class="btn btn-secondary btn-icon btn-close" @click="$emit('update:modelValue', false)">
+			<v-icon icon="mdi-close" />
+		</button>
 	</v-dialog>
 </template>
 
@@ -33,3 +36,17 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+@use "~/assets/css/variables.scss" as *;
+
+.screenshot-modal {
+	position: relative;
+}
+
+.btn-close {
+	position: absolute;
+	top: $padding-card;
+	right: $padding-card;
+}
+</style>
