@@ -9,7 +9,7 @@
 			<span class="short-title">{{ addon.name }}</span>
 		</template>
 		<template v-if="!minimal" #body>
-			<p class="addon-subtitle mb-2">{{ subtitle }}</p>
+			<p class="addon-subtitle">{{ subtitle }}</p>
 			<author-heads v-if="Object.keys(users).length" :authors />
 			<addon-flags :options="addon.options" />
 		</template>
@@ -104,5 +104,6 @@ export default defineNuxtComponent({
 .addon-subtitle {
 	white-space: pre-wrap;
 	line-height: 1.2;
+	margin-bottom: 8px;
 }
 </style>
