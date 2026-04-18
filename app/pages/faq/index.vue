@@ -158,7 +158,6 @@ export default defineNuxtComponent({
 .faq-card-text {
 	opacity: 1;
 	color: white;
-	text-shadow: $shadow-sheet;
 }
 
 .faq-icon {
