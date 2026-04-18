@@ -55,7 +55,7 @@ export default defineNuxtComponent({
 	display: block;
 	background-size: cover;
 	background-position: center;
-	box-shadow: $shadow-sheet;
+	box-shadow: $shadow-card;
 }
 
 .hero-tagline {

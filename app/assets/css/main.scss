@@ -191,9 +191,9 @@ img[src$=".jpg"] {
 	width: 100%;
 }
 
-.btn, .card, .header-img {
+.card, .header-img {
 	overflow: hidden;
-	box-shadow: $shadow-sheet;
+	box-shadow: $shadow-card;
 	border-radius: $border-radius;
 }
 

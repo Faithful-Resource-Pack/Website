@@ -17,6 +17,7 @@
 	font-size: 1rem;
 	line-height: 1.5;
 	border-radius: $border-radius;
+	box-shadow: $shadow-button;
 	transition: $transition-button;
 }
 .btn:hover {

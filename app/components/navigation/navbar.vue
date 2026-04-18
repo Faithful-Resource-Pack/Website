@@ -119,7 +119,7 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	box-shadow: $shadow-sheet;
+	box-shadow: $shadow-card;
 }
 // wraps both the items and the mobile navbar if present
 .navbar-container {

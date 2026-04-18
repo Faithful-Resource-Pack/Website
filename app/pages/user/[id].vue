@@ -143,7 +143,7 @@ export default defineNuxtComponent({
 }
 
 .user-header-image {
-	filter: drop-shadow($shadow-sheet);
+	filter: drop-shadow($shadow-card);
 }
 
 .user-header-username:hover {

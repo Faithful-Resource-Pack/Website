@@ -53,7 +53,7 @@ export default defineNuxtComponent({
 	// half of the horizontal padding goes here and half in the highlight
 	padding: $padding-card calc($padding-card / 2);
 	overflow-x: auto;
-	box-shadow: $shadow-sheet;
+	box-shadow: $shadow-card;
 }
 
 // for mobile
