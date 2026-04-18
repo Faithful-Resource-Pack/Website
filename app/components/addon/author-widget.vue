@@ -6,7 +6,7 @@
 				:src="`https://vzge.me/face/128/${getVisageSlug(author)}`"
 				:alt="`${author.username}'s Avatar`"
 			>
-				<h5 class="mb-0">{{ author.username }}</h5>
+				<p class="h5 mb-0">{{ author.username }}</p>
 			</profile-card>
 		</div>
 	</nuxt-link>

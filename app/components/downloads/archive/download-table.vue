@@ -5,9 +5,9 @@
 				<tr>
 					<!-- these must be in divs, I have no idea why -->
 					<th />
-					<th class="text-left"><div>Name</div></th>
-					<th><div>Published</div></th>
-					<th><div>Downloads</div></th>
+					<th class="text-left"><h4>Name</h4></th>
+					<th><h4>Published</h4></th>
+					<th><h4>Downloads</h4></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -61,9 +61,10 @@ export default defineNuxtComponent({
 	width: 100%;
 }
 
-.download-heading div {
-	font-size: 1.25rem;
+.download-heading h4 {
 	color: $text-card-title;
+	font-size: 1.25rem;
+	margin-bottom: 0;
 	padding-bottom: $padding-card;
 }
 

@@ -9,7 +9,7 @@
 		>
 			<template #prepend>
 				<v-icon
-					class="mr-1 ml-n1 card-text"
+					class="mr-1 ml-n1"
 					:icon="info[role]?.icon || 'mdi-shield-account'"
 					:color="info[role]?.color"
 				/>

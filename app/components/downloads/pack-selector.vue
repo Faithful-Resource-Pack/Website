@@ -18,7 +18,7 @@
 						:icon="id === selectedPack ? 'mdi-radiobox-marked' : 'mdi-radiobox-blank'"
 					/>
 					<div class="d-flex flex-column align-start">
-						<span class="pack-name">{{ label }}</span>
+						<h3 class="pack-name my-1">{{ label }}</h3>
 						<span>{{ description }}</span>
 					</div>
 				</div>

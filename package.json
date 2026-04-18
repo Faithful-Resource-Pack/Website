@@ -17,9 +17,9 @@
 		"docker:alive": "curl -s -o /dev/null -w \"%{http_code} %{content_type}\" http://localhost:3000 | grep -q \"^200 text/html\""
 	},
 	"dependencies": {
-		"isomorphic-dompurify": "^3.8.0",
+		"isomorphic-dompurify": "^3.9.0",
 		"luxon": "^3.7.2",
-		"marked": "^18.0.0",
+		"marked": "^18.0.1",
 		"nuxt": "^4.4.2",
 		"remove-markdown": "^0.6.3",
 		"sass": "^1.99.0",
@@ -31,7 +31,7 @@
 		"@nuxt/eslint": "1.15.2",
 		"@types/luxon": "^3.7.1",
 		"eslint": "^9.39.4",
-		"prettier": "^3.8.2"
+		"prettier": "^3.8.3"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [

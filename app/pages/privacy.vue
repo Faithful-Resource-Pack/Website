@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
 	<h1 class="title mt-5 text-center">Privacy Policy</h1>
-	<h3 class="text-center mb-5">Last edited: 26th November 2024</h3>
+	<p class="h3 text-center mb-5">Last edited: 26th November 2024</p>
 
 	<div class="card card-body">
 		<p>

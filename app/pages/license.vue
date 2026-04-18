@@ -1,10 +1,10 @@
 <template>
 	<h1 class="title mt-5 text-center">Faithful License</h1>
-	<h3 class="text-center mb-3">
+	<p class="h3 text-center mb-3">
 		Version 3 - 20th February 2023
 		<br />
 		Copyright © Faithful Resource Pack
-	</h3>
+	</p>
 	<div class="license-download">
 		<nuxt-link
 			class="btn block btn-secondary mb-5"
