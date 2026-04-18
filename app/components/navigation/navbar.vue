@@ -30,7 +30,7 @@
 					<v-icon size="small" :icon class="mr-2" /> {{ name }}
 				</nuxt-link>
 
-				<nuxt-link to="/" title="Faithful">
+				<nuxt-link class="navbar-desktop-logo-container" to="/" title="Faithful">
 					<img
 						class="navbar-desktop-logo zoom-hitbox zoom-affected"
 						src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=128"
@@ -185,7 +185,7 @@ header {
 		justify-content: start;
 		width: 100%;
 	}
-	.navbar-desktop-logo {
+	.navbar-desktop-logo-container {
 		display: none;
 	}
 }
