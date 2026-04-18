@@ -8,6 +8,7 @@
 			<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
 				<div class="card mb-6">
 					<div class="carousel-container">
+						<!-- don't show arrows if there's only a header -->
 						<v-carousel
 							v-model="currentImageIndex"
 							:show-arrows="screenshots.length ? 'hover' : false"
@@ -28,15 +29,15 @@
 						</button>
 					</div>
 					<div v-if="screenshots.length" class="reel-container">
-						<div v-for="(src, i) in reel" :key="src" class="flex-0-0">
+						<!-- buttons make it tab-selectable -->
+						<button v-for="(src, i) in reel" :key="src" class="flex-0-0" @click="selectImage(src)">
 							<img
 								:ref="`reel-${i}`"
 								:src
 								class="reel-image zoom-hitbox zoom-affected"
 								:class="i === currentImageIndex ? 'selected' : 'deselected'"
-								@click="selectImage(src)"
 							/>
-						</div>
+						</button>
 					</div>
 				</div>
 
@@ -62,7 +63,7 @@
 								Last updated {{ relativeDate(addon.last_updated) }}
 							</p>
 						</template>
-						{{ exactDate(addon.last_updated, DATETIME_MED) }}
+						{{ dateTooltip }}
 					</v-tooltip>
 				</div>
 			</v-col>
@@ -92,9 +93,7 @@ import AuthorWidget from "~/components/addon/author-widget.vue";
 import CompatibilityCard from "~/components/addon/compatibility-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
 
-// I hate how ESM can't double destructure like cjs
 import { DateTime } from "luxon";
-const { DATETIME_MED } = DateTime;
 
 export default defineNuxtComponent({
 	components: {
@@ -108,7 +107,6 @@ export default defineNuxtComponent({
 		return {
 			currentImageIndex: 0,
 			modalOpened: false,
-			DATETIME_MED,
 		};
 	},
 	setup() {
@@ -129,17 +127,14 @@ export default defineNuxtComponent({
 
 			useSeoMeta(generateMetaTags({ title, description: addon.description, image }));
 
-			return {
-				addon,
-				authors,
-				files: addon.files,
-			};
+			return { addon, authors };
 		} catch (err) {
 			throw createError({ statusCode: 404, statusMessage: String(err) });
 		}
 	},
 	methods: {
 		selectImage(url) {
+			// for some reason vuetify tracks based on index rather than source
 			const id = this.reel.findIndex((r) => r === url);
 			this.currentImageIndex = id;
 		},
@@ -148,13 +143,14 @@ export default defineNuxtComponent({
 		},
 	},
 	computed: {
+		downloads() {
+			return this.addon.files.filter((el) => el.use === "download");
+		},
 		header() {
-			return this.files.find((el) => el.use === "header").source;
+			return this.addon.files.find((el) => el.use === "header").source;
 		},
 		screenshots() {
-			return this.files
-				.filter((el) => el.use === "carousel" || el.use === "screenshot")
-				.map((el) => el.source);
+			return this.addon.files.filter((el) => el.use === "screenshot").map((el) => el.source);
 		},
 		reel() {
 			return [this.header, ...this.screenshots];
@@ -162,12 +158,13 @@ export default defineNuxtComponent({
 		currentImage() {
 			return this.reel[this.currentImageIndex];
 		},
-		downloads() {
-			return this.files.filter((el) => el.use === "download");
+		dateTooltip() {
+			return exactDate(this.addon.last_updated, DateTime.DATETIME_MED);
 		},
 	},
 	watch: {
 		currentImageIndex(newValue) {
+			// I have genuinely no idea why the ref is an array but this fixes it
 			const img = this.$refs[`reel-${newValue}`][0];
 			img.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
 		},
@@ -206,7 +203,7 @@ export default defineNuxtComponent({
 .reel-image {
 	border-radius: $border-radius;
 	height: 64px;
-	filter: brightness(0.3);
+	filter: brightness(0.5);
 	transition: $transition-zoom;
 }
 
