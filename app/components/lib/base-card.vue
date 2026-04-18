@@ -1,7 +1,9 @@
 <template>
 	<div class="card zoom-hitbox zoom-affected">
 		<nuxt-link class="base-card" :to>
-			<img class="base-card-image" :src="image" :alt loading="lazy" />
+			<slot name="image">
+				<img class="base-card-image" :src="image" :alt loading="lazy" />
+			</slot>
 			<div class="base-card-body">
 				<h3 v-if="$slots.title" class="h4 mb-1" :style="titleStyles">
 					<slot name="title" />
@@ -58,7 +60,6 @@ export default defineNuxtComponent({
 	display: flex;
 	flex-flow: column nowrap;
 	margin: $padding-card;
-	line-height: 1;
 }
 
 .base-card-image {

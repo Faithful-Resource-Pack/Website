@@ -1,20 +1,29 @@
 <template>
-	<nuxt-link :to class="card zoom-hitbox zoom-affected">
-		<div class="project-image">
-			<img class="project-background" :src="background" :alt="name" />
-			<div class="project-shadow" />
-			<img class="project-logo" :src="logo" :alt="`${name} logo`" />
-		</div>
-		<div class="card-body">
-			<h2 class="h4 mb-1">{{ name }}</h2>
-			<p>{{ description }}</p>
-		</div>
-	</nuxt-link>
+	<base-card :to>
+		<template #image>
+			<div class="project-image">
+				<img class="project-background" :src="background" :alt="name" />
+				<div class="project-shadow" />
+				<img class="project-logo" :src="logo" :alt="`${name} logo`" />
+			</div>
+		</template>
+		<template #title>
+			{{ name }}
+		</template>
+		<template #body>
+			<p class="mb-2">{{ description }}</p>
+		</template>
+	</base-card>
 </template>
 
 <script>
+import BaseCard from "~/components/lib/base-card.vue";
+
 export default defineNuxtComponent({
 	name: "project-card",
+	components: {
+		BaseCard,
+	},
 	props: {
 		name: {
 			type: String,
