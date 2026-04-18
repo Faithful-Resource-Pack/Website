@@ -97,3 +97,8 @@ img[src$=".jpg"] {
 .v-chip {
 	border-radius: $border-radius !important;
 }
+
+// fix addon screenshot modal not respecting image aspect ratio
+.v-dialog .v-overlay__content {
+	max-height: 100% !important;
+}
