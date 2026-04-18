@@ -112,6 +112,11 @@ export default defineNuxtComponent({
 	components: {
 		DownloadTable,
 	},
+	setup() {
+		definePageMeta({
+			name: "Download Archive",
+		});
+	},
 	async asyncData() {
 		// set object order by which ones come first
 		const downloadData = {
@@ -146,10 +151,6 @@ export default defineNuxtComponent({
 				else downloadData.alive[name][edition] = { downloads, files };
 			}),
 		);
-
-		definePageMeta({
-			name: "Download Archive",
-		});
 
 		// after the promise.all everything has finished fetching into downloadData
 		return downloadData;

@@ -19,7 +19,7 @@
 	"dependencies": {
 		"isomorphic-dompurify": "^3.9.0",
 		"luxon": "^3.7.2",
-		"marked": "^18.0.1",
+		"marked": "^18.0.2",
 		"nuxt": "^4.4.2",
 		"remove-markdown": "^0.6.3",
 		"sass": "^1.99.0",
