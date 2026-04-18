@@ -4,7 +4,7 @@
 		{{ error ? `Error: ${error}` : "No FAQs found" }}
 	</h2>
 	<template v-else>
-		<v-expansion-panels v-model="search" variant="accordion">
+		<v-expansion-panels v-model="search" variant="accordion" :theme>
 			<v-expansion-panel
 				v-for="({ question, answer }, i) in faqs"
 				:key="question"
@@ -28,6 +28,7 @@
 
 <script>
 export default defineNuxtComponent({
+	inject: ["theme"],
 	setup() {
 		definePageMeta({
 			disableDefaultMeta: true,
