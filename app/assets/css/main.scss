@@ -33,6 +33,7 @@ body {
 	color: $text-light;
 }
 h1, h2, h3, h4, h5, h6 {
+	color: $title-light;
 	margin-top: 0;
 	margin-bottom: 0.5rem;
 	line-height: 1.2;
@@ -207,13 +208,8 @@ img[src$=".jpg"] {
 	filter: brightness(110%);
 }
 
-.underline-hover {
-	color: unset;
-	&:hover {
-		color: unset;
-		text-decoration: underline;
-		text-decoration-color: currentColor;
-	}
+.underline-hover:hover {
+	text-decoration: underline;
 }
 
 /** relatively specific stuff that's used in multiple places */
@@ -224,13 +220,11 @@ img[src$=".jpg"] {
 	justify-content: center;
 	flex-direction: row;
 	align-items: center;
-	padding: 0.25rem 1rem;
+	padding: 0.25rem 0;
+	color: $text-light;
 	transition: $transition-navigation;
-	padding-right: 0;
-	padding-left: 0;
-	color: $text-navigation !important;
 	&:hover, &:focus {
-		color: $text-card !important;
+		color: $title-light;
 		transform: scale(0.95);
 		cursor: pointer;
 	}

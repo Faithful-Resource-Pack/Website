@@ -108,8 +108,6 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables.scss" as *;
 
-$border-thickness: 2px;
-
 .download-selector {
 	display: flex;
 	flex-flow: column nowrap;
@@ -118,7 +116,6 @@ $border-thickness: 2px;
 }
 
 .download-choice {
-	border: $border-thickness solid rgba(white, 0.2);
 	.download-info-icon {
 		color: rgba(white, 0.2);
 	}
@@ -139,7 +136,6 @@ $border-thickness: 2px;
 }
 
 .pack-name {
-	color: $text-card-title;
 	font-size: 1.35rem;
 }
 
@@ -149,11 +145,5 @@ $border-thickness: 2px;
 	.download-radio-icon {
 		color: $text-green;
 	}
-}
-
-// same size as archive page download buttons
-.btn-link {
-	width: 2.5rem;
-	height: 2.5rem;
 }
 </style>

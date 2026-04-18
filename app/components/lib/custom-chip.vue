@@ -35,7 +35,7 @@ export default defineNuxtComponent({
 		return {
 			data: {
 				Java: { color: "#1DD96A", icon: "mdi-minecraft", text: "Java Edition" },
-				Bedrock: { color: "#EEEEEE", icon: "mdi-cube", text: "Bedrock Edition" },
+				Bedrock: { color: "#858585", icon: "mdi-cube", text: "Bedrock Edition" },
 				"Faithful 32x": {
 					color: "#00A2FF",
 					icon: "faithful",

@@ -150,7 +150,6 @@ export default defineNuxtComponent({
 $item-highlight: rgba(255, 255, 255, 0.05);
 
 td {
-	color: $text-card;
 	text-align: center;
 	// for some reason you can't pad <tr> tags directly, so we style the children instead
 	padding: 0.2rem 0px;
@@ -186,7 +185,6 @@ td {
 
 .show-icon {
 	// less opaque
-	color: $text-navigation;
 	cursor: pointer;
 }
 

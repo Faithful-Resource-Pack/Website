@@ -1,4 +1,5 @@
 /** dark theme */
+$title-dark: white;
 $text-dark: rgba(255, 255, 255, 0.7);
 
 $bg-dark: #191919;
@@ -7,18 +8,19 @@ $bg-dark-url: url("/image/background/dark.png");
 $bg-dark-textured: $bg-dark $bg-dark-url repeat;
 
 $bg-dark-accent: #272727;
-$bg-dark-accent-url: url("/image/background/accent.png");
+$bg-dark-accent-url: url("/image/background/dark_accent.png");
 $bg-dark-accent-textured: $bg-dark-accent $bg-dark-accent-url repeat;
 
 /** light theme */
-$text-light: rgba(0, 0, 0, 0.8);
+$title-light: black;
+$text-light: rgba(0, 0, 0, 0.7);
 
 $bg-light: #FAFAFA;
 $bg-light-url: url("/image/background/light.png");
 $bg-light-textured: $bg-light $bg-light-url repeat;
 
-$bg-light-accent: #272727;
-$bg-light-accent-url: url("/image/background/accent.png");
+$bg-light-accent: #FFF;
+$bg-light-accent-url: url("/image/background/light_accent.png");
 $bg-light-accent-textured: $bg-light-accent $bg-light-accent-url repeat;
 
 /** accent colors (text is lighter than bg) */
@@ -44,9 +46,6 @@ $btn-secondary-hover: #515151;
 $btn-secondary-active: #6F6F6F;
 
 /** other text colors */
-$text-card-title: white;
-$text-card: $text-dark; // easier to change later if it's aliased
-$text-navigation: rgba(255, 255, 255, 0.5);
 $text-colored-banner: rgba(255, 255, 255, 0.8);
 $text-link: $btn-primary;
 $text-link-hover: $btn-primary-hover;
@@ -73,3 +72,4 @@ $breakpoint-xl: 1280px;
 /** global settings */
 $padding-card: 12px;
 $border-radius: 4px;
+$border-thickness: 2px;

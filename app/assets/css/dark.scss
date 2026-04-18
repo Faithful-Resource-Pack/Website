@@ -1,6 +1,9 @@
 @use "./variables" as *;
 
 .dark-theme {
+	color: $text-dark;
+	text-decoration-color: currentColor;
+
 	.textured {
 		background: $bg-dark-textured;
 	}
@@ -19,31 +22,44 @@
 		background: $bg-dark-accent-textured;
 	}
 
+	h1, h2, h3, h4, h5, h6 {
+		color: $title-dark;
+	}
+
+	// fix hovercards
+	a .card-body, a .base-card-body, .faq-answer {
+		color: $text-dark;
+	}
+
+	.navigation-link {
+		color: $text-dark;
+		&:hover, &:focus {
+			color: $title-dark;
+		}
+	}
+
+	// for some reason a link overrides the underline color by default
+	.underline-hover {
+		text-decoration-color: $text-dark;
+	}
+
 	// card color
 	.v-skeleton-loader__image {
 		background: $bg-dark-accent !important;
 	}
 
-	// vuetify theming inconsistency fixes (doesn't use website theme implementation)
-	// todo: probably switch to vuetify themes for everything
-	.v-input__control {
-		color: white;
-	}
+	/**
+	 * page specific styles
+	 */
+
 	.v-expansion-panels--variant-accordion * {
 		background: $bg-dark-accent;
 	}
 
-	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
-		color: $text-dark;
-		text-decoration-color: currentColor;
+	.download-choice {
+		border: $border-thickness solid rgba(white, 0.2);
 	}
 
-	// very strange things happen without this line (I have no idea why)
-	.underline-hover:hover {
-		text-decoration-color: $text-dark;
-	}
-
-	// about page stuff
 	.btn-about {
 		background: white;
 		color: black;

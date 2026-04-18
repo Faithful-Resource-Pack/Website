@@ -225,13 +225,11 @@ footer {
 }
 
 .footer-info-text {
-	color: $text-navigation;
 	padding: 0.25rem 0;
 	margin: 0;
 }
 
 .footer-title {
-	color: $text-card;
 	// fix for icons being too big
 	display: flex;
 	align-items: center;

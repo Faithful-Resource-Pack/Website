@@ -1,7 +1,7 @@
 <template>
 	<!-- header is 999 so we set it just below that (needs to be above images) -->
 	<div
-		class="d-block card-body card-text align-self-start block"
+		class="d-block card-body align-self-start block"
 		style="z-index: 998"
 		@keyup.esc="$emit('close')"
 	>
@@ -102,7 +102,6 @@ export default defineNuxtComponent({
 @use "~/assets/css/variables.scss" as *;
 
 .close-button:hover {
-	color: $text-card-title;
 	transition: $transition-navigation;
 }
 </style>

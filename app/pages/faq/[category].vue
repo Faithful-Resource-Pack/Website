@@ -107,9 +107,3 @@ export default defineNuxtComponent({
 	},
 });
 </script>
-
-<style scoped lang="scss">
-.faq-answer {
-	opacity: 0.75;
-}
-</style>

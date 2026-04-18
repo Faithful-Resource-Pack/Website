@@ -1,7 +1,7 @@
 <template>
 	<h1 class="title my-5 text-center">Download Faithful</h1>
 	<div class="card d-flex flex-row">
-		<div class="card-body card-text">
+		<div class="card-body">
 			<h2>Select Pack</h2>
 			<pack-selector v-model:select="selectedPack" v-model:hover="hoverPack" :packs />
 			<div class="d-flex flex-column ga-3">

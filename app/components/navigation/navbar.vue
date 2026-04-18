@@ -158,7 +158,6 @@ header {
 	line-height: 1;
 	background: transparent;
 	border: none;
-	color: $text-navigation;
 }
 
 // mobile styles

@@ -19,19 +19,32 @@
 		background: $bg-light-accent-textured;
 	}
 
+	// fix hovercards
+	a .card-body, a .base-card-body, .faq-answer {
+		color: $text-light;
+	}
+
+	// for some reason a link overrides the underline color by default
+	.underline-hover {
+		text-decoration-color: $text-light;
+	}
+
 	// card color
 	.v-skeleton-loader__image {
 		background: $bg-light-accent;
 	}
 
-	// about page stuff
+	/**
+	 * page specific styles
+	 */
+
+	.download-choice {
+		border: $border-thickness solid rgba(black, 0.15);
+	}
+
 	.btn-about {
 		background: black;
 		color: white;
-		&:hover {
-			// dark preserves blue hover effect, override it here
-			color: white !important;
-		}
 	}
 
 	.green-background,
@@ -42,7 +55,7 @@
 		background-blend-mode: multiply;
 		// only use white with a colored background, else use normal text color
 		.colored-title {
-			color: white;
+			color: $title-dark;
 		}
 	}
 

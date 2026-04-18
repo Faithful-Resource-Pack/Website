@@ -3,7 +3,7 @@
 		<nuxt-link class="base-card" :to>
 			<img class="base-card-image" :src="image" :alt loading="lazy" />
 			<div class="base-card-body">
-				<h3 v-if="$slots.title" class="base-card-title" :style="titleStyles">
+				<h3 v-if="$slots.title" class="h4 mb-1" :style="titleStyles">
 					<slot name="title" />
 				</h3>
 				<slot name="body" />
@@ -66,12 +66,5 @@ export default defineNuxtComponent({
 	width: 100%;
 	height: auto;
 	aspect-ratio: 16 / 9;
-}
-
-.base-card-title {
-	font-size: 1.5rem;
-	// makes gap between subtitle and title smaller
-	margin-bottom: 0.25rem;
-	color: $text-card-title;
 }
 </style>
