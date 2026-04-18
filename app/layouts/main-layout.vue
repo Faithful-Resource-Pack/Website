@@ -45,6 +45,11 @@ export default defineNuxtComponent({
 			required: false,
 			default: false,
 		},
+		overrideTheme: {
+			type: String,
+			required: false,
+			default: undefined,
+		},
 	},
 	provide() {
 		return {
@@ -69,13 +74,13 @@ export default defineNuxtComponent({
 	},
 	beforeMount() {
 		// set theme before client render (can't set on server because localStorage doesn't yet exist)
-		this.currentTheme = localStorage.getItem(THEME_KEY) || "auto";
+		this.currentTheme = this.overrideTheme || localStorage.getItem(THEME_KEY) || "auto";
 	},
 	watch: {
 		currentTheme: {
 			handler(newValue) {
 				if (!Object.keys(this.availableThemes).includes(newValue)) return;
-				localStorage.setItem(THEME_KEY, newValue);
+				if (!this.overrideTheme) localStorage.setItem(THEME_KEY, newValue);
 				const isDark =
 					this.currentTheme === "dark" ||
 					(this.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);

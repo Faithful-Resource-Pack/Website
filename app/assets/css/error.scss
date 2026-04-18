@@ -2,13 +2,8 @@
 
 $bg-end: #120E19;
 
+// extends dark-theme so most text styles etc are declared there
 .error-theme {
-	h1 {
-		color: white;
-	}
-	p {
-		color: $text-dark;
-	}
 	.site-container {
 		background: $bg-end url("/image/background/the_end.jpg") no-repeat center;
 	}
