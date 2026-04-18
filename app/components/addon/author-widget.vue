@@ -34,11 +34,15 @@ export default defineNuxtComponent({
 .author-widget {
 	border-radius: $border-radius;
 	transition: $transition-button;
-	&:hover {
-		background: rgba(white, 0.1);
-	}
 	&:active {
 		transform: scale(0.95);
+	}
+	// can't use regular vertical margin because the profiles clip into each other
+	&:first-child {
+		margin-top: -8px;
+	}
+	&:last-child {
+		margin-bottom: -8px;
 	}
 }
 </style>

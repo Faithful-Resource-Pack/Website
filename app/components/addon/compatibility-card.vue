@@ -4,7 +4,7 @@
 	<div class="addon-chips">
 		<custom-chip v-for="pack in packs" :key="pack" :type="pack" link />
 	</div>
-	<h5>Supported Editions</h5>
+	<h5 class="mt-3">Supported Editions</h5>
 	<div class="addon-chips">
 		<custom-chip v-for="edition in editions" :key="edition" :type="edition" link />
 	</div>
@@ -52,6 +52,5 @@ export default defineNuxtComponent({
 	display: flex;
 	flex-flow: row wrap;
 	gap: 1ch;
-	padding-bottom: 10px;
 }
 </style>

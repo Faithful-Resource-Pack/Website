@@ -63,6 +63,10 @@
 		border: $border-thickness solid rgba(white, 0.2);
 	}
 
+	.author-widget:hover {
+		background: rgba(white, 0.1);
+	}
+
 	.btn-about {
 		background: white;
 		color: black;

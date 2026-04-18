@@ -20,7 +20,10 @@
 	}
 
 	// fix hovercards
-	a .card-body, a .base-card-body, .faq-answer {
+	a .card-body,
+	a .base-card-body,
+	a .profile-card,
+	.faq-answer {
 		color: $text-light;
 	}
 
@@ -40,6 +43,10 @@
 
 	.download-choice {
 		border: $border-thickness solid rgba(black, 0.15);
+	}
+
+	.author-widget:hover {
+		background: rgba(black, 0.1);
 	}
 
 	.btn-about {
