@@ -17,7 +17,7 @@
 	<!-- eslint-disable vue/no-v-html -->
 	<div
 		v-if="post.description"
-		class="card card-body card-text"
+		class="card card-body body-text"
 		v-html="compileMarkdown(post.description)"
 	/>
 	<!-- eslint-enable vue/no-v-html -->
@@ -25,7 +25,7 @@
 	<template v-if="Object.keys(post.changelog || {}).length">
 		<br />
 		<h2 id="changelog" class="subtitle my-5 text-center">Changelog</h2>
-		<div class="card card-body card-text">
+		<div class="card card-body body-text">
 			<post-changelog :item="post.changelog" />
 		</div>
 	</template>

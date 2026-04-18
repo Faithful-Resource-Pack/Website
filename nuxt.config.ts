@@ -36,7 +36,13 @@ export default defineNuxtConfig({
 				{ name: "apple-mobile-web-app-capable", content: "no" },
 				{ name: "apple-mobile-web-app-title", content: "Faithful" },
 			],
-			link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+			link: [
+				{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+				{
+					rel: "stylesheet",
+					href: "https://database.faithfulpack.net/fonts/Roboto/stylesheet.css",
+				},
+			],
 			noscript: [
 				{
 					// no vuetify so we just do the entire alert from scratch

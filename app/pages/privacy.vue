@@ -8,7 +8,7 @@ definePageMeta({
 	<h1 class="title mt-5 text-center">Privacy Policy</h1>
 	<p class="h3 text-center mb-5">Last edited: 26th November 2024</p>
 
-	<div class="card card-body">
+	<div class="card card-body body-text">
 		<p>
 			This privacy policy describes how your personal information is collected, used and shared when
 			you visit <nuxt-link to="https://faithfulpack.net">https://faithfulpack.net</nuxt-link>.

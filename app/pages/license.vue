@@ -14,7 +14,7 @@
 			<span class="ml-2">Download License</span>
 		</nuxt-link>
 	</div>
-	<div class="card card-body">
+	<div class="card card-body body-text">
 		<h2>You may do the following:</h2>
 		<ol>
 			<li><p>Use our work as placeholders.</p></li>

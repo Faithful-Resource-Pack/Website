@@ -20,14 +20,13 @@
 .card-body > :last-child {
 	margin-bottom: 0;
 }
-// h5
-.card-text p {
-	// todo: use roboto here
-	font-size: 1.25rem;
-}
 // the first layer of lists get indented less than subsequent ones
-.card-text > ul, .card-text > ol {
+.card-body .body-text > ul,
+.card-body.body-text > ul {
 	padding-left: 1rem !important;
+}
+.body-text p, .body-text li {
+	font-family: Roboto, sans-serif;
 }
 
 .card {

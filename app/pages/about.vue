@@ -7,7 +7,7 @@ definePageMeta({
 <template>
 	<div class="green-background">
 		<div class="container about-container">
-			<div class="about-text">
+			<div class="about-text body-text">
 				<h1 class="colored-title">Upscaling the Look of Minecraft</h1>
 				<p>
 					Faithful recreates Minecraft's original textures in higher resolutions while staying true
@@ -22,7 +22,7 @@ definePageMeta({
 	</div>
 	<div class="container about-container">
 		<img class="about-image" src="/image/about/history.png" alt="our history" />
-		<div class="about-text">
+		<div class="about-text body-text">
 			<h1 class="colored-title">A History of Expertise</h1>
 			<p>
 				We've got over a decade of experience making quality textures for Minecraft, with a rich
@@ -43,7 +43,7 @@ definePageMeta({
 	</div>
 	<div class="blue-background">
 		<div class="container about-container">
-			<div class="about-text">
+			<div class="about-text body-text">
 				<h1 class="colored-title">Play How You Want</h1>
 				<p>
 					Faithful supports both Java and Bedrock Edition, and can be installed on computers,
@@ -59,7 +59,7 @@ definePageMeta({
 	</div>
 	<div class="container about-container">
 		<img class="about-image" src="/image/about/community.png" alt="the faithful community" />
-		<div class="about-text">
+		<div class="about-text body-text">
 			<h1 class="colored-title">Made by the Community</h1>
 			<p>
 				All Faithful textures are voted on by the public before being added, and anyone can submit a
@@ -80,7 +80,7 @@ definePageMeta({
 	</div>
 	<div class="pink-background">
 		<div class="container about-container">
-			<div class="about-text">
+			<div class="about-text body-text">
 				<h1 class="colored-title">Free and Open-Source</h1>
 				<p>
 					The project is made possible entirely by talented volunteer artists and developers working

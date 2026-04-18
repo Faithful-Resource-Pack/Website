@@ -3,7 +3,7 @@
 	<div class="error-theme">
 		<!-- inherit dark theme since the error background is dark (text colors can be reused) -->
 		<nuxt-layout name="default" override-theme="dark">
-			<div class="text-center">
+			<div class="text-center body-text">
 				<h1>Are you lost in The End?</h1>
 				<p>
 					Unfortunately, the page you requested doesn't exist!

@@ -19,7 +19,7 @@
 				loading="lazy"
 			/>
 		</nuxt-link>
-		<div>
+		<div class="body-text">
 			<nuxt-link :to="firstPost.permalink" class="underline-hover">
 				<h2 class="h1">{{ firstPost.title }}</h2>
 			</nuxt-link>

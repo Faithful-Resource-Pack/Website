@@ -11,11 +11,11 @@
 				:value="question"
 			>
 				<template #title>
-					<h5 :ref="`faq-${i}`" class="my-0">{{ question }}</h5>
+					<h4 :ref="`faq-${i}`" class="my-0">{{ question }}</h4>
 				</template>
 				<template #text>
 					<!-- eslint-disable-next-line vue/no-v-html -->
-					<div class="faq-answer" v-html="discordMarkdown(answer)" />
+					<div class="faq-answer body-text" v-html="discordMarkdown(answer)" />
 				</template>
 			</v-expansion-panel>
 		</v-expansion-panels>

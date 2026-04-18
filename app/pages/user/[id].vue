@@ -31,7 +31,7 @@
 		<hr />
 	</template>
 	<!-- eslint-disable vue/no-v-html -->
-	<div v-if="user.bio" class="card card-body card-text" v-html="compileMarkdown(user.bio)" />
+	<div v-if="user.bio" class="card card-body body-text" v-html="compileMarkdown(user.bio)" />
 	<!-- eslint-enable vue/no-v-html -->
 
 	<template v-if="addons.length">

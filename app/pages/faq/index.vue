@@ -28,8 +28,8 @@
 				:class="`${color}-background`"
 				:to
 			>
-				<v-icon :icon class="faq-card-text faq-icon colored-title" />
-				<h2 class="text-center faq-card-text colored-title">
+				<v-icon :icon class="faq-body-text faq-icon colored-title" />
+				<h2 class="text-center faq-body-text colored-title">
 					<chevron-link>{{ title }}</chevron-link>
 				</h2>
 			</nuxt-link>
@@ -155,7 +155,7 @@ export default defineNuxtComponent({
 	gap: 1rem;
 }
 
-.faq-card-text {
+.faq-body-text {
 	opacity: 1;
 	color: white;
 }
