@@ -1,6 +1,10 @@
 <template>
-	<v-dialog v-model="modalOpened" content-class="screenshot-modal" max-width="80vw">
-		<img class="card" :src />
+	<v-dialog
+		v-model="modalOpened"
+		content-class="screenshot-modal"
+		:max-width="$vuetify.display.mdAndUp ? '80vw' : undefined"
+	>
+		<img class="header-img" :src />
 		<button class="btn btn-secondary btn-icon btn-close" @click="$emit('update:modelValue', false)">
 			<v-icon icon="mdi-close" />
 		</button>
