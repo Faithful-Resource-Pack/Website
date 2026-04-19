@@ -1,45 +1,10 @@
 <template>
 	<div v-if="addon && addon.approval?.status === 'approved'">
-		<screenshot-modal v-model="modalOpened" :src="currentImage" />
-
 		<h1 class="title text-center my-5">{{ addon.name }}</h1>
 
 		<v-row :style="{ display: $vuetify.display.mdAndUp ? 'flex' : 'block' }">
 			<v-col :md="$vuetify.display.mdAndUp ? 9 : 10" style="max-width: 100%">
-				<div class="card mb-6">
-					<div class="carousel-container">
-						<!-- don't show arrows if there's only a header -->
-						<v-carousel
-							v-model="currentImageIndex"
-							:show-arrows="screenshots.length ? 'hover' : false"
-							hide-delimiters
-							theme="dark"
-							height="auto"
-						>
-							<v-carousel-item
-								v-for="src in reel"
-								:key="src"
-								:src
-								class="cursor-pointer"
-								@click="openModal"
-							/>
-						</v-carousel>
-						<button class="btn btn-secondary btn-icon btn-modal" @click="openModal">
-							<v-icon icon="mdi-fullscreen" />
-						</button>
-					</div>
-					<div v-if="screenshots.length" class="reel-container">
-						<!-- buttons make it tab-selectable -->
-						<button v-for="(src, i) in reel" :key="src" class="flex-0-0" @click="selectImage(src)">
-							<img
-								:ref="`reel-${i}`"
-								:src
-								class="reel-image zoom-hitbox zoom-affected"
-								:class="i === currentImageIndex ? 'selected' : 'deselected'"
-							/>
-						</button>
-					</div>
-				</div>
+				<screenshot-carousel :sources="reel" />
 
 				<!-- eslint-disable-next-line vue/no-v-html -->
 				<div class="card card-body body-text" v-html="compileMarkdown(addon.description)" />
@@ -88,7 +53,7 @@
 
 <script>
 import MediaIcon from "~/components/lib/media-icon.vue";
-import ScreenshotModal from "~/components/lib/screenshot-modal.vue";
+import ScreenshotCarousel from "~/components/lib/screenshot-carousel.vue";
 import AuthorWidget from "~/components/addon/author-widget.vue";
 import CompatibilityCard from "~/components/addon/compatibility-card.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
@@ -98,16 +63,10 @@ import { DateTime } from "luxon";
 export default defineNuxtComponent({
 	components: {
 		MediaIcon,
-		ScreenshotModal,
+		ScreenshotCarousel,
 		AuthorWidget,
 		CompatibilityCard,
 		DiscordButton,
-	},
-	data() {
-		return {
-			currentImageIndex: 0,
-			modalOpened: false,
-		};
 	},
 	setup() {
 		definePageMeta({
@@ -132,16 +91,6 @@ export default defineNuxtComponent({
 			throw createError({ statusCode: 404, statusMessage: String(err) });
 		}
 	},
-	methods: {
-		selectImage(url) {
-			// for some reason vuetify tracks based on index rather than source
-			const id = this.reel.findIndex((r) => r === url);
-			this.currentImageIndex = id;
-		},
-		openModal() {
-			this.modalOpened = true;
-		},
-	},
 	computed: {
 		downloads() {
 			return this.addon.files.filter((el) => el.use === "download");
@@ -155,18 +104,8 @@ export default defineNuxtComponent({
 		reel() {
 			return [this.header, ...this.screenshots];
 		},
-		currentImage() {
-			return this.reel[this.currentImageIndex];
-		},
 		dateTooltip() {
 			return exactDate(this.addon.last_updated, DateTime.DATETIME_MED);
-		},
-	},
-	watch: {
-		currentImageIndex(newValue) {
-			// I have genuinely no idea why the ref is an array but this fixes it
-			const img = this.$refs[`reel-${newValue}`][0];
-			img.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
 		},
 	},
 });
@@ -179,39 +118,5 @@ export default defineNuxtComponent({
 	padding: 1rem;
 	// 12 * 2
 	margin-bottom: 24px;
-}
-
-.carousel-container {
-	position: relative;
-}
-
-.btn-modal {
-	position: absolute;
-	top: $padding-card;
-	right: $padding-card;
-}
-
-.reel-container {
-	display: flex;
-	flex-flow: row nowrap;
-	overflow-x: auto;
-	scrollbar-width: none;
-	margin: $padding-card;
-	gap: $padding-card;
-}
-
-.reel-image {
-	border-radius: $border-radius;
-	height: 64px;
-	filter: brightness(0.5);
-	transition: $transition-zoom;
-}
-
-.reel-image.selected {
-	filter: none;
-}
-
-.reel-image.deselected:hover {
-	filter: brightness(1.1);
 }
 </style>
