@@ -7,14 +7,13 @@
 		urls: [
 			{
 				title: "Faithful 32x",
-				background: "https://database.faithfulpack.net/images/branding/site/posters/poster_32.png",
-				src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png",
+				background: "/images/posters/poster_32.png",
+				src: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f32_logo.png",
 			},
 			{
 				title: "Classic Faithful 32x",
-				background:
-					"https://database.faithfulpack.net/images/branding/site/posters/poster_cf32.png",
-				src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png",
+				background: "/images/posters/poster_cf32.png",
+				src: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf32_logo.png",
 			},
 		],
 	};
@@ -26,7 +25,7 @@
 		<h1 class="title middle">
 			<img
 				class="title-image"
-				src="https://database.faithfulpack.net/images/branding/logos/transparent/128/mods_logo.png"
+				src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/mods_logo.png"
 				alt="Mods"
 			/><span class="h1 bold">{$t("modding.title")}</span>
 		</h1>

@@ -132,6 +132,6 @@
 <!-- Only way to import scss for specific page on +error.svelte page -->
 {#if err}
 	<style lang="scss">
-		@import "../css/error.scss";
+		@use "../css/error.scss" as *;
 	</style>
 {/if}

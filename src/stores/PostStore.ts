@@ -11,7 +11,7 @@ interface Post {
 	title: string;
 	permalink: string;
 	date: string;
-	headerImg?: string;
+	header_img?: string;
 	id: string;
 	description: string;
 	downloads: Object;

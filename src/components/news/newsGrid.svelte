@@ -7,7 +7,7 @@
 
 	postStore.set(undefined);
 	onMount(() => {
-		fetch("https://api.faithfulpack.net/v2/posts")
+		fetch("https://api.faithfulpack.net/v2/posts/approved")
 			.then((res) => res.json())
 			.then((data) => {
 				postStore.set(data);
@@ -28,16 +28,12 @@
 	{:else}
 		{#each $posts as post}
 			<a class="card img-card" rel="noopener" href={post.permalink}>
-				{#if post.headerImg}
-					<img src={post.headerImg} loading="lazy" alt={post.title} />
-				{:else}
-					<img
-						src="https://database.faithfulpack.net/images/branding/backgrounds/forest.png"
-						loading="lazy"
-						alt={post.title}
-					/>
-				{/if}
-
+				<img
+					src={post.header_img ||
+						"https://database.faithfulpack.net/images/website/posts/placeholder.jpg"}
+					loading="lazy"
+					alt={post.title}
+				/>
 				<h3>{post.title}</h3>
 			</a>
 		{/each}

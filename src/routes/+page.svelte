@@ -9,33 +9,31 @@
 			[{ href: "/faithful32x", title: SEE_MORE }],
 			[{ href: "/faithful64x", title: SEE_MORE }],
 			[
-				{ href: "/classicfaithful32xjappa", title: "New Textures (Jappa)" },
-				{ href: "/classicfaithful32xprogrammerart", title: "Classic Textures (PA)" },
+				{ href: "/classic32x", title: "New Textures (Jappa)" },
+				{ href: "/classic32x-progartprogrammerart", title: "Classic Textures (PA)" },
 			],
-			[{ href: "/classicfaithful64x", title: SEE_MORE }],
+			[{ href: "/classic64x", title: SEE_MORE }],
 		],
 		urls: [
 			{
 				title: "Faithful 32x",
-				background: "https://database.faithfulpack.net/images/branding/site/posters/poster_32.png",
-				src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png",
+				background: "/images/posters/poster_32.png",
+				src: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f32_logo.png",
 			},
 			{
 				title: "Faithful 64x",
-				background: "https://database.faithfulpack.net/images/branding/site/posters/poster_64.png",
-				src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f64_logo.png",
+				background: "/images/posters/poster_64.png",
+				src: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f64_logo.png",
 			},
 			{
 				title: "Classic Faithful 32x",
-				background:
-					"https://database.faithfulpack.net/images/branding/site/posters/poster_cf32.png",
-				src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png",
+				background: "/images/posters/poster_cf32.png",
+				src: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf32_logo.png",
 			},
 			{
 				title: "Classic Faithful 64x",
-				background:
-					"https://database.faithfulpack.net/images/branding/site/posters/poster_cf64.png",
-				src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/cf64_logo.png",
+				background: "/images/posters/poster_cf64.png",
+				src: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf64_logo.png",
 			},
 		],
 	};
@@ -44,15 +42,13 @@
 		urls: [
 			{
 				title: "Add-ons",
-				background:
-					"https://database.faithfulpack.net/images/branding/site/posters/poster_addons.png",
-				src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/addons_logo.png",
+				background: "/images/posters/poster_addons.png",
+				src: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/add_ons_logo.png",
 			},
 			{
 				title: "Mod Support",
-				background:
-					"https://database.faithfulpack.net/images/branding/site/posters/poster_mods.png",
-				src: "https://database.faithfulpack.net/images/branding/logos/transparent/256/mods_logo.png",
+				background: "/images/posters/poster_mods.png",
+				src: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/mods_logo.png",
 			},
 		],
 	};

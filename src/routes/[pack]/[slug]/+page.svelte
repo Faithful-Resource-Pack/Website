@@ -47,10 +47,14 @@
 					<h2 class="text-center">Download</h2>
 				{/if}
 				{#each Object.entries(data.downloads) as [title, items]}
-					<h3 class="my-3 text-center">{title}</h3>
-					{#each items as item}
-						<DownloadButton href={item.url} text={item.name} />
-					{/each}
+					{#if typeof items === "string"}
+						<DownloadButton href={items} text={title} />
+					{:else}
+						<h3 class="my-3 text-center">{title}</h3>
+						{#each Object.entries(items) as [text, href]}
+							<DownloadButton {href} {text} />
+						{/each}
+					{/if}
 				{/each}
 				<div class="card card-body">
 					<li>Published {data.date}</li>
@@ -58,11 +62,11 @@
 			</div>
 		{/if}
 		<div class={data.downloads ? "post-details-right" : ""}>
-			{#if data.headerImg}
+			{#if data.header_img}
 				<img
 					id="post-header-img"
 					class="fancy-card-1x card"
-					src={data.headerImg}
+					src={data.header_img}
 					alt={data.title}
 				/>
 			{/if}

@@ -19,7 +19,7 @@
 		<h1 class="title middle">
 			<img
 				class="title-image"
-				src="https://database.faithfulpack.net/images/branding/logos/transparent/128/addons_logo.png"
+				src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/add_ons_logo.png"
 				alt="Add-ons"
 			/><span class="h1 bold">Add-ons</span>
 		</h1>

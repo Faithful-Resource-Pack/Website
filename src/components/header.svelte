@@ -17,32 +17,34 @@
 
 	const PROJECTS = [
 		{
-			image: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f32_logo.png",
+			image:
+				"https://database.faithfulpack.net/images/branding/logos/transparent/original/f32_logo.png",
 			text: "Faithful 32x",
 			link: "/faithful32x",
 		},
 		{
-			image: "https://database.faithfulpack.net/images/branding/logos/transparent/256/f64_logo.png",
+			image:
+				"https://database.faithfulpack.net/images/branding/logos/transparent/original/f64_logo.png",
 			text: "Faithful 64x",
 			link: "/faithful64x",
 		},
 		{
 			image:
-				"https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32_logo.png",
+				"https://database.faithfulpack.net/images/branding/logos/transparent/original/cf32j_logo.png",
 			text: "Classic Faithful 32x\nJappa",
-			link: "/classicfaithful32xjappa",
+			link: "/classic32x",
 		},
 		{
 			image:
-				"https://database.faithfulpack.net/images/branding/logos/transparent/256/cf32pa_logo.png",
+				"https://database.faithfulpack.net/images/branding/logos/transparent/original/cf32_logo.png",
 			text: "Classic Faithful 32x\nProgrammer Art",
-			link: "/classicfaithful32xprogrammerart",
+			link: "/classic32x-progartprogrammerart",
 		},
 		{
 			image:
-				"https://database.faithfulpack.net/images/branding/logos/transparent/256/cf64_logo.png",
+				"https://database.faithfulpack.net/images/branding/logos/transparent/original/cf64_logo.png",
 			text: "Classic Faithful 64x",
-			link: "/classicfaithful64x",
+			link: "/classic64x",
 		},
 	];
 

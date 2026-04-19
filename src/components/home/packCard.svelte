@@ -7,15 +7,13 @@
 	export let src: string;
 
 	export let links: CardLink[];
-
-	$: styles = src.includes("cf") ? "transform: scale(0.8)" : "";
 </script>
 
 <div class="pack-card">
 	<div class="bg-container">
 		<img class="bg" src={background} alt={title} />
 	</div>
-	<img class="image" {src} alt={title} style={styles} />
+	<img class="image" {src} alt={title} />
 	<h2 class="text-center">{title}</h2>
 
 	<ul>
