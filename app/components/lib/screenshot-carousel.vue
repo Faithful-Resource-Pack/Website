@@ -98,7 +98,7 @@ export default defineNuxtComponent({
 .reel-container {
 	display: flex;
 	flex-flow: row nowrap;
-	overflow-x: auto;
+	overflow: auto hidden;
 	scrollbar-width: none;
 	margin: $padding-card;
 	gap: $padding-card;
