@@ -6,7 +6,7 @@
 			<!-- don't show arrows if there's only a header -->
 			<v-carousel
 				v-model="currentImageIndex"
-				:show-arrows="sources.length > 1 ? 'hover' : false"
+				:show-arrows="multiple ? 'hover' : false"
 				hide-delimiters
 				theme="dark"
 				height="auto"
@@ -23,12 +23,13 @@
 				<v-icon icon="mdi-fullscreen" />
 			</button>
 		</div>
-		<div v-if="sources.length > 1" class="reel-container">
+		<div v-if="multiple" class="reel-container">
 			<!-- buttons make it tab-selectable -->
 			<button v-for="(src, i) in sources" :key="src" class="flex-0-0" @click="selectImage(src)">
 				<img
 					:ref="`reel-${i}`"
 					:src
+					loading="eager"
 					class="reel-image zoom-hitbox zoom-affected"
 					:class="i === currentImageIndex ? 'selected' : 'deselected'"
 				/>
@@ -70,6 +71,9 @@ export default defineNuxtComponent({
 	computed: {
 		currentImage() {
 			return this.sources[this.currentImageIndex];
+		},
+		multiple() {
+			return this.sources.length > 1;
 		},
 	},
 	watch: {

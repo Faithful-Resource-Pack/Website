@@ -2,7 +2,7 @@
 	<v-dialog v-model="modalOpened" :max-width="$vuetify.display.mdAndUp ? '80vw' : undefined">
 		<v-carousel
 			v-model="currentImageIndex"
-			:show-arrows="sources.length > 1"
+			:show-arrows="multiple"
 			hide-delimiters
 			theme="dark"
 			height="auto"
@@ -14,7 +14,7 @@
 			<v-icon icon="mdi-close" />
 		</button>
 		<!-- the default delimiters are genuinely hideous so it's reimplemented here -->
-		<div class="delimiters ga-n5">
+		<div v-if="multiple" class="delimiters ga-n5">
 			<v-btn
 				v-for="(src, i) in sources"
 				:key="src"
@@ -26,7 +26,8 @@
 				<v-icon
 					icon="mdi-circle-medium"
 					size="16px"
-					:class="currentImageIndex === i ? 'selected' : 'deselected'"
+					class="delimiter-dot"
+					:class="currentImageIndex === i && 'selected'"
 				/>
 			</v-btn>
 		</div>
@@ -56,6 +57,11 @@ export default defineNuxtComponent({
 			modalOpened: false,
 			currentImageIndex: 0,
 		};
+	},
+	computed: {
+		multiple() {
+			return this.sources.length > 1;
+		},
 	},
 	watch: {
 		open(n) {
@@ -112,10 +118,15 @@ export default defineNuxtComponent({
 	}
 }
 
-.selected {
-	color: white;
-}
-.deselected {
+.delimiter-dot {
 	color: rgba(white, 0.3);
+	transition: $transition-button;
+}
+.delimiter-dot:not(.selected):hover,
+.delimiter-dot:not(.selected):focus {
+	color: rgba(white, 0.7);
+}
+.delimiter-dot.selected {
+	color: white;
 }
 </style>
