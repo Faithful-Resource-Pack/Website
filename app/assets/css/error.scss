@@ -11,6 +11,8 @@ $bg-end: #120E19;
 		background: transparent;
 	}
 	header {
+		// disable sticky header since it's transparent (text bleeds through on mobile)
+		position: static !important;
 		box-shadow: none !important;
 	}
 	// make page a bit shorter (no need for bottom padding)
