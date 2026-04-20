@@ -74,6 +74,7 @@ img[src$=".jpg"] {
 	background-image: $bg-light-url !important;
 	background-repeat: repeat !important;
 	background-blend-mode: multiply;
+	box-shadow: $shadow-card !important;
 }
 
 // make text a bit more transparent than title (why is this so hard to do)
