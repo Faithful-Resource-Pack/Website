@@ -1,7 +1,29 @@
 <template>
-	<v-alert v-if="post.discontinued" title="This project has been discontinued!" type="error">
+	<v-alert
+		v-if="post.discontinued"
+		title="This project has been discontinued!"
+		type="error"
+		class="my-3"
+	>
 		This project has been deprecated and is no longer being actively worked on. Please contact a
-		staff member on Discord if you're interested in maintaining it!
+		staff member on Discord if you're interested in maintaining it.
+	</v-alert>
+	<v-alert
+		v-if="post.permalink.includes('compliance')"
+		title="This project has been renamed!"
+		type="info"
+		class="my-3"
+	>
+		Faithful was briefly known as Compliance due to the current team starting as a breakaway project
+		from the old fraudulent Faithful leadership, which maintained and monetized the pack from
+		2016–2020 without permission. See
+		<nuxt-link
+			to="/faq/history#Who%20is%20Kraineff,%20who%20is%20Vattic,%20and%20why%20are%20there%20two%20Faithfuls?"
+			class="text-white text-decoration-underline"
+		>
+			this FAQ answer</nuxt-link
+		>
+		for more information about Faithful's history.
 	</v-alert>
 	<div v-if="post.title" class="text-center my-5">
 		<h1 v-if="mainTitle" class="title mb-2">{{ mainTitle }}</h1>
