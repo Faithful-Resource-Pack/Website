@@ -21,8 +21,6 @@ table {
 }
 input, button, select, optgroup, textarea {
 	margin: 0;
-	font-family: inherit;
-	font-size: inherit;
 	line-height: inherit;
 }
 button, input {
@@ -63,7 +61,7 @@ img[src$=".jpg"] {
 	background: $bg-dark !important;
 }
 
-// looks way too close to regular text with faithful font
+// for some reason it looks tiny with the faithful font
 .v-alert-title {
 	font-size: 1.75rem !important;
 	margin-bottom: 0.5rem;
@@ -80,8 +78,10 @@ img[src$=".jpg"] {
 // make text a bit more transparent than title (why is this so hard to do)
 .v-alert--variant-flat .v-alert__content {
 	color: $text-colored-banner;
+	font-family: $font-body;
 }
 .v-alert--variant-flat .v-alert-title {
+	font-family: $font-display;
 	color: white;
 }
 

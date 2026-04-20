@@ -61,6 +61,10 @@ $transition-zoom: all 0.35s ease;
 $transition-button: all 0.15s ease; // bootstrap + about page
 $transition-navigation: all 0.1s ease;
 
+/** fonts */
+$font-display: Faithful;
+$font-body: Roboto, sans-serif;
+
 /** breakpoints (I have no idea where they came from) */
 $breakpoint-xs: 576px;
 $breakpoint-sm: 760px;
