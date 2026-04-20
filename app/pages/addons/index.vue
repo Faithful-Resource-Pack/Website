@@ -254,7 +254,7 @@ export default defineNuxtComponent({
 	watch: {
 		search(value) {
 			if (this.$route.query.search !== value) {
-				this.$router.push({ query: value ? { search: value } : null });
+				this.$router.replace({ query: value ? { search: value } : null });
 				this.shownResults = DISPLAYED_ADDONS_COUNT; // reset results
 			}
 		},
