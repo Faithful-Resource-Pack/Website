@@ -66,11 +66,10 @@ export default defineNuxtComponent({
 	methods: {
 		// wraps compileMarkdown to handle some discord markdown weirdness
 		discordMarkdown(text) {
-			// removes channel links
-			const cleanedText = text.replace(
-				/in <#\d+>/,
-				"on our [Discord](https://discord.gg/sN9YRQbBv7)",
-			);
+			// removes channel links and fix newlines (marked collapses them by default)
+			const cleanedText = text
+				.replace(/in <#\d+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)")
+				.replace("\n", "<br>");
 			return compileMarkdown(cleanedText);
 		},
 		scrollToFaq(faq) {
