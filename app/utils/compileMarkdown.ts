@@ -5,13 +5,11 @@ import removeMd from "remove-markdown";
 /**
  * Compiles (or removes) and sanitizes markdown text.
  * @param rawText - Unsanitized markdown text
- * @param removeMarkdown - Whether to remove md formatting or compile it
+ * @param options - Markdown options
  * @returns Sanitized and compiled HTML
  */
-export default function compileMarkdown(rawText: string, removeMarkdown = false) {
+export default function compileMarkdown(rawText: string, { strip = false, breaks = false } = {}) {
 	if (!rawText) return "";
-	const parsed = removeMarkdown
-		? removeMd(rawText)
-		: marked(rawText, { async: false, breaks: true });
+	const parsed = strip ? removeMd(rawText) : marked(rawText, { async: false, breaks });
 	return sanitize(parsed);
 }

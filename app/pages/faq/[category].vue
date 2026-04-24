@@ -71,7 +71,7 @@ export default defineNuxtComponent({
 				/in <#\d+>/g,
 				"on our [Discord](https://discord.gg/sN9YRQbBv7)",
 			);
-			return compileMarkdown(cleanedText);
+			return compileMarkdown(cleanedText, { breaks: true });
 		},
 		scrollToFaq(faq) {
 			const index = this.faqs.findIndex((f) => f.question === faq);

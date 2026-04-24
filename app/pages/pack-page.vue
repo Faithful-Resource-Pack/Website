@@ -29,7 +29,7 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 			{{ warning.split("\n")?.[1] || "" }}
 		</v-alert>
 		<!-- eslint-disable-next-line vue/no-v-html -->
-		<div class="card card-body body-text" v-html="compileMarkdown(description)" />
+		<div class="card card-body body-text" v-html="compileMarkdown(description, { breaks: true })" />
 
 		<template v-if="action">
 			<br />

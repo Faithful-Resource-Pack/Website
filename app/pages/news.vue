@@ -19,7 +19,7 @@
 		<div class="card-body body-text d-flex flex-column">
 			<h2 class="news-title">{{ firstPost.title }}</h2>
 			<p class="news-preview">
-				{{ compileMarkdown(firstPost.description, true) }}
+				{{ compileMarkdown(firstPost.description, { strip: true }) }}
 			</p>
 			<span class="mt-auto h5">{{ exactDate(firstPost.date) }}</span>
 		</div>
