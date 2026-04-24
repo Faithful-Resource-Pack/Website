@@ -103,3 +103,8 @@ img[src$=".jpg"] {
 .v-dialog .v-overlay__content {
 	max-height: 100% !important;
 }
+
+// for some reason this overrides text theming on the faq page otherwise
+.v-expansion-panel {
+	color: unset !important;
+}

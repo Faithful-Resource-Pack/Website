@@ -17,13 +17,13 @@
 		"docker:alive": "curl -s -o /dev/null -w \"%{http_code} %{content_type}\" http://localhost:3000 | grep -q \"^200 text/html\""
 	},
 	"dependencies": {
-		"isomorphic-dompurify": "^3.9.0",
+		"isomorphic-dompurify": "^3.10.0",
 		"luxon": "^3.7.2",
 		"marked": "^18.0.2",
 		"nuxt": "^4.4.2",
 		"remove-markdown": "^0.6.3",
 		"sass": "^1.99.0",
-		"vue": "^3.5.32",
+		"vue": "^3.5.33",
 		"vuetify-nuxt-module": "^0.19.5",
 		"yaml": "^2.8.3"
 	},

@@ -10,6 +10,8 @@ import removeMd from "remove-markdown";
  */
 export default function compileMarkdown(rawText: string, removeMarkdown = false) {
 	if (!rawText) return "";
-	const parsed = removeMarkdown ? removeMd(rawText) : marked(rawText, { async: false });
+	const parsed = removeMarkdown
+		? removeMd(rawText)
+		: marked(rawText, { async: false, breaks: true });
 	return sanitize(parsed);
 }

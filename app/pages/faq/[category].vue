@@ -15,7 +15,7 @@
 				</template>
 				<template #text>
 					<!-- eslint-disable-next-line vue/no-v-html -->
-					<div class="faq-answer body-text" v-html="discordMarkdown(answer)" />
+					<div class="body-text" v-html="discordMarkdown(answer)" />
 				</template>
 			</v-expansion-panel>
 		</v-expansion-panels>
@@ -66,10 +66,10 @@ export default defineNuxtComponent({
 	methods: {
 		// wraps compileMarkdown to handle some discord markdown weirdness
 		discordMarkdown(text) {
-			// removes channel links and fix newlines (marked collapses them by default)
+			// removes channel links and fix newlines (marked collapses single newlines by default)
 			const cleanedText = text
-				.replace(/in <#\d+>/, "on our [Discord](https://discord.gg/sN9YRQbBv7)")
-				.replace("\n", "<br>");
+				.replace(/in <#\d+>/g, "on our [Discord](https://discord.gg/sN9YRQbBv7)")
+				// .replace(/\n/g, "\n\n");
 			return compileMarkdown(cleanedText);
 		},
 		scrollToFaq(faq) {
