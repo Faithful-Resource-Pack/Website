@@ -1,40 +1,29 @@
 <template>
 	<h1 class="title my-5 text-center">Faithful News</h1>
 
-	<div v-if="!posts.length" class="basic-grid top-news pb-5">
-		<v-skeleton-loader type="image" theme="dark" />
-		<div>
+	<div v-if="!posts.length" class="card top-news">
+		<v-skeleton-loader type="image" :theme />
+		<div class="card-body d-flex flex-column">
 			<v-skeleton-loader type="article" :theme />
 		</div>
 	</div>
-	<div v-else class="basic-grid top-news pb-5">
-		<nuxt-link :to="firstPost.permalink" aria-label="Latest post">
-			<img
-				class="card zoom-hitbox zoom-affected"
-				:src="
-					firstPost.header_img ||
-					'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'
-				"
-				alt="Latest post's header image"
-				loading="lazy"
-			/>
-		</nuxt-link>
-		<div class="body-text">
-			<nuxt-link :to="firstPost.permalink" class="underline-hover">
-				<h2 class="h1">{{ firstPost.title }}</h2>
-			</nuxt-link>
+	<nuxt-link v-else class="card top-news" :to="firstPost.permalink">
+		<img
+			:src="
+				firstPost.header_img ||
+				'https://database.faithfulpack.net/images/website/posts/placeholder.jpg'
+			"
+			alt="Latest post's header image"
+			loading="lazy"
+		/>
+		<div class="card-body body-text d-flex flex-column">
+			<h2 class="news-title">{{ firstPost.title }}</h2>
 			<p class="news-preview">
 				{{ compileMarkdown(firstPost.description, true) }}
 			</p>
-			<nuxt-link
-				class="btn block btn-secondary"
-				:to="firstPost.permalink"
-				aria-label="Go to full post"
-			>
-				Read More
-			</nuxt-link>
+			<span class="mt-auto h5">{{ exactDate(firstPost.date) }}</span>
 		</div>
-	</div>
+	</nuxt-link>
 
 	<hr />
 
@@ -104,7 +93,11 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
 
+$news-display-height: 3;
+
+// don't add a gap because card-body comes with padding already
 .top-news {
+	display: grid;
 	grid-template-columns: 1fr;
 }
 
@@ -114,27 +107,32 @@ export default defineNuxtComponent({
 	}
 }
 
-* {
-	// must use regular css variable (scss inlines variables when compiled)
-	--news-display-height: 5;
-	@media screen and (max-width: $breakpoint-xl) {
-		--news-display-height: 3;
-	}
-	@media screen and (max-width: $breakpoint-md) {
-		--news-display-height: 1;
-	}
-	@media screen and (max-width: $breakpoint-sm) {
-		--news-display-height: 4;
-	}
+.top-news:hover .news-title {
+	text-decoration: underline;
 }
 
 // https://css-tricks.com/line-clampin/
 .news-preview {
 	display: -webkit-box;
-	height: calc(1.5 * var(--news-display-height));
+	height: calc(1.5 * $news-display-height);
 	overflow: hidden;
-	line-clamp: var(--news-display-height);
-	-webkit-line-clamp: var(--news-display-height);
+	line-clamp: $news-display-height;
+	-webkit-line-clamp: $news-display-height;
 	-webkit-box-orient: vertical;
+}
+
+* {
+	// hide before wrapping
+	@media screen and (max-width: $breakpoint-md) {
+		.news-preview {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: $breakpoint-sm) {
+		.news-preview {
+			display: -webkit-box;
+		}
+	}
 }
 </style>
