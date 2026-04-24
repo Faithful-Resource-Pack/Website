@@ -64,7 +64,7 @@
 		</v-row>
 		<div v-if="loading" class="res-grid-3">
 			<div v-for="i in 5" :key="i" class="card addon-skeleton-card">
-				<v-skeleton-loader type="image, subtitle, text, list-item-avatar" theme="dark" />
+				<v-skeleton-loader type="image, subtitle, text, list-item-avatar" :theme />
 			</div>
 		</div>
 		<div v-else class="res-grid-3">
@@ -104,6 +104,7 @@ export default defineNuxtComponent({
 		AddonCard,
 		CustomChip,
 	},
+	inject: ["theme"],
 	setup() {
 		definePageMeta({
 			name: "Add-ons",

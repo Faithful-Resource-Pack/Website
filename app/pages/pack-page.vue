@@ -44,7 +44,7 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 			<div class="res-grid-3">
 				<template v-if="!posts.length">
 					<div v-for="i in limit" :key="i" class="card pb-3">
-						<v-skeleton-loader type="image, subtitle, text" theme="dark" />
+						<v-skeleton-loader type="image, subtitle, text" :theme />
 					</div>
 				</template>
 				<template v-else>
@@ -68,7 +68,7 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 			<div class="res-grid-3">
 				<template v-if="!posts.length">
 					<div v-for="i in limit" :key="i" class="card pb-3">
-						<v-skeleton-loader type="image, subtitle, text" theme="dark" />
+						<v-skeleton-loader type="image, subtitle, text" :theme />
 					</div>
 				</template>
 				<template v-else>
@@ -106,6 +106,7 @@ export default defineNuxtComponent({
 		PostCard,
 		AddonCard,
 	},
+	inject: ["theme"],
 	props: {
 		name: {
 			type: String,

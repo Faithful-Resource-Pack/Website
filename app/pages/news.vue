@@ -40,7 +40,7 @@
 
 	<div v-if="!posts.length" class="res-grid-3">
 		<div v-for="i in 5" :key="i" class="card">
-			<v-skeleton-loader type="image, subtitle, text" theme="dark" class="pb-3" />
+			<v-skeleton-loader type="image, subtitle, text" :theme class="pb-3" />
 		</div>
 	</div>
 	<div v-else>
