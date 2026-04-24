@@ -1,29 +1,32 @@
-import { DateTime } from "luxon";
+import { DateTime, SystemZone } from "luxon";
 
-export type DateLike = number | string | Date;
+/**
+ * Convert a date-like object into a Luxon DateTime object with decent timezone handling
+ * @param date - ISO Date string or Unix timestamp
+ * @returns Luxon DateTime object
+ */
+function makeLuxonDate(date: string | number): DateTime {
+	return typeof date === "string" && Number.isNaN(Number(date))
+		? DateTime.fromISO(date, { zone: new SystemZone() })
+		: DateTime.fromMillis(Number(date));
+}
 
 /**
  * Convert a date-like object into a formatted exact date
- * @param dateObj - Date-like object to convert
+ * @param date - Date string or Unix timestamp
  * @param style - Luxon formatting style to use
  * @returns Precise date string
  */
-export function exactDate(dateObj: DateLike, style = DateTime.DATE_MED) {
-	const date = new Date(dateObj);
-	return DateTime.fromJSDate(date).toLocaleString(style, {
-		locale: "en",
-	});
+export function exactDate(date: string | number, style = DateTime.DATE_MED): string {
+	// fixes one half of the sentence being translated
+	return makeLuxonDate(date).toLocaleString(style, { locale: "en" });
 }
 
 /**
  * Convert a date-like object into an English relative date
- * @param dateObj - Date-like object to convert
+ * @param dateObj - Date string or Unix timestamp
  * @returns Relative date string
  */
-export function relativeDate(dateObj: DateLike) {
-	const date = new Date(dateObj);
-	return DateTime.fromJSDate(date).toRelative({
-		// fixes one half of the sentence being translated
-		locale: "en",
-	});
+export function relativeDate(date: string | number) {
+	return makeLuxonDate(date).toRelative({ locale: "en" });
 }
