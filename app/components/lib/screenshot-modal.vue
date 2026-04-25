@@ -8,7 +8,7 @@
 			height="auto"
 			:width="$vuetify.display.mdAndUp ? '80vw' : undefined"
 		>
-			<v-carousel-item v-for="src in sources" :key="src" :src />
+			<v-carousel-item v-for="src in sources" :key="src" :src class="header-img" />
 		</v-carousel>
 		<button class="btn btn-secondary btn-icon btn-close" @click="$emit('update:open', false)">
 			<v-icon icon="mdi-close" />
