@@ -8,6 +8,7 @@
 		>
 			<img
 				class="user-header-image"
+				:class="user.uuid && 'zoom-hitbox zoom-affected'"
 				:src="`https://vzge.me/face/128/${getVisageSlug(user)}`"
 				:title="user.uuid"
 			/>
