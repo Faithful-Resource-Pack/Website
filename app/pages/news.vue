@@ -76,7 +76,8 @@ export default defineNuxtComponent({
 			if (!this.posts) return [];
 			return Object.entries(
 				this.posts.slice(1).reduce((acc, cur) => {
-					const year = new Date(cur.date).getFullYear();
+					// don't use Date() since it's not timezone aware
+					const year = cur.date.split("-")[0];
 					acc[year] ||= [];
 					acc[year].push(cur);
 					return acc;
