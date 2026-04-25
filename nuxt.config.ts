@@ -44,7 +44,7 @@ export default defineNuxtConfig({
 				{
 					rel: "stylesheet",
 					href: "https://database.faithfulpack.net/fonts/Faithful_v1/stylesheet.css",
-				}
+				},
 			],
 			noscript: [
 				{
