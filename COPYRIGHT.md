@@ -8,12 +8,6 @@ The following files are licensed as follows:
 
 - public/image/*
 
-The following files are licensed as follows:
-
-> SIL Open Font License https://opensource.org/license/ofl-1-1/
-
-- public/font/Faithful.ttf
-
 ## External logos
 
 The following files are owned by their respective copyright holders and must be used within each of their Brand Guidelines:
@@ -21,3 +15,4 @@ The following files are owned by their respective copyright holders and must be 
 - public/image/addons/optifine.png
 - public/icons/curseforge.svg
 - public/icons/modrinth.svg
+- public/icons/discord.svg

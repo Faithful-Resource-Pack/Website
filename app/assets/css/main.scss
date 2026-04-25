@@ -5,11 +5,6 @@
 @use "./lib/cards" as *;
 @use "./lib/grids" as *;
 
-@font-face {
-	font-family: Faithful;
-	src: url("/font/Faithful.ttf") format("truetype");
-}
-
 /* Basic layout */
 
 /*!
