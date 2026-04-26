@@ -20,10 +20,6 @@
 .card-body > :last-child {
 	margin-bottom: 0;
 }
-.body-text p, .body-text li {
-	font-family: $font-body;
-}
-
 .card {
 	// margins are way too big by default
 	.v-skeleton-loader__text {

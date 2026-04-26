@@ -129,11 +129,12 @@ hr {
 .block {
 	width: 100%;
 }
-
+.body-text p, .body-text li {
+	font-family: $font-body;
+}
 .header-img {
 	width: 100%;
 }
-
 .card, .header-img {
 	overflow: hidden;
 	box-shadow: $shadow-card;
