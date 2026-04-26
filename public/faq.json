@@ -1,0 +1,205 @@
+[
+    {
+        "question": "What is Faithful? How did it come to be?",
+        "answer": "Faithful is a collection of Minecraft resource packs that recreate its textures in higher resolutions while staying true to their original look and feel.\nThe first project, Faithful 32x, was originally started by Minecraft Forum user Vattic in 2010, and over the years, it grew in popularity and has since amassed a large network of volunteer artists and developers. Today, Faithful is an entirely open-sourced project led primarily by volunteer managers, and spans several projects across multiple resolutions and styles.",
+        "keywords": ["faithful", "about"],
+        "categories": ["history"]
+    },
+    {
+        "question": "What were the Compliance and Emulated Vattic projects?",
+        "answer": "Faithful was briefly known as Compliance between late 2020 and early 2022 due to the current team starting as a breakaway project from the old fraudulent Faithful leadership, which maintained and monetized the pack from 2016–2020 without permission. After the situation was brought to light, Compliance re-took the Faithful name and rebranded, alongside the related Emulated Vattic project which joined Faithful to become Classic Faithful.\nEssentially, Faithful and Compliance are the same project, and Emulated Vattic and Classic Faithful are also the same project.",
+        "keywords": ["compliance", "emulated vattic", "em", "rebrand"],
+        "categories": ["history"]
+    },
+    {
+        "question": "Who is Kraineff, who is Vattic, and why were there two Faithfuls?",
+        "answer": "Vattic, the original creator of Faithful 32x32, left the project in 2016 following real-life difficulties. An artist named Kraineff (formerly xMrVizzy) soon took over, claiming Vattic gave him ownership.\nIn November 2020, Kraineff's history of poor management culminated in an exodus of Faithful contributors, who formed their own community-run project called Compliance. Soon after, these contributors gained contact with Vattic, confirming that Kraineff had falsely claimed ownership and moreover had been profiting off a stolen name for years. With Vattic's blessing, Compliance rebranded to Faithful despite Kraineff refusing to give up the name, thus leading to both projects sharing the same name.\nFor more details, watch AntVenom's video [here](https://www.youtube.com/watch?v=kgZYBTlwaVs).",
+        "keywords": ["kraineff", "vattic", "vizzy", "xmrvizzy"],
+        "categories": ["history"]
+    },
+    {
+        "question": "Where can I download Faithful?",
+        "answer": "Each pack has its own page where downloads and articles are linked. These pages can be found using the links here:\n- [Faithful 32x](https://faithfulpack.net/faithful32x)\n- [Faithful 64x](https://faithfulpack.net/faithful64x)\n- [Classic Faithful 32x](https://faithfulpack.net/classic32x)\n- [Classic Faithful 32x Jappa](https://faithfulpack.net/classic32x-jappa)\n- [Classic Faithful 64x Jappa](https://faithfulpack.net/classic64x-jappa)",
+        "keywords": ["downloads", "download"],
+        "categories": ["installation"]
+    },
+    {
+        "question": "How do I install Faithful/any resource pack?",
+        "answer": "We recommend giving [this Minecraft Wiki page](https://minecraft.wiki/w/Tutorials/Loading_a_resource_pack) a read. Add-ons and mod support work in exactly the same way, except by applying them on top of the given base pack rather than alone.",
+        "keywords": ["installation", "install"],
+        "categories": ["installation"]
+    },
+    {
+        "question": "Can Faithful be installed on consoles?",
+        "answer": "There are methods of installing custom resource packs on consoles, but they're very unreliable and change often as it's not officially supported behavior. There's no universal method that will work for everyone and hacky workarounds will probably be needed, sometimes even involving paid file managers. You may have luck searching up methods for an individual console online but results are not guaranteed and may stop working in the future.",
+        "keywords": ["console", "console support", "xbox", "playstation", "ps5", "switch"],
+        "categories": ["installation"]
+    },
+    {
+        "question": "Which Faithful pack is the best?",
+        "answer": "It's a matter of personal preference—no pack is \"better\" than the others since they all aim to accomplish completely different things. The best way to find which pack is your favorite is to simply try all of them and see which one(s) you like the most.",
+        "keywords": ["best", "best pack"],
+        "categories": ["installation", "packs"]
+    },
+    {
+        "question": "Is Faithful available for [Minecraft version/edition]?",
+        "answer": "Each pack is different:\n- Faithful 32x currently supports Bedrock Edition, and Java versions from 1.6 to the latest release, 1.4 and Beta 1.7.\n- Both Classic Faithful 32x packs are also available from 1.6 to the latest release and Bedrock Edition, but are currently not complete for b1.7–1.5.\n- Faithful and Classic Faithful 64x Jappa currently support only the latest Minecraft Java and Bedrock version, and Classic Faithful 64x supports just Java Edition.",
+        "keywords": ["version", "versions"],
+        "categories": ["installation", "packs", "issues"]
+    },
+    {
+        "question": "When will Faithful be available for [Minecraft version]?",
+        "answer": "Since Faithful is a community-driven project, progress is dependent on people submitting textures. This means that there are no hard deadlines for a given pack to be completed for a new version. However, you can usually use an [experimental build](https://database.faithfulpack.net/packs/) of the pack in the mean time, which may include missing textures.\nIf you want to help out with pack progress, read the [Contributor's Handbook](https://docs.faithfulpack.net/pages/manuals/contributor-handbook) and inquire in the pack's respective Discord for more information.",
+        "keywords": ["progress", "update", "new version"],
+        "categories": ["installation", "packs", "issues"]
+    },
+    {
+        "question": "Why am I seeing missing/16x/vanilla textures while using Faithful?",
+        "answer": "You're most likely using an incomplete pack. You can see each pack's completion at the top of the channel list of their respective Discord servers. If you want to help to get rid of these missing textures, you can help us out by making a texture!",
+        "keywords": ["missing textures", "missing texture", "no texture"],
+        "categories": ["issues", "packs"]
+    },
+    {
+        "question": "What happened to Faithful on the Bedrock Edition Marketplace, and will it ever be available again?",
+        "answer": "The version of Faithful 32x previously listed on the Bedrock Marketplace was never official and had been monetizing our stolen work, so we contacted Mojang to remove it.\nUnfortunately, publishing Faithful legitimately on the marketplace is complicated if not impossible due to restrictions surrounding free and contributor-led projects. We would like to eventually release Faithful there if possible, but only if it can remain completely free.",
+        "keywords": ["marketplace", "bedrock"],
+        "categories": ["history", "installation"]
+    },
+    {
+        "question": "What Faithful listings are official?",
+        "answer": "Each pack has listings on our [website](https://faithfulpack.net), [CurseForge](https://www.curseforge.com/members/faithful_resource_pack/projects), [Modrinth](https://modrinth.com/organization/Faithful-Resource-Pack), and [Planet Minecraft](https://www.planetminecraft.com/member/faithful_resource_pack/).\n**Downloads from any other sites are unofficial, unsupported and could be dangerous!** Remember to stay safe on the internet.",
+        "keywords": ["listings", "vendors"],
+        "categories": ["installation", "packs"]
+    },
+    {
+        "question": "What's the difference between Faithful and Classic Faithful?",
+        "answer": "The difference is in the art style, not in the textures that are being upscaled. Faithful has a more modern, detailed approach to redrawing textures, while Classic Faithful attempts to follow Vattic's art style from the original Faithful 32x32 as closely as possible, opting for a more brushed, smooth appearance.",
+        "keywords": [
+            "faithful vs classic faithful",
+            "classic faithful vs faithful",
+            "classic faithful",
+            "cf",
+            "cf difference",
+            "cf vs faithful",
+            "faithful vs cf",
+            "difference"
+        ],
+        "categories": ["installation", "packs"]
+    },
+    {
+        "question": "What are Jappa and Programmer Art textures?",
+        "answer": "JAPPA is the online nickname of Jasper Boerstra, Minecraft's art director and the author of the majority of textures used in versions 1.14 and newer. The \"new\" Minecraft textures are often called Jappa textures in his honour.\nProgrammer Art (oftentimes abbreviated as \"progart\" or \"PA\") is the name given by Mojang and used by the Minecraft artist community for the old textures, used in Minecraft prior to release 1.14. It's also the name of the built-in resource pack featured in newer versions that contains the old textures.\n*Whether a texture is Jappa or Programmer Art is not related to its pixel resolution (e.g. 16x16, 32x, 64x).*",
+        "keywords": ["jappa", "progart", "prog art", "pa"],
+        "categories": ["installation", "packs"]
+    },
+    {
+        "question": "What is the difference between 16x, 32x, and 64x?",
+        "answer": "\"32x\" means the textures, as a base, are 32 by 32 pixels (rather than default's 16 by 16 pixels). \"64x\" means the textures are 64 by 64 pixels. Higher numbers mean higher resolution textures. While these values are technically arbitrary, anything other than powers of two can cause issues in-game.\n*The pixel resolution of the textures aren't related to whether they are \"Jappa\" or \"Programmer Art\".*",
+        "keywords": ["resolution", "16x vs 32x", "32x vs 64x", "16x vs 64x"],
+        "categories": ["installation", "packs"]
+    },
+    {
+        "question": "But I don't like the new Minecraft textures! Faithful Programmer Art when?",
+        "answer": "[Classic Faithful 32x](https://faithfulpack.net/classic32x) is the programmer art counterpart to Faithful, complete with the original textures from 2011 by Vattic. There are plans for a modern Faithful-styled Programmer Art pack in the future, but for the time being all programmer art packs are based on the original Faithful art from that time period.",
+        "keywords": ["faithful programmer art", "faithful progart", "faithful pa"],
+        "categories": ["packs"]
+    },
+    {
+        "question": "Does Faithful offer any resolutions above 64x?",
+        "answer": "The simple answer is no. The amount of effort required for a 128x or 256x pack increases exponentially compared with our highest-supported resolution currently, 64x, and the difference in-game becomes harder and harder to notice. There are \"Faithful\" packs that may have higher resolution textures, but these aren't official or endorsed by us so your mileage may vary.",
+        "keywords": ["faithful 128x", "128x", "uhd", "higher resolution"],
+        "categories": ["installation", "packs"]
+    },
+    {
+        "question": "I've found a bug in Faithful! Where do I report it?",
+        "answer": "Please post any bug reports and/or opinions about the pack in the relevant support channel or report them as an issue on the appropriate GitHub repository.\n[Faithful GitHub](https://github.com/Faithful-Resource-Pack) • [Classic Faithful GitHub](https://github.com/ClassicFaithful)",
+        "keywords": ["bug", "bugs", "issue", "feedback"],
+        "categories": ["issues"]
+    },
+    {
+        "question": "How can I submit a texture to the pack? How does the approval process work?",
+        "answer": "Please read [The Faithful Contributor's Handbook](https://docs.faithfulpack.net/pages/manuals/contributor-handbook).\nTL;DR: To submit textures, consent to the submission terms, then upload your textures to the appropriate Discord submission channel (the file has to have the same name as the default texture), and the bot will take over from there and format it for you. Any text you include with the message will be added as a comment, and people pinged in the comment will be added as co-authors.\nFor a texture to be added to the pack, it must pass a round of community voting (lasting 2 days). If it passes, the texture will be added to the pack in the next update or rolling release.",
+        "keywords": ["submit", "approval", "contribute"],
+        "categories": ["creating"]
+    },
+    {
+        "question": "How can I submit my add-on to the website?",
+        "answer": "On https://webapp.faithfulpack.net/, log in with your Discord account. Using the sidebar, navigate to the \"Upload\" tab in the add-on category. Finally, fill out the form that you're presented with, and when you're finished, click the Submit button. Your add-on will appear on the website when it has been reviewed and approved by a manager.",
+        "keywords": ["submit add-on", "add-on", "addon"],
+        "categories": ["creating"]
+    },
+    {
+        "question": "Does Faithful support mods?",
+        "answer": "Yes, we are currently in an early stage of rebooting Faithful 32x mod support, and many textures for various mods have already been made. For now, you can download what's done via the [Faithful Mods GitHub repository](https://github.com/Faithful-Resource-Pack/Faithful-32x-Mods)—a more convenient mod picker website is planned in the future. Please check out the README file for more information, including how to contribute. You can also talk to others in <#1025645837247848458>.\nMod support for any packs besides Faithful 32x and Classic Faithful 32x is not currently planned (if you want to make textures for them, just ask a manager to set up a new repository).",
+        "keywords": ["mod support", "mods", "mod"],
+        "categories": ["installation"]
+    },
+    {
+        "question": "What happened to the existing Faithful mod support?",
+        "answer": "Mod support textures for Vattic-era Faithful were made by numerous people, and were collected and hosted by a group called the F32Organization. Their website that hosts the textures still exists at http://f32.me/, but goes down often (and has most likely gone down indefinitely at the time of writing). Currently, the most reliable place to get the old Faithful mod textures is [the F32Organization GitHub](https://github.com/F32Organization).\nWe used to host these textures on our website as well, but over time our mod picker broke down, leading to us removing them. When the time is right, we intend to group the old F32Org textures with Classic Faithful 32x and give them a proper mod picker on our website alongside the new Faithful 32x mod support.",
+        "keywords": ["f32", "f32org", "old mod support"],
+        "categories": ["history", "installation"]
+    },
+    {
+        "question": "How do I submit a texture for a mod?",
+        "answer": "You can make a pull request to our [GitHub repository](https://github.com/Faithful-Resource-Pack/Faithful-32x-Mods) with your textures to the correct branch. There are plans in the future to make this easier to do; if you have any trouble with GitHub, please contact a manager.",
+        "keywords": ["submit mod", "mod submit", "add mod"],
+        "categories": ["creating"]
+    },
+    {
+        "question": "CompliBot is offline! What do I do?",
+        "answer": "If one of the bots ever goes offline without previous notice from the developers, please ping __one__ of the online developers (<@360249987927638016> or <@173336582265241601>) and alert them of the issue.",
+        "keywords": ["bot offline", "bot dead", "bot down"],
+        "categories": ["issues"],
+        "discord": true
+    },
+    {
+        "question": "I have found a bug in CompliBot or Wynem and I want to request a fix and/or give feedback, how do I do it?",
+        "answer": "If you find any bugs with CompliBot/CompliBot Submissions or have any requests, you can use the `/feedback` command to send feedback directly to their GitHub issue pages, or make an issue directly on their respective repositories. For Wynem, you can use `e!suggest`.",
+        "keywords": ["bot bug", "bot bugs", "bot issue"],
+        "categories": ["issues"],
+        "discord": true
+    },
+    {
+        "question": "Will Faithful affect my FPS?",
+        "answer": "The short answer is no. While ludicrously high-resolution packs may cause a minor decrease (well above the scope of any Faithful pack), in general shaders or mods are the major graphics-related culprit for causing large amounts of lag, not resource packs. When a resource pack claims to boost FPS, there's a good chance it's completely lying or it will cause a very marginal increase at best.",
+        "keywords": ["fps", "lag", "performance"],
+        "categories": ["installation"]
+    },
+    {
+        "question": "How do I get the translator role?",
+        "answer": "Visit [our Crowdin](https://translate.faithfulpack.net) and see if you can help translate CompliBot or or the Faithful Web App. Once your translations get accepted, ping an online manager to add the role.",
+        "keywords": ["crowdin", "translator", "translation"],
+        "categories": ["creating"]
+    },
+    {
+        "question": "Items appear too big when using Bedrock Edition! What can I do?",
+        "answer": "This is a vanilla bug that's been in Bedrock for over four years ([MCPE-120618](https://bugs.mojang.com/browse/MCPE-120618)) which affects any pack with textures larger than default. A workaround has been found for most items, which is already included in all Faithful packs (any items that are still oversized in Faithful are likely unfixable), but for other packs there's a [standalone fix made by MultiPixel](https://fxtwitter.com/MultiPixelHD/status/1786301423011119359) available.",
+        "keywords": ["big items", "bugged items", "oversized items", "bedrock items"],
+        "categories": ["issues"]
+    },
+    {
+        "question": "Items have rendering issues in the player's hand. What can I do?",
+        "answer": "Chances are that you have the \"Item Stitching Fix\" Vanilla Tweaks pack enabled. This is incompatible with all Faithful packs since it manually defines custom item models based on the vanilla textures, and hence won't work with any custom resource pack. If you want the fix to work for all packs, you can use [this mod](https://modrinth.com/mod/modelfix) instead.",
+        "keywords": ["item edges", "item stitching fix"],
+        "categories": ["issues"]
+    },
+    {
+        "question": "Why do my GUI and items look distorted in-game?",
+        "answer": "This is likely caused by an incompatible GUI scaling factor. Due to the way Minecraft renders menus, you must use a GUI scale divisible by two for 32x packs and a GUI scale divisible by four for 64x packs. There is unfortunately no other way to prevent distortion besides manually adjusting the scale.",
+        "keywords": ["distortion", "distorted", "gui scale", "gui scaling", "gui"],
+        "categories": ["issues"]
+    },
+    {
+        "question": "Does Faithful accept sponsors or paid partners?",
+        "answer": "Simply put, no. Not only do sponsors/advertisements go against our open sourced ethos, but since Faithful has no single owner, any rewards can't be fairly distributed.",
+        "keywords": ["sponsor", "sponsorship", "partners"],
+        "categories": ["creating"]
+    },
+    {
+        "question": "How can I use Faithful textures in my own projects?",
+        "answer": "First, read [our license](https://faithfulpack.net/license) to see that your project meets our terms (no monetization, giving clear credit, etc). If it meets all the terms and conditions, no further permission is required.",
+        "keywords": ["permission", "usage", "distribution", "licence", "license"],
+        "categories": ["creating"]
+    }
+]

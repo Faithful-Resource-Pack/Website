@@ -1,3 +1,10 @@
+<script setup>
+definePageMeta({
+	layout: "no-container",
+	name: "FAQ",
+});
+</script>
+
 <template>
 	<hero-section background="/image/banners/faq.jpg" upspace="100px">
 		<template #title>Frequently Asked Questions</template>
@@ -43,6 +50,8 @@ import DiscordButton from "~/components/lib/discord-button.vue";
 import ChevronLink from "~/components/lib/chevron-link.vue";
 import HeroSection from "~/components/lib/hero-section.vue";
 
+import allFaqs from "../../../public/faq.json";
+
 export default defineNuxtComponent({
 	components: {
 		HeroSection,
@@ -51,6 +60,7 @@ export default defineNuxtComponent({
 	},
 	data() {
 		return {
+			allFaqs: allFaqs.filter((faq) => !faq.discord),
 			search: null,
 			icons: {
 				history: "mdi-book-open-blank-variant",
@@ -67,29 +77,6 @@ export default defineNuxtComponent({
 				creating: "yellow",
 			},
 		};
-	},
-	// for some reason <script setup> doesn't work with asyncData (???)
-	setup() {
-		definePageMeta({
-			layout: "no-container",
-			name: "FAQ",
-		});
-	},
-	async asyncData() {
-		try {
-			const allFaqs = await $fetch(
-				"https://raw.githubusercontent.com/Faithful-Resource-Pack/CompliBot/main/json/faq.json",
-			);
-			return {
-				allFaqs: JSON.parse(allFaqs).filter((faq) => !faq.discord),
-				error: null,
-			};
-		} catch (error) {
-			return {
-				allFaqs: [],
-				error,
-			};
-		}
 	},
 	methods: {
 		goToFaq() {
