@@ -20,11 +20,6 @@
 .card-body > :last-child {
 	margin-bottom: 0;
 }
-// the first layer of lists get indented less than subsequent ones
-.card-body .body-text > ul,
-.card-body.body-text > ul {
-	padding-left: 1rem !important;
-}
 .body-text p, .body-text li {
 	font-family: $font-body;
 }

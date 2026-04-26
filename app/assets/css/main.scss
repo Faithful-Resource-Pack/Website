@@ -14,7 +14,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-/* Important Bootstrap */
+// remove this line to instantly die
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -54,28 +54,13 @@ h5, .h5 {
 h6, .h6 {
 	font-size: 1rem;
 }
-p {
-	margin-top: 0;
-	margin-bottom: 1rem;
-}
-ol, ul, dl {
-	margin-top: 0;
-	margin-bottom: 1rem;
-	list-style-position: inside;
-	// vuetify fix
-	padding-left: 40px !important;
-}
 a {
 	color: $text-link;
 	text-decoration: none;
 	background: transparent;
-}
-a:hover {
-	color: $text-link-hover;
-}
-code {
-	// looks better inline with the faithful font
-	font-size: 80%;
+	&:hover {
+		color: $text-link-hover;
+	}
 }
 hr {
 	margin-top: 1rem;

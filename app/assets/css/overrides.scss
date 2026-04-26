@@ -4,6 +4,19 @@
  * HTML overrides
  */
 
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+ol, ul, dl {
+	margin-top: 0;
+	margin-bottom: 1rem;
+	// vuetify fix
+	padding-left: 40px !important;
+}
+li {
+	margin-bottom: 0.5rem;
+}
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
 	color: inherit;
