@@ -121,3 +121,10 @@ img[src$=".jpg"] {
 .v-expansion-panel {
 	color: unset !important;
 }
+
+// bigger text in solo text fields
+.v-text-field .v-field--variant-solo .v-field__input {
+	// for some reason more side padding makes things more centered
+	padding: 8px 24px !important;
+	font-size: 1.25rem !important;
+}
