@@ -10,7 +10,7 @@
 		<download-line
 			v-for="subItem in items.slice(1)"
 			:key="subItem.file_version"
-			nested
+			class="nested"
 			single
 			:item="subItem"
 			:curse="getCurseFile(subItem)"
@@ -59,3 +59,9 @@ export default defineNuxtComponent({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+.nested {
+	background: rgba(black, 0.2);
+}
+</style>

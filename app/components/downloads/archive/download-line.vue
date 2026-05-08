@@ -1,8 +1,14 @@
 <template>
-	<tr class="highlight-hover" :class="nested ? 'subitem' : ''" @click="toggleChildren">
+	<tr class="highlight-hover" @click="toggleChildren">
 		<td class="show-icon-container">
 			<!-- empty slot rendered if there's only a single download -->
-			<v-icon v-if="!nested && !single" :icon="showIcon" size="x-small" class="show-icon" />
+			<v-icon
+				v-if="!single"
+				:icon="showIcon"
+				size="x-small"
+				class="show-icon"
+				:title="isOpen ? 'Collapse legacy releases' : 'Open legacy releases'"
+			/>
 		</td>
 		<td class="download-details">
 			<span class="download-name">
@@ -34,7 +40,7 @@
 					:key="link"
 					class="btn btn-secondary btn-download"
 					:to="link"
-					:aria-label="`${textFormat[linkType]} download for ${labelText} (${version})`"
+					:title="`${textFormat[linkType]} download for ${labelText} (${version})`"
 				>
 					<media-icon class="dl-icon" :icon="linkType" fallback="download" />
 					<span class="link-text ml-2">{{ textFormat[linkType] || linkType }}</span>
@@ -55,11 +61,6 @@ export default defineNuxtComponent({
 		DownloadBadge,
 	},
 	props: {
-		nested: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
 		single: {
 			type: Boolean,
 			required: false,
@@ -165,16 +166,6 @@ td {
 	}
 }
 
-.download-item {
-	transition: $transition-button;
-}
-
-.subitem {
-	// kinda lazy way of showing old downloads as less significant
-	// todo: do this better lol
-	opacity: 75%;
-}
-
 // match intrinsic card padding on left side (looks more proportional)
 .show-icon-container {
 	padding-right: $padding-card;
@@ -256,11 +247,6 @@ i.dl-icon {
 	}
 	.mobile-details {
 		display: block;
-	}
-
-	// remove hover effect (looks bad on mobile)
-	.download-item:hover {
-		background: transparent;
 	}
 
 	// align icon to download name (looks better than in the middle)
