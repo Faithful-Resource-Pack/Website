@@ -51,7 +51,7 @@ export default defineNuxtComponent({
 .download-table-padding {
 	border-radius: $border-radius;
 	// half of the horizontal padding goes here and half in the highlight
-	padding: $padding-card calc($padding-card / 2);
+	padding: calc($padding-card / 2);
 	overflow-x: auto;
 	box-shadow: $shadow-card;
 }
@@ -64,6 +64,7 @@ export default defineNuxtComponent({
 .download-heading h4 {
 	font-size: 1.25rem;
 	margin-bottom: 0;
+	padding-top: calc($padding-card / 2);
 	padding-bottom: $padding-card;
 }
 
