@@ -40,6 +40,12 @@
 		background: $bg-light-accent;
 	}
 
+	// darker headings
+	.card .v-skeleton-loader__subtitle > .v-skeleton-loader__text,
+	.card .v-skeleton-loader__heading {
+		background: rgba(black, 0.5);
+	}
+
 	/**
 	 * page specific styles
 	 */

@@ -54,6 +54,12 @@
 		background: $bg-dark-accent !important;
 	}
 
+	// brighter headings
+	.card .v-skeleton-loader__subtitle > .v-skeleton-loader__text,
+	.card .v-skeleton-loader__heading {
+		background: rgba(white, 0.5) !important;
+	}
+
 	/**
 	 * page specific styles
 	 */
