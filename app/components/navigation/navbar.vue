@@ -2,7 +2,7 @@
 	<header class="accent-textured">
 		<nav class="navbar-container">
 			<div class="navbar-mobile-container">
-				<nuxt-link class="navbar-mobile-wordmark" to="/" title="Faithful">
+				<nuxt-link to="/" title="Faithful">
 					<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" />
 				</nuxt-link>
 

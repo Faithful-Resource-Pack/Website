@@ -54,13 +54,14 @@ export default defineNuxtComponent({
 	provide() {
 		return {
 			theme: computed(() => this.themeClass?.replace("-theme", "")),
+			isDark: computed(() => this.isDark),
 		};
 	},
 	data() {
 		return {
 			// must be null at first to force rerender when loaded
 			currentTheme: null,
-			themeClass: null,
+			isDark: null,
 			availableThemes: THEMES,
 		};
 	},
@@ -72,21 +73,25 @@ export default defineNuxtComponent({
 			this.currentTheme = keys[nextIndex];
 		},
 	},
+	computed: {
+		themeClass() {
+			if (this.overrideTheme) return `${this.overrideTheme}-theme`;
+			// null falls back to light theme which is more "neutral"
+			return this.isDark ? "dark-theme" : "light-theme";
+		},
+	},
 	beforeMount() {
 		// set theme before client render (can't set on server because localStorage doesn't yet exist)
-		this.currentTheme = this.overrideTheme || localStorage.getItem(THEME_KEY) || "auto";
+		this.currentTheme = localStorage.getItem(THEME_KEY) || "auto";
 	},
 	watch: {
 		currentTheme: {
 			handler(newValue) {
 				if (!Object.keys(this.availableThemes).includes(newValue)) return;
 				if (!this.overrideTheme) localStorage.setItem(THEME_KEY, newValue);
-				const isDark =
+				this.isDark =
 					this.currentTheme === "dark" ||
 					(this.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
-
-				// must be here otherwise it doesn't update before mount (I hate this too)
-				this.themeClass = isDark ? "dark-theme" : "light-theme";
 			},
 			immediate: true,
 		},
