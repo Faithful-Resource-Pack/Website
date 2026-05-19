@@ -3,7 +3,7 @@
 
 	<div v-if="!posts.length" class="card top-news">
 		<v-skeleton-loader type="image" :theme />
-		<div class="card-body d-flex flex-column">
+		<div class="d-flex flex-column">
 			<v-skeleton-loader type="article" :theme />
 		</div>
 	</div>
