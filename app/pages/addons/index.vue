@@ -31,7 +31,7 @@
 		>
 			<h3 class="h5 mb-0">Packs</h3>
 			<div class="px-2" />
-			<custom-chip v-for="pack in packs" :key="pack" :type="pack" filter :value="pack" />
+			<custom-chip v-for="pack in packs" :key="pack.id" :type="pack.name" filter :value="pack.id" />
 		</v-chip-group>
 		<v-chip-group
 			v-model="rawSelectedEditions"
@@ -64,7 +64,11 @@
 		</v-row>
 		<div v-if="loading" class="res-grid-3">
 			<div v-for="i in 5" :key="i" class="card addon-skeleton-card">
-				<v-skeleton-loader type="image, subtitle, text, list-item-avatar" :theme />
+				<v-skeleton-loader
+					data-allow-mismatch="class"
+					type="image, subtitle, text, list-item-avatar"
+					:theme
+				/>
 			</div>
 		</div>
 		<div v-else class="res-grid-3">
@@ -73,6 +77,7 @@
 				:key="addon.id"
 				:addon
 				:users
+				:packs
 				favorite
 				@toggleFav="toggleFav"
 			/>
@@ -81,6 +86,7 @@
 				:key="currentSort + addon.id"
 				:addon
 				:users
+				:packs
 				@toggleFav="toggleFav"
 			/>
 		</div>
@@ -121,11 +127,10 @@ export default defineNuxtComponent({
 		return {
 			addons: [],
 			users: {},
-			// store as object for faster lookup (sorting not needed)
-			fav: {},
-			search: "",
+			packs: [],
 			editions: ["Java", "Bedrock"],
-			packs: ["32x", "64x"],
+			search: "",
+			fav: new Set(),
 			shownResults: DISPLAYED_ADDONS_COUNT,
 			rawSelectedEditions: [],
 			rawSelectedPacks: [],
@@ -135,24 +140,16 @@ export default defineNuxtComponent({
 	},
 	methods: {
 		// used for both search and favorites
-		filterAddons(addons, sortMethod) {
+		filterAddons(addons, sortMethod = null) {
 			if (this.isSearchEmpty) return this.sortAddons(addons, sortMethod);
 			const filtered = addons.filter((addon) => {
 				if (!addon.name.toLowerCase().includes(this.search.toLowerCase())) return false;
 
-				// split types of an addon (pack + edition : pack & edition)
-				// they should really be split but oh well
-				const { localPacks, localEditions } = addon.options.tags.reduce(
-					(acc, tag) => {
-						if (this.packs.includes(tag)) acc.localPacks.push(tag);
-						if (this.editions.includes(tag)) acc.localEditions.push(tag);
-						return acc;
-					},
-					{ localPacks: [], localEditions: [] },
+				const hasPack = addon.options.packs.some((pack) => this.selectedPacks.includes(pack));
+				const hasEdition = addon.options.tags.some((edition) =>
+					this.selectedEditions.includes(edition),
 				);
 
-				const hasEdition = localEditions.some((edition) => this.selectedEditions.includes(edition));
-				const hasPack = localPacks.some((pack) => this.selectedPacks.includes(pack));
 				// must fulfill both criteria
 				return hasEdition && hasPack;
 			});
@@ -160,6 +157,7 @@ export default defineNuxtComponent({
 			return this.sortAddons(filtered, sortMethod);
 		},
 		sortAddons(addons, sortMethod) {
+			if (!sortMethod) return Array.from(addons);
 			return Array.from(addons).sort((a, b) => {
 				const an = a.name.trim().toLowerCase();
 				const bn = b.name.trim().toLowerCase();
@@ -183,9 +181,9 @@ export default defineNuxtComponent({
 			this.search = "";
 		},
 		toggleFav(addon) {
-			if (this.fav[addon.id]) delete this.fav[addon.id];
-			else this.fav[addon.id] = addon;
-			localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(this.fav));
+			if (this.fav.has(addon.id)) this.fav.delete(addon.id);
+			else this.fav.add(addon.id);
+			localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(Array.from(this.fav)));
 		},
 		checkShownItems() {
 			// https://stackoverflow.com/a/5354536/20327257
@@ -210,15 +208,21 @@ export default defineNuxtComponent({
 				return acc;
 			}, {});
 		},
+		async loadPacks() {
+			const { apiURL } = useRuntimeConfig().public;
+			this.packs = await $fetch(`${apiURL}/packs/search?tag=addons`);
+		},
 	},
 	computed: {
 		favAddons() {
-			// can't sort by insertion order since js orders the keys numerically, next best thing
-			return this.filterAddons(Object.values(this.fav), "dd");
+			return this.filterAddons(
+				this.addons.filter((a) => this.fav.has(a.id)),
+				"dd",
+			);
 		},
 		searchedAddons() {
 			return this.filterAddons(this.addons, this.currentSort).filter(
-				(addon) => !this.fav[addon.id],
+				(addon) => !this.fav.has(addon.id),
 			);
 		},
 		displayedAddons() {
@@ -232,7 +236,7 @@ export default defineNuxtComponent({
 		},
 		selectedPacks() {
 			// zero length means all are selected
-			if (this.rawSelectedPacks.length === 0) return this.packs;
+			if (this.rawSelectedPacks.length === 0) return this.packs.map((p) => p.id);
 			return this.rawSelectedPacks;
 		},
 		selectedEditions() {
@@ -263,12 +267,17 @@ export default defineNuxtComponent({
 	created() {
 		// take query params from route and start search with that if possible (can be done with ssr)
 		if (this.$route.query.search) this.search = this.$route.query.search;
-		this.loadAddons();
-		this.loadUsers();
+		Promise.all([this.loadAddons(), this.loadUsers(), this.loadPacks()]);
 	},
 	mounted() {
-		// need localstorage access so this must be done after mounting
-		this.fav = JSON.parse(localStorage.getItem(FAVORITE_ADDONS_KEY) || "{}");
+		const local = localStorage.getItem(FAVORITE_ADDONS_KEY);
+
+		// legacy compatibility
+		// todo: remove in a few months
+		if (local && local.startsWith("{")) {
+			this.fav = new Set(Object.keys(JSON.parse(local)));
+			localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(Array.from(this.fav)));
+		} else this.fav = new Set(JSON.parse(local || "[]"));
 
 		document.addEventListener("scroll", this.checkShownItems);
 	},

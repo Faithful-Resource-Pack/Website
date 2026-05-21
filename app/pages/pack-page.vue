@@ -76,6 +76,7 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 						v-for="addon in addons.slice(0, limit)"
 						:key="addon.id"
 						:addon
+						:packs
 						disable-favorites
 					/>
 				</template>
@@ -91,12 +92,6 @@ import HeroSection from "~/components/lib/hero-section.vue";
 import removeMd from "remove-markdown";
 import PostCard from "~/components/lib/post-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
-
-// todo: remove this when addons support all packs
-const NAME_TO_RES = {
-	"Faithful 32x": "32x",
-	"Faithful 64x": "64x",
-};
 
 // routed through the main nuxt config file (since they're statically generated)
 export default defineNuxtComponent({
@@ -128,6 +123,11 @@ export default defineNuxtComponent({
 			type: String,
 			required: true,
 		},
+		addonPack: {
+			type: String,
+			required: false,
+			default: null,
+		},
 		description: {
 			type: String,
 			required: true,
@@ -149,6 +149,7 @@ export default defineNuxtComponent({
 			usePosts: false,
 			addons: [],
 			useAddons: false,
+			packs: [],
 		};
 	},
 	methods: {
@@ -167,10 +168,14 @@ export default defineNuxtComponent({
 			const { apiURL } = useRuntimeConfig().public;
 			const addons = await $fetch(`${apiURL}/addons/approved`);
 			this.addons = addons
-				.filter((a) => a.options.tags.includes(NAME_TO_RES[this.name]))
+				.filter((a) => a.options.packs.includes(this.addonPack))
 				.sort((a, b) => new Date(b.last_updated || 0) - new Date(a.last_updated || 0));
 
-			if (!this.addons.length) this.usePosts = false;
+			if (!this.addons.length) this.useAddons = false;
+		},
+		async loadPacks() {
+			const { apiURL } = useRuntimeConfig().public;
+			this.packs = await $fetch(`${apiURL}/packs/search?tag=addons`);
 		},
 	},
 	computed: {
@@ -180,7 +185,10 @@ export default defineNuxtComponent({
 	},
 	created() {
 		if (this.slug) this.loadPosts();
-		if (NAME_TO_RES[this.name]) this.loadAddons();
+		if (this.addonPack) {
+			this.loadAddons();
+			this.loadPacks();
+		}
 	},
 });
 </script>

@@ -43,7 +43,7 @@
 			</v-chip>
 		</div>
 		<div class="res-grid-3">
-			<addon-card v-for="addon in addons" :key="addon.id" :addon disable-favorites />
+			<addon-card v-for="addon in addons" :key="addon.id" :addon :packs disable-favorites />
 		</div>
 	</template>
 </template>
@@ -73,22 +73,14 @@ export default defineNuxtComponent({
 
 		try {
 			let user;
-			let addons;
 			if (customSlug) {
-				// need to check if user slug exists before getting addons
 				user = await $fetch(`${apiURL}/users/${id.slice(1)}`);
 				// try for exact match
 				if (Array.isArray(user))
 					user = user.find((u) => u.username.toLowerCase() === id.slice(1).toLowerCase());
 				if (!user) throw new Error("No user with same username found");
-				addons = await $fetch(`${apiURL}/users/${user.id}/addons/approved`);
-			} else {
-				// you can get both at the same time since it's an id
-				[user, addons] = await Promise.all([
-					$fetch(`${apiURL}/users/${id}`),
-					$fetch(`${apiURL}/users/${id}/addons/approved`),
-				]);
-			}
+			} else user = await $fetch(`${apiURL}/users/${id}`);
+
 			if (user.anonymous) throw new Error("User is anonymous");
 			useSeoMeta(
 				generateMetaTags({
@@ -97,13 +89,16 @@ export default defineNuxtComponent({
 				}),
 			);
 
-			return {
-				user,
-				addons: addons.sort((a, b) => (b.last_updated || 0) - (a.last_updated || 0)),
-			};
+			return { user };
 		} catch (err) {
 			throw createError({ statusCode: 404, statusMessage: String(err) });
 		}
+	},
+	data() {
+		return {
+			packs: [],
+			addons: [],
+		};
 	},
 	methods: {
 		copyURL() {
@@ -121,6 +116,15 @@ export default defineNuxtComponent({
 		namemcComponent() {
 			return this.user?.uuid ? resolveComponent("nuxt-link") : "span";
 		},
+	},
+	created() {
+		const { apiURL } = useRuntimeConfig().public;
+		$fetch(`${apiURL}/packs/search?tag=addons`).then((res) => {
+			this.packs = res;
+		});
+		$fetch(`${apiURL}/users/${this.user.id}/addons/approved`).then((res) => {
+			this.addons = res.sort((a, b) => (b.last_updated || 0) - (a.last_updated || 0));
+		});
 	},
 });
 </script>

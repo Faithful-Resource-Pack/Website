@@ -9,6 +9,7 @@ export interface Pack {
 	banner: string;
 	wordmark: string;
 	download: string;
+	addonPack?: string;
 	description: string;
 	warning?: string;
 	action?: { text: string; to: string };

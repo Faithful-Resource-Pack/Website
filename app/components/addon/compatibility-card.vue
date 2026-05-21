@@ -2,11 +2,11 @@
 	<h2 class="text-center">Compatibility</h2>
 	<h5>Supported Packs</h5>
 	<div class="addon-chips">
-		<custom-chip v-for="pack in packs" :key="pack" :type="pack" link />
+		<custom-chip v-for="pack in options.packs" :key="pack" :type="pack" link />
 	</div>
 	<h5 class="mt-3">Supported Editions</h5>
 	<div class="addon-chips">
-		<custom-chip v-for="edition in editions" :key="edition" :type="edition" link />
+		<custom-chip v-for="edition in options.tags" :key="edition" :type="edition" link />
 	</div>
 	<template v-if="options.optifine">
 		<h5>Dependencies</h5>
@@ -34,14 +34,6 @@ export default defineNuxtComponent({
 		options: {
 			type: Object,
 			required: true,
-		},
-	},
-	computed: {
-		editions() {
-			return this.options.tags.filter((e) => ["Java", "Bedrock"].includes(e));
-		},
-		packs() {
-			return this.options.tags.filter((p) => ["32x", "64x"].includes(p));
 		},
 	},
 });
