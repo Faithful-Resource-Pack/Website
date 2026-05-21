@@ -90,7 +90,8 @@ export default defineNuxtComponent({
 			const date = exactDate(this.addon.last_updated);
 			if (this.addon.options.packs.length > 2)
 				return `${packs.map((p) => this.packToCode(p)).join(", ")}\n${date}`;
-			return `${packs.join(", ")} • ${date}`;
+			if (this.addon.options.packs.length > 1) return `${packs.join(", ")}\n${date}`;
+			return `${packs[0]} • ${date}`;
 		},
 		alt() {
 			// take embed description if exists
