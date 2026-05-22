@@ -9,7 +9,7 @@
 		<custom-chip v-for="edition in options.tags" :key="edition" :type="edition" link />
 	</div>
 	<template v-if="options.optifine">
-		<h5>Dependencies</h5>
+		<h5 class="mt-3">Dependencies</h5>
 		<profile-card src="/image/addons/optifine.png">
 			Requires
 			<nuxt-link to="https://optifine.net/downloads" target="_blank">OptiFine</nuxt-link> or an
