@@ -136,7 +136,7 @@ export default defineNuxtComponent({
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
-	gap: 1rem;
+	gap: 1.5rem;
 }
 
 .user-header-top {
