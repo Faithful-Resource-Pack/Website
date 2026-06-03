@@ -31,7 +31,7 @@
 		>
 			<h3 class="h5 mb-0">Packs</h3>
 			<div class="px-2" />
-			<custom-chip v-for="pack in packs" :key="pack.id" :type="pack.name" filter :value="pack.id" />
+			<custom-chip v-for="pack in packs" :key="pack.id" :type="pack.id" filter :value="pack.id" />
 		</v-chip-group>
 		<v-chip-group
 			v-model="rawSelectedEditions"

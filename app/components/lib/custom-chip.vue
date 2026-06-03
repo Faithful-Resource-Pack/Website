@@ -4,6 +4,7 @@
 		:style="{ color: chip.color }"
 		:prepend-icon="chip.icon"
 		:to="link ? chip.to : undefined"
+		v-bind="$attrs"
 	>
 		<template v-if="!canDirectlyPrepend" #prepend>
 			<media-icon class="mr-1 ml-n1" :icon="chip.icon" :color="chip.color" />
@@ -36,43 +37,35 @@ export default defineNuxtComponent({
 			data: {
 				Java: { color: "#1DD96A", icon: "mdi-minecraft", text: "Java Edition" },
 				Bedrock: { color: "#999999", icon: "mdi-cube", text: "Bedrock Edition" },
-				"Faithful 32x": {
+				faithful_32x: {
 					color: "#00A2FF",
 					icon: "faithful",
 					text: "Faithful 32x",
 					to: "/faithful32x",
 				},
-				"Faithful 64x": {
+				faithful_64x: {
 					color: "#FF0092",
 					icon: "faithful",
 					text: "Faithful 64x",
 					to: "/faithful64x",
 				},
-				"Classic Faithful 32x": {
+				classic_faithful_32x: {
 					color: "#5ED900",
 					icon: "faithful",
 					text: "Classic Faithful 32x",
 					to: "/classic32x",
 				},
-				"Classic Faithful 64x": {
+				classic_faithful_64x: {
 					color: "#BE42FF",
 					icon: "faithful",
 					text: "Classic Faithful 64x",
 					to: "/classic64x",
 				},
 			},
-			translate: {
-				faithful_32x: "Faithful 32x",
-				faithful_64x: "Faithful 64x",
-				classic_faithful_32x: "Classic Faithful 32x",
-				classic_faithful_64x: "Classic Faithful 64x",
-			},
 		};
 	},
 	computed: {
 		chip() {
-			if (Object.keys(this.translate).includes(this.type))
-				return this.data[this.translate[this.type]];
 			return this.data[this.type];
 		},
 		canDirectlyPrepend() {
