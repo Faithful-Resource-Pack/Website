@@ -6,7 +6,7 @@
 	>
 		<template #tagline>Providing a higher-resolution Minecraft experience since 2010.</template>
 		<template #actions>
-			<!-- hack to get the button the same width as the container -->
+			<!-- hack to make the tagline the same width as the container -->
 			<div class="container py-5 hero-button-container">
 				<nuxt-link to="/downloads" class="btn btn-primary btn-xl hero-button">
 					<media-icon icon="mdi-download" style="font-size: 1.5rem" />
