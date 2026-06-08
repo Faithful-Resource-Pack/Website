@@ -10,6 +10,7 @@
 		</template>
 		<template v-if="!minimal" #body>
 			<p class="addon-subtitle" :class="minimal ? '' : 'addon-subtitle-full'">{{ subtitle }}</p>
+			<v-spacer />
 			<author-heads v-if="Object.keys(users).length" :authors />
 			<addon-flags :options="addon.options" />
 		</template>

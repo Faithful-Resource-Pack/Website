@@ -3,7 +3,7 @@
 		<nuxt-link v-for="{ id, src, username } in authorInfo" :key="id" :to="`/user/${id}`">
 			<img :src :alt="`${username}'s Avatar`" :title="username" loading="lazy" />
 		</nuxt-link>
-		<p v-if="firstUsername" class="mb-0 ml-2">By {{ firstUsername }}</p>
+		<p v-if="firstUsername" class="mb-0">By {{ firstUsername }}</p>
 	</div>
 </template>
 
@@ -37,11 +37,10 @@ export default {
 
 <style scoped lang="scss">
 .author-heads {
-	flex-grow: 1;
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	gap: 6px;
+	gap: 8px;
 	img {
 		height: 32px;
 		image-rendering: pixelated;
