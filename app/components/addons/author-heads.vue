@@ -20,8 +20,7 @@ export default {
 		authorInfo() {
 			return this.authors.map((author) => ({
 				id: author.id,
-				// since the randomness is deterministic it's SSR-safe (wahoo)
-				src: `https://vzge.me/face/64/${getVisageSlug(author)}`,
+				src: `https://vzge.me/face/64/${author.uuid || "X-Steve"}`,
 				username: author?.username || "Anonymous author",
 			}));
 		},

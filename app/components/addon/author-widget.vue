@@ -3,7 +3,7 @@
 	<nuxt-link class="author-widget highlight-hover underline-hover mx-n2" :to="`/user/${author.id}`">
 		<div class="ma-2">
 			<profile-card
-				:src="`https://vzge.me/face/128/${getVisageSlug(author)}`"
+				:src="`https://vzge.me/face/128/${author.uuid || 'X-Steve'}`"
 				:alt="`${author.username}'s Avatar`"
 			>
 				<p class="h5 mb-0">{{ author.username }}</p>

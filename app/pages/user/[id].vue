@@ -9,7 +9,7 @@
 			<img
 				class="user-header-image"
 				:class="user.uuid && 'zoom-hitbox zoom-affected'"
-				:src="`https://vzge.me/face/128/${getVisageSlug(user)}`"
+				:src="`https://vzge.me/face/128/${user.uuid || 'X-Steve'}`"
 				:title="user.uuid"
 			/>
 		</component>
