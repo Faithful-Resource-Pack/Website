@@ -4,9 +4,9 @@
 		<div class="ma-2">
 			<profile-card
 				:src="`https://vzge.me/face/128/${author.uuid || 'X-Steve'}`"
-				:alt="`${author.username}'s Avatar`"
+				:alt="`${author.username || 'Anonymous Author'}'s Avatar`"
 			>
-				<p class="h5 mb-0">{{ author.username }}</p>
+				<p class="h5 mb-0">{{ author.username || "Anonymous" }}</p>
 			</profile-card>
 		</div>
 	</nuxt-link>
