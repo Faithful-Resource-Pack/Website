@@ -3,7 +3,12 @@
 		<nav class="navbar-container">
 			<div class="navbar-mobile-container">
 				<nuxt-link to="/" title="Faithful">
-					<img src="/image/wordmarks/navbar.png" height="32" alt="Faithful Wordmark" />
+					<img
+						class="navbar-mobile-wordmark"
+						src="/image/wordmarks/faithful.png"
+						alt="Faithful Wordmark"
+						height="40"
+					/>
 				</nuxt-link>
 
 				<button
@@ -158,6 +163,11 @@ header {
 	line-height: 1;
 	background: transparent;
 	border: none;
+}
+
+// logo has intrinsic padding but wordmark doesn't so we subtract a bit from 48px to pad it out
+.navbar-mobile-wordmark {
+	height: 40px;
 }
 
 // mobile styles
