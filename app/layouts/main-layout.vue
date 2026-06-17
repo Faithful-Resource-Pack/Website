@@ -1,9 +1,10 @@
 <!-- don't use this as an actual layout, it's a base for the real ones -->
 <template>
 	<div class="site-container" :class="themeClass" data-allow-mismatch="class">
-		<navbar />
+		<navbar @search="openSearchModal" />
 		<!-- grow the content to fill remaining space (footer and navbar always stay the same size) -->
 		<main class="textured flex-grow-1">
+			<search-modal v-model="searchModalOpen" />
 			<slot v-if="noContainer" />
 			<div v-else class="container">
 				<slot />
@@ -59,6 +60,8 @@ export default defineNuxtComponent({
 	},
 	data() {
 		return {
+			searchModalOpen: false,
+			searchListener: () => {},
 			// must be null at first to force rerender when loaded
 			currentTheme: null,
 			isDark: null,
@@ -66,6 +69,9 @@ export default defineNuxtComponent({
 		};
 	},
 	methods: {
+		openSearchModal() {
+			this.searchModalOpen = true;
+		},
 		cycleTheme() {
 			const keys = Object.keys(this.availableThemes);
 			const currentIndex = keys.indexOf(this.currentTheme);
@@ -83,6 +89,24 @@ export default defineNuxtComponent({
 	beforeMount() {
 		// set theme before client render (can't set on server because localStorage doesn't yet exist)
 		this.currentTheme = localStorage.getItem(THEME_KEY) || "auto";
+
+		this.searchListener = (event) => {
+			if (event.key !== "k") return;
+			// mac uses cmd+option+arrow
+			const isModified = navigator.platform.toLowerCase().includes("mac")
+				? event.metaKey
+				: event.ctrlKey;
+
+			if (!isModified) return;
+			event.preventDefault();
+
+			this.openSearchModal();
+		};
+
+		window.addEventListener("keydown", this.searchListener);
+	},
+	unmounted() {
+		window.removeEventListener("keydown", this.searchListener);
 	},
 	watch: {
 		currentTheme: {

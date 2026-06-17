@@ -192,3 +192,10 @@ hr {
 		text-align: center;
 	}
 }
+
+// needed to prevent scoped css static encoding issues
+.text-highlight {
+	background: $btn-primary;
+	color: white;
+	border-radius: $border-radius;
+}

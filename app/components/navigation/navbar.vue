@@ -2,22 +2,25 @@
 	<header class="accent-textured">
 		<nav class="navbar-container">
 			<div class="navbar-mobile-container">
+				<button
+					class="btn-navbar"
+					type="button"
+					:title="isOpen ? 'Close Menu' : 'Open Menu'"
+					@click="toggleNavbar"
+				>
+					<v-icon icon="mdi-menu" />
+				</button>
 				<nuxt-link to="/" title="Faithful">
 					<img
 						class="navbar-mobile-wordmark"
 						src="/image/wordmarks/faithful.png"
 						alt="Faithful Wordmark"
-						height="40"
+						height="36"
 					/>
 				</nuxt-link>
-
-				<button
-					class="navbar-toggler"
-					type="button"
-					:title="isOpen ? 'Close Menu' : 'Open Menu'"
-					@click="toggleNavbar"
-				>
-					<v-icon size="large" icon="mdi-menu" />
+				<v-spacer />
+				<button class="btn-navbar" type="button" title="Start Search" @click="$emit('search')">
+					<v-icon icon="mdi-magnify" />
 				</button>
 			</div>
 
@@ -35,13 +38,13 @@
 					<v-icon size="small" :icon class="mr-2" /> {{ name }}
 				</nuxt-link>
 
-				<nuxt-link class="navbar-desktop-logo-container" to="/" title="Faithful">
+				<button class="navbar-desktop-logo-container" title="Start Search" @click="$emit('search')">
 					<img
 						class="navbar-desktop-logo zoom-hitbox zoom-affected"
 						src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=128"
 						alt="Faithful Logo"
 					/>
-				</nuxt-link>
+				</button>
 
 				<nuxt-link
 					v-for="{ name, to, icon } in right"
@@ -105,6 +108,7 @@ export default defineNuxtComponent({
 			right: NAVBAR_ITEMS.slice(sideLength),
 		};
 	},
+	emits: ["search"],
 	methods: {
 		toggleNavbar() {
 			this.isOpen = !this.isOpen;
@@ -133,6 +137,7 @@ header {
 	align-items: center;
 	justify-content: center;
 	padding: 0.5rem 1rem;
+	min-height: 64px;
 }
 // wraps the actual item content (becomes columns on mobile)
 .navbar-item-container {
@@ -152,14 +157,15 @@ header {
 .navbar-link {
 	width: 125px;
 }
-// they're both the same size (helpful reference)
-.navbar-desktop-logo,
-.navbar-toggler {
+
+.navbar-desktop-logo {
 	width: 48px;
 	height: 48px;
 }
 
-.navbar-toggler {
+.btn-navbar {
+	width: 32px;
+	height: 32px;
 	line-height: 1;
 	background: transparent;
 	border: none;
@@ -167,11 +173,14 @@ header {
 
 // logo has intrinsic padding but wordmark doesn't so we subtract a bit to pad it out
 .navbar-mobile-wordmark {
-	height: 40px;
+	max-height: 36px;
 }
 
 // mobile styles
 @media screen and (max-width: $breakpoint-sm) {
+	.navbar-container {
+		min-height: 56px;
+	}
 	// set items container to left-aligned columns
 	.navbar-item-container {
 		flex-direction: column;
@@ -187,7 +196,6 @@ header {
 		width: 100%;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		gap: 1rem;
 	}
 	.navbar-link {

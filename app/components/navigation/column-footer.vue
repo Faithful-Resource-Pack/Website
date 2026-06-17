@@ -47,113 +47,7 @@
 </template>
 
 <script>
-// change this as necessary
-const FOOTER_CATEGORIES = [
-	{
-		title: "Info",
-		icon: "mdi-information",
-		items: [
-			{
-				name: "FAQ",
-				to: "/faq",
-			},
-			{
-				name: "License",
-				to: "/license",
-			},
-			{
-				name: "Privacy Policy",
-				to: "/privacy",
-			},
-			{
-				name: "Brand",
-				to: "https://docs.faithfulpack.net/pages/manuals/branding-guidelines",
-			},
-			{
-				name: "Status",
-				to: "https://status.faithfulpack.net",
-			},
-		],
-	},
-	{
-		title: "Listings",
-		icon: "mdi-post",
-		items: [
-			{
-				name: "CurseForge",
-				to: "https://www.curseforge.com/members/faithful_resource_pack/projects",
-			},
-			{
-				name: "Modrinth",
-				to: "https://modrinth.com/organization/Faithful-Resource-Pack",
-			},
-			{
-				name: "Planet Minecraft",
-				to: "https://www.planetminecraft.com/member/faithful_resource_pack",
-			},
-			{
-				name: "GitHub",
-				to: "https://github.com/Faithful-Resource-Pack",
-			},
-			{
-				name: "Classic GitHub",
-				to: "https://github.com/ClassicFaithful",
-			},
-		],
-	},
-	{
-		title: "Community",
-		icon: "mdi-chat",
-		items: [
-			{
-				name: "Twitter",
-				to: "https://twitter.com/faithfulpack",
-			},
-			{
-				name: "Bluesky",
-				to: "https://bsky.app/profile/faithfulpack.net",
-			},
-			{
-				name: "Reddit",
-				to: "https://www.reddit.com/r/faithfulpack",
-			},
-			{
-				name: "Discord",
-				to: "https://discord.gg/sN9YRQbBv7",
-			},
-			{
-				name: "Classic Discord",
-				to: "https://discord.gg/KSEhCVtg4J",
-			},
-		],
-	},
-	{
-		title: "Resources",
-		icon: "mdi-shape",
-		items: [
-			{
-				name: "Texture Gallery",
-				to: "https://webapp.faithfulpack.net/gallery",
-			},
-			{
-				name: "Contributing",
-				to: "https://docs.faithfulpack.net/pages/manuals/contributor-handbook",
-			},
-			{
-				name: "Translations",
-				to: "https://translate.faithfulpack.net",
-			},
-			{
-				name: "Faithful Docs",
-				to: "https://docs.faithfulpack.net",
-			},
-			{
-				name: "API Reference",
-				to: "https://api.faithfulpack.net/docs",
-			},
-		],
-	},
-];
+import categories from "../../../public/footer.json";
 
 export default defineNuxtComponent({
 	// can't be called footer since that's already an element
@@ -166,9 +60,7 @@ export default defineNuxtComponent({
 	},
 	emits: ["changeTheme"],
 	data() {
-		return {
-			categories: FOOTER_CATEGORIES,
-		};
+		return { categories };
 	},
 });
 </script>

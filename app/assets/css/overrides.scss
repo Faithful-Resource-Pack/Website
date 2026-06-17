@@ -55,6 +55,17 @@ img[src$=".jpg"] {
 	-o-user-drag: none;
 }
 
+// more key-looking key styles
+kbd {
+	font-family: inherit;
+	font-size: 80%;
+	padding: 2px 6px;
+	background: $btn-secondary;
+	border: 1px $btn-secondary-hover solid;
+	border-radius: 4px;
+	color: white;
+}
+
 /**
  * vuetify overrides
  */
