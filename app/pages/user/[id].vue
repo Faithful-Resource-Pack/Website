@@ -1,8 +1,8 @@
 <template>
 	<div class="user-header">
 		<component
-			:is="namemcComponent"
-			:to="`https://namemc.com/profile/${user.uuid}`"
+			:is="user?.uuid ? 'a' : 'span'"
+			:href="`https://namemc.com/profile/${user.uuid}`"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -112,9 +112,6 @@ export default defineNuxtComponent({
 		},
 		isReservedAccount() {
 			return this.user.id < 1000;
-		},
-		namemcComponent() {
-			return this.user?.uuid ? resolveComponent("nuxt-link") : "span";
 		},
 	},
 	created() {
