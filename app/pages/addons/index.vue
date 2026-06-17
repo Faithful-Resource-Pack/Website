@@ -15,6 +15,7 @@
 					:autofocus="!$vuetify.display.mobile"
 					clearable
 					hide-details
+					prepend-inner-icon="mdi-magnify"
 					placeholder="Search add-on name"
 					@click:clear="clearSearch"
 				/>

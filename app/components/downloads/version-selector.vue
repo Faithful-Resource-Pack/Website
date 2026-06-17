@@ -20,6 +20,7 @@
 			autofocus
 			hide-details
 			class="mt-5 mb-4"
+			prepend-inner-icon="mdi-magnify"
 			clear-icon="mdi-close"
 			:placeholder="`Search ${edition} Edition versions`"
 			@click:clear="clearSearch"

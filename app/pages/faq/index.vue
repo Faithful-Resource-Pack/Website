@@ -19,6 +19,7 @@ definePageMeta({
 					:autofocus="!$vuetify.display.mobile"
 					clearable
 					hide-details
+					prepend-inner-icon="mdi-magnify"
 					placeholder="Search FAQs"
 					@update:menu="goToFaq"
 				/>
