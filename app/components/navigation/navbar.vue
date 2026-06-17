@@ -124,12 +124,12 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	box-shadow: $shadow-card;
+	box-shadow: $shadow-navbar;
 }
 // wraps both the items and the mobile navbar if present
 .navbar-container {
 	display: flex;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
 	padding: 0.5rem 1rem;
