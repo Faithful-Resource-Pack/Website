@@ -23,18 +23,7 @@
 		<h2 class="title mb-4 text-center">Our Projects</h2>
 		<div class="basic-grid project-reel">
 			<!-- project data and props have the same key names so we can assign to v-bind directly -->
-			<project-card v-for="project in projects" :key="project.name" v-bind="project">
-				<template #btns>
-					<chevron-link
-						v-for="{ text, to } in project.buttons"
-						:key="text"
-						:to
-						:text
-						class="btn block btn-secondary my-1"
-						:aria-label="text === 'See More' ? project.name : text"
-					/>
-				</template>
-			</project-card>
+			<project-card v-for="project in projects" :key="project.name" v-bind="project" />
 		</div>
 
 		<hr />
