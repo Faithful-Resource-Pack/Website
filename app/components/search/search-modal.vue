@@ -1,6 +1,6 @@
 <template>
 	<v-dialog v-model="modalOpened" attach=".site-container" max-width="600">
-		<div class="card card-body my-10">
+		<div class="card card-body" style="max-height: 85vh">
 			<v-text-field
 				ref="search"
 				v-model="search"
@@ -15,21 +15,18 @@
 				@click:clear="clearSearch"
 				@keyup.enter="onSelect(results[0])"
 			/>
-			<p v-if="results.length" class="mt-3 mb-0">{{ results.length }} results found</p>
-			<p v-else-if="!isSearchable" class="my-3">
-				{{ MIN_SEARCH_LENGTH - search.length }} more
-				{{ MIN_SEARCH_LENGTH - search.length === 1 ? "character" : "characters" }} to start
-			</p>
-			<search-list
-				v-if="results.length"
-				:results
-				:class="results.length && 'my-3'"
-				@select="onSelect()"
-			/>
-			<div v-else-if="isSearchable" class="d-flex flex-column align-center justify-center my-5">
-				<v-icon size="64" icon="mdi-alert-circle-outline" />
-				<p class="h4 my-1">No results found</p>
+			<p v-if="statusText" class="my-2">{{ statusText }}</p>
+
+			<!-- both search and results -->
+			<search-list v-if="results.length" class="mb-3" :results @select="onSelect()" />
+
+			<!-- search but no results -->
+			<div v-else-if="isSearchable" class="d-flex flex-column align-center justify-center my-10">
+				<v-icon size="96" icon="mdi-alert-circle-outline" />
+				<p class="h4 mt-2 mb-0">No results found</p>
 			</div>
+
+			<!-- no search (and no results obviously) -->
 			<div
 				v-else-if="recentSearchResults.length"
 				:class="$vuetify.display.mdAndUp ? 'mb-3' : 'mb-n2'"
@@ -42,6 +39,7 @@
 				</div>
 				<search-list :results="recentSearchResults" @select="onSelectPreviousSearch" />
 			</div>
+
 			<!-- bit pointless to show on mobile where there are no keys to navigate with lol -->
 			<template v-if="$vuetify.display.mdAndUp">
 				<v-divider class="mt-0" />
@@ -85,7 +83,6 @@ export default defineNuxtComponent({
 			recentSearches: [],
 			// search => { priority: number, type: string, link: string, label: string, icon: string, date: Date }
 			filters: [],
-			MIN_SEARCH_LENGTH,
 		};
 	},
 	methods: {
@@ -161,6 +158,15 @@ export default defineNuxtComponent({
 		},
 		isSearchable() {
 			return this.search.length >= MIN_SEARCH_LENGTH;
+		},
+		statusText() {
+			const count = this.results.length;
+			if (count) return `${count} ${count === 1 ? "result" : "results"} found`;
+			if (!this.isSearchable) {
+				const delta = MIN_SEARCH_LENGTH - this.search.length;
+				return `${delta} more ${delta === 1 ? "character" : "characters"} to start`;
+			}
+			return "";
 		},
 	},
 	watch: {
