@@ -45,7 +45,7 @@
 		text-decoration-color: $text-dark;
 	}
 
-	.highlight-hover:hover {
+	.highlight-hover:hover, .highlight-hover:focus {
 		background: rgba(white, 0.1);
 	}
 

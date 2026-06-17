@@ -45,7 +45,7 @@ button, select {
 select {
 	overflow-wrap: normal;
 }
-// make images not draggable
+// make images undraggable
 img[src$=".png"],
 img[src$=".gif"],
 img[src$=".jpg"] {
