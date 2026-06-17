@@ -7,7 +7,7 @@
 				<img class="card-image" :src="image" :alt loading="lazy" />
 			</slot>
 			<div class="card-body">
-				<h3 v-if="$slots.title" class="h4 mb-1" :style="titleStyles">
+				<h3 v-if="$slots.title" class="h4 mb-0" :style="titleStyles">
 					<slot name="title" />
 				</h3>
 				<slot name="body" />

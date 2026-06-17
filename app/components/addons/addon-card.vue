@@ -6,10 +6,10 @@
 		:title-styles
 	>
 		<template #title>
-			<span class="short-title">{{ addon.name }}</span>
+			{{ addon.name }}
 		</template>
 		<template v-if="!minimal" #body>
-			<p class="addon-subtitle" :class="minimal ? '' : 'addon-subtitle-full'">{{ subtitle }}</p>
+			<p class="addon-subtitle mb-2 mt-1" :class="minimal ? '' : 'addon-subtitle-full'">{{ subtitle }}</p>
 			<v-spacer />
 			<author-heads v-if="Object.keys(users).length" :authors />
 			<addon-flags :options="addon.options" />
@@ -122,7 +122,6 @@ export default defineNuxtComponent({
 .addon-subtitle {
 	white-space: pre-wrap;
 	line-height: 1.2;
-	margin-bottom: 8px;
 }
 
 .addon-subtitle-full {
