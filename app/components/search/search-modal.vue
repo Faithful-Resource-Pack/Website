@@ -109,14 +109,22 @@ export default defineNuxtComponent({
 			this.recentSearches = [];
 		},
 		onSelect(result) {
-			// if autoselecting without the link
-			if (result?.path) this.$router.push({ path: result.path });
+			// pressed enter without search, invalid
+			if (!this.results.length) return;
+
+			if (result?.link) {
+				// have to handle external links ourselves since we're simulating a nuxt-link click
+				if (result.link.startsWith("http")) window.open(result.link, "_blank");
+				else this.$router.push({ path: result.link });
+			}
+
 			// if rerunning past search push it to the top and remove old entry, otherwise same as push
 			this.recentSearches = [...this.recentSearches.filter((s) => s !== this.search), this.search];
 			this.closeModal();
 		},
 		onSelectPreviousSearch(result) {
 			this.search = result.label;
+			this.$refs.search.focus();
 		},
 		closeModal() {
 			this.modalOpened = false;
