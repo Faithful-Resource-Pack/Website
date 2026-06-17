@@ -33,8 +33,14 @@
 			>
 				<div class="d-flex align-center justify-space-between">
 					<h4 class="mb-0">Recently searched</h4>
-					<v-btn icon variant="text" size="small" @click="clearRecentSearches">
-						<v-icon icon="mdi-playlist-remove" title="Clear Search History" />
+					<v-btn
+						icon
+						variant="text"
+						size="small"
+						title="Clear Search History"
+						@click="clearRecentSearches"
+					>
+						<v-icon icon="mdi-playlist-remove" />
 					</v-btn>
 				</div>
 				<search-list :results="recentSearchResults" @select="onSelectPreviousSearch" />

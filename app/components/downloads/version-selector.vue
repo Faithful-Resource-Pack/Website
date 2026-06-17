@@ -7,8 +7,8 @@
 	>
 		<div class="d-flex align-center justify-space-between">
 			<h2 class="mb-0">Select Minecraft Version</h2>
-			<v-btn icon variant="text" size="2rem" @click="$emit('close')">
-				<v-icon size="1.75rem" icon="mdi-close" title="Close Version Panel" />
+			<v-btn icon variant="text" size="2rem" title="Close Version Panel" @click="$emit('close')">
+				<v-icon size="1.75rem" icon="mdi-close" />
 			</v-btn>
 		</div>
 		<v-text-field
