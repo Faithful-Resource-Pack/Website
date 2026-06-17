@@ -112,10 +112,7 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-@use "~/assets/css/variables.scss" as *;
-
 .addon-info {
-	padding: 1rem;
 	// 12 * 2
 	margin-bottom: 24px;
 }

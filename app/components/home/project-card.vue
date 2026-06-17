@@ -55,6 +55,7 @@ export default defineNuxtComponent({
 .project-image {
 	position: relative;
 	display: inline;
+	flex-grow: 1;
 }
 
 // place logo on top of image
@@ -70,7 +71,7 @@ export default defineNuxtComponent({
 
 .project-shadow {
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(transparent, rgba(black, 0.5));

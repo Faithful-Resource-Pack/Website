@@ -165,7 +165,7 @@ header {
 	border: none;
 }
 
-// logo has intrinsic padding but wordmark doesn't so we subtract a bit from 48px to pad it out
+// logo has intrinsic padding but wordmark doesn't so we subtract a bit to pad it out
 .navbar-mobile-wordmark {
 	height: 40px;
 }
