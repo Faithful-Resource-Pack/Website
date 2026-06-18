@@ -38,12 +38,19 @@ export default defineNuxtConfig({
 			link: [
 				{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
 				{
-					rel: "stylesheet",
-					href: "https://database.faithfulpack.net/fonts/Roboto/stylesheet.css",
+					// saves a chained request inside the stylesheet file by immediately preloading
+					rel: "preload",
+					as: "font",
+					crossorigin: "anonymous",
+					href: "https://database.faithfulpack.net/fonts/Faithful_v1/Faithful32x.ttf",
 				},
 				{
 					rel: "stylesheet",
 					href: "https://database.faithfulpack.net/fonts/Faithful_v1/stylesheet.css",
+				},
+				{
+					rel: "stylesheet",
+					href: "https://database.faithfulpack.net/fonts/Roboto/stylesheet.css",
 				},
 			],
 			noscript: [
