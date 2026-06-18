@@ -3,7 +3,7 @@
 		<template v-for="{ id, label, description, to } in packs" :key="id">
 			<!-- focus/blur for keyboard navigation, mouseenter/leave for mouse navigation -->
 			<button
-				class="download-choice d-flex align-center justify-space-between ga-2 cursor-pointer"
+				class="download-choice ga-2 pa-3 cursor-pointer"
 				:class="id === selectedPack && 'selected-choice'"
 				@focus="hoverPack(id)"
 				@blur="resetHover"
@@ -116,10 +116,13 @@ export default defineNuxtComponent({
 }
 
 .download-choice {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
 	.download-info-icon {
 		color: rgba(white, 0.2);
 	}
-	padding: $padding-card;
 	border-radius: $border-radius;
 	text-align: left;
 
