@@ -32,7 +32,7 @@
 		<div class="basic-grid addon-reel">
 			<template v-if="!addons.length">
 				<div v-for="i in ADDON_REEL_LENGTH - 1" :key="i" class="card">
-					<v-skeleton-loader type="image, subtitle" :theme />
+					<v-skeleton-loader type="image, subtitle" :theme data-allow-mismatch="class" />
 				</div>
 			</template>
 			<template v-else>
@@ -51,7 +51,7 @@
 		<div class="res-grid-3">
 			<template v-if="!topPosts.length">
 				<div v-for="i in 6" :key="i" class="card pb-3">
-					<v-skeleton-loader type="image, subtitle, text" :theme />
+					<v-skeleton-loader type="image, subtitle, text" :theme data-allow-mismatch="class" />
 				</div>
 			</template>
 			<template v-else>
