@@ -17,11 +17,16 @@ definePageMeta({
 				</p>
 				<chevron-link class="btn btn-lg btn-about" to="/downloads">Get Started</chevron-link>
 			</div>
-			<img class="about-image" src="/image/about/faithful.gif" alt="gif of creeper textures" />
+			<img
+				class="about-image"
+				src="/image/about/faithful.gif"
+				alt="gif of creeper textures"
+				height="384"
+			/>
 		</div>
 	</div>
 	<div class="container about-container">
-		<img class="about-image" src="/image/about/history.png" alt="our history" />
+		<img class="about-image" src="/image/about/history.png" alt="our history" height="384" />
 		<div class="about-text body-text">
 			<h1 class="colored-title">A History of Expertise</h1>
 			<p>
@@ -54,11 +59,21 @@ definePageMeta({
 				</p>
 				<chevron-link class="btn btn-lg btn-about" to="/addons">View Add-ons</chevron-link>
 			</div>
-			<img class="about-image" src="/image/about/platforms.png" alt="supported platforms" />
+			<img
+				class="about-image"
+				src="/image/about/platforms.png"
+				alt="supported platforms"
+				height="384"
+			/>
 		</div>
 	</div>
 	<div class="container about-container">
-		<img class="about-image" src="/image/about/community.png" alt="the faithful community" />
+		<img
+			class="about-image"
+			src="/image/about/community.png"
+			alt="the faithful community"
+			height="384"
+		/>
 		<div class="about-text body-text">
 			<h1 class="colored-title">Made by the Community</h1>
 			<p>
@@ -98,7 +113,7 @@ definePageMeta({
 					Visit our GitHub
 				</chevron-link>
 			</div>
-			<img class="about-image" src="/image/about/foss.png" alt="github screenshot" />
+			<img class="about-image" src="/image/about/foss.png" alt="github screenshot" height="384" />
 		</div>
 	</div>
 	<div class="container faq-section">
