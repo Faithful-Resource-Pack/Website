@@ -24,7 +24,15 @@
 			@keyup.enter="onSelect(results[0])"
 		/>
 	</div>
-	<p v-if="statusText" class="my-2">{{ statusText }}</p>
+
+	<!-- remove bottom margin on mobile if there's nothing there (prevents weird lip) -->
+	<p
+		v-if="statusText"
+		class="mt-2"
+		:class="mobile && !isSearchable && !recentSearchResults.length ? 'mb-n2' : 'mb-2'"
+	>
+		{{ statusText }}
+	</p>
 
 	<!-- both search and results -->
 	<search-list v-if="results.length" class="mb-3" :results @select="onSelect()" />

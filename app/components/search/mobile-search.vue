@@ -1,6 +1,6 @@
 <template>
 	<v-overlay v-model="barOpened" attach=".site-container">
-		<div class="mobile-search-bar accent-textured mb-5">
+		<div class="mobile-search-bar accent-textured">
 			<search-widget mobile @close="closeBar" />
 		</div>
 	</v-overlay>
@@ -60,9 +60,8 @@ export default defineNuxtComponent({
 	top: 0;
 	z-index: 999;
 	width: 100vw;
-	height: 100vh;
-	padding: $padding-card;
-	padding-top: 0.5rem;
+	max-height: 100vh;
+	padding: 0.5rem $padding-card $padding-card $padding-card;
 	// ideally the search would be sticky but this is less janky
 	overflow: hidden auto;
 	border-radius: 0 0 $border-radius $border-radius;
