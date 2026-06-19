@@ -1,7 +1,7 @@
 <!-- don't use this as an actual layout, it's a base for the real ones -->
 <template>
 	<div class="site-container" :class="themeClass" data-allow-mismatch="class">
-		<navbar @search="openSearchModal" />
+		<navbar @search="toggleSearchModal" />
 		<!-- grow the content to fill remaining space (footer and navbar always stay the same size) -->
 		<main class="textured flex-grow-1">
 			<search-modal v-model="searchModalOpen" />
@@ -69,8 +69,8 @@ export default defineNuxtComponent({
 		};
 	},
 	methods: {
-		openSearchModal() {
-			this.searchModalOpen = true;
+		toggleSearchModal() {
+			this.searchModalOpen = !this.searchModalOpen;
 		},
 		cycleTheme() {
 			const keys = Object.keys(this.availableThemes);
@@ -100,7 +100,7 @@ export default defineNuxtComponent({
 			if (!isModified) return;
 			event.preventDefault();
 
-			this.openSearchModal();
+			this.toggleSearchModal();
 		};
 
 		window.addEventListener("keydown", this.searchListener);
