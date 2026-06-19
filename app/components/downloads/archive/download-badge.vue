@@ -45,7 +45,7 @@ export default defineNuxtComponent({
 }
 
 .download-badge {
-	border-radius: 3px;
+	border-radius: $border-radius;
 }
 
 .github {

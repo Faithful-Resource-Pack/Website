@@ -62,7 +62,7 @@ kbd {
 	padding: 2px 6px;
 	background: $btn-secondary;
 	border: 1px $btn-secondary-hover solid;
-	border-radius: 4px;
+	border-radius: $border-radius;
 	color: white;
 }
 

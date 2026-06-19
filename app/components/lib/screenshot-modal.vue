@@ -97,7 +97,6 @@ export default defineNuxtComponent({
 	position: absolute;
 	bottom: $padding-card;
 	padding: 4px;
-	margin: $padding-card;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
