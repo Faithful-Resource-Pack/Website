@@ -14,13 +14,13 @@
 					<compatibility-card :options="addon.options" />
 				</div>
 				<div class="card card-body addon-info">
-					<h2 class="text-center">
+					<h2>
 						{{ Object.keys(authors).length === 1 ? "Author" : "Authors" }}
 					</h2>
 					<author-widget v-for="author in authors" :key="author.id" :author />
 				</div>
 				<div class="card card-body addon-info">
-					<h2 class="text-center">Details</h2>
+					<h2>Details</h2>
 					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
 					<v-tooltip v-if="addon.last_updated" location="bottom">
 						<template #activator="{ props }">
