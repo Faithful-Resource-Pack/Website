@@ -6,7 +6,7 @@
 			:key="result.label"
 			:to="result.link"
 			class="d-flex flex-row align-start pa-2 ga-3 highlight-hover cursor-pointer body-text"
-			style="z-index: 998"
+			style="z-index: 997"
 			@click="$emit('select', result)"
 		>
 			<v-icon :icon="result.icon" class="search-result mt-1" :title="result.type" />

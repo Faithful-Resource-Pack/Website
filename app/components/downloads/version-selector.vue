@@ -1,8 +1,8 @@
 <template>
-	<!-- header is 999 so we set it just below that (needs to be above images) -->
+	<!-- header is 998 so we set it just below that (needs to be above images) -->
 	<div
 		class="d-block card-body align-self-start block"
-		style="z-index: 998"
+		style="z-index: 997"
 		@keyup.esc="$emit('close')"
 	>
 		<div class="d-flex align-center justify-space-between">

@@ -4,7 +4,8 @@
 		<navbar @search="toggleSearchModal" />
 		<!-- grow the content to fill remaining space (footer and navbar always stay the same size) -->
 		<main class="textured flex-grow-1">
-			<search-modal v-model="searchModalOpen" />
+			<search-modal v-if="$vuetify.display.mdAndUp" v-model="searchModalOpen" />
+			<mobile-search v-else v-model="searchModalOpen" />
 			<slot v-if="noContainer" />
 			<div v-else class="container">
 				<slot />
@@ -17,6 +18,8 @@
 <script>
 import Navbar from "~/components/navigation/navbar.vue";
 import ColumnFooter from "~/components/navigation/column-footer.vue";
+import SearchModal from "~/components/search/search-modal.vue";
+import MobileSearch from "~/components/search/mobile-search.vue";
 
 const THEME_KEY = "theme";
 const THEMES = {
@@ -39,6 +42,8 @@ export default defineNuxtComponent({
 	components: {
 		Navbar,
 		ColumnFooter,
+		SearchModal,
+		MobileSearch,
 	},
 	props: {
 		noContainer: {

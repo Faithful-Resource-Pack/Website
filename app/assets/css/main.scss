@@ -193,6 +193,15 @@ hr {
 	}
 }
 
+// used for search + navbar
+.btn-navbar {
+	width: 32px;
+	height: 32px;
+	line-height: 1;
+	background: transparent;
+	border: none;
+}
+
 // needed to prevent scoped css static encoding issues
 .text-highlight {
 	background: $btn-primary;

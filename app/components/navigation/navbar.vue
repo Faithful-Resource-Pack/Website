@@ -127,7 +127,7 @@ export default defineNuxtComponent({
 header {
 	position: sticky;
 	top: 0;
-	z-index: 999;
+	z-index: 998;
 	box-shadow: $shadow-navbar;
 }
 // wraps both the items and the mobile navbar if present
@@ -137,7 +137,6 @@ header {
 	align-items: center;
 	justify-content: center;
 	padding: 0.5rem 1rem;
-	min-height: 64px;
 }
 // wraps the actual item content (becomes columns on mobile)
 .navbar-item-container {
@@ -163,14 +162,6 @@ header {
 	height: 48px;
 }
 
-.btn-navbar {
-	width: 32px;
-	height: 32px;
-	line-height: 1;
-	background: transparent;
-	border: none;
-}
-
 // logo has intrinsic padding but wordmark doesn't so we subtract a bit to pad it out
 .navbar-mobile-wordmark {
 	max-height: 36px;
@@ -178,9 +169,6 @@ header {
 
 // mobile styles
 @media screen and (max-width: $breakpoint-sm) {
-	.navbar-container {
-		min-height: 56px;
-	}
 	// set items container to left-aligned columns
 	.navbar-item-container {
 		flex-direction: column;
