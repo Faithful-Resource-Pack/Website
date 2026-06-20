@@ -35,7 +35,12 @@
 	</p>
 
 	<!-- both search and results -->
-	<search-list v-if="results.length" class="mb-3" :results @select="onSelect()" />
+	<search-list
+		v-if="results.length"
+		:class="mobile ? 'mb-n2' : 'mb-2'"
+		:results
+		@select="onSelect()"
+	/>
 
 	<!-- search but no results -->
 	<div v-else-if="isSearchable" class="d-flex flex-column align-center justify-center my-10">
@@ -44,7 +49,7 @@
 	</div>
 
 	<!-- no search (and no results obviously) -->
-	<div v-else-if="recentSearchResults.length" :class="$vuetify.display.mdAndUp ? 'mb-3' : 'mb-n2'">
+	<div v-else-if="recentSearchResults.length" :class="mobile ? 'mb-n2' : 'mb-2'">
 		<div class="d-flex align-center justify-space-between">
 			<h4 class="mb-0">Recently searched</h4>
 			<v-btn
@@ -61,7 +66,7 @@
 	</div>
 
 	<!-- bit pointless to show on mobile where there are no keys to navigate with lol -->
-	<template v-if="$vuetify.display.mdAndUp">
+	<template v-if="!mobile">
 		<v-divider class="mt-0" />
 		<div class="d-flex flex-column flex-sm-row align-center my-n2 ga-2">
 			<p class="mb-0"><kbd>TAB</kbd> to navigate</p>

@@ -40,7 +40,7 @@
 			</template>
 			<base-card to="/addons" image="/image/addons/see_more.png">
 				<template #title>
-					<chevron-link aria-label="Go to add-on page">All Add-ons</chevron-link>
+					<chevron-link>All Add-ons</chevron-link>
 				</template>
 			</base-card>
 		</div>
