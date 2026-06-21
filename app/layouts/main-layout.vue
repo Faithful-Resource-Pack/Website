@@ -6,7 +6,8 @@
 		<main class="textured flex-grow-1">
 			<search-modal v-if="$vuetify.display.mdAndUp" v-model="searchModalOpen" />
 			<mobile-search v-else v-model="searchModalOpen" />
-			<slot v-if="noContainer" />
+			<!-- technically we could declare a container inside every component but that sucks -->
+			<slot v-if="layout === 'no-container'" />
 			<div v-else class="container">
 				<slot />
 			</div>
@@ -46,10 +47,10 @@ export default defineNuxtComponent({
 		MobileSearch,
 	},
 	props: {
-		noContainer: {
-			type: Boolean,
+		layout: {
+			type: String,
 			required: false,
-			default: false,
+			default: "default",
 		},
 		overrideTheme: {
 			type: String,
