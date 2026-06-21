@@ -21,7 +21,6 @@
 				</div>
 				<div class="card card-body addon-info">
 					<h2>Details</h2>
-					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
 					<v-tooltip v-if="addon.last_updated" location="bottom">
 						<template #activator="{ props }">
 							<p class="cursor-help mb-0" v-bind="props">
@@ -30,6 +29,7 @@
 						</template>
 						{{ dateTooltip }}
 					</v-tooltip>
+					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
 				</div>
 			</v-col>
 		</v-row>
