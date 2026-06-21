@@ -94,6 +94,11 @@ hr {
 	}
 }
 
+// keep max width lower for nicer reading width
+.text-container {
+	max-width: $breakpoint-md !important;
+}
+
 .title {
 	font-size: 5rem;
 	line-height: 1.2;

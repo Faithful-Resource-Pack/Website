@@ -214,8 +214,7 @@ export default defineNuxtComponent({
 	}
 }
 
-// isn't a standard breakpoint but it's the max size images render nicely at
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: $breakpoint-md) {
 	// center content and display vertically on mobile
 	.about-container {
 		display: flex;

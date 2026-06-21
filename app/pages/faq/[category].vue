@@ -1,5 +1,6 @@
 <script setup>
 definePageMeta({
+	layout: "text-container",
 	disableDefaultMeta: true,
 });
 const { category } = useRoute().params;

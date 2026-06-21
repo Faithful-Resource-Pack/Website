@@ -133,14 +133,17 @@ footer {
 	text-align: center;
 }
 
+@media screen and (max-width: $breakpoint-lg) {
+	// center align text for just the information on the top
+	.footer-information {
+		align-items: center;
+	}
+}
+
 @media screen and (max-width: $breakpoint-md) {
 	// drop link columns below information
 	.footer-container {
 		flex-flow: column wrap;
-		align-items: center;
-	}
-	// center align text for just the information on the top
-	.footer-information {
 		align-items: center;
 	}
 }

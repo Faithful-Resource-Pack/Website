@@ -1,3 +1,9 @@
+<script setup>
+definePageMeta({
+	layout: "text-container",
+});
+</script>
+
 <template>
 	<img class="center" src="/image/about/faithful_logos.png" alt="Faithful Logos" />
 	<hr />

@@ -12,6 +12,8 @@ export default defineNuxtComponent({
 	},
 	setup() {
 		definePageMeta({
+			// todo: maybe add a sidebar or something to make this less necessary?
+			layout: "text-container",
 			disableDefaultMeta: true,
 		});
 	},

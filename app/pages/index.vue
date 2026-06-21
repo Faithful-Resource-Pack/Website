@@ -181,13 +181,8 @@ export default defineNuxtComponent({
 	grid-template-columns: repeat(4, 1fr);
 }
 
-@media screen and (max-width: $breakpoint-lg) {
-	.project-reel {
-		grid-template-columns: repeat(2, 2fr);
-	}
-}
-
 @media screen and (max-width: $breakpoint-md) {
+	.project-reel,
 	.addon-reel {
 		grid-template-columns: repeat(2, 2fr);
 	}

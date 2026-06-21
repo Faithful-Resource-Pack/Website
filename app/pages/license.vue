@@ -1,3 +1,9 @@
+<script setup>
+definePageMeta({
+	layout: "text-container",
+});
+</script>
+
 <template>
 	<h1 class="title mt-5 text-center">Faithful License</h1>
 	<p class="h3 text-center mb-3">

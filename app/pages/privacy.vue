@@ -1,5 +1,6 @@
 <script setup>
 definePageMeta({
+	layout: "text-container",
 	name: "Privacy Policy",
 });
 </script>

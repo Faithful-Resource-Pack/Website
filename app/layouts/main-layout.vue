@@ -8,6 +8,9 @@
 			<mobile-search v-else v-model="searchModalOpen" />
 			<!-- technically we could declare a container inside every component but that sucks -->
 			<slot v-if="layout === 'no-container'" />
+			<div v-else-if="layout === 'text-container'" class="container text-container">
+				<slot />
+			</div>
 			<div v-else class="container">
 				<slot />
 			</div>

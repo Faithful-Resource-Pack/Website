@@ -34,20 +34,22 @@
 			</v-col>
 		</v-row>
 
-		<h2 id="downloads" class="subtitle my-5 text-center">
-			{{ downloads.length === 1 ? "Download" : "Downloads" }}
-		</h2>
-		<nuxt-link
-			v-for="{ name, source } in downloads"
-			:key="source"
-			:to="source"
-			class="btn block btn-lg btn-primary"
-		>
-			<media-icon size="small" :icon="name" fallback="download" />
-			<span class="ml-2">{{ name }}</span>
-		</nuxt-link>
-		<br />
-		<discord-button />
+		<div class="mx-auto text-container">
+			<h2 id="downloads" class="subtitle my-5 text-center">
+				{{ downloads.length === 1 ? "Download" : "Downloads" }}
+			</h2>
+			<nuxt-link
+				v-for="{ name, source } in downloads"
+				:key="source"
+				:to="source"
+				class="btn block btn-lg btn-primary"
+			>
+				<media-icon size="small" :icon="name" fallback="download" />
+				<span class="ml-2">{{ name }}</span>
+			</nuxt-link>
+			<br />
+			<discord-button />
+		</div>
 	</div>
 </template>
 

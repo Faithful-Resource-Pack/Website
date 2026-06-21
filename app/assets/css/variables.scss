@@ -69,11 +69,11 @@ $transition-navigation: all 0.1s ease;
 $font-display: Faithful v1, sans-serif;
 $font-body: Roboto, sans-serif;
 
-/** breakpoints (I have no idea where they came from) */
+/** vaguely vuetify-esque breakpoints */
 $breakpoint-xs: 576px;
 $breakpoint-sm: 760px;
 $breakpoint-md: 960px;
-$breakpoint-lg: 1140px;
+$breakpoint-lg: 1280px;
 
 /** global settings */
 $padding-card: 1rem;

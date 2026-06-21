@@ -114,6 +114,7 @@ export default defineNuxtComponent({
 	},
 	setup() {
 		definePageMeta({
+			layout: "text-container",
 			name: "Download Archive",
 		});
 	},
