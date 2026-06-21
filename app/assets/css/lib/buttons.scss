@@ -37,16 +37,9 @@ a.btn.disabled {
 	pointer-events: none;
 }
 .btn-more {
-	width: 50%;
+	max-width: $breakpoint-xs;
 	display: block;
 	margin: auto;
-
-	@media screen and (max-width: $breakpoint-md) {
-		width: 75%;
-	}
-	@media screen and (max-width: $breakpoint-sm) {
-		width: 100%;
-	}
 }
 .btn-icon {
 	width: 2.5rem;
