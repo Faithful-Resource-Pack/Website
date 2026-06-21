@@ -25,7 +25,7 @@ export default defineNuxtComponent({
 		level: {
 			type: Number,
 			required: false,
-			default: 2,
+			default: 1,
 		},
 		// used when headings should be a list element (nested category)
 		list: {
