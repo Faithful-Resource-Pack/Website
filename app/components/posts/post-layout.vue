@@ -27,7 +27,7 @@
 	</v-alert>
 	<div v-if="post.title" class="text-center my-5">
 		<h1 v-if="mainTitle" class="title mb-2">{{ mainTitle }}</h1>
-		<h2 v-if="subtitle" class="subtitle">{{ subtitle }}</h2>
+		<span v-if="subtitle" class="subtitle">{{ subtitle }}</span>
 	</div>
 	<template v-if="post.header_img">
 		<img :src="post.header_img" class="header-img" />

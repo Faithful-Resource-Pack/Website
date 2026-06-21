@@ -7,18 +7,18 @@
 			>{{ pack }}
 		</h2>
 		<template v-for="({ downloads, files }, edition) in editions" :key="edition">
-			<h3 class="text-center my-3">{{ edition }} Edition</h3>
+			<p class="h3 text-center my-3">{{ edition }} Edition</p>
 			<download-table :downloads :files class="mb-5" />
 		</template>
 		<br /><br />
 	</template>
 	<h2 class="text-center subtitle mb-0">Discontinued</h2>
 	<template v-for="({ downloads, files }, name) in discontinued" :key="name">
-		<h3 :id="hashify(name)" class="text-center my-3 download-title">
+		<p :id="hashify(name)" class="h3 text-center my-3 download-title">
 			<nuxt-link class="download-hashtag" title="Copy URL to clipboard" :to="`#${hashify(name)}`">
 				#</nuxt-link
 			>{{ name }}
-		</h3>
+		</p>
 		<download-table :downloads :files class="mb-5" />
 	</template>
 </template>
