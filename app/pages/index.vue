@@ -47,7 +47,7 @@
 
 		<hr />
 
-		<h2 class="title text-center">News</h2>
+		<h2 class="title text-center">Latest News</h2>
 		<div class="res-grid-3">
 			<template v-if="!topPosts.length">
 				<div v-for="i in 6" :key="i" class="card pb-3">
