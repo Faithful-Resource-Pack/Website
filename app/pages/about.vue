@@ -225,11 +225,4 @@ export default defineNuxtComponent({
 		max-width: 95%;
 	}
 }
-
-@media screen and (max-width: $breakpoint-xl) {
-	// override container class to fix margins
-	.container {
-		max-width: 95% !important;
-	}
-}
 </style>

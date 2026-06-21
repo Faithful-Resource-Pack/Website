@@ -5,15 +5,13 @@
 		<br />
 		Copyright © Faithful Resource Pack
 	</p>
-	<div class="license-download">
-		<nuxt-link
-			class="btn block btn-secondary mb-5"
-			to="https://database.faithfulpack.net/packs/LICENSE.txt"
-		>
-			<v-icon size="small" icon="mdi-download" />
-			<span class="ml-2">Download License</span>
-		</nuxt-link>
-	</div>
+	<nuxt-link
+		class="btn btn-secondary btn-more mb-5"
+		to="https://database.faithfulpack.net/packs/LICENSE.txt"
+	>
+		<v-icon size="small" icon="mdi-download" />
+		<span class="ml-2">Download License</span>
+	</nuxt-link>
 	<div class="card card-body body-text">
 		<h2>You may do the following:</h2>
 		<ol>
@@ -98,16 +96,3 @@
 		</ol>
 	</div>
 </template>
-
-<style scoped lang="scss">
-ol {
-	list-style-position: outside;
-}
-
-.license-download {
-	width: 75%;
-	margin-right: auto;
-	margin-left: auto;
-	margin-bottom: 1rem;
-}
-</style>

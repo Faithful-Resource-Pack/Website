@@ -161,8 +161,6 @@ export default defineNuxtComponent({
 		justify-content: center;
 	}
 	.user-header-username {
-		// mobile title size (looks nicer)
-		font-size: 2.75rem;
 		text-align: center;
 	}
 }

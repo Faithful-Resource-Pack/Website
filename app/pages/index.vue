@@ -66,9 +66,7 @@
 			</template>
 		</div>
 		<br />
-		<nuxt-link class="btn btn-secondary btn-more center" to="/news" aria-label="Go to news page">
-			See all news
-		</nuxt-link>
+		<nuxt-link class="btn btn-secondary btn-more" to="/news">See all news</nuxt-link>
 	</div>
 </template>
 

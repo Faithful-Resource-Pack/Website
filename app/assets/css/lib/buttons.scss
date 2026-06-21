@@ -39,7 +39,7 @@ a.btn.disabled {
 .btn-more {
 	width: 50%;
 	display: block;
-	margin: auto !important;
+	margin: auto;
 
 	@media screen and (max-width: $breakpoint-md) {
 		width: 75%;

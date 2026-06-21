@@ -33,7 +33,7 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 
 		<template v-if="action">
 			<br />
-			<nuxt-link :to="action.to" class="btn btn-secondary btn-more my-5">
+			<nuxt-link :to="action.to" class="btn btn-secondary btn-more">
 				{{ action.text }}
 			</nuxt-link>
 		</template>
