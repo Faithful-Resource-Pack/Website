@@ -45,6 +45,7 @@ export default defineNuxtComponent({
 }
 
 .download-badge {
+	box-shadow: $shadow-button;
 	border-radius: $border-radius;
 }
 
