@@ -7,7 +7,7 @@ definePageMeta({
 <template>
 	<h1 class="title mt-5 text-center">Faithful License</h1>
 	<p class="h3 text-center mb-3">
-		Version 3 - 20th February 2023
+		Version 3 - Feb 20, 2023
 		<br />
 		Copyright © Faithful Resource Pack
 	</p>
