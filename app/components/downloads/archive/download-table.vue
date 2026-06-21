@@ -63,9 +63,7 @@ export default defineNuxtComponent({
 
 .download-heading h4 {
 	font-size: 1.25rem;
-	margin-bottom: 0;
 	padding-top: calc($padding-card / 2);
-	padding-bottom: $padding-card;
 }
 
 // remove table headers on mobile
