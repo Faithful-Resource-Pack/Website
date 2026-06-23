@@ -15,7 +15,6 @@
 			ref="search"
 			v-model="search"
 			variant="solo"
-			density="comfortable"
 			clearable
 			autofocus
 			hide-details

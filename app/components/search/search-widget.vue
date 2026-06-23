@@ -13,7 +13,7 @@
 			ref="search"
 			v-model="search"
 			variant="solo"
-			:density="mobile ? 'compact' : 'comfortable'"
+			:density="mobile ? 'compact' : undefined"
 			clearable
 			autofocus
 			hide-details

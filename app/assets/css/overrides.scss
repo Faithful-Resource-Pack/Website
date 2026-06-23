@@ -134,7 +134,7 @@ kbd {
 }
 
 // bigger text in solo text fields
-.v-text-field.v-input--density-comfortable .v-field--variant-solo .v-field__input {
+.v-text-field:not(.v-input--density-compact) .v-field--variant-solo .v-field__input {
 	// for some reason more side padding makes things more centered
 	padding: 8px 16px !important;
 	font-size: 1.25rem !important;
