@@ -1,5 +1,5 @@
 <template>
-	<div class="author-heads">
+	<div class="author-heads mt-2">
 		<nuxt-link v-for="{ id, src, username } in authorInfo" :key="id" :to="`/user/${id}`">
 			<img :src :alt="`${username}'s Avatar`" :title="username" loading="lazy" />
 		</nuxt-link>

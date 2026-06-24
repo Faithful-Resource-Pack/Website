@@ -9,7 +9,7 @@
 			{{ addon.name }}
 		</template>
 		<template v-if="!minimal" #body>
-			<p class="addon-subtitle mb-2 mt-1" :class="minimal ? '' : 'addon-subtitle-full'">
+			<p class="addon-subtitle mb-0 mt-1" :class="minimal ? '' : 'addon-subtitle-full'">
 				{{ subtitle }}
 			</p>
 			<v-spacer />
