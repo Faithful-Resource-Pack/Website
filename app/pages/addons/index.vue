@@ -63,7 +63,7 @@
 				<v-select v-model="currentSort" hide-details density="compact" :items="sortMethods" />
 			</v-col>
 		</v-row>
-		<div v-if="loading" class="res-grid-3">
+		<div v-if="loading" class="grid-3">
 			<div v-for="i in 5" :key="i" class="card addon-skeleton-card">
 				<v-skeleton-loader
 					data-allow-mismatch="class"
@@ -72,7 +72,7 @@
 				/>
 			</div>
 		</div>
-		<div v-else class="res-grid-3">
+		<div v-else class="grid-3">
 			<addon-card
 				v-for="addon in favAddons"
 				:key="addon.id"

@@ -27,7 +27,7 @@
 
 	<hr />
 
-	<div v-if="!posts.length" class="res-grid-3">
+	<div v-if="!posts.length" class="grid-3">
 		<div v-for="i in 5" :key="i" class="card">
 			<v-skeleton-loader type="image, subtitle, text" :theme class="pb-3" />
 		</div>
@@ -35,7 +35,7 @@
 	<div v-else>
 		<div v-for="([year, yearPosts], i) in restPosts" :key="year">
 			<h2 v-if="i !== 0" class="subtitle mb-2">{{ year }}</h2>
-			<div class="res-grid-3 mb-7">
+			<div class="grid-3 mb-7">
 				<!-- no need for alt text as the images are decorative (the title is enough) -->
 				<post-card
 					v-for="{ id, permalink, header_img, title, date } in yearPosts"

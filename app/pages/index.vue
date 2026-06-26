@@ -21,7 +21,7 @@
 	</hero-section>
 	<div class="container">
 		<h2 class="title mb-4 text-center">Our Projects</h2>
-		<div class="basic-grid project-reel">
+		<div class="grid-4 project-reel">
 			<!-- project data and props have the same key names so we can assign to v-bind directly -->
 			<project-card v-for="project in projects" :key="project.name" v-bind="project" />
 		</div>
@@ -29,7 +29,7 @@
 		<hr />
 
 		<h2 class="title text-center">Add-ons</h2>
-		<div class="basic-grid addon-reel">
+		<div class="grid-4">
 			<template v-if="!addons.length">
 				<div v-for="i in ADDON_REEL_LENGTH - 1" :key="i" class="card">
 					<v-skeleton-loader type="image, subtitle" :theme data-allow-mismatch="class" />
@@ -48,7 +48,7 @@
 		<hr />
 
 		<h2 class="title text-center">Latest News</h2>
-		<div class="res-grid-3">
+		<div class="grid-3">
 			<template v-if="!topPosts.length">
 				<div v-for="i in 6" :key="i" class="card pb-3">
 					<v-skeleton-loader type="image, subtitle, text" :theme data-allow-mismatch="class" />
@@ -176,18 +176,6 @@ export default defineNuxtComponent({
 	margin-left: 8px;
 }
 
-.project-reel,
-.addon-reel {
-	grid-template-columns: repeat(4, 1fr);
-}
-
-@media screen and (max-width: $breakpoint-md) {
-	.project-reel,
-	.addon-reel {
-		grid-template-columns: repeat(2, 2fr);
-	}
-}
-
 @media screen and (max-width: $breakpoint-sm) {
 	.hero-button-container {
 		flex-flow: column nowrap;
@@ -198,6 +186,7 @@ export default defineNuxtComponent({
 	}
 }
 
+// project reel barely fits on 4 so we need to go wider
 @media screen and (max-width: $breakpoint-xs) {
 	.project-reel {
 		grid-template-columns: 1fr;

@@ -42,7 +42,7 @@
 				<span class="h3">{{ addons.length }}</span>
 			</v-chip>
 		</div>
-		<div class="res-grid-3">
+		<div class="grid-3">
 			<addon-card v-for="addon in addons" :key="addon.id" :addon :packs disable-favorites />
 		</div>
 	</template>

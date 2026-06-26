@@ -41,7 +41,7 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 		<template v-if="usePosts">
 			<hr />
 			<h2 id="news" class="subtitle text-center my-5">Latest News</h2>
-			<div class="res-grid-3">
+			<div class="grid-3">
 				<template v-if="!posts.length">
 					<div v-for="i in limit" :key="i" class="card pb-3">
 						<v-skeleton-loader type="image, subtitle, text" :theme />
@@ -65,7 +65,7 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 		<template v-if="useAddons">
 			<hr />
 			<h2 id="addons" class="subtitle text-center my-5">Latest Add-ons</h2>
-			<div class="res-grid-3">
+			<div class="grid-3">
 				<template v-if="!posts.length">
 					<div v-for="i in limit" :key="i" class="card pb-3">
 						<v-skeleton-loader type="image, subtitle, text" :theme />
