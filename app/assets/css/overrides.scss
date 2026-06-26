@@ -1,9 +1,13 @@
 @use "./variables" as *;
 
 /**
- * HTML overrides
+ * Fix HTML's awful defaults and prepare stylesheet for custom content
  */
 
+// remove this line to instantly die
+*, *::before, *::after {
+	box-sizing: border-box;
+}
 p {
 	margin-top: 0;
 	margin-bottom: 1rem;
@@ -67,7 +71,7 @@ kbd {
 }
 
 /**
- * vuetify overrides
+ * Vuetify overrides (a lot of theme fixes)
  */
 
 // make inline addon badges not suck
@@ -119,6 +123,7 @@ kbd {
 	aspect-ratio: 16 / 9 !important;
 }
 
+// consistent with webapp, pill chips look weird next to square everything
 .v-chip {
 	border-radius: $border-radius !important;
 }

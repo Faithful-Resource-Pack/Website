@@ -14,10 +14,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-// remove this line to instantly die
-*, *::before, *::after {
-	box-sizing: border-box;
-}
 html {
 	font-family: $font-display !important;
 	overflow-x: hidden;
@@ -54,6 +50,9 @@ h5, .h5 {
 h6, .h6 {
 	font-size: 1rem;
 }
+.body-text p, .body-text li {
+	font-family: $font-body;
+}
 a {
 	color: $text-link;
 	text-decoration: none;
@@ -80,15 +79,15 @@ hr {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	max-width: $breakpoint-lg;
+	// this is a bit ugly but it's way less annoying
 	@media screen and (max-width: $breakpoint-lg) {
 		max-width: $breakpoint-md;
 	}
 	@media screen and (max-width: $breakpoint-md) {
-		max-width: calc(#{$breakpoint-sm} - 20px);
+		max-width: calc($breakpoint-sm - 20px);
 	}
-	// this is a bit ugly but it's far fewer braces
 	@media screen and (max-width: $breakpoint-sm) {
-		max-width: calc(#{$breakpoint-xs} - 16px);
+		max-width: calc($breakpoint-xs - 16px);
 	}
 }
 
@@ -106,6 +105,7 @@ hr {
 	line-height: 1.2;
 }
 
+// prevents titles wrapping horribly on mobile
 @media screen and (max-width: $breakpoint-sm) {
 	.title {
 		font-size: 3.75rem;
@@ -118,10 +118,6 @@ hr {
 .text-center {
 	text-align: center !important;
 }
-.center {
-	display: block;
-	margin: auto !important;
-}
 .disabled {
 	pointer-events: none;
 }
@@ -129,13 +125,8 @@ hr {
 .block {
 	width: 100%;
 }
-.body-text p, .body-text li {
-	font-family: $font-body;
-}
 .header-img {
 	width: 100%;
-}
-.card, .header-img {
 	overflow: hidden;
 	box-shadow: $shadow-card;
 	border-radius: $border-radius;
