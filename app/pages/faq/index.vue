@@ -28,7 +28,7 @@ definePageMeta({
 		</template>
 	</hero-section>
 	<div class="container">
-		<div class="card-row" style="padding-bottom: 50px">
+		<div class="card-row">
 			<nuxt-link
 				v-for="{ icon, title, to, color } in categories"
 				:key="title"
@@ -36,20 +36,20 @@ definePageMeta({
 				:class="`${color}-background`"
 				:to
 			>
-				<v-icon :icon class="faq-body-text faq-icon colored-title" />
-				<h2 class="text-center faq-body-text colored-title">
-					<chevron-link>{{ title }}</chevron-link>
+				<v-icon :icon size="160px" class="colored-title mb-2" />
+				<h2 class="colored-title">
+					{{ title }}
 				</h2>
 			</nuxt-link>
 		</div>
+		<br />
 		<discord-button>Still have questions? Ask us on our Discord!</discord-button>
 	</div>
 </template>
 
 <script>
-import DiscordButton from "~/components/lib/discord-button.vue";
-import ChevronLink from "~/components/lib/chevron-link.vue";
 import HeroSection from "~/components/lib/hero-section.vue";
+import DiscordButton from "~/components/lib/discord-button.vue";
 
 import allFaqs from "../../../public/faq.json";
 
@@ -57,7 +57,6 @@ export default defineNuxtComponent({
 	components: {
 		HeroSection,
 		DiscordButton,
-		ChevronLink,
 	},
 	data() {
 		return {
@@ -124,35 +123,33 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
 
+.faq-icon {
+	font-size: 10rem;
+}
+
 .card-row {
 	display: flex;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 3rem;
+	gap: 1.5rem;
 }
 
 .faq-card {
-	min-width: 250px;
-	min-height: 350px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	height: 300px;
 	justify-content: center;
-	flex-grow: 0;
-	gap: 1rem;
+	align-items: center;
 }
 
-.faq-body-text {
-	opacity: 1;
-	color: white;
+// really stupid hack to make sure there's never just one wrapped to the bottom
+@media screen and (max-width: $breakpoint-lg) {
+	.faq-card {
+		min-width: 250px;
+	}
 }
-
-.faq-icon {
-	font-size: 10rem;
-	* {
-		opacity: 1 !important;
-		color: white !important;
+@media screen and (max-width: $breakpoint-md) {
+	.faq-card {
+		min-width: auto;
 	}
 }
 </style>

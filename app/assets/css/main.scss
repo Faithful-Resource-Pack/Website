@@ -79,18 +79,16 @@ hr {
 	margin-left: auto;
 	padding-top: 50px;
 	padding-bottom: 50px;
-	// this is a bit ugly but it's far fewer braces
-	@media screen and (min-width: $breakpoint-xs) {
-		max-width: calc(#{$breakpoint-xs} - 16px);
-	}
-	@media screen and (min-width: $breakpoint-sm) {
-		max-width: calc(#{$breakpoint-sm} - 20px);
-	}
-	@media screen and (min-width: $breakpoint-md) {
+	max-width: $breakpoint-lg;
+	@media screen and (max-width: $breakpoint-lg) {
 		max-width: $breakpoint-md;
 	}
-	@media screen and (min-width: $breakpoint-lg) {
-		max-width: $breakpoint-lg;
+	@media screen and (max-width: $breakpoint-md) {
+		max-width: calc(#{$breakpoint-sm} - 20px);
+	}
+	// this is a bit ugly but it's far fewer braces
+	@media screen and (max-width: $breakpoint-sm) {
+		max-width: calc(#{$breakpoint-xs} - 16px);
 	}
 }
 
