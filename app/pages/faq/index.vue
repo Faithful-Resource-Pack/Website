@@ -132,7 +132,7 @@ export default defineNuxtComponent({
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 1.5rem;
+	gap: $grid-gap;
 }
 
 .faq-card {
