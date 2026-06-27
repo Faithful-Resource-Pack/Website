@@ -89,13 +89,13 @@ export default defineNuxtComponent({
 
 .btn-close {
 	position: absolute;
-	top: $padding-card;
-	right: $padding-card;
+	top: $padding-container;
+	right: $padding-container;
 }
 
 .delimiters {
 	position: absolute;
-	bottom: $padding-card;
+	bottom: $padding-container;
 	padding: 4px;
 	left: 50%;
 	transform: translateX(-50%);

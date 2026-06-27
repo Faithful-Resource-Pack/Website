@@ -61,7 +61,7 @@ export default defineNuxtComponent({
 	z-index: 999;
 	width: 100vw;
 	max-height: 100vh;
-	padding: 0.5rem $padding-card $padding-card $padding-card;
+	padding: 0.5rem $padding-container $padding-container $padding-container;
 	// ideally the search would be sticky but this is less janky
 	overflow: hidden auto;
 	border-radius: 0 0 $border-radius $border-radius;

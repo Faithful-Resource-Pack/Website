@@ -69,7 +69,7 @@ export default defineNuxtComponent({
 @use "~/assets/css/variables" as *;
 
 footer {
-	padding: $padding-card;
+	padding: $padding-container;
 	text-align: center;
 }
 

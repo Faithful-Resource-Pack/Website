@@ -158,17 +158,17 @@ td {
 	// https://dev.to/temmietope/rounded-edges-on-table-rows-1d0n
 	&:first-child {
 		border-radius: $border-radius 0 0 $border-radius;
-		padding-left: calc($padding-card / 2);
+		padding-left: calc($padding-container / 2);
 	}
 	&:last-child {
 		border-radius: 0 $border-radius $border-radius 0;
-		padding-right: calc($padding-card / 2);
+		padding-right: calc($padding-container / 2);
 	}
 }
 
 // match intrinsic card padding on left side (looks more proportional)
 .show-icon-container {
-	padding-right: $padding-card;
+	padding-right: $padding-container;
 }
 
 .show-icon {

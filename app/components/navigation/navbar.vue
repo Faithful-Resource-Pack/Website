@@ -136,7 +136,7 @@ header {
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
-	padding: 0.5rem $padding-card;
+	padding: 0.5rem $padding-container;
 }
 // wraps the actual item content (becomes columns on mobile)
 .navbar-item-container {

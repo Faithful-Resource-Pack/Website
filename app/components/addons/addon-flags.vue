@@ -42,8 +42,8 @@ export default {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	bottom: $padding-card;
-	right: $padding-card;
+	bottom: $padding-container;
+	right: $padding-container;
 
 	& > img {
 		height: 32px;

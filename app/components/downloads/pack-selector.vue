@@ -132,7 +132,7 @@ export default defineNuxtComponent({
 .download-choice:not(.selected-choice):hover,
 .download-choice:not(.selected-choice):focus {
 	// half white half green, should unhardcode at some point
-	border: $border-thickness solid rgba(#bae3a1, 0.5);
+	border: $border-width solid rgba(#bae3a1, 0.5);
 	.download-radio-icon {
 		color: rgba(#bae3a1, 0.9);
 	}
@@ -143,7 +143,7 @@ export default defineNuxtComponent({
 }
 
 .selected-choice {
-	border: $border-thickness solid $text-green;
+	border: $border-width solid $text-green;
 	background: rgba($text-green, 0.15);
 	.download-radio-icon {
 		color: $text-green;

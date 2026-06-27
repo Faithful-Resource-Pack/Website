@@ -51,7 +51,7 @@ export default defineNuxtComponent({
 .download-table-padding {
 	border-radius: $border-radius;
 	// half of the horizontal padding goes here and half in the highlight
-	padding: calc($padding-card / 2);
+	padding: calc($padding-container / 2);
 	overflow-x: auto;
 	box-shadow: $shadow-card;
 }
@@ -63,7 +63,7 @@ export default defineNuxtComponent({
 
 .download-heading h4 {
 	font-size: 1.25rem;
-	padding-top: calc($padding-card / 2);
+	padding-top: calc($padding-container / 2);
 }
 
 // remove table headers on mobile

@@ -95,8 +95,8 @@ export default defineNuxtComponent({
 
 .btn-modal {
 	position: absolute;
-	top: $padding-card;
-	right: $padding-card;
+	top: $padding-container;
+	right: $padding-container;
 }
 
 .reel-container {
@@ -104,8 +104,8 @@ export default defineNuxtComponent({
 	flex-flow: row nowrap;
 	overflow: auto hidden;
 	scrollbar-width: none;
-	margin: $padding-card;
-	gap: $padding-card;
+	margin: $padding-container;
+	gap: $padding-container;
 }
 
 .reel-image {

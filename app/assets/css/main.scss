@@ -72,12 +72,12 @@ hr {
 /** MAIN STUFF */
 .container {
 	width: 100%;
-	padding-right: $padding-card;
-	padding-left: $padding-card;
+	padding-right: $padding-container;
+	padding-left: $padding-container;
 	margin-right: auto;
 	margin-left: auto;
-	padding-top: calc($padding-card * 2);
-	padding-bottom: calc($padding-card * 2);
+	padding-top: calc($padding-container * 2);
+	padding-bottom: calc($padding-container * 2);
 
 	max-width: $breakpoint-lg;
 	// this is a bit ugly but it's way less annoying
@@ -85,14 +85,14 @@ hr {
 		max-width: $breakpoint-md;
 	}
 	@media screen and (max-width: $breakpoint-md) {
-		max-width: calc($breakpoint-sm - $padding-card);
+		max-width: calc($breakpoint-sm - $padding-container);
 	}
 	@media screen and (max-width: $breakpoint-sm) {
-		max-width: calc($breakpoint-xs - $padding-card);
+		max-width: calc($breakpoint-xs - $padding-container);
 
 		// less mobile padding
-		padding-top: $padding-card;
-		padding-bottom: $padding-card;
+		padding-top: $padding-container;
+		padding-bottom: $padding-container;
 	}
 }
 
