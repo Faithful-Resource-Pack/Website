@@ -162,8 +162,9 @@ export default defineNuxtComponent({
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	// compensate for no image by adding more padding
+	padding-top: calc($padding-card * 4);
+	padding-bottom: calc($padding-card * 4);
 
 	h1 {
 		margin-top: 0;

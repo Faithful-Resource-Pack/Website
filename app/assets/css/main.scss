@@ -72,22 +72,27 @@ hr {
 /** MAIN STUFF */
 .container {
 	width: 100%;
-	padding-right: 15px;
-	padding-left: 15px;
+	padding-right: $padding-card;
+	padding-left: $padding-card;
 	margin-right: auto;
 	margin-left: auto;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: calc($padding-card * 2);
+	padding-bottom: calc($padding-card * 2);
+
 	max-width: $breakpoint-lg;
 	// this is a bit ugly but it's way less annoying
 	@media screen and (max-width: $breakpoint-lg) {
 		max-width: $breakpoint-md;
 	}
 	@media screen and (max-width: $breakpoint-md) {
-		max-width: calc($breakpoint-sm - 20px);
+		max-width: calc($breakpoint-sm - $padding-card);
 	}
 	@media screen and (max-width: $breakpoint-sm) {
-		max-width: calc($breakpoint-xs - 16px);
+		max-width: calc($breakpoint-xs - $padding-card);
+
+		// less mobile padding
+		padding-top: $padding-card;
+		padding-bottom: $padding-card;
 	}
 }
 
