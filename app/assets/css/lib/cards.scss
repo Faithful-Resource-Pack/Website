@@ -2,10 +2,12 @@
 
 /** Bootstrap Cards */
 .card {
+	// makes absolute positioned elements (addon favorite ui) work better
 	position: relative;
 	display: flex;
 	flex-flow: column nowrap;
-	min-width: 0;
+	// makes images clip to border radius
+	overflow: hidden;
 	overflow-wrap: break-word;
 	box-shadow: $shadow-card;
 	border-radius: $border-radius;
