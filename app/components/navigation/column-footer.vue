@@ -129,7 +129,7 @@ footer {
 
 .footer-title > i {
 	// fix padding
-	margin-right: 1rem;
+	margin-right: 0.75rem;
 	text-align: center;
 }
 

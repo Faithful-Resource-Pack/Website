@@ -23,15 +23,15 @@
 		"nuxt": "^4.4.8",
 		"remove-markdown": "^0.6.4",
 		"sass": "^1.101.0",
-		"vue": "^3.5.38",
+		"vue": "^3.5.39",
 		"vuetify-nuxt-module": "^0.19.5",
 		"yaml": "^2.9.0"
 	},
 	"devDependencies": {
 		"@nuxt/eslint": "1.16.0",
 		"@types/luxon": "^3.7.2",
-		"eslint": "^10.5.0",
-		"prettier": "^3.8.4"
+		"eslint": "^10.6.0",
+		"prettier": "^3.9.4"
 	},
 	"peerDependencies": {
 		"vuetify": "3"
