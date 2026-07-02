@@ -86,9 +86,9 @@ const NAVBAR_ITEMS = [
 		icon: "mdi-newspaper-variant",
 	},
 	{
-		name: "Web App",
-		to: "https://webapp.faithfulpack.net",
-		icon: "mdi-account",
+		name: "Studio",
+		to: "https://studio.faithfulpack.net",
+		icon: "mdi-hammer-screwdriver",
 	},
 	{
 		name: "About",

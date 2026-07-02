@@ -46,9 +46,9 @@ definePageMeta({
 			</li>
 			<li>
 				A technology similar to cookies called "localstorage" is used to save preferred website
-				themes, favorited add-ons, and recent searches. On the Faithful Web Application, login
-				information and persistent user-customizable settings also use localstorage. Localstorage is
-				entirely stored on the user's device and cannot be read by Faithful or any other user.
+				themes, favorited add-ons, and recent searches. On the Faithful Studio, login information
+				and persistent user-customizable settings also use localstorage. Localstorage is entirely
+				stored on the user's device and cannot be read by Faithful or any other user.
 			</li>
 			<li>
 				A record of the number of times a Discord bot command has been used is stored on a local
@@ -77,7 +77,7 @@ definePageMeta({
 			</li>
 			<li>
 				Localstorage data is used to remember user-configured settings between website visits and
-				prevent the web app logging out users between sessions.
+				prevent the Faithful Studio logging out users between sessions.
 			</li>
 			<li>
 				Discord bot command records are completely anonymous usage metrics used to improve the bot.
