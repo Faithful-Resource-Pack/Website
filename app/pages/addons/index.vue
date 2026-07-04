@@ -91,7 +91,18 @@
 				@toggleFav="toggleFav"
 			/>
 		</div>
+		<!-- put the CTA below the bottom element for tall monitors that don't scroll -->
 		<div ref="bottomElement" />
+		<hr />
+		<h2 class="text-center">Can't find what you're looking for?</h2>
+		<a
+			class="btn btn-secondary btn-more"
+			href="https://studio.faithfulpack.net"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Submit an add-on on the Faithful Studio
+		</a>
 	</div>
 </template>
 

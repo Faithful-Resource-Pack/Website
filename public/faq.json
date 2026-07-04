@@ -124,7 +124,7 @@
     },
     {
         "question": "How can I submit my add-on to the website?",
-        "answer": "On https://webapp.faithfulpack.net/, log in with your Discord account. Using the sidebar, navigate to the \"Upload\" tab in the add-on category. Finally, fill out the form that you're presented with, and when you're finished, click the Submit button. Your add-on will appear on the website when it has been reviewed and approved by a manager.",
+        "answer": "On https://studio.faithfulpack.net/, log in with your Discord account. Using the sidebar, navigate to the \"Upload\" tab in the add-on category. Finally, fill out the form that you're presented with, and when you're finished, click the Submit button. Your add-on will appear on the website when it has been reviewed and approved by a manager.",
         "keywords": ["submit add-on", "add-on", "addon"],
         "categories": ["creating"]
     },
