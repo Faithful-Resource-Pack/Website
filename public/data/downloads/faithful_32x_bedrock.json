@@ -2,9 +2,18 @@
   "26.x": [
     {
       "file_type": "Pre-release",
+      "file_version": 17.1,
+      "file_name": "July 2026",
+      "latest": true,
+      "date": "2025-06-18",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Bedrock/July%202026/Faithful%2032x%20%E2%80%93%20July%202026%20Release.mcpack"
+      }
+    },
+    {
+      "file_type": "Pre-release",
       "file_version": 17,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2025-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Bedrock/June%202026/Faithful%2032x%20-%2026.x.mcpack"
