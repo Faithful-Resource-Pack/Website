@@ -27,7 +27,7 @@ useSeoMeta(generateMetaTags({ title: `FAQ: ${toTitleCase(category)}` }));
 </template>
 
 <script>
-import allFaqs from "../../../public/faq.json";
+import allFaqs from "../../../public/data/faq.json";
 
 export default defineNuxtComponent({
 	inject: ["theme"],

@@ -51,7 +51,7 @@ definePageMeta({
 import HeroSection from "~/components/lib/hero-section.vue";
 import DiscordButton from "~/components/lib/discord-button.vue";
 
-import allFaqs from "../../../public/faq.json";
+import allFaqs from "../../../public/data/faq.json";
 
 export default defineNuxtComponent({
 	components: {

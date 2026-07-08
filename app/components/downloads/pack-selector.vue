@@ -1,6 +1,6 @@
 <template>
 	<div class="download-selector my-5" role="radiogroup">
-		<template v-for="{ id, label, description, to } in packs" :key="id">
+		<template v-for="{ id, name, description, to } in packs" :key="id">
 			<!-- focus/blur for keyboard navigation, mouseenter/leave for mouse navigation -->
 			<button
 				class="download-choice ga-2 pa-3 cursor-pointer"
@@ -18,7 +18,7 @@
 						:icon="id === selectedPack ? 'mdi-radiobox-marked' : 'mdi-radiobox-blank'"
 					/>
 					<div class="d-flex flex-column align-start">
-						<h3 class="pack-name my-1">{{ label }}</h3>
+						<h3 class="pack-name my-1">{{ name }}</h3>
 						<span>{{ description }}</span>
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 					:aria-hidden="id !== hoveredPack"
 					target="_blank"
 					rel="noopener noreferrer"
-					:title="`See more about ${label}`"
+					:title="`See more about ${name}`"
 					class="btn btn-secondary btn-icon"
 					:style="{ opacity: id === hoveredPack || id === selectedPack ? '1' : '0' }"
 				>

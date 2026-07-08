@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import categories from "../../../public/footer.json";
+import categories from "../../../public/data/footer.json";
 
 export default defineNuxtComponent({
 	// can't be called footer since that's already an element

@@ -56,6 +56,8 @@ import PackPreview from "~/components/downloads/pack-preview.vue";
 import PackSelector from "~/components/downloads/pack-selector.vue";
 import VersionSelector from "~/components/downloads/version-selector.vue";
 
+import projects from "../../public/data/projects.json";
+
 const DOWNLOAD_DATA = [
 	{
 		id: "f32",
@@ -122,7 +124,7 @@ export default defineNuxtComponent({
 				}
 
 				// vite limitation, can't do regular $fetch here
-				const downloads = await import(`../../public/downloads/${json}.json`)
+				const downloads = await import(`../../public/data/downloads/${json}.json`)
 					.then((res) => res.default)
 					.catch((err) => {
 						console.error(err);
@@ -138,32 +140,7 @@ export default defineNuxtComponent({
 	},
 	data() {
 		return {
-			packs: [
-				{
-					id: "f32",
-					label: "Faithful 32x",
-					description: "Tried and true for over a decade.",
-					to: "/faithful32x",
-				},
-				{
-					id: "f64",
-					label: "Faithful 64x",
-					description: "An even more detailed experience.",
-					to: "/faithful64x",
-				},
-				{
-					id: "cf32",
-					label: "Classic Faithful 32x",
-					description: "Bring back the old-school feel in style.",
-					to: "/classic32x",
-				},
-				{
-					id: "cf64",
-					label: "Classic Faithful 64x",
-					description: "Nostalgia and ultra-detailed graphics, all in one.",
-					to: "/classic64x-jappa",
-				},
-			],
+			packs: projects,
 			selectedPack: "f32",
 			hoverPack: "f32",
 			selectedEdition: null,
@@ -219,14 +196,14 @@ export default defineNuxtComponent({
 		selectedPack: {
 			handler(newValue) {
 				const pack = this.packs.find((p) => p.id === newValue);
-				if (!pack || this.hashify(pack.label) === this.$route.hash) return;
-				this.$router.replace({ hash: this.hashify(pack.label) });
+				if (!pack || this.hashify(pack.name) === this.$route.hash) return;
+				this.$router.replace({ hash: this.hashify(pack.name) });
 			},
 		},
 	},
 	mounted() {
 		if (this.$route.hash) {
-			const result = this.packs.find((p) => this.hashify(p.label) === this.$route.hash);
+			const result = this.packs.find((p) => this.hashify(p.name) === this.$route.hash);
 			if (result && result.id) this.selectedPack = result.id;
 			this.hoverPack = this.selectedPack;
 		}

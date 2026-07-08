@@ -79,36 +79,8 @@ import ChevronLink from "~/components/lib/chevron-link.vue";
 import HeroSection from "~/components/lib/hero-section.vue";
 import BaseCard from "~/components/lib/base-card.vue";
 
-const PROJECTS = [
-	{
-		name: "Faithful 32x",
-		background: "/image/posters/f32.jpg",
-		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f32_logo.png",
-		description: "Tried and true for over a decade.",
-		to: "/faithful32x",
-	},
-	{
-		name: "Faithful 64x",
-		background: "/image/posters/f64.jpg",
-		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f64_logo.png",
-		description: "An even more detailed experience.",
-		to: "/faithful64x",
-	},
-	{
-		name: "Classic Faithful 32x",
-		background: "/image/posters/cf32.jpg",
-		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf32_logo.png",
-		description: "Bring back the old-school feel in style.",
-		to: "/classic32x",
-	},
-	{
-		name: "Classic Faithful 64x",
-		background: "/image/posters/cf64.jpg",
-		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf64_logo.png",
-		description: "Nostalgia and ultra-detailed graphics, all in one.",
-		to: "/classic64x-jappa",
-	},
-];
+import projects from "../../public/data/projects.json";
+
 const ADDON_REEL_LENGTH = 4;
 
 export default defineNuxtComponent({
@@ -132,7 +104,7 @@ export default defineNuxtComponent({
 	},
 	data() {
 		return {
-			projects: PROJECTS,
+			projects,
 			ADDON_REEL_LENGTH,
 			addons: [],
 			topPosts: [],

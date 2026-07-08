@@ -79,7 +79,7 @@
 <script>
 import SearchList from "~/components/search/search-list.vue";
 
-import footerItems from "../../../public/footer.json";
+import footerItems from "../../../public/data/footer.json";
 
 const START_CONTEXT = 10;
 const END_CONTEXT = 50;

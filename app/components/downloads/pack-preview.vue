@@ -1,20 +1,20 @@
 <template>
 	<img
-		v-for="{ id, label } in packs"
+		v-for="{ id, name } in packs"
 		:key="id"
 		class="download-preview"
 		:class="getClass(id)"
 		:src="`/image/banners/${id}.jpg`"
-		:alt="`${label} Background`"
+		:alt="`${name} Background`"
 	/>
 
 	<img
-		v-for="{ id, label } in packs"
+		v-for="{ id, name } in packs"
 		:key="id"
 		class="download-preview download-logo"
 		:class="getClass(id)"
 		:src="`https://database.faithfulpack.net/images/branding/logos/transparent/hd/${id}_logo.png`"
-		:alt="`${label} Logo`"
+		:alt="`${name} Logo`"
 	/>
 </template>
 

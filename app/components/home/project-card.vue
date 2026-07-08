@@ -2,9 +2,17 @@
 	<base-card :to>
 		<template #image>
 			<div class="project-image">
-				<img class="project-background" :src="background" :alt="name" />
+				<img
+					class="project-background"
+					:src="`/image/banners/${id}.jpg`"
+					:alt="`${name} Background`"
+				/>
 				<div class="project-shadow" />
-				<img class="project-logo" :src="logo" :alt="`${name} logo`" />
+				<img
+					class="project-logo"
+					:src="`https://database.faithfulpack.net/images/branding/logos/transparent/hd/${id}_logo.png`"
+					:alt="name"
+				/>
 			</div>
 		</template>
 		<template #title>
@@ -25,15 +33,11 @@ export default defineNuxtComponent({
 		BaseCard,
 	},
 	props: {
+		id: {
+			type: String,
+			required: true,
+		},
 		name: {
-			type: String,
-			required: true,
-		},
-		background: {
-			type: String,
-			required: true,
-		},
-		logo: {
 			type: String,
 			required: true,
 		},

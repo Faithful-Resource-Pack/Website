@@ -64,48 +64,17 @@
 
 <script>
 // automatically gets split into two sides
-const NAVBAR_ITEMS = [
-	{
-		name: "Home",
-		to: "/",
-		icon: "mdi-home",
-	},
-	{
-		name: "Downloads",
-		to: "/downloads",
-		icon: "mdi-download",
-	},
-	{
-		name: "Add-ons",
-		to: "/addons",
-		icon: "mdi-plus-thick",
-	},
-	{
-		name: "News",
-		to: "/news",
-		icon: "mdi-newspaper-variant",
-	},
-	{
-		name: "Studio",
-		to: "https://studio.faithfulpack.net",
-		icon: "mdi-hammer-screwdriver",
-	},
-	{
-		name: "About",
-		to: "/about",
-		icon: "mdi-help-circle",
-	},
-];
+import items from "../../../public/data/navbar.json";
 
 export default defineNuxtComponent({
 	name: "navbar",
 	data() {
 		// split down middle
-		const sideLength = Math.round(NAVBAR_ITEMS.length / 2);
+		const sideLength = Math.round(items.length / 2);
 		return {
 			isOpen: false,
-			left: NAVBAR_ITEMS.slice(0, sideLength),
-			right: NAVBAR_ITEMS.slice(sideLength),
+			left: items.slice(0, sideLength),
+			right: items.slice(sideLength),
 		};
 	},
 	emits: ["search"],
