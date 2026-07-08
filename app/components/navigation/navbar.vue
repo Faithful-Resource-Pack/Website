@@ -121,7 +121,7 @@ header {
 .navbar-mobile-container {
 	display: none;
 }
-// make sure each item in the bar takes up the same length
+// dubious way of making sure logo is centered on the page (everything is the same length)
 .navbar-link {
 	width: 125px;
 }
