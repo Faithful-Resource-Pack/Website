@@ -1,5 +1,5 @@
 <template>
-	<header class="accent-textured">
+	<header class="accent-textured dark-theme">
 		<nav class="navbar-container">
 			<div class="navbar-mobile-container">
 				<button
