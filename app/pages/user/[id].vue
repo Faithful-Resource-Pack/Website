@@ -11,6 +11,8 @@
 				:class="user.uuid && 'zoom-hitbox zoom-affected'"
 				:src="`https://vzge.me/face/128/${user.uuid || 'X-Steve'}`"
 				:title="user.uuid"
+				width="128"
+				height="128"
 			/>
 		</component>
 		<div class="flex-grow-1">

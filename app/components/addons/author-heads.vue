@@ -1,7 +1,14 @@
 <template>
 	<div class="author-heads mt-2">
 		<nuxt-link v-for="{ id, src, username } in authorInfo" :key="id" :to="`/user/${id}`">
-			<img :src :alt="`${username}'s Avatar`" :title="username" loading="lazy" />
+			<img
+				:src
+				:alt="`${username}'s Avatar`"
+				:title="username"
+				loading="lazy"
+				width="32"
+				height="32"
+			/>
 		</nuxt-link>
 		<p v-if="firstUsername" class="mb-0">By {{ firstUsername }}</p>
 	</div>
@@ -41,7 +48,6 @@ export default {
 	align-items: center;
 	gap: 8px;
 	img {
-		height: 32px;
 		image-rendering: pixelated;
 	}
 }

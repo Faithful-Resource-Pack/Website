@@ -5,14 +5,25 @@
 			:src="java"
 			title="Available for Java Edition"
 			loading="lazy"
+			width="32"
+			height="32"
 		/>
 		<img
 			v-if="options.tags.includes('Bedrock')"
 			:src="bedrock"
 			title="Available for Bedrock Edition"
 			loading="lazy"
+			width="32"
+			height="32"
 		/>
-		<img v-if="options.optifine" :src="optifine" title="Requires OptiFine" loading="lazy" />
+		<img
+			v-if="options.optifine"
+			:src="optifine"
+			title="Requires OptiFine"
+			loading="lazy"
+			width="32"
+			height="32"
+		/>
 	</div>
 </template>
 
@@ -46,8 +57,6 @@ export default {
 	right: $padding-container;
 
 	& > img {
-		height: 32px;
-		width: 32px;
 		border-radius: $border-radius;
 		margin-top: 5px;
 	}

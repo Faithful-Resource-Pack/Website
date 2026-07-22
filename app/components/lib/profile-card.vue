@@ -1,6 +1,6 @@
 <template>
 	<div class="profile-card">
-		<img class="profile-avatar" :src :alt />
+		<img class="profile-avatar" :src :alt width="48" height="48" />
 		<!-- need div to treat as one unit -->
 		<div><slot /></div>
 	</div>
@@ -37,7 +37,6 @@ export default defineNuxtComponent({
 
 .profile-avatar {
 	image-rendering: pixelated;
-	height: 48px;
 	filter: drop-shadow($shadow-card);
 }
 </style>

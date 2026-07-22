@@ -40,9 +40,11 @@
 
 				<button class="navbar-desktop-logo-container" title="Start Search" @click="$emit('search')">
 					<img
-						class="navbar-desktop-logo zoom-hitbox zoom-affected"
+						class="zoom-hitbox zoom-affected"
 						src="https://database.faithfulpack.net/images/branding/logos/transparent/hd/main_logo.png?w=128"
 						alt="Faithful Logo"
+						width="48"
+						height="48"
 					/>
 				</button>
 
@@ -124,11 +126,6 @@ header {
 // dubious way of making sure logo is centered on the page (everything is the same length)
 .navbar-link {
 	width: 125px;
-}
-
-.navbar-desktop-logo {
-	width: 48px;
-	height: 48px;
 }
 
 // logo has intrinsic padding but wordmark doesn't so we subtract a bit to pad it out
