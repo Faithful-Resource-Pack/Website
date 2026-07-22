@@ -46,6 +46,10 @@
 			<addon-card v-for="addon in addons" :key="addon.id" :addon :packs disable-favorites />
 		</div>
 	</template>
+	<div v-else-if="!loading" class="text-center">
+		<v-icon size="96" icon="mdi-alert-circle-outline" />
+		<p class="h4 mt-2">This user has no add-ons!</p>
+	</div>
 </template>
 
 <script>
@@ -98,6 +102,7 @@ export default defineNuxtComponent({
 		return {
 			packs: [],
 			addons: [],
+			loading: true,
 		};
 	},
 	methods: {
@@ -121,6 +126,9 @@ export default defineNuxtComponent({
 		});
 		$fetch(`${apiURL}/users/${this.user.id}/addons/approved`).then((res) => {
 			this.addons = res.sort((a, b) => (b.last_updated || 0) - (a.last_updated || 0));
+
+			// render doesn't block on packs
+			this.loading = false;
 		});
 	},
 });

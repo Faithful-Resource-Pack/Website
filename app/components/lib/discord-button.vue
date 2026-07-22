@@ -4,6 +4,6 @@
 		class="btn btn-secondary btn-xl block"
 		v-bind="$attrs"
 	>
-		<slot>Start a discussion on our Discord!</slot>
+		<slot>Start a discussion on Discord!</slot>
 	</nuxt-link>
 </template>
