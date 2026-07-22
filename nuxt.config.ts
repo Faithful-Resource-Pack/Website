@@ -85,6 +85,12 @@ export default defineNuxtConfig({
 		},
 	},
 	modules: ["vuetify-nuxt-module", "@nuxt/eslint"],
+	// fix for https://github.com/vuetifyjs/cli/issues/25
+	vuetify: {
+		moduleOptions: {
+			prefixComposables: true,
+		},
+	},
 	css: [
 		"~/assets/css/main.scss",
 		// load all at once and switch based on root-level class
