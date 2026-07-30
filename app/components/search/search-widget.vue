@@ -262,6 +262,26 @@ export default defineNuxtComponent({
 				}),
 			);
 		});
+		$fetch(`${apiURL}/users/names`).then((users) => {
+			this.filters.push((search) =>
+				users.map((user) => {
+					const entry = {
+						type: "User account",
+						link: `/user/${user.id}`,
+						label: user.username || `Anonymous (${user.id})`,
+						icon: `https://vzge.me/face/64/${user.uuid || "X-Steve"}`,
+						// push to bottom of each priority (don't make random users show up)
+						date: new Date("0000-01-01"),
+					};
+					if (user.username?.toLowerCase() === search.toLowerCase())
+						return { priority: 0, ...entry };
+					if (user.username?.toLowerCase().startsWith(search.toLowerCase()))
+						return { priority: 1, ...entry };
+					// don't do include searches because then results get Very irrelevant
+					return { priority: -1, ...entry };
+				}),
+			);
+		});
 
 		const metaItems = footerItems.flatMap((category) =>
 			category.items.map((item) => ({

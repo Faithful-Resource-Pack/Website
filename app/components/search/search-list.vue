@@ -9,7 +9,13 @@
 			style="z-index: 997"
 			@click="$emit('select', result)"
 		>
-			<v-icon :icon="result.icon" class="search-result mt-1" :title="result.type" />
+			<v-icon
+				v-if="result.icon?.startsWith('mdi-')"
+				:icon="result.icon"
+				class="search-result mt-1"
+				:title="result.type"
+			/>
+			<img v-else :src="result.icon" style="height: 1.5em; width: 1.5em" :title="result.type" />
 			<div class="d-flex flex-column">
 				<span class="h5">{{ result.label }}</span>
 
