@@ -1,11 +1,13 @@
 <template>
 	<div class="download-table-padding accent-textured">
 		<table class="download-table">
-			<thead>
-				<tr class="download-heading">
-					<th colspan="2" class="file-heading"><p>Name</p></th>
-					<th><p>Date</p></th>
-					<th colspan="2"><p>Downloads</p></th>
+			<thead class="download-heading">
+				<tr>
+					<!-- these must be in divs, I have no idea why -->
+					<th />
+					<th class="text-left"><h4>Name</h4></th>
+					<th><h4>Published</h4></th>
+					<th><h4>Downloads</h4></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -48,47 +50,24 @@ export default defineNuxtComponent({
 
 .download-table-padding {
 	border-radius: $border-radius;
-	padding: 0.7rem;
+	// half of the horizontal padding goes here and half in the highlight
+	padding: calc($padding-container / 2);
 	overflow-x: auto;
-	margin-bottom: 2rem;
-	box-shadow: $shadow-sheet;
+	box-shadow: $shadow-card;
 }
 
+// for mobile
 .download-table {
 	width: 100%;
 }
 
-.download-heading {
-	background: $btn-secondary;
-	border-radius: $border-radius;
-	width: 100%;
-	th {
-		text-align: center;
-		width: calc(40% / 3);
-		p {
-			font-size: 1.25rem;
-			padding: 0.2rem;
-			color: $text-card;
-			margin-bottom: 0;
-			vertical-align: middle;
-		}
-	}
+.download-heading h4 {
+	font-size: 1.25rem;
+	padding-top: calc($padding-container / 2);
 }
 
-// default middle text alignment looks really stupid
-.file-heading {
-	text-align: left !important;
-	padding-left: 0.7rem;
-	width: 50%;
-}
-
-// remove padding and table headers on mobile
+// remove table headers on mobile
 @media screen and (max-width: $breakpoint-sm) {
-	.download-table-padding {
-		margin: 0;
-		padding: 0;
-	}
-
 	thead {
 		display: none;
 	}

@@ -6,7 +6,7 @@
 		position="absolute"
 		variant="text"
 		:color="favColor"
-		:aria-label="favAlt"
+		:title="favAlt"
 		@click="$emit('click')"
 	>
 		<v-icon :icon="favIcon" size="large" />

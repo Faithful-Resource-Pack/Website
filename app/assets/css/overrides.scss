@@ -1,0 +1,146 @@
+@use "./variables" as *;
+
+/**
+ * Fix HTML's awful defaults and prepare stylesheet for custom content
+ */
+
+// remove this line to instantly die
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+ol, ul, dl {
+	margin-top: 0;
+	margin-bottom: 1rem;
+	// vuetify fix
+	padding-left: 40px !important;
+}
+li {
+	margin-bottom: 0.5rem;
+}
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none;
+}
+img {
+	vertical-align: middle;
+	border-style: none;
+	object-fit: cover;
+	max-width: 100%;
+	height: auto;
+}
+table {
+	border-collapse: collapse;
+}
+input, button, select, optgroup, textarea {
+	margin: 0;
+	line-height: inherit;
+}
+button, input {
+	overflow: visible;
+}
+button, select {
+	text-transform: none;
+}
+select {
+	overflow-wrap: normal;
+}
+// make images undraggable
+img[src$=".png"],
+img[src$=".gif"],
+img[src$=".jpg"] {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+}
+
+// more key-looking key styles
+kbd {
+	font-family: inherit;
+	font-size: 80%;
+	padding: 2px 6px;
+	background: $btn-secondary;
+	border: 1px $btn-secondary-hover solid;
+	border-radius: $border-radius;
+	color: white;
+}
+
+/**
+ * Vuetify overrides (a lot of theme fixes)
+ */
+
+// make inline addon badges not suck
+.v-slide-group__content {
+	align-items: center;
+}
+
+// make progress spinners less ugly
+.v-progress-circular__underlay {
+	display: none;
+}
+
+// I think always-dark tooltips look way cleaner, kinda subjective though
+.v-tooltip > .v-overlay__content {
+	background: $bg-dark !important;
+}
+
+// for some reason it looks tiny with the faithful font
+.v-alert-title {
+	font-size: 1.75rem !important;
+	margin-bottom: 0.5rem;
+}
+
+// set textured background
+.v-alert--variant-flat {
+	background-image: $bg-light-url !important;
+	background-repeat: repeat !important;
+	background-blend-mode: multiply;
+	box-shadow: $shadow-card !important;
+}
+
+// make text a bit more transparent than title (why is this so hard to do)
+.v-alert--variant-flat .v-alert__content {
+	color: $text-colored-banner;
+	font-family: $font-body;
+}
+.v-alert--variant-flat .v-alert-title {
+	font-family: $font-display;
+	color: white;
+}
+
+// make sure stone background shows up
+.v-skeleton-loader {
+	background: transparent !important;
+}
+
+.v-skeleton-loader__image {
+	height: auto !important;
+	aspect-ratio: 16 / 9 !important;
+}
+
+// consistent with studio, pill chips look weird next to square everything
+.v-chip {
+	border-radius: $border-radius !important;
+}
+
+// fix addon screenshot modal not respecting image aspect ratio
+.v-dialog .v-overlay__content {
+	max-height: 100% !important;
+}
+
+// for some reason this overrides text theming on the faq page otherwise
+.v-expansion-panel {
+	color: unset !important;
+}
+
+// bigger text in solo text fields
+.v-text-field:not(.v-input--density-compact) .v-field--variant-solo .v-field__input {
+	// for some reason more side padding makes things more centered
+	padding: 8px 16px !important;
+	font-size: 1.25rem !important;
+}

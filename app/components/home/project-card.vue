@@ -1,30 +1,43 @@
 <template>
-	<nuxt-link :to class="card zoom-hitbox zoom-affected">
-		<div class="project-image">
-			<img class="project-background" :src="background" :alt="name" />
-			<div class="project-shadow" />
-			<img class="project-logo" :src="logo" :alt="`${name} logo`" />
-		</div>
-		<div class="card-body">
-			<h2 class="h4">{{ name }}</h2>
-			<p>{{ description }}</p>
-		</div>
-	</nuxt-link>
+	<base-card :to>
+		<template #image>
+			<div class="project-image">
+				<img
+					class="project-background"
+					:src="`/image/banners/${id}.jpg`"
+					:alt="`${name} Background`"
+				/>
+				<div class="project-shadow" />
+				<img
+					class="project-logo"
+					:src="`https://database.faithfulpack.net/images/branding/logos/transparent/hd/${id}_logo.png`"
+					:alt="name"
+				/>
+			</div>
+		</template>
+		<template #title>
+			{{ name }}
+		</template>
+		<template #body>
+			<p class="mb-0 mt-1">{{ description }}</p>
+		</template>
+	</base-card>
 </template>
 
 <script>
+import BaseCard from "~/components/lib/base-card.vue";
+
 export default defineNuxtComponent({
 	name: "project-card",
+	components: {
+		BaseCard,
+	},
 	props: {
+		id: {
+			type: String,
+			required: true,
+		},
 		name: {
-			type: String,
-			required: true,
-		},
-		background: {
-			type: String,
-			required: true,
-		},
-		logo: {
 			type: String,
 			required: true,
 		},
@@ -46,6 +59,7 @@ export default defineNuxtComponent({
 .project-image {
 	position: relative;
 	display: inline;
+	flex-grow: 1;
 }
 
 // place logo on top of image
@@ -61,7 +75,7 @@ export default defineNuxtComponent({
 
 .project-shadow {
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(transparent, rgba(black, 0.5));

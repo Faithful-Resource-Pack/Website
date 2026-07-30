@@ -1,9 +1,16 @@
 <template>
-	<div class="author-heads">
+	<div class="author-heads mt-2">
 		<nuxt-link v-for="{ id, src, username } in authorInfo" :key="id" :to="`/user/${id}`">
-			<img :src :alt="`${username}'s Avatar`" :title="username" loading="lazy" />
+			<img
+				:src
+				:alt="`${username}'s Avatar`"
+				:title="username"
+				loading="lazy"
+				width="32"
+				height="32"
+			/>
 		</nuxt-link>
-		<p v-if="firstUsername" class="mb-0 ml-2">By {{ firstUsername }}</p>
+		<p v-if="firstUsername" class="mb-0">By {{ firstUsername }}</p>
 	</div>
 </template>
 
@@ -20,8 +27,7 @@ export default {
 		authorInfo() {
 			return this.authors.map((author) => ({
 				id: author.id,
-				// since the randomness is deterministic it's SSR-safe (wahoo)
-				src: `https://vzge.me/face/64/${getVisageSlug(author)}`,
+				src: `https://vzge.me/face/64/${author.uuid || "X-Steve"}`,
 				username: author?.username || "Anonymous author",
 			}));
 		},
@@ -37,13 +43,11 @@ export default {
 
 <style scoped lang="scss">
 .author-heads {
-	flex-grow: 1;
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	gap: 6px;
+	gap: 8px;
 	img {
-		height: 32px;
 		image-rendering: pixelated;
 	}
 }

@@ -17,6 +17,7 @@
 	font-size: 1rem;
 	line-height: 1.5;
 	border-radius: $border-radius;
+	box-shadow: $shadow-button;
 	transition: $transition-button;
 }
 .btn:hover {
@@ -25,7 +26,6 @@
 }
 .btn:focus, .btn.focus {
 	outline: 0;
-	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .btn.disabled, .btn:disabled {
 	opacity: 0.65;
@@ -35,6 +35,16 @@
 }
 a.btn.disabled {
 	pointer-events: none;
+}
+.btn-more {
+	max-width: $breakpoint-xs;
+	display: block;
+	margin: auto;
+}
+.btn-icon {
+	width: 2.5rem;
+	max-height: 2.5rem;
+	aspect-ratio: 1;
 }
 .btn-primary {
 	color: white;
@@ -47,7 +57,6 @@ a.btn.disabled {
 .btn-primary:focus, .btn-primary.focus {
 	color: white;
 	background-color: $btn-primary-hover;
-	box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 .btn-primary.disabled, .btn-primary:disabled {
 	color: white;
@@ -57,10 +66,6 @@ a.btn.disabled {
 .btn-primary:not(:disabled):not(.disabled).active {
 	color: white;
 	background-color: $btn-primary-active;
-}
-.btn-primary:not(:disabled):not(.disabled):active:focus,
-.btn-primary:not(:disabled):not(.disabled).active:focus {
-	box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 .btn-secondary {
 	color: white;
@@ -73,7 +78,6 @@ a.btn.disabled {
 .btn-secondary:focus, .btn-secondary.focus {
 	color: white;
 	background-color: $btn-secondary-hover;
-	box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 .btn-secondary.disabled, .btn-secondary:disabled {
 	color: white;
@@ -84,14 +88,15 @@ a.btn.disabled {
 	color: white;
 	background-color: $btn-secondary-active;
 }
-.btn-secondary:not(:disabled):not(.disabled):active:focus,
-.btn-secondary:not(:disabled):not(.disabled).active:focus {
-	box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
-}
 .btn-lg, .btn-group-lg > .btn {
 	padding: 0.5rem 1rem;
 	font-size: 1.25rem;
 	line-height: 1.5;
-	border-radius: $border-radius;
+	margin-bottom: 1rem;
+}
+.btn-xl {
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	line-height: 1.5;
 	margin-bottom: 1rem;
 }

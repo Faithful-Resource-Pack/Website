@@ -1,25 +1,25 @@
+<script setup>
+definePageMeta({
+	layout: "text-container",
+	disableDefaultMeta: true,
+});
+const { category } = useRoute().params;
+useSeoMeta(generateMetaTags({ title: `FAQ: ${toTitleCase(category)}` }));
+</script>
+
 <template>
 	<h1 class="title text-center my-5">FAQ: {{ toTitleCase(category) }}</h1>
-	<h2 v-if="error || !faqs.length" class="text-center">
-		{{ error ? `Error: ${error}` : "No FAQs found" }}
-	</h2>
-	<template v-else>
-		<v-expansion-panels v-model="search" variant="accordion">
-			<v-expansion-panel
-				v-for="({ question, answer }, i) in faqs"
-				:key="question"
-				:value="question"
-			>
-				<template #title>
-					<h5 :ref="`faq-${i}`" class="my-0">{{ question }}</h5>
-				</template>
-				<template #text>
-					<!-- eslint-disable-next-line vue/no-v-html -->
-					<div class="faq-answer" v-html="discordMarkdown(answer)" />
-				</template>
-			</v-expansion-panel>
-		</v-expansion-panels>
-	</template>
+	<v-expansion-panels v-model="search" variant="accordion" :theme>
+		<v-expansion-panel v-for="({ question, answer }, i) in faqs" :key="question" :value="question">
+			<template #title>
+				<h4 :ref="`faq-${i}`" class="my-0">{{ question }}</h4>
+			</template>
+			<template #text>
+				<!-- eslint-disable-next-line vue/no-v-html -->
+				<div class="body-text" v-html="discordMarkdown(answer)" />
+			</template>
+		</v-expansion-panel>
+	</v-expansion-panels>
 	<hr />
 	<nuxt-link class="btn block btn-lg btn-secondary" href="/faq">
 		Return to Main FAQ Page
@@ -27,36 +27,10 @@
 </template>
 
 <script>
+import allFaqs from "../../../public/data/faq.json";
+
 export default defineNuxtComponent({
-	setup() {
-		definePageMeta({
-			disableDefaultMeta: true,
-		});
-	},
-	async asyncData() {
-		const { category } = useRoute().params;
-		useSeoMeta(generateMetaTags({ title: `FAQ: ${toTitleCase(category)}` }));
-
-		try {
-			const allFaqs = await $fetch(
-				"https://raw.githubusercontent.com/Faithful-Resource-Pack/CompliBot/main/json/faq.json",
-			);
-
-			return {
-				faqs: JSON.parse(allFaqs).filter(
-					(faq) => !faq.discord && faq.categories.includes(category),
-				),
-				category,
-				error: null,
-			};
-		} catch (error) {
-			return {
-				faqs: [],
-				category,
-				error,
-			};
-		}
-	},
+	inject: ["theme"],
 	data() {
 		return {
 			search: "",
@@ -67,10 +41,10 @@ export default defineNuxtComponent({
 		discordMarkdown(text) {
 			// removes channel links
 			const cleanedText = text.replace(
-				/in <#\d+>/,
+				/in <#\d+>/g,
 				"on our [Discord](https://discord.gg/sN9YRQbBv7)",
 			);
-			return compileMarkdown(cleanedText);
+			return compileMarkdown(cleanedText, { breaks: true });
 		},
 		scrollToFaq(faq) {
 			const index = this.faqs.findIndex((f) => f.question === faq);
@@ -90,6 +64,12 @@ export default defineNuxtComponent({
 			const { hash } = this.$route;
 			return hash ? hash.slice(1) : undefined;
 		},
+		category() {
+			return this.$route.params.category;
+		},
+		faqs() {
+			return allFaqs.filter((faq) => !faq.discord && faq.categories.includes(this.category));
+		},
 	},
 	watch: {
 		search: {
@@ -107,9 +87,3 @@ export default defineNuxtComponent({
 	},
 });
 </script>
-
-<style scoped lang="scss">
-.faq-answer {
-	opacity: 0.75;
-}
-</style>

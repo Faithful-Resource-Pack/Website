@@ -6,37 +6,33 @@
 	>
 		<template #tagline>Providing a higher-resolution Minecraft experience since 2010.</template>
 		<template #actions>
-			<!-- hack to get the button the same width as the container -->
-			<div class="container py-3">
-				<discord-button>Join our Discord now and contribute to the project!</discord-button>
+			<!-- hack to make the tagline the same width as the container -->
+			<div class="container py-5 hero-button-container">
+				<nuxt-link to="/downloads" class="btn btn-primary btn-xl hero-button">
+					<media-icon icon="mdi-download" style="font-size: 1.5rem" />
+					<span class="ml-3">Downloads</span>
+				</nuxt-link>
+				<nuxt-link to="https://discord.gg/sN9YRQbBv7" class="btn btn-secondary btn-xl hero-button">
+					<media-icon icon="discord" style="font-size: 1rem" />
+					<span class="ml-3">Get involved!</span>
+				</nuxt-link>
 			</div>
 		</template>
 	</hero-section>
 	<div class="container">
 		<h2 class="title mb-4 text-center">Our Projects</h2>
-		<div class="basic-grid project-reel">
+		<div class="grid-4 project-reel">
 			<!-- project data and props have the same key names so we can assign to v-bind directly -->
-			<project-card v-for="project in projects" :key="project.name" v-bind="project">
-				<template #btns>
-					<chevron-link
-						v-for="{ text, to } in project.buttons"
-						:key="text"
-						:to
-						:text
-						class="btn block btn-secondary my-1"
-						:aria-label="text === 'See More' ? project.name : text"
-					/>
-				</template>
-			</project-card>
+			<project-card v-for="project in projects" :key="project.name" v-bind="project" />
 		</div>
 
 		<hr />
 
 		<h2 class="title text-center">Add-ons</h2>
-		<div class="basic-grid addon-reel">
+		<div class="grid-4">
 			<template v-if="!addons.length">
 				<div v-for="i in ADDON_REEL_LENGTH - 1" :key="i" class="card">
-					<v-skeleton-loader type="image, subtitle" theme="dark" />
+					<v-skeleton-loader type="image, subtitle" :theme data-allow-mismatch="class" />
 				</div>
 			</template>
 			<template v-else>
@@ -44,18 +40,18 @@
 			</template>
 			<base-card to="/addons" image="/image/addons/see_more.png">
 				<template #title>
-					<chevron-link aria-label="Go to add-on page">See More</chevron-link>
+					<chevron-link>All Add-ons</chevron-link>
 				</template>
 			</base-card>
 		</div>
 
 		<hr />
 
-		<h2 class="title text-center">News</h2>
-		<div class="res-grid-3">
+		<h2 class="title text-center">Latest News</h2>
+		<div class="grid-3">
 			<template v-if="!topPosts.length">
 				<div v-for="i in 6" :key="i" class="card pb-3">
-					<v-skeleton-loader type="image, subtitle, text" theme="dark" />
+					<v-skeleton-loader type="image, subtitle, text" :theme data-allow-mismatch="class" />
 				</div>
 			</template>
 			<template v-else>
@@ -70,9 +66,7 @@
 			</template>
 		</div>
 		<br />
-		<nuxt-link class="btn btn-secondary news-button center" to="/news" aria-label="Go to news page">
-			See More
-		</nuxt-link>
+		<nuxt-link class="btn btn-secondary btn-more" to="/news">See all news</nuxt-link>
 	</div>
 </template>
 
@@ -80,41 +74,13 @@
 import ProjectCard from "~/components/home/project-card.vue";
 import PostCard from "~/components/lib/post-card.vue";
 import AddonCard from "~/components/addons/addon-card.vue";
-import DiscordButton from "~/components/lib/discord-button.vue";
+import MediaIcon from "~/components/lib/media-icon.vue";
 import ChevronLink from "~/components/lib/chevron-link.vue";
 import HeroSection from "~/components/lib/hero-section.vue";
 import BaseCard from "~/components/lib/base-card.vue";
 
-const PROJECTS = [
-	{
-		name: "Faithful 32x",
-		background: "/image/posters/f32.jpg",
-		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f32_logo.png",
-		description: "Double the resolution and double the fun!",
-		to: "/faithful32x",
-	},
-	{
-		name: "Faithful 64x",
-		background: "/image/posters/f64.jpg",
-		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f64_logo.png",
-		description: "An even more detailed experience!",
-		to: "/faithful64x",
-	},
-	{
-		name: "Classic Faithful 32x",
-		background: "/image/posters/cf32.jpg",
-		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf32_logo.png",
-		description: "For when you need that nostalgic hit!",
-		to: "/classic32x",
-	},
-	{
-		name: "Classic Faithful 64x",
-		background: "/image/posters/cf64.jpg",
-		logo: "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf64_logo.png",
-		description: "Both nostalgia and detail in equal amounts!",
-		to: "/classic64x",
-	},
-];
+import projects from "../../public/data/projects.json";
+
 const ADDON_REEL_LENGTH = 4;
 
 export default defineNuxtComponent({
@@ -124,9 +90,10 @@ export default defineNuxtComponent({
 		BaseCard,
 		PostCard,
 		AddonCard,
-		DiscordButton,
+		MediaIcon,
 		ChevronLink,
 	},
+	inject: ["theme"],
 	// for some reason <script setup> doesn't work with asyncData (???)
 	setup() {
 		definePageMeta({
@@ -137,7 +104,7 @@ export default defineNuxtComponent({
 	},
 	data() {
 		return {
-			projects: PROJECTS,
+			projects,
 			ADDON_REEL_LENGTH,
 			addons: [],
 			topPosts: [],
@@ -168,30 +135,33 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
 
-.project-reel,
-.addon-reel {
-	grid-template-columns: repeat(4, 1fr);
+.hero-button-container {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
 }
 
-@media screen and (max-width: $breakpoint-lg) {
-	.project-reel {
-		grid-template-columns: repeat(2, 2fr);
+.hero-button {
+	width: 256px;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+	.hero-button-container {
+		flex-flow: column nowrap;
+		align-items: stretch;
+	}
+	.hero-button {
+		width: auto;
 	}
 }
 
-@media screen and (max-width: $breakpoint-md) {
-	.addon-reel {
-		grid-template-columns: repeat(2, 2fr);
-	}
-}
-
+// project reel barely fits on 4 so we need to go wider
 @media screen and (max-width: $breakpoint-xs) {
 	.project-reel {
 		grid-template-columns: 1fr;
 	}
-}
-
-.news-button {
-	width: 50%;
 }
 </style>

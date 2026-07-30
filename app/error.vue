@@ -1,8 +1,9 @@
 <template>
 	<!-- theme class must be outside the layout so it encapsulates the navbar/footer -->
 	<div class="error-theme">
-		<nuxt-layout name="default">
-			<div class="text-center">
+		<!-- inherit dark theme since the error background is dark (text colors can be reused) -->
+		<nuxt-layout name="default" override-theme="dark">
+			<div class="text-center body-text">
 				<h1>Are you lost in The End?</h1>
 				<p>
 					Unfortunately, the page you requested doesn't exist!

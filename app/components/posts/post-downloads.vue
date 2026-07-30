@@ -1,5 +1,5 @@
 <template>
-	<h2 class="subtitle my-5 text-center">Downloads</h2>
+	<h2 id="downloads" class="subtitle my-5 text-center">Downloads</h2>
 	<template v-for="[category, items] in Object.entries(downloads)" :key="category">
 		<nuxt-link
 			v-if="typeof items === 'string'"
@@ -10,7 +10,7 @@
 			<span class="ml-2">{{ category }}</span>
 		</nuxt-link>
 		<template v-else>
-			<h1 class="my-3 text-center">{{ category }}</h1>
+			<h3 class="h2 my-3 text-center">{{ category }}</h3>
 			<nuxt-link
 				v-for="[name, link] in Object.entries(items)"
 				:key="link"

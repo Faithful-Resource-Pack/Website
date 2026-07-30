@@ -1,12 +1,14 @@
 @use "./variables" as *;
 
-// force lower specificity so page-specific styles don't break
-:where(.dark-theme) {
+.dark-theme {
+	color: $text-dark;
+	text-decoration-color: currentColor;
+
 	.textured {
 		background: $bg-dark-textured;
 	}
 
-	.accent-textured, .card {
+	&.accent-textured, .accent-textured, .card {
 		background: $bg-dark-accent-textured;
 	}
 
@@ -17,34 +19,62 @@
 	.accent-textured.v-chip--variant-elevated,
 	.accent-textured.v-card--variant-elevated,
 	.accent-textured.v-btn--variant-elevated {
-		background: $bg-dark-accent-textured !important;
+		background: $bg-dark-accent-textured;
 	}
 
+	h1, h2, h3, h4, h5, h6 {
+		color: $title-dark;
+	}
+
+	// fix hovercards
+	a .card-body,
+	a .base-card-body,
+	a .profile-card,
+	a .search-result {
+		color: $text-dark;
+	}
+
+	.navigation-link {
+		color: $text-dark;
+		&:hover, &:focus {
+			color: $title-dark;
+		}
+	}
+
+	// for some reason a link overrides the underline color by default
+	.underline-hover {
+		text-decoration-color: $text-dark;
+	}
+
+	.highlight-hover:hover, .highlight-hover:focus {
+		background: rgba(white, 0.1);
+	}
+
+	// card color
 	.v-skeleton-loader__image {
-		background: $bg-dark !important;
-	}
-
-	.v-expansion-panels--variant-accordion * {
 		background: $bg-dark-accent !important;
 	}
 
-	ul, ol, li, h1, h2, h3, h4, h5, h6, p, .v-expansion-panel-title__icon {
-		color: $text-dark;
-		text-decoration-color: currentColor;
+	// brighter headings
+	.card .v-skeleton-loader__subtitle > .v-skeleton-loader__text,
+	.card .v-skeleton-loader__heading {
+		background: rgba(white, 0.5) !important;
 	}
 
-	.underline-hover:hover {
-		text-decoration-color: $text-dark !important;
+	/**
+	 * page specific styles
+	 */
+
+	.v-expansion-panels--variant-accordion * {
+		background: $bg-dark-accent;
 	}
 
-	// fixes dropdown select color (it's always light mode otherwise)
-	.v-input__control {
-		color: white !important;
+	.download-choice {
+		border: $border-width solid rgba(white, 0.2);
 	}
 
-	// about page stuff
-	.about-button {
-		background: white !important;
+	.btn-about {
+		background: white;
 		color: black;
 	}
 
@@ -62,22 +92,22 @@
 	}
 
 	.green-background .colored-title {
-		color: $text-green !important;
+		color: $text-green;
 	}
 
 	.blue-background .colored-title {
-		color: $text-blue !important;
+		color: $text-blue;
 	}
 
 	.pink-background .colored-title {
-		color: $text-pink !important;
+		color: $text-pink;
 	}
 
 	.yellow-background .colored-title {
-		color: $text-yellow !important;
+		color: $text-yellow;
 	}
 
 	.orange-background .colored-title {
-		color: $text-orange !important;
+		color: $text-orange;
 	}
 }

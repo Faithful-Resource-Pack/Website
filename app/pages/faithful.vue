@@ -1,7 +1,13 @@
+<script setup>
+definePageMeta({
+	layout: "text-container",
+});
+</script>
+
 <template>
 	<img class="center" src="/image/about/faithful_logos.png" alt="Faithful Logos" />
 	<hr />
-	<div class="card card-body card-text">
+	<div class="card card-body body-text">
 		<h2>
 			Faithful was never officially licensed to xMrVizzy, also known as Kraineff, for use or for
 			commercial gain.

@@ -1,4 +1,5 @@
 /** dark theme */
+$title-dark: white;
 $text-dark: rgba(255, 255, 255, 0.7);
 
 $bg-dark: #191919;
@@ -7,32 +8,33 @@ $bg-dark-url: url("/image/background/dark.png");
 $bg-dark-textured: $bg-dark $bg-dark-url repeat;
 
 $bg-dark-accent: #272727;
-$bg-dark-accent-url: url("/image/background/accent.png");
+$bg-dark-accent-url: url("/image/background/dark_accent.png");
 $bg-dark-accent-textured: $bg-dark-accent $bg-dark-accent-url repeat;
 
 /** light theme */
-$text-light: rgba(0, 0, 0, 0.8);
+$title-light: black;
+$text-light: rgba(0, 0, 0, 0.7);
 
 $bg-light: #FAFAFA;
 $bg-light-url: url("/image/background/light.png");
 $bg-light-textured: $bg-light $bg-light-url repeat;
 
-$bg-light-accent: #272727;
-$bg-light-accent-url: url("/image/background/accent.png");
+$bg-light-accent: #FFF;
+$bg-light-accent-url: url("/image/background/light_accent.png");
 $bg-light-accent-textured: $bg-light-accent $bg-light-accent-url repeat;
 
 /** accent colors (text is lighter than bg) */
 $bg-green: #22A331;
 $bg-blue: #258ED4;
 $bg-pink: #CD2D7A;
-$bg-yellow: #FFD000;
-$bg-orange: #E66000;
+$bg-yellow: #EFB700;
+$bg-orange: #CB4B00;
 
 $text-green: #76C945;
 $text-blue: #5EBBF9;
 $text-pink: #FC53A5;
-$text-yellow: #FFF700;
-$text-orange: #FF8340;
+$text-yellow: #FFD000;
+$text-orange: #FF730F;
 
 /** button colors */
 $btn-primary: #4EA229;
@@ -44,32 +46,37 @@ $btn-secondary-hover: #515151;
 $btn-secondary-active: #6F6F6F;
 
 /** other text colors */
-$text-card-title: white;
-$text-card: $text-dark; // easier to change later if it's aliased
-$text-navigation: rgba(255, 255, 255, 0.5);
+$text-colored-banner: rgba(255, 255, 255, 0.8);
 $text-link: $btn-primary;
 $text-link-hover: $btn-primary-hover;
 
 /** shadows */
-// any overlay, e.g. banners, cards, etc
-$shadow-sheet: 0 3px 6px rgba(0, 0, 0, 0.3);
+$shadow-card: 0 2px 5px rgba(0, 0, 0, 0.2);
+$shadow-button: 0 3px 6px rgba(0, 0, 0, 0.3);
 $shadow-image: 0 10px 10px rgba(0, 0, 0, 0.465);
 $shadow-wordmark: 0 0 10px #000000;
+$shadow-navbar:
+	0 2px 4px -1px rgba(0, 0, 0, 0.2),
+	0 4px 5px 0 rgba(0, 0, 0, 0.14),
+	0 1px 10px 0 rgba(0, 0, 0, 0.12);
 
 /** transitions */
-$transition-zoom: all 0.5s ease;
+$transition-zoom: all 0.35s ease;
 $transition-button: all 0.15s ease; // bootstrap + about page
 $transition-navigation: all 0.1s ease;
 
-/** breakpoints (I have no idea where they came from) */
+/** fonts */
+$font-display: Faithful v1, sans-serif;
+$font-body: Roboto, sans-serif;
+
+/** vaguely vuetify-esque breakpoints */
 $breakpoint-xs: 576px;
 $breakpoint-sm: 760px;
 $breakpoint-md: 960px;
-$breakpoint-lg: 1140px;
-$breakpoint-xl: 1280px;
+$breakpoint-lg: 1280px;
 
-/** global settings */
-$padding-card: 12px;
+/** other global settings */
+$grid-gap: 24px;
+$padding-container: 16px;
 $border-radius: 4px;
-$blurple: #5865F2;
-$warning: #F44336;
+$border-width: 2px;

@@ -1,10 +1,16 @@
 <!-- don't use this as an actual layout, it's a base for the real ones -->
 <template>
 	<div class="site-container" :class="themeClass" data-allow-mismatch="class">
-		<navbar />
+		<navbar @search="toggleSearchModal" />
 		<!-- grow the content to fill remaining space (footer and navbar always stay the same size) -->
 		<main class="textured flex-grow-1">
-			<slot v-if="noContainer" />
+			<search-modal v-if="$vuetify.display.mdAndUp" v-model="searchModalOpen" />
+			<mobile-search v-else v-model="searchModalOpen" />
+			<!-- technically we could declare a container inside every component but that sucks -->
+			<slot v-if="layout === 'no-container'" />
+			<div v-else-if="layout === 'text-container'" class="container text-container">
+				<slot />
+			</div>
 			<div v-else class="container">
 				<slot />
 			</div>
@@ -16,6 +22,8 @@
 <script>
 import Navbar from "~/components/navigation/navbar.vue";
 import ColumnFooter from "~/components/navigation/column-footer.vue";
+import SearchModal from "~/components/search/search-modal.vue";
+import MobileSearch from "~/components/search/mobile-search.vue";
 
 const THEME_KEY = "theme";
 const THEMES = {
@@ -38,28 +46,41 @@ export default defineNuxtComponent({
 	components: {
 		Navbar,
 		ColumnFooter,
+		SearchModal,
+		MobileSearch,
 	},
 	props: {
-		noContainer: {
-			type: Boolean,
+		layout: {
+			type: String,
 			required: false,
-			default: false,
+			default: "default",
+		},
+		overrideTheme: {
+			type: String,
+			required: false,
+			default: undefined,
 		},
 	},
 	provide() {
 		return {
 			theme: computed(() => this.themeClass?.replace("-theme", "")),
+			isDark: computed(() => this.isDark),
 		};
 	},
 	data() {
 		return {
+			searchModalOpen: false,
+			searchListener: () => {},
 			// must be null at first to force rerender when loaded
 			currentTheme: null,
-			themeClass: null,
+			isDark: null,
 			availableThemes: THEMES,
 		};
 	},
 	methods: {
+		toggleSearchModal() {
+			this.searchModalOpen = !this.searchModalOpen;
+		},
 		cycleTheme() {
 			const keys = Object.keys(this.availableThemes);
 			const currentIndex = keys.indexOf(this.currentTheme);
@@ -67,21 +88,43 @@ export default defineNuxtComponent({
 			this.currentTheme = keys[nextIndex];
 		},
 	},
+	computed: {
+		themeClass() {
+			if (this.overrideTheme) return `${this.overrideTheme}-theme`;
+			// null falls back to light theme which is more "neutral"
+			return this.isDark ? "dark-theme" : "light-theme";
+		},
+	},
 	beforeMount() {
 		// set theme before client render (can't set on server because localStorage doesn't yet exist)
 		this.currentTheme = localStorage.getItem(THEME_KEY) || "auto";
+
+		this.searchListener = (event) => {
+			if (event.key !== "k") return;
+			// mac uses cmd+option+arrow
+			const isModified = navigator.platform.toLowerCase().includes("mac")
+				? event.metaKey
+				: event.ctrlKey;
+
+			if (!isModified) return;
+			event.preventDefault();
+
+			this.toggleSearchModal();
+		};
+
+		window.addEventListener("keydown", this.searchListener);
+	},
+	unmounted() {
+		window.removeEventListener("keydown", this.searchListener);
 	},
 	watch: {
 		currentTheme: {
 			handler(newValue) {
 				if (!Object.keys(this.availableThemes).includes(newValue)) return;
-				localStorage.setItem(THEME_KEY, newValue);
-				const isDark =
+				if (!this.overrideTheme) localStorage.setItem(THEME_KEY, newValue);
+				this.isDark =
 					this.currentTheme === "dark" ||
 					(this.currentTheme === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
-
-				// must be here otherwise it doesn't update before mount (I hate this too)
-				this.themeClass = isDark ? "dark-theme" : "light-theme";
 			},
 			immediate: true,
 		},

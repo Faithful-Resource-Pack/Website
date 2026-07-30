@@ -1,0 +1,9 @@
+node_modules
+.git
+*Dockerfile*
+*docker-compose*
+.vscode
+.deployment
+.env
+.nuxt
+.output

@@ -7,8 +7,8 @@
 	</ul>
 	<template v-else>
 		<template v-for="[key, val] in Object.entries(item)" :key>
-			<li v-if="list" class="mb-2">{{ key }}:</li>
-			<component :is="title" v-else class="mb-2">{{ key }}:</component>
+			<li v-if="list">{{ key }}:</li>
+			<component :is="title" v-else>{{ key }}:</component>
 			<post-changelog :item="val" :level="level + 1" />
 		</template>
 	</template>
@@ -25,7 +25,7 @@ export default defineNuxtComponent({
 		level: {
 			type: Number,
 			required: false,
-			default: 2,
+			default: 1,
 		},
 		// used when headings should be a list element (nested category)
 		list: {

@@ -1,5 +1,5 @@
 <template>
-	<main-layout no-container>
+	<main-layout layout="no-container">
 		<slot />
 	</main-layout>
 </template>

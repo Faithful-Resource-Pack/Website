@@ -7,7 +7,7 @@ definePageMeta({
 <template>
 	<div class="green-background">
 		<div class="container about-container">
-			<div class="about-text">
+			<div class="about-text body-text">
 				<h1 class="colored-title">Upscaling the Look of Minecraft</h1>
 				<p>
 					Faithful recreates Minecraft's original textures in higher resolutions while staying true
@@ -15,21 +15,19 @@ definePageMeta({
 					<br /><br />
 					With a variety of resolutions and styles, there's something for everyone!
 				</p>
-				<chevron-link
-					class="about-button"
-					to="https://discord.gg/sN9YRQbBv7"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Join our Discord
-				</chevron-link>
+				<chevron-link class="btn btn-lg btn-about" to="/downloads">Get Started</chevron-link>
 			</div>
-			<img class="about-image" src="/image/about/faithful.gif" alt="gif of creeper textures" />
+			<img
+				class="about-image"
+				src="/image/about/faithful.gif"
+				alt="gif of creeper textures"
+				height="384"
+			/>
 		</div>
 	</div>
 	<div class="container about-container">
-		<img class="about-image" src="/image/about/history.png" alt="our history" />
-		<div class="about-text">
+		<img class="about-image" src="/image/about/history.png" alt="our history" height="384" />
+		<div class="about-text body-text">
 			<h1 class="colored-title">A History of Expertise</h1>
 			<p>
 				We've got over a decade of experience making quality textures for Minecraft, with a rich
@@ -38,28 +36,45 @@ definePageMeta({
 				As one of the first ever texture packs to be developed, having started all the way back in
 				2010, Faithful has become a cult classic of the Minecraft community.
 			</p>
-			<chevron-link class="about-button" to="/stats">See our Stats</chevron-link>
+			<chevron-link
+				class="btn btn-lg btn-about"
+				to="https://discord.gg/sN9YRQbBv7"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Join our Discord
+			</chevron-link>
 		</div>
 	</div>
 	<div class="blue-background">
 		<div class="container about-container">
-			<div class="about-text">
-				<h1 class="colored-title">Cross-platform</h1>
+			<div class="about-text body-text">
+				<h1 class="colored-title">Play How You Want</h1>
 				<p>
-					Faithful is available for both the most popular Java Edition versions as well as Bedrock
-					Edition.
+					Faithful supports both Java and Bedrock Edition, and can be installed on computers,
+					phones, and even certain consoles.
 					<br /><br />
-					This means it can be used on all devices that support manual installation of resource
-					packs, from phones to even certain consoles.
+					Our community made add-ons also support a wide variety of editions and versions, so you
+					can make Faithful truly yours no matter how you like to play.
 				</p>
-				<chevron-link class="about-button" to="/downloads">View Downloads</chevron-link>
+				<chevron-link class="btn btn-lg btn-about" to="/addons">View Add-ons</chevron-link>
 			</div>
-			<img class="about-image" src="/image/about/platforms.png" alt="supported platforms" />
+			<img
+				class="about-image"
+				src="/image/about/platforms.png"
+				alt="supported platforms"
+				height="384"
+			/>
 		</div>
 	</div>
 	<div class="container about-container">
-		<img class="about-image" src="/image/about/community.png" alt="the faithful community" />
-		<div class="about-text">
+		<img
+			class="about-image"
+			src="/image/about/community.png"
+			alt="the faithful community"
+			height="384"
+		/>
+		<div class="about-text body-text">
 			<h1 class="colored-title">Made by the Community</h1>
 			<p>
 				All Faithful textures are voted on by the public before being added, and anyone can submit a
@@ -69,7 +84,7 @@ definePageMeta({
 				on Faithful forever!
 			</p>
 			<chevron-link
-				class="about-button"
+				class="btn btn-lg btn-about"
 				to="https://docs.faithfulpack.net/pages/manuals/contributor-handbook"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -80,8 +95,7 @@ definePageMeta({
 	</div>
 	<div class="pink-background">
 		<div class="container about-container">
-			<img class="about-image" src="/image/about/foss.png" alt="github screenshot" />
-			<div class="about-text">
+			<div class="about-text body-text">
 				<h1 class="colored-title">Free and Open-Source</h1>
 				<p>
 					The project is made possible entirely by talented volunteer artists and developers working
@@ -91,7 +105,7 @@ definePageMeta({
 					GitHub. Take a look and see how the magic happens!
 				</p>
 				<chevron-link
-					class="about-button"
+					class="btn btn-lg btn-about"
 					to="https://github.com/Faithful-Resource-Pack"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -99,11 +113,12 @@ definePageMeta({
 					Visit our GitHub
 				</chevron-link>
 			</div>
+			<img class="about-image" src="/image/about/foss.png" alt="github screenshot" height="384" />
 		</div>
 	</div>
 	<div class="container faq-section">
-		<h1 class="mb-4">Any More Questions?</h1>
-		<chevron-link class="about-button" to="/faq">View our FAQ</chevron-link>
+		<h1 class="colored-title mb-4">Any More Questions?</h1>
+		<chevron-link class="btn btn-lg btn-about" to="/faq">Check the FAQ</chevron-link>
 	</div>
 </template>
 
@@ -147,8 +162,9 @@ export default defineNuxtComponent({
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	// compensate for no image by adding more padding
+	padding-top: calc($padding-container * 4);
+	padding-bottom: calc($padding-container * 4);
 
 	h1 {
 		margin-top: 0;
@@ -157,57 +173,49 @@ export default defineNuxtComponent({
 	}
 }
 
-.about-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 12px 22px;
-	// prevent weird button wrapping issues
-	white-space: nowrap;
-	text-transform: uppercase;
-	line-height: 1;
+.btn-about {
+	// need to override btn-lg style
+	// todo: refactor button code to Not require this
+	margin-bottom: 0 !important;
 	transition: $transition-button;
 	&:hover {
 		opacity: 0.66;
 	}
 }
 
+// universal styles across both themes
 .green-background {
-	// both light/dark mode use white text
 	p {
-		color: white;
+		color: $text-colored-banner;
 	}
 
-	.about-button {
+	.btn-about {
 		background: white !important;
 		color: $bg-green !important;
 	}
 }
-
 .blue-background {
 	p {
-		color: white;
+		color: $text-colored-banner;
 	}
 
-	.about-button {
+	.btn-about {
 		background: white !important;
 		color: $bg-blue !important;
 	}
 }
-
 .pink-background {
 	p {
-		color: white;
+		color: $text-colored-banner;
 	}
 
-	.about-button {
+	.btn-about {
 		background: white !important;
 		color: $bg-pink !important;
 	}
 }
 
-// isn't a standard breakpoint but it's the max size images render nicely at
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: $breakpoint-md) {
 	// center content and display vertically on mobile
 	.about-container {
 		display: flex;
@@ -215,13 +223,6 @@ export default defineNuxtComponent({
 		align-items: center;
 		text-align: center;
 		max-width: 95%;
-	}
-}
-
-@media screen and (max-width: $breakpoint-xl) {
-	// override container class to fix margins
-	.container {
-		max-width: 95% !important;
 	}
 }
 </style>

@@ -1,14 +1,9 @@
 // more efficient bundling (compiled in same css file)
 @use "./variables" as *;
+@use "./overrides" as *;
 @use "./lib/buttons" as *;
-@use "./lib/banners" as *;
 @use "./lib/cards" as *;
 @use "./lib/grids" as *;
-
-@font-face {
-	font-family: Faithful;
-	src: url("/font/Faithful.ttf") format("truetype");
-}
 
 /* Basic layout */
 
@@ -19,16 +14,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-/* Important Bootstrap */
-*, *::before, *::after {
-	box-sizing: border-box;
-}
 html {
-	font-family: Faithful !important;
-	text-rendering: optimizeLegibility;
-	// improve font rendering
-	-webkit-font-smoothing: subpixel-antialiased !important;
-	-moz-osx-font-smoothing: grayscale;
+	font-family: $font-display !important;
 	overflow-x: hidden;
 }
 body {
@@ -38,6 +25,7 @@ body {
 	color: $text-light;
 }
 h1, h2, h3, h4, h5, h6 {
+	color: $title-light;
 	margin-top: 0;
 	margin-bottom: 0.5rem;
 	line-height: 1.2;
@@ -45,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal !important;
 }
 h1, .h1 {
-	font-size: 2.5rem;
+	font-size: 2.75rem;
 }
 h2, .h2 {
 	font-size: 2rem;
@@ -62,33 +50,16 @@ h5, .h5 {
 h6, .h6 {
 	font-size: 1rem;
 }
-p {
-	margin-top: 0;
-	margin-bottom: 1rem;
-}
-ol, ul, dl {
-	margin-top: 0;
-	margin-bottom: 1rem;
-	list-style-position: inside;
-	// vuetify fix
-	padding-left: 40px !important;
+.body-text p, .body-text li {
+	font-family: $font-body;
 }
 a {
 	color: $text-link;
 	text-decoration: none;
 	background: transparent;
-}
-a:hover {
-	color: $text-link-hover;
-}
-a:not([href]):not([class]),
-a:not([href]):not([class]):hover {
-	color: inherit;
-	text-decoration: none;
-}
-code {
-	// looks better inline with the faithful font
-	font-size: 80%;
+	&:hover {
+		color: $text-link-hover;
+	}
 }
 hr {
 	margin-top: 1rem;
@@ -97,67 +68,41 @@ hr {
 	color: transparent;
 	height: 1px;
 }
-img {
-	vertical-align: middle;
-	border-style: none;
-	object-fit: cover;
-	max-width: 100%;
-	height: auto;
-}
-table {
-	border-collapse: collapse;
-}
-input, button, select, optgroup, textarea {
-	margin: 0;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-}
-button, input {
-	overflow: visible;
-}
-button, select {
-	text-transform: none;
-}
-select {
-	overflow-wrap: normal;
-}
-// make images not draggable
-img[src$=".png"],
-img[src$=".gif"],
-img[src$=".jpg"] {
-	-webkit-user-drag: none;
-	-khtml-user-drag: none;
-	-moz-user-drag: none;
-	-o-user-drag: none;
-}
 
 /** MAIN STUFF */
 .container {
 	width: 100%;
-	padding-right: 15px;
-	padding-left: 15px;
+	padding-right: $padding-container;
+	padding-left: $padding-container;
 	margin-right: auto;
 	margin-left: auto;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	// this is a bit ugly but it's far fewer braces
-	@media screen and (min-width: $breakpoint-xs) {
-		max-width: calc(#{$breakpoint-xs} - 16px);
-	}
-	@media screen and (min-width: $breakpoint-sm) {
-		max-width: calc(#{$breakpoint-sm} - 20px);
-	}
-	@media screen and (min-width: $breakpoint-md) {
+	padding-top: calc($padding-container * 2);
+	padding-bottom: calc($padding-container * 2);
+
+	max-width: $breakpoint-lg;
+	// this is a bit ugly but it's way less annoying
+	@media screen and (max-width: $breakpoint-lg) {
 		max-width: $breakpoint-md;
 	}
-	@media screen and (min-width: $breakpoint-lg) {
-		max-width: $breakpoint-lg;
+	@media screen and (max-width: $breakpoint-md) {
+		max-width: calc($breakpoint-sm - $padding-container);
+	}
+	@media screen and (max-width: $breakpoint-sm) {
+		max-width: calc($breakpoint-xs - $padding-container);
+
+		// less mobile padding
+		padding-top: $padding-container;
+		padding-bottom: $padding-container;
 	}
 }
 
+// keep max width lower for nicer reading width
+.text-container {
+	max-width: $breakpoint-md !important;
+}
+
 .title {
-	font-size: 4.8rem;
+	font-size: 5rem;
 	line-height: 1.2;
 }
 .subtitle {
@@ -165,24 +110,18 @@ img[src$=".jpg"] {
 	line-height: 1.2;
 }
 
+// prevents titles wrapping horribly on mobile
 @media screen and (max-width: $breakpoint-sm) {
 	.title {
-		font-size: 2.75rem;
+		font-size: 3.75rem;
 	}
 	.subtitle {
-		font-size: 2.5rem;
-	}
-	.h2 {
-		font-size: 1.25rem !important;
+		font-size: 2.75rem;
 	}
 }
 
 .text-center {
 	text-align: center !important;
-}
-.center {
-	display: block;
-	margin: auto !important;
 }
 .disabled {
 	pointer-events: none;
@@ -191,14 +130,10 @@ img[src$=".jpg"] {
 .block {
 	width: 100%;
 }
-
 .header-img {
 	width: 100%;
-}
-
-.btn, *.card, .banner, .header-img, .about-button {
 	overflow: hidden;
-	box-shadow: $shadow-sheet;
+	box-shadow: $shadow-card;
 	border-radius: $border-radius;
 }
 
@@ -209,16 +144,15 @@ img[src$=".jpg"] {
 .zoom-hitbox:hover .zoom-affected,
 .zoom-hitbox:hover.zoom-affected {
 	transform: scale(1.05);
-	filter: brightness(110%);
 }
 
-.underline-hover {
-	color: unset;
-	&:hover {
-		color: unset;
-		text-decoration: underline;
-		text-decoration-color: currentColor;
-	}
+.underline-hover:hover {
+	text-decoration: underline;
+}
+
+.highlight-hover {
+	border-radius: $border-radius;
+	transition: $transition-button;
 }
 
 /** relatively specific stuff that's used in multiple places */
@@ -229,13 +163,11 @@ img[src$=".jpg"] {
 	justify-content: center;
 	flex-direction: row;
 	align-items: center;
-	padding: 0.25rem 1rem;
+	padding: 0.25rem 0;
+	color: $text-light;
 	transition: $transition-navigation;
-	padding-right: 0;
-	padding-left: 0;
-	color: $text-navigation !important;
 	&:hover, &:focus {
-		color: $text-card !important;
+		color: $title-light;
 		transform: scale(0.95);
 		cursor: pointer;
 	}
@@ -257,24 +189,18 @@ img[src$=".jpg"] {
 	}
 }
 
-.v-slide-group__content {
-	align-items: center;
+// used for search + navbar
+.btn-navbar {
+	width: 32px;
+	height: 32px;
+	line-height: 1;
+	background: transparent;
+	border: none;
 }
 
-.v-progress-circular__underlay {
-	display: none;
-}
-
-// make sure stone background shows up
-.v-skeleton-loader {
-	background: transparent !important;
-}
-
-.v-skeleton-loader__image {
-	height: auto !important;
-	aspect-ratio: 16 / 9 !important;
-}
-
-.v-chip {
-	border-radius: $border-radius !important;
+// needed to prevent scoped css static encoding issues
+.text-highlight {
+	background: $btn-primary;
+	color: white;
+	border-radius: $border-radius;
 }

@@ -1,12 +1,12 @@
 <template>
 	<!-- remove padding and re-add it so the highlight has a really nice margin -->
-	<nuxt-link class="author-widget underline-hover mx-n2" :to="`/user/${author.id}`">
+	<nuxt-link class="author-widget highlight-hover underline-hover mx-n2" :to="`/user/${author.id}`">
 		<div class="ma-2">
 			<profile-card
-				:src="`https://vzge.me/face/128/${getVisageSlug(author)}`"
-				:alt="`${author.username}'s Avatar`"
+				:src="`https://vzge.me/face/128/${author.uuid || 'X-Steve'}`"
+				:alt="`${author.username || 'Anonymous Author'}'s Avatar`"
 			>
-				<h5 class="mb-0">{{ author.username }}</h5>
+				<p class="h5 mb-0">{{ author.username || "Anonymous" }}</p>
 			</profile-card>
 		</div>
 	</nuxt-link>
@@ -32,14 +32,15 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
 .author-widget {
-	border-radius: $border-radius;
-	transition: $transition-button;
-	&:hover {
-		background: rgba(white, 0.1);
-		text-decoration: underline;
-	}
 	&:active {
 		transform: scale(0.95);
+	}
+	// can't use regular vertical margin because the profiles clip into each other
+	&:first-child {
+		margin-top: -8px;
+	}
+	&:last-child {
+		margin-bottom: -8px;
 	}
 }
 </style>

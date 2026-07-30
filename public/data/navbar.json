@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Home",
+		"to": "/",
+		"icon": "mdi-home"
+	},
+	{
+		"name": "Downloads",
+		"to": "/downloads",
+		"icon": "mdi-download"
+	},
+	{
+		"name": "Add-ons",
+		"to": "/addons",
+		"icon": "mdi-plus-thick"
+	},
+	{
+		"name": "News",
+		"to": "/news",
+		"icon": "mdi-newspaper-variant"
+	},
+	{
+		"name": "Studio",
+		"to": "https://studio.faithfulpack.net",
+		"icon": "mdi-hammer-wrench"
+	},
+	{
+		"name": "About",
+		"to": "/about",
+		"icon": "mdi-help-circle"
+	}
+]

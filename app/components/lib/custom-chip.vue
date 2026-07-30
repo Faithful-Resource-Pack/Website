@@ -4,16 +4,19 @@
 		:style="{ color: chip.color }"
 		:prepend-icon="chip.icon"
 		:to="link ? chip.to : undefined"
+		v-bind="$attrs"
 	>
 		<template v-if="!canDirectlyPrepend" #prepend>
 			<media-icon class="mr-1 ml-n1" :icon="chip.icon" :color="chip.color" />
 		</template>
-		<span>{{ chip.text }}</span>
+		<span>{{ chip.name }}</span>
 	</v-chip>
 </template>
 
 <script>
 import MediaIcon from "./media-icon.vue";
+
+import projects from "../../../public/data/projects.json";
 
 export default defineNuxtComponent({
 	name: "custom-chip",
@@ -34,43 +37,21 @@ export default defineNuxtComponent({
 	data() {
 		return {
 			data: {
-				Java: { color: "#1DD96A", icon: "mdi-minecraft", text: "Java Edition" },
-				Bedrock: { color: "#EEEEEE", icon: "mdi-cube", text: "Bedrock Edition" },
-				"Faithful 32x": {
-					color: "#00A2FF",
-					icon: "faithful",
-					text: "Faithful 32x",
-					to: "/faithful32x",
-				},
-				"Faithful 64x": {
-					color: "#FF0092",
-					icon: "faithful",
-					text: "Faithful 64x",
-					to: "/faithful64x",
-				},
-				"Classic Faithful 32x": {
-					color: "#5ED900",
-					icon: "faithful",
-					text: "Classic Faithful 32x",
-					to: "/classic32x",
-				},
-				"Classic Faithful 64x": {
-					color: "#BE42FF",
-					icon: "faithful",
-					text: "Classic Faithful 64x",
-					to: "/classic64x",
-				},
-			},
-			translate: {
-				"32x": "Faithful 32x",
-				"64x": "Faithful 64x",
+				Java: { color: "#1DD96A", icon: "mdi-minecraft", name: "Java Edition" },
+				Bedrock: { color: "#999999", icon: "mdi-cube", name: "Bedrock Edition" },
+				// kinda stupid but it works lol
+				...projects
+					.filter((p) => p.addons)
+					.reduce((acc, cur) => {
+						acc[cur.pack_id] = cur;
+						acc[cur.pack_id].icon = "faithful";
+						return acc;
+					}, {}),
 			},
 		};
 	},
 	computed: {
 		chip() {
-			if (Object.keys(this.translate).includes(this.type))
-				return this.data[this.translate[this.type]];
 			return this.data[this.type];
 		},
 		canDirectlyPrepend() {

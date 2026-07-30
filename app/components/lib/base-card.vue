@@ -1,9 +1,13 @@
 <template>
+	<!-- formatting styles for the actual card background/padding etc -->
 	<div class="card zoom-hitbox zoom-affected">
-		<nuxt-link class="base-card" :to>
-			<img class="base-card-image" :src="image" :alt loading="lazy" />
-			<div class="base-card-body">
-				<h3 v-if="$slots.title" class="base-card-title" :style="titleStyles">
+		<!-- put layout styles on link to affect its children correctly -->
+		<nuxt-link :to class="d-flex flex-column">
+			<slot name="image">
+				<img class="card-image" :src="image" :alt loading="lazy" />
+			</slot>
+			<div class="card-body">
+				<h3 v-if="$slots.title" class="h4 mb-0" :style="titleStyles">
 					<slot name="title" />
 				</h3>
 				<slot name="body" />
@@ -38,40 +42,3 @@ export default defineNuxtComponent({
 	},
 });
 </script>
-
-<style scoped lang="scss">
-@use "~/assets/css/variables" as *;
-
-.base-card {
-	display: flex;
-	flex-flow: column nowrap;
-
-	position: relative;
-	height: 100%;
-	&:hover {
-		cursor: pointer;
-	}
-}
-.base-card-body {
-	flex-grow: 1;
-	height: auto;
-	display: flex;
-	flex-flow: column nowrap;
-	margin: $padding-card;
-	line-height: 1;
-}
-
-.base-card-image {
-	position: relative;
-	width: 100%;
-	height: auto;
-	aspect-ratio: 16 / 9;
-}
-
-.base-card-title {
-	font-size: 1.5rem;
-	// makes gap between subtitle and title smaller
-	margin-bottom: 0.25rem;
-	color: $text-card-title;
-}
-</style>

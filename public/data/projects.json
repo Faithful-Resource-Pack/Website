@@ -1,0 +1,38 @@
+[
+	{
+		"id": "f32",
+		"pack_id": "faithful_32x",
+		"name": "Faithful 32x",
+		"description": "Tried and true for over a decade.",
+		"to": "/faithful32x",
+		"color": "#00A2FF",
+		"addons": true
+	},
+	{
+		"id": "f64",
+		"pack_id": "faithful_64x",
+		"name": "Faithful 64x",
+		"description": "An even more detailed experience.",
+		"to": "/faithful64x",
+		"color": "#FF0092",
+		"addons": true
+	},
+	{
+		"id": "cf32",
+		"pack_id": "classic_faithful_32x",
+		"name": "Classic Faithful 32x",
+		"description": "Bring back the old-school feel in style.",
+		"to": "/classic32x",
+		"color": "#5ED900",
+		"addons": true
+	},
+	{
+		"id": "cf64",
+		"pack_id": "classic_faithful_64x",
+		"name": "Classic Faithful 64x",
+		"description": "Nostalgia and ultra-detailed graphics, all in one.",
+		"to": "/classic64x-jappa",
+		"color": "#BE42FF",
+		"addons": true
+	}
+]

@@ -1,10 +1,20 @@
 <template>
 	<div class="user-header">
-		<img
-			class="user-header-image"
-			:src="`https://vzge.me/face/128/${getVisageSlug(user)}`"
-			:title="user.uuid"
-		/>
+		<component
+			:is="user?.uuid ? 'a' : 'span'"
+			:href="`https://namemc.com/profile/${user.uuid}`"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<img
+				class="user-header-image"
+				:class="user.uuid && 'zoom-hitbox zoom-affected'"
+				:src="`https://vzge.me/face/128/${user.uuid || 'X-Steve'}`"
+				:title="user.uuid"
+				width="128"
+				height="128"
+			/>
+		</component>
 		<div class="flex-grow-1">
 			<div class="user-header-top">
 				<h1 class="user-header-username mb-0 subtitle cursor-pointer" @click="copyURL">
@@ -17,17 +27,14 @@
 	</div>
 	<hr />
 	<template v-if="isReservedAccount">
-		<div class="warning banner">
-			<h1>This user account is special!</h1>
-			<p class="text-left mb-0" style="opacity: 0.8">
-				This user account does not correspond to a real Discord account. Possible reasons include
-				placeholder accounts for old contributions or organization accounts.
-			</p>
-		</div>
+		<v-alert type="warning" title="This user account is special!">
+			This user account does not correspond to a real Discord account. Possible reasons include
+			placeholder accounts for old contributions or organization accounts.
+		</v-alert>
 		<hr />
 	</template>
 	<!-- eslint-disable vue/no-v-html -->
-	<div v-if="user.bio" class="card card-body card-text" v-html="compileMarkdown(user.bio)" />
+	<div v-if="user.bio" class="card card-body body-text" v-html="compileMarkdown(user.bio)" />
 	<!-- eslint-enable vue/no-v-html -->
 
 	<template v-if="addons.length">
@@ -37,10 +44,14 @@
 				<span class="h3">{{ addons.length }}</span>
 			</v-chip>
 		</div>
-		<div class="res-grid-3">
-			<addon-card v-for="addon in addons" :key="addon.id" :addon disable-favorites />
+		<div class="grid-3">
+			<addon-card v-for="addon in addons" :key="addon.id" :addon :packs disable-favorites />
 		</div>
 	</template>
+	<div v-else-if="!loading" class="text-center">
+		<v-icon size="96" icon="mdi-alert-circle-outline" />
+		<p class="h4 mt-2">This user has no add-ons!</p>
+	</div>
 </template>
 
 <script>
@@ -68,22 +79,14 @@ export default defineNuxtComponent({
 
 		try {
 			let user;
-			let addons;
 			if (customSlug) {
-				// need to check if user slug exists before getting addons
 				user = await $fetch(`${apiURL}/users/${id.slice(1)}`);
 				// try for exact match
 				if (Array.isArray(user))
 					user = user.find((u) => u.username.toLowerCase() === id.slice(1).toLowerCase());
 				if (!user) throw new Error("No user with same username found");
-				addons = await $fetch(`${apiURL}/users/${user.id}/addons/approved`);
-			} else {
-				// you can get both at the same time since it's an id
-				[user, addons] = await Promise.all([
-					$fetch(`${apiURL}/users/${id}`),
-					$fetch(`${apiURL}/users/${id}/addons/approved`),
-				]);
-			}
+			} else user = await $fetch(`${apiURL}/users/${id}`);
+
 			if (user.anonymous) throw new Error("User is anonymous");
 			useSeoMeta(
 				generateMetaTags({
@@ -92,13 +95,17 @@ export default defineNuxtComponent({
 				}),
 			);
 
-			return {
-				user,
-				addons: addons.sort((a, b) => (b.last_updated || 0) - (a.last_updated || 0)),
-			};
+			return { user };
 		} catch (err) {
 			throw createError({ statusCode: 404, statusMessage: String(err) });
 		}
+	},
+	data() {
+		return {
+			packs: [],
+			addons: [],
+			loading: true,
+		};
 	},
 	methods: {
 		copyURL() {
@@ -114,6 +121,18 @@ export default defineNuxtComponent({
 			return this.user.id < 1000;
 		},
 	},
+	created() {
+		const { apiURL } = useRuntimeConfig().public;
+		$fetch(`${apiURL}/packs/search?tag=addons`).then((res) => {
+			this.packs = res;
+		});
+		$fetch(`${apiURL}/users/${this.user.id}/addons/approved`).then((res) => {
+			this.addons = res.sort((a, b) => (b.last_updated || 0) - (a.last_updated || 0));
+
+			// render doesn't block on packs
+			this.loading = false;
+		});
+	},
 });
 </script>
 
@@ -124,7 +143,7 @@ export default defineNuxtComponent({
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
-	gap: 1rem;
+	gap: 1.5rem;
 }
 
 .user-header-top {
@@ -136,7 +155,7 @@ export default defineNuxtComponent({
 }
 
 .user-header-image {
-	filter: drop-shadow($shadow-sheet);
+	filter: drop-shadow($shadow-card);
 }
 
 .user-header-username:hover {
@@ -152,8 +171,6 @@ export default defineNuxtComponent({
 		justify-content: center;
 	}
 	.user-header-username {
-		// mobile title size (looks nicer)
-		font-size: 2.75rem;
 		text-align: center;
 	}
 }

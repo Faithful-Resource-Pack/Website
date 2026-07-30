@@ -108,7 +108,7 @@ export default defineNuxtComponent({
 .selection-container {
 	overflow: hidden;
 	border-radius: $border-radius;
-	box-shadow: $shadow-sheet;
+	box-shadow: $shadow-card;
 }
 
 .selected-image {

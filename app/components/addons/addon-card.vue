@@ -6,10 +6,13 @@
 		:title-styles
 	>
 		<template #title>
-			<span class="short-title">{{ addon.name }}</span>
+			{{ addon.name }}
 		</template>
 		<template v-if="!minimal" #body>
-			<p class="addon-subtitle mb-2">{{ subtitle }}</p>
+			<p class="addon-subtitle mb-0 mt-1" :class="minimal ? '' : 'addon-subtitle-full'">
+				{{ subtitle }}
+			</p>
+			<v-spacer />
 			<author-heads v-if="Object.keys(users).length" :authors />
 			<addon-flags :options="addon.options" />
 		</template>
@@ -47,6 +50,11 @@ export default defineNuxtComponent({
 			required: false,
 			default: () => ({}),
 		},
+		packs: {
+			type: Array,
+			required: false,
+			default: () => [],
+		},
 		favorite: {
 			type: Boolean,
 			required: false,
@@ -65,13 +73,28 @@ export default defineNuxtComponent({
 		},
 	},
 	emits: ["toggleFav"],
+	methods: {
+		packToCode(pack) {
+			return (
+				pack
+					.split(" ")
+					// Classic Faithful 32x Jappa -> CF32J
+					.map((el) => (isNaN(Number(el[0])) ? el[0].toUpperCase() : el.match(/\d+/g)?.[0]))
+					.join("")
+			);
+		},
+	},
 	computed: {
 		subtitle() {
-			const formattedPacks = this.packs.map((res) => `Faithful ${res}`).join(", ");
-			if (!this.addon.last_updated) return formattedPacks;
+			const packs = this.addon.options.packs.map(
+				(id) => this.packs.find((p) => p.id === id)?.name || id,
+			);
+			if (!this.addon.last_updated) return packs.join(", ");
 			const date = exactDate(this.addon.last_updated);
-			if (this.packs.length > 1) return `${formattedPacks}\n${date}`;
-			return `${formattedPacks} • ${date}`;
+			if (this.addon.options.packs.length > 2)
+				return `${packs.map((p) => this.packToCode(p)).join(", ")}\n${date}`;
+			if (this.addon.options.packs.length > 1) return `${packs.join(", ")}\n${date}`;
+			return `${packs[0]} • ${date}`;
 		},
 		alt() {
 			// take embed description if exists
@@ -79,9 +102,6 @@ export default defineNuxtComponent({
 			// less than 150 characters (a lot of addons have really short descriptions)
 			if (this.addon.description.length < 150) return this.addon.description;
 			return this.addon.title;
-		},
-		packs() {
-			return ["32x", "64x"].filter((p) => this.addon.options.tags.includes(p));
 		},
 		titleStyles() {
 			// https://stackoverflow.com/questions/34294054/how-to-implement-single-line-ellipsis-with-css
@@ -104,5 +124,10 @@ export default defineNuxtComponent({
 .addon-subtitle {
 	white-space: pre-wrap;
 	line-height: 1.2;
+}
+
+.addon-subtitle-full {
+	// 12px margin + 32px images
+	margin-right: 44px;
 }
 </style>

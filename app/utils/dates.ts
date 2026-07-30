@@ -1,45 +1,32 @@
-import { DateTime } from "luxon";
-
-export type DateLike = number | string | Date;
+import { DateTime, SystemZone } from "luxon";
 
 /**
- * Create a short absolute date based on the user's browser language
- * @param dateObj - Date-like object to convert
- * @returns Formatted date string
+ * Convert a date-like object into a Luxon DateTime object with decent timezone handling
+ * @param date - ISO Date string or Unix timestamp
+ * @returns Luxon DateTime object
  */
-export function shortDate(dateObj: DateLike) {
-	const date = new Date(dateObj);
-	const year = date.getFullYear();
-	const month = date.getMonth() + 1; // 0 indexed
-	const day = date.getDate();
-	// mdy for us (expand array if someone else does too)
-	if (navigator && ["en-US"].includes(navigator.language)) return `${month}/${day}/${year}`;
-	// dmy for everyone else (and on server since no client is available)
-	return `${day}/${month}/${year}`;
+function makeLuxonDate(date: string | number): DateTime {
+	return typeof date === "string" && Number.isNaN(Number(date))
+		? DateTime.fromISO(date, { zone: new SystemZone() })
+		: DateTime.fromMillis(Number(date));
 }
 
 /**
  * Convert a date-like object into a formatted exact date
- * @param dateObj - Date-like object to convert
+ * @param date - Date string or Unix timestamp
  * @param style - Luxon formatting style to use
  * @returns Precise date string
  */
-export function exactDate(dateObj: DateLike, style = DateTime.DATE_MED) {
-	const date = new Date(dateObj);
-	return DateTime.fromJSDate(date).toLocaleString(style, {
-		locale: "en",
-	});
+export function exactDate(date: string | number, style = DateTime.DATE_MED): string {
+	// fixes one half of the sentence being translated
+	return makeLuxonDate(date).toLocaleString(style, { locale: "en" });
 }
 
 /**
  * Convert a date-like object into an English relative date
- * @param dateObj - Date-like object to convert
+ * @param dateObj - Date string or Unix timestamp
  * @returns Relative date string
  */
-export function relativeDate(dateObj: DateLike) {
-	const date = new Date(dateObj);
-	return DateTime.fromJSDate(date).toRelative({
-		// fixes one half of the sentence being translated
-		locale: "en",
-	});
+export function relativeDate(date: string | number) {
+	return makeLuxonDate(date).toRelative({ locale: "en" });
 }
