@@ -7,7 +7,7 @@ definePageMeta({
 <template>
 	<h1 class="title mt-5 text-center">Faithful License</h1>
 	<p class="h3 text-center mb-3">
-		Version 3 - Feb 20, 2023
+		Version 4 - Jul 31, 2026
 		<br />
 		Copyright © Faithful Resource Pack
 	</p>
@@ -19,86 +19,108 @@ definePageMeta({
 		<span class="ml-2">Download License</span>
 	</nuxt-link>
 	<div class="card card-body body-text">
+		<p>
+			We (Faithful) encourage using and modifying our work for your own projects. That being said,
+			there are a few ground rules to keep things fair for our artists and developers. In general,
+			you'll be fine if you're being honest about what you're using and aren't trying to take
+			advantage of our policies or contributors.
+		</p>
 		<h2>You may do the following:</h2>
 		<ol>
-			<li>Use our work as placeholders.</li>
 			<li>
-				Use our work as a base or reference for your own content (e.g. modded textures, content
-				creator edits).
+				Use, modify, and distribute our work for both Minecraft and non-Minecraft projects. This
+				includes but is not limited to adventure maps, mods, server resource packs, content creator
+				edits, and your own games or software.
 			</li>
-			<li>
-				Use a few textures that you cannot properly make, such as painting or particle textures.
-			</li>
-			<li>
-				Distribute a modified copy of a pack as a content creator with your videos or streams.
-			</li>
-			<li>Use our work for adventure maps, server resource packs, mod textures, or data packs.</li>
+			<li>Use our work as reference material or inspiration for your own projects.</li>
+			<li>Use our work as placeholder content.</li>
+			<li>Produce monetized videos or streams that use our packs.</li>
 		</ol>
-		<h2>By doing any of the above, you agree to follow these requirements:</h2>
+		<h2>Requirements if doing any of the above:</h2>
 		<ol>
 			<li>
-				Give clear credit in an appropriate place (e.g. video descriptions, pack.mcmetas, listing
-				descriptions).
+				Give clear credit to us in an appropriate and obvious place. This could be in a video or
+				listing description, a project README or credits.txt file, or a resource pack's pack.mcmeta
+				or manifest.json.
 			</li>
 			<li>
-				Link back to our website, which you can find here:
-				<nuxt-link to="https://faithfulpack.net/">https://faithfulpack.net/</nuxt-link>
+				Provide a clearly visible link to our website (<nuxt-link href="/"
+					>https://faithfulpack.net</nuxt-link
+				>).
 			</li>
 			<li>
-				Don't take credit for work you didn't make and always give proper attribution to any work
-				you use or modify. In addition, try to be somewhat specific about what you're using, as "GUI
-				originally from Faithful 32x" works a lot better than "some textures from Faithful". Just be
-				honest about what you're using, use common sense when in doubt, and you'll be fine.
+				Be honest and clear about what you reference or use. When possible, don't just say that
+				"some textures are from Faithful" with no further information; instead, try to cite the
+				specific resource pack and content being used.
 			</li>
 			<li>
-				Do not monetize content that contains any of our work, modified or not, under any
-				circumstances. This includes locking your content behind a paywall (including the Minecraft
-				Marketplace) or monetizing download links. Taking voluntary donations is still allowed, but
-				if it feels like you're profiting off our work don't do it.
+				Only use what you need to use. If you're making a resource pack that's mostly unmodified
+				Faithful textures, consider making it an add-on that gets overlaid on top of a base pack
+				instead.
 			</li>
 			<li>
-				Don't make your projects look official when they aren't. Examples of this behavior would
-				include copying our branding or marking a project as "official" in a way that would confuse
-				the average viewer into believing a project is official when it isn't.
+				Either include an unmodified copy of the
+				<a href="https://database.faithfulpack.net/packs/LICENSE.txt">license text file</a> or a
+				link to this page with all project distributions.
+			</li>
+		</ol>
+		<h2>You may not do the following:</h2>
+		<ol>
+			<li>
+				Lock content using or modifying our work behind a paywall. This includes the Minecraft
+				Marketplace and platforms like Patreon or Ko-fi.
 			</li>
 			<li>
-				<nuxt-link to="https://database.faithfulpack.net/packs/LICENSE.txt">This file</nuxt-link>,
-				unmodified, must be included in any content which contains any of our work.
+				Use monetized download links or link shorteners. You can use reward systems offered by
+				listing websites like CurseForge and Modrinth if your content is mostly your own, but avoid
+				these if it's mostly unoriginal or simple edits.
 			</li>
+			<li>
+				Indirectly take donations for content directly inspired by or based on our work. If
+				Faithful-related content is one small aspect of a larger creation portfolio from which you
+				receive donations, it's probably fine, but don't make our work the main reason or entire
+				basis for donating to you.
+			</li>
+			<li>
+				Use our work as a substitute for Minecraft's graphics when default textures otherwise
+				wouldn't be allowed. It makes us look bad when Faithful is only seen as a free-to-use
+				project that looks fairly similar to Minecraft's art, so if Mojang wouldn't want you to use
+				their work, we probably don't either.
+			</li>
+			<li>
+				Make your projects look official when they aren't. Don't copy our branding or misleadingly
+				call a project "official" in a way that would confuse an average user into believing we
+				officially run or endorse it.
+			</li>
+			<li>Use our work in cryptocurrency or NFT-based projects.</li>
+			<li>Train neural networks or AI models on our work.</li>
 		</ol>
 		<h2>Exceptions:</h2>
 		<ol>
 			<li>
-				If you're doing anything privately or undistributed to our work (e.g. custom edit for
-				personal use, unpublished add-ons, mod support, personal Minecraft server resource pack, or
-				edits either by you or from different packs) you can safely disregard all of these
-				requirements since you are not gaining unfairly from us in any form.
+				Private projects that use our work don't have to follow our requirements, since you aren't
+				gaining unfairly from us in any way. These include resource pack edits, texture
+				compilations, and add-ons made exclusively for personal use, in addition to resource packs
+				for small private Minecraft servers.
 			</li>
 			<li>
-				Projects not directly related to textures (e.g. website, bot) may have separate licenses
-				with different terms. Check their respective pages or repositories for more information. If
-				nothing is mentioned, assume that all rights remain reserved.
-			</li>
-			<li>
-				If you are using textures made before March 2016 (Minecraft Release 1.9). These textures are
-				licensed under Vattic's original Faithful 32x32 license, which has different requirements
-				compared with this license. If you're interested, you can find the original license here
-				under "Usage Guidelines":
-				<nuxt-link
-					to="https://web.archive.org/web/20150607220656/http://www.minecraftforum.net:80/forums/mapping-and-modding/resource-packs/1223254-faithful-32x32-pack-update-red-cat-clay-1-8"
-				>
-					https://web.archive.org/web/20150607220656/http://www.minecraftforum.net:80/forums/mapping-and-modding/resource-packs/1223254-faithful-32x32-pack-update-red-cat-clay-1-8
-				</nuxt-link>
+				This license does not exhaustively apply to all Faithful services or projects. Always check
+				the specific terms of the project you're interested in before assuming this license applies
+				to it.
 			</li>
 		</ol>
 		<h2>We reserve the right to:</h2>
 		<ol>
 			<li>
-				Refuse the ability to use, distribute, or modify any work made by us for any person or
-				group. This action would be final, generally only in the case of unusual circumstances.
+				Refuse any person or group the ability to use, distribute, or modify any of our work. This
+				action is final, but would generally only be used in the case of unusual situations.
 			</li>
-			<li>Take legal action if you do not comply with these guidelines.</li>
-			<li>Change this license at any time for any reason.</li>
+			<li>Take legal action if you don't comply with these terms.</li>
+			<li>Change this license at any time and for any reason.</li>
 		</ol>
+		<p>
+			Still have questions? Contact us by email at
+			<a href="mailto:contact@faithfulpack.net">contact@faithfulpack.net</a>.
+		</p>
 	</div>
 </template>
