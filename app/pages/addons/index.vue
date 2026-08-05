@@ -3,11 +3,9 @@
 		background="/image/banners/add_ons.jpg"
 		wordmark="/image/wordmarks/addons.png"
 		wordmark-alt="Faithful Add-ons Wordmark"
-		upspace="24px"
 	>
-		<template #tagline>Personalize and customize every aspect of your gameplay.</template>
 		<template #actions>
-			<div class="container pt-2 pb-0">
+			<div class="container py-0">
 				<v-text-field
 					v-model="search"
 					variant="solo"

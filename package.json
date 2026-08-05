@@ -17,20 +17,20 @@
 		"docker:alive": "curl -s -o /dev/null -w \"%{http_code} %{content_type}\" http://localhost:3000 | grep -q \"^200 text/html\""
 	},
 	"dependencies": {
-		"isomorphic-dompurify": "^3.19.0",
+		"isomorphic-dompurify": "^3.21.0",
 		"luxon": "^3.7.2",
-		"marked": "^18.0.7",
-		"nuxt": "^4.4.8",
+		"marked": "^18.0.9",
+		"nuxt": "4.4",
 		"remove-markdown": "^0.6.4",
-		"sass": "^1.101.4",
-		"vue": "^3.5.40",
+		"sass": "^1.102.0",
+		"vue": "^3.5.41",
 		"vuetify-nuxt-module": "^0.19.5",
 		"yaml": "^2.9.0"
 	},
 	"devDependencies": {
 		"@nuxt/eslint": "1.16.0",
-		"@types/luxon": "^3.7.2",
-		"eslint": "^10.7.0",
+		"@types/luxon": "^3.7.3",
+		"eslint": "^10.8.0",
 		"prettier": "^3.9.6"
 	},
 	"peerDependencies": {

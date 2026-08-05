@@ -1,13 +1,17 @@
 <template>
-	<div class="hero-container text-center" :style="{ backgroundImage }">
+	<div
+		class="hero-container text-center"
+		:class="{ solo: mobileSolo }"
+		:style="{ backgroundImage }"
+	>
 		<!-- this was the least stupid way to add some padding at the top -->
 		<div :style="{ height: upspace }" />
 		<div class="px-4">
-			<h1 v-if="$slots.title" class="hero-tagline title text-center mt-5">
+			<h1 v-if="$slots.title" class="hero-title title text-center">
 				<slot name="title" />
 			</h1>
 			<img v-if="wordmark" class="hero-wordmark" :src="wordmark" :alt="wordmarkAlt" />
-			<h2 v-if="$slots.tagline" class="hero-tagline">
+			<h2 v-if="$slots.tagline" class="hero-tagline mb-4">
 				<slot name="tagline" />
 			</h2>
 		</div>
@@ -39,6 +43,11 @@ export default defineNuxtComponent({
 			required: false,
 			default: null,
 		},
+		mobileSolo: {
+			type: Boolean,
+			required: false,
+			default: null,
+		},
 	},
 	computed: {
 		backgroundImage() {
@@ -58,17 +67,33 @@ export default defineNuxtComponent({
 	box-shadow: $shadow-card;
 }
 
+.hero-title,
+.hero-wordmark {
+	margin-top: 50px;
+	margin-bottom: 25px;
+}
+
+.hero-wordmark {
+	filter: drop-shadow($shadow-wordmark);
+	// halfway between sm and md breakpoints
+	width: 668px;
+	max-width: 100%;
+}
+
+.hero-title,
 .hero-tagline {
 	color: white;
 	text-shadow: 2px 2px 5px rgba(black, 0.8);
 }
 
-.hero-wordmark {
-	margin-top: 50px;
-	margin-bottom: 25px;
-	filter: drop-shadow($shadow-wordmark);
-	// halfway between sm and md breakpoints
-	width: 668px;
-	max-width: 100%;
+@media screen and (max-width: $breakpoint-sm) {
+	.hero-wordmark,
+	.hero-title {
+		margin-top: 25px;
+	}
+
+	.solo .hero-wordmark {
+		display: none;
+	}
 }
 </style>

@@ -4,7 +4,7 @@
 			<!-- focus/blur for keyboard navigation, mouseenter/leave for mouse navigation -->
 			<button
 				class="download-choice ga-2 pa-3 cursor-pointer"
-				:class="id === selectedPack && 'selected-choice'"
+				:class="{ 'selected-choice': id === selectedPack }"
 				@focus="hoverPack(id)"
 				@blur="resetHover"
 				@mouseenter="hoverPack(id)"

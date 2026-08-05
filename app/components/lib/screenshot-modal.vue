@@ -27,7 +27,7 @@
 					icon="mdi-circle-medium"
 					size="16px"
 					class="delimiter-dot"
-					:class="currentImageIndex === i && 'selected'"
+					:class="{ selected: currentImageIndex === i }"
 				/>
 			</v-btn>
 		</div>

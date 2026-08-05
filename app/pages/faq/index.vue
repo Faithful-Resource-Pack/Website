@@ -6,10 +6,9 @@ definePageMeta({
 </script>
 
 <template>
-	<hero-section background="/image/banners/faq.jpg" upspace="100px">
+	<hero-section background="/image/banners/faq.jpg">
 		<template #title>Frequently Asked Questions</template>
 		<template #actions>
-			<div style="height: 100px" />
 			<div class="container py-0">
 				<v-autocomplete
 					v-model="search"
@@ -20,7 +19,7 @@ definePageMeta({
 					clearable
 					hide-details
 					prepend-inner-icon="mdi-magnify"
-					placeholder="Search FAQs"
+					placeholder="Search answers"
 					@update:menu="goToFaq"
 				/>
 				<br />
