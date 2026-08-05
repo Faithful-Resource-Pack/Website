@@ -20,7 +20,7 @@
 		"isomorphic-dompurify": "^3.21.0",
 		"luxon": "^3.7.2",
 		"marked": "^18.0.9",
-		"nuxt": "4.4",
+		"nuxt": "4.5",
 		"remove-markdown": "^0.6.4",
 		"sass": "^1.102.0",
 		"vue": "^3.5.41",
