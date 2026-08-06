@@ -40,7 +40,7 @@ export default defineNuxtComponent({
 			return this.panelOpen ? "Close Version Panel" : "Open Version Panel";
 		},
 		icon() {
-			return this.panelOpen ? "mdi-chevron-left" : "mdi-chevron-right";
+			return this.panelOpen ? "mdi-menu-left" : "mdi-menu-right";
 		},
 	},
 });
