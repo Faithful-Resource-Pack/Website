@@ -115,7 +115,6 @@ $news-display-height: 3;
 // https://css-tricks.com/line-clampin/
 .news-preview {
 	display: -webkit-box;
-	height: calc(1.5 * $news-display-height);
 	overflow: hidden;
 	line-clamp: $news-display-height;
 	-webkit-line-clamp: $news-display-height;
