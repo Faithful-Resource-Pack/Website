@@ -48,7 +48,7 @@
 			<addon-card v-for="addon in addons" :key="addon.id" :addon :packs disable-favorites />
 		</div>
 	</template>
-	<div v-else-if="!loading" class="text-center">
+	<div v-else-if="!loading" class="text-center my-5">
 		<v-icon size="96" icon="mdi-alert-circle-outline" />
 		<p class="h4 mt-2">This user has no add-ons!</p>
 	</div>
