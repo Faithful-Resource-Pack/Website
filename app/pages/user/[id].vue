@@ -33,9 +33,8 @@
 		</v-alert>
 		<hr />
 	</template>
-	<!-- eslint-disable vue/no-v-html -->
+	<!-- eslint-disable-next-line vue/no-v-html -->
 	<div v-if="user.bio" class="card card-body body-text" v-html="compileMarkdown(user.bio)" />
-	<!-- eslint-enable vue/no-v-html -->
 
 	<template v-if="addons.length">
 		<div class="d-flex flex-row align-center justify-center ga-5 my-5">

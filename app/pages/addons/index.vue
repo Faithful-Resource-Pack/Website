@@ -281,13 +281,7 @@ export default defineNuxtComponent({
 	},
 	mounted() {
 		const local = localStorage.getItem(FAVORITE_ADDONS_KEY);
-
-		// legacy compatibility
-		// todo: remove in a few months
-		if (local && local.startsWith("{")) {
-			this.fav = new Set(Object.keys(JSON.parse(local)));
-			localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(Array.from(this.fav)));
-		} else this.fav = new Set(JSON.parse(local || "[]"));
+		this.fav = new Set(JSON.parse(local || "[]"));
 
 		document.addEventListener("scroll", this.checkShownItems);
 	},
