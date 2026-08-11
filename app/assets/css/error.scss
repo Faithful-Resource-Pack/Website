@@ -7,6 +7,11 @@ $bg-end: #120E19;
 	.site-container {
 		background: $bg-end url("/image/background/the_end.jpg") no-repeat center;
 	}
+	main {
+		display: flex;
+		align-items: center;
+		justify-items: center;
+	}
 	.textured, .accent-textured {
 		background: transparent;
 	}
