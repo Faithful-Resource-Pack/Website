@@ -1,16 +1,22 @@
 <template>
 	<div class="download-table-padding accent-textured">
 		<table class="download-table">
-			<thead class="download-heading">
+			<thead class="download-heading" @click="toggleCollapse">
+				<!-- bit of jank required to match body padding when collapsed -->
 				<tr>
-					<!-- these must be in divs, I have no idea why -->
-					<th />
-					<th class="text-left"><h4>Name</h4></th>
-					<th><h4>Published</h4></th>
-					<th><h4>Downloads</h4></th>
+					<th class="pl-2 pr-4">
+						<v-icon
+							:icon="collapseIcon"
+							size="x-small"
+							:title="isCollapsed ? 'Open download list' : 'Close download list'"
+						/>
+					</th>
+					<th class="text-left" style="width: 100%"><h4>Name</h4></th>
+					<th><h4 class="px-8">Published</h4></th>
+					<th><h4 style="min-width: 128px">Downloads</h4></th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody v-show="!isCollapsed">
 				<download-version
 					v-for="(items, version) in downloads"
 					:key="version"
@@ -42,6 +48,21 @@ export default defineNuxtComponent({
 			default: () => [],
 		},
 	},
+	data() {
+		return {
+			isCollapsed: false,
+		};
+	},
+	methods: {
+		toggleCollapse() {
+			this.isCollapsed = !this.isCollapsed;
+		},
+	},
+	computed: {
+		collapseIcon() {
+			return this.isCollapsed ? "mdi-plus" : "mdi-minus";
+		},
+	},
 });
 </script>
 
@@ -59,6 +80,10 @@ export default defineNuxtComponent({
 // for mobile
 .download-table {
 	width: 100%;
+}
+
+.download-heading {
+	cursor: pointer;
 }
 
 .download-heading h4 {
