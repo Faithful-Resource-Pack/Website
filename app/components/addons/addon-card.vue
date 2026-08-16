@@ -9,7 +9,7 @@
 			{{ addon.name }}
 		</template>
 		<template v-if="!minimal" #body>
-			<p class="addon-subtitle mb-0 mt-1" :class="minimal ? '' : 'addon-subtitle-full'">
+			<p class="my-0 text-pre-line" :class="{ 'addon-subtitle-full': !minimal }">
 				{{ subtitle }}
 			</p>
 			<v-spacer />
@@ -121,11 +121,6 @@ export default defineNuxtComponent({
 </script>
 
 <style scoped lang="scss">
-.addon-subtitle {
-	white-space: pre-wrap;
-	line-height: 1.2;
-}
-
 .addon-subtitle-full {
 	// 12px margin + 32px images
 	margin-right: 44px;
