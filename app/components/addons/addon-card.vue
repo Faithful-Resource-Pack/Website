@@ -99,7 +99,7 @@ export default defineNuxtComponent({
 		alt() {
 			// take embed description if exists
 			if (this.addon.embed_description) return this.addon.embed_description;
-			// less than 150 characters (a lot of addons have really short descriptions)
+			// fewer than 150 characters (a lot of addons have really short descriptions)
 			if (this.addon.description.length < 150) return this.addon.description;
 			return this.addon.title;
 		},
