@@ -147,6 +147,13 @@
         "categories": ["creating"]
     },
     {
+        "question": "How do I get the translator role?",
+        "answer": "Translation roles are currently given for localizing CompliBot Commands and the Faithful Studio, which is automated through [Crowdin](https://translate.faithfulpack.net). Contact an online manager to add the role once your translations have been reviewed and accepted on GitHub.",
+        "keywords": ["crowdin", "translator", "translation"],
+        "categories": ["creating"],
+        "discord": true
+    },
+    {
         "question": "CompliBot is offline! What do I do?",
         "answer": "If one of the bots ever goes offline without previous notice from the developers, please ping __one__ of the online developers (<@360249987927638016> or <@173336582265241601>) and alert them of the issue.",
         "keywords": ["bot offline", "bot dead", "bot down"],
@@ -155,7 +162,7 @@
     },
     {
         "question": "I have found a bug in CompliBot or Wynem and I want to request a fix and/or give feedback, how do I do it?",
-        "answer": "If you find any bugs with CompliBot/CompliBot Submissions or have any requests, you can use the `/feedback` command to send feedback directly to their GitHub issue pages, or make an issue directly on their respective repositories. For Wynem, you can use `e!suggest`.",
+        "answer": "If you find any bugs with CompliBot Commands/CompliBot Submissions or have any requests, you can use the `/feedback` command to send feedback directly to their GitHub issue pages, or make an issue directly on their respective repositories. For Wynem, you can use `e!suggest`.",
         "keywords": ["bot bug", "bot bugs", "bot issue"],
         "categories": ["issues"],
         "discord": true
@@ -167,14 +174,8 @@
         "categories": ["installation"]
     },
     {
-        "question": "How do I get the translator role?",
-        "answer": "Visit [our Crowdin](https://translate.faithfulpack.net) and see if you can help translate CompliBot or or the Faithful Web App. Once your translations get accepted, ping an online manager to add the role.",
-        "keywords": ["crowdin", "translator", "translation"],
-        "categories": ["creating"]
-    },
-    {
         "question": "Items appear too big when using Bedrock Edition! What can I do?",
-        "answer": "This is a vanilla bug that's been in Bedrock for over four years ([MCPE-120618](https://bugs.mojang.com/browse/MCPE-120618)) which affects any pack with textures larger than default. A workaround has been found for most items, which is already included in all Faithful packs (any items that are still oversized in Faithful are likely unfixable), but for other packs there's a [standalone fix made by MultiPixel](https://fxtwitter.com/MultiPixelHD/status/1786301423011119359) available.",
+        "answer": "This is a vanilla bug that's been in Bedrock for over five years ([MCPE-120618](https://bugs.mojang.com/browse/MCPE-120618)) which affects any pack with textures larger than default. A workaround has been found for most items, which is already included in all Faithful packs (any items that are still oversized in Faithful are likely unfixable), but for other packs there's a [standalone fix made by MultiPixel](https://fxtwitter.com/MultiPixelHD/status/1786301423011119359) available.",
         "keywords": ["big items", "bugged items", "oversized items", "bedrock items"],
         "categories": ["issues"]
     },
@@ -192,13 +193,13 @@
     },
     {
         "question": "Does Faithful accept sponsors or paid partners?",
-        "answer": "Simply put, no. Not only do sponsors/advertisements go against our open sourced ethos, but since Faithful has no single owner, any rewards can't be fairly distributed.",
+        "answer": "Simply put, no. Not only do sponsors/advertisements go against our open sourced ethos, but since Faithful has no single owner, rewards couldn't be fairly distributed.",
         "keywords": ["sponsor", "sponsorship", "partners"],
         "categories": ["creating"]
     },
     {
         "question": "How can I use Faithful textures in my own projects?",
-        "answer": "First, read [our license](https://faithfulpack.net/license) to see that your project meets our terms (no monetization, giving clear credit, etc). If it meets all the terms and conditions, no further permission is required.",
+        "answer": "Content in the main Faithful resource packs are licensed under the [Faithful License](https://faithfulpack.net/license); no further permission is required if your work follows our guidelines. Add-ons are licensed under the discretion of their individual authors, and should be treated as All Rights Reserved if no license is provided.",
         "keywords": ["permission", "usage", "distribution", "licence", "license"],
         "categories": ["creating"]
     }
