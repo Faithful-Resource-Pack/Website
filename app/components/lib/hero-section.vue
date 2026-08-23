@@ -61,7 +61,10 @@ export default defineNuxtComponent({
 @use "~/assets/css/variables" as *;
 
 .hero-container {
-	display: block;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
 	background-size: cover;
 	background-position: center;
 	box-shadow: $shadow-card;

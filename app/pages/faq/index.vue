@@ -9,7 +9,7 @@ definePageMeta({
 	<hero-section background="/image/banners/faq.jpg">
 		<template #title>Frequently Asked Questions</template>
 		<template #actions>
-			<div class="container py-0">
+			<div class="container text-container py-0">
 				<v-autocomplete
 					v-model="search"
 					:items="faqs.map((faq) => faq.question)"

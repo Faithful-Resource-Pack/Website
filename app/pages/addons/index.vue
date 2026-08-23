@@ -5,7 +5,7 @@
 		wordmark-alt="Faithful Add-ons Wordmark"
 	>
 		<template #actions>
-			<div class="container py-0">
+			<div class="container text-container py-0">
 				<v-text-field
 					v-model="search"
 					variant="solo"
