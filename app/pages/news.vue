@@ -121,18 +121,16 @@ $news-display-height: 3;
 	-webkit-box-orient: vertical;
 }
 
-* {
-	// hide before wrapping
-	@media screen and (max-width: $breakpoint-md) {
-		.news-preview {
-			display: none;
-		}
+// hide before wrapping
+@media screen and (max-width: $breakpoint-md) {
+	.news-preview {
+		display: none;
 	}
+}
 
-	@media screen and (max-width: $breakpoint-sm) {
-		.news-preview {
-			display: -webkit-box;
-		}
+@media screen and (max-width: $breakpoint-sm) {
+	.news-preview {
+		display: -webkit-box;
 	}
 }
 </style>
