@@ -1,4 +1,11 @@
 <template>
+	<template v-if="isReservedAccount">
+		<v-alert type="warning" title="This user account is special!">
+			This user account does not correspond to a real Discord account. Possible reasons include
+			placeholder accounts for old contributions or organization accounts.
+		</v-alert>
+		<hr />
+	</template>
 	<div class="user-header">
 		<component
 			:is="user?.uuid ? 'a' : 'span'"
@@ -26,31 +33,31 @@
 		</div>
 	</div>
 	<hr />
-	<template v-if="isReservedAccount">
-		<v-alert type="warning" title="This user account is special!">
-			This user account does not correspond to a real Discord account. Possible reasons include
-			placeholder accounts for old contributions or organization accounts.
-		</v-alert>
-		<hr />
-	</template>
 	<!-- eslint-disable-next-line vue/no-v-html -->
 	<div v-if="user.bio" class="card card-body body-text" v-html="compileMarkdown(user.bio)" />
 
-	<template v-if="addons.length">
+	<div v-if="!loading && !addons.length" class="text-center my-5">
+		<v-icon size="96" icon="mdi-alert-circle-outline" />
+		<p class="h4 mt-2">This user has no add-ons!</p>
+	</div>
+	<template v-else>
 		<div class="d-flex flex-row align-center justify-center ga-5 my-5">
 			<h2 class="subtitle mb-0">Add-ons</h2>
-			<v-chip color="#343A40" variant="flat" size="large">
+			<v-chip v-if="!loading" color="#343A40" variant="flat" size="large">
 				<span class="h3">{{ addons.length }}</span>
 			</v-chip>
 		</div>
 		<div class="grid-3">
-			<addon-card v-for="addon in addons" :key="addon.id" :addon :packs disable-favorites />
+			<template v-if="!addons.length">
+				<div v-for="i in 5" :key="i" class="card pb-3">
+					<v-skeleton-loader type="image, subtitle, text" :theme />
+				</div>
+			</template>
+			<template v-else>
+				<addon-card v-for="addon in addons" :key="addon.id" :addon :packs disable-favorites />
+			</template>
 		</div>
 	</template>
-	<div v-else-if="!loading" class="text-center my-5">
-		<v-icon size="96" icon="mdi-alert-circle-outline" />
-		<p class="h4 mt-2">This user has no add-ons!</p>
-	</div>
 </template>
 
 <script>
@@ -62,6 +69,7 @@ export default defineNuxtComponent({
 		AddonCard,
 		UserRoles,
 	},
+	inject: ["theme"],
 	setup() {
 		definePageMeta({
 			validate: (route) =>
