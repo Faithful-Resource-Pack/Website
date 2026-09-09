@@ -1,11 +1,11 @@
 {
-  "26.40": [
+  "26.4X": [
     {
       "file_type": "Release",
-      "file_version": 14,
+      "file_version": 14.1,
       "latest": true,
       "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/8258689"
+        "curse": "https://www.curseforge.com/api/v1/mods/694024/files/8846484/download"
       }
     }
   ],
