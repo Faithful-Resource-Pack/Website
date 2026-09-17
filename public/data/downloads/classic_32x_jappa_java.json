@@ -1,5 +1,5 @@
 {
-  "Snapshot": [
+  "26.3": [
     {
       "file_type": "Release",
       "file_version": "2026-21",
@@ -11,7 +11,7 @@
       }
     }
   ],
-  "26.1": [
+  "26.2": [
     {
       "file_type": "Release",
       "file_version": "2026-21",
@@ -20,6 +20,18 @@
       "date": "2026-09-16",
       "links": {
         "download": "https://database.faithfulpack.net/packs/Classic-32x-Jappa-Java/Classic%20Faithful%2032x%20Jappa%20-%20java-latest.zip"
+      }
+    }
+  ],
+  "26.1": [
+    {
+      "file_type": "Release",
+      "file_version": "2026-21",
+      "file_name": "2026 Release 21",
+      "latest": true,
+      "date": "2026-09-16",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/Classic-32x-Jappa-Java/Classic%20Faithful%2032x%20Jappa%20-%2026.1.zip"
       }
     }
   ],
