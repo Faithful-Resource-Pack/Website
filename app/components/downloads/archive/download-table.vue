@@ -1,7 +1,13 @@
 <template>
 	<div class="download-table-padding accent-textured">
 		<table class="download-table">
-			<thead class="download-heading" @click="toggleCollapse">
+			<thead
+				class="download-heading highlight-hover"
+				role="button"
+				tabindex="0"
+				@keydown.enter="toggleCollapse"
+				@click="toggleCollapse"
+			>
 				<!-- bit of jank required to match body padding when collapsed -->
 				<tr>
 					<th class="pl-2 pr-4">
@@ -84,6 +90,17 @@ export default defineNuxtComponent({
 
 .download-heading {
 	cursor: pointer;
+}
+
+th {
+	&:first-child {
+		border-radius: $border-radius 0 0 $border-radius;
+		padding-left: calc($padding-container / 2);
+	}
+	&:last-child {
+		border-radius: 0 $border-radius $border-radius 0;
+		padding-right: calc($padding-container / 2);
+	}
 }
 
 .download-heading h4 {
