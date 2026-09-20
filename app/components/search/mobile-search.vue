@@ -1,5 +1,5 @@
 <template>
-	<v-overlay v-model="barOpened" attach=".site-container">
+	<v-overlay v-model="barOpen" attach=".site-container">
 		<div class="mobile-search-bar accent-textured">
 			<search-widget mobile @close="closeBar" />
 		</div>
@@ -23,20 +23,20 @@ export default defineNuxtComponent({
 	emits: ["update:modelValue"],
 	data() {
 		return {
-			barOpened: false,
+			barOpen: false,
 		};
 	},
 	methods: {
 		closeBar() {
-			this.barOpened = false;
+			this.barOpen = false;
 		},
 	},
 	watch: {
 		modelValue(n) {
-			this.barOpened = n;
+			this.barOpen = n;
 			this.search = "";
 		},
-		modalOpened(n) {
+		modalOpen(n) {
 			this.$emit("update:modelValue", n);
 		},
 	},

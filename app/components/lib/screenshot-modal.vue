@@ -1,5 +1,5 @@
 <template>
-	<v-dialog v-model="modalOpened" :max-width="$vuetify.display.mdAndUp ? '80vw' : undefined">
+	<v-dialog v-model="modalOpen" :max-width="$vuetify.display.mdAndUp ? '80vw' : undefined">
 		<v-carousel
 			v-model="currentImageIndex"
 			:show-arrows="multiple"
@@ -54,7 +54,7 @@ export default defineNuxtComponent({
 	emits: ["update:open", "update:modelValue"],
 	data() {
 		return {
-			modalOpened: false,
+			modalOpen: false,
 			currentImageIndex: 0,
 		};
 	},
@@ -65,9 +65,9 @@ export default defineNuxtComponent({
 	},
 	watch: {
 		open(n) {
-			this.modalOpened = n;
+			this.modalOpen = n;
 		},
-		modalOpened(n) {
+		modalOpen(n) {
 			this.$emit("update:open", n);
 		},
 		modelValue(n) {

@@ -1,5 +1,5 @@
 <template>
-	<v-dialog v-model="modalOpened" attach=".site-container" max-width="600">
+	<v-dialog v-model="modalOpen" attach=".site-container" max-width="600">
 		<div class="card card-body" style="max-height: 85vh">
 			<search-widget @close="closeModal" />
 		</div>
@@ -23,20 +23,20 @@ export default defineNuxtComponent({
 	emits: ["update:modelValue"],
 	data() {
 		return {
-			modalOpened: false,
+			modalOpen: false,
 		};
 	},
 	methods: {
 		closeModal() {
-			this.modalOpened = false;
+			this.modalOpen = false;
 		},
 	},
 	watch: {
 		modelValue(n) {
-			this.modalOpened = n;
+			this.modalOpen = n;
 			this.search = "";
 		},
-		modalOpened(n) {
+		modalOpen(n) {
 			this.$emit("update:modelValue", n);
 		},
 	},
