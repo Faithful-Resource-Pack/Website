@@ -11,21 +11,22 @@
 						width="240"
 					/>
 				</nuxt-link>
-				<span class="theme-btn navigation-link" @click="$emit('changeTheme')">
+				<v-spacer />
+				<button class="theme-btn navigation-link" @click="$emit('changeTheme')">
 					<!-- prevents hydration mismatch (themes are loaded before mount but after ssr) -->
 					<client-only>
 						<template #fallback>Loading Themes...</template>
 						<v-icon :icon="theme.icon" />
 						{{ theme.name }}
 					</client-only>
-				</span>
-				<v-spacer v-if="$vuetify.display.mdAndUp" />
+				</button>
+				<v-spacer />
 				<nuxt-link to="mailto:contact@faithfulpack.net">contact@faithfulpack.net</nuxt-link>
 				<p class="footer-info-text">&copy; {{ new Date().getFullYear() }} Faithful Resource Pack</p>
 			</div>
 			<div class="footer-item-container">
 				<div v-for="{ title, items } in categories" :key="title" class="footer-column">
-					<h3 class="footer-title mb-1 mr-2">
+					<h3 class="mb-1 mr-2">
 						{{ title }}
 					</h3>
 					<nuxt-link
@@ -78,11 +79,14 @@ footer {
 .footer-container {
 	display: flex;
 	flex-flow: row nowrap;
+	// stretch info row to fit size of others
+	align-items: stretch;
 	justify-content: space-between;
 	gap: 4rem;
 	// override container class (we only need the side padding from it)
 	padding-bottom: 1rem !important;
 	padding-top: 1rem !important;
+	text-align: left;
 }
 
 // container for just the link columns
@@ -90,15 +94,16 @@ footer {
 	flex-grow: 1;
 	display: flex;
 	flex-flow: row nowrap;
+	align-items: start;
 	justify-content: space-between;
-	align-items: stretch;
 	gap: 2rem;
 }
 
 .footer-column {
 	display: flex;
 	flex-flow: column nowrap;
-	align-items: flex-start;
+	align-items: start;
+	justify-content: start;
 	gap: 0.25rem;
 }
 
@@ -107,36 +112,23 @@ footer {
 }
 
 .theme-btn {
+	// need some margin for when spacers get removed on mobile
 	margin-top: 1rem;
-
-	// useful for wrapping later (spacer below)
 	margin-bottom: 0.5rem;
 	font-size: 1.5rem;
-	// align-self: center;
 }
 
 .footer-info-text {
 	margin: 0;
 }
 
-.footer-title {
-	display: flex;
-	align-items: center;
-}
-
-.footer-title > i {
-	// fix padding
-	margin-right: 0.75rem;
-	text-align: center;
-}
-
 @media screen and (max-width: $breakpoint-md) {
-	// drop link columns below information
 	.footer-container {
+		// remove stretch from info columns
 		align-items: start;
 		gap: 3rem;
 	}
-	// two columns of footer information
+	// two footer columns on side
 	.footer-item-container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -145,11 +137,13 @@ footer {
 }
 
 @media screen and (max-width: $breakpoint-xs) {
+	// center info/link areas as rows, keep two columns for links
 	.footer-container {
 		flex-flow: column nowrap;
 		align-items: center;
 		gap: 2rem;
 	}
+	// since info is now on a line of its own center align looks better
 	.footer-information {
 		align-items: center;
 	}
