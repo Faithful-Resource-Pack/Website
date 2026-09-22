@@ -91,7 +91,7 @@
 		</div>
 		<div ref="bottomElement" />
 		<!-- put the CTA below the "bottom" element for tall monitors that don't scroll -->
-		<div v-show="!loading">
+		<div v-show="!loading" class="my-5">
 			<h2 class="text-center">Can't find what you're looking for?</h2>
 			<a
 				class="btn btn-secondary btn-more"

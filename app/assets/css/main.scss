@@ -89,10 +89,6 @@ hr {
 	}
 	@media screen and (max-width: $breakpoint-sm) {
 		max-width: calc($breakpoint-xs - $padding-container);
-
-		// less mobile padding
-		padding-top: $padding-container;
-		padding-bottom: $padding-container;
 	}
 }
 
