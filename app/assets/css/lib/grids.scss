@@ -27,12 +27,12 @@
 	}
 }
 @media screen and (max-width: $breakpoint-md) {
-	.grid-4 {
+	.grid-4, .grid-3 {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 @media screen and (max-width: $breakpoint-sm) {
-	.grid-5, .grid-4, .grid-3, .grid-2 {
+	.grid-5, .grid-2 {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
