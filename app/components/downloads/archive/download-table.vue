@@ -104,7 +104,6 @@ th {
 }
 
 .download-heading h4 {
-	font-size: 1.25rem;
 	padding-top: calc($padding-container / 2);
 }
 

@@ -1,6 +1,6 @@
 <template>
 	<footer class="accent-textured dark-theme">
-		<div class="container footer-container">
+		<div class="container text-container footer-container">
 			<div class="footer-column footer-information">
 				<nuxt-link to="/">
 					<img
@@ -8,6 +8,7 @@
 						src="/image/wordmarks/faithful.png"
 						loading="lazy"
 						alt="Faithful Wordmark"
+						width="240"
 					/>
 				</nuxt-link>
 				<span class="theme-btn navigation-link" @click="$emit('changeTheme')">
@@ -18,13 +19,13 @@
 						{{ theme.name }}
 					</client-only>
 				</span>
+				<v-spacer v-if="$vuetify.display.mdAndUp" />
 				<nuxt-link to="mailto:contact@faithfulpack.net">contact@faithfulpack.net</nuxt-link>
 				<p class="footer-info-text">&copy; {{ new Date().getFullYear() }} Faithful Resource Pack</p>
 			</div>
 			<div class="footer-item-container">
-				<div v-for="{ title, icon, items } in categories" :key="title" class="footer-column">
-					<h3 class="footer-title">
-						<v-icon size="x-small" :icon />
+				<div v-for="{ title, items } in categories" :key="title" class="footer-column">
+					<h3 class="footer-title mb-1 mr-2">
 						{{ title }}
 					</h3>
 					<nuxt-link
@@ -76,9 +77,9 @@ footer {
 // container for left column as well as the others for better wrapping
 .footer-container {
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	gap: 2rem;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	gap: 4rem;
 	// override container class (we only need the side padding from it)
 	padding-bottom: 1rem !important;
 	padding-top: 1rem !important;
@@ -89,17 +90,16 @@ footer {
 	flex-grow: 1;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: stretch;
 	gap: 2rem;
 }
 
 .footer-column {
-	max-width: 240px;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: flex-start;
-	flex-grow: 1;
+	gap: 0.25rem;
 }
 
 .footer-information {
@@ -107,22 +107,19 @@ footer {
 }
 
 .theme-btn {
-	padding: 1.5rem 0px;
+	margin-top: 1rem;
+
+	// useful for wrapping later (spacer below)
+	margin-bottom: 0.5rem;
 	font-size: 1.5rem;
 	// align-self: center;
 }
 
-.footer-wordmark {
-	padding: 5px;
-}
-
 .footer-info-text {
-	padding: 0.25rem 0;
 	margin: 0;
 }
 
 .footer-title {
-	// fix for icons being too big
 	display: flex;
 	align-items: center;
 }
@@ -133,37 +130,27 @@ footer {
 	text-align: center;
 }
 
-@media screen and (max-width: $breakpoint-lg) {
-	// center align text for just the information on the top
-	.footer-information {
-		align-items: center;
-	}
-}
-
 @media screen and (max-width: $breakpoint-md) {
 	// drop link columns below information
 	.footer-container {
-		flex-flow: column wrap;
-		align-items: center;
+		align-items: start;
+		gap: 3rem;
 	}
-}
-
-@media screen and (max-width: $breakpoint-sm) {
 	// two columns of footer information
 	.footer-item-container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
 	}
 }
 
 @media screen and (max-width: $breakpoint-xs) {
-	// back to flex but now as columns
-	.footer-item-container {
-		display: flex;
-		flex-flow: column wrap;
+	.footer-container {
+		flex-flow: column nowrap;
+		align-items: center;
+		gap: 2rem;
 	}
-	// center align text for all columns, not just info
-	.footer-column {
+	.footer-information {
 		align-items: center;
 	}
 }
