@@ -146,7 +146,7 @@ export default defineNuxtComponent({
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 40px;
+	gap: 2rem;
 
 	h1 {
 		text-transform: uppercase;
@@ -174,10 +174,12 @@ export default defineNuxtComponent({
 }
 
 .btn-about {
-	// need to override btn-lg style
-	// todo: refactor button code to Not require this
+	// btn-lg comes with bottom margin, should probably be changed to gap
 	margin-bottom: 0 !important;
-	transition: $transition-button;
+
+	&:hover {
+		opacity: 0.66;
+	}
 }
 
 // universal styles across both themes
@@ -221,18 +223,37 @@ export default defineNuxtComponent({
 	}
 }
 
+@media screen and (max-width: $breakpoint-lg) {
+	.about-image {
+		max-width: 384px;
+	}
+}
+
 @media screen and (max-width: $breakpoint-md) {
-	// center content and display vertically on mobile
+	.colored-title {
+		font-size: 2.25rem;
+	}
+	.about-image {
+		max-width: 256px;
+	}
+}
+
+@media screen and (max-width: $breakpoint-sm) {
 	.about-container {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		max-width: 95%;
+		flex-flow: column nowrap;
 
 		// larger padding
 		padding-top: calc($padding-container * 4) !important;
 		padding-bottom: calc($padding-container * 4) !important;
+	}
+	// genuinely horrifying solution to always place image on top
+	.about-container:has(div + img) {
+		flex-flow: column-reverse nowrap;
+	}
+
+	.about-image {
+		max-width: 100%;
 	}
 }
 </style>
