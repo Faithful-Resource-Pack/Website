@@ -3,11 +3,12 @@
 		background="/image/banners/hero.jpg"
 		wordmark="/image/wordmarks/faithful.png"
 		wordmark-alt="Faithful Wordmark"
+		mobile-solo
 	>
 		<template #tagline>Providing a higher-resolution Minecraft experience since 2010.</template>
 		<template #actions>
 			<!-- hack to make the tagline the same width as the container -->
-			<div class="container py-5 hero-button-container">
+			<div class="container hero-button-container">
 				<nuxt-link to="/downloads" class="btn btn-primary btn-xl hero-button">
 					<media-icon icon="mdi-download" style="font-size: 1.5rem" />
 					<span class="ml-3">Downloads</span>
@@ -140,15 +141,15 @@ export default defineNuxtComponent({
 	flex-flow: row nowrap;
 	align-items: center;
 	justify-content: center;
+	padding: $padding-container;
+	gap: $grid-gap;
 }
 
 .hero-button {
 	width: 256px;
-	margin-right: 8px;
-	margin-left: 8px;
 }
 
-@media screen and (max-width: $breakpoint-sm) {
+@media screen and (max-width: $breakpoint-xs) {
 	.hero-button-container {
 		flex-flow: column nowrap;
 		align-items: stretch;
@@ -156,10 +157,7 @@ export default defineNuxtComponent({
 	.hero-button {
 		width: auto;
 	}
-}
-
-// project reel barely fits on 4 so we need to go wider
-@media screen and (max-width: $breakpoint-xs) {
+	// project reel barely fits on 4 so we need to go wider
 	.project-reel {
 		grid-template-columns: 1fr;
 	}

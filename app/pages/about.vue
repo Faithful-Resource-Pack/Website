@@ -154,7 +154,7 @@ export default defineNuxtComponent({
 
 	p {
 		// add a bit of padding between the button and text
-		padding-bottom: 1.25rem;
+		margin-bottom: 2rem;
 	}
 }
 
@@ -223,6 +223,10 @@ export default defineNuxtComponent({
 		align-items: center;
 		text-align: center;
 		max-width: 95%;
+
+		// larger padding
+		padding-top: calc($padding-container * 4) !important;
+		padding-bottom: calc($padding-container * 4) !important;
 	}
 }
 </style>

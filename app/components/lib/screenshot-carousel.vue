@@ -1,5 +1,5 @@
 <template>
-	<screenshot-modal v-model:open="modalOpened" v-model="currentImageIndex" :sources />
+	<screenshot-modal v-model:open="modalOpen" v-model="currentImageIndex" :sources />
 
 	<div class="card mb-6">
 		<div class="carousel-container">
@@ -54,7 +54,7 @@ export default defineNuxtComponent({
 	},
 	data() {
 		return {
-			modalOpened: false,
+			modalOpen: false,
 			currentImageIndex: 0,
 		};
 	},
@@ -65,7 +65,7 @@ export default defineNuxtComponent({
 			this.currentImageIndex = id;
 		},
 		openModal() {
-			this.modalOpened = true;
+			this.modalOpen = true;
 		},
 	},
 	computed: {

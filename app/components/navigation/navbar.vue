@@ -137,13 +137,15 @@ header {
 @media screen and (max-width: $breakpoint-sm) {
 	// set items container to left-aligned columns
 	.navbar-item-container {
-		flex-direction: column;
-		justify-content: flex-start;
-		margin-top: 0.5rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		margin-top: 1rem;
+		margin-bottom: 0.25rem;
+		gap: 0.25rem;
 	}
 	// only toggle the display on mobile, on desktop the navbar is always visible
 	.navbar-hidden {
-		display: none;
+		display: none !important;
 	}
 	// show wordmark/toggler button on each side
 	.navbar-mobile-container {
@@ -158,6 +160,14 @@ header {
 	}
 	.navbar-desktop-logo-container {
 		display: none;
+	}
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+	.navbar-item-container {
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
 	}
 }
 </style>

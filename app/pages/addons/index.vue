@@ -3,11 +3,9 @@
 		background="/image/banners/add_ons.jpg"
 		wordmark="/image/wordmarks/addons.png"
 		wordmark-alt="Faithful Add-ons Wordmark"
-		upspace="24px"
 	>
-		<template #tagline>Personalize and customize every aspect of your gameplay.</template>
 		<template #actions>
-			<div class="container pt-2 pb-0">
+			<div class="container text-container py-0">
 				<v-text-field
 					v-model="search"
 					variant="solo"
@@ -91,18 +89,19 @@
 				@toggleFav="toggleFav"
 			/>
 		</div>
-		<!-- put the CTA below the bottom element for tall monitors that don't scroll -->
 		<div ref="bottomElement" />
-		<hr />
-		<h2 class="text-center">Can't find what you're looking for?</h2>
-		<a
-			class="btn btn-secondary btn-more"
-			href="https://studio.faithfulpack.net"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			Submit an add-on on the Faithful Studio
-		</a>
+		<!-- put the CTA below the "bottom" element for tall monitors that don't scroll -->
+		<div v-show="!loading" class="my-5">
+			<h2 class="text-center">Can't find what you're looking for?</h2>
+			<a
+				class="btn btn-secondary btn-more"
+				href="https://studio.faithfulpack.net"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Submit an add-on on the Faithful Studio
+			</a>
+		</div>
 	</div>
 </template>
 
@@ -283,13 +282,7 @@ export default defineNuxtComponent({
 	},
 	mounted() {
 		const local = localStorage.getItem(FAVORITE_ADDONS_KEY);
-
-		// legacy compatibility
-		// todo: remove in a few months
-		if (local && local.startsWith("{")) {
-			this.fav = new Set(Object.keys(JSON.parse(local)));
-			localStorage.setItem(FAVORITE_ADDONS_KEY, JSON.stringify(Array.from(this.fav)));
-		} else this.fav = new Set(JSON.parse(local || "[]"));
+		this.fav = new Set(JSON.parse(local || "[]"));
 
 		document.addEventListener("scroll", this.checkShownItems);
 	},

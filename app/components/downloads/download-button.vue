@@ -37,10 +37,10 @@ export default defineNuxtComponent({
 	emits: ["toggle"],
 	computed: {
 		alt() {
-			return this.panelOpen ? "Close Version Panel" : "Open Version Panel";
+			return this.panelOpen ? "Fewer Versions" : "More Versions";
 		},
 		icon() {
-			return this.panelOpen ? "mdi-chevron-left" : "mdi-chevron-right";
+			return this.panelOpen ? "mdi-menu-left" : "mdi-menu-right";
 		},
 	},
 });

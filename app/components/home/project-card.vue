@@ -19,7 +19,7 @@
 			{{ name }}
 		</template>
 		<template #body>
-			<p class="mb-0 mt-1">{{ description }}</p>
+			<p class="my-0">{{ description }}</p>
 		</template>
 	</base-card>
 </template>

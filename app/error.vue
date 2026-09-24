@@ -110,7 +110,7 @@ export default defineNuxtComponent({
 	position: relative;
 	height: 64px;
 	width: 128px;
-	margin: 100px auto;
+	margin: 64px auto;
 }
 #tnt {
 	position: absolute;

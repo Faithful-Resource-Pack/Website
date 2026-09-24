@@ -1,5 +1,10 @@
 <template>
-	<tr class="highlight-hover" @click="toggleChildren">
+	<tr
+		class="highlight-hover"
+		:tabindex="single ? -1 : 0"
+		@keydown.enter="toggleChildren"
+		@click="toggleChildren"
+	>
 		<td class="show-icon-container">
 			<!-- empty slot rendered if there's only a single download -->
 			<v-icon

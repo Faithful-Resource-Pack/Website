@@ -1,10 +1,32 @@
 {
+  "26.3": [
+    {
+      "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%2026.3.zip",
+		"curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/8888122"
+      }
+    }
+  ],
   "26.2": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%2026.2.zip"
+      }
+    },
+	{
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%2026.2.zip",
@@ -15,9 +37,18 @@
   "26.1": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%2026.1.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%2026.1.zip",
@@ -28,9 +59,18 @@
   "1.21.11": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.21.11.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.21.11.zip",
@@ -41,7 +81,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.11.zip",
@@ -52,9 +91,18 @@
   "1.21.10": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.21.10.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.21.10.zip",
@@ -65,9 +113,18 @@
   "1.21.8": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.21.8.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.21.8.zip",
@@ -78,7 +135,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.8.zip",
@@ -108,9 +164,18 @@
   "1.21.5": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.21.5.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.21.5.zip",
@@ -121,7 +186,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.5.zip",
@@ -150,9 +214,18 @@
   "1.21.4": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.21.4.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.21.4.zip",
@@ -163,7 +236,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.4.zip",
@@ -201,9 +273,18 @@
   "1.21.3": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.21.3.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.21.3.zip",
@@ -214,7 +295,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.3.zip",
@@ -261,9 +341,18 @@
   "1.21.1": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.21.1.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.21.1.zip",
@@ -274,7 +363,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.21.1.zip",
@@ -321,9 +409,18 @@
   "1.20.6": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.20.6.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.20.6.zip",
@@ -334,7 +431,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.20.6.zip",
@@ -390,9 +486,18 @@
   "1.20.4": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.20.4.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.20.4.zip",
@@ -403,7 +508,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.20.4.zip",
@@ -477,9 +581,18 @@
   "1.20.2": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.20.2.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.20.2.zip",
@@ -490,7 +603,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.20.2.zip",
@@ -582,9 +694,18 @@
   "1.20.1": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.20.1.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.20.1.zip",
@@ -595,7 +716,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.20.1.zip",
@@ -687,9 +807,18 @@
   "1.19.4": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.19.4.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.19.4.zip",
@@ -700,7 +829,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.19.4.zip",
@@ -810,9 +938,18 @@
   "1.19.3": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.19.3.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.19.3.zip",
@@ -823,7 +960,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.19.3.zip",
@@ -951,9 +1087,18 @@
   "1.19.2": [
     {
       "file_type": "Release",
+      "file_version": 19,
+      "file_name": "September 2026",
+      "latest": true,
+      "date": "2026-09-15",
+      "links": {
+        "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%201.19.2.zip"
+      }
+    },
+    {
+      "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",
-      "latest": true,
       "date": "2026-06-18",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/June%202026/Faithful%2032x%20-%201.19.2.zip",
@@ -964,7 +1109,6 @@
       "file_type": "Release",
       "file_version": 17,
       "file_name": "December 2025",
-      "latest": true,
       "date": "2025-12-30",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/December%202025/Faithful%2032x%20-%201.19.2.zip",

@@ -115,25 +115,22 @@ $news-display-height: 3;
 // https://css-tricks.com/line-clampin/
 .news-preview {
 	display: -webkit-box;
-	height: calc(1.5 * $news-display-height);
 	overflow: hidden;
 	line-clamp: $news-display-height;
 	-webkit-line-clamp: $news-display-height;
 	-webkit-box-orient: vertical;
 }
 
-* {
-	// hide before wrapping
-	@media screen and (max-width: $breakpoint-md) {
-		.news-preview {
-			display: none;
-		}
+// hide before wrapping
+@media screen and (max-width: $breakpoint-md) {
+	.news-preview {
+		display: none;
 	}
+}
 
-	@media screen and (max-width: $breakpoint-sm) {
-		.news-preview {
-			display: -webkit-box;
-		}
+@media screen and (max-width: $breakpoint-sm) {
+	.news-preview {
+		display: -webkit-box;
 	}
 }
 </style>

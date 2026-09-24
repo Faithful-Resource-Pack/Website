@@ -18,21 +18,21 @@
 	},
 	"dependencies": {
 		"@img-comparison-slider/vue": "^8.0.0",
-		"isomorphic-dompurify": "^3.19.0",
+		"isomorphic-dompurify": "^4.3.0",
 		"luxon": "^3.7.2",
-		"marked": "^18.0.7",
-		"nuxt": "^4.4.8",
-		"remove-markdown": "^0.6.4",
-		"sass": "^1.101.4",
-		"vue": "^3.5.40",
+		"marked": "^18.0.13",
+		"nuxt": "^4.5.2",
+		"remove-markdown": "^0.7.0",
+		"sass": "^1.104.1",
+		"vue": "^3.5.43",
 		"vuetify-nuxt-module": "^0.19.5",
-		"yaml": "^2.9.0"
+		"yaml": "^2.9.1"
 	},
 	"devDependencies": {
-		"@nuxt/eslint": "1.16.0",
-		"@types/luxon": "^3.7.2",
-		"eslint": "^10.7.0",
-		"prettier": "^3.9.6"
+		"@nuxt/eslint": "1.17.0",
+		"@types/luxon": "^3.7.5",
+		"eslint": "^10.11.0",
+		"prettier": "^3.9.8"
 	},
 	"peerDependencies": {
 		"vuetify": "3"

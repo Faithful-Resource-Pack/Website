@@ -89,10 +89,6 @@ hr {
 	}
 	@media screen and (max-width: $breakpoint-sm) {
 		max-width: calc($breakpoint-xs - $padding-container);
-
-		// less mobile padding
-		padding-top: $padding-container;
-		padding-bottom: $padding-container;
 	}
 }
 
@@ -163,7 +159,7 @@ hr {
 	justify-content: center;
 	flex-direction: row;
 	align-items: center;
-	padding: 0.25rem 0;
+	padding: 0;
 	color: $text-light;
 	transition: $transition-navigation;
 	&:hover, &:focus {
