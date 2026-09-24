@@ -28,6 +28,7 @@
 					:is="id === hoveredPack ? 'a' : 'span'"
 					:href="to"
 					:aria-hidden="id !== hoveredPack"
+					:tabindex="id === selectedPack ? 0 : -1"
 					target="_blank"
 					rel="noopener noreferrer"
 					:title="`See more about ${name}`"
