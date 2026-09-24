@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
 	<div class="green-background">
-		<div class="container about-container">
+		<section class="container about-container">
 			<div class="about-text body-text">
 				<h1 class="colored-title">Upscaling the Look of Minecraft</h1>
 				<p>
@@ -23,9 +23,9 @@ definePageMeta({
 				alt="gif of creeper textures"
 				height="384"
 			/>
-		</div>
+		</section>
 	</div>
-	<div class="container about-container">
+	<section class="container about-container">
 		<img class="about-image" src="/image/about/history.png" alt="our history" height="384" />
 		<div class="about-text body-text">
 			<h1 class="colored-title">A History of Expertise</h1>
@@ -45,9 +45,9 @@ definePageMeta({
 				Join our Discord
 			</chevron-link>
 		</div>
-	</div>
+	</section>
 	<div class="blue-background">
-		<div class="container about-container">
+		<section class="container about-container">
 			<div class="about-text body-text">
 				<h1 class="colored-title">Play How You Want</h1>
 				<p>
@@ -65,9 +65,9 @@ definePageMeta({
 				alt="supported platforms"
 				height="384"
 			/>
-		</div>
+		</section>
 	</div>
-	<div class="container about-container">
+	<section class="container about-container">
 		<img
 			class="about-image"
 			src="/image/about/community.png"
@@ -92,9 +92,9 @@ definePageMeta({
 				How to Contribute
 			</chevron-link>
 		</div>
-	</div>
+	</section>
 	<div class="pink-background">
-		<div class="container about-container">
+		<section class="container about-container">
 			<div class="about-text body-text">
 				<h1 class="colored-title">Free and Open-Source</h1>
 				<p>
@@ -114,12 +114,12 @@ definePageMeta({
 				</chevron-link>
 			</div>
 			<img class="about-image" src="/image/about/foss.png" alt="github screenshot" height="384" />
-		</div>
+		</section>
 	</div>
-	<div class="container faq-section">
+	<section class="container faq-section">
 		<h1 class="colored-title mb-4">Any More Questions?</h1>
 		<chevron-link class="btn btn-lg btn-about" to="/faq">Check the FAQ</chevron-link>
-	</div>
+	</section>
 </template>
 
 <script>
