@@ -55,10 +55,8 @@ export default defineNuxtComponent({
 	justify-content: center;
 	gap: 2px;
 	border-radius: $border-radius;
-	box-shadow: $shadow-button;
 
 	> * {
-		box-shadow: none;
 		border-radius: 0;
 	}
 }

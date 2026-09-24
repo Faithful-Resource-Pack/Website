@@ -178,9 +178,6 @@ export default defineNuxtComponent({
 	// todo: refactor button code to Not require this
 	margin-bottom: 0 !important;
 	transition: $transition-button;
-	&:hover {
-		opacity: 0.66;
-	}
 }
 
 // universal styles across both themes
@@ -192,6 +189,9 @@ export default defineNuxtComponent({
 	.btn-about {
 		background: white !important;
 		color: $bg-green !important;
+		&:focus {
+			box-shadow: 0 0 2px 4px rgba($text-green, 0.7);
+		}
 	}
 }
 .blue-background {
@@ -202,6 +202,9 @@ export default defineNuxtComponent({
 	.btn-about {
 		background: white !important;
 		color: $bg-blue !important;
+		&:focus {
+			box-shadow: 0 0 2px 4px rgba($text-blue, 0.7);
+		}
 	}
 }
 .pink-background {
@@ -212,6 +215,9 @@ export default defineNuxtComponent({
 	.btn-about {
 		background: white !important;
 		color: $bg-pink !important;
+		&:focus {
+			box-shadow: 0 0 2px 4px rgba($text-pink, 0.7);
+		}
 	}
 }
 
