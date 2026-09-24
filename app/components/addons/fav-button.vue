@@ -14,7 +14,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "fav-icon",
 	props: {
 		favorite: {
@@ -37,7 +37,7 @@ export default {
 			return this.favorite ? "Remove from Favorites" : "Add to Favorites";
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

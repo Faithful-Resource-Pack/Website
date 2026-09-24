@@ -15,7 +15,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "author-heads",
 	props: {
 		authors: {
@@ -38,7 +38,7 @@ export default {
 			return "";
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

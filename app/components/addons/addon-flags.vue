@@ -28,7 +28,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
 	name: "addon-flags",
 	props: {
 		options: {
@@ -43,7 +43,7 @@ export default {
 			java: "/image/addons/java.png",
 		};
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">
