@@ -18,7 +18,7 @@
 		from the old fraudulent Faithful leadership, which maintained and monetized the pack from
 		2016–2020 without permission. See
 		<nuxt-link
-			to="/faq/history#Who%20is%20Kraineff,%20who%20is%20Vattic,%20and%20why%20are%20there%20two%20Faithfuls?"
+			to="/faq/history#Who%20is%20Kraineff,%20who%20is%20Vattic,%20and%20why%20were%20there%20two%20Faithfuls?"
 			class="text-white text-decoration-underline"
 		>
 			this FAQ answer</nuxt-link
