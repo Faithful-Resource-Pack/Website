@@ -19,7 +19,7 @@ definePageMeta({
 		<p>
 			<b>
 				TL;DR: Faithful has not, does not, and will not collect personal information unless it is
-				explicitly given.
+				explicitly provided.
 			</b>
 		</p>
 		<ol>
@@ -66,8 +66,8 @@ definePageMeta({
 				growth and aggregate statistics.
 			</li>
 			<li>
-				Add-on information is used provide context for users interested in downloading the add-on,
-				aggregate statistics, and list them on the website accurately and correctly.
+				Add-on information is used to provide context for users interested in downloading the
+				add-on, aggregate statistics, and list them on the website accurately and correctly.
 			</li>
 			<li>
 				Texture submission information is used to provide context for submission voting, credit

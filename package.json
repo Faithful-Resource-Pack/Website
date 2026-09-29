@@ -21,7 +21,7 @@
 		"luxon": "^3.7.2",
 		"marked": "^18.0.14",
 		"nuxt": "^4.5.2",
-		"remove-markdown": "^0.7.0",
+		"remove-markdown": "^0.7.1",
 		"sass": "^1.105.0",
 		"vue": "^3.5.43",
 		"vuetify-nuxt-module": "^0.19.5",
@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"@nuxt/eslint": "1.17.0",
-		"@types/luxon": "^3.7.5",
+		"@types/luxon": "^3.7.6",
 		"eslint": "^10.11.0",
 		"prettier": "^3.9.9"
 	},
