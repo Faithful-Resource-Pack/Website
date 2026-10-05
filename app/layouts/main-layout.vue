@@ -101,7 +101,7 @@ export default defineNuxtComponent({
 
 		this.searchListener = (event) => {
 			if (event.key !== "k") return;
-			// mac uses cmd+option+arrow
+			// mac uses cmd+k instead of ctrl+k
 			const isModified = navigator.platform.toLowerCase().includes("mac")
 				? event.metaKey
 				: event.ctrlKey;

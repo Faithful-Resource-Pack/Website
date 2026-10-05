@@ -26,13 +26,25 @@
 	</div>
 
 	<!-- remove bottom margin on mobile if there's nothing there (prevents weird lip) -->
-	<p
-		v-if="statusText"
-		class="mt-2"
+	<div
+		class="d-flex flex-column align-start align-sm-center justify-space-between flex-sm-row mt-2"
 		:class="mobile && !isSearchable && !recentSearchResults.length ? 'mb-n2' : 'mb-2'"
 	>
-		{{ statusText }}
-	</p>
+		<p v-if="statusText" class="my-0">{{ statusText }}</p>
+		<v-chip-group v-if="isSearchable" v-model="selectedTypes" multiple style="overflow: visible">
+			<v-chip
+				v-for="{ icon, name } in types"
+				:key="name"
+				density="compact"
+				filter
+				:prepend-icon="icon"
+				:value="name"
+				style="color: #76c945"
+			>
+				{{ name }}
+			</v-chip>
+		</v-chip-group>
+	</div>
 
 	<!-- both search and results -->
 	<search-list
@@ -106,13 +118,24 @@ export default defineNuxtComponent({
 			recentSearches: [],
 			// search => { priority: number, type: string, link: string, label: string, icon: string, date: Date }
 			filters: [],
+			types: {
+				addon: {
+					name: "Add-on",
+					icon: "mdi-plus-thick",
+				},
+				post: {
+					name: "News Article",
+					icon: "mdi-newspaper-variant",
+				},
+			},
+			selectedTypes: [],
 		};
 	},
 	methods: {
 		startSearch(search) {
 			const entries = this.filters
 				.flatMap((filter) => filter(search))
-				.filter((f) => f.priority >= 0);
+				.filter((f) => f.priority >= 0 && this.hasType(f.type));
 			return entries.sort((a, b) => {
 				const delta = a.priority - b.priority;
 				if (delta !== 0) return delta;
@@ -165,6 +188,10 @@ export default defineNuxtComponent({
 				(found) => `<span class="text-highlight">${found}</span>`,
 			);
 		},
+		hasType(type) {
+			if (!this.selectedTypes.length) return true;
+			return this.selectedTypes.includes(type);
+		},
 	},
 	computed: {
 		results() {
@@ -214,10 +241,10 @@ export default defineNuxtComponent({
 			this.filters.push((search) =>
 				addons.map((addon) => {
 					const entry = {
-						type: "Add-on",
+						type: this.types.addon.name,
 						link: `/addons/${addon.slug}`,
 						label: addon.name,
-						icon: "mdi-plus-thick",
+						icon: this.types.addon.icon,
 						date: new Date(addon.last_updated || 0),
 					};
 					if (addon.name.toLowerCase() === search.toLowerCase()) return { priority: 0, ...entry };
@@ -240,10 +267,10 @@ export default defineNuxtComponent({
 			this.filters.push((search) =>
 				posts.map((post) => {
 					const entry = {
-						type: "News article",
+						type: this.types.post.name,
 						link: post.permalink,
 						label: post.title,
-						icon: "mdi-newspaper-variant",
+						icon: this.types.post.icon,
 						date: new Date(post.date),
 					};
 					if (post.title.toLowerCase() === search.toLowerCase()) return { priority: 0, ...entry };
