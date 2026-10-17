@@ -16,7 +16,7 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 <template>
 	<hero-section :background="banner" :wordmark :wordmark-alt="name">
 		<template #actions>
-			<div class="container pt-0 pb-4 flex-row ga-4">
+			<div class="container text-container pt-0 pb-4 flex-row ga-4">
 				<nuxt-link :to="download" class="btn btn-xl block btn-secondary">
 					<v-icon style="font-size: 1.5rem" icon="mdi-download" />
 					<span class="ml-3">Downloads</span>
@@ -25,18 +25,20 @@ useSeoMeta(generateMetaTags({ title: name, description: removeMd(description), i
 		</template>
 	</hero-section>
 	<div class="container">
-		<v-alert v-if="warning" :title="warning.split('\n')[0]" type="error" class="mb-3">
-			{{ warning.split("\n")?.[1] || "" }}
-		</v-alert>
-		<!-- eslint-disable-next-line vue/no-v-html -->
-		<div class="card card-body body-text" v-html="compileMarkdown(description, { breaks: true })" />
+		<div class="text-container">
+			<v-alert v-if="warning" :title="warning.split('\n')[0]" type="error" class="mb-6">
+				{{ warning.split("\n")?.[1] || "" }}
+			</v-alert>
+			<!-- eslint-disable-next-line vue/no-v-html -->
+			<div class="card card-body body-text" v-html="compileMarkdown(description)" />
 
-		<template v-if="action">
-			<br />
-			<nuxt-link :to="action.to" class="btn btn-secondary btn-more">
-				{{ action.text }}
-			</nuxt-link>
-		</template>
+			<template v-if="action">
+				<br />
+				<nuxt-link :to="action.to" class="btn btn-secondary btn-more">
+					{{ action.text }}
+				</nuxt-link>
+			</template>
+		</div>
 
 		<template v-if="usePosts">
 			<hr />
