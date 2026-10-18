@@ -94,8 +94,6 @@ export default defineNuxtComponent({
 <style scoped lang="scss">
 @use "~/assets/css/variables" as *;
 
-$news-display-height: 3;
-
 // don't add a gap because card-body comes with padding already
 .top-news {
 	display: grid;
@@ -116,21 +114,18 @@ $news-display-height: 3;
 .news-preview {
 	display: -webkit-box;
 	overflow: hidden;
-	line-clamp: $news-display-height;
-	-webkit-line-clamp: $news-display-height;
+	line-clamp: inherit;
 	-webkit-box-orient: vertical;
-}
-
-// hide before wrapping
-@media screen and (max-width: $breakpoint-md) {
-	.news-preview {
+	-webkit-line-clamp: 7;
+	@media screen and (max-width: $breakpoint-lg) {
+		-webkit-line-clamp: 3;
+	}
+	@media screen and (max-width: $breakpoint-md) {
 		display: none;
 	}
-}
-
-@media screen and (max-width: $breakpoint-sm) {
-	.news-preview {
+	@media screen and (max-width: $breakpoint-sm) {
 		display: -webkit-box;
+		-webkit-line-clamp: 5;
 	}
 }
 </style>
