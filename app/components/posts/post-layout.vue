@@ -47,7 +47,7 @@
 	<template v-if="Object.keys(post.changelog || {}).length">
 		<br />
 		<h2 id="changelog" class="subtitle my-5 text-center">Changelog</h2>
-		<div class="card card-body body-text">
+		<div class="card card-body body-text pt-2 pb-0">
 			<post-changelog :item="post.changelog" />
 		</div>
 	</template>
