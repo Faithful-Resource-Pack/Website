@@ -51,8 +51,9 @@ export default defineNuxtComponent({
 			this.isOpen = !this.isOpen;
 		},
 		getCurseFile(item) {
-			if (item.links.curse) {
-				const id = parseInt(item.links.curse.split("/").pop());
+			const curseLink = item.links.find(({ type }) => type === "curse");
+			if (curseLink !== undefined) {
+				const id = parseInt(curseLink.to.split("/").pop());
 				return this.files.find((el) => el.id === id);
 			}
 		},

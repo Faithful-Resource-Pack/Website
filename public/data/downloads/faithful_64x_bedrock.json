@@ -1,268 +1,360 @@
 {
-  "26.5X": [
-    {
-      "file_type": "Release",
-      "file_version": 15.1,
-      "latest": true,
-      "links": {
-        "curse": "https://www.curseforge.com/api/v1/mods/694024/files/9151013/download"
-      }
-    }
-  ],
-  "26.4X": [
-    {
-      "file_type": "Release",
-      "file_version": 14.1,
-      "links": {
-        "curse": "https://www.curseforge.com/api/v1/mods/694024/files/8846484/download"
-      }
-    }
-  ],
-  "26.10": [
-    {
-      "file_type": "Release",
-      "file_version": 13,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/7805339"
-      }
-    }
-  ],
-  "1.21.130": [
-    {
-      "file_type": "Release",
-      "file_version": 12,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/7312071"
-      }
-    }
-  ],
-  "1.21.111": [
-    {
-      "file_type": "Release",
-      "file_version": 11,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/7049180"
-      }
-    }
-  ],
-  "1.21.90/100": [
-    {
-      "file_type": "Release",
-      "file_version": 10,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/6743963"
-      }
-    }
-  ],
-  "1.21.70": [
-    {
-      "file_type": "Release",
-      "file_version": 9,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/6311941"
-      }
-    }
-  ],
-  "1.21.X": [
-    {
-      "file_type": "Release",
-      "file_version": 8,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/6013099"
-      }
-    },
-    {
-      "file_type": "Release",
-      "file_version": 7,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5850698"
-      }
-    },
-    {
-      "file_type": "Release",
-      "file_version": 6,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5704590"
-      }
-    },
-    {
-      "file_type": "Release",
-      "file_version": 5,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5501616"
-      }
-    }
-  ],
-  "1.20.x": [
-    {
-      "file_type": "Release",
-      "file_version": 4,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5373388"
-      }
-    },
-    {
-      "file_type": "Release",
-      "file_version": 3,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5207808"
-      }
-    },
-    {
-      "file_type": "Release",
-      "file_version": 2,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4932602"
-      }
-    },
-    {
-      "file_type": "Release",
-      "file_version": 1,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4781972"
-      }
-    },
-    {
-      "file_type": "Beta",
-      "file_version": 9,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/files/4626080"
-      }
-    }
-  ],
-  "1.19.x": [
-    {
-      "file_type": "Beta",
-      "file_version": 8,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4499616"
-      }
-    },
-    {
-      "file_type": "Beta",
-      "file_version": 7,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4174222"
-      }
-    },
-    {
-      "file_type": "Beta",
-      "file_version": 6,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/files/4055196"
-      }
-    },
-    {
-      "file_type": "Beta",
-      "file_version": 5,
-      "links": {
-        "curse": "https://www.curseforge.com/minecraft/mc-addons/faithful-64x-bedrock/files/3865490"
-      }
-    }
-  ],
-  "1.18.x": [
-    {
-      "file_type": "Beta",
-      "file_version": 4,
-      "size": "6.88 MB",
-      "date": "2022-04-14",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/beta-4/Faithful.64x.Beta.4.mcpack"
-      }
-    },
-    {
-      "file_type": "Beta",
-      "file_version": 3,
-      "size": "6.76 MB",
-      "date": "2022-02-19",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/beta-3/Compliance.64x.BE.-.Beta.3.mcpack"
-      }
-    },
-    {
-      "file_type": "Beta",
-      "file_version": 2,
-      "size": "6.52 MB",
-      "date": "2021-12-24",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/beta-2/Compliance.64x.Bedrock.Beta.2.mcpack"
-      }
-    }
-  ],
-  "1.17.x": [
-    {
-      "file_type": "Beta",
-      "file_version": 1,
-      "size": "6.13 MB",
-      "date": "2021-10-27",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/beta-1/Compliance.64x.Bedrock.-.Beta.1.mcpack"
-      }
-    },
-    {
-      "file_type": "Alpha",
-      "file_version": 8,
-      "size": "7.61 MB",
-      "date": "2021-08-08",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-8/Compliance.64x.-.Bedrock.mcpack"
-      }
-    },
-    {
-      "file_type": "Alpha",
-      "file_version": 7,
-      "size": "7.17 MB",
-      "date": "2021-05-07",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-7/Compliance.64x.Bedrock.-.Anniversary.Update.mcpack"
-      }
-    }
-  ],
-  "1.16.x": [
-    {
-      "file_type": "Alpha",
-      "file_version": 6,
-      "size": "7.40 MB",
-      "date": "2021-05-23",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-6.1/Compliance_64x_-_Bedrock_Edition.mcpack"
-      }
-    },
-    {
-      "file_type": "Alpha",
-      "file_version": 5,
-      "size": "7.53 MB",
-      "date": "2021-04-15",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-5/Compliance_64x_Bedrock_-_Alpha_5.mcpack"
-      }
-    },
-    {
-      "file_type": "Alpha",
-      "file_version": 4,
-      "size": "6.86 MB",
-      "date": "2021-03-24",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-4/Compliance_64x_-_Alpha_4_-_Bedrock_Edition.mcpack"
-      }
-    },
-    {
-      "file_type": "Alpha",
-      "file_version": 3,
-      "size": "6.57 MB",
-      "date": "2021-02-25",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-3/Compliance_64x_-_Bedrock_Alpha_3.mcpack"
-      }
-    },
-    {
-      "file_type": "Alpha",
-      "file_version": 2,
-      "size": "6.81 MB",
-      "date": "2021-02-07",
-      "links": {
-        "download": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-2/Compliance_64x_-_Bedrock_Alpha_2.mcpack"
-      }
-    }
-  ]
+	"26.5X": [
+		{
+			"file_type": "Release",
+			"file_version": 15.1,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/api/v1/mods/694024/files/9151013/download"
+				}
+			]
+		}
+	],
+	"26.4X": [
+		{
+			"file_type": "Release",
+			"file_version": 14.1,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/api/v1/mods/694024/files/8846484/download"
+				}
+			]
+		}
+	],
+	"26.10": [
+		{
+			"file_type": "Release",
+			"file_version": 13,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/7805339"
+				}
+			]
+		}
+	],
+	"1.21.130": [
+		{
+			"file_type": "Release",
+			"file_version": 12,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/7312071"
+				}
+			]
+		}
+	],
+	"1.21.111": [
+		{
+			"file_type": "Release",
+			"file_version": 11,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/7049180"
+				}
+			]
+		}
+	],
+	"1.21.90/100": [
+		{
+			"file_type": "Release",
+			"file_version": 10,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/6743963"
+				}
+			]
+		}
+	],
+	"1.21.70": [
+		{
+			"file_type": "Release",
+			"file_version": 9,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/6311941"
+				}
+			]
+		}
+	],
+	"1.21.X": [
+		{
+			"file_type": "Release",
+			"file_version": 8,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/6013099"
+				}
+			]
+		},
+		{
+			"file_type": "Release",
+			"file_version": 7,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5850698"
+				}
+			]
+		},
+		{
+			"file_type": "Release",
+			"file_version": 6,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5704590"
+				}
+			]
+		},
+		{
+			"file_type": "Release",
+			"file_version": 5,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5501616"
+				}
+			]
+		}
+	],
+	"1.20.x": [
+		{
+			"file_type": "Release",
+			"file_version": 4,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5373388"
+				}
+			]
+		},
+		{
+			"file_type": "Release",
+			"file_version": 3,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/5207808"
+				}
+			]
+		},
+		{
+			"file_type": "Release",
+			"file_version": 2,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4932602"
+				}
+			]
+		},
+		{
+			"file_type": "Release",
+			"file_version": 1,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4781972"
+				}
+			]
+		},
+		{
+			"file_type": "Beta",
+			"file_version": 9,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/files/4626080"
+				}
+			]
+		}
+	],
+	"1.19.x": [
+		{
+			"file_type": "Beta",
+			"file_version": 8,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4499616"
+				}
+			]
+		},
+		{
+			"file_type": "Beta",
+			"file_version": 7,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/download/4174222"
+				}
+			]
+		},
+		{
+			"file_type": "Beta",
+			"file_version": 6,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft-bedrock/addons/faithful-64x-bedrock/files/4055196"
+				}
+			]
+		},
+		{
+			"file_type": "Beta",
+			"file_version": 5,
+			"links": [
+				{
+					"type": "curse",
+					"to": "https://www.curseforge.com/minecraft/mc-addons/faithful-64x-bedrock/files/3865490"
+				}
+			]
+		}
+	],
+	"1.18.x": [
+		{
+			"file_type": "Beta",
+			"file_version": 4,
+			"size": "6.88 MB",
+			"date": "2022-04-14",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/beta-4/Faithful.64x.Beta.4.mcpack"
+				}
+			]
+		},
+		{
+			"file_type": "Beta",
+			"file_version": 3,
+			"size": "6.76 MB",
+			"date": "2022-02-19",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/beta-3/Compliance.64x.BE.-.Beta.3.mcpack"
+				}
+			]
+		},
+		{
+			"file_type": "Beta",
+			"file_version": 2,
+			"size": "6.52 MB",
+			"date": "2021-12-24",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/beta-2/Compliance.64x.Bedrock.Beta.2.mcpack"
+				}
+			]
+		}
+	],
+	"1.17.x": [
+		{
+			"file_type": "Beta",
+			"file_version": 1,
+			"size": "6.13 MB",
+			"date": "2021-10-27",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/beta-1/Compliance.64x.Bedrock.-.Beta.1.mcpack"
+				}
+			]
+		},
+		{
+			"file_type": "Alpha",
+			"file_version": 8,
+			"size": "7.61 MB",
+			"date": "2021-08-08",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-8/Compliance.64x.-.Bedrock.mcpack"
+				}
+			]
+		},
+		{
+			"file_type": "Alpha",
+			"file_version": 7,
+			"size": "7.17 MB",
+			"date": "2021-05-07",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-7/Compliance.64x.Bedrock.-.Anniversary.Update.mcpack"
+				}
+			]
+		}
+	],
+	"1.16.x": [
+		{
+			"file_type": "Alpha",
+			"file_version": 6,
+			"size": "7.40 MB",
+			"date": "2021-05-23",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-6.1/Compliance_64x_-_Bedrock_Edition.mcpack"
+				}
+			]
+		},
+		{
+			"file_type": "Alpha",
+			"file_version": 5,
+			"size": "7.53 MB",
+			"date": "2021-04-15",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-5/Compliance_64x_Bedrock_-_Alpha_5.mcpack"
+				}
+			]
+		},
+		{
+			"file_type": "Alpha",
+			"file_version": 4,
+			"size": "6.86 MB",
+			"date": "2021-03-24",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-4/Compliance_64x_-_Alpha_4_-_Bedrock_Edition.mcpack"
+				}
+			]
+		},
+		{
+			"file_type": "Alpha",
+			"file_version": 3,
+			"size": "6.57 MB",
+			"date": "2021-02-25",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-3/Compliance_64x_-_Bedrock_Alpha_3.mcpack"
+				}
+			]
+		},
+		{
+			"file_type": "Alpha",
+			"file_version": 2,
+			"size": "6.81 MB",
+			"date": "2021-02-07",
+			"links": [
+				{
+					"type": "download",
+					"to": "https://github.com/Faithful-Resource-Pack/Faithful-64x-Bedrock/releases/download/alpha-2/Compliance_64x_-_Bedrock_Alpha_2.mcpack"
+				}
+			]
+		}
+	]
 }

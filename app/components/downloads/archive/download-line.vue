@@ -21,7 +21,6 @@
 				<span class="ma-1">{{ labelText }}</span>
 			</span>
 			<download-badge badge="version">{{ version }}</download-badge>
-			<download-badge v-if="item.latest" badge="latest">Latest</download-badge>
 			<!-- avoid SSR warning with date localization -->
 			<span class="mobile-details" :title="exact">
 				{{ relative }}
@@ -41,14 +40,14 @@
 		<td>
 			<div class="links">
 				<nuxt-link
-					v-for="(link, linkType) in item.links"
-					:key="link"
+					v-for="{ type, to } in item.links"
+					:key="to"
 					class="btn btn-secondary btn-download"
-					:to="link"
-					:title="`${textFormat[linkType]} download for ${labelText} (${version})`"
+					:to
+					:title="`${textFormat[type] || type} download for ${labelText} (${version})`"
 				>
-					<media-icon class="dl-icon" :icon="linkType" fallback="download" />
-					<span class="link-text ml-2">{{ textFormat[linkType] || linkType }}</span>
+					<media-icon class="dl-icon" :icon="type" fallback="download" />
+					<span class="link-text ml-2">{{ textFormat[type] || type }}</span>
 				</nuxt-link>
 			</div>
 		</td>

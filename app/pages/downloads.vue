@@ -71,16 +71,15 @@ export default defineNuxtComponent({
 		// flatMap into array of promises that each resolve one key in downloadData
 		await Promise.all(
 			projects.flatMap((project) => {
+				// set up key order properly (this should really be refactored)
 				downloadData[project.id] = {};
+				for (const { edition } of project.downloads) downloadData[project.id][edition] = {};
+
 				return project.downloads.map(async ({ edition, json }) => {
-					downloadData[project.id][edition] = await import(
-						`../../public/data/downloads/${json}.json`
-					)
+					const data = await import(`../../public/data/downloads/${json}.json`)
 						.then((res) => res.default)
-						.catch((err) => {
-							console.error(err);
-							return {};
-						});
+						.catch((err) => console.error(err));
+					if (data) downloadData[project.id][edition] = data;
 				});
 			}),
 		);
@@ -119,7 +118,7 @@ export default defineNuxtComponent({
 				for (const [i, [version, [data]]] of Object.entries(versions).entries()) {
 					out[edition][version] = {
 						...data,
-						to: Object.values(data.links)[0],
+						to: data.links[0].to,
 						version,
 						latest: i === 0,
 					};
