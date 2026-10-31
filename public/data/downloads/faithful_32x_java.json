@@ -8,7 +8,7 @@
       "date": "2026-09-15",
       "links": {
         "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%2026.3.zip",
-		"curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/8888122"
+        "curse": "https://legacy.curseforge.com/minecraft/texture-packs/faithful-32x/download/8888122"
       }
     }
   ],
@@ -23,7 +23,7 @@
         "download": "https://database.faithfulpack.net/packs/32x-Java/September%202026/Faithful%2032x%20-%2026.2.zip"
       }
     },
-	{
+    {
       "file_type": "Release",
       "file_version": 18,
       "file_name": "June 2026",

@@ -3,7 +3,7 @@
     {
       "file_type": "Release",
       "file_version": 15.1,
-            "latest": true,
+      "latest": true,
       "links": {
         "curse": "https://www.curseforge.com/api/v1/mods/694024/files/9151013/download"
       }
