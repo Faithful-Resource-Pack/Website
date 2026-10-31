@@ -1,38 +1,55 @@
 [
 	{
-		"id": "f32",
-		"pack_id": "faithful_32x",
+		"id": "faithful_32x",
 		"name": "Faithful 32x",
 		"description": "Tried and true for over a decade.",
+		"logo": "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f32_logo.png",
+		"banner": "/image/banners/f32.jpg",
 		"to": "/faithful32x",
 		"color": "#00A2FF",
+		"downloads": [
+			{ "edition": "Java", "json": "faithful_32x_java" },
+			{ "edition": "Bedrock", "json": "faithful_32x_bedrock" }
+		],
 		"addons": true
 	},
 	{
-		"id": "f64",
-		"pack_id": "faithful_64x",
+		"id": "faithful_64x",
 		"name": "Faithful 64x",
 		"description": "An even more detailed experience.",
+		"logo": "https://database.faithfulpack.net/images/branding/logos/transparent/hd/f64_logo.png",
+		"banner": "/image/banners/f64.jpg",
 		"to": "/faithful64x",
 		"color": "#FF0092",
-		"addons": true
+		"downloads": [
+			{ "edition": "Java", "json": "faithful_64x_java" },
+			{ "edition": "Bedrock", "json": "faithful_64x_bedrock" }
+		]
 	},
 	{
-		"id": "cf32",
-		"pack_id": "classic_faithful_32x",
+		"id": "classic_faithful_32x",
 		"name": "Classic Faithful 32x",
 		"description": "Bring back the old-school feel in style.",
+		"logo": "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf32_logo.png",
+		"banner": "/image/banners/cf32.jpg",
 		"to": "/classic32x",
 		"color": "#5ED900",
-		"addons": true
+		"downloads": [
+			{ "edition": "Java", "json": "classic_32x_java" },
+			{ "edition": "Bedrock", "json": "classic_32x_bedrock" }
+		]
 	},
 	{
-		"id": "cf64",
-		"pack_id": "classic_faithful_64x",
+		"id": "classic_faithful_64x",
 		"name": "Classic Faithful 64x",
 		"description": "Nostalgia and ultra-detailed graphics, all in one.",
+		"logo": "https://database.faithfulpack.net/images/branding/logos/transparent/hd/cf64_logo.png",
+		"banner": "/image/banners/cf64.jpg",
 		"to": "/classic64x-jappa",
 		"color": "#BE42FF",
-		"addons": true
+		"downloads": [
+			{ "edition": "Java", "json": "classic_64x_jappa_java" },
+			{ "edition": "Bedrock", "json": "classic_64x_jappa_bedrock" }
+		]
 	}
 ]

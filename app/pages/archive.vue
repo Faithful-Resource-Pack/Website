@@ -25,88 +25,7 @@
 
 <script>
 import DownloadTable from "~/components/downloads/archive/download-table.vue";
-
-// expand this with new packs as necessary
-const DOWNLOAD_DATA = [
-	{
-		// json filename
-		json: "faithful_32x_java",
-		// curseforge project id
-		curse: "436482",
-		// display name
-		name: "Faithful 32x",
-		// display edition
-		edition: "Java",
-		// whether to display at bottom
-		discontinued: false,
-	},
-	{
-		json: "faithful_32x_bedrock",
-		curse: "507188",
-		name: "Faithful 32x",
-		edition: "Bedrock",
-	},
-	{
-		json: "faithful_64x_java",
-		curse: "419139",
-		name: "Faithful 64x",
-		edition: "Java",
-	},
-	{
-		json: "faithful_64x_bedrock",
-		curse: "694024",
-		name: "Faithful 64x",
-		edition: "Bedrock",
-	},
-	{
-		json: "classic_32x_java",
-		curse: "667237",
-		name: "Classic Faithful 32x",
-		edition: "Java",
-	},
-	{
-		json: "classic_32x_bedrock",
-		curse: "667237",
-		name: "Classic Faithful 32x",
-		edition: "Bedrock",
-	},
-	{
-		json: "classic_32x_jappa_java",
-		curse: "561185",
-		name: "Classic Faithful 32x Jappa",
-		edition: "Java",
-	},
-	{
-		json: "classic_32x_jappa_bedrock",
-		curse: "561185",
-		name: "Classic Faithful 32x Jappa",
-		edition: "Bedrock",
-	},
-	{
-		json: "classic_64x_jappa_java",
-		curse: "414275",
-		name: "Classic Faithful 64x Jappa",
-		edition: "Java",
-	},
-	{
-		json: "classic_64x_jappa_bedrock",
-		curse: "414275",
-		name: "Classic Faithful 64x Jappa",
-		edition: "Bedrock",
-	},
-	{
-		json: "faithful_32x_dungeons",
-		curse: "501546",
-		name: "Faithful 32x for Minecraft Dungeons",
-		discontinued: true,
-	},
-	{
-		json: "classic_64x_java",
-		curse: "1230339",
-		name: "Classic Faithful 64x",
-		discontinued: true,
-	},
-];
+import downloadIndex from "../../public/data/download_archive_index.json";
 
 export default defineNuxtComponent({
 	components: {
@@ -121,28 +40,32 @@ export default defineNuxtComponent({
 	async asyncData() {
 		// set object order by which ones come first
 		const downloadData = {
-			alive: DOWNLOAD_DATA.filter((d) => !d.discontinued).reduce((acc, cur) => {
-				acc[cur.name] ||= {};
-				acc[cur.name][cur.edition] = {};
-				return acc;
-			}, {}),
-			discontinued: DOWNLOAD_DATA.filter((d) => d.discontinued).reduce((acc, cur) => {
-				acc[cur.name] = {};
-				return acc;
-			}, {}),
+			alive: downloadIndex
+				.filter((d) => !d.discontinued)
+				.reduce((acc, cur) => {
+					acc[cur.name] ||= {};
+					acc[cur.name][cur.edition] = {};
+					return acc;
+				}, {}),
+			discontinued: downloadIndex
+				.filter((d) => d.discontinued)
+				.reduce((acc, cur) => {
+					acc[cur.name] = {};
+					return acc;
+				}, {}),
 		};
 
 		await Promise.all(
-			DOWNLOAD_DATA.map(async ({ discontinued, name, edition, json, curse }) => {
+			downloadIndex.map(async ({ discontinued, name, edition, json_filename, curseforge_id }) => {
 				const [downloads, { files }] = await Promise.all([
-					// vite limitation, can't do regular $fetch here
-					import(`../../public/data/downloads/${json}.json`)
+					// even though this is async technically it counts as a fetch-like request
+					import(`../../public/data/downloads/${json_filename}.json`)
 						.then((res) => res.default)
 						.catch((err) => {
 							console.error(err);
 							return {};
 						}),
-					$fetch(`https://api.cfwidget.com/${curse}`).catch((err) => {
+					$fetch(`https://api.cfwidget.com/${curseforge_id}`).catch((err) => {
 						console.error(err);
 						return [];
 					}),
@@ -157,9 +80,9 @@ export default defineNuxtComponent({
 		return downloadData;
 	},
 	methods: {
-		hashify(id) {
+		hashify(name) {
 			// vue router really hates spaces in HTML ids
-			return encodeURIComponent(id.replace(/ /g, "-"));
+			return encodeURIComponent(name.replace(/ /g, "-"));
 		},
 	},
 });

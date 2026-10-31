@@ -1,0 +1,74 @@
+[
+	{
+		"name": "Faithful 32x",
+		"edition": "Java",
+		"json_filename": "faithful_32x_java",
+		"curseforge_id": "436482"
+	},
+	{
+		"name": "Faithful 32x",
+		"edition": "Bedrock",
+		"json_filename": "faithful_32x_bedrock",
+		"curseforge_id": "507188"
+	},
+	{
+		"name": "Faithful 64x",
+		"edition": "Java",
+		"json_filename": "faithful_64x_java",
+		"curseforge_id": "419139"
+	},
+	{
+		"name": "Faithful 64x",
+		"edition": "Bedrock",
+		"json_filename": "faithful_64x_bedrock",
+		"curseforge_id": "694024"
+	},
+	{
+		"name": "Classic Faithful 32x",
+		"edition": "Java",
+		"json_filename": "classic_32x_java",
+		"curseforge_id": "667237"
+	},
+	{
+		"name": "Classic Faithful 32x",
+		"edition": "Bedrock",
+		"json_filename": "classic_32x_bedrock",
+		"curseforge_id": "667237"
+	},
+	{
+		"name": "Classic Faithful 32x Jappa",
+		"edition": "Java",
+		"json_filename": "classic_32x_jappa_java",
+		"curseforge_id": "561185"
+	},
+	{
+		"name": "Classic Faithful 32x Jappa",
+		"edition": "Bedrock",
+		"json_filename": "classic_32x_jappa_bedrock",
+		"curseforge_id": "561185"
+	},
+	{
+		"name": "Classic Faithful 64x Jappa",
+		"edition": "Java",
+		"json_filename": "classic_64x_jappa_java",
+		"curseforge_id": "414275"
+	},
+	{
+		"name": "Classic Faithful 64x Jappa",
+		"edition": "Bedrock",
+		"json_filename": "classic_64x_jappa_bedrock",
+		"curseforge_id": "414275"
+	},
+	{
+		"name": "Faithful 32x for Minecraft Dungeons",
+		"json_filename": "faithful_32x_dungeons",
+		"curseforge_id": "501546",
+		"discontinued": true
+	},
+	{
+		"name": "Classic Faithful 64x",
+		"json_filename": "classic_64x_java",
+		"curseforge_id": "1230339",
+		"discontinued": true
+	}
+]

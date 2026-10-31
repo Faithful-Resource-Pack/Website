@@ -58,49 +58,6 @@ import VersionSelector from "~/components/downloads/version-selector.vue";
 
 import projects from "../../public/data/projects.json";
 
-const DOWNLOAD_DATA = [
-	{
-		id: "f32",
-		json: "faithful_32x_java",
-		edition: "Java",
-	},
-	{
-		id: "f32",
-		json: "faithful_32x_bedrock",
-		edition: "Bedrock",
-	},
-	{
-		id: "f64",
-		json: "faithful_64x_java",
-		edition: "Java",
-	},
-	{
-		id: "f64",
-		json: "faithful_64x_bedrock",
-		edition: "Bedrock",
-	},
-	{
-		id: "cf32",
-		json: "classic_32x_java",
-		edition: "Java",
-	},
-	{
-		id: "cf32",
-		json: "classic_32x_bedrock",
-		edition: "Bedrock",
-	},
-	{
-		id: "cf64",
-		json: "classic_64x_jappa_java",
-		edition: "Java",
-	},
-	{
-		id: "cf64",
-		json: "classic_64x_jappa_bedrock",
-		edition: "Bedrock",
-	},
-];
-
 export default defineNuxtComponent({
 	components: {
 		PackSelector,
@@ -109,29 +66,22 @@ export default defineNuxtComponent({
 		VersionSelector,
 	},
 	async asyncData() {
-		// set object order by which ones come first
-		const downloadData = DOWNLOAD_DATA.reduce((acc, cur) => {
-			acc[cur.id] ||= {};
-			acc[cur.id][cur.edition] = "";
-			return acc;
-		}, {});
+		const downloadData = {};
 
+		// flatMap into array of promises that each resolve one key in downloadData
 		await Promise.all(
-			DOWNLOAD_DATA.map(async ({ id, json, to, edition }) => {
-				if (to) {
-					downloadData[id][edition] = to;
-					return;
-				}
-
-				// vite limitation, can't do regular $fetch here
-				const downloads = await import(`../../public/data/downloads/${json}.json`)
-					.then((res) => res.default)
-					.catch((err) => {
-						console.error(err);
-						return {};
-					});
-
-				downloadData[id][edition] = downloads;
+			projects.flatMap((project) => {
+				downloadData[project.id] = {};
+				return project.downloads.map(async ({ edition, json }) => {
+					downloadData[project.id][edition] = await import(
+						`../../public/data/downloads/${json}.json`
+					)
+						.then((res) => res.default)
+						.catch((err) => {
+							console.error(err);
+							return {};
+						});
+				});
 			}),
 		);
 
@@ -141,8 +91,8 @@ export default defineNuxtComponent({
 	data() {
 		return {
 			packs: projects,
-			selectedPack: "f32",
-			hoverPack: "f32",
+			selectedPack: "faithful_32x",
+			hoverPack: "faithful_32x",
 			selectedEdition: null,
 		};
 	},
@@ -156,9 +106,9 @@ export default defineNuxtComponent({
 		toggleVersionSelector(edition, open) {
 			return open ? this.closeVersionSelector() : this.openVersionSelector(edition);
 		},
-		hashify(id) {
+		hashify(name) {
 			// vue router really hates spaces in HTML ids
-			return `#${id.replace(/ /g, "-")}`;
+			return `#${name.replace(/ /g, "-")}`;
 		},
 	},
 	computed: {

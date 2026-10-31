@@ -39,14 +39,11 @@ export default defineNuxtComponent({
 			data: {
 				Java: { color: "#1DD96A", icon: "mdi-minecraft", name: "Java Edition" },
 				Bedrock: { color: "#999999", icon: "mdi-cube", name: "Bedrock Edition" },
-				// kinda stupid but it works lol
-				...projects
-					.filter((p) => p.addons)
-					.reduce((acc, cur) => {
-						acc[cur.pack_id] = cur;
-						acc[cur.pack_id].icon = "faithful";
-						return acc;
-					}, {}),
+				// this should really be merged into the pack api
+				...projects.reduce((acc, { id, name, color }) => {
+					acc[id] = { color, name, icon: "faithful" };
+					return acc;
+				}, {}),
 			},
 		};
 	},

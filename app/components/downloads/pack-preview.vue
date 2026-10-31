@@ -1,19 +1,19 @@
 <template>
 	<img
-		v-for="{ id, name } in packs"
+		v-for="{ id, name, banner } in packs"
 		:key="id"
 		class="download-preview"
 		:class="getClass(id)"
-		:src="`/image/banners/${id}.jpg`"
+		:src="banner"
 		:alt="`${name} Background`"
 	/>
 
 	<img
-		v-for="{ id, name } in packs"
+		v-for="{ id, name, logo } in packs"
 		:key="id"
 		class="download-preview download-logo"
 		:class="getClass(id)"
-		:src="`https://database.faithfulpack.net/images/branding/logos/transparent/hd/${id}_logo.png`"
+		:src="logo"
 		:alt="`${name} Logo`"
 	/>
 </template>
@@ -37,9 +37,9 @@ export default defineNuxtComponent({
 		},
 	},
 	methods: {
-		getClass(id) {
-			if (id === this.hoverPack && this.disabled) return "disabled";
-			if (id === this.hoverPack) return "show";
+		getClass(packId) {
+			if (packId === this.hoverPack && this.disabled) return "disabled";
+			if (packId === this.hoverPack) return "show";
 		},
 	},
 });
