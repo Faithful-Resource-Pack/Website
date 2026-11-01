@@ -61,7 +61,9 @@ export default defineNuxtComponent({
 // place logo on top of image
 .project-logo {
 	position: absolute;
-	right: 0;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .project-background {

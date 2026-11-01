@@ -10,8 +10,7 @@
 		"downloads": [
 			{ "edition": "Java", "json": "faithful_32x_java" },
 			{ "edition": "Bedrock", "json": "faithful_32x_bedrock" }
-		],
-		"addons": true
+		]
 	},
 	{
 		"id": "faithful_64x",
