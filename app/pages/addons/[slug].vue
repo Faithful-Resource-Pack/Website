@@ -56,8 +56,6 @@
 				<media-icon size="small" :icon="name" fallback="download" />
 				<span class="ml-2">{{ name }}</span>
 			</nuxt-link>
-			<br />
-			<discord-button />
 		</div>
 	</div>
 </template>
@@ -67,7 +65,6 @@ import MediaIcon from "~/components/lib/media-icon.vue";
 import ScreenshotCarousel from "~/components/lib/screenshot-carousel.vue";
 import AuthorWidget from "~/components/addon/author-widget.vue";
 import CompatibilityCard from "~/components/addon/compatibility-card.vue";
-import DiscordButton from "~/components/lib/discord-button.vue";
 
 import { DateTime } from "luxon";
 
@@ -77,7 +74,6 @@ export default defineNuxtComponent({
 		ScreenshotCarousel,
 		AuthorWidget,
 		CompatibilityCard,
-		DiscordButton,
 	},
 	setup() {
 		definePageMeta({

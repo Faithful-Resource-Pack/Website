@@ -42,20 +42,23 @@ definePageMeta({
 			</nuxt-link>
 		</div>
 		<br />
-		<discord-button>Still have questions? Ask us on our Discord!</discord-button>
+		<cta-widget
+			title="Still have questions?"
+			btn="Ask a team member directly on our Discord server!"
+		/>
 	</div>
 </template>
 
 <script>
 import HeroSection from "~/components/lib/hero-section.vue";
-import DiscordButton from "~/components/lib/discord-button.vue";
+import CtaWidget from "~/components/lib/cta-widget.vue";
 
 import allFaqs from "../../../public/data/faq.json";
 
 export default defineNuxtComponent({
 	components: {
 		HeroSection,
-		DiscordButton,
+		CtaWidget,
 	},
 	data() {
 		return {

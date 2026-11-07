@@ -90,18 +90,12 @@
 			/>
 		</div>
 		<div ref="bottomElement" />
-		<!-- put the CTA below the "bottom" element for tall monitors that don't scroll -->
-		<div v-show="!loading" class="my-5">
-			<h2 class="text-center">Can't find what you're looking for?</h2>
-			<a
-				class="btn btn-secondary btn-more"
-				href="https://studio.faithfulpack.net"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Submit an add-on on the Faithful Studio
-			</a>
-		</div>
+		<cta-widget
+			v-show="!loading"
+			title="Can't find what you're looking for?"
+			href="https://studio.faithfulpack.net"
+			btn="Submit an add-on with the Faithful Studio"
+		/>
 	</div>
 </template>
 
@@ -109,6 +103,7 @@
 import AddonCard from "~/components/addons/addon-card.vue";
 import HeroSection from "~/components/lib/hero-section.vue";
 import CustomChip from "~/components/lib/custom-chip.vue";
+import CtaWidget from "~/components/lib/cta-widget.vue";
 
 const FAVORITE_ADDONS_KEY = "favAddons";
 
@@ -120,6 +115,7 @@ export default defineNuxtComponent({
 		HeroSection,
 		AddonCard,
 		CustomChip,
+		CtaWidget,
 	},
 	inject: ["theme"],
 	setup() {

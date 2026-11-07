@@ -51,19 +51,18 @@
 			<post-changelog :item="post.changelog" />
 		</div>
 	</template>
-	<br />
-	<discord-button />
+	<cta-widget title="Want to be in the next post?" btn="Join our Discord server to start contributing today!" />
 </template>
 
 <script>
-import DiscordButton from "~/components/lib/discord-button.vue";
+import CtaWidget from "../lib/cta-widget.vue";
 import PostChangelog from "~/components/posts/post-changelog.vue";
 import PostDownloads from "~/components/posts/post-downloads.vue";
 
 export default defineNuxtComponent({
 	name: "post-layout",
 	components: {
-		DiscordButton,
+		CtaWidget,
 		PostDownloads,
 		PostChangelog,
 	},
