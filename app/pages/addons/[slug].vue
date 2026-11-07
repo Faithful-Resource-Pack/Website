@@ -21,13 +21,22 @@
 				</div>
 				<div class="card card-body addon-info">
 					<h2>Details</h2>
+
+					<v-tooltip v-if="addon.created" location="bottom">
+						<template #activator="{ props }">
+							<p class="cursor-help mb-0" v-bind="props">
+								Created {{ getHumanTime(addon.created).relative }}
+							</p>
+						</template>
+						{{ getHumanTime(addon.created).exact }}
+					</v-tooltip>
 					<v-tooltip v-if="addon.last_updated" location="bottom">
 						<template #activator="{ props }">
 							<p class="cursor-help mb-0" v-bind="props">
-								Last updated {{ relativeDate(addon.last_updated) }}
+								Last updated {{ getHumanTime(addon.last_updated).relative }}
 							</p>
 						</template>
-						{{ dateTooltip }}
+						{{ getHumanTime(addon.last_updated).exact }}
 					</v-tooltip>
 					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
 				</div>
@@ -93,6 +102,14 @@ export default defineNuxtComponent({
 			throw createError({ statusCode: 404, statusMessage: String(err) });
 		}
 	},
+	methods: {
+		getHumanTime(time) {
+			return {
+				exact: exactDate(time, DateTime.DATETIME_MED),
+				relative: relativeDate(time),
+			};
+		},
+	},
 	computed: {
 		downloads() {
 			return this.addon.files.filter((el) => el.use === "download");
@@ -105,9 +122,6 @@ export default defineNuxtComponent({
 		},
 		reel() {
 			return [this.header, ...this.screenshots];
-		},
-		dateTooltip() {
-			return exactDate(this.addon.last_updated, DateTime.DATETIME_MED);
 		},
 	},
 });
