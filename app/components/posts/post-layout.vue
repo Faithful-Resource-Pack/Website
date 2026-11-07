@@ -51,11 +51,14 @@
 			<post-changelog :item="post.changelog" />
 		</div>
 	</template>
-	<cta-widget title="Want to be in the next post?" btn="Join our Discord server to start contributing today!" />
+	<cta-widget
+		title="Want to be in the next post?"
+		btn="Join our Discord server to start contributing today!"
+	/>
 </template>
 
 <script>
-import CtaWidget from "../lib/cta-widget.vue";
+import CtaWidget from "~/components/lib/cta-widget.vue";
 import PostChangelog from "~/components/posts/post-changelog.vue";
 import PostDownloads from "~/components/posts/post-downloads.vue";
 

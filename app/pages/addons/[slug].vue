@@ -25,6 +25,7 @@
 					<v-tooltip v-if="addon.created" location="bottom">
 						<template #activator="{ props }">
 							<p class="cursor-help mb-0" v-bind="props">
+								<v-icon class="mr-1" icon="mdi-calendar" size="small" />
 								Created {{ getHumanTime(addon.created).relative }}
 							</p>
 						</template>
@@ -33,12 +34,16 @@
 					<v-tooltip v-if="addon.last_updated" location="bottom">
 						<template #activator="{ props }">
 							<p class="cursor-help mb-0" v-bind="props">
+								<v-icon class="mr-1" icon="mdi-update" size="small" />
 								Last updated {{ getHumanTime(addon.last_updated).relative }}
 							</p>
 						</template>
 						{{ getHumanTime(addon.last_updated).exact }}
 					</v-tooltip>
-					<p class="mb-0">Add-on ID: {{ addon.id }}</p>
+					<p class="mb-0">
+						<v-icon class="mr-1" icon="mdi-identifier" size="small" />
+						Add-on ID: {{ addon.id }}
+					</p>
 				</div>
 			</v-col>
 		</v-row>
