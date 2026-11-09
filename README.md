@@ -25,11 +25,15 @@
 
 ## Running
 
-Create a file called `.env` in the root folder, using [`.env.example`](.env.example) as a template.
+Rename the [`.env.example`](.env.example) file to `.env`. The defaults should work out of the box, but you may want to configure the Faithful API URL if you want to test local data.
+
+Install the website project dependencies by running:
 
 ```bash
 pnpm install
 ```
+
+To start the website, run:
 
 ```bash
 pnpm dev
