@@ -126,8 +126,10 @@ export default defineNuxtComponent({
 	},
 	data() {
 		const sortMethods = [
-			{ title: "Date (Newest to Oldest)", value: "dd" },
-			{ title: "Date (Oldest to Newest)", value: "da" },
+			{ title: "Date Updated (Newest to Oldest)", value: "dd" },
+			{ title: "Date Updated (Oldest to Newest)", value: "da" },
+			{ title: "Date Created (Newest to Newest)", value: "cd" },
+			{ title: "Date Created (Oldest to Newest)", value: "ca" },
 			{ title: "Name (A-Z)", value: "na" },
 			{ title: "Name (Z-A)", value: "nd" },
 		];
@@ -170,14 +172,20 @@ export default defineNuxtComponent({
 				const bn = b.name.trim().toLowerCase();
 				const ad = a.last_updated || 0;
 				const bd = b.last_updated || 0;
+				const ac = a.created || 0;
+				const bc = b.created || 0;
 				switch (sortMethod) {
 					case "na": // name ascending
 						return an === bn ? 0 : an > bn ? 1 : -1;
 					case "nd": // name descending
 						return an === bn ? 0 : an > bn ? -1 : 1;
-					case "da": // date ascending
+					case "ca": // creation ascending
+						return ac === bc ? 0 : ac > bc ? 1 : -1;
+					case "cd": // creation descending
+						return ac === bc ? 0 : ac < bc ? 1 : -1;
+					case "da": // update ascending
 						return ad === bd ? 0 : ad > bd ? 1 : -1;
-					case "dd": // date descending (default)
+					case "dd": // update descending (default)
 					default:
 						return ad === bd ? 0 : ad < bd ? 1 : -1;
 				}

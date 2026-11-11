@@ -21,7 +21,6 @@
 				</div>
 				<div class="card card-body addon-info">
 					<h2>Details</h2>
-
 					<v-tooltip v-if="addon.created" location="bottom">
 						<template #activator="{ props }">
 							<p class="cursor-help mb-0" v-bind="props">
